@@ -295,6 +295,14 @@
     -webkit-backdrop-filter: blur(10px);
     /* z-index: 12 — above #rate-hud (11) and #overlay (10) */
     z-index: 12;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.4s ease;
+  }
+
+  body.is-paused .theme-control {
+    opacity: 1;
+    pointer-events: auto;
   }
 
   .theme-control button {
@@ -4370,6 +4378,7 @@ function syncHistoryForState(mode) {
 function togglePause() {
   if (paused) {
     paused = false;
+    document.body.classList.remove('is-paused');
     overlay.classList.remove('visible');
     overlay.setAttribute('aria-hidden', 'true');
     overlayStatus.textContent = '';
@@ -4399,6 +4408,7 @@ function togglePause() {
     // Advance to the next tagline (wraps). Sentinel −1 becomes 0 on first pause.
     pauseTagIdx = (pauseTagIdx + 1 + TAGLINES.length) % TAGLINES.length;
     renderPauseTagline();
+    document.body.classList.add('is-paused');
     overlay.classList.add('visible');
     overlay.setAttribute('aria-hidden', 'false');
     overlayStatus.textContent = 'Animation paused. Press Escape or Space to resume.';
