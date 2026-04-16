@@ -1,6 +1,713 @@
-<!doctype html>
-<meta charset="utf-8">
-<meta http-equiv="refresh" content="0; url=/arrival">
-<title>sonde.life</title>
-<link rel="canonical" href="https://sonde.life/arrival">
-<p><a href="/arrival">Continue to sonde.life/arrival</a></p>
+<!DOCTYPE html>
+<html lang="en-US" data-theme="dark">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sonde — Arriving soon</title>
+<meta name="description" content="A new way to understand your software. Arriving soon.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://sonde.life/">
+
+<!-- Cloudflare Web Analytics beacon (SPA pageviews via history.pushState).
+     Placeholder token — swapped in at deploy time from the sonde.life
+     zone dashboard. -->
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "07871f5aa9e44ce2b83a37f8924fb4a6", "spa": true}'></script>
+
+<meta property="og:title" content="Sonde — Arriving soon">
+<meta property="og:description" content="A new way to understand your software. Arriving soon.">
+<meta property="og:image" content="/og-default.png">
+<meta property="og:url" content="https://sonde.life/">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Sonde — Arriving soon">
+<meta name="twitter:description" content="A new way to understand your software. Arriving soon.">
+<meta name="twitter:image" content="/og-default.png">
+
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'%3E%3Cdefs%3E%3CradialGradient id='s' cx='50%25' cy='50%25' r='50%25'%3E%3Cstop offset='0%25' stop-color='%23ffe082'/%3E%3Cstop offset='60%25' stop-color='%23ffb300'/%3E%3Cstop offset='100%25' stop-color='%23e65100'/%3E%3C/radialGradient%3E%3CclipPath id='d'%3E%3Ccircle cx='256' cy='256' r='240'/%3E%3C/clipPath%3E%3C/defs%3E%3Ccircle cx='256' cy='256' r='240' fill='url(%23s)'/%3E%3Cg clip-path='url(%23d)'%3E%3Cg transform='translate(250,240) rotate(-40)' fill='%231a3554' stroke='%231a3554'%3E%3Cline x1='-32' y1='-8' x2='-160' y2='-40' stroke-width='6' stroke-linecap='round'/%3E%3Ccircle cx='-160' cy='-40' r='10'/%3E%3Cline x1='-32' y1='16' x2='-125' y2='62' stroke-width='8' stroke-linecap='round'/%3E%3Crect x='-141' y='38' width='32' height='60' rx='4' transform='rotate(20,-125,62)'/%3E%3Cline x1='-16' y1='-40' x2='-46' y2='-92' stroke-width='7' stroke-linecap='round'/%3E%3Crect x='-70' y='-108' width='48' height='28' rx='4'/%3E%3Ccircle cx='-56' cy='-98' r='8'/%3E%3Ccircle cx='-36' cy='-98' r='6'/%3E%3Cpath d='M48,-108 Q128,-78 128,0 Q128,78 48,108' stroke-width='5' stroke-linejoin='round'/%3E%3Cline x1='58' y1='-50' x2='108' y2='0' stroke-width='5'/%3E%3Cline x1='58' y1='50' x2='108' y2='0' stroke-width='5'/%3E%3Cline x1='48' y1='0' x2='108' y2='0' stroke-width='5'/%3E%3Ccircle cx='110' cy='0' r='14'/%3E%3Cpolygon points='-16,-40 48,-40 62,-24 62,24 48,40 -16,40 -30,24 -30,-24'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&family=IBM+Plex+Mono:wght@300;400;500&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<!--
+  Canonical Sonde theme — mirrored from packages/themes/. Load order is
+  load-bearing: tokens → ultraviolet baseline → teaser toggle overrides.
+-->
+<link rel="stylesheet" href="../shared/themes/tokens.css">
+<link rel="stylesheet" href="../shared/themes/ultraviolet.css">
+<link rel="stylesheet" href="../shared/themes/teaser-toggle-sonde-life.css">
+
+<!--
+  First-paint theme resolution — runs before <body> renders so the
+  initial paint uses the correct theme without flashing the hard-coded
+  data-theme="dark" default. Mirrors the pattern in packages/cockpit/index.html.
+  Priority: stored localStorage > prefers-contrast: more > prefers-color-scheme > dark.
+-->
+<script>
+  (function () {
+    try {
+      var stored = localStorage.getItem('sonde-life:theme');
+      if (stored === 'light' || stored === 'dark' || stored === 'high-contrast') {
+        document.documentElement.setAttribute('data-theme', stored);
+        return;
+      }
+    } catch (_) { /* hardened browser */ }
+    if (window.matchMedia && window.matchMedia('(prefers-contrast: more)').matches) {
+      document.documentElement.setAttribute('data-theme', 'high-contrast');
+    } else if (window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches) {
+      document.documentElement.setAttribute('data-theme', 'light');
+    } else {
+      document.documentElement.setAttribute('data-theme', 'dark');
+    }
+  })();
+</script>
+
+<style>
+  /* ────────────────────────────────────────────────────────────────
+     Page-specific layout for sonde.life root teaser. All colors and
+     fonts come from the linked theme files via --sonde-* tokens.
+     ──────────────────────────────────────────────────────────────── */
+
+  :root {
+    --sonde-accent-glow: color-mix(in srgb, var(--sonde-color-accent) 32%, transparent);
+    --sonde-bg-deep:     color-mix(in srgb, var(--sonde-color-bg) 78%, #000 22%);
+    --sonde-surface-72:  color-mix(in srgb, var(--sonde-color-surface) 72%, transparent);
+  }
+
+  [data-theme="high-contrast"] {
+    --sonde-accent-glow: transparent;
+    --sonde-bg-deep: #ffffff;
+    --sonde-surface-72: #ffffff;
+  }
+
+  /* ── Skip link — WCAG 2.4.1 Bypass Blocks ──
+     Visually hidden until focused; standard keyboard-first pattern. */
+  .skip-link {
+    position: absolute;
+    top: -48px;
+    left: 1rem;
+    z-index: 100;
+    padding: 0.7rem 1.1rem;
+    background: var(--sonde-color-accent);
+    color: var(--sonde-color-bg);
+    font-family: var(--sonde-font-mono);
+    font-size: 0.8rem;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    text-decoration: none;
+    border-radius: 0 0 8px 8px;
+    transition: top 180ms ease;
+  }
+
+  .skip-link:focus,
+  .skip-link:focus-visible {
+    top: 0;
+    outline: 2px solid var(--sonde-color-text);
+    outline-offset: 2px;
+  }
+
+  [data-theme="high-contrast"] .skip-link {
+    background: #000;
+    color: #fff;
+  }
+
+  /* ── sr-only — visually hidden but accessible to screen readers,
+     voice control, and keyboard focus. Used for the radiogroup label
+     and the landmark-internal skip anchors required by the probe's
+     SC 2.4.1 rule. */
+  .sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+  }
+
+  .sr-only:focus,
+  .sr-only:focus-visible {
+    position: fixed;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: auto;
+    height: auto;
+    padding: 0.7rem 1.1rem;
+    margin: 0;
+    clip: auto;
+    overflow: visible;
+    background: var(--sonde-color-accent);
+    color: var(--sonde-color-bg);
+    font-family: var(--sonde-font-mono);
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    text-decoration: none;
+    letter-spacing: 0.08em;
+    z-index: 101;
+    border-radius: 0 0 8px 8px;
+    outline: 2px solid var(--sonde-color-text);
+    outline-offset: 2px;
+  }
+
+  [data-theme="high-contrast"] .sr-only:focus,
+  [data-theme="high-contrast"] .sr-only:focus-visible {
+    background: #000;
+    color: #fff;
+  }
+
+  *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+  html, body { width: 100%; min-height: 100vh; }
+
+  body {
+    background: var(--sonde-color-bg);
+    color: var(--sonde-color-text);
+    font-family: var(--sonde-font-body);
+    font-weight: 300;
+    line-height: var(--sonde-line-height, 1.65);
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    position: relative;
+  }
+
+  /* ── Ultraviolet nebula backdrop ── */
+  .nebula {
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+    background:
+      radial-gradient(1px 1px at 14% 22%, var(--sonde-color-text) 50%, transparent 100%),
+      radial-gradient(1px 1px at 38% 9%,  #c8b4ff 50%, transparent 100%),
+      radial-gradient(1px 1px at 62% 38%, var(--sonde-color-text) 50%, transparent 100%),
+      radial-gradient(1px 1px at 81% 12%, #a5b4fc 50%, transparent 100%),
+      radial-gradient(1.5px 1.5px at 28% 66%, var(--sonde-color-text) 50%, transparent 100%),
+      radial-gradient(1px 1px at 47% 82%, var(--sonde-color-accent) 50%, transparent 100%),
+      radial-gradient(1px 1px at 71% 74%, var(--sonde-color-text) 50%, transparent 100%),
+      radial-gradient(1px 1px at 92% 58%, var(--sonde-color-secondary) 50%, transparent 100%),
+      radial-gradient(2px 2px at 19% 48%, #d8b4fe 50%, transparent 100%),
+      radial-gradient(1.5px 1.5px at 55% 18%, var(--sonde-color-text) 50%, transparent 100%),
+      radial-gradient(1px 1px at 88% 90%, var(--sonde-color-text) 50%, transparent 100%),
+      radial-gradient(1px 1px at 6% 84%,  #c8b4ff 50%, transparent 100%),
+      radial-gradient(1px 1px at 33% 38%, var(--sonde-color-text) 50%, transparent 100%),
+      radial-gradient(1px 1px at 76% 28%, var(--sonde-color-text) 50%, transparent 100%),
+      radial-gradient(1px 1px at 50% 52%, #ddccff 50%, transparent 100%),
+      radial-gradient(ellipse 70% 50% at 28% 38%, color-mix(in srgb, var(--sonde-color-accent) 14%, transparent), transparent 72%),
+      radial-gradient(ellipse 60% 45% at 74% 66%, color-mix(in srgb, var(--sonde-color-secondary) 10%, transparent), transparent 72%),
+      linear-gradient(180deg, var(--sonde-bg-deep) 0%, var(--sonde-color-bg) 50%, var(--sonde-color-surface) 100%);
+  }
+
+  [data-theme="light"] .nebula {
+    background:
+      radial-gradient(ellipse 70% 50% at 28% 38%, color-mix(in srgb, var(--sonde-color-accent) 9%, transparent), transparent 72%),
+      radial-gradient(ellipse 60% 45% at 74% 66%, color-mix(in srgb, var(--sonde-color-secondary) 6%, transparent), transparent 72%),
+      linear-gradient(180deg, var(--sonde-bg-deep) 0%, var(--sonde-color-bg) 60%, var(--sonde-color-surface) 100%);
+  }
+
+  [data-theme="high-contrast"] .nebula { background: #ffffff; }
+
+  /* ── Theme control ── */
+  .theme-control {
+    position: fixed;
+    top: 1.5rem;
+    right: 1.5rem;
+    display: inline-flex;
+    padding: 4px;
+    border: 1px solid var(--sonde-color-border);
+    border-radius: 999px;
+    background: var(--sonde-surface-72);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    z-index: 20;
+  }
+
+  [data-theme="high-contrast"] .theme-control { background: #ffffff; }
+
+  .theme-control button {
+    appearance: none;
+    background: transparent;
+    border: 0;
+    color: var(--sonde-color-text-muted);
+    font-family: var(--sonde-font-mono);
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    padding: 0.45rem 0.95rem;
+    border-radius: 999px;
+    cursor: pointer;
+    transition: color 160ms ease, background 160ms ease;
+  }
+
+  .theme-control button[aria-checked="true"] {
+    background: var(--sonde-color-accent);
+    color: var(--sonde-bg-deep);
+  }
+
+  [data-theme="high-contrast"] .theme-control button[aria-checked="true"] {
+    background: #000;
+    color: #fff;
+  }
+
+  .theme-control button:hover { color: var(--sonde-color-text); }
+  .theme-control button:focus-visible {
+    outline: 2px solid var(--sonde-color-accent);
+    outline-offset: 2px;
+  }
+
+  /* ── Main ── */
+  main {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 5rem 2rem 3rem;
+    text-align: center;
+  }
+
+  .probe-mark {
+    width: clamp(104px, 14vw, 156px);
+    height: auto;
+    margin-bottom: 2.4rem;
+    color: var(--sonde-color-accent);
+    animation: probeDrift 1600ms cubic-bezier(0.2, 0.7, 0.2, 1) both;
+    animation-delay: 80ms;
+    filter: drop-shadow(0 0 22px var(--sonde-color-accent-dim));
+  }
+
+  .probe-mark .dish       { fill: color-mix(in srgb, var(--sonde-color-text) 86%, transparent); stroke: var(--sonde-color-accent); stroke-width: 1.3; stroke-linejoin: round; }
+  .probe-mark .dish-inner { fill: var(--sonde-color-accent); opacity: 0.35; }
+  .probe-mark .dish-spoke { stroke: var(--sonde-color-accent); stroke-width: 0.8; }
+  .probe-mark .dish-feed  { fill: color-mix(in srgb, var(--sonde-color-text) 94%, transparent); stroke: var(--sonde-color-accent); stroke-width: 0.6; }
+  .probe-mark .bus        { fill: var(--sonde-color-accent); stroke: color-mix(in srgb, var(--sonde-color-accent) 60%, #000); stroke-width: 1.1; }
+  .probe-mark .nozzle     { fill: color-mix(in srgb, var(--sonde-color-accent) 75%, #000); stroke: color-mix(in srgb, var(--sonde-color-accent) 45%, #000); stroke-width: 0.7; }
+  .probe-mark .glow-1     { fill: #fbbf24; }
+  .probe-mark .glow-2     { fill: #f472b6; opacity: 0.55; }
+  .probe-mark .glow-3     { fill: var(--sonde-color-accent); opacity: 0.28; }
+  .probe-mark .boom       { stroke: var(--sonde-color-accent); stroke-width: 0.95; stroke-linecap: round; }
+  .probe-mark .boom-tip   { fill: color-mix(in srgb, var(--sonde-color-accent) 80%, var(--sonde-color-text) 20%); stroke: var(--sonde-color-accent); stroke-width: 0.5; }
+  .probe-mark .rtg-boom   { stroke: var(--sonde-color-accent); stroke-width: 1.3; }
+  .probe-mark .rtg-body   { fill: var(--sonde-color-accent); stroke: color-mix(in srgb, var(--sonde-color-accent) 50%, #000); stroke-width: 0.65; }
+  .probe-mark .rtg-fin    { stroke: color-mix(in srgb, var(--sonde-color-accent) 50%, #000); stroke-width: 0.45; }
+  .probe-mark .sci-boom   { stroke: var(--sonde-color-accent); stroke-width: 1.1; }
+  .probe-mark .sci-body   { fill: color-mix(in srgb, var(--sonde-color-accent) 68%, var(--sonde-color-text) 32%); stroke: color-mix(in srgb, var(--sonde-color-accent) 50%, #000); stroke-width: 0.7; }
+  .probe-mark .sci-lens   { fill: var(--sonde-color-bg-deep, #1a1240); stroke: color-mix(in srgb, var(--sonde-color-accent) 50%, #000); stroke-width: 0.5; }
+
+  [data-theme="high-contrast"] .probe-mark *  { fill: #000 !important; stroke: #000 !important; opacity: 1 !important; }
+  [data-theme="high-contrast"] .probe-mark .dish { fill: #fff !important; }
+
+  .wordmark {
+    font-family: var(--sonde-font-display);
+    font-size: clamp(4.5rem, 14vw, 10rem);
+    font-weight: 500;
+    line-height: 0.9;
+    letter-spacing: -0.02em;
+    color: var(--sonde-color-text);
+    margin-bottom: 2.4rem;
+    animation: riseIn 1400ms cubic-bezier(0.2, 0.7, 0.2, 1) both;
+    animation-delay: 260ms;
+  }
+
+  .wordmark .dot {
+    color: var(--sonde-color-accent);
+    text-shadow: 0 0 28px var(--sonde-accent-glow);
+  }
+
+  .hero {
+    font-family: var(--sonde-font-display);
+    font-size: clamp(1.4rem, 3.6vw, 2.4rem);
+    font-weight: 400;
+    line-height: 1.3;
+    letter-spacing: -0.005em;
+    max-width: 24ch;
+    color: var(--sonde-color-text);
+    margin-bottom: 2rem;
+    animation: riseIn 1400ms cubic-bezier(0.2, 0.7, 0.2, 1) both;
+    animation-delay: 540ms;
+  }
+
+  .subhead {
+    font-family: var(--sonde-font-mono);
+    font-size: 0.82rem;
+    font-weight: 400;
+    letter-spacing: 0.34em;
+    text-transform: uppercase;
+    color: var(--sonde-color-text-muted);
+    margin-bottom: 3.5rem;
+    animation: riseIn 1400ms cubic-bezier(0.2, 0.7, 0.2, 1) both;
+    animation-delay: 820ms;
+  }
+
+  .subhead::before,
+  .subhead::after {
+    content: '';
+    display: inline-block;
+    vertical-align: middle;
+    width: 2.4rem;
+    height: 1px;
+    background: var(--sonde-color-border);
+    margin: 0 0.95rem;
+  }
+
+  .body {
+    max-width: 50ch;
+    font-family: var(--sonde-font-body);
+    font-size: 0.96rem;
+    line-height: 1.8;
+    color: var(--sonde-color-text-muted);
+    margin-bottom: 3rem;
+    animation: riseIn 1400ms cubic-bezier(0.2, 0.7, 0.2, 1) both;
+    animation-delay: 1080ms;
+  }
+
+  .body strong {
+    font-weight: 500;
+    color: var(--sonde-color-text);
+  }
+
+  .arrival-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.65rem;
+    font-family: var(--sonde-font-mono);
+    font-size: 0.82rem;
+    font-weight: 500;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--sonde-color-accent);
+    text-decoration: none;
+    padding: 0.9rem 1.7rem;
+    border: 1px solid var(--sonde-color-accent);
+    border-radius: 999px;
+    background: var(--sonde-color-accent-dim);
+    transition: box-shadow 220ms ease, background 220ms ease, color 220ms ease;
+    animation: riseIn 1400ms cubic-bezier(0.2, 0.7, 0.2, 1) both;
+    animation-delay: 1360ms;
+  }
+
+  .arrival-link:hover,
+  .arrival-link:focus-visible {
+    background: var(--sonde-color-accent);
+    color: var(--sonde-bg-deep);
+    box-shadow: 0 0 0 6px var(--sonde-accent-glow);
+    outline: none;
+  }
+
+  [data-theme="high-contrast"] .arrival-link {
+    background: #fff;
+    color: #000;
+    border-color: #000;
+  }
+  [data-theme="high-contrast"] .arrival-link:hover,
+  [data-theme="high-contrast"] .arrival-link:focus-visible {
+    background: #000;
+    color: #fff;
+    box-shadow: 0 0 0 3px #000;
+  }
+
+  .arrival-link .arrow {
+    font-family: var(--sonde-font-display);
+    font-size: 1.1em;
+    transition: transform 240ms ease;
+  }
+
+  .arrival-link:hover .arrow,
+  .arrival-link:focus-visible .arrow { transform: translateX(4px); }
+
+  .daylight-link {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.2rem;
+    margin-top: 1.6rem;
+    padding: 0.8rem 1.4rem;
+    font-family: var(--sonde-font-mono);
+    text-decoration: none;
+    color: var(--sonde-color-text-muted);
+    border-radius: 4px;
+    transition: color 200ms ease, background 200ms ease;
+    animation: riseIn 1400ms cubic-bezier(0.2, 0.7, 0.2, 1) both;
+    animation-delay: 1540ms;
+  }
+
+  .daylight-link:hover,
+  .daylight-link:focus-visible {
+    color: var(--sonde-color-accent);
+    background: color-mix(in srgb, var(--sonde-color-accent) 6%, transparent);
+    outline: none;
+  }
+
+  .daylight-link:focus-visible {
+    box-shadow: 0 0 0 2px var(--sonde-color-accent);
+  }
+
+  .daylight-link .sub-label {
+    font-size: 0.6rem;
+    font-weight: 500;
+    letter-spacing: 0.28em;
+    text-transform: uppercase;
+    opacity: 0.72;
+  }
+
+  .daylight-link .sub-title {
+    font-family: var(--sonde-font-display);
+    font-size: 0.98rem;
+    font-weight: 500;
+    letter-spacing: 0.01em;
+    text-transform: none;
+  }
+
+  .daylight-link .sub-muted {
+    color: var(--sonde-color-text-muted);
+    opacity: 0.85;
+    font-weight: 400;
+  }
+
+  [data-theme="high-contrast"] .daylight-link {
+    color: #000;
+    border: 2px solid #000;
+  }
+  [data-theme="high-contrast"] .daylight-link:hover,
+  [data-theme="high-contrast"] .daylight-link:focus-visible {
+    background: #000;
+    color: #fff;
+  }
+
+  /* ── Footer ──
+     Uses --sonde-color-text-muted for all text and visible borders so
+     every character passes WCAG AAA (7:1). The earlier "faint"
+     variant dropped to ~3.8:1 and failed even AA. */
+  footer {
+    padding: 2rem;
+    text-align: center;
+    font-family: var(--sonde-font-mono);
+    font-size: 0.76rem;
+    color: var(--sonde-color-text-muted);
+    letter-spacing: 0.12em;
+    animation: fadeIn 1200ms ease 1800ms both;
+  }
+
+  footer a {
+    color: var(--sonde-color-text-muted);
+    text-decoration: none;
+    border-bottom: 1px dotted var(--sonde-color-text-muted);
+    padding-bottom: 1px;
+    transition: color 160ms ease, border-color 160ms ease;
+  }
+
+  footer a:hover,
+  footer a:focus-visible {
+    color: var(--sonde-color-accent);
+    border-bottom-color: var(--sonde-color-accent);
+    outline: none;
+  }
+
+  footer .sep {
+    margin: 0 0.9rem;
+    color: var(--sonde-color-text-muted);
+  }
+
+  @keyframes riseIn {
+    from { opacity: 0; transform: translateY(18px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  @keyframes probeDrift {
+    from { opacity: 0; transform: translateY(-6px) rotate(-4deg); }
+    to   { opacity: 1; transform: translateY(0) rotate(0); }
+  }
+
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+      animation: none !important;
+      transition: none !important;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .probe-mark { margin-bottom: 1.8rem; }
+    .wordmark { margin-bottom: 1.8rem; }
+    .hero { margin-bottom: 1.4rem; }
+    .subhead { margin-bottom: 2.4rem; }
+    .body { margin-bottom: 2.4rem; }
+    .theme-control { top: 1rem; right: 1rem; }
+    .theme-control button { padding: 0.4rem 0.72rem; font-size: 10px; }
+  }
+</style>
+</head>
+<body>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
+  <div class="nebula" aria-hidden="true"></div>
+
+  <span id="theme-control-label" class="sr-only">Color theme</span>
+  <div class="theme-control" role="radiogroup" aria-labelledby="theme-control-label" onkeydown="themeRadioKey(event)">
+    <button type="button" role="radio" aria-checked="false" aria-label="Light theme" data-theme-value="light" tabindex="-1">Light</button>
+    <button type="button" role="radio" aria-checked="true"  aria-label="Dark theme"  data-theme-value="dark"  tabindex="0">Dark</button>
+    <button type="button" role="radio" aria-checked="false" aria-label="High contrast theme" data-theme-value="high-contrast" tabindex="-1">Contrast</button>
+  </div>
+
+  <main id="main-content">
+    <a href="#main-content" class="sr-only">Skip to main content</a>
+    <svg class="probe-mark" viewBox="-40 -36 76 68" aria-label="Sonde probe mark" role="img">
+      <g transform="rotate(-40)">
+        <line class="boom" x1="-6" y1="-1.5" x2="-32" y2="-8"/>
+        <circle class="boom-tip" cx="-32" cy="-8" r="1.8"/>
+        <line class="rtg-boom" x1="-6" y1="3" x2="-25" y2="12"/>
+        <g transform="translate(-25, 12) rotate(20)">
+          <rect class="rtg-body" x="-3" y="-6" width="6" height="12" rx="0.8"/>
+          <line class="rtg-fin" x1="-3" y1="-3" x2="3" y2="-3"/>
+          <line class="rtg-fin" x1="-3" y1="0"  x2="3" y2="0"/>
+          <line class="rtg-fin" x1="-3" y1="3"  x2="3" y2="3"/>
+        </g>
+        <line class="sci-boom" x1="-3" y1="-8" x2="-9" y2="-18"/>
+        <rect class="sci-body" x="-14" y="-22" width="10" height="6" rx="1"/>
+        <circle class="sci-lens" cx="-8" cy="-19" r="1.9"/>
+        <path class="dish" d="M9,-22 Q25,-16 25,0 Q25,16 9,22"/>
+        <path class="dish-inner" d="M11,-18 Q22,-12 22,0 Q22,12 11,18"/>
+        <line class="dish-spoke" x1="11" y1="-10" x2="21" y2="0"/>
+        <line class="dish-spoke" x1="11" y1="10"  x2="21" y2="0"/>
+        <line class="dish-spoke" x1="9"  y1="0"   x2="21" y2="0"/>
+        <circle class="dish-feed" cx="21" cy="0" r="2.9"/>
+        <polygon class="bus" points="-3,-8 9,-8 12,-5 12,5 9,8 -3,8 -6,5 -6,-5"/>
+        <path class="nozzle" d="M-8,-3 L-12,-5 L-12,5 L-8,3 Z"/>
+        <ellipse class="glow-1" cx="-18" cy="0" rx="3.5" ry="1.8"/>
+        <ellipse class="glow-2" cx="-23" cy="0" rx="5.5" ry="2.5"/>
+        <ellipse class="glow-3" cx="-29" cy="0" rx="8"   ry="3.5"/>
+      </g>
+    </svg>
+
+    <h1 class="wordmark">Sonde<span class="dot">.</span></h1>
+
+    <p class="hero">What if your software could speak for itself?</p>
+
+    <p class="subhead">Arriving soon</p>
+
+    <p class="body">
+      Software is the most valuable &mdash; and <strong>least understood</strong> &mdash; asset most organizations own.
+      We&rsquo;re building something to change that.
+    </p>
+
+    <a class="arrival-link"
+       href="./arrival.html?utm_source=sonde-life&amp;utm_medium=teaser&amp;utm_campaign=launch&amp;utm_content=arrival_primary"
+       data-testid="cta-arrival"
+       data-cta="arrival">
+      Something cinematic is on its way
+      <span class="arrow" aria-hidden="true">&rarr;</span>
+    </a>
+
+    <a class="daylight-link"
+       href="https://daylight.sonde.life/?utm_source=sonde-life&amp;utm_medium=teaser&amp;utm_campaign=launch&amp;utm_content=daylight_secondary"
+       target="_blank"
+       rel="noopener noreferrer"
+       data-testid="cta-daylight"
+       data-cta="daylight">
+      <span class="sub-label">See also</span>
+      <span class="sub-title">Daylight <span class="sub-muted">&mdash; accessibility health checks for real sites</span></span>
+    </a>
+  </main>
+
+  <footer>
+    <a href="#main-content" class="sr-only">Jump to main content</a>
+    &copy; 2026 Sonde
+    <span class="sep">&middot;</span>
+    <a href="mailto:hello@sonde.life?subject=Sonde" data-testid="cta-email" data-cta="email">Contact</a>
+  </footer>
+
+<script>
+  // Module-scoped state — not wrapped in an IIFE so the inline
+  // onkeydown="themeRadioKey(event)" attribute on the radiogroup div
+  // can reach the handler. The inline attribute is required by the
+  // Sonde a11y probe's static analyzer (SC 2.1.1), which only sees
+  // event handlers declared in HTML, not addEventListener.
+  const STORAGE_KEY = 'sonde-life:theme';
+  const root = document.documentElement;
+  const buttons = document.querySelectorAll('.theme-control button');
+
+  function readStoredTheme() {
+    try { return localStorage.getItem(STORAGE_KEY); } catch { return null; }
+  }
+  function writeStoredTheme(val) {
+    try { localStorage.setItem(STORAGE_KEY, val); } catch { /* hardened browser */ }
+  }
+
+  function resolveInitial() {
+    const stored = readStoredTheme();
+    if (stored === 'light' || stored === 'dark' || stored === 'high-contrast') return stored;
+    if (window.matchMedia('(prefers-contrast: more)').matches) return 'high-contrast';
+    if (window.matchMedia('(prefers-color-scheme: light)').matches) return 'light';
+    return 'dark';
+  }
+
+  // Roving tabindex: only the currently-checked radio is in the tab
+  // order. Tab reaches the group, then arrow keys move between.
+  function applyTheme(theme) {
+    root.setAttribute('data-theme', theme);
+    buttons.forEach((b) => {
+      const checked = b.dataset.themeValue === theme;
+      b.setAttribute('aria-checked', checked ? 'true' : 'false');
+      b.setAttribute('tabindex', checked ? '0' : '-1');
+    });
+  }
+
+  // Inline keyboard handler for the radiogroup. Globally reachable
+  // so the inline `onkeydown="themeRadioKey(event)"` attribute works.
+  // Handles ArrowLeft/Right/Up/Down + Home/End per WAI-ARIA radiogroup
+  // authoring practices.
+  function themeRadioKey(e) {
+    const active = document.activeElement;
+    const index = Array.prototype.indexOf.call(buttons, active);
+    if (index < 0) return;
+    let nextIndex = null;
+    if (e.key === 'ArrowRight' || e.key === 'ArrowDown') {
+      nextIndex = (index + 1) % buttons.length;
+    } else if (e.key === 'ArrowLeft' || e.key === 'ArrowUp') {
+      nextIndex = (index - 1 + buttons.length) % buttons.length;
+    } else if (e.key === 'Home') {
+      nextIndex = 0;
+    } else if (e.key === 'End') {
+      nextIndex = buttons.length - 1;
+    }
+    if (nextIndex === null) return;
+    e.preventDefault();
+    const next = buttons[nextIndex];
+    const t = next.dataset.themeValue;
+    applyTheme(t);
+    writeStoredTheme(t);
+    next.focus();
+  }
+
+  applyTheme(resolveInitial());
+
+  buttons.forEach((btn) => {
+    btn.addEventListener('click', () => {
+      const t = btn.dataset.themeValue;
+      applyTheme(t);
+      writeStoredTheme(t);
+    });
+  });
+
+  window.matchMedia('(prefers-contrast: more)').addEventListener('change', (e) => {
+    if (readStoredTheme()) return;
+    if (e.matches) applyTheme('high-contrast');
+  });
+  window.matchMedia('(prefers-color-scheme: light)').addEventListener('change', (e) => {
+    if (readStoredTheme()) return;
+    if (!window.matchMedia('(prefers-contrast: more)').matches) {
+      applyTheme(e.matches ? 'light' : 'dark');
+    }
+  });
+</script>
+</body>
+</html>

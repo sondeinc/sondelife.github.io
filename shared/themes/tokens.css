@@ -1,0 +1,1373 @@
+/**
+ * Sonde Design Tokens — Layer 1 (the semantic contract)
+ *
+ * Every --sonde-* custom property is defined here. This file is the
+ * SINGLE SOURCE OF TRUTH for every color, font, spacing, radius,
+ * motion, and shadow value used anywhere in Sonde output.
+ *
+ * Token Naming Rules:
+ *   - Prefix: --sonde-* (namespace, prevents collisions)
+ *   - Semantic: named by role, never by hue (--sonde-color-primary, not --sonde-color-blue)
+ *   - Categories: color, font, spacing, layout, radius, motion, shadow
+ *
+ * NO FALLBACKS. EVER.
+ *   Consumers MUST write `var(--sonde-color-text)` — never `var(--sonde-color-text, #1c1917)`.
+ *   Fallback literals drift from this file and produced the .score-badge
+ *   dark-mode contrast regression. If a token is missing the page MUST
+ *   break loudly so the gap gets fixed at the source.
+ *   The theme/var-with-fallback validator rule enforces this.
+ *
+ * NO LITERALS IN TYPESCRIPT.
+ *   No `.ts` or `.tsx` file under packages/ may contain a hex/rgb/hsl
+ *   color literal or a font-family string literal. Every color and font
+ *   reference comes from this token file via a `.css` consumer.
+ *   The `pnpm theme:audit` script grep-fails on any violation.
+ *
+ * Locale-Aware Tokens:
+ *   Some tokens vary per locale. CJK scripts need narrower line lengths
+ *   (~40ch vs 72ch for Latin). Override via [lang^="ja"], [lang^="zh"],
+ *   [lang^="ko"] selectors in theme files.
+ */
+
+:root {
+  /* ─── Color Scheme ──────────────────────────────────────────── */
+  /* Default = ultraviolet-dark (Sonde cockpit's product default theme).
+   * Every surface (audit, report, dashboard, presentation, daylight,
+   * high-contrast, infrared, ultraviolet) redefines these core tokens
+   * in its own :root block, so changing these defaults only affects
+   * pages that load tokens.css WITHOUT a theme file. The ecru/navy/teal
+   * daylight-brand values these used to hold now live in daylight.css
+   * where they correctly belong. See docs/plans/theming-brand-architecture.md. */
+  color-scheme: dark;
+
+  /* ─── Color — Semantic (ultraviolet-dark defaults) ──────────── */
+  --sonde-color-primary: #b185ff;        /* Electric violet — UV-dark primary */
+  --sonde-color-secondary: #7dd3fc;      /* Ionized cyan — UV-C shimmer */
+  --sonde-color-bg: #0a0618;             /* Deep indigo ground */
+  --sonde-color-surface: #15102a;        /* Raised surface */
+  --sonde-color-text: #e8e0ff;           /* Near-white with violet tint */
+  --sonde-color-text-muted: #a8a1c8;     /* Lavender-gray — AAA at 8.2:1 on ultraviolet-dark bg */
+  --sonde-color-text-heading: #e8e0ff;   /* Heading text matches body */
+  --sonde-color-sidebar: #0a0618;        /* Sidebar matches ground */
+  --sonde-color-border: #2a2050;         /* Deep violet border */
+  --sonde-color-border-subtle: #1f1840;  /* Subtle violet divider */
+  --sonde-color-accent: #b185ff;         /* Accent matches primary */
+  --sonde-color-accent-dim: rgba(177, 133, 255, 0.10);
+
+  /* ─── Color — Status (tuned for ultraviolet-dark bg) ────────── */
+  --sonde-color-pass: #5eead4;           /* Mint — readable on deep indigo */
+  --sonde-color-fail: #ff5a8a;           /* Hot rose */
+  --sonde-color-partial: #d4a85a;        /* Dying-star gold */
+  --sonde-color-na: #5a4d88;             /* Violet-gray muted */
+  --sonde-color-info: #7dd3fc;           /* Cyan info */
+  --sonde-color-warning: #d4a85a;        /* Matches partial */
+  --sonde-color-error: #ff5a8a;          /* Matches fail */
+  --sonde-color-critical: #f472b6;       /* Hot pink critical */
+
+  /* ─── Color — Table ─────────────────────────────────────────── */
+  --sonde-color-table-header-bg: #15102a;
+  --sonde-color-table-header-text: #e8e0ff;
+
+  /* ─── Color — Slide role palette ────────────────────────────── */
+  /* Used by HTML slide presentations (renderPresentation.ts).
+   * Each role maps to a CSS var that the inline-styled span/div
+   * elements reference. Default values target dark presentation
+   * surfaces; light-mode overrides flip the palette. */
+  --sonde-slide-role-primary: #ffffff;
+  --sonde-slide-role-accent: #38bdf8;
+  --sonde-slide-role-gold: #c8b878;
+  --sonde-slide-role-glow: #ffaa44;
+  --sonde-slide-role-glow-deep: #ff4400;
+  --sonde-slide-role-cta: #ffaa44;
+  --sonde-slide-role-muted: #8888a8;
+  --sonde-slide-role-secondary: #e4e4ed;
+  --sonde-slide-role-strut: #556677;
+  --sonde-slide-role-strut-light: #778899;
+
+  /* Slide presentation surface — PPTX deck background. */
+  --sonde-slide-bg: #0d1117;
+
+  /* Slide typography — font families used by the PPTX runtime.
+   * First family wins; fallbacks are for HTML preview only. */
+  --sonde-slide-font-title: 'Archivo Black', sans-serif;
+  --sonde-slide-font-body: 'Trebuchet MS', sans-serif;
+  --sonde-slide-font-mono: 'JetBrains Mono', ui-monospace, monospace;
+
+  /* Slide syntax-highlight colors (slides-tokens / renderPresentation) */
+  --sonde-slide-syntax-string: #98c379;
+
+  /* Slide structural surfaces (renderPresentation embedded CSS) */
+  --sonde-slide-code-bg: #141922;
+  --sonde-slide-code-text: #e4e4ed;
+  --sonde-slide-code-line-num: #556677;
+  --sonde-slide-code-highlight-bg: #1e2a3a;
+  --sonde-slide-pipeline-bg: #1a1f2b;
+  --sonde-slide-pipeline-active-bg: #1a2744;
+  --sonde-slide-detail-text: #8888a8;
+  --sonde-slide-bar-label: #e4e4ed;
+  --sonde-slide-bar-track: #1a1f2b;
+  --sonde-slide-bar-truncated-stripe: rgba(13, 17, 23, 0.4);
+  --sonde-slide-image-placeholder-bg: #1a1f2b;
+  --sonde-slide-quote-border: #556677;
+  --sonde-slide-hub-spoke-node-fill: #1a2744;
+  --sonde-slide-hub-spoke-hub-text: #0d1117;
+
+  /* ─── Color — Sonde Daylight brand mark ─────────────────────── */
+  /* The daylight mark is a probe silhouette against a sun disc. Three
+   * gradient stops drive the sun, one solid color is the probe. */
+  --sonde-daylight-mark-sun-stop-0: #ffe082;
+  --sonde-daylight-mark-sun-stop-1: #ffb300;
+  --sonde-daylight-mark-sun-stop-2: #e65100;
+  --sonde-daylight-mark-probe: #1a1a2e;
+
+  /* ─── Color — Sonde Probe brand mark (light variant) ────────── */
+  /* Used against dark backgrounds — reflective metallic colors. */
+  --sonde-probe-light-dish-1: #f8faff;
+  --sonde-probe-light-dish-2: #e8eef8;
+  --sonde-probe-light-dish-3: #b8c4d8;
+  --sonde-probe-light-bus-1: #d8c888;
+  --sonde-probe-light-bus-2: #c8b878;
+  --sonde-probe-light-bus-3: #a89848;
+  --sonde-probe-light-rtg-1: #9a8a7a;
+  --sonde-probe-light-rtg-2: #7a6a5a;
+  --sonde-probe-light-boom: #99a4b0;
+  --sonde-probe-light-boom-dot: #889098;
+  --sonde-probe-light-boom-dot-stroke: #778088;
+  --sonde-probe-light-strut-stroke: #778088;
+  --sonde-probe-light-dish-stroke: #556677;
+  --sonde-probe-light-dish-ring: #c8d0e0;
+  --sonde-probe-light-strut: #778899;
+  --sonde-probe-light-feed-fill: #f0f4fc;
+  --sonde-probe-light-feed-inner: #e4e8f4;
+  --sonde-probe-light-feed-stroke: #667788;
+  --sonde-probe-light-feed-inner-stroke: #889999;
+  --sonde-probe-light-bus-stroke: #556677;
+  --sonde-probe-light-bus-line: #a89848;
+  --sonde-probe-light-panel: #b8a868;
+  --sonde-probe-light-panel-stroke: #8a7a5a;
+  --sonde-probe-light-thruster: #778088;
+  --sonde-probe-light-antenna: #99a4b0;
+  --sonde-probe-light-antenna-dot: #aab4bc;
+  --sonde-probe-light-antenna-dot-stroke: #889098;
+  --sonde-probe-light-sci-platform: #99a4b0;
+  --sonde-probe-light-sci-lens-1: #334455;
+  --sonde-probe-light-sci-lens-1-stroke: #556677;
+  --sonde-probe-light-sci-lens-1-inner: #223344;
+  --sonde-probe-light-sci-lens-1-inner-stroke: #445566;
+  --sonde-probe-light-sci-lens-2: #334455;
+  --sonde-probe-light-rtg-line: #6a5a4a;
+  --sonde-probe-light-rtg-cap: #7a6a5a;
+
+  /* Engine glow ellipses — animated thruster flare */
+  --sonde-probe-glow-core: #ffcc66;
+  --sonde-probe-glow-mid: #ffaa44;
+  --sonde-probe-glow-outer: #ff7722;
+  --sonde-probe-glow-far: #ff4400;
+
+  /* ─── Color — Annotation labels ─────────────────────────────── */
+  /* Text colors paired with the colored annotation label backgrounds.
+   * Most severities use white text; warning uses near-black for legibility
+   * against the gold background. */
+  --sonde-color-annotation-label-on-dark: #ffffff;
+  --sonde-color-annotation-label-on-light: #1a1a1a;
+
+  /* ─── Color — VPAT compliance categories ───────────────────── */
+  /* The VPAT report uses four conformance buckets distinct from the
+   * generic pass/fail/partial/info palette so reviewers can scan a
+   * 50-row WCAG table at a glance. Greens/reds are intentional here —
+   * VPAT is a regulatory artifact, not a Sonde-branded report. */
+  --sonde-color-vpat-supports-fg: #2e7d32;
+  --sonde-color-vpat-supports-bg: #e8f5e9;
+  --sonde-color-vpat-partial-fg: #c56000;
+  --sonde-color-vpat-partial-border: #e67e22;
+  --sonde-color-vpat-partial-bg: #fff3e0;
+  --sonde-color-vpat-doesnot-fg: #c0392b;
+  --sonde-color-vpat-doesnot-bg: #ffebee;
+  --sonde-color-vpat-noteval-fg: #546e7a;
+  --sonde-color-vpat-noteval-border: #7f8c8d;
+  --sonde-color-vpat-noteval-bg: #eceff1;
+
+  /* ─── Color — Megaphone feedback (audit report) ─────────────── */
+  /* Tinted backgrounds for the "send feedback" megaphone callout. */
+  --sonde-color-megaphone-bg-strong: rgba(212, 160, 23, 0.12);
+  --sonde-color-megaphone-bg-medium: rgba(212, 160, 23, 0.10);
+  --sonde-color-megaphone-bg-light: rgba(212, 160, 23, 0.06);
+  --sonde-color-megaphone-gradient-end: rgba(10, 138, 126, 0.06);
+
+  /* ─── Color — Feedback section dark mode ───────────────────── */
+  --sonde-color-feedback-dark-from: #1a2636;
+  --sonde-color-feedback-dark-to: #152028;
+
+  /* ─── Color — Score Tiers ───────────────────────────────────── */
+  /* Sonde Score (0-1000) → tier color. Used by .score-badge and .scale-badge.
+   * All four tier values are paired with --sonde-color-score-text-on-badge
+   * (white) and validated to ≥ 4.5:1 contrast in every theme context.
+   * Tiers are NOT overridden in dark mode — the badge colors stay constant,
+   * and the white text contrasts equally well in light or dark page background.
+   */
+  --sonde-color-score-tier-0: #b36205;   /* 0–349 — Getting Started (amber) */
+  --sonde-color-score-tier-1: #9f6d03;   /* 350–549 — Needs Attention (gold) */
+  --sonde-color-score-tier-2: #0c857b;   /* 550–749 — Progressing (teal) */
+  --sonde-color-score-tier-3: #1d4ed8;   /* 750–1000 — Strong / Excellent (blue) */
+  --sonde-color-score-text-on-badge: #ffffff;  /* Text color paired with every score tier */
+
+  /* Score tier colors for dark page surfaces — used by the gauge SVG in
+   * renderAuditHtml when rendered against a dark background. These are
+   * pre-validated to ≥ 4.5:1 against #0d1117. The badge tier tokens above
+   * are deliberately separate so badges stay visually consistent. */
+  --sonde-color-score-tier-0-on-dark: #f97316;
+  --sonde-color-score-tier-1-on-dark: #fbbf24;
+  --sonde-color-score-tier-2-on-dark: #2dd4bf;
+  --sonde-color-score-tier-3-on-dark: #60a5fa;
+
+  /* ─── Color — Badges ────────────────────────────────────────── */
+  --sonde-color-badge-pass-bg: #dcfce7;
+  --sonde-color-badge-fail-bg: #fef2f2;
+  --sonde-color-badge-partial-bg: #fef3c7;
+  --sonde-color-badge-na-bg: #f5f5f4;
+  --sonde-color-badge-info-bg: #e0f2fe;
+  --sonde-color-badge-warning-bg: #fef3c7;
+  --sonde-color-badge-error-bg: #fef2f2;
+  --sonde-color-badge-critical-bg: #fff1f2;
+
+  /* ─── Code block surfaces ──────────────────────────────────── */
+  /* Renamed from --sonde-color-code-* to match the --sonde-{surface}-*
+   * naming convention used by other surfaces. Theme files override
+   * these with theme-appropriate values. */
+  --sonde-code-bg: #292524;
+  --sonde-code-text: #e7e5e4;
+  --sonde-code-line-num: #78716c;
+  --sonde-code-gutter-bg: #1c1917;
+  --sonde-code-highlight-bg: rgba(255, 255, 255, 0.06);
+
+  /* ─── Syntax highlighting ──────────────────────────────────── */
+  /* 12 role tokens used by every surface that renders source code
+   * (cockpit, audit reports, exhibits, patent claims, slides).
+   * Theme files override these with palettes tuned to the theme's
+   * code background. Renamed from --sonde-color-syntax-* to match
+   * the --sonde-{surface}-* naming convention. */
+  --sonde-syntax-keyword: #c792ea;
+  --sonde-syntax-type: #ffcb6b;
+  --sonde-syntax-string: #c3e88d;
+  --sonde-syntax-number: #f78c6c;
+  --sonde-syntax-comment: #546e7a;
+  --sonde-syntax-function: #82aaff;
+  --sonde-syntax-variable: #d6deeb;
+  --sonde-syntax-constant: #f78c6c;
+  --sonde-syntax-property: #82aaff;
+  --sonde-syntax-punctuation: #89ddff;
+  --sonde-syntax-tag: #ff5370;
+  --sonde-syntax-default: #d6deeb;
+
+  /* ─── Color ��� Diff ─────────────────────────────────────────── */
+  --sonde-color-diff-bg: #0a0e14;
+  --sonde-color-diff-add-bg: #0d2818;
+  --sonde-color-diff-add-text: #7ce08a;
+  --sonde-color-diff-add-gutter: #1a3a2a;
+  --sonde-color-diff-remove-bg: #2d0f0f;
+  --sonde-color-diff-remove-text: #e07c7c;
+  --sonde-color-diff-remove-gutter: #3a1a1a;
+  --sonde-color-diff-unchanged-gutter: #0d1117;
+
+  /* ─── Color — Exhibit (presentation surfaces) ──────────────── */
+  --sonde-exhibit-bg: #0d1117;
+  --sonde-exhibit-surface: #1a2744;
+  --sonde-exhibit-border: rgba(255, 255, 255, 0.12);
+  --sonde-exhibit-border-subtle: rgba(255, 255, 255, 0.06);
+  --sonde-exhibit-text-muted: #8888a8;
+  --sonde-exhibit-overlay: rgba(0, 0, 0, 0.65);
+
+  /* ─── Color — Elevated surface + stronger border tiers ──────── */
+  /* Extra depth tiers consumed by dense UIs (cockpit panels, nested
+   * trees, diagrams). Every surface that needs a third bg tier or a
+   * bolder border tier reads these — not surface-namespaced. */
+  --sonde-color-surface-elevated: #1f1840;                /* Tier 3 background — above surface */
+  --sonde-color-border-strong: #3a2d6b;                   /* Bolder border tier for nested structures */
+
+  /* ─── Color — Visualization primitives ──────────────────────── */
+  /* Surface-neutral viz tokens consumed by any component that renders
+   * graphs, diagrams, or data overlays (cockpit, exhibit, dashboards).
+   * Defaults = ultraviolet-dark (Sonde's product default theme).
+   * Per-theme overrides live in ultraviolet.css / infrared.css /
+   * high-contrast.css. */
+  --sonde-viz-grid-overlay: rgba(177, 133, 255, 0.03);    /* Grid overlay wash */
+  --sonde-viz-glow: rgba(177, 133, 255, 0.18);            /* Hover/pulse glow */
+  --sonde-viz-label-bg: rgba(10, 6, 24, 0.88);            /* Label chip background */
+  --sonde-viz-node-faded: rgba(144, 135, 184, 0.15);      /* Dimmed node in hover isolation */
+  --sonde-viz-edge: rgba(144, 135, 184, 0.4);             /* Default graph edge */
+  --sonde-viz-code-bg: rgba(177, 133, 255, 0.08);         /* Inline code tint on visualization surfaces */
+
+  /* ─── Typography ────────────────────────────────────────────── */
+  /* Defaults = ultraviolet (product default theme).
+   * daylight.css overrides with Bricolage Grotesque + DM Sans. */
+  --sonde-font-body: 'Outfit', 'IBM Plex Sans', 'Avenir Next', system-ui, sans-serif;
+  --sonde-font-heading: 'Outfit', 'IBM Plex Sans', sans-serif;
+  --sonde-font-mono: 'IBM Plex Mono', 'Fira Code', ui-monospace, monospace;
+  --sonde-font-display: 'Outfit', 'IBM Plex Sans', sans-serif;
+  --sonde-font-size-base: 16px;
+  --sonde-line-height: 1.65;
+
+  /* ─── Spacing Scale ─────────────────────────────────────────── */
+  --sonde-spacing-xs: 0.25rem;   /* 4px */
+  --sonde-spacing-sm: 0.5rem;    /* 8px */
+  --sonde-spacing-md: 1rem;      /* 16px */
+  --sonde-spacing-lg: 1.5rem;    /* 24px */
+  --sonde-spacing-xl: 2rem;      /* 32px */
+  --sonde-spacing-2xl: 3rem;     /* 48px */
+  --sonde-spacing-3xl: 4rem;     /* 64px */
+
+  /* ─── Layout ────────────────────────────────────────────────── */
+  --sonde-content-readable-max: 72ch;    /* Prose: optimal line length */
+  --sonde-content-data-max: 95vw;        /* Data tables: near full width */
+  --sonde-content-min-width: 320px;      /* Mobile minimum */
+  --sonde-content-padding: clamp(1rem, 3vw, 3rem);
+
+  /* ─── Border Radius ─────────────────────────────────────────── */
+  --sonde-radius-sm: 4px;
+  --sonde-radius-md: 8px;
+  --sonde-radius-lg: 14px;
+  --sonde-radius-pill: 999px;
+
+  /* ─── Motion ────────────────────────────────────────────────── */
+  --sonde-motion-duration-fast: 150ms;
+  --sonde-motion-duration-slow: 300ms;
+  --sonde-motion-easing: cubic-bezier(0.4, 0, 0.2, 1);
+  --sonde-motion-reduce: 0;             /* Set to 1 in prefers-reduced-motion */
+
+  /* ─── Elevation / Shadows ───────────────────────────────────── */
+  --sonde-shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.06);
+  --sonde-shadow-md: 0 4px 18px rgba(26, 53, 84, 0.10);
+  --sonde-shadow-lg: 0 8px 28px rgba(26, 53, 84, 0.14);
+  --sonde-shadow-swatch: 0 2px 5px rgba(0, 0, 0, 0.17);   /* contrast swatch chip */
+  --sonde-shadow-glow-pulse: 0 0 12px 4px rgba(30, 58, 95, 0.25); /* live-indicator pulse */
+  --sonde-shadow-annotation-detail: 0 4px 12px rgba(0, 0, 0, 0.15); /* annotation detail panel */
+  /* Daylight theme card / gallery elevations — used by daylightThemesPage,
+   * daylightThemeGallery. Soft cool-gray shadows tuned for the daylight bg. */
+  --sonde-shadow-daylight-card: 0 4px 14px -10px rgba(8, 12, 30, 0.25);
+  --sonde-shadow-daylight-gallery-rest: 0 12px 32px -24px rgba(8, 12, 30, 0.25);
+  --sonde-shadow-daylight-gallery-hover: 0 18px 36px -20px rgba(8, 12, 30, 0.30);
+  --sonde-shadow-daylight-cta-rest: 0 8px 20px -12px rgba(8, 12, 30, 0.35);
+  --sonde-shadow-daylight-cta-hover: 0 12px 26px -12px rgba(8, 12, 30, 0.45);
+}
+
+/* ─── Dark Mode — OS preference ─────────────────────────────────── */
+/* Shared dark-mode background/surface defaults every theme inherits.
+ * Individual themes still override --sonde-color-bg / --sonde-color-surface /
+ * status foregrounds to their own palette; these overrides only cover the
+ * tokens nearly every theme forgets to redeclare (badge pastel backgrounds,
+ * code block, sidebar) so that status-on-badge contrast pairs remain
+ * computable in dark contexts.
+ */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --sonde-color-sidebar: #0d1117;
+    --sonde-color-table-header-bg: #0a0a14;
+    --sonde-color-table-header-text: #e6edf3;
+
+    --sonde-color-badge-pass-bg: #064e3b;
+    --sonde-color-badge-fail-bg: #7f1d1d;
+    --sonde-color-badge-partial-bg: #78350f;
+    --sonde-color-badge-na-bg: #1f1f1f;
+    --sonde-color-badge-info-bg: #1e3a8a;
+    --sonde-color-badge-warning-bg: #78350f;
+    --sonde-color-badge-error-bg: #7f1d1d;
+    --sonde-color-badge-critical-bg: #881337;
+
+    --sonde-code-bg: #0f0f0f;
+    --sonde-code-text: #e7e5e4;
+  }
+}
+
+/* Sonde Probe brand mark — dark variant overrides.
+ *
+ * The probe mark uses ~30 token references in its hand-coded SVG. The
+ * default values above (light variant) are designed for dark page
+ * surfaces. When the host page goes dark mode, every brand-mark token
+ * flips to its dark equivalent so the same SVG markup automatically
+ * reads correctly against light page surfaces.
+ *
+ * Both the @media (prefers-color-scheme: dark) block and the explicit
+ * [data-theme="dark"] block apply these overrides.
+ */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --sonde-probe-light-dish-1: #3a4a60;
+    --sonde-probe-light-dish-2: #2a3a50;
+    --sonde-probe-light-dish-3: #1a2a3a;
+    --sonde-probe-light-bus-1: #8a7a3a;
+    --sonde-probe-light-bus-2: #7a6a2a;
+    --sonde-probe-light-bus-3: #5a4a1a;
+    --sonde-probe-light-rtg-1: #4a3a2a;
+    --sonde-probe-light-rtg-2: #3a2a1a;
+    --sonde-probe-light-boom: #4a5a6a;
+    --sonde-probe-light-boom-dot: #3a4a5a;
+    --sonde-probe-light-boom-dot-stroke: #2a3a4a;
+    --sonde-probe-light-strut-stroke: #2a3a4a;
+    --sonde-probe-light-dish-stroke: #2a3a4a;
+    --sonde-probe-light-dish-ring: #3a4a5a;
+    --sonde-probe-light-strut: #3a4a5a;
+    --sonde-probe-light-feed-fill: #c8d0e0;
+    --sonde-probe-light-feed-inner: #b0b8c8;
+    --sonde-probe-light-feed-stroke: #3a4a5a;
+    --sonde-probe-light-feed-inner-stroke: #2a3a4a;
+    --sonde-probe-light-bus-stroke: #2a2a2a;
+    --sonde-probe-light-bus-line: #5a4a1a;
+    --sonde-probe-light-panel: #6a5a2a;
+    --sonde-probe-light-panel-stroke: #4a3a1a;
+    --sonde-probe-light-thruster: #3a4a5a;
+    --sonde-probe-light-antenna: #4a5a6a;
+    --sonde-probe-light-antenna-dot: #5a6a7a;
+    --sonde-probe-light-antenna-dot-stroke: #3a4a5a;
+    --sonde-probe-light-sci-platform: #4a5a6a;
+    --sonde-probe-light-sci-lens-1: #1a2a3a;
+    --sonde-probe-light-sci-lens-1-stroke: #2a3a4a;
+    --sonde-probe-light-sci-lens-1-inner: #0a1a2a;
+    --sonde-probe-light-sci-lens-1-inner-stroke: #1a2a3a;
+    --sonde-probe-light-sci-lens-2: #1a2a3a;
+    --sonde-probe-light-rtg-line: #3a2a1a;
+    --sonde-probe-light-rtg-cap: #4a3a2a;
+  }
+}
+
+/* Dark mode via explicit [data-theme="dark"] toggle — mirrors the media
+ * query above so partners can opt in without OS dark mode.
+ */
+[data-theme="dark"] {
+  --sonde-probe-light-dish-1: #3a4a60;
+  --sonde-probe-light-dish-2: #2a3a50;
+  --sonde-probe-light-dish-3: #1a2a3a;
+  --sonde-probe-light-bus-1: #8a7a3a;
+  --sonde-probe-light-bus-2: #7a6a2a;
+  --sonde-probe-light-bus-3: #5a4a1a;
+  --sonde-probe-light-rtg-1: #4a3a2a;
+  --sonde-probe-light-rtg-2: #3a2a1a;
+  --sonde-probe-light-boom: #4a5a6a;
+  --sonde-probe-light-boom-dot: #3a4a5a;
+  --sonde-probe-light-boom-dot-stroke: #2a3a4a;
+  --sonde-probe-light-strut-stroke: #2a3a4a;
+  --sonde-probe-light-dish-stroke: #2a3a4a;
+  --sonde-probe-light-dish-ring: #3a4a5a;
+  --sonde-probe-light-strut: #3a4a5a;
+  --sonde-probe-light-feed-fill: #c8d0e0;
+  --sonde-probe-light-feed-inner: #b0b8c8;
+  --sonde-probe-light-feed-stroke: #3a4a5a;
+  --sonde-probe-light-feed-inner-stroke: #2a3a4a;
+  --sonde-probe-light-bus-stroke: #2a2a2a;
+  --sonde-probe-light-bus-line: #5a4a1a;
+  --sonde-probe-light-panel: #6a5a2a;
+  --sonde-probe-light-panel-stroke: #4a3a1a;
+  --sonde-probe-light-thruster: #3a4a5a;
+  --sonde-probe-light-antenna: #4a5a6a;
+  --sonde-probe-light-antenna-dot: #5a6a7a;
+  --sonde-probe-light-antenna-dot-stroke: #3a4a5a;
+  --sonde-probe-light-sci-platform: #4a5a6a;
+  --sonde-probe-light-sci-lens-1: #1a2a3a;
+  --sonde-probe-light-sci-lens-1-stroke: #2a3a4a;
+  --sonde-probe-light-sci-lens-1-inner: #0a1a2a;
+  --sonde-probe-light-sci-lens-1-inner-stroke: #1a2a3a;
+  --sonde-probe-light-sci-lens-2: #1a2a3a;
+  --sonde-probe-light-rtg-line: #3a2a1a;
+  --sonde-probe-light-rtg-cap: #4a3a2a;
+}
+
+[data-theme="dark"] {
+  --sonde-color-sidebar: #0d1117;
+  --sonde-color-table-header-bg: #0a0a14;
+  --sonde-color-table-header-text: #e6edf3;
+
+  --sonde-color-badge-pass-bg: #064e3b;
+  --sonde-color-badge-fail-bg: #7f1d1d;
+  --sonde-color-badge-partial-bg: #78350f;
+  --sonde-color-badge-na-bg: #1f1f1f;
+  --sonde-color-badge-info-bg: #1e3a8a;
+  --sonde-color-badge-warning-bg: #78350f;
+  --sonde-color-badge-error-bg: #7f1d1d;
+  --sonde-color-badge-critical-bg: #881337;
+
+  --sonde-code-bg: #0f0f0f;
+  --sonde-code-text: #e7e5e4;
+}
+
+/* ─── Reduced Motion ────────────────────────────────────────────── */
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    --sonde-motion-reduce: 1;
+    --sonde-motion-duration-fast: 0ms;
+    --sonde-motion-duration-slow: 0ms;
+  }
+}
+
+/* ─── Print ─────────────────────────────────────────────────────── */
+@media print {
+  :root {
+    --sonde-color-bg: #ffffff;
+    --sonde-color-surface: #ffffff;
+    --sonde-color-sidebar: #ffffff;
+    --sonde-color-text: #000000;
+    --sonde-color-text-heading: #000000;
+    --sonde-color-border: #cccccc;
+    --sonde-color-border-subtle: #eeeeee;
+    --sonde-shadow-sm: none;
+    --sonde-shadow-md: none;
+    --sonde-shadow-lg: none;
+  }
+  .sonde-nav, .sonde-controls, [data-print="hide"] { display: none !important; }
+  section, .vpat-section { break-inside: avoid; }
+  h2, h3 { break-after: avoid; }
+}
+
+/* ─── Forced Colors (Windows High Contrast) ─────────────────────── */
+@media (forced-colors: active) {
+  :root {
+    --sonde-color-primary: LinkText;
+    --sonde-color-text: CanvasText;
+    --sonde-color-bg: Canvas;
+    --sonde-color-surface: Canvas;
+    --sonde-color-border: CanvasText;
+    --sonde-color-accent: Highlight;
+  }
+}
+
+/* ─── Locale-Aware Overrides ────────────────────────────────────── */
+/* CJK scripts need narrower readable line length */
+:root:lang(ja), :root:lang(zh), :root:lang(ko),
+[lang^="ja"], [lang^="zh"], [lang^="ko"] {
+  --sonde-content-readable-max: 40ch;
+}
+
+/* ─── AUTO-GENERATED @property REGISTRATIONS — do not edit by hand ────── */
+/*
+ * Generated by scripts/syncTokenProperties.ts. Every custom property
+ * declared in :root whose initial value parses as a <color> receives
+ * an @property registration here. The magenta sentinel initial-value
+ * (#ff00ff) guarantees that any future missing-token regression
+ * paints loudly instead of silently inheriting a default.
+ *
+ * Do not edit by hand — rerun the script.
+ */
+@property --sonde-code-bg {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: #ff00ff;
+}
+@property --sonde-code-gutter-bg {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: #ff00ff;
+}
+@property --sonde-code-highlight-bg {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: #ff00ff;
+}
+@property --sonde-code-line-num {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: #ff00ff;
+}
+@property --sonde-code-text {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: #ff00ff;
+}
+@property --sonde-color-accent {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: #ff00ff;
+}
+@property --sonde-color-accent-dim {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: #ff00ff;
+}
+@property --sonde-color-annotation-label-on-dark {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: #ff00ff;
+}
+@property --sonde-color-annotation-label-on-light {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: #ff00ff;
+}
+@property --sonde-color-badge-critical-bg {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: #ff00ff;
+}
+@property --sonde-color-badge-error-bg {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: #ff00ff;
+}
+@property --sonde-color-badge-fail-bg {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: #ff00ff;
+}
+@property --sonde-color-badge-info-bg {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: #ff00ff;
+}
+@property --sonde-color-badge-na-bg {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: #ff00ff;
+}
+@property --sonde-color-badge-partial-bg {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: #ff00ff;
+}
+@property --sonde-color-badge-pass-bg {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: #ff00ff;
+}
+@property --sonde-color-badge-warning-bg {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: #ff00ff;
+}
+@property --sonde-color-bg {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: #ff00ff;
+}
+@property --sonde-color-border {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: #ff00ff;
+}
+@property --sonde-color-border-strong {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: #ff00ff;
+}
+@property --sonde-color-border-subtle {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: #ff00ff;
+}
+@property --sonde-color-critical {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: #ff00ff;
+}
+@property --sonde-color-diff-add-bg {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: #ff00ff;
+}
+@property --sonde-color-diff-add-gutter {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: #ff00ff;
+}
+@property --sonde-color-diff-add-text {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: #ff00ff;
+}
+@property --sonde-color-diff-bg {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: #ff00ff;
+}
+@property --sonde-color-diff-remove-bg {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: #ff00ff;
+}
+@property --sonde-color-diff-remove-gutter {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: #ff00ff;
+}
+@property --sonde-color-diff-remove-text {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: #ff00ff;
+}
+@property --sonde-color-diff-unchanged-gutter {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: #ff00ff;
+}
+@property --sonde-color-error {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: #ff00ff;
+}
+@property --sonde-color-fail {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: #ff00ff;
+}
+@property --sonde-color-feedback-dark-from {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: #ff00ff;
+}
+@property --sonde-color-feedback-dark-to {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: #ff00ff;
+}
+@property --sonde-color-info {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: #ff00ff;
+}
+@property --sonde-color-megaphone-bg-light {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: #ff00ff;
+}
+@property --sonde-color-megaphone-bg-medium {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: #ff00ff;
+}
+@property --sonde-color-megaphone-bg-strong {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: #ff00ff;
+}
+@property --sonde-color-megaphone-gradient-end {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: #ff00ff;
+}
+@property --sonde-color-na {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: #ff00ff;
+}
+@property --sonde-color-partial {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: #ff00ff;
+}
+@property --sonde-color-pass {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: #ff00ff;
+}
+@property --sonde-color-primary {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: #ff00ff;
+}
+@property --sonde-color-score-text-on-badge {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: #ff00ff;
+}
+@property --sonde-color-score-tier-0 {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: #ff00ff;
+}
+@property --sonde-color-score-tier-0-on-dark {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: #ff00ff;
+}
+@property --sonde-color-score-tier-1 {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: #ff00ff;
+}
+@property --sonde-color-score-tier-1-on-dark {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: #ff00ff;
+}
+@property --sonde-color-score-tier-2 {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: #ff00ff;
+}
+@property --sonde-color-score-tier-2-on-dark {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: #ff00ff;
+}
+@property --sonde-color-score-tier-3 {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: #ff00ff;
+}
+@property --sonde-color-score-tier-3-on-dark {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: #ff00ff;
+}
+@property --sonde-color-secondary {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: #ff00ff;
+}
+@property --sonde-color-sidebar {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: #ff00ff;
+}
+@property --sonde-color-surface {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: #ff00ff;
+}
+@property --sonde-color-surface-elevated {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: #ff00ff;
+}
+@property --sonde-color-table-header-bg {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: #ff00ff;
+}
+@property --sonde-color-table-header-text {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: #ff00ff;
+}
+@property --sonde-color-text {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: #ff00ff;
+}
+@property --sonde-color-text-heading {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: #ff00ff;
+}
+@property --sonde-color-text-muted {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: #ff00ff;
+}
+@property --sonde-color-vpat-doesnot-bg {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: #ff00ff;
+}
+@property --sonde-color-vpat-doesnot-fg {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: #ff00ff;
+}
+@property --sonde-color-vpat-noteval-bg {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: #ff00ff;
+}
+@property --sonde-color-vpat-noteval-border {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: #ff00ff;
+}
+@property --sonde-color-vpat-noteval-fg {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: #ff00ff;
+}
+@property --sonde-color-vpat-partial-bg {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: #ff00ff;
+}
+@property --sonde-color-vpat-partial-border {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: #ff00ff;
+}
+@property --sonde-color-vpat-partial-fg {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: #ff00ff;
+}
+@property --sonde-color-vpat-supports-bg {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: #ff00ff;
+}
+@property --sonde-color-vpat-supports-fg {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: #ff00ff;
+}
+@property --sonde-color-warning {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: #ff00ff;
+}
+@property --sonde-daylight-mark-probe {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: #ff00ff;
+}
+@property --sonde-daylight-mark-sun-stop-0 {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: #ff00ff;
+}
+@property --sonde-daylight-mark-sun-stop-1 {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: #ff00ff;
+}
+@property --sonde-daylight-mark-sun-stop-2 {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: #ff00ff;
+}
+@property --sonde-exhibit-bg {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: #ff00ff;
+}
+@property --sonde-exhibit-border {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: #ff00ff;
+}
+@property --sonde-exhibit-border-subtle {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: #ff00ff;
+}
+@property --sonde-exhibit-overlay {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: #ff00ff;
+}
+@property --sonde-exhibit-surface {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: #ff00ff;
+}
+@property --sonde-exhibit-text-muted {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: #ff00ff;
+}
+@property --sonde-probe-glow-core {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: #ff00ff;
+}
+@property --sonde-probe-glow-far {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: #ff00ff;
+}
+@property --sonde-probe-glow-mid {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: #ff00ff;
+}
+@property --sonde-probe-glow-outer {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: #ff00ff;
+}
+@property --sonde-probe-light-antenna {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: #ff00ff;
+}
+@property --sonde-probe-light-antenna-dot {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: #ff00ff;
+}
+@property --sonde-probe-light-antenna-dot-stroke {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: #ff00ff;
+}
+@property --sonde-probe-light-boom {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: #ff00ff;
+}
+@property --sonde-probe-light-boom-dot {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: #ff00ff;
+}
+@property --sonde-probe-light-boom-dot-stroke {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: #ff00ff;
+}
+@property --sonde-probe-light-bus-1 {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: #ff00ff;
+}
+@property --sonde-probe-light-bus-2 {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: #ff00ff;
+}
+@property --sonde-probe-light-bus-3 {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: #ff00ff;
+}
+@property --sonde-probe-light-bus-line {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: #ff00ff;
+}
+@property --sonde-probe-light-bus-stroke {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: #ff00ff;
+}
+@property --sonde-probe-light-dish-1 {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: #ff00ff;
+}
+@property --sonde-probe-light-dish-2 {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: #ff00ff;
+}
+@property --sonde-probe-light-dish-3 {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: #ff00ff;
+}
+@property --sonde-probe-light-dish-ring {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: #ff00ff;
+}
+@property --sonde-probe-light-dish-stroke {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: #ff00ff;
+}
+@property --sonde-probe-light-feed-fill {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: #ff00ff;
+}
+@property --sonde-probe-light-feed-inner {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: #ff00ff;
+}
+@property --sonde-probe-light-feed-inner-stroke {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: #ff00ff;
+}
+@property --sonde-probe-light-feed-stroke {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: #ff00ff;
+}
+@property --sonde-probe-light-panel {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: #ff00ff;
+}
+@property --sonde-probe-light-panel-stroke {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: #ff00ff;
+}
+@property --sonde-probe-light-rtg-1 {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: #ff00ff;
+}
+@property --sonde-probe-light-rtg-2 {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: #ff00ff;
+}
+@property --sonde-probe-light-rtg-cap {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: #ff00ff;
+}
+@property --sonde-probe-light-rtg-line {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: #ff00ff;
+}
+@property --sonde-probe-light-sci-lens-1 {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: #ff00ff;
+}
+@property --sonde-probe-light-sci-lens-1-inner {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: #ff00ff;
+}
+@property --sonde-probe-light-sci-lens-1-inner-stroke {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: #ff00ff;
+}
+@property --sonde-probe-light-sci-lens-1-stroke {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: #ff00ff;
+}
+@property --sonde-probe-light-sci-lens-2 {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: #ff00ff;
+}
+@property --sonde-probe-light-sci-platform {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: #ff00ff;
+}
+@property --sonde-probe-light-strut {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: #ff00ff;
+}
+@property --sonde-probe-light-strut-stroke {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: #ff00ff;
+}
+@property --sonde-probe-light-thruster {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: #ff00ff;
+}
+@property --sonde-slide-bar-label {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: #ff00ff;
+}
+@property --sonde-slide-bar-track {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: #ff00ff;
+}
+@property --sonde-slide-bar-truncated-stripe {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: #ff00ff;
+}
+@property --sonde-slide-bg {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: #ff00ff;
+}
+@property --sonde-slide-code-bg {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: #ff00ff;
+}
+@property --sonde-slide-code-highlight-bg {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: #ff00ff;
+}
+@property --sonde-slide-code-line-num {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: #ff00ff;
+}
+@property --sonde-slide-code-text {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: #ff00ff;
+}
+@property --sonde-slide-detail-text {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: #ff00ff;
+}
+@property --sonde-slide-hub-spoke-hub-text {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: #ff00ff;
+}
+@property --sonde-slide-hub-spoke-node-fill {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: #ff00ff;
+}
+@property --sonde-slide-image-placeholder-bg {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: #ff00ff;
+}
+@property --sonde-slide-pipeline-active-bg {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: #ff00ff;
+}
+@property --sonde-slide-pipeline-bg {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: #ff00ff;
+}
+@property --sonde-slide-quote-border {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: #ff00ff;
+}
+@property --sonde-slide-role-accent {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: #ff00ff;
+}
+@property --sonde-slide-role-cta {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: #ff00ff;
+}
+@property --sonde-slide-role-glow {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: #ff00ff;
+}
+@property --sonde-slide-role-glow-deep {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: #ff00ff;
+}
+@property --sonde-slide-role-gold {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: #ff00ff;
+}
+@property --sonde-slide-role-muted {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: #ff00ff;
+}
+@property --sonde-slide-role-primary {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: #ff00ff;
+}
+@property --sonde-slide-role-secondary {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: #ff00ff;
+}
+@property --sonde-slide-role-strut {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: #ff00ff;
+}
+@property --sonde-slide-role-strut-light {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: #ff00ff;
+}
+@property --sonde-slide-syntax-string {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: #ff00ff;
+}
+@property --sonde-syntax-comment {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: #ff00ff;
+}
+@property --sonde-syntax-constant {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: #ff00ff;
+}
+@property --sonde-syntax-default {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: #ff00ff;
+}
+@property --sonde-syntax-function {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: #ff00ff;
+}
+@property --sonde-syntax-keyword {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: #ff00ff;
+}
+@property --sonde-syntax-number {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: #ff00ff;
+}
+@property --sonde-syntax-property {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: #ff00ff;
+}
+@property --sonde-syntax-punctuation {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: #ff00ff;
+}
+@property --sonde-syntax-string {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: #ff00ff;
+}
+@property --sonde-syntax-tag {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: #ff00ff;
+}
+@property --sonde-syntax-type {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: #ff00ff;
+}
+@property --sonde-syntax-variable {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: #ff00ff;
+}
+@property --sonde-viz-code-bg {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: #ff00ff;
+}
+@property --sonde-viz-edge {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: #ff00ff;
+}
+@property --sonde-viz-glow {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: #ff00ff;
+}
+@property --sonde-viz-grid-overlay {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: #ff00ff;
+}
+@property --sonde-viz-label-bg {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: #ff00ff;
+}
+@property --sonde-viz-node-faded {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: #ff00ff;
+}
+/* ─── END AUTO-GENERATED @property REGISTRATIONS ───────────────────────── */
