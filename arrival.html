@@ -73,6 +73,8 @@
   #svg-layer {
     position: absolute;
     inset: 0;
+    width: 100%;
+    height: 100%;
     z-index: 1;
     overflow: visible;
   }
@@ -621,6 +623,10 @@
     <!-- World group — camera follows probe by translating this -->
     <g id="world-group">
 
+    <!-- Dynamic encounter layers -->
+    <g id="encounters-layer"></g>
+    <g id="debris-layer"></g>
+
     <!-- Probe group — stays near screen center, world moves around it -->
     <g id="probe-group" transform="translate(960, 500) scale(0.5)">
       <g transform="rotate(-40)">
@@ -661,9 +667,6 @@
       </g>
     </g>
 
-    <!-- Dynamic encounter layers -->
-    <g id="encounters-layer"></g>
-    <g id="debris-layer"></g>
 
     </g><!-- end world-group -->
 
@@ -1374,7 +1377,7 @@ const BLACK_HOLD = 2000;
 const SVG_VB = document.getElementById('svg-layer').viewBox.baseVal;
 const VB_CX = SVG_VB.width / 2;  // 960 for 1920 viewBox
 const VB_CY = SVG_VB.height / 2; // 540 for 1080 viewBox
-const PROBE_SCREEN_X = 720;
+const PROBE_SCREEN_X = 960;
 const PROBE_SCREEN_Y = 500;
 const PROBE_SCALE = 4.0;
 const PROBE_MIN_SCALE = 0.08; // Pinprick start size
@@ -1387,6 +1390,9 @@ let paused = false;
 let pauseTagIdx = -1;
 let startTime = 0;
 let pausedAt = 0;
+/** Lock for BFCache/background-tab resumption to sync RAF with wall-clock */
+let resumeSyncPending = false;
+let lastTickNow = performance.now();
 // M5b focus management: element to return focus to when the pause overlay closes
 let lastFocusedBeforePause = null;
 let cameraX = 0;
@@ -3657,11 +3663,12 @@ function preRollTick(now) {
 
   if (elapsed < PRE_ROLL_PROBE_ENTER) {
     crawlContainer.style.display = 'flex';
-    // Scroll crawl upward: bottom goes from -100% to ~45% (readable center)
+    // Scroll crawl upward: bottom goes from -45% to ~45% (readable center)
     // Linear scroll (no easing) — Star Wars crawl is constant speed
     const scrollTarget = 45; // percentage
+    // Start at -45% to offset the extreme CSS rotateX(25deg) perspective projection
     const scrollProgress = Math.min(1, crawlElapsed / PRE_ROLL_SCROLL_DUR);
-    crawlText.style.bottom = `${-100 + (100 + scrollTarget) * scrollProgress}%`;
+    crawlText.style.bottom = `${-45 + (45 + scrollTarget) * scrollProgress}%`;
 
     // Attribution fade-in
     if (crawlElapsed >= PRE_ROLL_ATTR_DELAY) {
@@ -3708,7 +3715,7 @@ function preRollTick(now) {
   // Probe continues flying right at impact scale — NO shrinkback
   const driftP = Math.min(1, shatterElapsed / PRE_ROLL_SHATTER_DUR);
   const probeX = PROBE_SCREEN_X + 80 * driftP;
-  probeGroup.setAttribute('transform', `translate(${probeX}, ${PROBE_SCREEN_Y}) scale(${PRE_ROLL_HANDOFF_SCALE})`);
+  probeGroup.setAttribute('transform', `translate(${probeX}, ${PROBE_SCREEN_Y}) scale(${PRE_ROLL_HANDOFF_SCALE})`); probeGroup.style.opacity = '1';
 
   // Trail color transitions through Sonde gold toward orange
   const trailColor = lerpColor('#FFE81F', '#C8B878', Math.min(1, shatterElapsed / 800));
@@ -3732,7 +3739,7 @@ function preRollTick(now) {
     restoreEngineColors();
     crawlContainer.style.display = 'none';
     shatterContainer.replaceChildren();
-    probeGroup.setAttribute('transform', `translate(${PROBE_SCREEN_X}, ${PROBE_SCREEN_Y}) scale(${PRE_ROLL_HANDOFF_SCALE})`);
+    probeGroup.setAttribute('transform', `translate(${PROBE_SCREEN_X}, ${PROBE_SCREEN_Y}) scale(${PRE_ROLL_HANDOFF_SCALE})`); probeGroup.style.opacity = '1';
     startTime = performance.now();
   }
 }
@@ -3824,7 +3831,7 @@ function skipPreRoll() {
   shatterContainer.replaceChildren();
   restoreEngineColors();
   probeGroup.style.opacity = '1';
-  probeGroup.setAttribute('transform', `translate(${PROBE_SCREEN_X}, ${PROBE_SCREEN_Y}) scale(${PRE_ROLL_HANDOFF_SCALE})`);
+  probeGroup.setAttribute('transform', `translate(${PROBE_SCREEN_X}, ${PROBE_SCREEN_Y}) scale(${PRE_ROLL_HANDOFF_SCALE})`); probeGroup.style.opacity = '1';
   startTime = performance.now();
 }
 
@@ -3837,7 +3844,7 @@ function getProbeWorldX(elapsed) {
     return p * approachEndX;
   }
   // During gauntlet: CONSTANT SPEED — every encounter feels the same
-  const totalTravel = LAST_ENC.worldX + 500;
+  const totalTravel = LAST_ENC.worldX + 740;
   const gauntletTime = FINALE_START - APPROACH_TIME;
   const gauntletProgress = Math.min(1, (elapsed - APPROACH_TIME) / gauntletTime);
   return approachEndX + (totalTravel - approachEndX) * gauntletProgress; // LINEAR
@@ -3855,7 +3862,7 @@ function getProbeScale(elapsed) {
 function updateCamera(elapsed, probeWorldX) {
   const scale = getProbeScale(elapsed);
   cameraX = probeWorldX - PROBE_SCREEN_X;
-  worldGroup.setAttribute('transform', `translate(${-cameraX}, 0)`);
+  worldGroup.setAttribute('transform', `translate(${-cameraX}, 0)`); probeGroup.style.opacity = '1';
   probeGroup.setAttribute('transform', `translate(${probeWorldX}, ${PROBE_SCREEN_Y}) scale(${scale})`);
 }
 
@@ -3887,13 +3894,10 @@ function updateEncounters(elapsed, probeWorldX) {
       encounterState[i] = 'exploding';
 
       if (enc.isMoon) {
-        // Moon: gentle fade as probe zooms past at full speed — no explosion
-        planet.animate([
-          { opacity: 1 }, { opacity: 0.3 },
-        ], { duration: 800, fill: 'forwards', easing: 'ease-out' });
+        // Moon: no explosion, no dimming
         encounterState[i] = 'done';
         // Keep flying past Moon for 2s so it scrolls off screen, THEN freeze + hub
-        moonPassedTime = performance.now();
+        moonPassedTime = lastTickNow;
       } else {
         // Normal language encounter: explode + debris diagram
         planet.animate([
@@ -4084,14 +4088,13 @@ const TREK_HANDOFF_DUR = 2000;
 
 function updateFinale() {
   if (!hubTriggered || hubStartTime === 0) return;
-  const t = performance.now() - hubStartTime;
+  const t = lastTickNow - hubStartTime;
   if (t < 0) return;
   if (finalePhase === 'none') finalePhase = 'hub-playing';
 
   // Wait for full hub animation before starting fade
   if (finalePhase === 'hub-playing' && t >= HUB_TOTAL_TIME) {
     finalePhase = 'fading';
-    // Fade to 0.7 (not 1.0) — hub stays faintly visible for Trek salute
     fadeOverlay.animate([{ opacity: 0 }, { opacity: 0.7 }], { duration: FADE_DUR, fill: 'forwards' });
   }
 
@@ -4113,29 +4116,34 @@ function updateFinale() {
   const trekHoldEnd = trekInEnd + TREK_HOLD_DUR;
   if (finalePhase === 'trek-hold' && t >= trekHoldEnd) {
     finalePhase = 'trek-handoff';
-    // Trek text drifts upward and fades
     trekTagline.animate([
       { opacity: 1, transform: 'translateY(0)' },
       { opacity: 0, transform: 'translateY(-25px)' },
     ], { duration: TREK_HANDOFF_DUR, fill: 'forwards' });
-    // Fade overlay to full black
     fadeOverlay.animate([{ opacity: 0.7 }, { opacity: 1 }], { duration: 1000, fill: 'forwards' });
-    // Brand tagline fades in with slight delay
-    hubTimers.push(setTimeout(() => {
-      finalTagline.animate([{ opacity: 0 }, { opacity: 1 }], { duration: TAG_IN, fill: 'forwards' });
-    }, 500));
   }
 
   const handoffEnd = trekHoldEnd + TREK_HANDOFF_DUR;
   if (finalePhase === 'trek-handoff' && t >= handoffEnd) {
-    finalePhase = 'tag-hold';
+    finalePhase = 'tag-delay';
     trekTagline.style.opacity = '0';
     trekTagline.style.transform = '';
     fadeOverlay.style.opacity = '1';
+  }
+
+  const tagDelayEnd = handoffEnd + 500;
+  if (finalePhase === 'tag-delay' && t >= tagDelayEnd) {
+    finalePhase = 'tag-in';
+    finalTagline.animate([{ opacity: 0 }, { opacity: 1 }], { duration: TAG_IN, fill: 'forwards' });
+  }
+
+  const tagInEnd = tagDelayEnd + TAG_IN;
+  if (finalePhase === 'tag-in' && t >= tagInEnd) {
+    finalePhase = 'tag-hold';
     finalTagline.style.opacity = '1';
   }
 
-  const tagHoldEnd = handoffEnd + TAG_HOLD;
+  const tagHoldEnd = tagInEnd + TAG_HOLD;
   if (finalePhase === 'tag-hold' && t >= tagHoldEnd) {
     finalePhase = 'tag-out';
     finalTagline.animate([{ opacity: 1 }, { opacity: 0 }], { duration: TAG_OUT, fill: 'forwards' });
@@ -4153,6 +4161,9 @@ function updateFinale() {
 // ─── Shared animation state cleanup ─────────────────────────────────────
 // Used by both resetAll (loop) and scrub (arrow keys) to avoid duplication
 function clearAnimationState() {
+  for (const el of [encountersLayer, debrisLayer, hubLayer]) {
+    for (const a of el.getAnimations({ subtree: true })) a.cancel();
+  }
   encountersLayer.replaceChildren();
   debrisLayer.replaceChildren();
   hubLayer.replaceChildren();
@@ -4177,6 +4188,7 @@ function clearAnimationState() {
 
 // ─── Reset for loop (resets to Act 0) ───────────────────────────────────
 function resetAll() {
+  lastTickNow = performance.now();
   clearAnimationState();
   for (let i = 0; i < ENCOUNTERS.length; i++) encounterState[i] = 'waiting';
   // Match initial-load sentinel so the first pause after a loop shows TAGLINES[0]
@@ -4237,7 +4249,7 @@ function setPlaybackRate(newRate) {
     hubStartTime = realNow - (realNow - hubStartTime) * playbackRate / newRate;
   }
   playbackRate = newRate;
-  for (const el of [encountersLayer, debrisLayer, hubLayer, shatterContainer]) {
+  for (const el of [encountersLayer, debrisLayer, hubLayer, shatterContainer, fadeOverlay, finalTagline, trekTagline]) {
     for (const a of el.getAnimations({ subtree: true })) a.playbackRate = newRate;
   }
   if (engineGlowAnim) engineGlowAnim.playbackRate = newRate;
@@ -4283,7 +4295,19 @@ function jumpToFinale() {
 
 // ─── Main loop ───────────────────────────────────────────────────────────
 function tick(now) {
+  if (resumeSyncPending) {
+    const delta = now - lastTickNow;
+    if (preRollActive) {
+      preRollStartTime += delta;
+    } else {
+      startTime += delta;
+      if (hubStartTime > 0) hubStartTime += delta;
+      if (moonPassedTime > 0) moonPassedTime += delta;
+    }
+    resumeSyncPending = false;
+  }
   if (!paused) {
+    lastTickNow = now;
     drawStars(now);
     tickParticles();
     drawParticles();
@@ -4305,22 +4329,22 @@ function tick(now) {
         probeMoveActive = true;
         // Smoothly move probe to screen center over 1.5s using RAF
         // Probe is in world-group, so world target = cameraX + VB_CX
-        let moveStartTime = performance.now();
+        let moveStartTime = now;
         const moveDuration = 1500;
         let movePausedAt = 0;
         const startWX = getProbeWorldX(elapsed);
         const startWY = PROBE_SCREEN_Y;
         const endWX = cameraX + VB_CX;
         const endWY = VB_CY;
-        function animateProbeToCenter() {
+        function animateProbeToCenter(animNow) {
           if (!probeMoveActive) return; // cancelled by scrub/reset
           if (paused) {
-            if (!movePausedAt) movePausedAt = performance.now();
+            if (!movePausedAt) movePausedAt = animNow;
             requestAnimationFrame(animateProbeToCenter);
             return;
           }
-          if (movePausedAt) { moveStartTime += performance.now() - movePausedAt; movePausedAt = 0; }
-          const p = Math.min(1, (performance.now() - moveStartTime) / moveDuration);
+          if (movePausedAt) { moveStartTime += animNow - movePausedAt; movePausedAt = 0; }
+          const p = Math.min(1, (animNow - moveStartTime) / moveDuration);
           const ease = easeInOutPow2(p);
           const wx = startWX + (endWX - startWX) * ease;
           const wy = startWY + (endWY - startWY) * ease;
@@ -4332,7 +4356,7 @@ function tick(now) {
           } else {
             probeMoveActive = false;
             engineGlow.style.opacity = '0'; // fully hidden during hub
-            hubStartTime = performance.now();
+            hubStartTime = lastTickNow;
             buildHub(VB_CX, VB_CY);
           }
         }
@@ -4382,16 +4406,9 @@ function togglePause() {
     overlay.classList.remove('visible');
     overlay.setAttribute('aria-hidden', 'true');
     overlayStatus.textContent = '';
-    // Adjust timing for whichever phase is active
-    const delta = performance.now() - pausedAt;
-    if (preRollActive) {
-      preRollStartTime += delta;
-    } else {
-      startTime += delta;
-      if (hubStartTime > 0) hubStartTime += delta;
-    }
+    resumeSyncPending = true;
     // Resume WAAPI animations on encounter/debris/shatter layers
-    for (const el of [encountersLayer, debrisLayer, hubLayer, shatterContainer]) {
+    for (const el of [encountersLayer, debrisLayer, hubLayer, shatterContainer, fadeOverlay, finalTagline, trekTagline]) {
       for (const a of el.getAnimations({ subtree: true })) a.play();
     }
     // Restore focus to wherever it was before pause (or body as fallback)
@@ -4413,7 +4430,7 @@ function togglePause() {
     overlay.setAttribute('aria-hidden', 'false');
     overlayStatus.textContent = 'Animation paused. Press Escape or Space to resume.';
     // Pause WAAPI animations on encounter/debris/shatter layers
-    for (const el of [encountersLayer, debrisLayer, hubLayer, shatterContainer]) {
+    for (const el of [encountersLayer, debrisLayer, hubLayer, shatterContainer, fadeOverlay, finalTagline, trekTagline]) {
       for (const a of el.getAnimations({ subtree: true })) a.pause();
     }
     // Move focus into the dialog, landing on the primary Daylight CTA
@@ -4443,7 +4460,7 @@ function navigatePauseTagline(direction) {
 // Shift elapsed time by delta ms. Clamps to valid range and rebuilds
 // encounter state so planets/debris are correct for the new time.
 function scrub(deltaMs) {
-  const now = paused ? pausedAt : performance.now();
+  const now = lastTickNow;
   const currentElapsed = elapsedAt(now);
   const newElapsed = Math.max(0, currentElapsed + deltaMs);
   // startTime rebase: elapsedAt(now) === newElapsed
@@ -4463,11 +4480,24 @@ function scrub(deltaMs) {
   trekTagline.style.transform = '';
   // Calculate where the probe will be at the new time
   const probeX = getProbeWorldX(newElapsed);
+  updateCamera(newElapsed, probeX);
+  
   for (let i = 0; i < ENCOUNTERS.length; i++) {
     const enc = ENCOUNTERS[i];
     if (probeX > enc.worldX + enc.radius + 50) {
-      // Probe has already passed — mark done (don't re-explode)
       encounterState[i] = 'done';
+      if (enc.isMoon) {
+        if (newElapsed >= FINALE_START) {
+          hubTriggered = true;
+          probeMoveActive = false;
+          engineGlow.style.opacity = '0';
+          hubStartTime = lastTickNow - ((newElapsed - FINALE_START) / playbackRate);
+          buildHub(VB_CX, VB_CY);
+          probeGroup.setAttribute('transform', `translate(${cameraX + VB_CX}, ${VB_CY}) scale(${PROBE_SCALE})`);
+        } else {
+          moonPassedTime = lastTickNow - ((newElapsed - enc.startTime) / playbackRate);
+        }
+      }
     } else {
       encounterState[i] = 'waiting';
     }
@@ -4553,7 +4583,7 @@ document.addEventListener('keydown', (e) => {
     // Jump to just before Moon encounter so user can watch the finale
     const moonEnc = ENCOUNTERS.find(enc => enc.isMoon);
     if (moonEnc) {
-      const now = paused ? pausedAt : performance.now();
+      const now = lastTickNow;
       const target = moonEnc.startTime - 3000; // 3s before Moon
       scrub(target - elapsedAt(now));
     }
