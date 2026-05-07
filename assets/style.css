@@ -1,0 +1,493 @@
+/* daylight nav — sticky top bar shared by audit-site and audit-report HTML.
+ * Every color/font/radius is a token reference with NO fallback. If a token
+ * is missing the page breaks loudly. See packages/themes/tokens.css.
+ */
+
+.site-nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 2.5rem;
+  border-bottom: 2px solid var(--sonde-color-border);
+  background: var(--sonde-color-surface);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.nav-brand {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  text-decoration: none;
+  color: inherit;
+}
+
+.nav-brand-name {
+  font-family: var(--sonde-font-heading);
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--sonde-color-primary);
+  letter-spacing: -0.02em;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.nav-links a {
+  font-family: var(--sonde-font-heading);
+  font-size: 0.88rem;
+  font-weight: 500;
+  color: var(--sonde-color-text-muted);
+  text-decoration: none;
+  transition: color 0.15s;
+}
+
+.nav-links a:hover { color: var(--sonde-color-primary); }
+
+.nav-search {
+  display: flex;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-search input[type="search"] {
+  font-family: var(--sonde-font-body);
+  font-size: 0.82rem;
+  padding: 0.3rem 0.6rem;
+  border: 1px solid var(--sonde-color-border);
+  border-radius: var(--sonde-daylight-radius-sm);
+  background: var(--sonde-color-bg);
+  color: var(--sonde-color-text);
+  outline: none;
+  width: 10rem;
+  transition: border-color 0.15s, box-shadow 0.15s;
+}
+
+.nav-search input[type="search"]:focus {
+  border-color: var(--sonde-color-primary);
+  box-shadow: 0 0 0 2px var(--sonde-color-accent-dim);
+}
+
+.nav-search input[type="search"]::placeholder {
+  color: var(--sonde-color-text-muted);
+  opacity: 0.7;
+}
+
+.nav-title {
+  font-family: var(--sonde-font-heading);
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: var(--sonde-color-primary);
+  margin: 0;
+  padding: 0;
+  border: none;
+  letter-spacing: -0.01em;
+  text-align: center;
+  flex: 1;
+}
+
+@media (max-width: 640px) {
+  .site-nav {
+    padding: 0.75rem 1.25rem;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+  .nav-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.25rem 0.75rem;
+  }
+  .nav-title {
+    width: 100%;
+    order: -1;
+  }
+}
+
+/* ── Single-gear settings dropdown (Fix 4) ─────────────────────── */
+.settings-dropdown {
+  position: relative;
+  margin-left: auto;
+}
+.settings-dropdown-trigger {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.25rem;
+  height: 2.25rem;
+  border-radius: 50%;
+  background: transparent;
+  color: var(--sonde-color-text-muted);
+  cursor: pointer;
+  list-style: none; /* Removes default triangle in some browsers */
+  transition: background 120ms ease, color 120ms ease;
+}
+.settings-dropdown-trigger::-webkit-details-marker {
+  display: none;
+}
+.settings-dropdown-trigger:hover,
+.settings-dropdown[open] .settings-dropdown-trigger {
+  background: var(--sonde-color-border-subtle);
+  color: var(--sonde-color-text);
+}
+.settings-dropdown-trigger:focus-visible {
+  outline: 2px solid var(--sonde-color-primary);
+  outline-offset: 2px;
+}
+.settings-dropdown-menu {
+  position: absolute;
+  top: calc(100% + 0.5rem);
+  right: 0;
+  width: 14rem;
+  padding: 0.5rem;
+  background: var(--sonde-color-surface);
+  border: 1px solid var(--sonde-color-border);
+  border-radius: 8px;
+  box-shadow: 0 10px 25px -5px rgba(0,0,0,0.1), 0 8px 10px -6px rgba(0,0,0,0.1);
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+/* Nested collapsible sections inside the gear popover. Each opens/closes
+ * independently via native <details> toggle, mirroring the Cockpit
+ * SettingsPopover pattern (packages/cockpit/src/components/layout.tsx)
+ * where IDE and Theme are two independent MUI <Select> controls in one
+ * popover. */
+.settings-section {
+  padding: 0;
+  margin: 0;
+  border: none;
+}
+.settings-section-trigger {
+  list-style: none;
+  cursor: pointer;
+  font-family: var(--sonde-font-heading);
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--sonde-color-text-muted);
+  padding: 0.25rem 0.25rem;
+  border-radius: 4px;
+  user-select: none;
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+.settings-section-trigger::-webkit-details-marker { display: none; }
+.settings-section-trigger::before {
+  content: "▸";
+  font-size: 0.7em;
+  line-height: 1;
+  color: var(--sonde-color-text-muted);
+  transition: transform 120ms ease;
+  display: inline-block;
+}
+.settings-section[open] > .settings-section-trigger::before {
+  transform: rotate(90deg);
+}
+.settings-section-trigger:hover {
+  color: var(--sonde-color-text);
+  background: var(--sonde-color-border-subtle);
+}
+.settings-section-trigger:focus-visible {
+  outline: 2px solid var(--sonde-color-primary);
+  outline-offset: 2px;
+}
+.settings-section-body {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  padding: 0.25rem 0 0.25rem 0.5rem;
+}
+.theme-toggle-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  padding: 0;
+  margin: 0;
+  border: none;
+}
+.theme-toggle-option {
+  position: relative;
+  cursor: pointer;
+}
+.theme-toggle-option input {
+  position: absolute;
+  inline-size: 1px;
+  block-size: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+.theme-preview {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.5rem 0.75rem;
+  border-radius: 6px;
+  background: var(--sonde-color-bg);
+  color: var(--sonde-color-text);
+  border: 2px solid transparent;
+  transition: background 120ms ease, border-color 120ms ease;
+}
+.theme-preview span {
+  font-family: var(--sonde-font-heading);
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: inherit;
+}
+.theme-toggle-option input:checked + .theme-preview {
+  background: var(--sonde-color-surface);
+  border-color: var(--sonde-color-primary);
+}
+.theme-toggle-option input:focus-visible + .theme-preview {
+  outline: 2px solid var(--sonde-color-primary);
+  outline-offset: 2px;
+}
+.theme-toggle-option:hover input:not(:checked) + .theme-preview {
+  background: var(--sonde-color-surface);
+}
+
+/* Scope the daylight-mark token family to each preview so the swatch
+ * renders its TARGET theme's mark regardless of the page's active theme.
+ * Without these overrides the tokens cascade from <html data-theme="…">
+ * and every preview looks identical. Values mirror packages/themes/tokens.css
+ * (light block ~line 118, dark block ~line 507) and packages/themes/daylight.css
+ * (high-contrast block ~line 305). */
+.theme-preview[data-theme="light"] {
+  --sonde-daylight-mark-sun-stop-0: #ffe082;
+  --sonde-daylight-mark-sun-stop-1: #ffb300;
+  --sonde-daylight-mark-sun-stop-2: #e65100;
+  --sonde-daylight-mark-crater: transparent;
+  --sonde-daylight-mark-probe: #1a1a2e;
+  --sonde-daylight-mark-solid-display: block;
+  --sonde-daylight-mark-line-display: none;
+}
+.theme-preview[data-theme="dark"] {
+  --sonde-daylight-mark-sun-stop-0: #e0e8f0;
+  --sonde-daylight-mark-sun-stop-1: #a8b4c0;
+  --sonde-daylight-mark-sun-stop-2: #505860;
+  --sonde-daylight-mark-crater: transparent;
+  --sonde-daylight-mark-probe: #0a1120;
+  --sonde-daylight-mark-solid-display: block;
+  --sonde-daylight-mark-line-display: none;
+}
+.theme-preview[data-theme="high-contrast"] {
+  --sonde-daylight-mark-sun-stop-0: #000000;
+  --sonde-daylight-mark-sun-stop-1: #000000;
+  --sonde-daylight-mark-sun-stop-2: #000000;
+  --sonde-daylight-mark-crater: transparent;
+  --sonde-daylight-mark-probe: #ffffff;
+  --sonde-daylight-mark-solid-display: none;
+  --sonde-daylight-mark-line-display: block;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .settings-dropdown-trigger { transition: none; }
+  .theme-preview { transition: none; }
+}
+
+@media print {
+  .settings-dropdown { display: none; }
+}
+
+
+.scribe-shell__header {
+  background: var(--sonde-color-bg);
+}
+
+.scribe-shell__header .site-nav {
+  width: 100%;
+}
+
+.scribe-shell__main {
+  margin-inline: auto;
+  max-width: 72rem;
+  padding: 1.5rem;
+}
+
+.scribe-index {
+  color: var(--sonde-color-text);
+  font-family: var(--sonde-font-body);
+}
+
+.scribe-index__hero {
+  border-bottom: 1px solid var(--sonde-color-border);
+  padding-block: 2rem;
+}
+
+.scribe-index__title {
+  color: var(--sonde-color-text-heading);
+  font-family: var(--sonde-font-heading);
+  font-size: 2rem;
+  line-height: 1.1;
+  margin: 0;
+}
+
+.scribe-index__meta {
+  color: var(--sonde-color-text-muted);
+  margin-block: 0.5rem 0;
+}
+
+.scribe-index__about {
+  border-top: 1px solid var(--sonde-color-border);
+  margin-block-start: 2rem;
+  padding-block-start: 1.5rem;
+}
+
+.scribe-index__about-title {
+  color: var(--sonde-color-text-heading);
+  font-family: var(--sonde-font-heading);
+  font-size: 1.25rem;
+  line-height: 1.2;
+  margin: 0;
+}
+
+.scribe-index__about-body {
+  color: var(--sonde-color-text-muted);
+  margin-block: 0.5rem 0;
+}
+
+.scribe-leaderboard-controls {
+  align-items: end;
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(12rem, 1fr));
+  margin-block-start: 1.5rem;
+}
+
+.scribe-leaderboard-control {
+  color: var(--sonde-color-text-muted);
+  display: grid;
+  font-size: 0.875rem;
+  gap: 0.35rem;
+  position: relative;
+}
+
+.scribe-leaderboard-control input,
+.scribe-leaderboard-control select {
+  background: var(--sonde-color-surface);
+  border: 1px solid var(--sonde-color-border);
+  border-radius: var(--sonde-radius-sm);
+  color: var(--sonde-color-text);
+  font: inherit;
+  min-block-size: 2.5rem;
+  padding: 0.55rem 0.7rem;
+}
+
+.scribe-leaderboard-wrap {
+  border: 1px solid var(--sonde-color-border);
+  border-radius: var(--sonde-radius-md);
+  margin-block-start: 1.5rem;
+  overflow-x: auto;
+}
+
+.scribe-leaderboard {
+  border-collapse: collapse;
+  color: var(--sonde-color-text);
+  font-size: 0.9rem;
+  inline-size: 100%;
+  min-inline-size: 58rem;
+}
+
+.scribe-leaderboard th,
+.scribe-leaderboard td {
+  border-bottom: 1px solid var(--sonde-color-border);
+  padding: 0.65rem 0.8rem;
+  text-align: left;
+  vertical-align: top;
+}
+
+.scribe-leaderboard th {
+  background: var(--sonde-color-surface);
+  color: var(--sonde-color-text-heading);
+  cursor: pointer;
+  font-family: var(--sonde-font-heading);
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.scribe-leaderboard th:last-child {
+  cursor: default;
+}
+
+.scribe-leaderboard tr[data-filtered="true"] {
+  display: none;
+}
+
+.scribe-leaderboard a {
+  color: var(--sonde-color-primary);
+}
+
+.scribe-leaderboard-pagination {
+  align-items: center;
+  color: var(--sonde-color-text-muted);
+  display: flex;
+  gap: 0.75rem;
+  justify-content: flex-end;
+  margin-block-start: 1rem;
+}
+
+.scribe-leaderboard-pagination[hidden] {
+  display: none;
+}
+
+.scribe-leaderboard-pagination button {
+  background: var(--sonde-color-surface);
+  border: 1px solid var(--sonde-color-border);
+  border-radius: var(--sonde-radius-sm);
+  color: var(--sonde-color-text);
+  cursor: pointer;
+  font: inherit;
+  padding: 0.45rem 0.75rem;
+}
+
+.scribe-leaderboard-pagination button:disabled {
+  color: var(--sonde-color-text-muted);
+  cursor: default;
+}
+
+.scribe-leaderboard-tag-list {
+  background: var(--sonde-color-surface);
+  border: 1px solid var(--sonde-color-border);
+  border-radius: var(--sonde-radius-sm);
+  box-shadow: var(--sonde-shadow-md);
+  inset-block-start: 100%;
+  inset-inline: 0;
+  max-block-size: 14rem;
+  overflow-y: auto;
+  position: absolute;
+  z-index: 20;
+}
+
+.scribe-leaderboard-tag-list [role="option"] {
+  color: var(--sonde-color-text);
+  cursor: pointer;
+  padding: 0.5rem 0.7rem;
+}
+
+.scribe-leaderboard-tag-list [role="option"][aria-selected="true"],
+.scribe-leaderboard-tag-list [role="option"]:hover {
+  background: var(--sonde-color-surface-elevated);
+}
+
+#scribe-leaderboard-tag-input[aria-expanded="false"] + .scribe-leaderboard-tag-list {
+  display: none;
+}
+
+.nav-brand-logo,
+.nav-brand-logo svg {
+  block-size: 1.75rem;
+  display: inline-flex;
+  inline-size: 1.75rem;
+}

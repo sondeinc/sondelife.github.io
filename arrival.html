@@ -1359,7 +1359,7 @@ const ENCOUNTERS = [
   // ── 2006 — Liquid: Tobi Lütke / Shopify templating ──
   { id: 'liquid', lang: 'Liquid', year: 2006, color: '#6db33f', labelColor: '#e0f8d0',
     radius: 50, worldX: 27600, worldY: 530, dwellTime: 1800, explosionType: 'liquidtemplate' },
-  { id: 'scss', lang: 'SCSS', year: 2006, color: '#c6538c', labelColor: '#f0d0e0',
+  { id: 'scss', lang: 'SCSS', year: 2006, color: '#CF649A', labelColor: '#f0d0e0',
     radius: 45, worldX: 28300, worldY: 460, dwellTime: 1600, explosionType: 'nestedsel' },
   { id: 'apex', lang: 'Apex', year: 2007, color: '#00A1E0', labelColor: '#001E3C',
     radius: 55, worldX: 29000, worldY: 530, dwellTime: 1800, explosionType: 'soqltrigger' },
@@ -1948,15 +1948,59 @@ function createLogoSvg(enc) {
       return g;
     }
     case 'css': {
-      // Shield/pentagon with "3"
+      // CSS3 shield — blue public logo, not the GitHub Linguist purple language color.
       g.appendChild(svgEl('path', {
-        d: 'M-28,-32 L28,-32 L24,22 L0,36 L-24,22 Z',
-        fill: '#563d7c', stroke: '#c8a8f0', 'stroke-width': 2
+        d: 'M-32,-36 L32,-36 L26,28 L0,38 L-26,28 Z',
+        fill: '#1572B6', stroke: '#d8f0ff', 'stroke-width': 2
+      }));
+      g.appendChild(svgEl('path', {
+        d: 'M0,-36 L32,-36 L26,28 L0,38 Z',
+        fill: '#33A9DC'
       }));
       const c3 = svgEl('text', { x: 0, y: 2, 'text-anchor': 'middle', 'dominant-baseline': 'central',
         fill: '#ffffff', 'font-family': "'DM Sans', sans-serif", 'font-size': 36, 'font-weight': 900 });
       c3.textContent = '3';
       g.appendChild(c3);
+      return g;
+    }
+    case 'fsharp': {
+      // F# angular mark.
+      g.appendChild(svgEl('polygon', {
+        points: '-38,0 -4,-34 -4,-16 -20,0 -4,16 -4,34',
+        fill: '#378BBA'
+      }));
+      g.appendChild(svgEl('polygon', {
+        points: '4,-34 38,0 4,34 4,16 20,0 4,-16',
+        fill: '#30B9DB'
+      }));
+      return g;
+    }
+    case 'scss': {
+      // Sass/SCSS rounded script mark.
+      g.appendChild(svgEl('circle', { cx: 0, cy: 0, r: 36, fill: '#CF649A' }));
+      const sass = svgEl('text', { x: 0, y: 4, 'text-anchor': 'middle', 'dominant-baseline': 'central',
+        fill: '#ffffff', 'font-family': 'Georgia, serif', 'font-size': 54, 'font-weight': 900, 'font-style': 'italic' });
+      sass.textContent = 'S';
+      g.appendChild(sass);
+      return g;
+    }
+    case 'less': {
+      // LESS badge with bracketed preprocessor mark.
+      g.appendChild(svgEl('rect', { x: -36, y: -32, width: 72, height: 64, rx: 8, fill: '#1D365D' }));
+      g.appendChild(svgEl('path', { d: 'M-22,-18 L-34,0 L-22,18', fill: 'none', stroke: '#ffffff', 'stroke-width': 6, 'stroke-linecap': 'round', 'stroke-linejoin': 'round' }));
+      g.appendChild(svgEl('path', { d: 'M22,-18 L34,0 L22,18', fill: 'none', stroke: '#ffffff', 'stroke-width': 6, 'stroke-linecap': 'round', 'stroke-linejoin': 'round' }));
+      g.appendChild(svgEl('circle', { cx: -8, cy: 0, r: 4, fill: '#ffffff' }));
+      g.appendChild(svgEl('circle', { cx: 8, cy: 0, r: 4, fill: '#ffffff' }));
+      return g;
+    }
+    case 'r': {
+      // R project mark: blue oval with the white R.
+      g.appendChild(svgEl('ellipse', { cx: 0, cy: 0, rx: 38, ry: 28, fill: '#198CE7' }));
+      g.appendChild(svgEl('ellipse', { cx: 0, cy: -4, rx: 30, ry: 20, fill: '#ffffff', opacity: 0.9 }));
+      const rLogo = svgEl('text', { x: 4, y: 8, 'text-anchor': 'middle', 'dominant-baseline': 'central',
+        fill: '#198CE7', 'font-family': 'Georgia, serif', 'font-size': 42, 'font-weight': 900 });
+      rLogo.textContent = 'R';
+      g.appendChild(rLogo);
       return g;
     }
     case 'delphi': {
@@ -2399,7 +2443,7 @@ function mkFormDesign(wx, wy, color) {
   titleT.textContent = 'Form1';
   g.appendChild(titleT);
   for (let i = 0; i < 3; i++) {
-    g.appendChild(svgEl('rect', { x: 56 + i * 14, y: -66, width: 10, height: 10, rx: 1,
+    g.appendChild(svgEl('rect', { x: 44 + i * 13, y: -66, width: 10, height: 10, rx: 1,
       fill: '#444', stroke: '#666', 'stroke-width': 0.5 }));
   }
   g.appendChild(svgEl('rect', { x: -60, y: -30, width: 60, height: 22, rx: 2,
@@ -2979,7 +3023,7 @@ function mkLiquidTemplate(wx, wy, color) {
 function mkNestedSel(wx, wy, color) {
   const g = svgEl('g', {}); g.style.opacity = '0';
   g.setAttribute('transform', `translate(${wx},${wy - 40}) scale(2.5)`);
-  const stroke = bright(color || '#c6538c');
+  const stroke = bright(color || '#CF649A');
   const fill = '#fff0f8';
   // Nested boxes (outermost to innermost)
   g.appendChild(svgEl('rect', { x: -80, y: -70, width: 160, height: 140, rx: 4,
@@ -4742,10 +4786,11 @@ function renderPauseTagline() {
   taglineText.classList.toggle('long', !!tl.long);
 }
 
-// M5a — history state sync. CF Web Analytics' SPA mode tracks pushState
-// calls as virtual pageviews, so pause/resume/CTA each get their own
-// trackable URL. History sync is suppressed during init cleanup and
-// popstate-driven state changes to avoid history loops.
+// M5a — history state sync. Pause/resume use replaceState so browser Back
+// leaves Arrival instead of walking internal overlay states. CTA clicks still
+// use pushState briefly so CF Web Analytics' SPA mode records that action.
+// History sync is suppressed during init cleanup and popstate-driven state
+// changes to avoid history loops.
 let suppressHistorySync = false;
 
 function pauseUrl(tagIdx) {
@@ -4781,7 +4826,7 @@ function togglePause() {
       document.body.focus();
     }
     lastFocusedBeforePause = null;
-    syncHistoryForState('push');
+    syncHistoryForState('replace');
   } else {
     paused = true;
     pausedAt = performance.now();
@@ -4799,7 +4844,7 @@ function togglePause() {
     // Move focus into the dialog, landing on the primary Daylight CTA
     lastFocusedBeforePause = document.activeElement;
     daylightCta.focus();
-    syncHistoryForState('push');
+    syncHistoryForState('replace');
   }
 }
 

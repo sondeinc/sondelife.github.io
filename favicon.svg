@@ -12,6 +12,17 @@
   host needs per-part theming via --sonde-color-* CSS variables.
 -->
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="-40 -36 76 68" role="img" aria-label="Sonde probe mark">
+  <style>
+    /* Standalone favicon context has no inherited color, so currentColor would
+       resolve to user-agent default (often invisible on tinted tab bars). Pin
+       a brand violet that reads on both light and dark browser chrome. The
+       dark value mirrors --sonde-color-primary in packages/themes/tokens.css;
+       SVGs loaded as favicons cannot read CSS custom properties from the host
+       page, so this duplication is unavoidable — keep in sync if the token
+       palette changes. */
+    :root { color: #b185ff; }
+    @media (prefers-color-scheme: light) { :root { color: #6d3fff; } }
+  </style>
   <g transform="rotate(-40)">
     <!-- magnetometer boom + tip -->
     <line x1="-6" y1="-1.5" x2="-32" y2="-8" stroke="currentColor" stroke-width="0.95" stroke-linecap="round"/>
