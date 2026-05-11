@@ -154,20 +154,34 @@
       row.setAttribute('data-filtered', 'false');
     });
 
-    ensurePagination();
-    if (pagination) {
-      var info = pagination.querySelector('.scribe-leaderboard-page-info');
-      var prev = pagination.querySelector('.scribe-leaderboard-prev');
-      var next = pagination.querySelector('.scribe-leaderboard-next');
-      pagination.hidden = passing.length <= pageSize;
-      if (info) {
-        var from = passing.length === 0 ? 0 : start + 1;
-        var to = Math.min(end, passing.length);
-        info.textContent = labels.showing + ' ' + from + '-' + to + ' ' + labels.of + ' ' + passing.length + ' ' + labels.modules;
-      }
-      if (prev) prev.disabled = state.page <= 1;
-      if (next) next.disabled = state.page >= maxPage;
+    // Mirror the audit-site / audit-html defensive shape: hide via the
+    // [hidden] attribute and zero out the live region in the off branch
+    // (#1044). The scribe leaderboard does not participate in
+    // localeFallback's data-msg-args hydration, so there is no
+    // data-msg-args attribute to clear here.
+    var shouldPage = passing.length > pageSize;
+    if (shouldPage) ensurePagination();
+    if (!pagination) return;
+    pagination.hidden = !shouldPage;
+    if (!shouldPage) {
+      var hiddenInfo = pagination.querySelector('.scribe-leaderboard-page-info');
+      if (hiddenInfo) hiddenInfo.textContent = '';
+      var hiddenPrev = pagination.querySelector('.scribe-leaderboard-prev');
+      if (hiddenPrev) hiddenPrev.disabled = true;
+      var hiddenNext = pagination.querySelector('.scribe-leaderboard-next');
+      if (hiddenNext) hiddenNext.disabled = true;
+      return;
     }
+    var pgInfo = pagination.querySelector('.scribe-leaderboard-page-info');
+    if (pgInfo) {
+      var from = passing.length === 0 ? 0 : start + 1;
+      var to = Math.min(end, passing.length);
+      pgInfo.textContent = labels.showing + ' ' + from + '-' + to + ' ' + labels.of + ' ' + passing.length + ' ' + labels.modules;
+    }
+    var prev = pagination.querySelector('.scribe-leaderboard-prev');
+    if (prev) prev.disabled = state.page <= 1;
+    var next = pagination.querySelector('.scribe-leaderboard-next');
+    if (next) next.disabled = state.page >= maxPage;
   }
 
   function resetAndRender() {

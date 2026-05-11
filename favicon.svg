@@ -9,7 +9,7 @@
 
   Fills use currentColor by default so an <img> or <object> host adopts
   the parent text color. Inlining in teaser HTML is preferred when the
-  host needs per-part theming via --sonde-color-* CSS variables.
+  host needs per-part theming via the sonde-color-* CSS variables.
 -->
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="-40 -36 76 68" role="img" aria-label="Sonde probe mark">
   <style>

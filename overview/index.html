@@ -368,12 +368,13 @@
     min-height: 100vh;
   }
 
+  /* Home page is a multi-section column (teaser + ecosystem cards + Daylight
+     CTA), not a single hero. The teaser must NOT grab `flex: 1 0 auto` —
+     stretching it pushes content into the middle of the viewport on tall
+     screens, leaving an awkward gap before the next section. (The earlier
+     "center home teaser" rule was correct when the teaser WAS the page.) */
   .sl-page-home .sl-teaser {
-    flex: 1 0 auto;
-  }
-
-  .sl-page-home .sl-footer {
-    display: none;
+    flex: 0 0 auto;
   }
 
   .sl-page-features {
@@ -457,6 +458,118 @@
     min-width: 0;
   }
 
+  /* Site-wide search — second WCAG 2.4.5 navigation mechanism (alongside
+     the primary <nav>) and a deep-link entry to any Helm node. Collapsed
+     to a magnifying-glass icon by default; clicking the icon expands the
+     <input> and focuses it. Click outside or Escape collapses again. The
+     listbox is absolutely-positioned so the nav row doesn't reflow. */
+  .sl-search {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    margin: 0;
+  }
+  .sl-search-trigger {
+    display: grid;
+    width: 2.25rem;
+    height: 2.25rem;
+    place-items: center;
+    padding: 0;
+    border: 1px solid transparent;
+    border-radius: 999px;
+    background: transparent;
+    color: var(--sonde-color-text-muted);
+    cursor: pointer;
+    transition: color 0.15s ease, border-color 0.15s ease;
+  }
+  .sl-search-trigger:hover,
+  .sl-search-trigger:focus-visible {
+    color: var(--sonde-color-accent);
+    border-color: var(--sonde-color-border);
+    outline: none;
+  }
+  .sl-search-trigger svg {
+    display: block;
+  }
+  .sl-search input {
+    width: 0;
+    padding: 0;
+    margin-left: 0;
+    font-family: var(--sonde-font-body);
+    font-size: 0.85rem;
+    color: var(--sonde-color-text);
+    background: var(--sonde-color-bg);
+    border: 1px solid transparent;
+    border-radius: 999px;
+    outline: none;
+    visibility: hidden;
+    transition: width 0.18s ease, padding 0.18s ease, margin-left 0.18s ease;
+  }
+  .sl-search[data-open="true"] .sl-search-trigger {
+    color: var(--sonde-color-accent);
+    border-color: var(--sonde-color-border);
+  }
+  .sl-search[data-open="true"] input {
+    width: clamp(8rem, 22vw, 16rem);
+    padding: 0.32rem 0.7rem;
+    margin-left: 0.25rem;
+    border-color: var(--sonde-color-border);
+    visibility: visible;
+  }
+  .sl-search[data-open="true"] input:focus-visible {
+    border-color: var(--sonde-color-accent);
+    box-shadow: 0 0 0 2px color-mix(in srgb, var(--sonde-color-accent) 35%, transparent);
+  }
+  .sl-search-results {
+    position: absolute;
+    top: calc(100% + 0.35rem);
+    right: 0;
+    min-width: 18rem;
+    max-width: min(28rem, calc(100vw - 2rem));
+    max-height: 60vh;
+    overflow-y: auto;
+    margin: 0;
+    padding: 0.25rem 0;
+    list-style: none;
+    background: var(--sonde-color-bg);
+    border: 1px solid var(--sonde-color-border);
+    border-radius: 0.5rem;
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.18);
+    z-index: 20;
+  }
+  .sl-search-results[hidden] { display: none; }
+  .sl-search-result {
+    display: block;
+    padding: 0.4rem 0.7rem;
+    color: var(--sonde-color-text);
+    text-decoration: none;
+    cursor: pointer;
+  }
+  .sl-search-result strong {
+    display: block;
+    font-size: 0.88rem;
+    font-weight: 600;
+    line-height: 1.3;
+  }
+  .sl-search-result span {
+    display: block;
+    font-size: 0.72rem;
+    color: var(--sonde-color-text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+  }
+  .sl-search-result:hover,
+  .sl-search-result[aria-selected="true"] {
+    background: color-mix(in srgb, var(--sonde-color-accent) 10%, transparent);
+    color: var(--sonde-color-text-heading);
+    outline: none;
+  }
+  .sl-search-empty {
+    padding: 0.5rem 0.7rem;
+    font-size: 0.85rem;
+    color: var(--sonde-color-text-muted);
+  }
+
   .sl-settings {
     margin-left: 0;
   }
@@ -510,6 +623,396 @@
     align-items: center;
   }
 
+  /* Hero variant with a page-identifying icon to the left of the title block.
+     Icon partials live in `partials/icons/*.liquid` and use currentColor
+     + --sonde-color-accent so they track the active theme. Inner uses flex
+     (not grid) so the inner always fills its parent regardless of how short
+     the title content is — grid-as-grid-item collapses to max-content when
+     content is short, which made narrow pages like /contact/ shrink. */
+  .sl-hero-with-icon .sl-section-inner {
+    display: flex;
+    align-items: flex-start;
+    gap: 1.5rem;
+    width: 100%;
+  }
+
+  .sl-hero-with-icon .sl-page-icon {
+    flex: 0 0 auto;
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.6rem;
+    color: var(--sonde-color-primary);
+  }
+
+  .sl-hero-with-icon .sl-page-icon-svg {
+    width: 4.5rem;
+    height: 4.5rem;
+    display: block;
+  }
+
+  /* Optional secondary affordance stacked under the page icon — currently
+     used on /compliance/ to surface the Visit Daylight pill without adding
+     a vertical row to the title block. Compact, sized to the icon column. */
+  .sl-page-icon-action {
+    min-height: 1.85rem;
+    padding: 0 0.7rem;
+    font-size: 0.78rem;
+    white-space: nowrap;
+  }
+
+  .sl-hero-content {
+    flex: 1 1 0;
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.35rem;
+  }
+
+  .sl-hero-content > .sl-eyebrow {
+    margin: 0;
+  }
+
+  .sl-hero-content > p {
+    margin: 0;
+  }
+
+  /* Narrow viewports: keep the icon + title + (optional) chevron on the
+     same row instead of stacking vertically. Stacking made phone-width
+     heroes 3+ rows tall (icon block, eyebrow + h1, chevron) which was
+     the worst offender for vertical waste at ≤ 380px. Icon shrinks to
+     stay paired with the title without crowding it. */
+  @media (max-width: 36rem) {
+    .sl-hero-with-icon .sl-section-inner {
+      gap: 0.85rem;
+    }
+    .sl-hero-with-icon .sl-page-icon-svg {
+      width: 2.5rem;
+      height: 2.5rem;
+    }
+    .sl-hero-content > .sl-eyebrow {
+      font-size: 0.72rem;
+    }
+    .sl-features-summary-toggle {
+      width: 1.3rem;
+      height: 1.3rem;
+    }
+  }
+
+  /* Collapsible /features/ hero. <details>/<summary> handles open/close
+     state without JS; the summary always shows the page identity (icon +
+     eyebrow + title) and the body holds the cockpit explainer paragraph
+     so the helm-app catalog can claim more vertical real estate when
+     readers want to explore. */
+  .sl-features-details {
+    display: block;
+  }
+
+  .sl-features-summary {
+    list-style: none;
+    cursor: pointer;
+  }
+
+  .sl-features-summary::-webkit-details-marker {
+    display: none;
+  }
+
+  .sl-features-summary::marker {
+    content: '';
+  }
+
+  .sl-features-summary .sl-section-inner {
+    align-items: center;
+  }
+
+  .sl-features-summary-toggle {
+    flex: 0 0 auto;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 1.6rem;
+    height: 1.6rem;
+    color: var(--sonde-color-text-muted);
+    transition: transform 0.18s ease, color 0.18s ease;
+    margin-left: auto;
+  }
+
+  .sl-features-summary:hover .sl-features-summary-toggle,
+  .sl-features-summary:focus-visible .sl-features-summary-toggle {
+    color: var(--sonde-color-primary);
+  }
+
+  .sl-features-details[open] .sl-features-summary-toggle {
+    transform: rotate(180deg);
+  }
+
+  /* When the details is open, drop the .sl-hero border-bottom on the
+     summary so the summary + body read as one continuous band. The body
+     carries the band's bottom border instead. */
+  .sl-features-details[open] > .sl-features-summary {
+    border-bottom: none;
+    padding-bottom: 0.35rem;
+  }
+
+  .sl-features-details-body {
+    padding-top: 0;
+    padding-bottom: 1.05rem;
+    border-bottom: 1px solid var(--sonde-color-border);
+  }
+
+  .sl-features-details-body-inner {
+    display: flex;
+    align-items: flex-start;
+    gap: 1.5rem;
+    width: 100%;
+  }
+
+  .sl-page-icon-spacer {
+    flex: 0 0 4.5rem;
+    width: 4.5rem;
+    align-self: stretch;
+  }
+
+  .sl-features-details-body p {
+    margin: 0;
+    color: var(--sonde-color-text);
+    font-size: 0.94rem;
+    line-height: 1.5;
+  }
+
+  .sl-features-details-body p strong {
+    color: var(--sonde-color-text-heading);
+  }
+
+  @media (max-width: 36rem) {
+    .sl-features-details-body-inner {
+      flex-direction: column;
+    }
+    .sl-page-icon-spacer {
+      display: none;
+    }
+  }
+
+  /* /compliance/ source-correlated finding cards. Stacked vertically (not
+     a 4-up grid) so long anchors and code excerpts have room without
+     bleeding into adjacent columns. Each card pairs a screenshot slot
+     (placeholder until real Sonde mobility-report output is wired in)
+     with the fix recipe text. */
+  .sl-finding-note {
+    margin: 0 0 1rem;
+    color: var(--sonde-color-text-muted);
+    font-size: 0.86rem;
+  }
+
+  .sl-finding-stack {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+  }
+
+  .sl-finding-example {
+    padding: 1.1rem 1.2rem;
+    border: 1px solid var(--sonde-color-border);
+    border-left: 0.25rem solid var(--sonde-color-primary);
+    border-radius: 0.55rem;
+    background: var(--sonde-color-bg);
+    overflow: hidden;
+  }
+
+  /* Each finding card is a <details>/<summary> so readers can collapse
+     framework-specific evidence they don't want to scroll past. The
+     summary carries the framework + finding title + anchor and a
+     chevron that rotates when [open]. */
+  .sl-finding-summary {
+    list-style: none;
+    cursor: pointer;
+    display: flex;
+    align-items: flex-start;
+    gap: 0.85rem;
+  }
+
+  .sl-finding-summary::-webkit-details-marker {
+    display: none;
+  }
+
+  .sl-finding-summary::marker {
+    content: '';
+  }
+
+  .sl-finding-head {
+    flex: 1 1 0;
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+  }
+
+  .sl-finding-toggle {
+    flex: 0 0 auto;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 1.6rem;
+    height: 1.6rem;
+    margin-top: 0.15rem;
+    color: var(--sonde-color-text-muted);
+    transition: transform 0.18s ease, color 0.18s ease;
+  }
+
+  .sl-finding-summary:hover .sl-finding-toggle,
+  .sl-finding-summary:focus-visible .sl-finding-toggle {
+    color: var(--sonde-color-primary);
+  }
+
+  .sl-finding-example[open] .sl-finding-toggle {
+    transform: rotate(180deg);
+  }
+
+  .sl-finding-example[open] .sl-finding-body {
+    margin-top: 0.85rem;
+  }
+
+  /* Collapsed state: only the framework eyebrow + chevron stay visible.
+     Title and anchor reveal once the user opens the card. Tighten the
+     vertical padding to match the single-line content so collapsed
+     cards don't carry expanded-card whitespace. */
+  .sl-finding-example:not([open]) {
+    padding-top: 0.55rem;
+    padding-bottom: 0.55rem;
+  }
+
+  .sl-finding-example:not([open]) .sl-finding-title,
+  .sl-finding-example:not([open]) .sl-finding-anchor {
+    display: none;
+  }
+
+  .sl-finding-framework {
+    margin: 0;
+    color: var(--sonde-color-primary);
+    font-family: var(--sonde-font-heading);
+    font-size: 0.74rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  .sl-finding-title {
+    margin: 0;
+    color: var(--sonde-color-text-heading);
+    font-family: var(--sonde-font-heading);
+    font-size: 1.05rem;
+    font-weight: 700;
+    line-height: 1.2;
+  }
+
+  .sl-finding-anchor {
+    margin: 0;
+    overflow-x: auto;
+  }
+
+  /* Background, border, font-family, color, border-radius come from
+     the global `code, .sl-inline-code` rule. Only the size + layout
+     overrides specific to anchor pills (long file paths) live here. */
+  .sl-finding-anchor code {
+    display: inline-block;
+    max-width: 100%;
+    padding: 0.18rem 0.45rem;
+    font-size: 0.8rem;
+    line-height: 1.4;
+    word-break: break-all;
+    white-space: pre-wrap;
+  }
+
+  .sl-finding-body {
+    display: grid;
+    grid-template-columns: minmax(0, 14rem) minmax(0, 1fr);
+    gap: 1.1rem;
+    align-items: start;
+  }
+
+  .sl-finding-screenshot {
+    aspect-ratio: 4 / 3;
+    border: 1px dashed color-mix(in srgb, var(--sonde-color-primary) 35%, var(--sonde-color-border));
+    border-radius: 0.4rem;
+    background: color-mix(in srgb, var(--sonde-color-primary) 4%, transparent);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.5rem;
+    text-align: center;
+  }
+
+  .sl-finding-screenshot.sl-finding-screenshot-real {
+    aspect-ratio: 8 / 5;
+    border: 1px solid color-mix(in srgb, var(--sonde-color-primary) 22%, var(--sonde-color-border));
+    background: color-mix(in srgb, var(--sonde-color-surface) 92%, var(--sonde-color-primary) 8%);
+    padding: 0;
+    margin: 0;
+    overflow: hidden;
+  }
+
+  .sl-finding-screenshot.sl-finding-screenshot-real img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+
+  .sl-finding-screenshot-placeholder {
+    color: var(--sonde-color-text-muted);
+    font-size: 0.78rem;
+    line-height: 1.35;
+    font-family: var(--sonde-font-heading);
+    letter-spacing: 0.04em;
+  }
+
+  .sl-finding-example-real .sl-finding-body {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 1rem;
+  }
+
+  .sl-finding-prose {
+    display: flex;
+    flex-direction: column;
+    gap: 0.55rem;
+    margin: 0;
+  }
+
+  .sl-finding-prose p {
+    margin: 0;
+    color: var(--sonde-color-text);
+    font-size: 0.92rem;
+    line-height: 1.5;
+    overflow-wrap: anywhere;
+  }
+
+  .sl-finding-criterion strong,
+  .sl-finding-fix strong {
+    color: var(--sonde-color-text-heading);
+    font-family: var(--sonde-font-heading);
+    font-size: 0.78rem;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    margin-right: 0.4rem;
+  }
+
+  .sl-finding-fix {
+    margin: 0;
+    color: var(--sonde-color-text);
+    font-size: 0.92rem;
+    line-height: 1.5;
+    overflow-wrap: anywhere;
+  }
+
+  @media (max-width: 38rem) {
+    .sl-finding-body {
+      grid-template-columns: minmax(0, 1fr);
+    }
+    .sl-finding-screenshot {
+      aspect-ratio: 16 / 10;
+    }
+  }
+
   .sl-eyebrow {
     margin: 0 0 0.65rem;
     color: var(--sonde-color-primary);
@@ -537,6 +1040,126 @@
     font-size: 0.94rem;
     line-height: 1.5;
   }
+
+  /* Inline `code` chip — applied to every <code> wrapped by the prose
+     filter (backtick spans in YAML body fields) and to any explicit
+     <code> author markup. Theme-aware: the chip background and border
+     blend with the active --sonde-color-primary so the chip reads as
+     part of the brand instead of a generic monospace span. */
+  code,
+  .sl-inline-code {
+    font-family: var(--sonde-font-mono, ui-monospace, SFMono-Regular, "Menlo", "Consolas", monospace);
+    font-size: 0.92em;
+    padding: 0.05em 0.4em;
+    background: color-mix(in srgb, var(--sonde-color-primary) 7%, transparent);
+    border: 1px solid color-mix(in srgb, var(--sonde-color-border) 75%, transparent);
+    border-radius: 0.3em;
+    color: var(--sonde-color-text);
+    overflow-wrap: anywhere;
+  }
+
+  /* Themed syntax-highlighted code blocks. The .sonde-syntax-* class set
+     is emitted by the renderer's `codeBlock` Liquid filter, which uses
+     the in-house @sondeai/slides-tokens tokenizer (23+ languages). Each
+     token role maps to a --sonde-syntax-* CSS variable already defined
+     in every Sonde theme (Ultraviolet / Infrared / High Contrast /
+     Daylight / Light / Dark) so highlighting tracks the active theme. */
+  .sl-code-block {
+    margin: 0;
+    padding: 0.95rem 1.1rem;
+    background: color-mix(in srgb, var(--sonde-color-primary) 5%, var(--sonde-color-surface));
+    border: 1px solid var(--sonde-color-border);
+    border-radius: 0.55rem;
+    overflow-x: auto;
+  }
+
+  .sl-code-block code {
+    display: block;
+    padding: 0;
+    background: transparent;
+    border: none;
+    border-radius: 0;
+    color: var(--sonde-syntax-default, var(--sonde-color-text));
+    font-family: var(--sonde-font-mono, ui-monospace, SFMono-Regular, "Menlo", "Consolas", monospace);
+    font-size: 0.88rem;
+    line-height: 1.55;
+    white-space: pre;
+    overflow-wrap: normal;
+  }
+
+  .sonde-syntax-line {
+    display: inline;
+  }
+
+  /* Methodology table-header / surface-card contrast inside .sl-band
+     sections — DARK MODE ONLY. Daylight's
+     `--sonde-color-table-header-bg` (#15102a in Ultraviolet dark) is
+     identical to sonde.life's `.sl-band` background
+     (`--sonde-color-surface` = #15102a), so headers blend into the
+     band and read as if unstyled. The ground-truth Daylight methodology
+     page sat on `--sonde-color-bg` (#0a0618) — never the same color as
+     the header. We restore that contrast on sonde.life by pinning
+     the header (and the other surface-tinted callouts inside meth
+     sections) to the page bg, which IS distinct from the surface
+     band in dark mode.
+
+     Light mode keeps the original tokens untouched: there
+     `--sonde-color-table-header-bg` is dark violet (#6d28d9) on a
+     white surface, which already contrasts clearly. */
+  :is(:root[data-mode="dark"], :root[data-theme="dark"]) .sl-meth-section
+    :is(.meth-weight-table th, .meth-allowlist-caveat, .cal-stat) {
+    background: var(--sonde-color-bg);
+  }
+  /* Auto-mode follows the OS preference; mirror the dark-mode rule
+     unless the user has explicitly forced light. */
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-mode="light"]):not([data-theme="light"]) .sl-meth-section
+      :is(.meth-weight-table th, .meth-allowlist-caveat, .cal-stat) {
+      background: var(--sonde-color-bg);
+    }
+  }
+
+  /* Line-number gutter — only renders when the codeBlock filter received a
+     snippetStartLine. The data-line attr carries the origin line in the source
+     file the snippet was sliced from, per the Sonde rule that every
+     scribe snippet must show its origin line.
+
+     `<code>` switches to `white-space: normal` so the `\n` joiners between
+     line spans collapse (they would otherwise stack on top of `display:
+     block`, doubling line height). Each line span keeps `white-space: pre`
+     so its internal indentation survives unchanged. */
+  .sl-code-block[data-start-line] code {
+    white-space: normal;
+  }
+  .sl-code-block[data-start-line] .sonde-syntax-line {
+    display: block;
+    white-space: pre;
+    padding-left: 4ch;
+    position: relative;
+  }
+  .sl-code-block[data-start-line] .sonde-syntax-line[data-line]::before {
+    content: attr(data-line);
+    position: absolute;
+    left: 0;
+    width: 3ch;
+    text-align: right;
+    color: var(--sonde-color-text-muted, color-mix(in srgb, var(--sonde-color-text) 45%, transparent));
+    font-variant-numeric: tabular-nums;
+    user-select: none;
+  }
+
+  .sonde-syntax-keyword     { color: var(--sonde-syntax-keyword,     var(--sonde-color-primary)); font-weight: 600; }
+  .sonde-syntax-type        { color: var(--sonde-syntax-type,        var(--sonde-color-secondary)); }
+  .sonde-syntax-string      { color: var(--sonde-syntax-string,      var(--sonde-color-pass, currentColor)); }
+  .sonde-syntax-number      { color: var(--sonde-syntax-number,      var(--sonde-color-warning, currentColor)); }
+  .sonde-syntax-comment     { color: var(--sonde-syntax-comment,     var(--sonde-color-text-muted)); font-style: italic; }
+  .sonde-syntax-function    { color: var(--sonde-syntax-function,    var(--sonde-color-secondary)); }
+  .sonde-syntax-variable    { color: var(--sonde-syntax-variable,    var(--sonde-color-text)); }
+  .sonde-syntax-constant    { color: var(--sonde-syntax-constant,    var(--sonde-color-warning, currentColor)); }
+  .sonde-syntax-property    { color: var(--sonde-syntax-property,    var(--sonde-color-primary)); }
+  .sonde-syntax-punctuation { color: var(--sonde-syntax-punctuation, var(--sonde-color-text-muted)); }
+  .sonde-syntax-tag         { color: var(--sonde-syntax-tag,         var(--sonde-color-error, currentColor)); }
+  .sonde-syntax-default     { color: var(--sonde-syntax-default,     var(--sonde-color-text)); }
 
   /* Inline glossary terms — native <abbr title> tooltip on hover, with a
      subtle dotted underline so readers know the word is annotated. The native
@@ -590,10 +1213,43 @@
     color: var(--sonde-color-primary);
   }
 
+  .sl-action-primary:hover,
+  .sl-action-primary:focus-visible {
+    background: color-mix(in srgb, var(--sonde-color-primary) 10%, transparent);
+  }
+
   .sl-band {
     border-top: 1px solid var(--sonde-color-border);
     border-bottom: 1px solid var(--sonde-color-border);
     background: var(--sonde-color-surface);
+  }
+
+  .sl-home-ecosystem {
+    border-bottom: 1px solid var(--sonde-color-border);
+  }
+
+  /* Bookmarkable section headers — clicking writes the heading's id to the
+     URL hash so readers can copy and share a deep link. The ::after rune
+     is a visual hover affordance; ARIA gets a real anchor via wrapping. */
+  .sl-anchor-heading {
+    scroll-margin-top: 4rem;
+  }
+  .sl-anchor-heading-link {
+    color: inherit;
+    text-decoration: none;
+    cursor: pointer;
+  }
+  .sl-anchor-heading-link::after {
+    content: ' #';
+    color: var(--sonde-color-primary);
+    opacity: 0;
+    transition: opacity 0.15s ease;
+    margin-left: 0.15em;
+  }
+  .sl-anchor-heading-link:hover::after,
+  .sl-anchor-heading-link:focus-visible::after,
+  .sl-anchor-heading:target .sl-anchor-heading-link::after {
+    opacity: 0.7;
   }
 
   .sl-section h2 {
@@ -787,11 +1443,17 @@
   }
 
   .sl-helm-title-block {
+    /* Off-screen visually-hidden pattern. The classic clip + overflow:hidden
+       form trips the reflow probe (WCAG 1.4.12 text-spacing clip finding)
+       because applied text-spacing makes the inner h1's scrollHeight exceed
+       the 1px container height. Off-screen positioning keeps the element
+       readable to AT without ever clipping. Mirrors `.visually-hidden`
+       from layouts/base.liquid. */
     position: absolute;
+    left: -10000px;
+    top: auto;
     width: 1px;
     height: 1px;
-    overflow: hidden;
-    clip-path: inset(50%);
     white-space: nowrap;
   }
 
@@ -1454,7 +2116,7 @@
   .sl-teaser {
     display: grid;
     place-items: center;
-    padding: clamp(2rem, 6vh, 4rem) clamp(1rem, 4vw, 3rem);
+    padding: clamp(0.75rem, 2vh, 1.5rem) clamp(1rem, 4vw, 3rem) clamp(1rem, 3vh, 2rem);
     text-align: center;
   }
 
@@ -1488,9 +2150,9 @@
     margin: 0.4rem 0 0;
     color: var(--sonde-color-text-heading);
     font-family: var(--sonde-font-heading);
-    font-size: clamp(1.35rem, 3.2vw, 2.35rem);
+    font-size: clamp(1rem, 1.8vw, 1.4rem);
     font-weight: 500;
-    line-height: 1.28;
+    line-height: 1.4;
   }
 
   .sl-teaser-kicker {
@@ -1522,9 +2184,73 @@
 
   .sl-contact-grid {
     display: grid;
-    grid-template-columns: minmax(0, 1fr) minmax(14rem, 22rem);
+    gap: clamp(1.5rem, 3vw, 2.5rem);
+  }
+
+  .sl-contact-left {
+    display: grid;
+    gap: clamp(1.5rem, 3vw, 2.5rem);
+  }
+
+  .sl-feedback-block {
+    display: grid;
+    gap: 1rem;
+  }
+
+  .sl-feedback-block h2 {
+    margin: 0;
+    color: var(--sonde-color-text-heading);
+    font-family: var(--sonde-font-heading);
+    font-size: clamp(1.6rem, 2.4vw, 2.1rem);
+    letter-spacing: 0;
+  }
+
+  .sl-feedback-block .sl-lede {
+    margin: 0;
+    color: var(--sonde-color-text-muted);
+    font-size: clamp(0.98rem, 1.4vw, 1.1rem);
+    line-height: 1.5;
+  }
+
+  .sl-feedback-grid {
+    display: grid;
     align-items: start;
-    gap: clamp(1.5rem, 4vw, 3rem);
+    gap: 1.5rem;
+    grid-template-columns: 1fr;
+  }
+
+  @media (min-width: 960px) {
+    .sl-feedback-grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+  }
+
+  .sl-feedback-card {
+    display: grid;
+    gap: 0.75rem;
+    padding: 1.25rem 1.4rem;
+    background: color-mix(in srgb, var(--sonde-color-surface) 60%, transparent);
+    border: 1px solid color-mix(in srgb, var(--sonde-color-text) 12%, transparent);
+    border-radius: 0.65rem;
+  }
+
+  .sl-feedback-card h3 {
+    margin: 0;
+    color: var(--sonde-color-text-heading);
+    font-family: var(--sonde-font-heading);
+    font-size: 1.1rem;
+    letter-spacing: 0;
+  }
+
+  .sl-feedback-card p {
+    margin: 0;
+    color: var(--sonde-color-text-muted);
+    font-size: 0.95rem;
+    line-height: 1.55;
+  }
+
+  .sl-feedback-cta {
+    justify-self: start;
   }
 
   .sl-contact-email h2 {
@@ -1559,7 +2285,7 @@
   }
 
   .sl-contact-qr img {
-    width: clamp(12rem, 28vw, 20rem);
+    width: clamp(6rem, 14vw, 10rem);
     height: auto;
     border-radius: 0.45rem;
     background: #ffffff;
@@ -1576,8 +2302,24 @@
     text-transform: uppercase;
   }
 
+  @media (min-width: 960px) {
+    .sl-contact-email {
+      grid-column: 1;
+      grid-row: 2;
+      align-self: center;
+    }
+
+    .sl-contact-qr {
+      grid-column: 2;
+      grid-row: 2;
+    }
+  }
+
   @media (max-width: 760px) {
     .sl-contact-grid {
+      grid-template-columns: 1fr;
+    }
+    .sl-feedback-grid {
       grid-template-columns: 1fr;
     }
   }
@@ -1602,39 +2344,50 @@
     text-underline-offset: 0.2em;
   }
 
-  .sl-daylight-link {
-    display: grid;
-    gap: 0.2rem;
-    color: var(--sonde-color-text);
-    text-decoration: none;
+  .sl-voyage-inner {
+    display: flex;
+    justify-content: center;
   }
 
-  .sl-daylight-link:hover,
-  .sl-daylight-link:focus-visible {
-    color: var(--sonde-color-primary);
+  .sl-voyage-link {
+    align-items: center;
+    gap: 0.85rem;
   }
 
-  .sl-daylight-link:hover span,
-  .sl-daylight-link:focus-visible span,
-  .sl-daylight-link:hover strong,
-  .sl-daylight-link:focus-visible strong {
-    color: var(--sonde-color-primary);
-    text-decoration: underline;
-    text-underline-offset: 0.2em;
+  .sl-voyage-probe {
+    width: 3.5rem;
+    height: 3.5rem;
+    flex-shrink: 0;
+    overflow: visible;
   }
 
-  .sl-daylight-link span {
-    color: var(--sonde-color-text-muted);
-    font-family: var(--sonde-font-mono);
-    font-size: 0.72rem;
-    letter-spacing: 0.28em;
-    text-transform: uppercase;
+  /* Three nested glow ellipses pulse in staggered sequence to suggest a
+     burning engine plume. prefers-reduced-motion silences the loop, and an
+     IntersectionObserver toggles `data-sl-onscreen` so the animation pauses
+     when the probe scrolls out of view. */
+  .sl-voyage-jets ellipse {
+    transform-origin: -10px center;
+    animation: sl-voyage-jet 0.55s ease-in-out infinite alternate;
+    animation-play-state: paused;
+  }
+  .sl-voyage-probe[data-sl-onscreen="true"] .sl-voyage-jets ellipse {
+    animation-play-state: running;
+  }
+  .sl-voyage-jets ellipse:nth-child(1) { animation-delay: 0.10s; }
+  .sl-voyage-jets ellipse:nth-child(2) { animation-delay: 0.05s; }
+  .sl-voyage-jets ellipse:nth-child(3) { animation-delay: 0s; }
+
+  @keyframes sl-voyage-jet {
+    0%   { transform: scaleX(0.85); opacity: 0.55; }
+    100% { transform: scaleX(1.15); opacity: 1; }
   }
 
-  .sl-daylight-link strong {
-    color: var(--sonde-color-text-heading);
-    font-family: var(--sonde-font-heading);
-    font-size: 1rem;
+  @media (prefers-reduced-motion: reduce) {
+    .sl-voyage-jets ellipse { animation: none; }
+  }
+
+  .sl-home-daylight-inner {
+    text-align: center;
   }
 
   .sl-footer {
@@ -1662,6 +2415,20 @@
     .sl-settings {
       order: 2;
       margin-left: auto;
+    }
+  }
+
+  /* Phone-width: the 7 nav links + "Contact" wrap to 3 rows because the
+     wider-screen typography overflows. Tighten font + gaps so the items
+     pack into one row when there's room and at most 2 rows on the very
+     narrowest phones, instead of an orphaned single-link third row. */
+  @media (max-width: 30rem) {
+    .sl-nav-links {
+      gap: 0.3rem 0.65rem;
+    }
+    .sl-nav-links a {
+      font-size: 0.74rem;
+      padding: 0.25rem 0;
     }
 
     .sl-helm-topbar {
@@ -1743,6 +2510,37 @@
         <a href="../scribe/" data-msg-id="sondeLife.nav.scribe">Scribe</a>
         <a href="../contact/" data-msg-id="sondeLife.nav.contact">Contact</a>
       </div>
+      <form class="sl-search"
+            role="search"
+            data-sl-search
+            data-search-index-url="../assets/search-index.json"
+            aria-label="Search"
+            onsubmit="return false;">
+        <button type="button"
+                class="sl-search-trigger"
+                aria-label="Search"
+                aria-controls="sl-search-input"
+                aria-expanded="false"
+                data-sl-search-toggle>
+          <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false" width="18" height="18">
+            <circle cx="11" cy="11" r="6.5" fill="none" stroke="currentColor" stroke-width="2"></circle>
+            <line x1="16" y1="16" x2="21" y2="21" stroke="currentColor" stroke-width="2" stroke-linecap="round"></line>
+          </svg>
+        </button>
+        <input
+          id="sl-search-input"
+          type="search"
+          role="combobox"
+          autocomplete="off"
+          spellcheck="false"
+          placeholder="Search…"
+          aria-label="Search"
+          aria-controls="sl-search-results"
+          aria-expanded="false"
+          aria-autocomplete="list"
+          aria-haspopup="listbox">
+        <ul id="sl-search-results" class="sl-search-results" role="listbox" hidden></ul>
+      </form>
       <details class="settings-dropdown sl-settings">
         <summary class="settings-dropdown-trigger" aria-label="Settings">
           <svg class="sl-settings-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
@@ -1751,10 +2549,10 @@
         </summary>
         <div class="settings-dropdown-menu">
   <details class="settings-section settings-platform-theme-section" open>
-    <summary class="settings-section-trigger" data-msg-id="scribe.settings.platformTheme">Platform Theme</summary>
+    <summary class="settings-section-trigger" data-msg-id="settings.theme.legend">Theme</summary>
     <div class="settings-section-body">
       <label class="theme-toggle-option settings-platform-theme-option">
-  <input type="radio" name="sonde-platform-theme-toggle" value="ultraviolet">
+  <input type="radio" name="sonde-platform-theme-toggle" value="ultraviolet" checked>
   <div class="theme-preview" data-platform-theme="ultraviolet">
     <span>Ultraviolet</span>
   </div>
@@ -1774,10 +2572,10 @@
     </div>
   </details>
   <details class="settings-section settings-theme-section" open>
-    <summary class="settings-section-trigger" data-msg-id="settings.theme.legend">Theme</summary>
+    <summary class="settings-section-trigger" data-msg-id="settings.mode.legend">Mode</summary>
     <div class="settings-section-body">
       <label class="theme-toggle-option theme-option-auto">
-  <input type="radio" name="sonde-theme-toggle" value="auto">
+  <input type="radio" name="sonde-theme-toggle" value="auto" checked>
   <div class="theme-preview" data-theme="auto">
     <span>Auto</span>
   </div>
@@ -1796,13 +2594,13 @@
 </label>
     </div>
   </details>
-  <details class="settings-section settings-language-section" open>
+  <details class="settings-section settings-language-section">
     <summary class="settings-section-trigger" data-msg-id="settings.language.legend">Language</summary>
     <div class="settings-section-body">
       <label class="theme-toggle-option settings-language-option">
   <input type="radio" name="sonde-locale-picker-radio" value="en-US" data-sonde-locale-picker checked>
   <div class="theme-preview">
-    <span>en-US</span>
+    <span>English (US)</span>
   </div>
 </label>
       <label class="theme-toggle-option settings-language-option">
@@ -1814,25 +2612,25 @@
       <label class="theme-toggle-option settings-language-option">
   <input type="radio" name="sonde-locale-picker-radio" value="fr-FR" data-sonde-locale-picker>
   <div class="theme-preview">
-    <span>fr-FR</span>
+    <span>Français</span>
   </div>
 </label>
       <label class="theme-toggle-option settings-language-option">
   <input type="radio" name="sonde-locale-picker-radio" value="de-DE" data-sonde-locale-picker>
   <div class="theme-preview">
-    <span>de-DE</span>
+    <span>Deutsch</span>
   </div>
 </label>
       <label class="theme-toggle-option settings-language-option">
   <input type="radio" name="sonde-locale-picker-radio" value="it-IT" data-sonde-locale-picker>
   <div class="theme-preview">
-    <span>it-IT</span>
+    <span>Italiano</span>
   </div>
 </label>
       <label class="theme-toggle-option settings-language-option">
   <input type="radio" name="sonde-locale-picker-radio" value="es-ES" data-sonde-locale-picker>
   <div class="theme-preview">
-    <span>es-ES</span>
+    <span>Español (España)</span>
   </div>
 </label>
     </div>
@@ -1842,16 +2640,42 @@
     </div>
   </nav>
   
-<section class="sl-section sl-hero" aria-labelledby="sl-overview-title">
+<section class="sl-section sl-hero sl-hero-with-icon" aria-labelledby="overview-title">
   <div class="sl-section-inner">
-    <p class="sl-eyebrow">Overview</p>
-    <h1 id="sl-overview-title">Software that understands software.</h1>
-    <p>Sonde turns source, builds, dependencies, resources, database access patterns, accessibility, compliance posture, and agent work into one evidence mesh teams can query, verify, and improve.</p>
+    <span class="sl-page-icon" aria-hidden="true"><svg class="sl-page-icon-svg" viewBox="0 0 64 64" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg">
+  <g fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+    <circle cx="32" cy="32" r="26" />
+    <circle cx="32" cy="32" r="20" opacity="0.55" />
+    <g opacity="0.7">
+      <line x1="32" y1="6" x2="32" y2="10" />
+      <line x1="32" y1="54" x2="32" y2="58" />
+      <line x1="6" y1="32" x2="10" y2="32" />
+      <line x1="54" y1="32" x2="58" y2="32" />
+      <line x1="14" y1="14" x2="17" y2="17" stroke-width="1.1" />
+      <line x1="50" y1="50" x2="47" y2="47" stroke-width="1.1" />
+      <line x1="50" y1="14" x2="47" y2="17" stroke-width="1.1" />
+      <line x1="14" y1="50" x2="17" y2="47" stroke-width="1.1" />
+    </g>
+    <line x1="32" y1="14" x2="32" y2="50" opacity="0.4" />
+    <line x1="14" y1="32" x2="50" y2="32" opacity="0.4" />
+  </g>
+  <g transform="rotate(-22 32 32)">
+    <polygon points="32,12 36,32 32,28 28,32" fill="var(--sonde-color-accent)" />
+    <polygon points="32,52 28,32 32,36 36,32" fill="currentColor" opacity="0.55" />
+  </g>
+  <circle cx="32" cy="32" r="2" fill="var(--sonde-color-accent)" />
+</svg>
+</span>
+    <div class="sl-hero-content">
+      <p class="sl-eyebrow">Overview</p>
+      <h1 id="overview-title">Software that understands software.</h1>
+      <p>Sonde turns source, builds, dependencies, resources, database access patterns, accessibility, compliance posture, and agent work into one evidence mesh teams can query, verify, and improve.</p>
+    </div>
   </div>
 </section>
-<section class="sl-section sl-band" aria-labelledby="sl-overview-grid">
+<section class="sl-section sl-band" aria-labelledby="overview-grid">
   <div class="sl-section-inner">
-    <h2 id="sl-overview-grid">Why teams use Sonde</h2>
+    <h2 id="overview-grid">Why teams use Sonde</h2>
     <div class="sl-copy-grid">
       <article class="sl-copy-item">
         <h3>Distinguished engineer pair for agents</h3>
@@ -1892,9 +2716,9 @@
     </div>
   </div>
 </section>
-<section class="sl-section" aria-labelledby="sl-overview-workflows">
+<section class="sl-section" aria-labelledby="overview-workflows">
   <div class="sl-section-inner">
-    <h2 id="sl-overview-workflows">Workflows Sonde improves</h2>
+    <h2 id="overview-workflows">Workflows Sonde improves</h2>
     <div class="sl-copy-grid">
       <article class="sl-copy-item">
         <h3>AI-generated code cleanup</h3>
@@ -1915,9 +2739,9 @@
     </div>
   </div>
 </section>
-<section class="sl-section sl-band" aria-labelledby="sl-overview-proof">
+<section class="sl-section sl-band" aria-labelledby="overview-proof">
   <div class="sl-section-inner">
-    <h2 id="sl-overview-proof">Agent field notes (quoted directly from chat transcripts)</h2>
+    <h2 id="overview-proof">Agent field notes (quoted directly from chat transcripts)</h2>
     <div class="sl-quote-list">
       <figure class="sl-quote-item">
         <blockquote>Sonde lint did its job: the <abbr class="sl-glossary" title="A small deterministic check that reads code, builds, manifests, dependencies, or runtime signals and emits auditable findings.">probe</abbr> change pushed execute over the complexity threshold, and the new test fixture strings were seen as user-facing.</blockquote>
@@ -1938,11 +2762,11 @@
     </div>
   </div>
 </section>
-<section class="sl-section" aria-labelledby="sl-language-proof">
+<section class="sl-section" aria-labelledby="language-proof">
   <div class="sl-section-inner">
     <div class="sl-section-heading-row">
       <div>
-        <h2 id="sl-language-proof">Language breadth</h2>
+        <h2 id="language-proof">Language breadth</h2>
         <p class="sl-lede">Sonde discovers language support from the same profiles the Cockpit uses so analysis, fix planning, and reporting can follow real polyglot systems instead of pretending one framework owns the whole codebase.</p>
       </div>
     </div>
@@ -1986,6 +2810,11 @@
       <div class="sl-language-chip" role="listitem" style="--sl-language-color: #00B2A9">
         <span class="sl-language-icon" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128"><rect width="128" height="128" rx="12" fill="#00B2A9"/><path fill="#fff" d="M34 44a14 14 0 1 1 12 13l9 16a14 14 0 0 1 18 0l9-16a14 14 0 1 1 9 5l-10 17a14 14 0 1 1-34 0L37 62a14 14 0 0 1-3 .3A14 14 0 0 1 34 44zm0 8a6 6 0 1 0 0-12 6 6 0 0 0 0 12zm30 45a6 6 0 1 0 0-12 6 6 0 0 0 0 12zm30-45a6 6 0 1 0 0-12 6 6 0 0 0 0 12z"/></svg></span>
         <span class="sl-language-name">Cypher</span>
+      </div>
+      
+      <div class="sl-language-chip" role="listitem" style="--sl-language-color: #00B4AB">
+        <span class="sl-language-icon" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128"><rect width="128" height="128" rx="12" fill="#00B4AB"/><path fill="#fff" d="M28 28h44l28 28v44H56L28 72V28zm12 12v27l21 21h27V61L67 40H40zm9 7 44 44V63L70 47H49z"/></svg></span>
+        <span class="sl-language-name">Dart</span>
       </div>
       
       <div class="sl-language-chip" role="listitem" style="--sl-language-color: #E3F171">
@@ -2157,6 +2986,325 @@
     document.addEventListener('keydown', (event) => {
       if (event.key !== 'Escape') return;
       close();
+    });
+  })();
+
+  // Bookmarkable section headers. Every <h2 id> / <h3 id> inside a content
+  // <section> becomes a clickable anchor that writes its id to the URL hash
+  // via history.pushState — readers can copy the address bar to deep-link
+  // into a section. Skipped on /features/ because Helm owns the hash for
+  // canonical kind/rack/node selection state — and Helm's `sl-page-features`
+  // class lives on the <div class="sl-page">, NOT on <body>, so the guard
+  // tests `root.classList`, not `document.body.classList`.
+  //
+  // A single delegated click listener handles every wrapped heading so we
+  // don't allocate one listener per match. Headings whose first child is
+  // already an <a> are skipped — wrapping a link inside a link is invalid
+  // HTML (and would shadow whatever destination the heading already had).
+  // After pushState we move focus to the heading itself so screen-reader
+  // users hear the new section announced rather than staying on the link.
+  (() => {
+    const root = document.querySelector('.sl-page');
+    if (!root) return;
+    if (root.classList.contains('sl-page-features')) return;
+    const headings = root.querySelectorAll('section h2[id], section h3[id]');
+    headings.forEach((heading) => {
+      if (heading.classList.contains('sl-anchor-heading')) return;
+      if (!heading.id) return;
+      if (heading.firstElementChild && heading.firstElementChild.tagName === 'A') return;
+      heading.classList.add('sl-anchor-heading');
+      const link = document.createElement('a');
+      link.className = 'sl-anchor-heading-link';
+      link.hash = heading.id;
+      while (heading.firstChild) link.appendChild(heading.firstChild);
+      heading.appendChild(link);
+    });
+
+    root.addEventListener('click', (event) => {
+      if (event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
+      const link = event.target instanceof Element
+        ? event.target.closest('.sl-anchor-heading-link')
+        : null;
+      if (!link || !root.contains(link)) return;
+      const heading = link.closest('.sl-anchor-heading');
+      if (!heading || !heading.id) return;
+      event.preventDefault();
+      history.pushState(null, '', '#' + heading.id);
+      heading.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      // tabindex=-1 keeps the heading out of the normal tab order while
+      // letting .focus() succeed; preventScroll avoids fighting with the
+      // smooth-scroll above.
+      heading.tabIndex = -1;
+      heading.focus({ preventScroll: true });
+    });
+  })();
+
+  // Pause the voyage-probe engine plume when the SVG is off-screen so the
+  // CSS keyframe loop doesn't burn cycles for content the user can't see.
+  // Falls back to "always animate" (matches pre-observer behavior) when the
+  // browser lacks IntersectionObserver. prefers-reduced-motion is handled
+  // separately via the CSS media query — this observer doesn't fight it.
+  (() => {
+    if (typeof IntersectionObserver === 'undefined') return;
+    const probes = document.querySelectorAll('.sl-voyage-probe');
+    if (probes.length === 0) return;
+    const observer = new IntersectionObserver((entries) => {
+      for (const entry of entries) {
+        entry.target.dataset.slOnscreen = entry.isIntersecting ? 'true' : 'false';
+      }
+    }, { rootMargin: '64px' });
+    for (const probe of probes) observer.observe(probe);
+  })();
+
+  // Roving tabindex for the primary nav links. Without this, the seven
+  // nav <a>s plus brand + search + settings put 10–11 elements in the
+  // primary nav's tab sequence, tripping the keyboard-trap probe's
+  // "deep focus region" heuristic. With roving tabindex the seven nav
+  // links collapse to a single tab stop; arrow keys (Left/Right, Up/Down)
+  // navigate within the group, Home/End jump to the ends. The aria-current
+  // link is the active tab stop on page load (or the first link if no
+  // route is current — e.g. on home where the brand IS the home link).
+  (() => {
+    const navLinks = document.querySelector('.sl-nav-links');
+    if (!navLinks) return;
+    const links = Array.from(navLinks.querySelectorAll('a'));
+    if (links.length < 2) return;
+    let activeIdx = links.findIndex((a) => a.getAttribute('aria-current') === 'page');
+    if (activeIdx < 0) activeIdx = 0;
+    for (let i = 0; i < links.length; i += 1) {
+      links[i].setAttribute('tabindex', i === activeIdx ? '0' : '-1');
+    }
+    function focusLink(rawIdx) {
+      const idx = ((rawIdx % links.length) + links.length) % links.length;
+      for (const link of links) link.setAttribute('tabindex', '-1');
+      links[idx].setAttribute('tabindex', '0');
+      links[idx].focus();
+    }
+    navLinks.addEventListener('keydown', (event) => {
+      const idx = links.indexOf(document.activeElement);
+      if (idx < 0) return;
+      if (event.key === 'ArrowRight' || event.key === 'ArrowDown') {
+        event.preventDefault();
+        focusLink(idx + 1);
+      } else if (event.key === 'ArrowLeft' || event.key === 'ArrowUp') {
+        event.preventDefault();
+        focusLink(idx - 1);
+      } else if (event.key === 'Home') {
+        event.preventDefault();
+        focusLink(0);
+      } else if (event.key === 'End') {
+        event.preventDefault();
+        focusLink(links.length - 1);
+      }
+    });
+  })();
+
+  // Site-wide autocomplete search. Default state is a magnifying-glass
+  // button; clicking it (or pressing /) expands the input. Lazy-loads the
+  // search index on first open. Up/Down navigate, Enter follows the
+  // highlighted result, Escape collapses. Listbox is built with DOM
+  // methods (no innerHTML) so untrusted index labels can never become
+  // markup. The index URL comes from a Liquid-rendered data-* attribute
+  // so it resolves correctly on every route, not just the apex.
+  (() => {
+    const form = document.querySelector('[data-sl-search]');
+    if (!form) return;
+    const input = form.querySelector('input[type="search"]');
+    const listbox = form.querySelector('#sl-search-results');
+    const trigger = form.querySelector('[data-sl-search-toggle]');
+    if (!input || !listbox || !trigger) return;
+    const indexUrl = form.dataset.searchIndexUrl || 'assets/search-index.json';
+
+    let entries = null;
+    let entriesPromise = null;
+    let currentMatches = [];
+    let highlightedIndex = -1;
+
+    function loadEntries() {
+      // Always retry if a previous load returned an empty array — that
+      // usually means the URL was wrong (e.g. a stale relative path).
+      if (Array.isArray(entries) && entries.length > 0) return Promise.resolve(entries);
+      if (entriesPromise) return entriesPromise;
+      entriesPromise = fetch(indexUrl, { credentials: 'same-origin' })
+        .then((r) => (r.ok ? r.json() : []))
+        .then((data) => {
+          entries = Array.isArray(data) ? data : [];
+          // Reset the promise on empty so the next interaction can retry.
+          if (entries.length === 0) entriesPromise = null;
+          return entries;
+        })
+        .catch(() => {
+          entries = [];
+          entriesPromise = null;
+          return entries;
+        });
+      return entriesPromise;
+    }
+
+    function openSearch() {
+      if (form.dataset.open === 'true') return;
+      form.dataset.open = 'true';
+      trigger.setAttribute('aria-expanded', 'true');
+      // Wait one frame so the visibility transition has started before
+      // calling .focus() — Safari otherwise sometimes refuses to focus
+      // an element that just transitioned from visibility:hidden.
+      requestAnimationFrame(() => input.focus());
+      loadEntries().then(() => render(rankedMatches(input.value)));
+    }
+
+    function closeSearch() {
+      form.dataset.open = 'false';
+      trigger.setAttribute('aria-expanded', 'false');
+      listbox.hidden = true;
+      input.setAttribute('aria-expanded', 'false');
+      input.removeAttribute('aria-activedescendant');
+      highlightedIndex = -1;
+    }
+
+    function rankedMatches(query) {
+      const q = query.trim().toLowerCase();
+      if (!q) return entries.filter((e) => e.type === 'page').slice(0, 12);
+      const scored = [];
+      for (const entry of entries) {
+        const label = String(entry.label || '').toLowerCase();
+        const ctx = String(entry.context || '').toLowerCase();
+        let score = 0;
+        if (label.startsWith(q)) score = 1000;
+        else if (label.includes(q)) score = 600;
+        else if (ctx.includes(q)) score = 300;
+        else continue;
+        if (entry.type === 'page') score += 50;
+        scored.push({ entry, score });
+      }
+      scored.sort((a, b) => b.score - a.score || a.entry.label.localeCompare(b.entry.label));
+      return scored.slice(0, 25).map((s) => s.entry);
+    }
+
+    function clearListbox() {
+      while (listbox.firstChild) listbox.removeChild(listbox.firstChild);
+    }
+
+    function buildResultRow(entry, idx) {
+      const li = document.createElement('li');
+      li.setAttribute('role', 'option');
+      li.id = `sl-search-opt-${idx}`;
+      li.setAttribute('aria-selected', 'false');
+      li.dataset.idx = String(idx);
+      const a = document.createElement('a');
+      a.className = 'sl-search-result';
+      a.href = entry.url;
+      a.tabIndex = -1;
+      // External entries leave the site, so open in a new tab and harden
+      // against window.opener leaks per OWASP "tabnabbing" guidance.
+      if (entry.type === 'external') {
+        a.target = '_blank';
+        a.rel = 'noopener noreferrer';
+      }
+      const label = document.createElement('strong');
+      label.textContent = entry.label;
+      a.appendChild(label);
+      if (entry.context) {
+        const ctx = document.createElement('span');
+        ctx.textContent = entry.context;
+        a.appendChild(ctx);
+      }
+      li.appendChild(a);
+      return li;
+    }
+
+    function render(matches) {
+      currentMatches = matches;
+      clearListbox();
+      if (matches.length === 0) {
+        const empty = document.createElement('li');
+        empty.className = 'sl-search-empty';
+        empty.setAttribute('role', 'presentation');
+        // TODO i18n: this string is inside an inline <script> so the Liquid
+        // `msg` filter can't reach it and the i18n probe doesn't scan it.
+        // When sonde.life localizes, hoist this and "Search" / "Search…"
+        // through window.__SL_I18N__ injected from the layout.
+        empty.textContent = 'No matches';
+        listbox.appendChild(empty);
+        listbox.hidden = false;
+        input.setAttribute('aria-expanded', 'true');
+        highlightedIndex = -1;
+        return;
+      }
+      for (let i = 0; i < matches.length; i += 1) {
+        listbox.appendChild(buildResultRow(matches[i], i));
+      }
+      listbox.hidden = false;
+      input.setAttribute('aria-expanded', 'true');
+      setHighlight(0);
+    }
+
+    function setHighlight(idx) {
+      const items = listbox.querySelectorAll('[role="option"]');
+      if (items.length === 0) return;
+      const next = ((idx % items.length) + items.length) % items.length;
+      for (const item of items) item.setAttribute('aria-selected', 'false');
+      const target = items[next];
+      target.setAttribute('aria-selected', 'true');
+      input.setAttribute('aria-activedescendant', target.id);
+      target.scrollIntoView({ block: 'nearest' });
+      highlightedIndex = next;
+    }
+
+    function navigateHighlighted() {
+      if (highlightedIndex < 0 || highlightedIndex >= currentMatches.length) return;
+      window.location.href = currentMatches[highlightedIndex].url;
+    }
+
+    trigger.addEventListener('click', () => {
+      if (form.dataset.open === 'true') {
+        closeSearch();
+      } else {
+        openSearch();
+      }
+    });
+    input.addEventListener('input', () => {
+      loadEntries().then(() => render(rankedMatches(input.value)));
+    });
+    input.addEventListener('keydown', (event) => {
+      if (event.key === 'ArrowDown') {
+        event.preventDefault();
+        if (listbox.hidden) {
+          loadEntries().then(() => render(rankedMatches(input.value)));
+        } else {
+          setHighlight(highlightedIndex + 1);
+        }
+      } else if (event.key === 'ArrowUp') {
+        event.preventDefault();
+        if (!listbox.hidden) setHighlight(highlightedIndex - 1);
+      } else if (event.key === 'Enter') {
+        if (!listbox.hidden && highlightedIndex >= 0) {
+          event.preventDefault();
+          navigateHighlighted();
+        }
+      } else if (event.key === 'Escape') {
+        event.preventDefault();
+        if (input.value) {
+          input.value = '';
+          render(rankedMatches(''));
+          return;
+        }
+        closeSearch();
+        trigger.focus();
+      }
+    });
+    document.addEventListener('click', (event) => {
+      if (form.contains(event.target)) return;
+      if (form.dataset.open === 'true') closeSearch();
+    });
+    document.addEventListener('keydown', (event) => {
+      // `/` opens search (avoid trapping when the user is typing in
+      // another input or a contenteditable region).
+      if (event.key !== '/' || event.metaKey || event.ctrlKey || event.altKey) return;
+      const active = document.activeElement;
+      const tag = active && active.tagName ? active.tagName.toLowerCase() : '';
+      if (tag === 'input' || tag === 'textarea' || (active && active.isContentEditable)) return;
+      event.preventDefault();
+      openSearch();
     });
   })();
 </script>

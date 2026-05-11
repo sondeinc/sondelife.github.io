@@ -122,6 +122,26 @@
   --sonde-daylight-mark-probe: #1a1a2e;
   --sonde-daylight-mark-solid-display: block;
   --sonde-daylight-mark-line-display: none;
+
+  /* ─── Color — Sonde daylight mock palette (build-time SVG mockups) ── */
+  /* Consumed by build-time generators that bake daylight-themed UI into
+   * fixture/preview PNGs (e.g. cockpit-mobile/scripts/generateMobileSeedScreenshots.ts).
+   * Not used by any runtime component — keeping these in tokens.css is the
+   * single-source-of-truth rule that bans hex literals in `.ts` under packages/. */
+  --sonde-daylight-mock-bg: #f4ecd8;
+  --sonde-daylight-mock-surface: #fffaf0;
+  --sonde-daylight-mock-surface-muted: #ece2c8;
+  --sonde-daylight-mock-border: #c9bda0;
+  --sonde-daylight-mock-primary: #142a4b;
+  --sonde-daylight-mock-accent: #1d3a6b;
+  --sonde-daylight-mock-text: #1a1a2e;
+  --sonde-daylight-mock-text-muted: #6b6552;
+  --sonde-daylight-mock-pass: #1f7a5a;
+  --sonde-daylight-mock-warn: #c9621a;
+  --sonde-daylight-mock-alert: #b3331e;
+  --sonde-daylight-mock-inverse-accent: #a8b8d4;
+  --sonde-daylight-mock-crater: #cf8a20;
+
   --sonde-daylight-hc-mark-earth-blue: #0b3d91;
   --sonde-daylight-hc-mark-bus-gold: #6b5a00;
   --sonde-daylight-hc-mark-rtg-brown: #4a3825;
@@ -406,8 +426,18 @@
   /* ─── Motion ────────────────────────────────────────────────── */
   --sonde-motion-duration-fast: 150ms;
   --sonde-motion-duration-slow: 300ms;
+  --sonde-motion-duration-spinner: 1600ms;     /* Full orbit for the Sonde spinner */
   --sonde-motion-easing: cubic-bezier(0.4, 0, 0.2, 1);
   --sonde-motion-reduce: 0;             /* Set to 1 in prefers-reduced-motion */
+
+  /* ─── Spinner / Loading Overlay ─────────────────────────────────
+   * Used by the shared `.sonde-spinner` / `.sonde-spinner-overlay`
+   * component. Themes override these to recolor the loading state
+   * without touching the structural CSS. */
+  --sonde-spinner-size: 96px;
+  --sonde-spinner-orbit-radius: 28;            /* unitless — paired with viewBox 64 */
+  --sonde-spinner-overlay-bg: rgba(255, 255, 255, 0.94);
+  --sonde-spinner-glow: 0 0 12px rgba(64, 108, 242, 0.35);
 
   /* ─── Elevation / Shadows ───────────────────────────────────── */
   --sonde-shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.06);
@@ -1106,6 +1136,71 @@
   inherits: true;
   initial-value: #ff00ff;
 }
+@property --sonde-daylight-mock-accent {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: #ff00ff;
+}
+@property --sonde-daylight-mock-alert {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: #ff00ff;
+}
+@property --sonde-daylight-mock-bg {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: #ff00ff;
+}
+@property --sonde-daylight-mock-border {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: #ff00ff;
+}
+@property --sonde-daylight-mock-crater {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: #ff00ff;
+}
+@property --sonde-daylight-mock-inverse-accent {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: #ff00ff;
+}
+@property --sonde-daylight-mock-pass {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: #ff00ff;
+}
+@property --sonde-daylight-mock-primary {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: #ff00ff;
+}
+@property --sonde-daylight-mock-surface {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: #ff00ff;
+}
+@property --sonde-daylight-mock-surface-muted {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: #ff00ff;
+}
+@property --sonde-daylight-mock-text {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: #ff00ff;
+}
+@property --sonde-daylight-mock-text-muted {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: #ff00ff;
+}
+@property --sonde-daylight-mock-warn {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: #ff00ff;
+}
 @property --sonde-exhibit-bg {
   syntax: "<color>";
   inherits: true;
@@ -1457,6 +1552,11 @@
   initial-value: #ff00ff;
 }
 @property --sonde-slide-syntax-string {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: #ff00ff;
+}
+@property --sonde-spinner-overlay-bg {
   syntax: "<color>";
   inherits: true;
   initial-value: #ff00ff;
@@ -1888,9 +1988,8 @@
     page-break-after: avoid;
   }
   thead { display: table-header-group; }
-  a[href]:not([href^="#"]):not([href^="mailto:"]):not([href^="tel:"]):not(.finding-link-btn):not(.finding-feedback-btn)::after {
-    content: " (" attr(href) ")";
-  }
+  /* Modern PDF readers preserve clickable hyperlinks; legacy
+   * "URL (URL)" expansion removed to avoid duplicate output. */
   th.sortable::after, th[data-sort-key]::after {
     content: "";
     display: none;
