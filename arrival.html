@@ -307,6 +307,68 @@
     pointer-events: auto;
   }
 
+  /* Skip link: first focusable element, visible only on focus.
+     Satisfies WCAG 2.4.1 (bypass blocks) and gives the cinematic a
+     keyboard exit back to sonde.life without disturbing the visual
+     storytelling. */
+  .arrival-skip-link {
+    position: fixed;
+    top: 1rem;
+    left: 1rem;
+    z-index: 13;
+    padding: 0.4rem 0.8rem;
+    border-radius: 999px;
+    background: rgba(10, 6, 22, 0.92);
+    border: 1px solid rgba(221, 170, 51, 0.6);
+    color: var(--text-primary, #f5f0eb);
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.85rem;
+    text-decoration: none;
+    transform: translateY(-150%);
+    transition: transform 0.18s ease;
+  }
+  .arrival-skip-link:focus,
+  .arrival-skip-link:focus-visible {
+    transform: translateY(0);
+    outline: 2px solid var(--accent, #ddaa33);
+    outline-offset: 2px;
+  }
+
+  /* Fullscreen toggle: matches theme-control's paused-state visibility
+     so it doesn't disrupt the cinematic when running. Lives at top-left
+     when paused; doesn't trap focus when hidden. */
+  .arrival-fullscreen-btn {
+    position: fixed;
+    top: 1.4rem;
+    left: 1.4rem;
+    z-index: 12;
+    width: 2.4rem;
+    height: 2.4rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid rgba(221, 170, 51, 0.45);
+    border-radius: 999px;
+    background: rgba(10, 6, 22, 0.72);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    color: var(--text-primary, #f5f0eb);
+    font-size: 1rem;
+    cursor: pointer;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.4s ease;
+  }
+  body.is-paused .arrival-fullscreen-btn,
+  body:fullscreen .arrival-fullscreen-btn {
+    opacity: 1;
+    pointer-events: auto;
+  }
+  .arrival-fullscreen-btn:focus-visible {
+    outline: 2px solid var(--accent, #ddaa33);
+    outline-offset: 2px;
+  }
+
   .theme-control button {
     appearance: none;
     background: transparent;
@@ -567,17 +629,38 @@
 </style>
 </head>
 <body>
-<!-- D4 theme control: shared sonde-life:theme localStorage key, top-right
-     segmented pill matching web/sonde-life/index.html. Inline onkeydown
-     is required by the Sonde a11y probe (SC 2.1.1) which only sees
-     statically-declared handlers, not addEventListener. -->
-<span id="theme-control-label" class="sr-only">Color theme</span>
-<div class="theme-control" role="radiogroup" aria-labelledby="theme-control-label" data-testid="theme-control" onkeydown="themeRadioKey(event)">
-  <button type="button" role="radio" aria-checked="false" aria-label="Light theme" data-testid="theme-light" data-theme-value="light" tabindex="-1">Light</button>
-  <button type="button" role="radio" aria-checked="true"  aria-label="Dark theme"  data-testid="theme-dark"  data-theme-value="dark"  tabindex="0">Dark</button>
-  <button type="button" role="radio" aria-checked="false" aria-label="High contrast theme" data-testid="theme-high-contrast" data-theme-value="high-contrast" tabindex="-1">Contrast</button>
-</div>
+<!-- Header landmark wraps all chrome (skip link, fullscreen, theme).
+     This keeps the cinematic's <main> as the only "content" landmark
+     and stops axe-core complaining about page content outside landmarks.
+     DOM order = visual reading order: skip → fullscreen (top-left) →
+     theme (top-right) → main. -->
+<header class="arrival-chrome">
+  <!-- Skip link inside <nav> satisfies WCAG 2.4.5 (a second way to
+       locate content beyond the cinematic itself). Hidden until focused. -->
+  <nav aria-label="Bypass cinematic">
+    <a class="arrival-skip-link" href="./">Back to Sonde home</a>
+  </nav>
 
+  <!-- Fullscreen toggle: appears when paused. Browser Fullscreen API. -->
+  <button type="button"
+          class="arrival-fullscreen-btn"
+          data-testid="arrival-fullscreen"
+          aria-label="Toggle fullscreen"
+          onclick="toggleArrivalFullscreen()">⛶</button>
+
+  <!-- D4 theme control: shared sonde-life:theme localStorage key, top-right
+       segmented pill matching web/sonde-life/index.html. Inline onkeydown
+       is required by the Sonde a11y probe (SC 2.1.1) which only sees
+       statically-declared handlers, not addEventListener. -->
+  <span id="theme-control-label" class="sr-only">Color theme</span>
+  <div class="theme-control" role="radiogroup" aria-labelledby="theme-control-label" data-testid="theme-control" onkeydown="themeRadioKey(event)">
+    <button type="button" role="radio" aria-checked="false" aria-label="Light theme" data-testid="theme-light" data-theme-value="light" tabindex="-1">Light</button>
+    <button type="button" role="radio" aria-checked="true"  aria-label="Dark theme"  data-testid="theme-dark"  data-theme-value="dark"  tabindex="0">Dark</button>
+    <button type="button" role="radio" aria-checked="false" aria-label="High contrast theme" data-testid="theme-high-contrast" data-theme-value="high-contrast" tabindex="-1">Contrast</button>
+  </div>
+</header>
+
+<main id="arrival-main">
 <div id="scene">
   <canvas id="starfield"></canvas>
 
@@ -827,7 +910,7 @@
 <script type="module">
 // ═══════════════════════════════════════════════════════════════════════════
 // Sonde Arrival — Cinematic Stealth Teaser v3
-// All 38 encounters + BabelCode hub finale
+// All 38 encounters + polyglot hub finale
 // Camera-follows-probe model: probe stays near center, world scrolls past
 // ═══════════════════════════════════════════════════════════════════════════
 
@@ -845,7 +928,7 @@ const TAGLINES = [
   { text: 'The code already knows its secrets. Sonde listens.' },
   { text: 'What if your codebase could explain itself?' },
   { text: 'If you need it, Sonde can read it.' },
-  { text: 'Flowcharts. Class diagrams. Dependency graphs. Migrations. What comes next?' },
+  { text: 'Flowcharts. Class diagrams. Dependency graphs. Fixes. What comes next?' },
   { text: 'Infinite Diversity in Infinite Combinations.' },
 ];
 
@@ -1386,7 +1469,7 @@ const ENCOUNTERS = [
     radius: 60, worldX: 35600, worldY: 510, dwellTime: 2000, explosionType: 'optchain' },
   { id: 'cypher', lang: 'Cypher', year: 2012, color: '#018BFF', labelColor: '#a0d4ff',
     radius: 50, worldX: 36300, worldY: 490, dwellTime: 1800, explosionType: 'querytree' },
-  // ── Earth's Moon — final flyby, then freeze for BabelCode hub ──
+  // ── Earth's Moon — final flyby, then freeze for polyglot hub ──
   { id: 'moon', lang: 'Moon', year: null, color: '#c8c8c8', labelColor: '#f0f0f0',
     radius: 90, worldX: 37300, worldY: 480, dwellTime: 2000, explosionType: 'none', isMoon: true },
 ];
@@ -4331,9 +4414,9 @@ function updateEncounters(elapsed, probeWorldX) {
 }
 
 // ═══════════════════════════════════════════════════════════════════════════
-// BABELCODE HUB FINALE
-// Matches cockpit BabelCode component: center hub + language logo spokes
-// Each spoke highlights with "to [Language]" label, then ALL flash GREEN
+// POLYGLOT HUB FINALE
+// Center hub + language logo spokes radiating outward.
+// Each spoke highlights with the language name, then ALL flash GREEN
 // ═══════════════════════════════════════════════════════════════════════════
 
 // Short abbreviation for logo circle (matches GitHub linguist style)
@@ -4415,7 +4498,7 @@ function buildHub(cx, cy) {
     { duration: 1200, fill: 'forwards', easing: 'ease-out' });
 
   // ── Spoke highlight sequence ──
-  // Each spoke lights up with bright line + "to [Language]" tooltip (200ms each)
+  // Each spoke lights up with bright line + language-name tooltip (200ms each)
   const highlightDelay = 1500;
   const perSpoke = 200;
 
@@ -5131,5 +5214,19 @@ preRollStartTime = performance.now();
 requestAnimationFrame(tick);
 </script>
 <noscript><p style="color:#F5F0EB;font-family:'DM Sans',sans-serif;font-size:28px;letter-spacing:0.08em;text-align:center;padding-top:45vh">Sonde. Arriving soon.</p></noscript>
+</main>
+<script>
+// Fullscreen API toggle. User-gesture only (browser requirement); we
+// request fullscreen on the document element so the cinematic + chrome
+// both fill the viewport. Wrapped in optional chaining so older browsers
+// (no Fullscreen API) silently no-op rather than crashing.
+function toggleArrivalFullscreen() {
+  if (!document.fullscreenElement) {
+    document.documentElement.requestFullscreen?.();
+  } else {
+    document.exitFullscreen?.();
+  }
+}
+</script>
 </body>
 </html>

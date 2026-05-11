@@ -49,6 +49,27 @@
 
 .nav-links a:hover { color: var(--sonde-color-primary); }
 
+/* Cross-property link (e.g. Compliance now lives on sonde.life). The arrow
+ * glyph signals the destination is a sibling Sonde property without the
+ * "external link" connotation that target=_blank would imply — same-tab
+ * navigation, not third-party. */
+.nav-link-external {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.15rem;
+}
+
+.nav-link-external-icon {
+  font-size: 0.75em;
+  opacity: 0.7;
+  transition: opacity 0.15s, transform 0.15s;
+}
+
+.nav-link-external:hover .nav-link-external-icon {
+  opacity: 1;
+  transform: translate(0.1em, -0.1em);
+}
+
 .nav-search {
   display: flex;
   align-items: center;
@@ -143,8 +164,8 @@
   position: absolute;
   top: calc(100% + 0.5rem);
   right: 0;
-  width: 14rem;
-  padding: 0.5rem;
+  width: min(22rem, calc(100vw - 2rem));
+  padding: 0.75rem;
   background: var(--sonde-color-surface);
   border: 1px solid var(--sonde-color-border);
   border-radius: 8px;
@@ -168,12 +189,12 @@
   list-style: none;
   cursor: pointer;
   font-family: var(--sonde-font-heading);
-  font-size: 0.75rem;
-  font-weight: 600;
+  font-size: 0.8rem;
+  font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.04em;
   color: var(--sonde-color-text-muted);
-  padding: 0.25rem 0.25rem;
+  padding: 0.35rem 0.25rem;
   border-radius: 4px;
   user-select: none;
   display: flex;
@@ -203,8 +224,12 @@
 .settings-section-body {
   display: flex;
   flex-direction: column;
-  gap: 0.25rem;
-  padding: 0.25rem 0 0.25rem 0.5rem;
+  gap: 0.4rem;
+  padding: 0.35rem 0 0.5rem 0.5rem;
+}
+.settings-language-section .settings-section-body {
+  max-block-size: 18rem;
+  overflow: auto;
 }
 .theme-toggle-group {
   display: flex;
@@ -233,7 +258,8 @@
   display: flex;
   align-items: center;
   gap: 0.75rem;
-  padding: 0.5rem 0.75rem;
+  min-block-size: 2.75rem;
+  padding: 0.65rem 0.85rem;
   border-radius: 6px;
   background: var(--sonde-color-bg);
   color: var(--sonde-color-text);
@@ -242,7 +268,7 @@
 }
 .theme-preview span {
   font-family: var(--sonde-font-heading);
-  font-size: 0.85rem;
+  font-size: 1rem;
   font-weight: 500;
   color: inherit;
 }
@@ -490,4 +516,469 @@
   block-size: 1.75rem;
   display: inline-flex;
   inline-size: 1.75rem;
+}
+
+
+/* audit methodology page CSS — extracted from renderAuditSite.tsx
+ * METHODOLOGY_CSS template literal. Tokens only, no fallbacks.
+ *
+ * Severity-dot classes (.sev-critical/.sev-high/.sev-medium/.sev-low)
+ * replace the inline `style={{ background: SEVERITY_COLORS[...] }}`
+ * pattern with class-based styling that maps to existing severity
+ * tokens. Scale-badge text color comes from --sonde-color-score-text-
+ * on-badge, the same single token paired with every score tier.
+ */
+
+.meth-header {
+  padding: 1.5rem 2.5rem 0.75rem;
+}
+
+.meth-header h1 {
+  font-size: 2rem;
+  margin: 0 0 0.4rem;
+  border: none;
+  padding: 0;
+}
+
+.meth-version {
+  font-family: var(--sonde-font-mono);
+  font-size: 0.88rem;
+  color: var(--sonde-color-text-muted);
+}
+
+.meth-section {
+  padding: 0.75rem 2.5rem;
+}
+
+/* Descendant rules accept either the Daylight `.meth-section` class or
+ * sonde.life's `.sl-meth-section` so the same paragraph / list / table
+ * polish lands on both surfaces. */
+:where(.meth-section, .sl-meth-section) h3 {
+  font-size: 1.05rem;
+  margin-top: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.meth-section h2 {
+  font-size: 1.3rem;
+  margin-top: 0;
+  margin-bottom: 0.75rem;
+}
+
+/* Self-linking heading anchor styling lives in `daylightAnchors.css`
+ * (shared with auditSite + vpatReport). This file no longer duplicates
+ * the rules. */
+
+/* Allowlisting section list spacing — slightly tighter than the
+ * default meth-section list, since the allowlisting sub-headings
+ * already supply the visual rhythm. */
+.meth-allowlist-list {
+  margin-top: 0.25rem;
+}
+
+.meth-allowlist-caveat {
+  border-inline-start: 3px solid var(--sonde-color-border);
+  padding: 0.5rem 0.75rem 0.5rem 1rem;
+  background: var(--sonde-color-surface);
+  border-radius: 4px;
+  font-size: 0.92rem;
+  color: var(--sonde-color-text-muted);
+  margin-top: 0.5rem;
+}
+
+:where(.meth-section, .sl-meth-section) p {
+  line-height: 1.65;
+  margin-bottom: 0.75rem;
+}
+
+:where(.meth-section, .sl-meth-section) ul,
+:where(.meth-section, .sl-meth-section) ol {
+  line-height: 1.65;
+  margin: 0 0 0.75rem;
+  padding-inline-start: 1.5rem;
+}
+
+:where(.meth-section, .sl-meth-section) li {
+  margin-bottom: 0.4rem;
+}
+
+:where(.meth-section, .sl-meth-section) li:last-child {
+  margin-bottom: 0;
+}
+
+.meth-formula-box {
+  background: var(--sonde-color-surface);
+  border: 2px solid var(--sonde-color-border);
+  border-radius: 10px;
+  padding: 1rem 1.5rem;
+  font-family: var(--sonde-font-mono);
+  font-size: 1rem;
+  text-align: center;
+  color: var(--sonde-color-primary);
+  font-weight: 500;
+  margin: 1rem 0;
+  width: fit-content;
+  max-width: 100%;
+}
+
+/* The Formula display equation — large, centered, monospaced. The
+ * `formula.expression` line that gets rendered as `<div
+ * class="meth-formula-formula">Score = round(…)</div>` belongs in
+ * its own block-level box, distinct from surrounding prose. */
+.meth-formula-formula {
+  font-family: var(--sonde-font-mono);
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: var(--sonde-color-primary);
+  background: var(--sonde-color-surface);
+  border: 1px solid var(--sonde-color-border);
+  border-radius: 8px;
+  padding: 0.85rem 1.25rem;
+  margin: 1rem 0;
+  text-align: center;
+  width: fit-content;
+  max-width: 100%;
+  overflow-x: auto;
+}
+
+/* The math legend immediately under .meth-formula-formula — small,
+ * muted, identifies each variable. */
+.meth-formula-legend {
+  font-family: var(--sonde-font-mono);
+  font-size: 0.88rem;
+  color: var(--sonde-color-text-muted);
+  margin: 0 0 1rem;
+}
+
+/* "How Sonde Scans" benefit list — slightly looser spacing than a
+ * default body list because each item carries a strong-led heading +
+ * explanation. */
+.meth-how-list {
+  list-style: none;
+  padding-inline-start: 0;
+  margin: 1rem 0;
+  display: grid;
+  gap: 0.75rem;
+}
+
+.meth-how-list li {
+  padding-inline-start: 1.5rem;
+  position: relative;
+  line-height: 1.6;
+}
+
+.meth-how-list li::before {
+  content: '';
+  position: absolute;
+  inset-inline-start: 0;
+  top: 0.55em;
+  width: 0.5rem;
+  height: 0.5rem;
+  border-radius: 50%;
+  background: var(--sonde-color-primary);
+}
+
+.meth-how-list li strong {
+  color: var(--sonde-color-text);
+  margin-inline-end: 0.25em;
+}
+
+/* "Why some scans come back incomplete" reason list — same shape as
+ * .meth-how-list but with a muted dot to read as a secondary list. */
+.meth-incomplete-list {
+  list-style: none;
+  padding-inline-start: 0;
+  margin: 0.5rem 0 1rem;
+  display: grid;
+  gap: 0.5rem;
+}
+
+.meth-incomplete-list li {
+  padding-inline-start: 1.5rem;
+  position: relative;
+  line-height: 1.6;
+}
+
+.meth-incomplete-list li::before {
+  content: '';
+  position: absolute;
+  inset-inline-start: 0.25rem;
+  top: 0.7em;
+  width: 0.35rem;
+  height: 0.35rem;
+  border-radius: 50%;
+  background: var(--sonde-color-text-muted);
+}
+
+/* Weight Table */
+
+.meth-weight-table {
+  width: 100%;
+  max-width: 44rem;
+  border-collapse: collapse;
+  font-size: 0.88rem;
+  margin: 1rem 0;
+}
+
+.meth-weight-table th {
+  background: var(--sonde-color-table-header-bg);
+  color: var(--sonde-color-table-header-text);
+  font-family: var(--sonde-font-heading);
+  font-weight: 500;
+  font-size: 0.76rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  padding: 0.55rem 0.85rem;
+  text-align: start;
+}
+
+.meth-weight-table td {
+  padding: 0.5rem 0.85rem;
+  border-bottom: 1px solid var(--sonde-color-border-subtle);
+  vertical-align: top;
+}
+
+/* Severity dots — class per severity tier instead of inline style */
+.sev-dot {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  margin-inline-end: 0.45rem;
+  vertical-align: middle;
+}
+
+.sev-critical { background: var(--sonde-color-critical); }
+.sev-high     { background: var(--sonde-color-fail); }
+.sev-medium   { background: var(--sonde-color-partial); }
+.sev-low      { background: var(--sonde-color-info); }
+
+.weight-val {
+  font-family: var(--sonde-font-heading);
+  font-weight: 700;
+  font-size: 1.1rem;
+  color: var(--sonde-color-primary);
+  text-align: center;
+}
+
+/* Score Scale */
+
+.score-scale {
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+  max-width: 36rem;
+  margin: 1rem 0;
+}
+
+.scale-tier {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.scale-range {
+  flex-shrink: 0;
+  width: 6.5rem;
+}
+
+/* Scale badge — same architecture as .score-badge: tier class supplies
+ * the background, the on-badge text token supplies the foreground.
+ *
+ * `box-sizing: border-box` is non-negotiable here: the badge has
+ * `width: 100%` of a `.scale-range` column (6.5rem) plus 1.3rem of
+ * horizontal padding. In content-box mode the badge becomes 7.8rem
+ * wide and overflows the column into the adjacent description text.
+ * Daylight gets border-box from a universal `*, *::before, *::after`
+ * reset on its surface; sonde.life has no equivalent reset, so we
+ * pin border-box on the badge directly. */
+.scale-badge {
+  box-sizing: border-box;
+  display: inline-block;
+  color: var(--sonde-color-score-text-on-badge);
+  font-family: var(--sonde-font-heading);
+  font-weight: 600;
+  font-size: 0.82rem;
+  padding: 0.25rem 0.65rem;
+  border-radius: 5px;
+  text-align: center;
+  width: 100%;
+  /* Prevent the longest range ("900–1000") from wrapping inside the
+   * fixed-width `.scale-range` column. The column was widened to
+   * 6.5rem to accommodate that range cleanly; this caps the line so
+   * a future longer label can't surprise-wrap. */
+  white-space: nowrap;
+}
+
+/* Tier→background mapping moved to `scoreTier.css` — auditSite and
+ * auditMethodology both need it; sonde.life loads auditMethodology and
+ * embeds the score-interpretation block. */
+
+.scale-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.1rem;
+}
+
+.scale-info strong {
+  font-family: var(--sonde-font-heading);
+  font-size: 0.92rem;
+}
+
+.scale-info span {
+  font-size: 0.82rem;
+  color: var(--sonde-color-text-muted);
+}
+
+/* Calibration Status */
+
+.calibration-status {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 0.75rem;
+  max-width: 36rem;
+  margin: 1.25rem 0;
+}
+
+.cal-stat {
+  background: var(--sonde-color-surface);
+  border: 1px solid var(--sonde-color-border-subtle);
+  border-radius: 8px;
+  padding: 0.85rem;
+  text-align: center;
+}
+
+.cal-val {
+  display: block;
+  font-family: var(--sonde-font-heading);
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--sonde-color-primary);
+  line-height: 1.2;
+  white-space: nowrap;
+}
+
+.cal-label {
+  display: block;
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--sonde-color-text-muted);
+  margin-top: 0.25rem;
+}
+
+/* Feedback Section */
+
+.meth-feedback {
+  background: linear-gradient(135deg, var(--sonde-color-accent-dim) 0%, var(--sonde-color-accent-dim) 100%);
+  border-radius: 12px;
+  margin: 1rem 2.5rem;
+  padding: 2rem 2.5rem !important;
+}
+
+.feedback-contact {
+  color: var(--sonde-color-primary);
+}
+
+.feedback-contact a,
+.feedback-contact a:visited { color: var(--sonde-color-primary); }
+
+.feedback-contact a {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.feedback-icon {
+  flex-shrink: 0;
+}
+
+.meth-cta-box {
+  margin-top: 1.5rem;
+  padding: 1.5rem 2rem;
+  border: 1px solid var(--sonde-color-border);
+  border-radius: 8px;
+  background: var(--sonde-color-surface);
+}
+
+.meth-cta-box-body {
+  margin-bottom: 0.75rem;
+  color: var(--sonde-color-text-muted);
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+@media (max-width: 640px) {
+  .meth-header { padding: 1rem 1.25rem 0.5rem; }
+  .meth-section { padding: 0.5rem 1.25rem; }
+  .meth-feedback { margin: 1rem 1.25rem; }
+}
+
+@media (max-width: 320px) {
+  .meth-formula-box { font-size: 0.85rem; padding: 0.75rem 1rem; overflow-x: auto; }
+  .meth-section table { display: block; overflow-x: auto; max-width: 100vw; }
+  .meth-section { padding: 0.75rem; word-break: break-word; }
+}
+
+
+/* Score-tier background mapping — single source of truth for the
+ * `.score-tier-0..3` classes that supply the .score-badge / .scale-badge
+ * background. Foreground text uses the `--sonde-color-score-text-on-badge`
+ * token, which is pre-validated to contrast at ≥4.5:1 against every tier
+ * color in every theme.
+ *
+ * Loaded by both `auditSite.css` and `auditMethodology.css` (sonde.life
+ * loads `auditMethodology` and embeds the methodology score-interpretation
+ * block). Without these rules the badge has white text with no background
+ * — 1.09:1 contrast on the page surface.
+ */
+.score-tier-0 { background: var(--sonde-color-score-tier-0); }
+.score-tier-1 { background: var(--sonde-color-score-tier-1); }
+.score-tier-2 { background: var(--sonde-color-score-tier-2); }
+.score-tier-3 { background: var(--sonde-color-score-tier-3); }
+
+
+/* Daylight self-link heading anchors — single source of truth for the
+ * `.meth-anchor` (audit-site landing + audit methodology) and
+ * `.vpat-anchor` (VPAT report) classes.
+ *
+ * Loaded by every daylight surface that emits anchored headings via
+ * `DAYLIGHT_ANCHORS_CSS` in `packages/renderer/src/reports/daylightSharedCss.ts`.
+ *
+ * `:where()` keeps specificity zero so a page-specific theme can still
+ * override individual properties without an arms race. `:has()` lets one
+ * rule add `scroll-margin-top` to whichever heading wraps the anchor —
+ * authors don't need to remember to put `scroll-margin-top` on every
+ * new heading they add an anchor to.
+ *
+ * scroll-margin clears the sticky `.site-nav` (1rem padding + ~24px
+ * content + 2px border ≈ 3.5rem; 5rem leaves room for box-shadow).
+ *
+ * The `::after` pseudo-element renders a faint `#` hint in the active
+ * theme's primary color — same affordance as sonde.life — revealed on
+ * hover, focus-visible, and `:target` so deep linking is discoverable
+ * without the heading itself shifting on hover.
+ */
+
+:where(.meth-anchor, .vpat-anchor) {
+  color: inherit;
+  text-decoration: none;
+}
+
+:where(.meth-anchor, .vpat-anchor)::after {
+  content: ' #';
+  color: var(--sonde-color-primary);
+  opacity: 0;
+  transition: opacity 0.15s ease;
+  margin-left: 0.15em;
+}
+
+:where(.meth-anchor, .vpat-anchor):hover::after,
+:where(.meth-anchor, .vpat-anchor):focus-visible::after,
+:is(h2, h3):target :where(.meth-anchor, .vpat-anchor)::after {
+  opacity: 0.7;
+}
+
+:is(h2, h3):has(> :where(.meth-anchor, .vpat-anchor)) {
+  scroll-margin-top: 5rem;
 }
