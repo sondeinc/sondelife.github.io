@@ -1467,8 +1467,8 @@
     display: grid;
     grid-template-columns: minmax(14rem, 1fr) auto;
     grid-template-areas:
-      "search meta"
-      "filters filters"
+      "search search"
+      "filters meta"
       "active active";
     gap: 0.55rem 0.75rem;
     align-items: center;
@@ -1565,6 +1565,17 @@
     font-weight: 700;
   }
 
+  .sl-helm-count-link {
+    color: inherit;
+    text-decoration-color: color-mix(in srgb, currentColor 45%, transparent);
+    text-underline-offset: 0.16em;
+  }
+
+  .sl-helm-count-link:hover,
+  .sl-helm-count-link:focus-visible {
+    color: var(--sonde-color-text);
+  }
+
   .sl-helm-active-filters {
     grid-area: active;
   }
@@ -1639,6 +1650,7 @@
   }
 
   .sl-helm-shell {
+    --sl-helm-nav-width: clamp(7rem, 28vw, 18rem);
     display: flex;
     min-height: 0;
     overflow: hidden;
@@ -1648,14 +1660,46 @@
   .sl-helm-navigator {
     position: relative;
     z-index: 2;
-    width: clamp(7rem, 28vw, 18rem);
+    width: var(--sl-helm-nav-width);
     min-width: 7rem;
-    max-width: 18rem;
+    max-width: min(42rem, 70vw);
     display: flex;
     flex-direction: column;
     min-height: 0;
-    border-right: 1px solid var(--sonde-color-border);
     background: color-mix(in srgb, var(--sonde-color-surface) 62%, var(--sonde-color-bg));
+  }
+
+  .sl-helm-splitter {
+    position: relative;
+    z-index: 4;
+    flex: 0 0 0.55rem;
+    width: 0.55rem;
+    min-width: 0.55rem;
+    border: 0;
+    padding: 0;
+    background: transparent;
+    cursor: col-resize;
+    touch-action: none;
+  }
+
+  .sl-helm-splitter::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    width: 1px;
+    margin: 0 auto;
+    background: var(--sonde-color-border);
+  }
+
+  .sl-helm-splitter:hover::before,
+  .sl-helm-splitter:focus-visible::before {
+    width: 3px;
+    background: var(--sonde-color-primary);
+  }
+
+  .sl-helm-splitter:focus-visible {
+    outline: 2px solid var(--sonde-color-primary);
+    outline-offset: -2px;
   }
 
   .sl-helm-navigator[data-collapsed="true"] {
@@ -2160,16 +2204,15 @@
 
   @media (max-width: 1100px) {
     .sl-helm-topbar {
-      grid-template-columns: minmax(0, 1fr);
+      grid-template-columns: minmax(0, 1fr) auto;
       grid-template-areas:
-        "search"
-        "filters"
-        "meta"
-        "active";
+        "search search"
+        "filters meta"
+        "active active";
     }
 
     .sl-helm-counts {
-      justify-content: flex-start;
+      justify-content: flex-end;
     }
   }
 

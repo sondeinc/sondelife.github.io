@@ -1467,8 +1467,8 @@
     display: grid;
     grid-template-columns: minmax(14rem, 1fr) auto;
     grid-template-areas:
-      "search meta"
-      "filters filters"
+      "search search"
+      "filters meta"
       "active active";
     gap: 0.55rem 0.75rem;
     align-items: center;
@@ -1565,6 +1565,17 @@
     font-weight: 700;
   }
 
+  .sl-helm-count-link {
+    color: inherit;
+    text-decoration-color: color-mix(in srgb, currentColor 45%, transparent);
+    text-underline-offset: 0.16em;
+  }
+
+  .sl-helm-count-link:hover,
+  .sl-helm-count-link:focus-visible {
+    color: var(--sonde-color-text);
+  }
+
   .sl-helm-active-filters {
     grid-area: active;
   }
@@ -1639,6 +1650,7 @@
   }
 
   .sl-helm-shell {
+    --sl-helm-nav-width: clamp(7rem, 28vw, 18rem);
     display: flex;
     min-height: 0;
     overflow: hidden;
@@ -1648,14 +1660,46 @@
   .sl-helm-navigator {
     position: relative;
     z-index: 2;
-    width: clamp(7rem, 28vw, 18rem);
+    width: var(--sl-helm-nav-width);
     min-width: 7rem;
-    max-width: 18rem;
+    max-width: min(42rem, 70vw);
     display: flex;
     flex-direction: column;
     min-height: 0;
-    border-right: 1px solid var(--sonde-color-border);
     background: color-mix(in srgb, var(--sonde-color-surface) 62%, var(--sonde-color-bg));
+  }
+
+  .sl-helm-splitter {
+    position: relative;
+    z-index: 4;
+    flex: 0 0 0.55rem;
+    width: 0.55rem;
+    min-width: 0.55rem;
+    border: 0;
+    padding: 0;
+    background: transparent;
+    cursor: col-resize;
+    touch-action: none;
+  }
+
+  .sl-helm-splitter::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    width: 1px;
+    margin: 0 auto;
+    background: var(--sonde-color-border);
+  }
+
+  .sl-helm-splitter:hover::before,
+  .sl-helm-splitter:focus-visible::before {
+    width: 3px;
+    background: var(--sonde-color-primary);
+  }
+
+  .sl-helm-splitter:focus-visible {
+    outline: 2px solid var(--sonde-color-primary);
+    outline-offset: -2px;
   }
 
   .sl-helm-navigator[data-collapsed="true"] {
@@ -2160,16 +2204,15 @@
 
   @media (max-width: 1100px) {
     .sl-helm-topbar {
-      grid-template-columns: minmax(0, 1fr);
+      grid-template-columns: minmax(0, 1fr) auto;
       grid-template-areas:
-        "search"
-        "filters"
-        "meta"
-        "active";
+        "search search"
+        "filters meta"
+        "active active";
     }
 
     .sl-helm-counts {
-      justify-content: flex-start;
+      justify-content: flex-end;
     }
   }
 
@@ -2753,7 +2796,6 @@
       <input id="sl-helm-search" type="search" data-msg-placeholder-id="sondeLife.helm.searchPlaceholder" placeholder="Filter racks and probes" autocomplete="off">
     </label>
     <div class="sl-helm-filters" aria-label="Explore filters">
-      <button type="button" class="sl-helm-filter-button" data-filter-menu="language" data-msg-id="sondeLife.helm.languageLabel">Language</button>
       <button type="button" class="sl-helm-filter-button" data-filter-menu="compliance" data-msg-id="sondeLife.helm.complianceLabel">Compliance</button>
       <button type="button" class="sl-helm-filter-button" data-filter-menu="jurisdiction" data-msg-id="sondeLife.helm.jurisdictionLabel">Jurisdiction</button>
       <button type="button" class="sl-helm-filter-button" data-filter-menu="audience" data-msg-id="sondeLife.helm.audienceLabel">Personas</button>
@@ -2764,8 +2806,8 @@
     <div class="sl-helm-active-filters" data-helm-active-filters aria-live="polite"></div>
   </div>
   <div class="sl-helm-menu" data-helm-menu hidden></div>
-  <div class="sl-helm-shell">
-    <div class="sl-helm-navigator" data-helm-navigator>
+  <div class="sl-helm-shell" data-helm-shell>
+    <div class="sl-helm-navigator" id="sl-helm-navigator" data-helm-navigator>
       <div class="sl-helm-navigator-header">
         <span data-msg-id="sondeLife.helm.navigator">Navigator</span>
         <div>
@@ -2776,7 +2818,19 @@
       </div>
       <div class="sl-helm-tree" role="tree" aria-label="Configuration hierarchy" data-helm-tree></div>
     </div>
-    <section class="sl-helm-detail" aria-live="polite" aria-label="Selected item details" tabindex="0" data-helm-detail>
+    <button
+      type="button"
+      class="sl-helm-splitter"
+      role="separator"
+      aria-label="Resize navigator"
+      aria-controls="sl-helm-navigator sl-helm-detail"
+      aria-orientation="vertical"
+      aria-valuemin="112"
+      aria-valuemax="672"
+      aria-valuenow="288"
+      data-helm-splitter
+    ></button>
+    <section class="sl-helm-detail" id="sl-helm-detail" aria-live="polite" aria-label="Selected item details" tabindex="0" data-helm-detail>
       <div class="sl-helm-empty">
         <svg class="sl-brand-mark sonde-daylight-mark" viewBox="0 0 512 512" width="28" height="28" aria-hidden="true"><defs><radialGradient id="sonde-life-brand-sun" cx="50%" cy="50%" r="50%"><stop offset="0%" stop-color="var(--sonde-daylight-mark-sun-stop-0)"></stop><stop offset="60%" stop-color="var(--sonde-daylight-mark-sun-stop-1)"></stop><stop offset="100%" stop-color="var(--sonde-daylight-mark-sun-stop-2)"></stop></radialGradient><clipPath id="sonde-life-brand-disc"><circle cx="256" cy="256" r="240"></circle></clipPath></defs><g style="display:var(--sonde-daylight-mark-solid-display, block)"><circle cx="256" cy="256" r="240" fill="url(#sonde-life-brand-sun)"></circle><g clip-path="url(#sonde-life-brand-disc)"><g fill="var(--sonde-daylight-mark-crater)" stroke="var(--sonde-daylight-mark-crater)">
   <!-- Lunar Maria (Visible only when themed via CSS variables) -->
@@ -2827,7 +2881,6 @@
 
     const filterState = {
       search: '',
-      language: new Set(),
       compliance: new Set(),
       jurisdiction: new Set(),
       audience: new Set(),
@@ -2839,6 +2892,7 @@
     let activeMenu = null;
     let navigatorCollapsed = false;
 
+    const shell = app.querySelector('[data-helm-shell]');
     const tree = app.querySelector('[data-helm-tree]');
     const detail = app.querySelector('[data-helm-detail]');
     const search = app.querySelector('#sl-helm-search');
@@ -2847,6 +2901,7 @@
     const activeFilters = app.querySelector('[data-helm-active-filters]');
     const counts = app.querySelector('[data-helm-counts]');
     const navigator = app.querySelector('[data-helm-navigator]');
+    const splitter = app.querySelector('[data-helm-splitter]');
     const emptyDetailHtml = detail.innerHTML;
     const countMessages = {
       racks: {
@@ -2873,8 +2928,10 @@
         for (const rack of hierarchy.racks) {
           if (rack.navCategory) expanded.add(rack.navCategory);
         }
+        restoreNavigatorWidth();
         restoreSelectionFromHash();
         bind();
+        updateSplitterState();
         render();
       })
       .catch((error) => {
@@ -2912,6 +2969,7 @@
       app.querySelector('[data-helm-toggle-navigator]').addEventListener('click', () => {
         navigatorCollapsed = !navigatorCollapsed;
         navigator.dataset.collapsed = String(navigatorCollapsed);
+        updateSplitterState();
         render();
       });
       clearButton.addEventListener('click', () => {
@@ -2942,6 +3000,83 @@
         activeMenu = null;
         menu.hidden = true;
       });
+      window.addEventListener('resize', () => {
+        restoreNavigatorWidth();
+        updateSplitterState();
+      });
+      bindSplitter();
+    }
+
+    function bindSplitter() {
+      if (!splitter || !shell || !navigator) return;
+      splitter.addEventListener('pointerdown', (event) => {
+        if (navigatorCollapsed) return;
+        event.preventDefault();
+        splitter.setPointerCapture(event.pointerId);
+        const startX = event.clientX;
+        const startWidth = navigator.getBoundingClientRect().width;
+        const drag = (moveEvent) => resizeNavigator(startWidth + moveEvent.clientX - startX);
+        const stop = (upEvent) => {
+          splitter.releasePointerCapture(upEvent.pointerId);
+          splitter.removeEventListener('pointermove', drag);
+          splitter.removeEventListener('pointerup', stop);
+          splitter.removeEventListener('pointercancel', stop);
+        };
+        splitter.addEventListener('pointermove', drag);
+        splitter.addEventListener('pointerup', stop);
+        splitter.addEventListener('pointercancel', stop);
+      });
+      splitter.addEventListener('keydown', (event) => {
+        if (navigatorCollapsed) return;
+        const current = navigator.getBoundingClientRect().width;
+        const step = event.shiftKey ? 48 : 16;
+        if (event.key === 'ArrowLeft') {
+          event.preventDefault();
+          resizeNavigator(current - step);
+        } else if (event.key === 'ArrowRight') {
+          event.preventDefault();
+          resizeNavigator(current + step);
+        } else if (event.key === 'Home') {
+          event.preventDefault();
+          resizeNavigator(navigatorWidthBounds().min);
+        } else if (event.key === 'End') {
+          event.preventDefault();
+          resizeNavigator(navigatorWidthBounds().max);
+        }
+      });
+    }
+
+    function restoreNavigatorWidth() {
+      if (!shell || !navigator) return;
+      const stored = Number(window.sessionStorage.getItem('sonde-life-feature-navigator-width') || '');
+      if (Number.isFinite(stored) && stored > 0) resizeNavigator(stored, false);
+      updateSplitterState();
+    }
+
+    function resizeNavigator(width, persist = true) {
+      if (!shell || !navigator) return;
+      const bounds = navigatorWidthBounds();
+      const next = Math.min(bounds.max, Math.max(bounds.min, width));
+      shell.style.setProperty('--sl-helm-nav-width', `${Math.round(next)}px`);
+      if (persist) window.sessionStorage.setItem('sonde-life-feature-navigator-width', String(Math.round(next)));
+      updateSplitterState();
+    }
+
+    function navigatorWidthBounds() {
+      const shellWidth = shell?.getBoundingClientRect().width || window.innerWidth;
+      const min = 112;
+      const max = Math.max(min, Math.min(672, shellWidth - 320, shellWidth * 0.7));
+      return { min, max };
+    }
+
+    function updateSplitterState() {
+      if (!splitter || !navigator) return;
+      splitter.hidden = navigatorCollapsed;
+      const bounds = navigatorWidthBounds();
+      const width = Math.round(navigator.getBoundingClientRect().width);
+      splitter.setAttribute('aria-valuemin', String(Math.round(bounds.min)));
+      splitter.setAttribute('aria-valuemax', String(Math.round(bounds.max)));
+      splitter.setAttribute('aria-valuenow', String(Math.round(Math.min(bounds.max, Math.max(bounds.min, width)))));
     }
 
     function restoreSelectionFromHash() {
@@ -3059,24 +3194,25 @@
         ['probes', currentCounts.probes],
         ['languages', currentCounts.languages],
       ]
-        .map(
-          ([label, value]) =>
-            `<span><strong>${escapeHtml(value)}</strong> ${escapeHtml(countLabel(label, value))}</span>`,
-        )
+        .map(([label, value]) => {
+          const content = `<strong>${escapeHtml(value)}</strong> ${escapeHtml(countLabel(label, value))}`;
+          if (label === 'languages') {
+            return `<span><a class="sl-helm-count-link" href="../overview/#language-proof">${content}</a></span>`;
+          }
+          return `<span>${content}</span>`;
+        })
         .join('');
     }
 
     function filteredCounts(racks) {
-      const languageIds = new Set();
       let probes = 0;
       for (const rack of racks) {
         probes += countNodesIn([rack], 'probe');
-        collectVisibleLanguageIds(rack, languageIds);
       }
       return {
         racks: racks.length,
         probes,
-        languages: languageIds.size,
+        languages: hierarchy.counts?.languages || hierarchy.languages.length,
       };
     }
 
@@ -3087,32 +3223,6 @@
         count += countNodesIn(node.children || [], kind);
       }
       return count;
-    }
-
-    function collectVisibleLanguageIds(rack, languageIds) {
-      const nodeLanguageIds = new Set();
-      collectNodeLanguageIds(rack, nodeLanguageIds);
-      const selectedLanguageIds = filterState.language;
-      const candidates =
-        nodeLanguageIds.size > 0
-          ? nodeLanguageIds
-          : selectedLanguageIds.size > 0
-            ? selectedLanguageIds
-            : new Set(hierarchy.languages.map((language) => language.id));
-      const publicLanguageIds = publicLanguageIdSet();
-      for (const id of candidates) {
-        if (!publicLanguageIds.has(id)) continue;
-        if (selectedLanguageIds.size === 0 || selectedLanguageIds.has(id)) languageIds.add(id);
-      }
-    }
-
-    function publicLanguageIdSet() {
-      return new Set((hierarchy.languages || []).map((language) => language.id));
-    }
-
-    function collectNodeLanguageIds(node, languageIds) {
-      for (const id of node.applicableLanguages || []) languageIds.add(id);
-      for (const child of node.children || []) collectNodeLanguageIds(child, languageIds);
     }
 
     function countLabel(label, value) {
@@ -3348,7 +3458,7 @@
         detail.innerHTML = `<div class="sl-helm-detail-top sl-helm-detail-top-single">
           <div class="sl-helm-detail-title">
             <span class="sl-helm-visual" aria-hidden="true">${category.icon}</span>
-            <div><h2>${escapeHtml(category.label)}</h2><p>${category.racks.length} racks</p></div>
+            <div><h2>${escapeHtml(category.label)}</h2><p>${category.racks.length} ${escapeHtml(countLabel('racks', category.racks.length))}</p></div>
           </div>
         </div>
         <div class="sl-helm-rack-list">
@@ -3359,7 +3469,7 @@
                 <strong>${escapeHtml(rack.name)}</strong>
                 <em>${escapeHtml(rack.description || '')}</em>
               </span>
-              <span class="sl-helm-card-meta">${countChildren(rack, 'probe')} probes</span>
+              <span class="sl-helm-card-meta">${countChildren(rack, 'probe')} ${escapeHtml(countLabel('probes', countChildren(rack, 'probe')))}</span>
             </button>`)
             .join('')}
         </div>`;
@@ -3563,27 +3673,13 @@
     }
 
     function filteredRacks() {
-      return hierarchy.racks.map(languageFilteredRack).filter(Boolean).filter((rack) => {
+      return hierarchy.racks.filter((rack) => {
         if (filterState.compliance.size > 0 && !filterState.compliance.has(rack.id)) return false;
         if (filterState.jurisdiction.size > 0 && ![...filterState.jurisdiction].some((value) => nodeHas(rack, 'jurisdictions', value))) return false;
         if (filterState.audience.size > 0 && ![...filterState.audience].some((value) => (rack.audience || []).includes(value))) return false;
         if (filterState.outcome.size > 0 && ![...filterState.outcome].some((value) => nodeHas(rack, 'solutionFacets', value))) return false;
         return !filterState.search || nodeMatchesSearch(rack, filterState.search);
       });
-    }
-
-    function languageFilteredRack(rack) {
-      if (filterState.language.size === 0) return rack;
-      if (!nodeMatchesLanguage(rack)) return null;
-      return {
-        ...rack,
-        children: (rack.children || []).filter((child) => nodeMatchesLanguage(child)),
-      };
-    }
-
-    function nodeMatchesLanguage(node) {
-      if (filterState.language.size === 0) return true;
-      return [...filterState.language].some((language) => (node.applicableLanguages || []).includes(language));
     }
 
     function categoriesFor(racks) {
@@ -3600,7 +3696,6 @@
     }
 
     function filterOptions(key) {
-      if (key === 'language') return [...hierarchy.languages].map((language) => ({ value: language.id, label: language.name, svgIcon: language.svgIcon })).sort(byLabel);
       if (key === 'compliance') return hierarchy.racks.filter((rack) => rack.complianceFramework).map((rack) => ({ value: rack.id, label: rack.complianceFramework.displayName })).sort(byLabel);
       if (key === 'jurisdiction') return uniqueValues(hierarchy.racks, 'jurisdictions').map((value) => ({ value, label: value })).sort(byLabel);
       if (key === 'audience') return uniqueRackValues('audience').map((value) => ({ value, label: titleCase(value) })).sort(byLabel);
@@ -3767,7 +3862,7 @@
     }
 
     function filterKeys() {
-      return ['language', 'compliance', 'jurisdiction', 'audience', 'outcome'];
+      return ['compliance', 'jurisdiction', 'audience', 'outcome'];
     }
 
     function partitionChildren(children) {
