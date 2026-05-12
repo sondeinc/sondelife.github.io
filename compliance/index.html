@@ -805,12 +805,34 @@
     color: var(--sonde-color-text-heading);
   }
 
+  .sl-compliance-overview-link {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    gap: 1rem;
+    align-items: center;
+    color: inherit;
+    text-decoration: none;
+  }
+
+  .sl-compliance-overview-link:hover h2,
+  .sl-compliance-overview-link:focus-visible h2 {
+    color: var(--sonde-color-primary);
+  }
+
+  .sl-compliance-overview-link .sl-lede {
+    margin-bottom: 0;
+  }
+
   @media (max-width: 36rem) {
     .sl-features-details-body-inner {
       flex-direction: column;
     }
     .sl-page-icon-spacer {
       display: none;
+    }
+    .sl-compliance-overview-link {
+      grid-template-columns: 1fr;
+      align-items: start;
     }
   }
 
@@ -2763,6 +2785,17 @@
       <h1 id="compliance-title">Compliance has a code-level gap.</h1>
       <p>Infrastructure tools can tell you how cloud resources are configured. Sonde shows what the product interface and the source code actually do.</p>
     </div>
+  </div>
+</section>
+<section class="sl-section sl-band" aria-labelledby="compliance-reporting-overview">
+  <div class="sl-section-inner">
+    <a class="sl-compliance-overview-link" href="../features/#category/compliance">
+      <div>
+        <h2 id="compliance-reporting-overview">Compliance reporting across global standards</h2>
+        <p class="sl-lede">Sonde compliance reports are built from deterministic <abbr class="sl-glossary" title="A small deterministic check that reads code, builds, manifests, dependencies, or runtime signals and emits auditable findings.">probes</abbr> over the same semantic graph that powers the rest of the platform. The current reporting paths cover accessibility evidence, security and privacy evidence, software supply-chain evidence, and regional or industry standards as supported <abbr class="sl-glossary" title="A group of probes organized by capability domain — architecture, accessibility, compliance, AI safety, and so on.">racks</abbr> are enabled. The result is not a separate checklist layer; it is standards evidence grounded in what the product and code actually do.</p>
+      </div>
+      <span class="sl-action sl-action-primary">Explore the Compliance node in Features</span>
+    </a>
   </div>
 </section>
 <section class="sl-section sl-band" aria-labelledby="compliance-proof">
