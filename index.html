@@ -1783,6 +1783,31 @@
     white-space: nowrap;
   }
 
+  .sl-helm-tree-scope-controls {
+    display: flex;
+    flex: 0 0 auto;
+    gap: 0.15rem;
+  }
+
+  .sl-helm-tree-scope-controls button {
+    width: 1.25rem;
+    height: 1.25rem;
+    border: 0;
+    border-radius: 0.2rem;
+    background: transparent;
+    color: var(--sonde-color-text-muted);
+    cursor: pointer;
+    font-size: 0.82rem;
+    line-height: 1;
+  }
+
+  .sl-helm-tree-scope-controls button:hover,
+  .sl-helm-tree-scope-controls button:focus-visible {
+    background: color-mix(in srgb, var(--sonde-color-primary) 10%, transparent);
+    color: var(--sonde-color-primary);
+    outline: none;
+  }
+
   .sl-helm-tree-badge {
     flex: 0 0 auto;
     color: var(--sonde-color-text-muted);

@@ -1783,6 +1783,31 @@
     white-space: nowrap;
   }
 
+  .sl-helm-tree-scope-controls {
+    display: flex;
+    flex: 0 0 auto;
+    gap: 0.15rem;
+  }
+
+  .sl-helm-tree-scope-controls button {
+    width: 1.25rem;
+    height: 1.25rem;
+    border: 0;
+    border-radius: 0.2rem;
+    background: transparent;
+    color: var(--sonde-color-text-muted);
+    cursor: pointer;
+    font-size: 0.82rem;
+    line-height: 1;
+  }
+
+  .sl-helm-tree-scope-controls button:hover,
+  .sl-helm-tree-scope-controls button:focus-visible {
+    background: color-mix(in srgb, var(--sonde-color-primary) 10%, transparent);
+    color: var(--sonde-color-primary);
+    outline: none;
+  }
+
   .sl-helm-tree-badge {
     flex: 0 0 auto;
     color: var(--sonde-color-text-muted);
@@ -2822,6 +2847,7 @@
     const activeFilters = app.querySelector('[data-helm-active-filters]');
     const counts = app.querySelector('[data-helm-counts]');
     const navigator = app.querySelector('[data-helm-navigator]');
+    const emptyDetailHtml = detail.innerHTML;
     const countMessages = {
       racks: {
         id: 'sondeLife.helm.count.racks',
@@ -3016,7 +3042,7 @@
       renderCounts(racks);
       renderTree(racks);
       renderActiveFilters();
-      renderDetail();
+      renderDetail(racks);
       if (activeMenu) {
         const button = app.querySelector(`[data-filter-menu="${activeMenu}"]`);
         if (button) renderFilterMenu(button);
@@ -3073,9 +3099,15 @@
           : selectedLanguageIds.size > 0
             ? selectedLanguageIds
             : new Set(hierarchy.languages.map((language) => language.id));
+      const publicLanguageIds = publicLanguageIdSet();
       for (const id of candidates) {
+        if (!publicLanguageIds.has(id)) continue;
         if (selectedLanguageIds.size === 0 || selectedLanguageIds.has(id)) languageIds.add(id);
       }
+    }
+
+    function publicLanguageIdSet() {
+      return new Set((hierarchy.languages || []).map((language) => language.id));
     }
 
     function collectNodeLanguageIds(node, languageIds) {
@@ -3135,6 +3167,7 @@
             expanded: open,
             selected,
             badge: String(category.racks.length),
+            scopeControls: category.racks.length > 0,
           });
           const racks = open
             ? category.racks.map((rack) => renderRackTree(rack)).join('')
@@ -3160,7 +3193,30 @@
           toggleExpanded(toggle.dataset.helmExpand);
         });
       }
+      for (const button of tree.querySelectorAll('[data-helm-expand-scope]')) {
+        button.addEventListener('click', (event) => {
+          event.stopPropagation();
+          setScopeExpanded(button.dataset.helmExpandScope, true);
+        });
+      }
+      for (const button of tree.querySelectorAll('[data-helm-collapse-scope]')) {
+        button.addEventListener('click', (event) => {
+          event.stopPropagation();
+          setScopeExpanded(button.dataset.helmCollapseScope, false);
+        });
+      }
       centerSelectedTreeRow();
+    }
+
+    function setScopeExpanded(categoryId, shouldExpand) {
+      const category = categoriesFor(filteredRacks()).find((candidate) => candidate.id === categoryId);
+      if (!category) return;
+      expanded.add(category.id);
+      for (const rack of category.racks) {
+        if (shouldExpand) expanded.add(rack.id);
+        else expanded.delete(rack.id);
+      }
+      render();
     }
 
     function handleTreeKey(event, row, rows) {
@@ -3266,15 +3322,29 @@
         }
         <span class="sl-helm-tree-icon" aria-hidden="true">${options.icon}</span>
         <span class="sl-helm-tree-label">${escapeHtml(options.label)}</span>
+        ${
+          options.scopeControls
+            ? `<span class="sl-helm-tree-scope-controls" aria-hidden="false">
+              <button type="button" tabindex="-1" data-helm-expand-scope="${escapeHtml(options.id)}" aria-label="Expand all ${escapeHtml(options.label)}">＋</button>
+              <button type="button" tabindex="-1" data-helm-collapse-scope="${escapeHtml(options.id)}" aria-label="Collapse all ${escapeHtml(options.label)}">－</button>
+            </span>`
+            : ''
+        }
         ${options.badge ? `<span class="sl-helm-tree-badge">${escapeHtml(options.badge)}</span>` : ''}
       </div>`;
     }
 
-    function renderDetail() {
-      if (!selection) return;
+    function renderDetail(racks) {
+      if (!selection) {
+        detail.innerHTML = emptyDetailHtml;
+        return;
+      }
       if (selection.kind === 'category') {
-        const category = categoriesFor(filteredRacks()).find((candidate) => candidate.id === selection.id);
-        if (!category) return;
+        const category = categoriesFor(racks).find((candidate) => candidate.id === selection.id);
+        if (!category) {
+          detail.innerHTML = emptyDetailHtml;
+          return;
+        }
         detail.innerHTML = `<div class="sl-helm-detail-top sl-helm-detail-top-single">
           <div class="sl-helm-detail-title">
             <span class="sl-helm-visual" aria-hidden="true">${category.icon}</span>
@@ -3300,8 +3370,11 @@
         }
         return;
       }
-      const pair = findSelectedNode(selection);
-      if (!pair) return;
+      const pair = findSelectedNodeInRacks(selection, racks);
+      if (!pair) {
+        detail.innerHTML = emptyDetailHtml;
+        return;
+      }
       const node = pair.node;
       const rack = pair.rack;
       const children = node.kind === 'rack' ? partitionChildren(node.children) : { probes: [], features: [] };
@@ -3418,7 +3491,7 @@
       const inputs = uniqueStrings(node.requires || []);
       const outputs = uniqueStrings(node.provides || []);
       const relations = [];
-      for (const rack of hierarchy.racks) {
+      for (const rack of filteredRacks()) {
         for (const candidate of rack.children || []) {
           if (candidate.kind !== 'probe' || candidate.id === node.id) continue;
           const candidateProvides = candidate.provides || [];
@@ -3490,16 +3563,27 @@
     }
 
     function filteredRacks() {
-      return hierarchy.racks.filter((rack) => {
-        if (filterState.language.size > 0 && rack.applicableLanguages?.length) {
-          if (![...filterState.language].some((language) => rack.applicableLanguages.includes(language))) return false;
-        }
+      return hierarchy.racks.map(languageFilteredRack).filter(Boolean).filter((rack) => {
         if (filterState.compliance.size > 0 && !filterState.compliance.has(rack.id)) return false;
         if (filterState.jurisdiction.size > 0 && ![...filterState.jurisdiction].some((value) => nodeHas(rack, 'jurisdictions', value))) return false;
         if (filterState.audience.size > 0 && ![...filterState.audience].some((value) => (rack.audience || []).includes(value))) return false;
         if (filterState.outcome.size > 0 && ![...filterState.outcome].some((value) => nodeHas(rack, 'solutionFacets', value))) return false;
         return !filterState.search || nodeMatchesSearch(rack, filterState.search);
       });
+    }
+
+    function languageFilteredRack(rack) {
+      if (filterState.language.size === 0) return rack;
+      if (!nodeMatchesLanguage(rack)) return null;
+      return {
+        ...rack,
+        children: (rack.children || []).filter((child) => nodeMatchesLanguage(child)),
+      };
+    }
+
+    function nodeMatchesLanguage(node) {
+      if (filterState.language.size === 0) return true;
+      return [...filterState.language].some((language) => (node.applicableLanguages || []).includes(language));
     }
 
     function categoriesFor(racks) {
@@ -3599,11 +3683,15 @@
     }
 
     function findSelectedNode(current) {
+      return findSelectedNodeInRacks(current, hierarchy.racks);
+    }
+
+    function findSelectedNodeInRacks(current, racks) {
       if (current.kind === 'rack') {
-        const rack = hierarchy.racks.find((candidate) => candidate.id === current.id);
+        const rack = racks.find((candidate) => candidate.id === current.id);
         return rack ? { rack, node: rack } : null;
       }
-      const rack = hierarchy.racks.find((candidate) => candidate.id === current.rackId);
+      const rack = racks.find((candidate) => candidate.id === current.rackId);
       const node = rack?.children.find((candidate) => candidate.id === current.id && candidate.kind === current.kind);
       return rack && node ? { rack, node } : null;
     }
