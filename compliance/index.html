@@ -272,6 +272,12 @@
           localeLinks[l].setAttribute('href', './' + base + '-' + locale + ext);
         }
       }
+      if (typeof document.dispatchEvent === 'function') {
+        var localeEvent = typeof CustomEvent === 'function'
+          ? new CustomEvent('sonde:locale-applied', { detail: { locale: locale } })
+          : { type: 'sonde:locale-applied', detail: { locale: locale } };
+        document.dispatchEvent(localeEvent);
+      }
     };
     document.head.appendChild(script);
   }
@@ -699,6 +705,21 @@
     }
   }
 
+  @media (max-width: 22rem) {
+    .sl-hero-with-icon .sl-section-inner {
+      flex-direction: column;
+    }
+
+    .sl-hero-with-icon .sl-page-icon {
+      flex-direction: row;
+      justify-content: flex-start;
+    }
+
+    .sl-hero-content {
+      width: 100%;
+    }
+  }
+
   /* Collapsible /features/ hero. <details>/<summary> handles open/close
      state without JS; the summary always shows the page identity (icon +
      eyebrow + title) and the body holds the cockpit explainer paragraph
@@ -811,6 +832,7 @@
   }
 
   .sl-finding-example {
+    min-width: 0;
     padding: 1.1rem 1.2rem;
     border: 1px solid var(--sonde-color-border);
     border-left: 0.25rem solid var(--sonde-color-primary);
@@ -928,6 +950,11 @@
     grid-template-columns: minmax(0, 14rem) minmax(0, 1fr);
     gap: 1.1rem;
     align-items: start;
+    min-width: 0;
+  }
+
+  .sl-finding-body > * {
+    min-width: 0;
   }
 
   .sl-finding-screenshot {
@@ -975,7 +1002,14 @@
     display: flex;
     flex-direction: column;
     gap: 0.55rem;
+    min-width: 0;
     margin: 0;
+  }
+
+  .sl-finding-snippet {
+    min-width: 0;
+    max-width: 100%;
+    overflow-x: auto;
   }
 
   .sl-finding-prose p {
@@ -1065,6 +1099,7 @@
      in every Sonde theme (Ultraviolet / Infrared / High Contrast /
      Daylight / Light / Dark) so highlighting tracks the active theme. */
   .sl-code-block {
+    max-width: 100%;
     margin: 0;
     padding: 0.95rem 1.1rem;
     background: color-mix(in srgb, var(--sonde-color-primary) 5%, var(--sonde-color-surface));
@@ -2714,8 +2749,7 @@
           <div class="sl-finding-head">
             <p class="sl-finding-framework">Compose Multiplatform — Android runtime</p>
             <h3 class="sl-finding-title">Runtime scan found symbolic accessible name</h3>
-            
-            <p class="sl-finding-anchor"><code>../SondeMobileApp.kt:266</code></p>
+            <p class="sl-finding-anchor"><code>../SondeMobileApp.kt:497</code></p>
           </div>
           <span class="sl-finding-toggle" aria-hidden="true"><svg class="sl-chevron-down" viewBox="0 0 16 16" width="16" height="16" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg">
   <path d="M3 6 L8 11 L13 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
@@ -2723,36 +2757,26 @@
 </span>
         </summary>
         <div class="sl-finding-body">
-          
           <figure class="sl-finding-screenshot sl-finding-screenshot-real">
-            <img src="/findings/cockpit-mobile-runtime-symbolic-icon-name-android.png" alt="Annotated runtime evidence emitted by Sonde Scribe. The left panel shows the cockpit-mobile Summary screen with a dashed bounded region around the unlabelled icon. The right panel zooms in and a callout arrow points at the 40-by-40-pixel element at coordinates 24, 220." loading="lazy" decoding="async" />
+            <img src="/findings/cockpit-mobile-runtime-symbolic-icon-name-android.png" alt="Annotated runtime evidence emitted by Sonde Scribe. The left panel shows the real Android Sonde Cockpit Mobile Summary screen for John K. with a dashed bounded region around the symbolic profile alert action. The right panel zooms into the exclamation-mark button captured from the Pixel 8 emulator." loading="lazy" decoding="async" />
           </figure>
-          
-          
           <div class="sl-finding-snippet">
-            <pre class="sl-code-block" data-language="kotlin" data-start-line="262"><code><span class="sonde-syntax-line" data-line="262"><span class="sonde-syntax-punctuation">@</span><span class="sonde-syntax-type">Composable</span></span>
-<span class="sonde-syntax-line" data-line="263"><span class="sonde-syntax-keyword">private</span><span class="sonde-syntax-default"> </span><span class="sonde-syntax-keyword">fun</span><span class="sonde-syntax-default"> </span><span class="sonde-syntax-type">StaticDogfoodSeedAction</span><span class="sonde-syntax-punctuation">()</span><span class="sonde-syntax-default"> </span><span class="sonde-syntax-punctuation">{</span></span>
-<span class="sonde-syntax-line" data-line="264"><span class="sonde-syntax-default">  </span><span class="sonde-syntax-type">IconButton</span><span class="sonde-syntax-punctuation">(</span></span>
-<span class="sonde-syntax-line" data-line="265"><span class="sonde-syntax-default">    onClick </span><span class="sonde-syntax-punctuation">=</span><span class="sonde-syntax-default"> </span><span class="sonde-syntax-punctuation">{},</span></span>
-<span class="sonde-syntax-line" data-line="266"><span class="sonde-syntax-default">    modifier </span><span class="sonde-syntax-punctuation">=</span><span class="sonde-syntax-default"> </span><span class="sonde-syntax-type">Modifier</span><span class="sonde-syntax-punctuation">.</span><span class="sonde-syntax-default">testTag</span><span class="sonde-syntax-punctuation">(</span><span class="sonde-syntax-type">SondeMobileTestTags</span><span class="sonde-syntax-punctuation">.</span><span class="sonde-syntax-type">StaticDogfoodSeedAction</span><span class="sonde-syntax-punctuation">),</span></span>
-<span class="sonde-syntax-line" data-line="267"><span class="sonde-syntax-default">  </span><span class="sonde-syntax-punctuation">)</span><span class="sonde-syntax-default"> </span><span class="sonde-syntax-punctuation">{</span></span>
-<span class="sonde-syntax-line" data-line="268"><span class="sonde-syntax-default">    </span><span class="sonde-syntax-comment">// Intentional Phase 9 M2 dogfood seed: symbolic text is not a durable accessible name.</span></span>
-<span class="sonde-syntax-line" data-line="269"><span class="sonde-syntax-default">    </span><span class="sonde-syntax-type">Text</span><span class="sonde-syntax-punctuation">(</span><span class="sonde-syntax-string">&quot;!&quot;</span><span class="sonde-syntax-punctuation">)</span></span>
-<span class="sonde-syntax-line" data-line="270"><span class="sonde-syntax-default">  </span><span class="sonde-syntax-punctuation">}</span></span>
-<span class="sonde-syntax-line" data-line="271"><span class="sonde-syntax-punctuation">}</span></span>
-<span class="sonde-syntax-line" data-line="272"> </span></code></pre>
+            <pre class="sl-code-block" data-language="kotlin" data-start-line="490"><code><span class="sonde-syntax-line" data-line="490"><span class="sonde-syntax-punctuation">@</span><span class="sonde-syntax-type">Composable</span></span>
+<span class="sonde-syntax-line" data-line="491"><span class="sonde-syntax-keyword">private</span><span class="sonde-syntax-default"> </span><span class="sonde-syntax-keyword">fun</span><span class="sonde-syntax-default"> </span><span class="sonde-syntax-type">StaticDogfoodSeedAction</span><span class="sonde-syntax-punctuation">()</span><span class="sonde-syntax-default"> </span><span class="sonde-syntax-punctuation">{</span></span>
+<span class="sonde-syntax-line" data-line="492"><span class="sonde-syntax-default">  </span><span class="sonde-syntax-type">IconButton</span><span class="sonde-syntax-punctuation">(</span></span>
+<span class="sonde-syntax-line" data-line="493"><span class="sonde-syntax-default">    onClick </span><span class="sonde-syntax-punctuation">=</span><span class="sonde-syntax-default"> </span><span class="sonde-syntax-punctuation">{},</span></span>
+<span class="sonde-syntax-line" data-line="494"><span class="sonde-syntax-default">    modifier </span><span class="sonde-syntax-punctuation">=</span><span class="sonde-syntax-default"> </span><span class="sonde-syntax-type">Modifier</span><span class="sonde-syntax-punctuation">.</span><span class="sonde-syntax-default">testTag</span><span class="sonde-syntax-punctuation">(</span><span class="sonde-syntax-type">SondeMobileTestTags</span><span class="sonde-syntax-punctuation">.</span><span class="sonde-syntax-type">StaticDogfoodSeedAction</span><span class="sonde-syntax-punctuation">),</span></span>
+<span class="sonde-syntax-line" data-line="495"><span class="sonde-syntax-default">  </span><span class="sonde-syntax-punctuation">)</span><span class="sonde-syntax-default"> </span><span class="sonde-syntax-punctuation">{</span></span>
+<span class="sonde-syntax-line" data-line="496"><span class="sonde-syntax-default">    </span><span class="sonde-syntax-comment">// Intentional Phase 9 M2 dogfood seed: symbolic text is not a durable accessible name.</span></span>
+<span class="sonde-syntax-line" data-line="497"><span class="sonde-syntax-default">    </span><span class="sonde-syntax-type">Text</span><span class="sonde-syntax-punctuation">(</span><span class="sonde-syntax-string">&quot;!&quot;</span><span class="sonde-syntax-punctuation">)</span></span>
+<span class="sonde-syntax-line" data-line="498"><span class="sonde-syntax-default">  </span><span class="sonde-syntax-punctuation">}</span></span>
+<span class="sonde-syntax-line" data-line="499"><span class="sonde-syntax-punctuation">}</span></span>
+<span class="sonde-syntax-line" data-line="500"> </span></code></pre>
           </div>
-          
           <div class="sl-finding-prose">
-            
             <p class="sl-finding-criterion"><strong>Criterion:</strong> WCAG 4.1.2 Name, Role, Value</p>
-            
-            
             <p class="sl-finding-runtime">Captured by the local runtime handoff (source-of-record label: <code class="sl-inline-code">appium-uiautomator2 Pixel 8</code>).</p>
-            
-            
             <p class="sl-finding-summary-prose">The local runtime accessibility tree exposes the cockpit-mobile seed icon action as a symbolic name instead of a durable accessible name.</p>
-            
             <p class="sl-finding-fix"><strong>Fix:</strong> Add a descriptive Compose semantics contentDescription or replace the icon-only action with a labelled control, then rerun the local runtime handoff.</p>
           </div>
         </div>
@@ -2762,8 +2786,7 @@
           <div class="sl-finding-head">
             <p class="sl-finding-framework">Compose Multiplatform — iOS runtime</p>
             <h3 class="sl-finding-title">Runtime scan found symbolic accessible name</h3>
-            
-            <p class="sl-finding-anchor"><code>../SondeMobileApp.kt:266</code></p>
+            <p class="sl-finding-anchor"><code>../SondeMobileApp.kt:497</code></p>
           </div>
           <span class="sl-finding-toggle" aria-hidden="true"><svg class="sl-chevron-down" viewBox="0 0 16 16" width="16" height="16" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg">
   <path d="M3 6 L8 11 L13 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
@@ -2771,36 +2794,26 @@
 </span>
         </summary>
         <div class="sl-finding-body">
-          
           <figure class="sl-finding-screenshot sl-finding-screenshot-real">
-            <img src="/findings/cockpit-mobile-runtime-symbolic-icon-name-ios.png" alt="Annotated runtime evidence emitted by Sonde Scribe. The left panel shows the cockpit-mobile Summary screen captured on iOS with a dashed bounded region around the unlabelled icon. The right panel zooms in and a callout arrow points at the 40-by-40-pixel element at coordinates 24, 220." loading="lazy" decoding="async" />
+            <img src="/findings/cockpit-mobile-runtime-symbolic-icon-name-ios.png" alt="Annotated runtime evidence emitted by Sonde Scribe. The left panel shows the real iOS Sonde Cockpit Mobile Summary screen for John K. with a dashed bounded region around the symbolic profile alert action. The right panel zooms into the exclamation-mark button captured from the iPhone 17 Pro simulator." loading="lazy" decoding="async" />
           </figure>
-          
-          
           <div class="sl-finding-snippet">
-            <pre class="sl-code-block" data-language="kotlin" data-start-line="262"><code><span class="sonde-syntax-line" data-line="262"><span class="sonde-syntax-punctuation">@</span><span class="sonde-syntax-type">Composable</span></span>
-<span class="sonde-syntax-line" data-line="263"><span class="sonde-syntax-keyword">private</span><span class="sonde-syntax-default"> </span><span class="sonde-syntax-keyword">fun</span><span class="sonde-syntax-default"> </span><span class="sonde-syntax-type">StaticDogfoodSeedAction</span><span class="sonde-syntax-punctuation">()</span><span class="sonde-syntax-default"> </span><span class="sonde-syntax-punctuation">{</span></span>
-<span class="sonde-syntax-line" data-line="264"><span class="sonde-syntax-default">  </span><span class="sonde-syntax-type">IconButton</span><span class="sonde-syntax-punctuation">(</span></span>
-<span class="sonde-syntax-line" data-line="265"><span class="sonde-syntax-default">    onClick </span><span class="sonde-syntax-punctuation">=</span><span class="sonde-syntax-default"> </span><span class="sonde-syntax-punctuation">{},</span></span>
-<span class="sonde-syntax-line" data-line="266"><span class="sonde-syntax-default">    modifier </span><span class="sonde-syntax-punctuation">=</span><span class="sonde-syntax-default"> </span><span class="sonde-syntax-type">Modifier</span><span class="sonde-syntax-punctuation">.</span><span class="sonde-syntax-default">testTag</span><span class="sonde-syntax-punctuation">(</span><span class="sonde-syntax-type">SondeMobileTestTags</span><span class="sonde-syntax-punctuation">.</span><span class="sonde-syntax-type">StaticDogfoodSeedAction</span><span class="sonde-syntax-punctuation">),</span></span>
-<span class="sonde-syntax-line" data-line="267"><span class="sonde-syntax-default">  </span><span class="sonde-syntax-punctuation">)</span><span class="sonde-syntax-default"> </span><span class="sonde-syntax-punctuation">{</span></span>
-<span class="sonde-syntax-line" data-line="268"><span class="sonde-syntax-default">    </span><span class="sonde-syntax-comment">// Intentional Phase 9 M2 dogfood seed: symbolic text is not a durable accessible name.</span></span>
-<span class="sonde-syntax-line" data-line="269"><span class="sonde-syntax-default">    </span><span class="sonde-syntax-type">Text</span><span class="sonde-syntax-punctuation">(</span><span class="sonde-syntax-string">&quot;!&quot;</span><span class="sonde-syntax-punctuation">)</span></span>
-<span class="sonde-syntax-line" data-line="270"><span class="sonde-syntax-default">  </span><span class="sonde-syntax-punctuation">}</span></span>
-<span class="sonde-syntax-line" data-line="271"><span class="sonde-syntax-punctuation">}</span></span>
-<span class="sonde-syntax-line" data-line="272"> </span></code></pre>
+            <pre class="sl-code-block" data-language="kotlin" data-start-line="490"><code><span class="sonde-syntax-line" data-line="490"><span class="sonde-syntax-punctuation">@</span><span class="sonde-syntax-type">Composable</span></span>
+<span class="sonde-syntax-line" data-line="491"><span class="sonde-syntax-keyword">private</span><span class="sonde-syntax-default"> </span><span class="sonde-syntax-keyword">fun</span><span class="sonde-syntax-default"> </span><span class="sonde-syntax-type">StaticDogfoodSeedAction</span><span class="sonde-syntax-punctuation">()</span><span class="sonde-syntax-default"> </span><span class="sonde-syntax-punctuation">{</span></span>
+<span class="sonde-syntax-line" data-line="492"><span class="sonde-syntax-default">  </span><span class="sonde-syntax-type">IconButton</span><span class="sonde-syntax-punctuation">(</span></span>
+<span class="sonde-syntax-line" data-line="493"><span class="sonde-syntax-default">    onClick </span><span class="sonde-syntax-punctuation">=</span><span class="sonde-syntax-default"> </span><span class="sonde-syntax-punctuation">{},</span></span>
+<span class="sonde-syntax-line" data-line="494"><span class="sonde-syntax-default">    modifier </span><span class="sonde-syntax-punctuation">=</span><span class="sonde-syntax-default"> </span><span class="sonde-syntax-type">Modifier</span><span class="sonde-syntax-punctuation">.</span><span class="sonde-syntax-default">testTag</span><span class="sonde-syntax-punctuation">(</span><span class="sonde-syntax-type">SondeMobileTestTags</span><span class="sonde-syntax-punctuation">.</span><span class="sonde-syntax-type">StaticDogfoodSeedAction</span><span class="sonde-syntax-punctuation">),</span></span>
+<span class="sonde-syntax-line" data-line="495"><span class="sonde-syntax-default">  </span><span class="sonde-syntax-punctuation">)</span><span class="sonde-syntax-default"> </span><span class="sonde-syntax-punctuation">{</span></span>
+<span class="sonde-syntax-line" data-line="496"><span class="sonde-syntax-default">    </span><span class="sonde-syntax-comment">// Intentional Phase 9 M2 dogfood seed: symbolic text is not a durable accessible name.</span></span>
+<span class="sonde-syntax-line" data-line="497"><span class="sonde-syntax-default">    </span><span class="sonde-syntax-type">Text</span><span class="sonde-syntax-punctuation">(</span><span class="sonde-syntax-string">&quot;!&quot;</span><span class="sonde-syntax-punctuation">)</span></span>
+<span class="sonde-syntax-line" data-line="498"><span class="sonde-syntax-default">  </span><span class="sonde-syntax-punctuation">}</span></span>
+<span class="sonde-syntax-line" data-line="499"><span class="sonde-syntax-punctuation">}</span></span>
+<span class="sonde-syntax-line" data-line="500"> </span></code></pre>
           </div>
-          
           <div class="sl-finding-prose">
-            
             <p class="sl-finding-criterion"><strong>Criterion:</strong> WCAG 4.1.2 Name, Role, Value</p>
-            
-            
             <p class="sl-finding-runtime">Captured by the local runtime handoff (source-of-record label: <code class="sl-inline-code">appium-xcuitest iPhone 17 Pro</code>).</p>
-            
-            
             <p class="sl-finding-summary-prose">The local runtime accessibility tree exposes the cockpit-mobile seed icon action as a symbolic name instead of a durable accessible name.</p>
-            
             <p class="sl-finding-fix"><strong>Fix:</strong> Add a descriptive Compose semantics contentDescription or replace the icon-only action with a labelled control, then rerun the local runtime handoff.</p>
           </div>
         </div>
@@ -2810,7 +2823,6 @@
           <div class="sl-finding-head">
             <p class="sl-finding-framework">SwiftUI — iOS runtime</p>
             <h3 class="sl-finding-title">SwiftUI image is missing an accessible name</h3>
-            
             <p class="sl-finding-anchor"><code>../swiftUiMissingImageLabel.swift:7</code></p>
           </div>
           <span class="sl-finding-toggle" aria-hidden="true"><svg class="sl-chevron-down" viewBox="0 0 16 16" width="16" height="16" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg">
@@ -2819,12 +2831,9 @@
 </span>
         </summary>
         <div class="sl-finding-body">
-          
           <figure class="sl-finding-screenshot sl-finding-screenshot-real">
             <img src="/findings/cockpit-mobile-swiftui-image-missing-label.png" alt="Annotated runtime evidence emitted by Sonde Scribe. The cockpit-mobile profile alert screen captured on iOS Simulator with a dashed bounded region around the unlabelled SwiftUI Image. A callout arrow points at the 96-by-96-pixel element at coordinates 956, 672. Header lines read: cockpit-mobile-swiftui-image-missing-label; swiftUiMissingImageLabel.swift:7; ios WCAG 1.1.1 Non-text Content bounds 956,672 96x96." loading="lazy" decoding="async" />
           </figure>
-          
-          
           <div class="sl-finding-snippet">
             <pre class="sl-code-block" data-language="swift" data-start-line="4"><code><span class="sonde-syntax-line" data-line="4"><span class="sonde-syntax-default">struct </span><span class="sonde-syntax-type">SondeDogfoodSwiftUIImageMissingLabel</span><span class="sonde-syntax-punctuation">:</span><span class="sonde-syntax-default"> </span><span class="sonde-syntax-type">View</span><span class="sonde-syntax-default"> </span><span class="sonde-syntax-punctuation">{</span></span>
 <span class="sonde-syntax-line" data-line="5"><span class="sonde-syntax-default">  </span><span class="sonde-syntax-keyword">var</span><span class="sonde-syntax-default"> body</span><span class="sonde-syntax-punctuation">:</span><span class="sonde-syntax-default"> some </span><span class="sonde-syntax-type">View</span><span class="sonde-syntax-default"> </span><span class="sonde-syntax-punctuation">{</span></span>
@@ -2837,18 +2846,126 @@
 <span class="sonde-syntax-line" data-line="12"><span class="sonde-syntax-punctuation">}</span></span>
 <span class="sonde-syntax-line" data-line="13"> </span></code></pre>
           </div>
-          
           <div class="sl-finding-prose">
-            
             <p class="sl-finding-criterion"><strong>Criterion:</strong> WCAG 1.1.1 Non-text Content</p>
-            
-            
             <p class="sl-finding-runtime">Captured by the SwiftUI fixture replay on iPhone 17 Pro through the same UIKit↔SwiftUI cross-platform mobile a11y <abbr class="sl-glossary" title="A small deterministic check that reads code, builds, manifests, dependencies, or runtime signals and emits auditable findings.">probe</abbr> Sonde ships.</p>
-            
-            
             <p class="sl-finding-summary-prose">The SwiftUI Image renders as meaningful content in the profile alert row but exposes no accessibilityLabel — VoiceOver announces nothing and the UIKit transform inherits the gap.</p>
-            
             <p class="sl-finding-fix"><strong>Fix:</strong> Add a product-specific .accessibilityLabel(...) modifier or mark the Image decorative with .accessibilityHidden(true) before the UIKit transform runs.</p>
+          </div>
+        </div>
+      </details>
+      <details class="sl-finding-example sl-finding-example-real" open>
+        <summary class="sl-finding-summary">
+          <div class="sl-finding-head">
+            <p class="sl-finding-framework">Compose Multiplatform — Android Material Design (target size)</p>
+            <h3 class="sl-finding-title">Filter control target is below Android minimum</h3>
+            <p class="sl-finding-anchor"><code>../SondeMobileApp.kt:657</code></p>
+          </div>
+          <span class="sl-finding-toggle" aria-hidden="true"><svg class="sl-chevron-down" viewBox="0 0 16 16" width="16" height="16" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg">
+  <path d="M3 6 L8 11 L13 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+</svg>
+</span>
+        </summary>
+        <div class="sl-finding-body">
+          <figure class="sl-finding-screenshot sl-finding-screenshot-real">
+            <img src="/findings/cockpit-mobile-android-critical-filter-target.png" alt="Annotated runtime evidence emitted by Sonde Scribe. The left panel shows the real Android Findings screen with compact severity and platform filter controls above the finding list. The right panel zooms into the Critical filter target captured on the Pixel 8 emulator." loading="lazy" decoding="async" />
+          </figure>
+          <div class="sl-finding-snippet">
+            <pre class="sl-code-block" data-language="kotlin" data-start-line="648"><code><span class="sonde-syntax-line" data-line="648"><span class="sonde-syntax-punctuation">@</span><span class="sonde-syntax-type">Composable</span></span>
+<span class="sonde-syntax-line" data-line="649"><span class="sonde-syntax-keyword">private</span><span class="sonde-syntax-default"> </span><span class="sonde-syntax-keyword">fun</span><span class="sonde-syntax-default"> </span><span class="sonde-syntax-type">CompactFilterChip</span><span class="sonde-syntax-punctuation">(</span></span>
+<span class="sonde-syntax-line" data-line="650"><span class="sonde-syntax-default">  selected</span><span class="sonde-syntax-punctuation">:</span><span class="sonde-syntax-default"> </span><span class="sonde-syntax-type">Boolean</span><span class="sonde-syntax-punctuation">,</span></span>
+<span class="sonde-syntax-line" data-line="651"><span class="sonde-syntax-default">  onClick</span><span class="sonde-syntax-punctuation">:</span><span class="sonde-syntax-default"> </span><span class="sonde-syntax-punctuation">()</span><span class="sonde-syntax-default"> -</span><span class="sonde-syntax-punctuation">&gt;</span><span class="sonde-syntax-default"> </span><span class="sonde-syntax-type">Unit</span><span class="sonde-syntax-punctuation">,</span></span>
+<span class="sonde-syntax-line" data-line="652"><span class="sonde-syntax-default">  label</span><span class="sonde-syntax-punctuation">:</span><span class="sonde-syntax-default"> </span><span class="sonde-syntax-type">String</span><span class="sonde-syntax-punctuation">,</span></span>
+<span class="sonde-syntax-line" data-line="653"><span class="sonde-syntax-default">  modifier</span><span class="sonde-syntax-punctuation">:</span><span class="sonde-syntax-default"> </span><span class="sonde-syntax-type">Modifier</span><span class="sonde-syntax-default"> </span><span class="sonde-syntax-punctuation">=</span><span class="sonde-syntax-default"> </span><span class="sonde-syntax-type">Modifier</span><span class="sonde-syntax-punctuation">,</span></span>
+<span class="sonde-syntax-line" data-line="654"><span class="sonde-syntax-punctuation">)</span><span class="sonde-syntax-default"> </span><span class="sonde-syntax-punctuation">{</span></span>
+<span class="sonde-syntax-line" data-line="655"><span class="sonde-syntax-default">  </span><span class="sonde-syntax-type">Surface</span><span class="sonde-syntax-punctuation">(</span></span>
+<span class="sonde-syntax-line" data-line="656"><span class="sonde-syntax-default">    modifier </span><span class="sonde-syntax-punctuation">=</span><span class="sonde-syntax-default"> modifier</span></span>
+<span class="sonde-syntax-line" data-line="657"><span class="sonde-syntax-default">      </span><span class="sonde-syntax-punctuation">.</span><span class="sonde-syntax-default">height</span><span class="sonde-syntax-punctuation">(</span><span class="sonde-syntax-type">SondeMobileTokens</span><span class="sonde-syntax-punctuation">.</span><span class="sonde-syntax-default">spacingMd * </span><span class="sonde-syntax-number">2</span><span class="sonde-syntax-punctuation">)</span></span>
+<span class="sonde-syntax-line" data-line="658"><span class="sonde-syntax-default">      </span><span class="sonde-syntax-punctuation">.</span><span class="sonde-syntax-default">clickable </span><span class="sonde-syntax-punctuation">{</span><span class="sonde-syntax-default"> onClick</span><span class="sonde-syntax-punctuation">()</span><span class="sonde-syntax-default"> </span><span class="sonde-syntax-punctuation">}</span></span>
+<span class="sonde-syntax-line" data-line="659"><span class="sonde-syntax-default">      </span><span class="sonde-syntax-punctuation">.</span><span class="sonde-syntax-default">semantics </span><span class="sonde-syntax-punctuation">{</span></span>
+<span class="sonde-syntax-line" data-line="660"><span class="sonde-syntax-default">        role </span><span class="sonde-syntax-punctuation">=</span><span class="sonde-syntax-default"> </span><span class="sonde-syntax-type">Role</span><span class="sonde-syntax-punctuation">.</span><span class="sonde-syntax-type">Button</span></span>
+<span class="sonde-syntax-line" data-line="661"><span class="sonde-syntax-default">        contentDescription </span><span class="sonde-syntax-punctuation">=</span><span class="sonde-syntax-default"> label</span></span>
+<span class="sonde-syntax-line" data-line="662"><span class="sonde-syntax-default">      </span><span class="sonde-syntax-punctuation">},</span></span>
+<span class="sonde-syntax-line" data-line="663"> </span></code></pre>
+          </div>
+          <div class="sl-finding-prose">
+            <p class="sl-finding-criterion"><strong>Criterion:</strong> WCAG 2.5.5 Target Size</p>
+            <p class="sl-finding-runtime">Captured by the local runtime handoff (source-of-record label: <code class="sl-inline-code">appium-uiautomator2 Pixel 8</code>).</p>
+            <p class="sl-finding-summary-prose">The real cockpit-mobile Findings screen renders compact 32dp filter controls below Android's 48dp minimum target size — touch users with motor impairments can miss the control entirely.</p>
+            <p class="sl-finding-fix"><strong>Fix:</strong> Increase the filter control hit area to at least 48dp while preserving the grouped findings density.</p>
+          </div>
+        </div>
+      </details>
+      <details class="sl-finding-example sl-finding-example-real" open>
+        <summary class="sl-finding-summary">
+          <div class="sl-finding-head">
+            <p class="sl-finding-framework">Compose Multiplatform — iOS HIG (Dynamic Type)</p>
+            <h3 class="sl-finding-title">Finding group heading can truncate under iOS Dynamic Type</h3>
+            <p class="sl-finding-anchor"><code>../SondeMobileApp.kt:536</code></p>
+          </div>
+          <span class="sl-finding-toggle" aria-hidden="true"><svg class="sl-chevron-down" viewBox="0 0 16 16" width="16" height="16" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg">
+  <path d="M3 6 L8 11 L13 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+</svg>
+</span>
+        </summary>
+        <div class="sl-finding-body">
+          <figure class="sl-finding-screenshot sl-finding-screenshot-real">
+            <img src="/findings/cockpit-mobile-ios-medium-dynamic-type.png" alt="Annotated runtime evidence emitted by Sonde Scribe. The left panel shows the real iOS Findings screen with large text and a truncated critical-finding group heading. The right panel zooms into the clipped heading captured on the iPhone 17 Pro simulator." loading="lazy" decoding="async" />
+          </figure>
+          <div class="sl-finding-snippet">
+            <pre class="sl-code-block" data-language="kotlin" data-start-line="530"><code><span class="sonde-syntax-line" data-line="530"><span class="sonde-syntax-default">    groups</span><span class="sonde-syntax-punctuation">.</span><span class="sonde-syntax-default">forEach </span><span class="sonde-syntax-punctuation">{</span><span class="sonde-syntax-default"> group -</span><span class="sonde-syntax-punctuation">&gt;</span></span>
+<span class="sonde-syntax-line" data-line="531"><span class="sonde-syntax-default">      item </span><span class="sonde-syntax-punctuation">{</span></span>
+<span class="sonde-syntax-line" data-line="532"><span class="sonde-syntax-default">        </span><span class="sonde-syntax-type">Text</span><span class="sonde-syntax-punctuation">(</span></span>
+<span class="sonde-syntax-line" data-line="533"><span class="sonde-syntax-default">          </span><span class="sonde-syntax-string">&quot;${severityGlyph(group.severity)} ${group.severity.name} findings requiring mobile cockpit review&quot;</span><span class="sonde-syntax-punctuation">,</span></span>
+<span class="sonde-syntax-line" data-line="534"><span class="sonde-syntax-default">          modifier </span><span class="sonde-syntax-punctuation">=</span><span class="sonde-syntax-default"> </span><span class="sonde-syntax-type">Modifier</span><span class="sonde-syntax-punctuation">.</span><span class="sonde-syntax-default">testTag</span><span class="sonde-syntax-punctuation">(</span><span class="sonde-syntax-string">&quot;${SondeMobileTestTags.FindingSeverityGroupPrefix}${group.severity.name}&quot;</span><span class="sonde-syntax-punctuation">),</span></span>
+<span class="sonde-syntax-line" data-line="535"><span class="sonde-syntax-default">          style </span><span class="sonde-syntax-punctuation">=</span><span class="sonde-syntax-default"> </span><span class="sonde-syntax-type">MaterialTheme</span><span class="sonde-syntax-punctuation">.</span><span class="sonde-syntax-default">typography</span><span class="sonde-syntax-punctuation">.</span><span class="sonde-syntax-default">titleMedium</span><span class="sonde-syntax-punctuation">,</span></span>
+<span class="sonde-syntax-line" data-line="536"><span class="sonde-syntax-default">          maxLines </span><span class="sonde-syntax-punctuation">=</span><span class="sonde-syntax-default"> </span><span class="sonde-syntax-number">1</span><span class="sonde-syntax-punctuation">,</span></span>
+<span class="sonde-syntax-line" data-line="537"><span class="sonde-syntax-default">          overflow </span><span class="sonde-syntax-punctuation">=</span><span class="sonde-syntax-default"> </span><span class="sonde-syntax-type">TextOverflow</span><span class="sonde-syntax-punctuation">.</span><span class="sonde-syntax-type">Ellipsis</span><span class="sonde-syntax-punctuation">,</span></span>
+<span class="sonde-syntax-line" data-line="538"><span class="sonde-syntax-default">        </span><span class="sonde-syntax-punctuation">)</span></span>
+<span class="sonde-syntax-line" data-line="539"> </span></code></pre>
+          </div>
+          <div class="sl-finding-prose">
+            <p class="sl-finding-criterion"><strong>Criterion:</strong> WCAG 1.4.4 Resize Text</p>
+            <p class="sl-finding-runtime">Captured by the local runtime handoff (source-of-record label: <code class="sl-inline-code">appium-xcuitest iPhone 17 Pro</code>).</p>
+            <p class="sl-finding-summary-prose">Under the iOS runtime text scale used by the simulator, the Findings group heading truncates before its full label fits — readers using larger text lose the section context.</p>
+            <p class="sl-finding-fix"><strong>Fix:</strong> Keep heading text wrapping and spacing token-driven so the heading reflows instead of truncating.</p>
+          </div>
+        </div>
+      </details>
+      <details class="sl-finding-example sl-finding-example-real" open>
+        <summary class="sl-finding-summary">
+          <div class="sl-finding-head">
+            <p class="sl-finding-framework">Compose Multiplatform — Material Design brand parity (color drift)</p>
+            <h3 class="sl-finding-title">Mobile brand consistency gap (color drift)</h3>
+            <p class="sl-finding-anchor"><code>../SondeMobileApp.kt:497</code></p>
+          </div>
+          <span class="sl-finding-toggle" aria-hidden="true"><svg class="sl-chevron-down" viewBox="0 0 16 16" width="16" height="16" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg">
+  <path d="M3 6 L8 11 L13 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+</svg>
+</span>
+        </summary>
+        <div class="sl-finding-body">
+          <figure class="sl-finding-screenshot sl-finding-screenshot-real">
+            <img src="/findings/cockpit-mobile-android-brand-color-drift.png" alt="Annotated runtime evidence emitted by Sonde Scribe. The left panel shows side-by-side real Android and iOS Sonde Cockpit Mobile Summary screens for John K. The right panel zooms into the paired profile alert actions interpreted through the brand-consistency color drift lens." loading="lazy" decoding="async" />
+          </figure>
+          <div class="sl-finding-snippet">
+            <pre class="sl-code-block" data-language="kotlin" data-start-line="490"><code><span class="sonde-syntax-line" data-line="490"><span class="sonde-syntax-punctuation">@</span><span class="sonde-syntax-type">Composable</span></span>
+<span class="sonde-syntax-line" data-line="491"><span class="sonde-syntax-keyword">private</span><span class="sonde-syntax-default"> </span><span class="sonde-syntax-keyword">fun</span><span class="sonde-syntax-default"> </span><span class="sonde-syntax-type">StaticDogfoodSeedAction</span><span class="sonde-syntax-punctuation">()</span><span class="sonde-syntax-default"> </span><span class="sonde-syntax-punctuation">{</span></span>
+<span class="sonde-syntax-line" data-line="492"><span class="sonde-syntax-default">  </span><span class="sonde-syntax-type">IconButton</span><span class="sonde-syntax-punctuation">(</span></span>
+<span class="sonde-syntax-line" data-line="493"><span class="sonde-syntax-default">    onClick </span><span class="sonde-syntax-punctuation">=</span><span class="sonde-syntax-default"> </span><span class="sonde-syntax-punctuation">{},</span></span>
+<span class="sonde-syntax-line" data-line="494"><span class="sonde-syntax-default">    modifier </span><span class="sonde-syntax-punctuation">=</span><span class="sonde-syntax-default"> </span><span class="sonde-syntax-type">Modifier</span><span class="sonde-syntax-punctuation">.</span><span class="sonde-syntax-default">testTag</span><span class="sonde-syntax-punctuation">(</span><span class="sonde-syntax-type">SondeMobileTestTags</span><span class="sonde-syntax-punctuation">.</span><span class="sonde-syntax-type">StaticDogfoodSeedAction</span><span class="sonde-syntax-punctuation">),</span></span>
+<span class="sonde-syntax-line" data-line="495"><span class="sonde-syntax-default">  </span><span class="sonde-syntax-punctuation">)</span><span class="sonde-syntax-default"> </span><span class="sonde-syntax-punctuation">{</span></span>
+<span class="sonde-syntax-line" data-line="496"><span class="sonde-syntax-default">    </span><span class="sonde-syntax-comment">// Intentional Phase 9 M2 dogfood seed: symbolic text is not a durable accessible name.</span></span>
+<span class="sonde-syntax-line" data-line="497"><span class="sonde-syntax-default">    </span><span class="sonde-syntax-type">Text</span><span class="sonde-syntax-punctuation">(</span><span class="sonde-syntax-string">&quot;!&quot;</span><span class="sonde-syntax-punctuation">)</span></span>
+<span class="sonde-syntax-line" data-line="498"><span class="sonde-syntax-default">  </span><span class="sonde-syntax-punctuation">}</span></span>
+<span class="sonde-syntax-line" data-line="499"><span class="sonde-syntax-punctuation">}</span></span>
+<span class="sonde-syntax-line" data-line="500"> </span></code></pre>
+          </div>
+          <div class="sl-finding-prose">
+            <p class="sl-finding-criterion"><strong>Criterion:</strong> Mobile Brand Consistency: color</p>
+            <p class="sl-finding-runtime">Brand-consistency evidence captured from the same cockpit-mobile runtime scan as the Android symbolic-icon finding above — same source line, different lens.</p>
+            <p class="sl-finding-summary-prose">The Android render of the summary action accent shipped a different color than the brand reference. Cross-platform brand drift is invisible to single-platform audits but obvious when both renders are compared side-by-side.</p>
+            <p class="sl-finding-fix"><strong>Fix:</strong> Align the rendered Android color to the brand token defined in the design system.</p>
           </div>
         </div>
       </details>
@@ -2857,7 +2974,6 @@
           <div class="sl-finding-head">
             <p class="sl-finding-framework">UIKit (Objective-C) — iOS runtime</p>
             <h3 class="sl-finding-title">Objective-C UIKit image is missing an accessible name</h3>
-            
             <p class="sl-finding-anchor"><code>../uikitMissingImageLabel.m:10</code></p>
           </div>
           <span class="sl-finding-toggle" aria-hidden="true"><svg class="sl-chevron-down" viewBox="0 0 16 16" width="16" height="16" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg">
@@ -2866,12 +2982,9 @@
 </span>
         </summary>
         <div class="sl-finding-body">
-          
           <figure class="sl-finding-screenshot sl-finding-screenshot-real">
             <img src="/findings/cockpit-mobile-objc-uikit-image-missing-label.png" alt="Annotated runtime evidence emitted by Sonde Scribe. The cockpit-mobile a11y-fixture screen captured on iOS Simulator with a dashed bounded region around the unlabelled UIImageView. A callout arrow points at the 132-by-132-pixel element at coordinates 612, 702. Header lines read: cockpit-mobile-objc-uikit-image-missing-label; uikitMissingImageLabel.m:10; ios WCAG 1.1.1 Non-text Content bounds 612,702 132x132." loading="lazy" decoding="async" />
           </figure>
-          
-          
           <div class="sl-finding-snippet">
             <pre class="sl-code-block" data-language="objectivec" data-start-line="9"><code><span class="sonde-syntax-line" data-line="9"><span class="sonde-syntax-default">- </span><span class="sonde-syntax-punctuation">(</span><span class="sonde-syntax-keyword">void</span><span class="sonde-syntax-punctuation">)</span><span class="sonde-syntax-default">configureDecorativeLookingAvatar </span><span class="sonde-syntax-punctuation">{</span></span>
 <span class="sonde-syntax-line" data-line="10"><span class="sonde-syntax-default">  </span><span class="sonde-syntax-type">UIImageView</span><span class="sonde-syntax-default"> *avatarImageView </span><span class="sonde-syntax-punctuation">=</span><span class="sonde-syntax-default"> </span><span class="sonde-syntax-punctuation">[[</span><span class="sonde-syntax-type">UIImageView</span><span class="sonde-syntax-default"> alloc</span><span class="sonde-syntax-punctuation">]</span><span class="sonde-syntax-default"> init</span><span class="sonde-syntax-punctuation">];</span></span>
@@ -2882,17 +2995,10 @@
 <span class="sonde-syntax-line" data-line="15"><span class="sonde-syntax-punctuation">}</span></span>
 <span class="sonde-syntax-line" data-line="16"> </span></code></pre>
           </div>
-          
           <div class="sl-finding-prose">
-            
             <p class="sl-finding-criterion"><strong>Criterion:</strong> WCAG 1.1.1 Non-text Content</p>
-            
-            
             <p class="sl-finding-runtime">Captured by the UIKit fixture replay on iPhone 17 Pro through the same cross-platform mobile a11y <abbr class="sl-glossary" title="A small deterministic check that reads code, builds, manifests, dependencies, or runtime signals and emits auditable findings.">probe</abbr> Sonde ships, lensed in the Objective-C → SwiftUI direction.</p>
-            
-            
             <p class="sl-finding-summary-prose">The UIImageView is explicitly marked as an accessibility element with the image trait but carries no accessibilityLabel, so the SwiftUI Image transform inherits an unlabelled meaningful image.</p>
-            
             <p class="sl-finding-fix"><strong>Fix:</strong> Set avatarImageView.accessibilityLabel to a product-specific string in UIKit before the SwiftUI transform runs.</p>
           </div>
         </div>
@@ -2902,7 +3008,6 @@
           <div class="sl-finding-head">
             <p class="sl-finding-framework">React Native — source trace</p>
             <h3 class="sl-finding-title">Hardcoded English accessibility label</h3>
-            
             <p class="sl-finding-anchor"><code>../reactNativeProfileStatus.tsx:5</code></p>
           </div>
           <span class="sl-finding-toggle" aria-hidden="true"><svg class="sl-chevron-down" viewBox="0 0 16 16" width="16" height="16" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg">
@@ -2911,8 +3016,6 @@
 </span>
         </summary>
         <div class="sl-finding-body">
-          
-          
           <div class="sl-finding-snippet">
             <pre class="sl-code-block" data-language="typescript" data-start-line="2"><code><span class="sonde-syntax-line" data-line="2"><span class="sonde-syntax-keyword">import</span><span class="sonde-syntax-default"> </span><span class="sonde-syntax-punctuation">{</span><span class="sonde-syntax-default"> </span><span class="sonde-syntax-type">Text</span><span class="sonde-syntax-default"> </span><span class="sonde-syntax-punctuation">}</span><span class="sonde-syntax-default"> </span><span class="sonde-syntax-keyword">from</span><span class="sonde-syntax-default"> </span><span class="sonde-syntax-string">&#39;react-native&#39;</span><span class="sonde-syntax-punctuation">;</span></span>
 <span class="sonde-syntax-line" data-line="3"> </span>
@@ -2921,17 +3024,10 @@
 <span class="sonde-syntax-line" data-line="6"><span class="sonde-syntax-punctuation">}</span></span>
 <span class="sonde-syntax-line" data-line="7"> </span></code></pre>
           </div>
-          
           <div class="sl-finding-prose">
-            
             <p class="sl-finding-criterion"><strong>Criterion:</strong> Sonde Source Trace Availability</p>
-            
-            
             <p class="sl-finding-runtime">Static JSX analysis on a React Native source file. The same JSX extractor that powers production a11y scans handles React Native and React-for-web.</p>
-            
-            
             <p class="sl-finding-summary-prose">The <code class="sl-inline-code">&lt;Text&gt;</code> element ships with a hardcoded English <code class="sl-inline-code">accessibilityLabel</code>. Non-English users will hear the literal English string regardless of their locale.</p>
-            
             <p class="sl-finding-fix"><strong>Fix:</strong> Replace the hardcoded <code class="sl-inline-code">accessibilityLabel</code> with a localized string lookup before the screen reaches non-English users.</p>
           </div>
         </div>
@@ -2941,7 +3037,6 @@
           <div class="sl-finding-head">
             <p class="sl-finding-framework">React / TSX — WCAG static probe</p>
             <h3 class="sl-finding-title">Image element is missing the alt attribute</h3>
-            
             <p class="sl-finding-anchor"><code>../badAccessibility.tsx:10</code></p>
           </div>
           <span class="sl-finding-toggle" aria-hidden="true"><svg class="sl-chevron-down" viewBox="0 0 16 16" width="16" height="16" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg">
@@ -2950,25 +3045,16 @@
 </span>
         </summary>
         <div class="sl-finding-body">
-          
-          
           <div class="sl-finding-snippet">
             <pre class="sl-code-block" data-language="typescript" data-start-line="9"><code><span class="sonde-syntax-line" data-line="9"><span class="sonde-syntax-keyword">export</span><span class="sonde-syntax-default"> </span><span class="sonde-syntax-keyword">function</span><span class="sonde-syntax-default"> </span><span class="sonde-syntax-type">BadImage</span><span class="sonde-syntax-punctuation">():</span><span class="sonde-syntax-default"> </span><span class="sonde-syntax-type">ReactElement</span><span class="sonde-syntax-default"> </span><span class="sonde-syntax-punctuation">{</span></span>
 <span class="sonde-syntax-line" data-line="10"><span class="sonde-syntax-default">  </span><span class="sonde-syntax-keyword">return</span><span class="sonde-syntax-default"> </span><span class="sonde-syntax-punctuation">&lt;</span><span class="sonde-syntax-default">img src</span><span class="sonde-syntax-punctuation">=</span><span class="sonde-syntax-string">&quot;/logo.png&quot;</span><span class="sonde-syntax-default"> /</span><span class="sonde-syntax-punctuation">&gt;;</span></span>
 <span class="sonde-syntax-line" data-line="11"><span class="sonde-syntax-punctuation">}</span></span>
 <span class="sonde-syntax-line" data-line="12"> </span></code></pre>
           </div>
-          
           <div class="sl-finding-prose">
-            
             <p class="sl-finding-criterion"><strong>Criterion:</strong> WCAG 1.1.1 Non-text Content (Level A)</p>
-            
-            
             <p class="sl-finding-runtime">Static JSX analysis. The cockpit compliance end-to-end suite asserts this exact source produces this exact finding.</p>
-            
-            
             <p class="sl-finding-summary-prose">The bare <code class="sl-inline-code">&lt;img&gt;</code> element exposes no alt attribute, so assistive technologies announce the file path or nothing at all.</p>
-            
             <p class="sl-finding-fix"><strong>Fix:</strong> Add <code class="sl-inline-code">alt=&quot;description&quot;</code> for informative images, or <code class="sl-inline-code">alt=&quot;&quot;</code> for decorative images.</p>
           </div>
         </div>
@@ -2978,7 +3064,6 @@
           <div class="sl-finding-head">
             <p class="sl-finding-framework">HTML — WCAG mechanical probe</p>
             <h3 class="sl-finding-title">Element has positive tabindex (focus order)</h3>
-            
             <p class="sl-finding-anchor"><code>../index.html:13</code></p>
           </div>
           <span class="sl-finding-toggle" aria-hidden="true"><svg class="sl-chevron-down" viewBox="0 0 16 16" width="16" height="16" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg">
@@ -2987,8 +3072,6 @@
 </span>
         </summary>
         <div class="sl-finding-body">
-          
-          
           <div class="sl-finding-snippet">
             <pre class="sl-code-block" data-language="html" data-start-line="11"><code><span class="sonde-syntax-line" data-line="11"><span class="sonde-syntax-default">  </span><span class="sonde-syntax-punctuation">&lt;</span><span class="sonde-syntax-default">/</span><span class="sonde-syntax-keyword">nav</span><span class="sonde-syntax-punctuation">&gt;</span></span>
 <span class="sonde-syntax-line" data-line="12"><span class="sonde-syntax-default">  </span><span class="sonde-syntax-punctuation">&lt;</span><span class="sonde-syntax-keyword">img</span><span class="sonde-syntax-default"> src</span><span class="sonde-syntax-punctuation">=</span><span class="sonde-syntax-string">&quot;logo.png&quot;</span><span class="sonde-syntax-punctuation">&gt;</span></span>
@@ -2996,17 +3079,10 @@
 <span class="sonde-syntax-line" data-line="14"><span class="sonde-syntax-punctuation">&lt;</span><span class="sonde-syntax-default">/</span><span class="sonde-syntax-keyword">body</span><span class="sonde-syntax-punctuation">&gt;</span></span>
 <span class="sonde-syntax-line" data-line="15"> </span></code></pre>
           </div>
-          
           <div class="sl-finding-prose">
-            
             <p class="sl-finding-criterion"><strong>Criterion:</strong> WCAG 2.4.3 Focus Order (Level A)</p>
-            
-            
             <p class="sl-finding-runtime">Static HTML analysis. The fix-apply end-to-end suite drives <code class="sl-inline-code">sonde lint --fix --apply</code> against this source and verifies the rule fires and the deterministic patch lands.</p>
-            
-            
             <p class="sl-finding-summary-prose">The <code class="sl-inline-code">&lt;button tabindex=&quot;3&quot;&gt;</code> creates an unpredictable focus order — positive tabindex values jump out of natural DOM order and disorient keyboard users.</p>
-            
             <p class="sl-finding-fix"><strong>Fix:</strong> Use <code class="sl-inline-code">tabindex=&quot;0&quot;</code> to add to natural tab order, or <code class="sl-inline-code">tabindex=&quot;-1&quot;</code> for programmatic focus only. Rearrange DOM order to achieve the desired tab sequence.</p>
           </div>
         </div>
@@ -3147,6 +3223,13 @@
     <div class="cal-stat"><span class="cal-val">400–600</span><span class="cal-label" data-msg-id="meth.cal.median">Target Median</span></div>
     <div class="cal-stat"><span class="cal-val">250–750</span><span class="cal-label" data-msg-id="meth.cal.spread">Target Spread</span></div>
     <div class="cal-stat"><span class="cal-val" data-msg-id="meth.cal.value.wip">WIP</span><span class="cal-label" data-msg-id="meth.cal.status">Status</span></div></div>
+  </div>
+</section>
+<section class="sl-section sl-band sl-meth-section sl-feedback-block" id="feedback" aria-labelledby="feedback-title">
+  <div class="sl-section-inner">
+    <h2 id="feedback-title"><a href="#feedback" class="meth-anchor" data-msg-id="meth.feedback.title">Help Us Improve</a></h2>
+    <p class="sl-lede" data-msg-id="meth.feedback.body">The Sonde Score is a living standard. We’re building it in the open because accessibility is too important for closed-door decisions. Your expertise makes it better. If you have feedback on our methodology, severity weights, or scoring approach, we want to hear from you.</p>
+    <a class="sl-action sl-action-primary sl-feedback-cta" href="https://github.com/sondeinc/daylight/discussions/categories/methodology" target="_blank" rel="noopener noreferrer" data-msg-id="meth.feedback.cta">Share feedback on the Daylight Project</a>
   </div>
 </section>
 

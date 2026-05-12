@@ -416,6 +416,20 @@
   --sonde-content-data-max: 95vw;        /* Data tables: near full width */
   --sonde-content-min-width: 320px;      /* Mobile minimum */
   --sonde-content-padding: clamp(1rem, 3vw, 3rem);
+  --sonde-form-factor-phone-max: 480px;       /* Phone contract upper bound */
+  --sonde-form-factor-tablet-max: 1024px;     /* Tablet contract upper bound */
+  --sonde-form-factor-large-min: 1920px;      /* Large-monitor contract lower bound */
+  --sonde-layout-shell-max: min(96vw, 118rem);          /* Rich page shell */
+  --sonde-layout-readable-max: var(--sonde-content-readable-max); /* Readable/prose rail */
+  --sonde-layout-data-max: var(--sonde-content-data-max);          /* Tables and dense data */
+  --sonde-layout-gutter-inline: var(--sonde-content-padding);
+  --sonde-layout-gutter-block: var(--sonde-spacing-xl);
+  --sonde-layout-panel-min: min(100%, 18rem);
+  --sonde-layout-panel-max: 28rem;
+  --sonde-layout-grid-min: 16rem;
+  --sonde-layout-toolbar-gap: var(--sonde-spacing-sm);
+  --sonde-target-size-min: 44px;      /* WCAG 2.5.8 minimum */
+  --sonde-target-size-comfort: 48px;  /* Mobile/touch comfort target */
 
   /* ─── Border Radius ─────────────────────────────────────────── */
   --sonde-radius-sm: 4px;
@@ -689,6 +703,35 @@
 :root:lang(ja), :root:lang(zh), :root:lang(ko),
 [lang^="ja"], [lang^="zh"], [lang^="ko"] {
   --sonde-content-readable-max: 40ch;
+  --sonde-layout-readable-max: 40ch;
+}
+
+/* ─── Form-Factor Layout Overrides ─────────────────────────────── */
+@media (max-width: 480px) {
+  :root {
+    --sonde-content-data-max: 100vw;
+    --sonde-content-padding: clamp(0.75rem, 4vw, 1rem);
+    --sonde-layout-shell-max: 100%;
+    --sonde-layout-data-max: 100vw;
+    --sonde-layout-gutter-inline: var(--sonde-content-padding);
+    --sonde-layout-gutter-block: var(--sonde-spacing-lg);
+    --sonde-layout-panel-min: 100%;
+    --sonde-layout-panel-max: 100%;
+    --sonde-layout-grid-min: min(100%, 14rem);
+    --sonde-layout-toolbar-gap: var(--sonde-spacing-xs);
+  }
+}
+
+@media (min-width: 1920px) {
+  :root {
+    --sonde-content-data-max: min(94vw, 118rem);
+    --sonde-content-padding: clamp(2rem, 2vw, 5rem);
+    --sonde-layout-shell-max: min(96vw, 128rem);
+    --sonde-layout-data-max: min(94vw, 118rem);
+    --sonde-layout-gutter-inline: var(--sonde-content-padding);
+    --sonde-layout-gutter-block: var(--sonde-spacing-2xl);
+    --sonde-layout-grid-min: 18rem;
+  }
 }
 
 /* ─── AUTO-GENERATED @property REGISTRATIONS — do not edit by hand ────── */

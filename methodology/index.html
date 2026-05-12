@@ -272,6 +272,12 @@
           localeLinks[l].setAttribute('href', './' + base + '-' + locale + ext);
         }
       }
+      if (typeof document.dispatchEvent === 'function') {
+        var localeEvent = typeof CustomEvent === 'function'
+          ? new CustomEvent('sonde:locale-applied', { detail: { locale: locale } })
+          : { type: 'sonde:locale-applied', detail: { locale: locale } };
+        document.dispatchEvent(localeEvent);
+      }
     };
     document.head.appendChild(script);
   }
@@ -699,6 +705,21 @@
     }
   }
 
+  @media (max-width: 22rem) {
+    .sl-hero-with-icon .sl-section-inner {
+      flex-direction: column;
+    }
+
+    .sl-hero-with-icon .sl-page-icon {
+      flex-direction: row;
+      justify-content: flex-start;
+    }
+
+    .sl-hero-content {
+      width: 100%;
+    }
+  }
+
   /* Collapsible /features/ hero. <details>/<summary> handles open/close
      state without JS; the summary always shows the page identity (icon +
      eyebrow + title) and the body holds the cockpit explainer paragraph
@@ -811,6 +832,7 @@
   }
 
   .sl-finding-example {
+    min-width: 0;
     padding: 1.1rem 1.2rem;
     border: 1px solid var(--sonde-color-border);
     border-left: 0.25rem solid var(--sonde-color-primary);
@@ -928,6 +950,11 @@
     grid-template-columns: minmax(0, 14rem) minmax(0, 1fr);
     gap: 1.1rem;
     align-items: start;
+    min-width: 0;
+  }
+
+  .sl-finding-body > * {
+    min-width: 0;
   }
 
   .sl-finding-screenshot {
@@ -975,7 +1002,14 @@
     display: flex;
     flex-direction: column;
     gap: 0.55rem;
+    min-width: 0;
     margin: 0;
+  }
+
+  .sl-finding-snippet {
+    min-width: 0;
+    max-width: 100%;
+    overflow-x: auto;
   }
 
   .sl-finding-prose p {
@@ -1065,6 +1099,7 @@
      in every Sonde theme (Ultraviolet / Infrared / High Contrast /
      Daylight / Light / Dark) so highlighting tracks the active theme. */
   .sl-code-block {
+    max-width: 100%;
     margin: 0;
     padding: 0.95rem 1.1rem;
     background: color-mix(in srgb, var(--sonde-color-primary) 5%, var(--sonde-color-surface));

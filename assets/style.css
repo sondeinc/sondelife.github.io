@@ -338,8 +338,9 @@
 
 .scribe-shell__main {
   margin-inline: auto;
-  max-width: 72rem;
-  padding: 1.5rem;
+  max-width: var(--sonde-layout-data-max);
+  padding-block: var(--sonde-layout-gutter-block);
+  padding-inline: var(--sonde-layout-gutter-inline);
 }
 
 .scribe-index {
@@ -387,8 +388,8 @@
 .scribe-leaderboard-controls {
   align-items: end;
   display: grid;
-  gap: 1rem;
-  grid-template-columns: repeat(auto-fit, minmax(12rem, 1fr));
+  gap: var(--sonde-layout-toolbar-gap);
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, var(--sonde-layout-grid-min)), 1fr));
   margin-block-start: 1.5rem;
 }
 
@@ -912,11 +913,17 @@
   .meth-header { padding: 1rem 1.25rem 0.5rem; }
   .meth-section { padding: 0.5rem 1.25rem; }
   .meth-feedback { margin: 1rem 1.25rem; }
+  :where(.meth-section, .sl-meth-section) table {
+    display: block;
+    inline-size: 100%;
+    max-inline-size: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
 }
 
 @media (max-width: 320px) {
   .meth-formula-box { font-size: 0.85rem; padding: 0.75rem 1rem; overflow-x: auto; }
-  .meth-section table { display: block; overflow-x: auto; max-width: 100vw; }
   .meth-section { padding: 0.75rem; word-break: break-word; }
 }
 

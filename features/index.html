@@ -272,6 +272,12 @@
           localeLinks[l].setAttribute('href', './' + base + '-' + locale + ext);
         }
       }
+      if (typeof document.dispatchEvent === 'function') {
+        var localeEvent = typeof CustomEvent === 'function'
+          ? new CustomEvent('sonde:locale-applied', { detail: { locale: locale } })
+          : { type: 'sonde:locale-applied', detail: { locale: locale } };
+        document.dispatchEvent(localeEvent);
+      }
     };
     document.head.appendChild(script);
   }
@@ -699,6 +705,21 @@
     }
   }
 
+  @media (max-width: 22rem) {
+    .sl-hero-with-icon .sl-section-inner {
+      flex-direction: column;
+    }
+
+    .sl-hero-with-icon .sl-page-icon {
+      flex-direction: row;
+      justify-content: flex-start;
+    }
+
+    .sl-hero-content {
+      width: 100%;
+    }
+  }
+
   /* Collapsible /features/ hero. <details>/<summary> handles open/close
      state without JS; the summary always shows the page identity (icon +
      eyebrow + title) and the body holds the cockpit explainer paragraph
@@ -811,6 +832,7 @@
   }
 
   .sl-finding-example {
+    min-width: 0;
     padding: 1.1rem 1.2rem;
     border: 1px solid var(--sonde-color-border);
     border-left: 0.25rem solid var(--sonde-color-primary);
@@ -928,6 +950,11 @@
     grid-template-columns: minmax(0, 14rem) minmax(0, 1fr);
     gap: 1.1rem;
     align-items: start;
+    min-width: 0;
+  }
+
+  .sl-finding-body > * {
+    min-width: 0;
   }
 
   .sl-finding-screenshot {
@@ -975,7 +1002,14 @@
     display: flex;
     flex-direction: column;
     gap: 0.55rem;
+    min-width: 0;
     margin: 0;
+  }
+
+  .sl-finding-snippet {
+    min-width: 0;
+    max-width: 100%;
+    overflow-x: auto;
   }
 
   .sl-finding-prose p {
@@ -1065,6 +1099,7 @@
      in every Sonde theme (Ultraviolet / Infrared / High Contrast /
      Daylight / Light / Dark) so highlighting tracks the active theme. */
   .sl-code-block {
+    max-width: 100%;
     margin: 0;
     padding: 0.95rem 1.1rem;
     background: color-mix(in srgb, var(--sonde-color-primary) 5%, var(--sonde-color-surface));
@@ -2787,6 +2822,20 @@
     const activeFilters = app.querySelector('[data-helm-active-filters]');
     const counts = app.querySelector('[data-helm-counts]');
     const navigator = app.querySelector('[data-helm-navigator]');
+    const countMessages = {
+      racks: {
+        id: 'sondeLife.helm.count.racks',
+        fallback: '{count, plural, one {rack} other {racks}}',
+      },
+      probes: {
+        id: 'sondeLife.helm.count.probes',
+        fallback: '{count, plural, one {probe} other {probes}}',
+      },
+      languages: {
+        id: 'sondeLife.helm.count.languages',
+        fallback: '{count, plural, one {language} other {languages}}',
+      },
+    };
 
     fetch(app.dataset.helmManifestHref)
       .then((response) => {
@@ -2815,6 +2864,7 @@
         restoreSelectionFromHash();
         render();
       });
+      document.addEventListener('sonde:locale-applied', () => render());
       search.addEventListener('input', () => {
         filterState.search = search.value;
         const best = findBestSelection(filterState.search);
@@ -2962,8 +3012,9 @@
     }
 
     function render() {
-      renderCounts();
-      renderTree();
+      const racks = filteredRacks();
+      renderCounts(racks);
+      renderTree(racks);
       renderActiveFilters();
       renderDetail();
       if (activeMenu) {
@@ -2974,34 +3025,102 @@
       }
     }
 
-    function renderCounts() {
+    function renderCounts(racks) {
       if (!hierarchy || !counts) return;
+      const currentCounts = filteredCounts(racks);
       counts.innerHTML = [
-        ['racks', hierarchy.counts?.racks ?? hierarchy.racks.length],
-        ['probes', hierarchy.counts?.probes ?? countNodes('probe')],
-        ['languages', hierarchy.counts?.languages ?? hierarchy.languages.length],
+        ['racks', currentCounts.racks],
+        ['probes', currentCounts.probes],
+        ['languages', currentCounts.languages],
       ]
-        .map(([label, value]) => `<span><strong>${escapeHtml(value)}</strong> ${escapeHtml(label)}</span>`)
+        .map(
+          ([label, value]) =>
+            `<span><strong>${escapeHtml(value)}</strong> ${escapeHtml(countLabel(label, value))}</span>`,
+        )
         .join('');
     }
 
-    function countNodes(kind) {
+    function filteredCounts(racks) {
+      const languageIds = new Set();
+      let probes = 0;
+      for (const rack of racks) {
+        probes += countNodesIn([rack], 'probe');
+        collectVisibleLanguageIds(rack, languageIds);
+      }
+      return {
+        racks: racks.length,
+        probes,
+        languages: languageIds.size,
+      };
+    }
+
+    function countNodesIn(nodes, kind) {
       let count = 0;
-      for (const rack of hierarchy.racks) {
-        if (rack.kind === kind) count += 1;
-        for (const child of rack.children || []) {
-          if (child.kind === kind) count += 1;
-        }
+      for (const node of nodes) {
+        if (node.kind === kind) count += 1;
+        count += countNodesIn(node.children || [], kind);
       }
       return count;
     }
 
-    function renderTree() {
+    function collectVisibleLanguageIds(rack, languageIds) {
+      const nodeLanguageIds = new Set();
+      collectNodeLanguageIds(rack, nodeLanguageIds);
+      const selectedLanguageIds = filterState.language;
+      const candidates =
+        nodeLanguageIds.size > 0
+          ? nodeLanguageIds
+          : selectedLanguageIds.size > 0
+            ? selectedLanguageIds
+            : new Set(hierarchy.languages.map((language) => language.id));
+      for (const id of candidates) {
+        if (selectedLanguageIds.size === 0 || selectedLanguageIds.has(id)) languageIds.add(id);
+      }
+    }
+
+    function collectNodeLanguageIds(node, languageIds) {
+      for (const id of node.applicableLanguages || []) languageIds.add(id);
+      for (const child of node.children || []) collectNodeLanguageIds(child, languageIds);
+    }
+
+    function countLabel(label, value) {
+      const message = countMessages[label];
+      if (!message) return label;
+      const dictionary = window.SondeDaylightI18n || {};
+      const translated = typeof dictionary[message.id] === 'string' ? dictionary[message.id] : message.fallback;
+      return formatPluralLabel(translated, value);
+    }
+
+    function formatPluralLabel(message, value) {
+      const variants = parsePluralMessage(message);
+      if (!variants) return message.replace(/\{count\}/g, String(value));
+      const locale = document.documentElement.lang || window.navigator.language || 'en-US';
+      const selected = new Intl.PluralRules(locale).select(value);
+      const text = variants[selected] || variants.other || variants.one || message;
+      const formatted = new Intl.NumberFormat(locale).format(value);
+      return text.replace(/#/g, formatted);
+    }
+
+    function parsePluralMessage(message) {
+      const prefix = '{count, plural,';
+      if (!message.startsWith(prefix) || !message.endsWith('}')) return null;
+      const variants = {};
+      const body = message.slice(prefix.length, -1);
+      const pattern = /(\w+)\s*\{([^{}]*)\}/g;
+      let match = pattern.exec(body);
+      while (match) {
+        variants[match[1]] = match[2];
+        match = pattern.exec(body);
+      }
+      return Object.keys(variants).length > 0 ? variants : null;
+    }
+
+    function renderTree(racks) {
       if (navigatorCollapsed) {
         tree.innerHTML = '';
         return;
       }
-      const categories = categoriesFor(filteredRacks());
+      const categories = categoriesFor(racks);
       tree.innerHTML = categories
         .map((category) => {
           const open = expanded.has(category.id);
