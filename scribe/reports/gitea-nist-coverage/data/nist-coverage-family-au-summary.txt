@@ -1,0 +1,10 @@
+NIST family AU: Audit and Accountability
+Total controls: 12
+Satisfied controls: 0
+Customer-context controls: 7
+Unsatisfied controls: 5
+Validation-resolved controls: 5
+Evidence-tier controls: 7
+Deferred-elsewhere controls: 0
+Representative controls: au-2:absent, au-3:absent, au-3.1:absent, au-4:requires-customer-context, au-5:requires-customer-context, au-6:requires-customer-context, au-8:absent, au-9:requires-customer-context, au-10:requires-customer-context, au-12:absent
+Raw rollup JSON download: data/nist-rollup.json

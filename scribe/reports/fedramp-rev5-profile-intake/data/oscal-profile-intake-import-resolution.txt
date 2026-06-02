@@ -1,0 +1,10 @@
+OSCAL import-resolution summary
+Resolved imports: 22
+Dangling imports: 0
+Profiles scanned: 22
+Catalog/profile provenance records: 45
+Representative import links:
+- resolved: fedramp-resources/baselines/rev5/json/FedRAMP_rev5_catalog_tailoring_profile.json imports #39653e2d-c342-4b6e-93bd-5a324e8f7e3f -> nist-oscal-content-v1-4/nist.gov/SP800-53/rev5/json/NIST_SP-800-53_rev5_catalog.json
+- resolved: fedramp-resources/baselines/rev5/json/FedRAMP_rev5_HIGH-baseline_profile.json imports #051a77c1-b61d-4995-8275-dacfe688d510 -> fedramp-resources/baselines/rev5/json/FedRAMP_rev5_catalog_tailoring_profile.json
+- resolved: fedramp-resources/baselines/rev5/json/FedRAMP_rev5_LI-SaaS-baseline_profile.json imports #051a77c1-b61d-4995-8275-dacfe688d510 -> fedramp-resources/baselines/rev5/json/FedRAMP_rev5_LOW-baseline_profile.json
+- resolved: fedramp-resources/baselines/rev5/json/FedRAMP_rev5_LOW-baseline_profile.json imports #051a77c1-b61d-4995-8275-dacfe688d510 -> fedramp-resources/baselines/rev5/json/FedRAMP_rev5_catalog_tailoring_profile.json

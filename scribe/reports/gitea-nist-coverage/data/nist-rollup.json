@@ -1,0 +1,755 @@
+{
+  "assessedAt": "2026-05-19T00:00:00.000Z",
+  "coverageRatio": 0.27184466019417475,
+  "families": [
+    {
+      "assessedAt": "2026-05-19T00:00:00.000Z",
+      "controls": [
+        {
+          "controlId": "ac-3",
+          "mode": "validation-resolved",
+          "status": "present",
+          "validation": "access-enforcement"
+        },
+        {
+          "controlId": "ac-3.7",
+          "mode": "validation-resolved",
+          "status": "present",
+          "validation": "access-enforcement"
+        },
+        {
+          "controlId": "ac-3.8",
+          "mode": "evidence-tier-with-rationale",
+          "rationale": "Runtime revocation and route-level deny evidence require customer tenancy context.",
+          "status": "present",
+          "validation": "access-enforcement"
+        },
+        {
+          "controlId": "ac-3.13",
+          "mode": "validation-resolved",
+          "status": "present",
+          "validation": "access-enforcement"
+        },
+        {
+          "controlId": "ac-4",
+          "mode": "evidence-tier-with-rationale",
+          "rationale": "Information-flow enforcement needs parseable allowlist or boundary enforcement evidence.",
+          "status": "requires-customer-context"
+        },
+        {
+          "controlId": "ac-6",
+          "mode": "validation-resolved",
+          "status": "present",
+          "validation": "least-privilege"
+        },
+        {
+          "controlId": "ac-6.1",
+          "mode": "evidence-tier-with-rationale",
+          "rationale": "Authorized access-to-security-functions review needs role inventory and operator policy.",
+          "status": "present",
+          "validation": "least-privilege"
+        },
+        {
+          "controlId": "ac-6.2",
+          "mode": "evidence-tier-with-rationale",
+          "rationale": "Non-privileged account use needs identity-provider and break-glass procedure evidence.",
+          "status": "present",
+          "validation": "least-privilege"
+        },
+        {
+          "controlId": "ac-6.5",
+          "mode": "evidence-tier-with-rationale",
+          "rationale": "Privileged group membership is customer environment state, not source-only evidence.",
+          "status": "present",
+          "validation": "least-privilege"
+        },
+        {
+          "controlId": "ac-6.8",
+          "mode": "evidence-tier-with-rationale",
+          "rationale": "Privileged command auditing requires source audit instrumentation plus runtime command-policy evidence; source-only audit events do not prove privileged command analysis.",
+          "status": "requires-customer-context"
+        },
+        {
+          "controlId": "ac-6.9",
+          "mode": "evidence-tier-with-rationale",
+          "rationale": "Requires audit witness on privileged-function call sites plus least-privilege evidence.",
+          "status": "present",
+          "validation": "least-privilege"
+        },
+        {
+          "controlId": "ac-6.10",
+          "mode": "validation-resolved",
+          "status": "present",
+          "validation": "least-privilege"
+        },
+        {
+          "controlId": "ac-7",
+          "mode": "validation-resolved",
+          "status": "present",
+          "validation": "access-enforcement"
+        },
+        {
+          "controlId": "ac-11",
+          "mode": "evidence-tier-with-rationale",
+          "rationale": "Session-timeout values live in deployment config; source-pattern coverage is partial.",
+          "status": "present",
+          "validation": "session-management"
+        },
+        {
+          "controlId": "ac-12",
+          "mode": "validation-resolved",
+          "status": "present",
+          "validation": "session-management"
+        },
+        {
+          "controlId": "ac-17",
+          "mode": "validation-resolved",
+          "status": "gap",
+          "validation": "transmission-encryption"
+        },
+        {
+          "controlId": "ac-17.2",
+          "mode": "validation-resolved",
+          "status": "gap",
+          "validation": "transmission-encryption"
+        },
+        {
+          "controlId": "ac-17.8",
+          "mode": "validation-resolved",
+          "status": "gap",
+          "validation": "transmission-encryption"
+        },
+        {
+          "controlId": "ac-18",
+          "mode": "evidence-tier-with-rationale",
+          "rationale": "Wireless access restrictions require deployment and device-management evidence.",
+          "status": "requires-customer-context"
+        }
+      ],
+      "deferredElsewhere": 0,
+      "evidenceTier": 9,
+      "family": "AC",
+      "familyTitle": "Access Control",
+      "totalControls": 19,
+      "validationResolved": 10
+    },
+    {
+      "assessedAt": "2026-05-19T00:00:00.000Z",
+      "controls": [
+        {
+          "controlId": "au-2",
+          "mode": "validation-resolved",
+          "status": "absent",
+          "validation": "audit-event-coverage"
+        },
+        {
+          "controlId": "au-3",
+          "mode": "validation-resolved",
+          "status": "absent",
+          "validation": "audit-record-completeness"
+        },
+        {
+          "controlId": "au-3.1",
+          "mode": "validation-resolved",
+          "status": "absent",
+          "validation": "audit-record-completeness"
+        },
+        {
+          "controlId": "au-4",
+          "mode": "evidence-tier-with-rationale",
+          "rationale": "Audit storage capacity counts only explicit audit-log capacity/rotation source evidence.",
+          "status": "requires-customer-context"
+        },
+        {
+          "controlId": "au-5",
+          "mode": "evidence-tier-with-rationale",
+          "rationale": "Audit processing failure response needs operational alerting and incident procedure evidence.",
+          "status": "requires-customer-context"
+        },
+        {
+          "controlId": "au-6",
+          "mode": "evidence-tier-with-rationale",
+          "rationale": "Audit review, correlation, reporting, SIEM rules, and alert handling are operational evidence beyond source-visible audit event generation.",
+          "status": "requires-customer-context"
+        },
+        {
+          "controlId": "au-8",
+          "mode": "validation-resolved",
+          "status": "absent",
+          "validation": "audit-record-completeness"
+        },
+        {
+          "controlId": "au-9",
+          "mode": "evidence-tier-with-rationale",
+          "rationale": "Audit record protection requires storage ACL and retention evidence beyond source code.",
+          "status": "requires-customer-context"
+        },
+        {
+          "controlId": "au-10",
+          "mode": "evidence-tier-with-rationale",
+          "rationale": "Non-repudiation counts only explicit signed event or identity-provider source evidence.",
+          "status": "requires-customer-context"
+        },
+        {
+          "controlId": "au-12",
+          "mode": "validation-resolved",
+          "status": "absent",
+          "validation": "audit-event-coverage"
+        },
+        {
+          "controlId": "au-12.1",
+          "mode": "evidence-tier-with-rationale",
+          "rationale": "System-wide audit generation requires deployment topology and platform coverage evidence; source coverage attests application instrumentation only.",
+          "status": "requires-customer-context"
+        },
+        {
+          "controlId": "au-12.3",
+          "mode": "evidence-tier-with-rationale",
+          "rationale": "Changes by authorized individuals need release-control and approval evidence plus audit instrumentation.",
+          "status": "requires-customer-context"
+        }
+      ],
+      "deferredElsewhere": 0,
+      "evidenceTier": 7,
+      "family": "AU",
+      "familyTitle": "Audit and Accountability",
+      "totalControls": 12,
+      "validationResolved": 5
+    },
+    {
+      "assessedAt": "2026-05-19T00:00:00.000Z",
+      "controls": [
+        {
+          "controlId": "cm-2",
+          "mode": "evidence-tier-with-rationale",
+          "rationale": "Baseline configuration derives from declarative GitOps reconciliation (e.g. a Flux Kustomization pruning a committed source baseline) or otherwise needs committed manifests plus operator-approved baseline policy.",
+          "status": "requires-customer-context"
+        },
+        {
+          "controlId": "cm-3",
+          "mode": "evidence-tier-with-rationale",
+          "rationale": "Configuration change control needs VCS and approval workflow evidence.",
+          "status": "requires-customer-context"
+        },
+        {
+          "controlId": "cm-4",
+          "mode": "evidence-tier-with-rationale",
+          "rationale": "Impact analysis derives from blast-radius probe rather than a single validation.",
+          "status": "requires-customer-context"
+        },
+        {
+          "controlId": "cm-5",
+          "mode": "evidence-tier-with-rationale",
+          "rationale": "Access restrictions for change need repository permissions and deployment policy evidence.",
+          "status": "present",
+          "validation": "least-privilege"
+        },
+        {
+          "controlId": "cm-6",
+          "mode": "validation-resolved",
+          "status": "present",
+          "validation": "configuration-defaults-safety"
+        },
+        {
+          "controlId": "cm-6.1",
+          "mode": "evidence-tier-with-rationale",
+          "rationale": "Automated configuration enforcement counts only a Kubernetes Namespace whose metadata.labels set pod-security.kubernetes.io/enforce to an enforcing Pod Security Admission level (restricted or baseline); audit/warn-only labels, the privileged no-op level, and Helm values without a Namespace kind remain customer deployment evidence.",
+          "status": "requires-customer-context"
+        },
+        {
+          "controlId": "cm-7",
+          "mode": "validation-resolved",
+          "status": "absent",
+          "validation": "least-functionality"
+        },
+        {
+          "controlId": "cm-7.1",
+          "mode": "evidence-tier-with-rationale",
+          "rationale": "Periodic review of allowed functions requires operator review cadence evidence.",
+          "status": "requires-customer-context"
+        },
+        {
+          "controlId": "cm-7.2",
+          "mode": "evidence-tier-with-rationale",
+          "rationale": "Preventing program execution requires runtime policy and allowlist evidence.",
+          "status": "requires-customer-context"
+        },
+        {
+          "controlId": "cm-7.4",
+          "mode": "evidence-tier-with-rationale",
+          "rationale": "Unauthorized software denylisting derives from admission-control deny-by-exception policy or endpoint/runtime denylist evidence.",
+          "status": "requires-customer-context"
+        },
+        {
+          "controlId": "cm-7.5",
+          "mode": "evidence-tier-with-rationale",
+          "rationale": "Authorized software allowlisting derives from admission-control allow-by-exception policy or endpoint/runtime allowlist evidence.",
+          "status": "requires-customer-context"
+        },
+        {
+          "controlId": "cm-8",
+          "mode": "evidence-tier-with-rationale",
+          "rationale": "Component inventory derives from parseable dependency graph or lockfile inventory evidence.",
+          "status": "requires-customer-context"
+        },
+        {
+          "controlId": "cm-10",
+          "mode": "evidence-tier-with-rationale",
+          "rationale": "Software usage restrictions require license and operator policy evidence.",
+          "status": "requires-customer-context"
+        },
+        {
+          "controlId": "cm-11",
+          "mode": "evidence-tier-with-rationale",
+          "rationale": "User-installed software restrictions require endpoint management evidence.",
+          "status": "requires-customer-context"
+        }
+      ],
+      "deferredElsewhere": 0,
+      "evidenceTier": 12,
+      "family": "CM",
+      "familyTitle": "Configuration Management",
+      "totalControls": 14,
+      "validationResolved": 2
+    },
+    {
+      "assessedAt": "2026-05-19T00:00:00.000Z",
+      "controls": [
+        {
+          "controlId": "ia-2",
+          "mode": "validation-resolved",
+          "status": "present",
+          "validation": "auth-required"
+        },
+        {
+          "controlId": "ia-2.1",
+          "mode": "evidence-tier-with-rationale",
+          "rationale": "Multifactor authentication for privileged accounts requires IdP configuration evidence.",
+          "status": "present",
+          "validation": "mfa-required"
+        },
+        {
+          "controlId": "ia-2.2",
+          "mode": "evidence-tier-with-rationale",
+          "rationale": "Multifactor authentication for non-privileged accounts requires IdP configuration evidence.",
+          "status": "present",
+          "validation": "mfa-required"
+        },
+        {
+          "controlId": "ia-2.6",
+          "mode": "evidence-tier-with-rationale",
+          "rationale": "Network access to privileged accounts requires runtime access-policy evidence.",
+          "status": "present",
+          "validation": "auth-required"
+        },
+        {
+          "controlId": "ia-2.8",
+          "mode": "evidence-tier-with-rationale",
+          "rationale": "Replay-resistant authentication needs protocol and IdP configuration evidence.",
+          "status": "present",
+          "validation": "auth-required"
+        },
+        {
+          "controlId": "ia-5",
+          "mode": "validation-resolved",
+          "status": "present",
+          "validation": "credential-storage-safety"
+        },
+        {
+          "controlId": "ia-5.1",
+          "mode": "validation-resolved",
+          "status": "absent",
+          "validation": "password-strength"
+        },
+        {
+          "controlId": "ia-5.2",
+          "mode": "evidence-tier-with-rationale",
+          "rationale": "Public-key authentication requires certificate lifecycle and key-store evidence.",
+          "status": "requires-customer-context"
+        },
+        {
+          "controlId": "ia-5.4",
+          "mode": "evidence-tier-with-rationale",
+          "rationale": "Automated password management support combines password policy with IdP evidence.",
+          "status": "absent",
+          "validation": "password-strength"
+        },
+        {
+          "controlId": "ia-5.6",
+          "mode": "validation-resolved",
+          "status": "present",
+          "validation": "credential-storage-safety"
+        },
+        {
+          "controlId": "ia-5.7",
+          "mode": "validation-resolved",
+          "status": "present",
+          "validation": "credential-storage-safety"
+        },
+        {
+          "controlId": "ia-5.13",
+          "mode": "evidence-tier-with-rationale",
+          "rationale": "Password managers require customer endpoint and secret-management policy evidence.",
+          "status": "requires-customer-context"
+        },
+        {
+          "controlId": "ia-6",
+          "mode": "validation-resolved",
+          "status": "present",
+          "validation": "auth-required"
+        },
+        {
+          "controlId": "ia-7",
+          "mode": "evidence-tier-with-rationale",
+          "rationale": "Cryptographic module authentication requires module inventory and FIPS evidence.",
+          "status": "requires-customer-context"
+        },
+        {
+          "controlId": "ia-8",
+          "mode": "evidence-tier-with-rationale",
+          "rationale": "Non-organizational user identification needs tenant and federation-policy evidence.",
+          "status": "present",
+          "validation": "auth-required"
+        }
+      ],
+      "deferredElsewhere": 0,
+      "evidenceTier": 9,
+      "family": "IA",
+      "familyTitle": "Identification and Authentication",
+      "totalControls": 15,
+      "validationResolved": 6
+    },
+    {
+      "assessedAt": "2026-05-19T00:00:00.000Z",
+      "controls": [
+        {
+          "controlId": "sc-2",
+          "mode": "evidence-tier-with-rationale",
+          "rationale": "Application partitioning needs process/runtime deployment evidence.",
+          "status": "requires-customer-context"
+        },
+        {
+          "controlId": "sc-3",
+          "mode": "evidence-tier-with-rationale",
+          "rationale": "Security function isolation needs architecture and deployment-boundary evidence.",
+          "status": "requires-customer-context"
+        },
+        {
+          "controlId": "sc-4",
+          "mode": "evidence-tier-with-rationale",
+          "rationale": "Information in shared system resources requires runtime isolation evidence.",
+          "status": "requires-customer-context"
+        },
+        {
+          "controlId": "sc-5",
+          "mode": "evidence-tier-with-rationale",
+          "rationale": "Denial-of-service protection requires perimeter and capacity evidence.",
+          "sourceEvidence": [
+            {
+              "capability": "nist80053.deployment-runtime-dos-mitigation",
+              "column": 8,
+              "controlIds": [
+                "sc-5"
+              ],
+              "evidenceKind": "runtime-request-size-limit",
+              "file": "gitea/services/attachment/attachment.go",
+              "line": 73,
+              "sourceSnippet": "src = http.MaxBytesReader(file.respWriter, src, maxFileSize)",
+              "sourceSurface": "application-runtime",
+              "strength": "strong"
+            }
+          ],
+          "status": "present"
+        },
+        {
+          "controlId": "sc-7",
+          "mode": "evidence-tier-with-rationale",
+          "rationale": "Boundary protection requires network architecture and ingress policy evidence.",
+          "status": "requires-customer-context"
+        },
+        {
+          "controlId": "sc-8",
+          "mode": "validation-resolved",
+          "status": "gap",
+          "validation": "transmission-encryption"
+        },
+        {
+          "controlId": "sc-8.1",
+          "mode": "validation-resolved",
+          "status": "gap",
+          "validation": "transmission-encryption"
+        },
+        {
+          "controlId": "sc-12",
+          "mode": "evidence-tier-with-rationale",
+          "rationale": "Cryptographic key establishment needs key-management lifecycle evidence.",
+          "status": "requires-customer-context"
+        },
+        {
+          "controlId": "sc-13",
+          "mode": "validation-resolved",
+          "status": "gap",
+          "validation": "cryptographic-strength"
+        },
+        {
+          "controlId": "sc-13.1",
+          "mode": "evidence-tier-with-rationale",
+          "rationale": "FIPS-validated cryptography needs module inventory and validation evidence.",
+          "status": "requires-customer-context"
+        },
+        {
+          "controlId": "sc-17",
+          "mode": "evidence-tier-with-rationale",
+          "rationale": "Public key infrastructure certificates count only declarative cert-manager source of truth: a Certificate resource with an issuerRef, a managed secretName, and a subject identity (commonName/dnsNames/uris/ipAddresses), or an Issuer/ClusterIssuer with a configured backend (selfSigned/ca/acme/vault/venafi). Trust-anchor approval, CA accreditation, and approved-service-provider facts remain customer/policy evidence.",
+          "status": "requires-customer-context"
+        },
+        {
+          "controlId": "sc-23",
+          "mode": "validation-resolved",
+          "status": "present",
+          "validation": "session-management"
+        },
+        {
+          "controlId": "sc-28",
+          "mode": "validation-resolved",
+          "status": "absent",
+          "validation": "data-at-rest-encryption"
+        },
+        {
+          "controlId": "sc-28.1",
+          "mode": "validation-resolved",
+          "status": "absent",
+          "validation": "data-at-rest-encryption"
+        },
+        {
+          "controlId": "sc-39",
+          "mode": "evidence-tier-with-rationale",
+          "rationale": "Process isolation counts only fully hardened workload securityContext source evidence (runAsNonRoot, allowPrivilegeEscalation:false, readOnlyRootFilesystem, dropped ALL capabilities, and a seccomp profile); broader runtime-sandbox posture remains customer deployment evidence.",
+          "status": "requires-customer-context"
+        }
+      ],
+      "deferredElsewhere": 0,
+      "evidenceTier": 9,
+      "family": "SC",
+      "familyTitle": "System and Communications Protection",
+      "totalControls": 15,
+      "validationResolved": 6
+    },
+    {
+      "assessedAt": "2026-05-19T00:00:00.000Z",
+      "controls": [
+        {
+          "controlId": "si-2",
+          "mode": "validation-resolved",
+          "status": "absent",
+          "validation": "dependency-vulnerability-status"
+        },
+        {
+          "controlId": "si-2.2",
+          "mode": "evidence-tier-with-rationale",
+          "rationale": "Automated flaw remediation status needs dependency data plus release workflow evidence.",
+          "status": "requires-customer-context"
+        },
+        {
+          "controlId": "si-2.4",
+          "mode": "evidence-tier-with-rationale",
+          "rationale": "Automated patch management requires deployment and package-management evidence.",
+          "status": "requires-customer-context"
+        },
+        {
+          "controlId": "si-3",
+          "mode": "evidence-tier-with-rationale",
+          "rationale": "Malicious code protection requires endpoint and runtime scanning evidence.",
+          "status": "requires-customer-context"
+        },
+        {
+          "controlId": "si-4",
+          "mode": "evidence-tier-with-rationale",
+          "rationale": "System monitoring derives from a deployed metrics-collection resource (e.g. a Prometheus PodMonitor/ServiceMonitor scraping workloads) or otherwise requires telemetry deployment and alerting policy evidence.",
+          "status": "requires-customer-context"
+        },
+        {
+          "controlId": "si-7",
+          "mode": "evidence-tier-with-rationale",
+          "rationale": "Software integrity needs signing, checksum, or supply-chain verification evidence.",
+          "status": "requires-customer-context"
+        },
+        {
+          "controlId": "si-7.1",
+          "mode": "evidence-tier-with-rationale",
+          "rationale": "Subresource integrity attests on HTML; complements code-level checks.",
+          "status": "requires-customer-context"
+        },
+        {
+          "controlId": "si-7.6",
+          "mode": "evidence-tier-with-rationale",
+          "rationale": "Cryptographic protection of software integrity needs signing-key lifecycle evidence.",
+          "status": "requires-customer-context"
+        },
+        {
+          "controlId": "si-10",
+          "mode": "validation-resolved",
+          "status": "absent",
+          "validation": "input-validation"
+        },
+        {
+          "controlId": "si-10.5",
+          "mode": "evidence-tier-with-rationale",
+          "rationale": "Input validation on restricted inputs requires domain-specific parser coverage.",
+          "status": "absent",
+          "validation": "input-validation"
+        },
+        {
+          "controlId": "si-10.6",
+          "mode": "validation-resolved",
+          "status": "present",
+          "validation": "injection-prevention"
+        },
+        {
+          "controlId": "si-11",
+          "mode": "validation-resolved",
+          "status": "absent",
+          "validation": "error-message-safety"
+        },
+        {
+          "controlId": "si-12",
+          "mode": "evidence-tier-with-rationale",
+          "rationale": "Information management and retention is policy-backed customer context.",
+          "status": "requires-customer-context"
+        },
+        {
+          "controlId": "si-16",
+          "mode": "evidence-tier-with-rationale",
+          "rationale": "Memory protection requires runtime/compiler hardening evidence outside source-only checks.",
+          "status": "requires-customer-context"
+        }
+      ],
+      "deferredElsewhere": 0,
+      "evidenceTier": 10,
+      "family": "SI",
+      "familyTitle": "System and Information Integrity",
+      "totalControls": 14,
+      "validationResolved": 4
+    },
+    {
+      "assessedAt": "2026-05-19T00:00:00.000Z",
+      "controls": [
+        {
+          "controlId": "ra-5",
+          "mode": "validation-resolved",
+          "status": "absent",
+          "validation": "dependency-vulnerability-status"
+        },
+        {
+          "controlId": "ra-5.2",
+          "mode": "evidence-tier-with-rationale",
+          "rationale": "Update-by-prior-vulnerability evidence needs dependency status plus release cadence.",
+          "status": "requires-customer-context"
+        },
+        {
+          "controlId": "ra-5.4",
+          "mode": "evidence-tier-with-rationale",
+          "rationale": "Discoverable information analysis requires public surface and deployment evidence.",
+          "status": "requires-customer-context"
+        },
+        {
+          "controlId": "ra-5.5",
+          "mode": "evidence-tier-with-rationale",
+          "rationale": "Privileged vulnerability scanning requires scanner credential and environment evidence.",
+          "status": "requires-customer-context"
+        }
+      ],
+      "deferredElsewhere": 0,
+      "evidenceTier": 3,
+      "family": "RA",
+      "familyTitle": "Risk Assessment",
+      "totalControls": 4,
+      "validationResolved": 1
+    },
+    {
+      "assessedAt": "2026-05-19T00:00:00.000Z",
+      "controls": [
+        {
+          "controlId": "sa-4.9",
+          "mode": "evidence-tier-with-rationale",
+          "rationale": "Developer security testing requirements need acquisition-contract evidence plus Sonde results.",
+          "status": "requires-customer-context"
+        },
+        {
+          "controlId": "sa-8",
+          "mode": "evidence-tier-with-rationale",
+          "rationale": "Security and privacy engineering principles need architecture and review evidence.",
+          "status": "requires-customer-context"
+        },
+        {
+          "controlId": "sa-10",
+          "mode": "evidence-tier-with-rationale",
+          "rationale": "Developer configuration management requires VCS and release-control evidence.",
+          "status": "requires-customer-context"
+        },
+        {
+          "controlId": "sa-11",
+          "mode": "evidence-tier-with-rationale",
+          "rationale": "Developer security testing is represented by a committed CI static-analysis workflow (e.g. CodeQL), Sonde findings, and certification evidence.",
+          "status": "requires-customer-context"
+        },
+        {
+          "controlId": "sa-11.1",
+          "mode": "evidence-tier-with-rationale",
+          "rationale": "Static code analysis is represented by a committed CodeQL/SAST CI workflow, Sonde execution evidence, and probe certification.",
+          "status": "requires-customer-context"
+        },
+        {
+          "controlId": "sa-15",
+          "mode": "evidence-tier-with-rationale",
+          "rationale": "Development process standards require SDLC policy and repository workflow evidence.",
+          "status": "requires-customer-context"
+        }
+      ],
+      "deferredElsewhere": 0,
+      "evidenceTier": 6,
+      "family": "SA",
+      "familyTitle": "System and Services Acquisition",
+      "totalControls": 6,
+      "validationResolved": 0
+    },
+    {
+      "assessedAt": "2026-05-19T00:00:00.000Z",
+      "controls": [
+        {
+          "controlId": "pt-2",
+          "mode": "evidence-tier-with-rationale",
+          "rationale": "Authority to process PII is policy and authorization evidence, not source-only evidence.",
+          "status": "requires-customer-context"
+        },
+        {
+          "controlId": "pt-3",
+          "mode": "evidence-tier-with-rationale",
+          "rationale": "PII processing purpose is policy-driven; source validation covers credential storage only.",
+          "status": "requires-customer-context"
+        },
+        {
+          "controlId": "pt-6",
+          "mode": "evidence-tier-with-rationale",
+          "rationale": "System of records notice coverage requires privacy program and publication evidence.",
+          "status": "requires-customer-context"
+        },
+        {
+          "controlId": "pt-7",
+          "mode": "evidence-tier-with-rationale",
+          "rationale": "Specific categories of PII processing require data inventory and privacy evidence.",
+          "status": "requires-customer-context"
+        }
+      ],
+      "deferredElsewhere": 0,
+      "evidenceTier": 4,
+      "family": "PT",
+      "familyTitle": "PII Processing and Transparency",
+      "totalControls": 4,
+      "validationResolved": 0
+    }
+  ],
+  "totalControls": 103,
+  "totalFamilies": 9,
+  "totalPresent": 28
+}

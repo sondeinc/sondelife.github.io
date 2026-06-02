@@ -1,0 +1,224 @@
+{
+  "entrypoint": "index.html",
+  "fileCount": 35,
+  "files": [
+    {
+      "bytes": 2142,
+      "path": "assets/brand/report-mark.svg",
+      "role": "asset",
+      "sha256": "sha256:8de0f91487c32afd293571e46f55be956a02e29c353a0d08897bc1cb37885f75"
+    },
+    {
+      "bytes": 600480,
+      "path": "assets/search-dialog-bundle.js",
+      "role": "asset",
+      "sha256": "sha256:9f31b6212d4a91eab55629ec43b2ef2b434ab10cf97b580c867cb8873ca0cd8d"
+    },
+    {
+      "bytes": 491030,
+      "path": "assets/themes/daylight.css",
+      "role": "theme",
+      "sha256": "sha256:6c0d5e67ac0ebce8776033a43b76778ed484573b4ca1eac291b2cac38fec49be"
+    },
+    {
+      "bytes": 483054,
+      "path": "assets/themes/high-contrast.css",
+      "role": "theme",
+      "sha256": "sha256:0f63f9850ef47cad9de6ab13b748cf23f272ad0bcc4a4b3e74c61eb47a8922ea"
+    },
+    {
+      "bytes": 482234,
+      "path": "assets/themes/infrared.css",
+      "role": "theme",
+      "sha256": "sha256:1171fe3bca3522066fa1a7391ed152420e95322930a8b132de872ae2d76c0366"
+    },
+    {
+      "bytes": 482359,
+      "path": "assets/themes/ultraviolet.css",
+      "role": "theme",
+      "sha256": "sha256:98b2ebd2ba87522ea40bba66b610e5c539b470513f55b0576c80a9cb71858f3d"
+    },
+    {
+      "bytes": 503181,
+      "path": "assets/vendor/paged.polyfill.min.js",
+      "role": "asset",
+      "sha256": "sha256:f44e35a6d5106d819c3415fd38591de04d3834343c14e50a562b84257e204692"
+    },
+    {
+      "bytes": 129981,
+      "path": "boot/file-direct.js",
+      "role": "runtime-script",
+      "sha256": "sha256:4191a52d5b9bf5cd5237d0c240164cd504417ba48db403035d5a92145bcd406e"
+    },
+    {
+      "bytes": 12692,
+      "path": "data/anchors.js",
+      "role": "runtime-data",
+      "sha256": "sha256:9c0797d5ee63c3588558448e084c4eb71d03a276c2c97ff4c34f7f22c0e85ebb"
+    },
+    {
+      "bytes": 4286,
+      "path": "data/export-actions.js",
+      "role": "runtime-data",
+      "sha256": "sha256:d107d618d23e1bf81d34660214d40095c6b0c1b02d058b23e0bb09e6fa7a365b"
+    },
+    {
+      "bytes": 4104,
+      "path": "data/feedback-actions.js",
+      "role": "runtime-data",
+      "sha256": "sha256:5b49c2a766366d6b075f78cad96d9607444ca7c721408d75fbf129f3a6df7505"
+    },
+    {
+      "bytes": 8003,
+      "path": "data/findings.js",
+      "role": "runtime-data",
+      "sha256": "sha256:403bf683e0a195389c6dc6e23077086afa95519e97e3f4f8c5212961e818741f"
+    },
+    {
+      "bytes": 1894,
+      "path": "data/in-dpdp-conformance.json",
+      "role": "runtime-data",
+      "sha256": "sha256:14f2ec9cad612eae160658dfa5432421ea45d05fb0e6387631a330b50db50861"
+    },
+    {
+      "bytes": 270191,
+      "path": "data/manifest.js",
+      "role": "runtime-data",
+      "sha256": "sha256:537ec46e936c63b38bbeaa750cfa0e34f442bc9d11086b8125cd1ec50547c0a1"
+    },
+    {
+      "bytes": 11748,
+      "path": "data/reader-views.js",
+      "role": "runtime-data",
+      "sha256": "sha256:91b59817be3d5fab839362d482c201a1ad100f32e3baa2ccea0523d0d2503385"
+    },
+    {
+      "bytes": 641345,
+      "path": "data/search-index.en-IN.js",
+      "role": "runtime-data",
+      "sha256": "sha256:95cecd3fb8ad21bd8384a204b0a147a9b224f3b02898410bd550f8d2a528871b"
+    },
+    {
+      "bytes": 641345,
+      "path": "data/search-index.en-US.js",
+      "role": "runtime-data",
+      "sha256": "sha256:a4e56dce0bdb10c4a02b76e6a93306df374f137e318f8c932807187a6f5aa29a"
+    },
+    {
+      "bytes": 3125730,
+      "path": "data/segmentation-blob.js",
+      "role": "runtime-data",
+      "sha256": "sha256:25cbf3f943c5acc5a951fc0e7941dae4e1c44c3352df3ef9236c39df43a536ee"
+    },
+    {
+      "bytes": 5278,
+      "path": "data/share-actions.js",
+      "role": "runtime-data",
+      "sha256": "sha256:617cd751d18e5556aecf0f30d0b0c3bf2f61acb900936b3b902b852793ed5759"
+    },
+    {
+      "bytes": 1516,
+      "path": "data/sitemap.js",
+      "role": "runtime-data",
+      "sha256": "sha256:0a09c92c33eb510a291d08569a9e3c40ab331ce07aa9dd8d71cc43dc845fdc53"
+    },
+    {
+      "bytes": 6147,
+      "path": "data/source-snippets.js",
+      "role": "runtime-data",
+      "sha256": "sha256:d232339ae9bc0e4129fce22ba16760d53f7173b6a8d4fe0724306c50552535d0"
+    },
+    {
+      "bytes": 7316,
+      "path": "data/toc.js",
+      "role": "runtime-data",
+      "sha256": "sha256:4b4946c41b2531bdcb6727fe5257714e0f9057d73e44bec6b19fb3c7d15c28e3"
+    },
+    {
+      "bytes": 40,
+      "path": "data/visualizations.js",
+      "role": "runtime-data",
+      "sha256": "sha256:6632ca5e1376bae2ed49650df75d2132c253d252fc5d056d74eea0272106fbaf"
+    },
+    {
+      "bytes": 6688,
+      "path": "exports/report.md",
+      "role": "export",
+      "sha256": "sha256:69265d8dac6556f2e5b96b35fdb83e5145f9ea78572de83eaad13ef465cb2436"
+    },
+    {
+      "bytes": 28466,
+      "path": "findings/finding-in-dpdp-children-context/index.html",
+      "role": "page",
+      "sha256": "sha256:94e165d5624206a4841373c0066db1d2e92d129718e668d06ad06731184d2657"
+    },
+    {
+      "bytes": 30188,
+      "path": "findings/finding-in-dpdp-consent-lifecycle/index.html",
+      "role": "page",
+      "sha256": "sha256:e9409f4ee84f2e70470b5e6b41c023f81160889143bf6f00fa187919226b5c87"
+    },
+    {
+      "bytes": 28904,
+      "path": "findings/finding-in-dpdp-consent-withdrawal-gap/index.html",
+      "role": "page",
+      "sha256": "sha256:6122439056dd2a3af38bb9dcb65155358996879d19594c3aef36fd668e9cec7d"
+    },
+    {
+      "bytes": 29376,
+      "path": "findings/finding-in-dpdp-operator-evidence/index.html",
+      "role": "page",
+      "sha256": "sha256:0efd5cf77970b1e9269293e669764d59c7d40550e81ea4fd6be15b4580db7a74"
+    },
+    {
+      "bytes": 30156,
+      "path": "findings/finding-in-dpdp-readiness/index.html",
+      "role": "page",
+      "sha256": "sha256:61c52e37c54f1782a3797d746a16afac2487d14dd130ffc22cf41f71b2f219a3"
+    },
+    {
+      "bytes": 21415,
+      "path": "fix-plans/finding-in-dpdp-readiness/index.html",
+      "role": "page",
+      "sha256": "sha256:785c746a0213325e221d42228ce1ce7b9271915dcaa32e979c52fc496b0aad88"
+    },
+    {
+      "bytes": 87679,
+      "path": "index.html",
+      "role": "page",
+      "sha256": "sha256:2c36f6bc2e5f55e407122fd45a98da08fe838e21e28dad2742d563f15b20e758"
+    },
+    {
+      "bytes": 15897,
+      "path": "locales/en-IN.js",
+      "role": "locale-bundle",
+      "sha256": "sha256:bc5f946dab0aff03b688b047b085260439233bc5397944c7c6579331cd1415de"
+    },
+    {
+      "bytes": 21610,
+      "path": "locales/en-US.js",
+      "role": "locale-bundle",
+      "sha256": "sha256:e8b862c4d61c35b0f27b22a676737e2420e36296b10f016e84a91318ec7e89b4"
+    },
+    {
+      "bytes": 270160,
+      "path": "scribe-runtime.manifest.json",
+      "role": "runtime-manifest",
+      "sha256": "sha256:c66f2dc16daaf5065aa79328916239b8d770bd0318ec3a1c2db665b24f064497"
+    },
+    {
+      "bytes": 328,
+      "path": "sitemap.xml",
+      "role": "sitemap",
+      "sha256": "sha256:62a0384584872abbb0f2d1521c2a22304997616b36cda35ca01db9e4918b0ca4"
+    }
+  ],
+  "inventoryScope": "public-files-excluding-self",
+  "outputTarget": "html",
+  "privateFilesIncluded": false,
+  "publicOnly": true,
+  "reportFamily": "compliance",
+  "reportId": "scribe-in-dpdp-readiness-gallery",
+  "runtimeManifestPath": "scribe-runtime.manifest.json",
+  "schemaVersion": "scribe-package-manifest/v1"
+}

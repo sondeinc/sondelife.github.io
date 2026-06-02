@@ -123,6 +123,33 @@
   --sonde-daylight-mark-solid-display: block;
   --sonde-daylight-mark-line-display: none;
 
+  /* Theme-preview mark palettes freeze each swatch's target appearance so
+   * the selector menu does not inherit the active page mode. Component CSS
+   * references these tokens; it must not mirror the literal color values. */
+  --sonde-daylight-mark-preview-light-sun-stop-0: #ffe082;
+  --sonde-daylight-mark-preview-light-sun-stop-1: #ffb300;
+  --sonde-daylight-mark-preview-light-sun-stop-2: #e65100;
+  --sonde-daylight-mark-preview-light-crater: transparent;
+  --sonde-daylight-mark-preview-light-probe: #1a1a2e;
+  --sonde-daylight-mark-preview-light-solid-display: block;
+  --sonde-daylight-mark-preview-light-line-display: none;
+
+  --sonde-daylight-mark-preview-dark-sun-stop-0: #e0e8f0;
+  --sonde-daylight-mark-preview-dark-sun-stop-1: #a8b4c0;
+  --sonde-daylight-mark-preview-dark-sun-stop-2: #505860;
+  --sonde-daylight-mark-preview-dark-crater: transparent;
+  --sonde-daylight-mark-preview-dark-probe: #0a1120;
+  --sonde-daylight-mark-preview-dark-solid-display: block;
+  --sonde-daylight-mark-preview-dark-line-display: none;
+
+  --sonde-daylight-mark-preview-high-contrast-sun-stop-0: #000000;
+  --sonde-daylight-mark-preview-high-contrast-sun-stop-1: #000000;
+  --sonde-daylight-mark-preview-high-contrast-sun-stop-2: #000000;
+  --sonde-daylight-mark-preview-high-contrast-crater: transparent;
+  --sonde-daylight-mark-preview-high-contrast-probe: #ffffff;
+  --sonde-daylight-mark-preview-high-contrast-solid-display: none;
+  --sonde-daylight-mark-preview-high-contrast-line-display: block;
+
   /* ─── Color — Sonde daylight mock palette (build-time SVG mockups) ── */
   /* Consumed by build-time generators that bake daylight-themed UI into
    * fixture/preview PNGs (e.g. cockpit-mobile/scripts/generateMobileSeedScreenshots.ts).
@@ -413,13 +440,13 @@
 
   /* ─── Layout ────────────────────────────────────────────────── */
   --sonde-content-readable-max: 72ch;    /* Prose: optimal line length */
-  --sonde-content-data-max: 95vw;        /* Data tables: near full width */
+  --sonde-content-data-max: 95%;         /* Data tables: proportional rail */
   --sonde-content-min-width: 320px;      /* Mobile minimum */
   --sonde-content-padding: clamp(1rem, 3vw, 3rem);
   --sonde-form-factor-phone-max: 480px;       /* Phone contract upper bound */
   --sonde-form-factor-tablet-max: 1024px;     /* Tablet contract upper bound */
   --sonde-form-factor-large-min: 1920px;      /* Large-monitor contract lower bound */
-  --sonde-layout-shell-max: min(96vw, 118rem);          /* Rich page shell */
+  --sonde-layout-shell-max: 96%;                   /* Rich page shell */
   --sonde-layout-readable-max: var(--sonde-content-readable-max); /* Readable/prose rail */
   --sonde-layout-data-max: var(--sonde-content-data-max);          /* Tables and dense data */
   --sonde-layout-gutter-inline: var(--sonde-content-padding);
@@ -680,6 +707,14 @@
     --sonde-shadow-sm: none;
     --sonde-shadow-md: none;
     --sonde-shadow-lg: none;
+    --sonde-code-bg: color-mix(in srgb, var(--sonde-color-text) 6%, var(--sonde-color-surface));
+    --sonde-code-text: var(--sonde-color-text);
+    --sonde-code-line-num: var(--sonde-color-text-muted);
+    --sonde-code-gutter-bg: color-mix(in srgb, var(--sonde-color-text) 4%, var(--sonde-color-surface));
+    --sonde-code-highlight-bg: color-mix(in srgb, var(--sonde-color-primary) 10%, var(--sonde-color-surface));
+    --sonde-color-fix-label: var(--sonde-color-secondary);
+    --sonde-color-fix-text: var(--sonde-color-text);
+    --sonde-viz-code-bg: var(--sonde-code-bg);
   }
   .sonde-nav, .sonde-controls, [data-print="hide"] { display: none !important; }
   section, .vpat-section { break-inside: avoid; }
@@ -709,10 +744,10 @@
 /* ─── Form-Factor Layout Overrides ─────────────────────────────── */
 @media (max-width: 480px) {
   :root {
-    --sonde-content-data-max: 100vw;
+    --sonde-content-data-max: 100%;
     --sonde-content-padding: clamp(0.75rem, 4vw, 1rem);
     --sonde-layout-shell-max: 100%;
-    --sonde-layout-data-max: 100vw;
+    --sonde-layout-data-max: 100%;
     --sonde-layout-gutter-inline: var(--sonde-content-padding);
     --sonde-layout-gutter-block: var(--sonde-spacing-lg);
     --sonde-layout-panel-min: 100%;
@@ -724,14 +759,156 @@
 
 @media (min-width: 1920px) {
   :root {
-    --sonde-content-data-max: min(94vw, 118rem);
+    --sonde-content-data-max: 94%;
     --sonde-content-padding: clamp(2rem, 2vw, 5rem);
-    --sonde-layout-shell-max: min(96vw, 128rem);
-    --sonde-layout-data-max: min(94vw, 118rem);
+    --sonde-layout-shell-max: 96%;
+    --sonde-layout-data-max: 94%;
     --sonde-layout-gutter-inline: var(--sonde-content-padding);
     --sonde-layout-gutter-block: var(--sonde-spacing-2xl);
     --sonde-layout-grid-min: 18rem;
   }
+}
+
+/* ─── Exhibit framework — shared structural styles ──────────────────────
+ * Single source of truth for every exhibit surface (Daylight homepage, audit
+ * report, on-demand VPAT). These rules are theme-agnostic — they read only
+ * `var(--sonde-*)`, so the 4 standard palettes (daylight / ultraviolet /
+ * infrared / high-contrast) recolor them with zero duplication. They live in
+ * the standard theme base (tokens.css) precisely so a surface like the
+ * on-demand VPAT — which bakes only `tokens + palette` — is styled identically
+ * to the homepage instead of depending on a per-surface stylesheet that may
+ * not be loaded. (Replaces the deleted daylightHomepage.css / vpatReport.css.)
+ *
+ * The exhibit title/header are shown by default (the VPAT relies on its title
+ * being visible). Surfaces with their own branded header — the Daylight
+ * homepage — simply do not render the exhibit title element, so no global
+ * hide rule is needed or wanted here. */
+.sonde-exhibit {
+  width: 92%;
+  /* Keep the exhibit container proportional to its embedding surface.
+   * Padding and form-factor spacing are owned by the layout tokens above. */
+  max-width: var(--sonde-layout-shell-max);
+  margin: 0 auto;
+  padding-block: var(--sonde-layout-gutter-block) var(--sonde-spacing-2xl);
+}
+
+.exhibit-subtitle {
+  font-size: 1.4rem;
+  color: var(--sonde-color-text-muted);
+  margin-bottom: 1.5rem;
+  font-style: italic;
+}
+
+.exhibit-heading {
+  font-size: 1.4rem;
+  color: var(--sonde-color-primary);
+  border-bottom: 2px solid var(--sonde-color-primary);
+  padding-bottom: 0.25rem;
+  margin-top: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.exhibit-body {
+  margin-bottom: 1rem;
+  line-height: 1.7;
+}
+
+.exhibit-bullets li,
+.exhibit-numbered-list li {
+  margin-bottom: 0.5rem;
+  line-height: 1.6;
+}
+
+.exhibit-callout {
+  border-inline-start: 3px solid var(--sonde-color-secondary);
+  padding: 0.75rem 1rem;
+  margin: 1rem 0;
+  background: var(--sonde-color-border-subtle);
+  border-radius: 0 6px 6px 0;
+}
+
+/* High-contrast: --sonde-color-border-subtle (#666) under --sonde-color-text (#000)
+ * resolves to 3.65:1, failing WCAG AA 1.4.3 (4.5:1). Use the surface token in HC so
+ * black callout text reads on white. The 3px left border still anchors the callout
+ * visually. Surfaced by daylightBaselineA11y.test.ts (SSG plan P0). */
+[data-theme='high-contrast'] .exhibit-callout {
+  background: var(--sonde-color-surface);
+}
+
+.exhibit-table {
+  margin: 1.5rem 0;
+  border-radius: 8px;
+  /* WCAG 1.4.12 fix (#863): `overflow: hidden` clipped table cells by
+     ~23px when users applied the WCAG-mandated text-spacing rules
+     (line-height 1.5, paragraph 2×, letter 0.12em, word 0.16em).
+     Allow horizontal scrolling instead so wide tables remain
+     accessible without losing content. */
+  overflow-x: auto;
+  border: 1px solid var(--sonde-color-border);
+}
+
+.exhibit-table th {
+  background: var(--sonde-color-primary);
+  color: var(--sonde-color-table-header-text);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  font-size: 0.85rem;
+}
+
+.exhibit-table td, .exhibit-table th {
+  padding: 0.6rem 0.8rem;
+}
+
+.exhibit-table tr:nth-child(even) {
+  background: var(--sonde-color-border-subtle);
+}
+
+.exhibit-header {
+  text-align: center;
+  padding: 2rem 0;
+  margin-bottom: 2rem;
+  border-bottom: 3px solid var(--sonde-color-primary);
+}
+
+.exhibit-footer {
+  margin-top: 3rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--sonde-color-border);
+  font-size: 0.8rem;
+  color: var(--sonde-color-text-muted);
+  text-align: center;
+}
+
+.exhibit-line {
+  border: none;
+  border-top: 1px solid var(--sonde-color-border);
+  margin: 2rem 0;
+}
+
+.exhibit-slide {
+  margin-bottom: 1rem;
+}
+
+/* WCAG 1.4.1 (#863): inline links must be distinguishable without color
+   alone. Always-on underline with a thicker hover state preserves the
+   teal/primary palette while satisfying the success criterion. */
+.sonde-exhibit a {
+  color: var(--sonde-color-secondary);
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 2px;
+  transition: color 0.2s, text-decoration-thickness 0.2s;
+}
+
+.sonde-exhibit a:hover,
+.sonde-exhibit a:focus-visible {
+  color: var(--sonde-color-primary);
+  text-decoration-thickness: 2px;
+}
+
+@media print {
+  .sonde-exhibit { max-width: none; padding: 1cm; }
 }
 
 /* ─── AUTO-GENERATED @property REGISTRATIONS — do not edit by hand ────── */
@@ -1155,6 +1332,81 @@
   initial-value: #ff00ff;
 }
 @property --sonde-daylight-mark-crater {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: #ff00ff;
+}
+@property --sonde-daylight-mark-preview-dark-crater {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: #ff00ff;
+}
+@property --sonde-daylight-mark-preview-dark-probe {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: #ff00ff;
+}
+@property --sonde-daylight-mark-preview-dark-sun-stop-0 {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: #ff00ff;
+}
+@property --sonde-daylight-mark-preview-dark-sun-stop-1 {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: #ff00ff;
+}
+@property --sonde-daylight-mark-preview-dark-sun-stop-2 {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: #ff00ff;
+}
+@property --sonde-daylight-mark-preview-high-contrast-crater {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: #ff00ff;
+}
+@property --sonde-daylight-mark-preview-high-contrast-probe {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: #ff00ff;
+}
+@property --sonde-daylight-mark-preview-high-contrast-sun-stop-0 {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: #ff00ff;
+}
+@property --sonde-daylight-mark-preview-high-contrast-sun-stop-1 {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: #ff00ff;
+}
+@property --sonde-daylight-mark-preview-high-contrast-sun-stop-2 {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: #ff00ff;
+}
+@property --sonde-daylight-mark-preview-light-crater {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: #ff00ff;
+}
+@property --sonde-daylight-mark-preview-light-probe {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: #ff00ff;
+}
+@property --sonde-daylight-mark-preview-light-sun-stop-0 {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: #ff00ff;
+}
+@property --sonde-daylight-mark-preview-light-sun-stop-1 {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: #ff00ff;
+}
+@property --sonde-daylight-mark-preview-light-sun-stop-2 {
   syntax: "<color>";
   inherits: true;
   initial-value: #ff00ff;
@@ -2007,6 +2259,14 @@
     --sonde-shadow-sm: none;
     --sonde-shadow-md: none;
     --sonde-shadow-lg: none;
+    --sonde-code-bg: color-mix(in srgb, var(--sonde-color-text) 6%, var(--sonde-color-surface));
+    --sonde-code-text: var(--sonde-color-text);
+    --sonde-code-line-num: var(--sonde-color-text-muted);
+    --sonde-code-gutter-bg: color-mix(in srgb, var(--sonde-color-text) 4%, var(--sonde-color-surface));
+    --sonde-code-highlight-bg: color-mix(in srgb, var(--sonde-color-primary) 10%, var(--sonde-color-surface));
+    --sonde-color-fix-label: var(--sonde-color-secondary);
+    --sonde-color-fix-text: var(--sonde-color-text);
+    --sonde-viz-code-bg: var(--sonde-code-bg);
   }
   body, .sonde-exhibit, .scribe-shell__main {
     background: #ffffff !important;

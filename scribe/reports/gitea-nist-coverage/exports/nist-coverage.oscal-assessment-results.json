@@ -1,0 +1,1309 @@
+{
+  "assessment-results": {
+    "metadata": {
+      "last-modified": "2026-05-19T00:00:00.000Z",
+      "oscal-version": "1.0.6",
+      "parties": [
+        {
+          "name": "NIST 800-53 Rev 5 OSCAL Catalog",
+          "props": [
+            {
+              "name": "oscal-source-repo",
+              "ns": "sonde",
+              "value": "usnistgov/oscal-content"
+            },
+            {
+              "name": "oscal-source-release",
+              "ns": "sonde",
+              "value": "v1.1.3"
+            },
+            {
+              "name": "oscal-source-catalog-version",
+              "ns": "sonde",
+              "value": "5.2.0"
+            },
+            {
+              "name": "oscal-source-uuid",
+              "ns": "sonde",
+              "value": "613fca2d-704a-42e7-8e2b-b206fb92b456"
+            }
+          ],
+          "remarks": "usnistgov/oscal-content v1.1.3 · catalog 5.2.0",
+          "short-name": "usnistgov/oscal-content",
+          "type": "organization",
+          "uuid": "fd451834-7af1-504d-b600-1ae2edb23203"
+        }
+      ],
+      "props": [
+        {
+          "name": "methodology-source-uuid",
+          "ns": "sonde",
+          "value": "613fca2d-704a-42e7-8e2b-b206fb92b456"
+        }
+      ],
+      "responsible-parties": [
+        {
+          "party-uuids": [
+            "fd451834-7af1-504d-b600-1ae2edb23203"
+          ],
+          "role-id": "methodology-source"
+        }
+      ],
+      "roles": [
+        {
+          "id": "methodology-source",
+          "title": "OSCAL Methodology Source"
+        }
+      ],
+      "title": "Gitea — NIST 800-53 Coverage",
+      "version": "1.0"
+    },
+    "results": [
+      {
+        "description": "Sonde automated NIST 800-53 assessment derived from validation rack validators. Coverage ratio: 0.2718 (28/103 controls present across 9 families).",
+        "findings": [
+          {
+            "description": "AC (Access Control) control AC-3 satisfied by validation \"access-enforcement\".",
+            "target": {
+              "status": {
+                "state": "satisfied"
+              },
+              "target-id": "ac-3",
+              "type": "objective-id"
+            },
+            "title": "AC-3 (Access Control)",
+            "uuid": "00451ced-77f1-5b94-b500-194feeb23396"
+          },
+          {
+            "description": "AC (Access Control) control AC-3.7 satisfied by validation \"access-enforcement\".",
+            "target": {
+              "status": {
+                "state": "satisfied"
+              },
+              "target-id": "ac-3.7",
+              "type": "objective-id"
+            },
+            "title": "AC-3.7 (Access Control)",
+            "uuid": "f94511e8-76f1-5a01-b200-1496f1b2384f"
+          },
+          {
+            "description": "AC (Access Control) control AC-3.8 satisfied by validation \"access-enforcement\".",
+            "target": {
+              "status": {
+                "state": "satisfied"
+              },
+              "target-id": "ac-3.8",
+              "type": "objective-id"
+            },
+            "title": "AC-3.8 (Access Control)",
+            "uuid": "fa45137b-75f1-586e-b300-1629f0b236bc"
+          },
+          {
+            "description": "AC (Access Control) control AC-3.13 satisfied by validation \"access-enforcement\".",
+            "target": {
+              "status": {
+                "state": "satisfied"
+              },
+              "target-id": "ac-3.13",
+              "type": "objective-id"
+            },
+            "title": "AC-3.13 (Access Control)",
+            "uuid": "fb45150e-74f1-56db-b000-1170f3b23b75"
+          },
+          {
+            "description": "AC (Access Control) control AC-4 requires customer context — Information-flow enforcement needs parseable allowlist or boundary enforcement evidence..",
+            "target": {
+              "status": {
+                "state": "not-satisfied"
+              },
+              "target-id": "ac-4",
+              "type": "objective-id"
+            },
+            "title": "AC-4 (Access Control)",
+            "uuid": "fc4516a1-73f1-5548-b100-1303f2b239e2"
+          },
+          {
+            "description": "AC (Access Control) control AC-6 satisfied by validation \"least-privilege\".",
+            "target": {
+              "status": {
+                "state": "satisfied"
+              },
+              "target-id": "ac-6",
+              "type": "objective-id"
+            },
+            "title": "AC-6 (Access Control)",
+            "uuid": "f5450b9c-72f1-53b5-be00-277af5b23e9b"
+          },
+          {
+            "description": "AC (Access Control) control AC-6.1 satisfied by validation \"least-privilege\".",
+            "target": {
+              "status": {
+                "state": "satisfied"
+              },
+              "target-id": "ac-6.1",
+              "type": "objective-id"
+            },
+            "title": "AC-6.1 (Access Control)",
+            "uuid": "f6450d2f-71f1-5222-bf00-290df4b23d08"
+          },
+          {
+            "description": "AC (Access Control) control AC-6.2 satisfied by validation \"least-privilege\".",
+            "target": {
+              "status": {
+                "state": "satisfied"
+              },
+              "target-id": "ac-6.2",
+              "type": "objective-id"
+            },
+            "title": "AC-6.2 (Access Control)",
+            "uuid": "3dc7dfd5-81da-533e-9a2c-809fdc81f4c0"
+          },
+          {
+            "description": "AC (Access Control) control AC-6.5 satisfied by validation \"least-privilege\".",
+            "target": {
+              "status": {
+                "state": "satisfied"
+              },
+              "target-id": "ac-6.5",
+              "type": "objective-id"
+            },
+            "title": "AC-6.5 (Access Control)",
+            "uuid": "3cc7de42-82da-54d1-992c-7f0cdd81f653"
+          },
+          {
+            "description": "AC (Access Control) control AC-6.8 requires customer context — Privileged command auditing requires source audit instrumentation plus runtime command-policy evidence; source-only audit events do not prove privileged command analysis..",
+            "target": {
+              "status": {
+                "state": "not-satisfied"
+              },
+              "target-id": "ac-6.8",
+              "type": "objective-id"
+            },
+            "title": "AC-6.8 (Access Control)",
+            "uuid": "3bc7dcaf-7fda-5018-9c2c-83c5de81f7e6"
+          },
+          {
+            "description": "AC (Access Control) control AC-6.9 satisfied by validation \"least-privilege\".",
+            "target": {
+              "status": {
+                "state": "satisfied"
+              },
+              "target-id": "ac-6.9",
+              "type": "objective-id"
+            },
+            "title": "AC-6.9 (Access Control)",
+            "uuid": "3ac7db1c-80da-51ab-9b2c-8232df81f979"
+          },
+          {
+            "description": "AC (Access Control) control AC-6.10 satisfied by validation \"least-privilege\".",
+            "target": {
+              "status": {
+                "state": "satisfied"
+              },
+              "target-id": "ac-6.10",
+              "type": "objective-id"
+            },
+            "title": "AC-6.10 (Access Control)",
+            "uuid": "39c7d989-85da-598a-962c-7a53e081fb0c"
+          },
+          {
+            "description": "AC (Access Control) control AC-7 satisfied by validation \"access-enforcement\".",
+            "target": {
+              "status": {
+                "state": "satisfied"
+              },
+              "target-id": "ac-7",
+              "type": "objective-id"
+            },
+            "title": "AC-7 (Access Control)",
+            "uuid": "38c7d7f6-86da-5b1d-952c-78c0e181fc9f"
+          },
+          {
+            "description": "AC (Access Control) control AC-11 satisfied by validation \"session-management\".",
+            "target": {
+              "status": {
+                "state": "satisfied"
+              },
+              "target-id": "ac-11",
+              "type": "objective-id"
+            },
+            "title": "AC-11 (Access Control)",
+            "uuid": "37c7d663-83da-5664-982c-7d79e281fe32"
+          },
+          {
+            "description": "AC (Access Control) control AC-12 satisfied by validation \"session-management\".",
+            "target": {
+              "status": {
+                "state": "satisfied"
+              },
+              "target-id": "ac-12",
+              "type": "objective-id"
+            },
+            "title": "AC-12 (Access Control)",
+            "uuid": "36c7d4d0-84da-57f7-972c-7be6e381ffc5"
+          },
+          {
+            "description": "AC (Access Control) control AC-17 not satisfied — validation \"transmission-encryption\" reports a gap (weak evidence or negating findings present).",
+            "target": {
+              "status": {
+                "state": "not-satisfied"
+              },
+              "target-id": "ac-17",
+              "type": "objective-id"
+            },
+            "title": "AC-17 (Access Control)",
+            "uuid": "45c7ec6d-79da-56a6-a22c-8d37e4820158"
+          },
+          {
+            "description": "AC (Access Control) control AC-17.2 not satisfied — validation \"transmission-encryption\" reports a gap (weak evidence or negating findings present).",
+            "target": {
+              "status": {
+                "state": "not-satisfied"
+              },
+              "target-id": "ac-17.2",
+              "type": "objective-id"
+            },
+            "title": "AC-17.2 (Access Control)",
+            "uuid": "44c7eada-7ada-5839-a12c-8ba4e58202eb"
+          },
+          {
+            "description": "AC (Access Control) control AC-17.8 not satisfied — validation \"transmission-encryption\" reports a gap (weak evidence or negating findings present).",
+            "target": {
+              "status": {
+                "state": "not-satisfied"
+              },
+              "target-id": "ac-17.8",
+              "type": "objective-id"
+            },
+            "title": "AC-17.8 (Access Control)",
+            "uuid": "43ca27de-7bd8-5b35-a825-11646e89965b"
+          },
+          {
+            "description": "AC (Access Control) control AC-18 requires customer context — Wireless access restrictions require deployment and device-management evidence..",
+            "target": {
+              "status": {
+                "state": "not-satisfied"
+              },
+              "target-id": "ac-18",
+              "type": "objective-id"
+            },
+            "title": "AC-18 (Access Control)",
+            "uuid": "44ca2971-7ad8-59a2-a925-12f76d8994c8"
+          },
+          {
+            "description": "AU (Audit and Accountability) control AU-2 not satisfied — no source-visible evidence detected for validation \"audit-event-coverage\".",
+            "target": {
+              "status": {
+                "state": "not-satisfied"
+              },
+              "target-id": "au-2",
+              "type": "objective-id"
+            },
+            "title": "AU-2 (Audit and Accountability)",
+            "uuid": "41ca24b8-79d8-580f-aa25-148a70899981"
+          },
+          {
+            "description": "AU (Audit and Accountability) control AU-3 not satisfied — no source-visible evidence detected for validation \"audit-record-completeness\".",
+            "target": {
+              "status": {
+                "state": "not-satisfied"
+              },
+              "target-id": "au-3",
+              "type": "objective-id"
+            },
+            "title": "AU-3 (Audit and Accountability)",
+            "uuid": "42ca264b-78d8-567c-ab25-161d6f8997ee"
+          },
+          {
+            "description": "AU (Audit and Accountability) control AU-3.1 not satisfied — no source-visible evidence detected for validation \"audit-record-completeness\".",
+            "target": {
+              "status": {
+                "state": "not-satisfied"
+              },
+              "target-id": "au-3.1",
+              "type": "objective-id"
+            },
+            "title": "AU-3.1 (Audit and Accountability)",
+            "uuid": "47ca2e2a-77d8-54e9-a425-0b1872899ca7"
+          },
+          {
+            "description": "AU (Audit and Accountability) control AU-4 requires customer context — Audit storage capacity counts only explicit audit-log capacity/rotation source evidence..",
+            "target": {
+              "status": {
+                "state": "not-satisfied"
+              },
+              "target-id": "au-4",
+              "type": "objective-id"
+            },
+            "title": "AU-4 (Audit and Accountability)",
+            "uuid": "48ca2fbd-76d8-5356-a525-0cab71899b14"
+          },
+          {
+            "description": "AU (Audit and Accountability) control AU-5 requires customer context — Audit processing failure response needs operational alerting and incident procedure evidence..",
+            "target": {
+              "status": {
+                "state": "not-satisfied"
+              },
+              "target-id": "au-5",
+              "type": "objective-id"
+            },
+            "title": "AU-5 (Audit and Accountability)",
+            "uuid": "45ca2b04-75d8-51c3-a625-0e3e74899fcd"
+          },
+          {
+            "description": "AU (Audit and Accountability) control AU-6 requires customer context — Audit review, correlation, reporting, SIEM rules, and alert handling are operational evidence beyond source-visible audit event generation..",
+            "target": {
+              "status": {
+                "state": "not-satisfied"
+              },
+              "target-id": "au-6",
+              "type": "objective-id"
+            },
+            "title": "AU-6 (Audit and Accountability)",
+            "uuid": "46ca2c97-74d8-5030-a725-0fd173899e3a"
+          },
+          {
+            "description": "AU (Audit and Accountability) control AU-8 not satisfied — no source-visible evidence detected for validation \"audit-record-completeness\".",
+            "target": {
+              "status": {
+                "state": "not-satisfied"
+              },
+              "target-id": "au-8",
+              "type": "objective-id"
+            },
+            "title": "AU-8 (Audit and Accountability)",
+            "uuid": "3bca1b46-83d8-57cd-a025-04cc668989c3"
+          },
+          {
+            "description": "AU (Audit and Accountability) control AU-9 requires customer context — Audit record protection requires storage ACL and retention evidence beyond source code..",
+            "target": {
+              "status": {
+                "state": "not-satisfied"
+              },
+              "target-id": "au-9",
+              "type": "objective-id"
+            },
+            "title": "AU-9 (Audit and Accountability)",
+            "uuid": "3cca1cd9-82d8-563a-a125-065f65898830"
+          },
+          {
+            "description": "AU (Audit and Accountability) control AU-10 requires customer context — Non-repudiation counts only explicit signed event or identity-provider source evidence..",
+            "target": {
+              "status": {
+                "state": "not-satisfied"
+              },
+              "target-id": "au-10",
+              "type": "objective-id"
+            },
+            "title": "AU-10 (Audit and Accountability)",
+            "uuid": "49cc6fe7-75d5-532c-ae28-22ed68874e52"
+          },
+          {
+            "description": "AU (Audit and Accountability) control AU-12 not satisfied — no source-visible evidence detected for validation \"audit-event-coverage\".",
+            "target": {
+              "status": {
+                "state": "not-satisfied"
+              },
+              "target-id": "au-12",
+              "type": "objective-id"
+            },
+            "title": "AU-12 (Audit and Accountability)",
+            "uuid": "48cc6e54-76d5-54bf-ad28-215a69874fe5"
+          },
+          {
+            "description": "AU (Audit and Accountability) control AU-12.1 requires customer context — System-wide audit generation requires deployment topology and platform coverage evidence; source coverage attests application instrumentation only..",
+            "target": {
+              "status": {
+                "state": "not-satisfied"
+              },
+              "target-id": "au-12.1",
+              "type": "objective-id"
+            },
+            "title": "AU-12.1 (Audit and Accountability)",
+            "uuid": "4bcc730d-77d5-5652-ac28-1fc766874b2c"
+          },
+          {
+            "description": "AU (Audit and Accountability) control AU-12.3 requires customer context — Changes by authorized individuals need release-control and approval evidence plus audit instrumentation..",
+            "target": {
+              "status": {
+                "state": "not-satisfied"
+              },
+              "target-id": "au-12.3",
+              "type": "objective-id"
+            },
+            "title": "AU-12.3 (Audit and Accountability)",
+            "uuid": "4acc717a-78d5-57e5-ab28-1e3467874cbf"
+          },
+          {
+            "description": "CM (Configuration Management) control CM-2 requires customer context — Baseline configuration derives from declarative GitOps reconciliation (e.g. a Flux Kustomization pruning a committed source baseline) or otherwise needs committed manifests plus operator-approved baseline policy..",
+            "target": {
+              "status": {
+                "state": "not-satisfied"
+              },
+              "target-id": "cm-2",
+              "type": "objective-id"
+            },
+            "title": "CM-2 (Configuration Management)",
+            "uuid": "45cc699b-71d5-5ce0-aa28-1ca164874806"
+          },
+          {
+            "description": "CM (Configuration Management) control CM-3 requires customer context — Configuration change control needs VCS and approval workflow evidence..",
+            "target": {
+              "status": {
+                "state": "not-satisfied"
+              },
+              "target-id": "cm-3",
+              "type": "objective-id"
+            },
+            "title": "CM-3 (Configuration Management)",
+            "uuid": "44cc6808-72d5-5e73-a928-1b0e65874999"
+          },
+          {
+            "description": "CM (Configuration Management) control CM-4 requires customer context — Impact analysis derives from blast-radius probe rather than a single validation..",
+            "target": {
+              "status": {
+                "state": "not-satisfied"
+              },
+              "target-id": "cm-4",
+              "type": "objective-id"
+            },
+            "title": "CM-4 (Configuration Management)",
+            "uuid": "47cc6cc1-73d5-5006-a828-197b628744e0"
+          },
+          {
+            "description": "CM (Configuration Management) control CM-5 satisfied by validation \"least-privilege\".",
+            "target": {
+              "status": {
+                "state": "satisfied"
+              },
+              "target-id": "cm-5",
+              "type": "objective-id"
+            },
+            "title": "CM-5 (Configuration Management)",
+            "uuid": "46cc6b2e-74d5-5199-a728-17e863874673"
+          },
+          {
+            "description": "CM (Configuration Management) control CM-6 satisfied by validation \"configuration-defaults-safety\".",
+            "target": {
+              "status": {
+                "state": "satisfied"
+              },
+              "target-id": "cm-6",
+              "type": "objective-id"
+            },
+            "title": "CM-6 (Configuration Management)",
+            "uuid": "41cc634f-7dd5-5fc4-a628-165570875aea"
+          },
+          {
+            "description": "CM (Configuration Management) control CM-6.1 requires customer context — Automated configuration enforcement counts only a Kubernetes Namespace whose metadata.labels set pod-security.kubernetes.io/enforce to an enforcing Pod Security Admission level (restricted or baseline); audit/warn-only labels, the privileged no-op level, and Helm values without a Namespace kind remain customer deployment evidence..",
+            "target": {
+              "status": {
+                "state": "not-satisfied"
+              },
+              "target-id": "cm-6.1",
+              "type": "objective-id"
+            },
+            "title": "CM-6.1 (Configuration Management)",
+            "uuid": "40cc61bc-7ed6-5157-a528-14c271875c7d"
+          },
+          {
+            "description": "CM (Configuration Management) control CM-7 not satisfied — no source-visible evidence detected for validation \"least-functionality\".",
+            "target": {
+              "status": {
+                "state": "not-satisfied"
+              },
+              "target-id": "cm-7",
+              "type": "objective-id"
+            },
+            "title": "CM-7 (Configuration Management)",
+            "uuid": "3fbb1708-6fd3-5b23-9c20-8152fa8eefed"
+          },
+          {
+            "description": "CM (Configuration Management) control CM-7.1 requires customer context — Periodic review of allowed functions requires operator review cadence evidence..",
+            "target": {
+              "status": {
+                "state": "not-satisfied"
+              },
+              "target-id": "cm-7.1",
+              "type": "objective-id"
+            },
+            "title": "CM-7.1 (Configuration Management)",
+            "uuid": "40bb189b-6ed3-5990-9d20-82e5f98eee5a"
+          },
+          {
+            "description": "CM (Configuration Management) control CM-7.2 requires customer context — Preventing program execution requires runtime policy and allowlist evidence..",
+            "target": {
+              "status": {
+                "state": "not-satisfied"
+              },
+              "target-id": "cm-7.2",
+              "type": "objective-id"
+            },
+            "title": "CM-7.2 (Configuration Management)",
+            "uuid": "41bb1a2e-71d3-5e49-9a20-7e2cf88eecc7"
+          },
+          {
+            "description": "CM (Configuration Management) control CM-7.4 requires customer context — Unauthorized software denylisting derives from admission-control deny-by-exception policy or endpoint/runtime denylist evidence..",
+            "target": {
+              "status": {
+                "state": "not-satisfied"
+              },
+              "target-id": "cm-7.4",
+              "type": "objective-id"
+            },
+            "title": "CM-7.4 (Configuration Management)",
+            "uuid": "42bb1bc1-70d3-5cb6-9b20-7fbff78eeb34"
+          },
+          {
+            "description": "CM (Configuration Management) control CM-7.5 requires customer context — Authorized software allowlisting derives from admission-control allow-by-exception policy or endpoint/runtime allowlist evidence..",
+            "target": {
+              "status": {
+                "state": "not-satisfied"
+              },
+              "target-id": "cm-7.5",
+              "type": "objective-id"
+            },
+            "title": "CM-7.5 (Configuration Management)",
+            "uuid": "43bb1d54-73d3-516f-9820-7b06f68ee9a1"
+          },
+          {
+            "description": "CM (Configuration Management) control CM-8 requires customer context — Component inventory derives from parseable dependency graph or lockfile inventory evidence..",
+            "target": {
+              "status": {
+                "state": "not-satisfied"
+              },
+              "target-id": "cm-8",
+              "type": "objective-id"
+            },
+            "title": "CM-8 (Configuration Management)",
+            "uuid": "44bb1ee7-72d3-5fdc-9920-7c99f58ee80e"
+          },
+          {
+            "description": "CM (Configuration Management) control CM-10 requires customer context — Software usage restrictions require license and operator policy evidence..",
+            "target": {
+              "status": {
+                "state": "not-satisfied"
+              },
+              "target-id": "cm-10",
+              "type": "objective-id"
+            },
+            "title": "CM-10 (Configuration Management)",
+            "uuid": "45bb207a-75d3-5495-9620-77e0f48ee67b"
+          },
+          {
+            "description": "CM (Configuration Management) control CM-11 requires customer context — User-installed software restrictions require endpoint management evidence..",
+            "target": {
+              "status": {
+                "state": "not-satisfied"
+              },
+              "target-id": "cm-11",
+              "type": "objective-id"
+            },
+            "title": "CM-11 (Configuration Management)",
+            "uuid": "46bb220d-74d3-5302-9720-7973f38ee4e8"
+          },
+          {
+            "description": "IA (Identification and Authentication) control IA-2 satisfied by validation \"auth-required\".",
+            "target": {
+              "status": {
+                "state": "satisfied"
+              },
+              "target-id": "ia-2",
+              "type": "objective-id"
+            },
+            "title": "IA-2 (Identification and Authentication)",
+            "uuid": "37bb0a70-77d3-57bb-a420-8deaf28ee355"
+          },
+          {
+            "description": "IA (Identification and Authentication) control IA-2.1 satisfied by validation \"mfa-required\".",
+            "target": {
+              "status": {
+                "state": "satisfied"
+              },
+              "target-id": "ia-2.1",
+              "type": "objective-id"
+            },
+            "title": "IA-2.1 (Identification and Authentication)",
+            "uuid": "38bb0c03-76d3-5628-a520-8f7df18ee1c2"
+          },
+          {
+            "description": "IA (Identification and Authentication) control IA-2.2 satisfied by validation \"mfa-required\".",
+            "target": {
+              "status": {
+                "state": "satisfied"
+              },
+              "target-id": "ia-2.2",
+              "type": "objective-id"
+            },
+            "title": "IA-2.2 (Identification and Authentication)",
+            "uuid": "45bd5f11-09d0-5bfa-a222-c95b748bde64"
+          },
+          {
+            "description": "IA (Identification and Authentication) control IA-2.6 satisfied by validation \"auth-required\".",
+            "target": {
+              "status": {
+                "state": "satisfied"
+              },
+              "target-id": "ia-2.6",
+              "type": "objective-id"
+            },
+            "title": "IA-2.6 (Identification and Authentication)",
+            "uuid": "44bd5d7e-0ad0-5d8d-a122-c7c8758bdff7"
+          },
+          {
+            "description": "IA (Identification and Authentication) control IA-2.8 satisfied by validation \"auth-required\".",
+            "target": {
+              "status": {
+                "state": "satisfied"
+              },
+              "target-id": "ia-2.8",
+              "type": "objective-id"
+            },
+            "title": "IA-2.8 (Identification and Authentication)",
+            "uuid": "43bd5beb-07d0-58d4-a422-cc81768be18a"
+          },
+          {
+            "description": "IA (Identification and Authentication) control IA-5 satisfied by validation \"credential-storage-safety\".",
+            "target": {
+              "status": {
+                "state": "satisfied"
+              },
+              "target-id": "ia-5",
+              "type": "objective-id"
+            },
+            "title": "IA-5 (Identification and Authentication)",
+            "uuid": "42bd5a58-08d0-5a67-a322-caee778be31d"
+          },
+          {
+            "description": "IA (Identification and Authentication) control IA-5.1 not satisfied — no source-visible evidence detected for validation \"password-strength\".",
+            "target": {
+              "status": {
+                "state": "not-satisfied"
+              },
+              "target-id": "ia-5.1",
+              "type": "objective-id"
+            },
+            "title": "IA-5.1 (Identification and Authentication)",
+            "uuid": "49bd655d-05d0-55ae-a622-cfa7708bd818"
+          },
+          {
+            "description": "IA (Identification and Authentication) control IA-5.2 requires customer context — Public-key authentication requires certificate lifecycle and key-store evidence..",
+            "target": {
+              "status": {
+                "state": "not-satisfied"
+              },
+              "target-id": "ia-5.2",
+              "type": "objective-id"
+            },
+            "title": "IA-5.2 (Identification and Authentication)",
+            "uuid": "48bd63ca-06d0-5741-a522-ce14718bd9ab"
+          },
+          {
+            "description": "IA (Identification and Authentication) control IA-5.4 not satisfied — no source-visible evidence detected for validation \"password-strength\".",
+            "target": {
+              "status": {
+                "state": "not-satisfied"
+              },
+              "target-id": "ia-5.4",
+              "type": "objective-id"
+            },
+            "title": "IA-5.4 (Identification and Authentication)",
+            "uuid": "47bd6237-03d0-5288-a822-d2cd728bdb3e"
+          },
+          {
+            "description": "IA (Identification and Authentication) control IA-5.6 satisfied by validation \"credential-storage-safety\".",
+            "target": {
+              "status": {
+                "state": "satisfied"
+              },
+              "target-id": "ia-5.6",
+              "type": "objective-id"
+            },
+            "title": "IA-5.6 (Identification and Authentication)",
+            "uuid": "46bd60a4-04d0-541b-a722-d13a738bdcd1"
+          },
+          {
+            "description": "IA (Identification and Authentication) control IA-5.7 satisfied by validation \"credential-storage-safety\".",
+            "target": {
+              "status": {
+                "state": "satisfied"
+              },
+              "target-id": "ia-5.7",
+              "type": "objective-id"
+            },
+            "title": "IA-5.7 (Identification and Authentication)",
+            "uuid": "3dbd5279-01d0-5f62-9a22-bcc36c8bd1cc"
+          },
+          {
+            "description": "IA (Identification and Authentication) control IA-5.13 requires customer context — Password managers require customer endpoint and secret-management policy evidence..",
+            "target": {
+              "status": {
+                "state": "not-satisfied"
+              },
+              "target-id": "ia-5.13",
+              "type": "objective-id"
+            },
+            "title": "IA-5.13 (Identification and Authentication)",
+            "uuid": "3cbd50e6-02d0-50f5-9922-bb306d8bd35f"
+          },
+          {
+            "description": "IA (Identification and Authentication) control IA-6 satisfied by validation \"auth-required\".",
+            "target": {
+              "status": {
+                "state": "satisfied"
+              },
+              "target-id": "ia-6",
+              "type": "objective-id"
+            },
+            "title": "IA-6 (Identification and Authentication)",
+            "uuid": "cbc0709a-03ce-53f1-901b-27c0e6934d9f"
+          },
+          {
+            "description": "IA (Identification and Authentication) control IA-7 requires customer context — Cryptographic module authentication requires module inventory and FIPS evidence..",
+            "target": {
+              "status": {
+                "state": "not-satisfied"
+              },
+              "target-id": "ia-7",
+              "type": "objective-id"
+            },
+            "title": "IA-7 (Identification and Authentication)",
+            "uuid": "ccc0722d-02ce-525e-911b-2953e5934c0c"
+          },
+          {
+            "description": "IA (Identification and Authentication) control IA-8 satisfied by validation \"auth-required\".",
+            "target": {
+              "status": {
+                "state": "satisfied"
+              },
+              "target-id": "ia-8",
+              "type": "objective-id"
+            },
+            "title": "IA-8 (Identification and Authentication)",
+            "uuid": "c9c06d74-01ce-50cb-921b-2ae6e89350c5"
+          },
+          {
+            "description": "SC (System and Communications Protection) control SC-2 requires customer context — Application partitioning needs process/runtime deployment evidence..",
+            "target": {
+              "status": {
+                "state": "not-satisfied"
+              },
+              "target-id": "sc-2",
+              "type": "objective-id"
+            },
+            "title": "SC-2 (System and Communications Protection)",
+            "uuid": "cac06f07-00ce-5f38-931b-2c79e7934f32"
+          },
+          {
+            "description": "SC (System and Communications Protection) control SC-3 requires customer context — Security function isolation needs architecture and deployment-boundary evidence..",
+            "target": {
+              "status": {
+                "state": "not-satisfied"
+              },
+              "target-id": "sc-3",
+              "type": "objective-id"
+            },
+            "title": "SC-3 (System and Communications Protection)",
+            "uuid": "c7c06a4e-07ce-5a3d-941b-2e0ce2934753"
+          },
+          {
+            "description": "SC (System and Communications Protection) control SC-4 requires customer context — Information in shared system resources requires runtime isolation evidence..",
+            "target": {
+              "status": {
+                "state": "not-satisfied"
+              },
+              "target-id": "sc-4",
+              "type": "objective-id"
+            },
+            "title": "SC-4 (System and Communications Protection)",
+            "uuid": "c8c06be1-06ce-58aa-951b-2f9fe19345c0"
+          },
+          {
+            "description": "SC (System and Communications Protection) control SC-5 satisfied by validation.",
+            "target": {
+              "status": {
+                "state": "satisfied"
+              },
+              "target-id": "sc-5",
+              "type": "objective-id"
+            },
+            "title": "SC-5 (System and Communications Protection)",
+            "uuid": "c5c06728-05ce-5717-961b-3132e4934a79"
+          },
+          {
+            "description": "SC (System and Communications Protection) control SC-7 requires customer context — Boundary protection requires network architecture and ingress policy evidence..",
+            "target": {
+              "status": {
+                "state": "not-satisfied"
+              },
+              "target-id": "sc-7",
+              "type": "objective-id"
+            },
+            "title": "SC-7 (System and Communications Protection)",
+            "uuid": "c6c068bb-04ce-5584-971b-32c5e39348e6"
+          },
+          {
+            "description": "SC (System and Communications Protection) control SC-8 not satisfied — validation \"transmission-encryption\" reports a gap (weak evidence or negating findings present).",
+            "target": {
+              "status": {
+                "state": "not-satisfied"
+              },
+              "target-id": "sc-8",
+              "type": "objective-id"
+            },
+            "title": "SC-8 (System and Communications Protection)",
+            "uuid": "c3c06402-fbce-5759-981b-3458ee935a37"
+          },
+          {
+            "description": "SC (System and Communications Protection) control SC-8.1 not satisfied — validation \"transmission-encryption\" reports a gap (weak evidence or negating findings present).",
+            "target": {
+              "status": {
+                "state": "not-satisfied"
+              },
+              "target-id": "sc-8.1",
+              "type": "objective-id"
+            },
+            "title": "SC-8.1 (System and Communications Protection)",
+            "uuid": "c4c06595-face-55c6-991b-35ebed9358a4"
+          },
+          {
+            "description": "SC (System and Communications Protection) control SC-12 requires customer context — Cryptographic key establishment needs key-management lifecycle evidence..",
+            "target": {
+              "status": {
+                "state": "not-satisfied"
+              },
+              "target-id": "sc-12",
+              "type": "objective-id"
+            },
+            "title": "SC-12 (System and Communications Protection)",
+            "uuid": "b1c28643-fdcc-5be8-961e-3949e0910596"
+          },
+          {
+            "description": "SC (System and Communications Protection) control SC-13 not satisfied — validation \"cryptographic-strength\" reports a gap (weak evidence or negating findings present).",
+            "target": {
+              "status": {
+                "state": "not-satisfied"
+              },
+              "target-id": "sc-13",
+              "type": "objective-id"
+            },
+            "title": "SC-13 (System and Communications Protection)",
+            "uuid": "b0c284b0-fecc-5d7b-951e-37b6e1910729"
+          },
+          {
+            "description": "SC (System and Communications Protection) control SC-13.1 requires customer context — FIPS-validated cryptography needs module inventory and validation evidence..",
+            "target": {
+              "status": {
+                "state": "not-satisfied"
+              },
+              "target-id": "sc-13.1",
+              "type": "objective-id"
+            },
+            "title": "SC-13.1 (System and Communications Protection)",
+            "uuid": "b3c28969-ffcc-5f0e-941e-3623de910270"
+          },
+          {
+            "description": "SC (System and Communications Protection) control SC-17 requires customer context — Public key infrastructure certificates count only declarative cert-manager source of truth: a Certificate resource with an issuerRef, a managed secretName, and a subject identity (commonName/dnsNames/uris/ipAddresses), or an Issuer/ClusterIssuer with a configured backend (selfSigned/ca/acme/vault/venafi). Trust-anchor approval, CA accreditation, and approved-service-provider facts remain customer/policy evidence..",
+            "target": {
+              "status": {
+                "state": "not-satisfied"
+              },
+              "target-id": "sc-17",
+              "type": "objective-id"
+            },
+            "title": "SC-17 (System and Communications Protection)",
+            "uuid": "b2c287d6-00cc-50a1-931e-3490df910403"
+          },
+          {
+            "description": "SC (System and Communications Protection) control SC-23 satisfied by validation \"session-management\".",
+            "target": {
+              "status": {
+                "state": "satisfied"
+              },
+              "target-id": "sc-23",
+              "type": "objective-id"
+            },
+            "title": "SC-23 (System and Communications Protection)",
+            "uuid": "b5c28c8f-01cc-5234-9a1e-3f95e4910be2"
+          },
+          {
+            "description": "SC (System and Communications Protection) control SC-28 not satisfied — no source-visible evidence detected for validation \"data-at-rest-encryption\".",
+            "target": {
+              "status": {
+                "state": "not-satisfied"
+              },
+              "target-id": "sc-28",
+              "type": "objective-id"
+            },
+            "title": "SC-28 (System and Communications Protection)",
+            "uuid": "b4c28afc-02cc-53c7-991e-3e02e5910d75"
+          },
+          {
+            "description": "SC (System and Communications Protection) control SC-28.1 not satisfied — no source-visible evidence detected for validation \"data-at-rest-encryption\".",
+            "target": {
+              "status": {
+                "state": "not-satisfied"
+              },
+              "target-id": "sc-28.1",
+              "type": "objective-id"
+            },
+            "title": "SC-28.1 (System and Communications Protection)",
+            "uuid": "b7c28fb5-03cc-555a-981e-3c6fe29108bc"
+          },
+          {
+            "description": "SC (System and Communications Protection) control SC-39 requires customer context — Process isolation counts only fully hardened workload securityContext source evidence (runAsNonRoot, allowPrivilegeEscalation:false, readOnlyRootFilesystem, dropped ALL capabilities, and a seccomp profile); broader runtime-sandbox posture remains customer deployment evidence..",
+            "target": {
+              "status": {
+                "state": "not-satisfied"
+              },
+              "target-id": "sc-39",
+              "type": "objective-id"
+            },
+            "title": "SC-39 (System and Communications Protection)",
+            "uuid": "b6c28e22-04cc-56ed-971e-3adce3910a4f"
+          },
+          {
+            "description": "SI (System and Information Integrity) control SI-2 not satisfied — no source-visible evidence detected for validation \"dependency-vulnerability-status\".",
+            "target": {
+              "status": {
+                "state": "not-satisfied"
+              },
+              "target-id": "si-2",
+              "type": "objective-id"
+            },
+            "title": "SI-2 (System and Information Integrity)",
+            "uuid": "b9c292db-f5cc-5f50-9e1e-45e1e891122e"
+          },
+          {
+            "description": "SI (System and Information Integrity) control SI-2.2 requires customer context — Automated flaw remediation status needs dependency data plus release workflow evidence..",
+            "target": {
+              "status": {
+                "state": "not-satisfied"
+              },
+              "target-id": "si-2.2",
+              "type": "objective-id"
+            },
+            "title": "SI-2.2 (System and Information Integrity)",
+            "uuid": "b8c29148-f6cc-50e3-9d1e-444ee99113c1"
+          },
+          {
+            "description": "SI (System and Information Integrity) control SI-2.4 requires customer context — Automated patch management requires deployment and package-management evidence..",
+            "target": {
+              "status": {
+                "state": "not-satisfied"
+              },
+              "target-id": "si-2.4",
+              "type": "objective-id"
+            },
+            "title": "SI-2.4 (System and Information Integrity)",
+            "uuid": "c7b15fc4-77c9-5a5f-a43d-d97e7298a731"
+          },
+          {
+            "description": "SI (System and Information Integrity) control SI-3 requires customer context — Malicious code protection requires endpoint and runtime scanning evidence..",
+            "target": {
+              "status": {
+                "state": "not-satisfied"
+              },
+              "target-id": "si-3",
+              "type": "objective-id"
+            },
+            "title": "SI-3 (System and Information Integrity)",
+            "uuid": "c8b16157-76c9-58cc-a53d-db117198a59e"
+          },
+          {
+            "description": "SI (System and Information Integrity) control SI-4 requires customer context — System monitoring derives from a deployed metrics-collection resource (e.g. a Prometheus PodMonitor/ServiceMonitor scraping workloads) or otherwise requires telemetry deployment and alerting policy evidence..",
+            "target": {
+              "status": {
+                "state": "not-satisfied"
+              },
+              "target-id": "si-4",
+              "type": "objective-id"
+            },
+            "title": "SI-4 (System and Information Integrity)",
+            "uuid": "c9b162ea-79c9-5d85-a23d-d6587098a40b"
+          },
+          {
+            "description": "SI (System and Information Integrity) control SI-7 requires customer context — Software integrity needs signing, checksum, or supply-chain verification evidence..",
+            "target": {
+              "status": {
+                "state": "not-satisfied"
+              },
+              "target-id": "si-7",
+              "type": "objective-id"
+            },
+            "title": "SI-7 (System and Information Integrity)",
+            "uuid": "cab1647d-78c9-5bf2-a33d-d7eb6f98a278"
+          },
+          {
+            "description": "SI (System and Information Integrity) control SI-7.1 requires customer context — Subresource integrity attests on HTML; complements code-level checks..",
+            "target": {
+              "status": {
+                "state": "not-satisfied"
+              },
+              "target-id": "si-7.1",
+              "type": "objective-id"
+            },
+            "title": "SI-7.1 (System and Information Integrity)",
+            "uuid": "c3b15978-73c9-5413-a83d-dfca7698ad7d"
+          },
+          {
+            "description": "SI (System and Information Integrity) control SI-7.6 requires customer context — Cryptographic protection of software integrity needs signing-key lifecycle evidence..",
+            "target": {
+              "status": {
+                "state": "not-satisfied"
+              },
+              "target-id": "si-7.6",
+              "type": "objective-id"
+            },
+            "title": "SI-7.6 (System and Information Integrity)",
+            "uuid": "c4b15b0b-72c9-5280-a93d-e15d7598abea"
+          },
+          {
+            "description": "SI (System and Information Integrity) control SI-10 not satisfied — no source-visible evidence detected for validation \"input-validation\".",
+            "target": {
+              "status": {
+                "state": "not-satisfied"
+              },
+              "target-id": "si-10",
+              "type": "objective-id"
+            },
+            "title": "SI-10 (System and Information Integrity)",
+            "uuid": "c5b15c9e-75c9-5739-a63d-dca47498aa57"
+          },
+          {
+            "description": "SI (System and Information Integrity) control SI-10.5 not satisfied — no source-visible evidence detected for validation \"input-validation\".",
+            "target": {
+              "status": {
+                "state": "not-satisfied"
+              },
+              "target-id": "si-10.5",
+              "type": "objective-id"
+            },
+            "title": "SI-10.5 (System and Information Integrity)",
+            "uuid": "c6b15e31-74c9-55a6-a73d-de377398a8c4"
+          },
+          {
+            "description": "SI (System and Information Integrity) control SI-10.6 satisfied by validation \"injection-prevention\".",
+            "target": {
+              "status": {
+                "state": "satisfied"
+              },
+              "target-id": "si-10.6",
+              "type": "objective-id"
+            },
+            "title": "SI-10.6 (System and Information Integrity)",
+            "uuid": "bfb1532c-7fc9-56f7-9c3d-cce66a989a99"
+          },
+          {
+            "description": "SI (System and Information Integrity) control SI-11 not satisfied — no source-visible evidence detected for validation \"error-message-safety\".",
+            "target": {
+              "status": {
+                "state": "not-satisfied"
+              },
+              "target-id": "si-11",
+              "type": "objective-id"
+            },
+            "title": "SI-11 (System and Information Integrity)",
+            "uuid": "c0b154bf-7ec9-5564-9d3d-ce7969989906"
+          },
+          {
+            "description": "SI (System and Information Integrity) control SI-12 requires customer context — Information management and retention is policy-backed customer context..",
+            "target": {
+              "status": {
+                "state": "not-satisfied"
+              },
+              "target-id": "si-12",
+              "type": "objective-id"
+            },
+            "title": "SI-12 (System and Information Integrity)",
+            "uuid": "cdb3a7cd-71c6-5256-aa40-eb076c965f28"
+          },
+          {
+            "description": "SI (System and Information Integrity) control SI-16 requires customer context — Memory protection requires runtime/compiler hardening evidence outside source-only checks..",
+            "target": {
+              "status": {
+                "state": "not-satisfied"
+              },
+              "target-id": "si-16",
+              "type": "objective-id"
+            },
+            "title": "SI-16 (System and Information Integrity)",
+            "uuid": "ccb3a63a-72c6-53e9-a940-e9746d9660bb"
+          },
+          {
+            "description": "RA (Risk Assessment) control RA-5 not satisfied — no source-visible evidence detected for validation \"dependency-vulnerability-status\".",
+            "target": {
+              "status": {
+                "state": "not-satisfied"
+              },
+              "target-id": "ra-5",
+              "type": "objective-id"
+            },
+            "title": "RA-5 (Risk Assessment)",
+            "uuid": "cbb3a4a7-6fc6-5f30-ac40-ee2d6e96624e"
+          },
+          {
+            "description": "RA (Risk Assessment) control RA-5.2 requires customer context — Update-by-prior-vulnerability evidence needs dependency status plus release cadence..",
+            "target": {
+              "status": {
+                "state": "not-satisfied"
+              },
+              "target-id": "ra-5.2",
+              "type": "objective-id"
+            },
+            "title": "RA-5.2 (Risk Assessment)",
+            "uuid": "cab3a314-70c6-50c3-ab40-ec9a6f9663e1"
+          },
+          {
+            "description": "RA (Risk Assessment) control RA-5.4 requires customer context — Discoverable information analysis requires public surface and deployment evidence..",
+            "target": {
+              "status": {
+                "state": "not-satisfied"
+              },
+              "target-id": "ra-5.4",
+              "type": "objective-id"
+            },
+            "title": "RA-5.4 (Risk Assessment)",
+            "uuid": "c9b3a181-75c6-58a2-a640-e4bb70966574"
+          },
+          {
+            "description": "RA (Risk Assessment) control RA-5.5 requires customer context — Privileged vulnerability scanning requires scanner credential and environment evidence..",
+            "target": {
+              "status": {
+                "state": "not-satisfied"
+              },
+              "target-id": "ra-5.5",
+              "type": "objective-id"
+            },
+            "title": "RA-5.5 (Risk Assessment)",
+            "uuid": "c8b39fee-76c6-5a35-a540-e32871966707"
+          },
+          {
+            "description": "SA (System and Services Acquisition) control SA-4.9 requires customer context — Developer security testing requirements need acquisition-contract evidence plus Sonde results..",
+            "target": {
+              "status": {
+                "state": "not-satisfied"
+              },
+              "target-id": "sa-4.9",
+              "type": "objective-id"
+            },
+            "title": "SA-4.9 (System and Services Acquisition)",
+            "uuid": "c7b39e5b-73c6-557c-a840-e7e17296689a"
+          },
+          {
+            "description": "SA (System and Services Acquisition) control SA-8 requires customer context — Security and privacy engineering principles need architecture and review evidence..",
+            "target": {
+              "status": {
+                "state": "not-satisfied"
+              },
+              "target-id": "sa-8",
+              "type": "objective-id"
+            },
+            "title": "SA-8 (System and Services Acquisition)",
+            "uuid": "c6b39cc8-74c6-570f-a740-e64e73966a2d"
+          },
+          {
+            "description": "SA (System and Services Acquisition) control SA-10 requires customer context — Developer configuration management requires VCS and release-control evidence..",
+            "target": {
+              "status": {
+                "state": "not-satisfied"
+              },
+              "target-id": "sa-10",
+              "type": "objective-id"
+            },
+            "title": "SA-10 (System and Services Acquisition)",
+            "uuid": "c5b39b35-79c6-5eee-a240-de6f64965290"
+          },
+          {
+            "description": "SA (System and Services Acquisition) control SA-11 requires customer context — Developer security testing is represented by a committed CI static-analysis workflow (e.g. CodeQL), Sonde findings, and certification evidence..",
+            "target": {
+              "status": {
+                "state": "not-satisfied"
+              },
+              "target-id": "sa-11",
+              "type": "objective-id"
+            },
+            "title": "SA-11 (System and Services Acquisition)",
+            "uuid": "c4b399a2-7ac6-5081-a140-dcdc65965423"
+          },
+          {
+            "description": "SA (System and Services Acquisition) control SA-11.1 requires customer context — Static code analysis is represented by a committed CodeQL/SAST CI workflow, Sonde execution evidence, and probe certification..",
+            "target": {
+              "status": {
+                "state": "not-satisfied"
+              },
+              "target-id": "sa-11.1",
+              "type": "objective-id"
+            },
+            "title": "SA-11.1 (System and Services Acquisition)",
+            "uuid": "26a5757f-78fc-5f0a-a30e-937d109495d0"
+          },
+          {
+            "description": "SA (System and Services Acquisition) control SA-15 requires customer context — Development process standards require SDLC policy and repository workflow evidence..",
+            "target": {
+              "status": {
+                "state": "not-satisfied"
+              },
+              "target-id": "sa-15",
+              "type": "objective-id"
+            },
+            "title": "SA-15 (System and Services Acquisition)",
+            "uuid": "25a573ec-79fc-509d-a20e-91ea11949763"
+          },
+          {
+            "description": "PT (PII Processing and Transparency) control PT-2 requires customer context — Authority to process PII is policy and authorization evidence, not source-only evidence..",
+            "target": {
+              "status": {
+                "state": "not-satisfied"
+              },
+              "target-id": "pt-2",
+              "type": "objective-id"
+            },
+            "title": "PT-2 (PII Processing and Transparency)",
+            "uuid": "28a578a5-76fc-5be4-a10e-9057129498f6"
+          },
+          {
+            "description": "PT (PII Processing and Transparency) control PT-3 requires customer context — PII processing purpose is policy-driven; source validation covers credential storage only..",
+            "target": {
+              "status": {
+                "state": "not-satisfied"
+              },
+              "target-id": "pt-3",
+              "type": "objective-id"
+            },
+            "title": "PT-3 (PII Processing and Transparency)",
+            "uuid": "27a57712-77fc-5d77-a00e-8ec413949a89"
+          },
+          {
+            "description": "PT (PII Processing and Transparency) control PT-6 requires customer context — System of records notice coverage requires privacy program and publication evidence..",
+            "target": {
+              "status": {
+                "state": "not-satisfied"
+              },
+              "target-id": "pt-6",
+              "type": "objective-id"
+            },
+            "title": "PT-6 (PII Processing and Transparency)",
+            "uuid": "22a56f33-74fc-58be-9f0e-8d3114949c1c"
+          },
+          {
+            "description": "PT (PII Processing and Transparency) control PT-7 requires customer context — Specific categories of PII processing require data inventory and privacy evidence..",
+            "target": {
+              "status": {
+                "state": "not-satisfied"
+              },
+              "target-id": "pt-7",
+              "type": "objective-id"
+            },
+            "title": "PT-7 (PII Processing and Transparency)",
+            "uuid": "21a56da0-75fc-5a51-9e0e-8b9e15949daf"
+          }
+        ],
+        "start": "2026-05-19T00:00:00.000Z",
+        "title": "Gitea — NIST 800-53 Coverage",
+        "uuid": "ff451b5a-78f1-5d27-b400-17bcefb23529"
+      }
+    ],
+    "uuid": "fe4519c7-79f1-5eba-b700-1c75ecb23070"
+  }
+}

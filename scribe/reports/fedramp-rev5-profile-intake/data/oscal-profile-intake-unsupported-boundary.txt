@@ -1,0 +1,10 @@
+Unsupported OSCAL package-family boundary
+Families kept fail-closed: poam, sap, sar, ssp
+Detected unsupported artifact files: 12
+Profile-declared unsupported boundaries: 88
+Reasoning:
+- System Security Plan packages require system ownership and implementation statements beyond artifact analysis.
+- System Security Plan packages require system ownership and implementation statements beyond artifact analysis.
+- System Security Plan packages require system ownership and implementation statements beyond artifact analysis.
+- System Security Plan packages require system ownership and implementation statements beyond artifact analysis.
+Raw intake JSON download: exports/oscal-profile-intake.json

@@ -1,0 +1,6 @@
+/data/search-index.*.js
+  Cache-Control: public, max-age=31536000, immutable
+/data/helm-index.*.js
+  Cache-Control: public, max-age=31536000, immutable
+/data/segmentation-blob.js
+  Cache-Control: public, max-age=31536000, immutable

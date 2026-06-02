@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en-US" dir="ltr" data-theme="auto" data-mode="auto" data-sonde-theme="ultraviolet">
+<head>
+  <base data-sonde-hosted-report-base href="/scribe/reports/gitea-nist-coverage/findings/finding-nist-coverage-family-au/">
+  <script>(function(){if(window.location.protocol==='file:'){var base=document.querySelector('base[data-sonde-hosted-report-base]');if(base)base.remove();}})();</script>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="generator" content="sonde-scribe">
+  <meta name="sonde-scribe-package-manifest" content="../../package.manifest.json">
+  <title>AU Audit and Accountability coverage: 0/12 controls satisfied - Gitea — NIST 800-53 Coverage</title>
+  <link rel="icon" type="image/svg+xml" href="../../assets/brand/report-mark.svg">
+  <link rel="stylesheet" data-scribe-theme-stylesheet href="../../assets/themes/ultraviolet.css">
+  <script src="../../boot/file-direct.js" defer></script>
+  <script src="../../data/manifest.js" defer></script>
+  <script src="../../data/toc.js" defer></script>
+  <script src="../../data/anchors.js" defer></script>
+  <script src="../../data/sitemap.js" defer></script>
+  <script src="../../data/findings.js" defer></script>
+  <script src="../../data/source-snippets.js" defer></script>
+  <script src="../../data/share-actions.js" defer></script>
+  <script src="../../data/feedback-actions.js" defer></script>
+  <script src="../../data/export-actions.js" defer></script>
+  <script src="../../data/reader-views.js" defer></script>
+  <script src="../../data/visualizations.js" defer></script>
+  <script src="../../assets/search-dialog-bundle.js" defer></script>
+  <script src="../../locales/en-US.js" defer></script>
+  <script src="../../locales/es-US.js" defer></script>
+</head>
+<body class="scribe-report" data-reader-view="developer">
+  <div class="sonde-container">
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  <header class="sonde-header">
+    <div class="sonde-responsive-toolbar">
+      <img class="sonde-logo" src="../../assets/brand/report-mark.svg" alt="" aria-hidden="true" width="64" height="64">
+      <div>
+        <p class="meta" data-scribe-msgid="scribe.report.brand.alpha">Sonde Scribe alpha</p>
+        <p class="meta"><a href="../../index.html" data-scribe-msgid="scribe.report.action.reportOverview">Report overview</a></p>
+        <h1 data-scribe-msgid="scribe.report.nistCoverage.familyFinding.title" data-scribe-icu-args="{&quot;family&quot;:&quot;AU&quot;,&quot;familyTitle&quot;:&quot;Audit and Accountability&quot;,&quot;present&quot;:0,&quot;total&quot;:12}">AU Audit and Accountability coverage: 0/12 controls satisfied</h1>
+      </div>
+      <div class="scribe-report-header-actions">
+        <sonde-search-dialog indexes="document" site-root="../../"></sonde-search-dialog>
+        <button class="scribe-report-icon-button" type="button" data-scribe-print data-scribe-tooltip data-tooltip="Print report" data-scribe-label-msgid="scribe.report.action.printReport" aria-label="Print report" title="Print report"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+            <path d="M6 9V2h12v7"></path>
+            <path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"></path>
+            <path d="M6 14h12v8H6z"></path>
+          </svg></button>
+        <div class="download-menu"><button type="button" class="download-menu-trigger" data-action="download-menu-toggle" aria-haspopup="true" aria-expanded="false" aria-controls="scribe-download-menu-list" aria-label="Download" title="Download" data-scribe-label-msgid="scribe.report.action.download" data-scribe-tooltip data-tooltip="Download"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="12" y1="18" x2="12" y2="12"/><polyline points="9 15 12 18 15 15"/></svg></button><div class="download-menu-list" id="scribe-download-menu-list" role="menu" hidden><button type="button" class="download-menu-item" role="menuitem" data-scribe-download-pdf><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="12" y1="18" x2="12" y2="12"/><polyline points="9 15 12 18 15 15"/></svg><span class="download-menu-item-label" data-scribe-msgid="scribe.report.action.downloadPdf">Download PDF</span></button><a href="../../exports/report.md" class="download-menu-item markdown-download" role="menuitem" download><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="12" y1="18" x2="12" y2="12"/><polyline points="9 15 12 18 15 15"/></svg><span class="download-menu-item-label" data-scribe-msgid="scribe.report.action.exportMarkdown">Download Markdown report</span></a><a href="../../exports/nist-coverage.oscal-assessment-results.json" class="download-menu-item oscal-download" role="menuitem" data-scribe-msgid="scribe.report.action.downloadOscal">Download OSCAL</a><a href="../../data/nist-rollup.json" class="download-menu-item json-download" role="menuitem" download><span class="download-menu-item-label" data-scribe-msgid="scribe.report.asset.export.nistRollup">NIST rollup source data</span></a><a href="../../data/nist-conformance.json" class="download-menu-item json-download" role="menuitem" download><span class="download-menu-item-label" data-scribe-msgid="scribe.report.asset.export.nistConformance">NIST conformance boundary</span></a></div></div>
+        <details class="settings-dropdown scribe-report-settings">
+        <summary class="settings-dropdown-trigger" aria-label="Settings" title="Theme and language">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false">
+            <path d="M19.4 13.5c.1-.5.1-1 .1-1.5s0-1-.1-1.5l2-1.5-2-3.5-2.4 1a7.3 7.3 0 0 0-2.6-1.5L14 2h-4l-.4 3a7.3 7.3 0 0 0-2.6 1.5l-2.4-1-2 3.5 2 1.5c-.1.5-.1 1-.1 1.5s0 1 .1 1.5l-2 1.5 2 3.5 2.4-1a7.3 7.3 0 0 0 2.6 1.5l.4 3h4l.4-3a7.3 7.3 0 0 0 2.6-1.5l2.4 1 2-3.5-2-1.5ZM12 15.5a3.5 3.5 0 1 1 0-7 3.5 3.5 0 0 1 0 7Z"></path>
+          </svg>
+        </summary>
+        <div class="settings-dropdown-menu" data-report-settings-dialog>
+  <details class="settings-section settings-platform-theme-section">
+    <summary class="settings-section-trigger" data-scribe-msgid="scribe.report.control.theme">Theme</summary>
+    <div class="settings-section-body">
+      <label class="theme-toggle-option settings-platform-theme-option">
+  <input type="radio" name="sonde-platform-theme-toggle" value="daylight">
+  <div class="theme-preview" data-platform-theme="daylight">
+    <span class="settings-theme-preview-icon" aria-hidden="true"><svg viewBox="0 0 512 512" width="28" height="28" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"><defs><radialGradient id="settings-theme-daylight-sun" cx="50%" cy="50%" r="50%"><stop offset="0%" stop-color="color-mix(in srgb, var(--sonde-color-surface) 88%, var(--sonde-color-primary) 12%)"/><stop offset="60%" stop-color="color-mix(in srgb, var(--sonde-color-primary) 80%, var(--sonde-color-bg) 20%)"/><stop offset="100%" stop-color="var(--sonde-color-primary)"/></radialGradient><clipPath id="settings-theme-daylight-disc"><circle cx="256" cy="256" r="240"/></clipPath></defs><circle cx="256" cy="256" r="240" fill="url(#settings-theme-daylight-sun)"/><g clip-path="url(#settings-theme-daylight-disc)"><g fill="color-mix(in srgb, var(--sonde-color-primary) 18%, transparent)" stroke="color-mix(in srgb, var(--sonde-color-primary) 18%, transparent)"><g opacity="0.7"><path d="M40,240 C60,110 170,40 250,90 C320,130 330,210 260,280 C200,340 50,340 40,240 Z" opacity="0.6"/><path d="M290,130 C360,60 460,110 470,190 C480,270 410,350 330,320 C260,290 230,190 290,130 Z" opacity="0.7"/><path d="M390,280 C470,250 510,300 480,380 C450,440 380,410 390,280 Z" opacity="0.5"/><path d="M130,350 C180,290 260,350 230,430 C200,510 60,450 130,350 Z" opacity="0.5"/><circle cx="230" cy="430" r="18" fill="transparent" stroke-width="4" opacity="0.8"/><circle cx="170" cy="190" r="12" fill="transparent" stroke-width="3" opacity="0.7"/><circle cx="90" cy="230" r="8" opacity="0.8"/></g></g><g transform="translate(250,240) rotate(-40)" fill="var(--sonde-color-bg)" stroke="var(--sonde-color-bg)"><line x1="-32" y1="-8" x2="-160" y2="-40" stroke-width="6" stroke-linecap="round"/><circle cx="-160" cy="-40" r="10"/><line x1="-32" y1="16" x2="-125" y2="62" stroke-width="8" stroke-linecap="round"/><rect x="-141" y="38" width="32" height="60" rx="4" transform="rotate(20,-125,62)"/><line x1="-16" y1="-40" x2="-46" y2="-92" stroke-width="7" stroke-linecap="round"/><rect x="-70" y="-108" width="48" height="28" rx="4"/><circle cx="-56" cy="-98" r="8"/><circle cx="-36" cy="-98" r="6"/><path d="M48,-108 Q128,-78 128,0 Q128,78 48,108" stroke-width="5" stroke-linejoin="round"/><line x1="58" y1="-50" x2="108" y2="0" stroke-width="5"/><line x1="58" y1="50" x2="108" y2="0" stroke-width="5"/><line x1="48" y1="0" x2="108" y2="0" stroke-width="5"/><circle cx="110" cy="0" r="14"/><polygon points="-16,-40 48,-40 62,-24 62,24 48,40 -16,40 -30,24 -30,-24"/></g></g></svg></span>
+    <span data-scribe-msgid="scribe.report.theme.daylight">Daylight</span>
+  </div>
+</label>
+      <label class="theme-toggle-option settings-platform-theme-option">
+  <input type="radio" name="sonde-platform-theme-toggle" value="ultraviolet" checked>
+  <div class="theme-preview" data-platform-theme="ultraviolet">
+    <span class="settings-theme-preview-icon" aria-hidden="true"><svg viewBox="0 0 512 512" width="28" height="28" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"><defs><radialGradient id="settings-theme-ultraviolet-sun" cx="50%" cy="50%" r="50%"><stop offset="0%" stop-color="color-mix(in srgb, var(--sonde-color-surface) 88%, var(--sonde-color-primary) 12%)"/><stop offset="60%" stop-color="color-mix(in srgb, var(--sonde-color-primary) 80%, var(--sonde-color-bg) 20%)"/><stop offset="100%" stop-color="var(--sonde-color-primary)"/></radialGradient><clipPath id="settings-theme-ultraviolet-disc"><circle cx="256" cy="256" r="240"/></clipPath></defs><circle cx="256" cy="256" r="240" fill="url(#settings-theme-ultraviolet-sun)"/><g clip-path="url(#settings-theme-ultraviolet-disc)"><g fill="color-mix(in srgb, var(--sonde-color-primary) 18%, transparent)" stroke="color-mix(in srgb, var(--sonde-color-primary) 18%, transparent)"><g opacity="0.7"><path d="M40,240 C60,110 170,40 250,90 C320,130 330,210 260,280 C200,340 50,340 40,240 Z" opacity="0.6"/><path d="M290,130 C360,60 460,110 470,190 C480,270 410,350 330,320 C260,290 230,190 290,130 Z" opacity="0.7"/><path d="M390,280 C470,250 510,300 480,380 C450,440 380,410 390,280 Z" opacity="0.5"/><path d="M130,350 C180,290 260,350 230,430 C200,510 60,450 130,350 Z" opacity="0.5"/><circle cx="230" cy="430" r="18" fill="transparent" stroke-width="4" opacity="0.8"/><circle cx="170" cy="190" r="12" fill="transparent" stroke-width="3" opacity="0.7"/><circle cx="90" cy="230" r="8" opacity="0.8"/></g></g><g transform="translate(250,240) rotate(-40)" fill="var(--sonde-color-bg)" stroke="var(--sonde-color-bg)"><line x1="-32" y1="-8" x2="-160" y2="-40" stroke-width="6" stroke-linecap="round"/><circle cx="-160" cy="-40" r="10"/><line x1="-32" y1="16" x2="-125" y2="62" stroke-width="8" stroke-linecap="round"/><rect x="-141" y="38" width="32" height="60" rx="4" transform="rotate(20,-125,62)"/><line x1="-16" y1="-40" x2="-46" y2="-92" stroke-width="7" stroke-linecap="round"/><rect x="-70" y="-108" width="48" height="28" rx="4"/><circle cx="-56" cy="-98" r="8"/><circle cx="-36" cy="-98" r="6"/><path d="M48,-108 Q128,-78 128,0 Q128,78 48,108" stroke-width="5" stroke-linejoin="round"/><line x1="58" y1="-50" x2="108" y2="0" stroke-width="5"/><line x1="58" y1="50" x2="108" y2="0" stroke-width="5"/><line x1="48" y1="0" x2="108" y2="0" stroke-width="5"/><circle cx="110" cy="0" r="14"/><polygon points="-16,-40 48,-40 62,-24 62,24 48,40 -16,40 -30,24 -30,-24"/></g></g></svg></span>
+    <span data-scribe-msgid="scribe.report.theme.ultraviolet">Ultraviolet</span>
+  </div>
+</label>
+      <label class="theme-toggle-option settings-platform-theme-option">
+  <input type="radio" name="sonde-platform-theme-toggle" value="infrared">
+  <div class="theme-preview" data-platform-theme="infrared">
+    <span class="settings-theme-preview-icon" aria-hidden="true"><svg viewBox="0 0 512 512" width="28" height="28" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"><defs><radialGradient id="settings-theme-infrared-sun" cx="50%" cy="50%" r="50%"><stop offset="0%" stop-color="color-mix(in srgb, var(--sonde-color-surface) 88%, var(--sonde-color-primary) 12%)"/><stop offset="60%" stop-color="color-mix(in srgb, var(--sonde-color-primary) 80%, var(--sonde-color-bg) 20%)"/><stop offset="100%" stop-color="var(--sonde-color-primary)"/></radialGradient><clipPath id="settings-theme-infrared-disc"><circle cx="256" cy="256" r="240"/></clipPath></defs><circle cx="256" cy="256" r="240" fill="url(#settings-theme-infrared-sun)"/><g clip-path="url(#settings-theme-infrared-disc)"><g fill="color-mix(in srgb, var(--sonde-color-primary) 18%, transparent)" stroke="color-mix(in srgb, var(--sonde-color-primary) 18%, transparent)"><g opacity="0.7"><path d="M40,240 C60,110 170,40 250,90 C320,130 330,210 260,280 C200,340 50,340 40,240 Z" opacity="0.6"/><path d="M290,130 C360,60 460,110 470,190 C480,270 410,350 330,320 C260,290 230,190 290,130 Z" opacity="0.7"/><path d="M390,280 C470,250 510,300 480,380 C450,440 380,410 390,280 Z" opacity="0.5"/><path d="M130,350 C180,290 260,350 230,430 C200,510 60,450 130,350 Z" opacity="0.5"/><circle cx="230" cy="430" r="18" fill="transparent" stroke-width="4" opacity="0.8"/><circle cx="170" cy="190" r="12" fill="transparent" stroke-width="3" opacity="0.7"/><circle cx="90" cy="230" r="8" opacity="0.8"/></g></g><g transform="translate(250,240) rotate(-40)" fill="var(--sonde-color-bg)" stroke="var(--sonde-color-bg)"><line x1="-32" y1="-8" x2="-160" y2="-40" stroke-width="6" stroke-linecap="round"/><circle cx="-160" cy="-40" r="10"/><line x1="-32" y1="16" x2="-125" y2="62" stroke-width="8" stroke-linecap="round"/><rect x="-141" y="38" width="32" height="60" rx="4" transform="rotate(20,-125,62)"/><line x1="-16" y1="-40" x2="-46" y2="-92" stroke-width="7" stroke-linecap="round"/><rect x="-70" y="-108" width="48" height="28" rx="4"/><circle cx="-56" cy="-98" r="8"/><circle cx="-36" cy="-98" r="6"/><path d="M48,-108 Q128,-78 128,0 Q128,78 48,108" stroke-width="5" stroke-linejoin="round"/><line x1="58" y1="-50" x2="108" y2="0" stroke-width="5"/><line x1="58" y1="50" x2="108" y2="0" stroke-width="5"/><line x1="48" y1="0" x2="108" y2="0" stroke-width="5"/><circle cx="110" cy="0" r="14"/><polygon points="-16,-40 48,-40 62,-24 62,24 48,40 -16,40 -30,24 -30,-24"/></g></g></svg></span>
+    <span data-scribe-msgid="scribe.report.theme.infrared">Infrared</span>
+  </div>
+</label>
+      <label class="theme-toggle-option settings-platform-theme-option">
+  <input type="radio" name="sonde-platform-theme-toggle" value="high-contrast">
+  <div class="theme-preview" data-platform-theme="high-contrast">
+    <span class="settings-theme-preview-icon" aria-hidden="true"><svg viewBox="0 0 512 512" width="28" height="28" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"><defs><radialGradient id="settings-theme-high-contrast-sun" cx="50%" cy="50%" r="50%"><stop offset="0%" stop-color="color-mix(in srgb, var(--sonde-color-surface) 88%, var(--sonde-color-primary) 12%)"/><stop offset="60%" stop-color="color-mix(in srgb, var(--sonde-color-primary) 80%, var(--sonde-color-bg) 20%)"/><stop offset="100%" stop-color="var(--sonde-color-primary)"/></radialGradient><clipPath id="settings-theme-high-contrast-disc"><circle cx="256" cy="256" r="240"/></clipPath></defs><circle cx="256" cy="256" r="240" fill="url(#settings-theme-high-contrast-sun)"/><g clip-path="url(#settings-theme-high-contrast-disc)"><g fill="color-mix(in srgb, var(--sonde-color-primary) 18%, transparent)" stroke="color-mix(in srgb, var(--sonde-color-primary) 18%, transparent)"><g opacity="0.7"><path d="M40,240 C60,110 170,40 250,90 C320,130 330,210 260,280 C200,340 50,340 40,240 Z" opacity="0.6"/><path d="M290,130 C360,60 460,110 470,190 C480,270 410,350 330,320 C260,290 230,190 290,130 Z" opacity="0.7"/><path d="M390,280 C470,250 510,300 480,380 C450,440 380,410 390,280 Z" opacity="0.5"/><path d="M130,350 C180,290 260,350 230,430 C200,510 60,450 130,350 Z" opacity="0.5"/><circle cx="230" cy="430" r="18" fill="transparent" stroke-width="4" opacity="0.8"/><circle cx="170" cy="190" r="12" fill="transparent" stroke-width="3" opacity="0.7"/><circle cx="90" cy="230" r="8" opacity="0.8"/></g></g><g transform="translate(250,240) rotate(-40)" fill="var(--sonde-color-bg)" stroke="var(--sonde-color-bg)"><line x1="-32" y1="-8" x2="-160" y2="-40" stroke-width="6" stroke-linecap="round"/><circle cx="-160" cy="-40" r="10"/><line x1="-32" y1="16" x2="-125" y2="62" stroke-width="8" stroke-linecap="round"/><rect x="-141" y="38" width="32" height="60" rx="4" transform="rotate(20,-125,62)"/><line x1="-16" y1="-40" x2="-46" y2="-92" stroke-width="7" stroke-linecap="round"/><rect x="-70" y="-108" width="48" height="28" rx="4"/><circle cx="-56" cy="-98" r="8"/><circle cx="-36" cy="-98" r="6"/><path d="M48,-108 Q128,-78 128,0 Q128,78 48,108" stroke-width="5" stroke-linejoin="round"/><line x1="58" y1="-50" x2="108" y2="0" stroke-width="5"/><line x1="58" y1="50" x2="108" y2="0" stroke-width="5"/><line x1="48" y1="0" x2="108" y2="0" stroke-width="5"/><circle cx="110" cy="0" r="14"/><polygon points="-16,-40 48,-40 62,-24 62,24 48,40 -16,40 -30,24 -30,-24"/></g></g></svg></span>
+    <span data-scribe-msgid="scribe.report.theme.highContrast">High contrast</span>
+  </div>
+</label>
+    </div>
+  </details>
+  <details class="settings-section settings-theme-section">
+    <summary class="settings-section-trigger" data-scribe-msgid="scribe.report.control.mode">Mode</summary>
+    <div class="settings-section-body">
+      <label class="theme-toggle-option theme-option-auto">
+  <input type="radio" name="sonde-theme-toggle" value="auto" checked>
+  <div class="theme-preview" data-theme="auto">
+    <span data-scribe-msgid="scribe.report.mode.auto">Auto</span>
+  </div>
+</label>
+      <label class="theme-toggle-option theme-option-light">
+  <input type="radio" name="sonde-theme-toggle" value="light">
+  <div class="theme-preview" data-theme="light">
+    <span data-scribe-msgid="scribe.report.mode.light">Light</span>
+  </div>
+</label>
+      <label class="theme-toggle-option theme-option-dark">
+  <input type="radio" name="sonde-theme-toggle" value="dark">
+  <div class="theme-preview" data-theme="dark">
+    <span data-scribe-msgid="scribe.report.mode.dark">Dark</span>
+  </div>
+</label>
+    </div>
+  </details>
+  <details class="settings-section settings-language-section">
+    <summary class="settings-section-trigger" data-scribe-msgid="scribe.report.control.locale">Language</summary>
+    <div class="settings-section-body">
+      <input id="settings-language-search" class="settings-language-search" type="search" autocomplete="off" spellcheck="false" aria-label="Search languages" placeholder="Search languages" title="Search languages" data-sonde-locale-search data-scribe-label-msgid="scribe.report.control.languageSearch" data-scribe-placeholder-msgid="scribe.report.control.languageSearch">
+      <sonde-locale-picker locales="[&quot;en-US&quot;,&quot;es-US&quot;]" value="en-US" input-name="sonde-locale-picker-radio">
+<label class="theme-toggle-option settings-language-option" dir="ltr" data-locale-search="en-US English (US) 🇺🇸 English United States">
+  <input type="radio" name="sonde-locale-picker-radio" value="en-US" data-sonde-locale-picker checked>
+  <div class="theme-preview locale-option-preview">
+    <span class="fi fi-us locale-option-flag" data-flag="🇺🇸" aria-hidden="true"></span>
+    <span class="locale-option-label">English (US)</span>
+  </div>
+</label>
+<label class="theme-toggle-option settings-language-option" dir="ltr" data-locale-search="es-US Español (US) 🇺🇸 Spanish United States">
+  <input type="radio" name="sonde-locale-picker-radio" value="es-US" data-sonde-locale-picker>
+  <div class="theme-preview locale-option-preview">
+    <span class="fi fi-us locale-option-flag" data-flag="🇺🇸" aria-hidden="true"></span>
+    <span class="locale-option-label">Español (US)</span>
+  </div>
+</label>
+</sonde-locale-picker>
+    </div>
+  </details>
+</div>
+      </details>
+      </div>
+    </div>
+  </header>
+  <main id="main-content" class="sonde-data-width">
+    <article id="finding-nist-coverage-family-au" data-scribe-anchor="finding-nist-coverage-family-au">
+      <p data-scribe-msgid="scribe.report.nistCoverage.familyFinding.summary" data-scribe-icu-args="{&quot;familyTitle&quot;:&quot;Audit and Accountability&quot;,&quot;present&quot;:0,&quot;customerContext&quot;:7,&quot;unsatisfied&quot;:5}">Audit and Accountability has 0 satisfied controls, 7 customer-context controls, and 5 unsatisfied controls.</p>
+
+      <p class="finding-fix">Fix plan details are available in the remediation artifact.</p>
+      <p><a class="scribe-report-link-action" href="../../fix-plans/finding-nist-coverage/index.html" data-scribe-msgid="scribe.report.action.openFixPlan">Open fix plan</a></p>
+      <section id="diagram-nist-coverage-controls" class="scribe-visualization" data-scribe-anchor="diagram-nist-coverage-controls" aria-labelledby="diagram-nist-coverage-controls-title">
+        <div class="scribe-visualization__header">
+          <h2 id="diagram-nist-coverage-controls-title" data-scribe-msgid="scribe.report.nistCoverage.visualization.title">NIST family coverage matrix</h2>
+          <p>NIST family coverage matrix · finding-nist-coverage</p>
+        </div>
+        <p class="scribe-visualization__summary" data-scribe-msgid="scribe.report.nistCoverage.visualization.longDescription">The matrix is generated from the same rollup used for HTML, Markdown, and OSCAL Assessment Results.</p>
+        <table class="scribe-visualization-data" aria-label="NIST matrix source data">
+          <caption data-scribe-msgid="scribe.report.nistCoverage.visualization.sourceDataTitle">NIST matrix source data</caption>
+          <tbody>
+            <tr><th scope="row">AC Access Control</th><td><span data-scribe-number="13">13</span>/<span data-scribe-number="19">19</span> present controls</td></tr>
+            <tr><th scope="row">AU Audit and Accountability</th><td><span data-scribe-number="0">0</span>/<span data-scribe-number="12">12</span> present controls</td></tr>
+            <tr><th scope="row">CM Configuration Management</th><td><span data-scribe-number="2">2</span>/<span data-scribe-number="14">14</span> present controls</td></tr>
+            <tr><th scope="row">IA Identification and Authentication</th><td><span data-scribe-number="10">10</span>/<span data-scribe-number="15">15</span> present controls</td></tr>
+            <tr><th scope="row">SC System and Communications Protection</th><td><span data-scribe-number="2">2</span>/<span data-scribe-number="15">15</span> present controls</td></tr>
+            <tr><th scope="row">SI System and Information Integrity</th><td><span data-scribe-number="1">1</span>/<span data-scribe-number="14">14</span> present controls</td></tr>
+            <tr><th scope="row">RA Risk Assessment</th><td><span data-scribe-number="0">0</span>/<span data-scribe-number="4">4</span> present controls</td></tr>
+            <tr><th scope="row">SA System and Services Acquisition</th><td><span data-scribe-number="0">0</span>/<span data-scribe-number="6">6</span> present controls</td></tr>
+            <tr><th scope="row">PT PII Processing and Transparency</th><td><span data-scribe-number="0">0</span>/<span data-scribe-number="4">4</span> present controls</td></tr>
+          </tbody>
+        </table>
+      </section>
+      <div class="finding-action-icons finding-action-icons--static scribe-finding-action-icons">
+        <button class="finding-link-btn scribe-finding-permalink" type="button" data-share-anchor="finding-nist-coverage-family-au" data-scribe-label-msgid="scribe.report.action.shareFinding" aria-label="Share finding" title="Share finding"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+          <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+        </svg></button>
+        <button class="finding-feedback-btn" type="button" data-feedback-action="feedback-finding-nist-coverage" data-feedback-anchor="finding-nist-coverage-family-au" data-scribe-label-msgid="scribe.report.action.feedbackFinding" aria-label="Send feedback" title="Send feedback"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M3 11l18-5v14L3 15v-4z"></path>
+          <path d="M3 11v4"></path>
+          <path d="M6 15v4a1 1 0 0 0 1 1h2a1 1 0 0 0 1-1v-3.5"></path>
+        </svg></button>
+      </div>
+      <section id="source-nist-coverage-family-au" data-scribe-anchor="source-nist-coverage-family-au" class="source-evidence">
+        <h2 data-scribe-msgid="scribe.report.complianceExample.source.title" data-scribe-icu-args="{&quot;framework&quot;:&quot;NIST SP 800-53 Rev. 5 / FedRAMP Rev. 5&quot;}">NIST SP 800-53 Rev. 5 / FedRAMP Rev. 5 source evidence</h2>
+        <p data-scribe-msgid="scribe.report.complianceExample.source.summary" data-scribe-icu-args="{&quot;sourcePath&quot;:&quot;data/nist-coverage-family-au-summary.txt&quot;,&quot;startLine&quot;:1,&quot;endLine&quot;:10}">data/nist-coverage-family-au-summary.txt L1-L10</p>
+        <figure class="source-snippet" data-source-path="data/nist-coverage-family-au-summary.txt" data-source-line="1" data-start-line="1" data-end-line="10" data-scribe-source-snippet="source-nist-coverage-family-au" data-scribe-source-collapse-label="Collapse snippet" data-scribe-source-expand-label="Expand snippet" data-scribe-source-fullscreen-label="Full screen snippet" data-scribe-source-close-fullscreen-label="Close full screen snippet">
+  <figcaption>
+    <span class="scribe-source-caption-main">
+      <span class="scribe-source-caption-text">data/nist-coverage-family-au-summary.txt <span data-line-range>L1-L10</span></span>
+
+    </span>
+    <span class="scribe-source-actions">
+      <button class="finding-link-btn scribe-source-action scribe-source-action--icon" type="button" data-scribe-source-toggle aria-expanded="true" aria-controls="source-code-source-nist-coverage-family-au" data-collapse-label="Collapse snippet" data-expand-label="Expand snippet" title="Collapse snippet" aria-label="Collapse snippet"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" focusable="false" aria-hidden="true">
+          <path d="m6 9 6 6 6-6"></path>
+        </svg></button>
+    </span>
+  </figcaption>
+  <div id="source-code-source-nist-coverage-family-au" class="scribe-source-code-region" data-scribe-source-code-region>
+    <button class="finding-link-btn scribe-source-action scribe-source-action--icon scribe-source-frame-action" type="button" data-scribe-source-fullscreen aria-controls="source-code-source-nist-coverage-family-au" title="Full screen snippet" aria-label="Full screen snippet"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+          <path d="M8 3H3v5"></path>
+          <path d="M16 3h5v5"></path>
+          <path d="M8 21H3v-5"></path>
+          <path d="M16 21h5v-5"></path>
+        </svg></button>
+    <pre class="sl-code-block" tabindex="0" data-language="text" data-start-line="1"><code><span class="sonde-syntax-line" data-line="1"><span class="sonde-syntax-type">NIST</span><span class="sonde-syntax-default"> family </span><span class="sonde-syntax-type">AU</span><span class="sonde-syntax-punctuation">:</span><span class="sonde-syntax-default"> </span><span class="sonde-syntax-type">Audit</span><span class="sonde-syntax-default"> and </span><span class="sonde-syntax-type">Accountability</span></span>
+<span class="sonde-syntax-line" data-line="2"><span class="sonde-syntax-type">Total</span><span class="sonde-syntax-default"> controls</span><span class="sonde-syntax-punctuation">:</span><span class="sonde-syntax-default"> </span><span class="sonde-syntax-number">12</span></span>
+<span class="sonde-syntax-line" data-line="3"><span class="sonde-syntax-type">Satisfied</span><span class="sonde-syntax-default"> controls</span><span class="sonde-syntax-punctuation">:</span><span class="sonde-syntax-default"> </span><span class="sonde-syntax-number">0</span></span>
+<span class="sonde-syntax-line" data-line="4"><span class="sonde-syntax-type">Customer</span><span class="sonde-syntax-default">-context controls</span><span class="sonde-syntax-punctuation">:</span><span class="sonde-syntax-default"> </span><span class="sonde-syntax-number">7</span></span>
+<span class="sonde-syntax-line" data-line="5"><span class="sonde-syntax-type">Unsatisfied</span><span class="sonde-syntax-default"> controls</span><span class="sonde-syntax-punctuation">:</span><span class="sonde-syntax-default"> </span><span class="sonde-syntax-number">5</span></span>
+<span class="sonde-syntax-line" data-line="6"><span class="sonde-syntax-type">Validation</span><span class="sonde-syntax-default">-resolved controls</span><span class="sonde-syntax-punctuation">:</span><span class="sonde-syntax-default"> </span><span class="sonde-syntax-number">5</span></span>
+<span class="sonde-syntax-line" data-line="7"><span class="sonde-syntax-type">Evidence</span><span class="sonde-syntax-default">-tier controls</span><span class="sonde-syntax-punctuation">:</span><span class="sonde-syntax-default"> </span><span class="sonde-syntax-number">7</span></span>
+<span class="sonde-syntax-line" data-line="8"><span class="sonde-syntax-type">Deferred</span><span class="sonde-syntax-default">-elsewhere controls</span><span class="sonde-syntax-punctuation">:</span><span class="sonde-syntax-default"> </span><span class="sonde-syntax-number">0</span></span>
+<span class="sonde-syntax-line" data-line="9"><span class="sonde-syntax-type">Representative</span><span class="sonde-syntax-default"> controls</span><span class="sonde-syntax-punctuation">:</span><span class="sonde-syntax-default"> au-</span><span class="sonde-syntax-number">2</span><span class="sonde-syntax-punctuation">:</span><span class="sonde-syntax-default">absent</span><span class="sonde-syntax-punctuation">,</span><span class="sonde-syntax-default"> au-</span><span class="sonde-syntax-number">3</span><span class="sonde-syntax-punctuation">:</span><span class="sonde-syntax-default">absent</span><span class="sonde-syntax-punctuation">,</span><span class="sonde-syntax-default"> au-</span><span class="sonde-syntax-number">3.1</span><span class="sonde-syntax-punctuation">:</span><span class="sonde-syntax-default">absent</span><span class="sonde-syntax-punctuation">,</span><span class="sonde-syntax-default"> au-</span><span class="sonde-syntax-number">4</span><span class="sonde-syntax-punctuation">:</span><span class="sonde-syntax-default">requires-customer-context</span><span class="sonde-syntax-punctuation">,</span><span class="sonde-syntax-default"> au-</span><span class="sonde-syntax-number">5</span><span class="sonde-syntax-punctuation">:</span><span class="sonde-syntax-default">requires-customer-context</span><span class="sonde-syntax-punctuation">,</span><span class="sonde-syntax-default"> au-</span><span class="sonde-syntax-number">6</span><span class="sonde-syntax-punctuation">:</span><span class="sonde-syntax-default">requires-customer-context</span><span class="sonde-syntax-punctuation">,</span><span class="sonde-syntax-default"> au-</span><span class="sonde-syntax-number">8</span><span class="sonde-syntax-punctuation">:</span><span class="sonde-syntax-default">absent</span><span class="sonde-syntax-punctuation">,</span><span class="sonde-syntax-default"> au-</span><span class="sonde-syntax-number">9</span><span class="sonde-syntax-punctuation">:</span><span class="sonde-syntax-default">requires-customer-context</span><span class="sonde-syntax-punctuation">,</span><span class="sonde-syntax-default"> au-</span><span class="sonde-syntax-number">10</span><span class="sonde-syntax-punctuation">:</span><span class="sonde-syntax-default">requires-customer-context</span><span class="sonde-syntax-punctuation">,</span><span class="sonde-syntax-default"> au-</span><span class="sonde-syntax-number">12</span><span class="sonde-syntax-punctuation">:</span><span class="sonde-syntax-default">absent</span></span>
+<span class="sonde-syntax-line" data-line="10"><span class="sonde-syntax-type">Raw</span><span class="sonde-syntax-default"> rollup </span><span class="sonde-syntax-type">JSON</span><span class="sonde-syntax-default"> download</span><span class="sonde-syntax-punctuation">:</span><span class="sonde-syntax-default"> data/nist-rollup</span><span class="sonde-syntax-punctuation">.</span><span class="sonde-syntax-default">json</span></span></code></pre>
+  </div>
+</figure>
+      </section>
+    </article>
+  </main>
+  </div>
+</body>
+</html>

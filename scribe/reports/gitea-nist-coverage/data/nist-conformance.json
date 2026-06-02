@@ -1,0 +1,34 @@
+{
+  "g11": {
+    "failClosed": true,
+    "supportedArtifacts": [
+      {
+        "conformance": "supported",
+        "format": "OSCAL Assessment Results",
+        "path": "exports/nist-coverage.oscal-assessment-results.json"
+      },
+      {
+        "conformance": "supported",
+        "format": "HTML report",
+        "path": "index.html"
+      },
+      {
+        "conformance": "supported",
+        "format": "Markdown report",
+        "path": "exports/report.md"
+      }
+    ],
+    "unsupportedArtifacts": [
+      "OSCAL SSP",
+      "OSCAL SAP",
+      "OSCAL SAR",
+      "OSCAL POA&M",
+      "OSCAL Component Definition",
+      "OSCAL Catalog",
+      "OSCAL Profile"
+    ]
+  },
+  "profile": "nist-fedramp-coverage-assessment-results",
+  "reportId": "scribe-nist-coverage-gitea",
+  "schemaVersion": "scribe-nist-conformance/v1"
+}

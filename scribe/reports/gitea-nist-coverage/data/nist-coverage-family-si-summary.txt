@@ -1,0 +1,10 @@
+NIST family SI: System and Information Integrity
+Total controls: 14
+Satisfied controls: 1
+Customer-context controls: 9
+Unsatisfied controls: 4
+Validation-resolved controls: 4
+Evidence-tier controls: 10
+Deferred-elsewhere controls: 0
+Representative controls: si-2:absent, si-2.2:requires-customer-context, si-2.4:requires-customer-context, si-3:requires-customer-context, si-4:requires-customer-context, si-7:requires-customer-context, si-7.1:requires-customer-context, si-7.6:requires-customer-context, si-10:absent, si-10.5:absent
+Raw rollup JSON download: data/nist-rollup.json

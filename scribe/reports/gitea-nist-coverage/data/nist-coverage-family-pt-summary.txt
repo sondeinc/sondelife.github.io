@@ -1,0 +1,10 @@
+NIST family PT: PII Processing and Transparency
+Total controls: 4
+Satisfied controls: 0
+Customer-context controls: 4
+Unsatisfied controls: 0
+Validation-resolved controls: 0
+Evidence-tier controls: 4
+Deferred-elsewhere controls: 0
+Representative controls: pt-2:requires-customer-context, pt-3:requires-customer-context, pt-6:requires-customer-context, pt-7:requires-customer-context
+Raw rollup JSON download: data/nist-rollup.json

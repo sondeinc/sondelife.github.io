@@ -1,0 +1,10 @@
+OSCAL Catalog/Profile intake summary
+Profiles normalized: 22
+Catalogs linked: 23
+Import links resolved: 22
+Dangling import links: 0
+Unique controls selected or excluded: 463
+Validation issues: 0
+Unsupported package-family artifacts: 12
+Raw intake JSON download: exports/oscal-profile-intake.json
+Catalog provenance data: data/oscal-catalog-provenance.json

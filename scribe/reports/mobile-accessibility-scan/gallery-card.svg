@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" role="img" aria-labelledby="title desc">
+  <title id="title">Mobile Accessibility Scan</title>
+  <desc id="desc">Mobile accessibility report gallery preview with source-linked compliance evidence.</desc>
+  <rect width="1200" height="675" rx="0" fill="hsl(127 46% 16%)"/>
+  <rect x="48" y="42" width="1104" height="591" rx="20" fill="hsl(127 48% 95%)"/>
+  <rect x="48" y="42" width="1104" height="58" rx="20" fill="hsl(127 54% 22%)"/>
+  <rect x="48" y="78" width="1104" height="24" fill="hsl(127 54% 22%)"/>
+  <rect x="86" y="63" width="104" height="16" rx="8" fill="hsl(171 82% 58%)"/>
+  <text x="214" y="80" font-family="Inter, Arial, sans-serif" font-size="20" font-weight="700" fill="hsl(127 58% 94%)">Mobile Accessibility</text>
+  <rect x="86" y="128" width="204" height="453" rx="14" fill="hsl(127 36% 90%)"/>
+  <text x="112" y="172" font-family="Inter, Arial, sans-serif" font-size="22" font-weight="800" fill="hsl(127 52% 18%)">Scribe</text>
+  <rect x="112" y="210" width="142" height="12" rx="6" fill="hsl(127 26% 72%)"/>
+  <rect x="112" y="250" width="102" height="12" rx="6" fill="hsl(127 26% 78%)"/>
+  <rect x="112" y="290" width="154" height="12" rx="6" fill="hsl(127 26% 78%)"/>
+  <rect x="112" y="330" width="124" height="12" rx="6" fill="hsl(127 26% 78%)"/>
+  <rect x="320" y="128" width="786" height="453" rx="14" fill="hsl(127 44% 99%)"/>
+  <text x="356" y="176" font-family="Inter, Arial, sans-serif" font-size="25" font-weight="800" fill="hsl(127 52% 15%)">Accessibility scan</text>
+  <text x="356" y="212" font-family="Inter, Arial, sans-serif" font-size="18" fill="hsl(127 30% 34%)">Mobile Accessibility Scan</text>
+  <rect x="356" y="246" width="106" height="68" rx="10" fill="hsl(171 58% 94%)" stroke="hsl(171 34% 76%)"/>
+  <text x="374" y="276" font-family="Inter, Arial, sans-serif" font-size="14" font-weight="700" fill="hsl(127 32% 32%)">Findings</text>
+  <text x="374" y="300" font-family="Inter, Arial, sans-serif" font-size="22" font-weight="800" fill="hsl(127 52% 18%)">A11Y</text><rect x="486" y="246" width="106" height="68" rx="10" fill="hsl(171 58% 94%)" stroke="hsl(171 34% 76%)"/>
+  <text x="504" y="276" font-family="Inter, Arial, sans-serif" font-size="14" font-weight="700" fill="hsl(127 32% 32%)">Views</text>
+  <text x="504" y="300" font-family="Inter, Arial, sans-serif" font-size="22" font-weight="800" fill="hsl(127 52% 18%)">Mobile</text><rect x="616" y="246" width="106" height="68" rx="10" fill="hsl(171 58% 94%)" stroke="hsl(171 34% 76%)"/>
+  <text x="634" y="276" font-family="Inter, Arial, sans-serif" font-size="14" font-weight="700" fill="hsl(127 32% 32%)">Locales</text>
+  <text x="634" y="300" font-family="Inter, Arial, sans-serif" font-size="22" font-weight="800" fill="hsl(127 52% 18%)">26</text>
+  <rect x="356" y="346" width="386" height="176" rx="12" fill="hsl(127 32% 96%)" stroke="hsl(127 28% 82%)"/>
+  <text x="382" y="380" font-family="Inter, Arial, sans-serif" font-size="17" font-weight="800" fill="hsl(127 48% 20%)">Report findings</text>
+  <rect x="382" y="394" width="16" height="16" rx="4" fill="hsl(171 70% 45%)"/>
+  <text x="410" y="410" font-family="Inter, Arial, sans-serif" font-size="16" fill="hsl(127 32% 25%)">Touch target size</text>
+  <text x="646" y="410" font-family="Inter, Arial, sans-serif" font-size="14" font-weight="800" fill="hsl(127 34% 31%)">review</text><rect x="382" y="422" width="16" height="16" rx="4" fill="hsl(142 70% 45%)"/>
+  <text x="410" y="438" font-family="Inter, Arial, sans-serif" font-size="16" fill="hsl(127 32% 25%)">Contrast states</text>
+  <text x="646" y="438" font-family="Inter, Arial, sans-serif" font-size="14" font-weight="800" fill="hsl(127 34% 31%)">pass</text><rect x="382" y="450" width="16" height="16" rx="4" fill="hsl(142 70% 45%)"/>
+  <text x="410" y="466" font-family="Inter, Arial, sans-serif" font-size="16" fill="hsl(127 32% 25%)">Rotor labels</text>
+  <text x="646" y="466" font-family="Inter, Arial, sans-serif" font-size="14" font-weight="800" fill="hsl(127 34% 31%)">pass</text><rect x="382" y="478" width="16" height="16" rx="4" fill="hsl(32 70% 45%)"/>
+  <text x="410" y="494" font-family="Inter, Arial, sans-serif" font-size="16" fill="hsl(127 32% 25%)">Focus order</text>
+  <text x="646" y="494" font-family="Inter, Arial, sans-serif" font-size="14" font-weight="800" fill="hsl(127 34% 31%)">review</text>
+  <rect x="776" y="346" width="294" height="176" rx="12" fill="hsl(171 44% 94%)" stroke="hsl(171 32% 78%)"/>
+  <text x="802" y="380" font-family="Inter, Arial, sans-serif" font-size="17" font-weight="800" fill="hsl(127 48% 20%)">Device traces</text>
+  <text x="802" y="410" font-family="JetBrains Mono, Menlo, monospace" font-size="16" fill="hsl(127 28% 28%)">ios-summary.png</text><text x="802" y="438" font-family="JetBrains Mono, Menlo, monospace" font-size="16" fill="hsl(127 28% 28%)">android-summary.png</text><text x="802" y="466" font-family="JetBrains Mono, Menlo, monospace" font-size="16" fill="hsl(127 28% 28%)">reader views</text><text x="802" y="494" font-family="JetBrains Mono, Menlo, monospace" font-size="16" fill="hsl(127 28% 28%)">localized exports</text>
+  <text x="356" y="552" font-family="Inter, Arial, sans-serif" font-size="18" font-weight="700" fill="hsl(127 46% 22%)">HTML / Markdown / OSCAL</text>
+</svg>

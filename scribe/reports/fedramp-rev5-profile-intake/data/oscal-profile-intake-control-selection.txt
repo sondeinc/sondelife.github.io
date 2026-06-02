@@ -1,0 +1,6 @@
+OSCAL control-selection summary
+Unique profile controls selected or excluded: 463
+Unique catalog controls in provenance: 1216
+Profiles with tailoring: 8
+ODP parameter summaries: 1818
+Representative controls: ac-1, ac-2, ac-2.1, ac-2.2, ac-2.3, ac-2.4, ac-2.5, ac-2.7, ac-2.9, ac-2.11, ac-2.12, ac-2.13

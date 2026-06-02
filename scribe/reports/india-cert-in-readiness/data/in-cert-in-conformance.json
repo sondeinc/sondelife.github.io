@@ -1,0 +1,74 @@
+{
+  "analysisInputHash": "sha256:bd802bbff28e9e0241ec19c5dc12aaf87f4426a2f96a5f886685fbde5b574891",
+  "certificationStatus": "not-certified",
+  "corpus": [
+    {
+      "commit": "f63cecc5a5fa1c3f0405d866dbf62f391e1eb487",
+      "id": "sonde-self-analysis",
+      "repository": "sondeinc/sonde",
+      "role": "self-analysis"
+    },
+    {
+      "commit": "dae209ae6559c29cfca2a1f4414c51d89ea643d5",
+      "id": "express",
+      "repository": "expressjs/express",
+      "role": "reference-corpus"
+    }
+  ],
+  "g11": {
+    "failClosed": true,
+    "missingProfileBehavior": "render-incomplete-not-certified",
+    "scoringExcludedStates": [
+      "requires-customer-context",
+      "attestation-required",
+      "not-source-observable",
+      "not-assessed",
+      "out-of-scope"
+    ],
+    "supportedArtifacts": [
+      {
+        "conformance": "supported",
+        "format": "HTML report",
+        "path": "index.html"
+      },
+      {
+        "conformance": "supported",
+        "format": "Markdown report",
+        "path": "exports/report.md"
+      },
+      {
+        "conformance": "supported",
+        "format": "Conformance boundary",
+        "path": "data/in-cert-in-conformance.json"
+      }
+    ],
+    "unsupportedClaimFixtures": [
+      {
+        "locale": "en-IN",
+        "unsupportedClaims": [
+          "CERT-In compliant",
+          "CERT-In certified",
+          "filed with CERT-In",
+          "automated India cyber compliance"
+        ]
+      }
+    ],
+    "unsupportedClaims": [
+      "CERT-In compliant",
+      "CERT-In certified",
+      "filed with CERT-In",
+      "automated India cyber compliance"
+    ]
+  },
+  "jurisdiction": "in",
+  "legalComplianceStatus": "not-determined",
+  "locale": "en-IN",
+  "profile": "india-cert-in-readiness-evidence-pack",
+  "regulatorFilingStatus": "not-determined",
+  "reportId": "scribe-in-cert-in-readiness-gallery",
+  "requiredLocales": [
+    "en-IN"
+  ],
+  "schemaVersion": "scribe-india-cert-in-conformance/v1",
+  "status": "ready"
+}

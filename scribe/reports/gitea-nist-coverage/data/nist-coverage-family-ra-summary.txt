@@ -1,0 +1,10 @@
+NIST family RA: Risk Assessment
+Total controls: 4
+Satisfied controls: 0
+Customer-context controls: 3
+Unsatisfied controls: 1
+Validation-resolved controls: 1
+Evidence-tier controls: 3
+Deferred-elsewhere controls: 0
+Representative controls: ra-5:absent, ra-5.2:requires-customer-context, ra-5.4:requires-customer-context, ra-5.5:requires-customer-context
+Raw rollup JSON download: data/nist-rollup.json

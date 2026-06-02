@@ -1,0 +1,356 @@
+{
+  "entrypoint": "index.html",
+  "fileCount": 57,
+  "files": [
+    {
+      "bytes": 2142,
+      "path": "assets/brand/report-mark.svg",
+      "role": "asset",
+      "sha256": "sha256:8de0f91487c32afd293571e46f55be956a02e29c353a0d08897bc1cb37885f75"
+    },
+    {
+      "bytes": 600480,
+      "path": "assets/search-dialog-bundle.js",
+      "role": "asset",
+      "sha256": "sha256:9f31b6212d4a91eab55629ec43b2ef2b434ab10cf97b580c867cb8873ca0cd8d"
+    },
+    {
+      "bytes": 491030,
+      "path": "assets/themes/daylight.css",
+      "role": "theme",
+      "sha256": "sha256:6c0d5e67ac0ebce8776033a43b76778ed484573b4ca1eac291b2cac38fec49be"
+    },
+    {
+      "bytes": 483054,
+      "path": "assets/themes/high-contrast.css",
+      "role": "theme",
+      "sha256": "sha256:0f63f9850ef47cad9de6ab13b748cf23f272ad0bcc4a4b3e74c61eb47a8922ea"
+    },
+    {
+      "bytes": 482234,
+      "path": "assets/themes/infrared.css",
+      "role": "theme",
+      "sha256": "sha256:1171fe3bca3522066fa1a7391ed152420e95322930a8b132de872ae2d76c0366"
+    },
+    {
+      "bytes": 482359,
+      "path": "assets/themes/ultraviolet.css",
+      "role": "theme",
+      "sha256": "sha256:98b2ebd2ba87522ea40bba66b610e5c539b470513f55b0576c80a9cb71858f3d"
+    },
+    {
+      "bytes": 503181,
+      "path": "assets/vendor/paged.polyfill.min.js",
+      "role": "asset",
+      "sha256": "sha256:f44e35a6d5106d819c3415fd38591de04d3834343c14e50a562b84257e204692"
+    },
+    {
+      "bytes": 129981,
+      "path": "boot/file-direct.js",
+      "role": "runtime-script",
+      "sha256": "sha256:53b03c822735ebc5daa0b7d7470810949014c93e5c90ab246591ad55e68d8ea5"
+    },
+    {
+      "bytes": 23520,
+      "path": "data/anchors.js",
+      "role": "runtime-data",
+      "sha256": "sha256:da937694c82bf4b0aba5cd01065dd511941c237137bdffc5bed5f204fd7e7c63"
+    },
+    {
+      "bytes": 4286,
+      "path": "data/export-actions.js",
+      "role": "runtime-data",
+      "sha256": "sha256:67178e323568f1f8da919ee6b7e45e323d0d5eca9b4da5a349a23955df6dca9e"
+    },
+    {
+      "bytes": 4086,
+      "path": "data/feedback-actions.js",
+      "role": "runtime-data",
+      "sha256": "sha256:1592f2cf6f76272478e0392e96f5149aa02e2019af4d45198ae7b3fecba9166c"
+    },
+    {
+      "bytes": 21838,
+      "path": "data/findings.js",
+      "role": "runtime-data",
+      "sha256": "sha256:e766205ba038acc012a0eada73d3d3e03f1b9ae0f79b538f26029138bee39f43"
+    },
+    {
+      "bytes": 464782,
+      "path": "data/manifest.js",
+      "role": "runtime-data",
+      "sha256": "sha256:89e4b53beef1ec04c7b0795d9471e79c71b7dc9393c8f5c500d028e5fd0064f2"
+    },
+    {
+      "bytes": 832,
+      "path": "data/nist-conformance.json",
+      "role": "runtime-data",
+      "sha256": "sha256:ca5ca3b4b65eab63acfd2c05978d5d94f7327ca4438b588c9a0b5289c183a479"
+    },
+    {
+      "bytes": 478,
+      "path": "data/nist-coverage-family-ac-summary.txt",
+      "role": "runtime-data",
+      "sha256": "sha256:e3bfefc73a4335d2c41efe237555249decd29099168002ae29408f897e79be75"
+    },
+    {
+      "bytes": 524,
+      "path": "data/nist-coverage-family-au-summary.txt",
+      "role": "runtime-data",
+      "sha256": "sha256:a046766b360c912b543b7ec265ce9841b31f93212474fb12ec469374ca878e9c"
+    },
+    {
+      "bytes": 570,
+      "path": "data/nist-coverage-family-cm-summary.txt",
+      "role": "runtime-data",
+      "sha256": "sha256:112a61bb46dfae01e1d2d48f3aa7091ad0225314365a9274699dcc6eee79470a"
+    },
+    {
+      "bytes": 477,
+      "path": "data/nist-coverage-family-ia-summary.txt",
+      "role": "runtime-data",
+      "sha256": "sha256:77426e6557a55e50613f24991410f2d66269abceb49d8c443f9b7d729b370b09"
+    },
+    {
+      "bytes": 429,
+      "path": "data/nist-coverage-family-pt-summary.txt",
+      "role": "runtime-data",
+      "sha256": "sha256:3ebce0d20acb0e77efbf4aab150665f4d00acdb8eff08aa298b6fe1b3c6964f0"
+    },
+    {
+      "bytes": 400,
+      "path": "data/nist-coverage-family-ra-summary.txt",
+      "role": "runtime-data",
+      "sha256": "sha256:86834932038ebcd8c2aa6209669141f1a77051638efd612b13a60e30b64ff167"
+    },
+    {
+      "bytes": 501,
+      "path": "data/nist-coverage-family-sa-summary.txt",
+      "role": "runtime-data",
+      "sha256": "sha256:1e838b4b3860fb2e505d7e8800da98966a9282a4b1b2ec943a5a92eb62f9e07f"
+    },
+    {
+      "bytes": 550,
+      "path": "data/nist-coverage-family-sc-summary.txt",
+      "role": "runtime-data",
+      "sha256": "sha256:0888ffe48a12f3fc8237419714a49c7ce7785b8c8fe0b271cb0d4b1ec6bcb525"
+    },
+    {
+      "bytes": 579,
+      "path": "data/nist-coverage-family-si-summary.txt",
+      "role": "runtime-data",
+      "sha256": "sha256:d4a414a942accebc3fe553b550e4ea934931f953a8983594648be75a28ece214"
+    },
+    {
+      "bytes": 1089,
+      "path": "data/nist-rollup-summary.txt",
+      "role": "runtime-data",
+      "sha256": "sha256:0098122159fd0b1612b561e0a04ce3ff013098512f3f0f7955eaa085bc391ce8"
+    },
+    {
+      "bytes": 28802,
+      "path": "data/nist-rollup.json",
+      "role": "runtime-data",
+      "sha256": "sha256:7e3275410e78ed576c1306a5ecc5857d90df80262b9e7ab27a192ca1b6bda167"
+    },
+    {
+      "bytes": 12402,
+      "path": "data/reader-views.js",
+      "role": "runtime-data",
+      "sha256": "sha256:90f4ef72bd63ec8f318a89f280284eff51353c05d233ce08686e99a45d4f8abd"
+    },
+    {
+      "bytes": 663085,
+      "path": "data/search-index.en-US.js",
+      "role": "runtime-data",
+      "sha256": "sha256:bd24594d69d675f4d73ef5e5a6ec1ad6c4ae9b225f09d05b2e937a8e2d05453f"
+    },
+    {
+      "bytes": 668009,
+      "path": "data/search-index.es-US.js",
+      "role": "runtime-data",
+      "sha256": "sha256:6795db4eb8b5e5b379ce9f076b1d138220922c13e26252d46aa6b733df8e1364"
+    },
+    {
+      "bytes": 3125730,
+      "path": "data/segmentation-blob.js",
+      "role": "runtime-data",
+      "sha256": "sha256:25cbf3f943c5acc5a951fc0e7941dae4e1c44c3352df3ef9236c39df43a536ee"
+    },
+    {
+      "bytes": 9885,
+      "path": "data/share-actions.js",
+      "role": "runtime-data",
+      "sha256": "sha256:bc913aeb5e74637cce6a13a3ff7f62b055b35a29cd4e5b2feaf2357933de9bca"
+    },
+    {
+      "bytes": 1496,
+      "path": "data/sitemap.js",
+      "role": "runtime-data",
+      "sha256": "sha256:922f887e5bc8f258b10c4b9e3eab33922862aad0ae10faed8b0ff44e7d00d2c8"
+    },
+    {
+      "bytes": 14679,
+      "path": "data/source-snippets.js",
+      "role": "runtime-data",
+      "sha256": "sha256:4816e843c3611577e1fb761ef7ee645c0b5a6f0633380d87ddbb917534abbd81"
+    },
+    {
+      "bytes": 12734,
+      "path": "data/toc.js",
+      "role": "runtime-data",
+      "sha256": "sha256:d078d472369f64313ca868868bad0569ad5a56ddb21279ea20580bcf43b74e67"
+    },
+    {
+      "bytes": 971,
+      "path": "data/visualization-source-data.nist-coverage.json",
+      "role": "runtime-data",
+      "sha256": "sha256:bd8d8435dd6cbd91b42ba34c5cb451b1f2671d775d02893500e337d39629dc8b"
+    },
+    {
+      "bytes": 3274,
+      "path": "data/visualizations.js",
+      "role": "runtime-data",
+      "sha256": "sha256:3eb379a13aa5d7bd3ae3032700361bd4f0cf1d5306a84053314488888ce2012c"
+    },
+    {
+      "bytes": 30870,
+      "path": "exports/nist-coverage.es-US.html",
+      "role": "page",
+      "sha256": "sha256:e26851fcf32a1e55ccd6aa130028d3bc0212f51de3cb4bf00124bc00e37c9d50"
+    },
+    {
+      "bytes": 13732,
+      "path": "exports/nist-coverage.es-US.md",
+      "role": "export",
+      "sha256": "sha256:4ab727d6c4a3487401039033979e381cb1984e5a54814270d9f826e7391d0df3"
+    },
+    {
+      "bytes": 30589,
+      "path": "exports/nist-coverage.html",
+      "role": "page",
+      "sha256": "sha256:c96deb93200b878cd66ecb0fcf358535eb092f18e231aaa1ef9b3b683642f426"
+    },
+    {
+      "bytes": 13466,
+      "path": "exports/nist-coverage.md",
+      "role": "export",
+      "sha256": "sha256:c300b9ee0b01f7aa2d4afca6593206bac9d167cf53962c3d629ea7938e3d7129"
+    },
+    {
+      "bytes": 55941,
+      "path": "exports/nist-coverage.oscal-assessment-results.json",
+      "role": "export",
+      "sha256": "sha256:849149e483e589980d512021c75934ae33434e2431d3166376180c4b5ad54fda"
+    },
+    {
+      "bytes": 16031,
+      "path": "exports/report.md",
+      "role": "export",
+      "sha256": "sha256:dd76fcbcfe8cc543244b95f75ce5614dd1a437920517cac8c81648bde6d24000"
+    },
+    {
+      "bytes": 33930,
+      "path": "findings/finding-nist-coverage-family-ac/index.html",
+      "role": "page",
+      "sha256": "sha256:fe27ff7902d6282bea367b710164397315deb4cfbfcbe15eb68fc3313f9ca10b"
+    },
+    {
+      "bytes": 34021,
+      "path": "findings/finding-nist-coverage-family-au/index.html",
+      "role": "page",
+      "sha256": "sha256:14dd3bb537eb101395992126df42d612dcb78b52cd5850ad8e160d1735ba8a14"
+    },
+    {
+      "bytes": 34069,
+      "path": "findings/finding-nist-coverage-family-cm/index.html",
+      "role": "page",
+      "sha256": "sha256:6d5aaa6ef546e977d1413bc33102925a0c9a685d9a37e3a93f668189e0159f10"
+    },
+    {
+      "bytes": 34024,
+      "path": "findings/finding-nist-coverage-family-ia/index.html",
+      "role": "page",
+      "sha256": "sha256:cafada3ee403b686a1c0e4a975379913894c81bbfd3ab3fbab0b731334193c38"
+    },
+    {
+      "bytes": 32737,
+      "path": "findings/finding-nist-coverage-family-pt/index.html",
+      "role": "page",
+      "sha256": "sha256:d06a3b3f4a353d607827dd1f729b9c1227f4b0ab6d7eb9cb12ee3306ab002472"
+    },
+    {
+      "bytes": 32547,
+      "path": "findings/finding-nist-coverage-family-ra/index.html",
+      "role": "page",
+      "sha256": "sha256:2a7ce9ec8f3b605988c906b03400630c4943c97457a6ba9aa115ced2ad671e59"
+    },
+    {
+      "bytes": 33243,
+      "path": "findings/finding-nist-coverage-family-sa/index.html",
+      "role": "page",
+      "sha256": "sha256:53b2a39c2ffa81b91cb963c5f61313beda0646124655ad5a6e8c9c6d747548aa"
+    },
+    {
+      "bytes": 34188,
+      "path": "findings/finding-nist-coverage-family-sc/index.html",
+      "role": "page",
+      "sha256": "sha256:d95cec13d15d41d1112582358678c4a8997f98ba861c02818ff8de4cbb1fc404"
+    },
+    {
+      "bytes": 34197,
+      "path": "findings/finding-nist-coverage-family-si/index.html",
+      "role": "page",
+      "sha256": "sha256:7b388efe83a4b71a822630e2f37e3dcded4c25da3b6750538d777da7405b80b3"
+    },
+    {
+      "bytes": 40583,
+      "path": "findings/finding-nist-coverage/index.html",
+      "role": "page",
+      "sha256": "sha256:943241230c8bf2d08fc233e2e28f45c77fe5cc9586607f11e5b70a69756b1869"
+    },
+    {
+      "bytes": 21827,
+      "path": "fix-plans/finding-nist-coverage/index.html",
+      "role": "page",
+      "sha256": "sha256:1e4af748571f20293034a9b97374f59254d80e78b0e6c80f6811b90b8f44d628"
+    },
+    {
+      "bytes": 275535,
+      "path": "index.html",
+      "role": "page",
+      "sha256": "sha256:240dd04ce43a87ecc0236e6251b933f146dfdd5d26196ad8c54bc37fa8eb08c4"
+    },
+    {
+      "bytes": 27769,
+      "path": "locales/en-US.js",
+      "role": "locale-bundle",
+      "sha256": "sha256:534d9c8599162cf9be3f053aa2eaac665dcfdd705b9443961e901e17081ddcae"
+    },
+    {
+      "bytes": 28837,
+      "path": "locales/es-US.js",
+      "role": "locale-bundle",
+      "sha256": "sha256:93342cc5cbf073e2d350aaee66610d2e33f78ae3bad8c3d67915e1b6fc0a81b5"
+    },
+    {
+      "bytes": 464751,
+      "path": "scribe-runtime.manifest.json",
+      "role": "runtime-manifest",
+      "sha256": "sha256:d124f946228f62cbe94a020968864184ceacfbec9d45548d45acc9ba94e9f1e3"
+    },
+    {
+      "bytes": 320,
+      "path": "sitemap.xml",
+      "role": "sitemap",
+      "sha256": "sha256:4edaa861161feaffc063b785cbef69031bfc027dab64f40e0ac13b12437a1d64"
+    }
+  ],
+  "inventoryScope": "public-files-excluding-self",
+  "outputTarget": "html",
+  "privateFilesIncluded": false,
+  "publicOnly": true,
+  "reportFamily": "compliance",
+  "reportId": "scribe-nist-coverage-gitea",
+  "runtimeManifestPath": "scribe-runtime.manifest.json",
+  "schemaVersion": "scribe-package-manifest/v1"
+}
