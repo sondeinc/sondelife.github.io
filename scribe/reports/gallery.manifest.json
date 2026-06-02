@@ -580,222 +580,6 @@
           "label": "Interactive HTML report"
         },
         {
-          "format": "JSON",
-          "label": "India CERT-In conformance boundary",
-          "standard": "Scribe G11"
-        },
-        {
-          "format": "Markdown",
-          "label": "Markdown report"
-        }
-      ],
-      "brand": {
-        "label": "India CERT-In",
-        "tone": "hsl(110 58% 42%)"
-      },
-      "cardImage": {
-        "altText": "India CERT-In readiness evidence report preview.",
-        "href": "reports/india-cert-in-readiness/gallery-card.svg",
-        "openGraph": true,
-        "path": "reports/india-cert-in-readiness/gallery-card.svg"
-      },
-      "description": "India CERT-In readiness evidence report with source-visible findings, customer-context states, and fail-closed G11 boundaries.",
-      "facets": {
-        "artifactFormat": [
-          "HTML",
-          "JSON",
-          "Markdown"
-        ],
-        "jurisdiction": [
-          "universe"
-        ],
-        "locale": [
-          "en-US",
-          "en-IN"
-        ],
-        "reportFamily": [
-          "compliance"
-        ],
-        "reportType": [
-          "in-cert-in"
-        ],
-        "standard": [
-          "Scribe G11"
-        ]
-      },
-      "href": "scribe/reports/india-cert-in-readiness/index.html",
-      "id": "india-cert-in-readiness",
-      "jurisdictions": [
-        "universe"
-      ],
-      "languageBadges": [
-        {
-          "flag": "🇮🇳",
-          "flagClass": "fi fi-in locale-option-flag",
-          "flagCode": "in",
-          "href": "reports/india-cert-in-readiness/?scribe_locale=en-IN",
-          "label": "English (India)",
-          "locale": "en-IN"
-        },
-        {
-          "flag": "🇺🇸",
-          "flagClass": "fi fi-us locale-option-flag",
-          "flagCode": "us",
-          "href": "reports/india-cert-in-readiness/?scribe_locale=en-US",
-          "label": "English (US)",
-          "locale": "en-US"
-        }
-      ],
-      "locales": [
-        "en-US",
-        "en-IN"
-      ],
-      "manifestPath": "scribe/reports/india-cert-in-readiness/scribe-runtime.manifest.json",
-      "reportFamily": "compliance",
-      "reportId": "scribe-in-cert-in-readiness-gallery",
-      "reportType": "in-cert-in",
-      "requiredArtifacts": [
-        {
-          "format": "HTML",
-          "href": "reports/india-cert-in-readiness/index.html",
-          "label": "Interactive HTML report",
-          "path": "index.html"
-        },
-        {
-          "format": "JSON",
-          "href": "reports/india-cert-in-readiness/data/in-cert-in-conformance.json",
-          "label": "India CERT-In conformance boundary",
-          "path": "data/in-cert-in-conformance.json",
-          "standard": "Scribe G11"
-        },
-        {
-          "download": true,
-          "format": "Markdown",
-          "href": "reports/india-cert-in-readiness/exports/report.md",
-          "label": "Markdown report",
-          "path": "exports/report.md"
-        }
-      ],
-      "scribePageHref": "reports/india-cert-in-readiness/index.html",
-      "scribePageManifestPath": "reports/india-cert-in-readiness/scribe-runtime.manifest.json",
-      "searchText": "India CERT-In Readiness Evidence Pack India CERT-In readiness evidence report with source-visible findings, customer-context states, and fail-closed G11 boundaries. compliance in-cert-in India CERT-In en-US en-IN English (India) English (US) universe Global Interactive HTML report HTML India CERT-In conformance boundary JSON Scribe G11 Markdown report Markdown sonde-self-analysis sondeinc/sonde Sonde self-analysis self-analysis express expressjs/express Express reference corpus reference-corpus",
-      "title": "India CERT-In Readiness Evidence Pack"
-    },
-    {
-      "artifactBadges": [
-        {
-          "format": "HTML",
-          "label": "Interactive HTML report"
-        },
-        {
-          "format": "JSON",
-          "label": "India DPDP conformance boundary",
-          "standard": "Scribe G11"
-        },
-        {
-          "format": "Markdown",
-          "label": "Markdown report"
-        }
-      ],
-      "brand": {
-        "label": "India DPDP",
-        "tone": "hsl(264 58% 42%)"
-      },
-      "cardImage": {
-        "altText": "India DPDP readiness evidence report preview.",
-        "href": "reports/india-dpdp-readiness/gallery-card.svg",
-        "openGraph": true,
-        "path": "reports/india-dpdp-readiness/gallery-card.svg"
-      },
-      "description": "India DPDP readiness evidence report with source-visible findings, customer-context states, and fail-closed G11 boundaries.",
-      "facets": {
-        "artifactFormat": [
-          "HTML",
-          "JSON",
-          "Markdown"
-        ],
-        "jurisdiction": [
-          "universe"
-        ],
-        "locale": [
-          "en-US",
-          "en-IN"
-        ],
-        "reportFamily": [
-          "compliance"
-        ],
-        "reportType": [
-          "in-dpdp"
-        ],
-        "standard": [
-          "Scribe G11"
-        ]
-      },
-      "href": "scribe/reports/india-dpdp-readiness/index.html",
-      "id": "india-dpdp-readiness",
-      "jurisdictions": [
-        "universe"
-      ],
-      "languageBadges": [
-        {
-          "flag": "🇮🇳",
-          "flagClass": "fi fi-in locale-option-flag",
-          "flagCode": "in",
-          "href": "reports/india-dpdp-readiness/?scribe_locale=en-IN",
-          "label": "English (India)",
-          "locale": "en-IN"
-        },
-        {
-          "flag": "🇺🇸",
-          "flagClass": "fi fi-us locale-option-flag",
-          "flagCode": "us",
-          "href": "reports/india-dpdp-readiness/?scribe_locale=en-US",
-          "label": "English (US)",
-          "locale": "en-US"
-        }
-      ],
-      "locales": [
-        "en-US",
-        "en-IN"
-      ],
-      "manifestPath": "scribe/reports/india-dpdp-readiness/scribe-runtime.manifest.json",
-      "reportFamily": "compliance",
-      "reportId": "scribe-in-dpdp-readiness-gallery",
-      "reportType": "in-dpdp",
-      "requiredArtifacts": [
-        {
-          "format": "HTML",
-          "href": "reports/india-dpdp-readiness/index.html",
-          "label": "Interactive HTML report",
-          "path": "index.html"
-        },
-        {
-          "format": "JSON",
-          "href": "reports/india-dpdp-readiness/data/in-dpdp-conformance.json",
-          "label": "India DPDP conformance boundary",
-          "path": "data/in-dpdp-conformance.json",
-          "standard": "Scribe G11"
-        },
-        {
-          "download": true,
-          "format": "Markdown",
-          "href": "reports/india-dpdp-readiness/exports/report.md",
-          "label": "Markdown report",
-          "path": "exports/report.md"
-        }
-      ],
-      "scribePageHref": "reports/india-dpdp-readiness/index.html",
-      "scribePageManifestPath": "reports/india-dpdp-readiness/scribe-runtime.manifest.json",
-      "searchText": "India DPDP Readiness Evidence Pack India DPDP readiness evidence report with source-visible findings, customer-context states, and fail-closed G11 boundaries. compliance in-dpdp India DPDP en-US en-IN English (India) English (US) universe Global Interactive HTML report HTML India DPDP conformance boundary JSON Scribe G11 Markdown report Markdown sonde-self-analysis sondeinc/sonde Sonde self-analysis self-analysis express expressjs/express Express reference corpus reference-corpus",
-      "title": "India DPDP Readiness Evidence Pack"
-    },
-    {
-      "artifactBadges": [
-        {
-          "format": "HTML",
-          "label": "Interactive HTML report"
-        },
-        {
           "format": "Markdown",
           "label": "Markdown report"
         },
@@ -1156,16 +940,6 @@
         },
         {
           "count": 1,
-          "label": "In Cert In",
-          "value": "in-cert-in"
-        },
-        {
-          "count": 1,
-          "label": "In Dpdp",
-          "value": "in-dpdp"
-        },
-        {
-          "count": 1,
           "label": "Mobile Accessibility Scan",
           "value": "mobile-accessibility-scan"
         },
@@ -1201,7 +975,7 @@
           "value": "en-CA"
         },
         {
-          "count": 4,
+          "count": 2,
           "label": "English (India)",
           "value": "en-IN"
         },
@@ -1211,7 +985,7 @@
           "value": "en-GB"
         },
         {
-          "count": 6,
+          "count": 4,
           "label": "English (US)",
           "value": "en-US"
         },
@@ -1332,7 +1106,7 @@
           "value": "eu"
         },
         {
-          "count": 3,
+          "count": 1,
           "label": "Global",
           "value": "universe"
         },
@@ -1353,17 +1127,17 @@
       "label": "Output format",
       "values": [
         {
-          "count": 6,
+          "count": 4,
           "label": "HTML",
           "value": "HTML"
         },
         {
-          "count": 4,
+          "count": 2,
           "label": "JSON",
           "value": "JSON"
         },
         {
-          "count": 6,
+          "count": 4,
           "label": "Markdown",
           "value": "Markdown"
         },
@@ -1389,7 +1163,7 @@
           "value": "OSCAL"
         },
         {
-          "count": 3,
+          "count": 1,
           "label": "Scribe G11",
           "value": "Scribe G11"
         }

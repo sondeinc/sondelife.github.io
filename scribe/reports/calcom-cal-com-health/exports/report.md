@@ -37,7 +37,7 @@ SVG: unavailable
 - **Database model:** Schema artifacts: 604 · Entities: 101 · Fields: 843 · Relationships: 263
 - **API endpoints:** 245 · tRPC (189), REST/HTTP (56)
 - **Other runtime surfaces:** Message channels: 0 · Config keys: 0
-- **Sonde Performance:** Analysis: 13.1 sec · Rate: 404.6 files/sec · Payload: 62 MB
+- **Sonde Performance:** Analysis: 19.3 sec · Rate: 274.6 files/sec · Payload: 62 MB
 
 <a id="finding-repository-health-complexity-handler-71962a93c2"></a>
 ## Critical complexity in handler

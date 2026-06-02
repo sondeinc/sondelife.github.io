@@ -1713,7 +1713,7 @@
     "commitSha": "180ede28f0bddf2738933a6e60a8e80f6116d7da",
     "generatedAt": "2026-05-15T12:00:00.000Z",
     "performance": {
-      "analysisSeconds": 13.1,
+      "analysisSeconds": 19.3,
       "analyzedFileCount": 5300,
       "payloadBytes": 65018245
     },
@@ -16234,7 +16234,7 @@
         },
         {
           "label": "Sonde Performance",
-          "value": "Analysis: 13.1 sec · Rate: 404.6 files/sec · Payload: 62 MB"
+          "value": "Analysis: 19.3 sec · Rate: 274.6 files/sec · Payload: 62 MB"
         }
       ],
       "visualizationId": "visualization-repository-health"

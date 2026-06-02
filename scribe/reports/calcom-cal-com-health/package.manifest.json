@@ -1398,7 +1398,7 @@
       "bytes": 1185703,
       "path": "data/manifest.js",
       "role": "runtime-data",
-      "sha256": "sha256:7808f97f228f4a55e1b3d30bda4a135a12c7665c87144016d498c7ec241dbd0f"
+      "sha256": "sha256:59471ff2cbff37ca4255a5d8ad54eb5b10da5f817dba1a9b47cf7db9d2ea68b7"
     },
     {
       "bytes": 1099590,
@@ -1446,25 +1446,25 @@
       "bytes": 1325,
       "path": "data/visualization-source-data.repository-health.json",
       "role": "runtime-data",
-      "sha256": "sha256:9d296d738f7a9cde5411a392fb0513b756285489cd5d3003174d81a9703b992c"
+      "sha256": "sha256:f175cce037ade92bc3a60e5cb4fdaa3bd126630604f98aa983e32a98325efdea"
     },
     {
       "bytes": 4327,
       "path": "data/visualizations.js",
       "role": "runtime-data",
-      "sha256": "sha256:06d599b0ce9b8ddfb9b8fd50d63a8dd1445a5c624fc381ef4f224a16cb403496"
+      "sha256": "sha256:b03c9f92789eec711c5295bac38f64ec0c35cf3b53d9f128b8e1480093b98d87"
     },
     {
       "bytes": 6261659,
       "path": "exports/report.md",
       "role": "export",
-      "sha256": "sha256:6c258be4375ebb56d29185a961a5f4c8ae809c763af58dcb53dfa91a783a9186"
+      "sha256": "sha256:a7fa70832c5bdec1ed020c397dde726d318120493f04143c33b6ca037dbe2033"
     },
     {
       "bytes": 65364,
       "path": "findings/finding-repository-health/index.html",
       "role": "page",
-      "sha256": "sha256:acc5c0e6fd13cbbdf8a7de2ad4071d180fa73b05592423a8b06f9b1749d23768"
+      "sha256": "sha256:cf70f95af545e9d204ca8101fb55f2269c8ea08f9a7e87247453c900ceaa9ac3"
     },
     {
       "bytes": 33703,
@@ -1476,7 +1476,7 @@
       "bytes": 7228237,
       "path": "index.html",
       "role": "page",
-      "sha256": "sha256:c113ebfea0b9495a5c41281f5ddd7374ad863eefaf32b6b4593b83be1df54433"
+      "sha256": "sha256:fd551cfa98e7811fab060d670e0c7319f8f12e7f8fe9f164dd8b55109b45bb2e"
     },
     {
       "bytes": 25723,
@@ -1638,7 +1638,7 @@
       "bytes": 1185672,
       "path": "scribe-runtime.manifest.json",
       "role": "runtime-manifest",
-      "sha256": "sha256:177617d326f9370646b501e806b74479945116f6e170a2c37b888b4d86a4f19c"
+      "sha256": "sha256:0e9cd2699bad114f0762f17548d4c15b6194f9a51230955b7dbbc99bc42203e3"
     },
     {
       "bytes": 328,
