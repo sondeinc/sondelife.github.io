@@ -1067,6 +1067,17 @@
   var successEl = document.getElementById('contact-success');
   var errorEl = document.getElementById('contact-error');
 
+  // Keep the submit button disabled until every required field is filled and the
+  // consent checkbox is checked. form.checkValidity() encodes both constraints,
+  // so re-evaluate on each edit: the button enables the moment the form becomes
+  // submittable and disables again if a field is cleared or consent is unchecked.
+  function syncSubmitState() {
+    if (submitBtn) { submitBtn.disabled = !form.checkValidity(); }
+  }
+  form.addEventListener('input', syncSubmitState);
+  form.addEventListener('change', syncSubmitState);
+  syncSubmitState();
+
   form.addEventListener('submit', function (e) {
     e.preventDefault();
     if (errorEl) { errorEl.hidden = true; }
@@ -1091,7 +1102,8 @@
       })
       .catch(function () {
         clearTimeout(timer);
-        if (submitBtn) { submitBtn.disabled = false; submitBtn.removeAttribute('aria-busy'); }
+        if (submitBtn) { submitBtn.removeAttribute('aria-busy'); }
+        syncSubmitState();
         if (errorEl) { errorEl.hidden = false; }
       });
   });
