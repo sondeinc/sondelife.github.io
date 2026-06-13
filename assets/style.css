@@ -93,6 +93,17 @@ textarea {
   touch-action: manipulation;
 }
 
+/* Shared disabled-control treatment: a disabled button must read as visibly
+   inactive, not broken. Structural only (dim + not-allowed cursor) so it stays
+   palette-agnostic; color fades uniformly via opacity. */
+button:disabled,
+[type="button"]:disabled,
+[type="submit"]:disabled,
+[type="reset"]:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+
 [data-scribe-anchor],
 :target {
   scroll-margin-top: var(--sonde-spacing-xl);
