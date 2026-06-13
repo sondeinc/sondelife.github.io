@@ -908,7 +908,7 @@
   <div class="sl-section-inner sl-alpha-layout">
     <div class="sl-contact-form-wrapper" id="contact-form-region">
       <form class="sl-alpha-form" data-contact-form action="https://sonde.life/api/submit" method="post">
-        <input type="hidden" name="source" value="sonde-life-contact">
+        <input type="hidden" name="hs_analytics_source" value="DIRECT_TRAFFIC">
         <div class="sl-alpha-form-heading">
           <h2 id="contact-form-title" data-msg-id="sondeLife.content.contact.formTitle">Send us a message</h2>
           <p data-msg-id="sondeLife.content.contact.formLede">General questions, product inquiries, and pre-release access requests are all welcome.</p>
@@ -928,7 +928,7 @@
           </label>
           <label class="sl-alpha-field">
             <span data-msg-id="sondeLife.content.contact.fields.teamSize">Team size</span>
-            <select name="teamSize" required>
+            <select name="company_size" required>
               <option value="solo" data-msg-id="sondeLife.content.contact.teamSizes.0.label">Solo / individual</option>
               <option value="2-10" data-msg-id="sondeLife.content.contact.teamSizes.1.label">2–10</option>
               <option value="11-50" data-msg-id="sondeLife.content.contact.teamSizes.2.label">11–50</option>
@@ -938,7 +938,7 @@
           </label>
           <label class="sl-alpha-field sl-alpha-field-wide">
             <span data-msg-id="sondeLife.content.contact.fields.useCase">What brings you here?</span>
-            <textarea name="useCase" rows="5" maxlength="2000" required></textarea>
+            <textarea name="message" rows="5" maxlength="2000" required></textarea>
           </label>
         </div>
         <label class="sl-alpha-honeypot">
@@ -946,7 +946,7 @@
           <input name="website" tabindex="-1" autocomplete="off">
         </label>
         <label class="sl-alpha-consent">
-          <input name="consent" type="checkbox" value="true" required>
+          <input type="checkbox" value="true" required>
           <span data-msg-id="sondeLife.content.contact.fields.consent">I agree to be contacted about Sonde.</span>
         </label>
         <div
