@@ -1,6 +1,6 @@
 window.__SCRIBE_LOCALES__ = window.__SCRIBE_LOCALES__ || {};
 window.__SCRIBE_LOCALES__["sv-SE"] = {
-  "fallbackCount": 15,
+  "fallbackCount": 11,
   "locale": "sv-SE",
   "messages": {
     "scribe.report.action.backToFinding": {
@@ -333,6 +333,11 @@ window.__SCRIBE_LOCALES__["sv-SE"] = {
       "reviewed": true,
       "text": "Tillgänglighet"
     },
+    "scribe.report.filter.option.aiSafety": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "AI-säkerhet"
+    },
     "scribe.report.filter.option.analysisCompleteness": {
       "fallback": false,
       "reviewed": true,
@@ -373,6 +378,11 @@ window.__SCRIBE_LOCALES__["sv-SE"] = {
       "reviewed": true,
       "text": "Fel"
     },
+    "scribe.report.filter.option.grammarParsing": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Grammatik och parsing"
+    },
     "scribe.report.filter.option.high": {
       "fallback": false,
       "reviewed": true,
@@ -403,6 +413,11 @@ window.__SCRIBE_LOCALES__["sv-SE"] = {
       "reviewed": true,
       "text": "Medel"
     },
+    "scribe.report.filter.option.metricsQuality": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Mått och kvalitet"
+    },
     "scribe.report.filter.option.mexicoFintechReadiness": {
       "fallback": false,
       "reviewed": true,
@@ -418,6 +433,16 @@ window.__SCRIBE_LOCALES__["sv-SE"] = {
       "reviewed": true,
       "text": "NIST FedRAMP-coverage"
     },
+    "scribe.report.filter.option.oscalProfileIntake": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "OSCAL-profilintag"
+    },
+    "scribe.report.filter.option.projectIntelligence": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Projektintelligens"
+    },
     "scribe.report.filter.option.remediationReadiness": {
       "fallback": false,
       "reviewed": true,
@@ -432,6 +457,11 @@ window.__SCRIBE_LOCALES__["sv-SE"] = {
       "fallback": false,
       "reviewed": true,
       "text": "Lagringsinventering"
+    },
+    "scribe.report.filter.option.security": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Säkerhet"
     },
     "scribe.report.filter.option.sourceTrace": {
       "fallback": false,
@@ -467,6 +497,21 @@ window.__SCRIBE_LOCALES__["sv-SE"] = {
       "fallback": false,
       "reviewed": true,
       "text": "Ljus"
+    },
+    "scribe.report.overview.stat.accessibilityFindings": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Fynd gällande tillgänglighet"
+    },
+    "scribe.report.overview.stat.codeQualityFindings": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Fynd gällande kodkvalitet"
+    },
+    "scribe.report.overview.stat.complianceFindings": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Efterlevnadsrelaterade fynd"
     },
     "scribe.report.overview.stat.evidenceScreenshots": {
       "fallback": false,
@@ -553,70 +598,35 @@ window.__SCRIBE_LOCALES__["sv-SE"] = {
       "reviewed": true,
       "text": "Allvarlig komplexitet i {symbol}"
     },
-    "scribe.report.repositoryHealth.finding.complexity.title.high": {
-      "fallback": false,
-      "reviewed": true,
-      "text": "Hög komplexitet i {symbol}"
-    },
-    "scribe.report.repositoryHealth.finding.deadCode.criterion": {
-      "fallback": false,
-      "reviewed": true,
-      "text": "Policy för död kod i förråd: bevisat oåtkomliga funktioner och oanvända exporter behöver granskas."
-    },
-    "scribe.report.repositoryHealth.finding.deadCode.fix": {
-      "fallback": false,
-      "reviewed": true,
-      "text": "Kontrollera att symbolen inte är en dynamisk ingångspunkt och ta sedan bort den eller lägg till de saknade referensbevisen innan du kör hälsorapporten igen."
-    },
-    "scribe.report.repositoryHealth.finding.deadCode.unreachable.summary": {
-      "fallback": false,
-      "reviewed": true,
-      "text": "{sourcePath}:{line} är märkt som oåtkomlig av dödkodsproben."
-    },
-    "scribe.report.repositoryHealth.finding.deadCode.unreachable.title": {
-      "fallback": false,
-      "reviewed": true,
-      "text": "Oåtkomlig funktion {symbol}"
-    },
-    "scribe.report.repositoryHealth.finding.deadCode.unusedExport.summary": {
-      "fallback": false,
-      "reviewed": true,
-      "text": "{sourcePath}:{line} är märkt som en oanvänd export av dödkodsproben."
-    },
-    "scribe.report.repositoryHealth.finding.deadCode.unusedExport.title": {
-      "fallback": false,
-      "reviewed": true,
-      "text": "Oanvänd exporterad symbol {symbol}"
-    },
     "scribe.report.repositoryHealth.finding.publicSummary": {
       "fallback": false,
       "reviewed": true,
       "text": "Sammanfattning av hälsotillståndet i det offentliga förrådet med källbaserade bevis för täckning."
     },
+    "scribe.report.repositoryHealth.finding.raw.criterion": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "{criterion}"
+    },
+    "scribe.report.repositoryHealth.finding.raw.fix": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "{recommendation}"
+    },
+    "scribe.report.repositoryHealth.finding.raw.summary": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "{summary}"
+    },
+    "scribe.report.repositoryHealth.finding.raw.title": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "{title}"
+    },
     "scribe.report.repositoryHealth.finding.runtime": {
       "fallback": false,
       "reviewed": true,
       "text": "Statisk hälsoanalys av förvar"
-    },
-    "scribe.report.repositoryHealth.finding.schemaMaintenance.criterion": {
-      "fallback": false,
-      "reviewed": true,
-      "text": "Hygien i schema för förrådets hälsa: schemaavskrivning, TODO, FIXME eller HACK-anteckningar bör inte vara den enda uppgiften om uppföljning av databas."
-    },
-    "scribe.report.repositoryHealth.finding.schemaMaintenance.fix": {
-      "fallback": false,
-      "reviewed": true,
-      "text": "Länka schemaanteckningen till en migrering, borttagningsplan eller spårat problem och kör sedan om schemafokuserade tester efter att databasändringen har landat."
-    },
-    "scribe.report.repositoryHealth.finding.schemaMaintenance.summary": {
-      "fallback": false,
-      "reviewed": true,
-      "text": "{sourcePath}:{line} innehåller en schemaanteckning {marker} som ska spåras som en explicit databasuppföljning."
-    },
-    "scribe.report.repositoryHealth.finding.schemaMaintenance.title": {
-      "fallback": false,
-      "reviewed": true,
-      "text": "Schemaunderhållsmeddelandet nämner {marker}"
     },
     "scribe.report.repositoryHealth.finding.title": {
       "fallback": false,
@@ -638,50 +648,25 @@ window.__SCRIBE_LOCALES__["sv-SE"] = {
       "reviewed": true,
       "text": "Lägg till eller uppdatera fokuserade tester för de ändrade grenarna på raderna {startLine} till och med {endLine}, kör de närmaste paketkontrollerna och återskapa sedan förrådets hälsorapport."
     },
-    "scribe.report.repositoryHealth.fixPlan.databaseSchema.step.inspect": {
+    "scribe.report.repositoryHealth.fixPlan.generic.step.inspect": {
       "fallback": false,
       "reviewed": true,
-      "text": "Granska schemadeklarationen i {sourcePath} raderna {startLine} till och med {endLine} och identifiera de berörda entiteter, fält, index och relationer."
+      "text": "Kontrollera det citerade källintervallet i {sourcePath} rader {startLine} till och med {endLine}."
     },
-    "scribe.report.repositoryHealth.fixPlan.databaseSchema.step.track": {
+    "scribe.report.repositoryHealth.fixPlan.generic.step.resolve": {
       "fallback": false,
       "reviewed": true,
-      "text": "Länka schemanoteringen eller gapet i det angivna intervallet till en spårad migrering, borttagningsplan eller ett problem innan du ändrar databasmodellen."
+      "text": "Tillämpa åtgärden med hjälp av den minsta källändringen som löser problemet."
     },
-    "scribe.report.repositoryHealth.fixPlan.databaseSchema.step.validate": {
+    "scribe.report.repositoryHealth.fixPlan.generic.step.validate": {
       "fallback": false,
       "reviewed": true,
-      "text": "När databasändringen har landat, kör schemaextraheringen igen och återskapa lagringsplatsens hälsorapport för {sourcePath}."
-    },
-    "scribe.report.repositoryHealth.fixPlan.deadCode.step.inspect": {
-      "fallback": false,
-      "reviewed": true,
-      "text": "Kontrollera {sourcePath}-linjerna {startLine} till och med {endLine} för dynamiska ingångspunkter, ramverkskrokar, genererade referenser och externa exporter innan du tar bort kod."
-    },
-    "scribe.report.repositoryHealth.fixPlan.deadCode.step.resolve": {
-      "fallback": false,
-      "reviewed": true,
-      "text": "Ta bort den oåtkomliga symbolen från det citerade intervallet, eller lägg till den saknade referensen om den avsiktligt är åtkomlig vid körning."
-    },
-    "scribe.report.repositoryHealth.fixPlan.deadCode.step.validate": {
-      "fallback": false,
-      "reviewed": true,
-      "text": "Kör om dödkods- och förrådshälsoanalysen för {sourcePath} för att bekräfta att fyndet är borta utan att introducera nya nåbarhetsluckor."
+      "text": "Kör om hälsorapporten för lagringsplatsen och de närmaste testerna på paketnivå innan du publicerar korrigeringen."
     },
     "scribe.report.repositoryHealth.fixPlan.scope": {
       "fallback": false,
       "reviewed": true,
       "text": "Målkällområde: {sourcePath} rader {startLine} till och med {endLine}."
-    },
-    "scribe.report.repositoryHealth.fixPlan.stepOne": {
-      "fallback": false,
-      "reviewed": true,
-      "text": "Fäst eller uppdatera utcheckningen av lagringsplatsen och kör sedan kommandot för hälsorapport igen mot samma rapportmanifest."
-    },
-    "scribe.report.repositoryHealth.fixPlan.stepTwo": {
-      "fallback": false,
-      "reviewed": true,
-      "text": "Lägg till ramverksstöd genom att utöka upptäckta resursdetektorer och beteendefixturer i stället för manuellt underhållen rapportlogik."
     },
     "scribe.report.repositoryHealth.fixPlan.summary": {
       "fallback": false,

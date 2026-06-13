@@ -1,6 +1,6 @@
 window.__SCRIBE_LOCALES__ = window.__SCRIBE_LOCALES__ || {};
 window.__SCRIBE_LOCALES__["ro-RO"] = {
-  "fallbackCount": 15,
+  "fallbackCount": 11,
   "locale": "ro-RO",
   "messages": {
     "scribe.report.action.backToFinding": {
@@ -333,6 +333,11 @@ window.__SCRIBE_LOCALES__["ro-RO"] = {
       "reviewed": true,
       "text": "Accesibilitate"
     },
+    "scribe.report.filter.option.aiSafety": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Siguranța AI"
+    },
     "scribe.report.filter.option.analysisCompleteness": {
       "fallback": false,
       "reviewed": true,
@@ -373,6 +378,11 @@ window.__SCRIBE_LOCALES__["ro-RO"] = {
       "reviewed": true,
       "text": "Eroare"
     },
+    "scribe.report.filter.option.grammarParsing": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Gramatică și analiză sintactică"
+    },
     "scribe.report.filter.option.high": {
       "fallback": false,
       "reviewed": true,
@@ -403,6 +413,11 @@ window.__SCRIBE_LOCALES__["ro-RO"] = {
       "reviewed": true,
       "text": "Mediu"
     },
+    "scribe.report.filter.option.metricsQuality": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Metrici și calitate"
+    },
     "scribe.report.filter.option.mexicoFintechReadiness": {
       "fallback": false,
       "reviewed": true,
@@ -418,6 +433,16 @@ window.__SCRIBE_LOCALES__["ro-RO"] = {
       "reviewed": true,
       "text": "Acoperire NIST FedRAMP"
     },
+    "scribe.report.filter.option.oscalProfileIntake": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Importare profil OSCAL"
+    },
+    "scribe.report.filter.option.projectIntelligence": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Inteligență de proiect"
+    },
     "scribe.report.filter.option.remediationReadiness": {
       "fallback": false,
       "reviewed": true,
@@ -432,6 +457,11 @@ window.__SCRIBE_LOCALES__["ro-RO"] = {
       "fallback": false,
       "reviewed": true,
       "text": "Inventarul depozitului"
+    },
+    "scribe.report.filter.option.security": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Securitate"
     },
     "scribe.report.filter.option.sourceTrace": {
       "fallback": false,
@@ -467,6 +497,21 @@ window.__SCRIBE_LOCALES__["ro-RO"] = {
       "fallback": false,
       "reviewed": true,
       "text": "Lumină"
+    },
+    "scribe.report.overview.stat.accessibilityFindings": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Constatări privind accesibilitatea"
+    },
+    "scribe.report.overview.stat.codeQualityFindings": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Constatări privind calitatea codului"
+    },
+    "scribe.report.overview.stat.complianceFindings": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Constatări legate de conformitate"
     },
     "scribe.report.overview.stat.evidenceScreenshots": {
       "fallback": false,
@@ -553,70 +598,35 @@ window.__SCRIBE_LOCALES__["ro-RO"] = {
       "reviewed": true,
       "text": "Complexitate severă în {symbol}"
     },
-    "scribe.report.repositoryHealth.finding.complexity.title.high": {
-      "fallback": false,
-      "reviewed": true,
-      "text": "Complexitate ridicată în {symbol}"
-    },
-    "scribe.report.repositoryHealth.finding.deadCode.criterion": {
-      "fallback": false,
-      "reviewed": true,
-      "text": "Politica de cod mort a sănătății depozitului: funcțiile dovedite inaccesibile și exporturile neutilizate trebuie revizuite."
-    },
-    "scribe.report.repositoryHealth.finding.deadCode.fix": {
-      "fallback": false,
-      "reviewed": true,
-      "text": "Confirmați că simbolul nu este un punct de intrare dinamic, apoi eliminați-l sau adăugați dovezile de referință lipsă înainte de a rula din nou raportul de stare."
-    },
-    "scribe.report.repositoryHealth.finding.deadCode.unreachable.summary": {
-      "fallback": false,
-      "reviewed": true,
-      "text": "{sourcePath}:{line} este etichetat ca fiind inaccesibil de către sonda de cod mort."
-    },
-    "scribe.report.repositoryHealth.finding.deadCode.unreachable.title": {
-      "fallback": false,
-      "reviewed": true,
-      "text": "Funcție inaccesibilă {symbol}"
-    },
-    "scribe.report.repositoryHealth.finding.deadCode.unusedExport.summary": {
-      "fallback": false,
-      "reviewed": true,
-      "text": "{sourcePath}:{line} este etichetat ca un export neutilizat de sonda de cod mort."
-    },
-    "scribe.report.repositoryHealth.finding.deadCode.unusedExport.title": {
-      "fallback": false,
-      "reviewed": true,
-      "text": "Simbol exportat neutilizat {symbol}"
-    },
     "scribe.report.repositoryHealth.finding.publicSummary": {
       "fallback": false,
       "reviewed": true,
       "text": "Rezumatul stării de sănătate a depozitului public cu dovezi de acoperire susținute de sursă."
     },
+    "scribe.report.repositoryHealth.finding.raw.criterion": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "{criterion}"
+    },
+    "scribe.report.repositoryHealth.finding.raw.fix": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "{recommendation}"
+    },
+    "scribe.report.repositoryHealth.finding.raw.summary": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "{summary}"
+    },
+    "scribe.report.repositoryHealth.finding.raw.title": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "{title}"
+    },
     "scribe.report.repositoryHealth.finding.runtime": {
       "fallback": false,
       "reviewed": true,
       "text": "Analiza statică a stării depozitului"
-    },
-    "scribe.report.repositoryHealth.finding.schemaMaintenance.criterion": {
-      "fallback": false,
-      "reviewed": true,
-      "text": "Igiena schemei de sănătate a depozitului: deprecierea schemei, notele TODO, FIXME sau HACK nu ar trebui să fie singura înregistrare a lucrărilor de urmărire a bazei de date."
-    },
-    "scribe.report.repositoryHealth.finding.schemaMaintenance.fix": {
-      "fallback": false,
-      "reviewed": true,
-      "text": "Legați nota de schemă la o migrare, un plan de eliminare sau o problemă urmărită, apoi rerulați sondele axate pe schemă după ce modificarea bazei de date aterizează."
-    },
-    "scribe.report.repositoryHealth.finding.schemaMaintenance.summary": {
-      "fallback": false,
-      "reviewed": true,
-      "text": "{sourcePath}:{line} conține o notă de schemă {marker} care ar trebui urmărită ca o urmărire explicită a bazei de date."
-    },
-    "scribe.report.repositoryHealth.finding.schemaMaintenance.title": {
-      "fallback": false,
-      "reviewed": true,
-      "text": "Nota de întreținere a schemei menționează {marker}"
     },
     "scribe.report.repositoryHealth.finding.title": {
       "fallback": false,
@@ -638,50 +648,25 @@ window.__SCRIBE_LOCALES__["ro-RO"] = {
       "reviewed": true,
       "text": "Adăugați sau actualizați testele focalizate pentru ramurile modificate în liniile {startLine} până la {endLine}, rulați cele mai apropiate verificări de pachete, apoi regenerați raportul de sănătate al depozitului."
     },
-    "scribe.report.repositoryHealth.fixPlan.databaseSchema.step.inspect": {
+    "scribe.report.repositoryHealth.fixPlan.generic.step.inspect": {
       "fallback": false,
       "reviewed": true,
-      "text": "Examinați declarația de schemă din {sourcePath} liniile {startLine} prin {endLine} și identificați entitățile afectate, câmpuri, indexuri și relații."
+      "text": "Verificați intervalul sursă citat în {sourcePath} linii {startLine} prin {endLine}."
     },
-    "scribe.report.repositoryHealth.fixPlan.databaseSchema.step.track": {
+    "scribe.report.repositoryHealth.fixPlan.generic.step.resolve": {
       "fallback": false,
       "reviewed": true,
-      "text": "Legați nota de schemă sau decalajul din intervalul citat la o migrare urmărită, un plan de eliminare sau o problemă înainte de a modifica modelul bazei de date."
+      "text": "Aplicați remedierea utilizând cea mai mică modificare a sursei care rezolvă constatarea."
     },
-    "scribe.report.repositoryHealth.fixPlan.databaseSchema.step.validate": {
+    "scribe.report.repositoryHealth.fixPlan.generic.step.validate": {
       "fallback": false,
       "reviewed": true,
-      "text": "După ce modificarea bazei de date a aterizat, rerulați extragerea schemei și regenerați raportul de stare a depozitului pentru {sourcePath}."
-    },
-    "scribe.report.repositoryHealth.fixPlan.deadCode.step.inspect": {
-      "fallback": false,
-      "reviewed": true,
-      "text": "Verificați liniile {sourcePath} {startLine} prin {endLine} pentru puncte de intrare dinamice, cârlige de cadru, referințe generate și exporturi externe înainte de a elimina codul."
-    },
-    "scribe.report.repositoryHealth.fixPlan.deadCode.step.resolve": {
-      "fallback": false,
-      "reviewed": true,
-      "text": "Eliminați simbolul inaccesibil din intervalul citat, sau adăugați dovezile de referință lipsă dacă este intenționat accesibil la timp de execuție."
-    },
-    "scribe.report.repositoryHealth.fixPlan.deadCode.step.validate": {
-      "fallback": false,
-      "reviewed": true,
-      "text": "Re-rulați analiza de sănătate a codului mort și a depozitului pentru {sourcePath} pentru a confirma că găsirea a dispărut fără a introduce noi lacune de accesibilitate."
+      "text": "Rerulați raportul de sănătate al depozitului și cele mai apropiate teste la nivel de pachet înainte de a publica remedierea."
     },
     "scribe.report.repositoryHealth.fixPlan.scope": {
       "fallback": false,
       "reviewed": true,
       "text": "Intervalul sursă ţintă: {sourcePath} linii {startLine} prin {endLine}."
-    },
-    "scribe.report.repositoryHealth.fixPlan.stepOne": {
-      "fallback": false,
-      "reviewed": true,
-      "text": "Fixați sau reîmprospătați extragerea depozitului, apoi rulați din nou comanda raportului de stare împotriva aceluiași manifest de raport."
-    },
-    "scribe.report.repositoryHealth.fixPlan.stepTwo": {
-      "fallback": false,
-      "reviewed": true,
-      "text": "Adăugați suport pentru cadru prin extinderea detectoarelor de resurse descoperite și a dispozitivelor de comportament în locul logicii de raportare menținute manual."
     },
     "scribe.report.repositoryHealth.fixPlan.summary": {
       "fallback": false,

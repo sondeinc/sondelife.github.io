@@ -1,6 +1,6 @@
 window.__SCRIBE_LOCALES__ = window.__SCRIBE_LOCALES__ || {};
 window.__SCRIBE_LOCALES__["cy-GB"] = {
-  "fallbackCount": 15,
+  "fallbackCount": 11,
   "locale": "cy-GB",
   "messages": {
     "scribe.report.action.backToFinding": {
@@ -333,6 +333,11 @@ window.__SCRIBE_LOCALES__["cy-GB"] = {
       "reviewed": true,
       "text": "Hygyrchedd"
     },
+    "scribe.report.filter.option.aiSafety": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "diogelwch AI"
+    },
     "scribe.report.filter.option.analysisCompleteness": {
       "fallback": false,
       "reviewed": true,
@@ -373,6 +378,11 @@ window.__SCRIBE_LOCALES__["cy-GB"] = {
       "reviewed": true,
       "text": "Gwall"
     },
+    "scribe.report.filter.option.grammarParsing": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Gramadeg a pharsio"
+    },
     "scribe.report.filter.option.high": {
       "fallback": false,
       "reviewed": true,
@@ -381,12 +391,12 @@ window.__SCRIBE_LOCALES__["cy-GB"] = {
     "scribe.report.filter.option.indiaCertInReadiness": {
       "fallback": false,
       "reviewed": true,
-      "text": "India"
+      "text": "India CERT-In readyness"
     },
     "scribe.report.filter.option.indiaDpdpReadiness": {
       "fallback": false,
       "reviewed": true,
-      "text": "India"
+      "text": "India DPDP readyness"
     },
     "scribe.report.filter.option.info": {
       "fallback": false,
@@ -403,6 +413,11 @@ window.__SCRIBE_LOCALES__["cy-GB"] = {
       "reviewed": true,
       "text": "Canolig"
     },
+    "scribe.report.filter.option.metricsQuality": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Metrigau a phroffedigrwydd"
+    },
     "scribe.report.filter.option.mexicoFintechReadiness": {
       "fallback": false,
       "reviewed": true,
@@ -418,6 +433,16 @@ window.__SCRIBE_LOCALES__["cy-GB"] = {
       "reviewed": true,
       "text": "Cwmpasu NIST FedRAMP"
     },
+    "scribe.report.filter.option.oscalProfileIntake": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "OSCAL mewnbwn proffil"
+    },
+    "scribe.report.filter.option.projectIntelligence": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Intelligence prosiect"
+    },
     "scribe.report.filter.option.remediationReadiness": {
       "fallback": false,
       "reviewed": true,
@@ -432,6 +457,11 @@ window.__SCRIBE_LOCALES__["cy-GB"] = {
       "fallback": false,
       "reviewed": true,
       "text": "Cyfrif cronfa"
+    },
+    "scribe.report.filter.option.security": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Diogelwch"
     },
     "scribe.report.filter.option.sourceTrace": {
       "fallback": false,
@@ -467,6 +497,21 @@ window.__SCRIBE_LOCALES__["cy-GB"] = {
       "fallback": false,
       "reviewed": true,
       "text": "Golau"
+    },
+    "scribe.report.overview.stat.accessibilityFindings": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Canfyddiadau Hygyrchedd"
+    },
+    "scribe.report.overview.stat.codeQualityFindings": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Canfyddiadau ansawdd y cod"
+    },
+    "scribe.report.overview.stat.complianceFindings": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Canfyddiadau sy'n ymwneud â chydymffurfiaeth"
     },
     "scribe.report.overview.stat.evidenceScreenshots": {
       "fallback": false,
@@ -553,70 +598,35 @@ window.__SCRIBE_LOCALES__["cy-GB"] = {
       "reviewed": true,
       "text": "Camddealltwriaeth ddifrifol yn {symbol}"
     },
-    "scribe.report.repositoryHealth.finding.complexity.title.high": {
-      "fallback": false,
-      "reviewed": true,
-      "text": "Cyflymder uchel yn {symbol}"
-    },
-    "scribe.report.repositoryHealth.finding.deadCode.criterion": {
-      "fallback": false,
-      "reviewed": true,
-      "text": "Polisi cod marw iechyd y storfa: mae angen adolygu swyddogaethau a brofwyd yn anhygyrch ac allforiadau heb eu defnyddio."
-    },
-    "scribe.report.repositoryHealth.finding.deadCode.fix": {
-      "fallback": false,
-      "reviewed": true,
-      "text": "Cadarnhau nad yw'r symbol yn bwynt cyrraedd dinamaidd, yna ei dynnu neu ychwanegu'r dystiolaeth cyfeirio sydd ar goll cyn ail-redeg yr adroddiad cyflwr."
-    },
-    "scribe.report.repositoryHealth.finding.deadCode.unreachable.summary": {
-      "fallback": false,
-      "reviewed": true,
-      "text": "Mae {sourcePath}:{line} wedi ei nodi fel un-argymhellir gan y soned cod-marw."
-    },
-    "scribe.report.repositoryHealth.finding.deadCode.unreachable.title": {
-      "fallback": false,
-      "reviewed": true,
-      "text": "Ffwythiant {symbol} heb ei gyrraedd"
-    },
-    "scribe.report.repositoryHealth.finding.deadCode.unusedExport.summary": {
-      "fallback": false,
-      "reviewed": true,
-      "text": "Mae {sourcePath}:{line} wedi ei labelu fel allforio heb ei ddefnyddio gan y soned cod marw."
-    },
-    "scribe.report.repositoryHealth.finding.deadCode.unusedExport.title": {
-      "fallback": false,
-      "reviewed": true,
-      "text": "Symbol allforio {symbol} heb ei ddefnyddio"
-    },
     "scribe.report.repositoryHealth.finding.publicSummary": {
       "fallback": false,
       "reviewed": true,
       "text": "Crynodeb iechyd y storfa gyhoeddus gyda thystiolaeth amddiffyniad wedi'i chynhyrchu gan y ffynhonnell."
     },
+    "scribe.report.repositoryHealth.finding.raw.criterion": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "{criterion}"
+    },
+    "scribe.report.repositoryHealth.finding.raw.fix": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "{recommendation}"
+    },
+    "scribe.report.repositoryHealth.finding.raw.summary": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "{summary}"
+    },
+    "scribe.report.repositoryHealth.finding.raw.title": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "{title}"
+    },
     "scribe.report.repositoryHealth.finding.runtime": {
       "fallback": false,
       "reviewed": true,
       "text": "Dadansoddiad seiliedig ar werthoedd statig"
-    },
-    "scribe.report.repositoryHealth.finding.schemaMaintenance.criterion": {
-      "fallback": false,
-      "reviewed": true,
-      "text": "Hylendid sgema iechyd y storfa: dylai nodiadau am ddiddymu sgema, TODO, FIXME, neu HACK ddim fod yn unig gofnod gwaith dilynol y gronfa ddata."
-    },
-    "scribe.report.repositoryHealth.finding.schemaMaintenance.fix": {
-      "fallback": false,
-      "reviewed": true,
-      "text": "Cysylltu'r nodyn sgema i drosglwyddiad, cynllun tynnu, neu fater wedi'i olrhain, ac wedyn ail-redeg profion wedi'u canolbwyntio ar sgema ar ôl i'r newid gronfa ddata gyrraedd."
-    },
-    "scribe.report.repositoryHealth.finding.schemaMaintenance.summary": {
-      "fallback": false,
-      "reviewed": true,
-      "text": "Mae {sourcePath}:{line} yn cynnwys nodyn {marker} sgema y dylid ei olrhain fel dilyniant cronfa ddata eglur."
-    },
-    "scribe.report.repositoryHealth.finding.schemaMaintenance.title": {
-      "fallback": false,
-      "reviewed": true,
-      "text": "Mae'r nodyn cynnal a chadw sgema yn cyfeirio at {marker}"
     },
     "scribe.report.repositoryHealth.finding.title": {
       "fallback": false,
@@ -638,50 +648,25 @@ window.__SCRIBE_LOCALES__["cy-GB"] = {
       "reviewed": true,
       "text": "Ychwanegu neu ddiweddaru profion canolbwyntio ar gyfer y clybiau newidiedig yn llinellau {startLine} i {endLine}, rhedeg y gwiriadau pecyn agosaf, ac yna ail-greu'r adroddiad iechyd y storfa."
     },
-    "scribe.report.repositoryHealth.fixPlan.databaseSchema.step.inspect": {
+    "scribe.report.repositoryHealth.fixPlan.generic.step.inspect": {
       "fallback": false,
       "reviewed": true,
-      "text": "Adolygu'r datganiad sgema yn {sourcePath} llinellau {startLine} trwy {endLine} a dynodi'r enwau, meysydd, mynegai a chysylltiadau a effeithior."
+      "text": "Gwirio'r amrediad ffynhonnell a ddyfynnir yn {sourcePath} llinellau {startLine} trwy {endLine}."
     },
-    "scribe.report.repositoryHealth.fixPlan.databaseSchema.step.track": {
+    "scribe.report.repositoryHealth.fixPlan.generic.step.resolve": {
       "fallback": false,
       "reviewed": true,
-      "text": "Cysylltu' r nodyn sgema neu' r bwlch yn yr amrediad dynodedig i gyrchfan wedi' i olrhain, cynllun gwaredu, neu fater cyn newid y model cronfa ddata."
+      "text": "Gweithredu'r adfer gan ddefnyddio'r newid ffynhonnell lleiaf sy'n datrys y canfyddiad."
     },
-    "scribe.report.repositoryHealth.fixPlan.databaseSchema.step.validate": {
+    "scribe.report.repositoryHealth.fixPlan.generic.step.validate": {
       "fallback": false,
       "reviewed": true,
-      "text": "Ar ôl i'r newid gronfa ddata gyrraedd, ail-redeg echdynnu sgema ac ail-greu'r adroddiad iechyd storfa ar gyfer {sourcePath}."
-    },
-    "scribe.report.repositoryHealth.fixPlan.deadCode.step.inspect": {
-      "fallback": false,
-      "reviewed": true,
-      "text": "Gwirio llinellau {sourcePath} {startLine} i {endLine} am bwyntiau cyrraedd dinasyddol, cnau ffrâm, cyfeiriadau a gynhyrchwyd, ac allforion allanol cyn gwaredu' r cod."
-    },
-    "scribe.report.repositoryHealth.fixPlan.deadCode.step.resolve": {
-      "fallback": false,
-      "reviewed": true,
-      "text": "Gwaredu' r symbol anhygyrch o' r amrediad dyfynnedig, neu ychwanegu' r dystiolaeth cyfeiriad ar goll os yw' n anhygyrch yn fwriadol yn ystod rhedeg."
-    },
-    "scribe.report.repositoryHealth.fixPlan.deadCode.step.validate": {
-      "fallback": false,
-      "reviewed": true,
-      "text": "Ail-redeg cod marw a dadansoddi iechyd y storfa ar gyfer {sourcePath} i gadarnhau bod y canfyddiad wedi mynd heb gyflwyno bylchau cyrraedd newydd."
+      "text": "Ail-redeg yr adroddiad iechyd y storfa a'r profion lefel pecyn agosaf cyn cyhoeddi'r cywiriad."
     },
     "scribe.report.repositoryHealth.fixPlan.scope": {
       "fallback": false,
       "reviewed": true,
       "text": "Amrediad ffynhonnell cyrchfan: {sourcePath} llinellau {startLine} trwy {endLine}."
-    },
-    "scribe.report.repositoryHealth.fixPlan.stepOne": {
-      "fallback": false,
-      "reviewed": true,
-      "text": "Pin neu adnewyddu'r gwirio allan o'r storfa, ac wedyn ail-redeg y gorchymyn adroddiad cyflwr yn erbyn yr un datganiad adroddiad."
-    },
-    "scribe.report.repositoryHealth.fixPlan.stepTwo": {
-      "fallback": false,
-      "reviewed": true,
-      "text": "Ychwanegu cynhaliaeth ffrâmwaith gan ehangu darganfyddwyr adnoddau a chysylltyddion ymddygiad yn lle rhesymeg adroddiadau a gynhaliwyd â llaw."
     },
     "scribe.report.repositoryHealth.fixPlan.summary": {
       "fallback": false,

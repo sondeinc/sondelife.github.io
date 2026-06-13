@@ -258,8 +258,8 @@
   }
 })();</script>
   <script>(function() {
-  var locales = ["en-US","en-GB","en-CA","en-IN","fr-CA","cy-GB","gd-GB","ga-GB","sco-GB","kw-GB","es-US","de-DE","fr-FR","es-ES","it-IT","nl-NL","pl-PL","pt-PT","pt-BR","ro-RO","sv-SE","ko-KR","zh-CN","ja-JP","hi-IN"];
-  var lower = ["en-us","en-gb","en-ca","en-in","fr-ca","cy-gb","gd-gb","ga-gb","sco-gb","kw-gb","es-us","de-de","fr-fr","es-es","it-it","nl-nl","pl-pl","pt-pt","pt-br","ro-ro","sv-se","ko-kr","zh-cn","ja-jp","hi-in"];
+  var locales = ["en-US","en-GB","en-CA","en-IN","fr-CA","cy-GB","es-US","de-DE","fr-FR","es-ES","it-IT","nl-NL","pl-PL","pt-PT","pt-BR","ro-RO","sv-SE","ko-KR","zh-CN","ja-JP","hi-IN"];
+  var lower = ["en-us","en-gb","en-ca","en-in","fr-ca","cy-gb","es-us","de-de","fr-fr","es-es","it-it","nl-nl","pl-pl","pt-pt","pt-br","ro-ro","sv-se","ko-kr","zh-cn","ja-jp","hi-in"];
   var forbidden = ["pt"];
   var defaultRegions = {"en":"US","de":"DE","fr":"FR","es":"ES","it":"IT","ja":"JP","zh":"CN","ko":"KR","ar":"SA","pt":"PT","nl":"NL","sv":"SE","pl":"PL","ro":"RO","cy":"GB","gd":"GB","ga":"GB","sco":"GB","kw":"GB"};
   var inheritancePolicy = {"sourceLocale":"en-US","chains":[{"locale":"en-IN","inherits":["en-GB","en-US"],"syntheticEmptyCatalog":true},{"locale":"es-MX","inherits":["es-US","en-US"],"syntheticEmptyCatalog":false}]};
@@ -602,6 +602,15 @@
     </a>
     <div class="sl-nav-actions">
       <div class="sl-nav-links">
+        <details class="sl-nav-dropdown">
+          <summary data-msg-id="sondeLife.nav.solutions">Solutions</summary>
+          <div class="sl-nav-dropdown-menu">
+            <a href="../../solutions/accessibility/" data-msg-id="sondeLife.solutions.subnav.accessibility">Accessibility</a>
+            <a href="../../solutions/compliance/" data-msg-id="sondeLife.solutions.subnav.compliance">Compliance</a>
+            <a href="../../solutions/ai-governance/" data-msg-id="sondeLife.solutions.subnav.aiGovernance">AI Governance</a>
+            <a href="../../solutions/developer/" data-msg-id="sondeLife.solutions.subnav.developer">Developer</a>
+          </div>
+        </details>
         <a href="../../overview/" data-msg-id="sondeLife.nav.overview">Overview</a>
         <a href="../../explore/" data-msg-id="sondeLife.nav.features">Explore</a>
         <a href="../../architecture/" data-msg-id="sondeLife.nav.architecture">Architecture</a>
@@ -674,7 +683,7 @@
     <summary class="settings-section-trigger" data-msg-id="settings.language.legend">Language</summary>
     <div class="settings-section-body">
       <input id="settings-language-search" class="settings-language-search" type="search" autocomplete="off" spellcheck="false" aria-label="Search languages" placeholder="Search languages" title="Search languages" data-sonde-locale-search>
-      <sonde-locale-picker locales="[&quot;en-US&quot;,&quot;en-GB&quot;,&quot;en-CA&quot;,&quot;en-IN&quot;,&quot;fr-CA&quot;,&quot;cy-GB&quot;,&quot;gd-GB&quot;,&quot;ga-GB&quot;,&quot;sco-GB&quot;,&quot;kw-GB&quot;,&quot;es-US&quot;,&quot;de-DE&quot;,&quot;fr-FR&quot;,&quot;es-ES&quot;,&quot;it-IT&quot;,&quot;nl-NL&quot;,&quot;pl-PL&quot;,&quot;pt-PT&quot;,&quot;pt-BR&quot;,&quot;ro-RO&quot;,&quot;sv-SE&quot;,&quot;ko-KR&quot;,&quot;zh-CN&quot;,&quot;ja-JP&quot;,&quot;hi-IN&quot;]" value="en-US" input-name="sonde-locale-picker-radio">
+      <sonde-locale-picker locales="[&quot;en-US&quot;,&quot;en-GB&quot;,&quot;en-CA&quot;,&quot;en-IN&quot;,&quot;fr-CA&quot;,&quot;cy-GB&quot;,&quot;es-US&quot;,&quot;de-DE&quot;,&quot;fr-FR&quot;,&quot;es-ES&quot;,&quot;it-IT&quot;,&quot;nl-NL&quot;,&quot;pl-PL&quot;,&quot;pt-PT&quot;,&quot;pt-BR&quot;,&quot;ro-RO&quot;,&quot;sv-SE&quot;,&quot;ko-KR&quot;,&quot;zh-CN&quot;,&quot;ja-JP&quot;,&quot;hi-IN&quot;]" value="en-US" input-name="sonde-locale-picker-radio">
 <label class="theme-toggle-option settings-language-option" dir="ltr" data-locale-search="en-US English (US) 🇺🇸 English United States">
   <input type="radio" name="sonde-locale-picker-radio" value="en-US" data-sonde-locale-picker checked>
   <div class="theme-preview locale-option-preview">
@@ -715,34 +724,6 @@
   <div class="theme-preview locale-option-preview">
     <span class="fi fi-gb-wls locale-option-flag" data-flag="🇬🇧" aria-hidden="true"></span>
     <span class="locale-option-label">Cymraeg</span>
-  </div>
-</label>
-<label class="theme-toggle-option settings-language-option" dir="ltr" data-locale-search="gd-GB Gàidhlig 🇬🇧 Scottish Gaelic United Kingdom">
-  <input type="radio" name="sonde-locale-picker-radio" value="gd-GB" data-sonde-locale-picker>
-  <div class="theme-preview locale-option-preview">
-    <span class="fi fi-gb-sct locale-option-flag" data-flag="🇬🇧" aria-hidden="true"></span>
-    <span class="locale-option-label">Gàidhlig</span>
-  </div>
-</label>
-<label class="theme-toggle-option settings-language-option" dir="ltr" data-locale-search="ga-GB Gaeilge 🇬🇧 Irish United Kingdom">
-  <input type="radio" name="sonde-locale-picker-radio" value="ga-GB" data-sonde-locale-picker>
-  <div class="theme-preview locale-option-preview">
-    <span class="fi fi-gb locale-option-flag" data-flag="🇬🇧" aria-hidden="true"></span>
-    <span class="locale-option-label">Gaeilge</span>
-  </div>
-</label>
-<label class="theme-toggle-option settings-language-option" dir="ltr" data-locale-search="sco-GB Scots 🇬🇧 Scots United Kingdom">
-  <input type="radio" name="sonde-locale-picker-radio" value="sco-GB" data-sonde-locale-picker>
-  <div class="theme-preview locale-option-preview">
-    <span class="fi fi-gb-sct locale-option-flag" data-flag="🇬🇧" aria-hidden="true"></span>
-    <span class="locale-option-label">Scots</span>
-  </div>
-</label>
-<label class="theme-toggle-option settings-language-option" dir="ltr" data-locale-search="kw-GB Kernewek 🇬🇧 Cornish United Kingdom">
-  <input type="radio" name="sonde-locale-picker-radio" value="kw-GB" data-sonde-locale-picker>
-  <div class="theme-preview locale-option-preview">
-    <span class="fi fi-gb locale-option-flag" data-flag="🇬🇧" aria-hidden="true"></span>
-    <span class="locale-option-label">Kernewek</span>
   </div>
 </label>
 <label class="theme-toggle-option settings-language-option" dir="ltr" data-locale-search="es-US Español (US) 🇺🇸 Spanish United States">
@@ -858,134 +839,14 @@
     </div>
     </nav>
 
-<section class="sl-section sl-hero sl-hero-with-icon sl-alpha-hero" aria-labelledby="eap-title">
+<section class="sl-section sl-redirect-section" aria-labelledby="redirect-title">
   <div class="sl-section-inner sonde-readable">
-    <span class="sl-page-icon" aria-hidden="true"><svg class="sl-page-icon-svg" viewBox="0 0 64 64" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg">
-  <defs>
-    <clipPath id="sl-icon-cockpit-bezel">
-      <circle cx="32" cy="32" r="22" />
-    </clipPath>
-  </defs>
-  <g fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
-    <circle cx="32" cy="32" r="26" />
-    <circle cx="32" cy="32" r="22" opacity="0.55" />
-    <g clip-path="url(#sl-icon-cockpit-bezel)">
-      <rect x="8" y="32" width="48" height="24" fill="var(--sonde-color-accent)" opacity="0.18" stroke="none" />
-      <line x1="8" y1="32" x2="56" y2="32" stroke="var(--sonde-color-accent)" stroke-width="1.8" />
-      <line x1="20" y1="26" x2="28" y2="26" opacity="0.55" />
-      <line x1="36" y1="26" x2="44" y2="26" opacity="0.55" />
-      <line x1="22" y1="38" x2="42" y2="38" opacity="0.4" />
-      <line x1="26" y1="44" x2="38" y2="44" opacity="0.3" />
-    </g>
-    <g opacity="0.7">
-      <path d="M14 14 A 25 25 0 0 1 50 14" stroke-dasharray="1.5 4" />
-    </g>
-    <line x1="32" y1="22" x2="32" y2="42" />
-    <line x1="22" y1="32" x2="42" y2="32" />
-  </g>
-  <circle cx="32" cy="32" r="2.4" fill="var(--sonde-color-accent)" />
-</svg>
-</span>
-    <div class="sl-hero-content">
-      <p class="sl-eyebrow" data-msg-id="sondeLife.content.eapSonde.eyebrow">Hosted cockpit EAP</p>
-      <h1 id="eap-title" data-msg-id="sondeLife.content.eapSonde.title">Request Sonde EAP access</h1>
-      <p data-msg-id="sondeLife.content.eapSonde.lede">Join the small hosted-cockpit cohort testing invite-gated sign-in, alpha manifests, and signed local bundle delivery before the public release.</p>
-    </div>
+    <h1 id="redirect-title" data-msg-id="sondeLife.eapSonde.redirect.title">This page has moved</h1>
+    <p data-msg-id="sondeLife.eapSonde.redirect.body">The Sonde contact and pre-release access form is now at the Contact page.</p>
+    <a class="sl-action sl-action-primary" href="../../contact/" data-msg-id="sondeLife.eapSonde.redirect.linkText">Go to the Contact page</a>
   </div>
 </section>
-<section class="sl-section sl-alpha-intake" aria-labelledby="eap-form-title">
-  <div class="sl-section-inner sl-alpha-layout">
-    <form class="sl-alpha-form" action="https://cockpit.sonde.life/api/eap/invite-request" method="post" data-alpha-intake-form>
-      <input type="hidden" name="source" value="sonde-life-eap">
-      <div class="sl-alpha-form-heading">
-        <h2 id="eap-form-title" data-msg-id="sondeLife.content.eapSonde.formTitle">EAP invite request</h2>
-        <p data-msg-id="sondeLife.content.eapSonde.formLede">Tell us where Sonde should meet your workflow first. The hosted intake verifies Cloudflare Turnstile, applies a per-IP rate limit, then relays the request to the EAP waitlist.</p>
-      </div>
-      <div class="sl-alpha-form-grid">
-        <label class="sl-alpha-field">
-          <span data-msg-id="sondeLife.content.eapSonde.fields.email">Work email</span>
-          <input name="email" type="email" autocomplete="email" required>
-        </label>
-        <label class="sl-alpha-field">
-          <span data-msg-id="sondeLife.content.eapSonde.fields.provider">Preferred sign-in provider</span>
-          <select name="provider" required>
-            <option value="github" data-msg-id="sondeLife.content.eapSonde.providers.0.label">GitHub</option>
-            <option value="google" data-msg-id="sondeLife.content.eapSonde.providers.1.label">Google</option>
-            <option value="microsoft" data-msg-id="sondeLife.content.eapSonde.providers.2.label">Microsoft</option>
-            <option value="gitlab" data-msg-id="sondeLife.content.eapSonde.providers.3.label">GitLab</option>
-            <option value="atlassian" data-msg-id="sondeLife.content.eapSonde.providers.4.label">Atlassian</option>
-          </select>
-        </label>
-        <label class="sl-alpha-field">
-          <span data-msg-id="sondeLife.content.eapSonde.fields.teamSize">Team size</span>
-          <select name="teamSize" required>
-            <option value="solo" data-msg-id="sondeLife.content.eapSonde.teamSizes.0.label">Solo / individual</option>
-            <option value="2-10" data-msg-id="sondeLife.content.eapSonde.teamSizes.1.label">2-10</option>
-            <option value="11-50" data-msg-id="sondeLife.content.eapSonde.teamSizes.2.label">11-50</option>
-            <option value="51-plus" data-msg-id="sondeLife.content.eapSonde.teamSizes.3.label">51+</option>
-          </select>
-        </label>
-        <label class="sl-alpha-field sl-alpha-field-wide">
-          <span data-msg-id="sondeLife.content.eapSonde.fields.useCase">What should Sonde help you prove first?</span>
-          <textarea name="useCase" rows="5" maxlength="2000" required></textarea>
-        </label>
-      </div>
-      <label class="sl-alpha-honeypot">
-        Website
-        <input name="website" tabindex="-1" autocomplete="off">
-      </label>
-      <label class="sl-alpha-consent">
-        <input name="consent" type="checkbox" value="true" required>
-        <span data-msg-id="sondeLife.content.eapSonde.fields.consent">I agree to be contacted about Sonde EAP access.</span>
-      </label>
-      <div
-        class="cf-turnstile sl-alpha-turnstile"
-        data-sitekey="__CF_TURNSTILE_SITE_KEY_SONDE_ALPHA__"
-        data-theme="auto"
-        data-response-field-name="cf-turnstile-response"></div>
-      <p class="sl-alpha-note" data-msg-id="sondeLife.content.eapSonde.rateLimitNote">Submissions are rate-limited by source IP and require a valid Turnstile token before they reach the waitlist adapter.</p>
-      <button class="sl-action sl-action-primary sl-alpha-submit" type="submit" data-msg-id="sondeLife.content.eapSonde.fields.submit">Request access</button>
-      <p class="sl-alpha-privacy" data-msg-id="sondeLife.content.eapSonde.privacyNote">We use this request only to evaluate EAP access and route follow-up. Do not include credentials, secrets, or private repository details.</p>
-    </form>
-    <aside class="sl-alpha-side" aria-labelledby="eap-hashes-title">
-      <section class="sl-alpha-hashes">
-        <h2 id="eap-hashes-title" data-msg-id="sondeLife.content.eapSonde.hashesTitle">Install-script hashes</h2>
-        <p data-msg-id="sondeLife.content.eapSonde.hashesLede">The first signed alpha bundle will publish SHA-256 hashes here before testers run any installer bytes.</p>
-        <dl class="sl-alpha-hash-list">
-          <div class="sl-alpha-hash-row" data-alpha-install-hash-status="pending">
-            <dt>
-              <span data-msg-id="sondeLife.content.eapSonde.installHashes.0.label">install.sh</span>
-              <small data-msg-id="sondeLife.content.eapSonde.installHashes.0.platform">macOS / Linux</small>
-            </dt>
-            <dd>
-              <code data-msg-id="sondeLife.content.eapSonde.installHashes.0.sha256">pending-first-alpha-bundle-release</code>
-              <span data-msg-id="sondeLife.content.eapSonde.installHashes.0.command">shasum -a 256 install.sh</span>
-            </dd>
-          </div>
-          <div class="sl-alpha-hash-row" data-alpha-install-hash-status="pending">
-            <dt>
-              <span data-msg-id="sondeLife.content.eapSonde.installHashes.1.label">install.ps1</span>
-              <small data-msg-id="sondeLife.content.eapSonde.installHashes.1.platform">Windows</small>
-            </dt>
-            <dd>
-              <code data-msg-id="sondeLife.content.eapSonde.installHashes.1.sha256">pending-first-alpha-bundle-release</code>
-              <span data-msg-id="sondeLife.content.eapSonde.installHashes.1.command">Get-FileHash .\install.ps1 -Algorithm SHA256</span>
-            </dd>
-          </div>
-        </dl>
-      </section>
-      <section class="sl-alpha-steps" aria-labelledby="eap-steps-title">
-        <h2 id="eap-steps-title" data-msg-id="sondeLife.content.eapSonde.nextStepsTitle">EAP gate sequence</h2>
-        <ol>
-          <li data-msg-id="sondeLife.content.eapSonde.nextSteps.0">Sonde reviews the request and adds approved testers to the alpha roster.</li>
-          <li data-msg-id="sondeLife.content.eapSonde.nextSteps.1">The hosted cockpit sign-in flow re-checks roster status before minting a session.</li>
-          <li data-msg-id="sondeLife.content.eapSonde.nextSteps.2">Signed manifest and installer hashes publish together when the first bundle release exists.</li>
-        </ol>
-      </section>
-    </aside>
-  </div>
-</section>
-<script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
+<script>if (location.protocol !== 'file:') window.location.replace('../../contact/');</script>
 
     <div hidden aria-hidden="true">
       <span data-msg-id="sondeLife.metadata.description">Software that understands software. Semantic mesh for compliance, code review, and AI-generated code quality.</span>
@@ -997,6 +858,10 @@
       <span data-msg-id="sondeLife.metadata.compliance.title">Compliance - Sonde</span>
       <span data-msg-id="sondeLife.metadata.scribe.title">Scribe - Sonde</span>
       <span data-msg-id="sondeLife.metadata.contact.title">Contact - Sonde</span>
+      <span data-msg-id="sondeLife.metadata.solutions.accessibility.title">Accessibility - Sonde</span>
+      <span data-msg-id="sondeLife.metadata.solutions.compliance.title">Compliance Solutions - Sonde</span>
+      <span data-msg-id="sondeLife.metadata.solutions.aiGovernance.title">AI Governance - Sonde</span>
+      <span data-msg-id="sondeLife.metadata.solutions.developer.title">Developer - Sonde</span>
       <span data-msg-id="settings.trigger.aria">Open display settings</span>
       <span data-msg-id="settings.trigger.title">Settings</span>
       <span data-msg-id="settings.theme.legend">Theme</span>
@@ -1037,6 +902,26 @@
     document.addEventListener('keydown', (event) => {
       if (event.key !== 'Escape') return;
       close();
+    });
+  })();
+
+  // Dismiss the Solutions nav dropdown on outside-click and Escape,
+  // matching the settings-dropdown dismissal pattern above.
+  (() => {
+    const navDropdown = document.querySelector('details.sl-nav-dropdown');
+    if (!navDropdown) return;
+    function closeNavDropdown() {
+      if (!navDropdown.open) return;
+      navDropdown.open = false;
+    }
+    document.addEventListener('click', (event) => {
+      if (!navDropdown.open) return;
+      if (navDropdown.contains(event.target)) return;
+      closeNavDropdown();
+    });
+    document.addEventListener('keydown', (event) => {
+      if (event.key !== 'Escape') return;
+      closeNavDropdown();
     });
   })();
 
@@ -1232,20 +1117,22 @@
     document.addEventListener('sonde:locale-applied', schedule);
   })();
 
-  // Roving tabindex for the primary nav links. Without this, the seven
-  // nav <a>s plus brand + search + settings put 10–11 elements in the
-  // primary nav's tab sequence, tripping the keyboard-trap probe's
-  // "deep focus region" heuristic. With roving tabindex the seven nav
-  // links collapse to a single tab stop; arrow keys (Left/Right, Up/Down)
-  // navigate within the group, Home/End jump to the ends. The aria-current
-  // link is the active tab stop on page load (or the first link if no
-  // route is current — e.g. on home where the brand IS the home link).
+  // Roving tabindex for the primary nav links. Without this, the primary
+  // nav <a>s + the Solutions <summary> plus brand + search + settings put
+  // many elements in the primary nav's tab sequence, tripping the
+  // keyboard-trap probe's "deep focus region" heuristic. With roving
+  // tabindex the top-level nav items collapse to a single tab stop; arrow
+  // keys (Left/Right, Up/Down) navigate within the group, Home/End jump to
+  // the ends. The aria-current item is the active tab stop on page load
+  // (or the first item if no route is current). Only direct <a> children
+  // and top-level <details> > <summary> are selected — this deliberately
+  // excludes hidden dropdown-menu <a>s that must not enter the roving group.
   (() => {
     const navLinks = document.querySelector('.sl-nav-links');
     if (!navLinks) return;
-    const links = Array.from(navLinks.querySelectorAll('a'));
+    const links = Array.from(navLinks.querySelectorAll(':scope > a, :scope > details > summary'));
     if (links.length < 2) return;
-    let activeIdx = links.findIndex((a) => a.getAttribute('aria-current') === 'page');
+    let activeIdx = links.findIndex((el) => el.getAttribute('aria-current') === 'page');
     if (activeIdx < 0) activeIdx = 0;
     for (let i = 0; i < links.length; i += 1) {
       links[i].setAttribute('tabindex', i === activeIdx ? '0' : '-1');

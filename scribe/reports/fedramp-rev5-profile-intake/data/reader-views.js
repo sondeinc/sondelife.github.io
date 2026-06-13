@@ -108,11 +108,6 @@ window.__SCRIBE_READER_VIEWS__ = [
           "reviewed": true,
           "text": "개발자"
         },
-        "kw-GB": {
-          "fallback": false,
-          "reviewed": true,
-          "text": "Developer rag oll"
-        },
         "nl-NL": {
           "fallback": false,
           "reviewed": true,
@@ -137,11 +132,6 @@ window.__SCRIBE_READER_VIEWS__ = [
           "fallback": false,
           "reviewed": true,
           "text": "Dezvoltator"
-        },
-        "sco-GB": {
-          "fallback": false,
-          "reviewed": true,
-          "text": "Developer view"
         },
         "sv-SE": {
           "fallback": false,
@@ -273,11 +263,6 @@ window.__SCRIBE_READER_VIEWS__ = [
           "reviewed": true,
           "text": "행정부"
         },
-        "kw-GB": {
-          "fallback": false,
-          "reviewed": true,
-          "text": "Executive rag oll"
-        },
         "nl-NL": {
           "fallback": false,
           "reviewed": true,
@@ -302,11 +287,6 @@ window.__SCRIBE_READER_VIEWS__ = [
           "fallback": false,
           "reviewed": true,
           "text": "Executiv"
-        },
-        "sco-GB": {
-          "fallback": false,
-          "reviewed": true,
-          "text": "Executive view"
         },
         "sv-SE": {
           "fallback": false,
@@ -430,11 +410,6 @@ window.__SCRIBE_READER_VIEWS__ = [
           "reviewed": true,
           "text": "감사원"
         },
-        "kw-GB": {
-          "fallback": false,
-          "reviewed": true,
-          "text": "Auditor rag oll"
-        },
         "nl-NL": {
           "fallback": false,
           "reviewed": true,
@@ -459,11 +434,6 @@ window.__SCRIBE_READER_VIEWS__ = [
           "fallback": false,
           "reviewed": true,
           "text": "Vizualizare auditor"
-        },
-        "sco-GB": {
-          "fallback": false,
-          "reviewed": true,
-          "text": ". Auditor"
         },
         "sv-SE": {
           "fallback": false,

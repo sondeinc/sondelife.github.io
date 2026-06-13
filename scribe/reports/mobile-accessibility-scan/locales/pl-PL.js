@@ -1,6 +1,6 @@
 window.__SCRIBE_LOCALES__ = window.__SCRIBE_LOCALES__ || {};
 window.__SCRIBE_LOCALES__["pl-PL"] = {
-  "fallbackCount": 90,
+  "fallbackCount": 86,
   "locale": "pl-PL",
   "messages": {
     "scribe.report.action.backToFinding": {
@@ -106,7 +106,7 @@ window.__SCRIBE_LOCALES__["pl-PL"] = {
     "scribe.report.asset.export.markdown": {
       "fallback": false,
       "reviewed": true,
-      "text": "Eksportowanie do Markdowna"
+      "text": "Eksport do Markdown"
     },
     "scribe.report.asset.export.oscal": {
       "fallback": false,
@@ -353,6 +353,11 @@ window.__SCRIBE_LOCALES__["pl-PL"] = {
       "reviewed": true,
       "text": "Dostępność"
     },
+    "scribe.report.filter.option.aiSafety": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Bezpieczeństwo AI"
+    },
     "scribe.report.filter.option.analysisCompleteness": {
       "fallback": false,
       "reviewed": true,
@@ -393,6 +398,11 @@ window.__SCRIBE_LOCALES__["pl-PL"] = {
       "reviewed": true,
       "text": "Błąd"
     },
+    "scribe.report.filter.option.grammarParsing": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Gramatyka i analiza składniowa"
+    },
     "scribe.report.filter.option.high": {
       "fallback": false,
       "reviewed": true,
@@ -423,6 +433,11 @@ window.__SCRIBE_LOCALES__["pl-PL"] = {
       "reviewed": true,
       "text": "Średni"
     },
+    "scribe.report.filter.option.metricsQuality": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Metryki i jakość"
+    },
     "scribe.report.filter.option.mexicoFintechReadiness": {
       "fallback": false,
       "reviewed": true,
@@ -438,6 +453,16 @@ window.__SCRIBE_LOCALES__["pl-PL"] = {
       "reviewed": true,
       "text": "Zakres NIST FedRAMP"
     },
+    "scribe.report.filter.option.oscalProfileIntake": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Import profilu OSCAL"
+    },
+    "scribe.report.filter.option.projectIntelligence": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Inteligencja projektu"
+    },
     "scribe.report.filter.option.remediationReadiness": {
       "fallback": false,
       "reviewed": true,
@@ -452,6 +477,11 @@ window.__SCRIBE_LOCALES__["pl-PL"] = {
       "fallback": false,
       "reviewed": true,
       "text": "Inwentarz repozytorium"
+    },
+    "scribe.report.filter.option.security": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Bezpieczeństwo"
     },
     "scribe.report.filter.option.sourceTrace": {
       "fallback": false,
@@ -487,16 +517,6 @@ window.__SCRIBE_LOCALES__["pl-PL"] = {
       "fallback": false,
       "reviewed": true,
       "text": "Publiczne podsumowanie znalezienia bez zawartości poprawki."
-    },
-    "scribe.report.fixPlan.missingAlt.stepOne": {
-      "fallback": false,
-      "reviewed": true,
-      "text": "Dodaj zlokalizowaną etykietę accessibilityLabel, która informuje o celu obrazu alertu profilu."
-    },
-    "scribe.report.fixPlan.missingAlt.stepTwo": {
-      "fallback": false,
-      "reviewed": true,
-      "text": "Przed opublikowaniem poprawki ponownie przeprowadź sprawdzenie źródła WCAG i renderowanego raportu."
     },
     "scribe.report.fixPlan.missingAlt.summary": {
       "fallback": false,
@@ -552,6 +572,21 @@ window.__SCRIBE_LOCALES__["pl-PL"] = {
       "fallback": false,
       "reviewed": true,
       "text": "Problem dostępności"
+    },
+    "scribe.report.overview.stat.accessibilityFindings": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Znaleziska dotyczące dostępności"
+    },
+    "scribe.report.overview.stat.codeQualityFindings": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Znaleziska dotyczące jakości kodu"
+    },
+    "scribe.report.overview.stat.complianceFindings": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Znaleziska związane z zgodnością"
     },
     "scribe.report.overview.stat.evidenceScreenshots": {
       "fallback": false,

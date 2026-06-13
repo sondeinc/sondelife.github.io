@@ -1,6 +1,6 @@
 window.__SCRIBE_LOCALES__ = window.__SCRIBE_LOCALES__ || {};
 window.__SCRIBE_LOCALES__["cy-GB"] = {
-  "fallbackCount": 90,
+  "fallbackCount": 86,
   "locale": "cy-GB",
   "messages": {
     "scribe.report.action.backToFinding": {
@@ -353,6 +353,11 @@ window.__SCRIBE_LOCALES__["cy-GB"] = {
       "reviewed": true,
       "text": "Hygyrchedd"
     },
+    "scribe.report.filter.option.aiSafety": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "diogelwch AI"
+    },
     "scribe.report.filter.option.analysisCompleteness": {
       "fallback": false,
       "reviewed": true,
@@ -393,6 +398,11 @@ window.__SCRIBE_LOCALES__["cy-GB"] = {
       "reviewed": true,
       "text": "Gwall"
     },
+    "scribe.report.filter.option.grammarParsing": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Gramadeg a pharsio"
+    },
     "scribe.report.filter.option.high": {
       "fallback": false,
       "reviewed": true,
@@ -401,12 +411,12 @@ window.__SCRIBE_LOCALES__["cy-GB"] = {
     "scribe.report.filter.option.indiaCertInReadiness": {
       "fallback": false,
       "reviewed": true,
-      "text": "India"
+      "text": "India CERT-In readyness"
     },
     "scribe.report.filter.option.indiaDpdpReadiness": {
       "fallback": false,
       "reviewed": true,
-      "text": "India"
+      "text": "India DPDP readyness"
     },
     "scribe.report.filter.option.info": {
       "fallback": false,
@@ -423,6 +433,11 @@ window.__SCRIBE_LOCALES__["cy-GB"] = {
       "reviewed": true,
       "text": "Canolig"
     },
+    "scribe.report.filter.option.metricsQuality": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Metrigau a phroffedigrwydd"
+    },
     "scribe.report.filter.option.mexicoFintechReadiness": {
       "fallback": false,
       "reviewed": true,
@@ -438,6 +453,16 @@ window.__SCRIBE_LOCALES__["cy-GB"] = {
       "reviewed": true,
       "text": "Cwmpasu NIST FedRAMP"
     },
+    "scribe.report.filter.option.oscalProfileIntake": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "OSCAL mewnbwn proffil"
+    },
+    "scribe.report.filter.option.projectIntelligence": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Intelligence prosiect"
+    },
     "scribe.report.filter.option.remediationReadiness": {
       "fallback": false,
       "reviewed": true,
@@ -452,6 +477,11 @@ window.__SCRIBE_LOCALES__["cy-GB"] = {
       "fallback": false,
       "reviewed": true,
       "text": "Cyfrif cronfa"
+    },
+    "scribe.report.filter.option.security": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Diogelwch"
     },
     "scribe.report.filter.option.sourceTrace": {
       "fallback": false,
@@ -487,16 +517,6 @@ window.__SCRIBE_LOCALES__["cy-GB"] = {
       "fallback": false,
       "reviewed": true,
       "text": "Crynodeb chwilio cyhoeddus heb gynnwys cywiro wedi ei rwystro."
-    },
-    "scribe.report.fixPlan.missingAlt.stepOne": {
-      "fallback": false,
-      "reviewed": true,
-      "text": "Ychwanegu label hygyrchedd lleoliedig sy'n cyfathrebu pwrpas y ddelwedd rhybudd proffil."
-    },
-    "scribe.report.fixPlan.missingAlt.stepTwo": {
-      "fallback": false,
-      "reviewed": true,
-      "text": "Ail-redeg y gwiriadau ffynhonnell WCAG a'r adroddiad arluniedig cyn cyhoeddi'r atgyweirio."
     },
     "scribe.report.fixPlan.missingAlt.summary": {
       "fallback": false,
@@ -552,6 +572,21 @@ window.__SCRIBE_LOCALES__["cy-GB"] = {
       "fallback": false,
       "reviewed": true,
       "text": "Problem hygyrchedd"
+    },
+    "scribe.report.overview.stat.accessibilityFindings": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Canfyddiadau Hygyrchedd"
+    },
+    "scribe.report.overview.stat.codeQualityFindings": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Canfyddiadau ansawdd y cod"
+    },
+    "scribe.report.overview.stat.complianceFindings": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Canfyddiadau sy'n ymwneud â chydymffurfiaeth"
     },
     "scribe.report.overview.stat.evidenceScreenshots": {
       "fallback": false,

@@ -103,11 +103,6 @@ window.__SCRIBE_TOC__ = [
                   "reviewed": true,
                   "text": "SwiftUI 이미지 소스 증거"
                 },
-                "kw-GB": {
-                  "fallback": false,
-                  "reviewed": true,
-                  "text": "SwiftUI image source evidence rag oll"
-                },
                 "nl-NL": {
                   "fallback": false,
                   "reviewed": true,
@@ -132,11 +127,6 @@ window.__SCRIBE_TOC__ = [
                   "fallback": false,
                   "reviewed": true,
                   "text": "Dovada sursei de imagine SwiftUI"
-                },
-                "sco-GB": {
-                  "fallback": false,
-                  "reviewed": true,
-                  "text": "SwiftUI image soorce evidence"
                 },
                 "sv-SE": {
                   "fallback": false,
@@ -249,11 +239,6 @@ window.__SCRIBE_TOC__ = [
                   "reviewed": true,
                   "text": "수정 계획: 이미지 대체 텍스트"
                 },
-                "kw-GB": {
-                  "fallback": false,
-                  "reviewed": true,
-                  "text": "Fix plan: image alt text rag oll"
-                },
                 "nl-NL": {
                   "fallback": false,
                   "reviewed": true,
@@ -278,11 +263,6 @@ window.__SCRIBE_TOC__ = [
                   "fallback": false,
                   "reviewed": true,
                   "text": "Planul fix: imaginea alt text"
-                },
-                "sco-GB": {
-                  "fallback": false,
-                  "reviewed": true,
-                  "text": "Mend plan: image alt text"
                 },
                 "sv-SE": {
                   "fallback": false,
@@ -393,11 +373,6 @@ window.__SCRIBE_TOC__ = [
               "reviewed": true,
               "text": "SwiftUI 이미지에 접근 가능한 이름이 없습니다"
             },
-            "kw-GB": {
-              "fallback": false,
-              "reviewed": true,
-              "text": "SwiftUI image is missing an accessible name rag oll"
-            },
             "nl-NL": {
               "fallback": false,
               "reviewed": true,
@@ -422,11 +397,6 @@ window.__SCRIBE_TOC__ = [
               "fallback": false,
               "reviewed": true,
               "text": "Imaginii SwiftUI îi lipsește un nume accesibil"
-            },
-            "sco-GB": {
-              "fallback": false,
-              "reviewed": true,
-              "text": "SwiftUI image is missin an accessible name"
             },
             "sv-SE": {
               "fallback": false,
@@ -537,11 +507,6 @@ window.__SCRIBE_TOC__ = [
           "reviewed": true,
           "text": "개요"
         },
-        "kw-GB": {
-          "fallback": false,
-          "reviewed": true,
-          "text": "Overview rag oll"
-        },
         "nl-NL": {
           "fallback": false,
           "reviewed": true,
@@ -566,11 +531,6 @@ window.__SCRIBE_TOC__ = [
           "fallback": false,
           "reviewed": true,
           "text": "Prezentare generală"
-        },
-        "sco-GB": {
-          "fallback": false,
-          "reviewed": true,
-          "text": "Overview page"
         },
         "sv-SE": {
           "fallback": false,

@@ -307,7 +307,7 @@ window.__SCRIBE_FILE_DIRECT_RUNTIME__ = {
   var settingsSectionStorageKey = 'sonde-scribe-report-settings-sections';
   var languageSearchLabel = {"msgid":"scribe.report.control.languageSearch","defaultText":"Search languages"};
   var pageStatusLabel = {"msgid":"scribe.report.control.pageStatus","defaultText":"Page"};
-  var chunkedFindingLabels = {"sourceSnippetTitle":{"msgid":"scribe.report.source.swiftUiMissingImageLabel.title","defaultText":"SwiftUI image source evidence"},"sourcePermalink":{"msgid":"scribe.report.action.sourcePermalink","defaultText":"Open source permalink"},"collapseSourceSnippet":{"msgid":"scribe.report.action.collapseSourceSnippet","defaultText":"Collapse snippet"},"expandSourceSnippet":{"msgid":"scribe.report.action.expandSourceSnippet","defaultText":"Expand snippet"},"fullScreenSourceSnippet":{"msgid":"scribe.report.action.fullScreenSourceSnippet","defaultText":"Full screen snippet"},"closeFullScreenSourceSnippet":{"msgid":"scribe.report.action.closeFullScreenSourceSnippet","defaultText":"Close full screen snippet"},"shareFinding":{"msgid":"scribe.report.action.shareFinding","defaultText":"Share finding"},"feedbackFinding":{"msgid":"scribe.report.action.feedbackFinding","defaultText":"Send feedback"},"findingPermalink":{"msgid":"scribe.report.action.findingPermalink","defaultText":"Copy finding link"}};
+  var chunkedFindingLabels = {"sourceSnippetTitle":{"msgid":"scribe.report.source.swiftUiMissingImageLabel.title","defaultText":"SwiftUI image source evidence"},"sourcePermalink":{"msgid":"scribe.report.action.sourcePermalink","defaultText":"Open source permalink"},"collapseSourceSnippet":{"msgid":"scribe.report.action.collapseSourceSnippet","defaultText":"Collapse snippet"},"expandSourceSnippet":{"msgid":"scribe.report.action.expandSourceSnippet","defaultText":"Expand snippet"},"fullScreenSourceSnippet":{"msgid":"scribe.report.action.fullScreenSourceSnippet","defaultText":"Full screen snippet"},"closeFullScreenSourceSnippet":{"msgid":"scribe.report.action.closeFullScreenSourceSnippet","defaultText":"Close full screen snippet"},"shareFinding":{"msgid":"scribe.report.action.shareFinding","defaultText":"Share finding"},"feedbackFinding":{"msgid":"scribe.report.action.feedbackFinding","defaultText":"Send feedback"},"findingPermalink":{"msgid":"scribe.report.action.findingPermalink","defaultText":"Copy finding link"},"openFixPlan":{"msgid":"scribe.report.action.openFixPlan","defaultText":"Open fix plan"}};
   var reportCurrentPage = 1;
   var reportCurrentPageCount = 1;
   var pendingFilterTimer = 0;
@@ -1984,6 +1984,22 @@ window.__SCRIBE_FILE_DIRECT_RUNTIME__ = {
     paragraph.textContent = localizableRuntimeText(summary.summary);
     addLocalizableTextAttributes(paragraph, summary.summary);
     body.appendChild(paragraph);
+
+    if (summary.fixPlanHref) {
+      var linkStack = document.createElement('div');
+      linkStack.className = 'scribe-report-link-stack';
+      var fixPlanLink = document.createElement('a');
+      fixPlanLink.className = 'scribe-report-link-action';
+      fixPlanLink.href = summary.fixPlanHref;
+      fixPlanLink.setAttribute('data-scribe-fixplan-entry-link', summary.anchorId);
+      fixPlanLink.setAttribute('data-scribe-msgid', chunkedFindingLabels.openFixPlan.msgid);
+      fixPlanLink.textContent = localizedText(
+        chunkedFindingLabels.openFixPlan.msgid,
+        chunkedFindingLabels.openFixPlan.defaultText
+      );
+      linkStack.appendChild(fixPlanLink);
+      body.appendChild(linkStack);
+    }
 
     if (summary.sourceSnippetIds && summary.sourceSnippetIds.length > 0) {
       var source = document.createElement('section');

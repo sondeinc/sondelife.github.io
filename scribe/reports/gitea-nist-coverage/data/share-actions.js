@@ -97,11 +97,6 @@ window.__SCRIBE_SHARE_ACTIONS__ = [
           "reviewed": true,
           "text": "발견 공유"
         },
-        "kw-GB": {
-          "fallback": false,
-          "reviewed": true,
-          "text": "Share kavos"
-        },
         "nl-NL": {
           "fallback": false,
           "reviewed": true,
@@ -126,11 +121,6 @@ window.__SCRIBE_SHARE_ACTIONS__ = [
           "fallback": false,
           "reviewed": true,
           "text": "Găsirea de acțiuni"
-        },
-        "sco-GB": {
-          "fallback": false,
-          "reviewed": true,
-          "text": "Share findin"
         },
         "sv-SE": {
           "fallback": false,
@@ -262,11 +252,6 @@ window.__SCRIBE_SHARE_ACTIONS__ = [
           "reviewed": true,
           "text": "NIST 제어는 명시적인 지원되는 아티팩트 경계를 필요로 합니다."
         },
-        "kw-GB": {
-          "fallback": false,
-          "reviewed": true,
-          "text": "Resedhow NIST a vynn finyow artefact skoodhys diskwedhys"
-        },
         "nl-NL": {
           "fallback": false,
           "reviewed": true,
@@ -291,11 +276,6 @@ window.__SCRIBE_SHARE_ACTIONS__ = [
           "fallback": false,
           "reviewed": true,
           "text": "Controalele NIST necesită limite explicite pentru artefactele acceptate"
-        },
-        "sco-GB": {
-          "fallback": false,
-          "reviewed": true,
-          "text": "NIST controls need explicit supportit-artifact boondaries"
         },
         "sv-SE": {
           "fallback": false,

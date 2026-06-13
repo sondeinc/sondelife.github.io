@@ -1,6 +1,6 @@
 window.__SCRIBE_LOCALES__ = window.__SCRIBE_LOCALES__ || {};
 window.__SCRIBE_LOCALES__["pl-PL"] = {
-  "fallbackCount": 15,
+  "fallbackCount": 11,
   "locale": "pl-PL",
   "messages": {
     "scribe.report.action.backToFinding": {
@@ -106,7 +106,7 @@ window.__SCRIBE_LOCALES__["pl-PL"] = {
     "scribe.report.asset.export.markdown": {
       "fallback": false,
       "reviewed": true,
-      "text": "Eksportowanie do Markdowna"
+      "text": "Eksport do Markdown"
     },
     "scribe.report.asset.mark": {
       "fallback": false,
@@ -333,6 +333,11 @@ window.__SCRIBE_LOCALES__["pl-PL"] = {
       "reviewed": true,
       "text": "Dostępność"
     },
+    "scribe.report.filter.option.aiSafety": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Bezpieczeństwo AI"
+    },
     "scribe.report.filter.option.analysisCompleteness": {
       "fallback": false,
       "reviewed": true,
@@ -373,6 +378,11 @@ window.__SCRIBE_LOCALES__["pl-PL"] = {
       "reviewed": true,
       "text": "Błąd"
     },
+    "scribe.report.filter.option.grammarParsing": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Gramatyka i analiza składniowa"
+    },
     "scribe.report.filter.option.high": {
       "fallback": false,
       "reviewed": true,
@@ -403,6 +413,11 @@ window.__SCRIBE_LOCALES__["pl-PL"] = {
       "reviewed": true,
       "text": "Średni"
     },
+    "scribe.report.filter.option.metricsQuality": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Metryki i jakość"
+    },
     "scribe.report.filter.option.mexicoFintechReadiness": {
       "fallback": false,
       "reviewed": true,
@@ -418,6 +433,16 @@ window.__SCRIBE_LOCALES__["pl-PL"] = {
       "reviewed": true,
       "text": "Zakres NIST FedRAMP"
     },
+    "scribe.report.filter.option.oscalProfileIntake": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Import profilu OSCAL"
+    },
+    "scribe.report.filter.option.projectIntelligence": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Inteligencja projektu"
+    },
     "scribe.report.filter.option.remediationReadiness": {
       "fallback": false,
       "reviewed": true,
@@ -432,6 +457,11 @@ window.__SCRIBE_LOCALES__["pl-PL"] = {
       "fallback": false,
       "reviewed": true,
       "text": "Inwentarz repozytorium"
+    },
+    "scribe.report.filter.option.security": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Bezpieczeństwo"
     },
     "scribe.report.filter.option.sourceTrace": {
       "fallback": false,
@@ -467,6 +497,21 @@ window.__SCRIBE_LOCALES__["pl-PL"] = {
       "fallback": false,
       "reviewed": true,
       "text": "Światło"
+    },
+    "scribe.report.overview.stat.accessibilityFindings": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Znaleziska dotyczące dostępności"
+    },
+    "scribe.report.overview.stat.codeQualityFindings": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Znaleziska dotyczące jakości kodu"
+    },
+    "scribe.report.overview.stat.complianceFindings": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Znaleziska związane z zgodnością"
     },
     "scribe.report.overview.stat.evidenceScreenshots": {
       "fallback": false,
@@ -553,70 +598,35 @@ window.__SCRIBE_LOCALES__["pl-PL"] = {
       "reviewed": true,
       "text": "Zła złożoność w {symbol}"
     },
-    "scribe.report.repositoryHealth.finding.complexity.title.high": {
-      "fallback": false,
-      "reviewed": true,
-      "text": "Wysoka złożoność w {symbol}"
-    },
-    "scribe.report.repositoryHealth.finding.deadCode.criterion": {
-      "fallback": false,
-      "reviewed": true,
-      "text": "Zasady dotyczące martwego kodu w repozytorium: sprawdzone nieosiągalne funkcje i nieużywane eksporty wymagają przeglądu."
-    },
-    "scribe.report.repositoryHealth.finding.deadCode.fix": {
-      "fallback": false,
-      "reviewed": true,
-      "text": "Upewnij się, że symbol nie jest dynamicznym punktem wejścia, a następnie usuń go lub dodaj brakujące dowody odniesienia przed ponownym uruchomieniem raportu kondycji."
-    },
-    "scribe.report.repositoryHealth.finding.deadCode.unreachable.summary": {
-      "fallback": false,
-      "reviewed": true,
-      "text": "{sourcePath}:{line} jest oznaczony jako nieosiągalny przez sondę martwego kodu."
-    },
-    "scribe.report.repositoryHealth.finding.deadCode.unreachable.title": {
-      "fallback": false,
-      "reviewed": true,
-      "text": "Nieosiągalna funkcja {symbol}"
-    },
-    "scribe.report.repositoryHealth.finding.deadCode.unusedExport.summary": {
-      "fallback": false,
-      "reviewed": true,
-      "text": "{sourcePath}:{line} jest oznaczony jako nieużywany eksport przez sondę martwego kodu."
-    },
-    "scribe.report.repositoryHealth.finding.deadCode.unusedExport.title": {
-      "fallback": false,
-      "reviewed": true,
-      "text": "Nieużywany wyeksportowany symbol {symbol}"
-    },
     "scribe.report.repositoryHealth.finding.publicSummary": {
       "fallback": false,
       "reviewed": true,
       "text": "Podsumowanie kondycji publicznego repozytorium z dowodami na zasięg popartymi źródłami."
     },
+    "scribe.report.repositoryHealth.finding.raw.criterion": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "{criterion}"
+    },
+    "scribe.report.repositoryHealth.finding.raw.fix": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "{recommendation}"
+    },
+    "scribe.report.repositoryHealth.finding.raw.summary": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "{summary}"
+    },
+    "scribe.report.repositoryHealth.finding.raw.title": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "{title}"
+    },
     "scribe.report.repositoryHealth.finding.runtime": {
       "fallback": false,
       "reviewed": true,
       "text": "Analiza statyczna stanu repozytorium"
-    },
-    "scribe.report.repositoryHealth.finding.schemaMaintenance.criterion": {
-      "fallback": false,
-      "reviewed": true,
-      "text": "Higiena schematów zdrowia repozytorium: przestarzałość schematu, notatki TODO, FIXME lub HACK nie powinny być jedynym zapisem prac związanych z bazą danych."
-    },
-    "scribe.report.repositoryHealth.finding.schemaMaintenance.fix": {
-      "fallback": false,
-      "reviewed": true,
-      "text": "Połącz notatkę schematu z planem migracji, usuwania lub śledzonym problemem, a następnie uruchom ponownie sondy skoncentrowane na schemacie po zmianie bazy danych."
-    },
-    "scribe.report.repositoryHealth.finding.schemaMaintenance.summary": {
-      "fallback": false,
-      "reviewed": true,
-      "text": "{sourcePath}:{line} zawiera notatkę schematu {marker}, która powinna być śledzona jako wyraźne kontynuowanie bazy danych."
-    },
-    "scribe.report.repositoryHealth.finding.schemaMaintenance.title": {
-      "fallback": false,
-      "reviewed": true,
-      "text": "Schemat utrzymania uwagi wspomina {marker}"
     },
     "scribe.report.repositoryHealth.finding.title": {
       "fallback": false,
@@ -638,50 +648,25 @@ window.__SCRIBE_LOCALES__["pl-PL"] = {
       "reviewed": true,
       "text": "Dodaj lub zaktualizuj skoncentrowane testy dla zmienionych gałęzi w wierszach {startLine} do {endLine}, uruchom najbliższe sprawdzenia pakietów, a następnie zregeneruj raport o stanie repozytorium."
     },
-    "scribe.report.repositoryHealth.fixPlan.databaseSchema.step.inspect": {
+    "scribe.report.repositoryHealth.fixPlan.generic.step.inspect": {
       "fallback": false,
       "reviewed": true,
-      "text": "Przejrzyj deklarację schematu w wierszach {sourcePath} od {startLine} do {endLine} i zidentyfikuj podmioty, pola, indeksy i relacje, których dotyczy problem."
+      "text": "Sprawdź zakres źródeł w liniach {sourcePath} od {startLine} do {endLine}."
     },
-    "scribe.report.repositoryHealth.fixPlan.databaseSchema.step.track": {
+    "scribe.report.repositoryHealth.fixPlan.generic.step.resolve": {
       "fallback": false,
       "reviewed": true,
-      "text": "Przed zmianą modelu bazy danych połącz uwagi dotyczące schematu lub luki w cytowanym zakresie ze śledzoną migracją, planem usuwania lub problemem."
+      "text": "Zastosuj naprawę przy użyciu najmniejszej zmiany źródła, która rozwiązuje problem."
     },
-    "scribe.report.repositoryHealth.fixPlan.databaseSchema.step.validate": {
+    "scribe.report.repositoryHealth.fixPlan.generic.step.validate": {
       "fallback": false,
       "reviewed": true,
-      "text": "Po zmianie bazy danych, uruchom ponownie wyodrębnianie schematu i zregeneruj raport o kondycji repozytorium dla {sourcePath}."
-    },
-    "scribe.report.repositoryHealth.fixPlan.deadCode.step.inspect": {
-      "fallback": false,
-      "reviewed": true,
-      "text": "Przed usunięciem kodu sprawdź linie {sourcePath} od {startLine} do {endLine} pod kątem dynamicznych punktów wejścia, haków ramowych, wygenerowanych odwołań i zewnętrznych eksportów."
-    },
-    "scribe.report.repositoryHealth.fixPlan.deadCode.step.resolve": {
-      "fallback": false,
-      "reviewed": true,
-      "text": "Usuń nieosiągalny symbol z cytowanego zakresu lub dodaj brakujący dowód odniesienia, jeśli jest on celowo osiągalny w czasie wykonywania."
-    },
-    "scribe.report.repositoryHealth.fixPlan.deadCode.step.validate": {
-      "fallback": false,
-      "reviewed": true,
-      "text": "Ponownie uruchom analizę martwego kodu i stanu repozytorium dla {sourcePath}, aby potwierdzić, że odkrycie zniknęło bez wprowadzania nowych luk w osiągalności."
+      "text": "Przed opublikowaniem poprawki ponownie uruchom raport o stanie repozytorium i najbliższe testy na poziomie pakietu."
     },
     "scribe.report.repositoryHealth.fixPlan.scope": {
       "fallback": false,
       "reviewed": true,
       "text": "Zakres źródłowy docelowy: linie {sourcePath} od {startLine} do {endLine}."
-    },
-    "scribe.report.repositoryHealth.fixPlan.stepOne": {
-      "fallback": false,
-      "reviewed": true,
-      "text": "Przypnij lub odśwież pobranie repozytorium, a następnie ponownie uruchom polecenie health report dla tego samego manifestu raportu."
-    },
-    "scribe.report.repositoryHealth.fixPlan.stepTwo": {
-      "fallback": false,
-      "reviewed": true,
-      "text": "Dodaj obsługę ram, rozszerzając wykryte detektory zasobów i urządzenia zachowania zamiast ręcznie utrzymywanej logiki raportów."
     },
     "scribe.report.repositoryHealth.fixPlan.summary": {
       "fallback": false,

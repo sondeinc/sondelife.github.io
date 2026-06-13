@@ -348,6 +348,11 @@ window.__SCRIBE_LOCALES__["es-US"] = {
       "reviewed": true,
       "text": "Accesibilidad"
     },
+    "scribe.report.filter.option.aiSafety": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Seguridad de IA"
+    },
     "scribe.report.filter.option.analysisCompleteness": {
       "fallback": false,
       "reviewed": true,
@@ -388,6 +393,11 @@ window.__SCRIBE_LOCALES__["es-US"] = {
       "reviewed": true,
       "text": "Error"
     },
+    "scribe.report.filter.option.grammarParsing": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Gramática y análisis sintáctico"
+    },
     "scribe.report.filter.option.high": {
       "fallback": false,
       "reviewed": true,
@@ -418,6 +428,11 @@ window.__SCRIBE_LOCALES__["es-US"] = {
       "reviewed": true,
       "text": "Medio"
     },
+    "scribe.report.filter.option.metricsQuality": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Métricas y calidad"
+    },
     "scribe.report.filter.option.mexicoFintechReadiness": {
       "fallback": false,
       "reviewed": true,
@@ -438,6 +453,11 @@ window.__SCRIBE_LOCALES__["es-US"] = {
       "reviewed": true,
       "text": "Ingesta de perfiles OSCAL"
     },
+    "scribe.report.filter.option.projectIntelligence": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Inteligencia de proyecto"
+    },
     "scribe.report.filter.option.remediationReadiness": {
       "fallback": false,
       "reviewed": true,
@@ -452,6 +472,11 @@ window.__SCRIBE_LOCALES__["es-US"] = {
       "fallback": false,
       "reviewed": true,
       "text": "Inventario del repositorio"
+    },
+    "scribe.report.filter.option.security": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Seguridad"
     },
     "scribe.report.filter.option.sourceTrace": {
       "fallback": false,
@@ -672,16 +697,6 @@ window.__SCRIBE_LOCALES__["es-US"] = {
       "fallback": false,
       "reviewed": true,
       "text": "Los controles NIST requieren límites explícitos de artefactos compatibles"
-    },
-    "scribe.report.nistCoverage.fixPlan.stepOne": {
-      "fallback": false,
-      "reviewed": true,
-      "text": "Mantenga Resultados de Evaluación OSCAL, Markdown, HTML, evidencia fuente y JSON de resumen en el manifiesto público del paquete."
-    },
-    "scribe.report.nistCoverage.fixPlan.stepTwo": {
-      "fallback": false,
-      "reviewed": true,
-      "text": "Agregue SSP/SAP/SAR/POA&M solo después de que las pruebas de conformidad G11 demuestren cada forma de artefacto con datos compatibles."
     },
     "scribe.report.nistCoverage.fixPlan.summary": {
       "fallback": false,

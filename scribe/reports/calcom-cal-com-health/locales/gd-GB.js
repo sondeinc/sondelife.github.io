@@ -1,6 +1,6 @@
 window.__SCRIBE_LOCALES__ = window.__SCRIBE_LOCALES__ || {};
 window.__SCRIBE_LOCALES__["gd-GB"] = {
-  "fallbackCount": 18,
+  "fallbackCount": 16,
   "locale": "gd-GB",
   "messages": {
     "scribe.report.action.backToFinding": {
@@ -157,6 +157,11 @@ window.__SCRIBE_LOCALES__["gd-GB"] = {
       "fallback": false,
       "reviewed": true,
       "text": "Sonde Scribe alpha"
+    },
+    "scribe.report.capabilityTiers.title": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "comas ORM & databasis"
     },
     "scribe.report.complianceExample.source.summary": {
       "fallback": false,
@@ -373,6 +378,16 @@ window.__SCRIBE_LOCALES__["gd-GB"] = {
       "reviewed": true,
       "text": "Àrd"
     },
+    "scribe.report.filter.option.indiaCertInReadiness": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "India CERT-In readiness"
+    },
+    "scribe.report.filter.option.indiaDpdpReadiness": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Deiseilachd India DPDP"
+    },
     "scribe.report.filter.option.info": {
       "fallback": false,
       "reviewed": true,
@@ -402,6 +417,11 @@ window.__SCRIBE_LOCALES__["gd-GB"] = {
       "fallback": false,
       "reviewed": true,
       "text": "Còmhdach NIST FedRAMP"
+    },
+    "scribe.report.filter.option.oscalProfileIntake": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "curadh pròifile OSCAL"
     },
     "scribe.report.filter.option.remediationReadiness": {
       "fallback": false,
@@ -452,6 +472,21 @@ window.__SCRIBE_LOCALES__["gd-GB"] = {
       "fallback": false,
       "reviewed": true,
       "text": "Solas"
+    },
+    "scribe.report.overview.stat.accessibilityFindings": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "In-ghabhail"
+    },
+    "scribe.report.overview.stat.codeQualityFindings": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "lorgail càileachd còda"
+    },
+    "scribe.report.overview.stat.complianceFindings": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "lorgail buntainneach ri sìmplidhachd"
     },
     "scribe.report.overview.stat.evidenceScreenshots": {
       "fallback": false,
@@ -538,70 +573,35 @@ window.__SCRIBE_LOCALES__["gd-GB"] = {
       "reviewed": true,
       "text": "Co-chòrdadh mòr ann an {symbol}"
     },
-    "scribe.report.repositoryHealth.finding.complexity.title.high": {
-      "fallback": false,
-      "reviewed": true,
-      "text": "Co-chòrdadh àrd ann an {symbol}"
-    },
-    "scribe.report.repositoryHealth.finding.deadCode.criterion": {
-      "fallback": false,
-      "reviewed": true,
-      "text": "Tha poileasaidh còd-mhara airson slàinte an tasglann: feumar ath-bhreithneachadh a dhèanamh air gnìomhan nach eil ri fhaighinn agus às-mhalairt nach tèid a chleachdadh."
-    },
-    "scribe.report.repositoryHealth.finding.deadCode.fix": {
-      "fallback": false,
-      "reviewed": true,
-      "text": "Deimhnich nach e puing a-steach didseatach a th' anns an samhla, an uair sin thoir dheth no cuir ris an fianais tagraidh a tha a dhìth mus ath-ruith thu an aithris slàinte."
-    },
-    "scribe.report.repositoryHealth.finding.deadCode.unreachable.summary": {
-      "fallback": false,
-      "reviewed": true,
-      "text": "Chaidh {sourcePath}:{line} a mheas mar nach urrainnear ruighinn air leis an t-sond còd-mhara."
-    },
-    "scribe.report.repositoryHealth.finding.deadCode.unreachable.title": {
-      "fallback": false,
-      "reviewed": true,
-      "text": "Feidhm nach urrainn a ruighinn {symbol}"
-    },
-    "scribe.report.repositoryHealth.finding.deadCode.unusedExport.summary": {
-      "fallback": false,
-      "reviewed": true,
-      "text": "Chaidh {sourcePath}:{line} a sgrìobhadh mar às-mhalairt nach deach a chleachdadh leis an t-sond còd-mhara."
-    },
-    "scribe.report.repositoryHealth.finding.deadCode.unusedExport.title": {
-      "fallback": false,
-      "reviewed": true,
-      "text": "Siombail às-mhalairt {symbol} nach gabh a chleachdadh"
-    },
     "scribe.report.repositoryHealth.finding.publicSummary": {
       "fallback": false,
       "reviewed": true,
       "text": "Sgrùdadh air slàinte an stòrais phoilitigeach le fianais air a' chòmhdach a tha air a dhearbhadh le stòras."
     },
+    "scribe.report.repositoryHealth.finding.raw.criterion": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "{criterion}"
+    },
+    "scribe.report.repositoryHealth.finding.raw.fix": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "{recommendation}"
+    },
+    "scribe.report.repositoryHealth.finding.raw.summary": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "{summary}"
+    },
+    "scribe.report.repositoryHealth.finding.raw.title": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "{title}"
+    },
     "scribe.report.repositoryHealth.finding.runtime": {
       "fallback": false,
       "reviewed": true,
       "text": "Anailis static air slàinte an stòrais"
-    },
-    "scribe.report.repositoryHealth.finding.schemaMaintenance.criterion": {
-      "fallback": false,
-      "reviewed": true,
-      "text": "Slàinte sgeama slàinte an tasglann: cha bu chòir do dh'ainmean sgeama a bhith na h-aon chlàradh air obair leanaidh-obrach bunait-dàta."
-    },
-    "scribe.report.repositoryHealth.finding.schemaMaintenance.fix": {
-      "fallback": false,
-      "reviewed": true,
-      "text": "Ceangail an nota sgeama ri planadh gluasad, toirt air falbh, no cùis air a lorg, agus an uairsin ath-thòisich sgèile-focused probes às dèidh an t-atharrachadh bunait-dàta a thasgadh."
-    },
-    "scribe.report.repositoryHealth.finding.schemaMaintenance.summary": {
-      "fallback": false,
-      "reviewed": true,
-      "text": "Tha {sourcePath}:{line} a' gabhail a-steach nota {marker} sgeama a bu chòir a lorg mar leantainn-air-son bunait-dàta follaiseach."
-    },
-    "scribe.report.repositoryHealth.finding.schemaMaintenance.title": {
-      "fallback": false,
-      "reviewed": true,
-      "text": "Tha an nota coimhearsnachd sgeama a' bruidhinn air {marker}"
     },
     "scribe.report.repositoryHealth.finding.title": {
       "fallback": false,
@@ -623,50 +623,25 @@ window.__SCRIBE_LOCALES__["gd-GB"] = {
       "reviewed": true,
       "text": "Cuir ri no ùrachadh air deuchainnean air an do dh'atharraich na craobhan air na loidhnean {startLine} gu {endLine}, ruith na seicean pacaid as fhaisge, an uair sin ath-chruthaich aithris slàinte an stòrais."
     },
-    "scribe.report.repositoryHealth.fixPlan.databaseSchema.step.inspect": {
+    "scribe.report.repositoryHealth.fixPlan.generic.step.inspect": {
       "fallback": false,
       "reviewed": true,
-      "text": "Ath-bhreithnich dearbhachadh na sgeama air loidhne {sourcePath} {startLine} tro {endLine} is aithneaich na h-eileamaidean, raointean, inntrigidhean is ceanglaichean a tha fo bhuaidh."
+      "text": "Dearbhaich an raon-thòrsa a tha air a shònrachadh anns na loidhne {sourcePath} {startLine} tro {endLine}."
     },
-    "scribe.report.repositoryHealth.fixPlan.databaseSchema.step.track": {
+    "scribe.report.repositoryHealth.fixPlan.generic.step.resolve": {
       "fallback": false,
       "reviewed": true,
-      "text": "Ceangail an nota sgeama no an beàrn san raon a tha air a ghairm ri gluasad air a lorg, plana a' toirt air falbh, no cùis mus atharraich thu am modail bunait-dàta."
+      "text": "Cuir an leigheas an gnìomh le bhith a' cleachdadh an t-atharrachadh stòr as lugha a shocraicheas an lorg."
     },
-    "scribe.report.repositoryHealth.fixPlan.databaseSchema.step.validate": {
+    "scribe.report.repositoryHealth.fixPlan.generic.step.validate": {
       "fallback": false,
       "reviewed": true,
-      "text": "Às dèidh dha an stòr-dàta atharrachadh, ath-thòisich sgaradh na sgeama is ath-chruthaich aithris slàinte an stòrais airson {sourcePath}."
-    },
-    "scribe.report.repositoryHealth.fixPlan.deadCode.step.inspect": {
-      "fallback": false,
-      "reviewed": true,
-      "text": "Thoir sùil air loidhne {sourcePath} {startLine} tro {endLine} airson puingean a-steach dynamaigeach, cnapan-starra, tagaichean gineadh, agus às-mhalairt taobh a-muigh mus cuir thu còd air falbh."
-    },
-    "scribe.report.repositoryHealth.fixPlan.deadCode.step.resolve": {
-      "fallback": false,
-      "reviewed": true,
-      "text": "Thoir air falbh an samhla nach urrainn a ruighinn on raon a tha air a ghairm, no cuir an fianais tagraidh a tha a dhìth ris ma tha e ri ruighinn gu h-àbhaisteach aig àm ruith."
-    },
-    "scribe.report.repositoryHealth.fixPlan.deadCode.step.validate": {
-      "fallback": false,
-      "reviewed": true,
-      "text": "Ath-thòisich anailis còd marbh is slàinte an stòrais airson {sourcePath} gus dearbhadh gu bheil an lorg air falbh gun a bhith a' cur beàrnan ùra ri ruigsinneachd."
+      "text": "Ath-ruith aithris slàinte an stòrais is na deuchainnean aig ìre pacaid as fhaisge air an àite mus foillsich thu an rèiteachadh."
     },
     "scribe.report.repositoryHealth.fixPlan.scope": {
       "fallback": false,
       "reviewed": true,
       "text": "Raon-tìre an t-srutha-uidhe: {sourcePath} lines {startLine} through {endLine}."
-    },
-    "scribe.report.repositoryHealth.fixPlan.stepOne": {
-      "fallback": false,
-      "reviewed": true,
-      "text": "Pin no ath-nuadhachadh air sgèileadh an stòrais, an uair sin ath-ruith an àithne aithrisean slàinte an aghaidh an aon aithrisean-slàinte."
-    },
-    "scribe.report.repositoryHealth.fixPlan.stepTwo": {
-      "fallback": false,
-      "reviewed": true,
-      "text": "Cuir taic ri framework le bhith a' leigeil le luchd-sgrùdaidh acmhainnean a lorg agus figheagan giùlain a chur ris an àite loidsig aithrisean a tha air a chumail suas le làimh."
     },
     "scribe.report.repositoryHealth.fixPlan.summary": {
       "fallback": false,

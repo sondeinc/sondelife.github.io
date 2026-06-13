@@ -1,6 +1,6 @@
 window.__SCRIBE_LOCALES__ = window.__SCRIBE_LOCALES__ || {};
 window.__SCRIBE_LOCALES__["de-DE"] = {
-  "fallbackCount": 90,
+  "fallbackCount": 86,
   "locale": "de-DE",
   "messages": {
     "scribe.report.action.backToFinding": {
@@ -353,6 +353,11 @@ window.__SCRIBE_LOCALES__["de-DE"] = {
       "reviewed": true,
       "text": "Barrierefreiheit"
     },
+    "scribe.report.filter.option.aiSafety": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "KI-Sicherheit"
+    },
     "scribe.report.filter.option.analysisCompleteness": {
       "fallback": false,
       "reviewed": true,
@@ -393,6 +398,11 @@ window.__SCRIBE_LOCALES__["de-DE"] = {
       "reviewed": true,
       "text": "Fehler"
     },
+    "scribe.report.filter.option.grammarParsing": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Grammatik & Parsing"
+    },
     "scribe.report.filter.option.high": {
       "fallback": false,
       "reviewed": true,
@@ -423,6 +433,11 @@ window.__SCRIBE_LOCALES__["de-DE"] = {
       "reviewed": true,
       "text": "Mittel"
     },
+    "scribe.report.filter.option.metricsQuality": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Metriken & Qualität"
+    },
     "scribe.report.filter.option.mexicoFintechReadiness": {
       "fallback": false,
       "reviewed": true,
@@ -438,6 +453,16 @@ window.__SCRIBE_LOCALES__["de-DE"] = {
       "reviewed": true,
       "text": "NIST FedRAMP Coverage"
     },
+    "scribe.report.filter.option.oscalProfileIntake": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "OSCAL-Profil-Intake"
+    },
+    "scribe.report.filter.option.projectIntelligence": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Projektintelligenz"
+    },
     "scribe.report.filter.option.remediationReadiness": {
       "fallback": false,
       "reviewed": true,
@@ -452,6 +477,11 @@ window.__SCRIBE_LOCALES__["de-DE"] = {
       "fallback": false,
       "reviewed": true,
       "text": "Repository-Inventar"
+    },
+    "scribe.report.filter.option.security": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Sicherheit"
     },
     "scribe.report.filter.option.sourceTrace": {
       "fallback": false,
@@ -487,16 +517,6 @@ window.__SCRIBE_LOCALES__["de-DE"] = {
       "fallback": false,
       "reviewed": true,
       "text": "Öffentliche Befundzusammenfassung ohne geschützten Behebungsinhalt."
-    },
-    "scribe.report.fixPlan.missingAlt.stepOne": {
-      "fallback": false,
-      "reviewed": true,
-      "text": "Fügen Sie ein lokalisiertes accessibilityLabel hinzu, das den Zweck des Profilwarnbilds kommuniziert."
-    },
-    "scribe.report.fixPlan.missingAlt.stepTwo": {
-      "fallback": false,
-      "reviewed": true,
-      "text": "Führen Sie die WCAG-Quell- und gerenderten Berichtprüfungen erneut aus, bevor Sie die Behebung veröffentlichen."
     },
     "scribe.report.fixPlan.missingAlt.summary": {
       "fallback": false,
@@ -552,6 +572,21 @@ window.__SCRIBE_LOCALES__["de-DE"] = {
       "fallback": false,
       "reviewed": true,
       "text": "Barrierefreiheitsproblem"
+    },
+    "scribe.report.overview.stat.accessibilityFindings": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Befunde zur Barrierefreiheit"
+    },
+    "scribe.report.overview.stat.codeQualityFindings": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Befunde zur Codequalität"
+    },
+    "scribe.report.overview.stat.complianceFindings": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Compliance-bezogene Befunde"
     },
     "scribe.report.overview.stat.evidenceScreenshots": {
       "fallback": false,

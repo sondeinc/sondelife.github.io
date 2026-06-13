@@ -172,9 +172,6 @@ Raw intake JSON download: exports/oscal-profile-intake.json
 
 Review dangling imports, unknown controls, and unsupported package-family boundaries before promoting a Catalog/Profile package.
 
-1. Pin every external OSCAL source repository and scan Catalog/Profile files together so imports can resolve.
-2. Keep SSP/SAP/SAR/POA&M package generation fail-closed until human process evidence is supplied.
-
 Fix plan link: [Resolve OSCAL intake gaps](../fix-plans/finding-oscal-profile-intake/index.html#fix-plan-oscal-profile-intake)
 
 Public export note: this Markdown file is derived from public runtime manifest and search-source data only. Private receipt data and gated fix-plan prose are excluded.

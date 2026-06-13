@@ -258,8 +258,8 @@
   }
 })();</script>
   <script>(function() {
-  var locales = ["en-US","en-GB","en-CA","en-IN","fr-CA","cy-GB","gd-GB","ga-GB","sco-GB","kw-GB","es-US","de-DE","fr-FR","es-ES","it-IT","nl-NL","pl-PL","pt-PT","pt-BR","ro-RO","sv-SE","ko-KR","zh-CN","ja-JP","hi-IN"];
-  var lower = ["en-us","en-gb","en-ca","en-in","fr-ca","cy-gb","gd-gb","ga-gb","sco-gb","kw-gb","es-us","de-de","fr-fr","es-es","it-it","nl-nl","pl-pl","pt-pt","pt-br","ro-ro","sv-se","ko-kr","zh-cn","ja-jp","hi-in"];
+  var locales = ["en-US","en-GB","en-CA","en-IN","fr-CA","cy-GB","es-US","de-DE","fr-FR","es-ES","it-IT","nl-NL","pl-PL","pt-PT","pt-BR","ro-RO","sv-SE","ko-KR","zh-CN","ja-JP","hi-IN"];
+  var lower = ["en-us","en-gb","en-ca","en-in","fr-ca","cy-gb","es-us","de-de","fr-fr","es-es","it-it","nl-nl","pl-pl","pt-pt","pt-br","ro-ro","sv-se","ko-kr","zh-cn","ja-jp","hi-in"];
   var forbidden = ["pt"];
   var defaultRegions = {"en":"US","de":"DE","fr":"FR","es":"ES","it":"IT","ja":"JP","zh":"CN","ko":"KR","ar":"SA","pt":"PT","nl":"NL","sv":"SE","pl":"PL","ro":"RO","cy":"GB","gd":"GB","ga":"GB","sco":"GB","kw":"GB"};
   var inheritancePolicy = {"sourceLocale":"en-US","chains":[{"locale":"en-IN","inherits":["en-GB","en-US"],"syntheticEmptyCatalog":true},{"locale":"es-MX","inherits":["es-US","en-US"],"syntheticEmptyCatalog":false}]};
@@ -602,6 +602,15 @@
     </a>
     <div class="sl-nav-actions">
       <div class="sl-nav-links">
+        <details class="sl-nav-dropdown">
+          <summary data-msg-id="sondeLife.nav.solutions">Solutions</summary>
+          <div class="sl-nav-dropdown-menu">
+            <a href="../solutions/accessibility/" data-msg-id="sondeLife.solutions.subnav.accessibility">Accessibility</a>
+            <a href="../solutions/compliance/" data-msg-id="sondeLife.solutions.subnav.compliance">Compliance</a>
+            <a href="../solutions/ai-governance/" data-msg-id="sondeLife.solutions.subnav.aiGovernance">AI Governance</a>
+            <a href="../solutions/developer/" data-msg-id="sondeLife.solutions.subnav.developer">Developer</a>
+          </div>
+        </details>
         <a href="../overview/" data-msg-id="sondeLife.nav.overview">Overview</a>
         <a href="../explore/" data-msg-id="sondeLife.nav.features">Explore</a>
         <a href="../architecture/" data-msg-id="sondeLife.nav.architecture">Architecture</a>
@@ -674,7 +683,7 @@
     <summary class="settings-section-trigger" data-msg-id="settings.language.legend">Language</summary>
     <div class="settings-section-body">
       <input id="settings-language-search" class="settings-language-search" type="search" autocomplete="off" spellcheck="false" aria-label="Search languages" placeholder="Search languages" title="Search languages" data-sonde-locale-search>
-      <sonde-locale-picker locales="[&quot;en-US&quot;,&quot;en-GB&quot;,&quot;en-CA&quot;,&quot;en-IN&quot;,&quot;fr-CA&quot;,&quot;cy-GB&quot;,&quot;gd-GB&quot;,&quot;ga-GB&quot;,&quot;sco-GB&quot;,&quot;kw-GB&quot;,&quot;es-US&quot;,&quot;de-DE&quot;,&quot;fr-FR&quot;,&quot;es-ES&quot;,&quot;it-IT&quot;,&quot;nl-NL&quot;,&quot;pl-PL&quot;,&quot;pt-PT&quot;,&quot;pt-BR&quot;,&quot;ro-RO&quot;,&quot;sv-SE&quot;,&quot;ko-KR&quot;,&quot;zh-CN&quot;,&quot;ja-JP&quot;,&quot;hi-IN&quot;]" value="en-US" input-name="sonde-locale-picker-radio">
+      <sonde-locale-picker locales="[&quot;en-US&quot;,&quot;en-GB&quot;,&quot;en-CA&quot;,&quot;en-IN&quot;,&quot;fr-CA&quot;,&quot;cy-GB&quot;,&quot;es-US&quot;,&quot;de-DE&quot;,&quot;fr-FR&quot;,&quot;es-ES&quot;,&quot;it-IT&quot;,&quot;nl-NL&quot;,&quot;pl-PL&quot;,&quot;pt-PT&quot;,&quot;pt-BR&quot;,&quot;ro-RO&quot;,&quot;sv-SE&quot;,&quot;ko-KR&quot;,&quot;zh-CN&quot;,&quot;ja-JP&quot;,&quot;hi-IN&quot;]" value="en-US" input-name="sonde-locale-picker-radio">
 <label class="theme-toggle-option settings-language-option" dir="ltr" data-locale-search="en-US English (US) 🇺🇸 English United States">
   <input type="radio" name="sonde-locale-picker-radio" value="en-US" data-sonde-locale-picker checked>
   <div class="theme-preview locale-option-preview">
@@ -715,34 +724,6 @@
   <div class="theme-preview locale-option-preview">
     <span class="fi fi-gb-wls locale-option-flag" data-flag="🇬🇧" aria-hidden="true"></span>
     <span class="locale-option-label">Cymraeg</span>
-  </div>
-</label>
-<label class="theme-toggle-option settings-language-option" dir="ltr" data-locale-search="gd-GB Gàidhlig 🇬🇧 Scottish Gaelic United Kingdom">
-  <input type="radio" name="sonde-locale-picker-radio" value="gd-GB" data-sonde-locale-picker>
-  <div class="theme-preview locale-option-preview">
-    <span class="fi fi-gb-sct locale-option-flag" data-flag="🇬🇧" aria-hidden="true"></span>
-    <span class="locale-option-label">Gàidhlig</span>
-  </div>
-</label>
-<label class="theme-toggle-option settings-language-option" dir="ltr" data-locale-search="ga-GB Gaeilge 🇬🇧 Irish United Kingdom">
-  <input type="radio" name="sonde-locale-picker-radio" value="ga-GB" data-sonde-locale-picker>
-  <div class="theme-preview locale-option-preview">
-    <span class="fi fi-gb locale-option-flag" data-flag="🇬🇧" aria-hidden="true"></span>
-    <span class="locale-option-label">Gaeilge</span>
-  </div>
-</label>
-<label class="theme-toggle-option settings-language-option" dir="ltr" data-locale-search="sco-GB Scots 🇬🇧 Scots United Kingdom">
-  <input type="radio" name="sonde-locale-picker-radio" value="sco-GB" data-sonde-locale-picker>
-  <div class="theme-preview locale-option-preview">
-    <span class="fi fi-gb-sct locale-option-flag" data-flag="🇬🇧" aria-hidden="true"></span>
-    <span class="locale-option-label">Scots</span>
-  </div>
-</label>
-<label class="theme-toggle-option settings-language-option" dir="ltr" data-locale-search="kw-GB Kernewek 🇬🇧 Cornish United Kingdom">
-  <input type="radio" name="sonde-locale-picker-radio" value="kw-GB" data-sonde-locale-picker>
-  <div class="theme-preview locale-option-preview">
-    <span class="fi fi-gb locale-option-flag" data-flag="🇬🇧" aria-hidden="true"></span>
-    <span class="locale-option-label">Kernewek</span>
   </div>
 </label>
 <label class="theme-toggle-option settings-language-option" dir="ltr" data-locale-search="es-US Español (US) 🇺🇸 Spanish United States">
@@ -879,32 +860,57 @@
 </span>
     <div class="sl-hero-content">
       <p class="sl-eyebrow" data-msg-id="sondeLife.content.scribe.eyebrow">Scribe</p>
-      <h1 id="scribe-title" data-msg-id="sondeLife.content.scribe.title">Documentation that stays tied to evidence.</h1>
-      <p data-msg-id="sondeLife.content.scribe.lede">Scribe is the authored-output companion to Sonde analysis: inspired by <abbr class="sl-glossary" data-tooltip="John Kaster&#39;s 1988–1997 award-winning XBase systems analysis tool — Sonde&#39;s prior art and design ancestor.">TechWriter</abbr>, the multi-award-winning systems analysis and documentation tool created by one of the founders.</p>
+      <h1 id="scribe-title" data-msg-id="sondeLife.content.scribe.title">Proof from your code. Reports built by Scribe.</h1>
+      <p data-msg-id="sondeLife.content.scribe.lede">Every Sonde report comes from a real codebase analysis, verified against its evidence manifest. Scribe is the authored-output engine that produces them — turning deterministic findings into structured, reviewable documentation your auditors and buyers can act on.</p>
     </div>
+  </div>
+</section>
+<section class="sl-section sl-band sl-scribe-categories" aria-labelledby="scribe-categories">
+  <div class="sl-section-inner sonde-readable">
+    <h2 id="scribe-categories" data-msg-id="sondeLife.content.scribe.categoriesTitle">What these reports prove to buyers</h2>
+    <div class="sl-copy-grid">
+  <article class="sl-copy-item">
+    <h3 data-msg-id="sondeLife.content.scribe.categories.0.heading">Accessibility reports prove conformance</h3>
+    <p data-msg-id="sondeLife.content.scribe.categories.0.body">A Sonde accessibility report shows which WCAG success criteria your software meets, which it fails, and exactly where in your source code each failure originates. Auditors and procurement teams accept VPAT and OpenACR documents as the standard evidence of conformance — Sonde generates both from the same analysis that found the violations.</p>
+  </article>
+  <article class="sl-copy-item">
+    <h3 data-msg-id="sondeLife.content.scribe.categories.1.heading">Compliance reports prove control coverage</h3>
+    <p data-msg-id="sondeLife.content.scribe.categories.1.body">A Sonde compliance report maps your code's actual behavior to the specific controls required by SOC 2, PCI DSS, NIST 800-53, or FedRAMP. The OSCAL output is machine-readable for agency assessment tools. The HTML and PDF packages are auditor-ready for delivery without additional preparation.</p>
+  </article>
+  <article class="sl-copy-item">
+    <h3 data-msg-id="sondeLife.content.scribe.categories.2.heading">Security reports prove your attack surface</h3>
+    <p data-msg-id="sondeLife.content.scribe.categories.2.body">A Sonde security report traces sensitive data through your code to identify the specific paths where credentials, PII, or secrets can escape. Every finding includes the source file, the vulnerable call path, and a verifiable fix. Suppress nothing — close findings by fixing the structural issue and proving it with a re-run.</p>
+  </article>
+  <article class="sl-copy-item">
+    <h3 data-msg-id="sondeLife.content.scribe.categories.3.heading">Architecture reports prove structural health</h3>
+    <p data-msg-id="sondeLife.content.scribe.categories.3.body">A Sonde architecture report maps your dependency graph, calculates the blast radius of proposed changes, and quantifies tech debt at the module level. Fix plans include the specific patch and a verification step — apply it, rerun, and confirm the finding is gone because the structure actually improved.</p>
+  </article>
+</div>
+
   </div>
 </section>
 <section class="sl-section sl-band" aria-labelledby="scribe-sections">
   <div class="sl-section-inner sonde-readable">
-    <h2 id="scribe-sections" data-msg-id="sondeLife.content.scribe.sectionTitle">What Scribe produces</h2>
+    <h2 id="scribe-sections" data-msg-id="sondeLife.content.scribe.sectionTitle">How Scribe produces them</h2>
     <div class="sl-copy-grid">
-      <article class="sl-copy-item">
-        <h3 data-msg-id="sondeLife.content.scribe.cards.0.title">Authored narrative</h3>
-        <p data-msg-id="sondeLife.content.scribe.cards.0.body">Long-form technical explanations, product docs, methodology pages, and decision records can live beside generated evidence without becoming a separate website stack.</p>
-      </article>
-      <article class="sl-copy-item">
-        <h3 data-msg-id="sondeLife.content.scribe.cards.1.title">Interactive evidence</h3>
-        <p data-msg-id="sondeLife.content.scribe.cards.1.body">Scribe can produce richly interactive, educational, collaborative, shareable, and actionable output modes, not just static pages.</p>
-      </article>
-      <article class="sl-copy-item">
-        <h3 data-msg-id="sondeLife.content.scribe.cards.2.title">TechWriter lineage</h3>
-        <p data-msg-id="sondeLife.content.scribe.cards.2.body">Scribe carries forward <abbr class="sl-glossary" data-tooltip="John Kaster&#39;s 1988–1997 award-winning XBase systems analysis tool — Sonde&#39;s prior art and design ancestor.">TechWriter</abbr>'s focus on turning complex engineering systems into clear, structured, reviewable documentation.</p>
-      </article>
-      <article class="sl-copy-item">
-        <h3 data-msg-id="sondeLife.content.scribe.cards.3.title">Reviewable changes</h3>
-        <p data-msg-id="sondeLife.content.scribe.cards.3.body">The source diff shows what narrative changed, while the build proof shows what pages were emitted.</p>
-      </article>
-    </div>
+  <article class="sl-copy-item">
+    <h3 data-msg-id="sondeLife.content.scribe.cards.0.title">Authored narrative</h3>
+    <p data-msg-id="sondeLife.content.scribe.cards.0.body">Long-form technical explanations, product docs, methodology pages, and decision records can live beside generated evidence without becoming a separate website stack.</p>
+  </article>
+  <article class="sl-copy-item">
+    <h3 data-msg-id="sondeLife.content.scribe.cards.1.title">Interactive evidence</h3>
+    <p data-msg-id="sondeLife.content.scribe.cards.1.body">Scribe can produce richly interactive, educational, collaborative, shareable, and actionable output modes, not just static pages.</p>
+  </article>
+  <article class="sl-copy-item">
+    <h3 data-msg-id="sondeLife.content.scribe.cards.2.title">TechWriter lineage</h3>
+    <p data-msg-id="sondeLife.content.scribe.cards.2.body">Scribe carries forward <abbr class="sl-glossary" data-tooltip="John Kaster&#39;s 1988–1997 award-winning XBase systems analysis tool — Sonde&#39;s prior art and design ancestor.">TechWriter</abbr>'s focus on turning complex engineering systems into clear, structured, reviewable documentation.</p>
+  </article>
+  <article class="sl-copy-item">
+    <h3 data-msg-id="sondeLife.content.scribe.cards.3.title">Reviewable changes</h3>
+    <p data-msg-id="sondeLife.content.scribe.cards.3.body">The source diff shows what narrative changed, while the build proof shows what pages were emitted.</p>
+  </article>
+</div>
+
   </div>
 </section>
 <section class="sl-section" aria-labelledby="scribe-gallery">
@@ -1052,13 +1058,6 @@
         <span class="locale-option-label">Italiano (2)</span>
       </div>
     </label>
-    <label class="theme-toggle-option sonde-locale-select-option" dir="ltr" data-locale-search="kw-GB Kernewek 🇬🇧 Cornish United Kingdom">
-      <input type="radio" name="gallery-locale-filter" value="kw-GB" data-sonde-locale-select-option>
-      <div class="theme-preview locale-option-preview">
-        <span class="fi fi-gb locale-option-flag" data-flag="🇬🇧" aria-hidden="true"></span>
-        <span class="locale-option-label">Kernewek (2)</span>
-      </div>
-    </label>
     <label class="theme-toggle-option sonde-locale-select-option" dir="ltr" data-locale-search="nl-NL Nederlands 🇳🇱 Dutch Netherlands">
       <input type="radio" name="gallery-locale-filter" value="nl-NL" data-sonde-locale-select-option>
       <div class="theme-preview locale-option-preview">
@@ -1092,13 +1091,6 @@
       <div class="theme-preview locale-option-preview">
         <span class="fi fi-ro locale-option-flag" data-flag="🇷🇴" aria-hidden="true"></span>
         <span class="locale-option-label">Română (2)</span>
-      </div>
-    </label>
-    <label class="theme-toggle-option sonde-locale-select-option" dir="ltr" data-locale-search="sco-GB Scots 🇬🇧 Scots United Kingdom">
-      <input type="radio" name="gallery-locale-filter" value="sco-GB" data-sonde-locale-select-option>
-      <div class="theme-preview locale-option-preview">
-        <span class="fi fi-gb-sct locale-option-flag" data-flag="🇬🇧" aria-hidden="true"></span>
-        <span class="locale-option-label">Scots (2)</span>
       </div>
     </label>
     <label class="theme-toggle-option sonde-locale-select-option" dir="ltr" data-locale-search="sv-SE Svenska 🇸🇪 Swedish Sweden">
@@ -1153,259 +1145,252 @@
     </div>
     <script>
       // Mark the gallery as hydrating before the grid below paints, so the
-      // browser shows a loading spinner instead of a flash of every card
-      // (unpaginated) with controls that are not yet wired. Cleared by the
-      // gallery runtime after its first render(); a failsafe timeout reveals
-      // the cards if that script never runs (e.g. a load error).
-      (() => {
-        const controls = document.querySelector('[data-scribe-gallery-controls]');
-        if (!controls) return;
-        controls.setAttribute('data-gallery-hydrating', '');
-        setTimeout(() => controls.removeAttribute('data-gallery-hydrating'), 3000);
-      })();
+// browser shows a loading spinner instead of a flash of every card
+// (unpaginated) with controls that are not yet wired. Cleared by the
+// gallery runtime after its first render(); a failsafe timeout reveals
+// the cards if that script never runs (e.g. a load error).
+(() => {
+  const controls = document.querySelector('[data-scribe-gallery-controls]');
+  if (!controls) return;
+  controls.setAttribute('data-gallery-hydrating', '');
+  setTimeout(() => controls.removeAttribute('data-gallery-hydrating'), 3000);
+})();
+
     </script>
     <div class="sl-scribe-gallery-grid sl-scribe-gallery-grid-cols-3">
-      <article class="sl-gallery-card" data-scribe-gallery-example data-gallery-search-text="Cal.diy Repository Health Repository health report with source, package, build, framework, and schema evidence. repository-analysis health Repository Health en-US en-GB en-CA fr-CA en-IN cy-GB gd-GB ga-GB sco-GB kw-GB es-US es-MX de-DE fr-FR es-ES it-IT nl-NL pl-PL pt-PT pt-BR ro-RO sv-SE ko-KR zh-CN ja-JP hi-IN Português (Brasil) English (Canada) Français (Canada) 简体中文 Français Deutsch English (India) हिन्दी Italiano 日本語 Español (México) Nederlands Polski Português (Portugal) Română 한국어 Español (España) Svenska Cymraeg English (UK) Gaeilge Gàidhlig Kernewek Scots English (US) Español (US) universe Global Interactive HTML report HTML Markdown report Markdown" data-gallery-report-type="health" data-gallery-locale="|en-US|en-GB|en-CA|fr-CA|en-IN|cy-GB|gd-GB|ga-GB|sco-GB|kw-GB|es-US|es-MX|de-DE|fr-FR|es-ES|it-IT|nl-NL|pl-PL|pt-PT|pt-BR|ro-RO|sv-SE|ko-KR|zh-CN|ja-JP|hi-IN" data-gallery-jurisdiction="|universe" data-gallery-artifact-format="|HTML|Markdown">
-        <a class="sl-gallery-card-image-link" href="reports/calcom-cal-com-health/index.html" target="_blank" rel="noopener noreferrer" aria-label="Open report: Cal.diy Repository Health">
-          <img class="sl-gallery-card-image" src="reports/calcom-cal-com-health/gallery-card.svg" alt="Repository health report gallery preview for Cal.com." loading="lazy" width="1200" height="675">
-        </a>
-        <p class="sl-gallery-card-action"><a class="sl-action sl-action-primary" href="reports/calcom-cal-com-health/index.html" target="_blank" rel="noopener noreferrer" aria-label="Open report: Cal.diy Repository Health" data-msg-id="sondeLife.content.scribe.galleryReportAction">Open report</a></p>
-        <p class="sl-gallery-brand">Repository Health</p>
-        <h3>Cal.diy Repository Health</h3>
-        <p>Repository health report with source, package, build, framework, and schema evidence.</p>
-        <div class="sl-gallery-card-meta">
-          <div class="sl-gallery-locale-links" aria-label="Languages"><a class="sl-gallery-locale-link sl-gallery-locale-link-edge-start" href="reports/calcom-cal-com-health/?scribe_locale=pt-BR" target="_blank" rel="noopener noreferrer" aria-label="Português (Brasil)" data-tooltip="Português (Brasil)">
-              <span class="fi fi-br locale-option-flag" data-flag="🇧🇷" aria-hidden="true"></span>
-              <span class="sl-visually-hidden">Português (Brasil)</span>
-            </a><a class="sl-gallery-locale-link" href="reports/calcom-cal-com-health/?scribe_locale=en-CA" target="_blank" rel="noopener noreferrer" aria-label="English (Canada)" data-tooltip="English (Canada)">
-              <span class="fi fi-ca locale-option-flag" data-flag="🇨🇦" aria-hidden="true"></span>
-              <span class="sl-visually-hidden">English (Canada)</span>
-            </a><a class="sl-gallery-locale-link" href="reports/calcom-cal-com-health/?scribe_locale=fr-CA" target="_blank" rel="noopener noreferrer" aria-label="Français (Canada)" data-tooltip="Français (Canada)">
-              <span class="fi fi-ca locale-option-flag" data-flag="🇨🇦" aria-hidden="true"></span>
-              <span class="sl-visually-hidden">Français (Canada)</span>
-            </a><a class="sl-gallery-locale-link" href="reports/calcom-cal-com-health/?scribe_locale=zh-CN" target="_blank" rel="noopener noreferrer" aria-label="简体中文" data-tooltip="简体中文">
-              <span class="fi fi-cn locale-option-flag" data-flag="🇨🇳" aria-hidden="true"></span>
-              <span class="sl-visually-hidden">简体中文</span>
-            </a><a class="sl-gallery-locale-link" href="reports/calcom-cal-com-health/?scribe_locale=fr-FR" target="_blank" rel="noopener noreferrer" aria-label="Français" data-tooltip="Français">
-              <span class="fi fi-fr locale-option-flag" data-flag="🇫🇷" aria-hidden="true"></span>
-              <span class="sl-visually-hidden">Français</span>
-            </a><a class="sl-gallery-locale-link" href="reports/calcom-cal-com-health/?scribe_locale=de-DE" target="_blank" rel="noopener noreferrer" aria-label="Deutsch" data-tooltip="Deutsch">
-              <span class="fi fi-de locale-option-flag" data-flag="🇩🇪" aria-hidden="true"></span>
-              <span class="sl-visually-hidden">Deutsch</span>
-            </a><a class="sl-gallery-locale-link" href="reports/calcom-cal-com-health/?scribe_locale=en-IN" target="_blank" rel="noopener noreferrer" aria-label="English (India)" data-tooltip="English (India)">
-              <span class="fi fi-in locale-option-flag" data-flag="🇮🇳" aria-hidden="true"></span>
-              <span class="sl-visually-hidden">English (India)</span>
-            </a><a class="sl-gallery-locale-link sl-gallery-locale-link-edge-end" href="reports/calcom-cal-com-health/?scribe_locale=hi-IN" target="_blank" rel="noopener noreferrer" aria-label="हिन्दी" data-tooltip="हिन्दी">
-              <span class="fi fi-in locale-option-flag" data-flag="🇮🇳" aria-hidden="true"></span>
-              <span class="sl-visually-hidden">हिन्दी</span>
-            </a><a class="sl-gallery-locale-link sl-gallery-locale-link-edge-start" href="reports/calcom-cal-com-health/?scribe_locale=it-IT" target="_blank" rel="noopener noreferrer" aria-label="Italiano" data-tooltip="Italiano">
-              <span class="fi fi-it locale-option-flag" data-flag="🇮🇹" aria-hidden="true"></span>
-              <span class="sl-visually-hidden">Italiano</span>
-            </a><a class="sl-gallery-locale-link" href="reports/calcom-cal-com-health/?scribe_locale=ja-JP" target="_blank" rel="noopener noreferrer" aria-label="日本語" data-tooltip="日本語">
-              <span class="fi fi-jp locale-option-flag" data-flag="🇯🇵" aria-hidden="true"></span>
-              <span class="sl-visually-hidden">日本語</span>
-            </a><a class="sl-gallery-locale-link" href="reports/calcom-cal-com-health/?scribe_locale=es-MX" target="_blank" rel="noopener noreferrer" aria-label="Español (México)" data-tooltip="Español (México)">
-              <span class="fi fi-mx locale-option-flag" data-flag="🇲🇽" aria-hidden="true"></span>
-              <span class="sl-visually-hidden">Español (México)</span>
-            </a><a class="sl-gallery-locale-link" href="reports/calcom-cal-com-health/?scribe_locale=nl-NL" target="_blank" rel="noopener noreferrer" aria-label="Nederlands" data-tooltip="Nederlands">
-              <span class="fi fi-nl locale-option-flag" data-flag="🇳🇱" aria-hidden="true"></span>
-              <span class="sl-visually-hidden">Nederlands</span>
-            </a><a class="sl-gallery-locale-link" href="reports/calcom-cal-com-health/?scribe_locale=pl-PL" target="_blank" rel="noopener noreferrer" aria-label="Polski" data-tooltip="Polski">
-              <span class="fi fi-pl locale-option-flag" data-flag="🇵🇱" aria-hidden="true"></span>
-              <span class="sl-visually-hidden">Polski</span>
-            </a><a class="sl-gallery-locale-link" href="reports/calcom-cal-com-health/?scribe_locale=pt-PT" target="_blank" rel="noopener noreferrer" aria-label="Português (Portugal)" data-tooltip="Português (Portugal)">
-              <span class="fi fi-pt locale-option-flag" data-flag="🇵🇹" aria-hidden="true"></span>
-              <span class="sl-visually-hidden">Português (Portugal)</span>
-            </a><a class="sl-gallery-locale-link" href="reports/calcom-cal-com-health/?scribe_locale=ro-RO" target="_blank" rel="noopener noreferrer" aria-label="Română" data-tooltip="Română">
-              <span class="fi fi-ro locale-option-flag" data-flag="🇷🇴" aria-hidden="true"></span>
-              <span class="sl-visually-hidden">Română</span>
-            </a><a class="sl-gallery-locale-link sl-gallery-locale-link-edge-end" href="reports/calcom-cal-com-health/?scribe_locale=ko-KR" target="_blank" rel="noopener noreferrer" aria-label="한국어" data-tooltip="한국어">
-              <span class="fi fi-kr locale-option-flag" data-flag="🇰🇷" aria-hidden="true"></span>
-              <span class="sl-visually-hidden">한국어</span>
-            </a><a class="sl-gallery-locale-link sl-gallery-locale-link-edge-start" href="reports/calcom-cal-com-health/?scribe_locale=es-ES" target="_blank" rel="noopener noreferrer" aria-label="Español (España)" data-tooltip="Español (España)">
-              <span class="fi fi-es locale-option-flag" data-flag="🇪🇸" aria-hidden="true"></span>
-              <span class="sl-visually-hidden">Español (España)</span>
-            </a><a class="sl-gallery-locale-link" href="reports/calcom-cal-com-health/?scribe_locale=sv-SE" target="_blank" rel="noopener noreferrer" aria-label="Svenska" data-tooltip="Svenska">
-              <span class="fi fi-se locale-option-flag" data-flag="🇸🇪" aria-hidden="true"></span>
-              <span class="sl-visually-hidden">Svenska</span>
-            </a><a class="sl-gallery-locale-link" href="reports/calcom-cal-com-health/?scribe_locale=cy-GB" target="_blank" rel="noopener noreferrer" aria-label="Cymraeg" data-tooltip="Cymraeg">
-              <span class="fi fi-gb-wls locale-option-flag" data-flag="🇬🇧" aria-hidden="true"></span>
-              <span class="sl-visually-hidden">Cymraeg</span>
-            </a><a class="sl-gallery-locale-link" href="reports/calcom-cal-com-health/?scribe_locale=en-GB" target="_blank" rel="noopener noreferrer" aria-label="English (UK)" data-tooltip="English (UK)">
-              <span class="fi fi-gb locale-option-flag" data-flag="🇬🇧" aria-hidden="true"></span>
-              <span class="sl-visually-hidden">English (UK)</span>
-            </a><a class="sl-gallery-locale-link" href="reports/calcom-cal-com-health/?scribe_locale=ga-GB" target="_blank" rel="noopener noreferrer" aria-label="Gaeilge" data-tooltip="Gaeilge">
-              <span class="fi fi-gb locale-option-flag" data-flag="🇬🇧" aria-hidden="true"></span>
-              <span class="sl-visually-hidden">Gaeilge</span>
-            </a><a class="sl-gallery-locale-link" href="reports/calcom-cal-com-health/?scribe_locale=gd-GB" target="_blank" rel="noopener noreferrer" aria-label="Gàidhlig" data-tooltip="Gàidhlig">
-              <span class="fi fi-gb-sct locale-option-flag" data-flag="🇬🇧" aria-hidden="true"></span>
-              <span class="sl-visually-hidden">Gàidhlig</span>
-            </a><a class="sl-gallery-locale-link" href="reports/calcom-cal-com-health/?scribe_locale=kw-GB" target="_blank" rel="noopener noreferrer" aria-label="Kernewek" data-tooltip="Kernewek">
-              <span class="fi fi-gb locale-option-flag" data-flag="🇬🇧" aria-hidden="true"></span>
-              <span class="sl-visually-hidden">Kernewek</span>
-            </a><a class="sl-gallery-locale-link sl-gallery-locale-link-edge-end" href="reports/calcom-cal-com-health/?scribe_locale=sco-GB" target="_blank" rel="noopener noreferrer" aria-label="Scots" data-tooltip="Scots">
-              <span class="fi fi-gb-sct locale-option-flag" data-flag="🇬🇧" aria-hidden="true"></span>
-              <span class="sl-visually-hidden">Scots</span>
-            </a><a class="sl-gallery-locale-link sl-gallery-locale-link-edge-start" href="reports/calcom-cal-com-health/?scribe_locale=en-US" target="_blank" rel="noopener noreferrer" aria-label="English (US)" data-tooltip="English (US)">
-              <span class="fi fi-us locale-option-flag" data-flag="🇺🇸" aria-hidden="true"></span>
-              <span class="sl-visually-hidden">English (US)</span>
-            </a><a class="sl-gallery-locale-link" href="reports/calcom-cal-com-health/?scribe_locale=es-US" target="_blank" rel="noopener noreferrer" aria-label="Español (US)" data-tooltip="Español (US)">
-              <span class="fi fi-us locale-option-flag" data-flag="🇺🇸" aria-hidden="true"></span>
-              <span class="sl-visually-hidden">Español (US)</span>
-            </a>
-          </div>
-        </div>
-        <ul class="sl-gallery-downloads">
-          <li><a href="reports/calcom-cal-com-health/index.html" target="_blank" rel="noopener noreferrer">Interactive HTML report</a></li>
-          <li><a href="reports/calcom-cal-com-health/exports/report.md" target="_blank" rel="noopener noreferrer" download type="text/markdown; charset=utf-8">Markdown report</a></li>
-        </ul>
-      </article>
+      <article class="sl-gallery-card" data-scribe-gallery-example data-gallery-search-text="Cal.diy Repository Health Repository health report with source, package, build, framework, and schema evidence. repository-analysis health Repository Health en-US en-GB en-CA fr-CA en-IN cy-GB gd-GB ga-GB es-US es-MX de-DE fr-FR es-ES it-IT nl-NL pl-PL pt-PT pt-BR ro-RO sv-SE ko-KR zh-CN ja-JP hi-IN Português (Brasil) English (Canada) Français (Canada) 简体中文 Français Deutsch English (India) हिन्दी Italiano 日本語 Español (México) Nederlands Polski Português (Portugal) Română 한국어 Español (España) Svenska Cymraeg English (UK) Gaeilge Gàidhlig English (US) Español (US) universe Global Interactive HTML report HTML Markdown report Markdown" data-gallery-report-type="health" data-gallery-locale="|en-US|en-GB|en-CA|fr-CA|en-IN|cy-GB|gd-GB|ga-GB|es-US|es-MX|de-DE|fr-FR|es-ES|it-IT|nl-NL|pl-PL|pt-PT|pt-BR|ro-RO|sv-SE|ko-KR|zh-CN|ja-JP|hi-IN" data-gallery-jurisdiction="|universe" data-gallery-artifact-format="|HTML|Markdown">
+  <a class="sl-gallery-card-image-link" href="/scribe/reports/calcom-cal-com-health/index.html" target="_blank" rel="noopener noreferrer" aria-label="Open report: Cal.diy Repository Health">
+    <img class="sl-gallery-card-image" src="/scribe/reports/calcom-cal-com-health/gallery-card.svg" alt="Repository health report gallery preview for Cal.com." loading="lazy" width="1200" height="675">
+  </a>
+  <p class="sl-gallery-card-action"><a class="sl-action sl-action-primary" href="/scribe/reports/calcom-cal-com-health/index.html" target="_blank" rel="noopener noreferrer" aria-label="Open report: Cal.diy Repository Health" data-msg-id="sondeLife.content.scribe.galleryReportAction">Open report</a></p>
+  <p class="sl-gallery-brand">Repository Health</p>
+  <h3>Cal.diy Repository Health</h3>
+  <p>Repository health report with source, package, build, framework, and schema evidence.</p>
+  <div class="sl-gallery-card-meta">
+    <div class="sl-gallery-locale-links" aria-label="Languages"><a class="sl-gallery-locale-link sl-gallery-locale-link-edge-start" href="/scribe/reports/calcom-cal-com-health/?scribe_locale=pt-BR" target="_blank" rel="noopener noreferrer" aria-label="Português (Brasil)" data-tooltip="Português (Brasil)">
+        <span class="fi fi-br locale-option-flag" data-flag="🇧🇷" aria-hidden="true"></span>
+        <span class="sl-visually-hidden">Português (Brasil)</span>
+      </a><a class="sl-gallery-locale-link" href="/scribe/reports/calcom-cal-com-health/?scribe_locale=en-CA" target="_blank" rel="noopener noreferrer" aria-label="English (Canada)" data-tooltip="English (Canada)">
+        <span class="fi fi-ca locale-option-flag" data-flag="🇨🇦" aria-hidden="true"></span>
+        <span class="sl-visually-hidden">English (Canada)</span>
+      </a><a class="sl-gallery-locale-link" href="/scribe/reports/calcom-cal-com-health/?scribe_locale=fr-CA" target="_blank" rel="noopener noreferrer" aria-label="Français (Canada)" data-tooltip="Français (Canada)">
+        <span class="fi fi-ca locale-option-flag" data-flag="🇨🇦" aria-hidden="true"></span>
+        <span class="sl-visually-hidden">Français (Canada)</span>
+      </a><a class="sl-gallery-locale-link" href="/scribe/reports/calcom-cal-com-health/?scribe_locale=zh-CN" target="_blank" rel="noopener noreferrer" aria-label="简体中文" data-tooltip="简体中文">
+        <span class="fi fi-cn locale-option-flag" data-flag="🇨🇳" aria-hidden="true"></span>
+        <span class="sl-visually-hidden">简体中文</span>
+      </a><a class="sl-gallery-locale-link" href="/scribe/reports/calcom-cal-com-health/?scribe_locale=fr-FR" target="_blank" rel="noopener noreferrer" aria-label="Français" data-tooltip="Français">
+        <span class="fi fi-fr locale-option-flag" data-flag="🇫🇷" aria-hidden="true"></span>
+        <span class="sl-visually-hidden">Français</span>
+      </a><a class="sl-gallery-locale-link" href="/scribe/reports/calcom-cal-com-health/?scribe_locale=de-DE" target="_blank" rel="noopener noreferrer" aria-label="Deutsch" data-tooltip="Deutsch">
+        <span class="fi fi-de locale-option-flag" data-flag="🇩🇪" aria-hidden="true"></span>
+        <span class="sl-visually-hidden">Deutsch</span>
+      </a><a class="sl-gallery-locale-link" href="/scribe/reports/calcom-cal-com-health/?scribe_locale=en-IN" target="_blank" rel="noopener noreferrer" aria-label="English (India)" data-tooltip="English (India)">
+        <span class="fi fi-in locale-option-flag" data-flag="🇮🇳" aria-hidden="true"></span>
+        <span class="sl-visually-hidden">English (India)</span>
+      </a><a class="sl-gallery-locale-link sl-gallery-locale-link-edge-end" href="/scribe/reports/calcom-cal-com-health/?scribe_locale=hi-IN" target="_blank" rel="noopener noreferrer" aria-label="हिन्दी" data-tooltip="हिन्दी">
+        <span class="fi fi-in locale-option-flag" data-flag="🇮🇳" aria-hidden="true"></span>
+        <span class="sl-visually-hidden">हिन्दी</span>
+      </a><a class="sl-gallery-locale-link sl-gallery-locale-link-edge-start" href="/scribe/reports/calcom-cal-com-health/?scribe_locale=it-IT" target="_blank" rel="noopener noreferrer" aria-label="Italiano" data-tooltip="Italiano">
+        <span class="fi fi-it locale-option-flag" data-flag="🇮🇹" aria-hidden="true"></span>
+        <span class="sl-visually-hidden">Italiano</span>
+      </a><a class="sl-gallery-locale-link" href="/scribe/reports/calcom-cal-com-health/?scribe_locale=ja-JP" target="_blank" rel="noopener noreferrer" aria-label="日本語" data-tooltip="日本語">
+        <span class="fi fi-jp locale-option-flag" data-flag="🇯🇵" aria-hidden="true"></span>
+        <span class="sl-visually-hidden">日本語</span>
+      </a><a class="sl-gallery-locale-link" href="/scribe/reports/calcom-cal-com-health/?scribe_locale=es-MX" target="_blank" rel="noopener noreferrer" aria-label="Español (México)" data-tooltip="Español (México)">
+        <span class="fi fi-mx locale-option-flag" data-flag="🇲🇽" aria-hidden="true"></span>
+        <span class="sl-visually-hidden">Español (México)</span>
+      </a><a class="sl-gallery-locale-link" href="/scribe/reports/calcom-cal-com-health/?scribe_locale=nl-NL" target="_blank" rel="noopener noreferrer" aria-label="Nederlands" data-tooltip="Nederlands">
+        <span class="fi fi-nl locale-option-flag" data-flag="🇳🇱" aria-hidden="true"></span>
+        <span class="sl-visually-hidden">Nederlands</span>
+      </a><a class="sl-gallery-locale-link" href="/scribe/reports/calcom-cal-com-health/?scribe_locale=pl-PL" target="_blank" rel="noopener noreferrer" aria-label="Polski" data-tooltip="Polski">
+        <span class="fi fi-pl locale-option-flag" data-flag="🇵🇱" aria-hidden="true"></span>
+        <span class="sl-visually-hidden">Polski</span>
+      </a><a class="sl-gallery-locale-link" href="/scribe/reports/calcom-cal-com-health/?scribe_locale=pt-PT" target="_blank" rel="noopener noreferrer" aria-label="Português (Portugal)" data-tooltip="Português (Portugal)">
+        <span class="fi fi-pt locale-option-flag" data-flag="🇵🇹" aria-hidden="true"></span>
+        <span class="sl-visually-hidden">Português (Portugal)</span>
+      </a><a class="sl-gallery-locale-link" href="/scribe/reports/calcom-cal-com-health/?scribe_locale=ro-RO" target="_blank" rel="noopener noreferrer" aria-label="Română" data-tooltip="Română">
+        <span class="fi fi-ro locale-option-flag" data-flag="🇷🇴" aria-hidden="true"></span>
+        <span class="sl-visually-hidden">Română</span>
+      </a><a class="sl-gallery-locale-link sl-gallery-locale-link-edge-end" href="/scribe/reports/calcom-cal-com-health/?scribe_locale=ko-KR" target="_blank" rel="noopener noreferrer" aria-label="한국어" data-tooltip="한국어">
+        <span class="fi fi-kr locale-option-flag" data-flag="🇰🇷" aria-hidden="true"></span>
+        <span class="sl-visually-hidden">한국어</span>
+      </a><a class="sl-gallery-locale-link sl-gallery-locale-link-edge-start" href="/scribe/reports/calcom-cal-com-health/?scribe_locale=es-ES" target="_blank" rel="noopener noreferrer" aria-label="Español (España)" data-tooltip="Español (España)">
+        <span class="fi fi-es locale-option-flag" data-flag="🇪🇸" aria-hidden="true"></span>
+        <span class="sl-visually-hidden">Español (España)</span>
+      </a><a class="sl-gallery-locale-link" href="/scribe/reports/calcom-cal-com-health/?scribe_locale=sv-SE" target="_blank" rel="noopener noreferrer" aria-label="Svenska" data-tooltip="Svenska">
+        <span class="fi fi-se locale-option-flag" data-flag="🇸🇪" aria-hidden="true"></span>
+        <span class="sl-visually-hidden">Svenska</span>
+      </a><a class="sl-gallery-locale-link" href="/scribe/reports/calcom-cal-com-health/?scribe_locale=cy-GB" target="_blank" rel="noopener noreferrer" aria-label="Cymraeg" data-tooltip="Cymraeg">
+        <span class="fi fi-gb-wls locale-option-flag" data-flag="🇬🇧" aria-hidden="true"></span>
+        <span class="sl-visually-hidden">Cymraeg</span>
+      </a><a class="sl-gallery-locale-link" href="/scribe/reports/calcom-cal-com-health/?scribe_locale=en-GB" target="_blank" rel="noopener noreferrer" aria-label="English (UK)" data-tooltip="English (UK)">
+        <span class="fi fi-gb locale-option-flag" data-flag="🇬🇧" aria-hidden="true"></span>
+        <span class="sl-visually-hidden">English (UK)</span>
+      </a><a class="sl-gallery-locale-link" href="/scribe/reports/calcom-cal-com-health/?scribe_locale=ga-GB" target="_blank" rel="noopener noreferrer" aria-label="Gaeilge" data-tooltip="Gaeilge">
+        <span class="fi fi-gb locale-option-flag" data-flag="🇬🇧" aria-hidden="true"></span>
+        <span class="sl-visually-hidden">Gaeilge</span>
+      </a><a class="sl-gallery-locale-link" href="/scribe/reports/calcom-cal-com-health/?scribe_locale=gd-GB" target="_blank" rel="noopener noreferrer" aria-label="Gàidhlig" data-tooltip="Gàidhlig">
+        <span class="fi fi-gb-sct locale-option-flag" data-flag="🇬🇧" aria-hidden="true"></span>
+        <span class="sl-visually-hidden">Gàidhlig</span>
+      </a><a class="sl-gallery-locale-link" href="/scribe/reports/calcom-cal-com-health/?scribe_locale=en-US" target="_blank" rel="noopener noreferrer" aria-label="English (US)" data-tooltip="English (US)">
+        <span class="fi fi-us locale-option-flag" data-flag="🇺🇸" aria-hidden="true"></span>
+        <span class="sl-visually-hidden">English (US)</span>
+      </a><a class="sl-gallery-locale-link sl-gallery-locale-link-edge-end" href="/scribe/reports/calcom-cal-com-health/?scribe_locale=es-US" target="_blank" rel="noopener noreferrer" aria-label="Español (US)" data-tooltip="Español (US)">
+        <span class="fi fi-us locale-option-flag" data-flag="🇺🇸" aria-hidden="true"></span>
+        <span class="sl-visually-hidden">Español (US)</span>
+      </a>
+    </div>
+  </div>
+  <ul class="sl-gallery-downloads">
+    <li><a href="/scribe/reports/calcom-cal-com-health/index.html" target="_blank" rel="noopener noreferrer">Interactive HTML report</a></li>
+    <li><a href="/scribe/reports/calcom-cal-com-health/exports/report.md" target="_blank" rel="noopener noreferrer" download type="text/markdown; charset=utf-8">Markdown report</a></li>
+  </ul>
+</article>
+
       <article class="sl-gallery-card" data-scribe-gallery-example data-gallery-search-text="FedRAMP Rev 5 OSCAL Profile Intake 22 Profile artifact(s), 23 Catalog artifact(s), and 22 resolved import link(s) were prepared for report use. compliance oscal-profile-intake OSCAL/FedRAMP en-US es-US English (US) Español (US) us United States Interactive HTML report HTML OSCAL Catalog/Profile intake JSON JSON OSCAL Markdown report Markdown" data-gallery-report-type="oscal-profile-intake" data-gallery-locale="|en-US|es-US" data-gallery-jurisdiction="|us" data-gallery-artifact-format="|HTML|JSON|Markdown">
-        <a class="sl-gallery-card-image-link" href="reports/fedramp-rev5-profile-intake/index.html" target="_blank" rel="noopener noreferrer" aria-label="Open report: FedRAMP Rev 5 OSCAL Profile Intake">
-          <img class="sl-gallery-card-image" src="reports/fedramp-rev5-profile-intake/gallery-card.svg" alt="OSCAL profile intake report preview." loading="lazy" width="1200" height="675">
-        </a>
-        <p class="sl-gallery-card-action"><a class="sl-action sl-action-primary" href="reports/fedramp-rev5-profile-intake/index.html" target="_blank" rel="noopener noreferrer" aria-label="Open report: FedRAMP Rev 5 OSCAL Profile Intake" data-msg-id="sondeLife.content.scribe.galleryReportAction">Open report</a></p>
-        <p class="sl-gallery-brand">OSCAL/FedRAMP</p>
-        <h3>FedRAMP Rev 5 OSCAL Profile Intake</h3>
-        <p>22 Profile artifact(s), 23 Catalog artifact(s), and 22 resolved import link(s) were prepared for report use.</p>
-        <div class="sl-gallery-card-meta">
-          <div class="sl-gallery-locale-links" aria-label="Languages"><a class="sl-gallery-locale-link sl-gallery-locale-link-edge-start" href="reports/fedramp-rev5-profile-intake/?scribe_locale=en-US" target="_blank" rel="noopener noreferrer" aria-label="English (US)" data-tooltip="English (US)">
-              <span class="fi fi-us locale-option-flag" data-flag="🇺🇸" aria-hidden="true"></span>
-              <span class="sl-visually-hidden">English (US)</span>
-            </a><a class="sl-gallery-locale-link" href="reports/fedramp-rev5-profile-intake/?scribe_locale=es-US" target="_blank" rel="noopener noreferrer" aria-label="Español (US)" data-tooltip="Español (US)">
-              <span class="fi fi-us locale-option-flag" data-flag="🇺🇸" aria-hidden="true"></span>
-              <span class="sl-visually-hidden">Español (US)</span>
-            </a>
-          </div>
-        </div>
-        <ul class="sl-gallery-downloads">
-          <li><a href="reports/fedramp-rev5-profile-intake/index.html" target="_blank" rel="noopener noreferrer">Interactive HTML report</a></li>
-          <li><a href="reports/fedramp-rev5-profile-intake/exports/oscal-profile-intake.json" target="_blank" rel="noopener noreferrer">OSCAL Catalog/Profile intake JSON</a></li>
-          <li><a href="reports/fedramp-rev5-profile-intake/exports/report.md" target="_blank" rel="noopener noreferrer" download type="text/markdown; charset=utf-8">Markdown report</a></li>
-        </ul>
-      </article>
+  <a class="sl-gallery-card-image-link" href="/scribe/reports/fedramp-rev5-profile-intake/index.html" target="_blank" rel="noopener noreferrer" aria-label="Open report: FedRAMP Rev 5 OSCAL Profile Intake">
+    <img class="sl-gallery-card-image" src="/scribe/reports/fedramp-rev5-profile-intake/gallery-card.svg" alt="OSCAL profile intake report preview." loading="lazy" width="1200" height="675">
+  </a>
+  <p class="sl-gallery-card-action"><a class="sl-action sl-action-primary" href="/scribe/reports/fedramp-rev5-profile-intake/index.html" target="_blank" rel="noopener noreferrer" aria-label="Open report: FedRAMP Rev 5 OSCAL Profile Intake" data-msg-id="sondeLife.content.scribe.galleryReportAction">Open report</a></p>
+  <p class="sl-gallery-brand">OSCAL/FedRAMP</p>
+  <h3>FedRAMP Rev 5 OSCAL Profile Intake</h3>
+  <p>22 Profile artifact(s), 23 Catalog artifact(s), and 22 resolved import link(s) were prepared for report use.</p>
+  <div class="sl-gallery-card-meta">
+    <div class="sl-gallery-locale-links" aria-label="Languages"><a class="sl-gallery-locale-link sl-gallery-locale-link-edge-start" href="/scribe/reports/fedramp-rev5-profile-intake/?scribe_locale=en-US" target="_blank" rel="noopener noreferrer" aria-label="English (US)" data-tooltip="English (US)">
+        <span class="fi fi-us locale-option-flag" data-flag="🇺🇸" aria-hidden="true"></span>
+        <span class="sl-visually-hidden">English (US)</span>
+      </a><a class="sl-gallery-locale-link sl-gallery-locale-link-edge-end" href="/scribe/reports/fedramp-rev5-profile-intake/?scribe_locale=es-US" target="_blank" rel="noopener noreferrer" aria-label="Español (US)" data-tooltip="Español (US)">
+        <span class="fi fi-us locale-option-flag" data-flag="🇺🇸" aria-hidden="true"></span>
+        <span class="sl-visually-hidden">Español (US)</span>
+      </a>
+    </div>
+  </div>
+  <ul class="sl-gallery-downloads">
+    <li><a href="/scribe/reports/fedramp-rev5-profile-intake/index.html" target="_blank" rel="noopener noreferrer">Interactive HTML report</a></li>
+    <li><a href="/scribe/reports/fedramp-rev5-profile-intake/exports/oscal-profile-intake.json" target="_blank" rel="noopener noreferrer">OSCAL Catalog/Profile intake JSON</a></li>
+    <li><a href="/scribe/reports/fedramp-rev5-profile-intake/exports/report.md" target="_blank" rel="noopener noreferrer" download type="text/markdown; charset=utf-8">Markdown report</a></li>
+  </ul>
+</article>
+
       <article class="sl-gallery-card" data-scribe-gallery-example data-gallery-search-text="Gitea — NIST 800-53 Coverage NIST/FedRAMP coverage report with 103 accounted controls and fail-closed OSCAL exports. compliance nist-coverage NIST/FedRAMP en-US es-US English (US) Español (US) us United States Interactive HTML report HTML OSCAL Assessment Results OSCAL Markdown report Markdown NIST rollup data JSON NIST conformance boundary Scribe G11" data-gallery-report-type="nist-coverage" data-gallery-locale="|en-US|es-US" data-gallery-jurisdiction="|us" data-gallery-artifact-format="|HTML|OSCAL Assessment Results|Markdown|JSON|JSON">
-        <a class="sl-gallery-card-image-link" href="reports/gitea-nist-coverage/index.html" target="_blank" rel="noopener noreferrer" aria-label="Open report: Gitea — NIST 800-53 Coverage">
-          <img class="sl-gallery-card-image" src="reports/gitea-nist-coverage/gallery-card.svg" alt="NIST/FedRAMP coverage report preview with source evidence, customer-context controls, and OSCAL Assessment Results." loading="lazy" width="1200" height="675">
-        </a>
-        <p class="sl-gallery-card-action"><a class="sl-action sl-action-primary" href="reports/gitea-nist-coverage/index.html" target="_blank" rel="noopener noreferrer" aria-label="Open report: Gitea — NIST 800-53 Coverage" data-msg-id="sondeLife.content.scribe.galleryReportAction">Open report</a></p>
-        <p class="sl-gallery-brand">NIST/FedRAMP</p>
-        <h3>Gitea — NIST 800-53 Coverage</h3>
-        <p>NIST/FedRAMP coverage report with 103 accounted controls and fail-closed OSCAL exports.</p>
-        <div class="sl-gallery-card-meta">
-          <div class="sl-gallery-locale-links" aria-label="Languages"><a class="sl-gallery-locale-link sl-gallery-locale-link-edge-start" href="reports/gitea-nist-coverage/?scribe_locale=en-US" target="_blank" rel="noopener noreferrer" aria-label="English (US)" data-tooltip="English (US)">
-              <span class="fi fi-us locale-option-flag" data-flag="🇺🇸" aria-hidden="true"></span>
-              <span class="sl-visually-hidden">English (US)</span>
-            </a><a class="sl-gallery-locale-link" href="reports/gitea-nist-coverage/?scribe_locale=es-US" target="_blank" rel="noopener noreferrer" aria-label="Español (US)" data-tooltip="Español (US)">
-              <span class="fi fi-us locale-option-flag" data-flag="🇺🇸" aria-hidden="true"></span>
-              <span class="sl-visually-hidden">Español (US)</span>
-            </a>
-          </div>
-        </div>
-        <ul class="sl-gallery-downloads">
-          <li><a href="reports/gitea-nist-coverage/index.html" target="_blank" rel="noopener noreferrer">Interactive HTML report</a></li>
-          <li><a href="reports/gitea-nist-coverage/exports/nist-coverage.oscal-assessment-results.json" target="_blank" rel="noopener noreferrer">OSCAL Assessment Results</a></li>
-          <li><a href="reports/gitea-nist-coverage/exports/report.md" target="_blank" rel="noopener noreferrer" download type="text/markdown; charset=utf-8">Markdown report</a></li>
-          <li><a href="reports/gitea-nist-coverage/data/nist-rollup.json" target="_blank" rel="noopener noreferrer">NIST rollup data</a></li>
-          <li><a href="reports/gitea-nist-coverage/data/nist-conformance.json" target="_blank" rel="noopener noreferrer">NIST conformance boundary</a></li>
-        </ul>
-      </article>
-      <article class="sl-gallery-card" data-scribe-gallery-example data-gallery-search-text="Mobile Accessibility Scan Report overview and visible public findings. compliance mobile-accessibility-scan Mobile Accessibility en-US en-GB en-CA fr-CA en-IN cy-GB gd-GB ga-GB sco-GB kw-GB es-US es-MX de-DE fr-FR es-ES it-IT nl-NL pl-PL pt-PT pt-BR ro-RO sv-SE ko-KR zh-CN ja-JP hi-IN Português (Brasil) English (Canada) Français (Canada) 简体中文 Français Deutsch English (India) हिन्दी Italiano 日本語 Español (México) Nederlands Polski Português (Portugal) Română 한국어 Español (España) Svenska Cymraeg English (UK) Gaeilge Gàidhlig Kernewek Scots English (US) Español (US) ca eu uk us Canada European Union United Kingdom United States Interactive HTML report HTML Markdown report Markdown OSCAL input data OSCAL" data-gallery-report-type="mobile-accessibility-scan" data-gallery-locale="|en-US|en-GB|en-CA|fr-CA|en-IN|cy-GB|gd-GB|ga-GB|sco-GB|kw-GB|es-US|es-MX|de-DE|fr-FR|es-ES|it-IT|nl-NL|pl-PL|pt-PT|pt-BR|ro-RO|sv-SE|ko-KR|zh-CN|ja-JP|hi-IN" data-gallery-jurisdiction="|ca|eu|uk|us" data-gallery-artifact-format="|HTML|Markdown|OSCAL">
-        <a class="sl-gallery-card-image-link" href="reports/mobile-accessibility-scan/index.html" target="_blank" rel="noopener noreferrer" aria-label="Open report: Mobile Accessibility Scan">
-          <img class="sl-gallery-card-image" src="reports/mobile-accessibility-scan/gallery-card.svg" alt="Mobile accessibility report gallery preview with source-linked compliance evidence." loading="lazy" width="1200" height="675">
-        </a>
-        <p class="sl-gallery-card-action"><a class="sl-action sl-action-primary" href="reports/mobile-accessibility-scan/index.html" target="_blank" rel="noopener noreferrer" aria-label="Open report: Mobile Accessibility Scan" data-msg-id="sondeLife.content.scribe.galleryReportAction">Open report</a></p>
-        <p class="sl-gallery-brand">Mobile Accessibility</p>
-        <h3>Mobile Accessibility Scan</h3>
-        <p>Report overview and visible public findings.</p>
-        <div class="sl-gallery-card-meta">
-          <div class="sl-gallery-locale-links" aria-label="Languages"><a class="sl-gallery-locale-link sl-gallery-locale-link-edge-start" href="reports/mobile-accessibility-scan/?scribe_locale=pt-BR" target="_blank" rel="noopener noreferrer" aria-label="Português (Brasil)" data-tooltip="Português (Brasil)">
-              <span class="fi fi-br locale-option-flag" data-flag="🇧🇷" aria-hidden="true"></span>
-              <span class="sl-visually-hidden">Português (Brasil)</span>
-            </a><a class="sl-gallery-locale-link" href="reports/mobile-accessibility-scan/?scribe_locale=en-CA" target="_blank" rel="noopener noreferrer" aria-label="English (Canada)" data-tooltip="English (Canada)">
-              <span class="fi fi-ca locale-option-flag" data-flag="🇨🇦" aria-hidden="true"></span>
-              <span class="sl-visually-hidden">English (Canada)</span>
-            </a><a class="sl-gallery-locale-link" href="reports/mobile-accessibility-scan/?scribe_locale=fr-CA" target="_blank" rel="noopener noreferrer" aria-label="Français (Canada)" data-tooltip="Français (Canada)">
-              <span class="fi fi-ca locale-option-flag" data-flag="🇨🇦" aria-hidden="true"></span>
-              <span class="sl-visually-hidden">Français (Canada)</span>
-            </a><a class="sl-gallery-locale-link" href="reports/mobile-accessibility-scan/?scribe_locale=zh-CN" target="_blank" rel="noopener noreferrer" aria-label="简体中文" data-tooltip="简体中文">
-              <span class="fi fi-cn locale-option-flag" data-flag="🇨🇳" aria-hidden="true"></span>
-              <span class="sl-visually-hidden">简体中文</span>
-            </a><a class="sl-gallery-locale-link" href="reports/mobile-accessibility-scan/?scribe_locale=fr-FR" target="_blank" rel="noopener noreferrer" aria-label="Français" data-tooltip="Français">
-              <span class="fi fi-fr locale-option-flag" data-flag="🇫🇷" aria-hidden="true"></span>
-              <span class="sl-visually-hidden">Français</span>
-            </a><a class="sl-gallery-locale-link" href="reports/mobile-accessibility-scan/?scribe_locale=de-DE" target="_blank" rel="noopener noreferrer" aria-label="Deutsch" data-tooltip="Deutsch">
-              <span class="fi fi-de locale-option-flag" data-flag="🇩🇪" aria-hidden="true"></span>
-              <span class="sl-visually-hidden">Deutsch</span>
-            </a><a class="sl-gallery-locale-link" href="reports/mobile-accessibility-scan/?scribe_locale=en-IN" target="_blank" rel="noopener noreferrer" aria-label="English (India)" data-tooltip="English (India)">
-              <span class="fi fi-in locale-option-flag" data-flag="🇮🇳" aria-hidden="true"></span>
-              <span class="sl-visually-hidden">English (India)</span>
-            </a><a class="sl-gallery-locale-link sl-gallery-locale-link-edge-end" href="reports/mobile-accessibility-scan/?scribe_locale=hi-IN" target="_blank" rel="noopener noreferrer" aria-label="हिन्दी" data-tooltip="हिन्दी">
-              <span class="fi fi-in locale-option-flag" data-flag="🇮🇳" aria-hidden="true"></span>
-              <span class="sl-visually-hidden">हिन्दी</span>
-            </a><a class="sl-gallery-locale-link sl-gallery-locale-link-edge-start" href="reports/mobile-accessibility-scan/?scribe_locale=it-IT" target="_blank" rel="noopener noreferrer" aria-label="Italiano" data-tooltip="Italiano">
-              <span class="fi fi-it locale-option-flag" data-flag="🇮🇹" aria-hidden="true"></span>
-              <span class="sl-visually-hidden">Italiano</span>
-            </a><a class="sl-gallery-locale-link" href="reports/mobile-accessibility-scan/?scribe_locale=ja-JP" target="_blank" rel="noopener noreferrer" aria-label="日本語" data-tooltip="日本語">
-              <span class="fi fi-jp locale-option-flag" data-flag="🇯🇵" aria-hidden="true"></span>
-              <span class="sl-visually-hidden">日本語</span>
-            </a><a class="sl-gallery-locale-link" href="reports/mobile-accessibility-scan/?scribe_locale=es-MX" target="_blank" rel="noopener noreferrer" aria-label="Español (México)" data-tooltip="Español (México)">
-              <span class="fi fi-mx locale-option-flag" data-flag="🇲🇽" aria-hidden="true"></span>
-              <span class="sl-visually-hidden">Español (México)</span>
-            </a><a class="sl-gallery-locale-link" href="reports/mobile-accessibility-scan/?scribe_locale=nl-NL" target="_blank" rel="noopener noreferrer" aria-label="Nederlands" data-tooltip="Nederlands">
-              <span class="fi fi-nl locale-option-flag" data-flag="🇳🇱" aria-hidden="true"></span>
-              <span class="sl-visually-hidden">Nederlands</span>
-            </a><a class="sl-gallery-locale-link" href="reports/mobile-accessibility-scan/?scribe_locale=pl-PL" target="_blank" rel="noopener noreferrer" aria-label="Polski" data-tooltip="Polski">
-              <span class="fi fi-pl locale-option-flag" data-flag="🇵🇱" aria-hidden="true"></span>
-              <span class="sl-visually-hidden">Polski</span>
-            </a><a class="sl-gallery-locale-link" href="reports/mobile-accessibility-scan/?scribe_locale=pt-PT" target="_blank" rel="noopener noreferrer" aria-label="Português (Portugal)" data-tooltip="Português (Portugal)">
-              <span class="fi fi-pt locale-option-flag" data-flag="🇵🇹" aria-hidden="true"></span>
-              <span class="sl-visually-hidden">Português (Portugal)</span>
-            </a><a class="sl-gallery-locale-link" href="reports/mobile-accessibility-scan/?scribe_locale=ro-RO" target="_blank" rel="noopener noreferrer" aria-label="Română" data-tooltip="Română">
-              <span class="fi fi-ro locale-option-flag" data-flag="🇷🇴" aria-hidden="true"></span>
-              <span class="sl-visually-hidden">Română</span>
-            </a><a class="sl-gallery-locale-link sl-gallery-locale-link-edge-end" href="reports/mobile-accessibility-scan/?scribe_locale=ko-KR" target="_blank" rel="noopener noreferrer" aria-label="한국어" data-tooltip="한국어">
-              <span class="fi fi-kr locale-option-flag" data-flag="🇰🇷" aria-hidden="true"></span>
-              <span class="sl-visually-hidden">한국어</span>
-            </a><a class="sl-gallery-locale-link sl-gallery-locale-link-edge-start" href="reports/mobile-accessibility-scan/?scribe_locale=es-ES" target="_blank" rel="noopener noreferrer" aria-label="Español (España)" data-tooltip="Español (España)">
-              <span class="fi fi-es locale-option-flag" data-flag="🇪🇸" aria-hidden="true"></span>
-              <span class="sl-visually-hidden">Español (España)</span>
-            </a><a class="sl-gallery-locale-link" href="reports/mobile-accessibility-scan/?scribe_locale=sv-SE" target="_blank" rel="noopener noreferrer" aria-label="Svenska" data-tooltip="Svenska">
-              <span class="fi fi-se locale-option-flag" data-flag="🇸🇪" aria-hidden="true"></span>
-              <span class="sl-visually-hidden">Svenska</span>
-            </a><a class="sl-gallery-locale-link" href="reports/mobile-accessibility-scan/?scribe_locale=cy-GB" target="_blank" rel="noopener noreferrer" aria-label="Cymraeg" data-tooltip="Cymraeg">
-              <span class="fi fi-gb-wls locale-option-flag" data-flag="🇬🇧" aria-hidden="true"></span>
-              <span class="sl-visually-hidden">Cymraeg</span>
-            </a><a class="sl-gallery-locale-link" href="reports/mobile-accessibility-scan/?scribe_locale=en-GB" target="_blank" rel="noopener noreferrer" aria-label="English (UK)" data-tooltip="English (UK)">
-              <span class="fi fi-gb locale-option-flag" data-flag="🇬🇧" aria-hidden="true"></span>
-              <span class="sl-visually-hidden">English (UK)</span>
-            </a><a class="sl-gallery-locale-link" href="reports/mobile-accessibility-scan/?scribe_locale=ga-GB" target="_blank" rel="noopener noreferrer" aria-label="Gaeilge" data-tooltip="Gaeilge">
-              <span class="fi fi-gb locale-option-flag" data-flag="🇬🇧" aria-hidden="true"></span>
-              <span class="sl-visually-hidden">Gaeilge</span>
-            </a><a class="sl-gallery-locale-link" href="reports/mobile-accessibility-scan/?scribe_locale=gd-GB" target="_blank" rel="noopener noreferrer" aria-label="Gàidhlig" data-tooltip="Gàidhlig">
-              <span class="fi fi-gb-sct locale-option-flag" data-flag="🇬🇧" aria-hidden="true"></span>
-              <span class="sl-visually-hidden">Gàidhlig</span>
-            </a><a class="sl-gallery-locale-link" href="reports/mobile-accessibility-scan/?scribe_locale=kw-GB" target="_blank" rel="noopener noreferrer" aria-label="Kernewek" data-tooltip="Kernewek">
-              <span class="fi fi-gb locale-option-flag" data-flag="🇬🇧" aria-hidden="true"></span>
-              <span class="sl-visually-hidden">Kernewek</span>
-            </a><a class="sl-gallery-locale-link sl-gallery-locale-link-edge-end" href="reports/mobile-accessibility-scan/?scribe_locale=sco-GB" target="_blank" rel="noopener noreferrer" aria-label="Scots" data-tooltip="Scots">
-              <span class="fi fi-gb-sct locale-option-flag" data-flag="🇬🇧" aria-hidden="true"></span>
-              <span class="sl-visually-hidden">Scots</span>
-            </a><a class="sl-gallery-locale-link sl-gallery-locale-link-edge-start" href="reports/mobile-accessibility-scan/?scribe_locale=en-US" target="_blank" rel="noopener noreferrer" aria-label="English (US)" data-tooltip="English (US)">
-              <span class="fi fi-us locale-option-flag" data-flag="🇺🇸" aria-hidden="true"></span>
-              <span class="sl-visually-hidden">English (US)</span>
-            </a><a class="sl-gallery-locale-link" href="reports/mobile-accessibility-scan/?scribe_locale=es-US" target="_blank" rel="noopener noreferrer" aria-label="Español (US)" data-tooltip="Español (US)">
-              <span class="fi fi-us locale-option-flag" data-flag="🇺🇸" aria-hidden="true"></span>
-              <span class="sl-visually-hidden">Español (US)</span>
-            </a>
-          </div>
-        </div>
-        <ul class="sl-gallery-downloads">
-          <li><a href="reports/mobile-accessibility-scan/index.html" target="_blank" rel="noopener noreferrer">Interactive HTML report</a></li>
-          <li><a href="reports/mobile-accessibility-scan/exports/report.md" target="_blank" rel="noopener noreferrer" download type="text/markdown; charset=utf-8">Markdown report</a></li>
-          <li><a href="reports/mobile-accessibility-scan/data/oscal-input.js" target="_blank" rel="noopener noreferrer">OSCAL input data</a></li>
-        </ul>
-      </article>
+  <a class="sl-gallery-card-image-link" href="/scribe/reports/gitea-nist-coverage/index.html" target="_blank" rel="noopener noreferrer" aria-label="Open report: Gitea — NIST 800-53 Coverage">
+    <img class="sl-gallery-card-image" src="/scribe/reports/gitea-nist-coverage/gallery-card.svg" alt="NIST/FedRAMP coverage report preview with source evidence, customer-context controls, and OSCAL Assessment Results." loading="lazy" width="1200" height="675">
+  </a>
+  <p class="sl-gallery-card-action"><a class="sl-action sl-action-primary" href="/scribe/reports/gitea-nist-coverage/index.html" target="_blank" rel="noopener noreferrer" aria-label="Open report: Gitea — NIST 800-53 Coverage" data-msg-id="sondeLife.content.scribe.galleryReportAction">Open report</a></p>
+  <p class="sl-gallery-brand">NIST/FedRAMP</p>
+  <h3>Gitea — NIST 800-53 Coverage</h3>
+  <p>NIST/FedRAMP coverage report with 103 accounted controls and fail-closed OSCAL exports.</p>
+  <div class="sl-gallery-card-meta">
+    <div class="sl-gallery-locale-links" aria-label="Languages"><a class="sl-gallery-locale-link sl-gallery-locale-link-edge-start" href="/scribe/reports/gitea-nist-coverage/?scribe_locale=en-US" target="_blank" rel="noopener noreferrer" aria-label="English (US)" data-tooltip="English (US)">
+        <span class="fi fi-us locale-option-flag" data-flag="🇺🇸" aria-hidden="true"></span>
+        <span class="sl-visually-hidden">English (US)</span>
+      </a><a class="sl-gallery-locale-link sl-gallery-locale-link-edge-end" href="/scribe/reports/gitea-nist-coverage/?scribe_locale=es-US" target="_blank" rel="noopener noreferrer" aria-label="Español (US)" data-tooltip="Español (US)">
+        <span class="fi fi-us locale-option-flag" data-flag="🇺🇸" aria-hidden="true"></span>
+        <span class="sl-visually-hidden">Español (US)</span>
+      </a>
+    </div>
+  </div>
+  <ul class="sl-gallery-downloads">
+    <li><a href="/scribe/reports/gitea-nist-coverage/index.html" target="_blank" rel="noopener noreferrer">Interactive HTML report</a></li>
+    <li><a href="/scribe/reports/gitea-nist-coverage/exports/nist-coverage.oscal-assessment-results.json" target="_blank" rel="noopener noreferrer">OSCAL Assessment Results</a></li>
+    <li><a href="/scribe/reports/gitea-nist-coverage/exports/report.md" target="_blank" rel="noopener noreferrer" download type="text/markdown; charset=utf-8">Markdown report</a></li>
+    <li><a href="/scribe/reports/gitea-nist-coverage/data/nist-rollup.json" target="_blank" rel="noopener noreferrer">NIST rollup data</a></li>
+    <li><a href="/scribe/reports/gitea-nist-coverage/data/nist-conformance.json" target="_blank" rel="noopener noreferrer">NIST conformance boundary</a></li>
+  </ul>
+</article>
+
+      <article class="sl-gallery-card" data-scribe-gallery-example data-gallery-search-text="Mobile Accessibility Scan Report overview and visible public findings. compliance mobile-accessibility-scan Mobile Accessibility en-US en-GB en-CA fr-CA en-IN cy-GB gd-GB ga-GB es-US es-MX de-DE fr-FR es-ES it-IT nl-NL pl-PL pt-PT pt-BR ro-RO sv-SE ko-KR zh-CN ja-JP hi-IN Português (Brasil) English (Canada) Français (Canada) 简体中文 Français Deutsch English (India) हिन्दी Italiano 日本語 Español (México) Nederlands Polski Português (Portugal) Română 한국어 Español (España) Svenska Cymraeg English (UK) Gaeilge Gàidhlig English (US) Español (US) ca eu uk us Canada European Union United Kingdom United States Interactive HTML report HTML Markdown report Markdown OSCAL input data OSCAL" data-gallery-report-type="mobile-accessibility-scan" data-gallery-locale="|en-US|en-GB|en-CA|fr-CA|en-IN|cy-GB|gd-GB|ga-GB|es-US|es-MX|de-DE|fr-FR|es-ES|it-IT|nl-NL|pl-PL|pt-PT|pt-BR|ro-RO|sv-SE|ko-KR|zh-CN|ja-JP|hi-IN" data-gallery-jurisdiction="|ca|eu|uk|us" data-gallery-artifact-format="|HTML|Markdown|OSCAL">
+  <a class="sl-gallery-card-image-link" href="/scribe/reports/mobile-accessibility-scan/index.html" target="_blank" rel="noopener noreferrer" aria-label="Open report: Mobile Accessibility Scan">
+    <img class="sl-gallery-card-image" src="/scribe/reports/mobile-accessibility-scan/gallery-card.svg" alt="Mobile accessibility report gallery preview with source-linked compliance evidence." loading="lazy" width="1200" height="675">
+  </a>
+  <p class="sl-gallery-card-action"><a class="sl-action sl-action-primary" href="/scribe/reports/mobile-accessibility-scan/index.html" target="_blank" rel="noopener noreferrer" aria-label="Open report: Mobile Accessibility Scan" data-msg-id="sondeLife.content.scribe.galleryReportAction">Open report</a></p>
+  <p class="sl-gallery-brand">Mobile Accessibility</p>
+  <h3>Mobile Accessibility Scan</h3>
+  <p>Report overview and visible public findings.</p>
+  <div class="sl-gallery-card-meta">
+    <div class="sl-gallery-locale-links" aria-label="Languages"><a class="sl-gallery-locale-link sl-gallery-locale-link-edge-start" href="/scribe/reports/mobile-accessibility-scan/?scribe_locale=pt-BR" target="_blank" rel="noopener noreferrer" aria-label="Português (Brasil)" data-tooltip="Português (Brasil)">
+        <span class="fi fi-br locale-option-flag" data-flag="🇧🇷" aria-hidden="true"></span>
+        <span class="sl-visually-hidden">Português (Brasil)</span>
+      </a><a class="sl-gallery-locale-link" href="/scribe/reports/mobile-accessibility-scan/?scribe_locale=en-CA" target="_blank" rel="noopener noreferrer" aria-label="English (Canada)" data-tooltip="English (Canada)">
+        <span class="fi fi-ca locale-option-flag" data-flag="🇨🇦" aria-hidden="true"></span>
+        <span class="sl-visually-hidden">English (Canada)</span>
+      </a><a class="sl-gallery-locale-link" href="/scribe/reports/mobile-accessibility-scan/?scribe_locale=fr-CA" target="_blank" rel="noopener noreferrer" aria-label="Français (Canada)" data-tooltip="Français (Canada)">
+        <span class="fi fi-ca locale-option-flag" data-flag="🇨🇦" aria-hidden="true"></span>
+        <span class="sl-visually-hidden">Français (Canada)</span>
+      </a><a class="sl-gallery-locale-link" href="/scribe/reports/mobile-accessibility-scan/?scribe_locale=zh-CN" target="_blank" rel="noopener noreferrer" aria-label="简体中文" data-tooltip="简体中文">
+        <span class="fi fi-cn locale-option-flag" data-flag="🇨🇳" aria-hidden="true"></span>
+        <span class="sl-visually-hidden">简体中文</span>
+      </a><a class="sl-gallery-locale-link" href="/scribe/reports/mobile-accessibility-scan/?scribe_locale=fr-FR" target="_blank" rel="noopener noreferrer" aria-label="Français" data-tooltip="Français">
+        <span class="fi fi-fr locale-option-flag" data-flag="🇫🇷" aria-hidden="true"></span>
+        <span class="sl-visually-hidden">Français</span>
+      </a><a class="sl-gallery-locale-link" href="/scribe/reports/mobile-accessibility-scan/?scribe_locale=de-DE" target="_blank" rel="noopener noreferrer" aria-label="Deutsch" data-tooltip="Deutsch">
+        <span class="fi fi-de locale-option-flag" data-flag="🇩🇪" aria-hidden="true"></span>
+        <span class="sl-visually-hidden">Deutsch</span>
+      </a><a class="sl-gallery-locale-link" href="/scribe/reports/mobile-accessibility-scan/?scribe_locale=en-IN" target="_blank" rel="noopener noreferrer" aria-label="English (India)" data-tooltip="English (India)">
+        <span class="fi fi-in locale-option-flag" data-flag="🇮🇳" aria-hidden="true"></span>
+        <span class="sl-visually-hidden">English (India)</span>
+      </a><a class="sl-gallery-locale-link sl-gallery-locale-link-edge-end" href="/scribe/reports/mobile-accessibility-scan/?scribe_locale=hi-IN" target="_blank" rel="noopener noreferrer" aria-label="हिन्दी" data-tooltip="हिन्दी">
+        <span class="fi fi-in locale-option-flag" data-flag="🇮🇳" aria-hidden="true"></span>
+        <span class="sl-visually-hidden">हिन्दी</span>
+      </a><a class="sl-gallery-locale-link sl-gallery-locale-link-edge-start" href="/scribe/reports/mobile-accessibility-scan/?scribe_locale=it-IT" target="_blank" rel="noopener noreferrer" aria-label="Italiano" data-tooltip="Italiano">
+        <span class="fi fi-it locale-option-flag" data-flag="🇮🇹" aria-hidden="true"></span>
+        <span class="sl-visually-hidden">Italiano</span>
+      </a><a class="sl-gallery-locale-link" href="/scribe/reports/mobile-accessibility-scan/?scribe_locale=ja-JP" target="_blank" rel="noopener noreferrer" aria-label="日本語" data-tooltip="日本語">
+        <span class="fi fi-jp locale-option-flag" data-flag="🇯🇵" aria-hidden="true"></span>
+        <span class="sl-visually-hidden">日本語</span>
+      </a><a class="sl-gallery-locale-link" href="/scribe/reports/mobile-accessibility-scan/?scribe_locale=es-MX" target="_blank" rel="noopener noreferrer" aria-label="Español (México)" data-tooltip="Español (México)">
+        <span class="fi fi-mx locale-option-flag" data-flag="🇲🇽" aria-hidden="true"></span>
+        <span class="sl-visually-hidden">Español (México)</span>
+      </a><a class="sl-gallery-locale-link" href="/scribe/reports/mobile-accessibility-scan/?scribe_locale=nl-NL" target="_blank" rel="noopener noreferrer" aria-label="Nederlands" data-tooltip="Nederlands">
+        <span class="fi fi-nl locale-option-flag" data-flag="🇳🇱" aria-hidden="true"></span>
+        <span class="sl-visually-hidden">Nederlands</span>
+      </a><a class="sl-gallery-locale-link" href="/scribe/reports/mobile-accessibility-scan/?scribe_locale=pl-PL" target="_blank" rel="noopener noreferrer" aria-label="Polski" data-tooltip="Polski">
+        <span class="fi fi-pl locale-option-flag" data-flag="🇵🇱" aria-hidden="true"></span>
+        <span class="sl-visually-hidden">Polski</span>
+      </a><a class="sl-gallery-locale-link" href="/scribe/reports/mobile-accessibility-scan/?scribe_locale=pt-PT" target="_blank" rel="noopener noreferrer" aria-label="Português (Portugal)" data-tooltip="Português (Portugal)">
+        <span class="fi fi-pt locale-option-flag" data-flag="🇵🇹" aria-hidden="true"></span>
+        <span class="sl-visually-hidden">Português (Portugal)</span>
+      </a><a class="sl-gallery-locale-link" href="/scribe/reports/mobile-accessibility-scan/?scribe_locale=ro-RO" target="_blank" rel="noopener noreferrer" aria-label="Română" data-tooltip="Română">
+        <span class="fi fi-ro locale-option-flag" data-flag="🇷🇴" aria-hidden="true"></span>
+        <span class="sl-visually-hidden">Română</span>
+      </a><a class="sl-gallery-locale-link sl-gallery-locale-link-edge-end" href="/scribe/reports/mobile-accessibility-scan/?scribe_locale=ko-KR" target="_blank" rel="noopener noreferrer" aria-label="한국어" data-tooltip="한국어">
+        <span class="fi fi-kr locale-option-flag" data-flag="🇰🇷" aria-hidden="true"></span>
+        <span class="sl-visually-hidden">한국어</span>
+      </a><a class="sl-gallery-locale-link sl-gallery-locale-link-edge-start" href="/scribe/reports/mobile-accessibility-scan/?scribe_locale=es-ES" target="_blank" rel="noopener noreferrer" aria-label="Español (España)" data-tooltip="Español (España)">
+        <span class="fi fi-es locale-option-flag" data-flag="🇪🇸" aria-hidden="true"></span>
+        <span class="sl-visually-hidden">Español (España)</span>
+      </a><a class="sl-gallery-locale-link" href="/scribe/reports/mobile-accessibility-scan/?scribe_locale=sv-SE" target="_blank" rel="noopener noreferrer" aria-label="Svenska" data-tooltip="Svenska">
+        <span class="fi fi-se locale-option-flag" data-flag="🇸🇪" aria-hidden="true"></span>
+        <span class="sl-visually-hidden">Svenska</span>
+      </a><a class="sl-gallery-locale-link" href="/scribe/reports/mobile-accessibility-scan/?scribe_locale=cy-GB" target="_blank" rel="noopener noreferrer" aria-label="Cymraeg" data-tooltip="Cymraeg">
+        <span class="fi fi-gb-wls locale-option-flag" data-flag="🇬🇧" aria-hidden="true"></span>
+        <span class="sl-visually-hidden">Cymraeg</span>
+      </a><a class="sl-gallery-locale-link" href="/scribe/reports/mobile-accessibility-scan/?scribe_locale=en-GB" target="_blank" rel="noopener noreferrer" aria-label="English (UK)" data-tooltip="English (UK)">
+        <span class="fi fi-gb locale-option-flag" data-flag="🇬🇧" aria-hidden="true"></span>
+        <span class="sl-visually-hidden">English (UK)</span>
+      </a><a class="sl-gallery-locale-link" href="/scribe/reports/mobile-accessibility-scan/?scribe_locale=ga-GB" target="_blank" rel="noopener noreferrer" aria-label="Gaeilge" data-tooltip="Gaeilge">
+        <span class="fi fi-gb locale-option-flag" data-flag="🇬🇧" aria-hidden="true"></span>
+        <span class="sl-visually-hidden">Gaeilge</span>
+      </a><a class="sl-gallery-locale-link" href="/scribe/reports/mobile-accessibility-scan/?scribe_locale=gd-GB" target="_blank" rel="noopener noreferrer" aria-label="Gàidhlig" data-tooltip="Gàidhlig">
+        <span class="fi fi-gb-sct locale-option-flag" data-flag="🇬🇧" aria-hidden="true"></span>
+        <span class="sl-visually-hidden">Gàidhlig</span>
+      </a><a class="sl-gallery-locale-link" href="/scribe/reports/mobile-accessibility-scan/?scribe_locale=en-US" target="_blank" rel="noopener noreferrer" aria-label="English (US)" data-tooltip="English (US)">
+        <span class="fi fi-us locale-option-flag" data-flag="🇺🇸" aria-hidden="true"></span>
+        <span class="sl-visually-hidden">English (US)</span>
+      </a><a class="sl-gallery-locale-link sl-gallery-locale-link-edge-end" href="/scribe/reports/mobile-accessibility-scan/?scribe_locale=es-US" target="_blank" rel="noopener noreferrer" aria-label="Español (US)" data-tooltip="Español (US)">
+        <span class="fi fi-us locale-option-flag" data-flag="🇺🇸" aria-hidden="true"></span>
+        <span class="sl-visually-hidden">Español (US)</span>
+      </a>
+    </div>
+  </div>
+  <ul class="sl-gallery-downloads">
+    <li><a href="/scribe/reports/mobile-accessibility-scan/index.html" target="_blank" rel="noopener noreferrer">Interactive HTML report</a></li>
+    <li><a href="/scribe/reports/mobile-accessibility-scan/exports/report.md" target="_blank" rel="noopener noreferrer" download type="text/markdown; charset=utf-8">Markdown report</a></li>
+    <li><a href="/scribe/reports/mobile-accessibility-scan/data/oscal-input.js" target="_blank" rel="noopener noreferrer">OSCAL input data</a></li>
+  </ul>
+</article>
+
     </div>
     <p class="sl-gallery-empty" data-scribe-gallery-empty hidden data-msg-id="sondeLife.content.scribe.galleryNoResultsLabel">No reports match the current filters.</p>
     <nav class="sl-gallery-pagination" data-scribe-gallery-pagination aria-label="Gallery pages">
@@ -1489,43 +1474,44 @@
   <div class="sl-section-inner">
     <h2 id="scribe-report-formats" data-msg-id="sondeLife.content.scribe.reportFormatsTitle">Supported evidence formats</h2>
     <div class="sl-copy-grid">
-      <article class="sl-copy-item">
-        <h3 data-msg-id="sondeLife.content.scribe.reportFormats.0.label">VPAT</h3>
-        <p data-msg-id="sondeLife.content.scribe.reportFormats.0.body">Voluntary Product Accessibility Template — the standard evidence format for Section 508 and WCAG conformance claims.</p>
-      </article>
-      <article class="sl-copy-item">
-        <h3 data-msg-id="sondeLife.content.scribe.reportFormats.1.label">OSCAL</h3>
-        <p data-msg-id="sondeLife.content.scribe.reportFormats.1.body">Open Security Controls Assessment Language — machine-readable compliance evidence for NIST, FedRAMP, and FISMA programs.</p>
-      </article>
-      <article class="sl-copy-item">
-        <h3 data-msg-id="sondeLife.content.scribe.reportFormats.2.label">SARIF</h3>
-        <p data-msg-id="sondeLife.content.scribe.reportFormats.2.body">Static Analysis Results Interchange Format — consumable by GitHub Advanced Security, Azure DevOps, and CI toolchains.</p>
-      </article>
-      <article class="sl-copy-item">
-        <h3 data-msg-id="sondeLife.content.scribe.reportFormats.3.label">PDF</h3>
-        <p data-msg-id="sondeLife.content.scribe.reportFormats.3.body">Print-ready evidence packages and executive summaries suitable for auditor delivery.</p>
-      </article>
-      <article class="sl-copy-item">
-        <h3 data-msg-id="sondeLife.content.scribe.reportFormats.4.label">HTML</h3>
-        <p data-msg-id="sondeLife.content.scribe.reportFormats.4.body">Interactive, linkable compliance reports with in-page navigation and source cross-references.</p>
-      </article>
-      <article class="sl-copy-item">
-        <h3 data-msg-id="sondeLife.content.scribe.reportFormats.5.label">Markdown</h3>
-        <p data-msg-id="sondeLife.content.scribe.reportFormats.5.body">Developer-friendly findings output for GitHub pull request comments, wikis, and documentation systems.</p>
-      </article>
-      <article class="sl-copy-item">
-        <h3 data-msg-id="sondeLife.content.scribe.reportFormats.6.label">CSV</h3>
-        <p data-msg-id="sondeLife.content.scribe.reportFormats.6.body">Tabular findings exports for spreadsheet workflows, issue tracking imports, and data pipeline ingestion.</p>
-      </article>
-      <article class="sl-copy-item">
-        <h3 data-msg-id="sondeLife.content.scribe.reportFormats.7.label">DOCX</h3>
-        <p data-msg-id="sondeLife.content.scribe.reportFormats.7.body">Word-compatible evidence documents for teams that require native Office format for legal or procurement review.</p>
-      </article>
-      <article class="sl-copy-item">
-        <h3 data-msg-id="sondeLife.content.scribe.reportFormats.8.label">PPTX</h3>
-        <p data-msg-id="sondeLife.content.scribe.reportFormats.8.body">Presentation-ready compliance summaries for board, audit committee, and executive stakeholder briefings.</p>
-      </article>
-    </div>
+  <article class="sl-copy-item">
+    <h3 data-msg-id="sondeLife.content.scribe.reportFormats.0.label">VPAT</h3>
+    <p data-msg-id="sondeLife.content.scribe.reportFormats.0.body">Voluntary Product Accessibility Template — the standard evidence format for Section 508 and WCAG conformance claims.</p>
+  </article>
+  <article class="sl-copy-item">
+    <h3 data-msg-id="sondeLife.content.scribe.reportFormats.1.label">OSCAL</h3>
+    <p data-msg-id="sondeLife.content.scribe.reportFormats.1.body">Open Security Controls Assessment Language — machine-readable compliance evidence for NIST, FedRAMP, and FISMA programs.</p>
+  </article>
+  <article class="sl-copy-item">
+    <h3 data-msg-id="sondeLife.content.scribe.reportFormats.2.label">SARIF</h3>
+    <p data-msg-id="sondeLife.content.scribe.reportFormats.2.body">Static Analysis Results Interchange Format — consumable by GitHub Advanced Security, Azure DevOps, and CI toolchains.</p>
+  </article>
+  <article class="sl-copy-item">
+    <h3 data-msg-id="sondeLife.content.scribe.reportFormats.3.label">PDF</h3>
+    <p data-msg-id="sondeLife.content.scribe.reportFormats.3.body">Print-ready evidence packages and executive summaries suitable for auditor delivery.</p>
+  </article>
+  <article class="sl-copy-item">
+    <h3 data-msg-id="sondeLife.content.scribe.reportFormats.4.label">HTML</h3>
+    <p data-msg-id="sondeLife.content.scribe.reportFormats.4.body">Interactive, linkable compliance reports with in-page navigation and source cross-references.</p>
+  </article>
+  <article class="sl-copy-item">
+    <h3 data-msg-id="sondeLife.content.scribe.reportFormats.5.label">Markdown</h3>
+    <p data-msg-id="sondeLife.content.scribe.reportFormats.5.body">Developer-friendly findings output for GitHub pull request comments, wikis, and documentation systems.</p>
+  </article>
+  <article class="sl-copy-item">
+    <h3 data-msg-id="sondeLife.content.scribe.reportFormats.6.label">CSV</h3>
+    <p data-msg-id="sondeLife.content.scribe.reportFormats.6.body">Tabular findings exports for spreadsheet workflows, issue tracking imports, and data pipeline ingestion.</p>
+  </article>
+  <article class="sl-copy-item">
+    <h3 data-msg-id="sondeLife.content.scribe.reportFormats.7.label">DOCX</h3>
+    <p data-msg-id="sondeLife.content.scribe.reportFormats.7.body">Word-compatible evidence documents for teams that require native Office format for legal or procurement review.</p>
+  </article>
+  <article class="sl-copy-item">
+    <h3 data-msg-id="sondeLife.content.scribe.reportFormats.8.label">PPTX</h3>
+    <p data-msg-id="sondeLife.content.scribe.reportFormats.8.body">Presentation-ready compliance summaries for board, audit committee, and executive stakeholder briefings.</p>
+  </article>
+</div>
+
   </div>
 </section>
 <section class="sl-section sl-level3-cta">
@@ -1544,6 +1530,10 @@
       <span data-msg-id="sondeLife.metadata.compliance.title">Compliance - Sonde</span>
       <span data-msg-id="sondeLife.metadata.scribe.title">Scribe - Sonde</span>
       <span data-msg-id="sondeLife.metadata.contact.title">Contact - Sonde</span>
+      <span data-msg-id="sondeLife.metadata.solutions.accessibility.title">Accessibility - Sonde</span>
+      <span data-msg-id="sondeLife.metadata.solutions.compliance.title">Compliance Solutions - Sonde</span>
+      <span data-msg-id="sondeLife.metadata.solutions.aiGovernance.title">AI Governance - Sonde</span>
+      <span data-msg-id="sondeLife.metadata.solutions.developer.title">Developer - Sonde</span>
       <span data-msg-id="settings.trigger.aria">Open display settings</span>
       <span data-msg-id="settings.trigger.title">Settings</span>
       <span data-msg-id="settings.theme.legend">Theme</span>
@@ -1584,6 +1574,26 @@
     document.addEventListener('keydown', (event) => {
       if (event.key !== 'Escape') return;
       close();
+    });
+  })();
+
+  // Dismiss the Solutions nav dropdown on outside-click and Escape,
+  // matching the settings-dropdown dismissal pattern above.
+  (() => {
+    const navDropdown = document.querySelector('details.sl-nav-dropdown');
+    if (!navDropdown) return;
+    function closeNavDropdown() {
+      if (!navDropdown.open) return;
+      navDropdown.open = false;
+    }
+    document.addEventListener('click', (event) => {
+      if (!navDropdown.open) return;
+      if (navDropdown.contains(event.target)) return;
+      closeNavDropdown();
+    });
+    document.addEventListener('keydown', (event) => {
+      if (event.key !== 'Escape') return;
+      closeNavDropdown();
     });
   })();
 
@@ -1779,20 +1789,22 @@
     document.addEventListener('sonde:locale-applied', schedule);
   })();
 
-  // Roving tabindex for the primary nav links. Without this, the seven
-  // nav <a>s plus brand + search + settings put 10–11 elements in the
-  // primary nav's tab sequence, tripping the keyboard-trap probe's
-  // "deep focus region" heuristic. With roving tabindex the seven nav
-  // links collapse to a single tab stop; arrow keys (Left/Right, Up/Down)
-  // navigate within the group, Home/End jump to the ends. The aria-current
-  // link is the active tab stop on page load (or the first link if no
-  // route is current — e.g. on home where the brand IS the home link).
+  // Roving tabindex for the primary nav links. Without this, the primary
+  // nav <a>s + the Solutions <summary> plus brand + search + settings put
+  // many elements in the primary nav's tab sequence, tripping the
+  // keyboard-trap probe's "deep focus region" heuristic. With roving
+  // tabindex the top-level nav items collapse to a single tab stop; arrow
+  // keys (Left/Right, Up/Down) navigate within the group, Home/End jump to
+  // the ends. The aria-current item is the active tab stop on page load
+  // (or the first item if no route is current). Only direct <a> children
+  // and top-level <details> > <summary> are selected — this deliberately
+  // excludes hidden dropdown-menu <a>s that must not enter the roving group.
   (() => {
     const navLinks = document.querySelector('.sl-nav-links');
     if (!navLinks) return;
-    const links = Array.from(navLinks.querySelectorAll('a'));
+    const links = Array.from(navLinks.querySelectorAll(':scope > a, :scope > details > summary'));
     if (links.length < 2) return;
-    let activeIdx = links.findIndex((a) => a.getAttribute('aria-current') === 'page');
+    let activeIdx = links.findIndex((el) => el.getAttribute('aria-current') === 'page');
     if (activeIdx < 0) activeIdx = 0;
     for (let i = 0; i < links.length; i += 1) {
       links[i].setAttribute('tabindex', i === activeIdx ? '0' : '-1');

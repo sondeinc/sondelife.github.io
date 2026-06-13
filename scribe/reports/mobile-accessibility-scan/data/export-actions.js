@@ -86,7 +86,7 @@ window.__SCRIBE_EXPORT_ACTIONS__ = [
         "hi-IN": {
           "fallback": false,
           "reviewed": true,
-          "text": "मार्कडाउन रिपोर्ट डाउनलोड करें"
+          "text": "Markdown रिपोर्ट डाउनलोड करें"
         },
         "it-IT": {
           "fallback": false,
@@ -102,11 +102,6 @@ window.__SCRIBE_EXPORT_ACTIONS__ = [
           "fallback": false,
           "reviewed": true,
           "text": "Markdown 보고서 다운로드"
-        },
-        "kw-GB": {
-          "fallback": false,
-          "reviewed": true,
-          "text": "Download Markdown derivas rag oll"
         },
         "nl-NL": {
           "fallback": false,
@@ -132,11 +127,6 @@ window.__SCRIBE_EXPORT_ACTIONS__ = [
           "fallback": false,
           "reviewed": true,
           "text": "Descărcați raportul Markdown"
-        },
-        "sco-GB": {
-          "fallback": false,
-          "reviewed": true,
-          "text": "Doonload Markdown report"
         },
         "sv-SE": {
           "fallback": false,

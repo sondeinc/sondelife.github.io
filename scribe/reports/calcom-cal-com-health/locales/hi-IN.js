@@ -1,6 +1,6 @@
 window.__SCRIBE_LOCALES__ = window.__SCRIBE_LOCALES__ || {};
 window.__SCRIBE_LOCALES__["hi-IN"] = {
-  "fallbackCount": 18,
+  "fallbackCount": 11,
   "locale": "hi-IN",
   "messages": {
     "scribe.report.action.backToFinding": {
@@ -28,6 +28,11 @@ window.__SCRIBE_LOCALES__["hi-IN"] = {
       "reviewed": true,
       "text": "ओपनएसीआर डाउनलोड करें"
     },
+    "scribe.report.action.downloadOscal": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "OSCAL डाउनलोड करें"
+    },
     "scribe.report.action.downloadPdf": {
       "fallback": false,
       "reviewed": true,
@@ -41,7 +46,7 @@ window.__SCRIBE_LOCALES__["hi-IN"] = {
     "scribe.report.action.exportMarkdown": {
       "fallback": false,
       "reviewed": true,
-      "text": "मार्कडाउन रिपोर्ट डाउनलोड करें"
+      "text": "Markdown रिपोर्ट डाउनलोड करें"
     },
     "scribe.report.action.feedbackFinding": {
       "fallback": false,
@@ -76,7 +81,7 @@ window.__SCRIBE_LOCALES__["hi-IN"] = {
     "scribe.report.action.openVpat": {
       "fallback": false,
       "reviewed": true,
-      "text": "वीपीएटी खोलें"
+      "text": "VPAT खोलें"
     },
     "scribe.report.action.printReport": {
       "fallback": false,
@@ -101,7 +106,7 @@ window.__SCRIBE_LOCALES__["hi-IN"] = {
     "scribe.report.asset.export.markdown": {
       "fallback": false,
       "reviewed": true,
-      "text": "मार्कडाउन निर्यात"
+      "text": "Markdown निर्यात"
     },
     "scribe.report.asset.mark": {
       "fallback": false,
@@ -112,6 +117,11 @@ window.__SCRIBE_LOCALES__["hi-IN"] = {
       "fallback": false,
       "reviewed": true,
       "text": "Sonde Scribe अल्फा अनुपालन रिपोर्ट चिह्न"
+    },
+    "scribe.report.asset.overviewScreenshot": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "अंकित Cockpit मोबाइल एक्सेसिबिलिटी साक्ष्य"
     },
     "scribe.report.asset.overviewScreenshot.alt": {
       "fallback": false,
@@ -323,6 +333,11 @@ window.__SCRIBE_LOCALES__["hi-IN"] = {
       "reviewed": true,
       "text": "पहुँच"
     },
+    "scribe.report.filter.option.aiSafety": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "एआई सुरक्षा"
+    },
     "scribe.report.filter.option.analysisCompleteness": {
       "fallback": false,
       "reviewed": true,
@@ -363,6 +378,11 @@ window.__SCRIBE_LOCALES__["hi-IN"] = {
       "reviewed": true,
       "text": "त्रुटि"
     },
+    "scribe.report.filter.option.grammarParsing": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "व्याकरण और पार्सिंग"
+    },
     "scribe.report.filter.option.high": {
       "fallback": false,
       "reviewed": true,
@@ -393,6 +413,11 @@ window.__SCRIBE_LOCALES__["hi-IN"] = {
       "reviewed": true,
       "text": "मध्यम"
     },
+    "scribe.report.filter.option.metricsQuality": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "मीट्रिक्स और गुणवत्ता"
+    },
     "scribe.report.filter.option.mexicoFintechReadiness": {
       "fallback": false,
       "reviewed": true,
@@ -413,6 +438,11 @@ window.__SCRIBE_LOCALES__["hi-IN"] = {
       "reviewed": true,
       "text": "OSCAL प्रोफ़ाइल इनटेक"
     },
+    "scribe.report.filter.option.projectIntelligence": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "प्रोजेक्ट बुद्धिमत्ता"
+    },
     "scribe.report.filter.option.remediationReadiness": {
       "fallback": false,
       "reviewed": true,
@@ -427,6 +457,11 @@ window.__SCRIBE_LOCALES__["hi-IN"] = {
       "fallback": false,
       "reviewed": true,
       "text": "भंडार सूची"
+    },
+    "scribe.report.filter.option.security": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "सुरक्षा"
     },
     "scribe.report.filter.option.sourceTrace": {
       "fallback": false,
@@ -462,6 +497,21 @@ window.__SCRIBE_LOCALES__["hi-IN"] = {
       "fallback": false,
       "reviewed": true,
       "text": "प्रकाश"
+    },
+    "scribe.report.overview.stat.accessibilityFindings": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "अक्सेसिबिलिटी खोज"
+    },
+    "scribe.report.overview.stat.codeQualityFindings": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "कोड की गुणवत्ता खोज"
+    },
+    "scribe.report.overview.stat.complianceFindings": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "अनुपालन संबंधी खोज"
     },
     "scribe.report.overview.stat.evidenceScreenshots": {
       "fallback": false,
@@ -548,70 +598,35 @@ window.__SCRIBE_LOCALES__["hi-IN"] = {
       "reviewed": true,
       "text": "{symbol} में गंभीर जटिलता"
     },
-    "scribe.report.repositoryHealth.finding.complexity.title.high": {
-      "fallback": false,
-      "reviewed": true,
-      "text": "{symbol} में उच्च जटिलता"
-    },
-    "scribe.report.repositoryHealth.finding.deadCode.criterion": {
-      "fallback": false,
-      "reviewed": true,
-      "text": "1. स्थिरता:- स्थिरता का अर्थ है कि कोई भी कार्य अपरिवर्तनीय नहीं है और अपरिवर्तनीय कार्यों का कोई भी स्थिर मूल्य नहीं होता।"
-    },
-    "scribe.report.repositoryHealth.finding.deadCode.fix": {
-      "fallback": false,
-      "reviewed": true,
-      "text": "सुनिश्चित करें कि प्रतीक एक गतिशील प्रवेश बिंदु नहीं है, फिर इसे हटाएं या स्वास्थ्य रिपोर्ट को फिर से चलाने से पहले गुम संदर्भ साक्ष्य जोड़ें."
-    },
-    "scribe.report.repositoryHealth.finding.deadCode.unreachable.summary": {
-      "fallback": false,
-      "reviewed": true,
-      "text": "{sourcePath}:{line} को मृत-कोड प्रोब द्वारा अप्राप्य के रूप में लेबल किया गया है।"
-    },
-    "scribe.report.repositoryHealth.finding.deadCode.unreachable.title": {
-      "fallback": false,
-      "reviewed": true,
-      "text": "अप्राप्य फंक्शन {symbol}"
-    },
-    "scribe.report.repositoryHealth.finding.deadCode.unusedExport.summary": {
-      "fallback": false,
-      "reviewed": true,
-      "text": "{sourcePath}:{line} को मृत-कोड प्रोब द्वारा एक अनउपयोगित निर्यात के रूप में लेबल किया गया है।"
-    },
-    "scribe.report.repositoryHealth.finding.deadCode.unusedExport.title": {
-      "fallback": false,
-      "reviewed": true,
-      "text": "निर्यात प्रतीक {symbol} का उपयोग नहीं किया गया"
-    },
     "scribe.report.repositoryHealth.finding.publicSummary": {
       "fallback": false,
       "reviewed": true,
       "text": "1. खाद्य सुरक्षा एवं गुणवत्ता नियंत्रण के लिए आवश्यक सूचनाओं का संकलन।"
     },
+    "scribe.report.repositoryHealth.finding.raw.criterion": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "{criterion}"
+    },
+    "scribe.report.repositoryHealth.finding.raw.fix": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "{recommendation}"
+    },
+    "scribe.report.repositoryHealth.finding.raw.summary": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "{summary}"
+    },
+    "scribe.report.repositoryHealth.finding.raw.title": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "{title}"
+    },
     "scribe.report.repositoryHealth.finding.runtime": {
       "fallback": false,
       "reviewed": true,
       "text": "भंडार स्वास्थ्य स्थिर विश्लेषण"
-    },
-    "scribe.report.repositoryHealth.finding.schemaMaintenance.criterion": {
-      "fallback": false,
-      "reviewed": true,
-      "text": "रिपोजिटरी स्वास्थ्य स्कीमा स्वच्छता: स्कीमा अवहेलना, TODO, FIXME, या HACK नोट्स डेटाबेस अनुवर्ती कार्य का एकमात्र रिकॉर्ड नहीं होना चाहिए।"
-    },
-    "scribe.report.repositoryHealth.finding.schemaMaintenance.fix": {
-      "fallback": false,
-      "reviewed": true,
-      "text": "स्कीमा नोट को एक प्रवासन, हटाने की योजना या ट्रैक किए गए मुद्दे से लिंक करें, फिर डाटाबेस परिवर्तन के बाद स्कीमा-केंद्रित प्रोब को फिर से चलाएं।"
-    },
-    "scribe.report.repositoryHealth.finding.schemaMaintenance.summary": {
-      "fallback": false,
-      "reviewed": true,
-      "text": "{sourcePath}:{line} में {marker} स्कीमा नोट है जिसे स्पष्ट डाटाबेस फॉलोअप के रूप में ट्रैक किया जाना चाहिए."
-    },
-    "scribe.report.repositoryHealth.finding.schemaMaintenance.title": {
-      "fallback": false,
-      "reviewed": true,
-      "text": "योजना रखरखाव नोट {marker} का उल्लेख करता है"
     },
     "scribe.report.repositoryHealth.finding.title": {
       "fallback": false,
@@ -633,45 +648,25 @@ window.__SCRIBE_LOCALES__["hi-IN"] = {
       "reviewed": true,
       "text": "{startLine} से {endLine} लाइनों में परिवर्तित शाखाओं के लिए फोकस्ड परीक्षण जोड़ें या अद्यतन करें, निकटतम पैकेज जांच चलाएँ, फिर भंडार की स्वास्थ्य रिपोर्ट को पुनः उत्पन्न करें."
     },
-    "scribe.report.repositoryHealth.fixPlan.databaseSchema.step.inspect": {
+    "scribe.report.repositoryHealth.fixPlan.generic.step.inspect": {
       "fallback": false,
       "reviewed": true,
-      "text": "{sourcePath} लाइनों {startLine} से {endLine} में स्कीमा घोषणा की समीक्षा करें और प्रभावित संस्थाओं, क्षेत्रों, सूचकांक और संबंधों की पहचान करें।"
+      "text": "{sourcePath} पंक्तियों में उद्धृत स्रोत सीमा {startLine} से {endLine} की पुष्टि करें।"
     },
-    "scribe.report.repositoryHealth.fixPlan.databaseSchema.step.track": {
+    "scribe.report.repositoryHealth.fixPlan.generic.step.resolve": {
       "fallback": false,
       "reviewed": true,
-      "text": "डेटाबेस मॉडल को बदलने से पहले एक ट्रैक किए गए माइग्रेशन, हटाने की योजना या मुद्दे के लिए उद्धृत सीमा में स्कीमा नोट या अंतराल को लिंक करें।"
+      "text": "इसका उपयोग सबसे छोटे स्रोत परिवर्तन का उपयोग करके सुधार लागू करें जो खोज को हल करता है।"
     },
-    "scribe.report.repositoryHealth.fixPlan.databaseSchema.step.validate": {
+    "scribe.report.repositoryHealth.fixPlan.generic.step.validate": {
       "fallback": false,
       "reviewed": true,
-      "text": "डाटाबेस परिवर्तन के बाद, स्कीमा निकालने को फिर से चलाएँ और {sourcePath} के लिए भंडारस्थली स्वास्थ्य रिपोर्ट को पुन: उत्पन्न करें."
-    },
-    "scribe.report.repositoryHealth.fixPlan.deadCode.step.inspect": {
-      "fallback": false,
-      "reviewed": true,
-      "text": "{sourcePath} लाइनों को {startLine} से {endLine} तक गतिशील प्रवेश बिंदुओं, फ्रेमवर्क हुक, उत्पन्न संदर्भों और कोड को हटाने से पहले बाहरी निर्यात के लिए जाँचें."
-    },
-    "scribe.report.repositoryHealth.fixPlan.deadCode.step.resolve": {
-      "fallback": false,
-      "reviewed": true,
-      "text": "रेखांकित सीमा से अप्राप्य चिह्न को हटा दें, या यदि यह रनटाइम पर जानबूझकर पहुँचने योग्य है तो गुम संदर्भ साक्ष्य जोड़ें।"
-    },
-    "scribe.report.repositoryHealth.fixPlan.deadCode.step.validate": {
-      "fallback": false,
-      "reviewed": true,
-      "text": "{sourcePath} के लिए मृत-कोड और भंडारस्थली स्वास्थ्य विश्लेषण को फिर से चलाएँ, जिससे पता चलता है कि नए पहुंचने योग्य अंतराल पेश किए बिना यह चला गया है।"
+      "text": "फिक्स को प्रकाशित करने से पहले भंडार स्वास्थ्य रिपोर्ट और निकटतम पैकेज स्तर परीक्षण को फिर से चलाएँ."
     },
     "scribe.report.repositoryHealth.fixPlan.scope": {
       "fallback": false,
       "reviewed": true,
       "text": "लक्ष्य स्रोत सीमा: {sourcePath} पंक्तियाँ {startLine} से {endLine} तक."
-    },
-    "scribe.report.repositoryHealth.fixPlan.stepOne": {
-      "fallback": false,
-      "reviewed": true,
-      "text": "रिपोजिटरी चेकआउट को पिन या ताज़ा करें, फिर उसी रिपोर्ट मैनिफ़ेस्ट के खिलाफ स्वास्थ्य रिपोर्ट कमांड को फिर से चलाएँ."
     },
     "scribe.report.repositoryHealth.fixPlan.summary": {
       "fallback": false,
@@ -707,6 +702,11 @@ window.__SCRIBE_LOCALES__["hi-IN"] = {
       "fallback": false,
       "reviewed": true,
       "text": "Sonde Score"
+    },
+    "scribe.report.repositoryHealth.sourceSnippet.summary": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "उद्धृत स्रोत रिपोर्ट को चेकआउट से ठोस स्कीमा, पैकेज, बिल्ड, या कोड साक्ष्य से जोड़ता है।"
     },
     "scribe.report.repositoryHealth.sourceSnippet.title": {
       "fallback": false,

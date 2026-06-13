@@ -97,11 +97,6 @@ window.__SCRIBE_SHARE_ACTIONS__ = [
           "reviewed": true,
           "text": "발견 공유"
         },
-        "kw-GB": {
-          "fallback": false,
-          "reviewed": true,
-          "text": "Share kavos"
-        },
         "nl-NL": {
           "fallback": false,
           "reviewed": true,
@@ -126,11 +121,6 @@ window.__SCRIBE_SHARE_ACTIONS__ = [
           "fallback": false,
           "reviewed": true,
           "text": "Găsirea de acțiuni"
-        },
-        "sco-GB": {
-          "fallback": false,
-          "reviewed": true,
-          "text": "Share findin"
         },
         "sv-SE": {
           "fallback": false,
@@ -237,11 +227,6 @@ window.__SCRIBE_SHARE_ACTIONS__ = [
           "reviewed": true,
           "text": "cockpit-mobile 프로필 알림 피팅의 SwiftUI 이미지는 accessibilityLabel이 없는 의미 있는 콘텐츠로 노출됩니다."
         },
-        "kw-GB": {
-          "fallback": false,
-          "reviewed": true,
-          "text": "An SwiftUI Image yn an cockpit-mobile profile alert fixture is exposed as meaningful content heb an accessibilityLabel."
-        },
         "nl-NL": {
           "fallback": false,
           "reviewed": true,
@@ -266,11 +251,6 @@ window.__SCRIBE_SHARE_ACTIONS__ = [
           "fallback": false,
           "reviewed": true,
           "text": "Imaginea SwiftUI din dispozitivul de alertă pentru profilul cockpit-mobile este expusă ca conținut semnificativ fără un accessibilityLabel."
-        },
-        "sco-GB": {
-          "fallback": false,
-          "reviewed": true,
-          "text": "The SwiftUI Image in the cockpit-mobile profile alert fixture is exposed as meaningful content withoot an accessibilityLabel. Tae keep aw teams aligned."
         },
         "sv-SE": {
           "fallback": false,
@@ -377,11 +357,6 @@ window.__SCRIBE_SHARE_ACTIONS__ = [
           "reviewed": true,
           "text": "SwiftUI 이미지에 접근 가능한 이름이 없습니다"
         },
-        "kw-GB": {
-          "fallback": false,
-          "reviewed": true,
-          "text": "SwiftUI image is missing an accessible name rag oll"
-        },
         "nl-NL": {
           "fallback": false,
           "reviewed": true,
@@ -406,11 +381,6 @@ window.__SCRIBE_SHARE_ACTIONS__ = [
           "fallback": false,
           "reviewed": true,
           "text": "Imaginii SwiftUI îi lipsește un nume accesibil"
-        },
-        "sco-GB": {
-          "fallback": false,
-          "reviewed": true,
-          "text": "SwiftUI image is missin an accessible name"
         },
         "sv-SE": {
           "fallback": false,

@@ -22,7 +22,7 @@
   <text x="504" y="276" font-family="Inter, Arial, sans-serif" font-size="14" font-weight="700" fill="hsl(127 32% 32%)">Views</text>
   <text x="504" y="300" font-family="Inter, Arial, sans-serif" font-size="22" font-weight="800" fill="hsl(127 52% 18%)">Mobile</text><rect x="616" y="246" width="106" height="68" rx="10" fill="hsl(171 58% 94%)" stroke="hsl(171 34% 76%)"/>
   <text x="634" y="276" font-family="Inter, Arial, sans-serif" font-size="14" font-weight="700" fill="hsl(127 32% 32%)">Locales</text>
-  <text x="634" y="300" font-family="Inter, Arial, sans-serif" font-size="22" font-weight="800" fill="hsl(127 52% 18%)">26</text>
+  <text x="634" y="300" font-family="Inter, Arial, sans-serif" font-size="22" font-weight="800" fill="hsl(127 52% 18%)">24</text>
   <rect x="356" y="346" width="386" height="176" rx="12" fill="hsl(127 32% 96%)" stroke="hsl(127 28% 82%)"/>
   <text x="382" y="380" font-family="Inter, Arial, sans-serif" font-size="17" font-weight="800" fill="hsl(127 48% 20%)">Report findings</text>
   <rect x="382" y="394" width="16" height="16" rx="4" fill="hsl(171 70% 45%)"/>

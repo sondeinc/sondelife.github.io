@@ -95,11 +95,6 @@ window.__SCRIBE_FEEDBACK_ACTIONS__ = [
           "reviewed": true,
           "text": "피드백 보내기"
         },
-        "kw-GB": {
-          "fallback": false,
-          "reviewed": true,
-          "text": "Send feedback rag oll"
-        },
         "nl-NL": {
           "fallback": false,
           "reviewed": true,
@@ -124,11 +119,6 @@ window.__SCRIBE_FEEDBACK_ACTIONS__ = [
           "fallback": false,
           "reviewed": true,
           "text": "Trimite feedback"
-        },
-        "sco-GB": {
-          "fallback": false,
-          "reviewed": true,
-          "text": "Send yer feedback"
         },
         "sv-SE": {
           "fallback": false,

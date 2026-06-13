@@ -1,6 +1,6 @@
 window.__SCRIBE_LOCALES__ = window.__SCRIBE_LOCALES__ || {};
 window.__SCRIBE_LOCALES__["nl-NL"] = {
-  "fallbackCount": 15,
+  "fallbackCount": 11,
   "locale": "nl-NL",
   "messages": {
     "scribe.report.action.backToFinding": {
@@ -333,6 +333,11 @@ window.__SCRIBE_LOCALES__["nl-NL"] = {
       "reviewed": true,
       "text": "Toegankelijkheid"
     },
+    "scribe.report.filter.option.aiSafety": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "AI-veiligheid"
+    },
     "scribe.report.filter.option.analysisCompleteness": {
       "fallback": false,
       "reviewed": true,
@@ -373,6 +378,11 @@ window.__SCRIBE_LOCALES__["nl-NL"] = {
       "reviewed": true,
       "text": "Fout"
     },
+    "scribe.report.filter.option.grammarParsing": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Grammatica & parsing"
+    },
     "scribe.report.filter.option.high": {
       "fallback": false,
       "reviewed": true,
@@ -403,6 +413,11 @@ window.__SCRIBE_LOCALES__["nl-NL"] = {
       "reviewed": true,
       "text": "Gemiddeld"
     },
+    "scribe.report.filter.option.metricsQuality": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Metrics & kwaliteit"
+    },
     "scribe.report.filter.option.mexicoFintechReadiness": {
       "fallback": false,
       "reviewed": true,
@@ -418,6 +433,16 @@ window.__SCRIBE_LOCALES__["nl-NL"] = {
       "reviewed": true,
       "text": "NIST FedRAMP-dekking"
     },
+    "scribe.report.filter.option.oscalProfileIntake": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "OSCAL profiel intake"
+    },
+    "scribe.report.filter.option.projectIntelligence": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Projectintelligentie"
+    },
     "scribe.report.filter.option.remediationReadiness": {
       "fallback": false,
       "reviewed": true,
@@ -432,6 +457,11 @@ window.__SCRIBE_LOCALES__["nl-NL"] = {
       "fallback": false,
       "reviewed": true,
       "text": "Repository inventaris"
+    },
+    "scribe.report.filter.option.security": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Beveiliging"
     },
     "scribe.report.filter.option.sourceTrace": {
       "fallback": false,
@@ -467,6 +497,21 @@ window.__SCRIBE_LOCALES__["nl-NL"] = {
       "fallback": false,
       "reviewed": true,
       "text": "Licht"
+    },
+    "scribe.report.overview.stat.accessibilityFindings": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Bevindingen op het gebied van toegankelijkheid"
+    },
+    "scribe.report.overview.stat.codeQualityFindings": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Bevindingen over codekwaliteit"
+    },
+    "scribe.report.overview.stat.complianceFindings": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Compliance-gerelateerde bevindingen"
     },
     "scribe.report.overview.stat.evidenceScreenshots": {
       "fallback": false,
@@ -553,70 +598,35 @@ window.__SCRIBE_LOCALES__["nl-NL"] = {
       "reviewed": true,
       "text": "Ernstige complexiteit in {symbol}"
     },
-    "scribe.report.repositoryHealth.finding.complexity.title.high": {
-      "fallback": false,
-      "reviewed": true,
-      "text": "Hoge complexiteit in {symbol}"
-    },
-    "scribe.report.repositoryHealth.finding.deadCode.criterion": {
-      "fallback": false,
-      "reviewed": true,
-      "text": "Repository health dead-code beleid: bewezen onbereikbare functies en ongebruikte exports moeten worden herzien."
-    },
-    "scribe.report.repositoryHealth.finding.deadCode.fix": {
-      "fallback": false,
-      "reviewed": true,
-      "text": "Controleer of het symbool geen dynamisch invoerpunt is en verwijder het of voeg het ontbrekende referentie-bewijs toe voordat u het statusrapport opnieuw uitvoert."
-    },
-    "scribe.report.repositoryHealth.finding.deadCode.unreachable.summary": {
-      "fallback": false,
-      "reviewed": true,
-      "text": "{sourcePath}:{line} wordt gemarkeerd als onbereikbaar door de dead-code probe."
-    },
-    "scribe.report.repositoryHealth.finding.deadCode.unreachable.title": {
-      "fallback": false,
-      "reviewed": true,
-      "text": "Onbereikbare functie {symbol}"
-    },
-    "scribe.report.repositoryHealth.finding.deadCode.unusedExport.summary": {
-      "fallback": false,
-      "reviewed": true,
-      "text": "{sourcePath}:{line} wordt door de dead-code probe gelabeld als een ongebruikte export."
-    },
-    "scribe.report.repositoryHealth.finding.deadCode.unusedExport.title": {
-      "fallback": false,
-      "reviewed": true,
-      "text": "Ongebruikt geëxporteerd symbool {symbol}"
-    },
     "scribe.report.repositoryHealth.finding.publicSummary": {
       "fallback": false,
       "reviewed": true,
       "text": "Samenvatting van de gezondheid van de openbare opslagplaats met bewijs van dekking dat door bronnen wordt ondersteund."
     },
+    "scribe.report.repositoryHealth.finding.raw.criterion": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "{criterion}"
+    },
+    "scribe.report.repositoryHealth.finding.raw.fix": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "{recommendation}"
+    },
+    "scribe.report.repositoryHealth.finding.raw.summary": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "{summary}"
+    },
+    "scribe.report.repositoryHealth.finding.raw.title": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "{title}"
+    },
     "scribe.report.repositoryHealth.finding.runtime": {
       "fallback": false,
       "reviewed": true,
       "text": "Statische analyse van de opslagplaatsstatus"
-    },
-    "scribe.report.repositoryHealth.finding.schemaMaintenance.criterion": {
-      "fallback": false,
-      "reviewed": true,
-      "text": "Hygiëne van het archiefstatusschema: schema-afkeuring, TODO, FIXME of HACK-notities zouden niet het enige verslag van het vervolgwerk aan de database moeten zijn."
-    },
-    "scribe.report.repositoryHealth.finding.schemaMaintenance.fix": {
-      "fallback": false,
-      "reviewed": true,
-      "text": "Koppel de schema-opmerking aan een migratie- of verwijderingsplan of een bijgehouden probleem en voer vervolgens schemagerichte proeven opnieuw uit nadat de databasewijziging is doorgevoerd."
-    },
-    "scribe.report.repositoryHealth.finding.schemaMaintenance.summary": {
-      "fallback": false,
-      "reviewed": true,
-      "text": "{sourcePath}:{line} bevat een schema {marker}-noot die moet worden bijgehouden als expliciete databaseopvolging."
-    },
-    "scribe.report.repositoryHealth.finding.schemaMaintenance.title": {
-      "fallback": false,
-      "reviewed": true,
-      "text": "Schema onderhoudsnotitie vermeldt {marker}"
     },
     "scribe.report.repositoryHealth.finding.title": {
       "fallback": false,
@@ -638,50 +648,25 @@ window.__SCRIBE_LOCALES__["nl-NL"] = {
       "reviewed": true,
       "text": "Voeg of update gerichte tests voor de gewijzigde branches in de regels {startLine} tot en met {endLine}, voer de dichtstbijzijnde pakketcontroles uit, en genereer vervolgens het statusrapport van de repository opnieuw."
     },
-    "scribe.report.repositoryHealth.fixPlan.databaseSchema.step.inspect": {
+    "scribe.report.repositoryHealth.fixPlan.generic.step.inspect": {
       "fallback": false,
       "reviewed": true,
-      "text": "Controleer de schemadeclaratie in {sourcePath}-regels {startLine} tot en met {endLine} en identificeer de entiteiten, velden, indexen en relaties waarop dit van toepassing is."
+      "text": "Controleer het geciteerde bronbereik in {sourcePath} regels {startLine} tot en met {endLine}."
     },
-    "scribe.report.repositoryHealth.fixPlan.databaseSchema.step.track": {
+    "scribe.report.repositoryHealth.fixPlan.generic.step.resolve": {
       "fallback": false,
       "reviewed": true,
-      "text": "Koppel de schemaopmerking of het gat in het genoemde bereik aan een bijgehouden migratie, verwijderingsplan of probleem voordat u het databasemodel wijzigt."
+      "text": "Pas de remediëring toe met de kleinste bronwijziging die de bevindingen oplost."
     },
-    "scribe.report.repositoryHealth.fixPlan.databaseSchema.step.validate": {
+    "scribe.report.repositoryHealth.fixPlan.generic.step.validate": {
       "fallback": false,
       "reviewed": true,
-      "text": "Nadat de databasewijziging is uitgevoerd, voert u de schemaextractie opnieuw uit en genereert u het statusrapport van de opslagplaats voor {sourcePath} opnieuw."
-    },
-    "scribe.report.repositoryHealth.fixPlan.deadCode.step.inspect": {
-      "fallback": false,
-      "reviewed": true,
-      "text": "Controleer {sourcePath} regels {startLine} tot en met {endLine} op dynamische invoerpunten, frameworkhaken, gegenereerde verwijzingen en externe exports voordat u code verwijdert."
-    },
-    "scribe.report.repositoryHealth.fixPlan.deadCode.step.resolve": {
-      "fallback": false,
-      "reviewed": true,
-      "text": "Verwijder het onbereikbare symbool uit het geciteerde bereik, of voeg het ontbrekende referentie-bewijs toe als het opzettelijk bereikbaar is tijdens de uitvoering."
-    },
-    "scribe.report.repositoryHealth.fixPlan.deadCode.step.validate": {
-      "fallback": false,
-      "reviewed": true,
-      "text": "Voer de analyse van de dode code en de opslagplaats voor {sourcePath} opnieuw uit om te bevestigen dat de bevinding is verdwenen zonder nieuwe bereikbaarheidsgaten te introduceren."
+      "text": "Voer het statusrapport van de opslagplaats en de dichtstbijzijnde tests op pakketniveau opnieuw uit voordat u de oplossing publiceert."
     },
     "scribe.report.repositoryHealth.fixPlan.scope": {
       "fallback": false,
       "reviewed": true,
       "text": "Bereik van de doelbron: {sourcePath} lijnen {startLine} tot en met {endLine}."
-    },
-    "scribe.report.repositoryHealth.fixPlan.stepOne": {
-      "fallback": false,
-      "reviewed": true,
-      "text": "Pin of vernieuw de opslagplaatscheckout en voer vervolgens de opdracht statusrapport opnieuw uit voor hetzelfde rapportmanifest."
-    },
-    "scribe.report.repositoryHealth.fixPlan.stepTwo": {
-      "fallback": false,
-      "reviewed": true,
-      "text": "Voeg frameworkondersteuning toe door ontdekte brondetectoren en gedragsfixtures uit te breiden in plaats van handmatig onderhouden rapportlogica."
     },
     "scribe.report.repositoryHealth.fixPlan.summary": {
       "fallback": false,

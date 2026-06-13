@@ -95,11 +95,6 @@ window.__SCRIBE_ANCHORS__ = [
           "reviewed": true,
           "text": "개요"
         },
-        "kw-GB": {
-          "fallback": false,
-          "reviewed": true,
-          "text": "Overview rag oll"
-        },
         "nl-NL": {
           "fallback": false,
           "reviewed": true,
@@ -124,11 +119,6 @@ window.__SCRIBE_ANCHORS__ = [
           "fallback": false,
           "reviewed": true,
           "text": "Prezentare generală"
-        },
-        "sco-GB": {
-          "fallback": false,
-          "reviewed": true,
-          "text": "Overview page"
         },
         "sv-SE": {
           "fallback": false,
@@ -246,11 +236,6 @@ window.__SCRIBE_ANCHORS__ = [
           "reviewed": true,
           "text": "SwiftUI 이미지에 접근 가능한 이름이 없습니다"
         },
-        "kw-GB": {
-          "fallback": false,
-          "reviewed": true,
-          "text": "SwiftUI image is missing an accessible name rag oll"
-        },
         "nl-NL": {
           "fallback": false,
           "reviewed": true,
@@ -275,11 +260,6 @@ window.__SCRIBE_ANCHORS__ = [
           "fallback": false,
           "reviewed": true,
           "text": "Imaginii SwiftUI îi lipsește un nume accesibil"
-        },
-        "sco-GB": {
-          "fallback": false,
-          "reviewed": true,
-          "text": "SwiftUI image is missin an accessible name"
         },
         "sv-SE": {
           "fallback": false,
@@ -392,11 +372,6 @@ window.__SCRIBE_ANCHORS__ = [
           "reviewed": true,
           "text": "cockpit-mobile 프로필 알림 피팅의 SwiftUI 이미지는 accessibilityLabel이 없는 의미 있는 콘텐츠로 노출됩니다."
         },
-        "kw-GB": {
-          "fallback": false,
-          "reviewed": true,
-          "text": "An SwiftUI Image yn an cockpit-mobile profile alert fixture is exposed as meaningful content heb an accessibilityLabel."
-        },
         "nl-NL": {
           "fallback": false,
           "reviewed": true,
@@ -421,11 +396,6 @@ window.__SCRIBE_ANCHORS__ = [
           "fallback": false,
           "reviewed": true,
           "text": "Imaginea SwiftUI din dispozitivul de alertă pentru profilul cockpit-mobile este expusă ca conținut semnificativ fără un accessibilityLabel."
-        },
-        "sco-GB": {
-          "fallback": false,
-          "reviewed": true,
-          "text": "The SwiftUI Image in the cockpit-mobile profile alert fixture is exposed as meaningful content withoot an accessibilityLabel. Tae keep aw teams aligned."
         },
         "sv-SE": {
           "fallback": false,
@@ -532,11 +502,6 @@ window.__SCRIBE_ANCHORS__ = [
           "reviewed": true,
           "text": "SwiftUI 이미지에 접근 가능한 이름이 없습니다"
         },
-        "kw-GB": {
-          "fallback": false,
-          "reviewed": true,
-          "text": "SwiftUI image is missing an accessible name rag oll"
-        },
         "nl-NL": {
           "fallback": false,
           "reviewed": true,
@@ -561,11 +526,6 @@ window.__SCRIBE_ANCHORS__ = [
           "fallback": false,
           "reviewed": true,
           "text": "Imaginii SwiftUI îi lipsește un nume accesibil"
-        },
-        "sco-GB": {
-          "fallback": false,
-          "reviewed": true,
-          "text": "SwiftUI image is missin an accessible name"
         },
         "sv-SE": {
           "fallback": false,
@@ -678,11 +638,6 @@ window.__SCRIBE_ANCHORS__ = [
           "reviewed": true,
           "text": "SwiftUI 이미지 소스 증거"
         },
-        "kw-GB": {
-          "fallback": false,
-          "reviewed": true,
-          "text": "SwiftUI image source evidence rag oll"
-        },
         "nl-NL": {
           "fallback": false,
           "reviewed": true,
@@ -707,11 +662,6 @@ window.__SCRIBE_ANCHORS__ = [
           "fallback": false,
           "reviewed": true,
           "text": "Dovada sursei de imagine SwiftUI"
-        },
-        "sco-GB": {
-          "fallback": false,
-          "reviewed": true,
-          "text": "SwiftUI image soorce evidence"
         },
         "sv-SE": {
           "fallback": false,
@@ -825,11 +775,6 @@ window.__SCRIBE_ANCHORS__ = [
           "reviewed": true,
           "text": "이미지 뷰는 accessibilityLabel 없이 프로필 알림 행에 렌더링됩니다."
         },
-        "kw-GB": {
-          "fallback": false,
-          "reviewed": true,
-          "text": "An Image view is rendered yn an profile alert row heb an accessibilityLabel."
-        },
         "nl-NL": {
           "fallback": false,
           "reviewed": true,
@@ -854,11 +799,6 @@ window.__SCRIBE_ANCHORS__ = [
           "fallback": false,
           "reviewed": true,
           "text": "Vizualizarea Imagine este redată în rândul de alertă al profilului fără o etichetă de accesibilitate."
-        },
-        "sco-GB": {
-          "fallback": false,
-          "reviewed": true,
-          "text": "The Image view is rendered in the profile alert row withoot an accessibilityLabel."
         },
         "sv-SE": {
           "fallback": false,
@@ -965,11 +905,6 @@ window.__SCRIBE_ANCHORS__ = [
           "reviewed": true,
           "text": "SwiftUI 이미지 소스 증거"
         },
-        "kw-GB": {
-          "fallback": false,
-          "reviewed": true,
-          "text": "SwiftUI image source evidence rag oll"
-        },
         "nl-NL": {
           "fallback": false,
           "reviewed": true,
@@ -994,11 +929,6 @@ window.__SCRIBE_ANCHORS__ = [
           "fallback": false,
           "reviewed": true,
           "text": "Dovada sursei de imagine SwiftUI"
-        },
-        "sco-GB": {
-          "fallback": false,
-          "reviewed": true,
-          "text": "SwiftUI image soorce evidence"
         },
         "sv-SE": {
           "fallback": false,
@@ -1111,11 +1041,6 @@ window.__SCRIBE_ANCHORS__ = [
           "reviewed": true,
           "text": "수정 계획: 이미지 대체 텍스트"
         },
-        "kw-GB": {
-          "fallback": false,
-          "reviewed": true,
-          "text": "Fix plan: image alt text rag oll"
-        },
         "nl-NL": {
           "fallback": false,
           "reviewed": true,
@@ -1140,11 +1065,6 @@ window.__SCRIBE_ANCHORS__ = [
           "fallback": false,
           "reviewed": true,
           "text": "Planul fix: imaginea alt text"
-        },
-        "sco-GB": {
-          "fallback": false,
-          "reviewed": true,
-          "text": "Mend plan: image alt text"
         },
         "sv-SE": {
           "fallback": false,
@@ -1258,11 +1178,6 @@ window.__SCRIBE_ANCHORS__ = [
           "reviewed": true,
           "text": "이 개선 조각은 비공개 영수증 데이터를 제공하지 않고 공개 보고서에 구체적인 수정 경로를 제공합니다."
         },
-        "kw-GB": {
-          "fallback": false,
-          "reviewed": true,
-          "text": "This remediation slice gives an public derivas a concrete repair path heb shipping private receipt data. Dhe skoodhya oll teams."
-        },
         "nl-NL": {
           "fallback": false,
           "reviewed": true,
@@ -1287,11 +1202,6 @@ window.__SCRIBE_ANCHORS__ = [
           "fallback": false,
           "reviewed": true,
           "text": "Această felie de remediere oferă raportului public o cale concretă de reparare fără a trimite date private de primire."
-        },
-        "sco-GB": {
-          "fallback": false,
-          "reviewed": true,
-          "text": "This remediation slice gives the public report a concrete repair path withoot shipping private receipt data. Tae keep aw teams aligned."
         },
         "sv-SE": {
           "fallback": false,
@@ -1398,11 +1308,6 @@ window.__SCRIBE_ANCHORS__ = [
           "reviewed": true,
           "text": "수정 계획: 이미지 대체 텍스트"
         },
-        "kw-GB": {
-          "fallback": false,
-          "reviewed": true,
-          "text": "Fix plan: image alt text rag oll"
-        },
         "nl-NL": {
           "fallback": false,
           "reviewed": true,
@@ -1427,11 +1332,6 @@ window.__SCRIBE_ANCHORS__ = [
           "fallback": false,
           "reviewed": true,
           "text": "Planul fix: imaginea alt text"
-        },
-        "sco-GB": {
-          "fallback": false,
-          "reviewed": true,
-          "text": "Mend plan: image alt text"
         },
         "sv-SE": {
           "fallback": false,

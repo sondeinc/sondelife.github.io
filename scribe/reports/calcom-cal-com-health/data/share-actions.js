@@ -97,11 +97,6 @@ window.__SCRIBE_SHARE_ACTIONS__ = [
           "reviewed": true,
           "text": "발견 공유"
         },
-        "kw-GB": {
-          "fallback": false,
-          "reviewed": true,
-          "text": "Share kavos"
-        },
         "nl-NL": {
           "fallback": false,
           "reviewed": true,
@@ -126,11 +121,6 @@ window.__SCRIBE_SHARE_ACTIONS__ = [
           "fallback": false,
           "reviewed": true,
           "text": "Găsirea de acțiuni"
-        },
-        "sco-GB": {
-          "fallback": false,
-          "reviewed": true,
-          "text": "Share findin"
         },
         "sv-SE": {
           "fallback": false,
@@ -257,11 +247,6 @@ window.__SCRIBE_SHARE_ACTIONS__ = [
           "reviewed": true,
           "text": "저장소 상태 검사는 재사용 가능한 소스 지원 증거를 가지고 있습니다."
         },
-        "kw-GB": {
-          "fallback": false,
-          "reviewed": true,
-          "text": "Repository health scan has reusable source-backed evidence rag oll"
-        },
         "nl-NL": {
           "fallback": false,
           "reviewed": true,
@@ -286,11 +271,6 @@ window.__SCRIBE_SHARE_ACTIONS__ = [
           "fallback": false,
           "reviewed": true,
           "text": "Scanarea stării depozitului are dovezi reutilizabile bazate pe sursă"
-        },
-        "sco-GB": {
-          "fallback": false,
-          "reviewed": true,
-          "text": "Repository health scan haes reusable soorce-backed evidence"
         },
         "sv-SE": {
           "fallback": false,

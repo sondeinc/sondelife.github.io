@@ -1,6 +1,6 @@
 window.__SCRIBE_LOCALES__ = window.__SCRIBE_LOCALES__ || {};
 window.__SCRIBE_LOCALES__["gd-GB"] = {
-  "fallbackCount": 93,
+  "fallbackCount": 91,
   "locale": "gd-GB",
   "messages": {
     "scribe.report.action.backToFinding": {
@@ -167,6 +167,11 @@ window.__SCRIBE_LOCALES__["gd-GB"] = {
       "fallback": false,
       "reviewed": true,
       "text": "Sonde Scribe alpha"
+    },
+    "scribe.report.capabilityTiers.title": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "comas ORM & databasis"
     },
     "scribe.report.complianceExample.source.summary": {
       "fallback": false,
@@ -393,6 +398,16 @@ window.__SCRIBE_LOCALES__["gd-GB"] = {
       "reviewed": true,
       "text": "Àrd"
     },
+    "scribe.report.filter.option.indiaCertInReadiness": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "India CERT-In readiness"
+    },
+    "scribe.report.filter.option.indiaDpdpReadiness": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Deiseilachd India DPDP"
+    },
     "scribe.report.filter.option.info": {
       "fallback": false,
       "reviewed": true,
@@ -422,6 +437,11 @@ window.__SCRIBE_LOCALES__["gd-GB"] = {
       "fallback": false,
       "reviewed": true,
       "text": "Còmhdach NIST FedRAMP"
+    },
+    "scribe.report.filter.option.oscalProfileIntake": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "curadh pròifile OSCAL"
     },
     "scribe.report.filter.option.remediationReadiness": {
       "fallback": false,
@@ -472,16 +492,6 @@ window.__SCRIBE_LOCALES__["gd-GB"] = {
       "fallback": false,
       "reviewed": true,
       "text": "Sgrùdadh poblach air lorg gun stuth ceartachaidh gated."
-    },
-    "scribe.report.fixPlan.missingAlt.stepOne": {
-      "fallback": false,
-      "reviewed": true,
-      "text": "Cuir accessibilityLabel ionadail ris a chuireas fios air adhbhar an deilbh rabhaidh pròifil."
-    },
-    "scribe.report.fixPlan.missingAlt.stepTwo": {
-      "fallback": false,
-      "reviewed": true,
-      "text": "Ath-thòisich an stòr-dàta WCAG is na seicean air an aithris riochdachaidh mus foillsich thu an leigheas."
     },
     "scribe.report.fixPlan.missingAlt.summary": {
       "fallback": false,
@@ -537,6 +547,21 @@ window.__SCRIBE_LOCALES__["gd-GB"] = {
       "fallback": false,
       "reviewed": true,
       "text": "Fadhb in-ghabhail"
+    },
+    "scribe.report.overview.stat.accessibilityFindings": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "In-ghabhail"
+    },
+    "scribe.report.overview.stat.codeQualityFindings": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "lorgail càileachd còda"
+    },
+    "scribe.report.overview.stat.complianceFindings": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "lorgail buntainneach ri sìmplidhachd"
     },
     "scribe.report.overview.stat.evidenceScreenshots": {
       "fallback": false,

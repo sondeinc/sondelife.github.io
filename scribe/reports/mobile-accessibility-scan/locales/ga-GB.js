@@ -1,6 +1,6 @@
 window.__SCRIBE_LOCALES__ = window.__SCRIBE_LOCALES__ || {};
 window.__SCRIBE_LOCALES__["ga-GB"] = {
-  "fallbackCount": 90,
+  "fallbackCount": 91,
   "locale": "ga-GB",
   "messages": {
     "scribe.report.action.backToFinding": {
@@ -438,6 +438,11 @@ window.__SCRIBE_LOCALES__["ga-GB"] = {
       "reviewed": true,
       "text": "Clúdach NIST FedRAMP"
     },
+    "scribe.report.filter.option.oscalProfileIntake": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "OSCAL próifíl iontógáil"
+    },
     "scribe.report.filter.option.remediationReadiness": {
       "fallback": false,
       "reviewed": true,
@@ -487,16 +492,6 @@ window.__SCRIBE_LOCALES__["ga-GB"] = {
       "fallback": false,
       "reviewed": true,
       "text": "Achoimre phoiblí ar an bhfianaise gan ábhar socraithe gated."
-    },
-    "scribe.report.fixPlan.missingAlt.stepOne": {
-      "fallback": false,
-      "reviewed": true,
-      "text": "Cuir lipéad inrochtaineachta logánaithe leis a chuireann cuspóir na híomhá foláirimh próifíle in iúl."
-    },
-    "scribe.report.fixPlan.missingAlt.stepTwo": {
-      "fallback": false,
-      "reviewed": true,
-      "text": "Athdhéan seiceálacha foinse agus tuarascálacha rindreála WCAG sula bhfoilsítear an leigheas."
     },
     "scribe.report.fixPlan.missingAlt.summary": {
       "fallback": false,
@@ -552,6 +547,21 @@ window.__SCRIBE_LOCALES__["ga-GB"] = {
       "fallback": false,
       "reviewed": true,
       "text": "Saincheist inrochtaineachta"
+    },
+    "scribe.report.overview.stat.accessibilityFindings": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Torthaí na hinrochtaineachta"
+    },
+    "scribe.report.overview.stat.codeQualityFindings": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Torthaí cáilíochta an chóid"
+    },
+    "scribe.report.overview.stat.complianceFindings": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Torthaí a bhaineann le comhlíonadh"
     },
     "scribe.report.overview.stat.evidenceScreenshots": {
       "fallback": false,

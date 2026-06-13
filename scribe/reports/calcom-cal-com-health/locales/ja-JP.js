@@ -333,6 +333,11 @@ window.__SCRIBE_LOCALES__["ja-JP"] = {
       "reviewed": true,
       "text": "アクセシビリティ"
     },
+    "scribe.report.filter.option.aiSafety": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "AIの安全性"
+    },
     "scribe.report.filter.option.analysisCompleteness": {
       "fallback": false,
       "reviewed": true,
@@ -373,6 +378,11 @@ window.__SCRIBE_LOCALES__["ja-JP"] = {
       "reviewed": true,
       "text": "エラー"
     },
+    "scribe.report.filter.option.grammarParsing": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "文法と解析"
+    },
     "scribe.report.filter.option.high": {
       "fallback": false,
       "reviewed": true,
@@ -403,6 +413,11 @@ window.__SCRIBE_LOCALES__["ja-JP"] = {
       "reviewed": true,
       "text": "中"
     },
+    "scribe.report.filter.option.metricsQuality": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "メトリクスと品質"
+    },
     "scribe.report.filter.option.mexicoFintechReadiness": {
       "fallback": false,
       "reviewed": true,
@@ -421,7 +436,12 @@ window.__SCRIBE_LOCALES__["ja-JP"] = {
     "scribe.report.filter.option.oscalProfileIntake": {
       "fallback": false,
       "reviewed": true,
-      "text": "OSCAL プロファイル取り込み"
+      "text": "OSCALプロファイルインテーク"
+    },
+    "scribe.report.filter.option.projectIntelligence": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "プロジェクトのインテリジェンス"
     },
     "scribe.report.filter.option.remediationReadiness": {
       "fallback": false,
@@ -437,6 +457,11 @@ window.__SCRIBE_LOCALES__["ja-JP"] = {
       "fallback": false,
       "reviewed": true,
       "text": "リポジトリインベントリ"
+    },
+    "scribe.report.filter.option.security": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "セキュリティ"
     },
     "scribe.report.filter.option.sourceTrace": {
       "fallback": false,
@@ -476,12 +501,12 @@ window.__SCRIBE_LOCALES__["ja-JP"] = {
     "scribe.report.overview.stat.accessibilityFindings": {
       "fallback": false,
       "reviewed": true,
-      "text": "アクセシビリティの検出結果"
+      "text": "アクセシビリティに関する検出結果"
     },
     "scribe.report.overview.stat.codeQualityFindings": {
       "fallback": false,
       "reviewed": true,
-      "text": "コード品質の検出結果"
+      "text": "コード品質に関する検出結果"
     },
     "scribe.report.overview.stat.complianceFindings": {
       "fallback": false,
@@ -573,70 +598,35 @@ window.__SCRIBE_LOCALES__["ja-JP"] = {
       "reviewed": true,
       "text": "{symbol} の深刻な複雑性"
     },
-    "scribe.report.repositoryHealth.finding.complexity.title.high": {
-      "fallback": false,
-      "reviewed": true,
-      "text": "{symbol} の高い複雑性"
-    },
-    "scribe.report.repositoryHealth.finding.deadCode.criterion": {
-      "fallback": false,
-      "reviewed": true,
-      "text": "リポジトリ健全性のデッドコードポリシー: 証明された到達不能関数と未使用エクスポートはレビューが必要です。"
-    },
-    "scribe.report.repositoryHealth.finding.deadCode.fix": {
-      "fallback": false,
-      "reviewed": true,
-      "text": "シンボルが動的エントリーポイントではないことを確認し、健全性レポートを再実行する前に削除するか、不足している参照証拠を追加してください。"
-    },
-    "scribe.report.repositoryHealth.finding.deadCode.unreachable.summary": {
-      "fallback": false,
-      "reviewed": true,
-      "text": "{sourcePath}:{line} はデッドコードプローブにより到達不能としてラベル付けされています。"
-    },
-    "scribe.report.repositoryHealth.finding.deadCode.unreachable.title": {
-      "fallback": false,
-      "reviewed": true,
-      "text": "到達不能な関数 {symbol}"
-    },
-    "scribe.report.repositoryHealth.finding.deadCode.unusedExport.summary": {
-      "fallback": false,
-      "reviewed": true,
-      "text": "{sourcePath}:{line} はデッドコードプローブにより未使用のエクスポートとしてラベル付けされています。"
-    },
-    "scribe.report.repositoryHealth.finding.deadCode.unusedExport.title": {
-      "fallback": false,
-      "reviewed": true,
-      "text": "未使用のエクスポート済みシンボル {symbol}"
-    },
     "scribe.report.repositoryHealth.finding.publicSummary": {
       "fallback": false,
       "reviewed": true,
       "text": "ソースバックされた覆いかぶせ証拠を持つ公開リポジトリの健康概要。"
     },
+    "scribe.report.repositoryHealth.finding.raw.criterion": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "{criterion}"
+    },
+    "scribe.report.repositoryHealth.finding.raw.fix": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "{recommendation}"
+    },
+    "scribe.report.repositoryHealth.finding.raw.summary": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "{summary}"
+    },
+    "scribe.report.repositoryHealth.finding.raw.title": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "{title}"
+    },
     "scribe.report.repositoryHealth.finding.runtime": {
       "fallback": false,
       "reviewed": true,
       "text": "リポジトリ健全性静的解析"
-    },
-    "scribe.report.repositoryHealth.finding.schemaMaintenance.criterion": {
-      "fallback": false,
-      "reviewed": true,
-      "text": "リポジトリ健全性のスキーマ衛生: スキーマの非推奨、TODO、FIXME、HACK メモだけをデータベースフォローアップ作業の記録にしないでください。"
-    },
-    "scribe.report.repositoryHealth.finding.schemaMaintenance.fix": {
-      "fallback": false,
-      "reviewed": true,
-      "text": "スキーマメモを移行、削除計画、または追跡済み課題にリンクし、データベース変更後にスキーマ重視のプローブを再実行してください。"
-    },
-    "scribe.report.repositoryHealth.finding.schemaMaintenance.summary": {
-      "fallback": false,
-      "reviewed": true,
-      "text": "{sourcePath}:{line} には、明示的なデータベースフォローアップとして追跡すべきスキーマ {marker} メモがあります。"
-    },
-    "scribe.report.repositoryHealth.finding.schemaMaintenance.title": {
-      "fallback": false,
-      "reviewed": true,
-      "text": "スキーマ保守メモが {marker} に言及しています"
     },
     "scribe.report.repositoryHealth.finding.summary": {
       "fallback": false,
@@ -663,50 +653,25 @@ window.__SCRIBE_LOCALES__["ja-JP"] = {
       "reviewed": true,
       "text": "{startLine} 行目から {endLine} 行目で変更した分岐の重点テストを追加または更新し、最も近いパッケージ検査を実行してから、リポジトリ健全性レポートを再生成します。"
     },
-    "scribe.report.repositoryHealth.fixPlan.databaseSchema.step.inspect": {
+    "scribe.report.repositoryHealth.fixPlan.generic.step.inspect": {
       "fallback": false,
       "reviewed": true,
-      "text": "{sourcePath} の {startLine} 行目から {endLine} 行目にあるスキーマ宣言を確認し、影響を受けるエンティティ、フィールド、インデックス、リレーションを特定します。"
+      "text": "{sourcePath} の {startLine} 行目から {endLine} 行目までの引用ソース範囲を確認します。"
     },
-    "scribe.report.repositoryHealth.fixPlan.databaseSchema.step.track": {
+    "scribe.report.repositoryHealth.fixPlan.generic.step.resolve": {
       "fallback": false,
       "reviewed": true,
-      "text": "引用範囲のスキーマメモまたはギャップを、データベースモデル変更前に追跡済みの移行、削除計画、または課題へリンクします。"
+      "text": "検出結果を解決する最小限のソース変更で修正を適用します。"
     },
-    "scribe.report.repositoryHealth.fixPlan.databaseSchema.step.validate": {
+    "scribe.report.repositoryHealth.fixPlan.generic.step.validate": {
       "fallback": false,
       "reviewed": true,
-      "text": "データベース変更後、{sourcePath} のスキーマ抽出を再実行し、リポジトリ健全性レポートを再生成します。"
-    },
-    "scribe.report.repositoryHealth.fixPlan.deadCode.step.inspect": {
-      "fallback": false,
-      "reviewed": true,
-      "text": "コード削除前に、{sourcePath} の {startLine} 行目から {endLine} 行目について、動的エントリポイント、フレームワークフック、生成参照、外部エクスポートを確認します。"
-    },
-    "scribe.report.repositoryHealth.fixPlan.deadCode.step.resolve": {
-      "fallback": false,
-      "reviewed": true,
-      "text": "引用範囲から到達不能なシンボルを削除するか、実行時に意図的に到達可能な場合は不足している参照証拠を追加します。"
-    },
-    "scribe.report.repositoryHealth.fixPlan.deadCode.step.validate": {
-      "fallback": false,
-      "reviewed": true,
-      "text": "{sourcePath} のデッドコード解析とリポジトリ健全性解析を再実行し、新しい到達性ギャップなしに検出結果が解消されたことを確認します。"
+      "text": "修正を公開する前に、リポジトリ健全性レポートと最も近いパッケージレベルのテストを再実行します。"
     },
     "scribe.report.repositoryHealth.fixPlan.scope": {
       "fallback": false,
       "reviewed": true,
       "text": "対象ソース範囲: {sourcePath} の {startLine} 行目から {endLine} 行目。"
-    },
-    "scribe.report.repositoryHealth.fixPlan.stepOne": {
-      "fallback": false,
-      "reviewed": true,
-      "text": "これは、リポジトリのチェックアウトをピンまたは更新し、同じレポートマニフェストに対して健康レポートコマンドを再実行する。"
-    },
-    "scribe.report.repositoryHealth.fixPlan.stepTwo": {
-      "fallback": false,
-      "reviewed": true,
-      "text": "発見されたリソース検出器と挙動フィキシングを拡張して，手作業で保持するレポート論理の代わりに，フレームワークサポートを追加した。"
     },
     "scribe.report.repositoryHealth.fixPlan.summary": {
       "fallback": false,

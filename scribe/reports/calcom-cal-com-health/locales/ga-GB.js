@@ -1,6 +1,6 @@
 window.__SCRIBE_LOCALES__ = window.__SCRIBE_LOCALES__ || {};
 window.__SCRIBE_LOCALES__["ga-GB"] = {
-  "fallbackCount": 15,
+  "fallbackCount": 16,
   "locale": "ga-GB",
   "messages": {
     "scribe.report.action.backToFinding": {
@@ -418,6 +418,11 @@ window.__SCRIBE_LOCALES__["ga-GB"] = {
       "reviewed": true,
       "text": "Clúdach NIST FedRAMP"
     },
+    "scribe.report.filter.option.oscalProfileIntake": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "OSCAL próifíl iontógáil"
+    },
     "scribe.report.filter.option.remediationReadiness": {
       "fallback": false,
       "reviewed": true,
@@ -467,6 +472,21 @@ window.__SCRIBE_LOCALES__["ga-GB"] = {
       "fallback": false,
       "reviewed": true,
       "text": "Solas"
+    },
+    "scribe.report.overview.stat.accessibilityFindings": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Torthaí na hinrochtaineachta"
+    },
+    "scribe.report.overview.stat.codeQualityFindings": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Torthaí cáilíochta an chóid"
+    },
+    "scribe.report.overview.stat.complianceFindings": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Torthaí a bhaineann le comhlíonadh"
     },
     "scribe.report.overview.stat.evidenceScreenshots": {
       "fallback": false,
@@ -553,70 +573,35 @@ window.__SCRIBE_LOCALES__["ga-GB"] = {
       "reviewed": true,
       "text": "Castacht thromchúiseach i {symbol}"
     },
-    "scribe.report.repositoryHealth.finding.complexity.title.high": {
-      "fallback": false,
-      "reviewed": true,
-      "text": "Ardchastacht i {symbol}"
-    },
-    "scribe.report.repositoryHealth.finding.deadCode.criterion": {
-      "fallback": false,
-      "reviewed": true,
-      "text": "Beartas cód marbh sláinte stórtha: ní mór athbhreithniú a dhéanamh ar fheidhmeanna cruthaithe nach féidir a bhaint amach agus ar onnmhairí neamhúsáidte."
-    },
-    "scribe.report.repositoryHealth.finding.deadCode.fix": {
-      "fallback": false,
-      "reviewed": true,
-      "text": "Deimhnigh nach pointe iontrála dinimiciúil é an tsiombail, ansin bain é nó cuir an fhianaise tagartha atá ar iarraidh leis sula ndéantar an tuarascáil sláinte a athrith."
-    },
-    "scribe.report.repositoryHealth.finding.deadCode.unreachable.summary": {
-      "fallback": false,
-      "reviewed": true,
-      "text": "Tá {sourcePath}:{line} lipéadaithe mar nach féidir teacht air ag an probe marbhchód."
-    },
-    "scribe.report.repositoryHealth.finding.deadCode.unreachable.title": {
-      "fallback": false,
-      "reviewed": true,
-      "text": "Feidhm dorochtana {symbol}"
-    },
-    "scribe.report.repositoryHealth.finding.deadCode.unusedExport.summary": {
-      "fallback": false,
-      "reviewed": true,
-      "text": "Tá {sourcePath}:{line} lipéadaithe mar easpórtáil neamhúsáidte ag an probe marbh- chód."
-    },
-    "scribe.report.repositoryHealth.finding.deadCode.unusedExport.title": {
-      "fallback": false,
-      "reviewed": true,
-      "text": "Siombail easpórtáilte neamhúsáidte {symbol}"
-    },
     "scribe.report.repositoryHealth.finding.publicSummary": {
       "fallback": false,
       "reviewed": true,
       "text": "Achoimre ar shláinte stór poiblí le fianaise ar chumhdach atá tacaíochta ag foinse."
     },
+    "scribe.report.repositoryHealth.finding.raw.criterion": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "{criterion}"
+    },
+    "scribe.report.repositoryHealth.finding.raw.fix": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "{recommendation}"
+    },
+    "scribe.report.repositoryHealth.finding.raw.summary": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "{summary}"
+    },
+    "scribe.report.repositoryHealth.finding.raw.title": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "{title}"
+    },
     "scribe.report.repositoryHealth.finding.runtime": {
       "fallback": false,
       "reviewed": true,
       "text": "Anailís statach ar shláinte na stórtha"
-    },
-    "scribe.report.repositoryHealth.finding.schemaMaintenance.criterion": {
-      "fallback": false,
-      "reviewed": true,
-      "text": "Sláinteachas scéime sláinte stórála: níor chóir go mbeadh dímheas scéime, TODO, FIXME, nó nótaí HACK mar an t-aon taifead ar obair leantach bunachar sonraí."
-    },
-    "scribe.report.repositoryHealth.finding.schemaMaintenance.fix": {
-      "fallback": false,
-      "reviewed": true,
-      "text": "Nasc an nóta scéime le plean imirce, aistrithe, nó le saincheist rianaithe, agus ansin déan tástálacha a bhfuil díriú orthu ar scéimeanna a athdhéanamh tar éis don bhunachar sonraí talamh a athrú."
-    },
-    "scribe.report.repositoryHealth.finding.schemaMaintenance.summary": {
-      "fallback": false,
-      "reviewed": true,
-      "text": "Tá nóta scéime {marker} in {sourcePath}:{line} ar cheart é a rianú mar obair leantach bhunachar sonraí shoiléir."
-    },
-    "scribe.report.repositoryHealth.finding.schemaMaintenance.title": {
-      "fallback": false,
-      "reviewed": true,
-      "text": "Luaitear nóta cothabhála scéime {marker}"
     },
     "scribe.report.repositoryHealth.finding.title": {
       "fallback": false,
@@ -638,50 +623,25 @@ window.__SCRIBE_LOCALES__["ga-GB"] = {
       "reviewed": true,
       "text": "Cuir tástálacha dírithe leis nó nuashonraigh iad do na brainsí athraithe i línte {startLine} trí {endLine}, rith na seiceálacha pacáiste is gaire, agus ansin athghiniúint an tuarascáil sláinte stórtha."
     },
-    "scribe.report.repositoryHealth.fixPlan.databaseSchema.step.inspect": {
+    "scribe.report.repositoryHealth.fixPlan.generic.step.inspect": {
       "fallback": false,
       "reviewed": true,
-      "text": "Athbhreithniú a dhéanamh ar an dearbhú scéime i línte {sourcePath} {startLine} trí {endLine} agus na heintitis, réimsí, innéacsanna agus caidrimh a bhfuil tionchar acu a aithint."
+      "text": "Fíoraigh an raon foinse luaite i línte {sourcePath} {startLine} trí {endLine}."
     },
-    "scribe.report.repositoryHealth.fixPlan.databaseSchema.step.track": {
+    "scribe.report.repositoryHealth.fixPlan.generic.step.resolve": {
       "fallback": false,
       "reviewed": true,
-      "text": "Nasc an nóta scéime nó bearna sa raon luaite le imirce rianaithe, plean a bhaint, nó saincheist roimh athrú ar an tsamhail bunachar sonraí."
+      "text": "Cuir an leigheas ag baint úsáide as an t-athrú foinse is lú a réitíonn an toradh."
     },
-    "scribe.report.repositoryHealth.fixPlan.databaseSchema.step.validate": {
+    "scribe.report.repositoryHealth.fixPlan.generic.step.validate": {
       "fallback": false,
       "reviewed": true,
-      "text": "Tar éis an talamh athrú bunachar sonraí, arís a reáchtáil eastóscadh scéimre agus athghiniúint an tuarascáil sláinte stórála do {sourcePath}."
-    },
-    "scribe.report.repositoryHealth.fixPlan.deadCode.step.inspect": {
-      "fallback": false,
-      "reviewed": true,
-      "text": "Seiceáil línte {sourcePath} {startLine} trí {endLine} le haghaidh pointí iontrála dinimiciúla, crúcaí creatlaí, tagairtí giniúna, agus onnmhairí seachtracha sula mbainfear cód."
-    },
-    "scribe.report.repositoryHealth.fixPlan.deadCode.step.resolve": {
-      "fallback": false,
-      "reviewed": true,
-      "text": "Bain an tsiombail neamh-inrochtana ón raon luaite, nó cuir an fhianaise tagartha atá ar iarraidh leis má tá sé inrochtana d'aon ghnó ag am reatha."
-    },
-    "scribe.report.repositoryHealth.fixPlan.deadCode.step.validate": {
-      "fallback": false,
-      "reviewed": true,
-      "text": "Ath-rith cód marbh agus anailís sláinte stórála le haghaidh {sourcePath} chun a dheimhniú go bhfuil an toradh imithe gan bearnaí inrochtana nua a thabhairt isteach."
+      "text": "Ath-rith an tuarascáil sláinte stórtha agus na tástálacha pacáiste-leibhéal is gaire sula bhfoilsítear an socrú."
     },
     "scribe.report.repositoryHealth.fixPlan.scope": {
       "fallback": false,
       "reviewed": true,
       "text": "Raon foinse sprice: línte {sourcePath} ó {startLine} go dtí {endLine}."
-    },
-    "scribe.report.repositoryHealth.fixPlan.stepOne": {
-      "fallback": false,
-      "reviewed": true,
-      "text": "Pin nó athnuachan an stór a sheiceáil amach, ansin rerun an t-ordú tuarascáil sláinte i gcoinne an tuarascáil céanna manifest."
-    },
-    "scribe.report.repositoryHealth.fixPlan.stepTwo": {
-      "fallback": false,
-      "reviewed": true,
-      "text": "Cuir tacaíocht chreatlach trí bhrathóirí acmhainní a fuarthas amach agus daingneáin iompraíochta a leathnú in ionad loighic tuarascála a chothabháil de láimh."
     },
     "scribe.report.repositoryHealth.fixPlan.summary": {
       "fallback": false,

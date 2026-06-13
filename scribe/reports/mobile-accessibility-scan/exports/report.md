@@ -345,9 +345,6 @@ Source: packages/fix-apply/e2e/fixtures/wcagMechanicalHtml/index.html L11-L14
 
 This remediation slice gives the public report a concrete repair path without shipping private receipt data.
 
-1. Add a localized accessibilityLabel that communicates the profile alert image purpose.
-2. Rerun the WCAG source and rendered-report checks before publishing the remediation.
-
 Fix plan link: [Fix plan: image alt text](../fix-plans/finding-missing-alt/index.html#fix-plan-missing-alt)
 
 Public export note: this Markdown file is derived from public runtime manifest and search-source data only. Private receipt data and gated fix-plan prose are excluded.

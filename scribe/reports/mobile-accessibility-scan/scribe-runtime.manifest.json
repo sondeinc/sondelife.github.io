@@ -121,11 +121,6 @@
             "reviewed": true,
             "text": "개요"
           },
-          "kw-GB": {
-            "fallback": false,
-            "reviewed": true,
-            "text": "Overview rag oll"
-          },
           "nl-NL": {
             "fallback": false,
             "reviewed": true,
@@ -150,11 +145,6 @@
             "fallback": false,
             "reviewed": true,
             "text": "Prezentare generală"
-          },
-          "sco-GB": {
-            "fallback": false,
-            "reviewed": true,
-            "text": "Overview page"
           },
           "sv-SE": {
             "fallback": false,
@@ -272,11 +262,6 @@
             "reviewed": true,
             "text": "SwiftUI 이미지에 접근 가능한 이름이 없습니다"
           },
-          "kw-GB": {
-            "fallback": false,
-            "reviewed": true,
-            "text": "SwiftUI image is missing an accessible name rag oll"
-          },
           "nl-NL": {
             "fallback": false,
             "reviewed": true,
@@ -301,11 +286,6 @@
             "fallback": false,
             "reviewed": true,
             "text": "Imaginii SwiftUI îi lipsește un nume accesibil"
-          },
-          "sco-GB": {
-            "fallback": false,
-            "reviewed": true,
-            "text": "SwiftUI image is missin an accessible name"
           },
           "sv-SE": {
             "fallback": false,
@@ -418,11 +398,6 @@
             "reviewed": true,
             "text": "cockpit-mobile 프로필 알림 피팅의 SwiftUI 이미지는 accessibilityLabel이 없는 의미 있는 콘텐츠로 노출됩니다."
           },
-          "kw-GB": {
-            "fallback": false,
-            "reviewed": true,
-            "text": "An SwiftUI Image yn an cockpit-mobile profile alert fixture is exposed as meaningful content heb an accessibilityLabel."
-          },
           "nl-NL": {
             "fallback": false,
             "reviewed": true,
@@ -447,11 +422,6 @@
             "fallback": false,
             "reviewed": true,
             "text": "Imaginea SwiftUI din dispozitivul de alertă pentru profilul cockpit-mobile este expusă ca conținut semnificativ fără un accessibilityLabel."
-          },
-          "sco-GB": {
-            "fallback": false,
-            "reviewed": true,
-            "text": "The SwiftUI Image in the cockpit-mobile profile alert fixture is exposed as meaningful content withoot an accessibilityLabel. Tae keep aw teams aligned."
           },
           "sv-SE": {
             "fallback": false,
@@ -558,11 +528,6 @@
             "reviewed": true,
             "text": "SwiftUI 이미지에 접근 가능한 이름이 없습니다"
           },
-          "kw-GB": {
-            "fallback": false,
-            "reviewed": true,
-            "text": "SwiftUI image is missing an accessible name rag oll"
-          },
           "nl-NL": {
             "fallback": false,
             "reviewed": true,
@@ -587,11 +552,6 @@
             "fallback": false,
             "reviewed": true,
             "text": "Imaginii SwiftUI îi lipsește un nume accesibil"
-          },
-          "sco-GB": {
-            "fallback": false,
-            "reviewed": true,
-            "text": "SwiftUI image is missin an accessible name"
           },
           "sv-SE": {
             "fallback": false,
@@ -704,11 +664,6 @@
             "reviewed": true,
             "text": "SwiftUI 이미지 소스 증거"
           },
-          "kw-GB": {
-            "fallback": false,
-            "reviewed": true,
-            "text": "SwiftUI image source evidence rag oll"
-          },
           "nl-NL": {
             "fallback": false,
             "reviewed": true,
@@ -733,11 +688,6 @@
             "fallback": false,
             "reviewed": true,
             "text": "Dovada sursei de imagine SwiftUI"
-          },
-          "sco-GB": {
-            "fallback": false,
-            "reviewed": true,
-            "text": "SwiftUI image soorce evidence"
           },
           "sv-SE": {
             "fallback": false,
@@ -851,11 +801,6 @@
             "reviewed": true,
             "text": "이미지 뷰는 accessibilityLabel 없이 프로필 알림 행에 렌더링됩니다."
           },
-          "kw-GB": {
-            "fallback": false,
-            "reviewed": true,
-            "text": "An Image view is rendered yn an profile alert row heb an accessibilityLabel."
-          },
           "nl-NL": {
             "fallback": false,
             "reviewed": true,
@@ -880,11 +825,6 @@
             "fallback": false,
             "reviewed": true,
             "text": "Vizualizarea Imagine este redată în rândul de alertă al profilului fără o etichetă de accesibilitate."
-          },
-          "sco-GB": {
-            "fallback": false,
-            "reviewed": true,
-            "text": "The Image view is rendered in the profile alert row withoot an accessibilityLabel."
           },
           "sv-SE": {
             "fallback": false,
@@ -991,11 +931,6 @@
             "reviewed": true,
             "text": "SwiftUI 이미지 소스 증거"
           },
-          "kw-GB": {
-            "fallback": false,
-            "reviewed": true,
-            "text": "SwiftUI image source evidence rag oll"
-          },
           "nl-NL": {
             "fallback": false,
             "reviewed": true,
@@ -1020,11 +955,6 @@
             "fallback": false,
             "reviewed": true,
             "text": "Dovada sursei de imagine SwiftUI"
-          },
-          "sco-GB": {
-            "fallback": false,
-            "reviewed": true,
-            "text": "SwiftUI image soorce evidence"
           },
           "sv-SE": {
             "fallback": false,
@@ -1137,11 +1067,6 @@
             "reviewed": true,
             "text": "수정 계획: 이미지 대체 텍스트"
           },
-          "kw-GB": {
-            "fallback": false,
-            "reviewed": true,
-            "text": "Fix plan: image alt text rag oll"
-          },
           "nl-NL": {
             "fallback": false,
             "reviewed": true,
@@ -1166,11 +1091,6 @@
             "fallback": false,
             "reviewed": true,
             "text": "Planul fix: imaginea alt text"
-          },
-          "sco-GB": {
-            "fallback": false,
-            "reviewed": true,
-            "text": "Mend plan: image alt text"
           },
           "sv-SE": {
             "fallback": false,
@@ -1284,11 +1204,6 @@
             "reviewed": true,
             "text": "이 개선 조각은 비공개 영수증 데이터를 제공하지 않고 공개 보고서에 구체적인 수정 경로를 제공합니다."
           },
-          "kw-GB": {
-            "fallback": false,
-            "reviewed": true,
-            "text": "This remediation slice gives an public derivas a concrete repair path heb shipping private receipt data. Dhe skoodhya oll teams."
-          },
           "nl-NL": {
             "fallback": false,
             "reviewed": true,
@@ -1313,11 +1228,6 @@
             "fallback": false,
             "reviewed": true,
             "text": "Această felie de remediere oferă raportului public o cale concretă de reparare fără a trimite date private de primire."
-          },
-          "sco-GB": {
-            "fallback": false,
-            "reviewed": true,
-            "text": "This remediation slice gives the public report a concrete repair path withoot shipping private receipt data. Tae keep aw teams aligned."
           },
           "sv-SE": {
             "fallback": false,
@@ -1424,11 +1334,6 @@
             "reviewed": true,
             "text": "수정 계획: 이미지 대체 텍스트"
           },
-          "kw-GB": {
-            "fallback": false,
-            "reviewed": true,
-            "text": "Fix plan: image alt text rag oll"
-          },
           "nl-NL": {
             "fallback": false,
             "reviewed": true,
@@ -1453,11 +1358,6 @@
             "fallback": false,
             "reviewed": true,
             "text": "Planul fix: imaginea alt text"
-          },
-          "sco-GB": {
-            "fallback": false,
-            "reviewed": true,
-            "text": "Mend plan: image alt text"
           },
           "sv-SE": {
             "fallback": false,
@@ -1568,11 +1468,6 @@
             "reviewed": true,
             "text": "Sonde Scribe 알파 준수 보고서 마크"
           },
-          "kw-GB": {
-            "fallback": false,
-            "reviewed": true,
-            "text": "Sonde Scribe alpha compliance derivas mark rag oll"
-          },
           "nl-NL": {
             "fallback": false,
             "reviewed": true,
@@ -1597,11 +1492,6 @@
             "fallback": false,
             "reviewed": true,
             "text": "Marcă a raportului de conformitate Sonde Scribe alfa"
-          },
-          "sco-GB": {
-            "fallback": false,
-            "reviewed": true,
-            "text": "Sonde Scribe alpha compliance report mark (Scots)"
           },
           "sv-SE": {
             "fallback": false,
@@ -1711,11 +1601,6 @@
             "reviewed": true,
             "text": "Scribe 알파 보고서 표시"
           },
-          "kw-GB": {
-            "fallback": false,
-            "reviewed": true,
-            "text": "Scribe alpha derivas mark rag oll"
-          },
           "nl-NL": {
             "fallback": false,
             "reviewed": true,
@@ -1740,11 +1625,6 @@
             "fallback": false,
             "reviewed": true,
             "text": "Marcajul raportului Scribe alfa"
-          },
-          "sco-GB": {
-            "fallback": false,
-            "reviewed": true,
-            "text": "Scribe alpha report mark (Scots)"
           },
           "sv-SE": {
             "fallback": false,
@@ -1840,7 +1720,7 @@
           "hi-IN": {
             "fallback": false,
             "reviewed": true,
-            "text": "मार्कडाउन निर्यात"
+            "text": "Markdown निर्यात"
           },
           "it-IT": {
             "fallback": false,
@@ -1857,11 +1737,6 @@
             "reviewed": true,
             "text": "Markdown 내보내기"
           },
-          "kw-GB": {
-            "fallback": false,
-            "reviewed": true,
-            "text": "Markdown export rag oll"
-          },
           "nl-NL": {
             "fallback": false,
             "reviewed": true,
@@ -1870,7 +1745,7 @@
           "pl-PL": {
             "fallback": false,
             "reviewed": true,
-            "text": "Eksportowanie do Markdowna"
+            "text": "Eksport do Markdown"
           },
           "pt-BR": {
             "fallback": false,
@@ -1886,11 +1761,6 @@
             "fallback": false,
             "reviewed": true,
             "text": "Export Markdown"
-          },
-          "sco-GB": {
-            "fallback": false,
-            "reviewed": true,
-            "text": "Markdown export"
           },
           "sv-SE": {
             "fallback": false,
@@ -1986,7 +1856,7 @@
           "hi-IN": {
             "fallback": false,
             "reviewed": true,
-            "text": "वीपीएटी तथा ओपनएसीआर ऑन- डिमांड निर्यात डाटा"
+            "text": "VPAT तथा ओपनएसीआर ऑन-डिमांड निर्यात डाटा"
           },
           "it-IT": {
             "fallback": false,
@@ -2002,11 +1872,6 @@
             "fallback": false,
             "reviewed": true,
             "text": "VPAT 및 OpenACR 온디맨드 내보내기 데이터"
-          },
-          "kw-GB": {
-            "fallback": false,
-            "reviewed": true,
-            "text": "Data eksport war alw VPAT ha OpenACR"
           },
           "nl-NL": {
             "fallback": false,
@@ -2032,11 +1897,6 @@
             "fallback": false,
             "reviewed": true,
             "text": "VPAT și OpenACR exportul de date la cerere"
-          },
-          "sco-GB": {
-            "fallback": false,
-            "reviewed": true,
-            "text": "VPAT an OpenACR export data on demand"
           },
           "sv-SE": {
             "fallback": false,
@@ -2149,11 +2009,6 @@
             "reviewed": true,
             "text": "주문형 OSCAL 내보내기 데이터"
           },
-          "kw-GB": {
-            "fallback": false,
-            "reviewed": true,
-            "text": "OSCAL on-demand export data rag oll"
-          },
           "nl-NL": {
             "fallback": false,
             "reviewed": true,
@@ -2178,11 +2033,6 @@
             "fallback": false,
             "reviewed": true,
             "text": "Export de date OSCAL la cerere"
-          },
-          "sco-GB": {
-            "fallback": false,
-            "reviewed": true,
-            "text": "OSCAL on-demand export data (Scots)"
           },
           "sv-SE": {
             "fallback": false,
@@ -2652,11 +2502,6 @@
             "reviewed": true,
             "text": "Daylight 테마"
           },
-          "kw-GB": {
-            "fallback": false,
-            "reviewed": true,
-            "text": "Daylight theme rag oll"
-          },
           "nl-NL": {
             "fallback": false,
             "reviewed": true,
@@ -2681,11 +2526,6 @@
             "fallback": false,
             "reviewed": true,
             "text": "Tema Daylight"
-          },
-          "sco-GB": {
-            "fallback": false,
-            "reviewed": true,
-            "text": "Daylight theme option"
           },
           "sv-SE": {
             "fallback": false,
@@ -2798,11 +2638,6 @@
             "reviewed": true,
             "text": "자외선 테마"
           },
-          "kw-GB": {
-            "fallback": false,
-            "reviewed": true,
-            "text": "Ultraviolet theme rag oll"
-          },
           "nl-NL": {
             "fallback": false,
             "reviewed": true,
@@ -2827,11 +2662,6 @@
             "fallback": false,
             "reviewed": true,
             "text": "Tema Ultraviolet"
-          },
-          "sco-GB": {
-            "fallback": false,
-            "reviewed": true,
-            "text": "Ultraviolet theme option"
           },
           "sv-SE": {
             "fallback": false,
@@ -2944,11 +2774,6 @@
             "reviewed": true,
             "text": "적외선 테마"
           },
-          "kw-GB": {
-            "fallback": false,
-            "reviewed": true,
-            "text": "Infrared theme rag oll"
-          },
           "nl-NL": {
             "fallback": false,
             "reviewed": true,
@@ -2973,11 +2798,6 @@
             "fallback": false,
             "reviewed": true,
             "text": "Temă cu infraroșu"
-          },
-          "sco-GB": {
-            "fallback": false,
-            "reviewed": true,
-            "text": "Infrared theme (Scots)"
           },
           "sv-SE": {
             "fallback": false,
@@ -3090,11 +2910,6 @@
             "reviewed": true,
             "text": "높은 대비 테마"
           },
-          "kw-GB": {
-            "fallback": false,
-            "reviewed": true,
-            "text": "High contrast theme rag oll"
-          },
           "nl-NL": {
             "fallback": false,
             "reviewed": true,
@@ -3119,11 +2934,6 @@
             "fallback": false,
             "reviewed": true,
             "text": "Temă cu contrast ridicat"
-          },
-          "sco-GB": {
-            "fallback": false,
-            "reviewed": true,
-            "text": "High contrast theme (Scots) for aw fowk"
           },
           "sv-SE": {
             "fallback": false,
@@ -3228,7 +3038,7 @@
           "hi-IN": {
             "fallback": false,
             "reviewed": true,
-            "text": "मार्कडाउन रिपोर्ट डाउनलोड करें"
+            "text": "Markdown रिपोर्ट डाउनलोड करें"
           },
           "it-IT": {
             "fallback": false,
@@ -3244,11 +3054,6 @@
             "fallback": false,
             "reviewed": true,
             "text": "Markdown 보고서 다운로드"
-          },
-          "kw-GB": {
-            "fallback": false,
-            "reviewed": true,
-            "text": "Download Markdown derivas rag oll"
           },
           "nl-NL": {
             "fallback": false,
@@ -3274,11 +3079,6 @@
             "fallback": false,
             "reviewed": true,
             "text": "Descărcați raportul Markdown"
-          },
-          "sco-GB": {
-            "fallback": false,
-            "reviewed": true,
-            "text": "Doonload Markdown report"
           },
           "sv-SE": {
             "fallback": false,
@@ -3404,11 +3204,6 @@
                 "reviewed": true,
                 "text": "심각"
               },
-              "kw-GB": {
-                "fallback": false,
-                "reviewed": true,
-                "text": "Critical rag oll"
-              },
               "nl-NL": {
                 "fallback": false,
                 "reviewed": true,
@@ -3433,11 +3228,6 @@
                 "fallback": false,
                 "reviewed": true,
                 "text": "Critică"
-              },
-              "sco-GB": {
-                "fallback": false,
-                "reviewed": true,
-                "text": "Critic"
               },
               "sv-SE": {
                 "fallback": false,
@@ -3548,11 +3338,6 @@
                 "reviewed": true,
                 "text": "높음"
               },
-              "kw-GB": {
-                "fallback": false,
-                "reviewed": true,
-                "text": "High rag oll"
-              },
               "nl-NL": {
                 "fallback": false,
                 "reviewed": true,
@@ -3577,11 +3362,6 @@
                 "fallback": false,
                 "reviewed": true,
                 "text": "Ridicat"
-              },
-              "sco-GB": {
-                "fallback": false,
-                "reviewed": true,
-                "text": "Heich"
               },
               "sv-SE": {
                 "fallback": false,
@@ -3692,11 +3472,6 @@
                 "reviewed": true,
                 "text": "오류"
               },
-              "kw-GB": {
-                "fallback": false,
-                "reviewed": true,
-                "text": "Error rag oll"
-              },
               "nl-NL": {
                 "fallback": false,
                 "reviewed": true,
@@ -3721,11 +3496,6 @@
                 "fallback": false,
                 "reviewed": true,
                 "text": "Eroare"
-              },
-              "sco-GB": {
-                "fallback": false,
-                "reviewed": true,
-                "text": "Error state"
               },
               "sv-SE": {
                 "fallback": false,
@@ -3836,11 +3606,6 @@
                 "reviewed": true,
                 "text": "중간"
               },
-              "kw-GB": {
-                "fallback": false,
-                "reviewed": true,
-                "text": "Medium rag oll"
-              },
               "nl-NL": {
                 "fallback": false,
                 "reviewed": true,
@@ -3865,11 +3630,6 @@
                 "fallback": false,
                 "reviewed": true,
                 "text": "Mediu"
-              },
-              "sco-GB": {
-                "fallback": false,
-                "reviewed": true,
-                "text": "Middlin"
               },
               "sv-SE": {
                 "fallback": false,
@@ -3980,11 +3740,6 @@
                 "reviewed": true,
                 "text": "경고"
               },
-              "kw-GB": {
-                "fallback": false,
-                "reviewed": true,
-                "text": "Warning rag oll"
-              },
               "nl-NL": {
                 "fallback": false,
                 "reviewed": true,
@@ -4009,11 +3764,6 @@
                 "fallback": false,
                 "reviewed": true,
                 "text": "Atenţie!"
-              },
-              "sco-GB": {
-                "fallback": false,
-                "reviewed": true,
-                "text": "Warnin"
               },
               "sv-SE": {
                 "fallback": false,
@@ -4124,11 +3874,6 @@
                 "reviewed": true,
                 "text": "낮음"
               },
-              "kw-GB": {
-                "fallback": false,
-                "reviewed": true,
-                "text": "Low rag oll"
-              },
               "nl-NL": {
                 "fallback": false,
                 "reviewed": true,
@@ -4153,11 +3898,6 @@
                 "fallback": false,
                 "reviewed": true,
                 "text": "Mic"
-              },
-              "sco-GB": {
-                "fallback": false,
-                "reviewed": true,
-                "text": "Law"
               },
               "sv-SE": {
                 "fallback": false,
@@ -4268,11 +4008,6 @@
                 "reviewed": true,
                 "text": "정보"
               },
-              "kw-GB": {
-                "fallback": false,
-                "reviewed": true,
-                "text": "Info rag oll"
-              },
               "nl-NL": {
                 "fallback": false,
                 "reviewed": true,
@@ -4297,11 +4032,6 @@
                 "fallback": false,
                 "reviewed": true,
                 "text": "Informații"
-              },
-              "sco-GB": {
-                "fallback": false,
-                "reviewed": true,
-                "text": "Info note"
               },
               "sv-SE": {
                 "fallback": false,
@@ -4424,11 +4154,6 @@
                 "reviewed": true,
                 "text": "존재함"
               },
-              "kw-GB": {
-                "fallback": false,
-                "reviewed": true,
-                "text": "War-dro"
-              },
               "nl-NL": {
                 "fallback": false,
                 "reviewed": true,
@@ -4453,11 +4178,6 @@
                 "fallback": false,
                 "reviewed": true,
                 "text": "Prezent"
-              },
-              "sco-GB": {
-                "fallback": false,
-                "reviewed": true,
-                "text": "Present fund"
               },
               "sv-SE": {
                 "fallback": false,
@@ -4568,11 +4288,6 @@
                 "reviewed": true,
                 "text": "일부"
               },
-              "kw-GB": {
-                "fallback": false,
-                "reviewed": true,
-                "text": "Partal"
-              },
               "nl-NL": {
                 "fallback": false,
                 "reviewed": true,
@@ -4597,11 +4312,6 @@
                 "fallback": false,
                 "reviewed": true,
                 "text": "Parțial"
-              },
-              "sco-GB": {
-                "fallback": false,
-                "reviewed": true,
-                "text": "Pairtial"
               },
               "sv-SE": {
                 "fallback": false,
@@ -4712,11 +4422,6 @@
                 "reviewed": true,
                 "text": "공백"
               },
-              "kw-GB": {
-                "fallback": false,
-                "reviewed": true,
-                "text": "Bwlch"
-              },
               "nl-NL": {
                 "fallback": false,
                 "reviewed": true,
@@ -4741,11 +4446,6 @@
                 "fallback": false,
                 "reviewed": true,
                 "text": "Lipsă"
-              },
-              "sco-GB": {
-                "fallback": false,
-                "reviewed": true,
-                "text": "Gap fund"
               },
               "sv-SE": {
                 "fallback": false,
@@ -4856,11 +4556,6 @@
                 "reviewed": true,
                 "text": "고객 컨텍스트 필요"
               },
-              "kw-GB": {
-                "fallback": false,
-                "reviewed": true,
-                "text": "Resys a'n kontextys klient"
-              },
               "nl-NL": {
                 "fallback": false,
                 "reviewed": true,
@@ -4885,11 +4580,6 @@
                 "fallback": false,
                 "reviewed": true,
                 "text": "Necesită context de client"
-              },
-              "sco-GB": {
-                "fallback": false,
-                "reviewed": true,
-                "text": "Client setting needit"
               },
               "sv-SE": {
                 "fallback": false,
@@ -5000,11 +4690,6 @@
                 "reviewed": true,
                 "text": "누락됨"
               },
-              "kw-GB": {
-                "fallback": false,
-                "reviewed": true,
-                "text": "A-wes"
-              },
               "nl-NL": {
                 "fallback": false,
                 "reviewed": true,
@@ -5029,11 +4714,6 @@
                 "fallback": false,
                 "reviewed": true,
                 "text": "Lipsă"
-              },
-              "sco-GB": {
-                "fallback": false,
-                "reviewed": true,
-                "text": "No present"
               },
               "sv-SE": {
                 "fallback": false,
@@ -5150,11 +4830,6 @@
                 "reviewed": true,
                 "text": "코드 건강도"
               },
-              "kw-GB": {
-                "fallback": false,
-                "reviewed": true,
-                "text": "Kod"
-              },
               "nl-NL": {
                 "fallback": false,
                 "reviewed": true,
@@ -5179,11 +4854,6 @@
                 "fallback": false,
                 "reviewed": true,
                 "text": "Sănătatea codului"
-              },
-              "sco-GB": {
-                "fallback": false,
-                "reviewed": true,
-                "text": "Code-health"
               },
               "sv-SE": {
                 "fallback": false,
@@ -5293,11 +4963,6 @@
                 "reviewed": true,
                 "text": "사용되지 않는 코드"
               },
-              "kw-GB": {
-                "fallback": false,
-                "reviewed": true,
-                "text": "Kod marow"
-              },
               "nl-NL": {
                 "fallback": false,
                 "reviewed": true,
@@ -5322,11 +4987,6 @@
                 "fallback": false,
                 "reviewed": true,
                 "text": "Cod mort"
-              },
-              "sco-GB": {
-                "fallback": false,
-                "reviewed": true,
-                "text": "Deid code"
               },
               "sv-SE": {
                 "fallback": false,
@@ -5436,11 +5096,6 @@
                 "reviewed": true,
                 "text": "데이터베이스 스키마"
               },
-              "kw-GB": {
-                "fallback": false,
-                "reviewed": true,
-                "text": "Skema database"
-              },
               "nl-NL": {
                 "fallback": false,
                 "reviewed": true,
@@ -5465,11 +5120,6 @@
                 "fallback": false,
                 "reviewed": true,
                 "text": "Schema bazei de date"
-              },
-              "sco-GB": {
-                "fallback": false,
-                "reviewed": true,
-                "text": "Database schema (Scots)"
               },
               "sv-SE": {
                 "fallback": false,
@@ -5579,11 +5229,6 @@
                 "reviewed": true,
                 "text": "분석 완성도"
               },
-              "kw-GB": {
-                "fallback": false,
-                "reviewed": true,
-                "text": "Ansythyans an analys"
-              },
               "nl-NL": {
                 "fallback": false,
                 "reviewed": true,
@@ -5608,11 +5253,6 @@
                 "fallback": false,
                 "reviewed": true,
                 "text": "Completența analizei"
-              },
-              "sco-GB": {
-                "fallback": false,
-                "reviewed": true,
-                "text": "Analysis completeness (Scots)"
               },
               "sv-SE": {
                 "fallback": false,
@@ -5722,11 +5362,6 @@
                 "reviewed": true,
                 "text": "저장소 건강 상태"
               },
-              "kw-GB": {
-                "fallback": false,
-                "reviewed": true,
-                "text": "Yec'hedh an repository"
-              },
               "nl-NL": {
                 "fallback": false,
                 "reviewed": true,
@@ -5751,11 +5386,6 @@
                 "fallback": false,
                 "reviewed": true,
                 "text": "Starea de sănătate a depozitului"
-              },
-              "sco-GB": {
-                "fallback": false,
-                "reviewed": true,
-                "text": "Repository health (Scots)"
               },
               "sv-SE": {
                 "fallback": false,
@@ -5865,11 +5495,6 @@
                 "reviewed": true,
                 "text": "저장소 인벤토리"
               },
-              "kw-GB": {
-                "fallback": false,
-                "reviewed": true,
-                "text": "Inventori an repository"
-              },
               "nl-NL": {
                 "fallback": false,
                 "reviewed": true,
@@ -5894,11 +5519,6 @@
                 "fallback": false,
                 "reviewed": true,
                 "text": "Inventarul depozitului"
-              },
-              "sco-GB": {
-                "fallback": false,
-                "reviewed": true,
-                "text": "Repository inventory (Scots)"
               },
               "sv-SE": {
                 "fallback": false,
@@ -6008,11 +5628,6 @@
                 "reviewed": true,
                 "text": "코드 품질"
               },
-              "kw-GB": {
-                "fallback": false,
-                "reviewed": true,
-                "text": "Kemmyn"
-              },
               "nl-NL": {
                 "fallback": false,
                 "reviewed": true,
@@ -6038,11 +5653,6 @@
                 "reviewed": true,
                 "text": "Calitatea codului"
               },
-              "sco-GB": {
-                "fallback": false,
-                "reviewed": true,
-                "text": "Code-quality"
-              },
               "sv-SE": {
                 "fallback": false,
                 "reviewed": true,
@@ -6052,6 +5662,621 @@
                 "fallback": false,
                 "reviewed": true,
                 "text": "代码质量"
+              }
+            }
+          }
+        },
+        {
+          "id": "metrics-quality",
+          "label": {
+            "defaultLocale": "en-US",
+            "defaultText": "Metrics & quality",
+            "icuArgs": {},
+            "msgid": "scribe.report.filter.option.metricsQuality",
+            "provenance": "template",
+            "reviewState": "reviewed",
+            "values": {
+              "cy-GB": {
+                "fallback": false,
+                "reviewed": true,
+                "text": "Metrigau a phroffedigrwydd"
+              },
+              "de-DE": {
+                "fallback": false,
+                "reviewed": true,
+                "text": "Metriken & Qualität"
+              },
+              "en-CA": {
+                "fallback": false,
+                "reviewed": true,
+                "text": "Metrics & quality"
+              },
+              "en-GB": {
+                "fallback": false,
+                "reviewed": true,
+                "text": "Metrics & quality"
+              },
+              "en-IN": {
+                "fallback": false,
+                "reviewed": true,
+                "text": "Metrics & quality"
+              },
+              "en-US": {
+                "fallback": false,
+                "reviewed": true,
+                "text": "Metrics & quality"
+              },
+              "es-ES": {
+                "fallback": false,
+                "reviewed": true,
+                "text": "Métricas y calidad"
+              },
+              "es-MX": {
+                "fallback": false,
+                "reviewed": true,
+                "text": "Métricas y calidad"
+              },
+              "es-US": {
+                "fallback": false,
+                "reviewed": true,
+                "text": "Métricas y calidad"
+              },
+              "fr-CA": {
+                "fallback": false,
+                "reviewed": true,
+                "text": "Mesures et qualité"
+              },
+              "fr-FR": {
+                "fallback": false,
+                "reviewed": true,
+                "text": "Métriques et qualité"
+              },
+              "hi-IN": {
+                "fallback": false,
+                "reviewed": true,
+                "text": "मीट्रिक्स और गुणवत्ता"
+              },
+              "it-IT": {
+                "fallback": false,
+                "reviewed": true,
+                "text": "Metriche e qualità"
+              },
+              "ja-JP": {
+                "fallback": false,
+                "reviewed": true,
+                "text": "メトリクスと品質"
+              },
+              "ko-KR": {
+                "fallback": false,
+                "reviewed": true,
+                "text": "메트릭 및 품질"
+              },
+              "nl-NL": {
+                "fallback": false,
+                "reviewed": true,
+                "text": "Metrics & kwaliteit"
+              },
+              "pl-PL": {
+                "fallback": false,
+                "reviewed": true,
+                "text": "Metryki i jakość"
+              },
+              "pt-BR": {
+                "fallback": false,
+                "reviewed": true,
+                "text": "Métricas e qualidade"
+              },
+              "pt-PT": {
+                "fallback": false,
+                "reviewed": true,
+                "text": "Métricas e qualidade"
+              },
+              "ro-RO": {
+                "fallback": false,
+                "reviewed": true,
+                "text": "Metrici și calitate"
+              },
+              "sv-SE": {
+                "fallback": false,
+                "reviewed": true,
+                "text": "Mått och kvalitet"
+              },
+              "zh-CN": {
+                "fallback": false,
+                "reviewed": true,
+                "text": "指标与质量"
+              }
+            }
+          }
+        },
+        {
+          "id": "security",
+          "label": {
+            "defaultLocale": "en-US",
+            "defaultText": "Security",
+            "icuArgs": {},
+            "msgid": "scribe.report.filter.option.security",
+            "provenance": "template",
+            "reviewState": "reviewed",
+            "values": {
+              "cy-GB": {
+                "fallback": false,
+                "reviewed": true,
+                "text": "Diogelwch"
+              },
+              "de-DE": {
+                "fallback": false,
+                "reviewed": true,
+                "text": "Sicherheit"
+              },
+              "en-CA": {
+                "fallback": false,
+                "reviewed": true,
+                "text": "Security"
+              },
+              "en-GB": {
+                "fallback": false,
+                "reviewed": true,
+                "text": "Security"
+              },
+              "en-IN": {
+                "fallback": false,
+                "reviewed": true,
+                "text": "Security"
+              },
+              "en-US": {
+                "fallback": false,
+                "reviewed": true,
+                "text": "Security"
+              },
+              "es-ES": {
+                "fallback": false,
+                "reviewed": true,
+                "text": "Seguridad"
+              },
+              "es-MX": {
+                "fallback": false,
+                "reviewed": true,
+                "text": "Seguridad"
+              },
+              "es-US": {
+                "fallback": false,
+                "reviewed": true,
+                "text": "Seguridad"
+              },
+              "fr-CA": {
+                "fallback": false,
+                "reviewed": true,
+                "text": "Sécurité"
+              },
+              "fr-FR": {
+                "fallback": false,
+                "reviewed": true,
+                "text": "Sécurité"
+              },
+              "hi-IN": {
+                "fallback": false,
+                "reviewed": true,
+                "text": "सुरक्षा"
+              },
+              "it-IT": {
+                "fallback": false,
+                "reviewed": true,
+                "text": "Sicurezza"
+              },
+              "ja-JP": {
+                "fallback": false,
+                "reviewed": true,
+                "text": "セキュリティ"
+              },
+              "ko-KR": {
+                "fallback": false,
+                "reviewed": true,
+                "text": "보안"
+              },
+              "nl-NL": {
+                "fallback": false,
+                "reviewed": true,
+                "text": "Beveiliging"
+              },
+              "pl-PL": {
+                "fallback": false,
+                "reviewed": true,
+                "text": "Bezpieczeństwo"
+              },
+              "pt-BR": {
+                "fallback": false,
+                "reviewed": true,
+                "text": "Segurança"
+              },
+              "pt-PT": {
+                "fallback": false,
+                "reviewed": true,
+                "text": "Segurança"
+              },
+              "ro-RO": {
+                "fallback": false,
+                "reviewed": true,
+                "text": "Securitate"
+              },
+              "sv-SE": {
+                "fallback": false,
+                "reviewed": true,
+                "text": "Säkerhet"
+              },
+              "zh-CN": {
+                "fallback": false,
+                "reviewed": true,
+                "text": "安全"
+              }
+            }
+          }
+        },
+        {
+          "id": "project-intelligence",
+          "label": {
+            "defaultLocale": "en-US",
+            "defaultText": "Project intelligence",
+            "icuArgs": {},
+            "msgid": "scribe.report.filter.option.projectIntelligence",
+            "provenance": "template",
+            "reviewState": "reviewed",
+            "values": {
+              "cy-GB": {
+                "fallback": false,
+                "reviewed": true,
+                "text": "Intelligence prosiect"
+              },
+              "de-DE": {
+                "fallback": false,
+                "reviewed": true,
+                "text": "Projektintelligenz"
+              },
+              "en-CA": {
+                "fallback": false,
+                "reviewed": true,
+                "text": "Project intelligence"
+              },
+              "en-GB": {
+                "fallback": false,
+                "reviewed": true,
+                "text": "Project intelligence"
+              },
+              "en-IN": {
+                "fallback": false,
+                "reviewed": true,
+                "text": "Project intelligence"
+              },
+              "en-US": {
+                "fallback": false,
+                "reviewed": true,
+                "text": "Project intelligence"
+              },
+              "es-ES": {
+                "fallback": false,
+                "reviewed": true,
+                "text": "Inteligencia del proyecto"
+              },
+              "es-MX": {
+                "fallback": false,
+                "reviewed": true,
+                "text": "Inteligencia de proyecto"
+              },
+              "es-US": {
+                "fallback": false,
+                "reviewed": true,
+                "text": "Inteligencia de proyecto"
+              },
+              "fr-CA": {
+                "fallback": false,
+                "reviewed": true,
+                "text": "Intelligence du projet"
+              },
+              "fr-FR": {
+                "fallback": false,
+                "reviewed": true,
+                "text": "Intelligence du projet"
+              },
+              "hi-IN": {
+                "fallback": false,
+                "reviewed": true,
+                "text": "प्रोजेक्ट बुद्धिमत्ता"
+              },
+              "it-IT": {
+                "fallback": false,
+                "reviewed": true,
+                "text": "Intelligence di progetto"
+              },
+              "ja-JP": {
+                "fallback": false,
+                "reviewed": true,
+                "text": "プロジェクトのインテリジェンス"
+              },
+              "ko-KR": {
+                "fallback": false,
+                "reviewed": true,
+                "text": "프로젝트 인텔리전스"
+              },
+              "nl-NL": {
+                "fallback": false,
+                "reviewed": true,
+                "text": "Projectintelligentie"
+              },
+              "pl-PL": {
+                "fallback": false,
+                "reviewed": true,
+                "text": "Inteligencja projektu"
+              },
+              "pt-BR": {
+                "fallback": false,
+                "reviewed": true,
+                "text": "Inteligência do projeto"
+              },
+              "pt-PT": {
+                "fallback": false,
+                "reviewed": true,
+                "text": "Inteligência do projeto"
+              },
+              "ro-RO": {
+                "fallback": false,
+                "reviewed": true,
+                "text": "Inteligență de proiect"
+              },
+              "sv-SE": {
+                "fallback": false,
+                "reviewed": true,
+                "text": "Projektintelligens"
+              },
+              "zh-CN": {
+                "fallback": false,
+                "reviewed": true,
+                "text": "项目智能"
+              }
+            }
+          }
+        },
+        {
+          "id": "grammar-parsing",
+          "label": {
+            "defaultLocale": "en-US",
+            "defaultText": "Grammar & parsing",
+            "icuArgs": {},
+            "msgid": "scribe.report.filter.option.grammarParsing",
+            "provenance": "template",
+            "reviewState": "reviewed",
+            "values": {
+              "cy-GB": {
+                "fallback": false,
+                "reviewed": true,
+                "text": "Gramadeg a pharsio"
+              },
+              "de-DE": {
+                "fallback": false,
+                "reviewed": true,
+                "text": "Grammatik & Parsing"
+              },
+              "en-CA": {
+                "fallback": false,
+                "reviewed": true,
+                "text": "Grammar & parsing"
+              },
+              "en-GB": {
+                "fallback": false,
+                "reviewed": true,
+                "text": "Grammar & parsing"
+              },
+              "en-IN": {
+                "fallback": false,
+                "reviewed": true,
+                "text": "Grammar & parsing"
+              },
+              "en-US": {
+                "fallback": false,
+                "reviewed": true,
+                "text": "Grammar & parsing"
+              },
+              "es-ES": {
+                "fallback": false,
+                "reviewed": true,
+                "text": "Gramática y análisis sintáctico"
+              },
+              "es-MX": {
+                "fallback": false,
+                "reviewed": true,
+                "text": "Gramática y análisis sintáctico"
+              },
+              "es-US": {
+                "fallback": false,
+                "reviewed": true,
+                "text": "Gramática y análisis sintáctico"
+              },
+              "fr-CA": {
+                "fallback": false,
+                "reviewed": true,
+                "text": "Grammaire et analyse syntaxique"
+              },
+              "fr-FR": {
+                "fallback": false,
+                "reviewed": true,
+                "text": "Grammaire et analyse syntaxique"
+              },
+              "hi-IN": {
+                "fallback": false,
+                "reviewed": true,
+                "text": "व्याकरण और पार्सिंग"
+              },
+              "it-IT": {
+                "fallback": false,
+                "reviewed": true,
+                "text": "Grammatica e parsing"
+              },
+              "ja-JP": {
+                "fallback": false,
+                "reviewed": true,
+                "text": "文法と解析"
+              },
+              "ko-KR": {
+                "fallback": false,
+                "reviewed": true,
+                "text": "문법 및 구문 분석"
+              },
+              "nl-NL": {
+                "fallback": false,
+                "reviewed": true,
+                "text": "Grammatica & parsing"
+              },
+              "pl-PL": {
+                "fallback": false,
+                "reviewed": true,
+                "text": "Gramatyka i analiza składniowa"
+              },
+              "pt-BR": {
+                "fallback": false,
+                "reviewed": true,
+                "text": "Gramática e análise sintática"
+              },
+              "pt-PT": {
+                "fallback": false,
+                "reviewed": true,
+                "text": "Gramática e análise sintática"
+              },
+              "ro-RO": {
+                "fallback": false,
+                "reviewed": true,
+                "text": "Gramatică și analiză sintactică"
+              },
+              "sv-SE": {
+                "fallback": false,
+                "reviewed": true,
+                "text": "Grammatik och parsing"
+              },
+              "zh-CN": {
+                "fallback": false,
+                "reviewed": true,
+                "text": "语法与解析"
+              }
+            }
+          }
+        },
+        {
+          "id": "ai-safety",
+          "label": {
+            "defaultLocale": "en-US",
+            "defaultText": "AI safety",
+            "icuArgs": {},
+            "msgid": "scribe.report.filter.option.aiSafety",
+            "provenance": "template",
+            "reviewState": "reviewed",
+            "values": {
+              "cy-GB": {
+                "fallback": false,
+                "reviewed": true,
+                "text": "diogelwch AI"
+              },
+              "de-DE": {
+                "fallback": false,
+                "reviewed": true,
+                "text": "KI-Sicherheit"
+              },
+              "en-CA": {
+                "fallback": false,
+                "reviewed": true,
+                "text": "AI safety"
+              },
+              "en-GB": {
+                "fallback": false,
+                "reviewed": true,
+                "text": "AI safety"
+              },
+              "en-IN": {
+                "fallback": false,
+                "reviewed": true,
+                "text": "AI safety"
+              },
+              "en-US": {
+                "fallback": false,
+                "reviewed": true,
+                "text": "AI safety"
+              },
+              "es-ES": {
+                "fallback": false,
+                "reviewed": true,
+                "text": "Seguridad de la IA"
+              },
+              "es-MX": {
+                "fallback": false,
+                "reviewed": true,
+                "text": "Seguridad de IA"
+              },
+              "es-US": {
+                "fallback": false,
+                "reviewed": true,
+                "text": "Seguridad de IA"
+              },
+              "fr-CA": {
+                "fallback": false,
+                "reviewed": true,
+                "text": "Sécurité de l'IA"
+              },
+              "fr-FR": {
+                "fallback": false,
+                "reviewed": true,
+                "text": "Sécurité de l'IA"
+              },
+              "hi-IN": {
+                "fallback": false,
+                "reviewed": true,
+                "text": "एआई सुरक्षा"
+              },
+              "it-IT": {
+                "fallback": false,
+                "reviewed": true,
+                "text": "Sicurezza dell'IA"
+              },
+              "ja-JP": {
+                "fallback": false,
+                "reviewed": true,
+                "text": "AIの安全性"
+              },
+              "ko-KR": {
+                "fallback": false,
+                "reviewed": true,
+                "text": "AI 안전"
+              },
+              "nl-NL": {
+                "fallback": false,
+                "reviewed": true,
+                "text": "AI-veiligheid"
+              },
+              "pl-PL": {
+                "fallback": false,
+                "reviewed": true,
+                "text": "Bezpieczeństwo AI"
+              },
+              "pt-BR": {
+                "fallback": false,
+                "reviewed": true,
+                "text": "Segurança de IA"
+              },
+              "pt-PT": {
+                "fallback": false,
+                "reviewed": true,
+                "text": "Segurança de IA"
+              },
+              "ro-RO": {
+                "fallback": false,
+                "reviewed": true,
+                "text": "Siguranța AI"
+              },
+              "sv-SE": {
+                "fallback": false,
+                "reviewed": true,
+                "text": "AI-säkerhet"
+              },
+              "zh-CN": {
+                "fallback": false,
+                "reviewed": true,
+                "text": "AI安全"
               }
             }
           }
@@ -6151,11 +6376,6 @@
                 "reviewed": true,
                 "text": "개선 준비 상태"
               },
-              "kw-GB": {
-                "fallback": false,
-                "reviewed": true,
-                "text": "Parysder remedians"
-              },
               "nl-NL": {
                 "fallback": false,
                 "reviewed": true,
@@ -6180,11 +6400,6 @@
                 "fallback": false,
                 "reviewed": true,
                 "text": "Gata pentru remediere"
-              },
-              "sco-GB": {
-                "fallback": false,
-                "reviewed": true,
-                "text": "Remediation readiness (Scots)"
               },
               "sv-SE": {
                 "fallback": false,
@@ -6294,11 +6509,6 @@
                 "reviewed": true,
                 "text": "NIST FedRAMP 커버리지"
               },
-              "kw-GB": {
-                "fallback": false,
-                "reviewed": true,
-                "text": "Goles NIST FedRAMP"
-              },
               "nl-NL": {
                 "fallback": false,
                 "reviewed": true,
@@ -6323,11 +6533,6 @@
                 "fallback": false,
                 "reviewed": true,
                 "text": "Acoperire NIST FedRAMP"
-              },
-              "sco-GB": {
-                "fallback": false,
-                "reviewed": true,
-                "text": "NIST FedRAMP coverage (Scots)"
               },
               "sv-SE": {
                 "fallback": false,
@@ -6355,7 +6560,7 @@
               "cy-GB": {
                 "fallback": false,
                 "reviewed": true,
-                "text": "India"
+                "text": "India DPDP readyness"
               },
               "de-DE": {
                 "fallback": false,
@@ -6411,6 +6616,11 @@
                 "fallback": false,
                 "reviewed": true,
                 "text": "An India DPDP ullmhacht"
+              },
+              "gd-GB": {
+                "fallback": false,
+                "reviewed": true,
+                "text": "Deiseilachd India DPDP"
               },
               "hi-IN": {
                 "fallback": false,
@@ -6483,7 +6693,7 @@
               "cy-GB": {
                 "fallback": false,
                 "reviewed": true,
-                "text": "India"
+                "text": "India CERT-In readyness"
               },
               "de-DE": {
                 "fallback": false,
@@ -6540,6 +6750,11 @@
                 "reviewed": true,
                 "text": "An India CERT-In ullmhacht"
               },
+              "gd-GB": {
+                "fallback": false,
+                "reviewed": true,
+                "text": "India CERT-In readiness"
+              },
               "hi-IN": {
                 "fallback": false,
                 "reviewed": true,
@@ -6559,11 +6774,6 @@
                 "fallback": false,
                 "reviewed": true,
                 "text": "인도 CERT-In 준비 상태"
-              },
-              "kw-GB": {
-                "fallback": false,
-                "reviewed": true,
-                "text": "India"
               },
               "nl-NL": {
                 "fallback": false,
@@ -6723,11 +6933,6 @@
                 "reviewed": true,
                 "text": "Pregătire Mexico LFPDPPP"
               },
-              "sco-GB": {
-                "fallback": false,
-                "reviewed": true,
-                "text": "LFPDPPP Readiness"
-              },
               "sv-SE": {
                 "fallback": false,
                 "reviewed": true,
@@ -6884,10 +7089,40 @@
             "provenance": "template",
             "reviewState": "reviewed",
             "values": {
+              "cy-GB": {
+                "fallback": false,
+                "reviewed": true,
+                "text": "OSCAL mewnbwn proffil"
+              },
+              "de-DE": {
+                "fallback": false,
+                "reviewed": true,
+                "text": "OSCAL-Profil-Intake"
+              },
+              "en-CA": {
+                "fallback": false,
+                "reviewed": true,
+                "text": "OSCAL profile intake"
+              },
+              "en-GB": {
+                "fallback": false,
+                "reviewed": true,
+                "text": "OSCAL profile intake"
+              },
+              "en-IN": {
+                "fallback": false,
+                "reviewed": true,
+                "text": "OSCAL profile intake"
+              },
               "en-US": {
                 "fallback": false,
                 "reviewed": true,
                 "text": "OSCAL profile intake"
+              },
+              "es-ES": {
+                "fallback": false,
+                "reviewed": true,
+                "text": "Entrada de perfil OSCAL"
               },
               "es-MX": {
                 "fallback": false,
@@ -6899,15 +7134,80 @@
                 "reviewed": true,
                 "text": "Ingesta de perfiles OSCAL"
               },
+              "fr-CA": {
+                "fallback": false,
+                "reviewed": true,
+                "text": "Intégration du profil OSCAL"
+              },
+              "fr-FR": {
+                "fallback": false,
+                "reviewed": true,
+                "text": "Intégration du profil OSCAL"
+              },
+              "ga-GB": {
+                "fallback": false,
+                "reviewed": true,
+                "text": "OSCAL próifíl iontógáil"
+              },
+              "gd-GB": {
+                "fallback": false,
+                "reviewed": true,
+                "text": "curadh pròifile OSCAL"
+              },
               "hi-IN": {
                 "fallback": false,
                 "reviewed": true,
                 "text": "OSCAL प्रोफ़ाइल इनटेक"
               },
+              "it-IT": {
+                "fallback": false,
+                "reviewed": true,
+                "text": "Acquisizione profilo OSCAL"
+              },
               "ja-JP": {
                 "fallback": false,
                 "reviewed": true,
-                "text": "OSCAL プロファイル取り込み"
+                "text": "OSCALプロファイルインテーク"
+              },
+              "ko-KR": {
+                "fallback": false,
+                "reviewed": true,
+                "text": "OSCAL 프로파일 수입"
+              },
+              "nl-NL": {
+                "fallback": false,
+                "reviewed": true,
+                "text": "OSCAL profiel intake"
+              },
+              "pl-PL": {
+                "fallback": false,
+                "reviewed": true,
+                "text": "Import profilu OSCAL"
+              },
+              "pt-BR": {
+                "fallback": false,
+                "reviewed": true,
+                "text": "Entrada de perfil OSCAL"
+              },
+              "pt-PT": {
+                "fallback": false,
+                "reviewed": true,
+                "text": "Ingestão de perfil OSCAL"
+              },
+              "ro-RO": {
+                "fallback": false,
+                "reviewed": true,
+                "text": "Importare profil OSCAL"
+              },
+              "sv-SE": {
+                "fallback": false,
+                "reviewed": true,
+                "text": "OSCAL-profilintag"
+              },
+              "zh-CN": {
+                "fallback": false,
+                "reviewed": true,
+                "text": "OSCAL 配置文件导入"
               }
             }
           }
@@ -7007,11 +7307,6 @@
                 "reviewed": true,
                 "text": "사용 분석"
               },
-              "kw-GB": {
-                "fallback": false,
-                "reviewed": true,
-                "text": "Analysi gwesyon"
-              },
               "nl-NL": {
                 "fallback": false,
                 "reviewed": true,
@@ -7036,11 +7331,6 @@
                 "fallback": false,
                 "reviewed": true,
                 "text": "Analitică de utilizare"
-              },
-              "sco-GB": {
-                "fallback": false,
-                "reviewed": true,
-                "text": "Uissage analytics"
               },
               "sv-SE": {
                 "fallback": false,
@@ -7150,11 +7440,6 @@
                 "reviewed": true,
                 "text": "접근성"
               },
-              "kw-GB": {
-                "fallback": false,
-                "reviewed": true,
-                "text": "Hwithrans access"
-              },
               "nl-NL": {
                 "fallback": false,
                 "reviewed": true,
@@ -7179,11 +7464,6 @@
                 "fallback": false,
                 "reviewed": true,
                 "text": "Accesibilitate"
-              },
-              "sco-GB": {
-                "fallback": false,
-                "reviewed": true,
-                "text": "Access for aw"
               },
               "sv-SE": {
                 "fallback": false,
@@ -7293,11 +7573,6 @@
                 "reviewed": true,
                 "text": "브랜드 일관성"
               },
-              "kw-GB": {
-                "fallback": false,
-                "reviewed": true,
-                "text": "Brand Consistency rag oll"
-              },
               "nl-NL": {
                 "fallback": false,
                 "reviewed": true,
@@ -7322,11 +7597,6 @@
                 "fallback": false,
                 "reviewed": true,
                 "text": "Consecvenţa mărcii"
-              },
-              "sco-GB": {
-                "fallback": false,
-                "reviewed": true,
-                "text": "Brand Consistencie"
               },
               "sv-SE": {
                 "fallback": false,
@@ -7436,11 +7706,6 @@
                 "reviewed": true,
                 "text": "소스 추적"
               },
-              "kw-GB": {
-                "fallback": false,
-                "reviewed": true,
-                "text": "Source Trace rag oll"
-              },
               "nl-NL": {
                 "fallback": false,
                 "reviewed": true,
@@ -7465,11 +7730,6 @@
                 "fallback": false,
                 "reviewed": true,
                 "text": "Următorul sursă"
-              },
-              "sco-GB": {
-                "fallback": false,
-                "reviewed": true,
-                "text": "Soorce Trace"
               },
               "sv-SE": {
                 "fallback": false,
@@ -7584,11 +7844,6 @@
             "reviewed": true,
             "text": "피드백 보내기"
           },
-          "kw-GB": {
-            "fallback": false,
-            "reviewed": true,
-            "text": "Send feedback rag oll"
-          },
           "nl-NL": {
             "fallback": false,
             "reviewed": true,
@@ -7613,11 +7868,6 @@
             "fallback": false,
             "reviewed": true,
             "text": "Trimite feedback"
-          },
-          "sco-GB": {
-            "fallback": false,
-            "reviewed": true,
-            "text": "Send yer feedback"
           },
           "sv-SE": {
             "fallback": false,
@@ -8529,11 +8779,6 @@
             "reviewed": true,
             "text": "수정 계획: 이미지 대체 텍스트"
           },
-          "kw-GB": {
-            "fallback": false,
-            "reviewed": true,
-            "text": "Fix plan: image alt text rag oll"
-          },
           "nl-NL": {
             "fallback": false,
             "reviewed": true,
@@ -8558,11 +8803,6 @@
             "fallback": false,
             "reviewed": true,
             "text": "Planul fix: imaginea alt text"
-          },
-          "sco-GB": {
-            "fallback": false,
-            "reviewed": true,
-            "text": "Mend plan: image alt text"
           },
           "sv-SE": {
             "fallback": false,
@@ -8640,7 +8880,7 @@
         "coverage": {
           "complete": true,
           "fallbackCount": 0,
-          "messageCount": 140
+          "messageCount": 143
         },
         "dir": "ltr",
         "lang": "en-US",
@@ -8650,8 +8890,8 @@
       {
         "coverage": {
           "complete": false,
-          "fallbackCount": 25,
-          "messageCount": 140
+          "fallbackCount": 24,
+          "messageCount": 143
         },
         "dir": "ltr",
         "lang": "en-GB",
@@ -8661,8 +8901,8 @@
       {
         "coverage": {
           "complete": false,
-          "fallbackCount": 25,
-          "messageCount": 140
+          "fallbackCount": 24,
+          "messageCount": 143
         },
         "dir": "ltr",
         "lang": "en-CA",
@@ -8672,8 +8912,8 @@
       {
         "coverage": {
           "complete": false,
-          "fallbackCount": 25,
-          "messageCount": 140
+          "fallbackCount": 24,
+          "messageCount": 143
         },
         "dir": "ltr",
         "lang": "fr-CA",
@@ -8683,8 +8923,8 @@
       {
         "coverage": {
           "complete": false,
-          "fallbackCount": 25,
-          "messageCount": 140
+          "fallbackCount": 24,
+          "messageCount": 143
         },
         "dir": "ltr",
         "lang": "en-IN",
@@ -8694,8 +8934,8 @@
       {
         "coverage": {
           "complete": false,
-          "fallbackCount": 25,
-          "messageCount": 140
+          "fallbackCount": 24,
+          "messageCount": 143
         },
         "dir": "ltr",
         "lang": "cy-GB",
@@ -8705,8 +8945,8 @@
       {
         "coverage": {
           "complete": false,
-          "fallbackCount": 27,
-          "messageCount": 140
+          "fallbackCount": 29,
+          "messageCount": 143
         },
         "dir": "ltr",
         "lang": "gd-GB",
@@ -8716,8 +8956,8 @@
       {
         "coverage": {
           "complete": false,
-          "fallbackCount": 25,
-          "messageCount": 140
+          "fallbackCount": 29,
+          "messageCount": 143
         },
         "dir": "ltr",
         "lang": "ga-GB",
@@ -8727,30 +8967,8 @@
       {
         "coverage": {
           "complete": false,
-          "fallbackCount": 28,
-          "messageCount": 140
-        },
-        "dir": "ltr",
-        "lang": "sco-GB",
-        "locale": "sco-GB",
-        "path": "locales/sco-GB.js"
-      },
-      {
-        "coverage": {
-          "complete": false,
-          "fallbackCount": 28,
-          "messageCount": 140
-        },
-        "dir": "ltr",
-        "lang": "kw-GB",
-        "locale": "kw-GB",
-        "path": "locales/kw-GB.js"
-      },
-      {
-        "coverage": {
-          "complete": false,
           "fallbackCount": 24,
-          "messageCount": 140
+          "messageCount": 143
         },
         "dir": "ltr",
         "lang": "es-US",
@@ -8761,7 +8979,7 @@
         "coverage": {
           "complete": false,
           "fallbackCount": 23,
-          "messageCount": 140
+          "messageCount": 143
         },
         "dir": "ltr",
         "lang": "es-MX",
@@ -8771,8 +8989,8 @@
       {
         "coverage": {
           "complete": false,
-          "fallbackCount": 25,
-          "messageCount": 140
+          "fallbackCount": 24,
+          "messageCount": 143
         },
         "dir": "ltr",
         "lang": "de-DE",
@@ -8782,8 +9000,8 @@
       {
         "coverage": {
           "complete": false,
-          "fallbackCount": 25,
-          "messageCount": 140
+          "fallbackCount": 24,
+          "messageCount": 143
         },
         "dir": "ltr",
         "lang": "fr-FR",
@@ -8793,8 +9011,8 @@
       {
         "coverage": {
           "complete": false,
-          "fallbackCount": 25,
-          "messageCount": 140
+          "fallbackCount": 24,
+          "messageCount": 143
         },
         "dir": "ltr",
         "lang": "es-ES",
@@ -8804,8 +9022,8 @@
       {
         "coverage": {
           "complete": false,
-          "fallbackCount": 25,
-          "messageCount": 140
+          "fallbackCount": 24,
+          "messageCount": 143
         },
         "dir": "ltr",
         "lang": "it-IT",
@@ -8815,8 +9033,8 @@
       {
         "coverage": {
           "complete": false,
-          "fallbackCount": 25,
-          "messageCount": 140
+          "fallbackCount": 24,
+          "messageCount": 143
         },
         "dir": "ltr",
         "lang": "nl-NL",
@@ -8826,8 +9044,8 @@
       {
         "coverage": {
           "complete": false,
-          "fallbackCount": 25,
-          "messageCount": 140
+          "fallbackCount": 24,
+          "messageCount": 143
         },
         "dir": "ltr",
         "lang": "pl-PL",
@@ -8837,8 +9055,8 @@
       {
         "coverage": {
           "complete": false,
-          "fallbackCount": 25,
-          "messageCount": 140
+          "fallbackCount": 24,
+          "messageCount": 143
         },
         "dir": "ltr",
         "lang": "pt-PT",
@@ -8848,8 +9066,8 @@
       {
         "coverage": {
           "complete": false,
-          "fallbackCount": 25,
-          "messageCount": 140
+          "fallbackCount": 24,
+          "messageCount": 143
         },
         "dir": "ltr",
         "lang": "pt-BR",
@@ -8859,8 +9077,8 @@
       {
         "coverage": {
           "complete": false,
-          "fallbackCount": 25,
-          "messageCount": 140
+          "fallbackCount": 24,
+          "messageCount": 143
         },
         "dir": "ltr",
         "lang": "ro-RO",
@@ -8870,8 +9088,8 @@
       {
         "coverage": {
           "complete": false,
-          "fallbackCount": 25,
-          "messageCount": 140
+          "fallbackCount": 24,
+          "messageCount": 143
         },
         "dir": "ltr",
         "lang": "sv-SE",
@@ -8881,8 +9099,8 @@
       {
         "coverage": {
           "complete": false,
-          "fallbackCount": 25,
-          "messageCount": 140
+          "fallbackCount": 24,
+          "messageCount": 143
         },
         "dir": "ltr",
         "lang": "ko-KR",
@@ -8892,8 +9110,8 @@
       {
         "coverage": {
           "complete": false,
-          "fallbackCount": 25,
-          "messageCount": 140
+          "fallbackCount": 24,
+          "messageCount": 143
         },
         "dir": "ltr",
         "lang": "zh-CN",
@@ -8904,7 +9122,7 @@
         "coverage": {
           "complete": false,
           "fallbackCount": 2,
-          "messageCount": 140
+          "messageCount": 143
         },
         "dir": "ltr",
         "lang": "ja-JP",
@@ -8914,8 +9132,8 @@
       {
         "coverage": {
           "complete": false,
-          "fallbackCount": 26,
-          "messageCount": 140
+          "fallbackCount": 24,
+          "messageCount": 143
         },
         "dir": "ltr",
         "lang": "hi-IN",
@@ -9013,7 +9231,7 @@
           "hi-IN": {
             "fallback": false,
             "reviewed": true,
-            "text": "वीपीएटी खोलें"
+            "text": "VPAT खोलें"
           },
           "it-IT": {
             "fallback": false,
@@ -9029,11 +9247,6 @@
             "fallback": false,
             "reviewed": true,
             "text": "VPAT 열기"
-          },
-          "kw-GB": {
-            "fallback": false,
-            "reviewed": true,
-            "text": "Open VPAT rag oll"
           },
           "nl-NL": {
             "fallback": false,
@@ -9059,11 +9272,6 @@
             "fallback": false,
             "reviewed": true,
             "text": "Deschide VPAT"
-          },
-          "sco-GB": {
-            "fallback": false,
-            "reviewed": true,
-            "text": "Open VPAT"
           },
           "sv-SE": {
             "fallback": false,
@@ -9183,11 +9391,6 @@
             "reviewed": true,
             "text": "OpenACR 다운로드"
           },
-          "kw-GB": {
-            "fallback": false,
-            "reviewed": true,
-            "text": "Derghyl OpenACR"
-          },
           "nl-NL": {
             "fallback": false,
             "reviewed": true,
@@ -9212,11 +9415,6 @@
             "fallback": false,
             "reviewed": true,
             "text": "Descărcare OpenACR"
-          },
-          "sco-GB": {
-            "fallback": false,
-            "reviewed": true,
-            "text": "Dounload OpenACR"
           },
           "sv-SE": {
             "fallback": false,
@@ -9353,11 +9551,6 @@
             "reviewed": true,
             "text": "개발자"
           },
-          "kw-GB": {
-            "fallback": false,
-            "reviewed": true,
-            "text": "Developer rag oll"
-          },
           "nl-NL": {
             "fallback": false,
             "reviewed": true,
@@ -9382,11 +9575,6 @@
             "fallback": false,
             "reviewed": true,
             "text": "Dezvoltator"
-          },
-          "sco-GB": {
-            "fallback": false,
-            "reviewed": true,
-            "text": "Developer view"
           },
           "sv-SE": {
             "fallback": false,
@@ -9529,11 +9717,6 @@
             "reviewed": true,
             "text": "행정부"
           },
-          "kw-GB": {
-            "fallback": false,
-            "reviewed": true,
-            "text": "Executive rag oll"
-          },
           "nl-NL": {
             "fallback": false,
             "reviewed": true,
@@ -9558,11 +9741,6 @@
             "fallback": false,
             "reviewed": true,
             "text": "Executiv"
-          },
-          "sco-GB": {
-            "fallback": false,
-            "reviewed": true,
-            "text": "Executive view"
           },
           "sv-SE": {
             "fallback": false,
@@ -9685,11 +9863,6 @@
             "reviewed": true,
             "text": "감사원"
           },
-          "kw-GB": {
-            "fallback": false,
-            "reviewed": true,
-            "text": "Auditor rag oll"
-          },
           "nl-NL": {
             "fallback": false,
             "reviewed": true,
@@ -9715,11 +9888,6 @@
             "reviewed": true,
             "text": "Vizualizare auditor"
           },
-          "sco-GB": {
-            "fallback": false,
-            "reviewed": true,
-            "text": ". Auditor"
-          },
           "sv-SE": {
             "fallback": false,
             "reviewed": true,
@@ -9743,7 +9911,7 @@
   "reportFamily": "compliance",
   "reportId": "scribe-mobile-accessibility-scan",
   "reportProfile": {
-    "catalogHash": "7lfnwm",
+    "catalogHash": "szhxx4",
     "profileId": "readiness",
     "rendererBinding": "mobile-accessibility-scan",
     "reportFamilyId": "accessibility",
@@ -9757,112 +9925,102 @@
     {
       "locale": "en-US",
       "path": "data/search-index.en-US.js",
-      "tokenCount": 322
+      "tokenCount": 320
     },
     {
       "locale": "en-GB",
       "path": "data/search-index.en-GB.js",
-      "tokenCount": 322
+      "tokenCount": 320
     },
     {
       "locale": "en-CA",
       "path": "data/search-index.en-CA.js",
-      "tokenCount": 322
+      "tokenCount": 320
     },
     {
       "locale": "fr-CA",
       "path": "data/search-index.fr-CA.js",
-      "tokenCount": 350
+      "tokenCount": 344
     },
     {
       "locale": "en-IN",
       "path": "data/search-index.en-IN.js",
-      "tokenCount": 322
+      "tokenCount": 320
     },
     {
       "locale": "cy-GB",
       "path": "data/search-index.cy-GB.js",
-      "tokenCount": 341
+      "tokenCount": 335
     },
     {
       "locale": "gd-GB",
       "path": "data/search-index.gd-GB.js",
-      "tokenCount": 354
+      "tokenCount": 343
     },
     {
       "locale": "ga-GB",
       "path": "data/search-index.ga-GB.js",
-      "tokenCount": 353
-    },
-    {
-      "locale": "sco-GB",
-      "path": "data/search-index.sco-GB.js",
-      "tokenCount": 330
-    },
-    {
-      "locale": "kw-GB",
-      "path": "data/search-index.kw-GB.js",
-      "tokenCount": 330
+      "tokenCount": 338
     },
     {
       "locale": "es-US",
       "path": "data/search-index.es-US.js",
-      "tokenCount": 353
+      "tokenCount": 345
     },
     {
       "locale": "es-MX",
       "path": "data/search-index.es-MX.js",
-      "tokenCount": 353
+      "tokenCount": 345
     },
     {
       "locale": "de-DE",
       "path": "data/search-index.de-DE.js",
-      "tokenCount": 345
+      "tokenCount": 336
     },
     {
       "locale": "fr-FR",
       "path": "data/search-index.fr-FR.js",
-      "tokenCount": 347
+      "tokenCount": 339
     },
     {
       "locale": "es-ES",
       "path": "data/search-index.es-ES.js",
-      "tokenCount": 353
+      "tokenCount": 345
     },
     {
       "locale": "it-IT",
       "path": "data/search-index.it-IT.js",
-      "tokenCount": 344
+      "tokenCount": 336
     },
     {
       "locale": "nl-NL",
       "path": "data/search-index.nl-NL.js",
-      "tokenCount": 342
+      "tokenCount": 333
     },
     {
       "locale": "pl-PL",
       "path": "data/search-index.pl-PL.js",
-      "tokenCount": 345
+      "tokenCount": 336
     },
     {
       "locale": "pt-PT",
       "path": "data/search-index.pt-PT.js",
-      "tokenCount": 343
+      "tokenCount": 334
     },
     {
       "locale": "pt-BR",
       "path": "data/search-index.pt-BR.js",
-      "tokenCount": 343
+      "tokenCount": 334
     },
     {
       "locale": "ro-RO",
       "path": "data/search-index.ro-RO.js",
-      "tokenCount": 344
+      "tokenCount": 336
     },
     {
       "locale": "sv-SE",
       "path": "data/search-index.sv-SE.js",
-      "tokenCount": 342
+      "tokenCount": 335
     },
     {
       "locale": "ko-KR",
@@ -9984,11 +10142,6 @@
             "reviewed": true,
             "text": "발견 공유"
           },
-          "kw-GB": {
-            "fallback": false,
-            "reviewed": true,
-            "text": "Share kavos"
-          },
           "nl-NL": {
             "fallback": false,
             "reviewed": true,
@@ -10013,11 +10166,6 @@
             "fallback": false,
             "reviewed": true,
             "text": "Găsirea de acțiuni"
-          },
-          "sco-GB": {
-            "fallback": false,
-            "reviewed": true,
-            "text": "Share findin"
           },
           "sv-SE": {
             "fallback": false,
@@ -10124,11 +10272,6 @@
             "reviewed": true,
             "text": "cockpit-mobile 프로필 알림 피팅의 SwiftUI 이미지는 accessibilityLabel이 없는 의미 있는 콘텐츠로 노출됩니다."
           },
-          "kw-GB": {
-            "fallback": false,
-            "reviewed": true,
-            "text": "An SwiftUI Image yn an cockpit-mobile profile alert fixture is exposed as meaningful content heb an accessibilityLabel."
-          },
           "nl-NL": {
             "fallback": false,
             "reviewed": true,
@@ -10153,11 +10296,6 @@
             "fallback": false,
             "reviewed": true,
             "text": "Imaginea SwiftUI din dispozitivul de alertă pentru profilul cockpit-mobile este expusă ca conținut semnificativ fără un accessibilityLabel."
-          },
-          "sco-GB": {
-            "fallback": false,
-            "reviewed": true,
-            "text": "The SwiftUI Image in the cockpit-mobile profile alert fixture is exposed as meaningful content withoot an accessibilityLabel. Tae keep aw teams aligned."
           },
           "sv-SE": {
             "fallback": false,
@@ -10264,11 +10402,6 @@
             "reviewed": true,
             "text": "SwiftUI 이미지에 접근 가능한 이름이 없습니다"
           },
-          "kw-GB": {
-            "fallback": false,
-            "reviewed": true,
-            "text": "SwiftUI image is missing an accessible name rag oll"
-          },
           "nl-NL": {
             "fallback": false,
             "reviewed": true,
@@ -10293,11 +10426,6 @@
             "fallback": false,
             "reviewed": true,
             "text": "Imaginii SwiftUI îi lipsește un nume accesibil"
-          },
-          "sco-GB": {
-            "fallback": false,
-            "reviewed": true,
-            "text": "SwiftUI image is missin an accessible name"
           },
           "sv-SE": {
             "fallback": false,
@@ -10468,11 +10596,6 @@
             "reviewed": true,
             "text": "{framework} 소스 증거"
           },
-          "kw-GB": {
-            "fallback": false,
-            "reviewed": true,
-            "text": "{framework} source evidence rag oll"
-          },
           "nl-NL": {
             "fallback": false,
             "reviewed": true,
@@ -10497,11 +10620,6 @@
             "fallback": false,
             "reviewed": true,
             "text": "Dovezi sursă {framework}"
-          },
-          "sco-GB": {
-            "fallback": false,
-            "reviewed": true,
-            "text": "{framework} soorce evidence"
           },
           "sv-SE": {
             "fallback": false,
@@ -10622,11 +10740,6 @@
             "reviewed": true,
             "text": "{framework} 소스 증거"
           },
-          "kw-GB": {
-            "fallback": false,
-            "reviewed": true,
-            "text": "{framework} source evidence rag oll"
-          },
           "nl-NL": {
             "fallback": false,
             "reviewed": true,
@@ -10651,11 +10764,6 @@
             "fallback": false,
             "reviewed": true,
             "text": "Dovezi sursă {framework}"
-          },
-          "sco-GB": {
-            "fallback": false,
-            "reviewed": true,
-            "text": "{framework} soorce evidence"
           },
           "sv-SE": {
             "fallback": false,
@@ -10776,11 +10884,6 @@
             "reviewed": true,
             "text": "{framework} 소스 증거"
           },
-          "kw-GB": {
-            "fallback": false,
-            "reviewed": true,
-            "text": "{framework} source evidence rag oll"
-          },
           "nl-NL": {
             "fallback": false,
             "reviewed": true,
@@ -10805,11 +10908,6 @@
             "fallback": false,
             "reviewed": true,
             "text": "Dovezi sursă {framework}"
-          },
-          "sco-GB": {
-            "fallback": false,
-            "reviewed": true,
-            "text": "{framework} soorce evidence"
           },
           "sv-SE": {
             "fallback": false,
@@ -10930,11 +11028,6 @@
             "reviewed": true,
             "text": "{framework} 소스 증거"
           },
-          "kw-GB": {
-            "fallback": false,
-            "reviewed": true,
-            "text": "{framework} source evidence rag oll"
-          },
           "nl-NL": {
             "fallback": false,
             "reviewed": true,
@@ -10959,11 +11052,6 @@
             "fallback": false,
             "reviewed": true,
             "text": "Dovezi sursă {framework}"
-          },
-          "sco-GB": {
-            "fallback": false,
-            "reviewed": true,
-            "text": "{framework} soorce evidence"
           },
           "sv-SE": {
             "fallback": false,
@@ -11084,11 +11172,6 @@
             "reviewed": true,
             "text": "{framework} 소스 증거"
           },
-          "kw-GB": {
-            "fallback": false,
-            "reviewed": true,
-            "text": "{framework} source evidence rag oll"
-          },
           "nl-NL": {
             "fallback": false,
             "reviewed": true,
@@ -11113,11 +11196,6 @@
             "fallback": false,
             "reviewed": true,
             "text": "Dovezi sursă {framework}"
-          },
-          "sco-GB": {
-            "fallback": false,
-            "reviewed": true,
-            "text": "{framework} soorce evidence"
           },
           "sv-SE": {
             "fallback": false,
@@ -11238,11 +11316,6 @@
             "reviewed": true,
             "text": "{framework} 소스 증거"
           },
-          "kw-GB": {
-            "fallback": false,
-            "reviewed": true,
-            "text": "{framework} source evidence rag oll"
-          },
           "nl-NL": {
             "fallback": false,
             "reviewed": true,
@@ -11267,11 +11340,6 @@
             "fallback": false,
             "reviewed": true,
             "text": "Dovezi sursă {framework}"
-          },
-          "sco-GB": {
-            "fallback": false,
-            "reviewed": true,
-            "text": "{framework} soorce evidence"
           },
           "sv-SE": {
             "fallback": false,
@@ -11392,11 +11460,6 @@
             "reviewed": true,
             "text": "{framework} 소스 증거"
           },
-          "kw-GB": {
-            "fallback": false,
-            "reviewed": true,
-            "text": "{framework} source evidence rag oll"
-          },
           "nl-NL": {
             "fallback": false,
             "reviewed": true,
@@ -11421,11 +11484,6 @@
             "fallback": false,
             "reviewed": true,
             "text": "Dovezi sursă {framework}"
-          },
-          "sco-GB": {
-            "fallback": false,
-            "reviewed": true,
-            "text": "{framework} soorce evidence"
           },
           "sv-SE": {
             "fallback": false,
@@ -11546,11 +11604,6 @@
             "reviewed": true,
             "text": "{framework} 소스 증거"
           },
-          "kw-GB": {
-            "fallback": false,
-            "reviewed": true,
-            "text": "{framework} source evidence rag oll"
-          },
           "nl-NL": {
             "fallback": false,
             "reviewed": true,
@@ -11575,11 +11628,6 @@
             "fallback": false,
             "reviewed": true,
             "text": "Dovezi sursă {framework}"
-          },
-          "sco-GB": {
-            "fallback": false,
-            "reviewed": true,
-            "text": "{framework} soorce evidence"
           },
           "sv-SE": {
             "fallback": false,
@@ -11700,11 +11748,6 @@
             "reviewed": true,
             "text": "{framework} 소스 증거"
           },
-          "kw-GB": {
-            "fallback": false,
-            "reviewed": true,
-            "text": "{framework} source evidence rag oll"
-          },
           "nl-NL": {
             "fallback": false,
             "reviewed": true,
@@ -11729,11 +11772,6 @@
             "fallback": false,
             "reviewed": true,
             "text": "Dovezi sursă {framework}"
-          },
-          "sco-GB": {
-            "fallback": false,
-            "reviewed": true,
-            "text": "{framework} soorce evidence"
           },
           "sv-SE": {
             "fallback": false,
@@ -11854,11 +11892,6 @@
             "reviewed": true,
             "text": "{framework} 소스 증거"
           },
-          "kw-GB": {
-            "fallback": false,
-            "reviewed": true,
-            "text": "{framework} source evidence rag oll"
-          },
           "nl-NL": {
             "fallback": false,
             "reviewed": true,
@@ -11883,11 +11916,6 @@
             "fallback": false,
             "reviewed": true,
             "text": "Dovezi sursă {framework}"
-          },
-          "sco-GB": {
-            "fallback": false,
-            "reviewed": true,
-            "text": "{framework} soorce evidence"
           },
           "sv-SE": {
             "fallback": false,
@@ -12006,11 +12034,6 @@
               "reviewed": true,
               "text": "자동"
             },
-            "kw-GB": {
-              "fallback": false,
-              "reviewed": true,
-              "text": "Awtomathek"
-            },
             "nl-NL": {
               "fallback": false,
               "reviewed": true,
@@ -12035,11 +12058,6 @@
               "fallback": false,
               "reviewed": true,
               "text": "Automat"
-            },
-            "sco-GB": {
-              "fallback": false,
-              "reviewed": true,
-              "text": "Automatic"
             },
             "sv-SE": {
               "fallback": false,
@@ -12149,11 +12167,6 @@
               "reviewed": true,
               "text": "빛"
             },
-            "kw-GB": {
-              "fallback": false,
-              "reviewed": true,
-              "text": "Lys"
-            },
             "nl-NL": {
               "fallback": false,
               "reviewed": true,
@@ -12178,11 +12191,6 @@
               "fallback": false,
               "reviewed": true,
               "text": "Lumină"
-            },
-            "sco-GB": {
-              "fallback": false,
-              "reviewed": true,
-              "text": "Licht"
             },
             "sv-SE": {
               "fallback": false,
@@ -12292,11 +12300,6 @@
               "reviewed": true,
               "text": "어두운"
             },
-            "kw-GB": {
-              "fallback": false,
-              "reviewed": true,
-              "text": "Teudh"
-            },
             "nl-NL": {
               "fallback": false,
               "reviewed": true,
@@ -12321,11 +12324,6 @@
               "fallback": false,
               "reviewed": true,
               "text": "Întuneric"
-            },
-            "sco-GB": {
-              "fallback": false,
-              "reviewed": true,
-              "text": "Daurk"
             },
             "sv-SE": {
               "fallback": false,
@@ -12438,11 +12436,6 @@
               "reviewed": true,
               "text": "Daylight"
             },
-            "kw-GB": {
-              "fallback": false,
-              "reviewed": true,
-              "text": "Daylight rag oll"
-            },
             "nl-NL": {
               "fallback": false,
               "reviewed": true,
@@ -12467,11 +12460,6 @@
               "fallback": false,
               "reviewed": true,
               "text": "Tema Daylight"
-            },
-            "sco-GB": {
-              "fallback": false,
-              "reviewed": true,
-              "text": "Daylight"
             },
             "sv-SE": {
               "fallback": false,
@@ -12582,11 +12570,6 @@
               "reviewed": true,
               "text": "자외선"
             },
-            "kw-GB": {
-              "fallback": false,
-              "reviewed": true,
-              "text": "Ultraviolet rag oll"
-            },
             "nl-NL": {
               "fallback": false,
               "reviewed": true,
@@ -12611,11 +12594,6 @@
               "fallback": false,
               "reviewed": true,
               "text": "Tema Ultraviolet"
-            },
-            "sco-GB": {
-              "fallback": false,
-              "reviewed": true,
-              "text": "Ultraviolet view"
             },
             "sv-SE": {
               "fallback": false,
@@ -12726,11 +12704,6 @@
               "reviewed": true,
               "text": "적외선"
             },
-            "kw-GB": {
-              "fallback": false,
-              "reviewed": true,
-              "text": "Infrared rag oll"
-            },
             "nl-NL": {
               "fallback": false,
               "reviewed": true,
@@ -12755,11 +12728,6 @@
               "fallback": false,
               "reviewed": true,
               "text": "Infraroșu"
-            },
-            "sco-GB": {
-              "fallback": false,
-              "reviewed": true,
-              "text": "Infrared (Scots)"
             },
             "sv-SE": {
               "fallback": false,
@@ -12870,11 +12838,6 @@
               "reviewed": true,
               "text": "높은 대비"
             },
-            "kw-GB": {
-              "fallback": false,
-              "reviewed": true,
-              "text": "High contrast rag oll"
-            },
             "nl-NL": {
               "fallback": false,
               "reviewed": true,
@@ -12899,11 +12862,6 @@
               "fallback": false,
               "reviewed": true,
               "text": "Contrast ridicat"
-            },
-            "sco-GB": {
-              "fallback": false,
-              "reviewed": true,
-              "text": "Heich contrast"
             },
             "sv-SE": {
               "fallback": false,
@@ -13049,11 +13007,6 @@
                     "reviewed": true,
                     "text": "SwiftUI 이미지 소스 증거"
                   },
-                  "kw-GB": {
-                    "fallback": false,
-                    "reviewed": true,
-                    "text": "SwiftUI image source evidence rag oll"
-                  },
                   "nl-NL": {
                     "fallback": false,
                     "reviewed": true,
@@ -13078,11 +13031,6 @@
                     "fallback": false,
                     "reviewed": true,
                     "text": "Dovada sursei de imagine SwiftUI"
-                  },
-                  "sco-GB": {
-                    "fallback": false,
-                    "reviewed": true,
-                    "text": "SwiftUI image soorce evidence"
                   },
                   "sv-SE": {
                     "fallback": false,
@@ -13195,11 +13143,6 @@
                     "reviewed": true,
                     "text": "수정 계획: 이미지 대체 텍스트"
                   },
-                  "kw-GB": {
-                    "fallback": false,
-                    "reviewed": true,
-                    "text": "Fix plan: image alt text rag oll"
-                  },
                   "nl-NL": {
                     "fallback": false,
                     "reviewed": true,
@@ -13224,11 +13167,6 @@
                     "fallback": false,
                     "reviewed": true,
                     "text": "Planul fix: imaginea alt text"
-                  },
-                  "sco-GB": {
-                    "fallback": false,
-                    "reviewed": true,
-                    "text": "Mend plan: image alt text"
                   },
                   "sv-SE": {
                     "fallback": false,
@@ -13339,11 +13277,6 @@
                 "reviewed": true,
                 "text": "SwiftUI 이미지에 접근 가능한 이름이 없습니다"
               },
-              "kw-GB": {
-                "fallback": false,
-                "reviewed": true,
-                "text": "SwiftUI image is missing an accessible name rag oll"
-              },
               "nl-NL": {
                 "fallback": false,
                 "reviewed": true,
@@ -13368,11 +13301,6 @@
                 "fallback": false,
                 "reviewed": true,
                 "text": "Imaginii SwiftUI îi lipsește un nume accesibil"
-              },
-              "sco-GB": {
-                "fallback": false,
-                "reviewed": true,
-                "text": "SwiftUI image is missin an accessible name"
               },
               "sv-SE": {
                 "fallback": false,
@@ -13483,11 +13411,6 @@
             "reviewed": true,
             "text": "개요"
           },
-          "kw-GB": {
-            "fallback": false,
-            "reviewed": true,
-            "text": "Overview rag oll"
-          },
           "nl-NL": {
             "fallback": false,
             "reviewed": true,
@@ -13512,11 +13435,6 @@
             "fallback": false,
             "reviewed": true,
             "text": "Prezentare generală"
-          },
-          "sco-GB": {
-            "fallback": false,
-            "reviewed": true,
-            "text": "Overview page"
           },
           "sv-SE": {
             "fallback": false,

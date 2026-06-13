@@ -653,6 +653,11 @@ window.__SCRIBE_LOCALES__["ja-JP"] = {
       "reviewed": true,
       "text": "アクセシビリティ"
     },
+    "scribe.report.filter.option.aiSafety": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "AIの安全性"
+    },
     "scribe.report.filter.option.analysisCompleteness": {
       "fallback": false,
       "reviewed": true,
@@ -693,6 +698,11 @@ window.__SCRIBE_LOCALES__["ja-JP"] = {
       "reviewed": true,
       "text": "エラー"
     },
+    "scribe.report.filter.option.grammarParsing": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "文法と解析"
+    },
     "scribe.report.filter.option.high": {
       "fallback": false,
       "reviewed": true,
@@ -723,6 +733,11 @@ window.__SCRIBE_LOCALES__["ja-JP"] = {
       "reviewed": true,
       "text": "中"
     },
+    "scribe.report.filter.option.metricsQuality": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "メトリクスと品質"
+    },
     "scribe.report.filter.option.mexicoFintechReadiness": {
       "fallback": false,
       "reviewed": true,
@@ -741,7 +756,12 @@ window.__SCRIBE_LOCALES__["ja-JP"] = {
     "scribe.report.filter.option.oscalProfileIntake": {
       "fallback": false,
       "reviewed": true,
-      "text": "OSCAL プロファイル取り込み"
+      "text": "OSCALプロファイルインテーク"
+    },
+    "scribe.report.filter.option.projectIntelligence": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "プロジェクトのインテリジェンス"
     },
     "scribe.report.filter.option.remediationReadiness": {
       "fallback": false,
@@ -757,6 +777,11 @@ window.__SCRIBE_LOCALES__["ja-JP"] = {
       "fallback": false,
       "reviewed": true,
       "text": "リポジトリインベントリ"
+    },
+    "scribe.report.filter.option.security": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "セキュリティ"
     },
     "scribe.report.filter.option.sourceTrace": {
       "fallback": false,
@@ -792,16 +817,6 @@ window.__SCRIBE_LOCALES__["ja-JP"] = {
       "fallback": false,
       "reviewed": true,
       "text": "ゲート付きの修正内容なしの公開発見要約。"
-    },
-    "scribe.report.fixPlan.missingAlt.stepOne": {
-      "fallback": false,
-      "reviewed": true,
-      "text": "プロファイル警告画像の目的を伝える地域化されたアクセシビリティラベルを追加します。"
-    },
-    "scribe.report.fixPlan.missingAlt.stepTwo": {
-      "fallback": false,
-      "reviewed": true,
-      "text": "修正を公開する前に WCAG ソースとレンダリングレポートのチェックを再度実行します。"
     },
     "scribe.report.fixPlan.missingAlt.summary": {
       "fallback": false,
@@ -866,12 +881,12 @@ window.__SCRIBE_LOCALES__["ja-JP"] = {
     "scribe.report.overview.stat.accessibilityFindings": {
       "fallback": false,
       "reviewed": true,
-      "text": "アクセシビリティの検出結果"
+      "text": "アクセシビリティに関する検出結果"
     },
     "scribe.report.overview.stat.codeQualityFindings": {
       "fallback": false,
       "reviewed": true,
-      "text": "コード品質の検出結果"
+      "text": "コード品質に関する検出結果"
     },
     "scribe.report.overview.stat.complianceFindings": {
       "fallback": false,

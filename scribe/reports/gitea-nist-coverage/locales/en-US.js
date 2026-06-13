@@ -348,6 +348,11 @@ window.__SCRIBE_LOCALES__["en-US"] = {
       "reviewed": true,
       "text": "Accessibility"
     },
+    "scribe.report.filter.option.aiSafety": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "AI safety"
+    },
     "scribe.report.filter.option.analysisCompleteness": {
       "fallback": false,
       "reviewed": true,
@@ -388,6 +393,11 @@ window.__SCRIBE_LOCALES__["en-US"] = {
       "reviewed": true,
       "text": "Error"
     },
+    "scribe.report.filter.option.grammarParsing": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Grammar & parsing"
+    },
     "scribe.report.filter.option.high": {
       "fallback": false,
       "reviewed": true,
@@ -418,6 +428,11 @@ window.__SCRIBE_LOCALES__["en-US"] = {
       "reviewed": true,
       "text": "Medium"
     },
+    "scribe.report.filter.option.metricsQuality": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Metrics & quality"
+    },
     "scribe.report.filter.option.mexicoFintechReadiness": {
       "fallback": false,
       "reviewed": true,
@@ -438,6 +453,11 @@ window.__SCRIBE_LOCALES__["en-US"] = {
       "reviewed": true,
       "text": "OSCAL profile intake"
     },
+    "scribe.report.filter.option.projectIntelligence": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Project intelligence"
+    },
     "scribe.report.filter.option.remediationReadiness": {
       "fallback": false,
       "reviewed": true,
@@ -452,6 +472,11 @@ window.__SCRIBE_LOCALES__["en-US"] = {
       "fallback": false,
       "reviewed": true,
       "text": "Repository inventory"
+    },
+    "scribe.report.filter.option.security": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Security"
     },
     "scribe.report.filter.option.sourceTrace": {
       "fallback": false,
@@ -672,16 +697,6 @@ window.__SCRIBE_LOCALES__["en-US"] = {
       "fallback": false,
       "reviewed": true,
       "text": "NIST controls require explicit supported-artifact boundaries"
-    },
-    "scribe.report.nistCoverage.fixPlan.stepOne": {
-      "fallback": false,
-      "reviewed": true,
-      "text": "Keep OSCAL Assessment Results, Markdown, HTML, source evidence, and rollup JSON in the public package manifest."
-    },
-    "scribe.report.nistCoverage.fixPlan.stepTwo": {
-      "fallback": false,
-      "reviewed": true,
-      "text": "Add SSP/SAP/SAR/POA&M only after G11 conformance tests prove each artifact shape against supported data."
     },
     "scribe.report.nistCoverage.fixPlan.summary": {
       "fallback": false,

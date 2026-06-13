@@ -343,6 +343,11 @@ window.__SCRIBE_LOCALES__["en-US"] = {
       "reviewed": true,
       "text": "Accessibility"
     },
+    "scribe.report.filter.option.aiSafety": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "AI safety"
+    },
     "scribe.report.filter.option.analysisCompleteness": {
       "fallback": false,
       "reviewed": true,
@@ -383,6 +388,11 @@ window.__SCRIBE_LOCALES__["en-US"] = {
       "reviewed": true,
       "text": "Error"
     },
+    "scribe.report.filter.option.grammarParsing": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Grammar & parsing"
+    },
     "scribe.report.filter.option.high": {
       "fallback": false,
       "reviewed": true,
@@ -413,6 +423,11 @@ window.__SCRIBE_LOCALES__["en-US"] = {
       "reviewed": true,
       "text": "Medium"
     },
+    "scribe.report.filter.option.metricsQuality": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Metrics & quality"
+    },
     "scribe.report.filter.option.mexicoFintechReadiness": {
       "fallback": false,
       "reviewed": true,
@@ -433,6 +448,11 @@ window.__SCRIBE_LOCALES__["en-US"] = {
       "reviewed": true,
       "text": "OSCAL profile intake"
     },
+    "scribe.report.filter.option.projectIntelligence": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Project intelligence"
+    },
     "scribe.report.filter.option.remediationReadiness": {
       "fallback": false,
       "reviewed": true,
@@ -447,6 +467,11 @@ window.__SCRIBE_LOCALES__["en-US"] = {
       "fallback": false,
       "reviewed": true,
       "text": "Repository inventory"
+    },
+    "scribe.report.filter.option.security": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Security"
     },
     "scribe.report.filter.option.sourceTrace": {
       "fallback": false,
@@ -592,16 +617,6 @@ window.__SCRIBE_LOCALES__["en-US"] = {
       "fallback": false,
       "reviewed": true,
       "text": "SSP/SAP/SAR/POA&M remain fail-closed: {unsupported} unsupported artifact occurrence(s)"
-    },
-    "scribe.report.oscalProfileIntake.fixPlan.stepOne": {
-      "fallback": false,
-      "reviewed": true,
-      "text": "Pin every external OSCAL source repository and scan Catalog/Profile files together so imports can resolve."
-    },
-    "scribe.report.oscalProfileIntake.fixPlan.stepTwo": {
-      "fallback": false,
-      "reviewed": true,
-      "text": "Keep SSP/SAP/SAR/POA&M package generation fail-closed until human process evidence is supplied."
     },
     "scribe.report.oscalProfileIntake.fixPlan.summary": {
       "fallback": false,

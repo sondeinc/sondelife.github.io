@@ -333,6 +333,11 @@ window.__SCRIBE_LOCALES__["es-US"] = {
       "reviewed": true,
       "text": "Accesibilidad"
     },
+    "scribe.report.filter.option.aiSafety": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Seguridad de IA"
+    },
     "scribe.report.filter.option.analysisCompleteness": {
       "fallback": false,
       "reviewed": true,
@@ -373,6 +378,11 @@ window.__SCRIBE_LOCALES__["es-US"] = {
       "reviewed": true,
       "text": "Error"
     },
+    "scribe.report.filter.option.grammarParsing": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Gramática y análisis sintáctico"
+    },
     "scribe.report.filter.option.high": {
       "fallback": false,
       "reviewed": true,
@@ -403,6 +413,11 @@ window.__SCRIBE_LOCALES__["es-US"] = {
       "reviewed": true,
       "text": "Medio"
     },
+    "scribe.report.filter.option.metricsQuality": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Métricas y calidad"
+    },
     "scribe.report.filter.option.mexicoFintechReadiness": {
       "fallback": false,
       "reviewed": true,
@@ -423,6 +438,11 @@ window.__SCRIBE_LOCALES__["es-US"] = {
       "reviewed": true,
       "text": "Ingesta de perfiles OSCAL"
     },
+    "scribe.report.filter.option.projectIntelligence": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Inteligencia de proyecto"
+    },
     "scribe.report.filter.option.remediationReadiness": {
       "fallback": false,
       "reviewed": true,
@@ -437,6 +457,11 @@ window.__SCRIBE_LOCALES__["es-US"] = {
       "fallback": false,
       "reviewed": true,
       "text": "Inventario del repositorio"
+    },
+    "scribe.report.filter.option.security": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Seguridad"
     },
     "scribe.report.filter.option.sourceTrace": {
       "fallback": false,
@@ -573,70 +598,35 @@ window.__SCRIBE_LOCALES__["es-US"] = {
       "reviewed": true,
       "text": "Complejidad severa en {symbol}"
     },
-    "scribe.report.repositoryHealth.finding.complexity.title.high": {
-      "fallback": false,
-      "reviewed": true,
-      "text": "Alta complejidad en {symbol}"
-    },
-    "scribe.report.repositoryHealth.finding.deadCode.criterion": {
-      "fallback": false,
-      "reviewed": true,
-      "text": "Política de código muerto de salud del repositorio: las funciones comprobadas como inalcanzables y las exportaciones no utilizadas necesitan revisión."
-    },
-    "scribe.report.repositoryHealth.finding.deadCode.fix": {
-      "fallback": false,
-      "reviewed": true,
-      "text": "Confirme que el símbolo no es un punto de entrada dinámico, luego quítelo o agregue la evidencia de referencia que falta antes de volver a ejecutar el informe de estado."
-    },
-    "scribe.report.repositoryHealth.finding.deadCode.unreachable.summary": {
-      "fallback": false,
-      "reviewed": true,
-      "text": "{sourcePath}:{line} está etiquetado como inalcanzable por la sonda de código muerto."
-    },
-    "scribe.report.repositoryHealth.finding.deadCode.unreachable.title": {
-      "fallback": false,
-      "reviewed": true,
-      "text": "Función inalcanzable {symbol}"
-    },
-    "scribe.report.repositoryHealth.finding.deadCode.unusedExport.summary": {
-      "fallback": false,
-      "reviewed": true,
-      "text": "{sourcePath}:{line} está etiquetado como una exportación no utilizada por la sonda de código muerto."
-    },
-    "scribe.report.repositoryHealth.finding.deadCode.unusedExport.title": {
-      "fallback": false,
-      "reviewed": true,
-      "text": "Símbolo exportado no utilizado {symbol}"
-    },
     "scribe.report.repositoryHealth.finding.publicSummary": {
       "fallback": false,
       "reviewed": true,
       "text": "Resumen de salud del repositorio público con evidencia de cobertura respaldada por fuentes."
     },
+    "scribe.report.repositoryHealth.finding.raw.criterion": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "{criterion}"
+    },
+    "scribe.report.repositoryHealth.finding.raw.fix": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "{recommendation}"
+    },
+    "scribe.report.repositoryHealth.finding.raw.summary": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "{summary}"
+    },
+    "scribe.report.repositoryHealth.finding.raw.title": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "{title}"
+    },
     "scribe.report.repositoryHealth.finding.runtime": {
       "fallback": false,
       "reviewed": true,
       "text": "Análisis estático del estado del repositorio"
-    },
-    "scribe.report.repositoryHealth.finding.schemaMaintenance.criterion": {
-      "fallback": false,
-      "reviewed": true,
-      "text": "Higiene del esquema de salud del repositorio: las notas de obsolescencia del esquema, TODO, FIXME o HACK no deben ser el único registro del trabajo de seguimiento de la base de datos."
-    },
-    "scribe.report.repositoryHealth.finding.schemaMaintenance.fix": {
-      "fallback": false,
-      "reviewed": true,
-      "text": "Vincule la nota del esquema a una migración, un plan de eliminación o un problema de seguimiento y, a continuación, vuelva a ejecutar las pruebas centradas en el esquema después de que se produzca el cambio de la base de datos."
-    },
-    "scribe.report.repositoryHealth.finding.schemaMaintenance.summary": {
-      "fallback": false,
-      "reviewed": true,
-      "text": "{sourcePath}:{line} contiene una nota de esquema {marker} que debe ser rastreada como seguimiento explícito de la base de datos."
-    },
-    "scribe.report.repositoryHealth.finding.schemaMaintenance.title": {
-      "fallback": false,
-      "reviewed": true,
-      "text": "La nota de mantenimiento del esquema menciona {marker}"
     },
     "scribe.report.repositoryHealth.finding.title": {
       "fallback": false,
@@ -658,50 +648,25 @@ window.__SCRIBE_LOCALES__["es-US"] = {
       "reviewed": true,
       "text": "Añada o actualice pruebas enfocadas para las ramas cambiadas en las líneas {startLine} a {endLine}, ejecute las comprobaciones de paquetes más cercanas y luego regenere el informe de estado del repositorio."
     },
-    "scribe.report.repositoryHealth.fixPlan.databaseSchema.step.inspect": {
+    "scribe.report.repositoryHealth.fixPlan.generic.step.inspect": {
       "fallback": false,
       "reviewed": true,
-      "text": "Revise la declaración del esquema en las líneas {sourcePath} {startLine} a {endLine} e identifique las entidades, campos, índices y relaciones afectados."
+      "text": "Verifique el rango de fuente citado en {sourcePath} líneas {startLine} a {endLine}."
     },
-    "scribe.report.repositoryHealth.fixPlan.databaseSchema.step.track": {
+    "scribe.report.repositoryHealth.fixPlan.generic.step.resolve": {
       "fallback": false,
       "reviewed": true,
-      "text": "Vincule la nota del esquema o el vacío en el rango citado a una migración, un plan de eliminación o un problema de seguimiento antes de cambiar el modelo de base de datos."
+      "text": "Aplique la remediación utilizando el cambio de origen más pequeño que resuelva el hallazgo."
     },
-    "scribe.report.repositoryHealth.fixPlan.databaseSchema.step.validate": {
+    "scribe.report.repositoryHealth.fixPlan.generic.step.validate": {
       "fallback": false,
       "reviewed": true,
-      "text": "Después de que el cambio de base de datos aterrice, vuelva a ejecutar la extracción de esquema y regenere el informe de estado del repositorio para {sourcePath}."
-    },
-    "scribe.report.repositoryHealth.fixPlan.deadCode.step.inspect": {
-      "fallback": false,
-      "reviewed": true,
-      "text": "Compruebe las líneas {sourcePath} de {startLine} a {endLine} para ver si hay puntos de entrada dinámicos, ganchos de marco, referencias generadas y exportaciones externas antes de eliminar el código."
-    },
-    "scribe.report.repositoryHealth.fixPlan.deadCode.step.resolve": {
-      "fallback": false,
-      "reviewed": true,
-      "text": "Eliminar el símbolo inalcanzable del rango citado, o añadir la evidencia de referencia faltante si es intencionalmente alcanzable en tiempo de ejecución."
-    },
-    "scribe.report.repositoryHealth.fixPlan.deadCode.step.validate": {
-      "fallback": false,
-      "reviewed": true,
-      "text": "Vuelve a ejecutar el análisis de código muerto y de estado del repositorio para {sourcePath} para confirmar que el hallazgo ha desaparecido sin introducir nuevas brechas de accesibilidad."
+      "text": "Vuelva a ejecutar el informe de estado del repositorio y las pruebas a nivel de paquete más cercanas antes de publicar la corrección."
     },
     "scribe.report.repositoryHealth.fixPlan.scope": {
       "fallback": false,
       "reviewed": true,
       "text": "Rango de origen de destino: {sourcePath} líneas {startLine} a {endLine}."
-    },
-    "scribe.report.repositoryHealth.fixPlan.stepOne": {
-      "fallback": false,
-      "reviewed": true,
-      "text": "Anclar o actualizar la obtención del repositorio y, a continuación, volver a ejecutar el comando de informe de estado en el mismo manifiesto de informe."
-    },
-    "scribe.report.repositoryHealth.fixPlan.stepTwo": {
-      "fallback": false,
-      "reviewed": true,
-      "text": "Agregue soporte de marco ampliando los detectores de recursos descubiertos y los accesorios de comportamiento en lugar de la lógica de informes mantenida manualmente."
     },
     "scribe.report.repositoryHealth.fixPlan.summary": {
       "fallback": false,

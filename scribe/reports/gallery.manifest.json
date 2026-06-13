@@ -17,7 +17,7 @@
       },
       "cardImage": {
         "altText": "Repository health report gallery preview for Cal.com.",
-        "href": "reports/calcom-cal-com-health/gallery-card.svg",
+        "href": "/scribe/reports/calcom-cal-com-health/gallery-card.svg",
         "openGraph": true,
         "path": "reports/calcom-cal-com-health/gallery-card.svg"
       },
@@ -39,8 +39,6 @@
           "cy-GB",
           "gd-GB",
           "ga-GB",
-          "sco-GB",
-          "kw-GB",
           "es-US",
           "es-MX",
           "de-DE",
@@ -76,7 +74,7 @@
           "flag": "🇧🇷",
           "flagClass": "fi fi-br locale-option-flag",
           "flagCode": "br",
-          "href": "reports/calcom-cal-com-health/?scribe_locale=pt-BR",
+          "href": "/scribe/reports/calcom-cal-com-health/?scribe_locale=pt-BR",
           "label": "Português (Brasil)",
           "locale": "pt-BR"
         },
@@ -84,7 +82,7 @@
           "flag": "🇨🇦",
           "flagClass": "fi fi-ca locale-option-flag",
           "flagCode": "ca",
-          "href": "reports/calcom-cal-com-health/?scribe_locale=en-CA",
+          "href": "/scribe/reports/calcom-cal-com-health/?scribe_locale=en-CA",
           "label": "English (Canada)",
           "locale": "en-CA"
         },
@@ -92,7 +90,7 @@
           "flag": "🇨🇦",
           "flagClass": "fi fi-ca locale-option-flag",
           "flagCode": "ca",
-          "href": "reports/calcom-cal-com-health/?scribe_locale=fr-CA",
+          "href": "/scribe/reports/calcom-cal-com-health/?scribe_locale=fr-CA",
           "label": "Français (Canada)",
           "locale": "fr-CA"
         },
@@ -100,7 +98,7 @@
           "flag": "🇨🇳",
           "flagClass": "fi fi-cn locale-option-flag",
           "flagCode": "cn",
-          "href": "reports/calcom-cal-com-health/?scribe_locale=zh-CN",
+          "href": "/scribe/reports/calcom-cal-com-health/?scribe_locale=zh-CN",
           "label": "简体中文",
           "locale": "zh-CN"
         },
@@ -108,7 +106,7 @@
           "flag": "🇫🇷",
           "flagClass": "fi fi-fr locale-option-flag",
           "flagCode": "fr",
-          "href": "reports/calcom-cal-com-health/?scribe_locale=fr-FR",
+          "href": "/scribe/reports/calcom-cal-com-health/?scribe_locale=fr-FR",
           "label": "Français",
           "locale": "fr-FR"
         },
@@ -116,7 +114,7 @@
           "flag": "🇩🇪",
           "flagClass": "fi fi-de locale-option-flag",
           "flagCode": "de",
-          "href": "reports/calcom-cal-com-health/?scribe_locale=de-DE",
+          "href": "/scribe/reports/calcom-cal-com-health/?scribe_locale=de-DE",
           "label": "Deutsch",
           "locale": "de-DE"
         },
@@ -124,7 +122,7 @@
           "flag": "🇮🇳",
           "flagClass": "fi fi-in locale-option-flag",
           "flagCode": "in",
-          "href": "reports/calcom-cal-com-health/?scribe_locale=en-IN",
+          "href": "/scribe/reports/calcom-cal-com-health/?scribe_locale=en-IN",
           "label": "English (India)",
           "locale": "en-IN"
         },
@@ -132,7 +130,7 @@
           "flag": "🇮🇳",
           "flagClass": "fi fi-in locale-option-flag",
           "flagCode": "in",
-          "href": "reports/calcom-cal-com-health/?scribe_locale=hi-IN",
+          "href": "/scribe/reports/calcom-cal-com-health/?scribe_locale=hi-IN",
           "label": "हिन्दी",
           "locale": "hi-IN"
         },
@@ -140,7 +138,7 @@
           "flag": "🇮🇹",
           "flagClass": "fi fi-it locale-option-flag",
           "flagCode": "it",
-          "href": "reports/calcom-cal-com-health/?scribe_locale=it-IT",
+          "href": "/scribe/reports/calcom-cal-com-health/?scribe_locale=it-IT",
           "label": "Italiano",
           "locale": "it-IT"
         },
@@ -148,7 +146,7 @@
           "flag": "🇯🇵",
           "flagClass": "fi fi-jp locale-option-flag",
           "flagCode": "jp",
-          "href": "reports/calcom-cal-com-health/?scribe_locale=ja-JP",
+          "href": "/scribe/reports/calcom-cal-com-health/?scribe_locale=ja-JP",
           "label": "日本語",
           "locale": "ja-JP"
         },
@@ -156,7 +154,7 @@
           "flag": "🇲🇽",
           "flagClass": "fi fi-mx locale-option-flag",
           "flagCode": "mx",
-          "href": "reports/calcom-cal-com-health/?scribe_locale=es-MX",
+          "href": "/scribe/reports/calcom-cal-com-health/?scribe_locale=es-MX",
           "label": "Español (México)",
           "locale": "es-MX"
         },
@@ -164,7 +162,7 @@
           "flag": "🇳🇱",
           "flagClass": "fi fi-nl locale-option-flag",
           "flagCode": "nl",
-          "href": "reports/calcom-cal-com-health/?scribe_locale=nl-NL",
+          "href": "/scribe/reports/calcom-cal-com-health/?scribe_locale=nl-NL",
           "label": "Nederlands",
           "locale": "nl-NL"
         },
@@ -172,7 +170,7 @@
           "flag": "🇵🇱",
           "flagClass": "fi fi-pl locale-option-flag",
           "flagCode": "pl",
-          "href": "reports/calcom-cal-com-health/?scribe_locale=pl-PL",
+          "href": "/scribe/reports/calcom-cal-com-health/?scribe_locale=pl-PL",
           "label": "Polski",
           "locale": "pl-PL"
         },
@@ -180,7 +178,7 @@
           "flag": "🇵🇹",
           "flagClass": "fi fi-pt locale-option-flag",
           "flagCode": "pt",
-          "href": "reports/calcom-cal-com-health/?scribe_locale=pt-PT",
+          "href": "/scribe/reports/calcom-cal-com-health/?scribe_locale=pt-PT",
           "label": "Português (Portugal)",
           "locale": "pt-PT"
         },
@@ -188,7 +186,7 @@
           "flag": "🇷🇴",
           "flagClass": "fi fi-ro locale-option-flag",
           "flagCode": "ro",
-          "href": "reports/calcom-cal-com-health/?scribe_locale=ro-RO",
+          "href": "/scribe/reports/calcom-cal-com-health/?scribe_locale=ro-RO",
           "label": "Română",
           "locale": "ro-RO"
         },
@@ -196,7 +194,7 @@
           "flag": "🇰🇷",
           "flagClass": "fi fi-kr locale-option-flag",
           "flagCode": "kr",
-          "href": "reports/calcom-cal-com-health/?scribe_locale=ko-KR",
+          "href": "/scribe/reports/calcom-cal-com-health/?scribe_locale=ko-KR",
           "label": "한국어",
           "locale": "ko-KR"
         },
@@ -204,7 +202,7 @@
           "flag": "🇪🇸",
           "flagClass": "fi fi-es locale-option-flag",
           "flagCode": "es",
-          "href": "reports/calcom-cal-com-health/?scribe_locale=es-ES",
+          "href": "/scribe/reports/calcom-cal-com-health/?scribe_locale=es-ES",
           "label": "Español (España)",
           "locale": "es-ES"
         },
@@ -212,7 +210,7 @@
           "flag": "🇸🇪",
           "flagClass": "fi fi-se locale-option-flag",
           "flagCode": "se",
-          "href": "reports/calcom-cal-com-health/?scribe_locale=sv-SE",
+          "href": "/scribe/reports/calcom-cal-com-health/?scribe_locale=sv-SE",
           "label": "Svenska",
           "locale": "sv-SE"
         },
@@ -220,7 +218,7 @@
           "flag": "🇬🇧",
           "flagClass": "fi fi-gb-wls locale-option-flag",
           "flagCode": "gb-wls",
-          "href": "reports/calcom-cal-com-health/?scribe_locale=cy-GB",
+          "href": "/scribe/reports/calcom-cal-com-health/?scribe_locale=cy-GB",
           "label": "Cymraeg",
           "locale": "cy-GB"
         },
@@ -228,7 +226,7 @@
           "flag": "🇬🇧",
           "flagClass": "fi fi-gb locale-option-flag",
           "flagCode": "gb",
-          "href": "reports/calcom-cal-com-health/?scribe_locale=en-GB",
+          "href": "/scribe/reports/calcom-cal-com-health/?scribe_locale=en-GB",
           "label": "English (UK)",
           "locale": "en-GB"
         },
@@ -236,7 +234,7 @@
           "flag": "🇬🇧",
           "flagClass": "fi fi-gb locale-option-flag",
           "flagCode": "gb",
-          "href": "reports/calcom-cal-com-health/?scribe_locale=ga-GB",
+          "href": "/scribe/reports/calcom-cal-com-health/?scribe_locale=ga-GB",
           "label": "Gaeilge",
           "locale": "ga-GB"
         },
@@ -244,31 +242,15 @@
           "flag": "🇬🇧",
           "flagClass": "fi fi-gb-sct locale-option-flag",
           "flagCode": "gb-sct",
-          "href": "reports/calcom-cal-com-health/?scribe_locale=gd-GB",
+          "href": "/scribe/reports/calcom-cal-com-health/?scribe_locale=gd-GB",
           "label": "Gàidhlig",
           "locale": "gd-GB"
-        },
-        {
-          "flag": "🇬🇧",
-          "flagClass": "fi fi-gb locale-option-flag",
-          "flagCode": "gb",
-          "href": "reports/calcom-cal-com-health/?scribe_locale=kw-GB",
-          "label": "Kernewek",
-          "locale": "kw-GB"
-        },
-        {
-          "flag": "🇬🇧",
-          "flagClass": "fi fi-gb-sct locale-option-flag",
-          "flagCode": "gb-sct",
-          "href": "reports/calcom-cal-com-health/?scribe_locale=sco-GB",
-          "label": "Scots",
-          "locale": "sco-GB"
         },
         {
           "flag": "🇺🇸",
           "flagClass": "fi fi-us locale-option-flag",
           "flagCode": "us",
-          "href": "reports/calcom-cal-com-health/?scribe_locale=en-US",
+          "href": "/scribe/reports/calcom-cal-com-health/?scribe_locale=en-US",
           "label": "English (US)",
           "locale": "en-US"
         },
@@ -276,7 +258,7 @@
           "flag": "🇺🇸",
           "flagClass": "fi fi-us locale-option-flag",
           "flagCode": "us",
-          "href": "reports/calcom-cal-com-health/?scribe_locale=es-US",
+          "href": "/scribe/reports/calcom-cal-com-health/?scribe_locale=es-US",
           "label": "Español (US)",
           "locale": "es-US"
         }
@@ -290,8 +272,6 @@
         "cy-GB",
         "gd-GB",
         "ga-GB",
-        "sco-GB",
-        "kw-GB",
         "es-US",
         "es-MX",
         "de-DE",
@@ -316,21 +296,21 @@
       "requiredArtifacts": [
         {
           "format": "HTML",
-          "href": "reports/calcom-cal-com-health/index.html",
+          "href": "/scribe/reports/calcom-cal-com-health/index.html",
           "label": "Interactive HTML report",
           "path": "index.html"
         },
         {
           "download": true,
           "format": "Markdown",
-          "href": "reports/calcom-cal-com-health/exports/report.md",
+          "href": "/scribe/reports/calcom-cal-com-health/exports/report.md",
           "label": "Markdown report",
           "path": "exports/report.md"
         }
       ],
-      "scribePageHref": "reports/calcom-cal-com-health/index.html",
+      "scribePageHref": "/scribe/reports/calcom-cal-com-health/index.html",
       "scribePageManifestPath": "reports/calcom-cal-com-health/scribe-runtime.manifest.json",
-      "searchText": "Cal.diy Repository Health Repository health report with source, package, build, framework, and schema evidence. repository-analysis health Repository Health en-US en-GB en-CA fr-CA en-IN cy-GB gd-GB ga-GB sco-GB kw-GB es-US es-MX de-DE fr-FR es-ES it-IT nl-NL pl-PL pt-PT pt-BR ro-RO sv-SE ko-KR zh-CN ja-JP hi-IN Português (Brasil) English (Canada) Français (Canada) 简体中文 Français Deutsch English (India) हिन्दी Italiano 日本語 Español (México) Nederlands Polski Português (Portugal) Română 한국어 Español (España) Svenska Cymraeg English (UK) Gaeilge Gàidhlig Kernewek Scots English (US) Español (US) universe Global Interactive HTML report HTML Markdown report Markdown",
+      "searchText": "Cal.diy Repository Health Repository health report with source, package, build, framework, and schema evidence. repository-analysis health Repository Health en-US en-GB en-CA fr-CA en-IN cy-GB gd-GB ga-GB es-US es-MX de-DE fr-FR es-ES it-IT nl-NL pl-PL pt-PT pt-BR ro-RO sv-SE ko-KR zh-CN ja-JP hi-IN Português (Brasil) English (Canada) Français (Canada) 简体中文 Français Deutsch English (India) हिन्दी Italiano 日本語 Español (México) Nederlands Polski Português (Portugal) Română 한국어 Español (España) Svenska Cymraeg English (UK) Gaeilge Gàidhlig English (US) Español (US) universe Global Interactive HTML report HTML Markdown report Markdown",
       "title": "Cal.diy Repository Health"
     },
     {
@@ -355,7 +335,7 @@
       },
       "cardImage": {
         "altText": "OSCAL profile intake report preview.",
-        "href": "reports/fedramp-rev5-profile-intake/gallery-card.svg",
+        "href": "/scribe/reports/fedramp-rev5-profile-intake/gallery-card.svg",
         "openGraph": true,
         "path": "reports/fedramp-rev5-profile-intake/gallery-card.svg"
       },
@@ -393,7 +373,7 @@
           "flag": "🇺🇸",
           "flagClass": "fi fi-us locale-option-flag",
           "flagCode": "us",
-          "href": "reports/fedramp-rev5-profile-intake/?scribe_locale=en-US",
+          "href": "/scribe/reports/fedramp-rev5-profile-intake/?scribe_locale=en-US",
           "label": "English (US)",
           "locale": "en-US"
         },
@@ -401,7 +381,7 @@
           "flag": "🇺🇸",
           "flagClass": "fi fi-us locale-option-flag",
           "flagCode": "us",
-          "href": "reports/fedramp-rev5-profile-intake/?scribe_locale=es-US",
+          "href": "/scribe/reports/fedramp-rev5-profile-intake/?scribe_locale=es-US",
           "label": "Español (US)",
           "locale": "es-US"
         }
@@ -417,13 +397,13 @@
       "requiredArtifacts": [
         {
           "format": "HTML",
-          "href": "reports/fedramp-rev5-profile-intake/index.html",
+          "href": "/scribe/reports/fedramp-rev5-profile-intake/index.html",
           "label": "Interactive HTML report",
           "path": "index.html"
         },
         {
           "format": "JSON",
-          "href": "reports/fedramp-rev5-profile-intake/exports/oscal-profile-intake.json",
+          "href": "/scribe/reports/fedramp-rev5-profile-intake/exports/oscal-profile-intake.json",
           "label": "OSCAL Catalog/Profile intake JSON",
           "path": "exports/oscal-profile-intake.json",
           "standard": "OSCAL"
@@ -431,12 +411,12 @@
         {
           "download": true,
           "format": "Markdown",
-          "href": "reports/fedramp-rev5-profile-intake/exports/report.md",
+          "href": "/scribe/reports/fedramp-rev5-profile-intake/exports/report.md",
           "label": "Markdown report",
           "path": "exports/report.md"
         }
       ],
-      "scribePageHref": "reports/fedramp-rev5-profile-intake/index.html",
+      "scribePageHref": "/scribe/reports/fedramp-rev5-profile-intake/index.html",
       "scribePageManifestPath": "reports/fedramp-rev5-profile-intake/scribe-runtime.manifest.json",
       "searchText": "FedRAMP Rev 5 OSCAL Profile Intake 22 Profile artifact(s), 23 Catalog artifact(s), and 22 resolved import link(s) were prepared for report use. compliance oscal-profile-intake OSCAL/FedRAMP en-US es-US English (US) Español (US) us United States Interactive HTML report HTML OSCAL Catalog/Profile intake JSON JSON OSCAL Markdown report Markdown",
       "title": "FedRAMP Rev 5 OSCAL Profile Intake"
@@ -472,7 +452,7 @@
       },
       "cardImage": {
         "altText": "NIST/FedRAMP coverage report preview with source evidence, customer-context controls, and OSCAL Assessment Results.",
-        "href": "reports/gitea-nist-coverage/gallery-card.svg",
+        "href": "/scribe/reports/gitea-nist-coverage/gallery-card.svg",
         "openGraph": true,
         "path": "reports/gitea-nist-coverage/gallery-card.svg"
       },
@@ -512,7 +492,7 @@
           "flag": "🇺🇸",
           "flagClass": "fi fi-us locale-option-flag",
           "flagCode": "us",
-          "href": "reports/gitea-nist-coverage/?scribe_locale=en-US",
+          "href": "/scribe/reports/gitea-nist-coverage/?scribe_locale=en-US",
           "label": "English (US)",
           "locale": "en-US"
         },
@@ -520,7 +500,7 @@
           "flag": "🇺🇸",
           "flagClass": "fi fi-us locale-option-flag",
           "flagCode": "us",
-          "href": "reports/gitea-nist-coverage/?scribe_locale=es-US",
+          "href": "/scribe/reports/gitea-nist-coverage/?scribe_locale=es-US",
           "label": "Español (US)",
           "locale": "es-US"
         }
@@ -536,13 +516,13 @@
       "requiredArtifacts": [
         {
           "format": "HTML",
-          "href": "reports/gitea-nist-coverage/index.html",
+          "href": "/scribe/reports/gitea-nist-coverage/index.html",
           "label": "Interactive HTML report",
           "path": "index.html"
         },
         {
           "format": "OSCAL Assessment Results",
-          "href": "reports/gitea-nist-coverage/exports/nist-coverage.oscal-assessment-results.json",
+          "href": "/scribe/reports/gitea-nist-coverage/exports/nist-coverage.oscal-assessment-results.json",
           "label": "OSCAL Assessment Results",
           "path": "exports/nist-coverage.oscal-assessment-results.json",
           "standard": "OSCAL"
@@ -550,25 +530,25 @@
         {
           "download": true,
           "format": "Markdown",
-          "href": "reports/gitea-nist-coverage/exports/report.md",
+          "href": "/scribe/reports/gitea-nist-coverage/exports/report.md",
           "label": "Markdown report",
           "path": "exports/report.md"
         },
         {
           "format": "JSON",
-          "href": "reports/gitea-nist-coverage/data/nist-rollup.json",
+          "href": "/scribe/reports/gitea-nist-coverage/data/nist-rollup.json",
           "label": "NIST rollup data",
           "path": "data/nist-rollup.json"
         },
         {
           "format": "JSON",
-          "href": "reports/gitea-nist-coverage/data/nist-conformance.json",
+          "href": "/scribe/reports/gitea-nist-coverage/data/nist-conformance.json",
           "label": "NIST conformance boundary",
           "path": "data/nist-conformance.json",
           "standard": "Scribe G11"
         }
       ],
-      "scribePageHref": "reports/gitea-nist-coverage/index.html",
+      "scribePageHref": "/scribe/reports/gitea-nist-coverage/index.html",
       "scribePageManifestPath": "reports/gitea-nist-coverage/scribe-runtime.manifest.json",
       "searchText": "Gitea — NIST 800-53 Coverage NIST/FedRAMP coverage report with 103 accounted controls and fail-closed OSCAL exports. compliance nist-coverage NIST/FedRAMP en-US es-US English (US) Español (US) us United States Interactive HTML report HTML OSCAL Assessment Results OSCAL Markdown report Markdown NIST rollup data JSON NIST conformance boundary Scribe G11",
       "title": "Gitea — NIST 800-53 Coverage"
@@ -595,7 +575,7 @@
       },
       "cardImage": {
         "altText": "Mobile accessibility report gallery preview with source-linked compliance evidence.",
-        "href": "reports/mobile-accessibility-scan/gallery-card.svg",
+        "href": "/scribe/reports/mobile-accessibility-scan/gallery-card.svg",
         "openGraph": true,
         "path": "reports/mobile-accessibility-scan/gallery-card.svg"
       },
@@ -621,8 +601,6 @@
           "cy-GB",
           "gd-GB",
           "ga-GB",
-          "sco-GB",
-          "kw-GB",
           "es-US",
           "es-MX",
           "de-DE",
@@ -663,7 +641,7 @@
           "flag": "🇧🇷",
           "flagClass": "fi fi-br locale-option-flag",
           "flagCode": "br",
-          "href": "reports/mobile-accessibility-scan/?scribe_locale=pt-BR",
+          "href": "/scribe/reports/mobile-accessibility-scan/?scribe_locale=pt-BR",
           "label": "Português (Brasil)",
           "locale": "pt-BR"
         },
@@ -671,7 +649,7 @@
           "flag": "🇨🇦",
           "flagClass": "fi fi-ca locale-option-flag",
           "flagCode": "ca",
-          "href": "reports/mobile-accessibility-scan/?scribe_locale=en-CA",
+          "href": "/scribe/reports/mobile-accessibility-scan/?scribe_locale=en-CA",
           "label": "English (Canada)",
           "locale": "en-CA"
         },
@@ -679,7 +657,7 @@
           "flag": "🇨🇦",
           "flagClass": "fi fi-ca locale-option-flag",
           "flagCode": "ca",
-          "href": "reports/mobile-accessibility-scan/?scribe_locale=fr-CA",
+          "href": "/scribe/reports/mobile-accessibility-scan/?scribe_locale=fr-CA",
           "label": "Français (Canada)",
           "locale": "fr-CA"
         },
@@ -687,7 +665,7 @@
           "flag": "🇨🇳",
           "flagClass": "fi fi-cn locale-option-flag",
           "flagCode": "cn",
-          "href": "reports/mobile-accessibility-scan/?scribe_locale=zh-CN",
+          "href": "/scribe/reports/mobile-accessibility-scan/?scribe_locale=zh-CN",
           "label": "简体中文",
           "locale": "zh-CN"
         },
@@ -695,7 +673,7 @@
           "flag": "🇫🇷",
           "flagClass": "fi fi-fr locale-option-flag",
           "flagCode": "fr",
-          "href": "reports/mobile-accessibility-scan/?scribe_locale=fr-FR",
+          "href": "/scribe/reports/mobile-accessibility-scan/?scribe_locale=fr-FR",
           "label": "Français",
           "locale": "fr-FR"
         },
@@ -703,7 +681,7 @@
           "flag": "🇩🇪",
           "flagClass": "fi fi-de locale-option-flag",
           "flagCode": "de",
-          "href": "reports/mobile-accessibility-scan/?scribe_locale=de-DE",
+          "href": "/scribe/reports/mobile-accessibility-scan/?scribe_locale=de-DE",
           "label": "Deutsch",
           "locale": "de-DE"
         },
@@ -711,7 +689,7 @@
           "flag": "🇮🇳",
           "flagClass": "fi fi-in locale-option-flag",
           "flagCode": "in",
-          "href": "reports/mobile-accessibility-scan/?scribe_locale=en-IN",
+          "href": "/scribe/reports/mobile-accessibility-scan/?scribe_locale=en-IN",
           "label": "English (India)",
           "locale": "en-IN"
         },
@@ -719,7 +697,7 @@
           "flag": "🇮🇳",
           "flagClass": "fi fi-in locale-option-flag",
           "flagCode": "in",
-          "href": "reports/mobile-accessibility-scan/?scribe_locale=hi-IN",
+          "href": "/scribe/reports/mobile-accessibility-scan/?scribe_locale=hi-IN",
           "label": "हिन्दी",
           "locale": "hi-IN"
         },
@@ -727,7 +705,7 @@
           "flag": "🇮🇹",
           "flagClass": "fi fi-it locale-option-flag",
           "flagCode": "it",
-          "href": "reports/mobile-accessibility-scan/?scribe_locale=it-IT",
+          "href": "/scribe/reports/mobile-accessibility-scan/?scribe_locale=it-IT",
           "label": "Italiano",
           "locale": "it-IT"
         },
@@ -735,7 +713,7 @@
           "flag": "🇯🇵",
           "flagClass": "fi fi-jp locale-option-flag",
           "flagCode": "jp",
-          "href": "reports/mobile-accessibility-scan/?scribe_locale=ja-JP",
+          "href": "/scribe/reports/mobile-accessibility-scan/?scribe_locale=ja-JP",
           "label": "日本語",
           "locale": "ja-JP"
         },
@@ -743,7 +721,7 @@
           "flag": "🇲🇽",
           "flagClass": "fi fi-mx locale-option-flag",
           "flagCode": "mx",
-          "href": "reports/mobile-accessibility-scan/?scribe_locale=es-MX",
+          "href": "/scribe/reports/mobile-accessibility-scan/?scribe_locale=es-MX",
           "label": "Español (México)",
           "locale": "es-MX"
         },
@@ -751,7 +729,7 @@
           "flag": "🇳🇱",
           "flagClass": "fi fi-nl locale-option-flag",
           "flagCode": "nl",
-          "href": "reports/mobile-accessibility-scan/?scribe_locale=nl-NL",
+          "href": "/scribe/reports/mobile-accessibility-scan/?scribe_locale=nl-NL",
           "label": "Nederlands",
           "locale": "nl-NL"
         },
@@ -759,7 +737,7 @@
           "flag": "🇵🇱",
           "flagClass": "fi fi-pl locale-option-flag",
           "flagCode": "pl",
-          "href": "reports/mobile-accessibility-scan/?scribe_locale=pl-PL",
+          "href": "/scribe/reports/mobile-accessibility-scan/?scribe_locale=pl-PL",
           "label": "Polski",
           "locale": "pl-PL"
         },
@@ -767,7 +745,7 @@
           "flag": "🇵🇹",
           "flagClass": "fi fi-pt locale-option-flag",
           "flagCode": "pt",
-          "href": "reports/mobile-accessibility-scan/?scribe_locale=pt-PT",
+          "href": "/scribe/reports/mobile-accessibility-scan/?scribe_locale=pt-PT",
           "label": "Português (Portugal)",
           "locale": "pt-PT"
         },
@@ -775,7 +753,7 @@
           "flag": "🇷🇴",
           "flagClass": "fi fi-ro locale-option-flag",
           "flagCode": "ro",
-          "href": "reports/mobile-accessibility-scan/?scribe_locale=ro-RO",
+          "href": "/scribe/reports/mobile-accessibility-scan/?scribe_locale=ro-RO",
           "label": "Română",
           "locale": "ro-RO"
         },
@@ -783,7 +761,7 @@
           "flag": "🇰🇷",
           "flagClass": "fi fi-kr locale-option-flag",
           "flagCode": "kr",
-          "href": "reports/mobile-accessibility-scan/?scribe_locale=ko-KR",
+          "href": "/scribe/reports/mobile-accessibility-scan/?scribe_locale=ko-KR",
           "label": "한국어",
           "locale": "ko-KR"
         },
@@ -791,7 +769,7 @@
           "flag": "🇪🇸",
           "flagClass": "fi fi-es locale-option-flag",
           "flagCode": "es",
-          "href": "reports/mobile-accessibility-scan/?scribe_locale=es-ES",
+          "href": "/scribe/reports/mobile-accessibility-scan/?scribe_locale=es-ES",
           "label": "Español (España)",
           "locale": "es-ES"
         },
@@ -799,7 +777,7 @@
           "flag": "🇸🇪",
           "flagClass": "fi fi-se locale-option-flag",
           "flagCode": "se",
-          "href": "reports/mobile-accessibility-scan/?scribe_locale=sv-SE",
+          "href": "/scribe/reports/mobile-accessibility-scan/?scribe_locale=sv-SE",
           "label": "Svenska",
           "locale": "sv-SE"
         },
@@ -807,7 +785,7 @@
           "flag": "🇬🇧",
           "flagClass": "fi fi-gb-wls locale-option-flag",
           "flagCode": "gb-wls",
-          "href": "reports/mobile-accessibility-scan/?scribe_locale=cy-GB",
+          "href": "/scribe/reports/mobile-accessibility-scan/?scribe_locale=cy-GB",
           "label": "Cymraeg",
           "locale": "cy-GB"
         },
@@ -815,7 +793,7 @@
           "flag": "🇬🇧",
           "flagClass": "fi fi-gb locale-option-flag",
           "flagCode": "gb",
-          "href": "reports/mobile-accessibility-scan/?scribe_locale=en-GB",
+          "href": "/scribe/reports/mobile-accessibility-scan/?scribe_locale=en-GB",
           "label": "English (UK)",
           "locale": "en-GB"
         },
@@ -823,7 +801,7 @@
           "flag": "🇬🇧",
           "flagClass": "fi fi-gb locale-option-flag",
           "flagCode": "gb",
-          "href": "reports/mobile-accessibility-scan/?scribe_locale=ga-GB",
+          "href": "/scribe/reports/mobile-accessibility-scan/?scribe_locale=ga-GB",
           "label": "Gaeilge",
           "locale": "ga-GB"
         },
@@ -831,31 +809,15 @@
           "flag": "🇬🇧",
           "flagClass": "fi fi-gb-sct locale-option-flag",
           "flagCode": "gb-sct",
-          "href": "reports/mobile-accessibility-scan/?scribe_locale=gd-GB",
+          "href": "/scribe/reports/mobile-accessibility-scan/?scribe_locale=gd-GB",
           "label": "Gàidhlig",
           "locale": "gd-GB"
-        },
-        {
-          "flag": "🇬🇧",
-          "flagClass": "fi fi-gb locale-option-flag",
-          "flagCode": "gb",
-          "href": "reports/mobile-accessibility-scan/?scribe_locale=kw-GB",
-          "label": "Kernewek",
-          "locale": "kw-GB"
-        },
-        {
-          "flag": "🇬🇧",
-          "flagClass": "fi fi-gb-sct locale-option-flag",
-          "flagCode": "gb-sct",
-          "href": "reports/mobile-accessibility-scan/?scribe_locale=sco-GB",
-          "label": "Scots",
-          "locale": "sco-GB"
         },
         {
           "flag": "🇺🇸",
           "flagClass": "fi fi-us locale-option-flag",
           "flagCode": "us",
-          "href": "reports/mobile-accessibility-scan/?scribe_locale=en-US",
+          "href": "/scribe/reports/mobile-accessibility-scan/?scribe_locale=en-US",
           "label": "English (US)",
           "locale": "en-US"
         },
@@ -863,7 +825,7 @@
           "flag": "🇺🇸",
           "flagClass": "fi fi-us locale-option-flag",
           "flagCode": "us",
-          "href": "reports/mobile-accessibility-scan/?scribe_locale=es-US",
+          "href": "/scribe/reports/mobile-accessibility-scan/?scribe_locale=es-US",
           "label": "Español (US)",
           "locale": "es-US"
         }
@@ -877,8 +839,6 @@
         "cy-GB",
         "gd-GB",
         "ga-GB",
-        "sco-GB",
-        "kw-GB",
         "es-US",
         "es-MX",
         "de-DE",
@@ -903,28 +863,28 @@
       "requiredArtifacts": [
         {
           "format": "HTML",
-          "href": "reports/mobile-accessibility-scan/index.html",
+          "href": "/scribe/reports/mobile-accessibility-scan/index.html",
           "label": "Interactive HTML report",
           "path": "index.html"
         },
         {
           "download": true,
           "format": "Markdown",
-          "href": "reports/mobile-accessibility-scan/exports/report.md",
+          "href": "/scribe/reports/mobile-accessibility-scan/exports/report.md",
           "label": "Markdown report",
           "path": "exports/report.md"
         },
         {
           "format": "OSCAL",
-          "href": "reports/mobile-accessibility-scan/data/oscal-input.js",
+          "href": "/scribe/reports/mobile-accessibility-scan/data/oscal-input.js",
           "label": "OSCAL input data",
           "path": "data/oscal-input.js",
           "standard": "OSCAL"
         }
       ],
-      "scribePageHref": "reports/mobile-accessibility-scan/index.html",
+      "scribePageHref": "/scribe/reports/mobile-accessibility-scan/index.html",
       "scribePageManifestPath": "reports/mobile-accessibility-scan/scribe-runtime.manifest.json",
-      "searchText": "Mobile Accessibility Scan Report overview and visible public findings. compliance mobile-accessibility-scan Mobile Accessibility en-US en-GB en-CA fr-CA en-IN cy-GB gd-GB ga-GB sco-GB kw-GB es-US es-MX de-DE fr-FR es-ES it-IT nl-NL pl-PL pt-PT pt-BR ro-RO sv-SE ko-KR zh-CN ja-JP hi-IN Português (Brasil) English (Canada) Français (Canada) 简体中文 Français Deutsch English (India) हिन्दी Italiano 日本語 Español (México) Nederlands Polski Português (Portugal) Română 한국어 Español (España) Svenska Cymraeg English (UK) Gaeilge Gàidhlig Kernewek Scots English (US) Español (US) ca eu uk us Canada European Union United Kingdom United States Interactive HTML report HTML Markdown report Markdown OSCAL input data OSCAL",
+      "searchText": "Mobile Accessibility Scan Report overview and visible public findings. compliance mobile-accessibility-scan Mobile Accessibility en-US en-GB en-CA fr-CA en-IN cy-GB gd-GB ga-GB es-US es-MX de-DE fr-FR es-ES it-IT nl-NL pl-PL pt-PT pt-BR ro-RO sv-SE ko-KR zh-CN ja-JP hi-IN Português (Brasil) English (Canada) Français (Canada) 简体中文 Français Deutsch English (India) हिन्दी Italiano 日本語 Español (México) Nederlands Polski Português (Portugal) Română 한국어 Español (España) Svenska Cymraeg English (UK) Gaeilge Gàidhlig English (US) Español (US) ca eu uk us Canada European Union United Kingdom United States Interactive HTML report HTML Markdown report Markdown OSCAL input data OSCAL",
       "title": "Mobile Accessibility Scan"
     }
   ],
@@ -1031,11 +991,6 @@
         },
         {
           "count": 2,
-          "label": "Kernewek",
-          "value": "kw-GB"
-        },
-        {
-          "count": 2,
           "label": "Nederlands",
           "value": "nl-NL"
         },
@@ -1058,11 +1013,6 @@
           "count": 2,
           "label": "Română",
           "value": "ro-RO"
-        },
-        {
-          "count": 2,
-          "label": "Scots",
-          "value": "sco-GB"
         },
         {
           "count": 2,

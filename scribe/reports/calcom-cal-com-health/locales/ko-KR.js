@@ -1,6 +1,6 @@
 window.__SCRIBE_LOCALES__ = window.__SCRIBE_LOCALES__ || {};
 window.__SCRIBE_LOCALES__["ko-KR"] = {
-  "fallbackCount": 15,
+  "fallbackCount": 11,
   "locale": "ko-KR",
   "messages": {
     "scribe.report.action.backToFinding": {
@@ -333,6 +333,11 @@ window.__SCRIBE_LOCALES__["ko-KR"] = {
       "reviewed": true,
       "text": "접근성"
     },
+    "scribe.report.filter.option.aiSafety": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "AI 안전"
+    },
     "scribe.report.filter.option.analysisCompleteness": {
       "fallback": false,
       "reviewed": true,
@@ -373,6 +378,11 @@ window.__SCRIBE_LOCALES__["ko-KR"] = {
       "reviewed": true,
       "text": "오류"
     },
+    "scribe.report.filter.option.grammarParsing": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "문법 및 구문 분석"
+    },
     "scribe.report.filter.option.high": {
       "fallback": false,
       "reviewed": true,
@@ -403,6 +413,11 @@ window.__SCRIBE_LOCALES__["ko-KR"] = {
       "reviewed": true,
       "text": "중간"
     },
+    "scribe.report.filter.option.metricsQuality": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "메트릭 및 품질"
+    },
     "scribe.report.filter.option.mexicoFintechReadiness": {
       "fallback": false,
       "reviewed": true,
@@ -418,6 +433,16 @@ window.__SCRIBE_LOCALES__["ko-KR"] = {
       "reviewed": true,
       "text": "NIST FedRAMP 커버리지"
     },
+    "scribe.report.filter.option.oscalProfileIntake": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "OSCAL 프로파일 수입"
+    },
+    "scribe.report.filter.option.projectIntelligence": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "프로젝트 인텔리전스"
+    },
     "scribe.report.filter.option.remediationReadiness": {
       "fallback": false,
       "reviewed": true,
@@ -432,6 +457,11 @@ window.__SCRIBE_LOCALES__["ko-KR"] = {
       "fallback": false,
       "reviewed": true,
       "text": "저장소 인벤토리"
+    },
+    "scribe.report.filter.option.security": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "보안"
     },
     "scribe.report.filter.option.sourceTrace": {
       "fallback": false,
@@ -467,6 +497,21 @@ window.__SCRIBE_LOCALES__["ko-KR"] = {
       "fallback": false,
       "reviewed": true,
       "text": "빛"
+    },
+    "scribe.report.overview.stat.accessibilityFindings": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "접근성 발견 사항"
+    },
+    "scribe.report.overview.stat.codeQualityFindings": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "코드 품질 발견 사항"
+    },
+    "scribe.report.overview.stat.complianceFindings": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "준수 관련 발견 사항"
     },
     "scribe.report.overview.stat.evidenceScreenshots": {
       "fallback": false,
@@ -553,70 +598,35 @@ window.__SCRIBE_LOCALES__["ko-KR"] = {
       "reviewed": true,
       "text": "{symbol}에서 심각한 복잡도"
     },
-    "scribe.report.repositoryHealth.finding.complexity.title.high": {
-      "fallback": false,
-      "reviewed": true,
-      "text": "{symbol}의 높은 복잡도"
-    },
-    "scribe.report.repositoryHealth.finding.deadCode.criterion": {
-      "fallback": false,
-      "reviewed": true,
-      "text": "저장소 상태 데드 코드 정책: 접근할 수 없는 함수와 사용되지 않는 내보내기는 검토가 필요합니다."
-    },
-    "scribe.report.repositoryHealth.finding.deadCode.fix": {
-      "fallback": false,
-      "reviewed": true,
-      "text": "상태 보고서를 다시 실행하기 전에 기호가 동적 입력 지점이 아님을 확인한 다음 기호를 제거하거나 누락된 참조 증거를 추가합니다."
-    },
-    "scribe.report.repositoryHealth.finding.deadCode.unreachable.summary": {
-      "fallback": false,
-      "reviewed": true,
-      "text": "{sourcePath}:{line} 는 데드 코드 프로브에 의해 접근할 수 없는 것으로 표시됩니다."
-    },
-    "scribe.report.repositoryHealth.finding.deadCode.unreachable.title": {
-      "fallback": false,
-      "reviewed": true,
-      "text": "도달할 수 없는 함수 {symbol}"
-    },
-    "scribe.report.repositoryHealth.finding.deadCode.unusedExport.summary": {
-      "fallback": false,
-      "reviewed": true,
-      "text": "{sourcePath}:{line} 는 데드 코드 프로브에 의해 사용되지 않은 내보내기로 레이블이 지정됩니다."
-    },
-    "scribe.report.repositoryHealth.finding.deadCode.unusedExport.title": {
-      "fallback": false,
-      "reviewed": true,
-      "text": "사용되지 않는 내보낸 심볼 {symbol}"
-    },
     "scribe.report.repositoryHealth.finding.publicSummary": {
       "fallback": false,
       "reviewed": true,
       "text": "공개 저장소 상태 요약 및 소스 뒷받침 범위 증거."
     },
+    "scribe.report.repositoryHealth.finding.raw.criterion": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "{criterion}"
+    },
+    "scribe.report.repositoryHealth.finding.raw.fix": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "{recommendation}"
+    },
+    "scribe.report.repositoryHealth.finding.raw.summary": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "{summary}"
+    },
+    "scribe.report.repositoryHealth.finding.raw.title": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "{title}"
+    },
     "scribe.report.repositoryHealth.finding.runtime": {
       "fallback": false,
       "reviewed": true,
       "text": "저장소 상태 정적 분석"
-    },
-    "scribe.report.repositoryHealth.finding.schemaMaintenance.criterion": {
-      "fallback": false,
-      "reviewed": true,
-      "text": "저장소 상태 스키마 위생: 스키마 폐기, TODO, FIXME, HACK 노트는 데이터베이스 추적 작업의 유일한 기록이 되어서는 안 된다."
-    },
-    "scribe.report.repositoryHealth.finding.schemaMaintenance.fix": {
-      "fallback": false,
-      "reviewed": true,
-      "text": "스키마 노트를 마이그레이션, 제거 계획 또는 추적된 문제에 연결한 다음 데이터베이스 변경이 발생한 후 스키마 중심 프로브를 다시 실행합니다."
-    },
-    "scribe.report.repositoryHealth.finding.schemaMaintenance.summary": {
-      "fallback": false,
-      "reviewed": true,
-      "text": "{sourcePath}:{line} 에는 명시적인 데이터베이스 추적으로 추적되어야 하는 스키마 {marker} 노트가 포함되어 있습니다."
-    },
-    "scribe.report.repositoryHealth.finding.schemaMaintenance.title": {
-      "fallback": false,
-      "reviewed": true,
-      "text": "스키마 유지보수 노트에 {marker}이 언급됨"
     },
     "scribe.report.repositoryHealth.finding.title": {
       "fallback": false,
@@ -638,50 +648,25 @@ window.__SCRIBE_LOCALES__["ko-KR"] = {
       "reviewed": true,
       "text": "{startLine} 에서 {endLine} 까지의 줄에 있는 변경된 브랜치에 대한 초점 테스트를 추가하거나 업데이트하고, 가장 가까운 패키지 검사를 실행한 다음 저장소 상태 보고서를 다시 생성합니다."
     },
-    "scribe.report.repositoryHealth.fixPlan.databaseSchema.step.inspect": {
+    "scribe.report.repositoryHealth.fixPlan.generic.step.inspect": {
       "fallback": false,
       "reviewed": true,
-      "text": "{sourcePath} 라인 {startLine} 에서 {endLine} 까지의 스키마 선언을 검토하고 영향을 받는 엔티티, 필드, 인덱스 및 관계를 식별합니다."
+      "text": "{sourcePath}의 {startLine}~{endLine}행에서 인용된 소스 범위를 확인하세요."
     },
-    "scribe.report.repositoryHealth.fixPlan.databaseSchema.step.track": {
+    "scribe.report.repositoryHealth.fixPlan.generic.step.resolve": {
       "fallback": false,
       "reviewed": true,
-      "text": "데이터베이스 모델을 변경하기 전에 인용된 범위의 스키마 노트 또는 간격을 추적된 마이그레이션, 제거 계획 또는 문제에 연결합니다."
+      "text": "발견을 해결하는 가장 작은 소스 변경으로 개선을 적용하세요."
     },
-    "scribe.report.repositoryHealth.fixPlan.databaseSchema.step.validate": {
+    "scribe.report.repositoryHealth.fixPlan.generic.step.validate": {
       "fallback": false,
       "reviewed": true,
-      "text": "데이터베이스 변경이 완료되면 스키마 추출을 다시 실행하고 {sourcePath}에 대한 저장소 상태 보고서를 다시 생성합니다."
-    },
-    "scribe.report.repositoryHealth.fixPlan.deadCode.step.inspect": {
-      "fallback": false,
-      "reviewed": true,
-      "text": "코드를 제거하기 전에 {sourcePath} 라인 {startLine} 에서 {endLine} 까지 동적 입력점, 프레임워크 훅, 생성된 참조, 외부 내보내기를 확인합니다."
-    },
-    "scribe.report.repositoryHealth.fixPlan.deadCode.step.resolve": {
-      "fallback": false,
-      "reviewed": true,
-      "text": "인용된 범위에서 접근할 수 없는 기호를 제거하거나, 런타임에서 의도적으로 접근할 수 있는 경우 누락된 참조 증거를 추가합니다."
-    },
-    "scribe.report.repositoryHealth.fixPlan.deadCode.step.validate": {
-      "fallback": false,
-      "reviewed": true,
-      "text": "{sourcePath}에 대한 데드 코드 및 저장소 상태 분석을 다시 실행하여 새로운 도달 가능성 간격을 도입하지 않고 발견이 사라졌음을 확인합니다."
+      "text": "수정을 게시하기 전에 저장소 상태 보고서와 가장 가까운 패키지 수준 테스트를 다시 실행합니다."
     },
     "scribe.report.repositoryHealth.fixPlan.scope": {
       "fallback": false,
       "reviewed": true,
       "text": "목표 소스 범위: {sourcePath} 라인 {startLine} 을 통해 {endLine}."
-    },
-    "scribe.report.repositoryHealth.fixPlan.stepOne": {
-      "fallback": false,
-      "reviewed": true,
-      "text": "저장소 체크아웃을 핀하거나 새로 고친 다음 동일한 보고서 매니페스트에 대해 상태 보고서 명령을 다시 실행합니다."
-    },
-    "scribe.report.repositoryHealth.fixPlan.stepTwo": {
-      "fallback": false,
-      "reviewed": true,
-      "text": "수동으로 유지 관리되는 보고서 논리 대신 발견된 리소스 검출기 및 동작 피팅을 확장하여 프레임워크 지원을 추가합니다."
     },
     "scribe.report.repositoryHealth.fixPlan.summary": {
       "fallback": false,

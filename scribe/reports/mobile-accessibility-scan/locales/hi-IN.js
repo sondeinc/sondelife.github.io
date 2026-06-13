@@ -1,6 +1,6 @@
 window.__SCRIBE_LOCALES__ = window.__SCRIBE_LOCALES__ || {};
 window.__SCRIBE_LOCALES__["hi-IN"] = {
-  "fallbackCount": 91,
+  "fallbackCount": 86,
   "locale": "hi-IN",
   "messages": {
     "scribe.report.action.backToFinding": {
@@ -28,6 +28,11 @@ window.__SCRIBE_LOCALES__["hi-IN"] = {
       "reviewed": true,
       "text": "ओपनएसीआर डाउनलोड करें"
     },
+    "scribe.report.action.downloadOscal": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "OSCAL डाउनलोड करें"
+    },
     "scribe.report.action.downloadPdf": {
       "fallback": false,
       "reviewed": true,
@@ -41,7 +46,7 @@ window.__SCRIBE_LOCALES__["hi-IN"] = {
     "scribe.report.action.exportMarkdown": {
       "fallback": false,
       "reviewed": true,
-      "text": "मार्कडाउन रिपोर्ट डाउनलोड करें"
+      "text": "Markdown रिपोर्ट डाउनलोड करें"
     },
     "scribe.report.action.feedbackFinding": {
       "fallback": false,
@@ -76,7 +81,7 @@ window.__SCRIBE_LOCALES__["hi-IN"] = {
     "scribe.report.action.openVpat": {
       "fallback": false,
       "reviewed": true,
-      "text": "वीपीएटी खोलें"
+      "text": "VPAT खोलें"
     },
     "scribe.report.action.printReport": {
       "fallback": false,
@@ -101,7 +106,7 @@ window.__SCRIBE_LOCALES__["hi-IN"] = {
     "scribe.report.asset.export.markdown": {
       "fallback": false,
       "reviewed": true,
-      "text": "मार्कडाउन निर्यात"
+      "text": "Markdown निर्यात"
     },
     "scribe.report.asset.export.oscal": {
       "fallback": false,
@@ -111,7 +116,7 @@ window.__SCRIBE_LOCALES__["hi-IN"] = {
     "scribe.report.asset.export.reportInput": {
       "fallback": false,
       "reviewed": true,
-      "text": "वीपीएटी तथा ओपनएसीआर ऑन- डिमांड निर्यात डाटा"
+      "text": "VPAT तथा ओपनएसीआर ऑन-डिमांड निर्यात डाटा"
     },
     "scribe.report.asset.mark": {
       "fallback": false,
@@ -122,6 +127,11 @@ window.__SCRIBE_LOCALES__["hi-IN"] = {
       "fallback": false,
       "reviewed": true,
       "text": "Sonde Scribe अल्फा अनुपालन रिपोर्ट चिह्न"
+    },
+    "scribe.report.asset.overviewScreenshot": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "अंकित Cockpit मोबाइल एक्सेसिबिलिटी साक्ष्य"
     },
     "scribe.report.asset.overviewScreenshot.alt": {
       "fallback": false,
@@ -343,6 +353,11 @@ window.__SCRIBE_LOCALES__["hi-IN"] = {
       "reviewed": true,
       "text": "पहुँच"
     },
+    "scribe.report.filter.option.aiSafety": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "एआई सुरक्षा"
+    },
     "scribe.report.filter.option.analysisCompleteness": {
       "fallback": false,
       "reviewed": true,
@@ -383,6 +398,11 @@ window.__SCRIBE_LOCALES__["hi-IN"] = {
       "reviewed": true,
       "text": "त्रुटि"
     },
+    "scribe.report.filter.option.grammarParsing": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "व्याकरण और पार्सिंग"
+    },
     "scribe.report.filter.option.high": {
       "fallback": false,
       "reviewed": true,
@@ -413,6 +433,11 @@ window.__SCRIBE_LOCALES__["hi-IN"] = {
       "reviewed": true,
       "text": "मध्यम"
     },
+    "scribe.report.filter.option.metricsQuality": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "मीट्रिक्स और गुणवत्ता"
+    },
     "scribe.report.filter.option.mexicoFintechReadiness": {
       "fallback": false,
       "reviewed": true,
@@ -433,6 +458,11 @@ window.__SCRIBE_LOCALES__["hi-IN"] = {
       "reviewed": true,
       "text": "OSCAL प्रोफ़ाइल इनटेक"
     },
+    "scribe.report.filter.option.projectIntelligence": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "प्रोजेक्ट बुद्धिमत्ता"
+    },
     "scribe.report.filter.option.remediationReadiness": {
       "fallback": false,
       "reviewed": true,
@@ -447,6 +477,11 @@ window.__SCRIBE_LOCALES__["hi-IN"] = {
       "fallback": false,
       "reviewed": true,
       "text": "भंडार सूची"
+    },
+    "scribe.report.filter.option.security": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "सुरक्षा"
     },
     "scribe.report.filter.option.sourceTrace": {
       "fallback": false,
@@ -476,22 +511,12 @@ window.__SCRIBE_LOCALES__["hi-IN"] = {
     "scribe.report.finding.missingAlt.wcagReference": {
       "fallback": false,
       "reviewed": true,
-      "text": "डबल्यूसीएजी 1.1.1 गैर- पाठ्य सामग्री"
+      "text": "WCAG 1.1.1 गैर-पाठ्य सामग्री"
     },
     "scribe.report.finding.publicSummary": {
       "fallback": false,
       "reviewed": true,
       "text": "1. मुद्रण के बिना किसी भी प्रकार की मुद्रण सामग्री का प्रकाशन न करना।"
-    },
-    "scribe.report.fixPlan.missingAlt.stepOne": {
-      "fallback": false,
-      "reviewed": true,
-      "text": "एक स्थानीयकृत पहुँच लेबल जोड़ें जो प्रोफ़ाइल चेतावनी छवि उद्देश्य को संचारित करता है."
-    },
-    "scribe.report.fixPlan.missingAlt.stepTwo": {
-      "fallback": false,
-      "reviewed": true,
-      "text": "1999 में, गूगल ने गूगल प्ले स्टोर को बंद करने और गूगल प्ले स्टोर को फिर से खोलने की घोषणा की।"
     },
     "scribe.report.fixPlan.missingAlt.summary": {
       "fallback": false,
@@ -547,6 +572,21 @@ window.__SCRIBE_LOCALES__["hi-IN"] = {
       "fallback": false,
       "reviewed": true,
       "text": "पहुँचता समस्या"
+    },
+    "scribe.report.overview.stat.accessibilityFindings": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "अक्सेसिबिलिटी खोज"
+    },
+    "scribe.report.overview.stat.codeQualityFindings": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "कोड की गुणवत्ता खोज"
+    },
+    "scribe.report.overview.stat.complianceFindings": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "अनुपालन संबंधी खोज"
     },
     "scribe.report.overview.stat.evidenceScreenshots": {
       "fallback": false,

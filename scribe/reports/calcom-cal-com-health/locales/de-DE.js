@@ -1,6 +1,6 @@
 window.__SCRIBE_LOCALES__ = window.__SCRIBE_LOCALES__ || {};
 window.__SCRIBE_LOCALES__["de-DE"] = {
-  "fallbackCount": 15,
+  "fallbackCount": 11,
   "locale": "de-DE",
   "messages": {
     "scribe.report.action.backToFinding": {
@@ -333,6 +333,11 @@ window.__SCRIBE_LOCALES__["de-DE"] = {
       "reviewed": true,
       "text": "Barrierefreiheit"
     },
+    "scribe.report.filter.option.aiSafety": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "KI-Sicherheit"
+    },
     "scribe.report.filter.option.analysisCompleteness": {
       "fallback": false,
       "reviewed": true,
@@ -373,6 +378,11 @@ window.__SCRIBE_LOCALES__["de-DE"] = {
       "reviewed": true,
       "text": "Fehler"
     },
+    "scribe.report.filter.option.grammarParsing": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Grammatik & Parsing"
+    },
     "scribe.report.filter.option.high": {
       "fallback": false,
       "reviewed": true,
@@ -403,6 +413,11 @@ window.__SCRIBE_LOCALES__["de-DE"] = {
       "reviewed": true,
       "text": "Mittel"
     },
+    "scribe.report.filter.option.metricsQuality": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Metriken & Qualität"
+    },
     "scribe.report.filter.option.mexicoFintechReadiness": {
       "fallback": false,
       "reviewed": true,
@@ -418,6 +433,16 @@ window.__SCRIBE_LOCALES__["de-DE"] = {
       "reviewed": true,
       "text": "NIST FedRAMP Coverage"
     },
+    "scribe.report.filter.option.oscalProfileIntake": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "OSCAL-Profil-Intake"
+    },
+    "scribe.report.filter.option.projectIntelligence": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Projektintelligenz"
+    },
     "scribe.report.filter.option.remediationReadiness": {
       "fallback": false,
       "reviewed": true,
@@ -432,6 +457,11 @@ window.__SCRIBE_LOCALES__["de-DE"] = {
       "fallback": false,
       "reviewed": true,
       "text": "Repository-Inventar"
+    },
+    "scribe.report.filter.option.security": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Sicherheit"
     },
     "scribe.report.filter.option.sourceTrace": {
       "fallback": false,
@@ -467,6 +497,21 @@ window.__SCRIBE_LOCALES__["de-DE"] = {
       "fallback": false,
       "reviewed": true,
       "text": "Licht"
+    },
+    "scribe.report.overview.stat.accessibilityFindings": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Befunde zur Barrierefreiheit"
+    },
+    "scribe.report.overview.stat.codeQualityFindings": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Befunde zur Codequalität"
+    },
+    "scribe.report.overview.stat.complianceFindings": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Compliance-bezogene Befunde"
     },
     "scribe.report.overview.stat.evidenceScreenshots": {
       "fallback": false,
@@ -553,70 +598,35 @@ window.__SCRIBE_LOCALES__["de-DE"] = {
       "reviewed": true,
       "text": "Schwere Komplexität in {symbol}"
     },
-    "scribe.report.repositoryHealth.finding.complexity.title.high": {
-      "fallback": false,
-      "reviewed": true,
-      "text": "Hohe Komplexität in {symbol}"
-    },
-    "scribe.report.repositoryHealth.finding.deadCode.criterion": {
-      "fallback": false,
-      "reviewed": true,
-      "text": "Repository-Health-Richtlinie für Dead Code: Nachgewiesene unerreichbare Funktionen und ungenutzte Exporte müssen geprüft werden."
-    },
-    "scribe.report.repositoryHealth.finding.deadCode.fix": {
-      "fallback": false,
-      "reviewed": true,
-      "text": "Bestätigen Sie, dass das Symbol kein dynamischer Einstiegspunkt ist; entfernen Sie es dann oder ergänzen Sie fehlende Referenznachweise, bevor der Health-Bericht erneut ausgeführt wird."
-    },
-    "scribe.report.repositoryHealth.finding.deadCode.unreachable.summary": {
-      "fallback": false,
-      "reviewed": true,
-      "text": "{sourcePath}:{line} ist vom Dead-Code-Probe als unerreichbar gekennzeichnet."
-    },
-    "scribe.report.repositoryHealth.finding.deadCode.unreachable.title": {
-      "fallback": false,
-      "reviewed": true,
-      "text": "Unerreichbare Funktion {symbol}"
-    },
-    "scribe.report.repositoryHealth.finding.deadCode.unusedExport.summary": {
-      "fallback": false,
-      "reviewed": true,
-      "text": "{sourcePath}:{line} ist vom Dead-Code-Probe als ungenutzter Export gekennzeichnet."
-    },
-    "scribe.report.repositoryHealth.finding.deadCode.unusedExport.title": {
-      "fallback": false,
-      "reviewed": true,
-      "text": "Ungenutztes exportiertes Symbol {symbol}"
-    },
     "scribe.report.repositoryHealth.finding.publicSummary": {
       "fallback": false,
       "reviewed": true,
       "text": "Repository-Health-Befund mit wiederverwendbarer quellgestützter Evidenz."
     },
+    "scribe.report.repositoryHealth.finding.raw.criterion": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "{criterion}"
+    },
+    "scribe.report.repositoryHealth.finding.raw.fix": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "{recommendation}"
+    },
+    "scribe.report.repositoryHealth.finding.raw.summary": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "{summary}"
+    },
+    "scribe.report.repositoryHealth.finding.raw.title": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "{title}"
+    },
     "scribe.report.repositoryHealth.finding.runtime": {
       "fallback": false,
       "reviewed": true,
       "text": "Statische Repository-Health-Analyse"
-    },
-    "scribe.report.repositoryHealth.finding.schemaMaintenance.criterion": {
-      "fallback": false,
-      "reviewed": true,
-      "text": "Datenbankschema-Notizen müssen mit einem Migrations-, Entfernungs- oder Verfolgungsplan verknüpft sein."
-    },
-    "scribe.report.repositoryHealth.finding.schemaMaintenance.fix": {
-      "fallback": false,
-      "reviewed": true,
-      "text": "Verknüpfe die Schemanotiz mit einer Migration, einem Entfernungsplan oder einem erfassten Issue und führe danach die schemafokussierten Probes erneut aus."
-    },
-    "scribe.report.repositoryHealth.finding.schemaMaintenance.summary": {
-      "fallback": false,
-      "reviewed": true,
-      "text": "{sourcePath}:{line} enthält eine Schema-{marker}-Notiz, die als explizite Datenbank-Nacharbeit verfolgt werden sollte."
-    },
-    "scribe.report.repositoryHealth.finding.schemaMaintenance.title": {
-      "fallback": false,
-      "reviewed": true,
-      "text": "Schema-Wartungsnotiz erwähnt {marker}"
     },
     "scribe.report.repositoryHealth.finding.title": {
       "fallback": false,
@@ -638,50 +648,25 @@ window.__SCRIBE_LOCALES__["de-DE"] = {
       "reviewed": true,
       "text": "Fügen Sie fokussierte Tests für die geänderten Zweige in den Zeilen {startLine} bis {endLine} hinzu oder aktualisieren Sie diese, führen Sie die nächsten Paketprüfungen aus und generieren Sie dann den Repository-Zustandsbericht neu."
     },
-    "scribe.report.repositoryHealth.fixPlan.databaseSchema.step.inspect": {
+    "scribe.report.repositoryHealth.fixPlan.generic.step.inspect": {
       "fallback": false,
       "reviewed": true,
-      "text": "Öffne {sourcePath} um Zeilen {startLine}-{endLine} und bestätige die Schema-Notiz mit dem zuständigen Datenbankmodell."
+      "text": "Öffne {sourcePath} um Zeilen {startLine}-{endLine} und bestätige den quellgestützten Befund."
     },
-    "scribe.report.repositoryHealth.fixPlan.databaseSchema.step.track": {
+    "scribe.report.repositoryHealth.fixPlan.generic.step.resolve": {
       "fallback": false,
       "reviewed": true,
-      "text": "Verknüpfe die Schema-Nacharbeit mit einer Migration, einem Entfernungsplan oder einem nachverfolgten Issue, bevor Code geändert wird."
+      "text": "Wende die Behebung mit der kleinsten Quelländerung an, die den Befund löst."
     },
-    "scribe.report.repositoryHealth.fixPlan.databaseSchema.step.validate": {
+    "scribe.report.repositoryHealth.fixPlan.generic.step.validate": {
       "fallback": false,
       "reviewed": true,
-      "text": "Führen Sie nach der Datenbankänderung die Schemaextraktion erneut aus und generieren Sie den Repository-Zustandsbericht für {sourcePath} neu."
-    },
-    "scribe.report.repositoryHealth.fixPlan.deadCode.step.inspect": {
-      "fallback": false,
-      "reviewed": true,
-      "text": "Öffne {sourcePath} um Zeilen {startLine}-{endLine} und bestätige, dass der Einstiegspunkt nicht durch Konfiguration, Reflexion oder externe Aufrufer erreicht wird."
-    },
-    "scribe.report.repositoryHealth.fixPlan.deadCode.step.resolve": {
-      "fallback": false,
-      "reviewed": true,
-      "text": "Entferne den unerreichbaren Pfad oder verbinde ihn wieder mit einem getesteten Aufrufpfad."
-    },
-    "scribe.report.repositoryHealth.fixPlan.deadCode.step.validate": {
-      "fallback": false,
-      "reviewed": true,
-      "text": "Führe Dead-Code- und Repository-Health-Analysen für {sourcePath} erneut aus, um zu bestätigen, dass der Befund verschwunden ist, ohne neue Erreichbarkeitslücken einzuführen."
+      "text": "Führe den Repository-Health-Bericht erneut aus und bestätige, dass der Befund geschlossen oder neu bewertet wurde."
     },
     "scribe.report.repositoryHealth.fixPlan.scope": {
       "fallback": false,
       "reviewed": true,
       "text": "Ziel-Quellbereich: {sourcePath} Zeilen {startLine} bis {endLine}."
-    },
-    "scribe.report.repositoryHealth.fixPlan.stepOne": {
-      "fallback": false,
-      "reviewed": true,
-      "text": "Heften Sie den Repository-Checkout an oder aktualisieren Sie ihn, und führen Sie dann den Befehl für den Statusbericht erneut für dasselbe Berichtsmanifest aus."
-    },
-    "scribe.report.repositoryHealth.fixPlan.stepTwo": {
-      "fallback": false,
-      "reviewed": true,
-      "text": "Behebe den Befund, führe den Repository-Health-Bericht erneut aus und aktualisiere diese Evidenz, bevor automatisierte Bereinigung angewendet wird."
     },
     "scribe.report.repositoryHealth.fixPlan.summary": {
       "fallback": false,

@@ -97,11 +97,6 @@ window.__SCRIBE_SHARE_ACTIONS__ = [
           "reviewed": true,
           "text": "발견 공유"
         },
-        "kw-GB": {
-          "fallback": false,
-          "reviewed": true,
-          "text": "Share kavos"
-        },
         "nl-NL": {
           "fallback": false,
           "reviewed": true,
@@ -126,11 +121,6 @@ window.__SCRIBE_SHARE_ACTIONS__ = [
           "fallback": false,
           "reviewed": true,
           "text": "Găsirea de acțiuni"
-        },
-        "sco-GB": {
-          "fallback": false,
-          "reviewed": true,
-          "text": "Share findin"
         },
         "sv-SE": {
           "fallback": false,
@@ -177,10 +167,40 @@ window.__SCRIBE_SHARE_ACTIONS__ = [
       "provenance": "template",
       "reviewState": "reviewed",
       "values": {
+        "cy-GB": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "OSCAL Mae'r mewnbwn Catalog/Proffil yn gysylltiedig â ffynhonnell"
+        },
+        "de-DE": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "OSCAL Catalog/Profile-Intake ist an die Provenienz gebunden"
+        },
+        "en-CA": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "OSCAL Catalog/Profile intake is provenance-bound"
+        },
+        "en-GB": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "OSCAL Catalog/Profile intake is provenance-bound"
+        },
+        "en-IN": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "OSCAL Catalog/Profile intake is provenance-bound"
+        },
         "en-US": {
           "fallback": false,
           "reviewed": true,
           "text": "OSCAL Catalog/Profile intake is provenance-bound"
+        },
+        "es-ES": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "La ingesta de Catálogo/Perfil OSCAL está vinculada a la procedencia"
         },
         "es-MX": {
           "fallback": false,
@@ -192,15 +212,80 @@ window.__SCRIBE_SHARE_ACTIONS__ = [
           "reviewed": true,
           "text": "La ingesta OSCAL Catalog/Profile está vinculada a procedencia"
         },
+        "fr-CA": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "L'admission du Catalogue/Profil OSCAL est liée à la provenance"
+        },
+        "fr-FR": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "L'intégration du Catalogue/Profil OSCAL est liée à la provenance"
+        },
+        "ga-GB": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "OSCAL Tá iontógáil catalóige/próifíle faoi cheangal ag foinse"
+        },
+        "gd-GB": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "OSCAL Tha inntleachd catalogue/profile ceangailte ri eachdraidh"
+        },
         "hi-IN": {
           "fallback": false,
           "reviewed": true,
           "text": "OSCAL कैटलॉग/प्रोफ़ाइल इनटेक स्रोत-बन्द है"
         },
+        "it-IT": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "L'acquisizione di OSCAL Catalog/Profile è vincolata alla provenienza"
+        },
         "ja-JP": {
           "fallback": false,
           "reviewed": true,
-          "text": "OSCAL Catalog/Profile 取り込みは由来情報に紐づきます"
+          "text": "OSCALカタログ/プロファイルのインテイクはプロバナンスに依存しています"
+        },
+        "ko-KR": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "OSCAL 카탈로그/프로파일 인증은 출처에 바인딩됩니다."
+        },
+        "nl-NL": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "OSCAL Catalog/Profile-intake is gebonden aan herkomst"
+        },
+        "pl-PL": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "Przyjęcie Katalogu/Profilu OSCAL jest powiązane z pochodzeniem (provenance-bound)"
+        },
+        "pt-BR": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "A ingestão de Catálogo/Perfil OSCAL está vinculada à proveniência"
+        },
+        "pt-PT": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "A ingestão de Catálogo/Perfil OSCAL está vinculada à proveniência"
+        },
+        "ro-RO": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "Intake-ul de Catalog/Profil OSCAL este legat de proveniență"
+        },
+        "sv-SE": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "OSCAL Catalog/Profile-intag är provenance-bundet"
+        },
+        "zh-CN": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "OSCAL 目录/配置文件的摄入是来源绑定的"
         }
       }
     }

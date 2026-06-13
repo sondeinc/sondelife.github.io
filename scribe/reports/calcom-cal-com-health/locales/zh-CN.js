@@ -1,6 +1,6 @@
 window.__SCRIBE_LOCALES__ = window.__SCRIBE_LOCALES__ || {};
 window.__SCRIBE_LOCALES__["zh-CN"] = {
-  "fallbackCount": 15,
+  "fallbackCount": 11,
   "locale": "zh-CN",
   "messages": {
     "scribe.report.action.backToFinding": {
@@ -333,6 +333,11 @@ window.__SCRIBE_LOCALES__["zh-CN"] = {
       "reviewed": true,
       "text": "无障碍"
     },
+    "scribe.report.filter.option.aiSafety": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "AI安全"
+    },
     "scribe.report.filter.option.analysisCompleteness": {
       "fallback": false,
       "reviewed": true,
@@ -373,6 +378,11 @@ window.__SCRIBE_LOCALES__["zh-CN"] = {
       "reviewed": true,
       "text": "错误"
     },
+    "scribe.report.filter.option.grammarParsing": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "语法与解析"
+    },
     "scribe.report.filter.option.high": {
       "fallback": false,
       "reviewed": true,
@@ -403,6 +413,11 @@ window.__SCRIBE_LOCALES__["zh-CN"] = {
       "reviewed": true,
       "text": "媒介"
     },
+    "scribe.report.filter.option.metricsQuality": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "指标与质量"
+    },
     "scribe.report.filter.option.mexicoFintechReadiness": {
       "fallback": false,
       "reviewed": true,
@@ -418,6 +433,16 @@ window.__SCRIBE_LOCALES__["zh-CN"] = {
       "reviewed": true,
       "text": "NIST FedRAMP 覆盖范围"
     },
+    "scribe.report.filter.option.oscalProfileIntake": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "OSCAL 配置文件导入"
+    },
+    "scribe.report.filter.option.projectIntelligence": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "项目智能"
+    },
     "scribe.report.filter.option.remediationReadiness": {
       "fallback": false,
       "reviewed": true,
@@ -432,6 +457,11 @@ window.__SCRIBE_LOCALES__["zh-CN"] = {
       "fallback": false,
       "reviewed": true,
       "text": "仓库清单"
+    },
+    "scribe.report.filter.option.security": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "安全"
     },
     "scribe.report.filter.option.sourceTrace": {
       "fallback": false,
@@ -467,6 +497,21 @@ window.__SCRIBE_LOCALES__["zh-CN"] = {
       "fallback": false,
       "reviewed": true,
       "text": "光"
+    },
+    "scribe.report.overview.stat.accessibilityFindings": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "无障碍发现"
+    },
+    "scribe.report.overview.stat.codeQualityFindings": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "代码质量发现"
+    },
+    "scribe.report.overview.stat.complianceFindings": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "合规相关发现"
     },
     "scribe.report.overview.stat.evidenceScreenshots": {
       "fallback": false,
@@ -553,70 +598,35 @@ window.__SCRIBE_LOCALES__["zh-CN"] = {
       "reviewed": true,
       "text": "{symbol} 中存在严重复杂度"
     },
-    "scribe.report.repositoryHealth.finding.complexity.title.high": {
-      "fallback": false,
-      "reviewed": true,
-      "text": "{symbol} 中的高复杂度"
-    },
-    "scribe.report.repositoryHealth.finding.deadCode.criterion": {
-      "fallback": false,
-      "reviewed": true,
-      "text": "存储库健康死代码政策:已证明无法访问的功能和未使用的导出需要审查。"
-    },
-    "scribe.report.repositoryHealth.finding.deadCode.fix": {
-      "fallback": false,
-      "reviewed": true,
-      "text": "确认该符号不是动态入口点,然后在重新运行运行状况报告之前删除该符号或添加缺失的参考证据。"
-    },
-    "scribe.report.repositoryHealth.finding.deadCode.unreachable.summary": {
-      "fallback": false,
-      "reviewed": true,
-      "text": "{sourcePath } : { line} 被死代码探测器标记为无法访问。"
-    },
-    "scribe.report.repositoryHealth.finding.deadCode.unreachable.title": {
-      "fallback": false,
-      "reviewed": true,
-      "text": "不可达函数 {symbol}"
-    },
-    "scribe.report.repositoryHealth.finding.deadCode.unusedExport.summary": {
-      "fallback": false,
-      "reviewed": true,
-      "text": "{sourcePath } : { line} 被死代码探测器标记为未使用的导出。"
-    },
-    "scribe.report.repositoryHealth.finding.deadCode.unusedExport.title": {
-      "fallback": false,
-      "reviewed": true,
-      "text": "未使用的出口符号 {symbol}"
-    },
     "scribe.report.repositoryHealth.finding.publicSummary": {
       "fallback": false,
       "reviewed": true,
       "text": "带有源支持覆盖证据的公共存储库运行状况摘要。"
     },
+    "scribe.report.repositoryHealth.finding.raw.criterion": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "{criterion}"
+    },
+    "scribe.report.repositoryHealth.finding.raw.fix": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "{recommendation}"
+    },
+    "scribe.report.repositoryHealth.finding.raw.summary": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "{summary}"
+    },
+    "scribe.report.repositoryHealth.finding.raw.title": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "{title}"
+    },
     "scribe.report.repositoryHealth.finding.runtime": {
       "fallback": false,
       "reviewed": true,
       "text": "存储库运行状况静态分析"
-    },
-    "scribe.report.repositoryHealth.finding.schemaMaintenance.criterion": {
-      "fallback": false,
-      "reviewed": true,
-      "text": "仓库运行状况模式卫生:模式废弃、 TODO、 FIXME 或 HACK 注释不应该是数据库后续工作的唯一记录。"
-    },
-    "scribe.report.repositoryHealth.finding.schemaMaintenance.fix": {
-      "fallback": false,
-      "reviewed": true,
-      "text": "将模式注释链接到迁移、移除计划或跟踪问题,然后在数据库变更到达后重新运行以模式为中心的探测。"
-    },
-    "scribe.report.repositoryHealth.finding.schemaMaintenance.summary": {
-      "fallback": false,
-      "reviewed": true,
-      "text": "{sourcePath } : { line} 包含一个应该作为显式数据库跟踪进行跟踪的模式 {marker} 注释。"
-    },
-    "scribe.report.repositoryHealth.finding.schemaMaintenance.title": {
-      "fallback": false,
-      "reviewed": true,
-      "text": "模式维护说明提到 {marker}"
     },
     "scribe.report.repositoryHealth.finding.title": {
       "fallback": false,
@@ -638,50 +648,25 @@ window.__SCRIBE_LOCALES__["zh-CN"] = {
       "reviewed": true,
       "text": "对行 {startLine } 到 {endLine } 中的更改分支添加或更新重点测试,运行最近的软件包检查,然后重新生成仓库运行状况报告。"
     },
-    "scribe.report.repositoryHealth.fixPlan.databaseSchema.step.inspect": {
+    "scribe.report.repositoryHealth.fixPlan.generic.step.inspect": {
       "fallback": false,
       "reviewed": true,
-      "text": "查看 {sourcePath} 行 {startLine} 到 {endLine} 中的模式声明,并识别受影响的实体、字段、索引和关系。"
+      "text": "验证 {sourcePath} 行 {startLine} 到 {endLine} 中的引用源范围。"
     },
-    "scribe.report.repositoryHealth.fixPlan.databaseSchema.step.track": {
+    "scribe.report.repositoryHealth.fixPlan.generic.step.resolve": {
       "fallback": false,
       "reviewed": true,
-      "text": "在更改数据库模型之前,将引用范围中的模式注释或空白关联到跟踪迁移、移除计划或问题。"
+      "text": "使用解决发现的最小源变化应用补救。"
     },
-    "scribe.report.repositoryHealth.fixPlan.databaseSchema.step.validate": {
+    "scribe.report.repositoryHealth.fixPlan.generic.step.validate": {
       "fallback": false,
       "reviewed": true,
-      "text": "数据库更改到达后,重新运行架构提取并重新生成 {sourcePath } 的储存库运行状况报告。"
-    },
-    "scribe.report.repositoryHealth.fixPlan.deadCode.step.inspect": {
-      "fallback": false,
-      "reviewed": true,
-      "text": "在删除代码之前,检查 {sourcePath} 行 {startLine } 到 {endLine } 是否有动态入口点、框架钩子、生成的引用和外部导出。"
-    },
-    "scribe.report.repositoryHealth.fixPlan.deadCode.step.resolve": {
-      "fallback": false,
-      "reviewed": true,
-      "text": "从引用范围中删除不可达到的符号,或者添加缺失的参考证据,如果它在运行时故意可达到的话。"
-    },
-    "scribe.report.repositoryHealth.fixPlan.deadCode.step.validate": {
-      "fallback": false,
-      "reviewed": true,
-      "text": "重新运行 {sourcePath} 的死代码和存储库运行状况分析,以确认发现已消失,而不引入新的可访问性缺口。"
+      "text": "在发布修复之前,重新运行储存库运行状况报告和最接近的软件包级别测试。"
     },
     "scribe.report.repositoryHealth.fixPlan.scope": {
       "fallback": false,
       "reviewed": true,
       "text": "目标源范围: {sourcePath} 行 {startLine} 到 {endLine}。"
-    },
-    "scribe.report.repositoryHealth.fixPlan.stepOne": {
-      "fallback": false,
-      "reviewed": true,
-      "text": "固定或刷新储存库检出,然后针对相同的报告清单重新运行运行状况报告命令。"
-    },
-    "scribe.report.repositoryHealth.fixPlan.stepTwo": {
-      "fallback": false,
-      "reviewed": true,
-      "text": "通过扩展发现的资源检测器和行为固定件而不是手动维护的报告逻辑,添加框架支持。"
     },
     "scribe.report.repositoryHealth.fixPlan.summary": {
       "fallback": false,

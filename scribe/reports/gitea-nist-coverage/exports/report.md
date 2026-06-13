@@ -392,9 +392,6 @@ Raw rollup JSON download: data/nist-rollup.json
 
 Publish OSCAL Assessment Results now and keep SSP/SAP/SAR/POA&M disabled until their data models are implemented and certified.
 
-1. Keep OSCAL Assessment Results, Markdown, HTML, source evidence, and rollup JSON in the public package manifest.
-2. Add SSP/SAP/SAR/POA&M only after G11 conformance tests prove each artifact shape against supported data.
-
 Fix plan link: [Conformance plan: unsupported artifacts fail closed](../fix-plans/finding-nist-coverage/index.html#fix-plan-nist-coverage)
 
 Public export note: this Markdown file is derived from public runtime manifest and search-source data only. Private receipt data and gated fix-plan prose are excluded.

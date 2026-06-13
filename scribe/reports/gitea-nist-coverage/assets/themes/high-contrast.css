@@ -7038,6 +7038,10 @@ body[data-scribe-working="true"] [data-scribe-result] {
   padding-block: 0.08rem;
   padding-inline: 0;
   text-decoration: none;
+  /* Keep the whole action label on one line — the flex link-stack wraps each
+     action to its own row, so the label must not break character-by-character
+     when the report column is narrow. */
+  white-space: nowrap;
 }
 
 .scribe-report-link-action:visited {
@@ -7144,8 +7148,10 @@ body[data-scribe-working="true"] [data-scribe-result] {
 .scribe-source-action.finding-link-btn {
   block-size: 32px;
   color: var(--sonde-color-accent);
+  flex-shrink: 0;
   inline-size: 32px;
   min-block-size: 32px;
+  min-inline-size: 32px;
   padding: 0;
 }
 
@@ -7189,6 +7195,319 @@ body[data-scribe-working="true"] [data-scribe-result] {
 
 .scribe-source-code-region .sl-code-block {
   padding-inline-end: 3rem;
+}
+
+/* ── Fix-plan component family ───────────────────────────────────────────────
+   Per-finding remediation: a stacked set of generator-backed plans, each with a
+   remediation summary, structured steps, a before/after diff, and the full plan
+   markdown. One shared look across repository-health and curated showcase reports. */
+
+.scribe-fixplan-remediations {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sonde-spacing-lg);
+}
+
+.scribe-fixplan-plan {
+  border: 1px solid var(--sonde-color-border-subtle);
+  border-radius: var(--sonde-radius-lg);
+  padding: var(--sonde-spacing-md) var(--sonde-spacing-lg);
+  background: var(--sonde-color-surface);
+  scroll-margin-block-start: var(--sonde-spacing-lg);
+}
+
+.scribe-fixplan-heading {
+  color: var(--sonde-color-text-heading);
+  margin-block: 0 var(--sonde-spacing-sm);
+}
+
+.scribe-fixplan-source-toggle {
+  display: flex;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: var(--sonde-spacing-xs);
+  margin-block-end: var(--sonde-spacing-sm);
+  color: var(--sonde-color-text-muted);
+  font-size: 0.875rem;
+}
+
+.scribe-fixplan-source-toggle-label,
+.scribe-fixplan-verify-label {
+  font-weight: 600;
+  color: var(--sonde-color-text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  font-size: 0.75rem;
+}
+
+.scribe-fixplan-source-ref {
+  font-family: var(--sonde-font-mono);
+  color: var(--sonde-color-text);
+}
+
+.scribe-fixplan-permalink {
+  color: var(--sonde-color-primary);
+  text-decoration: none;
+  border-block-end: 1px solid color-mix(in srgb, var(--sonde-color-primary) 40%, transparent);
+}
+
+.scribe-fixplan-permalink:hover,
+.scribe-fixplan-permalink:focus-visible {
+  border-block-end-color: var(--sonde-color-primary);
+}
+
+/* Remediation summary — a row of stat chips, never a vertical stack. */
+.scribe-fixplan-stats {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--sonde-spacing-sm);
+  margin-block: var(--sonde-spacing-sm);
+}
+
+.scribe-fixplan-stat {
+  display: flex;
+  flex-direction: column;
+  gap: 0.1rem;
+  min-inline-size: 5.5rem;
+  padding: var(--sonde-spacing-xs) var(--sonde-spacing-sm);
+  border: 1px solid var(--sonde-color-border-subtle);
+  border-radius: var(--sonde-radius-md);
+  background: var(--sonde-color-surface-elevated);
+}
+
+.scribe-fixplan-stat dt {
+  order: 2;
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--sonde-color-text-muted);
+}
+
+.scribe-fixplan-stat dd {
+  order: 1;
+  margin: 0;
+  font-size: 1.35rem;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+  color: var(--sonde-color-text-heading);
+}
+
+/* Structured steps — one card per fix group. */
+.scribe-fixplan-steps {
+  list-style: none;
+  margin: var(--sonde-spacing-sm) 0 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--sonde-spacing-sm);
+}
+
+.scribe-fixplan-group {
+  border: 1px solid var(--sonde-color-border-subtle);
+  border-inline-start: 3px solid var(--sonde-color-border-strong);
+  border-radius: var(--sonde-radius-md);
+  padding: var(--sonde-spacing-sm) var(--sonde-spacing-md);
+  background: var(--sonde-color-surface-elevated);
+}
+
+.scribe-fixplan-severity-critical {
+  border-inline-start-color: var(--sonde-color-severity-critical, var(--sonde-color-diff-remove-text));
+}
+
+.scribe-fixplan-group-title {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: var(--sonde-spacing-xs);
+  margin-block: 0 var(--sonde-spacing-xs);
+  color: var(--sonde-color-text-heading);
+  font-size: 1rem;
+}
+
+.scribe-fixplan-strategy {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.05rem 0.45rem;
+  border-radius: var(--sonde-radius-sm);
+  background: var(--sonde-color-accent-dim);
+  color: var(--sonde-color-accent);
+  font-family: var(--sonde-font-mono);
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+}
+
+.scribe-fixplan-functions {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--sonde-spacing-xs);
+}
+
+.scribe-fixplan-function {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: var(--sonde-spacing-xs);
+}
+
+.scribe-fixplan-function-name {
+  font-family: var(--sonde-font-mono);
+  font-weight: 600;
+  color: var(--sonde-color-text-heading);
+}
+
+/* Metrics — a wrapped row of chips so values never run together. */
+.scribe-fixplan-metrics {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+  margin-block-start: 0.2rem;
+  flex-basis: 100%;
+}
+
+.scribe-fixplan-metric {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.05rem 0.4rem;
+  border: 1px solid var(--sonde-color-border-subtle);
+  border-radius: var(--sonde-radius-sm);
+  background: var(--sonde-color-surface);
+  color: var(--sonde-color-text-muted);
+  font-family: var(--sonde-font-mono);
+  font-size: 0.72rem;
+  font-variant-numeric: tabular-nums;
+}
+
+/* Compliance criteria — one wrapped row per criterion so a many-finding group
+   reads as a structured list, never a concatenated heading. */
+.scribe-fixplan-criteria {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--sonde-spacing-xs);
+}
+
+.scribe-fixplan-criterion {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: var(--sonde-spacing-xs);
+}
+
+.scribe-fixplan-criterion-name {
+  font-weight: 600;
+  color: var(--sonde-color-text-heading);
+}
+
+.scribe-fixplan-criterion-level {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.05rem 0.4rem;
+  border-radius: var(--sonde-radius-sm);
+  background: var(--sonde-color-accent-dim);
+  color: var(--sonde-color-accent);
+  font-family: var(--sonde-font-mono);
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+}
+
+.scribe-fixplan-criterion-rule {
+  font-family: var(--sonde-font-mono);
+  font-size: 0.72rem;
+  color: var(--sonde-color-text-muted);
+}
+
+.scribe-fixplan-verify {
+  margin-block-start: var(--sonde-spacing-xs);
+}
+
+.scribe-fixplan-verify ul {
+  list-style: none;
+  margin: 0.2rem 0 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+}
+
+.scribe-fixplan-verify code {
+  font-family: var(--sonde-font-mono);
+  font-size: 0.78rem;
+  padding: 0.05rem 0.4rem;
+  border-radius: var(--sonde-radius-sm);
+  background: var(--sonde-color-surface-sunken, var(--sonde-color-surface-elevated));
+}
+
+.scribe-fixplan-full-markdown {
+  margin-block-start: var(--sonde-spacing-sm);
+}
+
+.scribe-fixplan-full-markdown > summary {
+  cursor: pointer;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--sonde-color-text-muted);
+}
+
+.scribe-fixplan-empty {
+  margin-block-start: var(--sonde-spacing-sm);
+  padding: var(--sonde-spacing-sm) var(--sonde-spacing-md);
+  border: 1px dashed var(--sonde-color-border);
+  border-radius: var(--sonde-radius-md);
+  color: var(--sonde-color-text-muted);
+}
+
+/* Curated showcase remediation card (no live AnalyzeResult). */
+.scribe-fixplan-remediation {
+  border: 1px solid var(--sonde-color-border-subtle);
+  border-radius: var(--sonde-radius-lg);
+  padding: var(--sonde-spacing-md) var(--sonde-spacing-lg);
+  background: var(--sonde-color-surface);
+  scroll-margin-block-start: var(--sonde-spacing-lg);
+}
+
+.scribe-fixplan-remediation-meta {
+  display: grid;
+  grid-template-columns: max-content 1fr;
+  gap: var(--sonde-spacing-xs) var(--sonde-spacing-md);
+  margin-block-start: var(--sonde-spacing-sm);
+}
+
+.scribe-fixplan-remediation-meta dt {
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--sonde-color-text-muted);
+}
+
+.scribe-fixplan-remediation-meta dd {
+  margin: 0;
+  color: var(--sonde-color-text);
+}
+
+/* Before / after diff: the wrapper toggle. The diff itself is the reusable
+   `sonde-diff-*` component (components/diffBlock.css + @sondeai/renderer). */
+
+.scribe-fixplan-before-after {
+  margin-block: var(--sonde-spacing-sm);
+}
+
+.scribe-fixplan-before-after-summary {
+  display: flex;
+  align-items: center;
+  gap: var(--sonde-spacing-sm);
+  cursor: pointer;
+}
+
+.scribe-fixplan-before-after-label {
+  font-weight: 600;
+  color: var(--sonde-color-text-heading);
 }
 
 .scribe-source-dialog {
@@ -7771,6 +8090,119 @@ body[data-scribe-working="true"] [data-scribe-result] {
 
 .scribe-collapse-toggle {
   margin-block-end: var(--sonde-spacing-sm);
+}
+
+
+/*
+ * Sonde unified diff — styling for the reusable server-side diff renderer
+ * (`@sondeai/renderer` `renderUnifiedDiff`) and the static counterpart of
+ * `<sonde-exhibit-diff>`. Structure comes from the renderer; colors/fonts here are
+ * the shared `--sonde-color-diff-*` / `--sonde-diff-*` palette, so a report's diff
+ * matches the interactive element and the syntax-highlighted code blocks beside it.
+ *
+ * Code cells carry `--sonde-syntax-*` token spans (the same highlighter
+ * `applyCodeBlock` uses); rows tint only the background so token colors show through.
+ */
+
+.sonde-diff {
+  margin-block-start: var(--sonde-spacing-xs);
+  border: 1px solid var(--sonde-color-diff-border);
+  border-radius: var(--sonde-radius-md);
+  overflow-x: auto;
+  background: var(--sonde-color-diff-bg);
+  font-family: var(--sonde-diff-font-mono);
+  font-size: var(--sonde-diff-code-font-size);
+}
+
+.sonde-diff-toolbar {
+  display: flex;
+  gap: var(--sonde-spacing-sm);
+  padding: var(--sonde-diff-toolbar-padding-block) var(--sonde-diff-toolbar-padding-inline);
+  border-bottom: 1px solid var(--sonde-color-diff-border);
+  background: var(--sonde-color-diff-toolbar-bg);
+}
+
+.sonde-diff-stat {
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+}
+
+.sonde-diff-stat--add {
+  color: var(--sonde-color-diff-add-text);
+}
+
+.sonde-diff-stat--rm {
+  color: var(--sonde-color-diff-remove-text);
+}
+
+.sonde-diff-table {
+  border-collapse: collapse;
+  min-inline-size: 100%;
+  inline-size: max-content;
+  table-layout: auto;
+}
+
+/* Reset any host table styling (e.g. a report's generic `td { border-bottom }`)
+   so diff rows read as code — background bands only, no underlines. */
+.sonde-diff-table td {
+  border: 0;
+  padding-block: 0;
+}
+
+.sonde-diff-gutter {
+  inline-size: var(--sonde-diff-gutter-width);
+  padding-inline: var(--sonde-diff-gutter-padding-inline);
+  text-align: end;
+  color: var(--sonde-color-diff-muted);
+  user-select: none;
+  font-variant-numeric: tabular-nums;
+  vertical-align: top;
+}
+
+.sonde-diff-gutter--new {
+  border-inline-end: 1px solid var(--sonde-color-diff-border-subtle);
+}
+
+.sonde-diff-code {
+  padding-inline: var(--sonde-diff-code-cell-padding-inline);
+  white-space: pre;
+  vertical-align: top;
+}
+
+.sonde-diff-prefix {
+  display: inline-block;
+  inline-size: 1ch;
+  margin-inline-end: 0.5ch;
+  user-select: none;
+  color: var(--sonde-color-diff-muted);
+}
+
+.sonde-diff-row--added .sonde-diff-code {
+  background: var(--sonde-color-diff-add-bg);
+}
+
+.sonde-diff-row--added .sonde-diff-gutter {
+  background: var(--sonde-color-diff-add-gutter);
+}
+
+.sonde-diff-row--removed .sonde-diff-code {
+  background: var(--sonde-color-diff-remove-bg);
+}
+
+.sonde-diff-row--removed .sonde-diff-gutter {
+  background: var(--sonde-color-diff-remove-gutter);
+}
+
+.sonde-diff-row--unchanged .sonde-diff-gutter {
+  background: var(--sonde-color-diff-unchanged-gutter);
+}
+
+.sonde-diff-sep {
+  padding-block: var(--sonde-diff-separator-padding-block);
+  padding-inline: var(--sonde-diff-gutter-padding-inline);
+  background: var(--sonde-color-diff-separator-bg);
+  color: var(--sonde-color-diff-separator-text);
+  user-select: none;
 }
 
 

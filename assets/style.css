@@ -2801,6 +2801,10 @@ body[data-scribe-working="true"] [data-scribe-result] {
   padding-block: 0.08rem;
   padding-inline: 0;
   text-decoration: none;
+  /* Keep the whole action label on one line — the flex link-stack wraps each
+     action to its own row, so the label must not break character-by-character
+     when the report column is narrow. */
+  white-space: nowrap;
 }
 
 .scribe-report-link-action:visited {
@@ -2907,8 +2911,10 @@ body[data-scribe-working="true"] [data-scribe-result] {
 .scribe-source-action.finding-link-btn {
   block-size: 32px;
   color: var(--sonde-color-accent);
+  flex-shrink: 0;
   inline-size: 32px;
   min-block-size: 32px;
+  min-inline-size: 32px;
   padding: 0;
 }
 
@@ -2952,6 +2958,319 @@ body[data-scribe-working="true"] [data-scribe-result] {
 
 .scribe-source-code-region .sl-code-block {
   padding-inline-end: 3rem;
+}
+
+/* ── Fix-plan component family ───────────────────────────────────────────────
+   Per-finding remediation: a stacked set of generator-backed plans, each with a
+   remediation summary, structured steps, a before/after diff, and the full plan
+   markdown. One shared look across repository-health and curated showcase reports. */
+
+.scribe-fixplan-remediations {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sonde-spacing-lg);
+}
+
+.scribe-fixplan-plan {
+  border: 1px solid var(--sonde-color-border-subtle);
+  border-radius: var(--sonde-radius-lg);
+  padding: var(--sonde-spacing-md) var(--sonde-spacing-lg);
+  background: var(--sonde-color-surface);
+  scroll-margin-block-start: var(--sonde-spacing-lg);
+}
+
+.scribe-fixplan-heading {
+  color: var(--sonde-color-text-heading);
+  margin-block: 0 var(--sonde-spacing-sm);
+}
+
+.scribe-fixplan-source-toggle {
+  display: flex;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: var(--sonde-spacing-xs);
+  margin-block-end: var(--sonde-spacing-sm);
+  color: var(--sonde-color-text-muted);
+  font-size: 0.875rem;
+}
+
+.scribe-fixplan-source-toggle-label,
+.scribe-fixplan-verify-label {
+  font-weight: 600;
+  color: var(--sonde-color-text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  font-size: 0.75rem;
+}
+
+.scribe-fixplan-source-ref {
+  font-family: var(--sonde-font-mono);
+  color: var(--sonde-color-text);
+}
+
+.scribe-fixplan-permalink {
+  color: var(--sonde-color-primary);
+  text-decoration: none;
+  border-block-end: 1px solid color-mix(in srgb, var(--sonde-color-primary) 40%, transparent);
+}
+
+.scribe-fixplan-permalink:hover,
+.scribe-fixplan-permalink:focus-visible {
+  border-block-end-color: var(--sonde-color-primary);
+}
+
+/* Remediation summary — a row of stat chips, never a vertical stack. */
+.scribe-fixplan-stats {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--sonde-spacing-sm);
+  margin-block: var(--sonde-spacing-sm);
+}
+
+.scribe-fixplan-stat {
+  display: flex;
+  flex-direction: column;
+  gap: 0.1rem;
+  min-inline-size: 5.5rem;
+  padding: var(--sonde-spacing-xs) var(--sonde-spacing-sm);
+  border: 1px solid var(--sonde-color-border-subtle);
+  border-radius: var(--sonde-radius-md);
+  background: var(--sonde-color-surface-elevated);
+}
+
+.scribe-fixplan-stat dt {
+  order: 2;
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--sonde-color-text-muted);
+}
+
+.scribe-fixplan-stat dd {
+  order: 1;
+  margin: 0;
+  font-size: 1.35rem;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+  color: var(--sonde-color-text-heading);
+}
+
+/* Structured steps — one card per fix group. */
+.scribe-fixplan-steps {
+  list-style: none;
+  margin: var(--sonde-spacing-sm) 0 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--sonde-spacing-sm);
+}
+
+.scribe-fixplan-group {
+  border: 1px solid var(--sonde-color-border-subtle);
+  border-inline-start: 3px solid var(--sonde-color-border-strong);
+  border-radius: var(--sonde-radius-md);
+  padding: var(--sonde-spacing-sm) var(--sonde-spacing-md);
+  background: var(--sonde-color-surface-elevated);
+}
+
+.scribe-fixplan-severity-critical {
+  border-inline-start-color: var(--sonde-color-severity-critical, var(--sonde-color-diff-remove-text));
+}
+
+.scribe-fixplan-group-title {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: var(--sonde-spacing-xs);
+  margin-block: 0 var(--sonde-spacing-xs);
+  color: var(--sonde-color-text-heading);
+  font-size: 1rem;
+}
+
+.scribe-fixplan-strategy {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.05rem 0.45rem;
+  border-radius: var(--sonde-radius-sm);
+  background: var(--sonde-color-accent-dim);
+  color: var(--sonde-color-accent);
+  font-family: var(--sonde-font-mono);
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+}
+
+.scribe-fixplan-functions {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--sonde-spacing-xs);
+}
+
+.scribe-fixplan-function {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: var(--sonde-spacing-xs);
+}
+
+.scribe-fixplan-function-name {
+  font-family: var(--sonde-font-mono);
+  font-weight: 600;
+  color: var(--sonde-color-text-heading);
+}
+
+/* Metrics — a wrapped row of chips so values never run together. */
+.scribe-fixplan-metrics {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+  margin-block-start: 0.2rem;
+  flex-basis: 100%;
+}
+
+.scribe-fixplan-metric {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.05rem 0.4rem;
+  border: 1px solid var(--sonde-color-border-subtle);
+  border-radius: var(--sonde-radius-sm);
+  background: var(--sonde-color-surface);
+  color: var(--sonde-color-text-muted);
+  font-family: var(--sonde-font-mono);
+  font-size: 0.72rem;
+  font-variant-numeric: tabular-nums;
+}
+
+/* Compliance criteria — one wrapped row per criterion so a many-finding group
+   reads as a structured list, never a concatenated heading. */
+.scribe-fixplan-criteria {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--sonde-spacing-xs);
+}
+
+.scribe-fixplan-criterion {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: var(--sonde-spacing-xs);
+}
+
+.scribe-fixplan-criterion-name {
+  font-weight: 600;
+  color: var(--sonde-color-text-heading);
+}
+
+.scribe-fixplan-criterion-level {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.05rem 0.4rem;
+  border-radius: var(--sonde-radius-sm);
+  background: var(--sonde-color-accent-dim);
+  color: var(--sonde-color-accent);
+  font-family: var(--sonde-font-mono);
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+}
+
+.scribe-fixplan-criterion-rule {
+  font-family: var(--sonde-font-mono);
+  font-size: 0.72rem;
+  color: var(--sonde-color-text-muted);
+}
+
+.scribe-fixplan-verify {
+  margin-block-start: var(--sonde-spacing-xs);
+}
+
+.scribe-fixplan-verify ul {
+  list-style: none;
+  margin: 0.2rem 0 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+}
+
+.scribe-fixplan-verify code {
+  font-family: var(--sonde-font-mono);
+  font-size: 0.78rem;
+  padding: 0.05rem 0.4rem;
+  border-radius: var(--sonde-radius-sm);
+  background: var(--sonde-color-surface-sunken, var(--sonde-color-surface-elevated));
+}
+
+.scribe-fixplan-full-markdown {
+  margin-block-start: var(--sonde-spacing-sm);
+}
+
+.scribe-fixplan-full-markdown > summary {
+  cursor: pointer;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--sonde-color-text-muted);
+}
+
+.scribe-fixplan-empty {
+  margin-block-start: var(--sonde-spacing-sm);
+  padding: var(--sonde-spacing-sm) var(--sonde-spacing-md);
+  border: 1px dashed var(--sonde-color-border);
+  border-radius: var(--sonde-radius-md);
+  color: var(--sonde-color-text-muted);
+}
+
+/* Curated showcase remediation card (no live AnalyzeResult). */
+.scribe-fixplan-remediation {
+  border: 1px solid var(--sonde-color-border-subtle);
+  border-radius: var(--sonde-radius-lg);
+  padding: var(--sonde-spacing-md) var(--sonde-spacing-lg);
+  background: var(--sonde-color-surface);
+  scroll-margin-block-start: var(--sonde-spacing-lg);
+}
+
+.scribe-fixplan-remediation-meta {
+  display: grid;
+  grid-template-columns: max-content 1fr;
+  gap: var(--sonde-spacing-xs) var(--sonde-spacing-md);
+  margin-block-start: var(--sonde-spacing-sm);
+}
+
+.scribe-fixplan-remediation-meta dt {
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--sonde-color-text-muted);
+}
+
+.scribe-fixplan-remediation-meta dd {
+  margin: 0;
+  color: var(--sonde-color-text);
+}
+
+/* Before / after diff: the wrapper toggle. The diff itself is the reusable
+   `sonde-diff-*` component (components/diffBlock.css + @sondeai/renderer). */
+
+.scribe-fixplan-before-after {
+  margin-block: var(--sonde-spacing-sm);
+}
+
+.scribe-fixplan-before-after-summary {
+  display: flex;
+  align-items: center;
+  gap: var(--sonde-spacing-sm);
+  cursor: pointer;
+}
+
+.scribe-fixplan-before-after-label {
+  font-weight: 600;
+  color: var(--sonde-color-text-heading);
 }
 
 .scribe-source-dialog {
@@ -5265,6 +5584,12 @@ abbr.sl-glossary:focus-visible::after {
   gap: 1rem;
 }
 
+.sl-contact-aside {
+  display: grid;
+  gap: 1.5rem;
+  align-content: start;
+}
+
 .sl-alpha-form-heading h2,
 .sl-alpha-hashes h2,
 .sl-alpha-steps h2 {
@@ -7157,6 +7482,18 @@ abbr.sl-glossary:focus-visible::after {
   margin-top: 1.25rem;
 }
 
+.sl-hero-ctas {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  justify-content: center;
+  margin-top: 1.5rem;
+}
+
+.sl-hero-cta {
+  min-width: 9rem;
+}
+
 .sl-home-pillars {
   padding-block-start: clamp(0.75rem, 1.7vh, 1.25rem);
 }
@@ -7454,6 +7791,130 @@ abbr.sl-glossary:focus-visible::after {
 
 .sl-home-daylight-inner {
   text-align: center;
+}
+
+.sl-solutions-explore-inner {
+  text-align: center;
+}
+
+.sl-solutions-proof-cta {
+  margin-top: 1.5rem;
+}
+
+/* Solutions nav dropdown — wraps the four /solutions/* sub-pages under
+   a <details> trigger in the primary nav. The summary inherits nav-link
+   typography so it matches sibling <a> items visually. The floating menu
+   appears below the trigger on open. */
+.sl-nav .sl-nav-dropdown {
+  position: relative;
+}
+
+.sl-nav .sl-nav-dropdown summary {
+  list-style: none;
+  cursor: pointer;
+  color: var(--sonde-color-text-muted);
+  font-family: var(--sonde-font-heading);
+  font-size: 0.82rem;
+  font-weight: 700;
+  padding: 0.26rem 0.36rem;
+  border-radius: 0.35rem;
+  user-select: none;
+}
+
+.sl-nav .sl-nav-dropdown summary::-webkit-details-marker,
+.sl-nav .sl-nav-dropdown summary::marker {
+  display: none;
+  content: '';
+}
+
+.sl-nav .sl-nav-dropdown summary:hover,
+.sl-nav .sl-nav-dropdown summary:focus-visible,
+.sl-nav .sl-nav-dropdown summary[aria-current="page"],
+.sl-nav .sl-nav-dropdown[open] > summary {
+  background: color-mix(in srgb, var(--sonde-color-primary) 10%, transparent);
+  color: var(--sonde-color-text-heading);
+}
+
+.sl-nav-dropdown-menu {
+  position: absolute;
+  top: calc(100% + 0.3rem);
+  right: 0;
+  z-index: 20;
+  display: flex;
+  flex-direction: column;
+  gap: 0.1rem;
+  min-width: 11rem;
+  padding: 0.3rem;
+  border: 1px solid var(--sonde-color-border);
+  border-radius: 0.45rem;
+  background: var(--sonde-color-surface);
+  box-shadow: 0 0.5rem 1.5rem color-mix(in srgb, var(--sonde-color-text) 18%, transparent);
+}
+
+.sl-nav-dropdown-menu a,
+.sl-nav-dropdown-menu a:visited {
+  display: block;
+  padding: 0.38rem 0.65rem;
+  border-radius: 0.3rem;
+  color: var(--sonde-color-text-muted);
+  font-family: var(--sonde-font-heading);
+  font-size: 0.82rem;
+  font-weight: 700;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.sl-nav-dropdown-menu a:hover,
+.sl-nav-dropdown-menu a:focus-visible,
+.sl-nav-dropdown-menu a[aria-current="page"] {
+  background: color-mix(in srgb, var(--sonde-color-primary) 10%, transparent);
+  color: var(--sonde-color-text-heading);
+  text-decoration: none;
+}
+
+/* Solutions in-page sub-navigation pills. The <nav> band sits between the
+   hero and problem sections. Each link renders as a rounded pill; the
+   active page is highlighted with the primary accent colour. */
+.sl-solutions-subnav {
+  background: var(--sonde-color-surface);
+  border-bottom: 1px solid var(--sonde-color-border);
+}
+
+.sl-solutions-subnav-inner {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  padding-block: 0.65rem;
+}
+
+.sl-solutions-subnav a,
+.sl-solutions-subnav a:visited {
+  display: inline-flex;
+  align-items: center;
+  min-height: 2rem;
+  padding: 0 0.9rem;
+  border: 1px solid var(--sonde-color-border);
+  border-radius: 999px;
+  color: var(--sonde-color-text-muted);
+  font-family: var(--sonde-font-heading);
+  font-size: 0.82rem;
+  font-weight: 700;
+  text-decoration: none;
+  transition: border-color 0.15s ease, color 0.15s ease, background-color 0.15s ease;
+}
+
+.sl-solutions-subnav a:hover,
+.sl-solutions-subnav a:focus-visible {
+  border-color: var(--sonde-color-primary);
+  color: var(--sonde-color-text-heading);
+  background: color-mix(in srgb, var(--sonde-color-primary) 8%, transparent);
+  text-decoration: none;
+}
+
+.sl-solutions-subnav a[aria-current="page"] {
+  border-color: var(--sonde-color-primary);
+  color: var(--sonde-color-primary);
+  background: color-mix(in srgb, var(--sonde-color-primary) 10%, transparent);
 }
 
 .sl-footer {

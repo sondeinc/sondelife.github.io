@@ -258,8 +258,8 @@
   }
 })();</script>
   <script>(function() {
-  var locales = ["en-US","en-GB","en-CA","en-IN","fr-CA","cy-GB","gd-GB","ga-GB","sco-GB","kw-GB","es-US","de-DE","fr-FR","es-ES","it-IT","nl-NL","pl-PL","pt-PT","pt-BR","ro-RO","sv-SE","ko-KR","zh-CN","ja-JP","hi-IN"];
-  var lower = ["en-us","en-gb","en-ca","en-in","fr-ca","cy-gb","gd-gb","ga-gb","sco-gb","kw-gb","es-us","de-de","fr-fr","es-es","it-it","nl-nl","pl-pl","pt-pt","pt-br","ro-ro","sv-se","ko-kr","zh-cn","ja-jp","hi-in"];
+  var locales = ["en-US","en-GB","en-CA","en-IN","fr-CA","cy-GB","es-US","de-DE","fr-FR","es-ES","it-IT","nl-NL","pl-PL","pt-PT","pt-BR","ro-RO","sv-SE","ko-KR","zh-CN","ja-JP","hi-IN"];
+  var lower = ["en-us","en-gb","en-ca","en-in","fr-ca","cy-gb","es-us","de-de","fr-fr","es-es","it-it","nl-nl","pl-pl","pt-pt","pt-br","ro-ro","sv-se","ko-kr","zh-cn","ja-jp","hi-in"];
   var forbidden = ["pt"];
   var defaultRegions = {"en":"US","de":"DE","fr":"FR","es":"ES","it":"IT","ja":"JP","zh":"CN","ko":"KR","ar":"SA","pt":"PT","nl":"NL","sv":"SE","pl":"PL","ro":"RO","cy":"GB","gd":"GB","ga":"GB","sco":"GB","kw":"GB"};
   var inheritancePolicy = {"sourceLocale":"en-US","chains":[{"locale":"en-IN","inherits":["en-GB","en-US"],"syntheticEmptyCatalog":true},{"locale":"es-MX","inherits":["es-US","en-US"],"syntheticEmptyCatalog":false}]};
@@ -602,6 +602,15 @@
     </a>
     <div class="sl-nav-actions">
       <div class="sl-nav-links">
+        <details class="sl-nav-dropdown">
+          <summary data-msg-id="sondeLife.nav.solutions">Solutions</summary>
+          <div class="sl-nav-dropdown-menu">
+            <a href="./solutions/accessibility/" data-msg-id="sondeLife.solutions.subnav.accessibility">Accessibility</a>
+            <a href="./solutions/compliance/" data-msg-id="sondeLife.solutions.subnav.compliance">Compliance</a>
+            <a href="./solutions/ai-governance/" data-msg-id="sondeLife.solutions.subnav.aiGovernance">AI Governance</a>
+            <a href="./solutions/developer/" data-msg-id="sondeLife.solutions.subnav.developer">Developer</a>
+          </div>
+        </details>
         <a href="./overview/" data-msg-id="sondeLife.nav.overview">Overview</a>
         <a href="./explore/" data-msg-id="sondeLife.nav.features">Explore</a>
         <a href="./architecture/" data-msg-id="sondeLife.nav.architecture">Architecture</a>
@@ -674,7 +683,7 @@
     <summary class="settings-section-trigger" data-msg-id="settings.language.legend">Language</summary>
     <div class="settings-section-body">
       <input id="settings-language-search" class="settings-language-search" type="search" autocomplete="off" spellcheck="false" aria-label="Search languages" placeholder="Search languages" title="Search languages" data-sonde-locale-search>
-      <sonde-locale-picker locales="[&quot;en-US&quot;,&quot;en-GB&quot;,&quot;en-CA&quot;,&quot;en-IN&quot;,&quot;fr-CA&quot;,&quot;cy-GB&quot;,&quot;gd-GB&quot;,&quot;ga-GB&quot;,&quot;sco-GB&quot;,&quot;kw-GB&quot;,&quot;es-US&quot;,&quot;de-DE&quot;,&quot;fr-FR&quot;,&quot;es-ES&quot;,&quot;it-IT&quot;,&quot;nl-NL&quot;,&quot;pl-PL&quot;,&quot;pt-PT&quot;,&quot;pt-BR&quot;,&quot;ro-RO&quot;,&quot;sv-SE&quot;,&quot;ko-KR&quot;,&quot;zh-CN&quot;,&quot;ja-JP&quot;,&quot;hi-IN&quot;]" value="en-US" input-name="sonde-locale-picker-radio">
+      <sonde-locale-picker locales="[&quot;en-US&quot;,&quot;en-GB&quot;,&quot;en-CA&quot;,&quot;en-IN&quot;,&quot;fr-CA&quot;,&quot;cy-GB&quot;,&quot;es-US&quot;,&quot;de-DE&quot;,&quot;fr-FR&quot;,&quot;es-ES&quot;,&quot;it-IT&quot;,&quot;nl-NL&quot;,&quot;pl-PL&quot;,&quot;pt-PT&quot;,&quot;pt-BR&quot;,&quot;ro-RO&quot;,&quot;sv-SE&quot;,&quot;ko-KR&quot;,&quot;zh-CN&quot;,&quot;ja-JP&quot;,&quot;hi-IN&quot;]" value="en-US" input-name="sonde-locale-picker-radio">
 <label class="theme-toggle-option settings-language-option" dir="ltr" data-locale-search="en-US English (US) 🇺🇸 English United States">
   <input type="radio" name="sonde-locale-picker-radio" value="en-US" data-sonde-locale-picker checked>
   <div class="theme-preview locale-option-preview">
@@ -715,34 +724,6 @@
   <div class="theme-preview locale-option-preview">
     <span class="fi fi-gb-wls locale-option-flag" data-flag="🇬🇧" aria-hidden="true"></span>
     <span class="locale-option-label">Cymraeg</span>
-  </div>
-</label>
-<label class="theme-toggle-option settings-language-option" dir="ltr" data-locale-search="gd-GB Gàidhlig 🇬🇧 Scottish Gaelic United Kingdom">
-  <input type="radio" name="sonde-locale-picker-radio" value="gd-GB" data-sonde-locale-picker>
-  <div class="theme-preview locale-option-preview">
-    <span class="fi fi-gb-sct locale-option-flag" data-flag="🇬🇧" aria-hidden="true"></span>
-    <span class="locale-option-label">Gàidhlig</span>
-  </div>
-</label>
-<label class="theme-toggle-option settings-language-option" dir="ltr" data-locale-search="ga-GB Gaeilge 🇬🇧 Irish United Kingdom">
-  <input type="radio" name="sonde-locale-picker-radio" value="ga-GB" data-sonde-locale-picker>
-  <div class="theme-preview locale-option-preview">
-    <span class="fi fi-gb locale-option-flag" data-flag="🇬🇧" aria-hidden="true"></span>
-    <span class="locale-option-label">Gaeilge</span>
-  </div>
-</label>
-<label class="theme-toggle-option settings-language-option" dir="ltr" data-locale-search="sco-GB Scots 🇬🇧 Scots United Kingdom">
-  <input type="radio" name="sonde-locale-picker-radio" value="sco-GB" data-sonde-locale-picker>
-  <div class="theme-preview locale-option-preview">
-    <span class="fi fi-gb-sct locale-option-flag" data-flag="🇬🇧" aria-hidden="true"></span>
-    <span class="locale-option-label">Scots</span>
-  </div>
-</label>
-<label class="theme-toggle-option settings-language-option" dir="ltr" data-locale-search="kw-GB Kernewek 🇬🇧 Cornish United Kingdom">
-  <input type="radio" name="sonde-locale-picker-radio" value="kw-GB" data-sonde-locale-picker>
-  <div class="theme-preview locale-option-preview">
-    <span class="fi fi-gb locale-option-flag" data-flag="🇬🇧" aria-hidden="true"></span>
-    <span class="locale-option-label">Kernewek</span>
   </div>
 </label>
 <label class="theme-toggle-option settings-language-option" dir="ltr" data-locale-search="es-US Español (US) 🇺🇸 Spanish United States">
@@ -861,7 +842,15 @@
 <section class="sl-teaser" aria-labelledby="home-title">
   <div class="sl-teaser-inner">
     <p id="home-title" class="sl-teaser-kicker" data-msg-id="sondeLife.content.home.eyebrow">Code well and prosper™</p>
-    <p class="sl-teaser-hero" data-msg-id="sondeLife.content.home.heroLines.0">Sonde is a comprehensive software analysis ecosystem.</p>
+    <p class="sl-teaser-hero" data-msg-id="sondeLife.content.home.heroLines.0">Prove your software is accessible, compliant, and safe to ship.</p>
+    <div class="sl-hero-ctas">
+      <a class="sl-action sl-action-primary sl-hero-cta"
+         href="/scribe/"
+         data-msg-id="sondeLife.content.home.heroCtas.0.label">See the proof</a>
+      <a class="sl-action sl-hero-cta"
+         href="/contact/"
+         data-msg-id="sondeLife.content.home.heroCtas.1.label">Contact us</a>
+    </div>
   </div>
 </section>
 <section class="sl-section sl-home-pillars">
@@ -1042,14 +1031,12 @@
     <p data-msg-id="sondeLife.content.home.noAiCallout.subline">AI is shipping commits faster than any team can manually review them. Sonde keeps up — deterministically, without AI.</p>
     <p class="sl-no-ai-audience" data-msg-id="sondeLife.content.home.noAiCallout.audienceNote">Improves every AI coding tool you already use.</p>
   </div>
-</section>
-<section class="sl-section sl-home-callout" aria-labelledby="callout-zero-tokens">
+</section><section class="sl-section sl-home-callout" aria-labelledby="callout-zero-tokens">
   <div class="sl-section-inner sonde-readable">
     <h2 id="callout-zero-tokens" data-msg-id="sondeLife.content.home.callouts.0.heading">Zero tokens</h2>
     <p data-msg-id="sondeLife.content.home.callouts.0.body">Sonde doesn't use AI itself, but makes all aspects of AI development faster and more efficient.</p>
   </div>
-</section>
-<section class="sl-section sl-band sl-home-callout" aria-labelledby="callout-not-just-source">
+</section><section class="sl-section sl-band sl-home-callout" aria-labelledby="callout-not-just-source">
   <div class="sl-section-inner sonde-readable">
     <h2 id="callout-not-just-source" data-msg-id="sondeLife.content.home.callouts.1.heading">Not just for source code</h2>
     <p data-msg-id="sondeLife.content.home.callouts.1.body">Sonde's deep and broad understanding isn't just for source code. It extends to all facets of the software ecosystem, including accessibility, compliance regulations, localization, databases, documentation, logs, monitoring, agentic development, MCP safety, issue tracking systems, CI/CD pipelines, and still more.</p>
@@ -1089,6 +1076,10 @@
       <span data-msg-id="sondeLife.metadata.compliance.title">Compliance - Sonde</span>
       <span data-msg-id="sondeLife.metadata.scribe.title">Scribe - Sonde</span>
       <span data-msg-id="sondeLife.metadata.contact.title">Contact - Sonde</span>
+      <span data-msg-id="sondeLife.metadata.solutions.accessibility.title">Accessibility - Sonde</span>
+      <span data-msg-id="sondeLife.metadata.solutions.compliance.title">Compliance Solutions - Sonde</span>
+      <span data-msg-id="sondeLife.metadata.solutions.aiGovernance.title">AI Governance - Sonde</span>
+      <span data-msg-id="sondeLife.metadata.solutions.developer.title">Developer - Sonde</span>
       <span data-msg-id="settings.trigger.aria">Open display settings</span>
       <span data-msg-id="settings.trigger.title">Settings</span>
       <span data-msg-id="settings.theme.legend">Theme</span>
@@ -1129,6 +1120,26 @@
     document.addEventListener('keydown', (event) => {
       if (event.key !== 'Escape') return;
       close();
+    });
+  })();
+
+  // Dismiss the Solutions nav dropdown on outside-click and Escape,
+  // matching the settings-dropdown dismissal pattern above.
+  (() => {
+    const navDropdown = document.querySelector('details.sl-nav-dropdown');
+    if (!navDropdown) return;
+    function closeNavDropdown() {
+      if (!navDropdown.open) return;
+      navDropdown.open = false;
+    }
+    document.addEventListener('click', (event) => {
+      if (!navDropdown.open) return;
+      if (navDropdown.contains(event.target)) return;
+      closeNavDropdown();
+    });
+    document.addEventListener('keydown', (event) => {
+      if (event.key !== 'Escape') return;
+      closeNavDropdown();
     });
   })();
 
@@ -1324,20 +1335,22 @@
     document.addEventListener('sonde:locale-applied', schedule);
   })();
 
-  // Roving tabindex for the primary nav links. Without this, the seven
-  // nav <a>s plus brand + search + settings put 10–11 elements in the
-  // primary nav's tab sequence, tripping the keyboard-trap probe's
-  // "deep focus region" heuristic. With roving tabindex the seven nav
-  // links collapse to a single tab stop; arrow keys (Left/Right, Up/Down)
-  // navigate within the group, Home/End jump to the ends. The aria-current
-  // link is the active tab stop on page load (or the first link if no
-  // route is current — e.g. on home where the brand IS the home link).
+  // Roving tabindex for the primary nav links. Without this, the primary
+  // nav <a>s + the Solutions <summary> plus brand + search + settings put
+  // many elements in the primary nav's tab sequence, tripping the
+  // keyboard-trap probe's "deep focus region" heuristic. With roving
+  // tabindex the top-level nav items collapse to a single tab stop; arrow
+  // keys (Left/Right, Up/Down) navigate within the group, Home/End jump to
+  // the ends. The aria-current item is the active tab stop on page load
+  // (or the first item if no route is current). Only direct <a> children
+  // and top-level <details> > <summary> are selected — this deliberately
+  // excludes hidden dropdown-menu <a>s that must not enter the roving group.
   (() => {
     const navLinks = document.querySelector('.sl-nav-links');
     if (!navLinks) return;
-    const links = Array.from(navLinks.querySelectorAll('a'));
+    const links = Array.from(navLinks.querySelectorAll(':scope > a, :scope > details > summary'));
     if (links.length < 2) return;
-    let activeIdx = links.findIndex((a) => a.getAttribute('aria-current') === 'page');
+    let activeIdx = links.findIndex((el) => el.getAttribute('aria-current') === 'page');
     if (activeIdx < 0) activeIdx = 0;
     for (let i = 0; i < links.length; i += 1) {
       links[i].setAttribute('tabindex', i === activeIdx ? '0' : '-1');
