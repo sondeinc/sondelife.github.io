@@ -905,28 +905,28 @@
   </div>
 </section>
 <section class="sl-section sl-contact-intake" aria-labelledby="contact-form-title">
-  <div class="sl-section-inner sl-alpha-layout">
+  <div class="sl-section-inner sl-contact-layout">
     <div class="sl-contact-form-wrapper" id="contact-form-region">
-      <form class="sl-alpha-form" data-contact-form action="https://sonde.life/api/submit" method="post">
+      <form class="sl-contact-form" data-contact-form action="https://sonde.life/api/submit" method="post">
         <input type="hidden" name="hs_analytics_source" value="DIRECT_TRAFFIC">
-        <div class="sl-alpha-form-heading">
+        <div class="sl-contact-form-heading">
           <h2 id="contact-form-title" data-msg-id="sondeLife.content.contact.formTitle">Send us a message</h2>
           <p data-msg-id="sondeLife.content.contact.formLede">General questions, product inquiries, and pre-release access requests are all welcome.</p>
         </div>
-        <div class="sl-alpha-form-grid">
-          <label class="sl-alpha-field">
+        <div class="sl-contact-form-grid">
+          <label class="sl-contact-field">
             <span data-msg-id="sondeLife.content.contact.fields.firstName">First name</span>
             <input name="firstName" type="text" autocomplete="given-name" required>
           </label>
-          <label class="sl-alpha-field">
+          <label class="sl-contact-field">
             <span data-msg-id="sondeLife.content.contact.fields.lastName">Last name</span>
             <input name="lastName" type="text" autocomplete="family-name" required>
           </label>
-          <label class="sl-alpha-field">
+          <label class="sl-contact-field">
             <span data-msg-id="sondeLife.content.contact.fields.email">Email</span>
             <input name="email" type="email" autocomplete="email" required>
           </label>
-          <label class="sl-alpha-field">
+          <label class="sl-contact-field">
             <span data-msg-id="sondeLife.content.contact.fields.teamSize">Team size</span>
             <select name="company_size" required>
               <option value="solo" data-msg-id="sondeLife.content.contact.teamSizes.0.label">Solo / individual</option>
@@ -936,27 +936,27 @@
               <option value="101-plus" data-msg-id="sondeLife.content.contact.teamSizes.4.label">101+</option>
             </select>
           </label>
-          <label class="sl-alpha-field sl-alpha-field-wide">
+          <label class="sl-contact-field sl-contact-field-wide">
             <span data-msg-id="sondeLife.content.contact.fields.useCase">What brings you here?</span>
             <textarea name="message" rows="5" maxlength="2000" required></textarea>
           </label>
         </div>
-        <label class="sl-alpha-honeypot">
+        <label class="sl-contact-honeypot">
           Website
           <input name="website" tabindex="-1" autocomplete="off">
         </label>
-        <label class="sl-alpha-consent">
+        <label class="sl-contact-consent">
           <input type="checkbox" value="true" required>
           <span data-msg-id="sondeLife.content.contact.fields.consent">I agree to be contacted about Sonde.</span>
         </label>
         <div
-          class="cf-turnstile sl-alpha-turnstile"
+          class="cf-turnstile sl-contact-turnstile"
           data-sitekey="0x4AAAAAADkIZlIrHcRTlD08"
           data-theme="auto"
           data-response-field-name="cf-turnstile-response"></div>
-        <p class="sl-alpha-note" data-msg-id="sondeLife.content.contact.rateLimitNote">Submissions are rate-limited by source IP and require a valid Turnstile token.</p>
-        <button class="sl-action sl-action-primary sl-alpha-submit" type="submit" data-msg-id="sondeLife.content.contact.fields.submit">Send message</button>
-        <p class="sl-alpha-privacy" data-msg-id="sondeLife.content.contact.privacyNote">We use this message only to respond to your inquiry.</p>
+        <p class="sl-contact-note" data-msg-id="sondeLife.content.contact.rateLimitNote">Submissions are rate-limited by source IP and require a valid Turnstile token.</p>
+        <button class="sl-action sl-action-primary sl-contact-submit" type="submit" data-msg-id="sondeLife.content.contact.fields.submit">Send message</button>
+        <p class="sl-contact-privacy" data-msg-id="sondeLife.content.contact.privacyNote">We use this message only to respond to your inquiry.</p>
       </form>
       <noscript>
         <p class="sl-contact-noscript-note">This form requires JavaScript for Turnstile verification. Please email us directly: <a href="mailto:contact@sonde.life">contact@sonde.life</a></p>
