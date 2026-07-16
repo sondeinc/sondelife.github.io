@@ -1,0 +1,10311 @@
+window.__SCRIBE_MANIFEST__ = {
+  "analysisScopeLabel": {
+    "defaultLocale": "en-US",
+    "defaultText": "Cockpit Mobile accessibility fixture",
+    "icuArgs": {},
+    "msgid": "scribe.report.scope",
+    "provenance": "template",
+    "reviewState": "reviewed",
+    "values": {
+      "en-US": {
+        "fallback": false,
+        "reviewed": true,
+        "text": "Cockpit Mobile accessibility fixture"
+      },
+      "es-MX": {
+        "fallback": false,
+        "reviewed": true,
+        "text": "Corpus requests (Python) para evidencia LFPDPPP de México"
+      },
+      "ja-JP": {
+        "fallback": false,
+        "reviewed": true,
+        "text": "フィクスチャアプリケーション"
+      }
+    }
+  },
+  "anchors": [
+    {
+      "anchorId": "section-overview",
+      "indexTermIds": [],
+      "label": {
+        "defaultLocale": "en-US",
+        "defaultText": "Overview",
+        "icuArgs": {},
+        "msgid": "scribe.report.overview.title",
+        "provenance": "template",
+        "reviewState": "reviewed",
+        "values": {
+          "cy-GB": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Crynodeb"
+          },
+          "de-DE": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Übersicht"
+          },
+          "en-CA": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Overview"
+          },
+          "en-GB": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Overview"
+          },
+          "en-IN": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Overview"
+          },
+          "en-US": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Overview"
+          },
+          "es-ES": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "1. Panorama general"
+          },
+          "es-MX": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "1. Panorama general"
+          },
+          "es-US": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "1. Panorama general"
+          },
+          "fr-CA": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Aperçu"
+          },
+          "fr-FR": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Aperçu général"
+          },
+          "ga-GB": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Forbhreathnú"
+          },
+          "gd-GB": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Sealladh farsaing"
+          },
+          "hi-IN": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "सारांश"
+          },
+          "it-IT": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Panoramica"
+          },
+          "ja-JP": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "概要"
+          },
+          "ko-KR": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "개요"
+          },
+          "nl-NL": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Overzicht"
+          },
+          "pl-PL": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Przegląd"
+          },
+          "pt-BR": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Visão geral"
+          },
+          "pt-PT": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Visão geral"
+          },
+          "ro-RO": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Prezentare generală"
+          },
+          "sv-SE": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Översikt"
+          },
+          "zh-CN": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "概 况"
+          }
+        }
+      },
+      "ordinalPath": [
+        0
+      ],
+      "pagePath": "index.html",
+      "role": "section"
+    },
+    {
+      "anchorId": "finding-missing-alt",
+      "indexTermIds": [
+        "wcag-alt-text"
+      ],
+      "label": {
+        "defaultLocale": "en-US",
+        "defaultText": "SwiftUI image is missing an accessible name",
+        "icuArgs": {},
+        "msgid": "scribe.report.finding.missingAlt.title",
+        "provenance": "template",
+        "reviewState": "reviewed",
+        "values": {
+          "cy-GB": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Mae'r ddelwedd SwiftUI ar goll enw hygyrchedd"
+          },
+          "de-DE": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "SwiftUI-Bild hat keinen barrierefreien Namen"
+          },
+          "en-CA": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "SwiftUI image is missing an accessible name"
+          },
+          "en-GB": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "SwiftUI image is missing an accessible name"
+          },
+          "en-IN": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "SwiftUI image is missing an accessible name"
+          },
+          "en-US": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "SwiftUI image is missing an accessible name"
+          },
+          "es-ES": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "A la imagen de SwiftUI le falta un nombre accesible"
+          },
+          "es-MX": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "A la imagen de SwiftUI le falta un nombre accesible"
+          },
+          "es-US": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "A la imagen de SwiftUI le falta un nombre accesible"
+          },
+          "fr-CA": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "L'image SwiftUI manque de nom accessible"
+          },
+          "fr-FR": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "L'image SwiftUI ne possède pas de nom accessible"
+          },
+          "ga-GB": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Tá ainm inrochtana ar iarraidh ar íomhá SwiftUI"
+          },
+          "gd-GB": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Tha ainm ruigsinneach a dhìth air ìomhaigh SwiftUI"
+          },
+          "hi-IN": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "स्विफ्टUI छवि में पहुँच योग्य नाम नहीं है"
+          },
+          "it-IT": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "All'immagine SwiftUI manca un nome accessibile"
+          },
+          "ja-JP": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "SwiftUI イメージにはアクセシブルな名前がありません"
+          },
+          "ko-KR": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "SwiftUI 이미지에 접근 가능한 이름이 없습니다"
+          },
+          "nl-NL": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "SwiftUI-afbeelding mist een toegankelijke naam"
+          },
+          "pl-PL": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Brakuje dostępnej nazwy obrazu SwiftUI"
+          },
+          "pt-BR": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "A imagem SwiftUI não tem um nome acessível"
+          },
+          "pt-PT": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "A imagem SwiftUI não tem um nome acessível"
+          },
+          "ro-RO": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Imaginii SwiftUI îi lipsește un nume accesibil"
+          },
+          "sv-SE": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "SwiftUI-bilden saknar ett tillgängligt namn"
+          },
+          "zh-CN": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "SwiftUI 图像缺少无障碍名称"
+          }
+        }
+      },
+      "ordinalPath": [
+        1
+      ],
+      "pagePath": "findings/finding-missing-alt/index.html",
+      "parentAnchorId": "section-overview",
+      "role": "finding",
+      "shareSummary": {
+        "defaultLocale": "en-US",
+        "defaultText": "The SwiftUI Image in the cockpit-mobile profile alert fixture is exposed as meaningful content without an accessibilityLabel.",
+        "icuArgs": {},
+        "msgid": "scribe.report.finding.missingAlt.summary",
+        "provenance": "template",
+        "reviewState": "reviewed",
+        "values": {
+          "cy-GB": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Mae'r ddelwedd SwiftUI yn y fframiau rhybuddion proffil Cockpit-mobile yn cael ei arddangos fel cynnwys perthnasol heb label hygyrchedd."
+          },
+          "de-DE": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Das SwiftUI-Bild im Cockpit-mobile-Profilwarnungsfixture wird als bedeutungsvoller Inhalt ohne accessibilityLabel offengelegt."
+          },
+          "en-CA": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "The SwiftUI Image in the Cockpit-mobile profile alert fixture is exposed as meaningful content without an accessibilityLabel."
+          },
+          "en-GB": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "The SwiftUI Image in the Cockpit-mobile profile alert fixture is exposed as meaningful content without an accessibilityLabel."
+          },
+          "en-IN": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "The SwiftUI Image in the Cockpit-mobile profile alert fixture is exposed as meaningful content without an accessibilityLabel."
+          },
+          "en-US": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "The SwiftUI Image in the cockpit-mobile profile alert fixture is exposed as meaningful content without an accessibilityLabel."
+          },
+          "es-ES": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "La imagen de SwiftUI en el accesorio de alerta de perfil Cockpit-mobile se expone como contenido significativo sin una etiqueta de accesibilidad."
+          },
+          "es-MX": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "La imagen de SwiftUI en el accesorio de alerta de perfil Cockpit-mobile se expone como contenido significativo sin una etiqueta de accesibilidad."
+          },
+          "es-US": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "La imagen de SwiftUI en el accesorio de alerta de perfil Cockpit-mobile se expone como contenido significativo sin una etiqueta de accesibilidad."
+          },
+          "fr-CA": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "L'image SwiftUI dans le profil d'alerte Cockpit-mobile est exposée comme contenu significatif sans étiquette d'accessibilité."
+          },
+          "fr-FR": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "L’image SwiftUI dans le dispositif d’alerte de profil Cockpit-mobile est exposée comme contenu significatif sans accessibilityLabel."
+          },
+          "ga-GB": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Tá an Íomhá SwiftUI sa daingneán foláirimh próifíle Cockpit-soghluaiste nochta mar ábhar brí gan accessibilityLabel."
+          },
+          "gd-GB": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Tha an ìomhaigh SwiftUI ann am mogal rabhaidh pròifil Cockpit-mobile air a shealltainn mar shusbaint bhrìoghmhor gun accessibilityLabel."
+          },
+          "hi-IN": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "वायुयान-मोबाइल प्रोफ़ाइल अलर्ट फिटिंग में स्विफ्टयूआई छवि को एक accessibilityLabel के बिना अर्थपूर्ण सामग्री के रूप में प्रदर्शित किया जाता है।"
+          },
+          "it-IT": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "L'immagine SwiftUI nel dispositivo di avviso del profilo Cockpit-mobile viene esposta come contenuto significativo senza un accessibilityLabel."
+          },
+          "ja-JP": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "ここでは，コックピットモバイルプロファイルアラートフィキシングにおけるＳｗｉｆｔＵＩイメージを，アクセシビリティラベルなしで意味あるコンテンツとして露出する。"
+          },
+          "ko-KR": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Cockpit-mobile 프로필 알림 피팅의 SwiftUI 이미지는 accessibilityLabel이 없는 의미 있는 콘텐츠로 노출됩니다."
+          },
+          "nl-NL": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "De SwiftUI-afbeelding in de waarschuwingsfixtuur voor het Cockpit-mobile-profiel wordt weergegeven als zinvolle inhoud zonder een accessibilityLabel."
+          },
+          "pl-PL": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Obraz SwiftUI w urządzeniu alertu profilu kokpit-mobilny jest wyświetlany jako znacząca zawartość bez etykiety accessibilityLabel."
+          },
+          "pt-BR": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "A imagem SwiftUI no dispositivo de alerta de perfil Cockpit-mobile é exposta como conteúdo significativo sem um accessibilityLabel."
+          },
+          "pt-PT": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "A imagem SwiftUI no dispositivo de alerta de perfil Cockpit-mobile é exposta como conteúdo significativo sem um accessibilityLabel."
+          },
+          "ro-RO": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Imaginea SwiftUI din dispozitivul de alertă pentru profilul Cockpit-mobile este expusă ca conținut semnificativ fără un accessibilityLabel."
+          },
+          "sv-SE": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "SwiftUI-bilden i varningsfixturen för Cockpit-mobilprofil exponeras som meningsfullt innehåll utan en accessibilityLabel."
+          },
+          "zh-CN": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Cockpit-mobile 配置文件警报固定项中的 SwiftUI 图像将作为没有 accessibilityLabel 的有意义内容公开。"
+          }
+        }
+      },
+      "shareTitle": {
+        "defaultLocale": "en-US",
+        "defaultText": "SwiftUI image is missing an accessible name",
+        "icuArgs": {},
+        "msgid": "scribe.report.finding.missingAlt.title",
+        "provenance": "template",
+        "reviewState": "reviewed",
+        "values": {
+          "cy-GB": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Mae'r ddelwedd SwiftUI ar goll enw hygyrchedd"
+          },
+          "de-DE": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "SwiftUI-Bild hat keinen barrierefreien Namen"
+          },
+          "en-CA": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "SwiftUI image is missing an accessible name"
+          },
+          "en-GB": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "SwiftUI image is missing an accessible name"
+          },
+          "en-IN": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "SwiftUI image is missing an accessible name"
+          },
+          "en-US": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "SwiftUI image is missing an accessible name"
+          },
+          "es-ES": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "A la imagen de SwiftUI le falta un nombre accesible"
+          },
+          "es-MX": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "A la imagen de SwiftUI le falta un nombre accesible"
+          },
+          "es-US": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "A la imagen de SwiftUI le falta un nombre accesible"
+          },
+          "fr-CA": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "L'image SwiftUI manque de nom accessible"
+          },
+          "fr-FR": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "L'image SwiftUI ne possède pas de nom accessible"
+          },
+          "ga-GB": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Tá ainm inrochtana ar iarraidh ar íomhá SwiftUI"
+          },
+          "gd-GB": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Tha ainm ruigsinneach a dhìth air ìomhaigh SwiftUI"
+          },
+          "hi-IN": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "स्विफ्टUI छवि में पहुँच योग्य नाम नहीं है"
+          },
+          "it-IT": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "All'immagine SwiftUI manca un nome accessibile"
+          },
+          "ja-JP": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "SwiftUI イメージにはアクセシブルな名前がありません"
+          },
+          "ko-KR": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "SwiftUI 이미지에 접근 가능한 이름이 없습니다"
+          },
+          "nl-NL": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "SwiftUI-afbeelding mist een toegankelijke naam"
+          },
+          "pl-PL": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Brakuje dostępnej nazwy obrazu SwiftUI"
+          },
+          "pt-BR": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "A imagem SwiftUI não tem um nome acessível"
+          },
+          "pt-PT": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "A imagem SwiftUI não tem um nome acessível"
+          },
+          "ro-RO": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Imaginii SwiftUI îi lipsește un nume accesibil"
+          },
+          "sv-SE": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "SwiftUI-bilden saknar ett tillgängligt namn"
+          },
+          "zh-CN": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "SwiftUI 图像缺少无障碍名称"
+          }
+        }
+      }
+    },
+    {
+      "anchorId": "source-swiftui-missing-image-label",
+      "indexTermIds": [
+        "wcag-alt-text"
+      ],
+      "label": {
+        "defaultLocale": "en-US",
+        "defaultText": "SwiftUI image source evidence",
+        "icuArgs": {},
+        "msgid": "scribe.report.source.swiftUiMissingImageLabel.title",
+        "provenance": "template",
+        "reviewState": "reviewed",
+        "values": {
+          "cy-GB": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Tystiolaeth ffynhonnell delwedd SwiftUI"
+          },
+          "de-DE": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "SwiftUI Bildquelle Nachweis"
+          },
+          "en-CA": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "SwiftUI image source evidence"
+          },
+          "en-GB": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "SwiftUI image source evidence"
+          },
+          "en-IN": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "SwiftUI image source evidence"
+          },
+          "en-US": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "SwiftUI image source evidence"
+          },
+          "es-ES": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Evidencia de fuente de imagen de SwiftUI"
+          },
+          "es-MX": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Evidencia de fuente de imagen de SwiftUI"
+          },
+          "es-US": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Evidencia de fuente de imagen de SwiftUI"
+          },
+          "fr-CA": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Évidence source d'image SwiftUI"
+          },
+          "fr-FR": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "SwiftUI image source evidence"
+          },
+          "ga-GB": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Fianaise foinse íomhá SwiftUI"
+          },
+          "gd-GB": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Fianais tùsail ìomhaigh SwiftUI"
+          },
+          "hi-IN": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "स्विफ्टयूआई छवि स्रोत प्रमाण"
+          },
+          "it-IT": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "SwiftUI immagine fonte evidenza"
+          },
+          "ja-JP": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "SwiftUI画像ソース証拠"
+          },
+          "ko-KR": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "SwiftUI 이미지 소스 증거"
+          },
+          "nl-NL": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "SwiftUI afbeelding bron bewijs"
+          },
+          "pl-PL": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "SwiftUI image source evidence"
+          },
+          "pt-BR": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "SwiftUI image source evidence"
+          },
+          "pt-PT": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "SwiftUI image source evidence"
+          },
+          "ro-RO": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Dovada sursei de imagine SwiftUI"
+          },
+          "sv-SE": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "SwiftUI bildkälla bevis"
+          },
+          "zh-CN": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "SwiftUI 图像源证据"
+          }
+        }
+      },
+      "ordinalPath": [
+        1,
+        0
+      ],
+      "pagePath": "findings/finding-missing-alt/index.html",
+      "parentAnchorId": "finding-missing-alt",
+      "role": "source-snippet",
+      "shareSummary": {
+        "defaultLocale": "en-US",
+        "defaultText": "The Image view is rendered in the profile alert row without an accessibilityLabel.",
+        "icuArgs": {},
+        "msgid": "scribe.report.source.swiftUiMissingImageLabel.summary",
+        "provenance": "template",
+        "reviewState": "reviewed",
+        "values": {
+          "cy-GB": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Mae'r olwg Delwedd yn cael ei lunio yn y rhes rhybudd proffil heb label hygyrchedd."
+          },
+          "de-DE": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Die Bildansicht wird in der Profilwarnzeile ohne accessibilityLabel gerendert."
+          },
+          "en-CA": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "The Image view is rendered in the profile alert row without an accessibilityLabel."
+          },
+          "en-GB": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "The Image view is rendered in the profile alert row without an accessibilityLabel."
+          },
+          "en-IN": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "The Image view is rendered in the profile alert row without an accessibilityLabel."
+          },
+          "en-US": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "The Image view is rendered in the profile alert row without an accessibilityLabel."
+          },
+          "es-ES": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "La vista Imagen se representa en la fila de alerta de perfil sin una etiqueta de accesibilidad."
+          },
+          "es-MX": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "La vista Imagen se representa en la fila de alerta de perfil sin una etiqueta de accesibilidad."
+          },
+          "es-US": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "La vista Imagen se representa en la fila de alerta de perfil sin una etiqueta de accesibilidad."
+          },
+          "fr-CA": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "La vue Image est rendue dans la ligne d'alerte du profil sans accessibilityLabel."
+          },
+          "fr-FR": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "La vue Image est affichée dans la ligne d’alerte de profil sans accessibilityLabel."
+          },
+          "ga-GB": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Rindreáiltear an t-amharc Íomhá sa ró foláirimh próifíle gan accessibilityLabel."
+          },
+          "gd-GB": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Thèid an sealladh dhealbh a riochdachadh ann an loidhne rabhaidh na pròifil gun accessibilityLabel."
+          },
+          "hi-IN": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "छवि दृश्य प्रोफ़ाइल चेतावनी पंक्ति में पहुँच लेबल के बिना रेंडर किया जाता है."
+          },
+          "it-IT": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "La visualizzazione Immagine viene visualizzata nella riga di avviso del profilo senza un accessibilityLabel."
+          },
+          "ja-JP": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "アクセシビリティラベルを含まないプロファイル警告行に Image ビューをレンダリングします。"
+          },
+          "ko-KR": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "이미지 뷰는 accessibilityLabel 없이 프로필 알림 행에 렌더링됩니다."
+          },
+          "nl-NL": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "De weergave Afbeelding wordt weergegeven in de rij met profielwaarschuwingen zonder een accessibilityLabel."
+          },
+          "pl-PL": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Widok Image jest renderowany w wierszu alertu profilu bez etykiety accessibilityLabel."
+          },
+          "pt-BR": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "A exibição Imagem é renderizada na linha de alerta de perfil sem um accessibilityLabel."
+          },
+          "pt-PT": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "A exibição Imagem é renderizada na linha de alerta de perfil sem um accessibilityLabel."
+          },
+          "ro-RO": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Vizualizarea Imagine este redată în rândul de alertă al profilului fără o etichetă de accesibilitate."
+          },
+          "sv-SE": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Bildvyn renderas i profilvarningsraden utan en accessibilityLabel."
+          },
+          "zh-CN": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "图像视图在配置文件警报行中渲染,但不包含 accessibilityLabel。"
+          }
+        }
+      },
+      "shareTitle": {
+        "defaultLocale": "en-US",
+        "defaultText": "SwiftUI image source evidence",
+        "icuArgs": {},
+        "msgid": "scribe.report.source.swiftUiMissingImageLabel.title",
+        "provenance": "template",
+        "reviewState": "reviewed",
+        "values": {
+          "cy-GB": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Tystiolaeth ffynhonnell delwedd SwiftUI"
+          },
+          "de-DE": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "SwiftUI Bildquelle Nachweis"
+          },
+          "en-CA": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "SwiftUI image source evidence"
+          },
+          "en-GB": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "SwiftUI image source evidence"
+          },
+          "en-IN": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "SwiftUI image source evidence"
+          },
+          "en-US": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "SwiftUI image source evidence"
+          },
+          "es-ES": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Evidencia de fuente de imagen de SwiftUI"
+          },
+          "es-MX": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Evidencia de fuente de imagen de SwiftUI"
+          },
+          "es-US": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Evidencia de fuente de imagen de SwiftUI"
+          },
+          "fr-CA": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Évidence source d'image SwiftUI"
+          },
+          "fr-FR": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "SwiftUI image source evidence"
+          },
+          "ga-GB": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Fianaise foinse íomhá SwiftUI"
+          },
+          "gd-GB": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Fianais tùsail ìomhaigh SwiftUI"
+          },
+          "hi-IN": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "स्विफ्टयूआई छवि स्रोत प्रमाण"
+          },
+          "it-IT": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "SwiftUI immagine fonte evidenza"
+          },
+          "ja-JP": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "SwiftUI画像ソース証拠"
+          },
+          "ko-KR": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "SwiftUI 이미지 소스 증거"
+          },
+          "nl-NL": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "SwiftUI afbeelding bron bewijs"
+          },
+          "pl-PL": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "SwiftUI image source evidence"
+          },
+          "pt-BR": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "SwiftUI image source evidence"
+          },
+          "pt-PT": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "SwiftUI image source evidence"
+          },
+          "ro-RO": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Dovada sursei de imagine SwiftUI"
+          },
+          "sv-SE": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "SwiftUI bildkälla bevis"
+          },
+          "zh-CN": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "SwiftUI 图像源证据"
+          }
+        }
+      }
+    },
+    {
+      "anchorId": "fix-plan-missing-alt",
+      "indexTermIds": [
+        "wcag-alt-text"
+      ],
+      "label": {
+        "defaultLocale": "en-US",
+        "defaultText": "Fix plan",
+        "icuArgs": {},
+        "msgid": "scribe.report.fixPlan.pageTitle",
+        "provenance": "template",
+        "reviewState": "reviewed",
+        "values": {
+          "cy-GB": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Gosod cynllun"
+          },
+          "de-DE": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Behebungsplan"
+          },
+          "en-CA": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Fix plan"
+          },
+          "en-GB": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Fix plan"
+          },
+          "en-IN": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Fix plan"
+          },
+          "en-US": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Fix plan"
+          },
+          "es-ES": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Plan de acción"
+          },
+          "es-MX": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Plan de acción"
+          },
+          "es-US": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Plan de acción"
+          },
+          "fr-CA": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Plan de correction"
+          },
+          "fr-FR": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Plan de correction"
+          },
+          "ga-GB": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Plean deisithe"
+          },
+          "gd-GB": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Plana ceartachaidh"
+          },
+          "hi-IN": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "सुधार योजना"
+          },
+          "it-IT": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Piano di correzione"
+          },
+          "ja-JP": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "修正計画"
+          },
+          "ko-KR": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "수정 계획"
+          },
+          "nl-NL": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Herstelplan"
+          },
+          "pl-PL": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Plan naprawczy"
+          },
+          "pt-BR": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Plano de correção"
+          },
+          "pt-PT": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Plano de correção"
+          },
+          "ro-RO": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Plan de remediere"
+          },
+          "sv-SE": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Åtgärdsplan"
+          },
+          "zh-CN": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "修复计划"
+          }
+        }
+      },
+      "ordinalPath": [
+        1,
+        1
+      ],
+      "pagePath": "fix-plans/finding-missing-alt/index.html",
+      "parentAnchorId": "finding-missing-alt",
+      "role": "fix-plan",
+      "shareSummary": {
+        "defaultLocale": "en-US",
+        "defaultText": "Live, per-finding fix plans generate automatically when Sonde analyzes your repository. This curated showcase demonstrates the report; see automated remediation in action on a live example.",
+        "icuArgs": {},
+        "msgid": "scribe.report.fixPlan.showcase.lead",
+        "provenance": "template",
+        "reviewState": "reviewed",
+        "values": {
+          "cy-GB": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Cynlluniau trwsio byw, per-finding, yn cael eu creu'n awtomatig pan fo Sonde yn dadansoddi eich storfa. Mae'r arddangosfa wedi'i chynnal yn dangos yr adroddiad; gweler adfer awtomatig yn gweithredu ar enghraifft fyw."
+          },
+          "de-DE": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Live-Behebungspläne pro Befund werden automatisch erstellt, wenn Sonde Ihr Repository analysiert. Diese kuratierte Vorschau zeigt den Bericht; sehen Sie die automatisierte Behebung in Aktion an einem Live-Beispiel."
+          },
+          "en-CA": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Live, per-finding fix plans generate automatically when Sonde analyzes your repository. This curated showcase demonstrates the report; see automated remediation in action on a live example."
+          },
+          "en-GB": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Live, per-finding fix plans generate automatically when Sonde analyses your repository. This curated showcase demonstrates the report; see automated remediation in action on a live example."
+          },
+          "en-IN": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Live, per-finding fix plans generate automatically when Sonde analyses your repository. This curated showcase demonstrates the report; see automated remediation in action on a live example."
+          },
+          "en-US": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Live, per-finding fix plans generate automatically when Sonde analyzes your repository. This curated showcase demonstrates the report; see automated remediation in action on a live example."
+          },
+          "es-ES": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Los planes de corrección en vivo, por cada hallazgo, se generan automáticamente cuando Sonde analiza su repositorio. Esta muestra seleccionada demuestra el informe; vea la corrección automatizada en acción en un ejemplo en vivo."
+          },
+          "es-MX": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Los planes de corrección en vivo, por hallazgo, se generan automáticamente cuando Sonde analiza su repositorio. Esta muestra curada demuestra el informe; vea la remediación automatizada en acción en un ejemplo en vivo."
+          },
+          "es-US": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Los planes de corrección en vivo, por hallazgo, se generan automáticamente cuando Sonde analiza su repositorio. Esta muestra curada demuestra el informe; vea la remediación automatizada en acción en un ejemplo en vivo."
+          },
+          "fr-CA": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Des plans de correction en direct, par constat, sont générés automatiquement lorsque Sonde analyse votre dépôt. Cet aperçu organisé présente le rapport; voyez la remédiation automatisée en action sur un exemple en direct."
+          },
+          "fr-FR": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Des plans de correction en direct, par constat, sont générés automatiquement lorsque Sonde analyse votre dépôt. Cette présentation organisée démontre le rapport ; voyez la remédiation automatisée en action sur un exemple en direct."
+          },
+          "ga-GB": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Gintear pleananna deisithe beo, in aghaidh an toraidh, go huathoibríoch nuair a dhéanann Sonde anailís ar do stóras. Léiríonn an taispeántas coimeádaithe seo an tuairisc; féach feabhsú uathoibríoch i mbun gnímh ar shampla beo."
+          },
+          "gd-GB": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Bidh planaichean ceartachaidh beò, gach lorg fa leth, gan gineadh gu fèin-obrachail nuair a nì Sonde anailis air an stòr agad. Tha an taisbeanadh làimh-thaghte seo a' sealltainn na h-aithisge; faic ceartachadh fèin-obrachail an gnìomh air eisimpleir bheò."
+          },
+          "hi-IN": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "जब Sonde आपके रिपॉजिटरी का विश्लेषण करता है, तो प्रत्येक finding के लिए लाइव फिक्स प्लान स्वचालित रूप से बन जाते हैं। यह क्यूरेटेड शोकेस रिपोर्ट को प्रदर्शित करता है; एक लाइव उदाहरण पर ऑटोमेटेड remediation को एक्शन में देखें।"
+          },
+          "it-IT": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "I piani di correzione live, basati su ogni singolo riscontro, vengono generati automaticamente quando Sonde analizza il tuo repository. Questa vetrina curata mostra il report; guarda la correzione automatizzata in azione su un esempio live."
+          },
+          "ja-JP": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Sondeがリポジトリを分析すると、検出結果ごとに自動で修正プランが生成されます。この厳選されたショーケースはレポートの例を示しています。ライブの事例で自動修復の実行をご覧ください。"
+          },
+          "ko-KR": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Sonde가 저장소를 분석할 때 자동으로 생성되는 실시간 개별 발견 사항별 수정 계획을 제공합니다. 이 선별된 쇼케이스는 보고서를 시연하며, 실제 예제에서 자동 개선 프로세스를 확인하세요."
+          },
+          "nl-NL": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Live, per finding gegenereerde herstelplannen worden automatisch aangemaakt wanneer Sonde uw repository analyseert. Deze gecureerde showcase demonstreert het report; bekijk geautomatiseerde remediation in actie op een live voorbeeld."
+          },
+          "pl-PL": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Plany naprawy na żywo, przygotowane dla każdego znaleziska, generowane są automatycznie podczas analizy repozytorium przez Sonde. Ta wyselekcjonowana prezentacja przedstawia raport; zobacz automatyczne naprawianie w działaniu na żywym przykładzie."
+          },
+          "pt-BR": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Planos de correção ao vivo, por finding, são gerados automaticamente quando o Sonde analisa seu repositório. Esta vitrine curada demonstra o report; veja a remediation automatizada em ação em um exemplo ao vivo."
+          },
+          "pt-PT": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Planos de correção em tempo real, por cada finding, são gerados automaticamente quando a Sonde analisa o seu repositório. Esta demonstração curada apresenta o report; veja a remediação automatizada em ação num exemplo em tempo real."
+          },
+          "ro-RO": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Planurile de remediere live, pentru fiecare finding în parte, sunt generate automat atunci când Sonde analizează repository-ul dvs. Această prezentare selectată demonstrează raportul; vedeți remedierea automatizată în acțiune pe un exemplu live."
+          },
+          "sv-SE": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Live, per-finding åtgärdsplaner genereras automatiskt när Sonde analyserar ditt arkiv. Denna kurerade showcase visar rapporten; se automatiserad remediation i arbete på ett live exempel."
+          },
+          "zh-CN": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "当 Sonde 分析您的代码库时，会自动生成针对每个发现问题的实时修复计划。此精选展示演示了报告功能；请查看实时示例中的自动化修复操作。"
+          }
+        }
+      },
+      "shareTitle": {
+        "defaultLocale": "en-US",
+        "defaultText": "Fix plan",
+        "icuArgs": {},
+        "msgid": "scribe.report.fixPlan.pageTitle",
+        "provenance": "template",
+        "reviewState": "reviewed",
+        "values": {
+          "cy-GB": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Gosod cynllun"
+          },
+          "de-DE": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Behebungsplan"
+          },
+          "en-CA": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Fix plan"
+          },
+          "en-GB": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Fix plan"
+          },
+          "en-IN": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Fix plan"
+          },
+          "en-US": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Fix plan"
+          },
+          "es-ES": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Plan de acción"
+          },
+          "es-MX": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Plan de acción"
+          },
+          "es-US": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Plan de acción"
+          },
+          "fr-CA": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Plan de correction"
+          },
+          "fr-FR": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Plan de correction"
+          },
+          "ga-GB": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Plean deisithe"
+          },
+          "gd-GB": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Plana ceartachaidh"
+          },
+          "hi-IN": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "सुधार योजना"
+          },
+          "it-IT": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Piano di correzione"
+          },
+          "ja-JP": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "修正計画"
+          },
+          "ko-KR": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "수정 계획"
+          },
+          "nl-NL": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Herstelplan"
+          },
+          "pl-PL": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Plan naprawczy"
+          },
+          "pt-BR": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Plano de correção"
+          },
+          "pt-PT": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Plano de correção"
+          },
+          "ro-RO": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Plan de remediere"
+          },
+          "sv-SE": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Åtgärdsplan"
+          },
+          "zh-CN": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "修复计划"
+          }
+        }
+      }
+    }
+  ],
+  "assets": [
+    {
+      "altText": {
+        "defaultLocale": "en-US",
+        "defaultText": "Sonde Scribe {version} compliance report mark",
+        "icuArgs": {
+          "version": "alpha"
+        },
+        "msgid": "scribe.report.asset.mark.alt",
+        "provenance": "template",
+        "reviewState": "reviewed",
+        "values": {
+          "cy-GB": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Sonde Scribe {version} marc cydymffurfio adroddiad"
+          },
+          "de-DE": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Sonde Scribe {version} Compliance-Bericht-Markierung"
+          },
+          "en-CA": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Sonde Scribe {version} compliance report mark"
+          },
+          "en-GB": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Sonde Scribe {version} compliance report mark"
+          },
+          "en-IN": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Sonde Scribe {version} compliance report mark"
+          },
+          "en-US": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Sonde Scribe {version} compliance report mark"
+          },
+          "es-ES": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Marca del informe de cumplimiento Sonde Scribe {version}"
+          },
+          "es-MX": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Marca del informe de cumplimiento Sonde Scribe {version}"
+          },
+          "es-US": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Marca del informe de cumplimiento Sonde Scribe {version}"
+          },
+          "fr-CA": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Marque de rapport de conformité Sonde Scribe {version}"
+          },
+          "fr-FR": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Marque de rapport de conformité Sonde Scribe {version}"
+          },
+          "ga-GB": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Marc tuairisce comhlíontachta Sonde Scribe {version}"
+          },
+          "gd-GB": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Comharra aithisg gèillidh Sonde Scribe {version}"
+          },
+          "hi-IN": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Sonde Scribe {version} अनुपालन रिपोर्ट मार्क"
+          },
+          "it-IT": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Marchio del report di conformità Sonde Scribe {version}"
+          },
+          "ja-JP": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Sonde Scribe {version} コンプライアンスレポートマーク"
+          },
+          "ko-KR": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Sonde Scribe {version} 규정 준수 보고서 마크"
+          },
+          "nl-NL": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Sonde Scribe {version} conformiteitsrapportmarkering"
+          },
+          "pl-PL": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Znak raportu zgodności Sonde Scribe {version}"
+          },
+          "pt-BR": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Marca do relatório de conformidade Sonde Scribe {version}"
+          },
+          "pt-PT": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Marca do relatório de conformidade Sonde Scribe {version}"
+          },
+          "ro-RO": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Marcajul raportului de conformitate Sonde Scribe {version}"
+          },
+          "sv-SE": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Sonde Scribe {version} märke för efterlevnadsrapport"
+          },
+          "zh-CN": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Sonde Scribe {version} 合规报告标记"
+          }
+        }
+      },
+      "assetId": "report-mark",
+      "defaultPath": "assets/brand/report-mark.svg",
+      "kind": "icon",
+      "label": {
+        "defaultLocale": "en-US",
+        "defaultText": "Scribe {version} report mark",
+        "icuArgs": {
+          "version": "alpha"
+        },
+        "msgid": "scribe.report.asset.mark",
+        "provenance": "template",
+        "reviewState": "reviewed",
+        "values": {
+          "cy-GB": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Marcio adroddiad {version} y sgript"
+          },
+          "de-DE": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Scribe {version} Bericht-Markierung"
+          },
+          "en-CA": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Scribe {version} report mark"
+          },
+          "en-GB": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Scribe {version} report mark"
+          },
+          "en-IN": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Scribe {version} report mark"
+          },
+          "en-US": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Scribe {version} report mark"
+          },
+          "es-ES": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Marca del informe Scribe {version}"
+          },
+          "es-MX": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Marca del informe Scribe {version}"
+          },
+          "es-US": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Marca del informe Scribe {version}"
+          },
+          "fr-CA": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Marque de rapport Scribe {version}"
+          },
+          "fr-FR": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Marque de rapport Scribe {version}"
+          },
+          "ga-GB": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Marc tuairisce Scribe {version}"
+          },
+          "gd-GB": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Comharra aithisg Scribe {version}"
+          },
+          "hi-IN": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Scribe {version} रिपोर्ट मार्क"
+          },
+          "it-IT": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Marchio del report Scribe {version}"
+          },
+          "ja-JP": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Scribe {version} レポートマーク"
+          },
+          "ko-KR": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Scribe {version} 보고서 표시"
+          },
+          "nl-NL": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Scribe {version} rapportmarkering"
+          },
+          "pl-PL": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Znak raportu Scribe {version}"
+          },
+          "pt-BR": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Marca de relatório Scribe {version}"
+          },
+          "pt-PT": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Marca de relatório Scribe {version}"
+          },
+          "ro-RO": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Marcajul raportului Scribe {version}"
+          },
+          "sv-SE": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Scribe {version} rapportmärke"
+          },
+          "zh-CN": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Scribe {version} 报告标记"
+          }
+        }
+      },
+      "localePaths": {}
+    },
+    {
+      "assetId": "export-markdown",
+      "defaultPath": "exports/report.md",
+      "kind": "export",
+      "label": {
+        "defaultLocale": "en-US",
+        "defaultText": "Markdown export",
+        "icuArgs": {},
+        "msgid": "scribe.report.asset.export.markdown",
+        "provenance": "template",
+        "reviewState": "reviewed",
+        "values": {
+          "cy-GB": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Allforio Markdown"
+          },
+          "de-DE": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Markdown-Export"
+          },
+          "en-CA": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Markdown export"
+          },
+          "en-GB": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Markdown export"
+          },
+          "en-IN": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Markdown export"
+          },
+          "en-US": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Markdown export"
+          },
+          "es-ES": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Exportación de Markdown"
+          },
+          "es-MX": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Exportacion Markdown"
+          },
+          "es-US": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Exportacion Markdown"
+          },
+          "fr-CA": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Exporter au format Markdown"
+          },
+          "fr-FR": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Exportation de Markdown"
+          },
+          "ga-GB": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Easpórtáil Markdown"
+          },
+          "gd-GB": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Às-mhalairt Markdown"
+          },
+          "hi-IN": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Markdown निर्यात"
+          },
+          "it-IT": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Esportazione in Markdown"
+          },
+          "ja-JP": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Markdown エクスポート"
+          },
+          "ko-KR": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Markdown 내보내기"
+          },
+          "nl-NL": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Markdown exporteren"
+          },
+          "pl-PL": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Eksport do Markdown"
+          },
+          "pt-BR": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Exportação de Markdown"
+          },
+          "pt-PT": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Exportação de Markdown"
+          },
+          "ro-RO": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Export Markdown"
+          },
+          "sv-SE": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Exportera till Markdown"
+          },
+          "zh-CN": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Markdown导出"
+          }
+        }
+      },
+      "localePaths": {}
+    },
+    {
+      "assetId": "export-report-input",
+      "defaultPath": "data/report-export-input.js",
+      "kind": "export",
+      "label": {
+        "defaultLocale": "en-US",
+        "defaultText": "VPAT and OpenACR on-demand export data",
+        "icuArgs": {},
+        "msgid": "scribe.report.asset.export.reportInput",
+        "provenance": "template",
+        "reviewState": "reviewed",
+        "values": {
+          "cy-GB": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Data allforio ar gais VPAT ac OpenACR"
+          },
+          "de-DE": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "VPAT und OpenACR Exportdaten auf Anfrage"
+          },
+          "en-CA": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "VPAT and OpenACR on-demand export data"
+          },
+          "en-GB": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "VPAT and OpenACR on-demand export data"
+          },
+          "en-IN": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "VPAT and OpenACR on-demand export data"
+          },
+          "en-US": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "VPAT and OpenACR on-demand export data"
+          },
+          "es-ES": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Exportar datos de VPAT y OpenACR a demanda"
+          },
+          "es-MX": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Exportar datos de VPAT y OpenACR a demanda"
+          },
+          "es-US": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Exportar datos de VPAT y OpenACR a demanda"
+          },
+          "fr-CA": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Exportation de données à la demande de VPAT et OpenACR"
+          },
+          "fr-FR": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Exportation de données à la demande de VPAT et OpenACR"
+          },
+          "ga-GB": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Sonraí easpórtála ar éileamh VPAT agus OpenACR"
+          },
+          "gd-GB": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Dàta às-phortaidh air iarrtas VPAT agus OpenACR"
+          },
+          "hi-IN": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "VPAT तथा ओपनएसीआर ऑन-डिमांड निर्यात डाटा"
+          },
+          "it-IT": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Esporta dati su richiesta per VPAT e OpenACR"
+          },
+          "ja-JP": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "VPAT および OpenACR のオンデマンドエクスポートデータ"
+          },
+          "ko-KR": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "VPAT 및 OpenACR 온디맨드 내보내기 데이터"
+          },
+          "nl-NL": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "VPAT en OpenACR op aanvraag exporteren"
+          },
+          "pl-PL": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Dane eksportu on-demand VPAT i OpenACR"
+          },
+          "pt-BR": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Exportação de dados sob demanda de VPAT e OpenACR"
+          },
+          "pt-PT": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Exportar dados em VPAT e OpenACR sob demanda"
+          },
+          "ro-RO": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "VPAT și OpenACR exportul de date la cerere"
+          },
+          "sv-SE": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "VPAT och OpenACR exportdata på begäran"
+          },
+          "zh-CN": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "VPAT 和 OpenACR 按需导出数据"
+          }
+        }
+      },
+      "localePaths": {}
+    },
+    {
+      "assetId": "export-oscal",
+      "defaultPath": "data/oscal-input.js",
+      "kind": "export",
+      "label": {
+        "defaultLocale": "en-US",
+        "defaultText": "OSCAL on-demand export data",
+        "icuArgs": {},
+        "msgid": "scribe.report.asset.export.oscal",
+        "provenance": "template",
+        "reviewState": "reviewed",
+        "values": {
+          "cy-GB": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Data allforio ar gais OSCAL"
+          },
+          "de-DE": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "OSCAL-Datenexport auf Abruf"
+          },
+          "en-CA": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "OSCAL on-demand export data"
+          },
+          "en-GB": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "OSCAL on-demand export data"
+          },
+          "en-IN": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "OSCAL on-demand export data"
+          },
+          "en-US": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "OSCAL on-demand export data"
+          },
+          "es-ES": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Datos de exportación OSCAL bajo demanda"
+          },
+          "es-MX": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Datos de exportación OSCAL bajo demanda"
+          },
+          "es-US": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Datos de exportación OSCAL bajo demanda"
+          },
+          "fr-CA": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "OSCAL - Exporter les données à la demande"
+          },
+          "fr-FR": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Données d'exportation OSCAL à la demande"
+          },
+          "ga-GB": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Sonraí easpórtála OSCAL ar éileamh"
+          },
+          "gd-GB": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Dàta às-mhalairt OSCAL air iarrtas"
+          },
+          "hi-IN": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "OSCAL मांग पर निर्यात डाटा"
+          },
+          "it-IT": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Esportazione dati OSCAL on-demand"
+          },
+          "ja-JP": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "OSCAL オンデマンドエクスポートデータ"
+          },
+          "ko-KR": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "주문형 OSCAL 내보내기 데이터"
+          },
+          "nl-NL": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "OSCAL on-demand exportgegevens"
+          },
+          "pl-PL": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Eksport danych OSCAL na żądanie"
+          },
+          "pt-BR": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Dados de exportação OSCAL sob demanda"
+          },
+          "pt-PT": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Dados de exportação OSCAL sob demanda"
+          },
+          "ro-RO": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Export de date OSCAL la cerere"
+          },
+          "sv-SE": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "OSCAL-exportdata på begäran"
+          },
+          "zh-CN": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "OSCAL 按需导出数据"
+          }
+        }
+      },
+      "localePaths": {}
+    },
+    {
+      "altText": {
+        "defaultLocale": "en-US",
+        "defaultText": "Annotated runtime evidence emitted by Sonde Scribe. The left panel shows the real Android Sonde Cockpit Mobile Summary screen for John K. with a dashed bounded region around the symbolic profile alert action. The right panel zooms into the exclamation-mark button captured from the Pixel 8 emulator.",
+        "icuArgs": {},
+        "msgid": "scribe.report.complianceExample.0.screenshot.alt",
+        "provenance": "template",
+        "reviewState": "reviewed",
+        "values": {
+          "en-US": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Annotated runtime evidence emitted by Sonde Scribe. The left panel shows the real Android Sonde Cockpit Mobile Summary screen for John K. with a dashed bounded region around the symbolic profile alert action. The right panel zooms into the exclamation-mark button captured from the Pixel 8 emulator."
+          }
+        }
+      },
+      "assetId": "compliance-evidence-1",
+      "defaultPath": "assets/findings/cockpit-mobile-runtime-symbolic-icon-name-android.png",
+      "kind": "screenshot",
+      "label": {
+        "defaultLocale": "en-US",
+        "defaultText": "Runtime scan found symbolic accessible name",
+        "icuArgs": {},
+        "msgid": "scribe.report.complianceExample.0.screenshot.label",
+        "provenance": "template",
+        "reviewState": "reviewed",
+        "values": {
+          "en-US": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Runtime scan found symbolic accessible name"
+          }
+        }
+      },
+      "localePaths": {},
+      "longDescription": {
+        "defaultLocale": "en-US",
+        "defaultText": "Captured by the local runtime handoff (source-of-record label: `appium-uiautomator2 Pixel 8`).",
+        "icuArgs": {},
+        "msgid": "scribe.report.complianceExample.0.screenshot.longDescription",
+        "provenance": "template",
+        "reviewState": "reviewed",
+        "values": {
+          "en-US": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Captured by the local runtime handoff (source-of-record label: `appium-uiautomator2 Pixel 8`)."
+          }
+        }
+      }
+    },
+    {
+      "altText": {
+        "defaultLocale": "en-US",
+        "defaultText": "Annotated runtime evidence emitted by Sonde Scribe. The left panel shows the real iOS Sonde Cockpit Mobile Summary screen for John K. with a dashed bounded region around the symbolic profile alert action. The right panel zooms into the exclamation-mark button captured from the iPhone 17 Pro simulator.",
+        "icuArgs": {},
+        "msgid": "scribe.report.complianceExample.1.screenshot.alt",
+        "provenance": "template",
+        "reviewState": "reviewed",
+        "values": {
+          "en-US": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Annotated runtime evidence emitted by Sonde Scribe. The left panel shows the real iOS Sonde Cockpit Mobile Summary screen for John K. with a dashed bounded region around the symbolic profile alert action. The right panel zooms into the exclamation-mark button captured from the iPhone 17 Pro simulator."
+          }
+        }
+      },
+      "assetId": "compliance-evidence-2",
+      "defaultPath": "assets/findings/cockpit-mobile-runtime-symbolic-icon-name-ios.png",
+      "kind": "screenshot",
+      "label": {
+        "defaultLocale": "en-US",
+        "defaultText": "Runtime scan found symbolic accessible name",
+        "icuArgs": {},
+        "msgid": "scribe.report.complianceExample.1.screenshot.label",
+        "provenance": "template",
+        "reviewState": "reviewed",
+        "values": {
+          "en-US": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Runtime scan found symbolic accessible name"
+          }
+        }
+      },
+      "localePaths": {},
+      "longDescription": {
+        "defaultLocale": "en-US",
+        "defaultText": "Captured by the local runtime handoff (source-of-record label: `appium-xcuitest iPhone 17 Pro`).",
+        "icuArgs": {},
+        "msgid": "scribe.report.complianceExample.1.screenshot.longDescription",
+        "provenance": "template",
+        "reviewState": "reviewed",
+        "values": {
+          "en-US": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Captured by the local runtime handoff (source-of-record label: `appium-xcuitest iPhone 17 Pro`)."
+          }
+        }
+      }
+    },
+    {
+      "altText": {
+        "defaultLocale": "en-US",
+        "defaultText": "Annotated runtime evidence emitted by Sonde Scribe. The cockpit-mobile profile alert screen captured on iOS Simulator with a dashed bounded region around the unlabelled SwiftUI Image. A callout arrow points at the 96-by-96-pixel element at coordinates 956, 672. Header lines read: cockpit-mobile-swiftui-image-missing-label; swiftUiMissingImageLabel.swift:7; ios WCAG 1.1.1 Non-text Content bounds 956,672 96x96.",
+        "icuArgs": {},
+        "msgid": "scribe.report.complianceExample.2.screenshot.alt",
+        "provenance": "template",
+        "reviewState": "reviewed",
+        "values": {
+          "en-US": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Annotated runtime evidence emitted by Sonde Scribe. The cockpit-mobile profile alert screen captured on iOS Simulator with a dashed bounded region around the unlabelled SwiftUI Image. A callout arrow points at the 96-by-96-pixel element at coordinates 956, 672. Header lines read: cockpit-mobile-swiftui-image-missing-label; swiftUiMissingImageLabel.swift:7; ios WCAG 1.1.1 Non-text Content bounds 956,672 96x96."
+          }
+        }
+      },
+      "assetId": "compliance-evidence-3",
+      "defaultPath": "assets/findings/cockpit-mobile-swiftui-image-missing-label.png",
+      "kind": "screenshot",
+      "label": {
+        "defaultLocale": "en-US",
+        "defaultText": "SwiftUI image is missing an accessible name",
+        "icuArgs": {},
+        "msgid": "scribe.report.complianceExample.2.screenshot.label",
+        "provenance": "template",
+        "reviewState": "reviewed",
+        "values": {
+          "en-US": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "SwiftUI image is missing an accessible name"
+          }
+        }
+      },
+      "localePaths": {},
+      "longDescription": {
+        "defaultLocale": "en-US",
+        "defaultText": "Captured by the SwiftUI fixture replay on iPhone 17 Pro through the same UIKit↔SwiftUI cross-platform mobile a11y probe Sonde ships.",
+        "icuArgs": {},
+        "msgid": "scribe.report.complianceExample.2.screenshot.longDescription",
+        "provenance": "template",
+        "reviewState": "reviewed",
+        "values": {
+          "en-US": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Captured by the SwiftUI fixture replay on iPhone 17 Pro through the same UIKit↔SwiftUI cross-platform mobile a11y probe Sonde ships."
+          }
+        }
+      }
+    },
+    {
+      "altText": {
+        "defaultLocale": "en-US",
+        "defaultText": "Annotated runtime evidence emitted by Sonde Scribe. The left panel shows the real Android Findings screen with compact severity and platform filter controls above the finding list. The right panel zooms into the Critical filter target captured on the Pixel 8 emulator.",
+        "icuArgs": {},
+        "msgid": "scribe.report.complianceExample.3.screenshot.alt",
+        "provenance": "template",
+        "reviewState": "reviewed",
+        "values": {
+          "en-US": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Annotated runtime evidence emitted by Sonde Scribe. The left panel shows the real Android Findings screen with compact severity and platform filter controls above the finding list. The right panel zooms into the Critical filter target captured on the Pixel 8 emulator."
+          }
+        }
+      },
+      "assetId": "compliance-evidence-4",
+      "defaultPath": "assets/findings/cockpit-mobile-android-critical-filter-target.png",
+      "kind": "screenshot",
+      "label": {
+        "defaultLocale": "en-US",
+        "defaultText": "Filter control target is below Android minimum",
+        "icuArgs": {},
+        "msgid": "scribe.report.complianceExample.3.screenshot.label",
+        "provenance": "template",
+        "reviewState": "reviewed",
+        "values": {
+          "en-US": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Filter control target is below Android minimum"
+          }
+        }
+      },
+      "localePaths": {},
+      "longDescription": {
+        "defaultLocale": "en-US",
+        "defaultText": "Captured by the local runtime handoff (source-of-record label: `appium-uiautomator2 Pixel 8`).",
+        "icuArgs": {},
+        "msgid": "scribe.report.complianceExample.3.screenshot.longDescription",
+        "provenance": "template",
+        "reviewState": "reviewed",
+        "values": {
+          "en-US": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Captured by the local runtime handoff (source-of-record label: `appium-uiautomator2 Pixel 8`)."
+          }
+        }
+      }
+    },
+    {
+      "altText": {
+        "defaultLocale": "en-US",
+        "defaultText": "Annotated runtime evidence emitted by Sonde Scribe. The left panel shows the real iOS Findings screen with large text and a truncated critical-finding group heading. The right panel zooms into the clipped heading captured on the iPhone 17 Pro simulator.",
+        "icuArgs": {},
+        "msgid": "scribe.report.complianceExample.4.screenshot.alt",
+        "provenance": "template",
+        "reviewState": "reviewed",
+        "values": {
+          "en-US": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Annotated runtime evidence emitted by Sonde Scribe. The left panel shows the real iOS Findings screen with large text and a truncated critical-finding group heading. The right panel zooms into the clipped heading captured on the iPhone 17 Pro simulator."
+          }
+        }
+      },
+      "assetId": "compliance-evidence-5",
+      "defaultPath": "assets/findings/cockpit-mobile-ios-medium-dynamic-type.png",
+      "kind": "screenshot",
+      "label": {
+        "defaultLocale": "en-US",
+        "defaultText": "Finding group heading can truncate under iOS Dynamic Type",
+        "icuArgs": {},
+        "msgid": "scribe.report.complianceExample.4.screenshot.label",
+        "provenance": "template",
+        "reviewState": "reviewed",
+        "values": {
+          "en-US": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Finding group heading can truncate under iOS Dynamic Type"
+          }
+        }
+      },
+      "localePaths": {},
+      "longDescription": {
+        "defaultLocale": "en-US",
+        "defaultText": "Captured by the local runtime handoff (source-of-record label: `appium-xcuitest iPhone 17 Pro`).",
+        "icuArgs": {},
+        "msgid": "scribe.report.complianceExample.4.screenshot.longDescription",
+        "provenance": "template",
+        "reviewState": "reviewed",
+        "values": {
+          "en-US": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Captured by the local runtime handoff (source-of-record label: `appium-xcuitest iPhone 17 Pro`)."
+          }
+        }
+      }
+    },
+    {
+      "altText": {
+        "defaultLocale": "en-US",
+        "defaultText": "Annotated runtime evidence emitted by Sonde Scribe. The left panel shows side-by-side real Android and iOS Sonde Cockpit Mobile Summary screens for John K. The right panel zooms into the paired profile alert actions interpreted through the brand-consistency color drift lens.",
+        "icuArgs": {},
+        "msgid": "scribe.report.complianceExample.5.screenshot.alt",
+        "provenance": "template",
+        "reviewState": "reviewed",
+        "values": {
+          "en-US": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Annotated runtime evidence emitted by Sonde Scribe. The left panel shows side-by-side real Android and iOS Sonde Cockpit Mobile Summary screens for John K. The right panel zooms into the paired profile alert actions interpreted through the brand-consistency color drift lens."
+          }
+        }
+      },
+      "assetId": "compliance-evidence-6",
+      "defaultPath": "assets/findings/cockpit-mobile-android-brand-color-drift.png",
+      "kind": "screenshot",
+      "label": {
+        "defaultLocale": "en-US",
+        "defaultText": "Mobile brand consistency gap (color drift)",
+        "icuArgs": {},
+        "msgid": "scribe.report.complianceExample.5.screenshot.label",
+        "provenance": "template",
+        "reviewState": "reviewed",
+        "values": {
+          "en-US": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Mobile brand consistency gap (color drift)"
+          }
+        }
+      },
+      "localePaths": {},
+      "longDescription": {
+        "defaultLocale": "en-US",
+        "defaultText": "Brand-consistency evidence captured from the same cockpit-mobile runtime scan as the Android symbolic-icon finding above — same source line, different lens.",
+        "icuArgs": {},
+        "msgid": "scribe.report.complianceExample.5.screenshot.longDescription",
+        "provenance": "template",
+        "reviewState": "reviewed",
+        "values": {
+          "en-US": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Brand-consistency evidence captured from the same cockpit-mobile runtime scan as the Android symbolic-icon finding above — same source line, different lens."
+          }
+        }
+      }
+    },
+    {
+      "altText": {
+        "defaultLocale": "en-US",
+        "defaultText": "Annotated runtime evidence emitted by Sonde Scribe. The cockpit-mobile a11y-fixture screen captured on iOS Simulator with a dashed bounded region around the unlabelled UIImageView. A callout arrow points at the 132-by-132-pixel element at coordinates 612, 702. Header lines read: cockpit-mobile-objc-uikit-image-missing-label; uikitMissingImageLabel.m:10; ios WCAG 1.1.1 Non-text Content bounds 612,702 132x132.",
+        "icuArgs": {},
+        "msgid": "scribe.report.complianceExample.6.screenshot.alt",
+        "provenance": "template",
+        "reviewState": "reviewed",
+        "values": {
+          "en-US": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Annotated runtime evidence emitted by Sonde Scribe. The cockpit-mobile a11y-fixture screen captured on iOS Simulator with a dashed bounded region around the unlabelled UIImageView. A callout arrow points at the 132-by-132-pixel element at coordinates 612, 702. Header lines read: cockpit-mobile-objc-uikit-image-missing-label; uikitMissingImageLabel.m:10; ios WCAG 1.1.1 Non-text Content bounds 612,702 132x132."
+          }
+        }
+      },
+      "assetId": "compliance-evidence-7",
+      "defaultPath": "assets/findings/cockpit-mobile-objc-uikit-image-missing-label.png",
+      "kind": "screenshot",
+      "label": {
+        "defaultLocale": "en-US",
+        "defaultText": "Objective-C UIKit image is missing an accessible name",
+        "icuArgs": {},
+        "msgid": "scribe.report.complianceExample.6.screenshot.label",
+        "provenance": "template",
+        "reviewState": "reviewed",
+        "values": {
+          "en-US": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Objective-C UIKit image is missing an accessible name"
+          }
+        }
+      },
+      "localePaths": {},
+      "longDescription": {
+        "defaultLocale": "en-US",
+        "defaultText": "Captured by the UIKit fixture replay on iPhone 17 Pro through the same cross-platform mobile a11y probe Sonde ships, lensed in the Objective-C → SwiftUI direction.",
+        "icuArgs": {},
+        "msgid": "scribe.report.complianceExample.6.screenshot.longDescription",
+        "provenance": "template",
+        "reviewState": "reviewed",
+        "values": {
+          "en-US": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Captured by the UIKit fixture replay on iPhone 17 Pro through the same cross-platform mobile a11y probe Sonde ships, lensed in the Objective-C → SwiftUI direction."
+          }
+        }
+      }
+    },
+    {
+      "assetId": "theme-daylight",
+      "defaultPath": "assets/themes/daylight.css",
+      "kind": "theme",
+      "label": {
+        "defaultLocale": "en-US",
+        "defaultText": "Daylight theme",
+        "icuArgs": {},
+        "msgid": "scribe.report.asset.theme.daylight",
+        "provenance": "template",
+        "reviewState": "reviewed",
+        "values": {
+          "cy-GB": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Thema Daylight"
+          },
+          "de-DE": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Daylight-Design"
+          },
+          "en-CA": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Daylight theme"
+          },
+          "en-GB": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Daylight theme"
+          },
+          "en-IN": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Daylight theme"
+          },
+          "en-US": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Daylight theme"
+          },
+          "es-ES": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Tema Daylight"
+          },
+          "es-MX": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Tema Daylight"
+          },
+          "es-US": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Tema Daylight"
+          },
+          "fr-CA": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Thème Daylight"
+          },
+          "fr-FR": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Thème Daylight"
+          },
+          "ga-GB": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Téama Daylight"
+          },
+          "gd-GB": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Cuspair Daylight"
+          },
+          "hi-IN": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Daylight प्रसंग"
+          },
+          "it-IT": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Tema Daylight"
+          },
+          "ja-JP": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Daylight テーマ"
+          },
+          "ko-KR": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Daylight 테마"
+          },
+          "nl-NL": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Daylight-thema"
+          },
+          "pl-PL": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Motyw Daylight"
+          },
+          "pt-BR": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Tema Daylight"
+          },
+          "pt-PT": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Tema Daylight"
+          },
+          "ro-RO": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Tema Daylight"
+          },
+          "sv-SE": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Daylight-tema"
+          },
+          "zh-CN": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Daylight 主题"
+          }
+        }
+      },
+      "localePaths": {}
+    },
+    {
+      "assetId": "theme-ultraviolet",
+      "defaultPath": "assets/themes/ultraviolet.css",
+      "kind": "theme",
+      "label": {
+        "defaultLocale": "en-US",
+        "defaultText": "Ultraviolet theme",
+        "icuArgs": {},
+        "msgid": "scribe.report.asset.theme.ultraviolet",
+        "provenance": "template",
+        "reviewState": "reviewed",
+        "values": {
+          "cy-GB": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Thema ultraviolet"
+          },
+          "de-DE": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Ultraviolett"
+          },
+          "en-CA": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Ultraviolet theme"
+          },
+          "en-GB": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Ultraviolet theme"
+          },
+          "en-IN": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Ultraviolet theme"
+          },
+          "en-US": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Ultraviolet theme"
+          },
+          "es-ES": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Tema de Ultravioleta"
+          },
+          "es-MX": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Tema Ultraviolet"
+          },
+          "es-US": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Tema Ultraviolet"
+          },
+          "fr-CA": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Thème ultraviolet"
+          },
+          "fr-FR": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Thème Ultraviolet"
+          },
+          "ga-GB": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Téama Ultraivialait"
+          },
+          "gd-GB": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Cuspair ultra-bhiolet"
+          },
+          "hi-IN": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "अल्ट्रावायलेट प्रसंग"
+          },
+          "it-IT": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Tema Ultravioletto"
+          },
+          "ja-JP": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "紫外線"
+          },
+          "ko-KR": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "자외선 테마"
+          },
+          "nl-NL": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Het Ultraviolet thema"
+          },
+          "pl-PL": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Ultraviolet"
+          },
+          "pt-BR": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Tema de Ultravioleta"
+          },
+          "pt-PT": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Tema de Ultravioleta"
+          },
+          "ro-RO": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Tema Ultraviolet"
+          },
+          "sv-SE": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Ultraviolett tema"
+          },
+          "zh-CN": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "紫外線主題"
+          }
+        }
+      },
+      "localePaths": {}
+    },
+    {
+      "assetId": "theme-infrared",
+      "defaultPath": "assets/themes/infrared.css",
+      "kind": "theme",
+      "label": {
+        "defaultLocale": "en-US",
+        "defaultText": "Infrared theme",
+        "icuArgs": {},
+        "msgid": "scribe.report.asset.theme.infrared",
+        "provenance": "template",
+        "reviewState": "reviewed",
+        "values": {
+          "cy-GB": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Thema infrared"
+          },
+          "de-DE": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Infrarot-Thema"
+          },
+          "en-CA": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Infrared theme"
+          },
+          "en-GB": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Infrared theme"
+          },
+          "en-IN": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Infrared theme"
+          },
+          "en-US": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Infrared theme"
+          },
+          "es-ES": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Tema de infrarrojos"
+          },
+          "es-MX": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Tema Infrared"
+          },
+          "es-US": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Tema Infrared"
+          },
+          "fr-CA": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Thème infrarouge"
+          },
+          "fr-FR": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Thème Infrarouge"
+          },
+          "ga-GB": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Téama Infridhearg"
+          },
+          "gd-GB": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Cuspair infridhearg"
+          },
+          "hi-IN": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "इंफ्रारेड प्रसंग"
+          },
+          "it-IT": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Tema a infrarossi"
+          },
+          "ja-JP": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "赤外線テーマ"
+          },
+          "ko-KR": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "적외선 테마"
+          },
+          "nl-NL": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Het infrarood thema"
+          },
+          "pl-PL": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Temat podczerwieni"
+          },
+          "pt-BR": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Tema de infravermelho"
+          },
+          "pt-PT": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Tema de infravermelho"
+          },
+          "ro-RO": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Temă cu infraroșu"
+          },
+          "sv-SE": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Infraröd tema"
+          },
+          "zh-CN": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "红外线主题"
+          }
+        }
+      },
+      "localePaths": {}
+    },
+    {
+      "assetId": "theme-high-contrast",
+      "defaultPath": "assets/themes/high-contrast.css",
+      "kind": "theme",
+      "label": {
+        "defaultLocale": "en-US",
+        "defaultText": "High Contrast theme",
+        "icuArgs": {},
+        "msgid": "scribe.report.asset.theme.highContrast",
+        "provenance": "template",
+        "reviewState": "reviewed",
+        "values": {
+          "cy-GB": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Thema Cyferbyniad Uchel"
+          },
+          "de-DE": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Design mit hohem Kontrast"
+          },
+          "en-CA": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "High contrast theme"
+          },
+          "en-GB": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "High contrast theme"
+          },
+          "en-IN": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "High contrast theme"
+          },
+          "en-US": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "High Contrast theme"
+          },
+          "es-ES": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Tema de alto contraste"
+          },
+          "es-MX": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Tema de alto contraste"
+          },
+          "es-US": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Tema de alto contraste"
+          },
+          "fr-CA": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Thème à fort contraste"
+          },
+          "fr-FR": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Thème à contraste élevé"
+          },
+          "ga-GB": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Téama Ardchodarsnachta"
+          },
+          "gd-GB": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Cuspair iomsgaradh àrd"
+          },
+          "hi-IN": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "उच्च कंट्रास्ट प्रसंगName"
+          },
+          "it-IT": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Tema ad alto contrasto"
+          },
+          "ja-JP": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "高コントラストテーマ"
+          },
+          "ko-KR": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "높은 대비 테마"
+          },
+          "nl-NL": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Thema met hoog contrast"
+          },
+          "pl-PL": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Motyw o wysokim kontraście"
+          },
+          "pt-BR": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Tema de alto contraste"
+          },
+          "pt-PT": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Tema de alto contraste"
+          },
+          "ro-RO": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Temă cu contrast ridicat"
+          },
+          "sv-SE": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Högkontrasttema"
+          },
+          "zh-CN": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "高对比度主题"
+          }
+        }
+      },
+      "localePaths": {}
+    }
+  ],
+  "conversionProvenance": [],
+  "exportActions": [
+    {
+      "actionId": "export-markdown",
+      "anchorIds": [
+        "section-overview",
+        "finding-missing-alt",
+        "source-swiftui-missing-image-label",
+        "fix-plan-missing-alt"
+      ],
+      "format": "markdown",
+      "href": "exports/report.md",
+      "includesPrivateReceipt": false,
+      "label": {
+        "defaultLocale": "en-US",
+        "defaultText": "Download Markdown report",
+        "icuArgs": {},
+        "msgid": "scribe.report.action.exportMarkdown",
+        "provenance": "template",
+        "reviewState": "reviewed",
+        "values": {
+          "cy-GB": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Lawrlwytho adroddiad Markdown"
+          },
+          "de-DE": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Markdown-Bericht herunterladen"
+          },
+          "en-CA": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Download Markdown report"
+          },
+          "en-GB": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Download Markdown report"
+          },
+          "en-IN": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Download Markdown report"
+          },
+          "en-US": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Download Markdown report"
+          },
+          "es-ES": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Descargar el informe de Markdown"
+          },
+          "es-MX": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Descargar informe Markdown"
+          },
+          "es-US": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Descargar informe Markdown"
+          },
+          "fr-CA": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Télécharger le rapport Markdown"
+          },
+          "fr-FR": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Télécharger le rapport Markdown"
+          },
+          "ga-GB": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Íoslódáil tuarascáil Markdown"
+          },
+          "gd-GB": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Luchdaich sìos aithris Markdown"
+          },
+          "hi-IN": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Markdown रिपोर्ट डाउनलोड करें"
+          },
+          "it-IT": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Scarica Markdown report"
+          },
+          "ja-JP": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Markdown レポートをダウンロード"
+          },
+          "ko-KR": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Markdown 보고서 다운로드"
+          },
+          "nl-NL": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Markdown rapport downloaden"
+          },
+          "pl-PL": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Pobierz raport Markdown"
+          },
+          "pt-BR": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Baixar Markdown report"
+          },
+          "pt-PT": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Baixar Markdown report"
+          },
+          "ro-RO": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Descărcați raportul Markdown"
+          },
+          "sv-SE": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Ladda ner Markdown-rapporten"
+          },
+          "zh-CN": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "下载Markdown报告"
+          }
+        }
+      },
+      "licenseVisibility": "redacted",
+      "locale": "en-US"
+    }
+  ],
+  "facets": [
+    {
+      "facetId": "severity",
+      "order": [
+        "critical",
+        "high",
+        "medium"
+      ],
+      "values": [
+        {
+          "id": "critical",
+          "label": {
+            "defaultLocale": "en-US",
+            "defaultText": "Critical",
+            "icuArgs": {},
+            "msgid": "scribe.report.filter.option.critical",
+            "provenance": "template",
+            "reviewState": "reviewed",
+            "values": {
+              "cy-GB": {
+                "fallback": false,
+                "reviewed": true,
+                "text": "Critigol"
+              },
+              "de-DE": {
+                "fallback": false,
+                "reviewed": true,
+                "text": "Kritisch"
+              },
+              "en-CA": {
+                "fallback": false,
+                "reviewed": true,
+                "text": "Critical"
+              },
+              "en-GB": {
+                "fallback": false,
+                "reviewed": true,
+                "text": "Critical"
+              },
+              "en-IN": {
+                "fallback": false,
+                "reviewed": true,
+                "text": "Critical"
+              },
+              "en-US": {
+                "fallback": false,
+                "reviewed": true,
+                "text": "Critical"
+              },
+              "es-ES": {
+                "fallback": false,
+                "reviewed": true,
+                "text": "Crítico"
+              },
+              "es-MX": {
+                "fallback": false,
+                "reviewed": true,
+                "text": "Crítico"
+              },
+              "es-US": {
+                "fallback": false,
+                "reviewed": true,
+                "text": "Crítico"
+              },
+              "fr-CA": {
+                "fallback": false,
+                "reviewed": true,
+                "text": "Critique"
+              },
+              "fr-FR": {
+                "fallback": false,
+                "reviewed": true,
+                "text": "Critique"
+              },
+              "ga-GB": {
+                "fallback": false,
+                "reviewed": true,
+                "text": "Critiúil"
+              },
+              "gd-GB": {
+                "fallback": false,
+                "reviewed": true,
+                "text": "Èiginneach"
+              },
+              "hi-IN": {
+                "fallback": false,
+                "reviewed": true,
+                "text": "गंभीर"
+              },
+              "it-IT": {
+                "fallback": false,
+                "reviewed": true,
+                "text": "Critico"
+              },
+              "ja-JP": {
+                "fallback": false,
+                "reviewed": true,
+                "text": "クリティカル"
+              },
+              "ko-KR": {
+                "fallback": false,
+                "reviewed": true,
+                "text": "심각"
+              },
+              "nl-NL": {
+                "fallback": false,
+                "reviewed": true,
+                "text": "Kritisch"
+              },
+              "pl-PL": {
+                "fallback": false,
+                "reviewed": true,
+                "text": "Krytyczny"
+              },
+              "pt-BR": {
+                "fallback": false,
+                "reviewed": true,
+                "text": "Crítico"
+              },
+              "pt-PT": {
+                "fallback": false,
+                "reviewed": true,
+                "text": "Crítico"
+              },
+              "ro-RO": {
+                "fallback": false,
+                "reviewed": true,
+                "text": "Critică"
+              },
+              "sv-SE": {
+                "fallback": false,
+                "reviewed": true,
+                "text": "Kritisk"
+              },
+              "zh-CN": {
+                "fallback": false,
+                "reviewed": true,
+                "text": "关键"
+              }
+            }
+          },
+          "tone": "critical"
+        },
+        {
+          "id": "high",
+          "label": {
+            "defaultLocale": "en-US",
+            "defaultText": "High",
+            "icuArgs": {},
+            "msgid": "scribe.report.filter.option.high",
+            "provenance": "template",
+            "reviewState": "reviewed",
+            "values": {
+              "cy-GB": {
+                "fallback": false,
+                "reviewed": true,
+                "text": "Uchel"
+              },
+              "de-DE": {
+                "fallback": false,
+                "reviewed": true,
+                "text": "Hoch"
+              },
+              "en-CA": {
+                "fallback": false,
+                "reviewed": true,
+                "text": "High"
+              },
+              "en-GB": {
+                "fallback": false,
+                "reviewed": true,
+                "text": "High"
+              },
+              "en-IN": {
+                "fallback": false,
+                "reviewed": true,
+                "text": "High"
+              },
+              "en-US": {
+                "fallback": false,
+                "reviewed": true,
+                "text": "High"
+              },
+              "es-ES": {
+                "fallback": false,
+                "reviewed": true,
+                "text": "Alto"
+              },
+              "es-MX": {
+                "fallback": false,
+                "reviewed": true,
+                "text": "Alto"
+              },
+              "es-US": {
+                "fallback": false,
+                "reviewed": true,
+                "text": "Alto"
+              },
+              "fr-CA": {
+                "fallback": false,
+                "reviewed": true,
+                "text": "Élevé"
+              },
+              "fr-FR": {
+                "fallback": false,
+                "reviewed": true,
+                "text": "Haut"
+              },
+              "ga-GB": {
+                "fallback": false,
+                "reviewed": true,
+                "text": "Ard"
+              },
+              "gd-GB": {
+                "fallback": false,
+                "reviewed": true,
+                "text": "Àrd"
+              },
+              "hi-IN": {
+                "fallback": false,
+                "reviewed": true,
+                "text": "उच्च"
+              },
+              "it-IT": {
+                "fallback": false,
+                "reviewed": true,
+                "text": "Alto"
+              },
+              "ja-JP": {
+                "fallback": false,
+                "reviewed": true,
+                "text": "高"
+              },
+              "ko-KR": {
+                "fallback": false,
+                "reviewed": true,
+                "text": "높음"
+              },
+              "nl-NL": {
+                "fallback": false,
+                "reviewed": true,
+                "text": "Hoog"
+              },
+              "pl-PL": {
+                "fallback": false,
+                "reviewed": true,
+                "text": "Wysoka"
+              },
+              "pt-BR": {
+                "fallback": false,
+                "reviewed": true,
+                "text": "Alta"
+              },
+              "pt-PT": {
+                "fallback": false,
+                "reviewed": true,
+                "text": "Alta"
+              },
+              "ro-RO": {
+                "fallback": false,
+                "reviewed": true,
+                "text": "Ridicat"
+              },
+              "sv-SE": {
+                "fallback": false,
+                "reviewed": true,
+                "text": "Hög"
+              },
+              "zh-CN": {
+                "fallback": false,
+                "reviewed": true,
+                "text": "高"
+              }
+            }
+          },
+          "tone": "high"
+        },
+        {
+          "id": "medium",
+          "label": {
+            "defaultLocale": "en-US",
+            "defaultText": "Medium",
+            "icuArgs": {},
+            "msgid": "scribe.report.filter.option.medium",
+            "provenance": "template",
+            "reviewState": "reviewed",
+            "values": {
+              "cy-GB": {
+                "fallback": false,
+                "reviewed": true,
+                "text": "Canolig"
+              },
+              "de-DE": {
+                "fallback": false,
+                "reviewed": true,
+                "text": "Mittel"
+              },
+              "en-CA": {
+                "fallback": false,
+                "reviewed": true,
+                "text": "Medium"
+              },
+              "en-GB": {
+                "fallback": false,
+                "reviewed": true,
+                "text": "Medium"
+              },
+              "en-IN": {
+                "fallback": false,
+                "reviewed": true,
+                "text": "Medium"
+              },
+              "en-US": {
+                "fallback": false,
+                "reviewed": true,
+                "text": "Medium"
+              },
+              "es-ES": {
+                "fallback": false,
+                "reviewed": true,
+                "text": "Mediana"
+              },
+              "es-MX": {
+                "fallback": false,
+                "reviewed": true,
+                "text": "Medio"
+              },
+              "es-US": {
+                "fallback": false,
+                "reviewed": true,
+                "text": "Medio"
+              },
+              "fr-CA": {
+                "fallback": false,
+                "reviewed": true,
+                "text": "Moyen"
+              },
+              "fr-FR": {
+                "fallback": false,
+                "reviewed": true,
+                "text": "Moyenne"
+              },
+              "ga-GB": {
+                "fallback": false,
+                "reviewed": true,
+                "text": "Meán"
+              },
+              "gd-GB": {
+                "fallback": false,
+                "reviewed": true,
+                "text": "Meadhanach"
+              },
+              "hi-IN": {
+                "fallback": false,
+                "reviewed": true,
+                "text": "मध्यम"
+              },
+              "it-IT": {
+                "fallback": false,
+                "reviewed": true,
+                "text": "Medio"
+              },
+              "ja-JP": {
+                "fallback": false,
+                "reviewed": true,
+                "text": "中"
+              },
+              "ko-KR": {
+                "fallback": false,
+                "reviewed": true,
+                "text": "중간"
+              },
+              "nl-NL": {
+                "fallback": false,
+                "reviewed": true,
+                "text": "Gemiddeld"
+              },
+              "pl-PL": {
+                "fallback": false,
+                "reviewed": true,
+                "text": "Średni"
+              },
+              "pt-BR": {
+                "fallback": false,
+                "reviewed": true,
+                "text": "Médio"
+              },
+              "pt-PT": {
+                "fallback": false,
+                "reviewed": true,
+                "text": "Médio"
+              },
+              "ro-RO": {
+                "fallback": false,
+                "reviewed": true,
+                "text": "Mediu"
+              },
+              "sv-SE": {
+                "fallback": false,
+                "reviewed": true,
+                "text": "Medel"
+              },
+              "zh-CN": {
+                "fallback": false,
+                "reviewed": true,
+                "text": "媒介"
+              }
+            }
+          },
+          "tone": "medium"
+        }
+      ]
+    },
+    {
+      "facetId": "status",
+      "order": [
+        "present",
+        "partial",
+        "gap",
+        "requires-customer-context",
+        "absent"
+      ],
+      "values": [
+        {
+          "id": "present",
+          "label": {
+            "defaultLocale": "en-US",
+            "defaultText": "Present",
+            "icuArgs": {},
+            "msgid": "scribe.report.facet.status.present",
+            "provenance": "template",
+            "reviewState": "reviewed",
+            "values": {
+              "cy-GB": {
+                "fallback": false,
+                "reviewed": true,
+                "text": "Cyfredol"
+              },
+              "de-DE": {
+                "fallback": false,
+                "reviewed": true,
+                "text": "Vorhanden"
+              },
+              "en-CA": {
+                "fallback": false,
+                "reviewed": true,
+                "text": "Present"
+              },
+              "en-GB": {
+                "fallback": false,
+                "reviewed": true,
+                "text": "Present"
+              },
+              "en-IN": {
+                "fallback": false,
+                "reviewed": true,
+                "text": "Present"
+              },
+              "en-US": {
+                "fallback": false,
+                "reviewed": true,
+                "text": "Present"
+              },
+              "es-ES": {
+                "fallback": false,
+                "reviewed": true,
+                "text": "Presente"
+              },
+              "es-MX": {
+                "fallback": false,
+                "reviewed": true,
+                "text": "Presente"
+              },
+              "es-US": {
+                "fallback": false,
+                "reviewed": true,
+                "text": "Presente"
+              },
+              "fr-CA": {
+                "fallback": false,
+                "reviewed": true,
+                "text": "Présent"
+              },
+              "fr-FR": {
+                "fallback": false,
+                "reviewed": true,
+                "text": "Présent"
+              },
+              "ga-GB": {
+                "fallback": false,
+                "reviewed": true,
+                "text": "I láthair"
+              },
+              "gd-GB": {
+                "fallback": false,
+                "reviewed": true,
+                "text": "Làthair"
+              },
+              "hi-IN": {
+                "fallback": false,
+                "reviewed": true,
+                "text": "वर्तमान"
+              },
+              "it-IT": {
+                "fallback": false,
+                "reviewed": true,
+                "text": "Presente"
+              },
+              "ja-JP": {
+                "fallback": false,
+                "reviewed": true,
+                "text": "対応済み"
+              },
+              "ko-KR": {
+                "fallback": false,
+                "reviewed": true,
+                "text": "존재함"
+              },
+              "nl-NL": {
+                "fallback": false,
+                "reviewed": true,
+                "text": "Aanwezig"
+              },
+              "pl-PL": {
+                "fallback": false,
+                "reviewed": true,
+                "text": "Obecny"
+              },
+              "pt-BR": {
+                "fallback": false,
+                "reviewed": true,
+                "text": "Presente"
+              },
+              "pt-PT": {
+                "fallback": false,
+                "reviewed": true,
+                "text": "Presente"
+              },
+              "ro-RO": {
+                "fallback": false,
+                "reviewed": true,
+                "text": "Prezent"
+              },
+              "sv-SE": {
+                "fallback": false,
+                "reviewed": true,
+                "text": "Närvarande"
+              },
+              "zh-CN": {
+                "fallback": false,
+                "reviewed": true,
+                "text": "存在"
+              }
+            }
+          },
+          "tone": "present"
+        },
+        {
+          "id": "partial",
+          "label": {
+            "defaultLocale": "en-US",
+            "defaultText": "Partial",
+            "icuArgs": {},
+            "msgid": "scribe.report.facet.status.partial",
+            "provenance": "template",
+            "reviewState": "reviewed",
+            "values": {
+              "cy-GB": {
+                "fallback": false,
+                "reviewed": true,
+                "text": "Rhanol"
+              },
+              "de-DE": {
+                "fallback": false,
+                "reviewed": true,
+                "text": "Teilweise"
+              },
+              "en-CA": {
+                "fallback": false,
+                "reviewed": true,
+                "text": "Partial"
+              },
+              "en-GB": {
+                "fallback": false,
+                "reviewed": true,
+                "text": "Partial"
+              },
+              "en-IN": {
+                "fallback": false,
+                "reviewed": true,
+                "text": "Partial"
+              },
+              "en-US": {
+                "fallback": false,
+                "reviewed": true,
+                "text": "Partial"
+              },
+              "es-ES": {
+                "fallback": false,
+                "reviewed": true,
+                "text": "Parcial"
+              },
+              "es-MX": {
+                "fallback": false,
+                "reviewed": true,
+                "text": "Parcial"
+              },
+              "es-US": {
+                "fallback": false,
+                "reviewed": true,
+                "text": "Parcial"
+              },
+              "fr-CA": {
+                "fallback": false,
+                "reviewed": true,
+                "text": "Partiel"
+              },
+              "fr-FR": {
+                "fallback": false,
+                "reviewed": true,
+                "text": "Partiel"
+              },
+              "ga-GB": {
+                "fallback": false,
+                "reviewed": true,
+                "text": "Páirteach"
+              },
+              "gd-GB": {
+                "fallback": false,
+                "reviewed": true,
+                "text": "Pàirteach"
+              },
+              "hi-IN": {
+                "fallback": false,
+                "reviewed": true,
+                "text": "आंशिक"
+              },
+              "it-IT": {
+                "fallback": false,
+                "reviewed": true,
+                "text": "Parziale"
+              },
+              "ja-JP": {
+                "fallback": false,
+                "reviewed": true,
+                "text": "部分的"
+              },
+              "ko-KR": {
+                "fallback": false,
+                "reviewed": true,
+                "text": "일부"
+              },
+              "nl-NL": {
+                "fallback": false,
+                "reviewed": true,
+                "text": "Gedeeltelijk"
+              },
+              "pl-PL": {
+                "fallback": false,
+                "reviewed": true,
+                "text": "Częściowy"
+              },
+              "pt-BR": {
+                "fallback": false,
+                "reviewed": true,
+                "text": "Parcial"
+              },
+              "pt-PT": {
+                "fallback": false,
+                "reviewed": true,
+                "text": "Parcial"
+              },
+              "ro-RO": {
+                "fallback": false,
+                "reviewed": true,
+                "text": "Parțial"
+              },
+              "sv-SE": {
+                "fallback": false,
+                "reviewed": true,
+                "text": "Delvis"
+              },
+              "zh-CN": {
+                "fallback": false,
+                "reviewed": true,
+                "text": "部分"
+              }
+            }
+          },
+          "tone": "partial"
+        },
+        {
+          "id": "gap",
+          "label": {
+            "defaultLocale": "en-US",
+            "defaultText": "Gap",
+            "icuArgs": {},
+            "msgid": "scribe.report.facet.status.gap",
+            "provenance": "template",
+            "reviewState": "reviewed",
+            "values": {
+              "cy-GB": {
+                "fallback": false,
+                "reviewed": true,
+                "text": "Bwlch"
+              },
+              "de-DE": {
+                "fallback": false,
+                "reviewed": true,
+                "text": "Lücke"
+              },
+              "en-CA": {
+                "fallback": false,
+                "reviewed": true,
+                "text": "Gap"
+              },
+              "en-GB": {
+                "fallback": false,
+                "reviewed": true,
+                "text": "Gap"
+              },
+              "en-IN": {
+                "fallback": false,
+                "reviewed": true,
+                "text": "Gap"
+              },
+              "en-US": {
+                "fallback": false,
+                "reviewed": true,
+                "text": "Gap"
+              },
+              "es-ES": {
+                "fallback": false,
+                "reviewed": true,
+                "text": "Falta"
+              },
+              "es-MX": {
+                "fallback": false,
+                "reviewed": true,
+                "text": "Brecha"
+              },
+              "es-US": {
+                "fallback": false,
+                "reviewed": true,
+                "text": "Brecha"
+              },
+              "fr-CA": {
+                "fallback": false,
+                "reviewed": true,
+                "text": "Manque"
+              },
+              "fr-FR": {
+                "fallback": false,
+                "reviewed": true,
+                "text": "Manque"
+              },
+              "ga-GB": {
+                "fallback": false,
+                "reviewed": true,
+                "text": "GapCity in Ontario Canada"
+              },
+              "gd-GB": {
+                "fallback": false,
+                "reviewed": true,
+                "text": "Beàrn"
+              },
+              "hi-IN": {
+                "fallback": false,
+                "reviewed": true,
+                "text": "अंतराल"
+              },
+              "it-IT": {
+                "fallback": false,
+                "reviewed": true,
+                "text": "Vuoto"
+              },
+              "ja-JP": {
+                "fallback": false,
+                "reviewed": true,
+                "text": "不足"
+              },
+              "ko-KR": {
+                "fallback": false,
+                "reviewed": true,
+                "text": "공백"
+              },
+              "nl-NL": {
+                "fallback": false,
+                "reviewed": true,
+                "text": "Mist"
+              },
+              "pl-PL": {
+                "fallback": false,
+                "reviewed": true,
+                "text": "Luka"
+              },
+              "pt-BR": {
+                "fallback": false,
+                "reviewed": true,
+                "text": "Falta"
+              },
+              "pt-PT": {
+                "fallback": false,
+                "reviewed": true,
+                "text": "Falta"
+              },
+              "ro-RO": {
+                "fallback": false,
+                "reviewed": true,
+                "text": "Lipsă"
+              },
+              "sv-SE": {
+                "fallback": false,
+                "reviewed": true,
+                "text": "Lucka"
+              },
+              "zh-CN": {
+                "fallback": false,
+                "reviewed": true,
+                "text": "缺口"
+              }
+            }
+          },
+          "tone": "gap"
+        },
+        {
+          "id": "requires-customer-context",
+          "label": {
+            "defaultLocale": "en-US",
+            "defaultText": "Needs customer context",
+            "icuArgs": {},
+            "msgid": "scribe.report.facet.status.requiresCustomerContext",
+            "provenance": "template",
+            "reviewState": "reviewed",
+            "values": {
+              "cy-GB": {
+                "fallback": false,
+                "reviewed": true,
+                "text": "Angen cyd-destun y cwsmer"
+              },
+              "de-DE": {
+                "fallback": false,
+                "reviewed": true,
+                "text": "Benötigt Kundekontext"
+              },
+              "en-CA": {
+                "fallback": false,
+                "reviewed": true,
+                "text": "Needs customer context"
+              },
+              "en-GB": {
+                "fallback": false,
+                "reviewed": true,
+                "text": "Needs customer context"
+              },
+              "en-IN": {
+                "fallback": false,
+                "reviewed": true,
+                "text": "Needs customer context"
+              },
+              "en-US": {
+                "fallback": false,
+                "reviewed": true,
+                "text": "Needs customer context"
+              },
+              "es-ES": {
+                "fallback": false,
+                "reviewed": true,
+                "text": "Requiere contexto del cliente"
+              },
+              "es-MX": {
+                "fallback": false,
+                "reviewed": true,
+                "text": "Requiere contexto del cliente"
+              },
+              "es-US": {
+                "fallback": false,
+                "reviewed": true,
+                "text": "Requiere contexto del cliente"
+              },
+              "fr-CA": {
+                "fallback": false,
+                "reviewed": true,
+                "text": "Nécessite un contexte client"
+              },
+              "fr-FR": {
+                "fallback": false,
+                "reviewed": true,
+                "text": "Nécessite un contexte client"
+              },
+              "ga-GB": {
+                "fallback": false,
+                "reviewed": true,
+                "text": "Riachtanais comhthéacs custaiméara"
+              },
+              "gd-GB": {
+                "fallback": false,
+                "reviewed": true,
+                "text": "Feumaidh co-theacsa luchd-ceannach"
+              },
+              "hi-IN": {
+                "fallback": false,
+                "reviewed": true,
+                "text": "ग्राहक संदर्भ की आवश्यकता है"
+              },
+              "it-IT": {
+                "fallback": false,
+                "reviewed": true,
+                "text": "Necessita di contesto del cliente"
+              },
+              "ja-JP": {
+                "fallback": false,
+                "reviewed": true,
+                "text": "顧客コンテキストが必要"
+              },
+              "ko-KR": {
+                "fallback": false,
+                "reviewed": true,
+                "text": "고객 컨텍스트 필요"
+              },
+              "nl-NL": {
+                "fallback": false,
+                "reviewed": true,
+                "text": "Vraagt om klantcontext"
+              },
+              "pl-PL": {
+                "fallback": false,
+                "reviewed": true,
+                "text": "Wymaga kontekstu klienta"
+              },
+              "pt-BR": {
+                "fallback": false,
+                "reviewed": true,
+                "text": "Precisa de contexto do cliente"
+              },
+              "pt-PT": {
+                "fallback": false,
+                "reviewed": true,
+                "text": "Necessita de contexto do cliente"
+              },
+              "ro-RO": {
+                "fallback": false,
+                "reviewed": true,
+                "text": "Necesită context de client"
+              },
+              "sv-SE": {
+                "fallback": false,
+                "reviewed": true,
+                "text": "Behöver kundkontext"
+              },
+              "zh-CN": {
+                "fallback": false,
+                "reviewed": true,
+                "text": "需要客户背景"
+              }
+            }
+          },
+          "tone": "requires-customer-context"
+        },
+        {
+          "id": "absent",
+          "label": {
+            "defaultLocale": "en-US",
+            "defaultText": "Absent",
+            "icuArgs": {},
+            "msgid": "scribe.report.facet.status.absent",
+            "provenance": "template",
+            "reviewState": "reviewed",
+            "values": {
+              "cy-GB": {
+                "fallback": false,
+                "reviewed": true,
+                "text": "Allan"
+              },
+              "de-DE": {
+                "fallback": false,
+                "reviewed": true,
+                "text": "Nicht vorhanden"
+              },
+              "en-CA": {
+                "fallback": false,
+                "reviewed": true,
+                "text": "Absent"
+              },
+              "en-GB": {
+                "fallback": false,
+                "reviewed": true,
+                "text": "Absent"
+              },
+              "en-IN": {
+                "fallback": false,
+                "reviewed": true,
+                "text": "Absent"
+              },
+              "en-US": {
+                "fallback": false,
+                "reviewed": true,
+                "text": "Absent"
+              },
+              "es-ES": {
+                "fallback": false,
+                "reviewed": true,
+                "text": "Ausente"
+              },
+              "es-MX": {
+                "fallback": false,
+                "reviewed": true,
+                "text": "Ausente"
+              },
+              "es-US": {
+                "fallback": false,
+                "reviewed": true,
+                "text": "Ausente"
+              },
+              "fr-CA": {
+                "fallback": false,
+                "reviewed": true,
+                "text": "Non présent"
+              },
+              "fr-FR": {
+                "fallback": false,
+                "reviewed": true,
+                "text": "Non présent"
+              },
+              "ga-GB": {
+                "fallback": false,
+                "reviewed": true,
+                "text": "As Láthair"
+              },
+              "gd-GB": {
+                "fallback": false,
+                "reviewed": true,
+                "text": "A-mach"
+              },
+              "hi-IN": {
+                "fallback": false,
+                "reviewed": true,
+                "text": "अनुपस्थित"
+              },
+              "it-IT": {
+                "fallback": false,
+                "reviewed": true,
+                "text": "Assente"
+              },
+              "ja-JP": {
+                "fallback": false,
+                "reviewed": true,
+                "text": "非対応"
+              },
+              "ko-KR": {
+                "fallback": false,
+                "reviewed": true,
+                "text": "누락됨"
+              },
+              "nl-NL": {
+                "fallback": false,
+                "reviewed": true,
+                "text": "Afwezig"
+              },
+              "pl-PL": {
+                "fallback": false,
+                "reviewed": true,
+                "text": "Nieobecny"
+              },
+              "pt-BR": {
+                "fallback": false,
+                "reviewed": true,
+                "text": "Ausente"
+              },
+              "pt-PT": {
+                "fallback": false,
+                "reviewed": true,
+                "text": "Ausente"
+              },
+              "ro-RO": {
+                "fallback": false,
+                "reviewed": true,
+                "text": "Lipsă"
+              },
+              "sv-SE": {
+                "fallback": false,
+                "reviewed": true,
+                "text": "Frånvarande"
+              },
+              "zh-CN": {
+                "fallback": false,
+                "reviewed": true,
+                "text": "缺失"
+              }
+            }
+          },
+          "tone": "absent"
+        }
+      ]
+    },
+    {
+      "facetId": "classification",
+      "order": [],
+      "values": [
+        {
+          "id": "accessibility",
+          "label": {
+            "defaultLocale": "en-US",
+            "defaultText": "Accessibility",
+            "icuArgs": {},
+            "msgid": "scribe.report.filter.option.accessibility",
+            "provenance": "template",
+            "reviewState": "reviewed",
+            "values": {
+              "cy-GB": {
+                "fallback": false,
+                "reviewed": true,
+                "text": "Hygyrchedd"
+              },
+              "de-DE": {
+                "fallback": false,
+                "reviewed": true,
+                "text": "Barrierefreiheit"
+              },
+              "en-CA": {
+                "fallback": false,
+                "reviewed": true,
+                "text": "Accessibility"
+              },
+              "en-GB": {
+                "fallback": false,
+                "reviewed": true,
+                "text": "Accessibility"
+              },
+              "en-IN": {
+                "fallback": false,
+                "reviewed": true,
+                "text": "Accessibility"
+              },
+              "en-US": {
+                "fallback": false,
+                "reviewed": true,
+                "text": "Accessibility"
+              },
+              "es-ES": {
+                "fallback": false,
+                "reviewed": true,
+                "text": "Accesibilidad"
+              },
+              "es-MX": {
+                "fallback": false,
+                "reviewed": true,
+                "text": "Accesibilidad"
+              },
+              "es-US": {
+                "fallback": false,
+                "reviewed": true,
+                "text": "Accesibilidad"
+              },
+              "fr-CA": {
+                "fallback": false,
+                "reviewed": true,
+                "text": "Accessibilité"
+              },
+              "fr-FR": {
+                "fallback": false,
+                "reviewed": true,
+                "text": "Accessibilité"
+              },
+              "ga-GB": {
+                "fallback": false,
+                "reviewed": true,
+                "text": "Inrochtaineacht"
+              },
+              "gd-GB": {
+                "fallback": false,
+                "reviewed": true,
+                "text": "Ruigsinneachd"
+              },
+              "hi-IN": {
+                "fallback": false,
+                "reviewed": true,
+                "text": "पहुँच"
+              },
+              "it-IT": {
+                "fallback": false,
+                "reviewed": true,
+                "text": "Accessibilità"
+              },
+              "ja-JP": {
+                "fallback": false,
+                "reviewed": true,
+                "text": "アクセシビリティ"
+              },
+              "ko-KR": {
+                "fallback": false,
+                "reviewed": true,
+                "text": "접근성"
+              },
+              "nl-NL": {
+                "fallback": false,
+                "reviewed": true,
+                "text": "Toegankelijkheid"
+              },
+              "pl-PL": {
+                "fallback": false,
+                "reviewed": true,
+                "text": "Dostępność"
+              },
+              "pt-BR": {
+                "fallback": false,
+                "reviewed": true,
+                "text": "Acessibilidade"
+              },
+              "pt-PT": {
+                "fallback": false,
+                "reviewed": true,
+                "text": "Acessibilidade"
+              },
+              "ro-RO": {
+                "fallback": false,
+                "reviewed": true,
+                "text": "Accesibilitate"
+              },
+              "sv-SE": {
+                "fallback": false,
+                "reviewed": true,
+                "text": "Tillgänglighet"
+              },
+              "zh-CN": {
+                "fallback": false,
+                "reviewed": true,
+                "text": "无障碍"
+              }
+            }
+          }
+        },
+        {
+          "id": "brand-consistency",
+          "label": {
+            "defaultLocale": "en-US",
+            "defaultText": "Brand consistency",
+            "icuArgs": {},
+            "msgid": "scribe.report.filter.option.brandConsistency",
+            "provenance": "template",
+            "reviewState": "reviewed",
+            "values": {
+              "cy-GB": {
+                "fallback": false,
+                "reviewed": true,
+                "text": "Cysondeb Brand"
+              },
+              "de-DE": {
+                "fallback": false,
+                "reviewed": true,
+                "text": "Konsistenz der Marke"
+              },
+              "en-CA": {
+                "fallback": false,
+                "reviewed": true,
+                "text": "Brand Consistency"
+              },
+              "en-GB": {
+                "fallback": false,
+                "reviewed": true,
+                "text": "Brand Consistency"
+              },
+              "en-IN": {
+                "fallback": false,
+                "reviewed": true,
+                "text": "Brand Consistency"
+              },
+              "en-US": {
+                "fallback": false,
+                "reviewed": true,
+                "text": "Brand consistency"
+              },
+              "es-ES": {
+                "fallback": false,
+                "reviewed": true,
+                "text": "Consistencia de marca"
+              },
+              "es-MX": {
+                "fallback": false,
+                "reviewed": true,
+                "text": "Consistencia de marca"
+              },
+              "es-US": {
+                "fallback": false,
+                "reviewed": true,
+                "text": "Consistencia de marca"
+              },
+              "fr-CA": {
+                "fallback": false,
+                "reviewed": true,
+                "text": "Conformité de la marque"
+              },
+              "fr-FR": {
+                "fallback": false,
+                "reviewed": true,
+                "text": "Cohérence de la marque"
+              },
+              "ga-GB": {
+                "fallback": false,
+                "reviewed": true,
+                "text": "Comhsheasmhacht an Bhranda"
+              },
+              "gd-GB": {
+                "fallback": false,
+                "reviewed": true,
+                "text": "Cunbhalachd branda"
+              },
+              "hi-IN": {
+                "fallback": false,
+                "reviewed": true,
+                "text": "ब्रांड सुसंगतता"
+              },
+              "it-IT": {
+                "fallback": false,
+                "reviewed": true,
+                "text": "Coerenza del marchio"
+              },
+              "ja-JP": {
+                "fallback": false,
+                "reviewed": true,
+                "text": "ブランド一貫性"
+              },
+              "ko-KR": {
+                "fallback": false,
+                "reviewed": true,
+                "text": "브랜드 일관성"
+              },
+              "nl-NL": {
+                "fallback": false,
+                "reviewed": true,
+                "text": "Consistentie van merk"
+              },
+              "pl-PL": {
+                "fallback": false,
+                "reviewed": true,
+                "text": "Spójność marki"
+              },
+              "pt-BR": {
+                "fallback": false,
+                "reviewed": true,
+                "text": "Consistência da marca"
+              },
+              "pt-PT": {
+                "fallback": false,
+                "reviewed": true,
+                "text": "Consistência da marca"
+              },
+              "ro-RO": {
+                "fallback": false,
+                "reviewed": true,
+                "text": "Consecvenţa mărcii"
+              },
+              "sv-SE": {
+                "fallback": false,
+                "reviewed": true,
+                "text": "Enhetlighet i varumärket"
+              },
+              "zh-CN": {
+                "fallback": false,
+                "reviewed": true,
+                "text": "品牌一致性"
+              }
+            }
+          }
+        },
+        {
+          "id": "source-trace",
+          "label": {
+            "defaultLocale": "en-US",
+            "defaultText": "Source trace",
+            "icuArgs": {},
+            "msgid": "scribe.report.filter.option.sourceTrace",
+            "provenance": "template",
+            "reviewState": "reviewed",
+            "values": {
+              "cy-GB": {
+                "fallback": false,
+                "reviewed": true,
+                "text": "Tarddiad"
+              },
+              "de-DE": {
+                "fallback": false,
+                "reviewed": true,
+                "text": "Source Trace"
+              },
+              "en-CA": {
+                "fallback": false,
+                "reviewed": true,
+                "text": "Source Trace"
+              },
+              "en-GB": {
+                "fallback": false,
+                "reviewed": true,
+                "text": "Source Trace"
+              },
+              "en-IN": {
+                "fallback": false,
+                "reviewed": true,
+                "text": "Source Trace"
+              },
+              "en-US": {
+                "fallback": false,
+                "reviewed": true,
+                "text": "Source trace"
+              },
+              "es-ES": {
+                "fallback": false,
+                "reviewed": true,
+                "text": "Fuente de rastreo"
+              },
+              "es-MX": {
+                "fallback": false,
+                "reviewed": true,
+                "text": "Rastreo de origen"
+              },
+              "es-US": {
+                "fallback": false,
+                "reviewed": true,
+                "text": "Rastreo de origen"
+              },
+              "fr-CA": {
+                "fallback": false,
+                "reviewed": true,
+                "text": "Trace source"
+              },
+              "fr-FR": {
+                "fallback": false,
+                "reviewed": true,
+                "text": "Source Trace"
+              },
+              "ga-GB": {
+                "fallback": false,
+                "reviewed": true,
+                "text": "Rianú Foinse"
+              },
+              "gd-GB": {
+                "fallback": false,
+                "reviewed": true,
+                "text": "Lorg an tùis"
+              },
+              "hi-IN": {
+                "fallback": false,
+                "reviewed": true,
+                "text": "स्रोत ट्रैश"
+              },
+              "it-IT": {
+                "fallback": false,
+                "reviewed": true,
+                "text": "Sorgente Trace"
+              },
+              "ja-JP": {
+                "fallback": false,
+                "reviewed": true,
+                "text": "ソーストレース"
+              },
+              "ko-KR": {
+                "fallback": false,
+                "reviewed": true,
+                "text": "소스 추적"
+              },
+              "nl-NL": {
+                "fallback": false,
+                "reviewed": true,
+                "text": "Bron traceren"
+              },
+              "pl-PL": {
+                "fallback": false,
+                "reviewed": true,
+                "text": "Source Trace"
+              },
+              "pt-BR": {
+                "fallback": false,
+                "reviewed": true,
+                "text": "Rastreamento de fonte"
+              },
+              "pt-PT": {
+                "fallback": false,
+                "reviewed": true,
+                "text": "Rastreamento de fonte"
+              },
+              "ro-RO": {
+                "fallback": false,
+                "reviewed": true,
+                "text": "Următorul sursă"
+              },
+              "sv-SE": {
+                "fallback": false,
+                "reviewed": true,
+                "text": "Källspårning"
+              },
+              "zh-CN": {
+                "fallback": false,
+                "reviewed": true,
+                "text": "源跟踪"
+              }
+            }
+          }
+        }
+      ]
+    }
+  ],
+  "feedbackActions": [
+    {
+      "actionId": "feedback-missing-alt",
+      "anchorId": "finding-missing-alt",
+      "label": {
+        "defaultLocale": "en-US",
+        "defaultText": "Send feedback",
+        "icuArgs": {},
+        "msgid": "scribe.report.action.feedbackFinding",
+        "provenance": "template",
+        "reviewState": "reviewed",
+        "values": {
+          "cy-GB": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Anfon adborth"
+          },
+          "de-DE": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Feedback senden"
+          },
+          "en-CA": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Send feedback"
+          },
+          "en-GB": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Send feedback"
+          },
+          "en-IN": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Send feedback"
+          },
+          "en-US": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Send feedback"
+          },
+          "es-ES": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Enviar comentarios"
+          },
+          "es-MX": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Enviar comentarios"
+          },
+          "es-US": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Enviar comentarios"
+          },
+          "fr-CA": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Envoyer un commentaire"
+          },
+          "fr-FR": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Envoyer des commentaires"
+          },
+          "ga-GB": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Aiseolas a sheoladh"
+          },
+          "gd-GB": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Seall aiseag"
+          },
+          "hi-IN": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "फ़ीडबैक भेजें"
+          },
+          "it-IT": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Invia feedback"
+          },
+          "ja-JP": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "フィードバックを送信"
+          },
+          "ko-KR": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "피드백 보내기"
+          },
+          "nl-NL": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Feedback versturen naar"
+          },
+          "pl-PL": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Wyślij opinię"
+          },
+          "pt-BR": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Enviar feedback"
+          },
+          "pt-PT": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Enviar feedback"
+          },
+          "ro-RO": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Trimite feedback"
+          },
+          "sv-SE": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Skicka feedback till oss"
+          },
+          "zh-CN": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "发送反馈"
+          }
+        }
+      },
+      "mode": "offline-payload",
+      "payloadTemplate": {
+        "anchorId": "finding-missing-alt",
+        "licenseVisibility": "redacted",
+        "locale": "en-US",
+        "reportId": "scribe-mobile-accessibility-scan"
+      },
+      "privacy": {
+        "privateReceiptIncluded": false,
+        "redactedFields": [
+          "source-code",
+          "private-generation-details"
+        ],
+        "sourceContext": "redacted"
+      }
+    }
+  ],
+  "fileDirect": {
+    "bootScripts": [
+      "boot/file-direct.js",
+      "data/manifest.js",
+      "data/toc.js",
+      "data/anchors.js",
+      "data/sitemap.js",
+      "data/visualizations.js",
+      "data/report-export-input.js",
+      "data/oscal-input.js"
+    ],
+    "bootStrategy": "script-tag-data",
+    "forbiddenRuntimeCapabilities": [
+      "fetch-required-boot",
+      "absolute-origin-assets",
+      "server-routing"
+    ],
+    "profile": "file-direct",
+    "relativePathsOnly": true,
+    "requiresServer": false
+  },
+  "findingSummaries": [
+    {
+      "anchorId": "finding-missing-alt",
+      "audienceInterest": [
+        {
+          "audience": "executive",
+          "weight": 72
+        },
+        {
+          "audience": "compliance-officer",
+          "weight": 94
+        },
+        {
+          "audience": "developer",
+          "weight": 100
+        },
+        {
+          "audience": "remediator",
+          "weight": 100
+        }
+      ],
+      "classification": "accessibility",
+      "controlIds": [
+        "wcag-1-1-1-non-text-content"
+      ],
+      "feedbackActionId": "feedback-missing-alt",
+      "findingId": "finding-missing-alt",
+      "frameworkIds": [
+        "swiftui-ios-runtime"
+      ],
+      "language": "swift",
+      "severity": "high",
+      "shareActionId": "share-missing-alt",
+      "sourceSnippetIds": [
+        "source-swiftui-missing-image-label"
+      ],
+      "summary": {
+        "defaultLocale": "en-US",
+        "defaultText": "The SwiftUI Image renders as meaningful content in the profile alert row but exposes no accessibilityLabel — VoiceOver announces nothing and the UIKit transform inherits the gap.",
+        "icuArgs": {},
+        "msgid": "scribe.report.complianceExample.2.finding.summary",
+        "provenance": "template",
+        "reviewState": "reviewed",
+        "values": {
+          "en-US": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "The SwiftUI Image renders as meaningful content in the profile alert row but exposes no accessibilityLabel — VoiceOver announces nothing and the UIKit transform inherits the gap."
+          },
+          "ja-JP": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "SwiftUI の Image はプロフィールアラート行で意味のあるコンテンツとして描画されますが、accessibilityLabel を公開していません。VoiceOver は何も読み上げず、UIKit 変換もその欠落を引き継ぎます。"
+          }
+        }
+      },
+      "title": {
+        "defaultLocale": "en-US",
+        "defaultText": "SwiftUI image is missing an accessible name",
+        "icuArgs": {},
+        "msgid": "scribe.report.complianceExample.2.finding.title",
+        "provenance": "template",
+        "reviewState": "reviewed",
+        "values": {
+          "en-US": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "SwiftUI image is missing an accessible name"
+          },
+          "ja-JP": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "SwiftUI 画像にアクセシブル名がありません"
+          }
+        }
+      }
+    },
+    {
+      "anchorId": "finding-1-runtime-scan-found-symbolic-accessible-name",
+      "audienceInterest": [
+        {
+          "audience": "executive",
+          "weight": 72
+        },
+        {
+          "audience": "compliance-officer",
+          "weight": 94
+        },
+        {
+          "audience": "developer",
+          "weight": 100
+        },
+        {
+          "audience": "remediator",
+          "weight": 100
+        }
+      ],
+      "classification": "accessibility",
+      "controlIds": [
+        "wcag-4-1-2-name-role-value"
+      ],
+      "feedbackActionId": "feedback-missing-alt",
+      "findingId": "finding-1-runtime-scan-found-symbolic-accessible-name",
+      "frameworkIds": [
+        "compose-multiplatform-android-runtime"
+      ],
+      "language": "kotlin",
+      "severity": "high",
+      "shareActionId": "share-missing-alt",
+      "sourceSnippetIds": [
+        "source-1-runtime-scan-found-symbolic-accessible-name"
+      ],
+      "summary": {
+        "defaultLocale": "en-US",
+        "defaultText": "The local runtime accessibility tree exposes the cockpit-mobile seed icon action as a symbolic name instead of a durable accessible name.",
+        "icuArgs": {},
+        "msgid": "scribe.report.complianceExample.0.finding.summary",
+        "provenance": "template",
+        "reviewState": "reviewed",
+        "values": {
+          "en-US": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "The local runtime accessibility tree exposes the cockpit-mobile seed icon action as a symbolic name instead of a durable accessible name."
+          },
+          "ja-JP": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "ローカル実行時のアクセシビリティツリーでは、cockpit-mobile のシードアイコン操作が、耐久性のあるアクセシブル名ではなく記号名として公開されています。"
+          }
+        }
+      },
+      "title": {
+        "defaultLocale": "en-US",
+        "defaultText": "Runtime scan found symbolic accessible name",
+        "icuArgs": {},
+        "msgid": "scribe.report.complianceExample.0.finding.title",
+        "provenance": "template",
+        "reviewState": "reviewed",
+        "values": {
+          "en-US": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Runtime scan found symbolic accessible name"
+          },
+          "ja-JP": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "SwiftUI 画像にアクセシブル名がありません"
+          }
+        }
+      }
+    },
+    {
+      "anchorId": "finding-2-runtime-scan-found-symbolic-accessible-name",
+      "audienceInterest": [
+        {
+          "audience": "executive",
+          "weight": 72
+        },
+        {
+          "audience": "compliance-officer",
+          "weight": 94
+        },
+        {
+          "audience": "developer",
+          "weight": 100
+        },
+        {
+          "audience": "remediator",
+          "weight": 100
+        }
+      ],
+      "classification": "accessibility",
+      "controlIds": [
+        "wcag-4-1-2-name-role-value"
+      ],
+      "feedbackActionId": "feedback-missing-alt",
+      "findingId": "finding-2-runtime-scan-found-symbolic-accessible-name",
+      "frameworkIds": [
+        "compose-multiplatform-ios-runtime"
+      ],
+      "language": "kotlin",
+      "severity": "high",
+      "shareActionId": "share-missing-alt",
+      "sourceSnippetIds": [
+        "source-2-runtime-scan-found-symbolic-accessible-name"
+      ],
+      "summary": {
+        "defaultLocale": "en-US",
+        "defaultText": "The local runtime accessibility tree exposes the cockpit-mobile seed icon action as a symbolic name instead of a durable accessible name.",
+        "icuArgs": {},
+        "msgid": "scribe.report.complianceExample.1.finding.summary",
+        "provenance": "template",
+        "reviewState": "reviewed",
+        "values": {
+          "en-US": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "The local runtime accessibility tree exposes the cockpit-mobile seed icon action as a symbolic name instead of a durable accessible name."
+          },
+          "ja-JP": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "ローカル実行時のアクセシビリティツリーでは、cockpit-mobile のシードアイコン操作が、耐久性のあるアクセシブル名ではなく記号名として公開されています。"
+          }
+        }
+      },
+      "title": {
+        "defaultLocale": "en-US",
+        "defaultText": "Runtime scan found symbolic accessible name",
+        "icuArgs": {},
+        "msgid": "scribe.report.complianceExample.1.finding.title",
+        "provenance": "template",
+        "reviewState": "reviewed",
+        "values": {
+          "en-US": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Runtime scan found symbolic accessible name"
+          },
+          "ja-JP": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "実行時スキャンが記号だけのアクセシブル名を検出"
+          }
+        }
+      }
+    },
+    {
+      "anchorId": "finding-4-filter-control-target-is-below-android-minimum",
+      "audienceInterest": [
+        {
+          "audience": "executive",
+          "weight": 72
+        },
+        {
+          "audience": "compliance-officer",
+          "weight": 94
+        },
+        {
+          "audience": "developer",
+          "weight": 100
+        },
+        {
+          "audience": "remediator",
+          "weight": 100
+        }
+      ],
+      "classification": "accessibility",
+      "controlIds": [
+        "wcag-2-5-5-target-size"
+      ],
+      "feedbackActionId": "feedback-missing-alt",
+      "findingId": "finding-4-filter-control-target-is-below-android-minimum",
+      "frameworkIds": [
+        "compose-multiplatform-android-material-design-target-size"
+      ],
+      "language": "kotlin",
+      "severity": "critical",
+      "shareActionId": "share-missing-alt",
+      "sourceSnippetIds": [
+        "source-4-filter-control-target-is-below-android-minimum"
+      ],
+      "summary": {
+        "defaultLocale": "en-US",
+        "defaultText": "The real cockpit-mobile Findings screen renders compact 32dp filter controls below Android's 48dp minimum target size — touch users with motor impairments can miss the control entirely.",
+        "icuArgs": {},
+        "msgid": "scribe.report.complianceExample.3.finding.summary",
+        "provenance": "template",
+        "reviewState": "reviewed",
+        "values": {
+          "en-US": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "The real cockpit-mobile Findings screen renders compact 32dp filter controls below Android's 48dp minimum target size — touch users with motor impairments can miss the control entirely."
+          },
+          "ja-JP": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "実際の cockpit-mobile Findings 画面では、コンパクトな 32dp のフィルターコントロールが Android の最小ターゲットサイズ 48dp を下回って描画されます。運動機能に制約があるタッチ利用者は、このコントロールを押し損ねる可能性があります。"
+          }
+        }
+      },
+      "title": {
+        "defaultLocale": "en-US",
+        "defaultText": "Filter control target is below Android minimum",
+        "icuArgs": {},
+        "msgid": "scribe.report.complianceExample.3.finding.title",
+        "provenance": "template",
+        "reviewState": "reviewed",
+        "values": {
+          "en-US": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Filter control target is below Android minimum"
+          },
+          "ja-JP": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "フィルターコントロールのターゲットが Android の最小値を下回っています"
+          }
+        }
+      }
+    },
+    {
+      "anchorId": "finding-5-finding-group-heading-can-truncate-under-ios-dynamic-type",
+      "audienceInterest": [
+        {
+          "audience": "executive",
+          "weight": 72
+        },
+        {
+          "audience": "compliance-officer",
+          "weight": 94
+        },
+        {
+          "audience": "developer",
+          "weight": 100
+        },
+        {
+          "audience": "remediator",
+          "weight": 100
+        }
+      ],
+      "classification": "accessibility",
+      "controlIds": [
+        "wcag-1-4-4-resize-text"
+      ],
+      "feedbackActionId": "feedback-missing-alt",
+      "findingId": "finding-5-finding-group-heading-can-truncate-under-ios-dynamic-type",
+      "frameworkIds": [
+        "compose-multiplatform-ios-hig-dynamic-type"
+      ],
+      "language": "kotlin",
+      "severity": "medium",
+      "shareActionId": "share-missing-alt",
+      "sourceSnippetIds": [
+        "source-5-finding-group-heading-can-truncate-under-ios-dynamic-type"
+      ],
+      "summary": {
+        "defaultLocale": "en-US",
+        "defaultText": "Under the iOS runtime text scale used by the simulator, the Findings group heading truncates before its full label fits — readers using larger text lose the section context.",
+        "icuArgs": {},
+        "msgid": "scribe.report.complianceExample.4.finding.summary",
+        "provenance": "template",
+        "reviewState": "reviewed",
+        "values": {
+          "en-US": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Under the iOS runtime text scale used by the simulator, the Findings group heading truncates before its full label fits — readers using larger text lose the section context."
+          },
+          "ja-JP": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "シミュレータで使用した iOS 実行時テキストスケールでは、Findings グループ見出しが完全なラベルを表示する前に切り詰められます。大きなテキストを使用する読者はセクションの文脈を失います。"
+          }
+        }
+      },
+      "title": {
+        "defaultLocale": "en-US",
+        "defaultText": "Finding group heading can truncate under iOS Dynamic Type",
+        "icuArgs": {},
+        "msgid": "scribe.report.complianceExample.4.finding.title",
+        "provenance": "template",
+        "reviewState": "reviewed",
+        "values": {
+          "en-US": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Finding group heading can truncate under iOS Dynamic Type"
+          },
+          "ja-JP": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "iOS Dynamic Type で検出グループ見出しが途中で切れる可能性があります"
+          }
+        }
+      }
+    },
+    {
+      "anchorId": "finding-6-mobile-brand-consistency-gap-color-drift",
+      "audienceInterest": [
+        {
+          "audience": "executive",
+          "weight": 72
+        },
+        {
+          "audience": "compliance-officer",
+          "weight": 94
+        },
+        {
+          "audience": "developer",
+          "weight": 100
+        },
+        {
+          "audience": "remediator",
+          "weight": 100
+        }
+      ],
+      "classification": "brand-consistency",
+      "controlIds": [
+        "mobile-brand-consistency-color"
+      ],
+      "feedbackActionId": "feedback-missing-alt",
+      "findingId": "finding-6-mobile-brand-consistency-gap-color-drift",
+      "frameworkIds": [
+        "compose-multiplatform-material-design-brand-parity-color-drift"
+      ],
+      "language": "kotlin",
+      "severity": "medium",
+      "shareActionId": "share-missing-alt",
+      "sourceSnippetIds": [
+        "source-6-mobile-brand-consistency-gap-color-drift"
+      ],
+      "summary": {
+        "defaultLocale": "en-US",
+        "defaultText": "The Android render of the summary action accent shipped a different color than the brand reference. Cross-platform brand drift is invisible to single-platform audits but obvious when both renders are compared side-by-side.",
+        "icuArgs": {},
+        "msgid": "scribe.report.complianceExample.5.finding.summary",
+        "provenance": "template",
+        "reviewState": "reviewed",
+        "values": {
+          "en-US": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "The Android render of the summary action accent shipped a different color than the brand reference. Cross-platform brand drift is invisible to single-platform audits but obvious when both renders are compared side-by-side."
+          },
+          "ja-JP": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Android で描画されたサマリーアクションのアクセント色が、ブランド基準とは異なる色で出荷されていました。クロスプラットフォームのブランドずれは単一プラットフォーム監査では見えませんが、両方の描画を横並びで比較すると明確です。"
+          }
+        }
+      },
+      "title": {
+        "defaultLocale": "en-US",
+        "defaultText": "Mobile brand consistency gap (color drift)",
+        "icuArgs": {},
+        "msgid": "scribe.report.complianceExample.5.finding.title",
+        "provenance": "template",
+        "reviewState": "reviewed",
+        "values": {
+          "en-US": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Mobile brand consistency gap (color drift)"
+          },
+          "ja-JP": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "モバイルのブランド一貫性ギャップ（色のずれ）"
+          }
+        }
+      }
+    },
+    {
+      "anchorId": "finding-7-objective-c-uikit-image-is-missing-an-accessible-name",
+      "audienceInterest": [
+        {
+          "audience": "executive",
+          "weight": 72
+        },
+        {
+          "audience": "compliance-officer",
+          "weight": 94
+        },
+        {
+          "audience": "developer",
+          "weight": 100
+        },
+        {
+          "audience": "remediator",
+          "weight": 100
+        }
+      ],
+      "classification": "accessibility",
+      "controlIds": [
+        "wcag-1-1-1-non-text-content"
+      ],
+      "feedbackActionId": "feedback-missing-alt",
+      "findingId": "finding-7-objective-c-uikit-image-is-missing-an-accessible-name",
+      "frameworkIds": [
+        "uikit-objective-c-ios-runtime"
+      ],
+      "language": "objectivec",
+      "severity": "high",
+      "shareActionId": "share-missing-alt",
+      "sourceSnippetIds": [
+        "source-7-objective-c-uikit-image-is-missing-an-accessible-name"
+      ],
+      "summary": {
+        "defaultLocale": "en-US",
+        "defaultText": "The UIImageView is explicitly marked as an accessibility element with the image trait but carries no accessibilityLabel, so the SwiftUI Image transform inherits an unlabelled meaningful image.",
+        "icuArgs": {},
+        "msgid": "scribe.report.complianceExample.6.finding.summary",
+        "provenance": "template",
+        "reviewState": "reviewed",
+        "values": {
+          "en-US": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "The UIImageView is explicitly marked as an accessibility element with the image trait but carries no accessibilityLabel, so the SwiftUI Image transform inherits an unlabelled meaningful image."
+          },
+          "ja-JP": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "UIImageView は画像トレイトを持つアクセシビリティ要素として明示的にマークされていますが、accessibilityLabel がありません。そのため、SwiftUI Image 変換はラベルのない意味のある画像を引き継ぎます。"
+          }
+        }
+      },
+      "title": {
+        "defaultLocale": "en-US",
+        "defaultText": "Objective-C UIKit image is missing an accessible name",
+        "icuArgs": {},
+        "msgid": "scribe.report.complianceExample.6.finding.title",
+        "provenance": "template",
+        "reviewState": "reviewed",
+        "values": {
+          "en-US": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Objective-C UIKit image is missing an accessible name"
+          },
+          "ja-JP": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Objective-C UIKit 画像にアクセシブル名がありません"
+          }
+        }
+      }
+    },
+    {
+      "anchorId": "finding-8-hardcoded-english-accessibility-label",
+      "audienceInterest": [
+        {
+          "audience": "executive",
+          "weight": 72
+        },
+        {
+          "audience": "compliance-officer",
+          "weight": 94
+        },
+        {
+          "audience": "developer",
+          "weight": 100
+        },
+        {
+          "audience": "remediator",
+          "weight": 100
+        }
+      ],
+      "classification": "source-trace",
+      "controlIds": [
+        "sonde-source-trace-availability"
+      ],
+      "feedbackActionId": "feedback-missing-alt",
+      "findingId": "finding-8-hardcoded-english-accessibility-label",
+      "frameworkIds": [
+        "react-native-source-trace"
+      ],
+      "language": "typescript",
+      "severity": "medium",
+      "shareActionId": "share-missing-alt",
+      "sourceSnippetIds": [
+        "source-8-hardcoded-english-accessibility-label"
+      ],
+      "summary": {
+        "defaultLocale": "en-US",
+        "defaultText": "The `<Text>` element ships with a hardcoded English `accessibilityLabel`. Non-English users will hear the literal English string regardless of their locale.",
+        "icuArgs": {},
+        "msgid": "scribe.report.complianceExample.7.finding.summary",
+        "provenance": "template",
+        "reviewState": "reviewed",
+        "values": {
+          "en-US": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "The `<Text>` element ships with a hardcoded English `accessibilityLabel`. Non-English users will hear the literal English string regardless of their locale."
+          },
+          "ja-JP": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "`<Text>` 要素は英語の `accessibilityLabel` をハードコードしたまま出荷されます。英語以外の利用者は、ロケールに関係なく英語の文字列をそのまま聞くことになります。"
+          }
+        }
+      },
+      "title": {
+        "defaultLocale": "en-US",
+        "defaultText": "Hardcoded English accessibility label",
+        "icuArgs": {},
+        "msgid": "scribe.report.complianceExample.7.finding.title",
+        "provenance": "template",
+        "reviewState": "reviewed",
+        "values": {
+          "en-US": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Hardcoded English accessibility label"
+          },
+          "ja-JP": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "英語のアクセシビリティラベルがハードコードされています"
+          }
+        }
+      }
+    },
+    {
+      "anchorId": "finding-9-image-element-is-missing-the-alt-attribute",
+      "audienceInterest": [
+        {
+          "audience": "executive",
+          "weight": 72
+        },
+        {
+          "audience": "compliance-officer",
+          "weight": 94
+        },
+        {
+          "audience": "developer",
+          "weight": 100
+        },
+        {
+          "audience": "remediator",
+          "weight": 100
+        }
+      ],
+      "classification": "accessibility",
+      "controlIds": [
+        "wcag-1-1-1-non-text-content-level-a"
+      ],
+      "feedbackActionId": "feedback-missing-alt",
+      "findingId": "finding-9-image-element-is-missing-the-alt-attribute",
+      "frameworkIds": [
+        "react-tsx-wcag-static-probe"
+      ],
+      "language": "typescript",
+      "severity": "high",
+      "shareActionId": "share-missing-alt",
+      "sourceSnippetIds": [
+        "source-9-image-element-is-missing-the-alt-attribute"
+      ],
+      "summary": {
+        "defaultLocale": "en-US",
+        "defaultText": "The bare `<img>` element exposes no alt attribute, so assistive technologies announce the file path or nothing at all.",
+        "icuArgs": {},
+        "msgid": "scribe.report.complianceExample.8.finding.summary",
+        "provenance": "template",
+        "reviewState": "reviewed",
+        "values": {
+          "en-US": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "The bare `<img>` element exposes no alt attribute, so assistive technologies announce the file path or nothing at all."
+          },
+          "ja-JP": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "素の `<img>` 要素は alt 属性を公開しないため、支援技術はファイルパスを読み上げるか、何も読み上げません。"
+          }
+        }
+      },
+      "title": {
+        "defaultLocale": "en-US",
+        "defaultText": "Image element is missing the alt attribute",
+        "icuArgs": {},
+        "msgid": "scribe.report.complianceExample.8.finding.title",
+        "provenance": "template",
+        "reviewState": "reviewed",
+        "values": {
+          "en-US": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Image element is missing the alt attribute"
+          },
+          "ja-JP": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "画像要素に alt 属性がありません"
+          }
+        }
+      }
+    },
+    {
+      "anchorId": "finding-10-element-has-positive-tabindex-focus-order",
+      "audienceInterest": [
+        {
+          "audience": "executive",
+          "weight": 72
+        },
+        {
+          "audience": "compliance-officer",
+          "weight": 94
+        },
+        {
+          "audience": "developer",
+          "weight": 100
+        },
+        {
+          "audience": "remediator",
+          "weight": 100
+        }
+      ],
+      "classification": "accessibility",
+      "controlIds": [
+        "wcag-2-4-3-focus-order-level-a"
+      ],
+      "feedbackActionId": "feedback-missing-alt",
+      "findingId": "finding-10-element-has-positive-tabindex-focus-order",
+      "frameworkIds": [
+        "html-wcag-mechanical-probe"
+      ],
+      "language": "html",
+      "severity": "high",
+      "shareActionId": "share-missing-alt",
+      "sourceSnippetIds": [
+        "source-10-element-has-positive-tabindex-focus-order"
+      ],
+      "summary": {
+        "defaultLocale": "en-US",
+        "defaultText": "The `<button tabindex=\"3\">` creates an unpredictable focus order — positive tabindex values jump out of natural DOM order and disorient keyboard users.",
+        "icuArgs": {},
+        "msgid": "scribe.report.complianceExample.9.finding.summary",
+        "provenance": "template",
+        "reviewState": "reviewed",
+        "values": {
+          "en-US": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "The `<button tabindex=\"3\">` creates an unpredictable focus order — positive tabindex values jump out of natural DOM order and disorient keyboard users."
+          },
+          "ja-JP": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "`<button tabindex=\"3\">` は予測できないフォーカス順序を作ります。正の tabindex 値は自然な DOM 順序から飛び出し、キーボード利用者を混乱させます。"
+          }
+        }
+      },
+      "title": {
+        "defaultLocale": "en-US",
+        "defaultText": "Element has positive tabindex (focus order)",
+        "icuArgs": {},
+        "msgid": "scribe.report.complianceExample.9.finding.title",
+        "provenance": "template",
+        "reviewState": "reviewed",
+        "values": {
+          "en-US": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Element has positive tabindex (focus order)"
+          },
+          "ja-JP": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "要素に正の tabindex があります（フォーカス順序）"
+          }
+        }
+      }
+    }
+  ],
+  "fixPlanLinks": [
+    {
+      "anchorId": "fix-plan-missing-alt",
+      "href": "fix-plans/finding-missing-alt/index.html",
+      "licenseState": "visible",
+      "title": {
+        "defaultLocale": "en-US",
+        "defaultText": "Fix plan",
+        "icuArgs": {},
+        "msgid": "scribe.report.fixPlan.pageTitle",
+        "provenance": "template",
+        "reviewState": "reviewed",
+        "values": {
+          "cy-GB": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Gosod cynllun"
+          },
+          "de-DE": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Behebungsplan"
+          },
+          "en-CA": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Fix plan"
+          },
+          "en-GB": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Fix plan"
+          },
+          "en-IN": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Fix plan"
+          },
+          "en-US": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Fix plan"
+          },
+          "es-ES": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Plan de acción"
+          },
+          "es-MX": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Plan de acción"
+          },
+          "es-US": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Plan de acción"
+          },
+          "fr-CA": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Plan de correction"
+          },
+          "fr-FR": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Plan de correction"
+          },
+          "ga-GB": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Plean deisithe"
+          },
+          "gd-GB": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Plana ceartachaidh"
+          },
+          "hi-IN": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "सुधार योजना"
+          },
+          "it-IT": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Piano di correzione"
+          },
+          "ja-JP": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "修正計画"
+          },
+          "ko-KR": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "수정 계획"
+          },
+          "nl-NL": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Herstelplan"
+          },
+          "pl-PL": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Plan naprawczy"
+          },
+          "pt-BR": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Plano de correção"
+          },
+          "pt-PT": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Plano de correção"
+          },
+          "ro-RO": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Plan de remediere"
+          },
+          "sv-SE": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Åtgärdsplan"
+          },
+          "zh-CN": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "修复计划"
+          }
+        }
+      }
+    }
+  ],
+  "indexTerms": [
+    {
+      "aliases": [
+        {
+          "defaultLocale": "en-US",
+          "defaultText": "Text alternative",
+          "icuArgs": {},
+          "msgid": "scribe.report.term.textAlternative",
+          "provenance": "template",
+          "reviewState": "reviewed",
+          "values": {
+            "en-US": {
+              "fallback": false,
+              "reviewed": true,
+              "text": "Text alternative"
+            }
+          }
+        }
+      ],
+      "label": {
+        "defaultLocale": "en-US",
+        "defaultText": "Alt text",
+        "icuArgs": {},
+        "msgid": "scribe.report.term.altText",
+        "provenance": "template",
+        "reviewState": "reviewed",
+        "values": {
+          "en-US": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Alt text"
+          }
+        }
+      },
+      "see": [],
+      "seeAlso": [
+        "wcag-non-text-content"
+      ],
+      "termId": "wcag-alt-text"
+    }
+  ],
+  "license": {
+    "visibility": "redacted",
+    "visibleEntitlements": [
+      {
+        "id": "mobile-accessibility-scan",
+        "kind": "report",
+        "state": "included"
+      },
+      {
+        "id": "fix-plan-missing-alt",
+        "kind": "generated-output",
+        "state": "included"
+      }
+    ]
+  },
+  "locales": {
+    "bundles": [
+      {
+        "coverage": {
+          "complete": true,
+          "fallbackCount": 0,
+          "messageCount": 131
+        },
+        "dir": "ltr",
+        "lang": "en-US",
+        "locale": "en-US",
+        "path": "locales/en-US.js"
+      },
+      {
+        "coverage": {
+          "complete": false,
+          "fallbackCount": 32,
+          "messageCount": 131
+        },
+        "dir": "ltr",
+        "lang": "en-GB",
+        "locale": "en-GB",
+        "path": "locales/en-GB.js"
+      },
+      {
+        "coverage": {
+          "complete": false,
+          "fallbackCount": 32,
+          "messageCount": 131
+        },
+        "dir": "ltr",
+        "lang": "en-CA",
+        "locale": "en-CA",
+        "path": "locales/en-CA.js"
+      },
+      {
+        "coverage": {
+          "complete": false,
+          "fallbackCount": 32,
+          "messageCount": 131
+        },
+        "dir": "ltr",
+        "lang": "fr-CA",
+        "locale": "fr-CA",
+        "path": "locales/fr-CA.js"
+      },
+      {
+        "coverage": {
+          "complete": false,
+          "fallbackCount": 24,
+          "messageCount": 131
+        },
+        "dir": "ltr",
+        "lang": "en-IN",
+        "locale": "en-IN",
+        "path": "locales/en-IN.js"
+      },
+      {
+        "coverage": {
+          "complete": false,
+          "fallbackCount": 32,
+          "messageCount": 131
+        },
+        "dir": "ltr",
+        "lang": "cy-GB",
+        "locale": "cy-GB",
+        "path": "locales/cy-GB.js"
+      },
+      {
+        "coverage": {
+          "complete": false,
+          "fallbackCount": 32,
+          "messageCount": 131
+        },
+        "dir": "ltr",
+        "lang": "gd-GB",
+        "locale": "gd-GB",
+        "path": "locales/gd-GB.js"
+      },
+      {
+        "coverage": {
+          "complete": false,
+          "fallbackCount": 32,
+          "messageCount": 131
+        },
+        "dir": "ltr",
+        "lang": "ga-GB",
+        "locale": "ga-GB",
+        "path": "locales/ga-GB.js"
+      },
+      {
+        "coverage": {
+          "complete": false,
+          "fallbackCount": 24,
+          "messageCount": 131
+        },
+        "dir": "ltr",
+        "lang": "es-US",
+        "locale": "es-US",
+        "path": "locales/es-US.js"
+      },
+      {
+        "coverage": {
+          "complete": false,
+          "fallbackCount": 23,
+          "messageCount": 131
+        },
+        "dir": "ltr",
+        "lang": "es-MX",
+        "locale": "es-MX",
+        "path": "locales/es-MX.js"
+      },
+      {
+        "coverage": {
+          "complete": false,
+          "fallbackCount": 32,
+          "messageCount": 131
+        },
+        "dir": "ltr",
+        "lang": "de-DE",
+        "locale": "de-DE",
+        "path": "locales/de-DE.js"
+      },
+      {
+        "coverage": {
+          "complete": false,
+          "fallbackCount": 32,
+          "messageCount": 131
+        },
+        "dir": "ltr",
+        "lang": "fr-FR",
+        "locale": "fr-FR",
+        "path": "locales/fr-FR.js"
+      },
+      {
+        "coverage": {
+          "complete": false,
+          "fallbackCount": 32,
+          "messageCount": 131
+        },
+        "dir": "ltr",
+        "lang": "es-ES",
+        "locale": "es-ES",
+        "path": "locales/es-ES.js"
+      },
+      {
+        "coverage": {
+          "complete": false,
+          "fallbackCount": 32,
+          "messageCount": 131
+        },
+        "dir": "ltr",
+        "lang": "it-IT",
+        "locale": "it-IT",
+        "path": "locales/it-IT.js"
+      },
+      {
+        "coverage": {
+          "complete": false,
+          "fallbackCount": 32,
+          "messageCount": 131
+        },
+        "dir": "ltr",
+        "lang": "nl-NL",
+        "locale": "nl-NL",
+        "path": "locales/nl-NL.js"
+      },
+      {
+        "coverage": {
+          "complete": false,
+          "fallbackCount": 32,
+          "messageCount": 131
+        },
+        "dir": "ltr",
+        "lang": "pl-PL",
+        "locale": "pl-PL",
+        "path": "locales/pl-PL.js"
+      },
+      {
+        "coverage": {
+          "complete": false,
+          "fallbackCount": 32,
+          "messageCount": 131
+        },
+        "dir": "ltr",
+        "lang": "pt-PT",
+        "locale": "pt-PT",
+        "path": "locales/pt-PT.js"
+      },
+      {
+        "coverage": {
+          "complete": false,
+          "fallbackCount": 32,
+          "messageCount": 131
+        },
+        "dir": "ltr",
+        "lang": "pt-BR",
+        "locale": "pt-BR",
+        "path": "locales/pt-BR.js"
+      },
+      {
+        "coverage": {
+          "complete": false,
+          "fallbackCount": 32,
+          "messageCount": 131
+        },
+        "dir": "ltr",
+        "lang": "ro-RO",
+        "locale": "ro-RO",
+        "path": "locales/ro-RO.js"
+      },
+      {
+        "coverage": {
+          "complete": false,
+          "fallbackCount": 32,
+          "messageCount": 131
+        },
+        "dir": "ltr",
+        "lang": "sv-SE",
+        "locale": "sv-SE",
+        "path": "locales/sv-SE.js"
+      },
+      {
+        "coverage": {
+          "complete": false,
+          "fallbackCount": 32,
+          "messageCount": 131
+        },
+        "dir": "ltr",
+        "lang": "ko-KR",
+        "locale": "ko-KR",
+        "path": "locales/ko-KR.js"
+      },
+      {
+        "coverage": {
+          "complete": false,
+          "fallbackCount": 32,
+          "messageCount": 131
+        },
+        "dir": "ltr",
+        "lang": "zh-CN",
+        "locale": "zh-CN",
+        "path": "locales/zh-CN.js"
+      },
+      {
+        "coverage": {
+          "complete": false,
+          "fallbackCount": 2,
+          "messageCount": 131
+        },
+        "dir": "ltr",
+        "lang": "ja-JP",
+        "locale": "ja-JP",
+        "path": "locales/ja-JP.js"
+      },
+      {
+        "coverage": {
+          "complete": false,
+          "fallbackCount": 32,
+          "messageCount": 131
+        },
+        "dir": "ltr",
+        "lang": "hi-IN",
+        "locale": "hi-IN",
+        "path": "locales/hi-IN.js"
+      }
+    ],
+    "fallback": "en-US",
+    "initial": "en-US"
+  },
+  "metadata": {
+    "generatedAt": "2026-05-15T12:00:00.000Z",
+    "scribeVersion": "alpha"
+  },
+  "onDemandExportActions": [
+    {
+      "actionId": "vpat-html",
+      "bundlePath": "assets/report-export-bundle.js",
+      "delivery": "on-demand",
+      "inputPath": "data/report-export-input.js",
+      "kind": "vpat-html",
+      "label": {
+        "defaultLocale": "en-US",
+        "defaultText": "Open VPAT",
+        "icuArgs": {},
+        "msgid": "scribe.report.action.openVpat",
+        "provenance": "template",
+        "reviewState": "reviewed",
+        "values": {
+          "cy-GB": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Agor VPAT"
+          },
+          "de-DE": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "VPAT öffnen"
+          },
+          "en-CA": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Open VPAT"
+          },
+          "en-GB": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Open VPAT"
+          },
+          "en-IN": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Open VPAT"
+          },
+          "en-US": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Open VPAT"
+          },
+          "es-ES": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Abrir VPAT"
+          },
+          "es-MX": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Abrir VPAT"
+          },
+          "es-US": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Abrir VPAT"
+          },
+          "fr-CA": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Ouvrir le VPAT"
+          },
+          "fr-FR": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Ouvrir VPAT"
+          },
+          "ga-GB": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Oscail VPAT"
+          },
+          "gd-GB": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Fosgail VPAT"
+          },
+          "hi-IN": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "VPAT खोलें"
+          },
+          "it-IT": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Apri VPAT"
+          },
+          "ja-JP": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "VPATを開く"
+          },
+          "ko-KR": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "VPAT 열기"
+          },
+          "nl-NL": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Open VPAT"
+          },
+          "pl-PL": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Open VPAT"
+          },
+          "pt-BR": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Abrir VPAT"
+          },
+          "pt-PT": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Abrir VPAT"
+          },
+          "ro-RO": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Deschide VPAT"
+          },
+          "sv-SE": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Öppna VPAT"
+          },
+          "zh-CN": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "开放式VPAT"
+          }
+        }
+      },
+      "state": [
+        "locale",
+        "theme",
+        "mode",
+        "reportDataVersion"
+      ]
+    },
+    {
+      "actionId": "openacr-yaml",
+      "bundlePath": "assets/report-export-bundle.js",
+      "delivery": "on-demand",
+      "inputPath": "data/report-export-input.js",
+      "kind": "openacr-yaml",
+      "label": {
+        "defaultLocale": "en-US",
+        "defaultText": "Download OpenACR",
+        "icuArgs": {},
+        "msgid": "scribe.report.action.downloadOpenAcr",
+        "provenance": "template",
+        "reviewState": "reviewed",
+        "values": {
+          "cy-GB": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Lawrlwytho OpenACR"
+          },
+          "de-DE": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "OpenACR herunterladen"
+          },
+          "en-CA": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Download OpenACR"
+          },
+          "en-GB": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Download OpenACR"
+          },
+          "en-IN": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Download OpenACR"
+          },
+          "en-US": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Download OpenACR"
+          },
+          "es-ES": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Descargar OpenACR"
+          },
+          "es-MX": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Descargar OpenACR"
+          },
+          "es-US": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Descargar OpenACR"
+          },
+          "fr-CA": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Télécharger OpenACR"
+          },
+          "fr-FR": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Télécharger OpenACR"
+          },
+          "ga-GB": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Íosluchtaigh OpenACR"
+          },
+          "gd-GB": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Luchdaich sìos OpenACR"
+          },
+          "hi-IN": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "ओपनएसीआर डाउनलोड करें"
+          },
+          "it-IT": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Scarica OpenACR"
+          },
+          "ja-JP": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "OpenACRをダウンロード"
+          },
+          "ko-KR": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "OpenACR 다운로드"
+          },
+          "nl-NL": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "OpenACR downloaden"
+          },
+          "pl-PL": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Pobierz OpenACR"
+          },
+          "pt-BR": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Baixar OpenACR"
+          },
+          "pt-PT": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Transferir OpenACR"
+          },
+          "ro-RO": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Descărcare OpenACR"
+          },
+          "sv-SE": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Ladda ner OpenACR"
+          },
+          "zh-CN": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "下载 OpenACR"
+          }
+        }
+      },
+      "state": [
+        "locale",
+        "reportDataVersion"
+      ]
+    }
+  ],
+  "outputTarget": "html",
+  "packageManifestPath": "package.manifest.json",
+  "readerViews": [
+    {
+      "audience": [
+        "developer",
+        "remediator"
+      ],
+      "defaultExpandedAnchorIds": [
+        "finding-missing-alt",
+        "source-1-runtime-scan-found-symbolic-accessible-name",
+        "source-2-runtime-scan-found-symbolic-accessible-name",
+        "source-swiftui-missing-image-label",
+        "source-4-filter-control-target-is-below-android-minimum",
+        "source-5-finding-group-heading-can-truncate-under-ios-dynamic-type",
+        "source-6-mobile-brand-consistency-gap-color-drift",
+        "source-7-objective-c-uikit-image-is-missing-an-accessible-name",
+        "source-8-hardcoded-english-accessibility-label",
+        "source-9-image-element-is-missing-the-alt-attribute",
+        "source-10-element-has-positive-tabindex-focus-order",
+        "fix-plan-missing-alt"
+      ],
+      "density": "full",
+      "hiddenAnchorIds": [],
+      "label": {
+        "defaultLocale": "en-US",
+        "defaultText": "Developer",
+        "icuArgs": {},
+        "msgid": "scribe.report.view.developer",
+        "provenance": "template",
+        "reviewState": "reviewed",
+        "values": {
+          "cy-GB": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Datblygwr"
+          },
+          "de-DE": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Entwickler"
+          },
+          "en-CA": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Developer"
+          },
+          "en-GB": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Developer"
+          },
+          "en-IN": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Developer"
+          },
+          "en-US": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Developer"
+          },
+          "es-ES": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Desarrollador"
+          },
+          "es-MX": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Desarrollador"
+          },
+          "es-US": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Desarrollador"
+          },
+          "fr-CA": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Développeur"
+          },
+          "fr-FR": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Développeur"
+          },
+          "ga-GB": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Forbróir"
+          },
+          "gd-GB": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Dealbhadair"
+          },
+          "hi-IN": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "विकासकर्ता"
+          },
+          "it-IT": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Sviluppatore"
+          },
+          "ja-JP": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "開発者"
+          },
+          "ko-KR": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "개발자"
+          },
+          "nl-NL": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Ontwikkelaar"
+          },
+          "pl-PL": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Programista"
+          },
+          "pt-BR": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Desenvolvedor"
+          },
+          "pt-PT": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Desenvolvedor"
+          },
+          "ro-RO": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Dezvoltator"
+          },
+          "sv-SE": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Utvecklare"
+          },
+          "zh-CN": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "开发人员"
+          }
+        }
+      },
+      "priorityAnchorIds": [
+        "finding-missing-alt",
+        "source-1-runtime-scan-found-symbolic-accessible-name",
+        "source-2-runtime-scan-found-symbolic-accessible-name",
+        "source-swiftui-missing-image-label",
+        "source-4-filter-control-target-is-below-android-minimum",
+        "source-5-finding-group-heading-can-truncate-under-ios-dynamic-type",
+        "source-6-mobile-brand-consistency-gap-color-drift",
+        "source-7-objective-c-uikit-image-is-missing-an-accessible-name",
+        "source-8-hardcoded-english-accessibility-label",
+        "source-9-image-element-is-missing-the-alt-attribute",
+        "source-10-element-has-positive-tabindex-focus-order",
+        "fix-plan-missing-alt"
+      ],
+      "viewId": "developer"
+    },
+    {
+      "audience": [
+        "executive"
+      ],
+      "defaultExpandedAnchorIds": [
+        "section-overview"
+      ],
+      "density": "compact",
+      "hiddenAnchorIds": [
+        "source-1-runtime-scan-found-symbolic-accessible-name",
+        "source-2-runtime-scan-found-symbolic-accessible-name",
+        "source-swiftui-missing-image-label",
+        "source-4-filter-control-target-is-below-android-minimum",
+        "source-5-finding-group-heading-can-truncate-under-ios-dynamic-type",
+        "source-6-mobile-brand-consistency-gap-color-drift",
+        "source-7-objective-c-uikit-image-is-missing-an-accessible-name",
+        "source-8-hardcoded-english-accessibility-label",
+        "source-9-image-element-is-missing-the-alt-attribute",
+        "source-10-element-has-positive-tabindex-focus-order"
+      ],
+      "label": {
+        "defaultLocale": "en-US",
+        "defaultText": "Executive",
+        "icuArgs": {},
+        "msgid": "scribe.report.view.executive",
+        "provenance": "template",
+        "reviewState": "reviewed",
+        "values": {
+          "cy-GB": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Gweithredol"
+          },
+          "de-DE": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Management"
+          },
+          "en-CA": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Executive"
+          },
+          "en-GB": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Executive"
+          },
+          "en-IN": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Executive"
+          },
+          "en-US": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Executive"
+          },
+          "es-ES": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Ejecutivo"
+          },
+          "es-MX": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Ejecutivo"
+          },
+          "es-US": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Ejecutivo"
+          },
+          "fr-CA": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Exécutif"
+          },
+          "fr-FR": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Exécutif"
+          },
+          "ga-GB": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Feidhmeannach"
+          },
+          "gd-GB": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Gnìomhach"
+          },
+          "hi-IN": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "कार्यकारी"
+          },
+          "it-IT": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Esecutivo"
+          },
+          "ja-JP": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "エグゼクティブ"
+          },
+          "ko-KR": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "행정부"
+          },
+          "nl-NL": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Uitvoerend"
+          },
+          "pl-PL": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Widok kierowniczy"
+          },
+          "pt-BR": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Executivo"
+          },
+          "pt-PT": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Executivo"
+          },
+          "ro-RO": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Executiv"
+          },
+          "sv-SE": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Verkställande"
+          },
+          "zh-CN": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "行政"
+          }
+        }
+      },
+      "priorityAnchorIds": [
+        "section-overview",
+        "finding-missing-alt"
+      ],
+      "viewId": "executive"
+    },
+    {
+      "audience": [
+        "compliance-officer"
+      ],
+      "defaultExpandedAnchorIds": [
+        "finding-missing-alt",
+        "fix-plan-missing-alt"
+      ],
+      "density": "normal",
+      "hiddenAnchorIds": [],
+      "label": {
+        "defaultLocale": "en-US",
+        "defaultText": "Auditor",
+        "icuArgs": {},
+        "msgid": "scribe.report.view.auditor",
+        "provenance": "template",
+        "reviewState": "reviewed",
+        "values": {
+          "cy-GB": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Awdurdod"
+          },
+          "de-DE": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Prüfer"
+          },
+          "en-CA": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Auditor"
+          },
+          "en-GB": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Auditor"
+          },
+          "en-IN": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Auditor"
+          },
+          "en-US": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Auditor"
+          },
+          "es-ES": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Auditoría"
+          },
+          "es-MX": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Vista de auditoría"
+          },
+          "es-US": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Vista de auditoría"
+          },
+          "fr-CA": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Auditeur"
+          },
+          "fr-FR": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Auditeur"
+          },
+          "ga-GB": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Iniúchóir"
+          },
+          "gd-GB": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Sgrùdaiche"
+          },
+          "hi-IN": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "ऑडिटर"
+          },
+          "it-IT": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Revisore dei conti"
+          },
+          "ja-JP": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "監査担当"
+          },
+          "ko-KR": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "감사원"
+          },
+          "nl-NL": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Auditorweergave"
+          },
+          "pl-PL": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Audytor"
+          },
+          "pt-BR": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Visão do auditor"
+          },
+          "pt-PT": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Vista de auditor"
+          },
+          "ro-RO": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Vizualizare auditor"
+          },
+          "sv-SE": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Revisor"
+          },
+          "zh-CN": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "审计员"
+          }
+        }
+      },
+      "priorityAnchorIds": [
+        "section-overview",
+        "finding-missing-alt",
+        "fix-plan-missing-alt"
+      ],
+      "viewId": "auditor"
+    }
+  ],
+  "reportFamily": "compliance",
+  "reportId": "scribe-mobile-accessibility-scan",
+  "reportProfile": {
+    "catalogHash": "-1dci7n",
+    "profileId": "readiness",
+    "rendererBinding": "mobile-accessibility-scan",
+    "reportFamilyId": "accessibility",
+    "reportId": "accessibility-readiness",
+    "version": "1.0.0"
+  },
+  "reportType": "mobile-accessibility-scan",
+  "runtimeProfile": "file-direct",
+  "schemaVersion": "scribe-runtime-manifest/v1",
+  "searchIndexes": [
+    {
+      "locale": "en-US",
+      "path": "data/search-index.en-US.js",
+      "tokenCount": 326
+    },
+    {
+      "locale": "en-GB",
+      "path": "data/search-index.en-GB.js",
+      "tokenCount": 326
+    },
+    {
+      "locale": "en-CA",
+      "path": "data/search-index.en-CA.js",
+      "tokenCount": 326
+    },
+    {
+      "locale": "fr-CA",
+      "path": "data/search-index.fr-CA.js",
+      "tokenCount": 350
+    },
+    {
+      "locale": "en-IN",
+      "path": "data/search-index.en-IN.js",
+      "tokenCount": 326
+    },
+    {
+      "locale": "cy-GB",
+      "path": "data/search-index.cy-GB.js",
+      "tokenCount": 347
+    },
+    {
+      "locale": "gd-GB",
+      "path": "data/search-index.gd-GB.js",
+      "tokenCount": 351
+    },
+    {
+      "locale": "ga-GB",
+      "path": "data/search-index.ga-GB.js",
+      "tokenCount": 350
+    },
+    {
+      "locale": "es-US",
+      "path": "data/search-index.es-US.js",
+      "tokenCount": 353
+    },
+    {
+      "locale": "es-MX",
+      "path": "data/search-index.es-MX.js",
+      "tokenCount": 353
+    },
+    {
+      "locale": "de-DE",
+      "path": "data/search-index.de-DE.js",
+      "tokenCount": 345
+    },
+    {
+      "locale": "fr-FR",
+      "path": "data/search-index.fr-FR.js",
+      "tokenCount": 347
+    },
+    {
+      "locale": "es-ES",
+      "path": "data/search-index.es-ES.js",
+      "tokenCount": 353
+    },
+    {
+      "locale": "it-IT",
+      "path": "data/search-index.it-IT.js",
+      "tokenCount": 345
+    },
+    {
+      "locale": "nl-NL",
+      "path": "data/search-index.nl-NL.js",
+      "tokenCount": 343
+    },
+    {
+      "locale": "pl-PL",
+      "path": "data/search-index.pl-PL.js",
+      "tokenCount": 350
+    },
+    {
+      "locale": "pt-PT",
+      "path": "data/search-index.pt-PT.js",
+      "tokenCount": 343
+    },
+    {
+      "locale": "pt-BR",
+      "path": "data/search-index.pt-BR.js",
+      "tokenCount": 342
+    },
+    {
+      "locale": "ro-RO",
+      "path": "data/search-index.ro-RO.js",
+      "tokenCount": 350
+    },
+    {
+      "locale": "sv-SE",
+      "path": "data/search-index.sv-SE.js",
+      "tokenCount": 340
+    },
+    {
+      "locale": "ko-KR",
+      "path": "data/search-index.ko-KR.js",
+      "tokenCount": 304
+    },
+    {
+      "locale": "zh-CN",
+      "path": "data/search-index.zh-CN.js",
+      "tokenCount": 304
+    },
+    {
+      "locale": "ja-JP",
+      "path": "data/search-index.ja-JP.js",
+      "tokenCount": 72
+    },
+    {
+      "locale": "hi-IN",
+      "path": "data/search-index.hi-IN.js",
+      "tokenCount": 305
+    }
+  ],
+  "shareActions": [
+    {
+      "actionId": "share-missing-alt",
+      "anchorId": "finding-missing-alt",
+      "hash": "finding-missing-alt",
+      "href": "findings/finding-missing-alt/index.html#finding-missing-alt",
+      "label": {
+        "defaultLocale": "en-US",
+        "defaultText": "Share finding",
+        "icuArgs": {},
+        "msgid": "scribe.report.action.shareFinding",
+        "provenance": "template",
+        "reviewState": "reviewed",
+        "values": {
+          "cy-GB": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Canfod rhannu"
+          },
+          "de-DE": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Befund teilen"
+          },
+          "en-CA": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Share finding"
+          },
+          "en-GB": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Share finding"
+          },
+          "en-IN": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Share finding"
+          },
+          "en-US": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Share finding"
+          },
+          "es-ES": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Compartir hallazgo"
+          },
+          "es-MX": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Compartir hallazgo"
+          },
+          "es-US": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Compartir hallazgo"
+          },
+          "fr-CA": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Partager le constat"
+          },
+          "fr-FR": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Partager la constatation"
+          },
+          "ga-GB": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Comhroinn á aimsiú"
+          },
+          "gd-GB": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "A' lorg sgaoilidhean"
+          },
+          "hi-IN": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "साझा ढूंढ रहा है"
+          },
+          "it-IT": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Condividi riscontro"
+          },
+          "ja-JP": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "検出結果を共有"
+          },
+          "ko-KR": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "발견 공유"
+          },
+          "nl-NL": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Aandeel vinden"
+          },
+          "pl-PL": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Udostępnij znalezisko"
+          },
+          "pt-BR": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Compartilhar a descoberta"
+          },
+          "pt-PT": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Compartilhar a descoberta"
+          },
+          "ro-RO": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Găsirea de acțiuni"
+          },
+          "sv-SE": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Aktiesökning"
+          },
+          "zh-CN": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "股份查找"
+          }
+        }
+      },
+      "summary": {
+        "defaultLocale": "en-US",
+        "defaultText": "The SwiftUI Image in the cockpit-mobile profile alert fixture is exposed as meaningful content without an accessibilityLabel.",
+        "icuArgs": {},
+        "msgid": "scribe.report.finding.missingAlt.summary",
+        "provenance": "template",
+        "reviewState": "reviewed",
+        "values": {
+          "cy-GB": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Mae'r ddelwedd SwiftUI yn y fframiau rhybuddion proffil Cockpit-mobile yn cael ei arddangos fel cynnwys perthnasol heb label hygyrchedd."
+          },
+          "de-DE": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Das SwiftUI-Bild im Cockpit-mobile-Profilwarnungsfixture wird als bedeutungsvoller Inhalt ohne accessibilityLabel offengelegt."
+          },
+          "en-CA": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "The SwiftUI Image in the Cockpit-mobile profile alert fixture is exposed as meaningful content without an accessibilityLabel."
+          },
+          "en-GB": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "The SwiftUI Image in the Cockpit-mobile profile alert fixture is exposed as meaningful content without an accessibilityLabel."
+          },
+          "en-IN": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "The SwiftUI Image in the Cockpit-mobile profile alert fixture is exposed as meaningful content without an accessibilityLabel."
+          },
+          "en-US": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "The SwiftUI Image in the cockpit-mobile profile alert fixture is exposed as meaningful content without an accessibilityLabel."
+          },
+          "es-ES": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "La imagen de SwiftUI en el accesorio de alerta de perfil Cockpit-mobile se expone como contenido significativo sin una etiqueta de accesibilidad."
+          },
+          "es-MX": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "La imagen de SwiftUI en el accesorio de alerta de perfil Cockpit-mobile se expone como contenido significativo sin una etiqueta de accesibilidad."
+          },
+          "es-US": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "La imagen de SwiftUI en el accesorio de alerta de perfil Cockpit-mobile se expone como contenido significativo sin una etiqueta de accesibilidad."
+          },
+          "fr-CA": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "L'image SwiftUI dans le profil d'alerte Cockpit-mobile est exposée comme contenu significatif sans étiquette d'accessibilité."
+          },
+          "fr-FR": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "L’image SwiftUI dans le dispositif d’alerte de profil Cockpit-mobile est exposée comme contenu significatif sans accessibilityLabel."
+          },
+          "ga-GB": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Tá an Íomhá SwiftUI sa daingneán foláirimh próifíle Cockpit-soghluaiste nochta mar ábhar brí gan accessibilityLabel."
+          },
+          "gd-GB": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Tha an ìomhaigh SwiftUI ann am mogal rabhaidh pròifil Cockpit-mobile air a shealltainn mar shusbaint bhrìoghmhor gun accessibilityLabel."
+          },
+          "hi-IN": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "वायुयान-मोबाइल प्रोफ़ाइल अलर्ट फिटिंग में स्विफ्टयूआई छवि को एक accessibilityLabel के बिना अर्थपूर्ण सामग्री के रूप में प्रदर्शित किया जाता है।"
+          },
+          "it-IT": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "L'immagine SwiftUI nel dispositivo di avviso del profilo Cockpit-mobile viene esposta come contenuto significativo senza un accessibilityLabel."
+          },
+          "ja-JP": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "ここでは，コックピットモバイルプロファイルアラートフィキシングにおけるＳｗｉｆｔＵＩイメージを，アクセシビリティラベルなしで意味あるコンテンツとして露出する。"
+          },
+          "ko-KR": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Cockpit-mobile 프로필 알림 피팅의 SwiftUI 이미지는 accessibilityLabel이 없는 의미 있는 콘텐츠로 노출됩니다."
+          },
+          "nl-NL": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "De SwiftUI-afbeelding in de waarschuwingsfixtuur voor het Cockpit-mobile-profiel wordt weergegeven als zinvolle inhoud zonder een accessibilityLabel."
+          },
+          "pl-PL": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Obraz SwiftUI w urządzeniu alertu profilu kokpit-mobilny jest wyświetlany jako znacząca zawartość bez etykiety accessibilityLabel."
+          },
+          "pt-BR": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "A imagem SwiftUI no dispositivo de alerta de perfil Cockpit-mobile é exposta como conteúdo significativo sem um accessibilityLabel."
+          },
+          "pt-PT": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "A imagem SwiftUI no dispositivo de alerta de perfil Cockpit-mobile é exposta como conteúdo significativo sem um accessibilityLabel."
+          },
+          "ro-RO": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Imaginea SwiftUI din dispozitivul de alertă pentru profilul Cockpit-mobile este expusă ca conținut semnificativ fără un accessibilityLabel."
+          },
+          "sv-SE": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "SwiftUI-bilden i varningsfixturen för Cockpit-mobilprofil exponeras som meningsfullt innehåll utan en accessibilityLabel."
+          },
+          "zh-CN": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Cockpit-mobile 配置文件警报固定项中的 SwiftUI 图像将作为没有 accessibilityLabel 的有意义内容公开。"
+          }
+        }
+      },
+      "title": {
+        "defaultLocale": "en-US",
+        "defaultText": "SwiftUI image is missing an accessible name",
+        "icuArgs": {},
+        "msgid": "scribe.report.finding.missingAlt.title",
+        "provenance": "template",
+        "reviewState": "reviewed",
+        "values": {
+          "cy-GB": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Mae'r ddelwedd SwiftUI ar goll enw hygyrchedd"
+          },
+          "de-DE": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "SwiftUI-Bild hat keinen barrierefreien Namen"
+          },
+          "en-CA": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "SwiftUI image is missing an accessible name"
+          },
+          "en-GB": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "SwiftUI image is missing an accessible name"
+          },
+          "en-IN": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "SwiftUI image is missing an accessible name"
+          },
+          "en-US": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "SwiftUI image is missing an accessible name"
+          },
+          "es-ES": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "A la imagen de SwiftUI le falta un nombre accesible"
+          },
+          "es-MX": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "A la imagen de SwiftUI le falta un nombre accesible"
+          },
+          "es-US": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "A la imagen de SwiftUI le falta un nombre accesible"
+          },
+          "fr-CA": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "L'image SwiftUI manque de nom accessible"
+          },
+          "fr-FR": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "L'image SwiftUI ne possède pas de nom accessible"
+          },
+          "ga-GB": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Tá ainm inrochtana ar iarraidh ar íomhá SwiftUI"
+          },
+          "gd-GB": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Tha ainm ruigsinneach a dhìth air ìomhaigh SwiftUI"
+          },
+          "hi-IN": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "स्विफ्टUI छवि में पहुँच योग्य नाम नहीं है"
+          },
+          "it-IT": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "All'immagine SwiftUI manca un nome accessibile"
+          },
+          "ja-JP": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "SwiftUI イメージにはアクセシブルな名前がありません"
+          },
+          "ko-KR": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "SwiftUI 이미지에 접근 가능한 이름이 없습니다"
+          },
+          "nl-NL": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "SwiftUI-afbeelding mist een toegankelijke naam"
+          },
+          "pl-PL": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Brakuje dostępnej nazwy obrazu SwiftUI"
+          },
+          "pt-BR": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "A imagem SwiftUI não tem um nome acessível"
+          },
+          "pt-PT": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "A imagem SwiftUI não tem um nome acessível"
+          },
+          "ro-RO": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Imaginii SwiftUI îi lipsește un nume accesibil"
+          },
+          "sv-SE": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "SwiftUI-bilden saknar ett tillgängligt namn"
+          },
+          "zh-CN": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "SwiftUI 图像缺少无障碍名称"
+          }
+        }
+      }
+    }
+  ],
+  "sitemap": {
+    "dataPath": "data/sitemap.js",
+    "pages": [
+      {
+        "anchorIds": [
+          "section-overview"
+        ],
+        "canonicalPath": "index.html",
+        "exportPaths": [
+          "exports/report.md"
+        ],
+        "locale": "en-US",
+        "path": "index.html",
+        "role": "overview"
+      },
+      {
+        "anchorIds": [
+          "finding-missing-alt",
+          "source-swiftui-missing-image-label"
+        ],
+        "canonicalPath": "findings/finding-missing-alt/index.html",
+        "exportPaths": [],
+        "locale": "en-US",
+        "parentPath": "index.html",
+        "path": "findings/finding-missing-alt/index.html",
+        "role": "finding"
+      },
+      {
+        "anchorIds": [
+          "fix-plan-missing-alt"
+        ],
+        "canonicalPath": "fix-plans/finding-missing-alt/index.html",
+        "exportPaths": [],
+        "locale": "en-US",
+        "parentPath": "findings/finding-missing-alt/index.html",
+        "path": "fix-plans/finding-missing-alt/index.html",
+        "role": "fix-plan"
+      },
+      {
+        "anchorIds": [
+          "section-overview",
+          "finding-missing-alt",
+          "source-swiftui-missing-image-label",
+          "fix-plan-missing-alt"
+        ],
+        "canonicalPath": "exports/report.md",
+        "exportPaths": [],
+        "locale": "en-US",
+        "parentPath": "index.html",
+        "path": "exports/report.md",
+        "role": "export"
+      }
+    ],
+    "xmlPath": "sitemap.xml"
+  },
+  "sourcesAttribution": [],
+  "sourceSnippets": [
+    {
+      "anchorId": "source-swiftui-missing-image-label",
+      "code": "struct SondeDogfoodSwiftUIImageMissingLabel: View {\n  var body: some View {\n    HStack {\n      Image(systemName: \"person.crop.circle.badge.exclamationmark\")\n        .font(.title2)\n      Text(\"Profile alert\")\n    }\n  }\n}",
+      "endLine": 12,
+      "label": {
+        "defaultLocale": "en-US",
+        "defaultText": "{framework} source evidence",
+        "icuArgs": {
+          "framework": "SwiftUI — iOS runtime"
+        },
+        "msgid": "scribe.report.complianceExample.source.title",
+        "provenance": "template",
+        "reviewState": "reviewed",
+        "values": {
+          "cy-GB": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "{framework} ffynhonnell dystiolaeth"
+          },
+          "de-DE": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "{framework} Quellenbeweise"
+          },
+          "en-CA": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "{framework} source evidence"
+          },
+          "en-GB": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "{framework} source evidence"
+          },
+          "en-IN": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "{framework} source evidence"
+          },
+          "en-US": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "{framework} source evidence"
+          },
+          "es-ES": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "{framework} fuente de evidencia"
+          },
+          "es-MX": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Evidencia fuente de {framework}"
+          },
+          "es-US": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Evidencia fuente de {framework}"
+          },
+          "fr-CA": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Évidence source {framework}"
+          },
+          "fr-FR": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Preuve source {framework}"
+          },
+          "ga-GB": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Fianaise foinse {framework}"
+          },
+          "gd-GB": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Fianais tùsail {framework}"
+          },
+          "hi-IN": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "{framework} स्रोत प्रमाण"
+          },
+          "it-IT": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "{framework} evidenza della fonte"
+          },
+          "ja-JP": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "{framework} のソース証拠"
+          },
+          "ko-KR": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "{framework} 소스 증거"
+          },
+          "nl-NL": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "{framework} bronbewijs"
+          },
+          "pl-PL": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "{framework} źródło dowodów"
+          },
+          "pt-BR": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "{framework} evidência de fonte"
+          },
+          "pt-PT": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "{framework} evidência de fonte"
+          },
+          "ro-RO": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Dovezi sursă {framework}"
+          },
+          "sv-SE": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "{framework} källbevis"
+          },
+          "zh-CN": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "{framework} 源证据"
+          }
+        }
+      },
+      "language": "swift",
+      "pagePath": "findings/finding-missing-alt/index.html",
+      "snippetId": "source-swiftui-missing-image-label",
+      "sourcePath": "packages/cockpit-mobile/src/commonMain/resources/mobileA11yFixtures/swiftUiMissingImageLabel.swift",
+      "startLine": 4,
+      "vcsPermalink": "https://github.com/sondeinc/sonde/blob/main/packages/cockpit-mobile/src/commonMain/resources/mobileA11yFixtures/swiftUiMissingImageLabel.swift#L4-L12",
+      "verifiedSourceHash": "sha256:c9bf5b764bac6ed0f6544f7ce02068714ead944981a12f1ad82ac5dccbc6709a"
+    },
+    {
+      "anchorId": "source-1-runtime-scan-found-symbolic-accessible-name",
+      "code": "@Composable\nprivate fun StaticDogfoodSeedAction() {\n  IconButton(\n    onClick = {},\n    modifier = Modifier.testTag(SondeMobileTestTags.StaticDogfoodSeedAction),\n  ) {\n    // Intentional Phase 9 M2 dogfood seed: symbolic text is not a durable accessible name.\n    Text(\"!\")\n  }\n}",
+      "endLine": 499,
+      "label": {
+        "defaultLocale": "en-US",
+        "defaultText": "{framework} source evidence",
+        "icuArgs": {
+          "framework": "Compose Multiplatform — Android runtime"
+        },
+        "msgid": "scribe.report.complianceExample.source.title",
+        "provenance": "template",
+        "reviewState": "reviewed",
+        "values": {
+          "cy-GB": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "{framework} ffynhonnell dystiolaeth"
+          },
+          "de-DE": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "{framework} Quellenbeweise"
+          },
+          "en-CA": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "{framework} source evidence"
+          },
+          "en-GB": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "{framework} source evidence"
+          },
+          "en-IN": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "{framework} source evidence"
+          },
+          "en-US": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "{framework} source evidence"
+          },
+          "es-ES": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "{framework} fuente de evidencia"
+          },
+          "es-MX": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Evidencia fuente de {framework}"
+          },
+          "es-US": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Evidencia fuente de {framework}"
+          },
+          "fr-CA": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Évidence source {framework}"
+          },
+          "fr-FR": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Preuve source {framework}"
+          },
+          "ga-GB": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Fianaise foinse {framework}"
+          },
+          "gd-GB": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Fianais tùsail {framework}"
+          },
+          "hi-IN": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "{framework} स्रोत प्रमाण"
+          },
+          "it-IT": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "{framework} evidenza della fonte"
+          },
+          "ja-JP": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "{framework} のソース証拠"
+          },
+          "ko-KR": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "{framework} 소스 증거"
+          },
+          "nl-NL": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "{framework} bronbewijs"
+          },
+          "pl-PL": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "{framework} źródło dowodów"
+          },
+          "pt-BR": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "{framework} evidência de fonte"
+          },
+          "pt-PT": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "{framework} evidência de fonte"
+          },
+          "ro-RO": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Dovezi sursă {framework}"
+          },
+          "sv-SE": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "{framework} källbevis"
+          },
+          "zh-CN": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "{framework} 源证据"
+          }
+        }
+      },
+      "language": "kotlin",
+      "pagePath": "findings/finding-missing-alt/index.html",
+      "snippetId": "source-1-runtime-scan-found-symbolic-accessible-name",
+      "sourcePath": "packages/cockpit-mobile/src/commonMain/kotlin/sonde/mobile/ui/SondeMobileApp.kt",
+      "startLine": 490,
+      "vcsPermalink": "https://github.com/sondeinc/sonde/blob/main/packages/cockpit-mobile/src/commonMain/kotlin/sonde/mobile/ui/SondeMobileApp.kt#L490-L499",
+      "verifiedSourceHash": "sha256:d3f809d30d075c1a84f3bd7f296c4a0351a34b64bb0e2a107a9395bbdd2ca3a5"
+    },
+    {
+      "anchorId": "source-2-runtime-scan-found-symbolic-accessible-name",
+      "code": "@Composable\nprivate fun StaticDogfoodSeedAction() {\n  IconButton(\n    onClick = {},\n    modifier = Modifier.testTag(SondeMobileTestTags.StaticDogfoodSeedAction),\n  ) {\n    // Intentional Phase 9 M2 dogfood seed: symbolic text is not a durable accessible name.\n    Text(\"!\")\n  }\n}",
+      "endLine": 499,
+      "label": {
+        "defaultLocale": "en-US",
+        "defaultText": "{framework} source evidence",
+        "icuArgs": {
+          "framework": "Compose Multiplatform — iOS runtime"
+        },
+        "msgid": "scribe.report.complianceExample.source.title",
+        "provenance": "template",
+        "reviewState": "reviewed",
+        "values": {
+          "cy-GB": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "{framework} ffynhonnell dystiolaeth"
+          },
+          "de-DE": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "{framework} Quellenbeweise"
+          },
+          "en-CA": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "{framework} source evidence"
+          },
+          "en-GB": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "{framework} source evidence"
+          },
+          "en-IN": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "{framework} source evidence"
+          },
+          "en-US": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "{framework} source evidence"
+          },
+          "es-ES": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "{framework} fuente de evidencia"
+          },
+          "es-MX": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Evidencia fuente de {framework}"
+          },
+          "es-US": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Evidencia fuente de {framework}"
+          },
+          "fr-CA": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Évidence source {framework}"
+          },
+          "fr-FR": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Preuve source {framework}"
+          },
+          "ga-GB": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Fianaise foinse {framework}"
+          },
+          "gd-GB": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Fianais tùsail {framework}"
+          },
+          "hi-IN": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "{framework} स्रोत प्रमाण"
+          },
+          "it-IT": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "{framework} evidenza della fonte"
+          },
+          "ja-JP": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "{framework} のソース証拠"
+          },
+          "ko-KR": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "{framework} 소스 증거"
+          },
+          "nl-NL": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "{framework} bronbewijs"
+          },
+          "pl-PL": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "{framework} źródło dowodów"
+          },
+          "pt-BR": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "{framework} evidência de fonte"
+          },
+          "pt-PT": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "{framework} evidência de fonte"
+          },
+          "ro-RO": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Dovezi sursă {framework}"
+          },
+          "sv-SE": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "{framework} källbevis"
+          },
+          "zh-CN": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "{framework} 源证据"
+          }
+        }
+      },
+      "language": "kotlin",
+      "pagePath": "findings/finding-missing-alt/index.html",
+      "snippetId": "source-2-runtime-scan-found-symbolic-accessible-name",
+      "sourcePath": "packages/cockpit-mobile/src/commonMain/kotlin/sonde/mobile/ui/SondeMobileApp.kt",
+      "startLine": 490,
+      "vcsPermalink": "https://github.com/sondeinc/sonde/blob/main/packages/cockpit-mobile/src/commonMain/kotlin/sonde/mobile/ui/SondeMobileApp.kt#L490-L499",
+      "verifiedSourceHash": "sha256:d3f809d30d075c1a84f3bd7f296c4a0351a34b64bb0e2a107a9395bbdd2ca3a5"
+    },
+    {
+      "anchorId": "source-4-filter-control-target-is-below-android-minimum",
+      "code": "@Composable\nprivate fun CompactFilterChip(\n  selected: Boolean,\n  onClick: () -> Unit,\n  label: String,\n  modifier: Modifier = Modifier,\n) {\n  Surface(\n    modifier = modifier\n      .height(SondeMobileTokens.spacingMd * 2)\n      .clickable { onClick() }\n      .semantics {\n        role = Role.Button\n        contentDescription = label\n      },",
+      "endLine": 662,
+      "label": {
+        "defaultLocale": "en-US",
+        "defaultText": "{framework} source evidence",
+        "icuArgs": {
+          "framework": "Compose Multiplatform — Android Material Design (target size)"
+        },
+        "msgid": "scribe.report.complianceExample.source.title",
+        "provenance": "template",
+        "reviewState": "reviewed",
+        "values": {
+          "cy-GB": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "{framework} ffynhonnell dystiolaeth"
+          },
+          "de-DE": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "{framework} Quellenbeweise"
+          },
+          "en-CA": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "{framework} source evidence"
+          },
+          "en-GB": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "{framework} source evidence"
+          },
+          "en-IN": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "{framework} source evidence"
+          },
+          "en-US": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "{framework} source evidence"
+          },
+          "es-ES": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "{framework} fuente de evidencia"
+          },
+          "es-MX": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Evidencia fuente de {framework}"
+          },
+          "es-US": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Evidencia fuente de {framework}"
+          },
+          "fr-CA": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Évidence source {framework}"
+          },
+          "fr-FR": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Preuve source {framework}"
+          },
+          "ga-GB": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Fianaise foinse {framework}"
+          },
+          "gd-GB": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Fianais tùsail {framework}"
+          },
+          "hi-IN": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "{framework} स्रोत प्रमाण"
+          },
+          "it-IT": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "{framework} evidenza della fonte"
+          },
+          "ja-JP": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "{framework} のソース証拠"
+          },
+          "ko-KR": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "{framework} 소스 증거"
+          },
+          "nl-NL": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "{framework} bronbewijs"
+          },
+          "pl-PL": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "{framework} źródło dowodów"
+          },
+          "pt-BR": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "{framework} evidência de fonte"
+          },
+          "pt-PT": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "{framework} evidência de fonte"
+          },
+          "ro-RO": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Dovezi sursă {framework}"
+          },
+          "sv-SE": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "{framework} källbevis"
+          },
+          "zh-CN": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "{framework} 源证据"
+          }
+        }
+      },
+      "language": "kotlin",
+      "pagePath": "findings/finding-missing-alt/index.html",
+      "snippetId": "source-4-filter-control-target-is-below-android-minimum",
+      "sourcePath": "packages/cockpit-mobile/src/commonMain/kotlin/sonde/mobile/ui/SondeMobileApp.kt",
+      "startLine": 648,
+      "vcsPermalink": "https://github.com/sondeinc/sonde/blob/main/packages/cockpit-mobile/src/commonMain/kotlin/sonde/mobile/ui/SondeMobileApp.kt#L648-L662",
+      "verifiedSourceHash": "sha256:2dfe92109623bdf10498f88031f30bc0e3eba73be7eef54c479f78266fddac5e"
+    },
+    {
+      "anchorId": "source-5-finding-group-heading-can-truncate-under-ios-dynamic-type",
+      "code": "    groups.forEach { group ->\n      item {\n        Text(\n          \"${severityGlyph(group.severity)} ${group.severity.name} findings requiring mobile cockpit review\",\n          modifier = Modifier.testTag(\"${SondeMobileTestTags.FindingSeverityGroupPrefix}${group.severity.name}\"),\n          style = MaterialTheme.typography.titleMedium,\n          maxLines = 1,\n          overflow = TextOverflow.Ellipsis,\n        )",
+      "endLine": 538,
+      "label": {
+        "defaultLocale": "en-US",
+        "defaultText": "{framework} source evidence",
+        "icuArgs": {
+          "framework": "Compose Multiplatform — iOS HIG (Dynamic Type)"
+        },
+        "msgid": "scribe.report.complianceExample.source.title",
+        "provenance": "template",
+        "reviewState": "reviewed",
+        "values": {
+          "cy-GB": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "{framework} ffynhonnell dystiolaeth"
+          },
+          "de-DE": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "{framework} Quellenbeweise"
+          },
+          "en-CA": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "{framework} source evidence"
+          },
+          "en-GB": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "{framework} source evidence"
+          },
+          "en-IN": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "{framework} source evidence"
+          },
+          "en-US": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "{framework} source evidence"
+          },
+          "es-ES": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "{framework} fuente de evidencia"
+          },
+          "es-MX": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Evidencia fuente de {framework}"
+          },
+          "es-US": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Evidencia fuente de {framework}"
+          },
+          "fr-CA": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Évidence source {framework}"
+          },
+          "fr-FR": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Preuve source {framework}"
+          },
+          "ga-GB": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Fianaise foinse {framework}"
+          },
+          "gd-GB": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Fianais tùsail {framework}"
+          },
+          "hi-IN": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "{framework} स्रोत प्रमाण"
+          },
+          "it-IT": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "{framework} evidenza della fonte"
+          },
+          "ja-JP": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "{framework} のソース証拠"
+          },
+          "ko-KR": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "{framework} 소스 증거"
+          },
+          "nl-NL": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "{framework} bronbewijs"
+          },
+          "pl-PL": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "{framework} źródło dowodów"
+          },
+          "pt-BR": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "{framework} evidência de fonte"
+          },
+          "pt-PT": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "{framework} evidência de fonte"
+          },
+          "ro-RO": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Dovezi sursă {framework}"
+          },
+          "sv-SE": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "{framework} källbevis"
+          },
+          "zh-CN": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "{framework} 源证据"
+          }
+        }
+      },
+      "language": "kotlin",
+      "pagePath": "findings/finding-missing-alt/index.html",
+      "snippetId": "source-5-finding-group-heading-can-truncate-under-ios-dynamic-type",
+      "sourcePath": "packages/cockpit-mobile/src/commonMain/kotlin/sonde/mobile/ui/SondeMobileApp.kt",
+      "startLine": 530,
+      "vcsPermalink": "https://github.com/sondeinc/sonde/blob/main/packages/cockpit-mobile/src/commonMain/kotlin/sonde/mobile/ui/SondeMobileApp.kt#L530-L538",
+      "verifiedSourceHash": "sha256:b69ec7eb5ef911f09a3ab4c236b63002ade800ebf17be1e9ff132092d400b71f"
+    },
+    {
+      "anchorId": "source-6-mobile-brand-consistency-gap-color-drift",
+      "code": "@Composable\nprivate fun StaticDogfoodSeedAction() {\n  IconButton(\n    onClick = {},\n    modifier = Modifier.testTag(SondeMobileTestTags.StaticDogfoodSeedAction),\n  ) {\n    // Intentional Phase 9 M2 dogfood seed: symbolic text is not a durable accessible name.\n    Text(\"!\")\n  }\n}",
+      "endLine": 499,
+      "label": {
+        "defaultLocale": "en-US",
+        "defaultText": "{framework} source evidence",
+        "icuArgs": {
+          "framework": "Compose Multiplatform — Material Design brand parity (color drift)"
+        },
+        "msgid": "scribe.report.complianceExample.source.title",
+        "provenance": "template",
+        "reviewState": "reviewed",
+        "values": {
+          "cy-GB": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "{framework} ffynhonnell dystiolaeth"
+          },
+          "de-DE": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "{framework} Quellenbeweise"
+          },
+          "en-CA": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "{framework} source evidence"
+          },
+          "en-GB": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "{framework} source evidence"
+          },
+          "en-IN": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "{framework} source evidence"
+          },
+          "en-US": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "{framework} source evidence"
+          },
+          "es-ES": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "{framework} fuente de evidencia"
+          },
+          "es-MX": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Evidencia fuente de {framework}"
+          },
+          "es-US": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Evidencia fuente de {framework}"
+          },
+          "fr-CA": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Évidence source {framework}"
+          },
+          "fr-FR": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Preuve source {framework}"
+          },
+          "ga-GB": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Fianaise foinse {framework}"
+          },
+          "gd-GB": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Fianais tùsail {framework}"
+          },
+          "hi-IN": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "{framework} स्रोत प्रमाण"
+          },
+          "it-IT": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "{framework} evidenza della fonte"
+          },
+          "ja-JP": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "{framework} のソース証拠"
+          },
+          "ko-KR": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "{framework} 소스 증거"
+          },
+          "nl-NL": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "{framework} bronbewijs"
+          },
+          "pl-PL": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "{framework} źródło dowodów"
+          },
+          "pt-BR": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "{framework} evidência de fonte"
+          },
+          "pt-PT": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "{framework} evidência de fonte"
+          },
+          "ro-RO": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Dovezi sursă {framework}"
+          },
+          "sv-SE": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "{framework} källbevis"
+          },
+          "zh-CN": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "{framework} 源证据"
+          }
+        }
+      },
+      "language": "kotlin",
+      "pagePath": "findings/finding-missing-alt/index.html",
+      "snippetId": "source-6-mobile-brand-consistency-gap-color-drift",
+      "sourcePath": "packages/cockpit-mobile/src/commonMain/kotlin/sonde/mobile/ui/SondeMobileApp.kt",
+      "startLine": 490,
+      "vcsPermalink": "https://github.com/sondeinc/sonde/blob/main/packages/cockpit-mobile/src/commonMain/kotlin/sonde/mobile/ui/SondeMobileApp.kt#L490-L499",
+      "verifiedSourceHash": "sha256:d3f809d30d075c1a84f3bd7f296c4a0351a34b64bb0e2a107a9395bbdd2ca3a5"
+    },
+    {
+      "anchorId": "source-7-objective-c-uikit-image-is-missing-an-accessible-name",
+      "code": "- (void)configureDecorativeLookingAvatar {\n  UIImageView *avatarImageView = [[UIImageView alloc] init];\n  avatarImageView.isAccessibilityElement = YES;\n  avatarImageView.accessibilityTraits = UIAccessibilityTraitImage;\n  [avatarImageView.widthAnchor constraintEqualToConstant:44].active = YES;\n  [avatarImageView.heightAnchor constraintEqualToConstant:44].active = YES;\n}",
+      "endLine": 15,
+      "label": {
+        "defaultLocale": "en-US",
+        "defaultText": "{framework} source evidence",
+        "icuArgs": {
+          "framework": "UIKit (Objective-C) — iOS runtime"
+        },
+        "msgid": "scribe.report.complianceExample.source.title",
+        "provenance": "template",
+        "reviewState": "reviewed",
+        "values": {
+          "cy-GB": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "{framework} ffynhonnell dystiolaeth"
+          },
+          "de-DE": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "{framework} Quellenbeweise"
+          },
+          "en-CA": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "{framework} source evidence"
+          },
+          "en-GB": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "{framework} source evidence"
+          },
+          "en-IN": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "{framework} source evidence"
+          },
+          "en-US": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "{framework} source evidence"
+          },
+          "es-ES": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "{framework} fuente de evidencia"
+          },
+          "es-MX": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Evidencia fuente de {framework}"
+          },
+          "es-US": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Evidencia fuente de {framework}"
+          },
+          "fr-CA": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Évidence source {framework}"
+          },
+          "fr-FR": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Preuve source {framework}"
+          },
+          "ga-GB": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Fianaise foinse {framework}"
+          },
+          "gd-GB": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Fianais tùsail {framework}"
+          },
+          "hi-IN": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "{framework} स्रोत प्रमाण"
+          },
+          "it-IT": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "{framework} evidenza della fonte"
+          },
+          "ja-JP": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "{framework} のソース証拠"
+          },
+          "ko-KR": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "{framework} 소스 증거"
+          },
+          "nl-NL": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "{framework} bronbewijs"
+          },
+          "pl-PL": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "{framework} źródło dowodów"
+          },
+          "pt-BR": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "{framework} evidência de fonte"
+          },
+          "pt-PT": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "{framework} evidência de fonte"
+          },
+          "ro-RO": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Dovezi sursă {framework}"
+          },
+          "sv-SE": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "{framework} källbevis"
+          },
+          "zh-CN": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "{framework} 源证据"
+          }
+        }
+      },
+      "language": "objectivec",
+      "pagePath": "findings/finding-missing-alt/index.html",
+      "snippetId": "source-7-objective-c-uikit-image-is-missing-an-accessible-name",
+      "sourcePath": "packages/cockpit-mobile/src/commonMain/resources/mobileA11yFixtures/uikitMissingImageLabel.m",
+      "startLine": 9,
+      "vcsPermalink": "https://github.com/sondeinc/sonde/blob/main/packages/cockpit-mobile/src/commonMain/resources/mobileA11yFixtures/uikitMissingImageLabel.m#L9-L15",
+      "verifiedSourceHash": "sha256:181726807ecc7de7db6ea46cde7a3d55a3ee204fdef943cc90dbcaadcbc794f1"
+    },
+    {
+      "anchorId": "source-8-hardcoded-english-accessibility-label",
+      "code": "import { Text } from 'react-native';\n\nexport function ReactNativeProfileStatus() {\n  return <Text accessibilityLabel=\"Profile status\" testID=\"profile.status\" />;\n}",
+      "endLine": 6,
+      "label": {
+        "defaultLocale": "en-US",
+        "defaultText": "{framework} source evidence",
+        "icuArgs": {
+          "framework": "React Native — source trace"
+        },
+        "msgid": "scribe.report.complianceExample.source.title",
+        "provenance": "template",
+        "reviewState": "reviewed",
+        "values": {
+          "cy-GB": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "{framework} ffynhonnell dystiolaeth"
+          },
+          "de-DE": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "{framework} Quellenbeweise"
+          },
+          "en-CA": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "{framework} source evidence"
+          },
+          "en-GB": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "{framework} source evidence"
+          },
+          "en-IN": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "{framework} source evidence"
+          },
+          "en-US": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "{framework} source evidence"
+          },
+          "es-ES": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "{framework} fuente de evidencia"
+          },
+          "es-MX": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Evidencia fuente de {framework}"
+          },
+          "es-US": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Evidencia fuente de {framework}"
+          },
+          "fr-CA": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Évidence source {framework}"
+          },
+          "fr-FR": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Preuve source {framework}"
+          },
+          "ga-GB": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Fianaise foinse {framework}"
+          },
+          "gd-GB": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Fianais tùsail {framework}"
+          },
+          "hi-IN": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "{framework} स्रोत प्रमाण"
+          },
+          "it-IT": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "{framework} evidenza della fonte"
+          },
+          "ja-JP": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "{framework} のソース証拠"
+          },
+          "ko-KR": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "{framework} 소스 증거"
+          },
+          "nl-NL": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "{framework} bronbewijs"
+          },
+          "pl-PL": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "{framework} źródło dowodów"
+          },
+          "pt-BR": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "{framework} evidência de fonte"
+          },
+          "pt-PT": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "{framework} evidência de fonte"
+          },
+          "ro-RO": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Dovezi sursă {framework}"
+          },
+          "sv-SE": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "{framework} källbevis"
+          },
+          "zh-CN": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "{framework} 源证据"
+          }
+        }
+      },
+      "language": "typescript",
+      "pagePath": "findings/finding-missing-alt/index.html",
+      "snippetId": "source-8-hardcoded-english-accessibility-label",
+      "sourcePath": "packages/cockpit-mobile/src/commonMain/resources/mobileA11yFixtures/reactNativeProfileStatus.tsx",
+      "startLine": 2,
+      "vcsPermalink": "https://github.com/sondeinc/sonde/blob/main/packages/cockpit-mobile/src/commonMain/resources/mobileA11yFixtures/reactNativeProfileStatus.tsx#L2-L6",
+      "verifiedSourceHash": "sha256:bea051019bbc48058bcce2fd5c23cc596e42a10226c3b599e32019af51a007a8"
+    },
+    {
+      "anchorId": "source-9-image-element-is-missing-the-alt-attribute",
+      "code": "export function BadImage(): ReactElement {\n  return <img src=\"/logo.png\" />;\n}",
+      "endLine": 13,
+      "label": {
+        "defaultLocale": "en-US",
+        "defaultText": "{framework} source evidence",
+        "icuArgs": {
+          "framework": "React / TSX — WCAG static probe"
+        },
+        "msgid": "scribe.report.complianceExample.source.title",
+        "provenance": "template",
+        "reviewState": "reviewed",
+        "values": {
+          "cy-GB": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "{framework} ffynhonnell dystiolaeth"
+          },
+          "de-DE": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "{framework} Quellenbeweise"
+          },
+          "en-CA": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "{framework} source evidence"
+          },
+          "en-GB": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "{framework} source evidence"
+          },
+          "en-IN": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "{framework} source evidence"
+          },
+          "en-US": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "{framework} source evidence"
+          },
+          "es-ES": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "{framework} fuente de evidencia"
+          },
+          "es-MX": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Evidencia fuente de {framework}"
+          },
+          "es-US": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Evidencia fuente de {framework}"
+          },
+          "fr-CA": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Évidence source {framework}"
+          },
+          "fr-FR": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Preuve source {framework}"
+          },
+          "ga-GB": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Fianaise foinse {framework}"
+          },
+          "gd-GB": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Fianais tùsail {framework}"
+          },
+          "hi-IN": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "{framework} स्रोत प्रमाण"
+          },
+          "it-IT": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "{framework} evidenza della fonte"
+          },
+          "ja-JP": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "{framework} のソース証拠"
+          },
+          "ko-KR": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "{framework} 소스 증거"
+          },
+          "nl-NL": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "{framework} bronbewijs"
+          },
+          "pl-PL": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "{framework} źródło dowodów"
+          },
+          "pt-BR": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "{framework} evidência de fonte"
+          },
+          "pt-PT": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "{framework} evidência de fonte"
+          },
+          "ro-RO": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Dovezi sursă {framework}"
+          },
+          "sv-SE": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "{framework} källbevis"
+          },
+          "zh-CN": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "{framework} 源证据"
+          }
+        }
+      },
+      "language": "typescript",
+      "pagePath": "findings/finding-missing-alt/index.html",
+      "snippetId": "source-9-image-element-is-missing-the-alt-attribute",
+      "sourcePath": "packages/cockpit/e2e/fixtures/src-compliance/badAccessibility.tsx",
+      "startLine": 11,
+      "vcsPermalink": "https://github.com/sondeinc/sonde/blob/main/packages/cockpit/e2e/fixtures/src-compliance/badAccessibility.tsx#L11-L13",
+      "verifiedSourceHash": "sha256:92a7402c166f297c8c9643812f992cb6864120c11dcdeec11316b552c2468b73"
+    },
+    {
+      "anchorId": "source-10-element-has-positive-tabindex-focus-order",
+      "code": "  </nav>\n  <img src=\"logo.png\">\n  <button tabindex=\"3\">Submit</button>\n</body>",
+      "endLine": 14,
+      "label": {
+        "defaultLocale": "en-US",
+        "defaultText": "{framework} source evidence",
+        "icuArgs": {
+          "framework": "HTML — WCAG mechanical probe"
+        },
+        "msgid": "scribe.report.complianceExample.source.title",
+        "provenance": "template",
+        "reviewState": "reviewed",
+        "values": {
+          "cy-GB": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "{framework} ffynhonnell dystiolaeth"
+          },
+          "de-DE": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "{framework} Quellenbeweise"
+          },
+          "en-CA": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "{framework} source evidence"
+          },
+          "en-GB": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "{framework} source evidence"
+          },
+          "en-IN": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "{framework} source evidence"
+          },
+          "en-US": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "{framework} source evidence"
+          },
+          "es-ES": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "{framework} fuente de evidencia"
+          },
+          "es-MX": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Evidencia fuente de {framework}"
+          },
+          "es-US": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Evidencia fuente de {framework}"
+          },
+          "fr-CA": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Évidence source {framework}"
+          },
+          "fr-FR": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Preuve source {framework}"
+          },
+          "ga-GB": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Fianaise foinse {framework}"
+          },
+          "gd-GB": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Fianais tùsail {framework}"
+          },
+          "hi-IN": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "{framework} स्रोत प्रमाण"
+          },
+          "it-IT": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "{framework} evidenza della fonte"
+          },
+          "ja-JP": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "{framework} のソース証拠"
+          },
+          "ko-KR": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "{framework} 소스 증거"
+          },
+          "nl-NL": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "{framework} bronbewijs"
+          },
+          "pl-PL": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "{framework} źródło dowodów"
+          },
+          "pt-BR": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "{framework} evidência de fonte"
+          },
+          "pt-PT": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "{framework} evidência de fonte"
+          },
+          "ro-RO": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Dovezi sursă {framework}"
+          },
+          "sv-SE": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "{framework} källbevis"
+          },
+          "zh-CN": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "{framework} 源证据"
+          }
+        }
+      },
+      "language": "html",
+      "pagePath": "findings/finding-missing-alt/index.html",
+      "snippetId": "source-10-element-has-positive-tabindex-focus-order",
+      "sourcePath": "packages/fix-apply/e2e/fixtures/wcagMechanicalHtml/index.html",
+      "startLine": 11,
+      "vcsPermalink": "https://github.com/sondeinc/sonde/blob/main/packages/fix-apply/e2e/fixtures/wcagMechanicalHtml/index.html#L11-L14",
+      "verifiedSourceHash": "sha256:96912e2abb10165a8ac346290099fd37910a96ef992de7d77ec5f57176e94bd7"
+    }
+  ],
+  "theme": {
+    "availableModes": [
+      {
+        "label": {
+          "defaultLocale": "en-US",
+          "defaultText": "Auto",
+          "icuArgs": {},
+          "msgid": "scribe.report.mode.auto",
+          "provenance": "template",
+          "reviewState": "reviewed",
+          "values": {
+            "cy-GB": {
+              "fallback": false,
+              "reviewed": true,
+              "text": "& Awtomatig"
+            },
+            "de-DE": {
+              "fallback": false,
+              "reviewed": true,
+              "text": "Automatisch"
+            },
+            "en-CA": {
+              "fallback": false,
+              "reviewed": true,
+              "text": "Auto"
+            },
+            "en-GB": {
+              "fallback": false,
+              "reviewed": true,
+              "text": "Auto"
+            },
+            "en-IN": {
+              "fallback": false,
+              "reviewed": true,
+              "text": "Auto"
+            },
+            "en-US": {
+              "fallback": false,
+              "reviewed": true,
+              "text": "Auto"
+            },
+            "es-ES": {
+              "fallback": false,
+              "reviewed": true,
+              "text": "Automático"
+            },
+            "es-MX": {
+              "fallback": false,
+              "reviewed": true,
+              "text": "Automatico"
+            },
+            "es-US": {
+              "fallback": false,
+              "reviewed": true,
+              "text": "Automatico"
+            },
+            "fr-CA": {
+              "fallback": false,
+              "reviewed": true,
+              "text": "Automatique"
+            },
+            "fr-FR": {
+              "fallback": false,
+              "reviewed": true,
+              "text": "Automatique"
+            },
+            "ga-GB": {
+              "fallback": false,
+              "reviewed": true,
+              "text": "Uathoibríoch"
+            },
+            "gd-GB": {
+              "fallback": false,
+              "reviewed": true,
+              "text": "fèin-obrachail"
+            },
+            "hi-IN": {
+              "fallback": false,
+              "reviewed": true,
+              "text": "स्वचालित"
+            },
+            "it-IT": {
+              "fallback": false,
+              "reviewed": true,
+              "text": "Automatico"
+            },
+            "ja-JP": {
+              "fallback": false,
+              "reviewed": true,
+              "text": "自動"
+            },
+            "ko-KR": {
+              "fallback": false,
+              "reviewed": true,
+              "text": "자동"
+            },
+            "nl-NL": {
+              "fallback": false,
+              "reviewed": true,
+              "text": "Automatisch"
+            },
+            "pl-PL": {
+              "fallback": false,
+              "reviewed": true,
+              "text": "Automatycznie"
+            },
+            "pt-BR": {
+              "fallback": false,
+              "reviewed": true,
+              "text": "Automático"
+            },
+            "pt-PT": {
+              "fallback": false,
+              "reviewed": true,
+              "text": "Automático"
+            },
+            "ro-RO": {
+              "fallback": false,
+              "reviewed": true,
+              "text": "Automat"
+            },
+            "sv-SE": {
+              "fallback": false,
+              "reviewed": true,
+              "text": "Automatiskt"
+            },
+            "zh-CN": {
+              "fallback": false,
+              "reviewed": true,
+              "text": "汽车"
+            }
+          }
+        },
+        "modeId": "auto"
+      },
+      {
+        "label": {
+          "defaultLocale": "en-US",
+          "defaultText": "Light",
+          "icuArgs": {},
+          "msgid": "scribe.report.mode.light",
+          "provenance": "template",
+          "reviewState": "reviewed",
+          "values": {
+            "cy-GB": {
+              "fallback": false,
+              "reviewed": true,
+              "text": "Golau"
+            },
+            "de-DE": {
+              "fallback": false,
+              "reviewed": true,
+              "text": "Licht"
+            },
+            "en-CA": {
+              "fallback": false,
+              "reviewed": true,
+              "text": "Light"
+            },
+            "en-GB": {
+              "fallback": false,
+              "reviewed": true,
+              "text": "Light"
+            },
+            "en-IN": {
+              "fallback": false,
+              "reviewed": true,
+              "text": "Light"
+            },
+            "en-US": {
+              "fallback": false,
+              "reviewed": true,
+              "text": "Light"
+            },
+            "es-ES": {
+              "fallback": false,
+              "reviewed": true,
+              "text": "Luz"
+            },
+            "es-MX": {
+              "fallback": false,
+              "reviewed": true,
+              "text": "Claro"
+            },
+            "es-US": {
+              "fallback": false,
+              "reviewed": true,
+              "text": "Claro"
+            },
+            "fr-CA": {
+              "fallback": false,
+              "reviewed": true,
+              "text": "Clair"
+            },
+            "fr-FR": {
+              "fallback": false,
+              "reviewed": true,
+              "text": "Clair"
+            },
+            "ga-GB": {
+              "fallback": false,
+              "reviewed": true,
+              "text": "Solas"
+            },
+            "gd-GB": {
+              "fallback": false,
+              "reviewed": true,
+              "text": "Solas"
+            },
+            "hi-IN": {
+              "fallback": false,
+              "reviewed": true,
+              "text": "प्रकाश"
+            },
+            "it-IT": {
+              "fallback": false,
+              "reviewed": true,
+              "text": "Luce"
+            },
+            "ja-JP": {
+              "fallback": false,
+              "reviewed": true,
+              "text": "ライト"
+            },
+            "ko-KR": {
+              "fallback": false,
+              "reviewed": true,
+              "text": "빛"
+            },
+            "nl-NL": {
+              "fallback": false,
+              "reviewed": true,
+              "text": "Licht"
+            },
+            "pl-PL": {
+              "fallback": false,
+              "reviewed": true,
+              "text": "Światło"
+            },
+            "pt-BR": {
+              "fallback": false,
+              "reviewed": true,
+              "text": "Luz"
+            },
+            "pt-PT": {
+              "fallback": false,
+              "reviewed": true,
+              "text": "Luz"
+            },
+            "ro-RO": {
+              "fallback": false,
+              "reviewed": true,
+              "text": "Lumină"
+            },
+            "sv-SE": {
+              "fallback": false,
+              "reviewed": true,
+              "text": "Ljus"
+            },
+            "zh-CN": {
+              "fallback": false,
+              "reviewed": true,
+              "text": "光"
+            }
+          }
+        },
+        "modeId": "light"
+      },
+      {
+        "label": {
+          "defaultLocale": "en-US",
+          "defaultText": "Dark",
+          "icuArgs": {},
+          "msgid": "scribe.report.mode.dark",
+          "provenance": "template",
+          "reviewState": "reviewed",
+          "values": {
+            "cy-GB": {
+              "fallback": false,
+              "reviewed": true,
+              "text": "Tywyll"
+            },
+            "de-DE": {
+              "fallback": false,
+              "reviewed": true,
+              "text": "Dunkel"
+            },
+            "en-CA": {
+              "fallback": false,
+              "reviewed": true,
+              "text": "Dark"
+            },
+            "en-GB": {
+              "fallback": false,
+              "reviewed": true,
+              "text": "Dark"
+            },
+            "en-IN": {
+              "fallback": false,
+              "reviewed": true,
+              "text": "Dark"
+            },
+            "en-US": {
+              "fallback": false,
+              "reviewed": true,
+              "text": "Dark"
+            },
+            "es-ES": {
+              "fallback": false,
+              "reviewed": true,
+              "text": "Oscuro"
+            },
+            "es-MX": {
+              "fallback": false,
+              "reviewed": true,
+              "text": "Oscuro"
+            },
+            "es-US": {
+              "fallback": false,
+              "reviewed": true,
+              "text": "Oscuro"
+            },
+            "fr-CA": {
+              "fallback": false,
+              "reviewed": true,
+              "text": "Sombre"
+            },
+            "fr-FR": {
+              "fallback": false,
+              "reviewed": true,
+              "text": "Sombre"
+            },
+            "ga-GB": {
+              "fallback": false,
+              "reviewed": true,
+              "text": "Dorcha"
+            },
+            "gd-GB": {
+              "fallback": false,
+              "reviewed": true,
+              "text": "Dorcha"
+            },
+            "hi-IN": {
+              "fallback": false,
+              "reviewed": true,
+              "text": "अंधेरा"
+            },
+            "it-IT": {
+              "fallback": false,
+              "reviewed": true,
+              "text": "Scuro"
+            },
+            "ja-JP": {
+              "fallback": false,
+              "reviewed": true,
+              "text": "ダーク"
+            },
+            "ko-KR": {
+              "fallback": false,
+              "reviewed": true,
+              "text": "어두운"
+            },
+            "nl-NL": {
+              "fallback": false,
+              "reviewed": true,
+              "text": "Donker"
+            },
+            "pl-PL": {
+              "fallback": false,
+              "reviewed": true,
+              "text": "Ciemny"
+            },
+            "pt-BR": {
+              "fallback": false,
+              "reviewed": true,
+              "text": "Escuro"
+            },
+            "pt-PT": {
+              "fallback": false,
+              "reviewed": true,
+              "text": "Escuro"
+            },
+            "ro-RO": {
+              "fallback": false,
+              "reviewed": true,
+              "text": "Întuneric"
+            },
+            "sv-SE": {
+              "fallback": false,
+              "reviewed": true,
+              "text": "Mörk"
+            },
+            "zh-CN": {
+              "fallback": false,
+              "reviewed": true,
+              "text": "暗"
+            }
+          }
+        },
+        "modeId": "dark"
+      }
+    ],
+    "availableThemes": [
+      {
+        "cssPath": "assets/themes/daylight.css",
+        "label": {
+          "defaultLocale": "en-US",
+          "defaultText": "Daylight",
+          "icuArgs": {},
+          "msgid": "settings.theme.daylight",
+          "provenance": "template",
+          "reviewState": "reviewed",
+          "values": {
+            "cy-GB": {
+              "fallback": false,
+              "reviewed": true,
+              "text": "Daylight"
+            },
+            "de-DE": {
+              "fallback": false,
+              "reviewed": true,
+              "text": "Daylight"
+            },
+            "en-CA": {
+              "fallback": false,
+              "reviewed": true,
+              "text": "Daylight"
+            },
+            "en-GB": {
+              "fallback": false,
+              "reviewed": true,
+              "text": "Daylight"
+            },
+            "en-IN": {
+              "fallback": false,
+              "reviewed": true,
+              "text": "Daylight"
+            },
+            "en-US": {
+              "fallback": false,
+              "reviewed": true,
+              "text": "Daylight"
+            },
+            "es-ES": {
+              "fallback": false,
+              "reviewed": true,
+              "text": "Daylight"
+            },
+            "es-MX": {
+              "fallback": false,
+              "reviewed": true,
+              "text": "Daylight"
+            },
+            "es-US": {
+              "fallback": false,
+              "reviewed": true,
+              "text": "Daylight"
+            },
+            "fr-CA": {
+              "fallback": false,
+              "reviewed": true,
+              "text": "Daylight"
+            },
+            "fr-FR": {
+              "fallback": false,
+              "reviewed": true,
+              "text": "Daylight"
+            },
+            "ga-GB": {
+              "fallback": false,
+              "reviewed": true,
+              "text": "Daylight"
+            },
+            "gd-GB": {
+              "fallback": false,
+              "reviewed": true,
+              "text": "Daylight"
+            },
+            "hi-IN": {
+              "fallback": false,
+              "reviewed": true,
+              "text": "Daylight"
+            },
+            "it-IT": {
+              "fallback": false,
+              "reviewed": true,
+              "text": "Daylight"
+            },
+            "ja-JP": {
+              "fallback": false,
+              "reviewed": true,
+              "text": "Daylight"
+            },
+            "ko-KR": {
+              "fallback": false,
+              "reviewed": true,
+              "text": "Daylight"
+            },
+            "nl-NL": {
+              "fallback": false,
+              "reviewed": true,
+              "text": "Daylight"
+            },
+            "pl-PL": {
+              "fallback": false,
+              "reviewed": true,
+              "text": "Daylight"
+            },
+            "pt-BR": {
+              "fallback": false,
+              "reviewed": true,
+              "text": "Daylight"
+            },
+            "pt-PT": {
+              "fallback": false,
+              "reviewed": true,
+              "text": "Daylight"
+            },
+            "ro-RO": {
+              "fallback": false,
+              "reviewed": true,
+              "text": "Daylight"
+            },
+            "sv-SE": {
+              "fallback": false,
+              "reviewed": true,
+              "text": "Daylight"
+            },
+            "zh-CN": {
+              "fallback": false,
+              "reviewed": true,
+              "text": "Daylight"
+            }
+          }
+        },
+        "themeId": "daylight"
+      },
+      {
+        "cssPath": "assets/themes/ultraviolet.css",
+        "label": {
+          "defaultLocale": "en-US",
+          "defaultText": "Ultraviolet",
+          "icuArgs": {},
+          "msgid": "settings.theme.ultraviolet",
+          "provenance": "template",
+          "reviewState": "reviewed",
+          "values": {
+            "cy-GB": {
+              "fallback": false,
+              "reviewed": true,
+              "text": "Ultraviolet"
+            },
+            "de-DE": {
+              "fallback": false,
+              "reviewed": true,
+              "text": "Ultraviolett"
+            },
+            "en-CA": {
+              "fallback": false,
+              "reviewed": true,
+              "text": "Ultraviolet"
+            },
+            "en-GB": {
+              "fallback": false,
+              "reviewed": true,
+              "text": "Ultraviolet"
+            },
+            "en-IN": {
+              "fallback": false,
+              "reviewed": true,
+              "text": "Ultraviolet"
+            },
+            "en-US": {
+              "fallback": false,
+              "reviewed": true,
+              "text": "Ultraviolet"
+            },
+            "es-ES": {
+              "fallback": false,
+              "reviewed": true,
+              "text": "Ultravioleta"
+            },
+            "es-MX": {
+              "fallback": false,
+              "reviewed": true,
+              "text": "Ultravioleta"
+            },
+            "es-US": {
+              "fallback": false,
+              "reviewed": true,
+              "text": "Ultravioleta"
+            },
+            "fr-CA": {
+              "fallback": false,
+              "reviewed": true,
+              "text": "Ultraviolet"
+            },
+            "fr-FR": {
+              "fallback": false,
+              "reviewed": true,
+              "text": "Ultraviolet"
+            },
+            "ga-GB": {
+              "fallback": false,
+              "reviewed": true,
+              "text": "Ultraivialait"
+            },
+            "gd-GB": {
+              "fallback": false,
+              "reviewed": true,
+              "text": "Ultraviolet"
+            },
+            "hi-IN": {
+              "fallback": false,
+              "reviewed": true,
+              "text": "अल्ट्रावॉयलेट"
+            },
+            "it-IT": {
+              "fallback": false,
+              "reviewed": true,
+              "text": "Ultravioletti"
+            },
+            "ja-JP": {
+              "fallback": false,
+              "reviewed": true,
+              "text": "紫外線"
+            },
+            "ko-KR": {
+              "fallback": false,
+              "reviewed": true,
+              "text": "자외선"
+            },
+            "nl-NL": {
+              "fallback": false,
+              "reviewed": true,
+              "text": "Ultraviolet"
+            },
+            "pl-PL": {
+              "fallback": false,
+              "reviewed": true,
+              "text": "Ultrafiolet"
+            },
+            "pt-BR": {
+              "fallback": false,
+              "reviewed": true,
+              "text": "Ultravioleta"
+            },
+            "pt-PT": {
+              "fallback": false,
+              "reviewed": true,
+              "text": "Ultravioleta"
+            },
+            "ro-RO": {
+              "fallback": false,
+              "reviewed": true,
+              "text": "Ultraviolet"
+            },
+            "sv-SE": {
+              "fallback": false,
+              "reviewed": true,
+              "text": "Ultraviolett"
+            },
+            "zh-CN": {
+              "fallback": false,
+              "reviewed": true,
+              "text": "紫外"
+            }
+          }
+        },
+        "themeId": "ultraviolet"
+      },
+      {
+        "cssPath": "assets/themes/infrared.css",
+        "label": {
+          "defaultLocale": "en-US",
+          "defaultText": "Infrared",
+          "icuArgs": {},
+          "msgid": "settings.theme.infrared",
+          "provenance": "template",
+          "reviewState": "reviewed",
+          "values": {
+            "cy-GB": {
+              "fallback": false,
+              "reviewed": true,
+              "text": "Is-goch"
+            },
+            "de-DE": {
+              "fallback": false,
+              "reviewed": true,
+              "text": "Infrarot"
+            },
+            "en-CA": {
+              "fallback": false,
+              "reviewed": true,
+              "text": "Infrared"
+            },
+            "en-GB": {
+              "fallback": false,
+              "reviewed": true,
+              "text": "Infrared"
+            },
+            "en-IN": {
+              "fallback": false,
+              "reviewed": true,
+              "text": "Infrared"
+            },
+            "en-US": {
+              "fallback": false,
+              "reviewed": true,
+              "text": "Infrared"
+            },
+            "es-ES": {
+              "fallback": false,
+              "reviewed": true,
+              "text": "Infrarrojo"
+            },
+            "es-MX": {
+              "fallback": false,
+              "reviewed": true,
+              "text": "Infrarrojo"
+            },
+            "es-US": {
+              "fallback": false,
+              "reviewed": true,
+              "text": "Infrarrojo"
+            },
+            "fr-CA": {
+              "fallback": false,
+              "reviewed": true,
+              "text": "Infrarouge"
+            },
+            "fr-FR": {
+              "fallback": false,
+              "reviewed": true,
+              "text": "Infrarouge"
+            },
+            "ga-GB": {
+              "fallback": false,
+              "reviewed": true,
+              "text": "Infridhearg"
+            },
+            "gd-GB": {
+              "fallback": false,
+              "reviewed": true,
+              "text": "Inntrigeadh"
+            },
+            "hi-IN": {
+              "fallback": false,
+              "reviewed": true,
+              "text": "इन्फ्रारेड"
+            },
+            "it-IT": {
+              "fallback": false,
+              "reviewed": true,
+              "text": "Infrarossi"
+            },
+            "ja-JP": {
+              "fallback": false,
+              "reviewed": true,
+              "text": "赤外線"
+            },
+            "ko-KR": {
+              "fallback": false,
+              "reviewed": true,
+              "text": "적외선"
+            },
+            "nl-NL": {
+              "fallback": false,
+              "reviewed": true,
+              "text": "Infrarood"
+            },
+            "pl-PL": {
+              "fallback": false,
+              "reviewed": true,
+              "text": "Podczerwień"
+            },
+            "pt-BR": {
+              "fallback": false,
+              "reviewed": true,
+              "text": "Infravermelho"
+            },
+            "pt-PT": {
+              "fallback": false,
+              "reviewed": true,
+              "text": "Infravermelho"
+            },
+            "ro-RO": {
+              "fallback": false,
+              "reviewed": true,
+              "text": "Infraroșu"
+            },
+            "sv-SE": {
+              "fallback": false,
+              "reviewed": true,
+              "text": "Infraröd"
+            },
+            "zh-CN": {
+              "fallback": false,
+              "reviewed": true,
+              "text": "红外"
+            }
+          }
+        },
+        "themeId": "infrared"
+      },
+      {
+        "cssPath": "assets/themes/high-contrast.css",
+        "label": {
+          "defaultLocale": "en-US",
+          "defaultText": "High Contrast",
+          "icuArgs": {},
+          "msgid": "settings.theme.hc",
+          "provenance": "template",
+          "reviewState": "reviewed",
+          "values": {
+            "cy-GB": {
+              "fallback": false,
+              "reviewed": true,
+              "text": "Cyferbyniad UchelComment"
+            },
+            "de-DE": {
+              "fallback": false,
+              "reviewed": true,
+              "text": "Hoher Kontrast"
+            },
+            "en-CA": {
+              "fallback": false,
+              "reviewed": true,
+              "text": "High Contrast"
+            },
+            "en-GB": {
+              "fallback": false,
+              "reviewed": true,
+              "text": "High Contrast"
+            },
+            "en-IN": {
+              "fallback": false,
+              "reviewed": true,
+              "text": "High Contrast"
+            },
+            "en-US": {
+              "fallback": false,
+              "reviewed": true,
+              "text": "High Contrast"
+            },
+            "es-ES": {
+              "fallback": false,
+              "reviewed": true,
+              "text": "Alto contraste"
+            },
+            "es-MX": {
+              "fallback": false,
+              "reviewed": true,
+              "text": "Alto contraste"
+            },
+            "es-US": {
+              "fallback": false,
+              "reviewed": true,
+              "text": "Alto contraste"
+            },
+            "fr-CA": {
+              "fallback": false,
+              "reviewed": true,
+              "text": "Contraste élevé"
+            },
+            "fr-FR": {
+              "fallback": false,
+              "reviewed": true,
+              "text": "Contraste élevé"
+            },
+            "ga-GB": {
+              "fallback": false,
+              "reviewed": true,
+              "text": "Ardchodarsnacht"
+            },
+            "gd-GB": {
+              "fallback": false,
+              "reviewed": true,
+              "text": "Co-dhealbhachd àrd"
+            },
+            "hi-IN": {
+              "fallback": false,
+              "reviewed": true,
+              "text": "हाई कंट्रास्ट"
+            },
+            "it-IT": {
+              "fallback": false,
+              "reviewed": true,
+              "text": "Alto contrasto"
+            },
+            "ja-JP": {
+              "fallback": false,
+              "reviewed": true,
+              "text": "ハイコントラスト"
+            },
+            "ko-KR": {
+              "fallback": false,
+              "reviewed": true,
+              "text": "고대비"
+            },
+            "nl-NL": {
+              "fallback": false,
+              "reviewed": true,
+              "text": "Hoog contrast"
+            },
+            "pl-PL": {
+              "fallback": false,
+              "reviewed": true,
+              "text": "Wysoki kontrast"
+            },
+            "pt-BR": {
+              "fallback": false,
+              "reviewed": true,
+              "text": "Alto Contraste"
+            },
+            "pt-PT": {
+              "fallback": false,
+              "reviewed": true,
+              "text": "Alto Contraste"
+            },
+            "ro-RO": {
+              "fallback": false,
+              "reviewed": true,
+              "text": "Contrast ridicat"
+            },
+            "sv-SE": {
+              "fallback": false,
+              "reviewed": true,
+              "text": "Hög kontrast"
+            },
+            "zh-CN": {
+              "fallback": false,
+              "reviewed": true,
+              "text": "高对比度"
+            }
+          }
+        },
+        "themeId": "high-contrast"
+      }
+    ],
+    "defaultMode": "auto",
+    "defaultTheme": "ultraviolet",
+    "density": "normal"
+  },
+  "title": {
+    "defaultLocale": "en-US",
+    "defaultText": "Mobile Accessibility Scan",
+    "icuArgs": {},
+    "msgid": "scribe.report.title",
+    "provenance": "template",
+    "reviewState": "reviewed",
+    "values": {
+      "en-US": {
+        "fallback": false,
+        "reviewed": true,
+        "text": "Mobile Accessibility Scan"
+      },
+      "ja-JP": {
+        "fallback": false,
+        "reviewed": true,
+        "text": "モバイルアクセシビリティスキャン"
+      }
+    }
+  },
+  "toc": [
+    {
+      "anchorId": "section-overview",
+      "children": [
+        {
+          "anchorId": "finding-missing-alt",
+          "children": [
+            {
+              "anchorId": "source-swiftui-missing-image-label",
+              "children": [],
+              "pagePath": "findings/finding-missing-alt/index.html",
+              "role": "source-snippet",
+              "title": {
+                "defaultLocale": "en-US",
+                "defaultText": "SwiftUI image source evidence",
+                "icuArgs": {},
+                "msgid": "scribe.report.source.swiftUiMissingImageLabel.title",
+                "provenance": "template",
+                "reviewState": "reviewed",
+                "values": {
+                  "cy-GB": {
+                    "fallback": false,
+                    "reviewed": true,
+                    "text": "Tystiolaeth ffynhonnell delwedd SwiftUI"
+                  },
+                  "de-DE": {
+                    "fallback": false,
+                    "reviewed": true,
+                    "text": "SwiftUI Bildquelle Nachweis"
+                  },
+                  "en-CA": {
+                    "fallback": false,
+                    "reviewed": true,
+                    "text": "SwiftUI image source evidence"
+                  },
+                  "en-GB": {
+                    "fallback": false,
+                    "reviewed": true,
+                    "text": "SwiftUI image source evidence"
+                  },
+                  "en-IN": {
+                    "fallback": false,
+                    "reviewed": true,
+                    "text": "SwiftUI image source evidence"
+                  },
+                  "en-US": {
+                    "fallback": false,
+                    "reviewed": true,
+                    "text": "SwiftUI image source evidence"
+                  },
+                  "es-ES": {
+                    "fallback": false,
+                    "reviewed": true,
+                    "text": "Evidencia de fuente de imagen de SwiftUI"
+                  },
+                  "es-MX": {
+                    "fallback": false,
+                    "reviewed": true,
+                    "text": "Evidencia de fuente de imagen de SwiftUI"
+                  },
+                  "es-US": {
+                    "fallback": false,
+                    "reviewed": true,
+                    "text": "Evidencia de fuente de imagen de SwiftUI"
+                  },
+                  "fr-CA": {
+                    "fallback": false,
+                    "reviewed": true,
+                    "text": "Évidence source d'image SwiftUI"
+                  },
+                  "fr-FR": {
+                    "fallback": false,
+                    "reviewed": true,
+                    "text": "SwiftUI image source evidence"
+                  },
+                  "ga-GB": {
+                    "fallback": false,
+                    "reviewed": true,
+                    "text": "Fianaise foinse íomhá SwiftUI"
+                  },
+                  "gd-GB": {
+                    "fallback": false,
+                    "reviewed": true,
+                    "text": "Fianais tùsail ìomhaigh SwiftUI"
+                  },
+                  "hi-IN": {
+                    "fallback": false,
+                    "reviewed": true,
+                    "text": "स्विफ्टयूआई छवि स्रोत प्रमाण"
+                  },
+                  "it-IT": {
+                    "fallback": false,
+                    "reviewed": true,
+                    "text": "SwiftUI immagine fonte evidenza"
+                  },
+                  "ja-JP": {
+                    "fallback": false,
+                    "reviewed": true,
+                    "text": "SwiftUI画像ソース証拠"
+                  },
+                  "ko-KR": {
+                    "fallback": false,
+                    "reviewed": true,
+                    "text": "SwiftUI 이미지 소스 증거"
+                  },
+                  "nl-NL": {
+                    "fallback": false,
+                    "reviewed": true,
+                    "text": "SwiftUI afbeelding bron bewijs"
+                  },
+                  "pl-PL": {
+                    "fallback": false,
+                    "reviewed": true,
+                    "text": "SwiftUI image source evidence"
+                  },
+                  "pt-BR": {
+                    "fallback": false,
+                    "reviewed": true,
+                    "text": "SwiftUI image source evidence"
+                  },
+                  "pt-PT": {
+                    "fallback": false,
+                    "reviewed": true,
+                    "text": "SwiftUI image source evidence"
+                  },
+                  "ro-RO": {
+                    "fallback": false,
+                    "reviewed": true,
+                    "text": "Dovada sursei de imagine SwiftUI"
+                  },
+                  "sv-SE": {
+                    "fallback": false,
+                    "reviewed": true,
+                    "text": "SwiftUI bildkälla bevis"
+                  },
+                  "zh-CN": {
+                    "fallback": false,
+                    "reviewed": true,
+                    "text": "SwiftUI 图像源证据"
+                  }
+                }
+              }
+            },
+            {
+              "anchorId": "fix-plan-missing-alt",
+              "children": [],
+              "pagePath": "fix-plans/finding-missing-alt/index.html",
+              "role": "fix-plan",
+              "title": {
+                "defaultLocale": "en-US",
+                "defaultText": "Fix plan",
+                "icuArgs": {},
+                "msgid": "scribe.report.fixPlan.pageTitle",
+                "provenance": "template",
+                "reviewState": "reviewed",
+                "values": {
+                  "cy-GB": {
+                    "fallback": false,
+                    "reviewed": true,
+                    "text": "Gosod cynllun"
+                  },
+                  "de-DE": {
+                    "fallback": false,
+                    "reviewed": true,
+                    "text": "Behebungsplan"
+                  },
+                  "en-CA": {
+                    "fallback": false,
+                    "reviewed": true,
+                    "text": "Fix plan"
+                  },
+                  "en-GB": {
+                    "fallback": false,
+                    "reviewed": true,
+                    "text": "Fix plan"
+                  },
+                  "en-IN": {
+                    "fallback": false,
+                    "reviewed": true,
+                    "text": "Fix plan"
+                  },
+                  "en-US": {
+                    "fallback": false,
+                    "reviewed": true,
+                    "text": "Fix plan"
+                  },
+                  "es-ES": {
+                    "fallback": false,
+                    "reviewed": true,
+                    "text": "Plan de acción"
+                  },
+                  "es-MX": {
+                    "fallback": false,
+                    "reviewed": true,
+                    "text": "Plan de acción"
+                  },
+                  "es-US": {
+                    "fallback": false,
+                    "reviewed": true,
+                    "text": "Plan de acción"
+                  },
+                  "fr-CA": {
+                    "fallback": false,
+                    "reviewed": true,
+                    "text": "Plan de correction"
+                  },
+                  "fr-FR": {
+                    "fallback": false,
+                    "reviewed": true,
+                    "text": "Plan de correction"
+                  },
+                  "ga-GB": {
+                    "fallback": false,
+                    "reviewed": true,
+                    "text": "Plean deisithe"
+                  },
+                  "gd-GB": {
+                    "fallback": false,
+                    "reviewed": true,
+                    "text": "Plana ceartachaidh"
+                  },
+                  "hi-IN": {
+                    "fallback": false,
+                    "reviewed": true,
+                    "text": "सुधार योजना"
+                  },
+                  "it-IT": {
+                    "fallback": false,
+                    "reviewed": true,
+                    "text": "Piano di correzione"
+                  },
+                  "ja-JP": {
+                    "fallback": false,
+                    "reviewed": true,
+                    "text": "修正計画"
+                  },
+                  "ko-KR": {
+                    "fallback": false,
+                    "reviewed": true,
+                    "text": "수정 계획"
+                  },
+                  "nl-NL": {
+                    "fallback": false,
+                    "reviewed": true,
+                    "text": "Herstelplan"
+                  },
+                  "pl-PL": {
+                    "fallback": false,
+                    "reviewed": true,
+                    "text": "Plan naprawczy"
+                  },
+                  "pt-BR": {
+                    "fallback": false,
+                    "reviewed": true,
+                    "text": "Plano de correção"
+                  },
+                  "pt-PT": {
+                    "fallback": false,
+                    "reviewed": true,
+                    "text": "Plano de correção"
+                  },
+                  "ro-RO": {
+                    "fallback": false,
+                    "reviewed": true,
+                    "text": "Plan de remediere"
+                  },
+                  "sv-SE": {
+                    "fallback": false,
+                    "reviewed": true,
+                    "text": "Åtgärdsplan"
+                  },
+                  "zh-CN": {
+                    "fallback": false,
+                    "reviewed": true,
+                    "text": "修复计划"
+                  }
+                }
+              }
+            }
+          ],
+          "pagePath": "findings/finding-missing-alt/index.html",
+          "role": "finding",
+          "title": {
+            "defaultLocale": "en-US",
+            "defaultText": "SwiftUI image is missing an accessible name",
+            "icuArgs": {},
+            "msgid": "scribe.report.finding.missingAlt.title",
+            "provenance": "template",
+            "reviewState": "reviewed",
+            "values": {
+              "cy-GB": {
+                "fallback": false,
+                "reviewed": true,
+                "text": "Mae'r ddelwedd SwiftUI ar goll enw hygyrchedd"
+              },
+              "de-DE": {
+                "fallback": false,
+                "reviewed": true,
+                "text": "SwiftUI-Bild hat keinen barrierefreien Namen"
+              },
+              "en-CA": {
+                "fallback": false,
+                "reviewed": true,
+                "text": "SwiftUI image is missing an accessible name"
+              },
+              "en-GB": {
+                "fallback": false,
+                "reviewed": true,
+                "text": "SwiftUI image is missing an accessible name"
+              },
+              "en-IN": {
+                "fallback": false,
+                "reviewed": true,
+                "text": "SwiftUI image is missing an accessible name"
+              },
+              "en-US": {
+                "fallback": false,
+                "reviewed": true,
+                "text": "SwiftUI image is missing an accessible name"
+              },
+              "es-ES": {
+                "fallback": false,
+                "reviewed": true,
+                "text": "A la imagen de SwiftUI le falta un nombre accesible"
+              },
+              "es-MX": {
+                "fallback": false,
+                "reviewed": true,
+                "text": "A la imagen de SwiftUI le falta un nombre accesible"
+              },
+              "es-US": {
+                "fallback": false,
+                "reviewed": true,
+                "text": "A la imagen de SwiftUI le falta un nombre accesible"
+              },
+              "fr-CA": {
+                "fallback": false,
+                "reviewed": true,
+                "text": "L'image SwiftUI manque de nom accessible"
+              },
+              "fr-FR": {
+                "fallback": false,
+                "reviewed": true,
+                "text": "L'image SwiftUI ne possède pas de nom accessible"
+              },
+              "ga-GB": {
+                "fallback": false,
+                "reviewed": true,
+                "text": "Tá ainm inrochtana ar iarraidh ar íomhá SwiftUI"
+              },
+              "gd-GB": {
+                "fallback": false,
+                "reviewed": true,
+                "text": "Tha ainm ruigsinneach a dhìth air ìomhaigh SwiftUI"
+              },
+              "hi-IN": {
+                "fallback": false,
+                "reviewed": true,
+                "text": "स्विफ्टUI छवि में पहुँच योग्य नाम नहीं है"
+              },
+              "it-IT": {
+                "fallback": false,
+                "reviewed": true,
+                "text": "All'immagine SwiftUI manca un nome accessibile"
+              },
+              "ja-JP": {
+                "fallback": false,
+                "reviewed": true,
+                "text": "SwiftUI イメージにはアクセシブルな名前がありません"
+              },
+              "ko-KR": {
+                "fallback": false,
+                "reviewed": true,
+                "text": "SwiftUI 이미지에 접근 가능한 이름이 없습니다"
+              },
+              "nl-NL": {
+                "fallback": false,
+                "reviewed": true,
+                "text": "SwiftUI-afbeelding mist een toegankelijke naam"
+              },
+              "pl-PL": {
+                "fallback": false,
+                "reviewed": true,
+                "text": "Brakuje dostępnej nazwy obrazu SwiftUI"
+              },
+              "pt-BR": {
+                "fallback": false,
+                "reviewed": true,
+                "text": "A imagem SwiftUI não tem um nome acessível"
+              },
+              "pt-PT": {
+                "fallback": false,
+                "reviewed": true,
+                "text": "A imagem SwiftUI não tem um nome acessível"
+              },
+              "ro-RO": {
+                "fallback": false,
+                "reviewed": true,
+                "text": "Imaginii SwiftUI îi lipsește un nume accesibil"
+              },
+              "sv-SE": {
+                "fallback": false,
+                "reviewed": true,
+                "text": "SwiftUI-bilden saknar ett tillgängligt namn"
+              },
+              "zh-CN": {
+                "fallback": false,
+                "reviewed": true,
+                "text": "SwiftUI 图像缺少无障碍名称"
+              }
+            }
+          }
+        }
+      ],
+      "pagePath": "index.html",
+      "role": "section",
+      "title": {
+        "defaultLocale": "en-US",
+        "defaultText": "Overview",
+        "icuArgs": {},
+        "msgid": "scribe.report.overview.title",
+        "provenance": "template",
+        "reviewState": "reviewed",
+        "values": {
+          "cy-GB": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Crynodeb"
+          },
+          "de-DE": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Übersicht"
+          },
+          "en-CA": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Overview"
+          },
+          "en-GB": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Overview"
+          },
+          "en-IN": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Overview"
+          },
+          "en-US": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Overview"
+          },
+          "es-ES": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "1. Panorama general"
+          },
+          "es-MX": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "1. Panorama general"
+          },
+          "es-US": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "1. Panorama general"
+          },
+          "fr-CA": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Aperçu"
+          },
+          "fr-FR": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Aperçu général"
+          },
+          "ga-GB": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Forbhreathnú"
+          },
+          "gd-GB": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Sealladh farsaing"
+          },
+          "hi-IN": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "सारांश"
+          },
+          "it-IT": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Panoramica"
+          },
+          "ja-JP": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "概要"
+          },
+          "ko-KR": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "개요"
+          },
+          "nl-NL": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Overzicht"
+          },
+          "pl-PL": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Przegląd"
+          },
+          "pt-BR": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Visão geral"
+          },
+          "pt-PT": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Visão geral"
+          },
+          "ro-RO": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Prezentare generală"
+          },
+          "sv-SE": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Översikt"
+          },
+          "zh-CN": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "概 况"
+          }
+        }
+      }
+    }
+  ],
+  "visualizations": []
+}
+;

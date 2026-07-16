@@ -1,0 +1,10 @@
+NIST family IA: Identification and Authentication
+Total controls: 15
+Satisfied controls: 0
+Customer-context controls: 3
+Unsatisfied controls: 10
+Validation-resolved controls: 6
+Evidence-tier controls: 9
+Deferred-elsewhere controls: 0
+Representative controls: ia-2:absent, ia-2.1:partial, ia-2.2:partial, ia-2.6:absent, ia-2.8:absent, ia-5:absent, ia-5.1:absent, ia-5.2:requires-customer-context, ia-5.4:absent, ia-5.6:absent
+Raw rollup JSON download: data/nist-rollup.json

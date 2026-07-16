@@ -4,22 +4,22 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="generator" content="sonde-scribe">
-  <meta name="description" content="Software that understands software. Semantic mesh for compliance, code review, and AI-generated code quality." data-msg-content-id="sondeLife.metadata.description">
+  <meta name="description" content="Sonde checks the software your team ships — for accessibility, compliance, and quality — and shows you exactly what to fix." data-msg-content-id="sondeLife.metadata.description">
   <link rel="canonical" href="https://sonde.life/">
   <script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon="{&quot;token&quot;:&quot;07871f5aa9e44ce2b83a37f8924fb4a6&quot;,&quot;spa&quot;:true}"></script>
   <title data-msg-id="sondeLife.metadata.home.title">Sonde - Software That Understands Software</title>
   <meta property="og:title" content="Sonde — Software That Understands Software" data-msg-content-id="sondeLife.metadata.home.title">
-  <meta property="og:description" content="Semantic mesh for compliance, code review, and AI-generated code quality." data-msg-content-id="sondeLife.metadata.description">
+  <meta property="og:description" content="Sonde checks the software your team ships — for accessibility, compliance, and quality — and shows you exactly what to fix." data-msg-content-id="sondeLife.metadata.description">
   <meta property="og:image" content="/og-sonde.png">
   <meta property="og:url" content="https://sonde.life/">
   <meta property="og:type" content="website">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Sonde — Software That Understands Software" data-msg-content-id="sondeLife.metadata.home.title">
-  <meta name="twitter:description" content="Semantic mesh for compliance, code review, and AI-generated code quality." data-msg-content-id="sondeLife.metadata.description">
+  <meta name="twitter:description" content="Sonde checks the software your team ships — for accessibility, compliance, and quality — and shows you exactly what to fix." data-msg-content-id="sondeLife.metadata.description">
   <meta name="twitter:image" content="/og-sonde.png">
   <link rel="icon" type="image/svg+xml" href="/favicon.svg">
-  <link id="sonde-active-platform-theme" rel="stylesheet" href="assets/theme-ultraviolet.css?v=t1tqrw">
-  <link rel="stylesheet" href="assets/style.css?v=5gxm5r">
+  <link id="sonde-active-platform-theme" rel="stylesheet" href="assets/theme-ultraviolet.css?v=mmypnw">
+  <link rel="stylesheet" href="assets/style.css?v=ikdgq5">
   <script>(function () {
   var THEME_KEY = "sonde-theme";
   var LOCALE_KEY = "sonde-locale";
@@ -81,7 +81,7 @@
 
   var PLATFORM_THEME_KEY = "sonde-platform-theme";
   var PLATFORM_THEME_LINK_ID = "sonde-active-platform-theme";
-  var PLATFORM_THEME_HREFS = {"ultraviolet":"assets/theme-ultraviolet.css?v=t1tqrw","infrared":"assets/theme-infrared.css?v=1jqvb2j","high-contrast":"assets/theme-high-contrast.css?v=6daosy"};
+  var PLATFORM_THEME_HREFS = {"ultraviolet":"assets/theme-ultraviolet.css?v=mmypnw","infrared":"assets/theme-infrared.css?v=-vz9orl","high-contrast":"assets/theme-high-contrast.css?v=-lirq4"};
   var PLATFORM_THEME_ATTRIBUTE = "data-theme";
 
   function applyPlatformTheme(stored) {
@@ -179,6 +179,29 @@
     initThemeControls();
     initPlatformThemeControls();
     initLocaleControls();
+    initSettingsDropdownDismiss();
+  }
+  // Single-sourced settings-dropdown dismissal (was inline-duplicated per site chrome): an outside click or
+  // Escape closes any open .settings-dropdown and returns focus to its summary trigger, so keyboard users land
+  // somewhere sensible regardless of how the panel was dismissed.
+  function initSettingsDropdownDismiss() {
+    function closeOpenSettings() {
+      var dropdowns = document.querySelectorAll('.settings-dropdown[open]');
+      for (var i = 0; i < dropdowns.length; i++) {
+        dropdowns[i].removeAttribute('open');
+        var summary = dropdowns[i].querySelector('summary');
+        if (summary) summary.focus();
+      }
+    }
+    document.addEventListener('click', function (event) {
+      var open = document.querySelector('.settings-dropdown[open]');
+      if (!open) return;
+      if (open.contains(event.target)) return;
+      closeOpenSettings();
+    });
+    document.addEventListener('keydown', function (event) {
+      if (event.key === 'Escape') closeOpenSettings();
+    });
   }
   function settingsSectionId(section) {
     if (!section || !section.classList) return '';
@@ -597,26 +620,17 @@
 <div class="sl-page sl-page-home">
   <nav class="sl-nav" aria-label="Primary navigation">
     <a class="sl-brand" href="./">
-      <svg class="sl-brand-mark sonde-daylight-mark" viewBox="0 0 512 512" width="28" height="28" aria-hidden="true"><defs><radialGradient id="sonde-life-brand-sun" cx="50%" cy="50%" r="50%"><stop offset="0%" stop-color="var(--sonde-daylight-mark-sun-stop-0)"></stop><stop offset="60%" stop-color="var(--sonde-daylight-mark-sun-stop-1)"></stop><stop offset="100%" stop-color="var(--sonde-daylight-mark-sun-stop-2)"></stop></radialGradient><clipPath id="sonde-life-brand-disc"><circle cx="256" cy="256" r="240"></circle></clipPath></defs><g style="display:var(--sonde-daylight-mark-solid-display, block)"><circle cx="256" cy="256" r="240" fill="url(#sonde-life-brand-sun)"></circle><g clip-path="url(#sonde-life-brand-disc)"><g fill="var(--sonde-daylight-mark-crater)" stroke="var(--sonde-daylight-mark-crater)"><g opacity="0.7"><path d="M40,240 C60,110 170,40 250,90 C320,130 330,210 260,280 C200,340 50,340 40,240 Z" opacity="0.6"/><path d="M290,130 C360,60 460,110 470,190 C480,270 410,350 330,320 C260,290 230,190 290,130 Z" opacity="0.7"/><path d="M390,280 C470,250 510,300 480,380 C450,440 380,410 390,280 Z" opacity="0.5"/><path d="M130,350 C180,290 260,350 230,430 C200,510 60,450 130,350 Z" opacity="0.5"/><circle cx="230" cy="430" r="18" fill="transparent" stroke-width="4" opacity="0.8"/><circle cx="170" cy="190" r="12" fill="transparent" stroke-width="3" opacity="0.7"/><circle cx="90" cy="230" r="8" opacity="0.8"/></g></g></g><g clip-path="url(#sonde-life-brand-disc)"><g transform="translate(250,240) rotate(-40)" fill="var(--sonde-daylight-mark-probe)" stroke="var(--sonde-daylight-mark-probe)"><line x1="-32" y1="-8" x2="-160" y2="-40" stroke-width="6" stroke-linecap="round"/><circle cx="-160" cy="-40" r="10"/><line x1="-32" y1="16" x2="-125" y2="62" stroke-width="8" stroke-linecap="round"/><rect x="-141" y="38" width="32" height="60" rx="4" transform="rotate(20,-125,62)"/><line x1="-16" y1="-40" x2="-46" y2="-92" stroke-width="7" stroke-linecap="round"/><rect x="-70" y="-108" width="48" height="28" rx="4"/><circle cx="-56" cy="-98" r="8"/><circle cx="-36" cy="-98" r="6"/><path d="M48,-108 Q128,-78 128,0 Q128,78 48,108" stroke-width="5" stroke-linejoin="round"/><line x1="58" y1="-50" x2="108" y2="0" stroke-width="5"/><line x1="58" y1="50" x2="108" y2="0" stroke-width="5"/><line x1="48" y1="0" x2="108" y2="0" stroke-width="5"/><circle cx="110" cy="0" r="14"/><polygon points="-16,-40 48,-40 62,-24 62,24 48,40 -16,40 -30,24 -30,-24"/></g></g></g><g style="display:var(--sonde-daylight-mark-line-display, none)"><circle cx="256" cy="256" r="232" fill="none" stroke="var(--sonde-daylight-hc-mark-earth-blue)" stroke-width="28"></circle><defs><clipPath id="hc-clip-_R_3_"><circle cx="256" cy="256" r="214"></circle></clipPath></defs><g clip-path="url(#hc-clip-_R_3_)"><g transform="translate(276,228) scale(1.3) rotate(-40)" fill="none" stroke-linecap="round" stroke-linejoin="round"><line x1="-32" y1="-8" x2="-165" y2="-42" stroke="var(--sonde-daylight-hc-mark-metal)" stroke-width="8"></line><circle cx="-80" cy="-20" r="3" stroke="var(--sonde-daylight-hc-mark-metal)" stroke-width="3"></circle><circle cx="-125" cy="-32" r="2.5" stroke="var(--sonde-daylight-hc-mark-metal)" stroke-width="3"></circle><circle cx="-165" cy="-42" r="8" stroke="var(--sonde-daylight-hc-mark-metal)" stroke-width="4"></circle><circle cx="-165" cy="-42" r="4" stroke="var(--sonde-daylight-hc-mark-metal)" stroke-width="2"></circle><line x1="-165" y1="-48" x2="-165" y2="-36" stroke="var(--sonde-daylight-hc-mark-metal)" stroke-width="2"></line><line x1="-171" y1="-42" x2="-159" y2="-42" stroke="var(--sonde-daylight-hc-mark-metal)" stroke-width="2"></line><line x1="-32" y1="16" x2="-130" y2="64" stroke="var(--sonde-daylight-hc-mark-metal)" stroke-width="12"></line><circle cx="-80" cy="40" r="4" stroke="var(--sonde-daylight-hc-mark-metal)" stroke-width="4"></circle><g transform="translate(-130,64) rotate(20)"><rect x="-16" y="-32" width="32" height="64" rx="4" stroke="var(--sonde-daylight-hc-mark-rtg-brown)" stroke-width="6"></rect><line x1="-16" y1="-22" x2="16" y2="-22" stroke="var(--sonde-daylight-hc-mark-rtg-brown)" stroke-width="4"></line><line x1="-16" y1="-12" x2="16" y2="-12" stroke="var(--sonde-daylight-hc-mark-rtg-brown)" stroke-width="4"></line><line x1="-16" y1="-2" x2="16" y2="-2" stroke="var(--sonde-daylight-hc-mark-rtg-brown)" stroke-width="4"></line><line x1="-16" y1="8" x2="16" y2="8" stroke="var(--sonde-daylight-hc-mark-rtg-brown)" stroke-width="4"></line><line x1="-16" y1="18" x2="16" y2="18" stroke="var(--sonde-daylight-hc-mark-rtg-brown)" stroke-width="4"></line><line x1="-16" y1="28" x2="16" y2="28" stroke="var(--sonde-daylight-hc-mark-rtg-brown)" stroke-width="4"></line><rect x="-18" y="-34" width="36" height="4" rx="2" stroke="var(--sonde-daylight-hc-mark-rtg-brown)" stroke-width="3"></rect><rect x="-18" y="30" width="36" height="4" rx="2" stroke="var(--sonde-daylight-hc-mark-rtg-brown)" stroke-width="3"></rect></g><line x1="-16" y1="-40" x2="-48" y2="-96" stroke="var(--sonde-daylight-hc-mark-metal)" stroke-width="10"></line><circle cx="-30" cy="-64" r="4" stroke="var(--sonde-daylight-hc-mark-metal)" stroke-width="4"></circle><g transform="translate(-48,-96)"><rect x="-24" y="-16" width="48" height="28" rx="4" stroke="var(--sonde-daylight-hc-mark-metal)" stroke-width="6"></rect><line x1="-20" y1="-8" x2="20" y2="-8" stroke="var(--sonde-daylight-hc-mark-metal)" stroke-width="2"></line><line x1="-20" y1="0" x2="20" y2="0" stroke="var(--sonde-daylight-hc-mark-metal)" stroke-width="2"></line><circle cx="-10" cy="-4" r="8" stroke="var(--sonde-daylight-hc-mark-metal)" stroke-width="5"></circle><circle cx="-10" cy="-4" r="4" stroke="var(--sonde-daylight-hc-mark-metal)" stroke-width="2"></circle><circle cx="10" cy="-4" r="6" stroke="var(--sonde-daylight-hc-mark-metal)" stroke-width="4"></circle><circle cx="10" cy="-4" r="3" stroke="var(--sonde-daylight-hc-mark-metal)" stroke-width="2"></circle><rect x="-4" y="4" width="8" height="6" rx="1.5" stroke="var(--sonde-daylight-hc-mark-metal)" stroke-width="3"></rect></g><path d="M48,-112 Q130,-80 130,0 Q130,80 48,112" stroke="var(--sonde-daylight-hc-mark-earth-blue)" stroke-width="8"></path><path d="M56,-96 Q118,-68 118,0 Q118,68 56,96" stroke="var(--sonde-daylight-hc-mark-earth-blue)" stroke-width="2"></path><path d="M64,-80 Q106,-56 106,0 Q106,56 64,80" stroke="var(--sonde-daylight-hc-mark-earth-blue)" stroke-width="2"></path><path d="M72,-60 Q94,-40 94,0 Q94,40 72,60" stroke="var(--sonde-daylight-hc-mark-earth-blue)" stroke-width="2"></path><line x1="60" y1="-52" x2="110" y2="0" stroke="var(--sonde-daylight-hc-mark-earth-blue)" stroke-width="8"></line><line x1="60" y1="52" x2="110" y2="0" stroke="var(--sonde-daylight-hc-mark-earth-blue)" stroke-width="8"></line><line x1="48" y1="0" x2="110" y2="0" stroke="var(--sonde-daylight-hc-mark-earth-blue)" stroke-width="8"></line><circle cx="112" cy="0" r="14" stroke="var(--sonde-daylight-hc-mark-earth-blue)" stroke-width="6"></circle><circle cx="112" cy="0" r="8" stroke="var(--sonde-daylight-hc-mark-earth-blue)" stroke-width="3"></circle><polygon points="-16,-40 48,-40 64,-24 64,24 48,40 -16,40 -32,24 -32,-24" stroke="var(--sonde-daylight-hc-mark-bus-gold)" stroke-width="8"></polygon><line x1="0" y1="-40" x2="0" y2="40" stroke="var(--sonde-daylight-hc-mark-bus-gold)" stroke-width="4"></line><line x1="24" y1="-40" x2="24" y2="40" stroke="var(--sonde-daylight-hc-mark-bus-gold)" stroke-width="4"></line><line x1="-16" y1="-20" x2="48" y2="-20" stroke="var(--sonde-daylight-hc-mark-bus-gold)" stroke-width="3"></line><line x1="-16" y1="0" x2="48" y2="0" stroke="var(--sonde-daylight-hc-mark-bus-gold)" stroke-width="3"></line><line x1="-16" y1="20" x2="48" y2="20" stroke="var(--sonde-daylight-hc-mark-bus-gold)" stroke-width="3"></line><rect x="4" y="-16" width="16" height="12" rx="1.5" stroke="var(--sonde-daylight-hc-mark-bus-gold)" stroke-width="3"></rect><rect x="28" y="-16" width="16" height="12" rx="1.5" stroke="var(--sonde-daylight-hc-mark-bus-gold)" stroke-width="3"></rect><rect x="4" y="4" width="16" height="12" rx="1.5" stroke="var(--sonde-daylight-hc-mark-bus-gold)" stroke-width="3"></rect><rect x="28" y="4" width="16" height="12" rx="1.5" stroke="var(--sonde-daylight-hc-mark-bus-gold)" stroke-width="3"></rect><rect x="-36" y="-12" width="8" height="24" rx="2" stroke="var(--sonde-daylight-hc-mark-metal)" stroke-width="4"></rect><path d="M-44,-8 L-52,-14 L-52,14 L-44,8 Z" stroke="var(--sonde-daylight-hc-mark-metal)" stroke-width="4"></path><g transform="translate(-8,0)" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M-52,-14 Q-86,-20 -112,-8 Q-120,0 -112,8 Q-86,20 -52,14" stroke="var(--sonde-daylight-hc-mark-flame-deep)" stroke-width="6"></path><path d="M-52,-10 Q-78,-14 -96,-5 Q-102,0 -96,5 Q-78,14 -52,10" stroke="var(--sonde-daylight-hc-mark-flame-mid)" stroke-width="5"></path><path d="M-52,-6 Q-68,-8 -78,-2 Q-82,0 -78,2 Q-68,8 -52,6" stroke="var(--sonde-daylight-hc-mark-flame-hot)" stroke-width="4"></path></g><line x1="16" y1="-40" x2="24" y2="-56" stroke="var(--sonde-daylight-hc-mark-metal)" stroke-width="5"></line><circle cx="24" cy="-56" r="3" stroke="var(--sonde-daylight-hc-mark-metal)" stroke-width="3"></circle></g></g></g></svg>
+      <svg class="sl-brand-mark sonde-daylight-mark" viewBox="0 0 512 512" width="28" height="28" aria-hidden="true"><defs><radialGradient id="sonde-life-brand-sun" cx="50%" cy="50%" r="50%"><stop offset="0%" stop-color="var(--sonde-daylight-mark-sun-stop-0)"/><stop offset="60%" stop-color="var(--sonde-daylight-mark-sun-stop-1)"/><stop offset="100%" stop-color="var(--sonde-daylight-mark-sun-stop-2)"/></radialGradient><clipPath id="sonde-life-brand-disc"><circle cx="256" cy="256" r="240"/></clipPath></defs><g style="display:var(--sonde-daylight-mark-solid-display)"><circle cx="256" cy="256" r="240" fill="url(#sonde-life-brand-sun)"/><g clip-path="url(#sonde-life-brand-disc)"><g fill="var(--sonde-daylight-mark-crater)" stroke="var(--sonde-daylight-mark-crater)"><g opacity="0.7"><path d="M40,240 C60,110 170,40 250,90 C320,130 330,210 260,280 C200,340 50,340 40,240 Z" opacity="0.6"/><path d="M290,130 C360,60 460,110 470,190 C480,270 410,350 330,320 C260,290 230,190 290,130 Z" opacity="0.7"/><path d="M390,280 C470,250 510,300 480,380 C450,440 380,410 390,280 Z" opacity="0.5"/><path d="M130,350 C180,290 260,350 230,430 C200,510 60,450 130,350 Z" opacity="0.5"/><circle cx="230" cy="430" r="18" fill="transparent" stroke-width="4" opacity="0.8"/><circle cx="170" cy="190" r="12" fill="transparent" stroke-width="3" opacity="0.7"/><circle cx="90" cy="230" r="8" opacity="0.8"/></g></g></g><g clip-path="url(#sonde-life-brand-disc)"><g transform="translate(250,240) rotate(-40)" fill="var(--sonde-daylight-mark-probe)" stroke="var(--sonde-daylight-mark-probe)"><line x1="-32" y1="-8" x2="-160" y2="-40" stroke-width="6" stroke-linecap="round"/><circle cx="-160" cy="-40" r="10"/><line x1="-32" y1="16" x2="-125" y2="62" stroke-width="8" stroke-linecap="round"/><rect x="-141" y="38" width="32" height="60" rx="4" transform="rotate(20,-125,62)"/><line x1="-16" y1="-40" x2="-46" y2="-92" stroke-width="7" stroke-linecap="round"/><rect x="-70" y="-108" width="48" height="28" rx="4"/><circle cx="-56" cy="-98" r="8"/><circle cx="-36" cy="-98" r="6"/><path d="M48,-108 Q128,-78 128,0 Q128,78 48,108" stroke-width="5" stroke-linejoin="round"/><line x1="58" y1="-50" x2="108" y2="0" stroke-width="5"/><line x1="58" y1="50" x2="108" y2="0" stroke-width="5"/><line x1="48" y1="0" x2="108" y2="0" stroke-width="5"/><circle cx="110" cy="0" r="14"/><polygon points="-16,-40 48,-40 62,-24 62,24 48,40 -16,40 -30,24 -30,-24"/></g></g></g><g style="display:var(--sonde-daylight-mark-line-display)"><circle cx="256" cy="256" r="232" fill="none" stroke="var(--sonde-daylight-hc-mark-earth-blue)" stroke-width="28"/><defs><clipPath id="sonde-life-brand-hc-clip"><circle cx="256" cy="256" r="214"/></clipPath></defs><g clip-path="url(#sonde-life-brand-hc-clip)"><g transform="translate(276,228) scale(1.3) rotate(-40)" fill="none" stroke-linecap="round" stroke-linejoin="round"><line x1="-32" y1="-8" x2="-165" y2="-42" stroke="var(--sonde-daylight-hc-mark-metal)" stroke-width="8"/><circle cx="-80" cy="-20" r="3" stroke="var(--sonde-daylight-hc-mark-metal)" stroke-width="3"/><circle cx="-125" cy="-32" r="2.5" stroke="var(--sonde-daylight-hc-mark-metal)" stroke-width="3"/><circle cx="-165" cy="-42" r="8" stroke="var(--sonde-daylight-hc-mark-metal)" stroke-width="4"/><circle cx="-165" cy="-42" r="4" stroke="var(--sonde-daylight-hc-mark-metal)" stroke-width="2"/><line x1="-165" y1="-48" x2="-165" y2="-36" stroke="var(--sonde-daylight-hc-mark-metal)" stroke-width="2"/><line x1="-171" y1="-42" x2="-159" y2="-42" stroke="var(--sonde-daylight-hc-mark-metal)" stroke-width="2"/><line x1="-32" y1="16" x2="-130" y2="64" stroke="var(--sonde-daylight-hc-mark-metal)" stroke-width="12"/><circle cx="-80" cy="40" r="4" stroke="var(--sonde-daylight-hc-mark-metal)" stroke-width="4"/><g transform="translate(-130,64) rotate(20)"><rect x="-16" y="-32" width="32" height="64" rx="4" stroke="var(--sonde-daylight-hc-mark-rtg-brown)" stroke-width="6"/><line x1="-16" y1="-22" x2="16" y2="-22" stroke="var(--sonde-daylight-hc-mark-rtg-brown)" stroke-width="4"/><line x1="-16" y1="-12" x2="16" y2="-12" stroke="var(--sonde-daylight-hc-mark-rtg-brown)" stroke-width="4"/><line x1="-16" y1="-2" x2="16" y2="-2" stroke="var(--sonde-daylight-hc-mark-rtg-brown)" stroke-width="4"/><line x1="-16" y1="8" x2="16" y2="8" stroke="var(--sonde-daylight-hc-mark-rtg-brown)" stroke-width="4"/><line x1="-16" y1="18" x2="16" y2="18" stroke="var(--sonde-daylight-hc-mark-rtg-brown)" stroke-width="4"/><line x1="-16" y1="28" x2="16" y2="28" stroke="var(--sonde-daylight-hc-mark-rtg-brown)" stroke-width="4"/><rect x="-18" y="-34" width="36" height="4" rx="2" stroke="var(--sonde-daylight-hc-mark-rtg-brown)" stroke-width="3"/><rect x="-18" y="30" width="36" height="4" rx="2" stroke="var(--sonde-daylight-hc-mark-rtg-brown)" stroke-width="3"/></g><line x1="-16" y1="-40" x2="-48" y2="-96" stroke="var(--sonde-daylight-hc-mark-metal)" stroke-width="10"/><circle cx="-30" cy="-64" r="4" stroke="var(--sonde-daylight-hc-mark-metal)" stroke-width="4"/><g transform="translate(-48,-96)"><rect x="-24" y="-16" width="48" height="28" rx="4" stroke="var(--sonde-daylight-hc-mark-metal)" stroke-width="6"/><line x1="-20" y1="-8" x2="20" y2="-8" stroke="var(--sonde-daylight-hc-mark-metal)" stroke-width="2"/><line x1="-20" y1="0" x2="20" y2="0" stroke="var(--sonde-daylight-hc-mark-metal)" stroke-width="2"/><circle cx="-10" cy="-4" r="8" stroke="var(--sonde-daylight-hc-mark-metal)" stroke-width="5"/><circle cx="-10" cy="-4" r="4" stroke="var(--sonde-daylight-hc-mark-metal)" stroke-width="2"/><circle cx="10" cy="-4" r="6" stroke="var(--sonde-daylight-hc-mark-metal)" stroke-width="4"/><circle cx="10" cy="-4" r="3" stroke="var(--sonde-daylight-hc-mark-metal)" stroke-width="2"/><rect x="-4" y="4" width="8" height="6" rx="1.5" stroke="var(--sonde-daylight-hc-mark-metal)" stroke-width="3"/></g><path d="M48,-112 Q130,-80 130,0 Q130,80 48,112" stroke="var(--sonde-daylight-hc-mark-earth-blue)" stroke-width="8"/><path d="M56,-96 Q118,-68 118,0 Q118,68 56,96" stroke="var(--sonde-daylight-hc-mark-earth-blue)" stroke-width="2"/><path d="M64,-80 Q106,-56 106,0 Q106,56 64,80" stroke="var(--sonde-daylight-hc-mark-earth-blue)" stroke-width="2"/><path d="M72,-60 Q94,-40 94,0 Q94,40 72,60" stroke="var(--sonde-daylight-hc-mark-earth-blue)" stroke-width="2"/><line x1="60" y1="-52" x2="110" y2="0" stroke="var(--sonde-daylight-hc-mark-earth-blue)" stroke-width="8"/><line x1="60" y1="52" x2="110" y2="0" stroke="var(--sonde-daylight-hc-mark-earth-blue)" stroke-width="8"/><line x1="48" y1="0" x2="110" y2="0" stroke="var(--sonde-daylight-hc-mark-earth-blue)" stroke-width="8"/><circle cx="112" cy="0" r="14" stroke="var(--sonde-daylight-hc-mark-earth-blue)" stroke-width="6"/><circle cx="112" cy="0" r="8" stroke="var(--sonde-daylight-hc-mark-earth-blue)" stroke-width="3"/><polygon points="-16,-40 48,-40 64,-24 64,24 48,40 -16,40 -32,24 -32,-24" stroke="var(--sonde-daylight-hc-mark-bus-gold)" stroke-width="8"/><line x1="0" y1="-40" x2="0" y2="40" stroke="var(--sonde-daylight-hc-mark-bus-gold)" stroke-width="4"/><line x1="24" y1="-40" x2="24" y2="40" stroke="var(--sonde-daylight-hc-mark-bus-gold)" stroke-width="4"/><line x1="-16" y1="-20" x2="48" y2="-20" stroke="var(--sonde-daylight-hc-mark-bus-gold)" stroke-width="3"/><line x1="-16" y1="0" x2="48" y2="0" stroke="var(--sonde-daylight-hc-mark-bus-gold)" stroke-width="3"/><line x1="-16" y1="20" x2="48" y2="20" stroke="var(--sonde-daylight-hc-mark-bus-gold)" stroke-width="3"/><rect x="4" y="-16" width="16" height="12" rx="1.5" stroke="var(--sonde-daylight-hc-mark-bus-gold)" stroke-width="3"/><rect x="28" y="-16" width="16" height="12" rx="1.5" stroke="var(--sonde-daylight-hc-mark-bus-gold)" stroke-width="3"/><rect x="4" y="4" width="16" height="12" rx="1.5" stroke="var(--sonde-daylight-hc-mark-bus-gold)" stroke-width="3"/><rect x="28" y="4" width="16" height="12" rx="1.5" stroke="var(--sonde-daylight-hc-mark-bus-gold)" stroke-width="3"/><rect x="-36" y="-12" width="8" height="24" rx="2" stroke="var(--sonde-daylight-hc-mark-metal)" stroke-width="4"/><path d="M-44,-8 L-52,-14 L-52,14 L-44,8 Z" stroke="var(--sonde-daylight-hc-mark-metal)" stroke-width="4"/><g transform="translate(-8,0)" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M-52,-14 Q-86,-20 -112,-8 Q-120,0 -112,8 Q-86,20 -52,14" stroke="var(--sonde-daylight-hc-mark-flame-deep)" stroke-width="6"/><path d="M-52,-10 Q-78,-14 -96,-5 Q-102,0 -96,5 Q-78,14 -52,10" stroke="var(--sonde-daylight-hc-mark-flame-mid)" stroke-width="5"/><path d="M-52,-6 Q-68,-8 -78,-2 Q-82,0 -78,2 Q-68,8 -52,6" stroke="var(--sonde-daylight-hc-mark-flame-hot)" stroke-width="4"/></g><line x1="16" y1="-40" x2="24" y2="-56" stroke="var(--sonde-daylight-hc-mark-metal)" stroke-width="5"/><circle cx="24" cy="-56" r="3" stroke="var(--sonde-daylight-hc-mark-metal)" stroke-width="3"/></g></g></g></svg>
       <span data-msg-id="sondeLife.nav.home">Sonde</span>
     </a>
     <div class="sl-nav-actions">
       <div class="sl-nav-links">
-        <details class="sl-nav-dropdown">
-          <summary data-msg-id="sondeLife.nav.solutions">Solutions</summary>
-          <div class="sl-nav-dropdown-menu">
-            <a href="./solutions/accessibility/" data-msg-id="sondeLife.solutions.subnav.accessibility">Accessibility</a>
-            <a href="./solutions/compliance/" data-msg-id="sondeLife.solutions.subnav.compliance">Compliance</a>
-            <a href="./solutions/ai-governance/" data-msg-id="sondeLife.solutions.subnav.aiGovernance">AI Governance</a>
-            <a href="./solutions/developer/" data-msg-id="sondeLife.solutions.subnav.developer">Developer</a>
-          </div>
-        </details>
-        <a href="./overview/" data-msg-id="sondeLife.nav.overview">Overview</a>
+        <a href="./ai-safety/" data-msg-id="sondeLife.nav.overview">AI Safety</a>
         <a href="./explore/" data-msg-id="sondeLife.nav.features">Explore</a>
         <a href="./architecture/" data-msg-id="sondeLife.nav.architecture">Architecture</a>
         <a href="./methodology/" data-msg-id="sondeLife.nav.methodology">Methodology</a>
         <a href="./compliance/" data-msg-id="sondeLife.nav.compliance">Compliance</a>
-        <a href="./scribe/" data-msg-id="sondeLife.nav.scribe">Scribe</a>
+        <a href="./proof/" data-msg-id="sondeLife.nav.scribe">Proof</a>
         <a href="./contact/" data-msg-id="sondeLife.nav.contact">Contact</a>
       </div>
       <sonde-search-dialog
@@ -629,60 +643,60 @@
             <path d="M19.4 13.5c.1-.5.1-1 .1-1.5s0-1-.1-1.5l2-1.5-2-3.5-2.4 1a7.3 7.3 0 0 0-2.6-1.5L14 2h-4l-.4 3a7.3 7.3 0 0 0-2.6 1.5l-2.4-1-2 3.5 2 1.5c-.1.5-.1 1-.1 1.5s0 1 .1 1.5l-2 1.5 2 3.5 2.4-1a7.3 7.3 0 0 0 2.6 1.5l.4 3h4l.4-3a7.3 7.3 0 0 0 2.6-1.5l2.4 1 2-3.5-2-1.5ZM12 15.5a3.5 3.5 0 1 1 0-7 3.5 3.5 0 0 1 0 7Z"/>
           </svg>
         </summary>
-        <div class="settings-dropdown-menu">
+        <div class="settings-dropdown-menu" data-report-settings-dialog>
   <details class="settings-section settings-platform-theme-section" open>
-    <summary class="settings-section-trigger" data-msg-id="settings.theme.legend">Theme</summary>
+    <summary class="settings-section-trigger" data-msg-id="settings.theme.legend" data-scribe-msgid="settings.theme.legend">Theme</summary>
     <div class="settings-section-body">
       <label class="theme-toggle-option settings-platform-theme-option">
   <input type="radio" name="sonde-platform-theme-toggle" value="ultraviolet" checked>
-  <div class="theme-preview" data-platform-theme="ultraviolet">
-    <span class="settings-theme-preview-icon" aria-hidden="true"><svg class="settings-theme-mark sonde-daylight-mark" viewBox="0 0 512 512" width="28" height="28" aria-hidden="true"><defs><radialGradient id="settings-theme-ultraviolet-sun" cx="50%" cy="50%" r="50%"><stop offset="0%" stop-color="color-mix(in srgb, var(--sonde-color-surface) 88%, var(--sonde-color-primary) 12%)"></stop><stop offset="60%" stop-color="color-mix(in srgb, var(--sonde-color-primary) 80%, var(--sonde-color-bg) 20%)"></stop><stop offset="100%" stop-color="var(--sonde-color-primary)"></stop></radialGradient><clipPath id="settings-theme-ultraviolet-disc"><circle cx="256" cy="256" r="240"></circle></clipPath></defs><g style="display:block"><circle cx="256" cy="256" r="240" fill="url(#settings-theme-ultraviolet-sun)"></circle><g clip-path="url(#settings-theme-ultraviolet-disc)"><g fill="color-mix(in srgb, var(--sonde-color-primary) 18%, transparent)" stroke="color-mix(in srgb, var(--sonde-color-primary) 18%, transparent)"><g opacity="0.7"><path d="M40,240 C60,110 170,40 250,90 C320,130 330,210 260,280 C200,340 50,340 40,240 Z" opacity="0.6"/><path d="M290,130 C360,60 460,110 470,190 C480,270 410,350 330,320 C260,290 230,190 290,130 Z" opacity="0.7"/><path d="M390,280 C470,250 510,300 480,380 C450,440 380,410 390,280 Z" opacity="0.5"/><path d="M130,350 C180,290 260,350 230,430 C200,510 60,450 130,350 Z" opacity="0.5"/><circle cx="230" cy="430" r="18" fill="transparent" stroke-width="4" opacity="0.8"/><circle cx="170" cy="190" r="12" fill="transparent" stroke-width="3" opacity="0.7"/><circle cx="90" cy="230" r="8" opacity="0.8"/></g></g></g><g clip-path="url(#settings-theme-ultraviolet-disc)"><g transform="translate(250,240) rotate(-40)" fill="var(--sonde-color-bg)" stroke="var(--sonde-color-bg)"><line x1="-32" y1="-8" x2="-160" y2="-40" stroke-width="6" stroke-linecap="round"/><circle cx="-160" cy="-40" r="10"/><line x1="-32" y1="16" x2="-125" y2="62" stroke-width="8" stroke-linecap="round"/><rect x="-141" y="38" width="32" height="60" rx="4" transform="rotate(20,-125,62)"/><line x1="-16" y1="-40" x2="-46" y2="-92" stroke-width="7" stroke-linecap="round"/><rect x="-70" y="-108" width="48" height="28" rx="4"/><circle cx="-56" cy="-98" r="8"/><circle cx="-36" cy="-98" r="6"/><path d="M48,-108 Q128,-78 128,0 Q128,78 48,108" stroke-width="5" stroke-linejoin="round"/><line x1="58" y1="-50" x2="108" y2="0" stroke-width="5"/><line x1="58" y1="50" x2="108" y2="0" stroke-width="5"/><line x1="48" y1="0" x2="108" y2="0" stroke-width="5"/><circle cx="110" cy="0" r="14"/><polygon points="-16,-40 48,-40 62,-24 62,24 48,40 -16,40 -30,24 -30,-24"/></g></g></g><g style="display:none"><circle cx="256" cy="256" r="232" fill="none" stroke="var(--sonde-daylight-hc-mark-earth-blue)" stroke-width="28"></circle><defs><clipPath id="hc-clip-_R_3_"><circle cx="256" cy="256" r="214"></circle></clipPath></defs><g clip-path="url(#hc-clip-_R_3_)"><g transform="translate(276,228) scale(1.3) rotate(-40)" fill="none" stroke-linecap="round" stroke-linejoin="round"><line x1="-32" y1="-8" x2="-165" y2="-42" stroke="var(--sonde-daylight-hc-mark-metal)" stroke-width="8"></line><circle cx="-80" cy="-20" r="3" stroke="var(--sonde-daylight-hc-mark-metal)" stroke-width="3"></circle><circle cx="-125" cy="-32" r="2.5" stroke="var(--sonde-daylight-hc-mark-metal)" stroke-width="3"></circle><circle cx="-165" cy="-42" r="8" stroke="var(--sonde-daylight-hc-mark-metal)" stroke-width="4"></circle><circle cx="-165" cy="-42" r="4" stroke="var(--sonde-daylight-hc-mark-metal)" stroke-width="2"></circle><line x1="-165" y1="-48" x2="-165" y2="-36" stroke="var(--sonde-daylight-hc-mark-metal)" stroke-width="2"></line><line x1="-171" y1="-42" x2="-159" y2="-42" stroke="var(--sonde-daylight-hc-mark-metal)" stroke-width="2"></line><line x1="-32" y1="16" x2="-130" y2="64" stroke="var(--sonde-daylight-hc-mark-metal)" stroke-width="12"></line><circle cx="-80" cy="40" r="4" stroke="var(--sonde-daylight-hc-mark-metal)" stroke-width="4"></circle><g transform="translate(-130,64) rotate(20)"><rect x="-16" y="-32" width="32" height="64" rx="4" stroke="var(--sonde-daylight-hc-mark-rtg-brown)" stroke-width="6"></rect><line x1="-16" y1="-22" x2="16" y2="-22" stroke="var(--sonde-daylight-hc-mark-rtg-brown)" stroke-width="4"></line><line x1="-16" y1="-12" x2="16" y2="-12" stroke="var(--sonde-daylight-hc-mark-rtg-brown)" stroke-width="4"></line><line x1="-16" y1="-2" x2="16" y2="-2" stroke="var(--sonde-daylight-hc-mark-rtg-brown)" stroke-width="4"></line><line x1="-16" y1="8" x2="16" y2="8" stroke="var(--sonde-daylight-hc-mark-rtg-brown)" stroke-width="4"></line><line x1="-16" y1="18" x2="16" y2="18" stroke="var(--sonde-daylight-hc-mark-rtg-brown)" stroke-width="4"></line><line x1="-16" y1="28" x2="16" y2="28" stroke="var(--sonde-daylight-hc-mark-rtg-brown)" stroke-width="4"></line><rect x="-18" y="-34" width="36" height="4" rx="2" stroke="var(--sonde-daylight-hc-mark-rtg-brown)" stroke-width="3"></rect><rect x="-18" y="30" width="36" height="4" rx="2" stroke="var(--sonde-daylight-hc-mark-rtg-brown)" stroke-width="3"></rect></g><line x1="-16" y1="-40" x2="-48" y2="-96" stroke="var(--sonde-daylight-hc-mark-metal)" stroke-width="10"></line><circle cx="-30" cy="-64" r="4" stroke="var(--sonde-daylight-hc-mark-metal)" stroke-width="4"></circle><g transform="translate(-48,-96)"><rect x="-24" y="-16" width="48" height="28" rx="4" stroke="var(--sonde-daylight-hc-mark-metal)" stroke-width="6"></rect><line x1="-20" y1="-8" x2="20" y2="-8" stroke="var(--sonde-daylight-hc-mark-metal)" stroke-width="2"></line><line x1="-20" y1="0" x2="20" y2="0" stroke="var(--sonde-daylight-hc-mark-metal)" stroke-width="2"></line><circle cx="-10" cy="-4" r="8" stroke="var(--sonde-daylight-hc-mark-metal)" stroke-width="5"></circle><circle cx="-10" cy="-4" r="4" stroke="var(--sonde-daylight-hc-mark-metal)" stroke-width="2"></circle><circle cx="10" cy="-4" r="6" stroke="var(--sonde-daylight-hc-mark-metal)" stroke-width="4"></circle><circle cx="10" cy="-4" r="3" stroke="var(--sonde-daylight-hc-mark-metal)" stroke-width="2"></circle><rect x="-4" y="4" width="8" height="6" rx="1.5" stroke="var(--sonde-daylight-hc-mark-metal)" stroke-width="3"></rect></g><path d="M48,-112 Q130,-80 130,0 Q130,80 48,112" stroke="var(--sonde-daylight-hc-mark-earth-blue)" stroke-width="8"></path><path d="M56,-96 Q118,-68 118,0 Q118,68 56,96" stroke="var(--sonde-daylight-hc-mark-earth-blue)" stroke-width="2"></path><path d="M64,-80 Q106,-56 106,0 Q106,56 64,80" stroke="var(--sonde-daylight-hc-mark-earth-blue)" stroke-width="2"></path><path d="M72,-60 Q94,-40 94,0 Q94,40 72,60" stroke="var(--sonde-daylight-hc-mark-earth-blue)" stroke-width="2"></path><line x1="60" y1="-52" x2="110" y2="0" stroke="var(--sonde-daylight-hc-mark-earth-blue)" stroke-width="8"></line><line x1="60" y1="52" x2="110" y2="0" stroke="var(--sonde-daylight-hc-mark-earth-blue)" stroke-width="8"></line><line x1="48" y1="0" x2="110" y2="0" stroke="var(--sonde-daylight-hc-mark-earth-blue)" stroke-width="8"></line><circle cx="112" cy="0" r="14" stroke="var(--sonde-daylight-hc-mark-earth-blue)" stroke-width="6"></circle><circle cx="112" cy="0" r="8" stroke="var(--sonde-daylight-hc-mark-earth-blue)" stroke-width="3"></circle><polygon points="-16,-40 48,-40 64,-24 64,24 48,40 -16,40 -32,24 -32,-24" stroke="var(--sonde-daylight-hc-mark-bus-gold)" stroke-width="8"></polygon><line x1="0" y1="-40" x2="0" y2="40" stroke="var(--sonde-daylight-hc-mark-bus-gold)" stroke-width="4"></line><line x1="24" y1="-40" x2="24" y2="40" stroke="var(--sonde-daylight-hc-mark-bus-gold)" stroke-width="4"></line><line x1="-16" y1="-20" x2="48" y2="-20" stroke="var(--sonde-daylight-hc-mark-bus-gold)" stroke-width="3"></line><line x1="-16" y1="0" x2="48" y2="0" stroke="var(--sonde-daylight-hc-mark-bus-gold)" stroke-width="3"></line><line x1="-16" y1="20" x2="48" y2="20" stroke="var(--sonde-daylight-hc-mark-bus-gold)" stroke-width="3"></line><rect x="4" y="-16" width="16" height="12" rx="1.5" stroke="var(--sonde-daylight-hc-mark-bus-gold)" stroke-width="3"></rect><rect x="28" y="-16" width="16" height="12" rx="1.5" stroke="var(--sonde-daylight-hc-mark-bus-gold)" stroke-width="3"></rect><rect x="4" y="4" width="16" height="12" rx="1.5" stroke="var(--sonde-daylight-hc-mark-bus-gold)" stroke-width="3"></rect><rect x="28" y="4" width="16" height="12" rx="1.5" stroke="var(--sonde-daylight-hc-mark-bus-gold)" stroke-width="3"></rect><rect x="-36" y="-12" width="8" height="24" rx="2" stroke="var(--sonde-daylight-hc-mark-metal)" stroke-width="4"></rect><path d="M-44,-8 L-52,-14 L-52,14 L-44,8 Z" stroke="var(--sonde-daylight-hc-mark-metal)" stroke-width="4"></path><g transform="translate(-8,0)" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M-52,-14 Q-86,-20 -112,-8 Q-120,0 -112,8 Q-86,20 -52,14" stroke="var(--sonde-daylight-hc-mark-flame-deep)" stroke-width="6"></path><path d="M-52,-10 Q-78,-14 -96,-5 Q-102,0 -96,5 Q-78,14 -52,10" stroke="var(--sonde-daylight-hc-mark-flame-mid)" stroke-width="5"></path><path d="M-52,-6 Q-68,-8 -78,-2 Q-82,0 -78,2 Q-68,8 -52,6" stroke="var(--sonde-daylight-hc-mark-flame-hot)" stroke-width="4"></path></g><line x1="16" y1="-40" x2="24" y2="-56" stroke="var(--sonde-daylight-hc-mark-metal)" stroke-width="5"></line><circle cx="24" cy="-56" r="3" stroke="var(--sonde-daylight-hc-mark-metal)" stroke-width="3"></circle></g></g></g></svg></span>
-    <span data-msg-id="settings.theme.ultraviolet">Ultraviolet</span>
+  <div class="theme-preview" data-platform-theme="ultraviolet" data-theme="dark">
+    <span class="settings-theme-preview-icon" aria-hidden="true"><svg class="settings-theme-mark sonde-daylight-mark" viewBox="0 0 512 512" width="28" height="28" aria-hidden="true"><defs><radialGradient id="settings-theme-ultraviolet-sun" cx="50%" cy="50%" r="50%"><stop offset="0%" stop-color="var(--sonde-daylight-mark-sun-stop-0)"/><stop offset="60%" stop-color="var(--sonde-daylight-mark-sun-stop-1)"/><stop offset="100%" stop-color="var(--sonde-daylight-mark-sun-stop-2)"/></radialGradient><clipPath id="settings-theme-ultraviolet-disc"><circle cx="256" cy="256" r="240"/></clipPath></defs><g style="display:var(--sonde-daylight-mark-solid-display)"><circle cx="256" cy="256" r="240" fill="url(#settings-theme-ultraviolet-sun)"/><g clip-path="url(#settings-theme-ultraviolet-disc)"><g fill="var(--sonde-daylight-mark-crater)" stroke="var(--sonde-daylight-mark-crater)"><g opacity="0.7"><path d="M40,240 C60,110 170,40 250,90 C320,130 330,210 260,280 C200,340 50,340 40,240 Z" opacity="0.6"/><path d="M290,130 C360,60 460,110 470,190 C480,270 410,350 330,320 C260,290 230,190 290,130 Z" opacity="0.7"/><path d="M390,280 C470,250 510,300 480,380 C450,440 380,410 390,280 Z" opacity="0.5"/><path d="M130,350 C180,290 260,350 230,430 C200,510 60,450 130,350 Z" opacity="0.5"/><circle cx="230" cy="430" r="18" fill="transparent" stroke-width="4" opacity="0.8"/><circle cx="170" cy="190" r="12" fill="transparent" stroke-width="3" opacity="0.7"/><circle cx="90" cy="230" r="8" opacity="0.8"/></g></g></g><g clip-path="url(#settings-theme-ultraviolet-disc)"><g transform="translate(250,240) rotate(-40)" fill="var(--sonde-daylight-mark-probe)" stroke="var(--sonde-daylight-mark-probe)"><line x1="-32" y1="-8" x2="-160" y2="-40" stroke-width="6" stroke-linecap="round"/><circle cx="-160" cy="-40" r="10"/><line x1="-32" y1="16" x2="-125" y2="62" stroke-width="8" stroke-linecap="round"/><rect x="-141" y="38" width="32" height="60" rx="4" transform="rotate(20,-125,62)"/><line x1="-16" y1="-40" x2="-46" y2="-92" stroke-width="7" stroke-linecap="round"/><rect x="-70" y="-108" width="48" height="28" rx="4"/><circle cx="-56" cy="-98" r="8"/><circle cx="-36" cy="-98" r="6"/><path d="M48,-108 Q128,-78 128,0 Q128,78 48,108" stroke-width="5" stroke-linejoin="round"/><line x1="58" y1="-50" x2="108" y2="0" stroke-width="5"/><line x1="58" y1="50" x2="108" y2="0" stroke-width="5"/><line x1="48" y1="0" x2="108" y2="0" stroke-width="5"/><circle cx="110" cy="0" r="14"/><polygon points="-16,-40 48,-40 62,-24 62,24 48,40 -16,40 -30,24 -30,-24"/></g></g></g><g style="display:var(--sonde-daylight-mark-line-display)"><circle cx="256" cy="256" r="232" fill="none" stroke="var(--sonde-daylight-hc-mark-earth-blue)" stroke-width="28"/><defs><clipPath id="settings-theme-ultraviolet-hc-clip"><circle cx="256" cy="256" r="214"/></clipPath></defs><g clip-path="url(#settings-theme-ultraviolet-hc-clip)"><g transform="translate(276,228) scale(1.3) rotate(-40)" fill="none" stroke-linecap="round" stroke-linejoin="round"><line x1="-32" y1="-8" x2="-165" y2="-42" stroke="var(--sonde-daylight-hc-mark-metal)" stroke-width="8"/><circle cx="-80" cy="-20" r="3" stroke="var(--sonde-daylight-hc-mark-metal)" stroke-width="3"/><circle cx="-125" cy="-32" r="2.5" stroke="var(--sonde-daylight-hc-mark-metal)" stroke-width="3"/><circle cx="-165" cy="-42" r="8" stroke="var(--sonde-daylight-hc-mark-metal)" stroke-width="4"/><circle cx="-165" cy="-42" r="4" stroke="var(--sonde-daylight-hc-mark-metal)" stroke-width="2"/><line x1="-165" y1="-48" x2="-165" y2="-36" stroke="var(--sonde-daylight-hc-mark-metal)" stroke-width="2"/><line x1="-171" y1="-42" x2="-159" y2="-42" stroke="var(--sonde-daylight-hc-mark-metal)" stroke-width="2"/><line x1="-32" y1="16" x2="-130" y2="64" stroke="var(--sonde-daylight-hc-mark-metal)" stroke-width="12"/><circle cx="-80" cy="40" r="4" stroke="var(--sonde-daylight-hc-mark-metal)" stroke-width="4"/><g transform="translate(-130,64) rotate(20)"><rect x="-16" y="-32" width="32" height="64" rx="4" stroke="var(--sonde-daylight-hc-mark-rtg-brown)" stroke-width="6"/><line x1="-16" y1="-22" x2="16" y2="-22" stroke="var(--sonde-daylight-hc-mark-rtg-brown)" stroke-width="4"/><line x1="-16" y1="-12" x2="16" y2="-12" stroke="var(--sonde-daylight-hc-mark-rtg-brown)" stroke-width="4"/><line x1="-16" y1="-2" x2="16" y2="-2" stroke="var(--sonde-daylight-hc-mark-rtg-brown)" stroke-width="4"/><line x1="-16" y1="8" x2="16" y2="8" stroke="var(--sonde-daylight-hc-mark-rtg-brown)" stroke-width="4"/><line x1="-16" y1="18" x2="16" y2="18" stroke="var(--sonde-daylight-hc-mark-rtg-brown)" stroke-width="4"/><line x1="-16" y1="28" x2="16" y2="28" stroke="var(--sonde-daylight-hc-mark-rtg-brown)" stroke-width="4"/><rect x="-18" y="-34" width="36" height="4" rx="2" stroke="var(--sonde-daylight-hc-mark-rtg-brown)" stroke-width="3"/><rect x="-18" y="30" width="36" height="4" rx="2" stroke="var(--sonde-daylight-hc-mark-rtg-brown)" stroke-width="3"/></g><line x1="-16" y1="-40" x2="-48" y2="-96" stroke="var(--sonde-daylight-hc-mark-metal)" stroke-width="10"/><circle cx="-30" cy="-64" r="4" stroke="var(--sonde-daylight-hc-mark-metal)" stroke-width="4"/><g transform="translate(-48,-96)"><rect x="-24" y="-16" width="48" height="28" rx="4" stroke="var(--sonde-daylight-hc-mark-metal)" stroke-width="6"/><line x1="-20" y1="-8" x2="20" y2="-8" stroke="var(--sonde-daylight-hc-mark-metal)" stroke-width="2"/><line x1="-20" y1="0" x2="20" y2="0" stroke="var(--sonde-daylight-hc-mark-metal)" stroke-width="2"/><circle cx="-10" cy="-4" r="8" stroke="var(--sonde-daylight-hc-mark-metal)" stroke-width="5"/><circle cx="-10" cy="-4" r="4" stroke="var(--sonde-daylight-hc-mark-metal)" stroke-width="2"/><circle cx="10" cy="-4" r="6" stroke="var(--sonde-daylight-hc-mark-metal)" stroke-width="4"/><circle cx="10" cy="-4" r="3" stroke="var(--sonde-daylight-hc-mark-metal)" stroke-width="2"/><rect x="-4" y="4" width="8" height="6" rx="1.5" stroke="var(--sonde-daylight-hc-mark-metal)" stroke-width="3"/></g><path d="M48,-112 Q130,-80 130,0 Q130,80 48,112" stroke="var(--sonde-daylight-hc-mark-earth-blue)" stroke-width="8"/><path d="M56,-96 Q118,-68 118,0 Q118,68 56,96" stroke="var(--sonde-daylight-hc-mark-earth-blue)" stroke-width="2"/><path d="M64,-80 Q106,-56 106,0 Q106,56 64,80" stroke="var(--sonde-daylight-hc-mark-earth-blue)" stroke-width="2"/><path d="M72,-60 Q94,-40 94,0 Q94,40 72,60" stroke="var(--sonde-daylight-hc-mark-earth-blue)" stroke-width="2"/><line x1="60" y1="-52" x2="110" y2="0" stroke="var(--sonde-daylight-hc-mark-earth-blue)" stroke-width="8"/><line x1="60" y1="52" x2="110" y2="0" stroke="var(--sonde-daylight-hc-mark-earth-blue)" stroke-width="8"/><line x1="48" y1="0" x2="110" y2="0" stroke="var(--sonde-daylight-hc-mark-earth-blue)" stroke-width="8"/><circle cx="112" cy="0" r="14" stroke="var(--sonde-daylight-hc-mark-earth-blue)" stroke-width="6"/><circle cx="112" cy="0" r="8" stroke="var(--sonde-daylight-hc-mark-earth-blue)" stroke-width="3"/><polygon points="-16,-40 48,-40 64,-24 64,24 48,40 -16,40 -32,24 -32,-24" stroke="var(--sonde-daylight-hc-mark-bus-gold)" stroke-width="8"/><line x1="0" y1="-40" x2="0" y2="40" stroke="var(--sonde-daylight-hc-mark-bus-gold)" stroke-width="4"/><line x1="24" y1="-40" x2="24" y2="40" stroke="var(--sonde-daylight-hc-mark-bus-gold)" stroke-width="4"/><line x1="-16" y1="-20" x2="48" y2="-20" stroke="var(--sonde-daylight-hc-mark-bus-gold)" stroke-width="3"/><line x1="-16" y1="0" x2="48" y2="0" stroke="var(--sonde-daylight-hc-mark-bus-gold)" stroke-width="3"/><line x1="-16" y1="20" x2="48" y2="20" stroke="var(--sonde-daylight-hc-mark-bus-gold)" stroke-width="3"/><rect x="4" y="-16" width="16" height="12" rx="1.5" stroke="var(--sonde-daylight-hc-mark-bus-gold)" stroke-width="3"/><rect x="28" y="-16" width="16" height="12" rx="1.5" stroke="var(--sonde-daylight-hc-mark-bus-gold)" stroke-width="3"/><rect x="4" y="4" width="16" height="12" rx="1.5" stroke="var(--sonde-daylight-hc-mark-bus-gold)" stroke-width="3"/><rect x="28" y="4" width="16" height="12" rx="1.5" stroke="var(--sonde-daylight-hc-mark-bus-gold)" stroke-width="3"/><rect x="-36" y="-12" width="8" height="24" rx="2" stroke="var(--sonde-daylight-hc-mark-metal)" stroke-width="4"/><path d="M-44,-8 L-52,-14 L-52,14 L-44,8 Z" stroke="var(--sonde-daylight-hc-mark-metal)" stroke-width="4"/><g transform="translate(-8,0)" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M-52,-14 Q-86,-20 -112,-8 Q-120,0 -112,8 Q-86,20 -52,14" stroke="var(--sonde-daylight-hc-mark-flame-deep)" stroke-width="6"/><path d="M-52,-10 Q-78,-14 -96,-5 Q-102,0 -96,5 Q-78,14 -52,10" stroke="var(--sonde-daylight-hc-mark-flame-mid)" stroke-width="5"/><path d="M-52,-6 Q-68,-8 -78,-2 Q-82,0 -78,2 Q-68,8 -52,6" stroke="var(--sonde-daylight-hc-mark-flame-hot)" stroke-width="4"/></g><line x1="16" y1="-40" x2="24" y2="-56" stroke="var(--sonde-daylight-hc-mark-metal)" stroke-width="5"/><circle cx="24" cy="-56" r="3" stroke="var(--sonde-daylight-hc-mark-metal)" stroke-width="3"/></g></g></g></svg></span>
+    <span data-msg-id="settings.theme.ultraviolet" data-scribe-msgid="settings.theme.ultraviolet">Ultraviolet</span>
   </div>
 </label>
       <label class="theme-toggle-option settings-platform-theme-option">
   <input type="radio" name="sonde-platform-theme-toggle" value="infrared">
-  <div class="theme-preview" data-platform-theme="infrared">
-    <span class="settings-theme-preview-icon" aria-hidden="true"><svg class="settings-theme-mark sonde-daylight-mark" viewBox="0 0 512 512" width="28" height="28" aria-hidden="true"><defs><radialGradient id="settings-theme-infrared-sun" cx="50%" cy="50%" r="50%"><stop offset="0%" stop-color="color-mix(in srgb, var(--sonde-color-surface) 88%, var(--sonde-color-primary) 12%)"></stop><stop offset="60%" stop-color="color-mix(in srgb, var(--sonde-color-primary) 80%, var(--sonde-color-bg) 20%)"></stop><stop offset="100%" stop-color="var(--sonde-color-primary)"></stop></radialGradient><clipPath id="settings-theme-infrared-disc"><circle cx="256" cy="256" r="240"></circle></clipPath></defs><g style="display:block"><circle cx="256" cy="256" r="240" fill="url(#settings-theme-infrared-sun)"></circle><g clip-path="url(#settings-theme-infrared-disc)"><g fill="color-mix(in srgb, var(--sonde-color-primary) 18%, transparent)" stroke="color-mix(in srgb, var(--sonde-color-primary) 18%, transparent)"><g opacity="0.7"><path d="M40,240 C60,110 170,40 250,90 C320,130 330,210 260,280 C200,340 50,340 40,240 Z" opacity="0.6"/><path d="M290,130 C360,60 460,110 470,190 C480,270 410,350 330,320 C260,290 230,190 290,130 Z" opacity="0.7"/><path d="M390,280 C470,250 510,300 480,380 C450,440 380,410 390,280 Z" opacity="0.5"/><path d="M130,350 C180,290 260,350 230,430 C200,510 60,450 130,350 Z" opacity="0.5"/><circle cx="230" cy="430" r="18" fill="transparent" stroke-width="4" opacity="0.8"/><circle cx="170" cy="190" r="12" fill="transparent" stroke-width="3" opacity="0.7"/><circle cx="90" cy="230" r="8" opacity="0.8"/></g></g></g><g clip-path="url(#settings-theme-infrared-disc)"><g transform="translate(250,240) rotate(-40)" fill="var(--sonde-color-bg)" stroke="var(--sonde-color-bg)"><line x1="-32" y1="-8" x2="-160" y2="-40" stroke-width="6" stroke-linecap="round"/><circle cx="-160" cy="-40" r="10"/><line x1="-32" y1="16" x2="-125" y2="62" stroke-width="8" stroke-linecap="round"/><rect x="-141" y="38" width="32" height="60" rx="4" transform="rotate(20,-125,62)"/><line x1="-16" y1="-40" x2="-46" y2="-92" stroke-width="7" stroke-linecap="round"/><rect x="-70" y="-108" width="48" height="28" rx="4"/><circle cx="-56" cy="-98" r="8"/><circle cx="-36" cy="-98" r="6"/><path d="M48,-108 Q128,-78 128,0 Q128,78 48,108" stroke-width="5" stroke-linejoin="round"/><line x1="58" y1="-50" x2="108" y2="0" stroke-width="5"/><line x1="58" y1="50" x2="108" y2="0" stroke-width="5"/><line x1="48" y1="0" x2="108" y2="0" stroke-width="5"/><circle cx="110" cy="0" r="14"/><polygon points="-16,-40 48,-40 62,-24 62,24 48,40 -16,40 -30,24 -30,-24"/></g></g></g><g style="display:none"><circle cx="256" cy="256" r="232" fill="none" stroke="var(--sonde-daylight-hc-mark-earth-blue)" stroke-width="28"></circle><defs><clipPath id="hc-clip-_R_3_"><circle cx="256" cy="256" r="214"></circle></clipPath></defs><g clip-path="url(#hc-clip-_R_3_)"><g transform="translate(276,228) scale(1.3) rotate(-40)" fill="none" stroke-linecap="round" stroke-linejoin="round"><line x1="-32" y1="-8" x2="-165" y2="-42" stroke="var(--sonde-daylight-hc-mark-metal)" stroke-width="8"></line><circle cx="-80" cy="-20" r="3" stroke="var(--sonde-daylight-hc-mark-metal)" stroke-width="3"></circle><circle cx="-125" cy="-32" r="2.5" stroke="var(--sonde-daylight-hc-mark-metal)" stroke-width="3"></circle><circle cx="-165" cy="-42" r="8" stroke="var(--sonde-daylight-hc-mark-metal)" stroke-width="4"></circle><circle cx="-165" cy="-42" r="4" stroke="var(--sonde-daylight-hc-mark-metal)" stroke-width="2"></circle><line x1="-165" y1="-48" x2="-165" y2="-36" stroke="var(--sonde-daylight-hc-mark-metal)" stroke-width="2"></line><line x1="-171" y1="-42" x2="-159" y2="-42" stroke="var(--sonde-daylight-hc-mark-metal)" stroke-width="2"></line><line x1="-32" y1="16" x2="-130" y2="64" stroke="var(--sonde-daylight-hc-mark-metal)" stroke-width="12"></line><circle cx="-80" cy="40" r="4" stroke="var(--sonde-daylight-hc-mark-metal)" stroke-width="4"></circle><g transform="translate(-130,64) rotate(20)"><rect x="-16" y="-32" width="32" height="64" rx="4" stroke="var(--sonde-daylight-hc-mark-rtg-brown)" stroke-width="6"></rect><line x1="-16" y1="-22" x2="16" y2="-22" stroke="var(--sonde-daylight-hc-mark-rtg-brown)" stroke-width="4"></line><line x1="-16" y1="-12" x2="16" y2="-12" stroke="var(--sonde-daylight-hc-mark-rtg-brown)" stroke-width="4"></line><line x1="-16" y1="-2" x2="16" y2="-2" stroke="var(--sonde-daylight-hc-mark-rtg-brown)" stroke-width="4"></line><line x1="-16" y1="8" x2="16" y2="8" stroke="var(--sonde-daylight-hc-mark-rtg-brown)" stroke-width="4"></line><line x1="-16" y1="18" x2="16" y2="18" stroke="var(--sonde-daylight-hc-mark-rtg-brown)" stroke-width="4"></line><line x1="-16" y1="28" x2="16" y2="28" stroke="var(--sonde-daylight-hc-mark-rtg-brown)" stroke-width="4"></line><rect x="-18" y="-34" width="36" height="4" rx="2" stroke="var(--sonde-daylight-hc-mark-rtg-brown)" stroke-width="3"></rect><rect x="-18" y="30" width="36" height="4" rx="2" stroke="var(--sonde-daylight-hc-mark-rtg-brown)" stroke-width="3"></rect></g><line x1="-16" y1="-40" x2="-48" y2="-96" stroke="var(--sonde-daylight-hc-mark-metal)" stroke-width="10"></line><circle cx="-30" cy="-64" r="4" stroke="var(--sonde-daylight-hc-mark-metal)" stroke-width="4"></circle><g transform="translate(-48,-96)"><rect x="-24" y="-16" width="48" height="28" rx="4" stroke="var(--sonde-daylight-hc-mark-metal)" stroke-width="6"></rect><line x1="-20" y1="-8" x2="20" y2="-8" stroke="var(--sonde-daylight-hc-mark-metal)" stroke-width="2"></line><line x1="-20" y1="0" x2="20" y2="0" stroke="var(--sonde-daylight-hc-mark-metal)" stroke-width="2"></line><circle cx="-10" cy="-4" r="8" stroke="var(--sonde-daylight-hc-mark-metal)" stroke-width="5"></circle><circle cx="-10" cy="-4" r="4" stroke="var(--sonde-daylight-hc-mark-metal)" stroke-width="2"></circle><circle cx="10" cy="-4" r="6" stroke="var(--sonde-daylight-hc-mark-metal)" stroke-width="4"></circle><circle cx="10" cy="-4" r="3" stroke="var(--sonde-daylight-hc-mark-metal)" stroke-width="2"></circle><rect x="-4" y="4" width="8" height="6" rx="1.5" stroke="var(--sonde-daylight-hc-mark-metal)" stroke-width="3"></rect></g><path d="M48,-112 Q130,-80 130,0 Q130,80 48,112" stroke="var(--sonde-daylight-hc-mark-earth-blue)" stroke-width="8"></path><path d="M56,-96 Q118,-68 118,0 Q118,68 56,96" stroke="var(--sonde-daylight-hc-mark-earth-blue)" stroke-width="2"></path><path d="M64,-80 Q106,-56 106,0 Q106,56 64,80" stroke="var(--sonde-daylight-hc-mark-earth-blue)" stroke-width="2"></path><path d="M72,-60 Q94,-40 94,0 Q94,40 72,60" stroke="var(--sonde-daylight-hc-mark-earth-blue)" stroke-width="2"></path><line x1="60" y1="-52" x2="110" y2="0" stroke="var(--sonde-daylight-hc-mark-earth-blue)" stroke-width="8"></line><line x1="60" y1="52" x2="110" y2="0" stroke="var(--sonde-daylight-hc-mark-earth-blue)" stroke-width="8"></line><line x1="48" y1="0" x2="110" y2="0" stroke="var(--sonde-daylight-hc-mark-earth-blue)" stroke-width="8"></line><circle cx="112" cy="0" r="14" stroke="var(--sonde-daylight-hc-mark-earth-blue)" stroke-width="6"></circle><circle cx="112" cy="0" r="8" stroke="var(--sonde-daylight-hc-mark-earth-blue)" stroke-width="3"></circle><polygon points="-16,-40 48,-40 64,-24 64,24 48,40 -16,40 -32,24 -32,-24" stroke="var(--sonde-daylight-hc-mark-bus-gold)" stroke-width="8"></polygon><line x1="0" y1="-40" x2="0" y2="40" stroke="var(--sonde-daylight-hc-mark-bus-gold)" stroke-width="4"></line><line x1="24" y1="-40" x2="24" y2="40" stroke="var(--sonde-daylight-hc-mark-bus-gold)" stroke-width="4"></line><line x1="-16" y1="-20" x2="48" y2="-20" stroke="var(--sonde-daylight-hc-mark-bus-gold)" stroke-width="3"></line><line x1="-16" y1="0" x2="48" y2="0" stroke="var(--sonde-daylight-hc-mark-bus-gold)" stroke-width="3"></line><line x1="-16" y1="20" x2="48" y2="20" stroke="var(--sonde-daylight-hc-mark-bus-gold)" stroke-width="3"></line><rect x="4" y="-16" width="16" height="12" rx="1.5" stroke="var(--sonde-daylight-hc-mark-bus-gold)" stroke-width="3"></rect><rect x="28" y="-16" width="16" height="12" rx="1.5" stroke="var(--sonde-daylight-hc-mark-bus-gold)" stroke-width="3"></rect><rect x="4" y="4" width="16" height="12" rx="1.5" stroke="var(--sonde-daylight-hc-mark-bus-gold)" stroke-width="3"></rect><rect x="28" y="4" width="16" height="12" rx="1.5" stroke="var(--sonde-daylight-hc-mark-bus-gold)" stroke-width="3"></rect><rect x="-36" y="-12" width="8" height="24" rx="2" stroke="var(--sonde-daylight-hc-mark-metal)" stroke-width="4"></rect><path d="M-44,-8 L-52,-14 L-52,14 L-44,8 Z" stroke="var(--sonde-daylight-hc-mark-metal)" stroke-width="4"></path><g transform="translate(-8,0)" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M-52,-14 Q-86,-20 -112,-8 Q-120,0 -112,8 Q-86,20 -52,14" stroke="var(--sonde-daylight-hc-mark-flame-deep)" stroke-width="6"></path><path d="M-52,-10 Q-78,-14 -96,-5 Q-102,0 -96,5 Q-78,14 -52,10" stroke="var(--sonde-daylight-hc-mark-flame-mid)" stroke-width="5"></path><path d="M-52,-6 Q-68,-8 -78,-2 Q-82,0 -78,2 Q-68,8 -52,6" stroke="var(--sonde-daylight-hc-mark-flame-hot)" stroke-width="4"></path></g><line x1="16" y1="-40" x2="24" y2="-56" stroke="var(--sonde-daylight-hc-mark-metal)" stroke-width="5"></line><circle cx="24" cy="-56" r="3" stroke="var(--sonde-daylight-hc-mark-metal)" stroke-width="3"></circle></g></g></g></svg></span>
-    <span data-msg-id="settings.theme.infrared">Infrared</span>
+  <div class="theme-preview" data-platform-theme="infrared" data-theme="dark">
+    <span class="settings-theme-preview-icon" aria-hidden="true"><svg class="settings-theme-mark sonde-daylight-mark" viewBox="0 0 512 512" width="28" height="28" aria-hidden="true"><defs><radialGradient id="settings-theme-infrared-sun" cx="50%" cy="50%" r="50%"><stop offset="0%" stop-color="var(--sonde-daylight-mark-sun-stop-0)"/><stop offset="60%" stop-color="var(--sonde-daylight-mark-sun-stop-1)"/><stop offset="100%" stop-color="var(--sonde-daylight-mark-sun-stop-2)"/></radialGradient><clipPath id="settings-theme-infrared-disc"><circle cx="256" cy="256" r="240"/></clipPath></defs><g style="display:var(--sonde-daylight-mark-solid-display)"><circle cx="256" cy="256" r="240" fill="url(#settings-theme-infrared-sun)"/><g clip-path="url(#settings-theme-infrared-disc)"><g fill="var(--sonde-daylight-mark-crater)" stroke="var(--sonde-daylight-mark-crater)"><g opacity="0.7"><path d="M40,240 C60,110 170,40 250,90 C320,130 330,210 260,280 C200,340 50,340 40,240 Z" opacity="0.6"/><path d="M290,130 C360,60 460,110 470,190 C480,270 410,350 330,320 C260,290 230,190 290,130 Z" opacity="0.7"/><path d="M390,280 C470,250 510,300 480,380 C450,440 380,410 390,280 Z" opacity="0.5"/><path d="M130,350 C180,290 260,350 230,430 C200,510 60,450 130,350 Z" opacity="0.5"/><circle cx="230" cy="430" r="18" fill="transparent" stroke-width="4" opacity="0.8"/><circle cx="170" cy="190" r="12" fill="transparent" stroke-width="3" opacity="0.7"/><circle cx="90" cy="230" r="8" opacity="0.8"/></g></g></g><g clip-path="url(#settings-theme-infrared-disc)"><g transform="translate(250,240) rotate(-40)" fill="var(--sonde-daylight-mark-probe)" stroke="var(--sonde-daylight-mark-probe)"><line x1="-32" y1="-8" x2="-160" y2="-40" stroke-width="6" stroke-linecap="round"/><circle cx="-160" cy="-40" r="10"/><line x1="-32" y1="16" x2="-125" y2="62" stroke-width="8" stroke-linecap="round"/><rect x="-141" y="38" width="32" height="60" rx="4" transform="rotate(20,-125,62)"/><line x1="-16" y1="-40" x2="-46" y2="-92" stroke-width="7" stroke-linecap="round"/><rect x="-70" y="-108" width="48" height="28" rx="4"/><circle cx="-56" cy="-98" r="8"/><circle cx="-36" cy="-98" r="6"/><path d="M48,-108 Q128,-78 128,0 Q128,78 48,108" stroke-width="5" stroke-linejoin="round"/><line x1="58" y1="-50" x2="108" y2="0" stroke-width="5"/><line x1="58" y1="50" x2="108" y2="0" stroke-width="5"/><line x1="48" y1="0" x2="108" y2="0" stroke-width="5"/><circle cx="110" cy="0" r="14"/><polygon points="-16,-40 48,-40 62,-24 62,24 48,40 -16,40 -30,24 -30,-24"/></g></g></g><g style="display:var(--sonde-daylight-mark-line-display)"><circle cx="256" cy="256" r="232" fill="none" stroke="var(--sonde-daylight-hc-mark-earth-blue)" stroke-width="28"/><defs><clipPath id="settings-theme-infrared-hc-clip"><circle cx="256" cy="256" r="214"/></clipPath></defs><g clip-path="url(#settings-theme-infrared-hc-clip)"><g transform="translate(276,228) scale(1.3) rotate(-40)" fill="none" stroke-linecap="round" stroke-linejoin="round"><line x1="-32" y1="-8" x2="-165" y2="-42" stroke="var(--sonde-daylight-hc-mark-metal)" stroke-width="8"/><circle cx="-80" cy="-20" r="3" stroke="var(--sonde-daylight-hc-mark-metal)" stroke-width="3"/><circle cx="-125" cy="-32" r="2.5" stroke="var(--sonde-daylight-hc-mark-metal)" stroke-width="3"/><circle cx="-165" cy="-42" r="8" stroke="var(--sonde-daylight-hc-mark-metal)" stroke-width="4"/><circle cx="-165" cy="-42" r="4" stroke="var(--sonde-daylight-hc-mark-metal)" stroke-width="2"/><line x1="-165" y1="-48" x2="-165" y2="-36" stroke="var(--sonde-daylight-hc-mark-metal)" stroke-width="2"/><line x1="-171" y1="-42" x2="-159" y2="-42" stroke="var(--sonde-daylight-hc-mark-metal)" stroke-width="2"/><line x1="-32" y1="16" x2="-130" y2="64" stroke="var(--sonde-daylight-hc-mark-metal)" stroke-width="12"/><circle cx="-80" cy="40" r="4" stroke="var(--sonde-daylight-hc-mark-metal)" stroke-width="4"/><g transform="translate(-130,64) rotate(20)"><rect x="-16" y="-32" width="32" height="64" rx="4" stroke="var(--sonde-daylight-hc-mark-rtg-brown)" stroke-width="6"/><line x1="-16" y1="-22" x2="16" y2="-22" stroke="var(--sonde-daylight-hc-mark-rtg-brown)" stroke-width="4"/><line x1="-16" y1="-12" x2="16" y2="-12" stroke="var(--sonde-daylight-hc-mark-rtg-brown)" stroke-width="4"/><line x1="-16" y1="-2" x2="16" y2="-2" stroke="var(--sonde-daylight-hc-mark-rtg-brown)" stroke-width="4"/><line x1="-16" y1="8" x2="16" y2="8" stroke="var(--sonde-daylight-hc-mark-rtg-brown)" stroke-width="4"/><line x1="-16" y1="18" x2="16" y2="18" stroke="var(--sonde-daylight-hc-mark-rtg-brown)" stroke-width="4"/><line x1="-16" y1="28" x2="16" y2="28" stroke="var(--sonde-daylight-hc-mark-rtg-brown)" stroke-width="4"/><rect x="-18" y="-34" width="36" height="4" rx="2" stroke="var(--sonde-daylight-hc-mark-rtg-brown)" stroke-width="3"/><rect x="-18" y="30" width="36" height="4" rx="2" stroke="var(--sonde-daylight-hc-mark-rtg-brown)" stroke-width="3"/></g><line x1="-16" y1="-40" x2="-48" y2="-96" stroke="var(--sonde-daylight-hc-mark-metal)" stroke-width="10"/><circle cx="-30" cy="-64" r="4" stroke="var(--sonde-daylight-hc-mark-metal)" stroke-width="4"/><g transform="translate(-48,-96)"><rect x="-24" y="-16" width="48" height="28" rx="4" stroke="var(--sonde-daylight-hc-mark-metal)" stroke-width="6"/><line x1="-20" y1="-8" x2="20" y2="-8" stroke="var(--sonde-daylight-hc-mark-metal)" stroke-width="2"/><line x1="-20" y1="0" x2="20" y2="0" stroke="var(--sonde-daylight-hc-mark-metal)" stroke-width="2"/><circle cx="-10" cy="-4" r="8" stroke="var(--sonde-daylight-hc-mark-metal)" stroke-width="5"/><circle cx="-10" cy="-4" r="4" stroke="var(--sonde-daylight-hc-mark-metal)" stroke-width="2"/><circle cx="10" cy="-4" r="6" stroke="var(--sonde-daylight-hc-mark-metal)" stroke-width="4"/><circle cx="10" cy="-4" r="3" stroke="var(--sonde-daylight-hc-mark-metal)" stroke-width="2"/><rect x="-4" y="4" width="8" height="6" rx="1.5" stroke="var(--sonde-daylight-hc-mark-metal)" stroke-width="3"/></g><path d="M48,-112 Q130,-80 130,0 Q130,80 48,112" stroke="var(--sonde-daylight-hc-mark-earth-blue)" stroke-width="8"/><path d="M56,-96 Q118,-68 118,0 Q118,68 56,96" stroke="var(--sonde-daylight-hc-mark-earth-blue)" stroke-width="2"/><path d="M64,-80 Q106,-56 106,0 Q106,56 64,80" stroke="var(--sonde-daylight-hc-mark-earth-blue)" stroke-width="2"/><path d="M72,-60 Q94,-40 94,0 Q94,40 72,60" stroke="var(--sonde-daylight-hc-mark-earth-blue)" stroke-width="2"/><line x1="60" y1="-52" x2="110" y2="0" stroke="var(--sonde-daylight-hc-mark-earth-blue)" stroke-width="8"/><line x1="60" y1="52" x2="110" y2="0" stroke="var(--sonde-daylight-hc-mark-earth-blue)" stroke-width="8"/><line x1="48" y1="0" x2="110" y2="0" stroke="var(--sonde-daylight-hc-mark-earth-blue)" stroke-width="8"/><circle cx="112" cy="0" r="14" stroke="var(--sonde-daylight-hc-mark-earth-blue)" stroke-width="6"/><circle cx="112" cy="0" r="8" stroke="var(--sonde-daylight-hc-mark-earth-blue)" stroke-width="3"/><polygon points="-16,-40 48,-40 64,-24 64,24 48,40 -16,40 -32,24 -32,-24" stroke="var(--sonde-daylight-hc-mark-bus-gold)" stroke-width="8"/><line x1="0" y1="-40" x2="0" y2="40" stroke="var(--sonde-daylight-hc-mark-bus-gold)" stroke-width="4"/><line x1="24" y1="-40" x2="24" y2="40" stroke="var(--sonde-daylight-hc-mark-bus-gold)" stroke-width="4"/><line x1="-16" y1="-20" x2="48" y2="-20" stroke="var(--sonde-daylight-hc-mark-bus-gold)" stroke-width="3"/><line x1="-16" y1="0" x2="48" y2="0" stroke="var(--sonde-daylight-hc-mark-bus-gold)" stroke-width="3"/><line x1="-16" y1="20" x2="48" y2="20" stroke="var(--sonde-daylight-hc-mark-bus-gold)" stroke-width="3"/><rect x="4" y="-16" width="16" height="12" rx="1.5" stroke="var(--sonde-daylight-hc-mark-bus-gold)" stroke-width="3"/><rect x="28" y="-16" width="16" height="12" rx="1.5" stroke="var(--sonde-daylight-hc-mark-bus-gold)" stroke-width="3"/><rect x="4" y="4" width="16" height="12" rx="1.5" stroke="var(--sonde-daylight-hc-mark-bus-gold)" stroke-width="3"/><rect x="28" y="4" width="16" height="12" rx="1.5" stroke="var(--sonde-daylight-hc-mark-bus-gold)" stroke-width="3"/><rect x="-36" y="-12" width="8" height="24" rx="2" stroke="var(--sonde-daylight-hc-mark-metal)" stroke-width="4"/><path d="M-44,-8 L-52,-14 L-52,14 L-44,8 Z" stroke="var(--sonde-daylight-hc-mark-metal)" stroke-width="4"/><g transform="translate(-8,0)" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M-52,-14 Q-86,-20 -112,-8 Q-120,0 -112,8 Q-86,20 -52,14" stroke="var(--sonde-daylight-hc-mark-flame-deep)" stroke-width="6"/><path d="M-52,-10 Q-78,-14 -96,-5 Q-102,0 -96,5 Q-78,14 -52,10" stroke="var(--sonde-daylight-hc-mark-flame-mid)" stroke-width="5"/><path d="M-52,-6 Q-68,-8 -78,-2 Q-82,0 -78,2 Q-68,8 -52,6" stroke="var(--sonde-daylight-hc-mark-flame-hot)" stroke-width="4"/></g><line x1="16" y1="-40" x2="24" y2="-56" stroke="var(--sonde-daylight-hc-mark-metal)" stroke-width="5"/><circle cx="24" cy="-56" r="3" stroke="var(--sonde-daylight-hc-mark-metal)" stroke-width="3"/></g></g></g></svg></span>
+    <span data-msg-id="settings.theme.infrared" data-scribe-msgid="settings.theme.infrared">Infrared</span>
   </div>
 </label>
       <label class="theme-toggle-option settings-platform-theme-option">
   <input type="radio" name="sonde-platform-theme-toggle" value="high-contrast">
-  <div class="theme-preview" data-platform-theme="high-contrast">
-    <span class="settings-theme-preview-icon" aria-hidden="true"><svg class="settings-theme-mark sonde-daylight-mark" viewBox="0 0 512 512" width="28" height="28" aria-hidden="true"><defs><radialGradient id="settings-theme-high-contrast-sun" cx="50%" cy="50%" r="50%"><stop offset="0%" stop-color="var(--sonde-daylight-mark-sun-stop-0)"></stop><stop offset="60%" stop-color="var(--sonde-daylight-mark-sun-stop-1)"></stop><stop offset="100%" stop-color="var(--sonde-daylight-mark-sun-stop-2)"></stop></radialGradient><clipPath id="settings-theme-high-contrast-disc"><circle cx="256" cy="256" r="240"></circle></clipPath></defs><g style="display:var(--sonde-daylight-mark-solid-display, block)"><circle cx="256" cy="256" r="240" fill="url(#settings-theme-high-contrast-sun)"></circle><g clip-path="url(#settings-theme-high-contrast-disc)"><g fill="var(--sonde-daylight-mark-crater)" stroke="var(--sonde-daylight-mark-crater)"><g opacity="0.7"><path d="M40,240 C60,110 170,40 250,90 C320,130 330,210 260,280 C200,340 50,340 40,240 Z" opacity="0.6"/><path d="M290,130 C360,60 460,110 470,190 C480,270 410,350 330,320 C260,290 230,190 290,130 Z" opacity="0.7"/><path d="M390,280 C470,250 510,300 480,380 C450,440 380,410 390,280 Z" opacity="0.5"/><path d="M130,350 C180,290 260,350 230,430 C200,510 60,450 130,350 Z" opacity="0.5"/><circle cx="230" cy="430" r="18" fill="transparent" stroke-width="4" opacity="0.8"/><circle cx="170" cy="190" r="12" fill="transparent" stroke-width="3" opacity="0.7"/><circle cx="90" cy="230" r="8" opacity="0.8"/></g></g></g><g clip-path="url(#settings-theme-high-contrast-disc)"><g transform="translate(250,240) rotate(-40)" fill="var(--sonde-daylight-mark-probe)" stroke="var(--sonde-daylight-mark-probe)"><line x1="-32" y1="-8" x2="-160" y2="-40" stroke-width="6" stroke-linecap="round"/><circle cx="-160" cy="-40" r="10"/><line x1="-32" y1="16" x2="-125" y2="62" stroke-width="8" stroke-linecap="round"/><rect x="-141" y="38" width="32" height="60" rx="4" transform="rotate(20,-125,62)"/><line x1="-16" y1="-40" x2="-46" y2="-92" stroke-width="7" stroke-linecap="round"/><rect x="-70" y="-108" width="48" height="28" rx="4"/><circle cx="-56" cy="-98" r="8"/><circle cx="-36" cy="-98" r="6"/><path d="M48,-108 Q128,-78 128,0 Q128,78 48,108" stroke-width="5" stroke-linejoin="round"/><line x1="58" y1="-50" x2="108" y2="0" stroke-width="5"/><line x1="58" y1="50" x2="108" y2="0" stroke-width="5"/><line x1="48" y1="0" x2="108" y2="0" stroke-width="5"/><circle cx="110" cy="0" r="14"/><polygon points="-16,-40 48,-40 62,-24 62,24 48,40 -16,40 -30,24 -30,-24"/></g></g></g><g style="display:var(--sonde-daylight-mark-line-display, none)"><circle cx="256" cy="256" r="232" fill="none" stroke="var(--sonde-daylight-hc-mark-earth-blue)" stroke-width="28"></circle><defs><clipPath id="hc-clip-_R_3_"><circle cx="256" cy="256" r="214"></circle></clipPath></defs><g clip-path="url(#hc-clip-_R_3_)"><g transform="translate(276,228) scale(1.3) rotate(-40)" fill="none" stroke-linecap="round" stroke-linejoin="round"><line x1="-32" y1="-8" x2="-165" y2="-42" stroke="var(--sonde-daylight-hc-mark-metal)" stroke-width="8"></line><circle cx="-80" cy="-20" r="3" stroke="var(--sonde-daylight-hc-mark-metal)" stroke-width="3"></circle><circle cx="-125" cy="-32" r="2.5" stroke="var(--sonde-daylight-hc-mark-metal)" stroke-width="3"></circle><circle cx="-165" cy="-42" r="8" stroke="var(--sonde-daylight-hc-mark-metal)" stroke-width="4"></circle><circle cx="-165" cy="-42" r="4" stroke="var(--sonde-daylight-hc-mark-metal)" stroke-width="2"></circle><line x1="-165" y1="-48" x2="-165" y2="-36" stroke="var(--sonde-daylight-hc-mark-metal)" stroke-width="2"></line><line x1="-171" y1="-42" x2="-159" y2="-42" stroke="var(--sonde-daylight-hc-mark-metal)" stroke-width="2"></line><line x1="-32" y1="16" x2="-130" y2="64" stroke="var(--sonde-daylight-hc-mark-metal)" stroke-width="12"></line><circle cx="-80" cy="40" r="4" stroke="var(--sonde-daylight-hc-mark-metal)" stroke-width="4"></circle><g transform="translate(-130,64) rotate(20)"><rect x="-16" y="-32" width="32" height="64" rx="4" stroke="var(--sonde-daylight-hc-mark-rtg-brown)" stroke-width="6"></rect><line x1="-16" y1="-22" x2="16" y2="-22" stroke="var(--sonde-daylight-hc-mark-rtg-brown)" stroke-width="4"></line><line x1="-16" y1="-12" x2="16" y2="-12" stroke="var(--sonde-daylight-hc-mark-rtg-brown)" stroke-width="4"></line><line x1="-16" y1="-2" x2="16" y2="-2" stroke="var(--sonde-daylight-hc-mark-rtg-brown)" stroke-width="4"></line><line x1="-16" y1="8" x2="16" y2="8" stroke="var(--sonde-daylight-hc-mark-rtg-brown)" stroke-width="4"></line><line x1="-16" y1="18" x2="16" y2="18" stroke="var(--sonde-daylight-hc-mark-rtg-brown)" stroke-width="4"></line><line x1="-16" y1="28" x2="16" y2="28" stroke="var(--sonde-daylight-hc-mark-rtg-brown)" stroke-width="4"></line><rect x="-18" y="-34" width="36" height="4" rx="2" stroke="var(--sonde-daylight-hc-mark-rtg-brown)" stroke-width="3"></rect><rect x="-18" y="30" width="36" height="4" rx="2" stroke="var(--sonde-daylight-hc-mark-rtg-brown)" stroke-width="3"></rect></g><line x1="-16" y1="-40" x2="-48" y2="-96" stroke="var(--sonde-daylight-hc-mark-metal)" stroke-width="10"></line><circle cx="-30" cy="-64" r="4" stroke="var(--sonde-daylight-hc-mark-metal)" stroke-width="4"></circle><g transform="translate(-48,-96)"><rect x="-24" y="-16" width="48" height="28" rx="4" stroke="var(--sonde-daylight-hc-mark-metal)" stroke-width="6"></rect><line x1="-20" y1="-8" x2="20" y2="-8" stroke="var(--sonde-daylight-hc-mark-metal)" stroke-width="2"></line><line x1="-20" y1="0" x2="20" y2="0" stroke="var(--sonde-daylight-hc-mark-metal)" stroke-width="2"></line><circle cx="-10" cy="-4" r="8" stroke="var(--sonde-daylight-hc-mark-metal)" stroke-width="5"></circle><circle cx="-10" cy="-4" r="4" stroke="var(--sonde-daylight-hc-mark-metal)" stroke-width="2"></circle><circle cx="10" cy="-4" r="6" stroke="var(--sonde-daylight-hc-mark-metal)" stroke-width="4"></circle><circle cx="10" cy="-4" r="3" stroke="var(--sonde-daylight-hc-mark-metal)" stroke-width="2"></circle><rect x="-4" y="4" width="8" height="6" rx="1.5" stroke="var(--sonde-daylight-hc-mark-metal)" stroke-width="3"></rect></g><path d="M48,-112 Q130,-80 130,0 Q130,80 48,112" stroke="var(--sonde-daylight-hc-mark-earth-blue)" stroke-width="8"></path><path d="M56,-96 Q118,-68 118,0 Q118,68 56,96" stroke="var(--sonde-daylight-hc-mark-earth-blue)" stroke-width="2"></path><path d="M64,-80 Q106,-56 106,0 Q106,56 64,80" stroke="var(--sonde-daylight-hc-mark-earth-blue)" stroke-width="2"></path><path d="M72,-60 Q94,-40 94,0 Q94,40 72,60" stroke="var(--sonde-daylight-hc-mark-earth-blue)" stroke-width="2"></path><line x1="60" y1="-52" x2="110" y2="0" stroke="var(--sonde-daylight-hc-mark-earth-blue)" stroke-width="8"></line><line x1="60" y1="52" x2="110" y2="0" stroke="var(--sonde-daylight-hc-mark-earth-blue)" stroke-width="8"></line><line x1="48" y1="0" x2="110" y2="0" stroke="var(--sonde-daylight-hc-mark-earth-blue)" stroke-width="8"></line><circle cx="112" cy="0" r="14" stroke="var(--sonde-daylight-hc-mark-earth-blue)" stroke-width="6"></circle><circle cx="112" cy="0" r="8" stroke="var(--sonde-daylight-hc-mark-earth-blue)" stroke-width="3"></circle><polygon points="-16,-40 48,-40 64,-24 64,24 48,40 -16,40 -32,24 -32,-24" stroke="var(--sonde-daylight-hc-mark-bus-gold)" stroke-width="8"></polygon><line x1="0" y1="-40" x2="0" y2="40" stroke="var(--sonde-daylight-hc-mark-bus-gold)" stroke-width="4"></line><line x1="24" y1="-40" x2="24" y2="40" stroke="var(--sonde-daylight-hc-mark-bus-gold)" stroke-width="4"></line><line x1="-16" y1="-20" x2="48" y2="-20" stroke="var(--sonde-daylight-hc-mark-bus-gold)" stroke-width="3"></line><line x1="-16" y1="0" x2="48" y2="0" stroke="var(--sonde-daylight-hc-mark-bus-gold)" stroke-width="3"></line><line x1="-16" y1="20" x2="48" y2="20" stroke="var(--sonde-daylight-hc-mark-bus-gold)" stroke-width="3"></line><rect x="4" y="-16" width="16" height="12" rx="1.5" stroke="var(--sonde-daylight-hc-mark-bus-gold)" stroke-width="3"></rect><rect x="28" y="-16" width="16" height="12" rx="1.5" stroke="var(--sonde-daylight-hc-mark-bus-gold)" stroke-width="3"></rect><rect x="4" y="4" width="16" height="12" rx="1.5" stroke="var(--sonde-daylight-hc-mark-bus-gold)" stroke-width="3"></rect><rect x="28" y="4" width="16" height="12" rx="1.5" stroke="var(--sonde-daylight-hc-mark-bus-gold)" stroke-width="3"></rect><rect x="-36" y="-12" width="8" height="24" rx="2" stroke="var(--sonde-daylight-hc-mark-metal)" stroke-width="4"></rect><path d="M-44,-8 L-52,-14 L-52,14 L-44,8 Z" stroke="var(--sonde-daylight-hc-mark-metal)" stroke-width="4"></path><g transform="translate(-8,0)" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M-52,-14 Q-86,-20 -112,-8 Q-120,0 -112,8 Q-86,20 -52,14" stroke="var(--sonde-daylight-hc-mark-flame-deep)" stroke-width="6"></path><path d="M-52,-10 Q-78,-14 -96,-5 Q-102,0 -96,5 Q-78,14 -52,10" stroke="var(--sonde-daylight-hc-mark-flame-mid)" stroke-width="5"></path><path d="M-52,-6 Q-68,-8 -78,-2 Q-82,0 -78,2 Q-68,8 -52,6" stroke="var(--sonde-daylight-hc-mark-flame-hot)" stroke-width="4"></path></g><line x1="16" y1="-40" x2="24" y2="-56" stroke="var(--sonde-daylight-hc-mark-metal)" stroke-width="5"></line><circle cx="24" cy="-56" r="3" stroke="var(--sonde-daylight-hc-mark-metal)" stroke-width="3"></circle></g></g></g></svg></span>
-    <span data-msg-id="settings.theme.hc">High Contrast</span>
+  <div class="theme-preview" data-platform-theme="high-contrast" data-theme="high-contrast">
+    <span class="settings-theme-preview-icon" aria-hidden="true"><svg class="settings-theme-mark sonde-daylight-mark" viewBox="0 0 512 512" width="28" height="28" aria-hidden="true"><defs><radialGradient id="settings-theme-high-contrast-sun" cx="50%" cy="50%" r="50%"><stop offset="0%" stop-color="var(--sonde-daylight-mark-sun-stop-0)"/><stop offset="60%" stop-color="var(--sonde-daylight-mark-sun-stop-1)"/><stop offset="100%" stop-color="var(--sonde-daylight-mark-sun-stop-2)"/></radialGradient><clipPath id="settings-theme-high-contrast-disc"><circle cx="256" cy="256" r="240"/></clipPath></defs><g style="display:var(--sonde-daylight-mark-solid-display)"><circle cx="256" cy="256" r="240" fill="url(#settings-theme-high-contrast-sun)"/><g clip-path="url(#settings-theme-high-contrast-disc)"><g fill="var(--sonde-daylight-mark-crater)" stroke="var(--sonde-daylight-mark-crater)"><g opacity="0.7"><path d="M40,240 C60,110 170,40 250,90 C320,130 330,210 260,280 C200,340 50,340 40,240 Z" opacity="0.6"/><path d="M290,130 C360,60 460,110 470,190 C480,270 410,350 330,320 C260,290 230,190 290,130 Z" opacity="0.7"/><path d="M390,280 C470,250 510,300 480,380 C450,440 380,410 390,280 Z" opacity="0.5"/><path d="M130,350 C180,290 260,350 230,430 C200,510 60,450 130,350 Z" opacity="0.5"/><circle cx="230" cy="430" r="18" fill="transparent" stroke-width="4" opacity="0.8"/><circle cx="170" cy="190" r="12" fill="transparent" stroke-width="3" opacity="0.7"/><circle cx="90" cy="230" r="8" opacity="0.8"/></g></g></g><g clip-path="url(#settings-theme-high-contrast-disc)"><g transform="translate(250,240) rotate(-40)" fill="var(--sonde-daylight-mark-probe)" stroke="var(--sonde-daylight-mark-probe)"><line x1="-32" y1="-8" x2="-160" y2="-40" stroke-width="6" stroke-linecap="round"/><circle cx="-160" cy="-40" r="10"/><line x1="-32" y1="16" x2="-125" y2="62" stroke-width="8" stroke-linecap="round"/><rect x="-141" y="38" width="32" height="60" rx="4" transform="rotate(20,-125,62)"/><line x1="-16" y1="-40" x2="-46" y2="-92" stroke-width="7" stroke-linecap="round"/><rect x="-70" y="-108" width="48" height="28" rx="4"/><circle cx="-56" cy="-98" r="8"/><circle cx="-36" cy="-98" r="6"/><path d="M48,-108 Q128,-78 128,0 Q128,78 48,108" stroke-width="5" stroke-linejoin="round"/><line x1="58" y1="-50" x2="108" y2="0" stroke-width="5"/><line x1="58" y1="50" x2="108" y2="0" stroke-width="5"/><line x1="48" y1="0" x2="108" y2="0" stroke-width="5"/><circle cx="110" cy="0" r="14"/><polygon points="-16,-40 48,-40 62,-24 62,24 48,40 -16,40 -30,24 -30,-24"/></g></g></g><g style="display:var(--sonde-daylight-mark-line-display)"><circle cx="256" cy="256" r="232" fill="none" stroke="var(--sonde-daylight-hc-mark-earth-blue)" stroke-width="28"/><defs><clipPath id="settings-theme-high-contrast-hc-clip"><circle cx="256" cy="256" r="214"/></clipPath></defs><g clip-path="url(#settings-theme-high-contrast-hc-clip)"><g transform="translate(276,228) scale(1.3) rotate(-40)" fill="none" stroke-linecap="round" stroke-linejoin="round"><line x1="-32" y1="-8" x2="-165" y2="-42" stroke="var(--sonde-daylight-hc-mark-metal)" stroke-width="8"/><circle cx="-80" cy="-20" r="3" stroke="var(--sonde-daylight-hc-mark-metal)" stroke-width="3"/><circle cx="-125" cy="-32" r="2.5" stroke="var(--sonde-daylight-hc-mark-metal)" stroke-width="3"/><circle cx="-165" cy="-42" r="8" stroke="var(--sonde-daylight-hc-mark-metal)" stroke-width="4"/><circle cx="-165" cy="-42" r="4" stroke="var(--sonde-daylight-hc-mark-metal)" stroke-width="2"/><line x1="-165" y1="-48" x2="-165" y2="-36" stroke="var(--sonde-daylight-hc-mark-metal)" stroke-width="2"/><line x1="-171" y1="-42" x2="-159" y2="-42" stroke="var(--sonde-daylight-hc-mark-metal)" stroke-width="2"/><line x1="-32" y1="16" x2="-130" y2="64" stroke="var(--sonde-daylight-hc-mark-metal)" stroke-width="12"/><circle cx="-80" cy="40" r="4" stroke="var(--sonde-daylight-hc-mark-metal)" stroke-width="4"/><g transform="translate(-130,64) rotate(20)"><rect x="-16" y="-32" width="32" height="64" rx="4" stroke="var(--sonde-daylight-hc-mark-rtg-brown)" stroke-width="6"/><line x1="-16" y1="-22" x2="16" y2="-22" stroke="var(--sonde-daylight-hc-mark-rtg-brown)" stroke-width="4"/><line x1="-16" y1="-12" x2="16" y2="-12" stroke="var(--sonde-daylight-hc-mark-rtg-brown)" stroke-width="4"/><line x1="-16" y1="-2" x2="16" y2="-2" stroke="var(--sonde-daylight-hc-mark-rtg-brown)" stroke-width="4"/><line x1="-16" y1="8" x2="16" y2="8" stroke="var(--sonde-daylight-hc-mark-rtg-brown)" stroke-width="4"/><line x1="-16" y1="18" x2="16" y2="18" stroke="var(--sonde-daylight-hc-mark-rtg-brown)" stroke-width="4"/><line x1="-16" y1="28" x2="16" y2="28" stroke="var(--sonde-daylight-hc-mark-rtg-brown)" stroke-width="4"/><rect x="-18" y="-34" width="36" height="4" rx="2" stroke="var(--sonde-daylight-hc-mark-rtg-brown)" stroke-width="3"/><rect x="-18" y="30" width="36" height="4" rx="2" stroke="var(--sonde-daylight-hc-mark-rtg-brown)" stroke-width="3"/></g><line x1="-16" y1="-40" x2="-48" y2="-96" stroke="var(--sonde-daylight-hc-mark-metal)" stroke-width="10"/><circle cx="-30" cy="-64" r="4" stroke="var(--sonde-daylight-hc-mark-metal)" stroke-width="4"/><g transform="translate(-48,-96)"><rect x="-24" y="-16" width="48" height="28" rx="4" stroke="var(--sonde-daylight-hc-mark-metal)" stroke-width="6"/><line x1="-20" y1="-8" x2="20" y2="-8" stroke="var(--sonde-daylight-hc-mark-metal)" stroke-width="2"/><line x1="-20" y1="0" x2="20" y2="0" stroke="var(--sonde-daylight-hc-mark-metal)" stroke-width="2"/><circle cx="-10" cy="-4" r="8" stroke="var(--sonde-daylight-hc-mark-metal)" stroke-width="5"/><circle cx="-10" cy="-4" r="4" stroke="var(--sonde-daylight-hc-mark-metal)" stroke-width="2"/><circle cx="10" cy="-4" r="6" stroke="var(--sonde-daylight-hc-mark-metal)" stroke-width="4"/><circle cx="10" cy="-4" r="3" stroke="var(--sonde-daylight-hc-mark-metal)" stroke-width="2"/><rect x="-4" y="4" width="8" height="6" rx="1.5" stroke="var(--sonde-daylight-hc-mark-metal)" stroke-width="3"/></g><path d="M48,-112 Q130,-80 130,0 Q130,80 48,112" stroke="var(--sonde-daylight-hc-mark-earth-blue)" stroke-width="8"/><path d="M56,-96 Q118,-68 118,0 Q118,68 56,96" stroke="var(--sonde-daylight-hc-mark-earth-blue)" stroke-width="2"/><path d="M64,-80 Q106,-56 106,0 Q106,56 64,80" stroke="var(--sonde-daylight-hc-mark-earth-blue)" stroke-width="2"/><path d="M72,-60 Q94,-40 94,0 Q94,40 72,60" stroke="var(--sonde-daylight-hc-mark-earth-blue)" stroke-width="2"/><line x1="60" y1="-52" x2="110" y2="0" stroke="var(--sonde-daylight-hc-mark-earth-blue)" stroke-width="8"/><line x1="60" y1="52" x2="110" y2="0" stroke="var(--sonde-daylight-hc-mark-earth-blue)" stroke-width="8"/><line x1="48" y1="0" x2="110" y2="0" stroke="var(--sonde-daylight-hc-mark-earth-blue)" stroke-width="8"/><circle cx="112" cy="0" r="14" stroke="var(--sonde-daylight-hc-mark-earth-blue)" stroke-width="6"/><circle cx="112" cy="0" r="8" stroke="var(--sonde-daylight-hc-mark-earth-blue)" stroke-width="3"/><polygon points="-16,-40 48,-40 64,-24 64,24 48,40 -16,40 -32,24 -32,-24" stroke="var(--sonde-daylight-hc-mark-bus-gold)" stroke-width="8"/><line x1="0" y1="-40" x2="0" y2="40" stroke="var(--sonde-daylight-hc-mark-bus-gold)" stroke-width="4"/><line x1="24" y1="-40" x2="24" y2="40" stroke="var(--sonde-daylight-hc-mark-bus-gold)" stroke-width="4"/><line x1="-16" y1="-20" x2="48" y2="-20" stroke="var(--sonde-daylight-hc-mark-bus-gold)" stroke-width="3"/><line x1="-16" y1="0" x2="48" y2="0" stroke="var(--sonde-daylight-hc-mark-bus-gold)" stroke-width="3"/><line x1="-16" y1="20" x2="48" y2="20" stroke="var(--sonde-daylight-hc-mark-bus-gold)" stroke-width="3"/><rect x="4" y="-16" width="16" height="12" rx="1.5" stroke="var(--sonde-daylight-hc-mark-bus-gold)" stroke-width="3"/><rect x="28" y="-16" width="16" height="12" rx="1.5" stroke="var(--sonde-daylight-hc-mark-bus-gold)" stroke-width="3"/><rect x="4" y="4" width="16" height="12" rx="1.5" stroke="var(--sonde-daylight-hc-mark-bus-gold)" stroke-width="3"/><rect x="28" y="4" width="16" height="12" rx="1.5" stroke="var(--sonde-daylight-hc-mark-bus-gold)" stroke-width="3"/><rect x="-36" y="-12" width="8" height="24" rx="2" stroke="var(--sonde-daylight-hc-mark-metal)" stroke-width="4"/><path d="M-44,-8 L-52,-14 L-52,14 L-44,8 Z" stroke="var(--sonde-daylight-hc-mark-metal)" stroke-width="4"/><g transform="translate(-8,0)" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M-52,-14 Q-86,-20 -112,-8 Q-120,0 -112,8 Q-86,20 -52,14" stroke="var(--sonde-daylight-hc-mark-flame-deep)" stroke-width="6"/><path d="M-52,-10 Q-78,-14 -96,-5 Q-102,0 -96,5 Q-78,14 -52,10" stroke="var(--sonde-daylight-hc-mark-flame-mid)" stroke-width="5"/><path d="M-52,-6 Q-68,-8 -78,-2 Q-82,0 -78,2 Q-68,8 -52,6" stroke="var(--sonde-daylight-hc-mark-flame-hot)" stroke-width="4"/></g><line x1="16" y1="-40" x2="24" y2="-56" stroke="var(--sonde-daylight-hc-mark-metal)" stroke-width="5"/><circle cx="24" cy="-56" r="3" stroke="var(--sonde-daylight-hc-mark-metal)" stroke-width="3"/></g></g></g></svg></span>
+    <span data-msg-id="settings.theme.hc" data-scribe-msgid="settings.theme.hc">High Contrast</span>
   </div>
 </label>
     </div>
   </details>
   <details class="settings-section settings-theme-section" open>
-    <summary class="settings-section-trigger" data-msg-id="settings.mode.legend">Mode</summary>
+    <summary class="settings-section-trigger" data-msg-id="settings.mode.legend" data-scribe-msgid="settings.mode.legend">Mode</summary>
     <div class="settings-section-body">
       <label class="theme-toggle-option theme-option-auto">
   <input type="radio" name="sonde-theme-toggle" value="auto" checked>
   <div class="theme-preview" data-theme="auto">
-    <span>Auto</span>
+    <span data-msg-id="settings.theme.auto" data-scribe-msgid="settings.theme.auto">Auto</span>
   </div>
 </label>
       <label class="theme-toggle-option theme-option-light">
   <input type="radio" name="sonde-theme-toggle" value="light">
   <div class="theme-preview" data-theme="light">
-    <span>Light</span>
+    <span data-msg-id="settings.theme.light" data-scribe-msgid="settings.theme.light">Light</span>
   </div>
 </label>
       <label class="theme-toggle-option theme-option-dark">
   <input type="radio" name="sonde-theme-toggle" value="dark">
   <div class="theme-preview" data-theme="dark">
-    <span>Dark</span>
+    <span data-msg-id="settings.theme.dark" data-scribe-msgid="settings.theme.dark">Dark</span>
   </div>
 </label>
     </div>
   </details>
   <details class="settings-section settings-language-section">
-    <summary class="settings-section-trigger" data-msg-id="settings.language.legend">Language</summary>
+    <summary class="settings-section-trigger" data-msg-id="settings.language.legend" data-scribe-msgid="settings.language.legend">Language</summary>
     <div class="settings-section-body">
-      <input id="settings-language-search" class="settings-language-search" type="search" autocomplete="off" spellcheck="false" aria-label="Search languages" placeholder="Search languages" title="Search languages" data-sonde-locale-search>
+      <input id="settings-language-search" class="settings-language-search" type="search" autocomplete="off" spellcheck="false" aria-label="Search languages" placeholder="Search languages" title="Search languages" data-sonde-locale-search data-msg-aria-label-id="settings.language.search" data-msg-placeholder-id="settings.language.search" data-msg-title-id="settings.language.search" data-scribe-label-msgid="scribe.report.control.languageSearch" data-scribe-placeholder-msgid="scribe.report.control.languageSearch">
       <sonde-locale-picker locales="[&quot;en-US&quot;,&quot;en-GB&quot;,&quot;en-CA&quot;,&quot;en-IN&quot;,&quot;fr-CA&quot;,&quot;cy-GB&quot;,&quot;es-US&quot;,&quot;de-DE&quot;,&quot;fr-FR&quot;,&quot;es-ES&quot;,&quot;it-IT&quot;,&quot;nl-NL&quot;,&quot;pl-PL&quot;,&quot;pt-PT&quot;,&quot;pt-BR&quot;,&quot;ro-RO&quot;,&quot;sv-SE&quot;,&quot;ko-KR&quot;,&quot;zh-CN&quot;,&quot;ja-JP&quot;,&quot;hi-IN&quot;]" value="en-US" input-name="sonde-locale-picker-radio">
 <label class="theme-toggle-option settings-language-option" dir="ltr" data-locale-search="en-US English (US) 🇺🇸 English United States">
   <input type="radio" name="sonde-locale-picker-radio" value="en-US" data-sonde-locale-picker checked>
@@ -839,247 +853,108 @@
     </div>
     </nav>
 
-<section class="sl-teaser" aria-labelledby="home-title">
-  <div class="sl-teaser-inner">
-    <p id="home-title" class="sl-teaser-kicker" data-msg-id="sondeLife.content.home.eyebrow">Code well and prosper™</p>
-    <p class="sl-teaser-hero" data-msg-id="sondeLife.content.home.heroLines.0">Prove your software is accessible, compliant, and safe to ship.</p>
-    <div class="sl-hero-ctas">
-      <a class="sl-action sl-action-primary sl-hero-cta"
-         href="/scribe/"
-         data-msg-id="sondeLife.content.home.heroCtas.0.label">See the proof</a>
-      <a class="sl-action sl-hero-cta"
-         href="/contact/"
-         data-msg-id="sondeLife.content.home.heroCtas.1.label">Contact us</a>
+<section class="sl-hero sl-home-hero" aria-labelledby="home-title">
+  <div class="sl-home-hero-inner">
+    <div class="sl-home-hero-copy">
+      <p class="sl-eyebrow" data-msg-id="sondeLife.content.home.eyebrow">Code well and prosper™</p>
+      <h1 id="home-title" class="sl-home-h1">
+        <span class="sl-home-h1-line"><span data-msg-id="sondeLife.content.home.h1Lines..segments.0.text">Software that</span></span>
+        <span class="sl-home-h1-line"><span class="sl-home-h1-emphasis" data-msg-id="sondeLife.content.home.h1Lines..segments.0.text">understands</span><span data-msg-id="sondeLife.content.home.h1Lines..segments.1.text"> software.</span></span>
+      </h1>
+      <p class="sl-home-subhead" data-msg-id="sondeLife.content.home.subhead">Sonde analyzes your entire software system - without AI - and provides consistent, verified findings and fix plans.</p>
+      <div class="sl-home-ctas">
+        <a class="sl-action sl-action-primary" href="./architecture/"><span data-msg-id="sondeLife.content.home.ctas.0.label">Learn how Sonde works</span></a>
+        <a class="sl-action sl-action-secondary" href="https://daylight.sonde.life/usgov/section508-gov/?utm_source=sonde-life&amp;utm_medium=home&amp;utm_campaign=launch&amp;utm_content=a11y_report_cta" target="_blank" rel="noopener noreferrer"><span data-msg-id="sondeLife.content.home.ctas.1.label">See an accessibility report</span><span class="sl-visually-hidden" data-msg-id="sondeLife.content.home.newTabLabel">(opens in a new tab)</span></a>
+      </div>
+      <div class="sl-home-pillars" role="list">
+        <a class="sl-pillar-card" role="listitem" href="./solutions/accessibility/" aria-labelledby="pillar-accessibility">
+          <h2 id="pillar-accessibility" class="sl-pillar-name" data-msg-id="sondeLife.content.home.pillars.0.name">Accessibility</h2>
+          <p class="sl-pillar-blurb" data-msg-id="sondeLife.content.home.pillars.0.blurb">Reach every customer and meet accessibility standards like WCAG and Section 508. Sonde traces each finding to the exact source line that produced it — and hands your team the fix.</p>
+          <span class="sl-pillar-more" aria-hidden="true">Learn more →</span>
+        </a>
+        <a class="sl-pillar-card" role="listitem" href="./solutions/compliance/" aria-labelledby="pillar-compliance">
+          <h2 id="pillar-compliance" class="sl-pillar-name" data-msg-id="sondeLife.content.home.pillars.1.name">Compliance</h2>
+          <p class="sl-pillar-blurb" data-msg-id="sondeLife.content.home.pillars.1.blurb">Turn your real software into audit-ready evidence — mapped to the global standards and US frameworks, like SOC 2, FedRAMP, and HIPAA, that customers and regulators ask about — in the officially recognized formats auditors require.</p>
+          <span class="sl-pillar-more" aria-hidden="true">Learn more →</span>
+        </a>
+        <a class="sl-pillar-card" role="listitem" href="./solutions/ai-governance/" aria-labelledby="pillar-ai-guardrails">
+          <h2 id="pillar-ai-guardrails" class="sl-pillar-name" data-msg-id="sondeLife.content.home.pillars.2.name">AI Guardrails</h2>
+          <p class="sl-pillar-blurb" data-msg-id="sondeLife.content.home.pillars.2.blurb">Ship AI-written code with confidence. AI generates code faster than any team can review it — Sonde independently checks what your AI tools produce, deterministically and without AI, and catches what they get wrong before it reaches customers.</p>
+          <span class="sl-pillar-more" aria-hidden="true">Learn more →</span>
+        </a>
+        <a class="sl-pillar-card" role="listitem" href="./solutions/development/" aria-labelledby="pillar-development">
+          <h2 id="pillar-development" class="sl-pillar-name" data-msg-id="sondeLife.content.home.pillars.3.name">Development</h2>
+          <p class="sl-pillar-blurb" data-msg-id="sondeLife.content.home.pillars.3.blurb">Keep your software healthy as it grows. Sonde maps your whole system to surface the tech debt and architectural smells that spread invisibly — and shows your team what to fix before a routine change turns into a multi-month refactor.</p>
+          <span class="sl-pillar-more" aria-hidden="true">Learn more →</span>
+        </a>
+      </div>
     </div>
+    <div class="sl-hero-visual" aria-hidden="true">
+  <figure class="sl-hero-report">
+    <figcaption class="sl-hero-report-head">
+      <span class="sl-hero-report-label">Example Sonde results</span>
+      <span class="sl-hero-report-repo">acme/storefront</span>
+    </figcaption>
+    <div class="sl-hero-report-score">
+      <figure class="sl-gauge" role="img" aria-label="Repository Health: 924 out of 1000">
+  <svg viewBox="0 0 120 120" class="sl-gauge-svg" aria-hidden="true">
+    <circle class="sl-gauge-track" cx="60" cy="60" r="52" pathLength="100"/>
+    <circle class="sl-gauge-value" cx="60" cy="60" r="52" pathLength="100"
+            style="stroke-dasharray: 92.4 100;"/>
+  </svg>
+  <figcaption class="sl-gauge-cap">
+    <span class="sl-gauge-score">924</span><span class="sl-gauge-max">/1000</span>
+    <span class="sl-gauge-label">Repository Health</span>
+  </figcaption>
+</figure>
+
+      <p class="sl-hero-report-verdict"><strong>Healthy</strong> — 8 findings to fix, each with a specific fix.</p>
+    </div>
+    <ul class="sl-hero-report-findings">
+      <li class="sl-hero-finding">
+        <span class="sl-hero-finding-dot sl-hero-finding-dot--warn"></span>
+        <span class="sl-hero-finding-body">
+          <span class="sl-hero-finding-title">Missing alt text on 4 images</span>
+          <span class="sl-hero-finding-fix">→ add descriptive alt attributes</span>
+        </span>
+      </li>
+      <li class="sl-hero-finding">
+        <span class="sl-hero-finding-dot sl-hero-finding-dot--warn"></span>
+        <span class="sl-hero-finding-body">
+          <span class="sl-hero-finding-title">SOC 2 access-log gap in the API</span>
+          <span class="sl-hero-finding-fix">→ enable audit logging on writes</span>
+        </span>
+      </li>
+      <li class="sl-hero-finding">
+        <span class="sl-hero-finding-dot sl-hero-finding-dot--info"></span>
+        <span class="sl-hero-finding-body">
+          <span class="sl-hero-finding-title">N+1 query in /orders</span>
+          <span class="sl-hero-finding-fix">→ batch the lookup into one call</span>
+        </span>
+      </li>
+    </ul>
+    <p class="sl-hero-report-foot">Generated from your own code — every finding traced to the exact source line.</p>
+  </figure>
+</div>
+
   </div>
 </section>
-<section class="sl-section sl-home-pillars">
-  <div class="sl-section-inner sonde-readable sl-pillars-inner">
-    <article class="sl-pillar" aria-labelledby="pillar-compliance">
-      <h2 id="pillar-compliance" data-msg-id="sondeLife.content.home.pillars.0.heading">COMPLIANCE</h2>
-      <ul class="sl-pillar-bullets">
-        <li>
-          <details class="sl-bullet-details" open>
-            <summary>
-              <strong data-msg-id="sondeLife.content.home.pillars.0.bullets.0.label">Accessibility</strong><span class="sl-sep" aria-hidden="true">: </span><span data-msg-id="sondeLife.content.home.pillars.0.bullets.0.body">WCAG 2.1/2.2, Section 508, EU EAA on web, iOS, and Android. Every violation traced to the exact source line that produced it.</span>
-            </summary>
-            <div class="sl-bullet-expand">
-              <p>Sonde's patent-pending Three-Face Architecture reads your source code (JSX, SwiftUI, Compose, HTML, etc.), runs your actual app in Chromium, iOS Simulator, and Android Emulator, and traces every runtime finding back to the exact source line that caused it. Sonde checks what your code actually does on every platform your users depend on. Output includes WCAG-mapped SARIF for CI pipelines, VPAT, OSCAL, and OpenACR, all from one deterministic scan.</p>
-              <a class="sl-bullet-dig-deeper" href="/compliance/#compliance-accessibility">Dig deeper →</a>
-            </div>
-          </details>
-        </li>
-        <li>
-          <details class="sl-bullet-details">
-            <summary>
-              <strong data-msg-id="sondeLife.content.home.pillars.0.bullets.1.label">Security</strong><span class="sl-sep" aria-hidden="true">: </span><span data-msg-id="sondeLife.content.home.pillars.0.bullets.1.body">OWASP Top 10, CWE patterns, dependency and supply-chain vulnerabilities.</span>
-            </summary>
-            <div class="sl-bullet-expand">
-              <p>Sonde traces sensitive data through your code using taint analysis across five language catalogs — catching not just vulnerable packages but the actual call paths where credentials, PII, or secrets can escape. Every finding is a specific file and line with a mechanically verifiable fix plan attached, not a confidence score or a guess.</p>
-              <a class="sl-bullet-dig-deeper" href="/compliance/#compliance-security">Dig deeper →</a>
-            </div>
-          </details>
-        </li>
-        <li>
-          <details class="sl-bullet-details">
-            <summary>
-              <strong data-msg-id="sondeLife.content.home.pillars.0.bullets.2.label">Privacy</strong><span class="sl-sep" aria-hidden="true">: </span><span data-msg-id="sondeLife.content.home.pillars.0.bullets.2.body">PHI/PII data-flow tracing; GDPR, CCPA, HIPAA evidence surfaces automatically.</span>
-            </summary>
-            <div class="sl-bullet-expand">
-              <p>Privacy compliance has a code-level gap that infrastructure scanners can't reach. Sonde follows how sensitive data actually moves through your codebase — which functions touch it, where it gets persisted or transmitted, and which paths are unprotected. GDPR, CCPA, and HIPAA evidence packages surface automatically from your existing code graph, no manual tagging required.</p>
-              <a class="sl-bullet-dig-deeper" href="/compliance/#compliance-privacy">Dig deeper →</a>
-            </div>
-          </details>
-        </li>
-        <li>
-          <details class="sl-bullet-details">
-            <summary>
-              <strong data-msg-id="sondeLife.content.home.pillars.0.bullets.3.label">Regulatory standards</strong><span class="sl-sep" aria-hidden="true">: </span><span data-msg-id="sondeLife.content.home.pillars.0.bullets.3.body">SOC 2, PCI DSS, NIST 800-53, FedRAMP-ready evidence packages.</span>
-            </summary>
-            <div class="sl-bullet-expand">
-              <p>One Sonde analysis simultaneously maps findings to every applicable framework you've activated. Add HIPAA after SOC 2 and Sonde reuses everything already analyzed — no re-scanning, no duplicate work. Evidence packages export as HTML, PDF, OSCAL, and JSON, audit-ready on demand.</p>
-              <a class="sl-bullet-dig-deeper" href="/compliance/#compliance-regulatory">Dig deeper →</a>
-            </div>
-          </details>
-        </li>
-        <li>
-          <details class="sl-bullet-details">
-            <summary>
-              <strong data-msg-id="sondeLife.content.home.pillars.0.bullets.4.label">Mobile parity</strong><span class="sl-sep" aria-hidden="true">: </span><span data-msg-id="sondeLife.content.home.pillars.0.bullets.4.body">iOS and Android compliance posture compared side by side. No competitor does this.</span>
-            </summary>
-            <div class="sl-bullet-expand">
-              <p>No other tool provides side-by-side iOS and Android compliance posture from a single scan. Sonde covers SwiftUI, UIKit, Jetpack Compose, React Native, and Compose Multiplatform — with real VoiceOver and TalkBack accessibility trees from live device simulators, not simulated or approximated results. Compliance gaps that hide in platform-specific corners don't survive this.</p>
-              <a class="sl-bullet-dig-deeper" href="/compliance/#compliance-mobile-parity">Dig deeper →</a>
-            </div>
-          </details>
-        </li>
-        <li>
-          <details class="sl-bullet-details">
-            <summary>
-              <strong data-msg-id="sondeLife.content.home.pillars.0.bullets.5.label">AI & agent governance</strong><span class="sl-sep" aria-hidden="true">: </span><span data-msg-id="sondeLife.content.home.pillars.0.bullets.5.body">MCP safety, tool boundaries, agent output compliance.</span>
-            </summary>
-            <div class="sl-bullet-expand">
-              <p>As AI coding agents write more of your code, verifying that code meets compliance standards at scale becomes structurally impossible to do manually. Sonde analyzes AI-generated commits with the same deterministic rigor as human-written code, verifying MCP tool boundaries, agent output safety, and compliance posture — before anything reaches production.</p>
-              <a class="sl-bullet-dig-deeper" href="/compliance/#compliance-ai-governance">Dig deeper →</a>
-            </div>
-          </details>
-        </li>
-        <li>
-          <details class="sl-bullet-details">
-            <summary>
-              <strong data-msg-id="sondeLife.content.home.pillars.0.bullets.6.label">Licensing & SBOM</strong><span class="sl-sep" aria-hidden="true">: </span><span data-msg-id="sondeLife.content.home.pillars.0.bullets.6.body">OSS license risk, CycloneDX bill of materials, supply-chain compliance.</span>
-            </summary>
-            <div class="sl-bullet-expand">
-              <p>Sonde generates a CycloneDX Software Bill of Materials from your actual resolved dependency graph — not just your manifest files, but everything that's truly shipped. License compatibility conflicts, copyleft propagation risks, and supply-chain vulnerability exposure are surfaced with evidence traceable to specific components.</p>
-              <a class="sl-bullet-dig-deeper" href="/compliance/#compliance-licensing">Dig deeper →</a>
-            </div>
-          </details>
-        </li>
-      </ul>
-      <a class="sl-action" href="/compliance/" data-msg-id="sondeLife.content.home.pillars.0.cta">Explore compliance →</a>
-    </article>
-    <article class="sl-pillar" aria-labelledby="pillar-system-health">
-      <h2 id="pillar-system-health" data-msg-id="sondeLife.content.home.pillars.1.heading">SYSTEM HEALTH</h2>
-      <ul class="sl-pillar-bullets">
-        <li>
-          <details class="sl-bullet-details" open>
-            <summary>
-              <strong data-msg-id="sondeLife.content.home.pillars.1.bullets.0.label">Verification beyond AI speed</strong><span class="sl-sep" aria-hidden="true">: </span><span data-msg-id="sondeLife.content.home.pillars.1.bullets.0.body">Every AI-generated commit analyzed deterministically before it reaches production. No AI doing the reviewing.</span>
-            </summary>
-            <div class="sl-bullet-expand">
-              <p>AI coding agents produce commits faster than any human team can review them. Sonde doesn't slow them down — it keeps up deterministically, analyzing every commit against your actual code graph before it reaches production. No AI reviewing AI. No model-generated guesses. Mechanically reproducible results, every time.</p>
-              <a class="sl-bullet-dig-deeper" href="/architecture/#health-ai-verification">Dig deeper →</a>
-            </div>
-          </details>
-        </li>
-        <li>
-          <details class="sl-bullet-details">
-            <summary>
-              <strong data-msg-id="sondeLife.content.home.pillars.1.bullets.1.label">Proof, not opinion</strong><span class="sl-sep" aria-hidden="true">: </span><span data-msg-id="sondeLife.content.home.pillars.1.bullets.1.body">Deterministic fix recipes from your actual code graph. Mechanically verifiable, not model-generated guesses.</span>
-            </summary>
-            <div class="sl-bullet-expand">
-              <p>Every Sonde finding includes the specific file, specific line, and the structural fact that triggered it. Fix plans are concrete patches for mechanical issues, or step-by-step review-required recipes when context is needed. After applying the fix, rerun the analysis — the finding closes because the structural issue is resolved, not because a suppression list was updated.</p>
-              <a class="sl-bullet-dig-deeper" href="/architecture/#health-proof">Dig deeper →</a>
-            </div>
-          </details>
-        </li>
-        <li>
-          <details class="sl-bullet-details">
-            <summary>
-              <strong data-msg-id="sondeLife.content.home.pillars.1.bullets.2.label">Architecture health</strong><span class="sl-sep" aria-hidden="true">: </span><span data-msg-id="sondeLife.content.home.pillars.1.bullets.2.body">Dependency graphs, module boundaries, and blast radius for every proposed change.</span>
-            </summary>
-            <div class="sl-bullet-expand">
-              <p>Sonde builds a live dependency graph of your entire system and calculates the blast radius of any proposed change before it's made. God classes, circular dependencies, and orphaned modules are surfaced before they become expensive. Scope refactors in hours, not sprints — because you know exactly what depends on what.</p>
-              <a class="sl-bullet-dig-deeper" href="/architecture/#health-architecture-health">Dig deeper →</a>
-            </div>
-          </details>
-        </li>
-        <li>
-          <details class="sl-bullet-details">
-            <summary>
-              <strong data-msg-id="sondeLife.content.home.pillars.1.bullets.3.label">Code quality</strong><span class="sl-sep" aria-hidden="true">: </span><span data-msg-id="sondeLife.content.home.pillars.1.bullets.3.body">Complexity, cohesion, coupling, and tech debt scored and mapped to your codebase topology.</span>
-            </summary>
-            <div class="sl-bullet-expand">
-              <p>Cyclomatic complexity, coupling metrics, and cohesion scores are mapped directly to your codebase topology — not just reported as abstract numbers. Every metric traces to specific modules and functions. Tech debt is quantified with enough structural context to prioritize what to fix first, rather than generating another list nobody acts on.</p>
-              <a class="sl-bullet-dig-deeper" href="/architecture/#health-code-quality">Dig deeper →</a>
-            </div>
-          </details>
-        </li>
-        <li>
-          <details class="sl-bullet-details">
-            <summary>
-              <strong data-msg-id="sondeLife.content.home.pillars.1.bullets.4.label">Performance</strong><span class="sl-sep" aria-hidden="true">: </span><span data-msg-id="sondeLife.content.home.pillars.1.bullets.4.body">Algorithmic hotspots, memory pressure, and resource bottleneck detection at the source.</span>
-            </summary>
-            <div class="sl-bullet-expand">
-              <p>Sonde detects algorithmic hotspots, unbounded loops, and resource bottlenecks at the source level — before they manifest as production incidents. Analysis runs against your actual code structure, not just profiling data, so performance issues are caught before the code ships rather than after users complain.</p>
-              <a class="sl-bullet-dig-deeper" href="/architecture/#health-performance">Dig deeper →</a>
-            </div>
-          </details>
-        </li>
-        <li>
-          <details class="sl-bullet-details">
-            <summary>
-              <strong data-msg-id="sondeLife.content.home.pillars.1.bullets.5.label">Maintainability</strong><span class="sl-sep" aria-hidden="true">: </span><span data-msg-id="sondeLife.content.home.pillars.1.bullets.5.body">Dead code, duplicate logic, naming drift, and vendored-fork risk.</span>
-            </summary>
-            <div class="sl-bullet-expand">
-              <p>Dead code, duplicate logic, naming drift, and vendored-fork risk accumulate invisibly until a refactor becomes a multi-month project. Sonde maps these systematically across your codebase and gives you a prioritized view of where maintenance debt is concentrated — before it compounds into something expensive.</p>
-              <a class="sl-bullet-dig-deeper" href="/architecture/#health-maintainability">Dig deeper →</a>
-            </div>
-          </details>
-        </li>
-        <li>
-          <details class="sl-bullet-details">
-            <summary>
-              <strong data-msg-id="sondeLife.content.home.pillars.1.bullets.6.label">Fix plans with receipts</strong><span class="sl-sep" aria-hidden="true">: </span><span data-msg-id="sondeLife.content.home.pillars.1.bullets.6.body">Apply the patch, rerun the analysis, verify the finding is closed. Every time.</span>
-            </summary>
-            <div class="sl-bullet-expand">
-              <p>Most analysis tools tell you what's wrong. Sonde tells you what's wrong and gives you the exact patch to fix it. Apply it. Rerun the analysis. The finding is gone — not because a suppression list changed, but because the structural issue is actually resolved. Verifiable improvement with a paper trail, every time.</p>
-              <a class="sl-bullet-dig-deeper" href="/architecture/#health-fix-plans">Dig deeper →</a>
-            </div>
-          </details>
-        </li>
-      </ul>
-      <a class="sl-action" href="/architecture/" data-msg-id="sondeLife.content.home.pillars.1.cta">Explore system health →</a>
-    </article>
-  </div>
-</section>
-<section class="sl-section sl-band sl-home-no-ai-callout" aria-labelledby="home-no-ai-headline">
-  <div class="sl-section-inner sonde-readable">
-    <h2 id="home-no-ai-headline" class="sl-anchor-heading">
-      <a class="sl-anchor-heading-link" href="#home-no-ai-headline" data-msg-id="sondeLife.content.home.noAiCallout.headline">Your AI generates code. Sonde generates proof.</a>
-    </h2>
-    <p data-msg-id="sondeLife.content.home.noAiCallout.subline">AI is shipping commits faster than any team can manually review them. Sonde keeps up — deterministically, without AI.</p>
-    <p class="sl-no-ai-audience" data-msg-id="sondeLife.content.home.noAiCallout.audienceNote">Improves every AI coding tool you already use.</p>
-  </div>
-</section><section class="sl-section sl-home-callout" aria-labelledby="callout-zero-tokens">
-  <div class="sl-section-inner sonde-readable">
-    <h2 id="callout-zero-tokens" data-msg-id="sondeLife.content.home.callouts.0.heading">Zero tokens</h2>
-    <p data-msg-id="sondeLife.content.home.callouts.0.body">Sonde doesn't use AI itself, but makes all aspects of AI development faster and more efficient.</p>
-  </div>
-</section><section class="sl-section sl-band sl-home-callout" aria-labelledby="callout-not-just-source">
-  <div class="sl-section-inner sonde-readable">
-    <h2 id="callout-not-just-source" data-msg-id="sondeLife.content.home.callouts.1.heading">Not just for source code</h2>
-    <p data-msg-id="sondeLife.content.home.callouts.1.body">Sonde's deep and broad understanding isn't just for source code. It extends to all facets of the software ecosystem, including accessibility, compliance regulations, localization, databases, documentation, logs, monitoring, agentic development, MCP safety, issue tracking systems, CI/CD pipelines, and still more.</p>
-  </div>
-</section>
-<section class="sl-section sl-home-daylight">
-  <div class="sl-section-inner sonde-readable sl-home-daylight-inner">
-    <a class="sl-daylight-link sl-action sl-action-primary"
-       href="https://daylight.sonde.life/?utm_source=sonde-life&amp;utm_medium=home&amp;utm_campaign=launch&amp;utm_content=daylight_secondary"
-       target="_blank"
-       rel="noopener noreferrer"
-       data-cta="daylight">
-      <span data-msg-id="sondeLife.content.home.daylightLink.label">See the Daylight Project for improving accessibility</span>
-    </a>
-  </div>
-</section>
-<script>
-  (function () {
-    document.querySelectorAll('.sl-pillar').forEach(function (pillar) {
-      const group = Array.from(pillar.querySelectorAll('.sl-bullet-details'));
-      group.forEach(function (d) {
-        d.addEventListener('toggle', function () {
-          if (d.open) group.forEach(function (o) { if (o !== d) o.open = false; });
-        });
-      });
-    });
-  }());
-</script>
 
     <div hidden aria-hidden="true">
-      <span data-msg-id="sondeLife.metadata.description">Software that understands software. Semantic mesh for compliance, code review, and AI-generated code quality.</span>
+      <span data-msg-id="sondeLife.metadata.description">Sonde checks the software your team ships for accessibility, compliance, and quality — and shows you exactly what to fix.</span>
       <span data-msg-id="sondeLife.metadata.home.title">Sonde - Software That Understands Software</span>
-      <span data-msg-id="sondeLife.metadata.overview.title">Overview - Sonde</span>
+      <span data-msg-id="sondeLife.metadata.overview.title">AI Safety - Sonde</span>
+      <span data-msg-id="sondeLife.metadata.secureAutonomousAgents.title">Secure Autonomous Agents - Sonde</span>
       <span data-msg-id="sondeLife.metadata.explore.title">Explore - Sonde</span>
       <span data-msg-id="sondeLife.metadata.architecture.title">Architecture - Sonde</span>
       <span data-msg-id="sondeLife.metadata.methodology.title">Methodology - Sonde</span>
       <span data-msg-id="sondeLife.metadata.compliance.title">Compliance - Sonde</span>
-      <span data-msg-id="sondeLife.metadata.scribe.title">Scribe - Sonde</span>
+      <span data-msg-id="sondeLife.metadata.scribe.title">Proof - Sonde</span>
       <span data-msg-id="sondeLife.metadata.contact.title">Contact - Sonde</span>
       <span data-msg-id="sondeLife.metadata.solutions.accessibility.title">Accessibility - Sonde</span>
       <span data-msg-id="sondeLife.metadata.solutions.compliance.title">Compliance Solutions - Sonde</span>
-      <span data-msg-id="sondeLife.metadata.solutions.aiGovernance.title">AI Governance - Sonde</span>
-      <span data-msg-id="sondeLife.metadata.solutions.developer.title">Developer - Sonde</span>
+      <span data-msg-id="sondeLife.metadata.solutions.aiGovernance.title">AI Guardrails - Sonde</span>
+      <span data-msg-id="sondeLife.metadata.solutions.developer.title">Development - Sonde</span>
       <span data-msg-id="settings.trigger.aria">Open display settings</span>
       <span data-msg-id="settings.trigger.title">Settings</span>
       <span data-msg-id="settings.theme.legend">Theme</span>
@@ -1095,53 +970,13 @@
     </div>
     <footer class="sl-footer">
     <div class="sl-footer-inner">
-    <p data-msg-id="sondeLife.footer.tagline">What if your software could speak for itself?</p>
     </div>
   </footer>
 </div>
 <script>
-  // Dismiss the settings dropdown on outside-click and Escape. Both paths
-  // close the <details> AND return focus to the summary trigger so keyboard
-  // users land somewhere sensible regardless of how dismissal was invoked.
-  (() => {
-    const settings = document.querySelector('details.sl-settings');
-    if (!settings) return;
-    const trigger = settings.querySelector('summary');
-    function close() {
-      if (!settings.open) return;
-      settings.open = false;
-      if (trigger) trigger.focus();
-    }
-    document.addEventListener('click', (event) => {
-      if (!settings.open) return;
-      if (settings.contains(event.target)) return;
-      close();
-    });
-    document.addEventListener('keydown', (event) => {
-      if (event.key !== 'Escape') return;
-      close();
-    });
-  })();
-
-  // Dismiss the Solutions nav dropdown on outside-click and Escape,
-  // matching the settings-dropdown dismissal pattern above.
-  (() => {
-    const navDropdown = document.querySelector('details.sl-nav-dropdown');
-    if (!navDropdown) return;
-    function closeNavDropdown() {
-      if (!navDropdown.open) return;
-      navDropdown.open = false;
-    }
-    document.addEventListener('click', (event) => {
-      if (!navDropdown.open) return;
-      if (navDropdown.contains(event.target)) return;
-      closeNavDropdown();
-    });
-    document.addEventListener('keydown', (event) => {
-      if (event.key !== 'Escape') return;
-      closeNavDropdown();
-    });
-  })();
+  // The settings-dropdown outside-click/Escape dismissal is single-sourced in the shared Daylight hydration
+  // script (buildDaylightHydrationScript settingsDropdownDismiss); it closes any open .settings-dropdown and
+  // returns focus to its summary.
 
   // Bookmarkable section headers. Every <h2 id> / <h3 id> inside a content
   // <section> becomes a clickable anchor that writes its id to the URL hash
@@ -1155,8 +990,12 @@
   // don't allocate one listener per match. Headings whose first child is
   // already an <a> are skipped — wrapping a link inside a link is invalid
   // HTML (and would shadow whatever destination the heading already had).
-  // After pushState we move focus to the heading itself so screen-reader
-  // users hear the new section announced rather than staying on the link.
+  // Headings that are themselves nested inside an ancestor <a> (e.g. a
+  // card-heading inside a whole-card link, like the homepage pillar cards)
+  // are skipped for the same reason — wrapping would still nest an <a>
+  // inside the card's own <a>. After pushState we move focus to the
+  // heading itself so screen-reader users hear the new section announced
+  // rather than staying on the link.
   (() => {
     const root = document.querySelector('.sl-page');
     if (!root) return;
@@ -1169,6 +1008,7 @@
         const firstElement = heading.firstElementChild;
         if (firstElement && firstElement.classList.contains('sl-anchor-heading-link')) return;
         if (firstElement && firstElement.tagName === 'A') return;
+        if (heading.closest('a')) return;
         heading.classList.add('sl-anchor-heading');
         const link = document.createElement('a');
         link.className = 'sl-anchor-heading-link';
@@ -1336,15 +1176,16 @@
   })();
 
   // Roving tabindex for the primary nav links. Without this, the primary
-  // nav <a>s + the Solutions <summary> plus brand + search + settings put
-  // many elements in the primary nav's tab sequence, tripping the
-  // keyboard-trap probe's "deep focus region" heuristic. With roving
-  // tabindex the top-level nav items collapse to a single tab stop; arrow
-  // keys (Left/Right, Up/Down) navigate within the group, Home/End jump to
-  // the ends. The aria-current item is the active tab stop on page load
-  // (or the first item if no route is current). Only direct <a> children
-  // and top-level <details> > <summary> are selected — this deliberately
-  // excludes hidden dropdown-menu <a>s that must not enter the roving group.
+  // nav <a>s plus brand + search + settings put many elements in the
+  // primary nav's tab sequence, tripping the keyboard-trap probe's "deep
+  // focus region" heuristic. With roving tabindex the top-level nav items
+  // collapse to a single tab stop; arrow keys (Left/Right, Up/Down)
+  // navigate within the group, Home/End jump to the ends. The aria-current
+  // item is the active tab stop on page load (or the first item if no route
+  // is current). The selector picks up direct <a> children (all seven nav
+  // items today) plus any top-level <details> > <summary> — the nav has no
+  // <details> now, but the clause keeps the group correct if a dropdown is
+  // ever reintroduced.
   (() => {
     const navLinks = document.querySelector('.sl-nav-links');
     if (!navLinks) return;
@@ -1384,7 +1225,7 @@
 
 
   </main>
-  <script src="assets/leaderboard.js?v=1l8p6po"></script>
-  <script src="assets/search-dialog-bundle.js?v=3jtlp8" defer></script>
+  <script src="assets/leaderboard.js?v=-7tzeco"></script>
+  <script src="assets/search-dialog-bundle.js?v=-jz0d8t" defer></script>
 </body>
 </html>

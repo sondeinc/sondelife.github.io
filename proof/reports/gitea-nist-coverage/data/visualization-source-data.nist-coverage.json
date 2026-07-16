@@ -1,0 +1,47 @@
+[
+  {
+    "label": "AC Access Control",
+    "unit": "present controls",
+    "value": "8/19"
+  },
+  {
+    "label": "AU Audit and Accountability",
+    "unit": "present controls",
+    "value": "0/12"
+  },
+  {
+    "label": "CM Configuration Management",
+    "unit": "present controls",
+    "value": "1/14"
+  },
+  {
+    "label": "IA Identification and Authentication",
+    "unit": "present controls",
+    "value": "0/15"
+  },
+  {
+    "label": "SC System and Communications Protection",
+    "unit": "present controls",
+    "value": "1/15"
+  },
+  {
+    "label": "SI System and Information Integrity",
+    "unit": "present controls",
+    "value": "1/14"
+  },
+  {
+    "label": "RA Risk Assessment",
+    "unit": "present controls",
+    "value": "0/4"
+  },
+  {
+    "label": "SA System and Services Acquisition",
+    "unit": "present controls",
+    "value": "0/6"
+  },
+  {
+    "label": "PT PII Processing and Transparency",
+    "unit": "present controls",
+    "value": "0/4"
+  }
+]
