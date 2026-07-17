@@ -1,0 +1,42 @@
+[
+  {
+    "label": "Source",
+    "value": "Files: 6306 · LOC: 244805 · Classes: 1178 · Types: 2418 · Interfaces: 767"
+  },
+  {
+    "label": "Languages",
+    "value": "7 · apex, css, javascript, php, prisma, sql, typescript"
+  },
+  {
+    "label": "Frameworks",
+    "value": "9 · NestJS, Next.js, React, Prisma ORM, tRPC API, ASP.NET WebAPI/MVC Endpoints, Express/Fastify/Hono API Endpoints, process.env (Node.js), TypeORM"
+  },
+  {
+    "label": "Packages and build",
+    "value": "Package manifests: 120 · Build configs: 210"
+  },
+  {
+    "label": "CI/CD",
+    "value": "50 · GitHub Actions"
+  },
+  {
+    "label": "Resource detections",
+    "value": "7 · ASP.NET WebAPI/MVC Endpoints, Express/Fastify/Hono API Endpoints, Next.js API Routes, Prisma ORM, process.env (Node.js), tRPC API Procedures, TypeORM"
+  },
+  {
+    "label": "Database model",
+    "value": "Schema artifacts: 604 · Entities: 101 · Fields: 843 · Relationships: 263"
+  },
+  {
+    "label": "API endpoints",
+    "value": "255 · tRPC (199), REST/HTTP (56)"
+  },
+  {
+    "label": "Other runtime surfaces",
+    "value": "Message channels: 0 · Config keys: 0"
+  },
+  {
+    "label": "Sonde Performance",
+    "value": "Analysis: 6306 files · Payload: 50.6 MB"
+  }
+]

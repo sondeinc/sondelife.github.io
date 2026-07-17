@@ -1,0 +1,10 @@
+NIST family AC: Access Control
+Total controls: 19
+Satisfied controls: 8
+Customer-context controls: 3
+Unsatisfied controls: 8
+Validation-resolved controls: 10
+Evidence-tier controls: 9
+Deferred-elsewhere controls: 0
+Representative controls: ac-3:absent, ac-3.7:absent, ac-3.8:absent, ac-3.13:absent, ac-4:requires-customer-context, ac-6:present, ac-6.1:present, ac-6.2:present, ac-6.5:present, ac-6.8:requires-customer-context
+Raw rollup JSON download: data/nist-rollup.json

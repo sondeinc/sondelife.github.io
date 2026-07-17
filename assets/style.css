@@ -49,6 +49,19 @@ body {
   outline-offset: 2px;
 }
 
+/* Visually hidden — offscreen for assistive tech (a11y live regions, labels). */
+.sonde-visually-hidden {
+  position: absolute;
+  inline-size: 1px;
+  block-size: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+  border: 0;
+}
+
 h1, h2, h3, h4 {
   font-family: var(--sonde-font-heading);
   font-weight: 600;
@@ -84,6 +97,40 @@ a:focus-visible {
   outline: 2px solid var(--sonde-color-accent);
   outline-offset: 3px;
   text-decoration-color: currentColor;
+}
+
+.sonde-inline-external-link,
+.sonde-inline-external-link:visited,
+.sonde-exhibit .sonde-inline-external-link,
+.sonde-exhibit .sonde-inline-external-link:visited {
+  text-decoration: none;
+  text-decoration-line: none;
+}
+
+.sonde-inline-external-link-text {
+  text-decoration-color: currentColor;
+  text-decoration-line: underline;
+  text-decoration-thickness: 0.08em;
+  text-underline-offset: 0.12em;
+}
+
+.sonde-external-link-icon {
+  display: inline-block;
+  width: 0.72em;
+  height: 0.72em;
+  margin-inline-start: 0.12em;
+  fill: none;
+  stroke: currentColor;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 2;
+  transition: transform 120ms ease;
+  vertical-align: 0.08em;
+}
+
+.sonde-inline-external-link:hover .sonde-external-link-icon,
+.sonde-inline-external-link:focus-visible .sonde-external-link-icon {
+  transform: translate(0.06em, -0.06em);
 }
 
 button,
@@ -226,6 +273,205 @@ tr:hover {
   -webkit-overflow-scrolling: touch;
 }
 
+/* ─── Generic flex layout primitives ─────────────────────────
+ * Shared, all-surface layout vocabulary (used by report/audit pages and the
+ * cockpit app shell alike). `.sonde-cluster` is a non-stretching inline group —
+ * unlike `.sonde-responsive-flow` (which grows children to a panel width) and
+ * `.sonde-responsive-toolbar` (which forces an a11y target-size on interactive
+ * children). Gap uses the shared spacing scale. */
+.sonde-cluster {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--sonde-spacing-sm);
+}
+.sonde-cluster-between {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--sonde-spacing-md);
+}
+.sonde-cluster-end {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: flex-end;
+  gap: var(--sonde-spacing-sm);
+  min-inline-size: 0;
+}
+
+/* Vertical fill: a flex column that consumes remaining space and lets a scroll
+ * descendant own overflow (min-block-size:0 breaks the flex min-content floor). */
+.sonde-fill {
+  flex: 1;
+  min-block-size: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+/* A scrolling region that fills its flex parent and owns vertical overflow. */
+.sonde-scroll-region {
+  flex: 1;
+  overflow: auto;
+}
+
+/* A vertically-bounded scroll viewport for embedded long content (a markdown/doc
+ * preview): floors at a readable height and caps before it dominates the page. */
+.sonde-markdown-scroll {
+  overflow: auto;
+  max-block-size: 27.5rem;
+  min-block-size: 15rem;
+}
+
+/* A full-width chart host with a default height — charting libraries (ECharts,
+ * etc.) need an explicitly-sized element to lay their canvas into. */
+.sonde-chart-host {
+  inline-size: 100%;
+  block-size: 17.5rem;
+}
+
+/* Content-sized data table: columns fit their content and the table floors at a
+ * readable width so it overflows (its scroll container scrolls) rather than
+ * hard-truncating on a narrow viewport. */
+.sonde-table-auto {
+  table-layout: auto;
+  inline-size: 100%;
+  min-inline-size: 37.5rem;
+}
+
+/* Portal-hosted popper/tooltip stacking. `.sonde-popper` lifts a portalled
+ * overlay above page content; `-passthrough` also lets pointer events fall
+ * through to what's underneath (a decorative, non-interactive hover card). */
+.sonde-popper {
+  z-index: 1300;
+}
+.sonde-popper-passthrough {
+  z-index: 1300;
+  pointer-events: none;
+}
+
+/* A full-viewport overlay column (fullscreen panels, lightboxes). */
+.sonde-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 1300;
+  background: var(--sonde-color-bg);
+  padding: var(--sonde-spacing-md);
+  overflow: auto;
+  display: flex;
+  flex-direction: column;
+  gap: var(--sonde-spacing-sm);
+}
+
+/* A padded content card capped to a readable width — hover/tooltip cards, fact
+ * panels, popovers. Border/background come from the host surface (e.g. MUI Paper)
+ * or from `.summary-card` when a standalone card is wanted. */
+.sonde-card {
+  padding: var(--sonde-spacing-sm);
+  max-inline-size: min(100%, 22rem);
+}
+
+/* A filled, full-width content panel — a raised surface for a grouped strip of
+ * detail/facts. Unlike `.sonde-card` it is not width-capped. */
+.sonde-panel {
+  padding: var(--sonde-spacing-md);
+  background: var(--sonde-color-surface-elevated);
+  border-radius: var(--sonde-radius-md);
+}
+
+/* A full-width application page shell — padded, uncapped (unlike `.sonde-container`,
+ * which caps + centers a report page). For app surfaces whose dense content owns its
+ * own width. */
+.sonde-app-page {
+  padding-block: var(--sonde-spacing-xl);
+  padding-inline: var(--sonde-spacing-lg);
+}
+
+/* Small shared helpers that a flex/text layout genuinely needs and that no element
+ * prop expresses: monospace text, a flex child that may shrink below content
+ * (enables truncation), and a flex child that never shrinks. */
+.sonde-mono {
+  font-family: var(--sonde-font-mono);
+}
+.sonde-min-0 {
+  min-inline-size: 0;
+}
+.sonde-truncate {
+  display: block;
+  min-inline-size: 0;
+  max-inline-size: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.sonde-inline-truncate {
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+  gap: var(--sonde-spacing-sm);
+  min-inline-size: 0;
+  max-inline-size: 100%;
+  overflow: hidden;
+}
+.sonde-inline-truncate > :is(a, button, .sonde-noshrink) {
+  flex-shrink: 0;
+}
+.sonde-inline-truncate > :not(a, button, .sonde-noshrink) {
+  min-inline-size: 0;
+}
+.sonde-inline-truncate > .sonde-truncate {
+  flex: 1 1 auto;
+}
+/* A form control (select/input group) held to a readable minimum width so it
+ * doesn't collapse to its content or jitter as the value changes. */
+.sonde-form-control {
+  min-inline-size: 9.375rem;
+}
+/* A comfortable content measure — wider than prose (`.sonde-readable`), narrower
+ * than dense data (`.sonde-data-width`). For settings/form columns. */
+.sonde-measure {
+  max-inline-size: 55rem;
+}
+/* Strip the native chrome from a `<fieldset>` used purely for a11y grouping
+ * (a labelled group of form controls), keeping the semantic legend. */
+.sonde-fieldset-reset {
+  border: 0;
+  padding: 0;
+}
+.sonde-noshrink {
+  flex-shrink: 0;
+}
+.sonde-push-end {
+  margin-inline-start: auto;
+}
+/* Suppress the focus outline on a container that is only a programmatic focus
+ * target (e.g. a tabpanel focused on tab-switch); its interactive descendants
+ * keep their own focus rings. */
+.sonde-no-outline {
+  outline: none;
+}
+
+/* Empty / loading / error state regions. A plain message block (`.sonde-state`),
+ * a centered message (`.sonde-state-centered`), or a centered column that stacks
+ * an icon/spinner + copy + actions (`.sonde-state-column`). Generic across
+ * surfaces (report empty states, cockpit tab states). */
+.sonde-state {
+  padding-block: var(--sonde-spacing-lg);
+}
+.sonde-state-centered {
+  padding-block: var(--sonde-spacing-2xl);
+  padding-inline: var(--sonde-spacing-md);
+  text-align: center;
+}
+.sonde-state-column {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--sonde-spacing-md);
+  padding-block: var(--sonde-spacing-2xl);
+}
+
 .sonde-header {
   display: flex;
   justify-content: space-between;
@@ -245,6 +491,20 @@ tr:hover {
   font-size: 0.8rem;
   color: var(--sonde-color-text-muted);
   text-align: center;
+}
+
+/* Footer nav links — single-sourced here (the shared base every footer surface
+   loads) rather than copied into auditReport.css and daylightFooter.css, which
+   never co-load but both load baseStructural. */
+.footer-nav a {
+  color: var(--sonde-color-text-muted);
+  text-decoration: none;
+  transition: color 0.15s;
+}
+
+.footer-nav a:hover {
+  color: var(--sonde-color-primary);
+  text-decoration: underline;
 }
 
 /* ─── Badges ─────────────────────────────────────────────── */
@@ -348,6 +608,39 @@ tr:hover {
 .score-pass { color: var(--sonde-color-pass); font-weight: 600; }
 .score-warn { color: var(--sonde-color-warning); font-weight: 600; }
 .score-fail { color: var(--sonde-color-fail); font-weight: 600; }
+
+/* ─── Score grade chip ───────────────────────────────────────
+ * Colored score-band badge, banded by its `data-grade` attribute. Shared across
+ * every surface that renders a Sonde grade (cockpit score view, reports). */
+.sonde-grade-chip {
+  font-weight: 600;
+  font-family: var(--sonde-font-body);
+}
+.sonde-grade-chip[data-grade="excellent"] {
+  color: var(--sonde-color-pass);
+  border: 1px solid var(--sonde-color-pass);
+  background: color-mix(in srgb, var(--sonde-color-pass) 12%, transparent);
+}
+.sonde-grade-chip[data-grade="strong"] {
+  color: var(--sonde-color-info);
+  border: 1px solid var(--sonde-color-info);
+  background: color-mix(in srgb, var(--sonde-color-info) 12%, transparent);
+}
+.sonde-grade-chip[data-grade="fair"] {
+  color: var(--sonde-color-warning);
+  border: 1px solid var(--sonde-color-warning);
+  background: color-mix(in srgb, var(--sonde-color-warning) 12%, transparent);
+}
+.sonde-grade-chip[data-grade="weak"] {
+  color: var(--sonde-color-error);
+  border: 1px solid var(--sonde-color-error);
+  background: color-mix(in srgb, var(--sonde-color-error) 12%, transparent);
+}
+.sonde-grade-chip[data-grade="critical"] {
+  color: var(--sonde-color-critical);
+  border: 1px solid var(--sonde-color-critical);
+  background: color-mix(in srgb, var(--sonde-color-critical) 12%, transparent);
+}
 
 @media (max-width: 480px) {
   h1 { font-size: 1.6rem; }
@@ -630,7 +923,12 @@ tr:hover {
   gap: 0.5rem;
 }
 
-.settings-dropdown:not([open]) > .settings-dropdown-menu {
+/* Descendant (not direct-child) combinator: the shared report-settings menu is
+ * injected through a `dangerouslySetInnerHTML` host `<div>` (daylightChrome.tsx),
+ * so `.settings-dropdown-menu` is a grandchild of `.settings-dropdown`. The
+ * inline fallback renders it as a direct child. Matching either keeps the closed
+ * menu's own `display` resolved to `none` regardless of the wrapper. */
+.settings-dropdown:not([open]) .settings-dropdown-menu {
   display: none;
 }
 
@@ -893,7 +1191,8 @@ tr:hover {
  * its target mode regardless of the page's active theme. Literal palette
  * values live in tokens.css; this component only maps the frozen preview
  * tokens onto the mark token family consumed by the SVG. */
-.theme-preview[data-theme="light"] {
+.theme-preview[data-theme="light"],
+.theme-preview[data-mode="light"] {
   --sonde-daylight-mark-sun-stop-0: var(--sonde-daylight-mark-preview-light-sun-stop-0);
   --sonde-daylight-mark-sun-stop-1: var(--sonde-daylight-mark-preview-light-sun-stop-1);
   --sonde-daylight-mark-sun-stop-2: var(--sonde-daylight-mark-preview-light-sun-stop-2);
@@ -902,7 +1201,8 @@ tr:hover {
   --sonde-daylight-mark-solid-display: var(--sonde-daylight-mark-preview-light-solid-display);
   --sonde-daylight-mark-line-display: var(--sonde-daylight-mark-preview-light-line-display);
 }
-.theme-preview[data-theme="dark"] {
+.theme-preview[data-theme="dark"],
+.theme-preview[data-mode="dark"] {
   --sonde-daylight-mark-sun-stop-0: var(--sonde-daylight-mark-preview-dark-sun-stop-0);
   --sonde-daylight-mark-sun-stop-1: var(--sonde-daylight-mark-preview-dark-sun-stop-1);
   --sonde-daylight-mark-sun-stop-2: var(--sonde-daylight-mark-preview-dark-sun-stop-2);
@@ -911,7 +1211,8 @@ tr:hover {
   --sonde-daylight-mark-solid-display: var(--sonde-daylight-mark-preview-dark-solid-display);
   --sonde-daylight-mark-line-display: var(--sonde-daylight-mark-preview-dark-line-display);
 }
-.theme-preview[data-theme="high-contrast"] {
+.theme-preview[data-theme="high-contrast"],
+.theme-preview[data-mode="high-contrast"] {
   --sonde-daylight-mark-sun-stop-0: var(--sonde-daylight-mark-preview-high-contrast-sun-stop-0);
   --sonde-daylight-mark-sun-stop-1: var(--sonde-daylight-mark-preview-high-contrast-sun-stop-1);
   --sonde-daylight-mark-sun-stop-2: var(--sonde-daylight-mark-preview-high-contrast-sun-stop-2);
@@ -2944,6 +3245,13 @@ body[data-scribe-working="true"] [data-scribe-result] {
   color: var(--sonde-color-text-heading);
 }
 
+/* The diff fullscreen action ships `hidden` until the behavior script wires it —
+   without this guard the `display: inline-flex` above overrides the UA `[hidden]`
+   rule and no-JS (or unwired, or PDF-print-frame) readers see a dead control. */
+.scribe-source-action[hidden] {
+  display: none;
+}
+
 .scribe-source-code-region {
   position: relative;
 }
@@ -3019,23 +3327,28 @@ body[data-scribe-working="true"] [data-scribe-result] {
   border-block-end-color: var(--sonde-color-primary);
 }
 
-/* Remediation summary — a row of stat chips, never a vertical stack. */
+/* Remediation overview — one passive readout row at the top of the fix-plan page,
+   never repeated per finding (see renderFixPlanRemediationOverview). */
 .scribe-fixplan-stats {
   display: flex;
   flex-wrap: wrap;
-  gap: var(--sonde-spacing-sm);
+  gap: var(--sonde-spacing-md);
   margin-block: var(--sonde-spacing-sm);
 }
 
+/* A passive stat readout, NOT a card/button: no border, radius, or elevated
+   surface — those affordances made the block read as clickable. Stats are
+   separated by a thin inline divider instead. */
 .scribe-fixplan-stat {
   display: flex;
   flex-direction: column;
   gap: 0.1rem;
   min-inline-size: 5.5rem;
-  padding: var(--sonde-spacing-xs) var(--sonde-spacing-sm);
-  border: 1px solid var(--sonde-color-border-subtle);
-  border-radius: var(--sonde-radius-md);
-  background: var(--sonde-color-surface-elevated);
+}
+
+.scribe-fixplan-stat + .scribe-fixplan-stat {
+  padding-inline-start: var(--sonde-spacing-md);
+  border-inline-start: 1px solid var(--sonde-color-border-subtle);
 }
 
 .scribe-fixplan-stat dt {
@@ -3254,23 +3567,65 @@ body[data-scribe-working="true"] [data-scribe-result] {
   color: var(--sonde-color-text);
 }
 
-/* Before / after diff: the wrapper toggle. The diff itself is the reusable
-   `sonde-diff-*` component (components/diffBlock.css + @sondeai/renderer). */
+/* Before / after diff: the finding's Source-Evidence body when an auto-fix was
+   certified. The head carries the label + a split↔unified segmented toggle
+   (revealed by scribeBehaviors); each pane is the reusable `sonde-diff-*`
+   component (components/diffBlock.css + @sondeai/renderer). */
 
 .scribe-fixplan-before-after {
   margin-block: var(--sonde-spacing-sm);
 }
 
-.scribe-fixplan-before-after-summary {
+.scribe-fixplan-before-after-head {
   display: flex;
   align-items: center;
+  justify-content: space-between;
   gap: var(--sonde-spacing-sm);
-  cursor: pointer;
+  margin-block-end: var(--sonde-spacing-xs);
 }
 
 .scribe-fixplan-before-after-label {
   font-weight: 600;
   color: var(--sonde-color-text-heading);
+}
+
+.scribe-diff-view-toggle {
+  display: inline-flex;
+  gap: var(--sonde-spacing-3xs, 2px);
+  padding: var(--sonde-spacing-3xs, 2px);
+  border: 1px solid var(--sonde-color-diff-border);
+  border-radius: var(--sonde-radius-sm);
+}
+
+/* The toolbar ships `hidden` until the behavior script wires it — without this
+   guard the `display: inline-flex` above overrides the UA `[hidden]` rule and
+   no-JS (or unwired) readers see a dead control. */
+.scribe-diff-view-toggle[hidden] {
+  display: none;
+}
+
+.scribe-diff-view-toggle__btn {
+  font: inherit;
+  font-size: var(--sonde-diff-toolbar-font-size);
+  font-weight: 600;
+  border: none;
+  background: transparent;
+  color: var(--sonde-color-text-muted);
+  padding-block: var(--sonde-spacing-3xs, 2px);
+  padding-inline: var(--sonde-spacing-sm);
+  border-radius: var(--sonde-radius-sm);
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+}
+
+.scribe-diff-view-toggle__btn[data-active="true"] {
+  background: var(--sonde-color-accent-dim);
+  color: var(--sonde-color-primary);
+}
+
+.scribe-diff-view-toggle__btn:hover,
+.scribe-diff-view-toggle__btn:focus-visible {
+  color: var(--sonde-color-primary);
 }
 
 .scribe-source-dialog {
@@ -3901,6 +4256,12 @@ body[data-scribe-working="true"] [data-scribe-result] {
   text-align: center;
 }
 
+/* Center the WEIGHT column header so it lines up with the centered weight
+ * values below it (the other columns stay start-aligned). */
+.meth-weight-table th:nth-child(2) {
+  text-align: center;
+}
+
 /* Score Scale */
 
 .score-scale {
@@ -4048,6 +4409,172 @@ body[data-scribe-working="true"] [data-scribe-result] {
   line-height: 1.6;
 }
 
+/* ── /compliance/how-it-works/ breadcrumb + teaser CTA arrow (M3) ──── */
+.sl-breadcrumb {
+  font-size: 0.85rem;
+  color: var(--sonde-color-text-muted);
+  margin-bottom: 0.75rem;
+}
+
+.sl-breadcrumb a,
+.sl-breadcrumb a:visited { color: var(--sonde-color-primary); }
+
+.sl-breadcrumb-sep { margin: 0 0.4rem; }
+
+/* Decorative arrow after the "See how the architecture works" CTA — kept
+ * out of the translatable string so no translator has to preserve it. */
+.sl-action-arrow {
+  color: var(--sonde-color-primary);
+  font-weight: 600;
+  margin-inline-start: 0.25rem;
+}
+
+/* ── sonde.life methodology accordions (M1b) ────────────────────────
+ * The twelve methodology sections collapse into <details> accordions
+ * grouped in three labelled sub-bands so the deep "how" is available
+ * but not a wall of text. Deep-link ids live on the summary heading
+ * (never on <details>), so every Daylight anchor still resolves and
+ * the shared reveal script opens the ancestor <details>. */
+
+/* Methodology panels fill the full band width (the `.sl-section-inner` shell,
+ * responsive via `min(100%, --sonde-layout-shell-max)`). The panels drop the
+ * narrow `.sonde-readable` cap so prose/tables use the whole width instead of
+ * hugging the left edge of a full-width <details>. */
+.sl-meth-band-head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-bottom: 0.85rem;
+}
+
+.sl-meth-band-title {
+  display: flex;
+  align-items: baseline;
+  gap: 0.6rem;
+  margin: 0;
+}
+
+.sl-meth-band-count {
+  font-family: var(--sonde-font-mono);
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: var(--sonde-color-text-muted);
+}
+
+.sl-meth-expand-all {
+  flex-shrink: 0;
+  appearance: none;
+  cursor: pointer;
+  font-family: var(--sonde-font-heading);
+  font-size: 0.8rem;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  color: var(--sonde-color-primary);
+  background: transparent;
+  border: 1px solid var(--sonde-color-border);
+  border-radius: 6px;
+  padding: 0.3rem 0.7rem;
+}
+
+.sl-meth-expand-all:hover {
+  border-color: var(--sonde-color-primary);
+}
+
+.sl-meth-expand-all:focus-visible {
+  outline: 2px solid var(--sonde-color-primary);
+  outline-offset: 2px;
+}
+
+/* Label swaps by button state; both stay locale-swappable via data-msg-id. */
+.sl-meth-label-collapse { display: none; }
+.sl-meth-expand-all[aria-expanded='true'] .sl-meth-label-expand { display: none; }
+.sl-meth-expand-all[aria-expanded='true'] .sl-meth-label-collapse { display: inline; }
+
+.sl-meth-accordion {
+  border: 1px solid var(--sonde-color-border-subtle);
+  border-radius: 8px;
+  background: var(--sonde-color-surface);
+  margin: 0 0 0.6rem;
+}
+
+.sl-meth-accordion[open] {
+  border-color: var(--sonde-color-border);
+}
+
+.sl-meth-summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  /* Full-row target, ≥44px tall for mobile tap (round-3 H4). */
+  min-height: 44px;
+  padding: 0.6rem 1rem;
+  cursor: pointer;
+  list-style: none;
+  /* Nav is position:sticky;top:0 — clear it when a deep-link reveals
+   * this heading, matching .sl-anchor-heading's tuned offset. */
+  scroll-margin-top: 4.5rem;
+}
+
+.sl-meth-summary::-webkit-details-marker {
+  display: none;
+}
+
+.sl-meth-summary:hover .sl-meth-summary-title {
+  color: var(--sonde-color-primary);
+}
+
+.sl-meth-summary:focus-visible {
+  outline: 2px solid var(--sonde-color-primary);
+  outline-offset: -2px;
+  border-radius: 8px;
+}
+
+.sl-meth-summary-title {
+  /* Wrap to two lines rather than truncate — de-DE / pl-PL headings
+   * run ~30–40% longer and these are deep-link target headings
+   * (round-3 E4). */
+  margin: 0;
+  font-size: 1.05rem;
+  line-height: 1.35;
+  scroll-margin-top: 4.5rem;
+}
+
+.sl-meth-toggle {
+  flex-shrink: 0;
+  display: inline-flex;
+  color: var(--sonde-color-text-muted);
+  transition: transform 0.2s ease;
+}
+
+.sl-meth-accordion[open] .sl-meth-toggle {
+  transform: rotate(180deg);
+}
+
+.sl-meth-panel {
+  padding: 0 1rem 0.9rem;
+}
+
+.sl-meth-panel > :first-child {
+  margin-top: 0.25rem;
+}
+
+/* Honor reduced-motion: no chevron spin. */
+@media (prefers-reduced-motion: reduce) {
+  .sl-meth-toggle { transition: none; }
+}
+
+/* Print / PDF: procurement teams print this page. Collapsed panels
+ * would drop their content, so force every accordion open for print
+ * (round-3 A4 / risk 5). */
+@media print {
+  .sl-meth-toggle { display: none; }
+  .sl-meth-expand-all { display: none; }
+  .sl-meth-panel { display: block !important; }
+}
+
 @media (max-width: 640px) {
   .meth-header { padding: 1rem 1.25rem 0.5rem; }
   .meth-section { padding: 0.5rem 1.25rem; }
@@ -4192,10 +4719,14 @@ body {
   color: var(--sonde-color-text);
 }
 
+/* sonde.life pages are full-bleed: override the exhibit layout tokens (not its
+ * structural properties) so the container spans the viewport. The structural
+ * declarations live in the sanctioned tokens.css `.sonde-exhibit` rule. */
 main.sonde-exhibit:has(> .sl-page) {
-  width: 100%;
-  max-width: none;
-  padding-block: 0;
+  --sonde-exhibit-inline-size: 100%;
+  --sonde-exhibit-max-inline-size: none;
+  --sonde-exhibit-pad-block-start: 0;
+  --sonde-exhibit-pad-block-end: 0;
 }
 
 .sl-page-home {
@@ -5150,6 +5681,22 @@ abbr.sl-glossary:focus-visible::after {
   background: color-mix(in srgb, var(--sonde-color-primary) 10%, transparent);
 }
 
+/* Secondary actions take the theme's secondary accent, mirroring the primary
+   variant above. Without this they fell through to the `.sl-action` base
+   `--sonde-color-text-heading` — a monochrome that reads as "always white" in
+   every dark theme (and near-black in light ones) while sibling CTAs carry the
+   theme accent, i.e. the link never followed the selected theme/mode. */
+.sl-page .sl-action-secondary,
+.sl-page .sl-action-secondary:visited {
+  border-color: var(--sonde-color-secondary);
+  color: var(--sonde-color-secondary);
+}
+
+.sl-page .sl-action-secondary:hover,
+.sl-page .sl-action-secondary:focus-visible {
+  background: color-mix(in srgb, var(--sonde-color-secondary) 10%, transparent);
+}
+
 .sl-band {
   border-top: 1px solid var(--sonde-color-border);
   border-bottom: 1px solid var(--sonde-color-border);
@@ -5218,103 +5765,6 @@ abbr.sl-glossary:focus-visible::after {
   background: var(--sonde-color-bg);
 }
 
-.sl-pillar h2 {
-  margin: 0 0 0.9rem;
-  font-size: clamp(0.95rem, 1.4vw, 1.1rem);
-  letter-spacing: 0.06em;
-}
-
-.sl-pillar-bullets {
-  flex: 1;
-  list-style: none;
-  margin: 0 0 1.25rem;
-  padding: 0;
-  display: flex;
-  flex-direction: column;
-  gap: 0.55rem;
-}
-
-.sl-pillar-bullets li {
-  font-size: 0.88rem;
-  line-height: 1.45;
-  padding-left: 1rem;
-  position: relative;
-}
-
-.sl-pillar-bullets li::before {
-  content: '›';
-  position: absolute;
-  left: 0;
-  color: var(--sonde-color-primary);
-  font-weight: 700;
-}
-
-/* Accordion bullets — li contains <details> */
-.sl-pillar-bullets li:has(details) {
-  padding-left: 0;
-}
-
-.sl-pillar-bullets li:has(details)::before {
-  display: none;
-}
-
-.sl-bullet-details {
-  width: 100%;
-}
-
-.sl-bullet-details summary {
-  cursor: pointer;
-  list-style: none;
-  padding-left: 1rem;
-  position: relative;
-  font-size: 0.88rem;
-  line-height: 1.45;
-}
-
-.sl-bullet-details summary::-webkit-details-marker,
-.sl-bullet-details summary::marker {
-  display: none;
-  content: '';
-}
-
-.sl-bullet-details summary::before {
-  content: '›';
-  position: absolute;
-  left: 0;
-  color: var(--sonde-color-primary);
-  font-weight: 700;
-  display: inline-block;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .sl-bullet-details summary::before {
-    transition: transform 0.15s ease;
-  }
-}
-
-.sl-bullet-details[open] > summary::before {
-  transform: rotate(90deg);
-}
-
-.sl-bullet-expand {
-  margin: 0.5rem 0 0.25rem 1rem;
-  padding: 0.6rem 0.85rem;
-  background: var(--sonde-color-accent-dim);
-  border-left: 2px solid var(--sonde-color-primary);
-  border-radius: 0 0.25rem 0.25rem 0;
-  font-size: 0.83rem;
-  line-height: 1.58;
-  color: var(--sonde-color-text-muted);
-}
-
-.sl-bullet-expand p {
-  margin: 0;
-}
-
-.sl-pillar-bullets strong {
-  color: var(--sonde-color-text-heading);
-}
-
 /* Callout bands (Zero tokens, Not just for source code) */
 .sl-home-callout h2 {
   font-size: clamp(1rem, 1.6vw, 1.35rem);
@@ -5370,39 +5820,6 @@ abbr.sl-glossary:focus-visible::after {
   font-size: 0.875rem;
   line-height: 1.55;
   margin: 0;
-}
-
-/* "Dig deeper ->" link inside accordion expand panel. Scoped through `.sl-page`
-   so it outranks the platform theme's `.sonde-exhibit a` body-link rule. */
-.sl-page .sl-bullet-dig-deeper,
-.sl-page .sl-bullet-dig-deeper:visited {
-  display: inline-flex;
-  align-items: center;
-  margin-top: 0.5rem;
-  padding: 0.12rem 0.42rem;
-  border: 1px solid color-mix(in srgb, var(--sonde-color-primary) 62%, transparent);
-  border-radius: 999px;
-  background: color-mix(in srgb, var(--sonde-color-bg) 76%, var(--sonde-color-primary));
-  color: var(--sonde-color-primary);
-  font-family: var(--sonde-font-heading);
-  font-size: 0.78rem;
-  font-weight: 800;
-  text-decoration: none;
-  text-decoration-line: none;
-}
-
-.sl-page .sl-bullet-dig-deeper:hover,
-.sl-page .sl-bullet-dig-deeper:focus-visible {
-  border-color: var(--sonde-color-primary);
-  background: color-mix(in srgb, var(--sonde-color-primary) 12%, transparent);
-  color: var(--sonde-color-text-heading);
-  text-decoration: none;
-  text-decoration-line: none;
-}
-
-.sl-pillar .sl-action {
-  align-self: flex-start;
-  margin-top: auto;
 }
 
 .sl-level3-cta {
@@ -7572,87 +7989,12 @@ abbr.sl-glossary:focus-visible::after {
   .sl-trailer-quote p { transition: none; }
 }
 
-.sl-home-daylight-inner {
-  text-align: center;
-}
-
 .sl-solutions-explore-inner {
   text-align: center;
 }
 
 .sl-solutions-proof-cta {
   margin-top: 1.5rem;
-}
-
-/* Solutions nav dropdown — wraps the four /solutions/* sub-pages under
-   a <details> trigger in the primary nav. The summary inherits nav-link
-   typography so it matches sibling <a> items visually. The floating menu
-   appears below the trigger on open. */
-.sl-nav .sl-nav-dropdown {
-  position: relative;
-}
-
-.sl-nav .sl-nav-dropdown summary {
-  list-style: none;
-  cursor: pointer;
-  color: var(--sonde-color-text-muted);
-  font-family: var(--sonde-font-heading);
-  font-size: 0.82rem;
-  font-weight: 700;
-  padding: 0.26rem 0.36rem;
-  border-radius: 0.35rem;
-  user-select: none;
-}
-
-.sl-nav .sl-nav-dropdown summary::-webkit-details-marker,
-.sl-nav .sl-nav-dropdown summary::marker {
-  display: none;
-  content: '';
-}
-
-.sl-nav .sl-nav-dropdown summary:hover,
-.sl-nav .sl-nav-dropdown summary:focus-visible,
-.sl-nav .sl-nav-dropdown summary[aria-current="page"],
-.sl-nav .sl-nav-dropdown[open] > summary {
-  background: color-mix(in srgb, var(--sonde-color-primary) 10%, transparent);
-  color: var(--sonde-color-text-heading);
-}
-
-.sl-nav-dropdown-menu {
-  position: absolute;
-  top: calc(100% + 0.3rem);
-  right: 0;
-  z-index: 20;
-  display: flex;
-  flex-direction: column;
-  gap: 0.1rem;
-  min-width: 11rem;
-  padding: 0.3rem;
-  border: 1px solid var(--sonde-color-border);
-  border-radius: 0.45rem;
-  background: var(--sonde-color-surface);
-  box-shadow: 0 0.5rem 1.5rem color-mix(in srgb, var(--sonde-color-text) 18%, transparent);
-}
-
-.sl-nav-dropdown-menu a,
-.sl-nav-dropdown-menu a:visited {
-  display: block;
-  padding: 0.38rem 0.65rem;
-  border-radius: 0.3rem;
-  color: var(--sonde-color-text-muted);
-  font-family: var(--sonde-font-heading);
-  font-size: 0.82rem;
-  font-weight: 700;
-  text-decoration: none;
-  white-space: nowrap;
-}
-
-.sl-nav-dropdown-menu a:hover,
-.sl-nav-dropdown-menu a:focus-visible,
-.sl-nav-dropdown-menu a[aria-current="page"] {
-  background: color-mix(in srgb, var(--sonde-color-primary) 10%, transparent);
-  color: var(--sonde-color-text-heading);
-  text-decoration: none;
 }
 
 /* Solutions in-page sub-navigation pills. The <nav> band sits between the
@@ -7798,6 +8140,82 @@ abbr.sl-glossary:focus-visible::after {
     grid-template-columns: minmax(0, 1fr);
   }
 }
+
+/* ── Home hero (visual homepage) ─────────────────────────────── */
+.sl-home-hero { background: var(--sonde-color-bg); padding: clamp(1rem, 2vw, 1.75rem) clamp(1.25rem, 4vw, 4rem) clamp(1.5rem, 3vw, 2.5rem); }
+.sl-home-hero-inner { display: grid; grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.85fr); gap: clamp(1.5rem, 3vw, 3rem); align-items: start; max-width: 1320px; margin: 0 auto; }
+.sl-home-hero-copy { min-width: 0; }
+.sl-home-h1 { font-family: var(--sonde-font-heading); font-weight: 800; letter-spacing: -0.03em; line-height: 1.02; font-size: clamp(2.4rem, 6vw, 4.6rem); margin: 0.4em 0 0.5em; color: var(--sonde-color-text-heading); }
+.sl-home-h1-line { display: block; }
+.sl-home-h1-emphasis { color: var(--sonde-color-accent); }
+.sl-home-subhead { font-family: var(--sonde-font-body); font-size: clamp(1.05rem, 1.6vw, 1.4rem); line-height: 1.5; color: var(--sonde-color-text-muted); max-width: 84ch; margin: 0 0 3rem; }
+.sl-home-ctas { display: flex; flex-wrap: wrap; gap: 0.75rem 1rem; margin-bottom: 1.25rem; }
+.sl-home-pillars { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: clamp(0.75rem, 1.5vw, 1.25rem); }
+.sl-home-pillars .sl-pillar-card { display: block; padding: clamp(1rem, 1.6vw, 1.5rem); border: 1px solid var(--sonde-color-border); border-radius: 14px; background: var(--sonde-color-surface); color: inherit; text-decoration: none; }
+.sl-pillar-name { font-family: var(--sonde-font-heading); font-size: 1.2rem; margin: 0 0 0.4rem; color: var(--sonde-color-text-heading); }
+.sl-pillar-blurb { font-size: 0.95rem; line-height: 1.45; color: var(--sonde-color-text-muted); margin: 0 0 0.6rem; }
+.sl-pillar-more { font-size: 0.9rem; font-weight: 600; color: var(--sonde-color-accent); }
+@media (prefers-reduced-motion: no-preference) { .sl-home-pillars .sl-pillar-card { transition: border-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease; } }
+.sl-home-pillars .sl-pillar-card:hover, .sl-home-pillars .sl-pillar-card:focus-visible { border-color: var(--sonde-color-border-strong); transform: translateY(-2px); box-shadow: var(--sonde-shadow-md); outline: none; }
+.sl-home-pillars .sl-pillar-card:focus-visible { outline: 2px solid var(--sonde-color-focus); outline-offset: 2px; }
+
+/* ── Hero visual: an example Sonde report (score → concrete findings → fixes) ── */
+.sl-hero-visual { display: flex; flex-direction: column; align-items: center; }
+.sl-hero-report { width: min(100%, 380px); margin: 0; padding: clamp(1rem, 1.6vw, 1.4rem); border: 1px solid var(--sonde-color-border); border-radius: 14px; background: var(--sonde-color-surface); box-shadow: var(--sonde-shadow-md); }
+.sl-hero-report-head { display: flex; align-items: baseline; justify-content: space-between; gap: 0.75rem; margin-bottom: 0.9rem; }
+.sl-hero-report-label { font-family: var(--sonde-font-body); font-size: 0.68rem; font-weight: 700; letter-spacing: 0.09em; text-transform: uppercase; color: var(--sonde-color-text-muted); }
+.sl-hero-report-repo { font-family: var(--sonde-font-mono); font-size: 0.78rem; color: var(--sonde-color-text-muted); }
+.sl-hero-report-score { display: flex; align-items: center; gap: 1rem; padding-bottom: 0.9rem; border-bottom: 1px solid var(--sonde-color-border); }
+.sl-hero-report-score .sl-gauge { position: relative; inset: auto; margin: 0; flex: none; }
+/* The example score is illustrative, so the ring tracks the active theme accent
+ * (rather than the fixed score-tier palette) to stay cohesive across themes. */
+.sl-hero-report-score .sl-gauge-value { stroke: var(--sonde-color-accent); }
+.sl-hero-report-verdict { margin: 0; font-family: var(--sonde-font-body); font-size: 0.95rem; line-height: 1.4; color: var(--sonde-color-text); }
+.sl-hero-report-verdict strong { color: var(--sonde-color-accent); }
+.sl-hero-report-findings { list-style: none; margin: 0.9rem 0 0; padding: 0; display: grid; gap: 0.7rem; }
+.sl-hero-finding { display: flex; gap: 0.6rem; align-items: start; }
+.sl-hero-finding-dot { flex: none; width: 0.6rem; height: 0.6rem; margin-top: 0.35rem; border-radius: 50%; background: var(--sonde-color-text-muted); }
+.sl-hero-finding-dot--warn { background: var(--sonde-color-score-tier-1); }
+.sl-hero-finding-dot--info { background: var(--sonde-color-accent); }
+.sl-hero-finding-body { display: block; min-width: 0; }
+.sl-hero-finding-title { display: block; font-family: var(--sonde-font-body); font-size: 0.9rem; line-height: 1.35; color: var(--sonde-color-text); }
+.sl-hero-finding-fix { display: block; font-family: var(--sonde-font-mono); font-size: 0.78rem; line-height: 1.4; color: var(--sonde-color-text-muted); }
+.sl-hero-report-foot { margin: 1rem 0 0; padding-top: 0.85rem; border-top: 1px solid var(--sonde-color-border); font-family: var(--sonde-font-body); font-size: 0.78rem; line-height: 1.4; color: var(--sonde-color-text-muted); }
+
+/* ── Health gauge (reusable) ─────────────────────────────────── */
+.sl-gauge { position: absolute; right: 0; bottom: 0; margin: 0; display: grid; place-items: center; z-index: 3; }
+.sl-gauge-svg { width: clamp(120px, 12vw, 168px); height: auto; transform: rotate(-90deg); }
+.sl-gauge-track { stroke: var(--sonde-color-border); stroke-width: 10; fill: none; }
+.sl-gauge-value { stroke: var(--sonde-color-score-tier-3); stroke-width: 10; fill: none; stroke-linecap: round; }
+.sl-gauge-cap { position: absolute; text-align: center; font-family: var(--sonde-font-heading); }
+.sl-gauge-score { font-size: 1.9rem; font-weight: 800; color: var(--sonde-color-text-heading); }
+.sl-gauge-max { color: var(--sonde-color-text-muted); }
+.sl-gauge-label { display: block; font-size: 0.7rem; font-weight: 500; color: var(--sonde-color-text-muted); margin-top: 0.2rem; }
+
+/* ── Hero responsive collapse ────────────────────────────────── */
+@media (max-width: 900px) {
+  .sl-home-hero-inner { grid-template-columns: 1fr; }
+  .sl-hero-visual { margin-top: clamp(1.5rem, 4vw, 2.5rem); }
+  .sl-home-pillars { grid-template-columns: 1fr; }
+}
+
+/* ── Pillar (solutions) pages — visual Level-2 ───────────────── */
+.sl-pillar-hero-title { font-family: var(--sonde-font-heading); font-size: clamp(2.2rem, 5vw, 3.6rem); letter-spacing: -0.03em; color: var(--sonde-color-text-heading); margin: 0.3em 0 0.4em; }
+.sl-tile-grid { display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: clamp(0.75rem, 1.5vw, 1.5rem); }
+.sl-tile { padding: clamp(1rem, 1.6vw, 1.5rem); border: 1px solid var(--sonde-color-border); border-radius: 14px; background: var(--sonde-color-surface); }
+.sl-tile-icon { display: grid; place-items: center; width: 40px; height: 40px; border-radius: 10px; background: var(--sonde-color-accent-dim); margin-bottom: 0.6rem; }
+/* Standalone SVG assets (sites/sonde-life/assets/icon-*.svg) masked with the theme
+ * accent token, so the glyphs re-tint across every product theme. An external-file
+ * mask URL (not a data-URI) renders correctly in real browsers. */
+.sl-tile-icon::before { content: ""; width: 22px; height: 22px; background: var(--sonde-color-accent); -webkit-mask: var(--sl-tile-icon) center / contain no-repeat; mask: var(--sl-tile-icon) center / contain no-repeat; }
+.sl-tile-icon[data-icon="scan"] { --sl-tile-icon: url("icon-scan.svg"); }
+.sl-tile-icon[data-icon="fix"] { --sl-tile-icon: url("icon-fix.svg"); }
+.sl-tile-icon[data-icon="proof"] { --sl-tile-icon: url("icon-proof.svg"); }
+.sl-tile-icon[data-icon="reach"] { --sl-tile-icon: url("icon-reach.svg"); }
+.sl-tile-title { font-family: var(--sonde-font-heading); font-size: 1.2rem; color: var(--sonde-color-text-heading); margin: 0 0 0.35rem; }
+.sl-tile-line { font-size: 0.98rem; line-height: 1.5; color: var(--sonde-color-text-muted); margin: 0; }
+.sl-proof-band-inner { display: flex; flex-wrap: wrap; gap: 0.75rem 1rem; }
+@media (max-width: 820px) { .sl-tile-grid { grid-template-columns: 1fr; } }
 
 
 /**
@@ -8119,37 +8537,6 @@ abbr.sl-glossary:focus-visible::after {
     --sonde-color-fix-text: var(--sonde-color-text);
     --sonde-viz-code-bg: var(--sonde-code-bg);
   }
-  body, .sonde-exhibit, .scribe-shell__main {
-    background: #ffffff !important;
-    color: #000000 !important;
-  }
-  .site-nav, .settings-dropdown, footer, .sonde-nav, .sonde-controls,
-  .scribe-leaderboard-pagination, .leaderboard-pagination, [data-print="hide"] {
-    display: none !important;
-  }
-  details, details:not([open]) { display: block; }
-  details > summary { display: none; }
-  details > * { display: revert; }
-  pre, code, .exhibit-code-block {
-    break-inside: avoid;
-    page-break-inside: avoid;
-    orphans: 4;
-    widows: 4;
-  }
-  section, .vpat-section, tr { break-inside: avoid; }
-  h1, h2, h3, h4, h5, h6 {
-    break-after: avoid;
-    page-break-after: avoid;
-  }
-  thead { display: table-header-group; }
-  /* Modern PDF readers preserve clickable hyperlinks; legacy
-   * "URL (URL)" expansion removed to avoid duplicate output. */
-  th.sortable::after, th[data-sort-key]::after {
-    content: "";
-    display: none;
-  }
-  tr[data-filtered="true"] { display: none; }
-  body[data-scribe-print-rows="all"] tr[data-filtered="true"] { display: table-row; }
 }
 
 /* ─── High Contrast Preference ─────────────────────────────────── */
@@ -8498,37 +8885,6 @@ abbr.sl-glossary:focus-visible::after {
     --sonde-color-fix-text: var(--sonde-color-text);
     --sonde-viz-code-bg: var(--sonde-code-bg);
   }
-  body, .sonde-exhibit, .scribe-shell__main {
-    background: #ffffff !important;
-    color: #000000 !important;
-  }
-  .site-nav, .settings-dropdown, footer, .sonde-nav, .sonde-controls,
-  .scribe-leaderboard-pagination, .leaderboard-pagination, [data-print="hide"] {
-    display: none !important;
-  }
-  details, details:not([open]) { display: block; }
-  details > summary { display: none; }
-  details > * { display: revert; }
-  pre, code, .exhibit-code-block {
-    break-inside: avoid;
-    page-break-inside: avoid;
-    orphans: 4;
-    widows: 4;
-  }
-  section, .vpat-section, tr { break-inside: avoid; }
-  h1, h2, h3, h4, h5, h6 {
-    break-after: avoid;
-    page-break-after: avoid;
-  }
-  thead { display: table-header-group; }
-  /* Modern PDF readers preserve clickable hyperlinks; legacy
-   * "URL (URL)" expansion removed to avoid duplicate output. */
-  th.sortable::after, th[data-sort-key]::after {
-    content: "";
-    display: none;
-  }
-  tr[data-filtered="true"] { display: none; }
-  body[data-scribe-print-rows="all"] tr[data-filtered="true"] { display: table-row; }
 }
 
 /* ─── High Contrast Preference ─────────────────────────────────── */
@@ -8899,37 +9255,6 @@ abbr.sl-glossary:focus-visible::after {
     --sonde-color-fix-text: var(--sonde-color-text);
     --sonde-viz-code-bg: var(--sonde-code-bg);
   }
-  body, .sonde-exhibit, .scribe-shell__main {
-    background: #ffffff !important;
-    color: #000000 !important;
-  }
-  .site-nav, .settings-dropdown, footer, .sonde-nav, .sonde-controls,
-  .scribe-leaderboard-pagination, .leaderboard-pagination, [data-print="hide"] {
-    display: none !important;
-  }
-  details, details:not([open]) { display: block; }
-  details > summary { display: none; }
-  details > * { display: revert; }
-  pre, code, .exhibit-code-block {
-    break-inside: avoid;
-    page-break-inside: avoid;
-    orphans: 4;
-    widows: 4;
-  }
-  section, .vpat-section, tr { break-inside: avoid; }
-  h1, h2, h3, h4, h5, h6 {
-    break-after: avoid;
-    page-break-after: avoid;
-  }
-  thead { display: table-header-group; }
-  /* Modern PDF readers preserve clickable hyperlinks; legacy
-   * "URL (URL)" expansion removed to avoid duplicate output. */
-  th.sortable::after, th[data-sort-key]::after {
-    content: "";
-    display: none;
-  }
-  tr[data-filtered="true"] { display: none; }
-  body[data-scribe-print-rows="all"] tr[data-filtered="true"] { display: table-row; }
 }
 
 /* ─── Forced Colors (Windows High Contrast) ─────────────────────── */
