@@ -1,21 +1,5 @@
 (function () {
   var labels = {"allLanguages":"All languages","allKinds":"All kinds","allTags":"All tags","previous":"Previous","next":"Next","showing":"Showing","of":"of","modules":"modules"};
-  var navSearch = document.getElementById('site-search');
-  var rootHref = document.body ? document.body.getAttribute('data-scribe-root-href') || './index.html' : './index.html';
-
-  function redirectSearch(value) {
-    var query = value.trim();
-    window.location.href = rootHref + '?q=' + encodeURIComponent(query);
-  }
-
-  if (navSearch) {
-    navSearch.addEventListener('keydown', function (event) {
-      if (event.key === 'Enter') {
-        event.preventDefault();
-        redirectSearch(navSearch.value);
-      }
-    });
-  }
 
   var table = document.querySelector('.scribe-leaderboard');
   if (!table) return;
@@ -74,7 +58,6 @@
     var q = params.get('q') || '';
     state.search = q;
     if (search) search.value = q;
-    if (navSearch) navSearch.value = q;
   }
 
   function rowMatches(row) {

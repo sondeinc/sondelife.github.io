@@ -716,9 +716,73 @@
     --sonde-color-fix-text: var(--sonde-color-text);
     --sonde-viz-code-bg: var(--sonde-code-bg);
   }
-  .sonde-nav, .sonde-controls, [data-print="hide"] { display: none !important; }
-  section, .vpat-section { break-inside: avoid; }
-  h2, h3 { break-after: avoid; }
+  /* Structural print rules are single-sourced here (the universal base every
+   * palette/surface prepends). Each theme's own @media print block carries only
+   * its :root print token overrides — never a copy of this structure. */
+  body, .sonde-exhibit, .scribe-shell__main {
+    background: #ffffff !important;
+    color: #000000 !important;
+  }
+  .site-nav,
+  .settings-dropdown,
+  footer,
+  .sonde-nav,
+  .sonde-controls,
+  .scribe-leaderboard-pagination,
+  .leaderboard-pagination,
+  [data-print="hide"] {
+    display: none !important;
+  }
+  details,
+  details:not([open]) {
+    display: block;
+  }
+  details > summary {
+    display: none;
+  }
+  details > * {
+    display: revert;
+  }
+  pre,
+  code,
+  .exhibit-code-block {
+    break-inside: avoid;
+    page-break-inside: avoid;
+    orphans: 4;
+    widows: 4;
+  }
+  section,
+  .vpat-section,
+  tr {
+    break-inside: avoid;
+  }
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    break-after: avoid;
+    page-break-after: avoid;
+  }
+  thead {
+    display: table-header-group;
+  }
+  /* Modern PDF readers preserve clickable hyperlinks, so the raw href is no
+   * longer appended as visible text after every <a> (that produced duplicate
+   * "URL (URL)" output and bloated paged output). Click-through still works in
+   * saved PDFs across paged.js, Playwright bake, and Chrome's stock print. */
+  th.sortable::after,
+  th[data-sort-key]::after {
+    content: "";
+    display: none;
+  }
+  tr[data-filtered="true"] {
+    display: none;
+  }
+  body[data-scribe-print-rows="all"] tr[data-filtered="true"] {
+    display: table-row;
+  }
 }
 
 /* ─── Forced Colors (Windows High Contrast) ─────────────────────── */
@@ -784,12 +848,15 @@
  * homepage — simply do not render the exhibit title element, so no global
  * hide rule is needed or wanted here. */
 .sonde-exhibit {
-  width: 92%;
-  /* Keep the exhibit container proportional to its embedding surface.
-   * Padding and form-factor spacing are owned by the layout tokens above. */
-  max-width: var(--sonde-layout-shell-max);
+  /* Dimensions are read from custom props so an embedding surface can go
+   * full-bleed by overriding the tokens (not the structural properties) — the
+   * sanctioned way to adjust exhibit layout from a surface. Defaults preserve
+   * the standard proportional container. */
+  width: var(--sonde-exhibit-inline-size, 92%);
+  max-width: var(--sonde-exhibit-max-inline-size, var(--sonde-layout-shell-max));
   margin: 0 auto;
-  padding-block: var(--sonde-layout-gutter-block) var(--sonde-spacing-2xl);
+  padding-block: var(--sonde-exhibit-pad-block-start, var(--sonde-layout-gutter-block))
+    var(--sonde-exhibit-pad-block-end, var(--sonde-spacing-2xl));
 }
 
 .exhibit-subtitle {
@@ -911,10 +978,330 @@
   .sonde-exhibit { max-width: none; padding: 1cm; }
 }
 
+/* ─── Exhibit visualizations — structural layout for the string-serialized
+ * exhibit charts, diagrams, and rich blocks (packages/exhibit HTML serializer).
+ * Mirrors the <sonde-exhibit-*> Lit element designs for the static-render path,
+ * which previously shipped these classes unstyled. Tokens only, no literals.
+ * `--exhibit-role-color` carries a slide role's accent to fills/borders; roles
+ * without a distinct token fall back to the primary default. ───────────────── */
+
+.exhibit-bar-chart,
+.exhibit-pipeline,
+.exhibit-value-ladder,
+.exhibit-hub-spoke {
+  --exhibit-role-color: var(--sonde-color-primary);
+}
+.exhibit-role-secondary { --exhibit-role-color: var(--sonde-color-secondary); }
+.exhibit-role-accent,
+.exhibit-role-gold,
+.exhibit-role-glow,
+.exhibit-role-glowDeep,
+.exhibit-role-cta { --exhibit-role-color: var(--sonde-color-accent); }
+.exhibit-role-muted,
+.exhibit-role-strut { --exhibit-role-color: var(--sonde-color-text-muted); }
+
+/* Document/text blocks */
+.exhibit-title {
+  font-size: 2rem;
+  line-height: 1.2;
+  margin-bottom: 0.5rem;
+  color: var(--sonde-color-text-heading);
+}
+.exhibit-author {
+  color: var(--sonde-color-text-muted);
+  font-size: 0.9rem;
+  margin-bottom: 1rem;
+}
+.exhibit-section {
+  margin-block: 2.5rem;
+}
+.exhibit-quote {
+  border-inline-start: 3px solid var(--sonde-color-secondary);
+  padding: 0.5rem 1.25rem;
+  margin: 1.5rem 0;
+  font-style: italic;
+  color: var(--sonde-color-text-muted);
+}
+.exhibit-disclaimer,
+.exhibit-adaptation-summary {
+  font-size: 0.8rem;
+  color: var(--sonde-color-text-muted);
+  margin-block: 0.5rem;
+}
+.exhibit-image {
+  margin: 1.5rem 0;
+}
+.exhibit-image img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  border-radius: 6px;
+}
+.exhibit-image figcaption {
+  font-size: 0.85rem;
+  color: var(--sonde-color-text-muted);
+  margin-top: 0.5rem;
+  text-align: center;
+}
+.exhibit-error,
+.exhibit-unknown {
+  border: 1px solid var(--sonde-color-border);
+  border-radius: 6px;
+  padding: 0.75rem 1rem;
+  color: var(--sonde-color-text-muted);
+  background: var(--sonde-color-border-subtle);
+}
+
+/* Bar chart */
+.exhibit-bar-chart {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  margin: 1.5rem 0;
+}
+.exhibit-bar {
+  display: grid;
+  grid-template-columns: minmax(6em, 8em) 1fr minmax(3em, 4em);
+  align-items: center;
+  gap: 0.6rem;
+}
+.exhibit-bar-label {
+  font-size: 0.9rem;
+  text-align: end;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.exhibit-bar-track {
+  height: 1.4em;
+  border-radius: 3px;
+  background: var(--sonde-color-border-subtle);
+  overflow: hidden;
+}
+.exhibit-bar-fill {
+  height: 100%;
+  border-radius: 3px;
+  background: var(--exhibit-role-color, var(--sonde-color-primary));
+}
+.exhibit-bar-value {
+  font-size: 0.85rem;
+  font-variant-numeric: tabular-nums;
+  font-weight: 600;
+}
+
+/* Campaign steps */
+.exhibit-campaign-steps {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  margin: 1.5rem 0;
+}
+.exhibit-step {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.8rem;
+  padding: 0.6rem 0;
+}
+.exhibit-step + .exhibit-step {
+  border-top: 1px solid var(--sonde-color-border-subtle);
+}
+.exhibit-step-num {
+  flex-shrink: 0;
+  inline-size: 2.2em;
+  block-size: 2.2em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: var(--sonde-color-primary);
+  color: var(--sonde-color-table-header-text);
+  font-weight: 600;
+}
+.exhibit-step-name {
+  font-weight: 600;
+}
+.exhibit-step-detail {
+  color: var(--sonde-color-text-muted);
+  font-size: 0.9rem;
+}
+
+/* Value ladder */
+.exhibit-value-ladder-label {
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+.exhibit-value-ladder {
+  list-style: none;
+  display: flex;
+  flex-direction: column-reverse;
+  gap: 0.3rem;
+  margin: 1rem 0;
+}
+.exhibit-value-step {
+  padding: 0.5rem 1.25rem;
+  border-radius: 6px;
+  border: 1.5px solid var(--exhibit-role-color, var(--sonde-color-primary));
+  background: var(--sonde-color-surface);
+}
+
+/* Pipeline */
+.exhibit-pipeline {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin: 1.5rem 0;
+}
+.exhibit-pipeline-vertical {
+  flex-direction: column;
+}
+.exhibit-pipeline-step {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  padding: 0.6rem 1rem;
+  border-radius: 6px;
+  border: 1.5px solid var(--exhibit-role-color, var(--sonde-color-primary));
+  background: var(--sonde-color-surface);
+  min-inline-size: 6em;
+}
+.exhibit-pipeline-step.exhibit-step-active {
+  background: var(--sonde-color-border-subtle);
+}
+.exhibit-pipeline-detail {
+  font-size: 0.85rem;
+  color: var(--sonde-color-text-muted);
+}
+
+/* Hub & spoke */
+.exhibit-hub-spoke {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 1rem;
+  margin: 1.5rem 0;
+}
+.exhibit-hub {
+  padding: 0.75rem 1.25rem;
+  border-radius: 8px;
+  background: var(--sonde-color-primary);
+  color: var(--sonde-color-table-header-text);
+  font-weight: 600;
+}
+.exhibit-spokes {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+.exhibit-spoke {
+  padding: 0.4rem 0.8rem;
+  border-radius: 6px;
+  border: 1.5px solid var(--exhibit-role-color, var(--sonde-color-primary));
+  background: var(--sonde-color-surface);
+}
+
+/* Interactive demo + editable source */
+.exhibit-interactive-demo,
+.exhibit-editable-source {
+  margin: 1.5rem 0;
+  border: 1px solid var(--sonde-color-border);
+  border-radius: 8px;
+  overflow: hidden;
+}
+.exhibit-demo-targets {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  padding: 0.5rem;
+  border-top: 1px solid var(--sonde-color-border);
+}
+.exhibit-demo-target {
+  padding: 0.3rem 0.7rem;
+  border-radius: 20px;
+  border: 1px solid var(--sonde-color-border);
+  background: var(--sonde-color-surface);
+  color: var(--sonde-color-text);
+  font-family: var(--sonde-font-mono);
+  font-size: 0.75rem;
+  cursor: pointer;
+}
+.exhibit-editable-textarea {
+  display: block;
+  inline-size: 100%;
+  min-block-size: 8em;
+  padding: 0.75rem;
+  border: none;
+  font-family: var(--sonde-font-mono);
+  font-size: 0.85rem;
+  color: var(--sonde-color-text);
+  background: var(--sonde-color-surface);
+  resize: vertical;
+}
+
+/* Gauge */
+.exhibit-gauge {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.25rem;
+  margin: 1rem;
+}
+.exhibit-gauge-svg {
+  inline-size: 7rem;
+  block-size: 7rem;
+}
+.exhibit-gauge-value {
+  fill: var(--sonde-color-text-heading);
+  font-size: 1.4rem;
+  font-weight: 700;
+}
+.exhibit-gauge-label {
+  font-size: 0.9rem;
+  color: var(--sonde-color-text-muted);
+  text-align: center;
+}
+
+/* Radar (fallback table) */
+.exhibit-radar {
+  margin: 1.5rem 0;
+}
+
+/* Heatmap */
+.exhibit-heatmap {
+  border-collapse: separate;
+  border-spacing: 2px;
+  margin: 1.5rem 0;
+}
+.exhibit-heatmap-cell {
+  padding: 0.3rem 0.5rem;
+  border-radius: 3px;
+  text-align: center;
+  font-size: 0.85rem;
+  color: var(--sonde-color-text);
+  background: color-mix(in srgb, var(--sonde-color-primary) calc(var(--exhibit-heatmap-intensity, 0) * 1%), var(--sonde-color-surface));
+}
+
+/* Probe visualization */
+.exhibit-probe-visualization {
+  margin: 1.5rem 0;
+  text-align: center;
+}
+.exhibit-probe-visualization figcaption {
+  font-size: 0.85rem;
+  color: var(--sonde-color-text-muted);
+  margin-bottom: 0.5rem;
+}
+.exhibit-probe-visualization-empty {
+  border: 1px dashed var(--sonde-color-border);
+  border-radius: 6px;
+  padding: 1rem;
+  color: var(--sonde-color-text-muted);
+}
+
 /* ─── sonde.life contact form — shared structure ────────────────────────
- * Migrated out of the surface-specific components/sondeLifeChrome.css per
- * #1682: theme-agnostic layout in the base, color via tokens. Renamed from
- * the EAP-era .sl-alpha-* classes to accurate .sl-contact-* names. */
+ * Theme-agnostic layout lives in the base layer; color comes from tokens.
+ * The public classes intentionally describe the contact form surface. */
 .sl-contact-layout {
   display: grid;
   grid-template-columns: minmax(0, 1.2fr) minmax(18rem, 0.8fr);
@@ -2422,37 +2809,6 @@
     --sonde-color-fix-text: var(--sonde-color-text);
     --sonde-viz-code-bg: var(--sonde-code-bg);
   }
-  body, .sonde-exhibit, .scribe-shell__main {
-    background: #ffffff !important;
-    color: #000000 !important;
-  }
-  .site-nav, .settings-dropdown, footer, .sonde-nav, .sonde-controls,
-  .scribe-leaderboard-pagination, .leaderboard-pagination, [data-print="hide"] {
-    display: none !important;
-  }
-  details, details:not([open]) { display: block; }
-  details > summary { display: none; }
-  details > * { display: revert; }
-  pre, code, .exhibit-code-block {
-    break-inside: avoid;
-    page-break-inside: avoid;
-    orphans: 4;
-    widows: 4;
-  }
-  section, .vpat-section, tr { break-inside: avoid; }
-  h1, h2, h3, h4, h5, h6 {
-    break-after: avoid;
-    page-break-after: avoid;
-  }
-  thead { display: table-header-group; }
-  /* Modern PDF readers preserve clickable hyperlinks; legacy
-   * "URL (URL)" expansion removed to avoid duplicate output. */
-  th.sortable::after, th[data-sort-key]::after {
-    content: "";
-    display: none;
-  }
-  tr[data-filtered="true"] { display: none; }
-  body[data-scribe-print-rows="all"] tr[data-filtered="true"] { display: table-row; }
 }
 
 /* ─── High Contrast Preference ─────────────────────────────────── */
