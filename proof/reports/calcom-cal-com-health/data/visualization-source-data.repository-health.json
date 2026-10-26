@@ -1,42 +1,1267 @@
 [
   {
     "label": "Source",
-    "value": "Files: 6306 · LOC: 244805 · Classes: 1178 · Types: 2418 · Interfaces: 767"
+    "labelText": {
+      "defaultLocale": "en-US",
+      "defaultText": "Source",
+      "icuArgs": {},
+      "msgid": "scribe.report.repositoryHealth.sourceRow.source",
+      "provenance": "template",
+      "reviewState": "reviewed",
+      "values": {
+        "cy-GB": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "Tarddiad"
+        },
+        "de-DE": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "Quelle"
+        },
+        "en-CA": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "Source"
+        },
+        "en-GB": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "Source"
+        },
+        "en-IN": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "Source"
+        },
+        "en-US": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "Source"
+        },
+        "es-ES": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "Origen"
+        },
+        "es-MX": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "Fuente"
+        },
+        "es-US": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "Fuente"
+        },
+        "fr-CA": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "Source"
+        },
+        "fr-FR": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "Source"
+        },
+        "gd-GB": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "Tùs"
+        },
+        "hi-IN": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "स्रोत"
+        },
+        "it-IT": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "Sorgente"
+        },
+        "ja-JP": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "ソース"
+        },
+        "ko-KR": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "소스"
+        },
+        "nl-NL": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "Bron"
+        },
+        "pl-PL": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "Źródło"
+        },
+        "pt-BR": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "Fonte"
+        },
+        "pt-PT": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "Fonte"
+        },
+        "ro-RO": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "Sursă"
+        },
+        "sv-SE": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "Källa"
+        },
+        "zh-CN": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "源"
+        }
+      }
+    },
+    "value": "Files: 6335 · LOC: 260522 · Classes: 1255 · Types: 2436 · Interfaces: 768"
   },
   {
     "label": "Languages",
+    "labelText": {
+      "defaultLocale": "en-US",
+      "defaultText": "Languages",
+      "icuArgs": {},
+      "msgid": "scribe.report.repositoryHealth.sourceRow.languages",
+      "provenance": "template",
+      "reviewState": "reviewed",
+      "values": {
+        "cy-GB": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "Ieithoedd"
+        },
+        "de-DE": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "Sprachen"
+        },
+        "en-CA": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "Languages"
+        },
+        "en-GB": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "Languages"
+        },
+        "en-IN": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "Languages"
+        },
+        "en-US": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "Languages"
+        },
+        "es-ES": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "Idiomas"
+        },
+        "es-MX": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "Idiomas"
+        },
+        "es-US": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "Idiomas"
+        },
+        "fr-CA": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "Langues"
+        },
+        "fr-FR": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "Langues"
+        },
+        "ga-GB": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "Teangacha"
+        },
+        "gd-GB": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "Cànanan"
+        },
+        "hi-IN": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "भाषाएं"
+        },
+        "it-IT": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "Lingue"
+        },
+        "ja-JP": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "言語"
+        },
+        "ko-KR": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "언어"
+        },
+        "nl-NL": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "Talen"
+        },
+        "pl-PL": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "Języki"
+        },
+        "pt-BR": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "Idiomas"
+        },
+        "pt-PT": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "Idiomas"
+        },
+        "ro-RO": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "Limbi"
+        },
+        "sv-SE": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "Språk"
+        },
+        "zh-CN": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "语言"
+        }
+      }
+    },
     "value": "7 · apex, css, javascript, php, prisma, sql, typescript"
   },
   {
     "label": "Frameworks",
-    "value": "9 · NestJS, Next.js, React, Prisma ORM, tRPC API, ASP.NET WebAPI/MVC Endpoints, Express/Fastify/Hono API Endpoints, process.env (Node.js), TypeORM"
+    "labelText": {
+      "defaultLocale": "en-US",
+      "defaultText": "Frameworks",
+      "icuArgs": {},
+      "msgid": "scribe.report.repositoryHealth.sourceRow.frameworks",
+      "provenance": "template",
+      "reviewState": "reviewed",
+      "values": {
+        "cy-GB": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "Fframweithiau"
+        },
+        "de-DE": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "Frameworks"
+        },
+        "en-CA": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "Frameworks"
+        },
+        "en-GB": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "Frameworks"
+        },
+        "en-IN": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "Frameworks"
+        },
+        "en-US": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "Frameworks"
+        },
+        "es-ES": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "Marcos de trabajo"
+        },
+        "es-MX": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "Marcos"
+        },
+        "es-US": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "Marcos"
+        },
+        "fr-CA": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "Cadres de travail"
+        },
+        "fr-FR": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "Frameworks"
+        },
+        "ga-GB": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "Creataí"
+        },
+        "gd-GB": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "Frèaman-obrach"
+        },
+        "hi-IN": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "फ्रेमवर्क्स"
+        },
+        "it-IT": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "Framework"
+        },
+        "ja-JP": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "フレームワーク"
+        },
+        "ko-KR": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "프레임워크들"
+        },
+        "nl-NL": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "Frameworks"
+        },
+        "pl-PL": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "Frameworki"
+        },
+        "pt-BR": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "Frameworks"
+        },
+        "pt-PT": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "Estruturas"
+        },
+        "ro-RO": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "Framework-uri"
+        },
+        "sv-SE": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "Ramverk"
+        },
+        "zh-CN": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "框架"
+        }
+      }
+    },
+    "value": "9 · NestJS, Next.js, React, Prisma ORM, tRPC API, EventEmitter (Node.js), Express/Fastify/Hono API Endpoints, process.env (Node.js), TypeORM"
   },
   {
     "label": "Packages and build",
+    "labelText": {
+      "defaultLocale": "en-US",
+      "defaultText": "Packages and build",
+      "icuArgs": {},
+      "msgid": "scribe.report.repositoryHealth.sourceRow.packagesAndBuild",
+      "provenance": "template",
+      "reviewState": "reviewed",
+      "values": {
+        "cy-GB": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "Pecynnau a chreu"
+        },
+        "de-DE": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "Pakete und Build"
+        },
+        "en-CA": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "Packages and build"
+        },
+        "en-GB": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "Packages and build"
+        },
+        "en-IN": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "Packages and build"
+        },
+        "en-US": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "Packages and build"
+        },
+        "es-ES": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "Paquetes y compilación"
+        },
+        "es-MX": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "Paquetes y compilación"
+        },
+        "es-US": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "Paquetes y compilación"
+        },
+        "fr-CA": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "Paquets et build"
+        },
+        "fr-FR": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "Paquets et build"
+        },
+        "hi-IN": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "पैकेज और बिल्ड"
+        },
+        "it-IT": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "Pacchetti e build"
+        },
+        "ja-JP": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "パッケージとビルド"
+        },
+        "ko-KR": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "패키지 및 빌드"
+        },
+        "nl-NL": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "Pakketten en build"
+        },
+        "pl-PL": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "Pakiety i budowanie"
+        },
+        "pt-BR": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "Pacotes e build"
+        },
+        "pt-PT": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "Pacotes e build"
+        },
+        "ro-RO": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "Pachete și build"
+        },
+        "sv-SE": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "Paket och bygge"
+        },
+        "zh-CN": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "包和构建"
+        }
+      }
+    },
     "value": "Package manifests: 120 · Build configs: 210"
   },
   {
     "label": "CI/CD",
+    "labelText": {
+      "defaultLocale": "en-US",
+      "defaultText": "CI/CD",
+      "icuArgs": {},
+      "msgid": "scribe.report.repositoryHealth.sourceRow.cicd",
+      "provenance": "template",
+      "reviewState": "reviewed",
+      "values": {
+        "cy-GB": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "CI/CD"
+        },
+        "de-DE": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "CI/CD"
+        },
+        "en-CA": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "CI/CD"
+        },
+        "en-GB": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "CI/CD"
+        },
+        "en-IN": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "CI/CD"
+        },
+        "en-US": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "CI/CD"
+        },
+        "es-ES": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "CI/CD"
+        },
+        "es-MX": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "CI/CD"
+        },
+        "es-US": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "CI/CD"
+        },
+        "fr-CA": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "CI/CD"
+        },
+        "fr-FR": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "CI/CD"
+        },
+        "hi-IN": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "CI/CD"
+        },
+        "it-IT": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "CI/CD"
+        },
+        "ja-JP": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "CI/CD"
+        },
+        "ko-KR": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "CI/CD"
+        },
+        "nl-NL": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "CI/CD"
+        },
+        "pl-PL": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "CI/CD"
+        },
+        "pt-BR": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "CI/CD"
+        },
+        "pt-PT": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "CI/CD"
+        },
+        "ro-RO": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "CI/CD"
+        },
+        "sv-SE": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "CI/CD"
+        },
+        "zh-CN": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "CI/CD"
+        }
+      }
+    },
     "value": "50 · GitHub Actions"
   },
   {
     "label": "Resource detections",
-    "value": "7 · ASP.NET WebAPI/MVC Endpoints, Express/Fastify/Hono API Endpoints, Next.js API Routes, Prisma ORM, process.env (Node.js), tRPC API Procedures, TypeORM"
+    "labelText": {
+      "defaultLocale": "en-US",
+      "defaultText": "Resource detections",
+      "icuArgs": {},
+      "msgid": "scribe.report.repositoryHealth.sourceRow.resourceDetections",
+      "provenance": "template",
+      "reviewState": "reviewed",
+      "values": {
+        "cy-GB": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "Canfod Adnoddau"
+        },
+        "de-DE": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "Ressourcenerkennungen"
+        },
+        "en-CA": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "Resource detections"
+        },
+        "en-GB": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "Resource detections"
+        },
+        "en-IN": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "Resource detections"
+        },
+        "en-US": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "Resource detections"
+        },
+        "es-ES": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "Detecciones de recursos"
+        },
+        "es-MX": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "Detecciones de recursos"
+        },
+        "es-US": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "Detecciones de recursos"
+        },
+        "fr-CA": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "Détections de ressources"
+        },
+        "fr-FR": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "Détections de ressources"
+        },
+        "hi-IN": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "रिसोर्स डिटेक्शन"
+        },
+        "it-IT": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "Rilevamenti delle risorse"
+        },
+        "ja-JP": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "リソース検出"
+        },
+        "ko-KR": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "리소스 감지"
+        },
+        "nl-NL": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "Resource-detecties"
+        },
+        "pl-PL": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "Wykryte zasoby"
+        },
+        "pt-BR": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "Detecções de recursos"
+        },
+        "pt-PT": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "Deteções de recursos"
+        },
+        "ro-RO": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "Detectări de resurse"
+        },
+        "sv-SE": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "Resursdetekteringar"
+        },
+        "zh-CN": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "资源检测"
+        }
+      }
+    },
+    "value": "7 · EventEmitter (Node.js), Express/Fastify/Hono API Endpoints, Next.js API Routes, Prisma ORM, process.env (Node.js), tRPC API Procedures, TypeORM"
   },
   {
     "label": "Database model",
-    "value": "Schema artifacts: 604 · Entities: 101 · Fields: 843 · Relationships: 263"
+    "labelText": {
+      "defaultLocale": "en-US",
+      "defaultText": "Database model",
+      "icuArgs": {},
+      "msgid": "scribe.report.repositoryHealth.sourceRow.databaseModel",
+      "provenance": "template",
+      "reviewState": "reviewed",
+      "values": {
+        "cy-GB": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "Model Cronfa Ddata"
+        },
+        "de-DE": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "Datenbankmodell"
+        },
+        "en-CA": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "Database model"
+        },
+        "en-GB": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "Database model"
+        },
+        "en-IN": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "Database model"
+        },
+        "en-US": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "Database model"
+        },
+        "es-ES": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "Modelo de base de datos"
+        },
+        "es-MX": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "Modelo de base de datos"
+        },
+        "es-US": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "Modelo de base de datos"
+        },
+        "fr-CA": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "Modèle de base de données"
+        },
+        "fr-FR": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "Modèle de base de données"
+        },
+        "hi-IN": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "डेटाबेस मॉडल"
+        },
+        "it-IT": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "Modello del database"
+        },
+        "ja-JP": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "データベースモデル"
+        },
+        "ko-KR": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "데이터베이스 모델"
+        },
+        "nl-NL": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "Databasemodel"
+        },
+        "pl-PL": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "Model bazy danych"
+        },
+        "pt-BR": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "Modelo de banco de dados"
+        },
+        "pt-PT": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "Modelo de base de dados"
+        },
+        "ro-RO": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "Model de bază de date"
+        },
+        "sv-SE": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "Databasmodell"
+        },
+        "zh-CN": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "数据库模型"
+        }
+      }
+    },
+    "value": "Schema artifacts: 604 · Entities: 101 · Fields: 1042 · Relationships: 409"
   },
   {
     "label": "API endpoints",
+    "labelText": {
+      "defaultLocale": "en-US",
+      "defaultText": "API endpoints",
+      "icuArgs": {},
+      "msgid": "scribe.report.repositoryHealth.sourceRow.apiEndpoints",
+      "provenance": "template",
+      "reviewState": "reviewed",
+      "values": {
+        "cy-GB": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "Terfynellau API"
+        },
+        "de-DE": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "API-Endpunkte"
+        },
+        "en-CA": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "API endpoints"
+        },
+        "en-GB": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "API endpoints"
+        },
+        "en-IN": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "API endpoints"
+        },
+        "en-US": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "API endpoints"
+        },
+        "es-ES": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "Endpoints de la API"
+        },
+        "es-MX": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "Endpoints de API"
+        },
+        "es-US": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "Endpoints de API"
+        },
+        "fr-CA": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "Points de terminaison d'API"
+        },
+        "fr-FR": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "Points de terminaison d'API"
+        },
+        "hi-IN": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "API एंडपॉइंट्स"
+        },
+        "it-IT": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "Endpoint API"
+        },
+        "ja-JP": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "APIエンドポイント"
+        },
+        "ko-KR": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "API 엔드포인트"
+        },
+        "nl-NL": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "API-eindpunten"
+        },
+        "pl-PL": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "Punkty końcowe API"
+        },
+        "pt-BR": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "Endpoints de API"
+        },
+        "pt-PT": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "Endpoints de API"
+        },
+        "ro-RO": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "Puncte de terminal API"
+        },
+        "sv-SE": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "API-slutpunkter"
+        },
+        "zh-CN": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "API 端点"
+        }
+      }
+    },
     "value": "255 · tRPC (199), REST/HTTP (56)"
   },
   {
     "label": "Other runtime surfaces",
-    "value": "Message channels: 0 · Config keys: 0"
+    "labelText": {
+      "defaultLocale": "en-US",
+      "defaultText": "Other runtime surfaces",
+      "icuArgs": {},
+      "msgid": "scribe.report.repositoryHealth.sourceRow.otherRuntimeSurfaces",
+      "provenance": "template",
+      "reviewState": "reviewed",
+      "values": {
+        "cy-GB": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "Arwynebau rhedeg eraill"
+        },
+        "de-DE": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "Andere Runtime-Oberflächen"
+        },
+        "en-CA": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "Other runtime surfaces"
+        },
+        "en-GB": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "Other runtime surfaces"
+        },
+        "en-IN": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "Other runtime surfaces"
+        },
+        "en-US": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "Other runtime surfaces"
+        },
+        "es-ES": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "Otras superficies de tiempo de ejecución"
+        },
+        "es-MX": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "Otras superficies de tiempo de ejecución"
+        },
+        "es-US": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "Otras superficies de tiempo de ejecución"
+        },
+        "fr-CA": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "Autres surfaces d'exécution"
+        },
+        "fr-FR": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "Autres surfaces d'exécution"
+        },
+        "hi-IN": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "अन्य रनटाइम सरफेस"
+        },
+        "it-IT": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "Altre superfici di runtime"
+        },
+        "ja-JP": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "その他のランタイム表面"
+        },
+        "ko-KR": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "기타 런타임 표면"
+        },
+        "nl-NL": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "Andere runtime-oppervlakken"
+        },
+        "pl-PL": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "Inne powierzchnie runtime"
+        },
+        "pt-BR": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "Outras superfícies de tempo de execução"
+        },
+        "pt-PT": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "Outras superfícies de runtime"
+        },
+        "ro-RO": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "Alte suprafețe de rulare"
+        },
+        "sv-SE": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "Andra runtime-ytor"
+        },
+        "zh-CN": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "其他运行时表面"
+        }
+      }
+    },
+    "value": "Message channels: 28 · Config keys: 822"
   },
   {
     "label": "Sonde Performance",
-    "value": "Analysis: 6306 files · Payload: 50.6 MB"
+    "labelText": {
+      "defaultLocale": "en-US",
+      "defaultText": "Sonde Performance",
+      "icuArgs": {},
+      "msgid": "scribe.report.repositoryHealth.sourceRow.sondePerformance",
+      "provenance": "template",
+      "reviewState": "reviewed",
+      "values": {
+        "cy-GB": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "Perfformiad Sonde"
+        },
+        "de-DE": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "Sonde Performance"
+        },
+        "en-CA": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "Sonde Performance"
+        },
+        "en-GB": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "Sonde Performance"
+        },
+        "en-IN": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "Sonde Performance"
+        },
+        "en-US": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "Sonde Performance"
+        },
+        "es-ES": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "Rendimiento de Sonde"
+        },
+        "es-MX": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "Rendimiento de Sonde"
+        },
+        "es-US": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "Rendimiento de Sonde"
+        },
+        "fr-CA": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "Performance de Sonde"
+        },
+        "fr-FR": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "Performance de Sonde"
+        },
+        "hi-IN": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "Sonde प्रदर्शन"
+        },
+        "it-IT": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "Performance di Sonde"
+        },
+        "ja-JP": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "Sonde パフォーマンス"
+        },
+        "ko-KR": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "Sonde 성능"
+        },
+        "nl-NL": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "Sonde Performance"
+        },
+        "pl-PL": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "Wydajność Sonde"
+        },
+        "pt-BR": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "Desempenho do Sonde"
+        },
+        "pt-PT": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "Desempenho do Sonde"
+        },
+        "ro-RO": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "Performanța Sonde"
+        },
+        "sv-SE": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "Sonde-prestanda"
+        },
+        "zh-CN": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "Sonde 性能"
+        }
+      }
+    },
+    "value": "Analysis: 6335 files · Payload: 89.8 MB"
   }
 ]

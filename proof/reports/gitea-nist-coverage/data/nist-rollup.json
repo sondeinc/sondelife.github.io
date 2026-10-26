@@ -1,6 +1,6 @@
 {
   "assessedAt": "2026-05-19T00:00:00.000Z",
-  "coverageRatio": 0.10679611650485436,
+  "coverageRatio": 0.05825242718446602,
   "families": [
     {
       "assessedAt": "2026-05-19T00:00:00.000Z",
@@ -8,26 +8,26 @@
         {
           "controlId": "ac-3",
           "mode": "validation-resolved",
-          "status": "absent",
+          "status": "present",
           "validation": "access-enforcement"
         },
         {
           "controlId": "ac-3.7",
           "mode": "validation-resolved",
-          "status": "absent",
+          "status": "present",
           "validation": "access-enforcement"
         },
         {
           "controlId": "ac-3.8",
           "mode": "evidence-tier-with-rationale",
           "rationale": "Runtime revocation and route-level deny evidence require customer tenancy context.",
-          "status": "absent",
+          "status": "present",
           "validation": "access-enforcement"
         },
         {
           "controlId": "ac-3.13",
           "mode": "validation-resolved",
-          "status": "absent",
+          "status": "present",
           "validation": "access-enforcement"
         },
         {
@@ -39,28 +39,28 @@
         {
           "controlId": "ac-6",
           "mode": "validation-resolved",
-          "status": "present",
+          "status": "absent",
           "validation": "least-privilege"
         },
         {
           "controlId": "ac-6.1",
           "mode": "evidence-tier-with-rationale",
           "rationale": "Authorized access-to-security-functions review needs role inventory and operator policy.",
-          "status": "present",
+          "status": "absent",
           "validation": "least-privilege"
         },
         {
           "controlId": "ac-6.2",
           "mode": "evidence-tier-with-rationale",
           "rationale": "Non-privileged account use needs identity-provider and break-glass procedure evidence.",
-          "status": "present",
+          "status": "absent",
           "validation": "least-privilege"
         },
         {
           "controlId": "ac-6.5",
           "mode": "evidence-tier-with-rationale",
           "rationale": "Privileged group membership is customer environment state, not source-only evidence.",
-          "status": "present",
+          "status": "absent",
           "validation": "least-privilege"
         },
         {
@@ -73,50 +73,50 @@
           "controlId": "ac-6.9",
           "mode": "evidence-tier-with-rationale",
           "rationale": "Requires audit witness on privileged-function call sites plus least-privilege evidence.",
-          "status": "present",
+          "status": "absent",
           "validation": "least-privilege"
         },
         {
           "controlId": "ac-6.10",
           "mode": "validation-resolved",
-          "status": "present",
+          "status": "absent",
           "validation": "least-privilege"
         },
         {
           "controlId": "ac-7",
           "mode": "validation-resolved",
-          "status": "absent",
+          "status": "present",
           "validation": "access-enforcement"
         },
         {
           "controlId": "ac-11",
           "mode": "evidence-tier-with-rationale",
           "rationale": "Session-timeout values live in deployment config; source-pattern coverage is partial.",
-          "status": "present",
+          "status": "absent",
           "validation": "session-management"
         },
         {
           "controlId": "ac-12",
           "mode": "validation-resolved",
-          "status": "present",
+          "status": "absent",
           "validation": "session-management"
         },
         {
           "controlId": "ac-17",
           "mode": "validation-resolved",
-          "status": "gap",
+          "status": "absent",
           "validation": "transmission-encryption"
         },
         {
           "controlId": "ac-17.2",
           "mode": "validation-resolved",
-          "status": "gap",
+          "status": "absent",
           "validation": "transmission-encryption"
         },
         {
           "controlId": "ac-17.8",
           "mode": "validation-resolved",
-          "status": "gap",
+          "status": "absent",
           "validation": "transmission-encryption"
         },
         {
@@ -241,13 +241,13 @@
           "controlId": "cm-5",
           "mode": "evidence-tier-with-rationale",
           "rationale": "Access restrictions for change need repository permissions and deployment policy evidence.",
-          "status": "present",
+          "status": "absent",
           "validation": "least-privilege"
         },
         {
           "controlId": "cm-6",
           "mode": "validation-resolved",
-          "status": "absent",
+          "status": "partial",
           "validation": "configuration-defaults-safety"
         },
         {
@@ -325,14 +325,14 @@
           "controlId": "ia-2.1",
           "mode": "evidence-tier-with-rationale",
           "rationale": "Multifactor authentication for privileged accounts requires IdP configuration evidence.",
-          "status": "partial",
+          "status": "absent",
           "validation": "mfa-required"
         },
         {
           "controlId": "ia-2.2",
           "mode": "evidence-tier-with-rationale",
           "rationale": "Multifactor authentication for non-privileged accounts requires IdP configuration evidence.",
-          "status": "partial",
+          "status": "absent",
           "validation": "mfa-required"
         },
         {
@@ -455,13 +455,13 @@
         {
           "controlId": "sc-8",
           "mode": "validation-resolved",
-          "status": "gap",
+          "status": "absent",
           "validation": "transmission-encryption"
         },
         {
           "controlId": "sc-8.1",
           "mode": "validation-resolved",
-          "status": "gap",
+          "status": "absent",
           "validation": "transmission-encryption"
         },
         {
@@ -473,7 +473,7 @@
         {
           "controlId": "sc-13",
           "mode": "validation-resolved",
-          "status": "gap",
+          "status": "absent",
           "validation": "cryptographic-strength"
         },
         {
@@ -491,7 +491,7 @@
         {
           "controlId": "sc-23",
           "mode": "validation-resolved",
-          "status": "present",
+          "status": "absent",
           "validation": "session-management"
         },
         {
@@ -736,5 +736,5 @@
   ],
   "totalControls": 103,
   "totalFamilies": 9,
-  "totalPresent": 11
+  "totalPresent": 6
 }

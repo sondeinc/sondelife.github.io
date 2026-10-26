@@ -1,9 +1,47 @@
 window.__SCRIBE_SOURCE_SNIPPETS__ = [
   {
     "anchorId": "source-swiftui-missing-image-label",
-    "code": "struct SondeDogfoodSwiftUIImageMissingLabel: View {\n  var body: some View {\n    HStack {\n      Image(systemName: \"person.crop.circle.badge.exclamationmark\")\n        .font(.title2)\n      Text(\"Profile alert\")\n    }\n  }\n}",
+    "body": {
+      "code": "struct SondeSiriusSwiftUIImageMissingLabel: View {\n  var body: some View {\n    HStack {\n      Image(systemName: \"person.crop.circle.badge.exclamationmark\")\n        .font(.title2)\n      Text(\"Profile alert\")\n    }\n  }\n}",
+      "kind": "snippet"
+    },
     "endLine": 12,
     "label": {
+      "catalogDependency": {
+        "explicitLocales": [
+          "es-US"
+        ],
+        "lookupLocales": [
+          "en-US",
+          "en-GB",
+          "en-CA",
+          "fr-CA",
+          "en-IN",
+          "cy-GB",
+          "gd-GB",
+          "ga-GB",
+          "es-US",
+          "es-MX",
+          "de-DE",
+          "fr-FR",
+          "es-ES",
+          "it-IT",
+          "nl-NL",
+          "pl-PL",
+          "pt-PT",
+          "pt-BR",
+          "ro-RO",
+          "sv-SE",
+          "ko-KR",
+          "zh-CN",
+          "ja-JP",
+          "hi-IN"
+        ],
+        "reportFallbacks": {
+          "ja-JP": "{framework} のソース証拠"
+        },
+        "sourceLocale": "en-US"
+      },
       "defaultLocale": "en-US",
       "defaultText": "{framework} source evidence",
       "icuArgs": {
@@ -26,13 +64,51 @@ window.__SCRIBE_SOURCE_SNIPPETS__ = [
     "sourcePath": "packages/cockpit-mobile/src/commonMain/resources/mobileA11yFixtures/swiftUiMissingImageLabel.swift",
     "startLine": 4,
     "vcsPermalink": "https://github.com/sondeinc/sonde/blob/main/packages/cockpit-mobile/src/commonMain/resources/mobileA11yFixtures/swiftUiMissingImageLabel.swift#L4-L12",
-    "verifiedSourceHash": "sha256:c9bf5b764bac6ed0f6544f7ce02068714ead944981a12f1ad82ac5dccbc6709a"
+    "verifiedSourceHash": "sha256:a3f99270d2779d1dbea83fe5036afe98045de66034482f4c29fbc0245984ec13"
   },
   {
     "anchorId": "source-1-runtime-scan-found-symbolic-accessible-name",
-    "code": "@Composable\nprivate fun StaticDogfoodSeedAction() {\n  IconButton(\n    onClick = {},\n    modifier = Modifier.testTag(SondeMobileTestTags.StaticDogfoodSeedAction),\n  ) {\n    // Intentional Phase 9 M2 dogfood seed: symbolic text is not a durable accessible name.\n    Text(\"!\")\n  }\n}",
-    "endLine": 499,
+    "body": {
+      "code": "@Composable\nfun ComposeSymbolicActionFixture() {\n  IconButton(\n    onClick = {},\n    modifier = Modifier.testTag(SondeMobileTestTags.StaticSiriusFixtureAction),\n  ) {\n    Text(\"!\")\n  }\n}",
+      "kind": "snippet"
+    },
+    "endLine": 23,
     "label": {
+      "catalogDependency": {
+        "explicitLocales": [
+          "es-US"
+        ],
+        "lookupLocales": [
+          "en-US",
+          "en-GB",
+          "en-CA",
+          "fr-CA",
+          "en-IN",
+          "cy-GB",
+          "gd-GB",
+          "ga-GB",
+          "es-US",
+          "es-MX",
+          "de-DE",
+          "fr-FR",
+          "es-ES",
+          "it-IT",
+          "nl-NL",
+          "pl-PL",
+          "pt-PT",
+          "pt-BR",
+          "ro-RO",
+          "sv-SE",
+          "ko-KR",
+          "zh-CN",
+          "ja-JP",
+          "hi-IN"
+        ],
+        "reportFallbacks": {
+          "ja-JP": "{framework} のソース証拠"
+        },
+        "sourceLocale": "en-US"
+      },
       "defaultLocale": "en-US",
       "defaultText": "{framework} source evidence",
       "icuArgs": {
@@ -52,16 +128,54 @@ window.__SCRIBE_SOURCE_SNIPPETS__ = [
     "language": "kotlin",
     "pagePath": "findings/finding-missing-alt/index.html",
     "snippetId": "source-1-runtime-scan-found-symbolic-accessible-name",
-    "sourcePath": "packages/cockpit-mobile/src/commonMain/kotlin/sonde/mobile/ui/SondeMobileApp.kt",
-    "startLine": 490,
-    "vcsPermalink": "https://github.com/sondeinc/sonde/blob/main/packages/cockpit-mobile/src/commonMain/kotlin/sonde/mobile/ui/SondeMobileApp.kt#L490-L499",
-    "verifiedSourceHash": "sha256:d3f809d30d075c1a84f3bd7f296c4a0351a34b64bb0e2a107a9395bbdd2ca3a5"
+    "sourcePath": "packages/cockpit-mobile/src/commonMain/resources/mobileA11yFixtures/composeSymbolicAction.kt",
+    "startLine": 15,
+    "vcsPermalink": "https://github.com/sondeinc/sonde/blob/main/packages/cockpit-mobile/src/commonMain/resources/mobileA11yFixtures/composeSymbolicAction.kt#L15-L23",
+    "verifiedSourceHash": "sha256:141ea721efb91ebc9645932dc78908cd573dd114fbfde4b3df86d32aad5a8994"
   },
   {
     "anchorId": "source-2-runtime-scan-found-symbolic-accessible-name",
-    "code": "@Composable\nprivate fun StaticDogfoodSeedAction() {\n  IconButton(\n    onClick = {},\n    modifier = Modifier.testTag(SondeMobileTestTags.StaticDogfoodSeedAction),\n  ) {\n    // Intentional Phase 9 M2 dogfood seed: symbolic text is not a durable accessible name.\n    Text(\"!\")\n  }\n}",
-    "endLine": 499,
+    "body": {
+      "code": "@Composable\nfun ComposeSymbolicActionFixture() {\n  IconButton(\n    onClick = {},\n    modifier = Modifier.testTag(SondeMobileTestTags.StaticSiriusFixtureAction),\n  ) {\n    Text(\"!\")\n  }\n}",
+      "kind": "snippet"
+    },
+    "endLine": 23,
     "label": {
+      "catalogDependency": {
+        "explicitLocales": [
+          "es-US"
+        ],
+        "lookupLocales": [
+          "en-US",
+          "en-GB",
+          "en-CA",
+          "fr-CA",
+          "en-IN",
+          "cy-GB",
+          "gd-GB",
+          "ga-GB",
+          "es-US",
+          "es-MX",
+          "de-DE",
+          "fr-FR",
+          "es-ES",
+          "it-IT",
+          "nl-NL",
+          "pl-PL",
+          "pt-PT",
+          "pt-BR",
+          "ro-RO",
+          "sv-SE",
+          "ko-KR",
+          "zh-CN",
+          "ja-JP",
+          "hi-IN"
+        ],
+        "reportFallbacks": {
+          "ja-JP": "{framework} のソース証拠"
+        },
+        "sourceLocale": "en-US"
+      },
       "defaultLocale": "en-US",
       "defaultText": "{framework} source evidence",
       "icuArgs": {
@@ -81,16 +195,54 @@ window.__SCRIBE_SOURCE_SNIPPETS__ = [
     "language": "kotlin",
     "pagePath": "findings/finding-missing-alt/index.html",
     "snippetId": "source-2-runtime-scan-found-symbolic-accessible-name",
-    "sourcePath": "packages/cockpit-mobile/src/commonMain/kotlin/sonde/mobile/ui/SondeMobileApp.kt",
-    "startLine": 490,
-    "vcsPermalink": "https://github.com/sondeinc/sonde/blob/main/packages/cockpit-mobile/src/commonMain/kotlin/sonde/mobile/ui/SondeMobileApp.kt#L490-L499",
-    "verifiedSourceHash": "sha256:d3f809d30d075c1a84f3bd7f296c4a0351a34b64bb0e2a107a9395bbdd2ca3a5"
+    "sourcePath": "packages/cockpit-mobile/src/commonMain/resources/mobileA11yFixtures/composeSymbolicAction.kt",
+    "startLine": 15,
+    "vcsPermalink": "https://github.com/sondeinc/sonde/blob/main/packages/cockpit-mobile/src/commonMain/resources/mobileA11yFixtures/composeSymbolicAction.kt#L15-L23",
+    "verifiedSourceHash": "sha256:141ea721efb91ebc9645932dc78908cd573dd114fbfde4b3df86d32aad5a8994"
   },
   {
     "anchorId": "source-4-filter-control-target-is-below-android-minimum",
-    "code": "@Composable\nprivate fun CompactFilterChip(\n  selected: Boolean,\n  onClick: () -> Unit,\n  label: String,\n  modifier: Modifier = Modifier,\n) {\n  Surface(\n    modifier = modifier\n      .height(SondeMobileTokens.spacingMd * 2)\n      .clickable { onClick() }\n      .semantics {\n        role = Role.Button\n        contentDescription = label\n      },",
-    "endLine": 662,
+    "body": {
+      "code": "@Composable\nprivate fun CompactFilterChip(\n  selected: Boolean,\n  onClick: () -> Unit,\n  label: String,\n  modifier: Modifier = Modifier,\n) {\n  Surface(\n    modifier = modifier\n      .height(SondeMobileTokens.spacingMd * 2)\n      .clickable { onClick() }\n      .semantics {\n        role = Role.Button\n        contentDescription = label\n      },",
+      "kind": "snippet"
+    },
+    "endLine": 665,
     "label": {
+      "catalogDependency": {
+        "explicitLocales": [
+          "es-US"
+        ],
+        "lookupLocales": [
+          "en-US",
+          "en-GB",
+          "en-CA",
+          "fr-CA",
+          "en-IN",
+          "cy-GB",
+          "gd-GB",
+          "ga-GB",
+          "es-US",
+          "es-MX",
+          "de-DE",
+          "fr-FR",
+          "es-ES",
+          "it-IT",
+          "nl-NL",
+          "pl-PL",
+          "pt-PT",
+          "pt-BR",
+          "ro-RO",
+          "sv-SE",
+          "ko-KR",
+          "zh-CN",
+          "ja-JP",
+          "hi-IN"
+        ],
+        "reportFallbacks": {
+          "ja-JP": "{framework} のソース証拠"
+        },
+        "sourceLocale": "en-US"
+      },
       "defaultLocale": "en-US",
       "defaultText": "{framework} source evidence",
       "icuArgs": {
@@ -111,15 +263,53 @@ window.__SCRIBE_SOURCE_SNIPPETS__ = [
     "pagePath": "findings/finding-missing-alt/index.html",
     "snippetId": "source-4-filter-control-target-is-below-android-minimum",
     "sourcePath": "packages/cockpit-mobile/src/commonMain/kotlin/sonde/mobile/ui/SondeMobileApp.kt",
-    "startLine": 648,
-    "vcsPermalink": "https://github.com/sondeinc/sonde/blob/main/packages/cockpit-mobile/src/commonMain/kotlin/sonde/mobile/ui/SondeMobileApp.kt#L648-L662",
+    "startLine": 651,
+    "vcsPermalink": "https://github.com/sondeinc/sonde/blob/main/packages/cockpit-mobile/src/commonMain/kotlin/sonde/mobile/ui/SondeMobileApp.kt#L651-L665",
     "verifiedSourceHash": "sha256:2dfe92109623bdf10498f88031f30bc0e3eba73be7eef54c479f78266fddac5e"
   },
   {
     "anchorId": "source-5-finding-group-heading-can-truncate-under-ios-dynamic-type",
-    "code": "    groups.forEach { group ->\n      item {\n        Text(\n          \"${severityGlyph(group.severity)} ${group.severity.name} findings requiring mobile cockpit review\",\n          modifier = Modifier.testTag(\"${SondeMobileTestTags.FindingSeverityGroupPrefix}${group.severity.name}\"),\n          style = MaterialTheme.typography.titleMedium,\n          maxLines = 1,\n          overflow = TextOverflow.Ellipsis,\n        )",
-    "endLine": 538,
+    "body": {
+      "code": "    groups.forEach { group ->\n      item {\n        Text(\n          \"${severityGlyph(group.severity)} ${group.severity.name} findings requiring mobile cockpit review\",\n          modifier = Modifier.testTag(\"${SondeMobileTestTags.FindingSeverityGroupPrefix}${group.severity.name}\"),\n          style = MaterialTheme.typography.titleMedium,\n          maxLines = 1,\n          overflow = TextOverflow.Ellipsis,\n        )",
+      "kind": "snippet"
+    },
+    "endLine": 541,
     "label": {
+      "catalogDependency": {
+        "explicitLocales": [
+          "es-US"
+        ],
+        "lookupLocales": [
+          "en-US",
+          "en-GB",
+          "en-CA",
+          "fr-CA",
+          "en-IN",
+          "cy-GB",
+          "gd-GB",
+          "ga-GB",
+          "es-US",
+          "es-MX",
+          "de-DE",
+          "fr-FR",
+          "es-ES",
+          "it-IT",
+          "nl-NL",
+          "pl-PL",
+          "pt-PT",
+          "pt-BR",
+          "ro-RO",
+          "sv-SE",
+          "ko-KR",
+          "zh-CN",
+          "ja-JP",
+          "hi-IN"
+        ],
+        "reportFallbacks": {
+          "ja-JP": "{framework} のソース証拠"
+        },
+        "sourceLocale": "en-US"
+      },
       "defaultLocale": "en-US",
       "defaultText": "{framework} source evidence",
       "icuArgs": {
@@ -140,15 +330,53 @@ window.__SCRIBE_SOURCE_SNIPPETS__ = [
     "pagePath": "findings/finding-missing-alt/index.html",
     "snippetId": "source-5-finding-group-heading-can-truncate-under-ios-dynamic-type",
     "sourcePath": "packages/cockpit-mobile/src/commonMain/kotlin/sonde/mobile/ui/SondeMobileApp.kt",
-    "startLine": 530,
-    "vcsPermalink": "https://github.com/sondeinc/sonde/blob/main/packages/cockpit-mobile/src/commonMain/kotlin/sonde/mobile/ui/SondeMobileApp.kt#L530-L538",
+    "startLine": 533,
+    "vcsPermalink": "https://github.com/sondeinc/sonde/blob/main/packages/cockpit-mobile/src/commonMain/kotlin/sonde/mobile/ui/SondeMobileApp.kt#L533-L541",
     "verifiedSourceHash": "sha256:b69ec7eb5ef911f09a3ab4c236b63002ade800ebf17be1e9ff132092d400b71f"
   },
   {
     "anchorId": "source-6-mobile-brand-consistency-gap-color-drift",
-    "code": "@Composable\nprivate fun StaticDogfoodSeedAction() {\n  IconButton(\n    onClick = {},\n    modifier = Modifier.testTag(SondeMobileTestTags.StaticDogfoodSeedAction),\n  ) {\n    // Intentional Phase 9 M2 dogfood seed: symbolic text is not a durable accessible name.\n    Text(\"!\")\n  }\n}",
-    "endLine": 499,
+    "body": {
+      "code": "@Composable\nfun ComposeSymbolicActionFixture() {\n  IconButton(\n    onClick = {},\n    modifier = Modifier.testTag(SondeMobileTestTags.StaticSiriusFixtureAction),\n  ) {\n    Text(\"!\")\n  }\n}",
+      "kind": "snippet"
+    },
+    "endLine": 23,
     "label": {
+      "catalogDependency": {
+        "explicitLocales": [
+          "es-US"
+        ],
+        "lookupLocales": [
+          "en-US",
+          "en-GB",
+          "en-CA",
+          "fr-CA",
+          "en-IN",
+          "cy-GB",
+          "gd-GB",
+          "ga-GB",
+          "es-US",
+          "es-MX",
+          "de-DE",
+          "fr-FR",
+          "es-ES",
+          "it-IT",
+          "nl-NL",
+          "pl-PL",
+          "pt-PT",
+          "pt-BR",
+          "ro-RO",
+          "sv-SE",
+          "ko-KR",
+          "zh-CN",
+          "ja-JP",
+          "hi-IN"
+        ],
+        "reportFallbacks": {
+          "ja-JP": "{framework} のソース証拠"
+        },
+        "sourceLocale": "en-US"
+      },
       "defaultLocale": "en-US",
       "defaultText": "{framework} source evidence",
       "icuArgs": {
@@ -168,16 +396,54 @@ window.__SCRIBE_SOURCE_SNIPPETS__ = [
     "language": "kotlin",
     "pagePath": "findings/finding-missing-alt/index.html",
     "snippetId": "source-6-mobile-brand-consistency-gap-color-drift",
-    "sourcePath": "packages/cockpit-mobile/src/commonMain/kotlin/sonde/mobile/ui/SondeMobileApp.kt",
-    "startLine": 490,
-    "vcsPermalink": "https://github.com/sondeinc/sonde/blob/main/packages/cockpit-mobile/src/commonMain/kotlin/sonde/mobile/ui/SondeMobileApp.kt#L490-L499",
-    "verifiedSourceHash": "sha256:d3f809d30d075c1a84f3bd7f296c4a0351a34b64bb0e2a107a9395bbdd2ca3a5"
+    "sourcePath": "packages/cockpit-mobile/src/commonMain/resources/mobileA11yFixtures/composeSymbolicAction.kt",
+    "startLine": 15,
+    "vcsPermalink": "https://github.com/sondeinc/sonde/blob/main/packages/cockpit-mobile/src/commonMain/resources/mobileA11yFixtures/composeSymbolicAction.kt#L15-L23",
+    "verifiedSourceHash": "sha256:141ea721efb91ebc9645932dc78908cd573dd114fbfde4b3df86d32aad5a8994"
   },
   {
     "anchorId": "source-7-objective-c-uikit-image-is-missing-an-accessible-name",
-    "code": "- (void)configureDecorativeLookingAvatar {\n  UIImageView *avatarImageView = [[UIImageView alloc] init];\n  avatarImageView.isAccessibilityElement = YES;\n  avatarImageView.accessibilityTraits = UIAccessibilityTraitImage;\n  [avatarImageView.widthAnchor constraintEqualToConstant:44].active = YES;\n  [avatarImageView.heightAnchor constraintEqualToConstant:44].active = YES;\n}",
+    "body": {
+      "code": "- (void)configureDecorativeLookingAvatar {\n  UIImageView *avatarImageView = [[UIImageView alloc] init];\n  avatarImageView.isAccessibilityElement = YES;\n  avatarImageView.accessibilityTraits = UIAccessibilityTraitImage;\n  [avatarImageView.widthAnchor constraintEqualToConstant:44].active = YES;\n  [avatarImageView.heightAnchor constraintEqualToConstant:44].active = YES;\n}",
+      "kind": "snippet"
+    },
     "endLine": 15,
     "label": {
+      "catalogDependency": {
+        "explicitLocales": [
+          "es-US"
+        ],
+        "lookupLocales": [
+          "en-US",
+          "en-GB",
+          "en-CA",
+          "fr-CA",
+          "en-IN",
+          "cy-GB",
+          "gd-GB",
+          "ga-GB",
+          "es-US",
+          "es-MX",
+          "de-DE",
+          "fr-FR",
+          "es-ES",
+          "it-IT",
+          "nl-NL",
+          "pl-PL",
+          "pt-PT",
+          "pt-BR",
+          "ro-RO",
+          "sv-SE",
+          "ko-KR",
+          "zh-CN",
+          "ja-JP",
+          "hi-IN"
+        ],
+        "reportFallbacks": {
+          "ja-JP": "{framework} のソース証拠"
+        },
+        "sourceLocale": "en-US"
+      },
       "defaultLocale": "en-US",
       "defaultText": "{framework} source evidence",
       "icuArgs": {
@@ -204,9 +470,47 @@ window.__SCRIBE_SOURCE_SNIPPETS__ = [
   },
   {
     "anchorId": "source-8-hardcoded-english-accessibility-label",
-    "code": "import { Text } from 'react-native';\n\nexport function ReactNativeProfileStatus() {\n  return <Text accessibilityLabel=\"Profile status\" testID=\"profile.status\" />;\n}",
+    "body": {
+      "code": "import { Text } from 'react-native';\n\nexport function ReactNativeProfileStatus() {\n  return <Text accessibilityLabel=\"Profile status\" testID=\"profile.status\" />;\n}",
+      "kind": "snippet"
+    },
     "endLine": 6,
     "label": {
+      "catalogDependency": {
+        "explicitLocales": [
+          "es-US"
+        ],
+        "lookupLocales": [
+          "en-US",
+          "en-GB",
+          "en-CA",
+          "fr-CA",
+          "en-IN",
+          "cy-GB",
+          "gd-GB",
+          "ga-GB",
+          "es-US",
+          "es-MX",
+          "de-DE",
+          "fr-FR",
+          "es-ES",
+          "it-IT",
+          "nl-NL",
+          "pl-PL",
+          "pt-PT",
+          "pt-BR",
+          "ro-RO",
+          "sv-SE",
+          "ko-KR",
+          "zh-CN",
+          "ja-JP",
+          "hi-IN"
+        ],
+        "reportFallbacks": {
+          "ja-JP": "{framework} のソース証拠"
+        },
+        "sourceLocale": "en-US"
+      },
       "defaultLocale": "en-US",
       "defaultText": "{framework} source evidence",
       "icuArgs": {
@@ -233,9 +537,47 @@ window.__SCRIBE_SOURCE_SNIPPETS__ = [
   },
   {
     "anchorId": "source-9-image-element-is-missing-the-alt-attribute",
-    "code": "export function BadImage(): ReactElement {\n  return <img src=\"/logo.png\" />;\n}",
+    "body": {
+      "code": "export function BadImage(): ReactElement {\n  return <img src=\"/logo.png\" />;\n}",
+      "kind": "snippet"
+    },
     "endLine": 13,
     "label": {
+      "catalogDependency": {
+        "explicitLocales": [
+          "es-US"
+        ],
+        "lookupLocales": [
+          "en-US",
+          "en-GB",
+          "en-CA",
+          "fr-CA",
+          "en-IN",
+          "cy-GB",
+          "gd-GB",
+          "ga-GB",
+          "es-US",
+          "es-MX",
+          "de-DE",
+          "fr-FR",
+          "es-ES",
+          "it-IT",
+          "nl-NL",
+          "pl-PL",
+          "pt-PT",
+          "pt-BR",
+          "ro-RO",
+          "sv-SE",
+          "ko-KR",
+          "zh-CN",
+          "ja-JP",
+          "hi-IN"
+        ],
+        "reportFallbacks": {
+          "ja-JP": "{framework} のソース証拠"
+        },
+        "sourceLocale": "en-US"
+      },
       "defaultLocale": "en-US",
       "defaultText": "{framework} source evidence",
       "icuArgs": {
@@ -262,9 +604,47 @@ window.__SCRIBE_SOURCE_SNIPPETS__ = [
   },
   {
     "anchorId": "source-10-element-has-positive-tabindex-focus-order",
-    "code": "  </nav>\n  <img src=\"logo.png\">\n  <button tabindex=\"3\">Submit</button>\n</body>",
-    "endLine": 14,
+    "body": {
+      "code": "  </header>\n  <img src=\"logo.png\">\n  <button tabindex=\"3\">Submit</button>\n</body>",
+      "kind": "snippet"
+    },
+    "endLine": 16,
     "label": {
+      "catalogDependency": {
+        "explicitLocales": [
+          "es-US"
+        ],
+        "lookupLocales": [
+          "en-US",
+          "en-GB",
+          "en-CA",
+          "fr-CA",
+          "en-IN",
+          "cy-GB",
+          "gd-GB",
+          "ga-GB",
+          "es-US",
+          "es-MX",
+          "de-DE",
+          "fr-FR",
+          "es-ES",
+          "it-IT",
+          "nl-NL",
+          "pl-PL",
+          "pt-PT",
+          "pt-BR",
+          "ro-RO",
+          "sv-SE",
+          "ko-KR",
+          "zh-CN",
+          "ja-JP",
+          "hi-IN"
+        ],
+        "reportFallbacks": {
+          "ja-JP": "{framework} のソース証拠"
+        },
+        "sourceLocale": "en-US"
+      },
       "defaultLocale": "en-US",
       "defaultText": "{framework} source evidence",
       "icuArgs": {
@@ -285,9 +665,9 @@ window.__SCRIBE_SOURCE_SNIPPETS__ = [
     "pagePath": "findings/finding-missing-alt/index.html",
     "snippetId": "source-10-element-has-positive-tabindex-focus-order",
     "sourcePath": "packages/fix-apply/e2e/fixtures/wcagMechanicalHtml/index.html",
-    "startLine": 11,
-    "vcsPermalink": "https://github.com/sondeinc/sonde/blob/main/packages/fix-apply/e2e/fixtures/wcagMechanicalHtml/index.html#L11-L14",
-    "verifiedSourceHash": "sha256:96912e2abb10165a8ac346290099fd37910a96ef992de7d77ec5f57176e94bd7"
+    "startLine": 13,
+    "vcsPermalink": "https://github.com/sondeinc/sonde/blob/main/packages/fix-apply/e2e/fixtures/wcagMechanicalHtml/index.html#L13-L16",
+    "verifiedSourceHash": "sha256:cfc8e11508047d3a71d788146fa27823765ab9987463017828a23f76032dfbce"
   }
 ]
 ;

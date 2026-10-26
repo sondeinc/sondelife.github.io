@@ -5,6 +5,41 @@ window.__SCRIBE_SHARE_ACTIONS__ = [
     "hash": "finding-oscal-profile-intake",
     "href": "findings/finding-oscal-profile-intake/index.html#finding-oscal-profile-intake",
     "label": {
+      "catalogDependency": {
+        "explicitLocales": [
+          "es-US"
+        ],
+        "lookupLocales": [
+          "en-US",
+          "en-GB",
+          "en-CA",
+          "fr-CA",
+          "en-IN",
+          "cy-GB",
+          "gd-GB",
+          "ga-GB",
+          "es-US",
+          "es-MX",
+          "de-DE",
+          "fr-FR",
+          "es-ES",
+          "it-IT",
+          "nl-NL",
+          "pl-PL",
+          "pt-PT",
+          "pt-BR",
+          "ro-RO",
+          "sv-SE",
+          "ko-KR",
+          "zh-CN",
+          "ja-JP",
+          "hi-IN"
+        ],
+        "reportFallbacks": {
+          "ja-JP": "検出結果を共有"
+        },
+        "sourceLocale": "en-US"
+      },
       "defaultLocale": "en-US",
       "defaultText": "Share finding",
       "icuArgs": {},
@@ -135,6 +170,41 @@ window.__SCRIBE_SHARE_ACTIONS__ = [
       }
     },
     "summary": {
+      "catalogDependency": {
+        "explicitLocales": [
+          "es-US"
+        ],
+        "lookupLocales": [
+          "en-US",
+          "en-GB",
+          "en-CA",
+          "fr-CA",
+          "en-IN",
+          "cy-GB",
+          "gd-GB",
+          "ga-GB",
+          "es-US",
+          "es-MX",
+          "de-DE",
+          "fr-FR",
+          "es-ES",
+          "it-IT",
+          "nl-NL",
+          "pl-PL",
+          "pt-PT",
+          "pt-BR",
+          "ro-RO",
+          "sv-SE",
+          "ko-KR",
+          "zh-CN",
+          "ja-JP",
+          "hi-IN"
+        ],
+        "reportFallbacks": {
+          "ja-JP": "未対応の連邦パッケージ成果物を生成せず、検証済みの取り込み証拠を示します。"
+        },
+        "sourceLocale": "en-US"
+      },
       "defaultLocale": "en-US",
       "defaultText": "The report exposes validated Catalog/Profile intake evidence without fabricating unsupported federal package artifacts.",
       "icuArgs": {},
@@ -142,24 +212,154 @@ window.__SCRIBE_SHARE_ACTIONS__ = [
       "provenance": "template",
       "reviewState": "reviewed",
       "values": {
+        "cy-GB": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "Mae'r adroddiad yn datgelu tystiolaeth o fewnbwn Catalog/Proffil dilys heb greu arteffactau pecyn ffederal ni chynhelir."
+        },
+        "de-DE": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "Der Bericht legt validierte Belege der Katalog-/Profil-Aufnahme offen, ohne nicht unterstützte Artefakte von Bundespaketen zu fingieren."
+        },
+        "en-CA": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "The report exposes validated Catalog/Profile intake evidence without fabricating unsupported federal package artifacts."
+        },
+        "en-GB": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "The report exposes validated Catalog/Profile intake evidence without fabricating unsupported federal package artefacts."
+        },
+        "en-IN": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "The report exposes validated Catalog/Profile intake evidence without fabricating unsupported federal package artefacts."
+        },
         "en-US": {
           "fallback": false,
           "reviewed": true,
           "text": "The report exposes validated Catalog/Profile intake evidence without fabricating unsupported federal package artifacts."
+        },
+        "es-ES": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "El informe expone evidencias validadas de la ingesta de Catálogo/Perfil sin fabricar artefactos de paquetes federales no compatibles."
+        },
+        "es-MX": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "El informe expone evidencia validada de ingesta de Catálogo/Perfil sin fabricar artefactos de paquetes federales no compatibles."
         },
         "es-US": {
           "fallback": false,
           "reviewed": true,
           "text": "El informe expone evidencia validada de ingesta Catalog/Profile sin fabricar artefactos federales no compatibles."
         },
+        "fr-CA": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "Le rapport expose les preuves validées de prise en charge du catalogue/profil sans fabriquer d'artefacts de package fédéraux non pris en charge."
+        },
+        "fr-FR": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "Le rapport expose les preuves validées d'intégration du catalogue/profil sans fabriquer d'artefacts de packages fédéraux non supportés."
+        },
+        "hi-IN": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "यह रिपोर्ट बिना किसी असमर्थित फेडरल पैकेज आर्टिफैक्ट्स को गढ़े, वैलिडेट किए गए कैटलॉग/प्रोफ़ाइल इनटेक साक्ष्य को उजागर करती है।"
+        },
+        "it-IT": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "Il report espone prove validate di acquisizione Catalogo/Profilo senza fabbricare artefatti di pacchetti federali non supportati."
+        },
         "ja-JP": {
           "fallback": false,
           "reviewed": true,
-          "text": "未対応の連邦パッケージ成果物を生成せず、検証済みの取り込み証拠を示します。"
+          "text": "このレポートは、虚偽の連邦パッケージアーティファクトを作成することなく、検証済みのカタログ/プロファイル導入証拠を公開します。"
+        },
+        "ko-KR": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "이 보고서는 지원되지 않는 연방 패키지 아티팩트를 생성하지 않고 검증된 카탈로그/프로파일 인테이크 증거를 노출합니다."
+        },
+        "nl-NL": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "Het rapport toont gevalideerd bewijs van Catalog/Profile-inname zonder niet-ondersteunde federale pakketartefacten te fabriceren."
+        },
+        "pl-PL": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "Raport przedstawia zweryfikowane dowody przyjmowania Katalogu/Profilu bez fabrykowania nieobsługiwanych artefaktów pakietów federalnych."
+        },
+        "pt-BR": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "O relatório expõe evidências validadas de entrada de Catálogo/Perfil sem fabricar artefatos de pacotes federais não suportados."
+        },
+        "pt-PT": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "O relatório expõe evidências validadas da admissão de Catálogo/Perfil sem fabricar artefactos de pacotes federais não suportados."
+        },
+        "ro-RO": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "Raportul expune probele validate ale importului Catalog/Profil fără a fabrica artefacte de pachete federale nesusținute."
+        },
+        "sv-SE": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "Rapporten visar validerade bevis för intag av katalog/profil utan att fabricera icke-stödda federala paketartefakter."
+        },
+        "zh-CN": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "该报告展示了经过验证的目录/配置文件输入证据，且未伪造缺乏支持的联邦包工件。"
         }
       }
     },
     "title": {
+      "catalogDependency": {
+        "explicitLocales": [
+          "es-US"
+        ],
+        "lookupLocales": [
+          "en-US",
+          "en-GB",
+          "en-CA",
+          "fr-CA",
+          "en-IN",
+          "cy-GB",
+          "gd-GB",
+          "ga-GB",
+          "es-US",
+          "es-MX",
+          "de-DE",
+          "fr-FR",
+          "es-ES",
+          "it-IT",
+          "nl-NL",
+          "pl-PL",
+          "pt-PT",
+          "pt-BR",
+          "ro-RO",
+          "sv-SE",
+          "ko-KR",
+          "zh-CN",
+          "ja-JP",
+          "hi-IN"
+        ],
+        "reportFallbacks": {
+          "ja-JP": "OSCAL Catalog/Profile 取り込みは由来情報に紐づきます"
+        },
+        "sourceLocale": "en-US"
+      },
       "defaultLocale": "en-US",
       "defaultText": "OSCAL Catalog/Profile intake is provenance-bound",
       "icuArgs": {},

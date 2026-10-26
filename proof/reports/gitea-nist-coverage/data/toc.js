@@ -11,6 +11,41 @@ window.__SCRIBE_TOC__ = [
             "pagePath": "findings/finding-nist-coverage/index.html",
             "role": "source-snippet",
             "title": {
+              "catalogDependency": {
+                "explicitLocales": [
+                  "es-US"
+                ],
+                "lookupLocales": [
+                  "en-US",
+                  "en-GB",
+                  "en-CA",
+                  "fr-CA",
+                  "en-IN",
+                  "cy-GB",
+                  "gd-GB",
+                  "ga-GB",
+                  "es-US",
+                  "es-MX",
+                  "de-DE",
+                  "fr-FR",
+                  "es-ES",
+                  "it-IT",
+                  "nl-NL",
+                  "pl-PL",
+                  "pt-PT",
+                  "pt-BR",
+                  "ro-RO",
+                  "sv-SE",
+                  "ko-KR",
+                  "zh-CN",
+                  "ja-JP",
+                  "hi-IN"
+                ],
+                "reportFallbacks": {
+                  "ja-JP": "NIST カバレッジ解釈"
+                },
+                "sourceLocale": "en-US"
+              },
               "defaultLocale": "en-US",
               "defaultText": "NIST coverage interpretation",
               "icuArgs": {},
@@ -37,6 +72,41 @@ window.__SCRIBE_TOC__ = [
             "pagePath": "findings/finding-nist-coverage/index.html",
             "role": "diagram",
             "title": {
+              "catalogDependency": {
+                "explicitLocales": [
+                  "es-US"
+                ],
+                "lookupLocales": [
+                  "en-US",
+                  "en-GB",
+                  "en-CA",
+                  "fr-CA",
+                  "en-IN",
+                  "cy-GB",
+                  "gd-GB",
+                  "ga-GB",
+                  "es-US",
+                  "es-MX",
+                  "de-DE",
+                  "fr-FR",
+                  "es-ES",
+                  "it-IT",
+                  "nl-NL",
+                  "pl-PL",
+                  "pt-PT",
+                  "pt-BR",
+                  "ro-RO",
+                  "sv-SE",
+                  "ko-KR",
+                  "zh-CN",
+                  "ja-JP",
+                  "hi-IN"
+                ],
+                "reportFallbacks": {
+                  "ja-JP": "NIST ファミリーカバレッジマトリクス"
+                },
+                "sourceLocale": "en-US"
+              },
               "defaultLocale": "en-US",
               "defaultText": "NIST family coverage matrix",
               "icuArgs": {},
@@ -63,6 +133,37 @@ window.__SCRIBE_TOC__ = [
             "pagePath": "fix-plans/finding-nist-coverage/index.html",
             "role": "fix-plan",
             "title": {
+              "catalogDependency": {
+                "explicitLocales": [],
+                "lookupLocales": [
+                  "en-US",
+                  "en-GB",
+                  "en-CA",
+                  "fr-CA",
+                  "en-IN",
+                  "cy-GB",
+                  "gd-GB",
+                  "ga-GB",
+                  "es-US",
+                  "es-MX",
+                  "de-DE",
+                  "fr-FR",
+                  "es-ES",
+                  "it-IT",
+                  "nl-NL",
+                  "pl-PL",
+                  "pt-PT",
+                  "pt-BR",
+                  "ro-RO",
+                  "sv-SE",
+                  "ko-KR",
+                  "zh-CN",
+                  "ja-JP",
+                  "hi-IN"
+                ],
+                "reportFallbacks": {},
+                "sourceLocale": "en-US"
+              },
               "defaultLocale": "en-US",
               "defaultText": "Fix plan",
               "icuArgs": {},
@@ -87,6 +188,41 @@ window.__SCRIBE_TOC__ = [
         "pagePath": "findings/finding-nist-coverage/index.html",
         "role": "finding",
         "title": {
+          "catalogDependency": {
+            "explicitLocales": [
+              "es-US"
+            ],
+            "lookupLocales": [
+              "en-US",
+              "en-GB",
+              "en-CA",
+              "fr-CA",
+              "en-IN",
+              "cy-GB",
+              "gd-GB",
+              "ga-GB",
+              "es-US",
+              "es-MX",
+              "de-DE",
+              "fr-FR",
+              "es-ES",
+              "it-IT",
+              "nl-NL",
+              "pl-PL",
+              "pt-PT",
+              "pt-BR",
+              "ro-RO",
+              "sv-SE",
+              "ko-KR",
+              "zh-CN",
+              "ja-JP",
+              "hi-IN"
+            ],
+            "reportFallbacks": {
+              "ja-JP": "NIST コントロールには明示的な対応アーティファクト境界が必要です"
+            },
+            "sourceLocale": "en-US"
+          },
           "defaultLocale": "en-US",
           "defaultText": "NIST controls require explicit supported-artifact boundaries",
           "icuArgs": {},
@@ -111,6 +247,39 @@ window.__SCRIBE_TOC__ = [
     "pagePath": "index.html",
     "role": "section",
     "title": {
+      "catalogDependency": {
+        "explicitLocales": [],
+        "lookupLocales": [
+          "en-US",
+          "en-GB",
+          "en-CA",
+          "fr-CA",
+          "en-IN",
+          "cy-GB",
+          "gd-GB",
+          "ga-GB",
+          "es-US",
+          "es-MX",
+          "de-DE",
+          "fr-FR",
+          "es-ES",
+          "it-IT",
+          "nl-NL",
+          "pl-PL",
+          "pt-PT",
+          "pt-BR",
+          "ro-RO",
+          "sv-SE",
+          "ko-KR",
+          "zh-CN",
+          "ja-JP",
+          "hi-IN"
+        ],
+        "reportFallbacks": {
+          "ja-JP": "概要"
+        },
+        "sourceLocale": "en-US"
+      },
       "defaultLocale": "en-US",
       "defaultText": "Overview",
       "icuArgs": {},

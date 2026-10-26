@@ -14487,7 +14487,7 @@
         "artifactKind": "profile",
         "contentHash": "sha256:aca424c31a1c633758d22fc0cef6e80c43bd8300d01acd240b59c8318e0d4545",
         "excludedControlIds": [],
-        "hasOdps": false,
+        "hasOdps": true,
         "hasTailoring": true,
         "imports": [
           {
@@ -16902,7 +16902,7 @@
         "artifactKind": "profile",
         "contentHash": "sha256:c0e2b602c12456a307d8a36d35ec135d2b30e603a6e343082f565bde8d933305",
         "excludedControlIds": [],
-        "hasOdps": false,
+        "hasOdps": true,
         "hasTailoring": true,
         "imports": [
           {
@@ -18104,7 +18104,7 @@
         "artifactKind": "profile",
         "contentHash": "sha256:2466a03f41d7ce73aeafbb5632124edf2a5e473e70231e194ba8d3cb54ce0c7f",
         "excludedControlIds": [],
-        "hasOdps": false,
+        "hasOdps": true,
         "hasTailoring": true,
         "imports": [
           {
@@ -19306,7 +19306,7 @@
         "artifactKind": "profile",
         "contentHash": "sha256:9a31036e9f66e0d8cd9d15a981a9f956e9043562a882f44bd78048c7a86820e2",
         "excludedControlIds": [],
-        "hasOdps": false,
+        "hasOdps": true,
         "hasTailoring": true,
         "imports": [
           {
@@ -21369,7 +21369,7 @@
         "artifactKind": "profile",
         "contentHash": "sha256:ddbd7f04534ab74fb2092aef01b2ca9c604dc91a79edfc75656363370acc177e",
         "excludedControlIds": [],
-        "hasOdps": false,
+        "hasOdps": true,
         "hasTailoring": true,
         "imports": [
           {
@@ -23784,7 +23784,7 @@
         "artifactKind": "profile",
         "contentHash": "sha256:af90c4d937ff48de2f80d5bf36f05183617c9af0e82375b2dcadb2ea22ee40f9",
         "excludedControlIds": [],
-        "hasOdps": false,
+        "hasOdps": true,
         "hasTailoring": true,
         "imports": [
           {
@@ -24986,7 +24986,7 @@
         "artifactKind": "profile",
         "contentHash": "sha256:1fde6520976f8308c481d93b7ae222609bb987579251e0f5f213217586cef86a",
         "excludedControlIds": [],
-        "hasOdps": false,
+        "hasOdps": true,
         "hasTailoring": true,
         "imports": [
           {
@@ -26188,7 +26188,7 @@
         "artifactKind": "profile",
         "contentHash": "sha256:369e014a700854270842c09d16b57b980df663011a380417306ae0af92dc3c0e",
         "excludedControlIds": [],
-        "hasOdps": false,
+        "hasOdps": true,
         "hasTailoring": true,
         "imports": [
           {

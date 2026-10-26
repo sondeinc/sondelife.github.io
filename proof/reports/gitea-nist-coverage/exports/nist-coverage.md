@@ -4,7 +4,7 @@
 
 ## Summary
 
-11/103 controls present — Coverage 10.7%.
+6/103 controls present — Coverage 5.8%.
 
 ## Control families
 
@@ -12,24 +12,24 @@
 
 | Control | Status | Validation | Rationale |
 |---|---|---|---|
-| `AC-3` | Not satisfied | access-enforcement |  |
-| `AC-3.7` | Not satisfied | access-enforcement |  |
-| `AC-3.8` | Not satisfied | access-enforcement | Runtime revocation and route-level deny evidence require customer tenancy context. |
-| `AC-3.13` | Not satisfied | access-enforcement |  |
+| `AC-3` | Satisfied | access-enforcement |  |
+| `AC-3.7` | Satisfied | access-enforcement |  |
+| `AC-3.8` | Satisfied | access-enforcement | Runtime revocation and route-level deny evidence require customer tenancy context. |
+| `AC-3.13` | Satisfied | access-enforcement |  |
 | `AC-4` | Requires customer context | — | Information-flow enforcement needs parseable allowlist or boundary enforcement evidence. |
-| `AC-6` | Satisfied | least-privilege |  |
-| `AC-6.1` | Satisfied | least-privilege | Authorized access-to-security-functions review needs role inventory and operator policy. |
-| `AC-6.2` | Satisfied | least-privilege | Non-privileged account use needs identity-provider and break-glass procedure evidence. |
-| `AC-6.5` | Satisfied | least-privilege | Privileged group membership is customer environment state, not source-only evidence. |
+| `AC-6` | Not satisfied | least-privilege |  |
+| `AC-6.1` | Not satisfied | least-privilege | Authorized access-to-security-functions review needs role inventory and operator policy. |
+| `AC-6.2` | Not satisfied | least-privilege | Non-privileged account use needs identity-provider and break-glass procedure evidence. |
+| `AC-6.5` | Not satisfied | least-privilege | Privileged group membership is customer environment state, not source-only evidence. |
 | `AC-6.8` | Requires customer context | — | Privileged command auditing requires source audit instrumentation plus runtime command-policy evidence; source-only audit events do not prove privileged command analysis. |
-| `AC-6.9` | Satisfied | least-privilege | Requires audit witness on privileged-function call sites plus least-privilege evidence. |
-| `AC-6.10` | Satisfied | least-privilege |  |
-| `AC-7` | Not satisfied | access-enforcement |  |
-| `AC-11` | Satisfied | session-management | Session-timeout values live in deployment config; source-pattern coverage is partial. |
-| `AC-12` | Satisfied | session-management |  |
-| `AC-17` | Gap | transmission-encryption |  |
-| `AC-17.2` | Gap | transmission-encryption |  |
-| `AC-17.8` | Gap | transmission-encryption |  |
+| `AC-6.9` | Not satisfied | least-privilege | Requires audit witness on privileged-function call sites plus least-privilege evidence. |
+| `AC-6.10` | Not satisfied | least-privilege |  |
+| `AC-7` | Satisfied | access-enforcement |  |
+| `AC-11` | Not satisfied | session-management | Session-timeout values live in deployment config; source-pattern coverage is partial. |
+| `AC-12` | Not satisfied | session-management |  |
+| `AC-17` | Not satisfied | transmission-encryption |  |
+| `AC-17.2` | Not satisfied | transmission-encryption |  |
+| `AC-17.8` | Not satisfied | transmission-encryption |  |
 | `AC-18` | Requires customer context | — | Wireless access restrictions require deployment and device-management evidence. |
 
 ### AU — Audit and Accountability {#oscal-family-au}
@@ -56,8 +56,8 @@
 | `CM-2` | Requires customer context | — | Baseline configuration derives from declarative GitOps reconciliation (e.g. a Flux Kustomization pruning a committed source baseline) or otherwise needs committed manifests plus operator-approved baseline policy. |
 | `CM-3` | Requires customer context | — | Configuration change control needs VCS and approval workflow evidence. |
 | `CM-4` | Requires customer context | — | Impact analysis derives from blast-radius probe rather than a single validation. |
-| `CM-5` | Satisfied | least-privilege | Access restrictions for change need repository permissions and deployment policy evidence. |
-| `CM-6` | Not satisfied | configuration-defaults-safety |  |
+| `CM-5` | Not satisfied | least-privilege | Access restrictions for change need repository permissions and deployment policy evidence. |
+| `CM-6` | Partially satisfied | configuration-defaults-safety |  |
 | `CM-6.1` | Requires customer context | — | Automated configuration enforcement counts only a Kubernetes Namespace whose metadata.labels set pod-security.kubernetes.io/enforce to an enforcing Pod Security Admission level (restricted or baseline); audit/warn-only labels, the privileged no-op level, and Helm values without a Namespace kind remain customer deployment evidence. |
 | `CM-7` | Not satisfied | least-functionality |  |
 | `CM-7.1` | Requires customer context | — | Periodic review of allowed functions requires operator review cadence evidence. |
@@ -73,8 +73,8 @@
 | Control | Status | Validation | Rationale |
 |---|---|---|---|
 | `IA-2` | Not satisfied | auth-required |  |
-| `IA-2.1` | Partially satisfied | mfa-required | Multifactor authentication for privileged accounts requires IdP configuration evidence. |
-| `IA-2.2` | Partially satisfied | mfa-required | Multifactor authentication for non-privileged accounts requires IdP configuration evidence. |
+| `IA-2.1` | Not satisfied | mfa-required | Multifactor authentication for privileged accounts requires IdP configuration evidence. |
+| `IA-2.2` | Not satisfied | mfa-required | Multifactor authentication for non-privileged accounts requires IdP configuration evidence. |
 | `IA-2.6` | Not satisfied | auth-required | Network access to privileged accounts requires runtime access-policy evidence. |
 | `IA-2.8` | Not satisfied | auth-required | Replay-resistant authentication needs protocol and IdP configuration evidence. |
 | `IA-5` | Not satisfied | credential-storage-safety |  |
@@ -97,13 +97,13 @@
 | `SC-4` | Requires customer context | — | Information in shared system resources requires runtime isolation evidence. |
 | `SC-5` | Requires customer context | — | Denial-of-service protection requires perimeter and capacity evidence. |
 | `SC-7` | Requires customer context | — | Boundary protection requires network architecture and ingress policy evidence. |
-| `SC-8` | Gap | transmission-encryption |  |
-| `SC-8.1` | Gap | transmission-encryption |  |
+| `SC-8` | Not satisfied | transmission-encryption |  |
+| `SC-8.1` | Not satisfied | transmission-encryption |  |
 | `SC-12` | Requires customer context | — | Cryptographic key establishment needs key-management lifecycle evidence. |
-| `SC-13` | Gap | cryptographic-strength |  |
+| `SC-13` | Not satisfied | cryptographic-strength |  |
 | `SC-13.1` | Requires customer context | — | FIPS-validated cryptography needs module inventory and validation evidence. |
 | `SC-17` | Requires customer context | — | Public key infrastructure certificates count only declarative cert-manager source of truth: a Certificate resource with an issuerRef, a managed secretName, and a subject identity (commonName/dnsNames/uris/ipAddresses), or an Issuer/ClusterIssuer with a configured backend (selfSigned/ca/acme/vault/venafi). Trust-anchor approval, CA accreditation, and approved-service-provider facts remain customer/policy evidence. |
-| `SC-23` | Satisfied | session-management |  |
+| `SC-23` | Not satisfied | session-management |  |
 | `SC-28` | Not satisfied | data-at-rest-encryption |  |
 | `SC-28.1` | Not satisfied | data-at-rest-encryption |  |
 | `SC-39` | Requires customer context | — | Process isolation counts only fully hardened workload securityContext source evidence (runAsNonRoot, allowPrivilegeEscalation:false, readOnlyRootFilesystem, dropped ALL capabilities, and a seccomp profile); broader runtime-sandbox posture remains customer deployment evidence. |

@@ -1,8 +1,13 @@
 window.__SCRIBE_LOCALES__ = window.__SCRIBE_LOCALES__ || {};
 window.__SCRIBE_LOCALES__["ro-RO"] = {
-  "fallbackCount": 6,
+  "fallbackCount": 13,
   "locale": "ro-RO",
   "messages": {
+    "scribe.leaderboard.language": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Limbă"
+    },
     "scribe.report.action.backToFinding": {
       "fallback": false,
       "reviewed": true,
@@ -27,6 +32,11 @@ window.__SCRIBE_LOCALES__["ro-RO"] = {
       "fallback": false,
       "reviewed": true,
       "text": "Restrânge fragmentul"
+    },
+    "scribe.report.action.completeFixPlan": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Completează planul de remediere"
     },
     "scribe.report.action.copyDiagramLink": {
       "fallback": false,
@@ -138,6 +148,36 @@ window.__SCRIBE_LOCALES__["ro-RO"] = {
       "reviewed": true,
       "text": "Vizualizează sursa diagramei"
     },
+    "scribe.report.actionPriorities.affectedLocations": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "{count, plural, one {# locație afectată} other {# locații afectate}}"
+    },
+    "scribe.report.actionPriorities.nextAction": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Următoarea acțiune"
+    },
+    "scribe.report.actionPriorities.originalEvidence": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Vezi proba originală"
+    },
+    "scribe.report.actionPriorities.summary": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Aceste priorități combină impactul, amploarea și probele disponibile. Începeți de sus, apoi deschideți locațiile afectate pentru detalii tehnice."
+    },
+    "scribe.report.actionPriorities.title": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Ce să reparați mai întâi"
+    },
+    "scribe.report.actionPriorities.why": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "De ce este important acest lucru"
+    },
     "scribe.report.asset.export.markdown": {
       "fallback": false,
       "reviewed": true,
@@ -187,6 +227,26 @@ window.__SCRIBE_LOCALES__["ro-RO"] = {
       "fallback": false,
       "reviewed": true,
       "text": "Tema Ultraviolet"
+    },
+    "scribe.report.autofixFilter.fullExplanation": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Explicație completă"
+    },
+    "scribe.report.autofixFilter.help": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Numărătoarea reflectă căutarea și filtrele actuale. O previzualizare prezintă o modificare generată. Aceasta nu confirmă faptul că modificarea a fost aplicată sau verificată."
+    },
+    "scribe.report.autofixFilter.label": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Rezultate Autofix"
+    },
+    "scribe.report.autofixFilter.preview": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Previzualizări Autofix"
     },
     "scribe.report.brand": {
       "fallback": false,
@@ -258,10 +318,20 @@ window.__SCRIBE_LOCALES__["ro-RO"] = {
       "reviewed": true,
       "text": "Capabilitate ORM și bază de date"
     },
+    "scribe.report.complianceEvidence.criterion": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "{criterion}"
+    },
     "scribe.report.complianceExample.source.summary": {
       "fallback": false,
       "reviewed": true,
       "text": "{sourcePath} L{startLine}-L{endLine}"
+    },
+    "scribe.report.context.title": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Mai multe informații"
     },
     "scribe.report.control.allClassifications": {
       "fallback": false,
@@ -303,6 +373,16 @@ window.__SCRIBE_LOCALES__["ro-RO"] = {
       "reviewed": true,
       "text": "Cuprins"
     },
+    "scribe.report.control.emptyPlan": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Nu este disponibil niciun conținut structurat pentru plan."
+    },
+    "scribe.report.control.evictedPlan": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Conținutul planului a fost eliberat. Redeschideți planul pentru a-l încărca din nou."
+    },
     "scribe.report.control.expandContents": {
       "fallback": false,
       "reviewed": true,
@@ -318,10 +398,10 @@ window.__SCRIBE_LOCALES__["ro-RO"] = {
       "reviewed": true,
       "text": "În primul rând"
     },
-    "scribe.report.control.language": {
+    "scribe.report.control.guidance": {
       "fallback": false,
       "reviewed": true,
-      "text": "Limbă"
+      "text": "Ghidaj"
     },
     "scribe.report.control.languageSearch": {
       "fallback": false,
@@ -332,6 +412,11 @@ window.__SCRIBE_LOCALES__["ro-RO"] = {
       "fallback": false,
       "reviewed": true,
       "text": "Ultima"
+    },
+    "scribe.report.control.loadingPlan": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Se încarcă planul de remediere…"
     },
     "scribe.report.control.locale": {
       "fallback": false,
@@ -348,6 +433,11 @@ window.__SCRIBE_LOCALES__["ro-RO"] = {
       "reviewed": true,
       "text": "Următorul"
     },
+    "scribe.report.control.outsideResults": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "În afara rezultatelor actuale"
+    },
     "scribe.report.control.pageSize": {
       "fallback": false,
       "reviewed": true,
@@ -357,6 +447,11 @@ window.__SCRIBE_LOCALES__["ro-RO"] = {
       "fallback": false,
       "reviewed": true,
       "text": "Pagina"
+    },
+    "scribe.report.control.pinContents": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Fixează navigarea"
     },
     "scribe.report.control.previousPage": {
       "fallback": false,
@@ -368,6 +463,11 @@ window.__SCRIBE_LOCALES__["ro-RO"] = {
       "reviewed": true,
       "text": "Vizualizarea pentru cititor"
     },
+    "scribe.report.control.referenceMaterial": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Material de referință"
+    },
     "scribe.report.control.remediation": {
       "fallback": false,
       "reviewed": true,
@@ -377,6 +477,16 @@ window.__SCRIBE_LOCALES__["ro-RO"] = {
       "fallback": false,
       "reviewed": true,
       "text": "Rezultate"
+    },
+    "scribe.report.control.retryPlan": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Reîncărcați planul"
+    },
+    "scribe.report.control.returnToResults": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Înapoi la rezultate"
     },
     "scribe.report.control.search": {
       "fallback": false,
@@ -388,10 +498,20 @@ window.__SCRIBE_LOCALES__["ro-RO"] = {
       "reviewed": true,
       "text": "Severitate"
     },
+    "scribe.report.control.targetUnavailable": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Această destinație a raportului este indisponibilă"
+    },
     "scribe.report.control.theme": {
       "fallback": false,
       "reviewed": true,
       "text": "Temă"
+    },
+    "scribe.report.control.unavailablePlan": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Planul nu a putut fi încărcat. Deschideți planul complet sau reîncercați."
     },
     "scribe.report.facet.status.absent": {
       "fallback": false,
@@ -463,6 +583,66 @@ window.__SCRIBE_LOCALES__["ro-RO"] = {
       "reviewed": true,
       "text": "Reparare automată"
     },
+    "scribe.report.fixPlan.component.acceptanceCriteria": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Criterii de acceptare"
+    },
+    "scribe.report.fixPlan.component.beforeAfter": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Înainte / după (previzualizare auto-corecție)"
+    },
+    "scribe.report.fixPlan.component.closeFullScreen": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Închide"
+    },
+    "scribe.report.fixPlan.component.fixGroups": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Grupuri de remediere"
+    },
+    "scribe.report.fixPlan.component.fixed": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Fixat"
+    },
+    "scribe.report.fixPlan.component.fullScreen": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Diff ecran complet"
+    },
+    "scribe.report.fixPlan.component.manualSteps": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Pași de remediere manuală"
+    },
+    "scribe.report.fixPlan.component.original": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Original"
+    },
+    "scribe.report.fixPlan.component.source": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Sursă"
+    },
+    "scribe.report.fixPlan.component.splitView": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Împărțire"
+    },
+    "scribe.report.fixPlan.component.unifiedView": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Unificat"
+    },
+    "scribe.report.fixPlan.component.verify": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Verifică"
+    },
     "scribe.report.fixPlan.pageTitle": {
       "fallback": false,
       "reviewed": true,
@@ -477,6 +657,61 @@ window.__SCRIBE_LOCALES__["ro-RO"] = {
       "fallback": false,
       "reviewed": true,
       "text": "Ghid de remediere pentru constatările din acest raport."
+    },
+    "scribe.report.metric.displayedScale": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Scară afișată"
+    },
+    "scribe.report.metric.explanation": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Fiecare rând își afișează propriile benzi de referință ordonate și valoarea măsurată. Eticheta metricii precizează care direcție este mai bună."
+    },
+    "scribe.report.metric.higherIsBetter": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Mai mare este mai bine"
+    },
+    "scribe.report.metric.lowerIsBetter": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Mai mic este mai bine"
+    },
+    "scribe.report.metric.measured": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "măsurat"
+    },
+    "scribe.report.metric.measuredResults": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Rezultate măsurate"
+    },
+    "scribe.report.metric.referenceRanges": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Intervale de referință"
+    },
+    "scribe.report.metric.severity.critical": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Critic"
+    },
+    "scribe.report.metric.severity.good": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Bun"
+    },
+    "scribe.report.metric.severity.high": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Ridicat"
+    },
+    "scribe.report.metric.severity.moderate": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Moderată"
     },
     "scribe.report.mode.auto": {
       "fallback": false,
@@ -573,26 +808,6 @@ window.__SCRIBE_LOCALES__["ro-RO"] = {
       "reviewed": true,
       "text": "Forma depozitului"
     },
-    "scribe.report.repositoryHealth.finding.analysisIncomplete.criterion": {
-      "fallback": false,
-      "reviewed": true,
-      "text": "Scanările de sănătate ale depozitului necesită ca toate sondele și detectoarele de resurse selectate să se finalizeze curată."
-    },
-    "scribe.report.repositoryHealth.finding.analysisIncomplete.fix": {
-      "fallback": false,
-      "reviewed": true,
-      "text": "Remediați sondele eșuate înainte de a publica rezultatele cu care se confruntă clienții; avertismentele ar trebui să identifice mesajul detectorului și al excepției."
-    },
-    "scribe.report.repositoryHealth.finding.analysisIncomplete.summary": {
-      "fallback": false,
-      "reviewed": true,
-      "text": "Sonda (sondele) {failedProbeCount} a eșuat și a fost înregistrată (au fost înregistrate) o (unele) avertizare(ri) a(le) detectorului {detectorWarningCount}."
-    },
-    "scribe.report.repositoryHealth.finding.analysisIncomplete.title": {
-      "fallback": false,
-      "reviewed": true,
-      "text": "Analiza stării depozitului a avut o acoperire incompletă a sondei"
-    },
     "scribe.report.repositoryHealth.finding.complexity.criterion": {
       "fallback": false,
       "reviewed": true,
@@ -601,7 +816,7 @@ window.__SCRIBE_LOCALES__["ro-RO"] = {
     "scribe.report.repositoryHealth.finding.complexity.fix": {
       "fallback": false,
       "reviewed": true,
-      "text": "Împărțiți hotspot-ul în unități de decizie mai mici, păstrați comportamentul curent cu teste focalizate și re-executați raportul de stare înainte de a aplica curățarea automată."
+      "text": "Împărțiți {symbol} în unități de decizie mai mici, păstrați comportamentul curent cu teste focalizate și re-executați raportul de stare înainte de a aplica curățarea automată."
     },
     "scribe.report.repositoryHealth.finding.complexity.summary": {
       "fallback": false,
@@ -622,11 +837,6 @@ window.__SCRIBE_LOCALES__["ro-RO"] = {
       "fallback": false,
       "reviewed": true,
       "text": "Rezumatul stării de sănătate a depozitului public cu dovezi de acoperire susținute de sursă."
-    },
-    "scribe.report.repositoryHealth.finding.raw.criterion": {
-      "fallback": false,
-      "reviewed": true,
-      "text": "{criterion}"
     },
     "scribe.report.repositoryHealth.finding.raw.fix": {
       "fallback": false,
@@ -661,7 +871,7 @@ window.__SCRIBE_LOCALES__["ro-RO"] = {
     "scribe.report.repositoryHealth.finding.showcaseSampling.summary": {
       "fallback": false,
       "reviewed": true,
-      "text": "Acest showcase de capacități evidențiază cele mai înalte finding, până la o limită de {cap, number} finding — afișând {shown, number} din un total de {total, number} finding. Categorii eșantionate: {categories, list}."
+      "text": "Acest showcase de capacități evidențiază cele mai înalte constatări până la o limită de {cap, number} constatări — afișând {shown, number} din un total de {total, number} constatări. Categorii eșantionate: {categories, list}."
     },
     "scribe.report.repositoryHealth.finding.showcaseSampling.title": {
       "fallback": false,
@@ -677,41 +887,6 @@ window.__SCRIBE_LOCALES__["ro-RO"] = {
       "fallback": false,
       "reviewed": true,
       "text": "Scanarea stării depozitului are dovezi reutilizabile bazate pe sursă"
-    },
-    "scribe.report.repositoryHealth.fixPlan.codeHealth.step.extract": {
-      "fallback": false,
-      "reviewed": true,
-      "text": "Refactorizați intervalul citat în ordinea descrescătoare a riscului: împărțiți clusterele de decizii cu cea mai mare complexitate în ajutoare numite sau unități de decizie mai înguste, păstrând în același timp comportamentul."
-    },
-    "scribe.report.repositoryHealth.fixPlan.codeHealth.step.inspect": {
-      "fallback": false,
-      "reviewed": true,
-      "text": "Inspectați liniile {sourcePath} de la {startLine} la {endLine} și listați ramificațiile, buclele, căile de întoarcere timpurie și de excepție care determină complexitatea măsurată."
-    },
-    "scribe.report.repositoryHealth.fixPlan.codeHealth.step.validate": {
-      "fallback": false,
-      "reviewed": true,
-      "text": "Adăugați sau actualizați testele focalizate pentru ramurile modificate în liniile {startLine} până la {endLine}, rulați cele mai apropiate verificări de pachete, apoi regenerați raportul de sănătate al depozitului."
-    },
-    "scribe.report.repositoryHealth.fixPlan.generic.step.inspect": {
-      "fallback": false,
-      "reviewed": true,
-      "text": "Verificați intervalul sursă citat în {sourcePath} linii {startLine} prin {endLine}."
-    },
-    "scribe.report.repositoryHealth.fixPlan.generic.step.resolve": {
-      "fallback": false,
-      "reviewed": true,
-      "text": "Aplicați remedierea utilizând cea mai mică modificare a sursei care rezolvă constatarea."
-    },
-    "scribe.report.repositoryHealth.fixPlan.generic.step.validate": {
-      "fallback": false,
-      "reviewed": true,
-      "text": "Rerulați raportul de sănătate al depozitului și cele mai apropiate teste la nivel de pachet înainte de a publica remedierea."
-    },
-    "scribe.report.repositoryHealth.fixPlan.scope": {
-      "fallback": false,
-      "reviewed": true,
-      "text": "Intervalul sursă ţintă: {sourcePath} linii {startLine} prin {endLine}."
     },
     "scribe.report.repositoryHealth.overview.body": {
       "fallback": false,
@@ -743,6 +918,56 @@ window.__SCRIBE_LOCALES__["ro-RO"] = {
       "reviewed": true,
       "text": "Sonde Score"
     },
+    "scribe.report.repositoryHealth.sourceRow.apiEndpoints": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Puncte de terminal API"
+    },
+    "scribe.report.repositoryHealth.sourceRow.cicd": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "CI/CD"
+    },
+    "scribe.report.repositoryHealth.sourceRow.databaseModel": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Model de bază de date"
+    },
+    "scribe.report.repositoryHealth.sourceRow.frameworks": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Framework-uri"
+    },
+    "scribe.report.repositoryHealth.sourceRow.languages": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Limbi"
+    },
+    "scribe.report.repositoryHealth.sourceRow.otherRuntimeSurfaces": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Alte suprafețe de rulare"
+    },
+    "scribe.report.repositoryHealth.sourceRow.packagesAndBuild": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Pachete și build"
+    },
+    "scribe.report.repositoryHealth.sourceRow.resourceDetections": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Detectări de resurse"
+    },
+    "scribe.report.repositoryHealth.sourceRow.sondePerformance": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Performanța Sonde"
+    },
+    "scribe.report.repositoryHealth.sourceRow.source": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Sursă"
+    },
     "scribe.report.repositoryHealth.sourceSnippet.summary": {
       "fallback": false,
       "reviewed": true,
@@ -757,21 +982,6 @@ window.__SCRIBE_LOCALES__["ro-RO"] = {
       "fallback": false,
       "reviewed": true,
       "text": "Datele sursă privind sănătatea depozitului arată {sourceFileCount, number} fișiere sursă, {languageCount, number} limbaje, {packageManifestCount, number} manifesto de pachete, {buildConfigCount, number} configurații de build, {frameworkDetectionCount, number} detectări de resurse și {databaseSchemaCount, number} artefacte de schemă de bază de date."
-    },
-    "scribe.report.repositoryHealth.visualization.finding.controlFlow.alt": {
-      "fallback": false,
-      "reviewed": true,
-      "text": "Graficul fluxului de control pentru {subject} în {sourcePath} liniile {startLine} prin {endLine}."
-    },
-    "scribe.report.repositoryHealth.visualization.finding.controlFlow.title": {
-      "fallback": false,
-      "reviewed": true,
-      "text": "Graf de flux de control pentru {subject}"
-    },
-    "scribe.report.repositoryHealth.visualization.finding.description": {
-      "fallback": false,
-      "reviewed": true,
-      "text": "Diagrama este generată din {sourcePath} linii {startLine} prin {endLine} și evidențiază sursa-backed control-flux sau dovezi de schemă pentru descoperire."
     },
     "scribe.report.repositoryHealth.visualization.longDescription": {
       "fallback": false,
@@ -823,7 +1033,12 @@ window.__SCRIBE_LOCALES__["ro-RO"] = {
       "reviewed": true,
       "text": "Sursă"
     },
-    "scribe.report.term.primary": {
+    "scribe.report.term.repository-health.alias": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Raport de stare"
+    },
+    "scribe.report.term.repository-health.primary": {
       "fallback": false,
       "reviewed": true,
       "text": "Sănătatea repository-ului"
@@ -867,6 +1082,11 @@ window.__SCRIBE_LOCALES__["ro-RO"] = {
       "fallback": false,
       "reviewed": true,
       "text": "Nu a fost generat niciun artefact de vizualizare pentru această descoperire."
+    },
+    "scribe.report.visualization.visualization-repository-health.projection": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Datele sursei de stare a depozitului"
     },
     "settings.theme.daylight": {
       "fallback": false,

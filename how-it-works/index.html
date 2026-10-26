@@ -1,0 +1,1614 @@
+<!DOCTYPE html>
+<html lang="en-US" dir="ltr" data-theme="airglow" data-mode="dark">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="generator" content="sonde-scribe">
+  <meta name="description" content="Sonde checks the software your team ships — for accessibility, compliance, and quality — and shows you exactly what to fix." data-msg-content-id="sondeLife.metadata.description">
+  <link rel="canonical" href="https://sonde.tech/how-it-works/">
+  <script>(function () {
+  if ((function () { try { return window.self !== window.top && window.parent.location.origin === location.origin && new URLSearchParams(location.search).get('print') === '1'; } catch (_error) { return false; } })()) return;
+  var HOSTS = ["sonde.tech"];
+  var CODES = ["AT","BE","BG","HR","CY","CZ","DK","EE","FI","FR","DE","GR","HU","IE","IT","LV","LT","LU","MT","NL","PL","PT","RO","SK","SI","ES","SE","IS","LI","NO","GB","GP","MQ","GF","RE","YT","MF","AX","GI","GG","JE","IM"];
+  var CONSENT_KEY = "sonde-analytics-consent";
+  var COUNTRY_KEY = "sonde-analytics-country";
+  var OFF_TAB_NAME = "sonde-analytics-off";
+  var LIFETIME = 15811200000;
+  var BEACON_SRC = "https://static.cloudflareinsights.com/beacon.min.js";
+  var BEACON_CONFIG = "{\"token\":\"627dee06dbbf4bd1bced3148b304fca5\",\"spa\":true}";
+  var BANNER_SRC = "../assets/immutable/consent-banner.e5375b5fe93016c6.js";
+  var RESET_ATTRIBUTE = 'data-sonde-preferences-reset';
+  function insert(src, config) {
+    var script = document.createElement('script');
+    script.defer = true;
+    script.src = src;
+    if (config) script.setAttribute('data-cf-beacon', config);
+    document.head.appendChild(script);
+  }
+  // The banner script also installs the "reset remembered preferences" control, which every host needs; only
+  // analytics and the country lookup are limited to the listed hosts.
+  insert(BANNER_SRC, null);
+  if (HOSTS.indexOf(location.hostname) === -1) return;
+  var root = document.documentElement;
+  var beaconInserted = false;
+  var pending = null;
+  function loadBeacon() {
+    if (beaconInserted) return;
+    beaconInserted = true;
+    insert(BEACON_SRC, BEACON_CONFIG);
+  }
+  function needed() {
+    root.setAttribute('data-analytics-consent', 'needed');
+    document.dispatchEvent(new CustomEvent('sonde:analytics-consent-needed'));
+  }
+  function browserOff() {
+    return navigator.globalPrivacyControl === true || navigator.doNotTrack === '1';
+  }
+  function storedChoice() {
+    var record = null;
+    try { record = JSON.parse(localStorage.getItem(CONSENT_KEY)); } catch (e) { return null; }
+    var now = Date.now();
+    if (!record || typeof record !== 'object' || (record.choice !== 'allowed' && record.choice !== 'off')) return null;
+    if (typeof record.at !== 'number' || record.at > now || now - record.at > LIFETIME) return null;
+    return record.choice;
+  }
+  function knownCountry(code) {
+    return typeof code === 'string' && /^[A-Z]{2}$/.test(code) && code !== 'XX';
+  }
+  function withCountry(callback) {
+    var saved = null;
+    try { saved = sessionStorage.getItem(COUNTRY_KEY); } catch (e) { saved = null; }
+    if (saved) { callback(saved); return; }
+    if (pending) { pending.push(callback); return; }
+    pending = [callback];
+    var finished = false;
+    var controller = typeof AbortController === 'function' ? new AbortController() : null;
+    var timer = setTimeout(function () {
+      if (controller) controller.abort();
+      finish(null);
+    }, 3000);
+    function finish(code) {
+      if (finished) return;
+      finished = true;
+      clearTimeout(timer);
+      if (code) { try { sessionStorage.setItem(COUNTRY_KEY, code); } catch (e) { /* blocked store */ } }
+      var waiting = pending;
+      pending = null;
+      for (var i = 0; i < waiting.length; i++) waiting[i](code);
+    }
+    var init = { cache: 'no-store', credentials: 'omit' };
+    if (controller) init.signal = controller.signal;
+    try {
+      fetch('/cdn-cgi/trace', init)
+        .then(function (response) { return response.ok ? response.text() : ''; })
+        .then(function (text) {
+          var match = /^loc=([A-Z0-9]{2})$/m.exec(typeof text === 'string' ? text : '');
+          finish(match ? match[1] : null);
+        }, function () { finish(null); });
+    } catch (e) {
+      finish(null);
+    }
+  }
+  function check() {
+    if (browserOff()) return;
+    // An "off" the browser would not store, kept for this tab by the banner.
+    if (typeof name === 'string' && name === OFF_TAB_NAME) return;
+    var choice = storedChoice();
+    if (choice === 'off') return;
+    if (choice === 'allowed') {
+      if (!root.hasAttribute(RESET_ATTRIBUTE)) loadBeacon();
+      return;
+    }
+    withCountry(function (code) {
+      if (knownCountry(code) && CODES.indexOf(code) === -1) {
+        if (!root.hasAttribute(RESET_ATTRIBUTE)) loadBeacon();
+      } else {
+        needed();
+      }
+    });
+  }
+  document.addEventListener('sonde:analytics-consent-chosen', function (event) {
+    if (event.detail && event.detail.choice === 'allowed' && !browserOff()) loadBeacon();
+  });
+  window.sondeAnalytics = { check: check };
+  check();
+})();</script>
+  <title data-msg-id="sondeLife.metadata.how-it-works.title">How it works - Sonde</title>
+  <meta property="og:title" content="Sonde — Software That Understands Software" data-msg-content-id="sondeLife.metadata.how-it-works.title">
+  <meta property="og:description" content="Sonde checks the software your team ships — for accessibility, compliance, and quality — and shows you exactly what to fix." data-msg-content-id="sondeLife.metadata.description">
+  <meta property="og:image" content="https://sonde.tech/assets/media/og-sonde.bcedbdc6e4ec406d.png">
+  <meta property="og:url" content="https://sonde.tech/how-it-works/">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Sonde — Software That Understands Software" data-msg-content-id="sondeLife.metadata.how-it-works.title">
+  <meta name="twitter:description" content="Sonde checks the software your team ships — for accessibility, compliance, and quality — and shows you exactly what to fix." data-msg-content-id="sondeLife.metadata.description">
+  <meta name="twitter:image" content="https://sonde.tech/assets/media/og-sonde.bcedbdc6e4ec406d.png">
+  <link rel="icon" href="/favicon.ico" sizes="32x32">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link id="sonde-active-platform-theme" rel="stylesheet" href="../assets/immutable/theme-airglow.1c68f85145a8170b.css">
+  <link rel="stylesheet" href="../assets/immutable/style.46730863e33446bc.css">
+  <script src="../assets/immutable/navigation-rail.383c60fe9d907824.js" defer></script><script>(function () {
+  var LIFETIMES = {"sonde-locale":31536000000,"sonde-platform-theme":31536000000,"sonde-theme":31536000000,"sonde-settings-sections":31536000000,"sonde-motion":31536000000};
+  var OFFERED = {"sonde-locale":["en-US"],"sonde-platform-theme":["airglow","ultraviolet","infrared","high-contrast"],"sonde-theme":["auto","light","dark"],"sonde-motion":["normal","reduce","auto"]};
+  var CONSENT_KEY = "sonde-analytics-consent";
+  var CONSENT_LIFETIME = 15811200000;
+  var TIMES_KEY = "sonde-preference-times";
+  function store() { try { return window.localStorage; } catch (e) { return null; } }
+  function read(s, key) { try { return s.getItem(key); } catch (e) { return null; } }
+  function remove(s, key) { try { s.removeItem(key); } catch (e) { /* blocked store */ } }
+  function write(s, key, value) { try { s.setItem(key, value); } catch (e) { /* blocked store */ } }
+  function parse(raw) { try { return JSON.parse(raw); } catch (e) { return null; } }
+  function isRecord(value) { return value !== null && typeof value === 'object' && !Array.isArray(value); }
+  function sweep(now) {
+    var s = store();
+    if (!s) return;
+    var recorded = parse(read(s, TIMES_KEY) || 'null');
+    if (!isRecord(recorded)) recorded = {};
+    var next = {};
+    var kept = 0;
+    for (var key in LIFETIMES) {
+      var value = read(s, key);
+      if (value === null) continue;
+      if (OFFERED[key] && OFFERED[key].indexOf(value) === -1) { remove(s, key); continue; }
+      var entry = recorded[key];
+      var at = isRecord(entry) && entry.value === value && typeof entry.at === 'number' && entry.at <= now ? entry.at : now;
+      if (now - at > LIFETIMES[key]) { remove(s, key); continue; }
+      next[key] = { at: at, value: value };
+      kept++;
+    }
+    var rawConsent = read(s, CONSENT_KEY);
+    if (rawConsent !== null) {
+      var consent = parse(rawConsent);
+      var valid = isRecord(consent) && (consent.choice === 'allowed' || consent.choice === 'off') &&
+        typeof consent.at === 'number' && consent.at <= now && now - consent.at <= CONSENT_LIFETIME;
+      if (!valid) remove(s, CONSENT_KEY);
+    }
+    if (kept > 0) write(s, TIMES_KEY, JSON.stringify(next));
+    else remove(s, TIMES_KEY);
+  }
+  sweep(Date.now());
+  if (window.addEventListener) window.addEventListener('pagehide', function () { sweep(Date.now()); });
+})();
+(function () {
+  var THEME_KEY = "sonde-theme";
+  var LOCALE_KEY = "sonde-locale";
+  var MOTION_KEY = "sonde-motion";
+  var SETTINGS_SECTIONS_KEY = "sonde-settings-sections";
+  var VALID_THEMES = ["auto","light","dark"];
+  var VALID_MOTION = ["normal","reduce","auto"];
+  var THEME_ATTRIBUTE = "data-mode";
+  var REMOVE_THEME_ATTRIBUTE_ON_AUTO = true;
+  var CLOSE_DROPDOWN_ON_SELECT = false;
+  var DEFAULT_MODE = "dark";
+  var el = document.documentElement;
+  var mm = window.matchMedia;
+  var darkMq = mm && mm('(prefers-color-scheme: dark)');
+  var motionMq = mm && mm('(prefers-reduced-motion: reduce)');
+
+  function safeRead(key) {
+    try { return window.localStorage.getItem(key); } catch (e) { return null; }
+  }
+  function safeWrite(key, value) {
+    try { window.localStorage.setItem(key, value); } catch (e) { /* quota / private mode */ }
+  }
+  function certificationParam(name) {
+    try { return new URL(window.location.href).searchParams.get(name); } catch (e) { return null; }
+  }
+  function readAll() {
+    try {
+      var ls = window.localStorage;
+      return { t: ls.getItem(THEME_KEY), l: ls.getItem(LOCALE_KEY), m: ls.getItem(MOTION_KEY) };
+    } catch (e) { return { t: null, l: null, m: null }; }
+  }
+
+  function resolveTheme(stored) {
+    if (VALID_THEMES.indexOf(stored || '') !== -1 && stored !== 'auto') return stored;
+    return darkMq && darkMq.matches ? 'dark' : 'light';
+  }
+  function resolveMotion(stored) {
+    if (stored === 'normal' || stored === 'reduce') return stored;
+    return motionMq && motionMq.matches ? 'reduce' : 'normal';
+  }
+
+  function applyTheme(stored) {
+    if (stored !== 'auto' && VALID_THEMES.indexOf(stored || '') === -1) stored = DEFAULT_MODE;
+    if (REMOVE_THEME_ATTRIBUTE_ON_AUTO && (stored === 'auto' || VALID_THEMES.indexOf(stored || '') === -1)) {
+      el.removeAttribute(THEME_ATTRIBUTE);
+      syncThemePreviewMode(stored);
+      return;
+    }
+    el.setAttribute(THEME_ATTRIBUTE, resolveTheme(stored));
+    syncThemePreviewMode(stored);
+  }
+  function syncThemePreviewMode(stored) {
+    var explicitMode = stored === 'light' || stored === 'dark' ? stored : '';
+    var previews = document.querySelectorAll('.settings-platform-theme-option .theme-preview[data-platform-theme]');
+    for (var previewIndex = 0; previewIndex < previews.length; previewIndex++) {
+      if (explicitMode) previews[previewIndex].setAttribute('data-mode', explicitMode);
+      else previews[previewIndex].removeAttribute('data-mode');
+    }
+  }
+  function applyMotion(stored) { el.setAttribute('data-motion', resolveMotion(stored)); }
+  function applyLocale(stored) {
+    if (typeof stored === 'string' && stored.length > 0) el.setAttribute('lang', stored);
+  }
+
+  var PLATFORM_THEME_KEY = "sonde-platform-theme";
+  var PLATFORM_THEME_LINK_ID = "sonde-active-platform-theme";
+  var PLATFORM_THEME_HREFS = {"airglow":"../assets/immutable/theme-airglow.1c68f85145a8170b.css","ultraviolet":"../assets/immutable/theme-ultraviolet.b8925766fdfdab46.css","infrared":"../assets/immutable/theme-infrared.9789fb6eae62141a.css","high-contrast":"../assets/immutable/theme-high-contrast.0afc0c2fb8c46969.css"};
+  var PLATFORM_THEME_ATTRIBUTE = "data-theme";
+
+  function applyPlatformTheme(stored) {
+    if (typeof stored !== 'string') return;
+    var href = PLATFORM_THEME_HREFS[stored];
+    if (!href) return;
+    var link = document.getElementById(PLATFORM_THEME_LINK_ID);
+    if (!link) {
+      link = document.createElement('link');
+      link.id = PLATFORM_THEME_LINK_ID;
+      link.setAttribute('rel', 'stylesheet');
+      document.head.appendChild(link);
+    }
+    var absoluteHref = new URL(href, document.baseURI).href;
+    var currentHref = link.getAttribute('href');
+    var currentAbsoluteHref = currentHref ? new URL(currentHref, document.baseURI).href : null;
+    if (currentAbsoluteHref !== absoluteHref) link.setAttribute('href', href);
+    if (PLATFORM_THEME_ATTRIBUTE) el.setAttribute(PLATFORM_THEME_ATTRIBUTE, stored);
+  }
+  var certificationPlatformTheme = certificationParam('scan_theme');
+  applyPlatformTheme(PLATFORM_THEME_HREFS[certificationPlatformTheme] ? certificationPlatformTheme : safeRead(PLATFORM_THEME_KEY));
+
+
+  var prefs = readAll();
+  var certificationTheme = certificationParam('scan_theme_mode');
+  applyTheme(VALID_THEMES.indexOf(certificationTheme || '') !== -1 ? certificationTheme : prefs.t);
+  applyMotion(prefs.m);
+  applyLocale(certificationParam('scan_locale') || prefs.l);
+
+  if (darkMq && darkMq.addEventListener) {
+    darkMq.addEventListener('change', function () {
+      if (VALID_THEMES.indexOf(safeRead(THEME_KEY) || '') === -1) applyTheme(null);
+    });
+  }
+  if (motionMq && motionMq.addEventListener) {
+    motionMq.addEventListener('change', function () {
+      if (VALID_MOTION.indexOf(safeRead(MOTION_KEY) || '') === -1) applyMotion(null);
+    });
+  }
+
+  window.sondePrefs = {
+    getTheme: function () { return el.getAttribute(THEME_ATTRIBUTE) || 'light'; },
+    getMotion: function () { return el.getAttribute('data-motion') || 'normal'; },
+    setTheme: function (value) {
+      if (value === 'auto') { safeWrite(THEME_KEY, 'auto'); applyTheme('auto'); return; }
+      if (VALID_THEMES.indexOf(value) !== -1) { safeWrite(THEME_KEY, value); applyTheme(value); }
+    },
+    setMotion: function (value) {
+      if (value === 'auto') { safeWrite(MOTION_KEY, 'auto'); applyMotion(null); return; }
+      if (VALID_MOTION.indexOf(value) !== -1) { safeWrite(MOTION_KEY, value); applyMotion(value); }
+    },
+    setLocale: function (value) {
+      if (typeof value === 'string' && value.length > 0) safeWrite(LOCALE_KEY, value);
+    },
+  };
+
+  function initThemeControls() {
+    var activeTheme = safeRead(THEME_KEY) || DEFAULT_MODE;
+    if (VALID_THEMES.indexOf(activeTheme) === -1) activeTheme = DEFAULT_MODE;
+    var themeInputs = document.querySelectorAll('input[name="sonde-theme-toggle"]');
+    for (var i = 0; i < themeInputs.length; i++) {
+      var input = themeInputs[i];
+      if (input.value === activeTheme) input.checked = true;
+      input.addEventListener('change', function (event) {
+        if (!event.target.checked) return;
+        window.sondePrefs.setTheme(event.target.value);
+        if (CLOSE_DROPDOWN_ON_SELECT) closeSettingsDropdown(event.target);
+      });
+    }
+    syncThemePreviewMode(activeTheme);
+  }
+
+  function initPlatformThemeControls() {
+    var activePlatformTheme = safeRead(PLATFORM_THEME_KEY);
+    if (!PLATFORM_THEME_HREFS[activePlatformTheme]) {
+      var link = document.getElementById(PLATFORM_THEME_LINK_ID);
+      var currentHref = link && link.getAttribute('href') ? new URL(link.getAttribute('href'), document.baseURI).href : '';
+      for (var key in PLATFORM_THEME_HREFS) {
+        if (new URL(PLATFORM_THEME_HREFS[key], document.baseURI).href === currentHref) activePlatformTheme = key;
+      }
+    }
+    var platformInputs = document.querySelectorAll('input[name="sonde-platform-theme-toggle"]');
+    for (var p = 0; p < platformInputs.length; p++) {
+      var input = platformInputs[p];
+      if (input.value === activePlatformTheme) input.checked = true;
+      input.addEventListener('change', function (event) {
+        if (!event.target.checked || !PLATFORM_THEME_HREFS[event.target.value]) return;
+        safeWrite(PLATFORM_THEME_KEY, event.target.value);
+        applyPlatformTheme(event.target.value);
+        if (CLOSE_DROPDOWN_ON_SELECT) closeSettingsDropdown(event.target);
+      });
+    }
+  }
+
+  function initControls() {
+    initSettingsSectionControls();
+    initThemeControls();
+    initPlatformThemeControls();
+    initLocaleControls();
+    initSettingsDropdownDismiss();
+    initMotionControls();
+  }
+  function initMotionControls() {
+    var motionInputs = document.querySelectorAll('input[name="sonde-motion-toggle"]');
+    for (var m = 0; m < motionInputs.length; m++) {
+      motionInputs[m].checked = safeRead(MOTION_KEY) === 'reduce';
+      motionInputs[m].addEventListener('change', function (event) {
+        window.sondePrefs.setMotion(event.target.checked ? 'reduce' : 'auto');
+      });
+    }
+  }
+  // Single-sourced settings-dropdown dismissal (was inline-duplicated per site chrome): an outside click or
+  // Escape closes any open .settings-dropdown and returns focus to its summary trigger, so keyboard users land
+  // somewhere sensible regardless of how the panel was dismissed.
+  function initSettingsDropdownDismiss() {
+    function closeOpenSettings() {
+      var dropdowns = document.querySelectorAll('.settings-dropdown[open]');
+      for (var i = 0; i < dropdowns.length; i++) {
+        dropdowns[i].removeAttribute('open');
+        var summary = dropdowns[i].querySelector('summary');
+        if (summary) summary.focus();
+      }
+    }
+    document.addEventListener('click', function (event) {
+      var open = document.querySelector('.settings-dropdown[open]');
+      if (!open) return;
+      if (open.contains(event.target)) return;
+      closeOpenSettings();
+    });
+    document.addEventListener('keydown', function (event) {
+      if (event.key === 'Escape') closeOpenSettings();
+    });
+  }
+  function settingsSectionId(section) {
+    if (!section || !section.classList) return '';
+    if (section.classList.contains('settings-platform-theme-section')) return 'theme';
+    if (section.classList.contains('settings-theme-section')) return 'mode';
+    if (section.classList.contains('settings-language-section')) return 'language';
+    return '';
+  }
+  function settingsSections() {
+    return document.querySelectorAll('.settings-section');
+  }
+  function persistSettingsSectionState() {
+    var sections = settingsSections();
+    var openIds = [];
+    for (var s = 0; s < sections.length; s++) {
+      var id = settingsSectionId(sections[s]);
+      if (id && sections[s].hasAttribute('open')) openIds.push(id);
+    }
+    safeWrite(SETTINGS_SECTIONS_KEY, openIds.join(','));
+  }
+  function applySettingsSectionState() {
+    var stored = safeRead(SETTINGS_SECTIONS_KEY);
+    if (typeof stored !== 'string') return;
+    var openIds = stored ? stored.split(',') : [];
+    var sections = settingsSections();
+    for (var s = 0; s < sections.length; s++) {
+      var id = settingsSectionId(sections[s]);
+      if (!id) continue;
+      if (openIds.indexOf(id) !== -1) sections[s].setAttribute('open', '');
+      else sections[s].removeAttribute('open');
+    }
+  }
+  function syncLanguageSectionExclusivity(section) {
+    if (!section || !section.classList || !section.hasAttribute('open')) return;
+    var isLanguage = section.classList.contains('settings-language-section');
+    var sections = settingsSections();
+    for (var r = 0; r < sections.length; r++) {
+      if (sections[r] === section) continue;
+      var otherIsLanguage = sections[r].classList.contains('settings-language-section');
+      if (isLanguage || otherIsLanguage) sections[r].removeAttribute('open');
+    }
+  }
+  function initSettingsSectionControls() {
+    applySettingsSectionState();
+    var sections = settingsSections();
+    for (var s = 0; s < sections.length; s++) {
+      sections[s].addEventListener('toggle', function (event) {
+        var section = event.currentTarget;
+        syncLanguageSectionExclusivity(section);
+        persistSettingsSectionState();
+      });
+    }
+  }
+  function initLocaleControls() {
+    var localeInputs = document.querySelectorAll('input[name="sonde-locale-picker-radio"]');
+    for (var l = 0; l < localeInputs.length; l++) {
+      localeInputs[l].addEventListener('change', function (event) {
+        if (!event.target.checked) return;
+        var section = event.target.closest ? event.target.closest('.settings-language-section') : null;
+        if (section) {
+          section.setAttribute('open', '');
+          syncLanguageSectionExclusivity(section);
+          persistSettingsSectionState();
+        }
+        if (CLOSE_DROPDOWN_ON_SELECT) closeSettingsDropdown(event.target);
+      });
+    }
+  }
+  function closeSettingsDropdown(target) {
+    var dropdown = target && target.closest ? target.closest('.settings-dropdown') : null;
+    if (dropdown) dropdown.removeAttribute('open');
+  }
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initControls);
+  } else {
+    initControls();
+  }
+})();</script>
+  <script>(function() {
+  var locales = ["en-US"];
+  var lower = ["en-us"];
+  var forbidden = ["pt"];
+  var defaultRegions = {"en":"US","de":"DE","fr":"FR","es":"ES","it":"IT","ja":"JP","zh":"CN","ko":"KR","ar":"SA","pt":"PT","nl":"NL","sv":"SE","pl":"PL","ro":"RO","cy":"GB","gd":"GB","ga":"GB","sco":"GB","kw":"GB"};
+  var inheritancePolicy = {"sourceLocale":"en-US","chains":[{"locale":"en-IN","inherits":["en-GB","en-US"],"syntheticEmptyCatalog":true},{"locale":"es-MX","inherits":["es-US","en-US"],"syntheticEmptyCatalog":false}]};
+  var rtlLangs = ["ar","he","fa","ur","ps","sd","yi","dv","ks","ckb"];
+  var storageKey = "sonde-locale";
+  var defaultLocale = "en-US";
+  var bundleBaseHref = "../assets/locales/daylight-";
+  var localeHydrationAttr = 'data-sonde-locale-hydrating';
+  var localeHydrationStyleId = 'sonde-locale-hydration-style';
+  var localeHydrationEpoch = 0;
+  var activeLocale = null;
+  var pendingLocale = null;
+  var richSourceSelector = 'abbr.sl-glossary, code.sl-inline-code';
+  var sourceHtmlKey = '__sondeSourceHtml';
+  var translatableAttrs = [
+    ['data-msg-id', function(el, txt, locale) { applyTranslatedHtml(el, txt, locale); }],
+    ['data-msg-title-id', function(el, txt) { el.setAttribute('title', txt); }],
+    ['data-msg-aria-label-id', function(el, txt) { el.setAttribute('aria-label', txt); }],
+    ['data-msg-placeholder-id', function(el, txt) { el.setAttribute('placeholder', txt); }],
+    ['data-msg-content-id', function(el, txt) { el.setAttribute('content', txt); }],
+    ['data-msg-alt-id', function(el, txt) { el.setAttribute('alt', txt); }]
+  ];
+  function pickLocale() {
+    try {
+      var saved = localStorage.getItem(storageKey);
+      if (saved) {
+        var savedIdx = lower.indexOf(saved.toLowerCase());
+        if (savedIdx !== -1) return locales[savedIdx];
+      }
+    } catch (e) { /* storage disabled */ }
+    var langs = (navigator.languages && navigator.languages.length) ? navigator.languages : [navigator.language];
+    for (var i = 0; i < langs.length; i++) {
+      var raw = langs[i];
+      if (!raw) continue;
+      var tag = canonicalLocale(raw);
+      var exactIdx = lower.indexOf(tag);
+      if (exactIdx !== -1) return locales[exactIdx];
+      var base = tag.split('-')[0];
+      if (!base) continue;
+      if (tag.indexOf('-') !== -1) {
+        var inherited = explicitCatalogFallbackChain(tag);
+        for (var parent = 1; parent < inherited.length; parent++) {
+          var inheritedIdx = lower.indexOf(canonicalLocale(inherited[parent]));
+          if (inheritedIdx !== -1) return locales[inheritedIdx];
+        }
+      }
+      if (forbidden.indexOf(base) !== -1) continue;
+      var prefix = base + '-';
+      var defaultRegion = defaultRegions[base];
+      if (defaultRegion) {
+        var defaultIdx = lower.indexOf(prefix + defaultRegion.toLowerCase());
+        if (defaultIdx !== -1) return locales[defaultIdx];
+      }
+      for (var j = 0; j < lower.length; j++) {
+        if (lower[j].indexOf(prefix) === 0) return locales[j];
+      }
+    }
+    return defaultLocale;
+  }
+  function explicitCatalogFallbackChain(tag) {
+    for (var chain = 0; chain < inheritancePolicy.chains.length; chain++) {
+      if (canonicalLocale(inheritancePolicy.chains[chain].locale) !== tag) continue;
+      return [inheritancePolicy.chains[chain].locale].concat(inheritancePolicy.chains[chain].inherits);
+    }
+    return [];
+  }
+  function canonicalLocale(locale) {
+    var parts = String(locale || '').trim().split('-').filter(function(part) { return part.length > 0; });
+    var extensionIndex = -1;
+    for (var e = 1; e < parts.length; e++) {
+      if (parts[e].length === 1) {
+        extensionIndex = e;
+        break;
+      }
+    }
+    if (extensionIndex !== -1) parts = parts.slice(0, extensionIndex);
+    return (parts.length === 0 ? String(locale || '').trim() : parts.join('-')).toLowerCase();
+  }
+  function isSourceLocale(locale) {
+    return locale === defaultLocale;
+  }
+  function hasRichSourceHtml(el) {
+    return Boolean(el && el.querySelector && el.querySelector(richSourceSelector));
+  }
+  function rememberRichSourceHtml(el) {
+    if (!hasRichSourceHtml(el)) return;
+    if (typeof el[sourceHtmlKey] !== 'string') el[sourceHtmlKey] = el.innerHTML;
+  }
+  function applyTranslatedHtml(el, txt, locale) {
+    rememberRichSourceHtml(el);
+    if (isSourceLocale(locale) && typeof el[sourceHtmlKey] === 'string') {
+      el.innerHTML = el[sourceHtmlKey];
+      return;
+    }
+    el.innerHTML = txt;
+  }
+  function ensureLocaleHydrationStyle() {
+    if (document.getElementById && document.getElementById(localeHydrationStyleId)) return;
+    if (!document.createElement || !document.head) return;
+    var style = document.createElement('style');
+    style.id = localeHydrationStyleId;
+    var hiddenSelectors = [];
+    for (var h = 0; h < translatableAttrs.length; h++) {
+      hiddenSelectors.push('html[' + localeHydrationAttr + '] [' + translatableAttrs[h][0] + ']');
+    }
+    style.textContent = hiddenSelectors.join(',') + '{visibility:hidden!important;}';
+    document.head.appendChild(style);
+  }
+  function markLocaleHydrating(locale, force) {
+    if (!force && isSourceLocale(locale)) return;
+    ensureLocaleHydrationStyle();
+    localeHydrationEpoch++;
+    document.documentElement.setAttribute(localeHydrationAttr, locale);
+    var epoch = localeHydrationEpoch;
+    setTimeout(function() {
+      if (epoch === localeHydrationEpoch) clearLocaleHydration();
+    }, 4000);
+  }
+  function clearLocaleHydration() {
+    localeHydrationEpoch++;
+    document.documentElement.removeAttribute(localeHydrationAttr);
+  }
+  function applyLocale(locale, forceHydrationGuard) {
+    activeLocale = locale;
+    var base = locale.split('-')[0].toLowerCase();
+    var dir = rtlLangs.indexOf(base) !== -1 ? 'rtl' : 'ltr';
+    document.documentElement.lang = locale;
+    document.documentElement.dir = dir;
+    markLocaleHydrating(locale, forceHydrationGuard === true);
+
+    var scriptId = 'sonde-locale-bundle';
+    var existing = document.getElementById(scriptId);
+    if (existing) existing.remove();
+    var script = document.createElement('script');
+    script.id = scriptId;
+    script.src = bundleBaseHref + locale + '.js';
+    script.onload = function() {
+      if (activeLocale !== locale) return;
+      pendingLocale = locale;
+      if (document.readyState === 'loading') return;
+      applyPendingLocale();
+    };
+    script.onerror = function() {
+      if (activeLocale === locale) clearLocaleHydration();
+    };
+    document.head.appendChild(script);
+  }
+  function applyPendingLocale() {
+      var locale = pendingLocale;
+      if (!locale) return;
+      pendingLocale = null;
+      var dict = window.SondeDaylightI18n;
+      if (!dict) {
+        clearLocaleHydration();
+        return;
+      }
+      // Values come from same-origin compiled .po bundles we emit; Lingui msgids
+      // may contain inline markup (<strong>, <a>), so we apply as HTML, not text.
+      for (var a = 0; a < translatableAttrs.length; a++) {
+        var attrName = translatableAttrs[a][0];
+        var apply = translatableAttrs[a][1];
+        var els = document.querySelectorAll('[' + attrName + ']');
+        for (var j = 0; j < els.length; j++) {
+          var el = els[j];
+          var id = el.getAttribute(attrName);
+          if (!id || !dict[id]) continue;
+          var text = dict[id];
+          var args = el.getAttribute('data-msg-args');
+          if (args) {
+            try {
+              var parsed = JSON.parse(args);
+              for (var key in parsed) {
+                text = text.replace('{'+key+'}', parsed[key]);
+              }
+            } catch(e) {}
+          }
+          apply(el, text, locale);
+        }
+      }
+      var localeLinks = document.querySelectorAll('[data-locale-link]');
+      for (var l = 0; l < localeLinks.length; l++) {
+        var base = localeLinks[l].getAttribute('data-locale-link');
+        var ext = localeLinks[l].getAttribute('data-locale-ext') || '';
+        if (locale === 'en-US') {
+          localeLinks[l].setAttribute('href', './' + base + ext);
+        } else {
+          localeLinks[l].setAttribute('href', './' + base + '-' + locale + ext);
+        }
+      }
+      if (typeof document.dispatchEvent === 'function') {
+        var localeEvent = typeof CustomEvent === 'function'
+          ? new CustomEvent('sonde:locale-applied', { detail: { locale: locale } })
+          : { type: 'sonde:locale-applied', detail: { locale: locale } };
+        document.dispatchEvent(localeEvent);
+      }
+      clearLocaleHydration();
+  }
+  function normalizeLocaleSearch(value) {
+    var normalized = String(value || '').toLowerCase();
+    if (typeof normalized.normalize === 'function') {
+      normalized = normalized.normalize('NFKD').replace(/[\u0300-\u036f]/g, '');
+    }
+    return normalized.replace(/[-_/]+/g, ' ').replace(/\s+/g, ' ').trim();
+  }
+  function localeOptionSearchText(option) {
+    var input = option.querySelector && option.querySelector('input[data-sonde-locale-picker], input[data-sonde-locale-select-option]');
+    return normalizeLocaleSearch([
+      option.getAttribute('data-locale-search') || '',
+      option.textContent || '',
+      input && input.value ? input.value : ''
+    ].join(' '));
+  }
+  function localeSearchRoot(input) {
+    if (input.closest) {
+      return input.closest('.sonde-locale-select-menu') || input.closest('.settings-language-section') || input.closest('[data-report-settings-dialog]') || input.parentElement || document;
+    }
+    return document;
+  }
+  function filterLocaleSearchOptions(input) {
+    var query = normalizeLocaleSearch(input.value);
+    var root = localeSearchRoot(input);
+    var options = root.querySelectorAll('.settings-language-option, .sonde-locale-select-option:not(.sonde-locale-select-all)');
+    for (var i = 0; i < options.length; i++) {
+      var option = options[i];
+      var hidden = Boolean(query) && localeOptionSearchText(option).indexOf(query) === -1;
+      option.hidden = hidden;
+      option.setAttribute('aria-hidden', hidden ? 'true' : 'false');
+    }
+  }
+  function initLocaleSearchControls() {
+    var inputs = document.querySelectorAll('input[data-sonde-locale-search]');
+    for (var i = 0; i < inputs.length; i++) {
+      var input = inputs[i];
+      filterLocaleSearchOptions(input);
+      if (input.getAttribute('data-sonde-locale-search-bound') === 'true') continue;
+      input.setAttribute('data-sonde-locale-search-bound', 'true');
+      input.addEventListener('input', function(ev) {
+        filterLocaleSearchOptions(ev.target);
+      });
+    }
+  }
+  function initLocaleSelects() {
+    var selects = document.querySelectorAll('[data-sonde-locale-select]');
+    for (var s = 0; s < selects.length; s++) {
+      var sel = selects[s];
+      if (sel.getAttribute('data-sonde-locale-select-bound') === 'true') continue;
+      sel.setAttribute('data-sonde-locale-select-bound', 'true');
+      bindLocaleSelect(sel);
+    }
+  }
+  function bindLocaleSelect(sel) {
+    var radios = sel.querySelectorAll('input[data-sonde-locale-select-option]');
+    for (var r = 0; r < radios.length; r++) {
+      var radio = radios[r];
+      if (radio.checked) {
+        sel.value = radio.value;
+        sel.setAttribute('data-value', radio.value);
+      }
+      radio.addEventListener('change', function(ev) {
+        if (!ev.target.checked) return;
+        // Mirror the chosen value onto the host element so consumers that read
+        // element.value (e.g. the Scribe gallery card filter) keep working exactly
+        // as they did with a native <select>. The native change event bubbles to the
+        // host on its own (target phase before ancestor phase), so consumers see the
+        // updated value without a synthetic dispatch. This is a locale FILTER, not the
+        // site-locale switcher — it must never call applyLocale.
+        sel.value = ev.target.value;
+        sel.setAttribute('data-value', ev.target.value);
+        syncLocaleSelectTrigger(sel, ev.target);
+        if (sel.tagName === 'DETAILS') sel.removeAttribute('open');
+      });
+    }
+  }
+  function syncLocaleSelectTrigger(sel, radio) {
+    var current = sel.querySelector('.sonde-locale-select-current');
+    var option = radio.closest && radio.closest('.sonde-locale-select-option');
+    var preview = option && option.querySelector('.locale-option-preview');
+    if (!current || !preview) return;
+    var flag = preview.querySelector('.locale-option-flag');
+    var label = preview.querySelector('.locale-option-label');
+    // The trigger shows the bare endonym; strip the trailing " (n)" count suffix
+    // that option labels carry. Endonyms never end in " (digits)", so this only
+    // removes the count.
+    var labelText = label ? String(label.textContent || '').replace(/\s*\(\d+\)\s*$/, '') : '';
+    while (current.firstChild) current.removeChild(current.firstChild);
+    if (flag) current.appendChild(flag.cloneNode(true));
+    var labelSpan = document.createElement('span');
+    labelSpan.className = 'sonde-locale-select-current-label';
+    labelSpan.textContent = labelText;
+    current.appendChild(labelSpan);
+  }
+  var initialLocale = pickLocale();
+  applyLocale(initialLocale, false);
+  function init() {
+    var active = activeLocale || initialLocale;
+    applyPendingLocale();
+    initLocaleSearchControls();
+    initLocaleSelects();
+    var pickers = document.querySelectorAll('sonde-locale-picker');
+    for (var p = 0; p < pickers.length; p++) {
+      pickers[p].setAttribute('value', active);
+      pickers[p].addEventListener('sonde-locale-change', function(ev) {
+        var next = ev.detail && ev.detail.locale;
+        if (!next || lower.indexOf(next.toLowerCase()) === -1) return;
+        try { localStorage.setItem(storageKey, next); } catch (e) {}
+        applyLocale(next, true);
+      });
+    }
+    var radios = document.querySelectorAll('input[type="radio"][data-sonde-locale-picker]');
+    for (var k = 0; k < radios.length; k++) {
+      var radio = radios[k];
+      if (radio.value === active) radio.checked = true;
+      radio.addEventListener('change', function(ev) {
+        var next = ev.target.value;
+        if (lower.indexOf(next.toLowerCase()) === -1) return;
+        try { localStorage.setItem(storageKey, next); } catch (e) {}
+        applyLocale(next, true);
+      });
+    }
+  }
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', init);
+  } else {
+    init();
+  }
+})();</script>
+</head>
+<body>
+  <a href="#main-content" class="skip-link" data-msg-id="sondeLife.skipToContent">Skip to content</a>
+<header class="site-header">
+  <div class="container nav-row">
+    <a class="logo" href="../">
+      <img src="../favicon.svg" alt="" width="28" height="28" class="logo-icon">
+      <span data-msg-id="sondeLife.nav.home">Sonde</span>
+    </a>
+    <nav class="primary-nav" aria-label="Primary" data-msg-aria-label-id="sondeLife.nav.aria">
+      <ul>
+        <li class="has-children">
+          <a href="../solutions/" data-msg-id="sondeLife.nav.solutions">Solutions</a><button class="submenu-toggle" type="button" aria-expanded="false" aria-controls="submenu-solutions" hidden>
+            <span class="sonde-visually-hidden" data-msg-id="sondeLife.nav.solutionsMenu">Solutions menu</span>
+            <svg viewBox="0 0 12 12" width="12" height="12" aria-hidden="true" focusable="false"><path d="M2.5 4.5 6 8l3.5-3.5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+          <ul class="dropdown" id="submenu-solutions" hidden>
+            <li><a href="../solutions/ai-guardrails/" data-msg-id="sondeLife.nav.aiGuardrails">AI Guardrails & Governance</a></li>
+            <li><a href="../solutions/compliance/" data-msg-id="sondeLife.nav.complianceAccessibility">Compliance & Accessibility</a></li>
+          </ul>
+        </li>
+        <li><a href="../how-it-works/" data-msg-id="sondeLife.nav.howItWorks" aria-current="page">How it Works</a></li>
+        <li><a href="../pricing/" data-msg-id="sondeLife.nav.pricing">Pricing</a></li>
+        <li class="has-children">
+          <a href="../resources/" data-msg-id="sondeLife.nav.resources">Resources</a><button class="submenu-toggle" type="button" aria-expanded="false" aria-controls="submenu-resources" hidden>
+            <span class="sonde-visually-hidden" data-msg-id="sondeLife.nav.resourcesMenu">Resources menu</span>
+            <svg viewBox="0 0 12 12" width="12" height="12" aria-hidden="true" focusable="false"><path d="M2.5 4.5 6 8l3.5-3.5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+          <ul class="dropdown" id="submenu-resources" hidden>
+            <li><a href="../resources/explore/" data-msg-id="sondeLife.nav.features">Explore</a></li>
+            <li><a href="../resources/methodology/" data-msg-id="sondeLife.nav.methodology">Methodology</a></li>
+            <li><a href="../resources/architecture/" data-msg-id="sondeLife.nav.architecture">Architecture</a></li>
+          </ul>
+        </li>
+        <li><a href="../company/" data-msg-id="sondeLife.nav.company">Company</a></li>
+      </ul>
+    </nav>
+    <div class="header-actions">
+      <sonde-search-dialog
+        hidden
+        data-sl-reveal
+        indexes="document,helm"
+        site-root="../"
+        bundle-manifest="data/search-bundles.js"
+        placeholder="Search"
+        data-msg-placeholder-id="sondeLife.header.search"></sonde-search-dialog>
+      <div class="download-menu scribe-page-pdf" data-scribe-paged-polyfill="../assets/vendor/paged.polyfill.min.js?v=-o90dlq" data-search-exclude hidden><button type="button" class="download-menu-trigger" data-action="download-menu-toggle" aria-expanded="false" aria-controls="scribe-page-pdf-menu-list" aria-label="Download" data-msg-aria-label-id="audit.download" title="Download" data-msg-title-id="audit.download"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="12" y1="18" x2="12" y2="12"/><polyline points="9 15 12 18 15 15"/></svg></button><div class="download-menu-list" id="scribe-page-pdf-menu-list" role="group" aria-label="Download" data-msg-aria-label-id="audit.download" hidden><button type="button" class="download-menu-item" data-scribe-download-pdf><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="12" y1="18" x2="12" y2="12"/><polyline points="9 15 12 18 15 15"/></svg><span class="download-menu-item-label" data-msg-id="audit.downloadPdf">Download PDF</span></button></div><span class="sonde-visually-hidden" role="status" data-scribe-page-pdf-status></span></div>
+      <details class="settings-dropdown" hidden data-sl-reveal>
+        <summary class="settings-dropdown-trigger sl-settings-trigger">
+          <svg class="sl-settings-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+            <path d="M19.4 13.5c.1-.5.1-1 .1-1.5s0-1-.1-1.5l2-1.5-2-3.5-2.4 1a7.3 7.3 0 0 0-2.6-1.5L14 2h-4l-.4 3a7.3 7.3 0 0 0-2.6 1.5l-2.4-1-2 3.5 2 1.5c-.1.5-.1 1-.1 1.5s0 1 .1 1.5l-2 1.5 2 3.5 2.4-1a7.3 7.3 0 0 0 2.6 1.5l.4 3h4l.4-3a7.3 7.3 0 0 0 2.6-1.5l2.4 1 2-3.5-2-1.5ZM12 15.5a3.5 3.5 0 1 1 0-7 3.5 3.5 0 0 1 0 7Z"/>
+          </svg>
+          <span class="sl-settings-label" data-msg-id="sondeLife.settings.aria">Settings</span>
+        </summary>
+        <div class="settings-dropdown-menu" data-report-settings-dialog>
+  <details class="settings-section settings-platform-theme-section" open>
+    <summary class="settings-section-trigger" data-msg-id="settings.theme.legend" data-scribe-msgid="settings.theme.legend">Theme</summary>
+    <div class="settings-section-body">
+      <label class="theme-toggle-option settings-platform-theme-option">
+  <input type="radio" name="sonde-platform-theme-toggle" value="airglow" checked>
+  <div class="theme-preview" data-platform-theme="airglow" data-theme="dark">
+    <span class="settings-theme-preview-icon" aria-hidden="true"><svg class="settings-theme-mark sonde-daylight-mark" viewBox="0 0 512 512" width="28" height="28" aria-hidden="true"><defs><radialGradient id="settings-theme-airglow-sun" cx="50%" cy="50%" r="50%"><stop offset="0%" stop-color="var(--sonde-daylight-mark-sun-stop-0)"/><stop offset="60%" stop-color="var(--sonde-daylight-mark-sun-stop-1)"/><stop offset="100%" stop-color="var(--sonde-daylight-mark-sun-stop-2)"/></radialGradient><clipPath id="settings-theme-airglow-disc"><circle cx="256" cy="256" r="240"/></clipPath></defs><g style="display:var(--sonde-daylight-mark-solid-display)"><circle cx="256" cy="256" r="240" fill="url(#settings-theme-airglow-sun)"/><g clip-path="url(#settings-theme-airglow-disc)"><g fill="var(--sonde-daylight-mark-crater)" stroke="var(--sonde-daylight-mark-crater)"><g opacity="0.7"><path d="M40,240 C60,110 170,40 250,90 C320,130 330,210 260,280 C200,340 50,340 40,240 Z" opacity="0.6"/><path d="M290,130 C360,60 460,110 470,190 C480,270 410,350 330,320 C260,290 230,190 290,130 Z" opacity="0.7"/><path d="M390,280 C470,250 510,300 480,380 C450,440 380,410 390,280 Z" opacity="0.5"/><path d="M130,350 C180,290 260,350 230,430 C200,510 60,450 130,350 Z" opacity="0.5"/><circle cx="230" cy="430" r="18" fill="transparent" stroke-width="4" opacity="0.8"/><circle cx="170" cy="190" r="12" fill="transparent" stroke-width="3" opacity="0.7"/><circle cx="90" cy="230" r="8" opacity="0.8"/></g></g></g><g clip-path="url(#settings-theme-airglow-disc)"><g transform="translate(250,240) rotate(-40)" fill="var(--sonde-daylight-mark-probe)" stroke="var(--sonde-daylight-mark-probe)"><line x1="-32" y1="-8" x2="-160" y2="-40" stroke-width="6" stroke-linecap="round"/><circle cx="-160" cy="-40" r="10"/><line x1="-32" y1="16" x2="-125" y2="62" stroke-width="8" stroke-linecap="round"/><rect x="-141" y="38" width="32" height="60" rx="4" transform="rotate(20,-125,62)"/><line x1="-16" y1="-40" x2="-46" y2="-92" stroke-width="7" stroke-linecap="round"/><rect x="-70" y="-108" width="48" height="28" rx="4"/><circle cx="-56" cy="-98" r="8"/><circle cx="-36" cy="-98" r="6"/><path d="M48,-108 Q128,-78 128,0 Q128,78 48,108" stroke-width="5" stroke-linejoin="round"/><line x1="58" y1="-50" x2="108" y2="0" stroke-width="5"/><line x1="58" y1="50" x2="108" y2="0" stroke-width="5"/><line x1="48" y1="0" x2="108" y2="0" stroke-width="5"/><circle cx="110" cy="0" r="14"/><polygon points="-16,-40 48,-40 62,-24 62,24 48,40 -16,40 -30,24 -30,-24"/></g></g></g><g style="display:var(--sonde-daylight-mark-line-display)"><circle cx="256" cy="256" r="232" fill="none" stroke="var(--sonde-daylight-hc-mark-earth-blue)" stroke-width="28"/><defs><clipPath id="settings-theme-airglow-hc-clip"><circle cx="256" cy="256" r="214"/></clipPath></defs><g clip-path="url(#settings-theme-airglow-hc-clip)"><g transform="translate(276,228) scale(1.3) rotate(-40)" fill="none" stroke-linecap="round" stroke-linejoin="round"><line x1="-32" y1="-8" x2="-165" y2="-42" stroke="var(--sonde-daylight-hc-mark-metal)" stroke-width="8"/><circle cx="-80" cy="-20" r="3" stroke="var(--sonde-daylight-hc-mark-metal)" stroke-width="3"/><circle cx="-125" cy="-32" r="2.5" stroke="var(--sonde-daylight-hc-mark-metal)" stroke-width="3"/><circle cx="-165" cy="-42" r="8" stroke="var(--sonde-daylight-hc-mark-metal)" stroke-width="4"/><circle cx="-165" cy="-42" r="4" stroke="var(--sonde-daylight-hc-mark-metal)" stroke-width="2"/><line x1="-165" y1="-48" x2="-165" y2="-36" stroke="var(--sonde-daylight-hc-mark-metal)" stroke-width="2"/><line x1="-171" y1="-42" x2="-159" y2="-42" stroke="var(--sonde-daylight-hc-mark-metal)" stroke-width="2"/><line x1="-32" y1="16" x2="-130" y2="64" stroke="var(--sonde-daylight-hc-mark-metal)" stroke-width="12"/><circle cx="-80" cy="40" r="4" stroke="var(--sonde-daylight-hc-mark-metal)" stroke-width="4"/><g transform="translate(-130,64) rotate(20)"><rect x="-16" y="-32" width="32" height="64" rx="4" stroke="var(--sonde-daylight-hc-mark-rtg-brown)" stroke-width="6"/><line x1="-16" y1="-22" x2="16" y2="-22" stroke="var(--sonde-daylight-hc-mark-rtg-brown)" stroke-width="4"/><line x1="-16" y1="-12" x2="16" y2="-12" stroke="var(--sonde-daylight-hc-mark-rtg-brown)" stroke-width="4"/><line x1="-16" y1="-2" x2="16" y2="-2" stroke="var(--sonde-daylight-hc-mark-rtg-brown)" stroke-width="4"/><line x1="-16" y1="8" x2="16" y2="8" stroke="var(--sonde-daylight-hc-mark-rtg-brown)" stroke-width="4"/><line x1="-16" y1="18" x2="16" y2="18" stroke="var(--sonde-daylight-hc-mark-rtg-brown)" stroke-width="4"/><line x1="-16" y1="28" x2="16" y2="28" stroke="var(--sonde-daylight-hc-mark-rtg-brown)" stroke-width="4"/><rect x="-18" y="-34" width="36" height="4" rx="2" stroke="var(--sonde-daylight-hc-mark-rtg-brown)" stroke-width="3"/><rect x="-18" y="30" width="36" height="4" rx="2" stroke="var(--sonde-daylight-hc-mark-rtg-brown)" stroke-width="3"/></g><line x1="-16" y1="-40" x2="-48" y2="-96" stroke="var(--sonde-daylight-hc-mark-metal)" stroke-width="10"/><circle cx="-30" cy="-64" r="4" stroke="var(--sonde-daylight-hc-mark-metal)" stroke-width="4"/><g transform="translate(-48,-96)"><rect x="-24" y="-16" width="48" height="28" rx="4" stroke="var(--sonde-daylight-hc-mark-metal)" stroke-width="6"/><line x1="-20" y1="-8" x2="20" y2="-8" stroke="var(--sonde-daylight-hc-mark-metal)" stroke-width="2"/><line x1="-20" y1="0" x2="20" y2="0" stroke="var(--sonde-daylight-hc-mark-metal)" stroke-width="2"/><circle cx="-10" cy="-4" r="8" stroke="var(--sonde-daylight-hc-mark-metal)" stroke-width="5"/><circle cx="-10" cy="-4" r="4" stroke="var(--sonde-daylight-hc-mark-metal)" stroke-width="2"/><circle cx="10" cy="-4" r="6" stroke="var(--sonde-daylight-hc-mark-metal)" stroke-width="4"/><circle cx="10" cy="-4" r="3" stroke="var(--sonde-daylight-hc-mark-metal)" stroke-width="2"/><rect x="-4" y="4" width="8" height="6" rx="1.5" stroke="var(--sonde-daylight-hc-mark-metal)" stroke-width="3"/></g><path d="M48,-112 Q130,-80 130,0 Q130,80 48,112" stroke="var(--sonde-daylight-hc-mark-earth-blue)" stroke-width="8"/><path d="M56,-96 Q118,-68 118,0 Q118,68 56,96" stroke="var(--sonde-daylight-hc-mark-earth-blue)" stroke-width="2"/><path d="M64,-80 Q106,-56 106,0 Q106,56 64,80" stroke="var(--sonde-daylight-hc-mark-earth-blue)" stroke-width="2"/><path d="M72,-60 Q94,-40 94,0 Q94,40 72,60" stroke="var(--sonde-daylight-hc-mark-earth-blue)" stroke-width="2"/><line x1="60" y1="-52" x2="110" y2="0" stroke="var(--sonde-daylight-hc-mark-earth-blue)" stroke-width="8"/><line x1="60" y1="52" x2="110" y2="0" stroke="var(--sonde-daylight-hc-mark-earth-blue)" stroke-width="8"/><line x1="48" y1="0" x2="110" y2="0" stroke="var(--sonde-daylight-hc-mark-earth-blue)" stroke-width="8"/><circle cx="112" cy="0" r="14" stroke="var(--sonde-daylight-hc-mark-earth-blue)" stroke-width="6"/><circle cx="112" cy="0" r="8" stroke="var(--sonde-daylight-hc-mark-earth-blue)" stroke-width="3"/><polygon points="-16,-40 48,-40 64,-24 64,24 48,40 -16,40 -32,24 -32,-24" stroke="var(--sonde-daylight-hc-mark-bus-gold)" stroke-width="8"/><line x1="0" y1="-40" x2="0" y2="40" stroke="var(--sonde-daylight-hc-mark-bus-gold)" stroke-width="4"/><line x1="24" y1="-40" x2="24" y2="40" stroke="var(--sonde-daylight-hc-mark-bus-gold)" stroke-width="4"/><line x1="-16" y1="-20" x2="48" y2="-20" stroke="var(--sonde-daylight-hc-mark-bus-gold)" stroke-width="3"/><line x1="-16" y1="0" x2="48" y2="0" stroke="var(--sonde-daylight-hc-mark-bus-gold)" stroke-width="3"/><line x1="-16" y1="20" x2="48" y2="20" stroke="var(--sonde-daylight-hc-mark-bus-gold)" stroke-width="3"/><rect x="4" y="-16" width="16" height="12" rx="1.5" stroke="var(--sonde-daylight-hc-mark-bus-gold)" stroke-width="3"/><rect x="28" y="-16" width="16" height="12" rx="1.5" stroke="var(--sonde-daylight-hc-mark-bus-gold)" stroke-width="3"/><rect x="4" y="4" width="16" height="12" rx="1.5" stroke="var(--sonde-daylight-hc-mark-bus-gold)" stroke-width="3"/><rect x="28" y="4" width="16" height="12" rx="1.5" stroke="var(--sonde-daylight-hc-mark-bus-gold)" stroke-width="3"/><rect x="-36" y="-12" width="8" height="24" rx="2" stroke="var(--sonde-daylight-hc-mark-metal)" stroke-width="4"/><path d="M-44,-8 L-52,-14 L-52,14 L-44,8 Z" stroke="var(--sonde-daylight-hc-mark-metal)" stroke-width="4"/><g transform="translate(-8,0)" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M-52,-14 Q-86,-20 -112,-8 Q-120,0 -112,8 Q-86,20 -52,14" stroke="var(--sonde-daylight-hc-mark-flame-deep)" stroke-width="6"/><path d="M-52,-10 Q-78,-14 -96,-5 Q-102,0 -96,5 Q-78,14 -52,10" stroke="var(--sonde-daylight-hc-mark-flame-mid)" stroke-width="5"/><path d="M-52,-6 Q-68,-8 -78,-2 Q-82,0 -78,2 Q-68,8 -52,6" stroke="var(--sonde-daylight-hc-mark-flame-hot)" stroke-width="4"/></g><line x1="16" y1="-40" x2="24" y2="-56" stroke="var(--sonde-daylight-hc-mark-metal)" stroke-width="5"/><circle cx="24" cy="-56" r="3" stroke="var(--sonde-daylight-hc-mark-metal)" stroke-width="3"/></g></g></g></svg></span>
+    <span data-msg-id="settings.theme.airglow" data-scribe-msgid="settings.theme.airglow">Airglow</span>
+  </div>
+</label>
+      <label class="theme-toggle-option settings-platform-theme-option">
+  <input type="radio" name="sonde-platform-theme-toggle" value="ultraviolet">
+  <div class="theme-preview" data-platform-theme="ultraviolet" data-theme="dark">
+    <span class="settings-theme-preview-icon" aria-hidden="true"><svg class="settings-theme-mark sonde-daylight-mark" viewBox="0 0 512 512" width="28" height="28" aria-hidden="true"><defs><radialGradient id="settings-theme-ultraviolet-sun" cx="50%" cy="50%" r="50%"><stop offset="0%" stop-color="var(--sonde-daylight-mark-sun-stop-0)"/><stop offset="60%" stop-color="var(--sonde-daylight-mark-sun-stop-1)"/><stop offset="100%" stop-color="var(--sonde-daylight-mark-sun-stop-2)"/></radialGradient><clipPath id="settings-theme-ultraviolet-disc"><circle cx="256" cy="256" r="240"/></clipPath></defs><g style="display:var(--sonde-daylight-mark-solid-display)"><circle cx="256" cy="256" r="240" fill="url(#settings-theme-ultraviolet-sun)"/><g clip-path="url(#settings-theme-ultraviolet-disc)"><g fill="var(--sonde-daylight-mark-crater)" stroke="var(--sonde-daylight-mark-crater)"><g opacity="0.7"><path d="M40,240 C60,110 170,40 250,90 C320,130 330,210 260,280 C200,340 50,340 40,240 Z" opacity="0.6"/><path d="M290,130 C360,60 460,110 470,190 C480,270 410,350 330,320 C260,290 230,190 290,130 Z" opacity="0.7"/><path d="M390,280 C470,250 510,300 480,380 C450,440 380,410 390,280 Z" opacity="0.5"/><path d="M130,350 C180,290 260,350 230,430 C200,510 60,450 130,350 Z" opacity="0.5"/><circle cx="230" cy="430" r="18" fill="transparent" stroke-width="4" opacity="0.8"/><circle cx="170" cy="190" r="12" fill="transparent" stroke-width="3" opacity="0.7"/><circle cx="90" cy="230" r="8" opacity="0.8"/></g></g></g><g clip-path="url(#settings-theme-ultraviolet-disc)"><g transform="translate(250,240) rotate(-40)" fill="var(--sonde-daylight-mark-probe)" stroke="var(--sonde-daylight-mark-probe)"><line x1="-32" y1="-8" x2="-160" y2="-40" stroke-width="6" stroke-linecap="round"/><circle cx="-160" cy="-40" r="10"/><line x1="-32" y1="16" x2="-125" y2="62" stroke-width="8" stroke-linecap="round"/><rect x="-141" y="38" width="32" height="60" rx="4" transform="rotate(20,-125,62)"/><line x1="-16" y1="-40" x2="-46" y2="-92" stroke-width="7" stroke-linecap="round"/><rect x="-70" y="-108" width="48" height="28" rx="4"/><circle cx="-56" cy="-98" r="8"/><circle cx="-36" cy="-98" r="6"/><path d="M48,-108 Q128,-78 128,0 Q128,78 48,108" stroke-width="5" stroke-linejoin="round"/><line x1="58" y1="-50" x2="108" y2="0" stroke-width="5"/><line x1="58" y1="50" x2="108" y2="0" stroke-width="5"/><line x1="48" y1="0" x2="108" y2="0" stroke-width="5"/><circle cx="110" cy="0" r="14"/><polygon points="-16,-40 48,-40 62,-24 62,24 48,40 -16,40 -30,24 -30,-24"/></g></g></g><g style="display:var(--sonde-daylight-mark-line-display)"><circle cx="256" cy="256" r="232" fill="none" stroke="var(--sonde-daylight-hc-mark-earth-blue)" stroke-width="28"/><defs><clipPath id="settings-theme-ultraviolet-hc-clip"><circle cx="256" cy="256" r="214"/></clipPath></defs><g clip-path="url(#settings-theme-ultraviolet-hc-clip)"><g transform="translate(276,228) scale(1.3) rotate(-40)" fill="none" stroke-linecap="round" stroke-linejoin="round"><line x1="-32" y1="-8" x2="-165" y2="-42" stroke="var(--sonde-daylight-hc-mark-metal)" stroke-width="8"/><circle cx="-80" cy="-20" r="3" stroke="var(--sonde-daylight-hc-mark-metal)" stroke-width="3"/><circle cx="-125" cy="-32" r="2.5" stroke="var(--sonde-daylight-hc-mark-metal)" stroke-width="3"/><circle cx="-165" cy="-42" r="8" stroke="var(--sonde-daylight-hc-mark-metal)" stroke-width="4"/><circle cx="-165" cy="-42" r="4" stroke="var(--sonde-daylight-hc-mark-metal)" stroke-width="2"/><line x1="-165" y1="-48" x2="-165" y2="-36" stroke="var(--sonde-daylight-hc-mark-metal)" stroke-width="2"/><line x1="-171" y1="-42" x2="-159" y2="-42" stroke="var(--sonde-daylight-hc-mark-metal)" stroke-width="2"/><line x1="-32" y1="16" x2="-130" y2="64" stroke="var(--sonde-daylight-hc-mark-metal)" stroke-width="12"/><circle cx="-80" cy="40" r="4" stroke="var(--sonde-daylight-hc-mark-metal)" stroke-width="4"/><g transform="translate(-130,64) rotate(20)"><rect x="-16" y="-32" width="32" height="64" rx="4" stroke="var(--sonde-daylight-hc-mark-rtg-brown)" stroke-width="6"/><line x1="-16" y1="-22" x2="16" y2="-22" stroke="var(--sonde-daylight-hc-mark-rtg-brown)" stroke-width="4"/><line x1="-16" y1="-12" x2="16" y2="-12" stroke="var(--sonde-daylight-hc-mark-rtg-brown)" stroke-width="4"/><line x1="-16" y1="-2" x2="16" y2="-2" stroke="var(--sonde-daylight-hc-mark-rtg-brown)" stroke-width="4"/><line x1="-16" y1="8" x2="16" y2="8" stroke="var(--sonde-daylight-hc-mark-rtg-brown)" stroke-width="4"/><line x1="-16" y1="18" x2="16" y2="18" stroke="var(--sonde-daylight-hc-mark-rtg-brown)" stroke-width="4"/><line x1="-16" y1="28" x2="16" y2="28" stroke="var(--sonde-daylight-hc-mark-rtg-brown)" stroke-width="4"/><rect x="-18" y="-34" width="36" height="4" rx="2" stroke="var(--sonde-daylight-hc-mark-rtg-brown)" stroke-width="3"/><rect x="-18" y="30" width="36" height="4" rx="2" stroke="var(--sonde-daylight-hc-mark-rtg-brown)" stroke-width="3"/></g><line x1="-16" y1="-40" x2="-48" y2="-96" stroke="var(--sonde-daylight-hc-mark-metal)" stroke-width="10"/><circle cx="-30" cy="-64" r="4" stroke="var(--sonde-daylight-hc-mark-metal)" stroke-width="4"/><g transform="translate(-48,-96)"><rect x="-24" y="-16" width="48" height="28" rx="4" stroke="var(--sonde-daylight-hc-mark-metal)" stroke-width="6"/><line x1="-20" y1="-8" x2="20" y2="-8" stroke="var(--sonde-daylight-hc-mark-metal)" stroke-width="2"/><line x1="-20" y1="0" x2="20" y2="0" stroke="var(--sonde-daylight-hc-mark-metal)" stroke-width="2"/><circle cx="-10" cy="-4" r="8" stroke="var(--sonde-daylight-hc-mark-metal)" stroke-width="5"/><circle cx="-10" cy="-4" r="4" stroke="var(--sonde-daylight-hc-mark-metal)" stroke-width="2"/><circle cx="10" cy="-4" r="6" stroke="var(--sonde-daylight-hc-mark-metal)" stroke-width="4"/><circle cx="10" cy="-4" r="3" stroke="var(--sonde-daylight-hc-mark-metal)" stroke-width="2"/><rect x="-4" y="4" width="8" height="6" rx="1.5" stroke="var(--sonde-daylight-hc-mark-metal)" stroke-width="3"/></g><path d="M48,-112 Q130,-80 130,0 Q130,80 48,112" stroke="var(--sonde-daylight-hc-mark-earth-blue)" stroke-width="8"/><path d="M56,-96 Q118,-68 118,0 Q118,68 56,96" stroke="var(--sonde-daylight-hc-mark-earth-blue)" stroke-width="2"/><path d="M64,-80 Q106,-56 106,0 Q106,56 64,80" stroke="var(--sonde-daylight-hc-mark-earth-blue)" stroke-width="2"/><path d="M72,-60 Q94,-40 94,0 Q94,40 72,60" stroke="var(--sonde-daylight-hc-mark-earth-blue)" stroke-width="2"/><line x1="60" y1="-52" x2="110" y2="0" stroke="var(--sonde-daylight-hc-mark-earth-blue)" stroke-width="8"/><line x1="60" y1="52" x2="110" y2="0" stroke="var(--sonde-daylight-hc-mark-earth-blue)" stroke-width="8"/><line x1="48" y1="0" x2="110" y2="0" stroke="var(--sonde-daylight-hc-mark-earth-blue)" stroke-width="8"/><circle cx="112" cy="0" r="14" stroke="var(--sonde-daylight-hc-mark-earth-blue)" stroke-width="6"/><circle cx="112" cy="0" r="8" stroke="var(--sonde-daylight-hc-mark-earth-blue)" stroke-width="3"/><polygon points="-16,-40 48,-40 64,-24 64,24 48,40 -16,40 -32,24 -32,-24" stroke="var(--sonde-daylight-hc-mark-bus-gold)" stroke-width="8"/><line x1="0" y1="-40" x2="0" y2="40" stroke="var(--sonde-daylight-hc-mark-bus-gold)" stroke-width="4"/><line x1="24" y1="-40" x2="24" y2="40" stroke="var(--sonde-daylight-hc-mark-bus-gold)" stroke-width="4"/><line x1="-16" y1="-20" x2="48" y2="-20" stroke="var(--sonde-daylight-hc-mark-bus-gold)" stroke-width="3"/><line x1="-16" y1="0" x2="48" y2="0" stroke="var(--sonde-daylight-hc-mark-bus-gold)" stroke-width="3"/><line x1="-16" y1="20" x2="48" y2="20" stroke="var(--sonde-daylight-hc-mark-bus-gold)" stroke-width="3"/><rect x="4" y="-16" width="16" height="12" rx="1.5" stroke="var(--sonde-daylight-hc-mark-bus-gold)" stroke-width="3"/><rect x="28" y="-16" width="16" height="12" rx="1.5" stroke="var(--sonde-daylight-hc-mark-bus-gold)" stroke-width="3"/><rect x="4" y="4" width="16" height="12" rx="1.5" stroke="var(--sonde-daylight-hc-mark-bus-gold)" stroke-width="3"/><rect x="28" y="4" width="16" height="12" rx="1.5" stroke="var(--sonde-daylight-hc-mark-bus-gold)" stroke-width="3"/><rect x="-36" y="-12" width="8" height="24" rx="2" stroke="var(--sonde-daylight-hc-mark-metal)" stroke-width="4"/><path d="M-44,-8 L-52,-14 L-52,14 L-44,8 Z" stroke="var(--sonde-daylight-hc-mark-metal)" stroke-width="4"/><g transform="translate(-8,0)" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M-52,-14 Q-86,-20 -112,-8 Q-120,0 -112,8 Q-86,20 -52,14" stroke="var(--sonde-daylight-hc-mark-flame-deep)" stroke-width="6"/><path d="M-52,-10 Q-78,-14 -96,-5 Q-102,0 -96,5 Q-78,14 -52,10" stroke="var(--sonde-daylight-hc-mark-flame-mid)" stroke-width="5"/><path d="M-52,-6 Q-68,-8 -78,-2 Q-82,0 -78,2 Q-68,8 -52,6" stroke="var(--sonde-daylight-hc-mark-flame-hot)" stroke-width="4"/></g><line x1="16" y1="-40" x2="24" y2="-56" stroke="var(--sonde-daylight-hc-mark-metal)" stroke-width="5"/><circle cx="24" cy="-56" r="3" stroke="var(--sonde-daylight-hc-mark-metal)" stroke-width="3"/></g></g></g></svg></span>
+    <span data-msg-id="settings.theme.ultraviolet" data-scribe-msgid="settings.theme.ultraviolet">Ultraviolet</span>
+  </div>
+</label>
+      <label class="theme-toggle-option settings-platform-theme-option">
+  <input type="radio" name="sonde-platform-theme-toggle" value="infrared">
+  <div class="theme-preview" data-platform-theme="infrared" data-theme="dark">
+    <span class="settings-theme-preview-icon" aria-hidden="true"><svg class="settings-theme-mark sonde-daylight-mark" viewBox="0 0 512 512" width="28" height="28" aria-hidden="true"><defs><radialGradient id="settings-theme-infrared-sun" cx="50%" cy="50%" r="50%"><stop offset="0%" stop-color="var(--sonde-daylight-mark-sun-stop-0)"/><stop offset="60%" stop-color="var(--sonde-daylight-mark-sun-stop-1)"/><stop offset="100%" stop-color="var(--sonde-daylight-mark-sun-stop-2)"/></radialGradient><clipPath id="settings-theme-infrared-disc"><circle cx="256" cy="256" r="240"/></clipPath></defs><g style="display:var(--sonde-daylight-mark-solid-display)"><circle cx="256" cy="256" r="240" fill="url(#settings-theme-infrared-sun)"/><g clip-path="url(#settings-theme-infrared-disc)"><g fill="var(--sonde-daylight-mark-crater)" stroke="var(--sonde-daylight-mark-crater)"><g opacity="0.7"><path d="M40,240 C60,110 170,40 250,90 C320,130 330,210 260,280 C200,340 50,340 40,240 Z" opacity="0.6"/><path d="M290,130 C360,60 460,110 470,190 C480,270 410,350 330,320 C260,290 230,190 290,130 Z" opacity="0.7"/><path d="M390,280 C470,250 510,300 480,380 C450,440 380,410 390,280 Z" opacity="0.5"/><path d="M130,350 C180,290 260,350 230,430 C200,510 60,450 130,350 Z" opacity="0.5"/><circle cx="230" cy="430" r="18" fill="transparent" stroke-width="4" opacity="0.8"/><circle cx="170" cy="190" r="12" fill="transparent" stroke-width="3" opacity="0.7"/><circle cx="90" cy="230" r="8" opacity="0.8"/></g></g></g><g clip-path="url(#settings-theme-infrared-disc)"><g transform="translate(250,240) rotate(-40)" fill="var(--sonde-daylight-mark-probe)" stroke="var(--sonde-daylight-mark-probe)"><line x1="-32" y1="-8" x2="-160" y2="-40" stroke-width="6" stroke-linecap="round"/><circle cx="-160" cy="-40" r="10"/><line x1="-32" y1="16" x2="-125" y2="62" stroke-width="8" stroke-linecap="round"/><rect x="-141" y="38" width="32" height="60" rx="4" transform="rotate(20,-125,62)"/><line x1="-16" y1="-40" x2="-46" y2="-92" stroke-width="7" stroke-linecap="round"/><rect x="-70" y="-108" width="48" height="28" rx="4"/><circle cx="-56" cy="-98" r="8"/><circle cx="-36" cy="-98" r="6"/><path d="M48,-108 Q128,-78 128,0 Q128,78 48,108" stroke-width="5" stroke-linejoin="round"/><line x1="58" y1="-50" x2="108" y2="0" stroke-width="5"/><line x1="58" y1="50" x2="108" y2="0" stroke-width="5"/><line x1="48" y1="0" x2="108" y2="0" stroke-width="5"/><circle cx="110" cy="0" r="14"/><polygon points="-16,-40 48,-40 62,-24 62,24 48,40 -16,40 -30,24 -30,-24"/></g></g></g><g style="display:var(--sonde-daylight-mark-line-display)"><circle cx="256" cy="256" r="232" fill="none" stroke="var(--sonde-daylight-hc-mark-earth-blue)" stroke-width="28"/><defs><clipPath id="settings-theme-infrared-hc-clip"><circle cx="256" cy="256" r="214"/></clipPath></defs><g clip-path="url(#settings-theme-infrared-hc-clip)"><g transform="translate(276,228) scale(1.3) rotate(-40)" fill="none" stroke-linecap="round" stroke-linejoin="round"><line x1="-32" y1="-8" x2="-165" y2="-42" stroke="var(--sonde-daylight-hc-mark-metal)" stroke-width="8"/><circle cx="-80" cy="-20" r="3" stroke="var(--sonde-daylight-hc-mark-metal)" stroke-width="3"/><circle cx="-125" cy="-32" r="2.5" stroke="var(--sonde-daylight-hc-mark-metal)" stroke-width="3"/><circle cx="-165" cy="-42" r="8" stroke="var(--sonde-daylight-hc-mark-metal)" stroke-width="4"/><circle cx="-165" cy="-42" r="4" stroke="var(--sonde-daylight-hc-mark-metal)" stroke-width="2"/><line x1="-165" y1="-48" x2="-165" y2="-36" stroke="var(--sonde-daylight-hc-mark-metal)" stroke-width="2"/><line x1="-171" y1="-42" x2="-159" y2="-42" stroke="var(--sonde-daylight-hc-mark-metal)" stroke-width="2"/><line x1="-32" y1="16" x2="-130" y2="64" stroke="var(--sonde-daylight-hc-mark-metal)" stroke-width="12"/><circle cx="-80" cy="40" r="4" stroke="var(--sonde-daylight-hc-mark-metal)" stroke-width="4"/><g transform="translate(-130,64) rotate(20)"><rect x="-16" y="-32" width="32" height="64" rx="4" stroke="var(--sonde-daylight-hc-mark-rtg-brown)" stroke-width="6"/><line x1="-16" y1="-22" x2="16" y2="-22" stroke="var(--sonde-daylight-hc-mark-rtg-brown)" stroke-width="4"/><line x1="-16" y1="-12" x2="16" y2="-12" stroke="var(--sonde-daylight-hc-mark-rtg-brown)" stroke-width="4"/><line x1="-16" y1="-2" x2="16" y2="-2" stroke="var(--sonde-daylight-hc-mark-rtg-brown)" stroke-width="4"/><line x1="-16" y1="8" x2="16" y2="8" stroke="var(--sonde-daylight-hc-mark-rtg-brown)" stroke-width="4"/><line x1="-16" y1="18" x2="16" y2="18" stroke="var(--sonde-daylight-hc-mark-rtg-brown)" stroke-width="4"/><line x1="-16" y1="28" x2="16" y2="28" stroke="var(--sonde-daylight-hc-mark-rtg-brown)" stroke-width="4"/><rect x="-18" y="-34" width="36" height="4" rx="2" stroke="var(--sonde-daylight-hc-mark-rtg-brown)" stroke-width="3"/><rect x="-18" y="30" width="36" height="4" rx="2" stroke="var(--sonde-daylight-hc-mark-rtg-brown)" stroke-width="3"/></g><line x1="-16" y1="-40" x2="-48" y2="-96" stroke="var(--sonde-daylight-hc-mark-metal)" stroke-width="10"/><circle cx="-30" cy="-64" r="4" stroke="var(--sonde-daylight-hc-mark-metal)" stroke-width="4"/><g transform="translate(-48,-96)"><rect x="-24" y="-16" width="48" height="28" rx="4" stroke="var(--sonde-daylight-hc-mark-metal)" stroke-width="6"/><line x1="-20" y1="-8" x2="20" y2="-8" stroke="var(--sonde-daylight-hc-mark-metal)" stroke-width="2"/><line x1="-20" y1="0" x2="20" y2="0" stroke="var(--sonde-daylight-hc-mark-metal)" stroke-width="2"/><circle cx="-10" cy="-4" r="8" stroke="var(--sonde-daylight-hc-mark-metal)" stroke-width="5"/><circle cx="-10" cy="-4" r="4" stroke="var(--sonde-daylight-hc-mark-metal)" stroke-width="2"/><circle cx="10" cy="-4" r="6" stroke="var(--sonde-daylight-hc-mark-metal)" stroke-width="4"/><circle cx="10" cy="-4" r="3" stroke="var(--sonde-daylight-hc-mark-metal)" stroke-width="2"/><rect x="-4" y="4" width="8" height="6" rx="1.5" stroke="var(--sonde-daylight-hc-mark-metal)" stroke-width="3"/></g><path d="M48,-112 Q130,-80 130,0 Q130,80 48,112" stroke="var(--sonde-daylight-hc-mark-earth-blue)" stroke-width="8"/><path d="M56,-96 Q118,-68 118,0 Q118,68 56,96" stroke="var(--sonde-daylight-hc-mark-earth-blue)" stroke-width="2"/><path d="M64,-80 Q106,-56 106,0 Q106,56 64,80" stroke="var(--sonde-daylight-hc-mark-earth-blue)" stroke-width="2"/><path d="M72,-60 Q94,-40 94,0 Q94,40 72,60" stroke="var(--sonde-daylight-hc-mark-earth-blue)" stroke-width="2"/><line x1="60" y1="-52" x2="110" y2="0" stroke="var(--sonde-daylight-hc-mark-earth-blue)" stroke-width="8"/><line x1="60" y1="52" x2="110" y2="0" stroke="var(--sonde-daylight-hc-mark-earth-blue)" stroke-width="8"/><line x1="48" y1="0" x2="110" y2="0" stroke="var(--sonde-daylight-hc-mark-earth-blue)" stroke-width="8"/><circle cx="112" cy="0" r="14" stroke="var(--sonde-daylight-hc-mark-earth-blue)" stroke-width="6"/><circle cx="112" cy="0" r="8" stroke="var(--sonde-daylight-hc-mark-earth-blue)" stroke-width="3"/><polygon points="-16,-40 48,-40 64,-24 64,24 48,40 -16,40 -32,24 -32,-24" stroke="var(--sonde-daylight-hc-mark-bus-gold)" stroke-width="8"/><line x1="0" y1="-40" x2="0" y2="40" stroke="var(--sonde-daylight-hc-mark-bus-gold)" stroke-width="4"/><line x1="24" y1="-40" x2="24" y2="40" stroke="var(--sonde-daylight-hc-mark-bus-gold)" stroke-width="4"/><line x1="-16" y1="-20" x2="48" y2="-20" stroke="var(--sonde-daylight-hc-mark-bus-gold)" stroke-width="3"/><line x1="-16" y1="0" x2="48" y2="0" stroke="var(--sonde-daylight-hc-mark-bus-gold)" stroke-width="3"/><line x1="-16" y1="20" x2="48" y2="20" stroke="var(--sonde-daylight-hc-mark-bus-gold)" stroke-width="3"/><rect x="4" y="-16" width="16" height="12" rx="1.5" stroke="var(--sonde-daylight-hc-mark-bus-gold)" stroke-width="3"/><rect x="28" y="-16" width="16" height="12" rx="1.5" stroke="var(--sonde-daylight-hc-mark-bus-gold)" stroke-width="3"/><rect x="4" y="4" width="16" height="12" rx="1.5" stroke="var(--sonde-daylight-hc-mark-bus-gold)" stroke-width="3"/><rect x="28" y="4" width="16" height="12" rx="1.5" stroke="var(--sonde-daylight-hc-mark-bus-gold)" stroke-width="3"/><rect x="-36" y="-12" width="8" height="24" rx="2" stroke="var(--sonde-daylight-hc-mark-metal)" stroke-width="4"/><path d="M-44,-8 L-52,-14 L-52,14 L-44,8 Z" stroke="var(--sonde-daylight-hc-mark-metal)" stroke-width="4"/><g transform="translate(-8,0)" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M-52,-14 Q-86,-20 -112,-8 Q-120,0 -112,8 Q-86,20 -52,14" stroke="var(--sonde-daylight-hc-mark-flame-deep)" stroke-width="6"/><path d="M-52,-10 Q-78,-14 -96,-5 Q-102,0 -96,5 Q-78,14 -52,10" stroke="var(--sonde-daylight-hc-mark-flame-mid)" stroke-width="5"/><path d="M-52,-6 Q-68,-8 -78,-2 Q-82,0 -78,2 Q-68,8 -52,6" stroke="var(--sonde-daylight-hc-mark-flame-hot)" stroke-width="4"/></g><line x1="16" y1="-40" x2="24" y2="-56" stroke="var(--sonde-daylight-hc-mark-metal)" stroke-width="5"/><circle cx="24" cy="-56" r="3" stroke="var(--sonde-daylight-hc-mark-metal)" stroke-width="3"/></g></g></g></svg></span>
+    <span data-msg-id="settings.theme.infrared" data-scribe-msgid="settings.theme.infrared">Infrared</span>
+  </div>
+</label>
+      <label class="theme-toggle-option settings-platform-theme-option">
+  <input type="radio" name="sonde-platform-theme-toggle" value="high-contrast">
+  <div class="theme-preview" data-platform-theme="high-contrast" data-theme="high-contrast">
+    <span class="settings-theme-preview-icon" aria-hidden="true"><svg class="settings-theme-mark sonde-daylight-mark" viewBox="0 0 512 512" width="28" height="28" aria-hidden="true"><defs><radialGradient id="settings-theme-high-contrast-sun" cx="50%" cy="50%" r="50%"><stop offset="0%" stop-color="var(--sonde-daylight-mark-sun-stop-0)"/><stop offset="60%" stop-color="var(--sonde-daylight-mark-sun-stop-1)"/><stop offset="100%" stop-color="var(--sonde-daylight-mark-sun-stop-2)"/></radialGradient><clipPath id="settings-theme-high-contrast-disc"><circle cx="256" cy="256" r="240"/></clipPath></defs><g style="display:var(--sonde-daylight-mark-solid-display)"><circle cx="256" cy="256" r="240" fill="url(#settings-theme-high-contrast-sun)"/><g clip-path="url(#settings-theme-high-contrast-disc)"><g fill="var(--sonde-daylight-mark-crater)" stroke="var(--sonde-daylight-mark-crater)"><g opacity="0.7"><path d="M40,240 C60,110 170,40 250,90 C320,130 330,210 260,280 C200,340 50,340 40,240 Z" opacity="0.6"/><path d="M290,130 C360,60 460,110 470,190 C480,270 410,350 330,320 C260,290 230,190 290,130 Z" opacity="0.7"/><path d="M390,280 C470,250 510,300 480,380 C450,440 380,410 390,280 Z" opacity="0.5"/><path d="M130,350 C180,290 260,350 230,430 C200,510 60,450 130,350 Z" opacity="0.5"/><circle cx="230" cy="430" r="18" fill="transparent" stroke-width="4" opacity="0.8"/><circle cx="170" cy="190" r="12" fill="transparent" stroke-width="3" opacity="0.7"/><circle cx="90" cy="230" r="8" opacity="0.8"/></g></g></g><g clip-path="url(#settings-theme-high-contrast-disc)"><g transform="translate(250,240) rotate(-40)" fill="var(--sonde-daylight-mark-probe)" stroke="var(--sonde-daylight-mark-probe)"><line x1="-32" y1="-8" x2="-160" y2="-40" stroke-width="6" stroke-linecap="round"/><circle cx="-160" cy="-40" r="10"/><line x1="-32" y1="16" x2="-125" y2="62" stroke-width="8" stroke-linecap="round"/><rect x="-141" y="38" width="32" height="60" rx="4" transform="rotate(20,-125,62)"/><line x1="-16" y1="-40" x2="-46" y2="-92" stroke-width="7" stroke-linecap="round"/><rect x="-70" y="-108" width="48" height="28" rx="4"/><circle cx="-56" cy="-98" r="8"/><circle cx="-36" cy="-98" r="6"/><path d="M48,-108 Q128,-78 128,0 Q128,78 48,108" stroke-width="5" stroke-linejoin="round"/><line x1="58" y1="-50" x2="108" y2="0" stroke-width="5"/><line x1="58" y1="50" x2="108" y2="0" stroke-width="5"/><line x1="48" y1="0" x2="108" y2="0" stroke-width="5"/><circle cx="110" cy="0" r="14"/><polygon points="-16,-40 48,-40 62,-24 62,24 48,40 -16,40 -30,24 -30,-24"/></g></g></g><g style="display:var(--sonde-daylight-mark-line-display)"><circle cx="256" cy="256" r="232" fill="none" stroke="var(--sonde-daylight-hc-mark-earth-blue)" stroke-width="28"/><defs><clipPath id="settings-theme-high-contrast-hc-clip"><circle cx="256" cy="256" r="214"/></clipPath></defs><g clip-path="url(#settings-theme-high-contrast-hc-clip)"><g transform="translate(276,228) scale(1.3) rotate(-40)" fill="none" stroke-linecap="round" stroke-linejoin="round"><line x1="-32" y1="-8" x2="-165" y2="-42" stroke="var(--sonde-daylight-hc-mark-metal)" stroke-width="8"/><circle cx="-80" cy="-20" r="3" stroke="var(--sonde-daylight-hc-mark-metal)" stroke-width="3"/><circle cx="-125" cy="-32" r="2.5" stroke="var(--sonde-daylight-hc-mark-metal)" stroke-width="3"/><circle cx="-165" cy="-42" r="8" stroke="var(--sonde-daylight-hc-mark-metal)" stroke-width="4"/><circle cx="-165" cy="-42" r="4" stroke="var(--sonde-daylight-hc-mark-metal)" stroke-width="2"/><line x1="-165" y1="-48" x2="-165" y2="-36" stroke="var(--sonde-daylight-hc-mark-metal)" stroke-width="2"/><line x1="-171" y1="-42" x2="-159" y2="-42" stroke="var(--sonde-daylight-hc-mark-metal)" stroke-width="2"/><line x1="-32" y1="16" x2="-130" y2="64" stroke="var(--sonde-daylight-hc-mark-metal)" stroke-width="12"/><circle cx="-80" cy="40" r="4" stroke="var(--sonde-daylight-hc-mark-metal)" stroke-width="4"/><g transform="translate(-130,64) rotate(20)"><rect x="-16" y="-32" width="32" height="64" rx="4" stroke="var(--sonde-daylight-hc-mark-rtg-brown)" stroke-width="6"/><line x1="-16" y1="-22" x2="16" y2="-22" stroke="var(--sonde-daylight-hc-mark-rtg-brown)" stroke-width="4"/><line x1="-16" y1="-12" x2="16" y2="-12" stroke="var(--sonde-daylight-hc-mark-rtg-brown)" stroke-width="4"/><line x1="-16" y1="-2" x2="16" y2="-2" stroke="var(--sonde-daylight-hc-mark-rtg-brown)" stroke-width="4"/><line x1="-16" y1="8" x2="16" y2="8" stroke="var(--sonde-daylight-hc-mark-rtg-brown)" stroke-width="4"/><line x1="-16" y1="18" x2="16" y2="18" stroke="var(--sonde-daylight-hc-mark-rtg-brown)" stroke-width="4"/><line x1="-16" y1="28" x2="16" y2="28" stroke="var(--sonde-daylight-hc-mark-rtg-brown)" stroke-width="4"/><rect x="-18" y="-34" width="36" height="4" rx="2" stroke="var(--sonde-daylight-hc-mark-rtg-brown)" stroke-width="3"/><rect x="-18" y="30" width="36" height="4" rx="2" stroke="var(--sonde-daylight-hc-mark-rtg-brown)" stroke-width="3"/></g><line x1="-16" y1="-40" x2="-48" y2="-96" stroke="var(--sonde-daylight-hc-mark-metal)" stroke-width="10"/><circle cx="-30" cy="-64" r="4" stroke="var(--sonde-daylight-hc-mark-metal)" stroke-width="4"/><g transform="translate(-48,-96)"><rect x="-24" y="-16" width="48" height="28" rx="4" stroke="var(--sonde-daylight-hc-mark-metal)" stroke-width="6"/><line x1="-20" y1="-8" x2="20" y2="-8" stroke="var(--sonde-daylight-hc-mark-metal)" stroke-width="2"/><line x1="-20" y1="0" x2="20" y2="0" stroke="var(--sonde-daylight-hc-mark-metal)" stroke-width="2"/><circle cx="-10" cy="-4" r="8" stroke="var(--sonde-daylight-hc-mark-metal)" stroke-width="5"/><circle cx="-10" cy="-4" r="4" stroke="var(--sonde-daylight-hc-mark-metal)" stroke-width="2"/><circle cx="10" cy="-4" r="6" stroke="var(--sonde-daylight-hc-mark-metal)" stroke-width="4"/><circle cx="10" cy="-4" r="3" stroke="var(--sonde-daylight-hc-mark-metal)" stroke-width="2"/><rect x="-4" y="4" width="8" height="6" rx="1.5" stroke="var(--sonde-daylight-hc-mark-metal)" stroke-width="3"/></g><path d="M48,-112 Q130,-80 130,0 Q130,80 48,112" stroke="var(--sonde-daylight-hc-mark-earth-blue)" stroke-width="8"/><path d="M56,-96 Q118,-68 118,0 Q118,68 56,96" stroke="var(--sonde-daylight-hc-mark-earth-blue)" stroke-width="2"/><path d="M64,-80 Q106,-56 106,0 Q106,56 64,80" stroke="var(--sonde-daylight-hc-mark-earth-blue)" stroke-width="2"/><path d="M72,-60 Q94,-40 94,0 Q94,40 72,60" stroke="var(--sonde-daylight-hc-mark-earth-blue)" stroke-width="2"/><line x1="60" y1="-52" x2="110" y2="0" stroke="var(--sonde-daylight-hc-mark-earth-blue)" stroke-width="8"/><line x1="60" y1="52" x2="110" y2="0" stroke="var(--sonde-daylight-hc-mark-earth-blue)" stroke-width="8"/><line x1="48" y1="0" x2="110" y2="0" stroke="var(--sonde-daylight-hc-mark-earth-blue)" stroke-width="8"/><circle cx="112" cy="0" r="14" stroke="var(--sonde-daylight-hc-mark-earth-blue)" stroke-width="6"/><circle cx="112" cy="0" r="8" stroke="var(--sonde-daylight-hc-mark-earth-blue)" stroke-width="3"/><polygon points="-16,-40 48,-40 64,-24 64,24 48,40 -16,40 -32,24 -32,-24" stroke="var(--sonde-daylight-hc-mark-bus-gold)" stroke-width="8"/><line x1="0" y1="-40" x2="0" y2="40" stroke="var(--sonde-daylight-hc-mark-bus-gold)" stroke-width="4"/><line x1="24" y1="-40" x2="24" y2="40" stroke="var(--sonde-daylight-hc-mark-bus-gold)" stroke-width="4"/><line x1="-16" y1="-20" x2="48" y2="-20" stroke="var(--sonde-daylight-hc-mark-bus-gold)" stroke-width="3"/><line x1="-16" y1="0" x2="48" y2="0" stroke="var(--sonde-daylight-hc-mark-bus-gold)" stroke-width="3"/><line x1="-16" y1="20" x2="48" y2="20" stroke="var(--sonde-daylight-hc-mark-bus-gold)" stroke-width="3"/><rect x="4" y="-16" width="16" height="12" rx="1.5" stroke="var(--sonde-daylight-hc-mark-bus-gold)" stroke-width="3"/><rect x="28" y="-16" width="16" height="12" rx="1.5" stroke="var(--sonde-daylight-hc-mark-bus-gold)" stroke-width="3"/><rect x="4" y="4" width="16" height="12" rx="1.5" stroke="var(--sonde-daylight-hc-mark-bus-gold)" stroke-width="3"/><rect x="28" y="4" width="16" height="12" rx="1.5" stroke="var(--sonde-daylight-hc-mark-bus-gold)" stroke-width="3"/><rect x="-36" y="-12" width="8" height="24" rx="2" stroke="var(--sonde-daylight-hc-mark-metal)" stroke-width="4"/><path d="M-44,-8 L-52,-14 L-52,14 L-44,8 Z" stroke="var(--sonde-daylight-hc-mark-metal)" stroke-width="4"/><g transform="translate(-8,0)" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M-52,-14 Q-86,-20 -112,-8 Q-120,0 -112,8 Q-86,20 -52,14" stroke="var(--sonde-daylight-hc-mark-flame-deep)" stroke-width="6"/><path d="M-52,-10 Q-78,-14 -96,-5 Q-102,0 -96,5 Q-78,14 -52,10" stroke="var(--sonde-daylight-hc-mark-flame-mid)" stroke-width="5"/><path d="M-52,-6 Q-68,-8 -78,-2 Q-82,0 -78,2 Q-68,8 -52,6" stroke="var(--sonde-daylight-hc-mark-flame-hot)" stroke-width="4"/></g><line x1="16" y1="-40" x2="24" y2="-56" stroke="var(--sonde-daylight-hc-mark-metal)" stroke-width="5"/><circle cx="24" cy="-56" r="3" stroke="var(--sonde-daylight-hc-mark-metal)" stroke-width="3"/></g></g></g></svg></span>
+    <span data-msg-id="settings.theme.hc" data-scribe-msgid="settings.theme.hc">High Contrast</span>
+  </div>
+</label>
+    </div>
+  </details>
+  <details class="settings-section settings-theme-section" open>
+    <summary class="settings-section-trigger" data-msg-id="settings.mode.legend" data-scribe-msgid="settings.mode.legend">Mode</summary>
+    <div class="settings-section-body">
+      <label class="theme-toggle-option theme-option-auto">
+  <input type="radio" name="sonde-theme-toggle" value="auto">
+  <div class="theme-preview" data-theme="auto">
+    <span data-msg-id="settings.theme.auto" data-scribe-msgid="settings.theme.auto">Auto</span>
+  </div>
+</label>
+      <label class="theme-toggle-option theme-option-light">
+  <input type="radio" name="sonde-theme-toggle" value="light">
+  <div class="theme-preview" data-theme="light">
+    <span data-msg-id="settings.theme.light" data-scribe-msgid="settings.theme.light">Light</span>
+  </div>
+</label>
+      <label class="theme-toggle-option theme-option-dark">
+  <input type="radio" name="sonde-theme-toggle" value="dark" checked>
+  <div class="theme-preview" data-theme="dark">
+    <span data-msg-id="settings.theme.dark" data-scribe-msgid="settings.theme.dark">Dark</span>
+  </div>
+</label>
+    </div>
+  </details>
+  <div class="settings-preferences">
+    <label class="settings-motion-option"><input type="checkbox" name="sonde-motion-toggle"> <span data-msg-id="settings.motion.reduce">Reduce motion</span></label>
+    <button type="button" class="settings-reset" data-sonde-preference-reset hidden><span data-msg-id="settings.reset">Reset remembered preferences</span></button>
+    <p class="settings-reset-done" role="status" data-sonde-preference-reset-confirmation hidden><span data-msg-id="settings.reset.done">Your preferences are reset. Where we need your consent, we will ask again; elsewhere analytics returns to its default, which is on.</span></p>
+  </div>
+</div>
+      </details>
+      <a class="btn btn-primary" href="../contact/" data-msg-id="sondeLife.nav.talkToUs">Talk to us</a>
+    </div>
+  </div>
+</header>
+<script>
+  (function () {
+    var header = document.querySelector('header.site-header');
+    if (!header) return;
+    var revealed = header.querySelectorAll('[data-sl-reveal]');
+    for (var r = 0; r < revealed.length; r += 1) revealed[r].hidden = false;
+
+    var HOVER_DELAY_MS = 150;
+    var toggles = Array.prototype.slice.call(header.querySelectorAll('.submenu-toggle'));
+    function menuOf(toggle) {
+      return document.getElementById(toggle.getAttribute('aria-controls'));
+    }
+    function isOpen(toggle) {
+      return toggle.getAttribute('aria-expanded') === 'true';
+    }
+    function setOpen(toggle, open) {
+      toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+      var menu = menuOf(toggle);
+      if (menu) menu.hidden = !open;
+    }
+    function closeOthers(keep) {
+      for (var i = 0; i < toggles.length; i += 1) {
+        if (toggles[i] !== keep && isOpen(toggles[i])) setOpen(toggles[i], false);
+      }
+    }
+    toggles.forEach(function (toggle) {
+      var item = toggle.closest('.has-children');
+      var timer = 0;
+      toggle.hidden = false;
+      toggle.addEventListener('click', function () {
+        window.clearTimeout(timer);
+        var open = !isOpen(toggle);
+        closeOthers(toggle);
+        setOpen(toggle, open);
+      });
+      if (!item) return;
+      item.addEventListener('pointerenter', function (event) {
+        if (event.pointerType !== 'mouse') return;
+        window.clearTimeout(timer);
+        timer = window.setTimeout(function () {
+          closeOthers(toggle);
+          setOpen(toggle, true);
+        }, HOVER_DELAY_MS);
+      });
+      item.addEventListener('pointerleave', function (event) {
+        if (event.pointerType !== 'mouse') return;
+        window.clearTimeout(timer);
+        timer = window.setTimeout(function () {
+          if (!item.contains(document.activeElement)) setOpen(toggle, false);
+        }, HOVER_DELAY_MS);
+      });
+    });
+    document.addEventListener('keydown', function (event) {
+      if (event.key !== 'Escape') return;
+      toggles.forEach(function (toggle) {
+        if (!isOpen(toggle)) return;
+        var menu = menuOf(toggle);
+        var focused = document.activeElement;
+        var focusWasInside = focused === toggle || (menu !== null && menu.contains(focused));
+        setOpen(toggle, false);
+        if (focusWasInside) toggle.focus();
+      });
+    });
+    document.addEventListener('click', function (event) {
+      var target = event.target instanceof Element ? event.target : null;
+      toggles.forEach(function (toggle) {
+        var item = toggle.closest('.has-children');
+        if (isOpen(toggle) && !(item && target && item.contains(target))) setOpen(toggle, false);
+      });
+    });
+
+    var root = document.documentElement;
+    var shortViewport = window.matchMedia ? window.matchMedia('(max-height: 499px)') : null;
+    function clearHeader() {
+      root.style.scrollPaddingTop = shortViewport && shortViewport.matches ? '0px' : header.offsetHeight + 'px';
+      root.style.setProperty('--sl-header-block-size', header.offsetHeight + 'px');
+    }
+    clearHeader();
+    if (typeof ResizeObserver === 'function') new ResizeObserver(clearHeader).observe(header);
+    if (shortViewport && shortViewport.addEventListener) shortViewport.addEventListener('change', clearHeader);
+  })();
+</script>
+
+  <main id="main-content" class="sonde-exhibit" data-presentation-active="true" tabindex="-1">
+
+<section class="page-hero">
+  <div class="container">
+    <div class="eyebrow" data-msg-id="sondeLife.content.howItWorks.eyebrow">How it works</div>
+    <h1 data-msg-id="sondeLife.content.howItWorks.title">Use Sonde anywhere you work</h1>
+    <p class="lede" data-msg-id="sondeLife.content.howItWorks.lede">Sonde works with a variety of tools and environments to provide you with the maximum flexibility.</p>
+    <div class="tool-strip" role="group" aria-label="Works with your AI agent over MCP, your CLI, CI pipeline, and editor" data-msg-aria-label-id="sondeLife.content.howItWorks.toolStripLabel">
+      <div class="tool-strip-item">
+        <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M9 3v5M15 3v5"/><path d="M6 8h12v3a6 6 0 0 1-12 0z"/><path d="M12 17v4"/></svg>
+        <span data-msg-id="sondeLife.content.howItWorks.tools.0.label">MCP Server</span>
+      </div>
+      <div class="tool-strip-item">
+        <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M6 9l3 3-3 3M12 15h6"/></svg>
+        <span data-msg-id="sondeLife.content.howItWorks.tools.1.label">A CLI</span>
+      </div>
+      <div class="tool-strip-item">
+        <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M4 7h11a4 4 0 0 1 4 4v1"/><path d="M20 17H9a4 4 0 0 1-4-4v-1"/><path d="M16 4l3 3-3 3M8 20l-3-3 3-3"/></svg>
+        <span data-msg-id="sondeLife.content.howItWorks.tools.2.label">CI pipeline integration</span>
+      </div>
+      <div class="tool-strip-item">
+        <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M9 4L4 12l5 8M15 4l5 8-5 8"/></svg>
+        <span data-msg-id="sondeLife.content.howItWorks.tools.3.label">Your favorite editor</span>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="alt">
+  <div class="container">
+    <h2 id="two-ways-to-run-it" class="centered" data-msg-id="sondeLife.content.howItWorks.waysTitle">Two ways to run it</h2>
+    <div class="pricing-grid">
+      <div class="pricing-card">
+        <h3 id="self-hosted" data-msg-id="sondeLife.content.howItWorks.ways.0.name">Self-hosted</h3>
+        <p class="blurb" data-msg-id="sondeLife.content.howItWorks.ways.0.blurb">Runs on your own premises, under your control.</p>
+      </div>
+      <div class="pricing-card">
+        <h3 id="saas" data-msg-id="sondeLife.content.howItWorks.ways.1.name">SaaS</h3>
+        <p class="blurb" data-msg-id="sondeLife.content.howItWorks.ways.1.blurb">Hosted by us -- nothing to run or maintain on your end.</p>
+      </div>
+    </div>
+  </div>
+</section>
+<section>
+  <div class="container">
+    <h2 id="how-it-all-works" class="centered" data-msg-id="sondeLife.content.howItWorks.diagramTitle">How it all works</h2>
+    <div class="mesh-diagram" id="sl-mesh-diagram">
+    <svg id="sonde-hero-sprite" aria-hidden="true" focusable="false" width="0" height="0">
+      <symbol id="sonde-i-code" viewBox="0 0 24 24">
+        <rect x="2.5" y="4" width="19" height="16" rx="2.5" />
+        <path d="M2.5 8.5h19" />
+        <circle cx="5.5" cy="6.25" r=".55" />
+        <circle cx="7.6" cy="6.25" r=".55" />
+        <circle cx="9.7" cy="6.25" r=".55" />
+        <path d="m9.4 12.2-2.3 2.3 2.3 2.3M14.6 12.2l2.3 2.3-2.3 2.3" />
+      </symbol>
+      <symbol id="sonde-i-cubes" viewBox="0 0 24 24">
+        <path d="M12 2.6 16.4 5 12 7.4 7.6 5Z" />
+        <path d="M5.6 12.4 10 14.8 5.6 17.2 1.2 14.8Z" />
+        <path d="M18.4 12.4 22.8 14.8 18.4 17.2 14 14.8Z" />
+        <path d="M12 7.6v3M9.5 11.5 7.4 12.6M14.5 11.5l2.1 1.1" />
+      </symbol>
+      <symbol id="sonde-i-browser" viewBox="0 0 24 24">
+        <rect x="2.5" y="4" width="19" height="16" rx="2.5" />
+        <path d="M2.5 8.5h19" />
+        <circle cx="5.5" cy="6.25" r=".55" />
+        <circle cx="7.6" cy="6.25" r=".55" />
+        <path d="m7.4 11.6 3.6 3.6M11 11.6l-3.6 3.6" />
+        <path d="m14.6 12.3 4.6 4.4-2 .35-.5 2Z" />
+      </symbol>
+      <symbol id="sonde-i-website" viewBox="0 0 24 24">
+        <rect x="2.5" y="4" width="19" height="16" rx="2.5" />
+        <path d="M2.5 8.5h19" />
+        <circle cx="5.5" cy="6.25" r=".55" />
+        <path d="M8.2 6.25h10.3" />
+        <rect x="5.5" y="11" width="5.5" height="6" rx="1" />
+        <path d="M13.5 12h5M13.5 14.5h5M13.5 17h3" />
+      </symbol>
+      <symbol id="sonde-i-mobile" viewBox="0 0 24 24">
+        <rect x="6" y="2.5" width="12" height="19" rx="2.6" />
+        <path d="M10.4 5.2h3.2" />
+        <circle cx="9.9" cy="10.6" r="1.05" />
+        <circle cx="14.1" cy="10.6" r="1.05" />
+        <circle cx="9.9" cy="14.6" r="1.05" />
+        <circle cx="14.1" cy="14.6" r="1.05" />
+      </symbol>
+      <symbol id="sonde-i-dataflow" viewBox="0 0 24 24">
+        <circle cx="4.6" cy="12" r="2" />
+        <circle cx="19.4" cy="5.8" r="2" />
+        <circle cx="19.4" cy="18.2" r="2" />
+        <circle cx="12" cy="12" r="1.5" />
+        <path d="M6.6 12h3.9M13.4 11.2l4-3.9M13.4 12.8l4 3.9" />
+      </symbol>
+      <symbol id="sonde-i-schema" viewBox="0 0 24 24">
+        <rect x="2.4" y="4.6" width="11.4" height="11.4" rx="1.6" />
+        <path d="M2.4 8.4h11.4M8.1 4.6v11.4" />
+        <ellipse cx="18.2" cy="10.7" rx="3.4" ry="1.5" />
+        <path d="M14.8 10.7v6.1c0 .83 1.52 1.5 3.4 1.5s3.4-.67 3.4-1.5v-6.1" />
+        <path d="M14.8 13.8c0 .83 1.52 1.5 3.4 1.5s3.4-.67 3.4-1.5" />
+      </symbol>
+      <symbol id="sonde-i-cloud" viewBox="0 0 24 24">
+        <path
+          d="M7.3 18.4a4.2 4.2 0 0 1-.55-8.36 5.3 5.3 0 0 1 10.05-1.16 3.9 3.9 0 0 1 .5 7.72Z"
+        />
+      </symbol>
+
+      <symbol id="sonde-i-shield-check" viewBox="0 0 24 24">
+        <path d="M12 2.6 20 5.6v6c0 4.6-3.2 8.2-8 9.8-4.8-1.6-8-5.2-8-9.8v-6Z" />
+        <path d="m8.4 11.9 2.6 2.6 4.6-4.9" />
+      </symbol>
+      <symbol id="sonde-i-target" viewBox="0 0 24 24">
+        <circle cx="12" cy="12" r="7.4" />
+        <circle cx="12" cy="12" r="3" />
+        <path d="M12 1.8v3.1M12 19.1v3.1M1.8 12h3.1M19.1 12h3.1" />
+      </symbol>
+      <symbol id="sonde-i-globe" viewBox="0 0 24 24">
+        <circle cx="12" cy="12" r="9" />
+        <path d="M3 12h18" />
+        <ellipse cx="12" cy="12" rx="4" ry="9" />
+      </symbol>
+      <symbol id="sonde-i-pulse" viewBox="0 0 24 24">
+        <path d="M1.8 12.2h4l2.3-6.5 3.9 12.9 2.6-8.3 1.7 4.4 1.5-2.5h4.4" />
+      </symbol>
+      <symbol id="sonde-i-layers" viewBox="0 0 24 24">
+        <path d="M12 2.8 22 7.5 12 12.2 2 7.5Z" />
+        <path d="m2 12.6 10 4.7 10-4.7" />
+        <path d="m2 16.9 10 4.7 10-4.7" />
+      </symbol>
+
+      <symbol id="sonde-i-discover" viewBox="0 0 24 24">
+        <circle cx="12" cy="12" r="8.5" />
+        <circle cx="12" cy="12" r="4.8" />
+        <circle cx="12" cy="12" r="1.5" />
+      </symbol>
+      <symbol id="sonde-i-analyze" viewBox="0 0 24 24">
+        <circle cx="10.6" cy="10.6" r="6.5" />
+        <path d="m15.5 15.5 5 5" />
+        <path d="M8.2 10.6h4.8M10.6 8.2v4.8" />
+      </symbol>
+      <symbol id="sonde-i-query" viewBox="0 0 24 24">
+        <rect x="2.6" y="3.8" width="18.8" height="16.4" rx="2.4" />
+        <path d="m6.4 15.4 3.4-4 3 2.6 3.6-4.4" />
+        <circle cx="17.4" cy="8.8" r="1.4" />
+      </symbol>
+
+      <symbol id="sonde-i-brain" viewBox="0 0 24 24">
+        <path d="M12 4.6a3 3 0 0 0-5.4 1.8A2.9 2.9 0 0 0 4.5 9.2a2.9 2.9 0 0 0 .9 2.1A3 3 0 0 0 7 16.1a3 3 0 0 0 5 1.3Z" />
+        <path d="M12 4.6a3 3 0 0 1 5.4 1.8 2.9 2.9 0 0 1 2.1 2.8 2.9 2.9 0 0 1-.9 2.1 3 3 0 0 1-1.6 4.8 3 3 0 0 1-5 1.3Z" />
+        <path d="M12 4.6v12.8" />
+        <path d="M8.9 9.5h1.7M13.4 12.4h1.7" />
+      </symbol>
+      <symbol id="sonde-i-shield-access" viewBox="0 0 24 24">
+        <path d="M12 2.6 20 5.6v6c0 4.6-3.2 8.2-8 9.8-4.8-1.6-8-5.2-8-9.8v-6Z" />
+        <circle cx="12" cy="7.7" r="1.2" />
+        <path d="M8.4 10.3h7.2" />
+        <path d="M12 10.3v3.1M12 13.4l-2 3.7M12 13.4l2 3.7" />
+      </symbol>
+
+      <symbol id="sonde-i-file-code" viewBox="0 0 24 24">
+        <path d="M13.6 2.8H6.9a2 2 0 0 0-2 2v14.4a2 2 0 0 0 2 2h10.2a2 2 0 0 0 2-2V8.4Z" />
+        <path d="M13.6 2.8v5.6h5.5" />
+        <path d="m10.4 12.9-1.9 1.9 1.9 1.9M14 12.9l1.9 1.9-1.9 1.9" />
+      </symbol>
+      <symbol id="sonde-i-fixplan" viewBox="0 0 24 24">
+        <path
+          d="M8.6 4.4H6.7a1.9 1.9 0 0 0-1.9 1.9v12.9a1.9 1.9 0 0 0 1.9 1.9h10.6a1.9 1.9 0 0 0 1.9-1.9V6.3a1.9 1.9 0 0 0-1.9-1.9h-1.9"
+        />
+        <rect x="8.6" y="2.6" width="6.8" height="3.6" rx="1.2" />
+        <path d="m8.6 11.7 1.5 1.5 3-3.2M8.6 16.6l1.5 1.5 3-3.2" />
+      </symbol>
+      <symbol id="sonde-i-report" viewBox="0 0 24 24">
+        <path d="M13.6 2.8H6.9a2 2 0 0 0-2 2v14.4a2 2 0 0 0 2 2h10.2a2 2 0 0 0 2-2V8.4Z" />
+        <path d="M13.6 2.8v5.6h5.5" />
+        <path d="M8.7 17.4v-3.1M11.7 17.4v-5.1M14.7 17.4v-2" />
+      </symbol>
+      <symbol id="sonde-i-rerun" viewBox="0 0 24 24">
+        <path d="M20.1 12a8.1 8.1 0 1 1-2.5-5.9" />
+        <path d="M20.6 3.5v4.7h-4.7" />
+        <path d="m8.9 12.1 2.2 2.2 4.1-4.4" />
+      </symbol>
+    </svg>
+
+        <div class="diagram" role="group" aria-labelledby="diagram-label" aria-describedby="diagram-desc">
+          <h3 class="sonde-visually-hidden" id="diagram-label" data-msg-id="sondeLife.howItWorks.diagram.label">How Sonde turns a software system into evidence and fix plans</h3>
+          <p class="sonde-visually-hidden" id="diagram-desc" data-msg-id="sondeLife.howItWorks.diagram.description">Eight kinds of system input feed the Sonde Semantic Mesh. The mesh runs a discover, analyze, query and prove pipeline, and emits three outcome tracks — AI guardrails; development; and compliance and accessibility — which together deliver a specific file and line, a deterministic fix plan, audit-ready reports, and a rerun that verifies improvement.</p>
+
+          <article class="card card--system" aria-labelledby="system-heading">
+            <h3 class="card__heading" id="system-heading" data-msg-id="sondeLife.howItWorks.diagram.system.heading">Your software system</h3>
+            <ul class="rows">
+              <li class="row">
+                <svg class="row__icon" aria-hidden="true" focusable="false"><use href="#sonde-i-code" /></svg>
+                <span data-msg-id="sondeLife.howItWorks.diagram.system.sourceCode">Source code</span>
+              </li>
+              <li class="row">
+                <svg class="row__icon" aria-hidden="true" focusable="false"><use href="#sonde-i-cubes" /></svg>
+                <span data-msg-id="sondeLife.howItWorks.diagram.system.builds">Builds & dependencies</span>
+              </li>
+              <li class="row">
+                <svg class="row__icon" aria-hidden="true" focusable="false"><use href="#sonde-i-browser" /></svg>
+                <span data-msg-id="sondeLife.howItWorks.diagram.system.browserRuntime">UI / browser runtime</span>
+              </li>
+              <li class="row">
+                <svg class="row__icon" aria-hidden="true" focusable="false"><use href="#sonde-i-mobile" /></svg>
+                <span data-msg-id="sondeLife.howItWorks.diagram.system.mobileApps">Mobile apps</span>
+              </li>
+              <li class="row">
+                <svg class="row__icon" aria-hidden="true" focusable="false"><use href="#sonde-i-dataflow" /></svg>
+                <span data-msg-id="sondeLife.howItWorks.diagram.system.dataFlows">Data flows</span>
+              </li>
+              <li class="row">
+                <svg class="row__icon" aria-hidden="true" focusable="false"><use href="#sonde-i-schema" /></svg>
+                <span data-msg-id="sondeLife.howItWorks.diagram.system.databaseSchema">Database schema</span>
+              </li>
+              <li class="row">
+                <svg class="row__icon" aria-hidden="true" focusable="false"><use href="#sonde-i-cloud" /></svg>
+                <span data-msg-id="sondeLife.howItWorks.diagram.system.cloudResources">Cloud resources</span>
+              </li>
+              <li class="row">
+                <svg class="row__icon" aria-hidden="true" focusable="false"><use href="#sonde-i-website" /></svg>
+                <span data-msg-id="sondeLife.howItWorks.diagram.system.website">Website</span>
+              </li>
+            </ul>
+          </article>
+
+          <div class="hop">
+          <svg
+            class="conn conn--a"
+            viewBox="0 0 52 600"
+            preserveAspectRatio="none"
+            role="img"
+            focusable="false"
+            aria-labelledby="conn-a-title"
+          >
+            <title id="conn-a-title" data-msg-id="sondeLife.howItWorks.diagram.connectorInputs">feeds into the Sonde Semantic Mesh</title>
+            <g class="conn__lines">
+              <path d="M0 88 C 24 88, 18 300, 42 300" />
+              <path d="M0 157 C 24 157, 20 300, 42 300" />
+              <path d="M0 228 C 26 228, 22 300, 42 300" />
+              <path d="M0 296 C 28 296, 24 300, 42 300" />
+              <path d="M0 361 C 28 361, 24 300, 42 300" />
+              <path d="M0 426 C 26 426, 22 300, 42 300" />
+              <path d="M0 491 C 24 491, 20 300, 42 300" />
+              <path d="M0 556 C 24 556, 18 300, 42 300" />
+            </g>
+            <path class="conn__head" d="M41 288 L52 300 L41 312 Z" />
+          </svg>
+
+          <svg class="flow" viewBox="0 0 34 44" role="img" focusable="false" aria-labelledby="flow-a-title">
+            <title id="flow-a-title" data-msg-id="sondeLife.howItWorks.diagram.connectorInputs">feeds into the Sonde Semantic Mesh</title>
+            <path class="flow__line" d="M17 1 V 27" />
+            <path class="flow__head" d="M8 26 L17 43 L26 26 Z" />
+          </svg>
+          </div>
+
+          <article class="card card--mesh" aria-labelledby="mesh-heading">
+            <h3 class="card__heading card__heading--center" id="mesh-heading" data-msg-id="sondeLife.howItWorks.diagram.mesh.heading">Sonde Semantic Mesh</h3>
+
+            <div class="mesh">
+              <svg
+                class="mesh__field"
+                viewBox="0 25 420 250"
+                role="img"
+                focusable="false"
+                aria-labelledby="mesh-field-title"
+              >
+                <title id="mesh-field-title" data-msg-id="sondeLife.howItWorks.diagram.mesh.fieldTitle">Abstract node-and-link field representing the semantic mesh</title>
+        <path class="mesh__edges" d="M268 150L279.7 162.9M268 150L269.1 130.4M268 150L287.8 141.5M239 200.2L224.7 212.6M239 200.2L252.4 214.3M239 200.2L254.7 188.1M181 200.2L194.9 211.5M181 200.2L170 217.6M181 200.2L161.4 188.5M152 150L141.5 138M152 150L158.1 132.6M152 150L133.7 156.7M181 99.8L183 82.6M181 99.8L165.5 91.5M181 99.8L198.7 91.5M239 99.8L226.2 89.3M239 99.8L239.3 72.4M239 99.8L263.3 112.6M252.4 214.3L263.8 202.5M252.4 214.3L269.9 218.2M194.9 211.5L188.5 231.7M194.9 211.5L170 217.6M263.8 202.5L269.9 218.2M263.8 202.5L278.1 193.6M161.4 188.5L146.1 188.7M161.4 188.5L148.7 205.9M188.5 231.7L200.8 247.5M188.5 231.7L178.1 251.2M141.5 138L146.5 121.6M141.5 138L158.1 132.6M170 217.6L150.4 227.8M170 217.6L188.5 231.7M158.1 132.6L146.5 121.6M158.1 132.6L164.8 116.8M145.7 170.8L131.2 176.3M145.7 170.8L146.1 188.7M145.7 170.8L133.7 156.7M279.7 162.9L265.1 173.4M279.7 162.9L288.9 179.8M178.1 251.2L193 267.6M178.1 251.2L156.4 245.5M254.7 188.1L263.8 202.5M254.7 188.1L265.1 173.4M129.1 125.1L146.5 121.6M129.1 125.1L141.5 138M129.1 125.1L124.9 106.8M183 82.6L198.7 91.5M183 82.6L165.5 91.5M133.7 156.7L115.8 163.3M269.1 130.4L284.4 123.3M269.1 130.4L263.3 112.6M224.7 212.6L234.7 229.1M224.7 212.6L215.2 233.9M278.1 193.6L288.9 179.8M278.1 193.6L296.6 201.8M111.8 147.6L115.8 163.3M111.8 147.6L97.1 155.4M111.8 147.6L133.7 156.7M296.6 201.8L303.9 186.1M296.6 201.8L289.5 218.4M110.7 115.5L124.9 106.8M110.7 115.5L129.1 125.1M110.7 115.5L90.7 103.5M146.1 188.7L148.7 205.9M215.2 233.9L200.8 247.5M215.2 233.9L234.7 229.1M215.2 233.9L227.7 252.7M132.4 202.6L148.7 205.9M132.4 202.6L129.8 220.1M132.4 202.6L113.5 204M90.7 103.5L90.8 85.4M90.7 103.5L76.2 121M115.8 163.3L131.2 176.3M90.8 85.4L97.9 67.2M90.8 85.4L70.8 88M287.8 141.5L300.8 154.1M287.8 141.5L284.4 123.3M97.6 176.2L114.8 185.5M97.6 176.2L97.1 155.4M97.6 176.2L87.5 194.7M257.4 239.7L279.8 242.2M257.4 239.7L249.2 261.2M257.4 239.7L269.9 218.2M200.8 247.5L193 267.6M97.1 155.4L79 158.3M97.1 155.4L91 136.2M265.1 173.4L268 150M164.8 116.8L146.5 121.6M164.8 116.8L151.8 102.7M151.8 102.7L165.5 91.5M151.8 102.7L142.8 86.6M284.4 123.3L300 117.4M198.7 91.5L199.6 71.2M91 136.2L76.2 121M91 136.2L68.9 143.3M76.2 121L53.7 127.4M79 158.3L68.9 143.3M79 158.3L69.3 180M234.7 229.1L252.4 214.3M288.9 179.8L303.9 186.1M111.2 90.3L90.8 85.4M111.2 90.3L124.9 106.8M111.2 90.3L124.2 71.3M68.9 143.3L51.3 155.8M68.9 143.3L53.7 127.4M216.1 75.3L199.6 71.2M216.1 75.3L226.2 89.3M216.1 75.3L215.7 56M184.6 60.1L199.6 71.2M184.6 60.1L174.1 44.1M184.6 60.1L200.4 45.9M142.8 86.6L156.4 67.9M142.8 86.6L165.5 91.5M69.3 180L87.5 194.7M69.3 180L44.8 180.9M239.3 72.4L234.9 54.1M239.3 72.4L257.7 79.5M239.3 72.4L226.2 89.3M114.8 185.5L113.5 204M114.8 185.5L131.2 176.3M308.9 170.6L303.9 186.1M308.9 170.6L300.8 154.1M308.9 170.6L322.5 156.8M323.7 184.2L337.6 197.2M323.7 184.2L303.9 186.1M323.7 184.2L308.9 170.6M70.8 88L54.1 78.1M70.8 88L90.7 103.5M300.8 154.1L316.5 139.5M322.5 156.8L316.5 139.5M322.5 156.8L300.8 154.1M150.4 227.8L156.4 245.5M150.4 227.8L148.7 205.9M150.4 227.8L129.8 220.1M174.1 44.1L152.8 47.4M174.1 44.1L200.4 45.9M156.4 67.9L152.8 47.4M156.4 67.9L165.5 91.5M316.5 139.5L335 126.3M113.5 204L96.1 211.4M283.7 101.9L273.2 88.9M283.7 101.9L284.4 123.3M283.7 101.9L300 117.4M200.4 45.9L215.7 56M200.4 45.9L220 36.3M273.2 88.9L257.7 79.5M273.2 88.9L294.4 80.4M257.7 79.5L276 62.4M269.9 218.2L289.5 218.4M47 101.6L54.1 78.1M47 101.6L53.7 127.4M47 101.6L70.8 88M156.4 245.5L129.3 238.6M51.3 155.8L35 146.5M51.3 155.8L29.8 168M131.2 176.3L146.1 188.7M263.3 112.6L283.7 101.9M263.3 112.6L284.4 123.3M300 117.4L305.9 95.6M305.9 95.6L294.4 80.4M305.9 95.6L322.5 108.3M129.8 220.1L129.3 238.6M129.8 220.1L109.2 225.9M87.5 194.7L96.1 211.4M294.4 80.4L283.7 101.9M193 267.6L188.5 231.7M335 126.3L351.9 135.7M335 126.3L352.8 115.5M335 126.3L322.5 108.3M152.8 47.4L122 52.5M129.3 238.6L109.5 244.8M129.3 238.6L150.4 227.8M79.2 219.3L63.6 209.3M79.2 219.3L96.1 211.4M79.2 219.3L91.9 237.5M199.6 71.2L183 82.6M276 62.4L278.3 42.2M276 62.4L253.2 54.1M227.7 252.7L249.2 261.2M227.7 252.7L234.7 229.1M124.2 71.3L122 52.5M124.2 71.3L142.8 86.6M351.9 135.7L370.3 129.5M351.9 135.7L352.8 115.5M234.9 54.1L253.2 54.1M234.9 54.1L215.7 56M91.9 237.5L109.5 244.8M91.9 237.5L109.2 225.9M253.2 54.1L239.3 72.4M253.2 54.1L240 34.4M249.2 261.2L234.7 229.1M352.8 115.5L370.3 129.5M279.8 242.2L300.5 240.5M279.8 242.2L289.5 218.4M97.9 67.2L124.2 71.3M97.9 67.2L111.2 90.3M289.5 218.4L300.5 240.5M340.9 172.5L346.2 155.8M340.9 172.5L323.7 184.2M340.9 172.5L364.4 176.7M109.5 244.8L109.2 225.9M122 52.5L97.9 67.2M53.7 127.4L34.4 126.9M364.3 158.4L346.2 155.8M364.3 158.4L364.4 176.7M364.3 158.4L384.4 166.9M322.5 108.3L334.7 90M364.4 176.7L364.8 197.8M364.4 176.7L384.4 166.9M337.6 197.2L336.4 219.7M337.6 197.2L340.9 172.5M63.6 209.3L45.7 200.1M63.6 209.3L87.5 194.7M317.5 215.4L336.4 219.7M317.5 215.4L327.2 238M317.5 215.4L296.6 201.8M364.8 197.8L366.5 217.4M364.8 197.8L387.8 186.3M336.4 219.7L327.2 238M240 34.4L220 36.3M240 34.4L234.9 54.1M370.3 129.5L390.5 144.1M220 36.3L215.7 56M346.2 155.8L351.9 135.7M34.4 126.9L35 146.5M34.4 126.9L16.4 143.2M44.8 180.9L45.7 200.1M44.8 180.9L29.8 168M54.1 78.1L90.8 85.4M327.2 238L300.5 240.5M45.7 200.1L69.3 180M384.4 166.9L387.8 186.3M387.8 186.3L364.4 176.7M29.8 168L35 146.5M16.4 143.2L35 146.5M16.4 143.2L29.8 168M310.5 59.9L324.1 74.6M310.5 59.9L294.4 80.4M310.5 59.9L276 62.4M278.3 42.2L253.2 54.1M278.3 42.2L310.5 59.9M366.5 217.4L336.4 219.7M366.5 217.4L337.6 197.2M334.7 90L324.1 74.6M334.7 90L354.6 91.4M354.6 91.4L352.7 71.2M354.6 91.4L352.8 115.5M109.2 225.9L96.1 211.4M324.1 74.6L305.9 95.6M375.6 103.5L393.8 118.1M375.6 103.5L354.6 91.4M375.6 103.5L352.8 115.5M390.5 144.1L408.1 157.8M390.5 144.1L384.4 166.9M393.8 118.1L370.3 129.5M393.8 118.1L390.5 144.1M408.1 157.8L384.4 166.9M408.1 157.8L387.8 186.3M352.7 71.2L334.7 90M352.7 71.2L324.1 74.6" />
+        <g class="mesh__nodes"><circle class="tw tw-1" cx="268" cy="150" r="2.3"/><circle class="tw tw-2" cx="239" cy="200.2" r="1.5"/><circle cx="181" cy="200.2" r="1.5"/><circle cx="152" cy="150" r="1.5"/><circle class="tw tw-3" cx="181" cy="99.8" r="1.5"/><circle cx="239" cy="99.8" r="1.5"/><circle cx="252.4" cy="214.3" r="1.5"/><circle cx="194.9" cy="211.5" r="2.3"/><circle cx="263.8" cy="202.5" r="1.5"/><circle class="tw tw-4" cx="161.4" cy="188.5" r="1.5"/><circle cx="188.5" cy="231.7" r="1.5"/><circle class="tw tw-5" cx="141.5" cy="138" r="1.5"/><circle class="tw tw-6" cx="170" cy="217.6" r="1.5"/><circle cx="158.1" cy="132.6" r="1.5"/><circle class="tw tw-7" cx="145.7" cy="170.8" r="2.3"/><circle class="tw tw-8" cx="279.7" cy="162.9" r="1.5"/><circle class="tw tw-9" cx="178.1" cy="251.2" r="1.5"/><circle cx="254.7" cy="188.1" r="1.5"/><circle class="tw tw-10" cx="129.1" cy="125.1" r="1.5"/><circle class="tw tw-11" cx="183" cy="82.6" r="1.5"/><circle cx="133.7" cy="156.7" r="1.5"/><circle cx="269.1" cy="130.4" r="2.3"/><circle cx="224.7" cy="212.6" r="1.5"/><circle cx="278.1" cy="193.6" r="1.5"/><circle cx="111.8" cy="147.6" r="1.5"/><circle class="tw tw-12" cx="296.6" cy="201.8" r="1.5"/><circle cx="110.7" cy="115.5" r="1.5"/><circle cx="146.1" cy="188.7" r="1.5"/><circle cx="215.2" cy="233.9" r="2.3"/><circle cx="132.4" cy="202.6" r="1.5"/><circle cx="90.7" cy="103.5" r="1.5"/><circle cx="115.8" cy="163.3" r="1.5"/><circle class="tw tw-13" cx="90.8" cy="85.4" r="1.5"/><circle cx="287.8" cy="141.5" r="1.5"/><circle cx="97.6" cy="176.2" r="1.5"/><circle cx="257.4" cy="239.7" r="2.3"/><circle class="tw tw-14" cx="200.8" cy="247.5" r="1.5"/><circle cx="146.5" cy="121.6" r="1.5"/><circle cx="97.1" cy="155.4" r="1.5"/><circle class="tw tw-15" cx="265.1" cy="173.4" r="1.5"/><circle class="tw tw-16" cx="164.8" cy="116.8" r="1.5"/><circle cx="151.8" cy="102.7" r="1.5"/><circle cx="284.4" cy="123.3" r="2.3"/><circle class="tw tw-17" cx="198.7" cy="91.5" r="1.5"/><circle cx="91" cy="136.2" r="1.5"/><circle cx="76.2" cy="121" r="1.5"/><circle cx="79" cy="158.3" r="1.5"/><circle class="tw tw-18" cx="234.7" cy="229.1" r="1.5"/><circle cx="288.9" cy="179.8" r="1.5"/><circle cx="111.2" cy="90.3" r="2.3"/><circle cx="148.7" cy="205.9" r="1.5"/><circle cx="68.9" cy="143.3" r="1.5"/><circle class="tw tw-19" cx="124.9" cy="106.8" r="1.5"/><circle class="tw tw-20" cx="216.1" cy="75.3" r="1.5"/><circle cx="165.5" cy="91.5" r="1.5"/><circle cx="184.6" cy="60.1" r="1.5"/><circle cx="142.8" cy="86.6" r="2.3"/><circle cx="69.3" cy="180" r="1.5"/><circle class="tw tw-21" cx="239.3" cy="72.4" r="1.5"/><circle cx="114.8" cy="185.5" r="1.5"/><circle cx="308.9" cy="170.6" r="1.5"/><circle class="tw tw-22" cx="323.7" cy="184.2" r="1.5"/><circle class="tw tw-23" cx="70.8" cy="88" r="1.5"/><circle class="tw tw-24" cx="300.8" cy="154.1" r="2.3"/><circle cx="322.5" cy="156.8" r="1.5"/><circle cx="150.4" cy="227.8" r="1.5"/><circle cx="174.1" cy="44.1" r="1.5"/><circle class="tw tw-25" cx="156.4" cy="67.9" r="1.5"/><circle cx="316.5" cy="139.5" r="1.5"/><circle cx="113.5" cy="204" r="1.5"/><circle class="tw tw-26" cx="283.7" cy="101.9" r="2.3"/><circle cx="200.4" cy="45.9" r="1.5"/><circle cx="273.2" cy="88.9" r="1.5"/><circle cx="257.7" cy="79.5" r="1.5"/><circle cx="269.9" cy="218.2" r="1.5"/><circle cx="47" cy="101.6" r="1.5"/><circle cx="156.4" cy="245.5" r="1.5"/><circle cx="51.3" cy="155.8" r="2.3"/><circle class="tw tw-27" cx="131.2" cy="176.3" r="1.5"/><circle cx="263.3" cy="112.6" r="1.5"/><circle class="tw tw-28" cx="300" cy="117.4" r="1.5"/><circle cx="305.9" cy="95.6" r="1.5"/><circle class="tw tw-29" cx="129.8" cy="220.1" r="1.5"/><circle cx="87.5" cy="194.7" r="1.5"/><circle cx="294.4" cy="80.4" r="2.3"/><circle cx="193" cy="267.6" r="1.5"/><circle cx="335" cy="126.3" r="1.5"/><circle cx="152.8" cy="47.4" r="1.5"/><circle cx="129.3" cy="238.6" r="1.5"/><circle cx="79.2" cy="219.3" r="1.5"/><circle cx="199.6" cy="71.2" r="1.5"/><circle cx="276" cy="62.4" r="2.3"/><circle class="tw tw-30" cx="227.7" cy="252.7" r="1.5"/><circle cx="124.2" cy="71.3" r="1.5"/><circle cx="351.9" cy="135.7" r="1.5"/><circle class="tw tw-31" cx="234.9" cy="54.1" r="1.5"/><circle class="tw tw-32" cx="91.9" cy="237.5" r="1.5"/><circle cx="253.2" cy="54.1" r="1.5"/><circle cx="249.2" cy="261.2" r="2.3"/><circle class="tw tw-33" cx="352.8" cy="115.5" r="1.5"/><circle cx="279.8" cy="242.2" r="1.5"/><circle class="tw tw-34" cx="97.9" cy="67.2" r="1.5"/><circle cx="289.5" cy="218.4" r="1.5"/><circle cx="340.9" cy="172.5" r="1.5"/><circle cx="109.5" cy="244.8" r="1.5"/><circle cx="122" cy="52.5" r="2.3"/><circle class="tw tw-35" cx="53.7" cy="127.4" r="1.5"/><circle cx="364.3" cy="158.4" r="1.5"/><circle cx="215.7" cy="56" r="1.5"/><circle cx="322.5" cy="108.3" r="1.5"/><circle class="tw tw-36" cx="364.4" cy="176.7" r="1.5"/><circle cx="337.6" cy="197.2" r="1.5"/><circle cx="63.6" cy="209.3" r="2.3"/><circle cx="317.5" cy="215.4" r="1.5"/><circle class="tw tw-25" cx="364.8" cy="197.8" r="1.5"/><circle class="tw tw-37" cx="336.4" cy="219.7" r="1.5"/><circle cx="96.1" cy="211.4" r="1.5"/><circle cx="226.2" cy="89.3" r="1.5"/><circle cx="240" cy="34.4" r="1.5"/><circle cx="370.3" cy="129.5" r="2.3"/><circle cx="220" cy="36.3" r="1.5"/><circle class="tw tw-38" cx="346.2" cy="155.8" r="1.5"/><circle cx="303.9" cy="186.1" r="1.5"/><circle cx="34.4" cy="126.9" r="1.5"/><circle cx="44.8" cy="180.9" r="1.5"/><circle class="tw tw-39" cx="54.1" cy="78.1" r="1.5"/><circle cx="327.2" cy="238" r="2.3"/><circle cx="45.7" cy="200.1" r="1.5"/><circle cx="384.4" cy="166.9" r="1.5"/><circle class="tw tw-40" cx="387.8" cy="186.3" r="1.5"/><circle cx="29.8" cy="168" r="1.5"/><circle cx="16.4" cy="143.2" r="1.5"/><circle class="tw tw-41" cx="310.5" cy="59.9" r="1.5"/><circle cx="300.5" cy="240.5" r="2.3"/><circle class="tw tw-42" cx="278.3" cy="42.2" r="1.5"/><circle class="tw tw-43" cx="366.5" cy="217.4" r="1.5"/><circle cx="35" cy="146.5" r="1.5"/><circle cx="334.7" cy="90" r="1.5"/><circle cx="354.6" cy="91.4" r="1.5"/><circle cx="109.2" cy="225.9" r="1.5"/><circle class="tw tw-44" cx="324.1" cy="74.6" r="2.3"/><circle class="tw tw-45" cx="375.6" cy="103.5" r="1.5"/><circle cx="390.5" cy="144.1" r="1.5"/><circle class="tw tw-46" cx="393.8" cy="118.1" r="1.5"/><circle cx="408.1" cy="157.8" r="1.5"/><circle cx="352.7" cy="71.2" r="1.5"/></g>
+        <g class="mesh__pulses" aria-hidden="true"><path class="spark__trail pulse-47" pathLength="100" d="M90.7 103.5L110.7 115.5L129.1 125.1L141.5 138L158.1 132.6"/><path class="spark__head pulse-47" pathLength="100" d="M90.7 103.5L110.7 115.5L129.1 125.1L141.5 138L158.1 132.6"/><path class="spark__trail pulse-48" pathLength="100" d="M70.8 88L90.7 103.5L110.7 115.5L129.1 125.1L141.5 138L158.1 132.6"/><path class="spark__head pulse-48" pathLength="100" d="M70.8 88L90.7 103.5L110.7 115.5L129.1 125.1L141.5 138L158.1 132.6"/><path class="spark__trail pulse-49" pathLength="100" d="M165.5 91.5L156.4 67.9L152.8 47.4L122 52.5L97.9 67.2L90.8 85.4L54.1 78.1L47 101.6L53.7 127.4L34.4 126.9"/><path class="spark__head pulse-49" pathLength="100" d="M165.5 91.5L156.4 67.9L152.8 47.4L122 52.5L97.9 67.2L90.8 85.4L54.1 78.1L47 101.6L53.7 127.4L34.4 126.9"/><path class="spark__trail pulse-50" pathLength="100" d="M184.6 60.1L199.6 71.2L198.7 91.5L181 99.8"/><path class="spark__head pulse-50" pathLength="100" d="M184.6 60.1L199.6 71.2L198.7 91.5L181 99.8"/><path class="spark__trail pulse-51" pathLength="100" d="M240 34.4L234.9 54.1L239.3 72.4L239 99.8"/><path class="spark__head pulse-51" pathLength="100" d="M240 34.4L234.9 54.1L239.3 72.4L239 99.8"/><path class="spark__trail pulse-52" pathLength="100" d="M305.9 95.6L300 117.4L284.4 123.3L269.1 130.4L268 150"/><path class="spark__head pulse-52" pathLength="100" d="M305.9 95.6L300 117.4L284.4 123.3L269.1 130.4L268 150"/><path class="spark__trail pulse-53" pathLength="100" d="M390.5 144.1L370.3 129.5L351.9 135.7L335 126.3L316.5 139.5L300.8 154.1L287.8 141.5L268 150"/><path class="spark__head pulse-53" pathLength="100" d="M390.5 144.1L370.3 129.5L351.9 135.7L335 126.3L316.5 139.5L300.8 154.1L287.8 141.5L268 150"/><path class="spark__trail pulse-54" pathLength="100" d="M279.7 162.9L288.9 179.8L303.9 186.1L323.7 184.2L337.6 197.2L366.5 217.4L364.8 197.8L387.8 186.3L408.1 157.8L390.5 144.1"/><path class="spark__head pulse-54" pathLength="100" d="M279.7 162.9L288.9 179.8L303.9 186.1L323.7 184.2L337.6 197.2L366.5 217.4L364.8 197.8L387.8 186.3L408.1 157.8L390.5 144.1"/><path class="spark__trail pulse-55" pathLength="100" d="M317.5 215.4L296.6 201.8L278.1 193.6L263.8 202.5L254.7 188.1L239 200.2"/><path class="spark__head pulse-55" pathLength="100" d="M317.5 215.4L296.6 201.8L278.1 193.6L263.8 202.5L254.7 188.1L239 200.2"/><path class="spark__trail pulse-56" pathLength="100" d="M257.4 239.7L269.9 218.2L263.8 202.5L254.7 188.1L239 200.2"/><path class="spark__head pulse-56" pathLength="100" d="M257.4 239.7L269.9 218.2L263.8 202.5L254.7 188.1L239 200.2"/><path class="spark__trail pulse-57" pathLength="100" d="M224.7 212.6L215.2 233.9L227.7 252.7L249.2 261.2L257.4 239.7L279.8 242.2L300.5 240.5L327.2 238L336.4 219.7L366.5 217.4"/><path class="spark__head pulse-57" pathLength="100" d="M224.7 212.6L215.2 233.9L227.7 252.7L249.2 261.2L257.4 239.7L279.8 242.2L300.5 240.5L327.2 238L336.4 219.7L366.5 217.4"/><path class="spark__trail pulse-58" pathLength="100" d="M129.3 238.6L150.4 227.8L170 217.6L181 200.2"/><path class="spark__head pulse-58" pathLength="100" d="M129.3 238.6L150.4 227.8L170 217.6L181 200.2"/><path class="spark__trail pulse-59" pathLength="100" d="M161.4 188.5L148.7 205.9L150.4 227.8L129.3 238.6L109.5 244.8L91.9 237.5L79.2 219.3L63.6 209.3L45.7 200.1L44.8 180.9"/><path class="spark__head pulse-59" pathLength="100" d="M161.4 188.5L148.7 205.9L150.4 227.8L129.3 238.6L109.5 244.8L91.9 237.5L79.2 219.3L63.6 209.3L45.7 200.1L44.8 180.9"/><path class="spark__trail pulse-60" pathLength="100" d="M87.5 194.7L97.6 176.2L114.8 185.5L131.2 176.3L145.7 170.8"/><path class="spark__head pulse-60" pathLength="100" d="M87.5 194.7L97.6 176.2L114.8 185.5L131.2 176.3L145.7 170.8"/></g>
+        <g class="mesh__flares" aria-hidden="true"><circle class="pulse-61" cx="158.1" cy="132.6" r="3.4"/><circle class="pulse-62" cx="158.1" cy="132.6" r="3.4"/><circle class="pulse-63" cx="34.4" cy="126.9" r="3.4"/><circle class="pulse-64" cx="181" cy="99.8" r="3.4"/><circle class="pulse-65" cx="239" cy="99.8" r="3.4"/><circle class="pulse-66" cx="268" cy="150" r="3.4"/><circle class="pulse-67" cx="268" cy="150" r="3.4"/><circle class="pulse-68" cx="390.5" cy="144.1" r="3.4"/><circle class="pulse-69" cx="239" cy="200.2" r="3.4"/><circle class="pulse-70" cx="239" cy="200.2" r="3.4"/><circle class="pulse-71" cx="366.5" cy="217.4" r="3.4"/><circle class="pulse-72" cx="181" cy="200.2" r="3.4"/><circle class="pulse-73" cx="44.8" cy="180.9" r="3.4"/><circle class="pulse-74" cx="145.7" cy="170.8" r="3.4"/></g>
+              </svg>
+
+              <span class="mesh__medallion">
+
+                <svg class="mesh__probe" role="img" focusable="false" aria-labelledby="probe-title" viewBox="-40 -36 76 68">
+                  <title id="probe-title" data-msg-id="sondeLife.howItWorks.diagram.mesh.probeTitle">Sonde probe mark</title>
+                  <g transform="rotate(-40)" class="probe">
+          <line x1="-6" y1="-1.5" x2="-32" y2="-8" stroke-width="0.95" stroke-linecap="round" />
+          <circle cx="-32" cy="-8" r="1.8" fill="currentColor" stroke="none" />
+          <line x1="-6" y1="3" x2="-25" y2="12" stroke-width="1.3" />
+          <g transform="translate(-25, 12) rotate(20)">
+            <rect x="-3" y="-6" width="6" height="12" rx="0.8" fill="currentColor" stroke-width="0.65" />
+            <line x1="-3" y1="-3" x2="3" y2="-3" stroke-width="0.45" />
+            <line x1="-3" y1="0" x2="3" y2="0" stroke-width="0.45" />
+            <line x1="-3" y1="3" x2="3" y2="3" stroke-width="0.45" />
+          </g>
+          <line x1="-3" y1="-8" x2="-9" y2="-18" stroke-width="1.1" />
+          <rect x="-14" y="-22" width="10" height="6" rx="1" fill="currentColor" stroke-width="0.7" />
+          <circle cx="-8" cy="-19" r="1.9" fill="currentColor" stroke="none" />
+          <path
+            d="M9,-22 Q25,-16 25,0 Q25,16 9,22"
+            fill="currentColor"
+            stroke-width="1.3"
+            stroke-linejoin="round"
+          />
+          <path d="M11,-18 Q22,-12 22,0 Q22,12 11,18" fill="currentColor" stroke="none" opacity="0.35" />
+          <line x1="11" y1="-10" x2="21" y2="0" stroke-width="0.8" />
+          <line x1="11" y1="10" x2="21" y2="0" stroke-width="0.8" />
+          <line x1="9" y1="0" x2="21" y2="0" stroke-width="0.8" />
+          <circle cx="21" cy="0" r="2.9" fill="currentColor" stroke="none" />
+          <polygon
+            points="-3,-8 9,-8 12,-5 12,5 9,8 -3,8 -6,5 -6,-5"
+            fill="currentColor"
+            stroke-width="1.1"
+          />
+          <path d="M-8,-3 L-12,-5 L-12,5 L-8,3 Z" fill="currentColor" stroke-width="0.7" />
+        </g>
+                </svg>
+              </span>
+            </div>
+
+            <ul class="traits">
+              <li class="trait">
+                <svg class="trait__icon" aria-hidden="true" focusable="false"><use href="#sonde-i-shield-check" /></svg>
+                <span data-msg-id="sondeLife.howItWorks.diagram.mesh.deterministic">Deterministic, not AI-generated guesses</span>
+              </li>
+              <li class="trait">
+                <svg class="trait__icon" aria-hidden="true" focusable="false"><use href="#sonde-i-globe" /></svg>
+                <span data-msg-id="sondeLife.howItWorks.diagram.mesh.wholeSystem">Whole-system analysis</span>
+              </li>
+              <li class="trait">
+                <svg class="trait__icon" aria-hidden="true" focusable="false"><use href="#sonde-i-target" /></svg>
+                <span data-msg-id="sondeLife.howItWorks.diagram.mesh.provenance">Exact source-line provenance</span>
+              </li>
+              <li class="trait">
+                <svg class="trait__icon" aria-hidden="true" focusable="false"><use href="#sonde-i-pulse" /></svg>
+                <span data-msg-id="sondeLife.howItWorks.diagram.mesh.checks">Hundreds of checks</span>
+              </li>
+              <li class="trait trait--wide">
+                <svg class="trait__icon" aria-hidden="true" focusable="false"><use href="#sonde-i-layers" /></svg>
+                <span data-msg-id="sondeLife.howItWorks.diagram.mesh.oneModel">One model, many outputs</span>
+              </li>
+            </ul>
+
+            <h4 id="how-an-analysis-runs" class="sonde-visually-hidden" data-msg-id="sondeLife.howItWorks.diagram.pipeline.heading">How an analysis runs</h4>
+            <ol class="pipeline">
+              <li class="stage">
+                <span class="stage__disc">
+                  <svg class="stage__icon" aria-hidden="true" focusable="false"><use href="#sonde-i-discover" /></svg>
+                </span>
+                <span class="stage__label" data-msg-id="sondeLife.howItWorks.diagram.pipeline.discover">Discover</span>
+              </li>
+              <li class="stage">
+                <span class="stage__disc">
+                  <svg class="stage__icon" aria-hidden="true" focusable="false"><use href="#sonde-i-analyze" /></svg>
+                </span>
+                <span class="stage__label" data-msg-id="sondeLife.howItWorks.diagram.pipeline.analyze">Analyze</span>
+              </li>
+              <li class="stage">
+                <span class="stage__disc">
+                  <svg class="stage__icon" aria-hidden="true" focusable="false"><use href="#sonde-i-query" /></svg>
+                </span>
+                <span class="stage__label" data-msg-id="sondeLife.howItWorks.diagram.pipeline.query">Query</span>
+              </li>
+              <li class="stage">
+                <span class="stage__disc">
+                  <svg class="stage__icon" aria-hidden="true" focusable="false"><use href="#sonde-i-shield-check" /></svg>
+                </span>
+                <span class="stage__label" data-msg-id="sondeLife.howItWorks.diagram.pipeline.prove">Prove</span>
+              </li>
+            </ol>
+          </article>
+
+          <div class="hop">
+          <svg
+            class="conn conn--b"
+            viewBox="0 0 52 600"
+            preserveAspectRatio="none"
+            role="img"
+            focusable="false"
+            aria-labelledby="conn-b-title"
+          >
+            <title id="conn-b-title" data-msg-id="sondeLife.howItWorks.diagram.connectorOutcomes">the mesh produces these outcome tracks</title>
+            <g class="conn__lines">
+              <path d="M0 300 C 18 300, 24 95, 42 95" />
+              <path d="M0 300 H 42" />
+              <path d="M0 300 C 18 300, 24 505, 42 505" />
+            </g>
+            <path class="conn__head" d="M41 83 L52 95 L41 107 Z" />
+            <path class="conn__head" d="M41 288 L52 300 L41 312 Z" />
+            <path class="conn__head" d="M41 493 L52 505 L41 517 Z" />
+          </svg>
+
+          <svg class="flow" viewBox="0 0 34 44" role="img" focusable="false" aria-labelledby="flow-b-title">
+            <title id="flow-b-title" data-msg-id="sondeLife.howItWorks.diagram.connectorOutcomes">the mesh produces these outcome tracks</title>
+            <path class="flow__line" d="M17 1 V 27" />
+            <path class="flow__head" d="M8 26 L17 43 L26 26 Z" />
+          </svg>
+          </div>
+
+          <div class="outcomes">
+            <h3 id="what-sonde-produces" class="sonde-visually-hidden" data-msg-id="sondeLife.howItWorks.diagram.outcomes.heading">What Sonde produces</h3>
+            <ul class="outcomes__list">
+              <li>
+                <article class="card card--outcome">
+                  <span class="card__badge">
+                    <svg class="card__badge-icon" aria-hidden="true" focusable="false"><use href="#sonde-i-brain" /></svg>
+                  </span>
+                  <div class="card__copy">
+                    <h4 id="ai-guardrails" class="card__title" data-msg-id="sondeLife.howItWorks.diagram.outcomes.aiGuardrails.title">AI Guardrails</h4>
+                    <p class="card__body" data-msg-id="sondeLife.howItWorks.diagram.outcomes.aiGuardrails.body">Verify AI-written code before it reaches production</p>
+                  </div>
+                </article>
+              </li>
+              <li>
+                <article class="card card--outcome">
+                  <span class="card__badge">
+                    <svg class="card__badge-icon" aria-hidden="true" focusable="false"><use href="#sonde-i-code" /></svg>
+                  </span>
+                  <div class="card__copy">
+                    <h4 id="development" class="card__title" data-msg-id="sondeLife.howItWorks.diagram.outcomes.development.title">Development</h4>
+                    <p class="card__body" data-msg-id="sondeLife.howItWorks.diagram.outcomes.development.body">Expose architecture risk, tech debt, hotspots, and blast radius</p>
+                  </div>
+                </article>
+              </li>
+              <li>
+                <article class="card card--outcome">
+                  <span class="card__badge">
+                    <svg class="card__badge-icon" aria-hidden="true" focusable="false"><use href="#sonde-i-shield-access" /></svg>
+                  </span>
+                  <div class="card__copy">
+                    <h4 id="compliance-accessibility" class="card__title" data-msg-id="sondeLife.howItWorks.diagram.outcomes.compliance.title">Compliance & Accessibility</h4>
+                    <p class="card__body" data-msg-id="sondeLife.howItWorks.diagram.outcomes.compliance.body">Map once; scan to SOC 2, FedRAMP, HIPAA, GDPR, PCI DSS, WCAG and more</p>
+                  </div>
+                </article>
+              </li>
+            </ul>
+          </div>
+
+          <div class="hop">
+          <svg
+            class="conn conn--c"
+            viewBox="0 0 52 600"
+            preserveAspectRatio="none"
+            role="img"
+            focusable="false"
+            aria-labelledby="conn-c-title"
+          >
+            <title id="conn-c-title" data-msg-id="sondeLife.howItWorks.diagram.connectorTeams">together, the outcomes deliver these artifacts to teams</title>
+            <g class="conn__lines">
+              <path d="M0 95 C 16 95, 12 300, 26 300" />
+              <path d="M0 300 H 26" />
+              <path d="M0 505 C 16 505, 12 300, 26 300" />
+            </g>
+            <path class="conn__head" d="M24 296 H34 V272 L52 300 L34 328 V304 H24 Z" />
+          </svg>
+
+          <svg class="flow" viewBox="0 0 34 44" role="img" focusable="false" aria-labelledby="flow-c-title">
+            <title id="flow-c-title" data-msg-id="sondeLife.howItWorks.diagram.connectorTeams">together, the outcomes deliver these artifacts to teams</title>
+            <path class="flow__line" d="M17 1 V 27" />
+            <path class="flow__head" d="M8 26 L17 43 L26 26 Z" />
+          </svg>
+          </div>
+
+          <article class="card card--teams" aria-labelledby="teams-heading">
+            <h3 class="card__heading" id="teams-heading" data-msg-id="sondeLife.howItWorks.diagram.teams.heading">What teams get</h3>
+            <ul class="rows rows--stacked">
+              <li class="row row--stacked">
+                <svg class="row__icon" aria-hidden="true" focusable="false"><use href="#sonde-i-file-code" /></svg>
+                <span data-msg-id="sondeLife.howItWorks.diagram.teams.fileLine">Specific file + line</span>
+              </li>
+              <li class="row row--stacked">
+                <svg class="row__icon" aria-hidden="true" focusable="false"><use href="#sonde-i-fixplan" /></svg>
+                <span data-msg-id="sondeLife.howItWorks.diagram.teams.fixPlan">Deterministic fix plan</span>
+              </li>
+              <li class="row row--stacked">
+                <svg class="row__icon" aria-hidden="true" focusable="false"><use href="#sonde-i-report" /></svg>
+                <span data-msg-id="sondeLife.howItWorks.diagram.teams.reports">Audit-ready reports</span>
+              </li>
+              <li class="row row--stacked">
+                <svg class="row__icon" aria-hidden="true" focusable="false"><use href="#sonde-i-rerun" /></svg>
+                <span data-msg-id="sondeLife.howItWorks.diagram.teams.rerun">Rerun to verify improvement</span>
+              </li>
+            </ul>
+          </article>
+
+        </div>
+</div>
+<script>document.getElementById("sl-mesh-diagram").setAttribute("data-sl-animate", "");</script>
+
+    <p class="section-lede" data-msg-id="sondeLife.content.howItWorks.diagramLede">Sonde parses your codebase into a structural model, checks it against a deterministic set of rules, and turns the results into evidence your team can act on. Run it in CI, from the CLI, or straight from your editor -- it's the same check, the same result, every time.</p>
+  </div>
+</section>
+<section>
+  <div class="container">
+    <h2 id="agentic-usage-of-sonde-mcp" class="centered" data-msg-id="sondeLife.content.howItWorks.mcpTitle">Agentic usage of Sonde MCP</h2>
+    <p class="section-lede" data-msg-id="sondeLife.content.howItWorks.mcpParagraphs.0">Sonde ships an MCP server, so the AI coding agent you already use can call the same deterministic analysis your team runs from the CLI and in CI. One command registers it with the agent hosts installed on your machine.</p>
+    <p class="section-lede" data-msg-id="sondeLife.content.howItWorks.mcpParagraphs.1">From inside a session, an agent can analyze code from a chosen facet such as health, complexity, or dependencies; query the semantic graph to find symbols, trace callers and callees, measure blast radius, and read context and snippets; review its own change with a delta review and a lint of the diff; and build a fix plan without changing anything.</p>
+    <p class="section-lede" data-msg-id="sondeLife.content.howItWorks.mcpParagraphs.2">When a fix is applied, it goes through verified transformers that roll the change back if its check fails, and actions that need consent ask you through the agent's host rather than taking the agent's word for it. Every answer points back to the same evidence, down to the file and line, so a reviewer can check exactly what the agent saw.</p>
+  </div>
+</section>
+<section class="alt cta-banner">
+  <div class="container">
+    <h2 id="ready-to-see-it-on-your-codebase" data-msg-id="sondeLife.ctaBanner.heading">Ready to see it on your codebase?</h2>
+    <p data-msg-id="sondeLife.ctaBanner.intro">Bring a real repository. Leave with a deterministic read on where the risk actually is.</p>
+    <div class="hero-ctas">
+      <a class="btn btn-primary" href="../contact/" data-msg-id="sondeLife.nav.talkToUs">Talk to us</a>
+    </div>
+  </div>
+</section>
+
+
+
+  </main>
+<footer class="site-footer">
+  <div class="container footer-row">
+    <div>&copy; 2026 Sonde. <span data-msg-id="sondeLife.footer.rights">All rights reserved.</span></div>
+    <div>
+      <a href="../policy/privacy/" data-msg-id="sondeLife.footer.privacy">Privacy</a> &middot;
+      <a href="../policy/cookies/" data-msg-id="sondeLife.footer.cookies">Cookie and browser storage</a> &middot;
+      <a href="../sitemap/" data-msg-id="sondeLife.footer.siteMap">Site map</a>
+    </div>
+  </div>
+</footer>
+<section class="cookie-banner" data-sonde-consent-banner hidden role="region" aria-label="Analytics choice" data-msg-aria-label-id="sondeLife.consent.region" data-search-exclude>
+  <div class="container cookie-banner-row">
+    <p data-sonde-consent-status></p>
+    <span hidden data-sonde-consent-message="available" data-msg-id="sondeLife.consent.available">An analytics choice is available at the bottom of the page.</span>
+    <span hidden data-sonde-consent-message="allowed" data-msg-id="sondeLife.consent.allowed">Analytics allowed.</span>
+    <span hidden data-sonde-consent-message="off" data-msg-id="sondeLife.consent.off">Analytics kept off.</span>
+    <span hidden data-sonde-consent-message="browser-off" data-msg-id="sondeLife.consent.browserOff">Your browser asks sites not to track you, so analytics stays off.</span>
+    <div class="cookie-banner-actions">
+      <button class="btn btn-secondary" type="button" data-sonde-consent-choice="off" data-msg-id="sondeLife.consent.keepOff">Keep analytics off</button>
+      <button class="btn btn-secondary" type="button" data-sonde-consent-choice="allowed" data-msg-id="sondeLife.consent.allow">Allow analytics</button>
+    </div>
+  </div>
+</section>
+<div hidden aria-hidden="true">
+  <span data-msg-id="sondeLife.metadata.description">Sonde checks the software your team ships for accessibility, compliance, and quality — and shows you exactly what to fix.</span>
+  <span data-msg-id="sondeLife.metadata.home.title">Sonde - Software That Understands Software</span>
+  <span data-msg-id="sondeLife.metadata.solutions.title">Solutions - Sonde</span>
+  <span data-msg-id="sondeLife.metadata.solutions-ai-guardrails.title">AI Guardrails & Governance - Sonde</span>
+  <span data-msg-id="sondeLife.metadata.solutions-compliance.title">Compliance & Accessibility - Sonde</span>
+  <span data-msg-id="sondeLife.metadata.how-it-works.title">How it works - Sonde</span>
+  <span data-msg-id="sondeLife.metadata.pricing.title">Pricing - Sonde</span>
+  <span data-msg-id="sondeLife.metadata.resources.title">Resources - Sonde</span>
+  <span data-msg-id="sondeLife.metadata.resources-explore.title">Explore - Sonde</span>
+  <span data-msg-id="sondeLife.metadata.resources-methodology.title">Methodology - Sonde</span>
+  <span data-msg-id="sondeLife.metadata.resources-architecture.title">Architecture - Sonde</span>
+  <span data-msg-id="sondeLife.metadata.company.title">Company - Sonde</span>
+  <span data-msg-id="sondeLife.metadata.proof.title">Proof - Sonde</span>
+  <span data-msg-id="sondeLife.metadata.contact.title">Contact - Sonde</span>
+  <span data-msg-id="sondeLife.metadata.policy-cookies.title">Cookie and browser storage - Sonde</span>
+  <span data-msg-id="sondeLife.metadata.policy-privacy.title">Privacy Notice (draft) - Sonde</span>
+  <span data-msg-id="sondeLife.metadata.policy-subprocessors.title">Subprocessors - Sonde</span>
+  <span data-msg-id="sondeLife.metadata.sitemap.title">Site map - Sonde</span>
+  <span data-msg-id="settings.trigger.aria">Open display settings</span>
+  <span data-msg-id="settings.trigger.title">Settings</span>
+  <span data-msg-id="settings.theme.legend">Theme</span>
+  <span data-msg-id="settings.mode.legend">Mode</span>
+  <span data-msg-id="settings.language.legend">Language</span>
+  <span data-msg-id="settings.theme.ultraviolet">Ultraviolet</span>
+  <span data-msg-id="settings.theme.infrared">Infrared</span>
+  <span data-msg-id="settings.theme.daylight">Daylight</span>
+  <span data-msg-id="settings.theme.auto">Auto</span>
+  <span data-msg-id="settings.theme.light">Light</span>
+  <span data-msg-id="settings.theme.dark">Dark</span>
+  <span data-msg-id="settings.theme.hc">High Contrast</span>
+</div>
+<script>
+  (function () {
+    var main = document.getElementById('main-content');
+    if (!main || main.querySelector('[data-explore]')) return;
+
+    function wrapHeadings() {
+      var headings = main.querySelectorAll('h2[id], h3[id], h4[id]');
+      for (var i = 0; i < headings.length; i += 1) {
+        var heading = headings[i];
+        var first = heading.firstElementChild;
+        if (first && first.tagName === 'A') continue;
+        if (heading.closest('a, summary, button, [hidden]')) continue;
+        var link = document.createElement('a');
+        link.className = 'heading-anchor';
+        link.href = '#' + heading.id;
+        while (heading.firstChild) link.appendChild(heading.firstChild);
+        heading.appendChild(link);
+      }
+    }
+
+    function targetOf(fragment) {
+      if (!fragment || fragment.length < 2) return null;
+      var raw = fragment.slice(1);
+      var decoded = null;
+      try {
+        decoded = document.getElementById(decodeURIComponent(raw));
+      } catch (error) {
+        decoded = null;
+      }
+      return decoded || document.getElementById(raw);
+    }
+
+    function reveal(target, focus) {
+      for (var node = target; node && node !== document.body; node = node.parentElement) {
+        if (node.tagName === 'DETAILS' && !node.open) node.open = true;
+      }
+      var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      target.scrollIntoView({ behavior: reduce ? 'auto' : 'smooth', block: 'start' });
+      if (!focus) return;
+      if (!target.hasAttribute('tabindex')) target.setAttribute('tabindex', '-1');
+      target.focus({ preventScroll: true });
+    }
+
+    wrapHeadings();
+    document.addEventListener('sonde:locale-applied', wrapHeadings);
+
+    main.addEventListener('click', function (event) {
+      if (event.defaultPrevented || event.button !== 0 || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
+      var link = event.target instanceof Element ? event.target.closest('a.heading-anchor') : null;
+      if (!link) return;
+      var fragment = link.getAttribute('href');
+      var target = targetOf(fragment);
+      if (!target) return;
+      event.preventDefault();
+      history.pushState(null, '', fragment);
+      reveal(target.closest('h2, h3, h4') || target, true);
+    });
+
+    function revealHash() {
+      var target = targetOf(window.location.hash);
+      if (target) reveal(target, false);
+    }
+    window.addEventListener('hashchange', revealHash);
+    if (window.location.hash) revealHash();
+  })();
+</script>
+
+
+  <script src="../assets/immutable/leaderboard.df428abc18725d52.js"></script>
+  <script src="../assets/immutable/search-dialog-bundle.b668c77a9575fe79.js" defer></script>
+  <script src="../assets/scribe-page-pdf.js?v=xm0tyf" defer></script>
+</body>
+</html>

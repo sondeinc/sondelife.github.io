@@ -1,46 +1,1432 @@
 [
   {
     "label": "AC Access Control",
+    "labelText": {
+      "catalogDependency": {
+        "explicitLocales": [],
+        "lookupLocales": [
+          "en-US",
+          "en-GB",
+          "en-CA",
+          "fr-CA",
+          "en-IN",
+          "cy-GB",
+          "gd-GB",
+          "ga-GB",
+          "es-US",
+          "es-MX",
+          "de-DE",
+          "fr-FR",
+          "es-ES",
+          "it-IT",
+          "nl-NL",
+          "pl-PL",
+          "pt-PT",
+          "pt-BR",
+          "ro-RO",
+          "sv-SE",
+          "ko-KR",
+          "zh-CN",
+          "ja-JP",
+          "hi-IN"
+        ],
+        "reportFallbacks": {},
+        "sourceLocale": "en-US"
+      },
+      "defaultLocale": "en-US",
+      "defaultText": "{family} {familyTitle}",
+      "icuArgs": {
+        "family": "AC",
+        "familyTitle": "Access Control"
+      },
+      "msgid": "scribe.report.nistCoverage.sourceRow.family",
+      "provenance": "template",
+      "reviewState": "reviewed",
+      "values": {
+        "cy-GB": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "{family} {familyTitle}"
+        },
+        "de-DE": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "{family} {familyTitle}"
+        },
+        "en-CA": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "{family} {familyTitle}"
+        },
+        "en-GB": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "{family} {familyTitle}"
+        },
+        "en-IN": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "{family} {familyTitle}"
+        },
+        "en-US": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "{family} {familyTitle}"
+        },
+        "es-ES": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "{family} {familyTitle}"
+        },
+        "es-MX": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "{family} {familyTitle}"
+        },
+        "es-US": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "{family} {familyTitle}"
+        },
+        "fr-CA": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "{family} {familyTitle}"
+        },
+        "fr-FR": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "{family} {familyTitle}"
+        },
+        "hi-IN": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "{family} {familyTitle}"
+        },
+        "it-IT": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "{family} {familyTitle}"
+        },
+        "ja-JP": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "{family} {familyTitle}"
+        },
+        "ko-KR": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "{family} {familyTitle}"
+        },
+        "nl-NL": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "{family} {familyTitle}"
+        },
+        "pl-PL": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "{family} {familyTitle}"
+        },
+        "pt-BR": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "{family} {familyTitle}"
+        },
+        "pt-PT": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "{family} {familyTitle}"
+        },
+        "ro-RO": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "{family} {familyTitle}"
+        },
+        "sv-SE": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "{family} {familyTitle}"
+        },
+        "zh-CN": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "{family} {familyTitle}"
+        }
+      }
+    },
     "unit": "present controls",
-    "value": "8/19"
+    "value": "5/19"
   },
   {
     "label": "AU Audit and Accountability",
+    "labelText": {
+      "catalogDependency": {
+        "explicitLocales": [],
+        "lookupLocales": [
+          "en-US",
+          "en-GB",
+          "en-CA",
+          "fr-CA",
+          "en-IN",
+          "cy-GB",
+          "gd-GB",
+          "ga-GB",
+          "es-US",
+          "es-MX",
+          "de-DE",
+          "fr-FR",
+          "es-ES",
+          "it-IT",
+          "nl-NL",
+          "pl-PL",
+          "pt-PT",
+          "pt-BR",
+          "ro-RO",
+          "sv-SE",
+          "ko-KR",
+          "zh-CN",
+          "ja-JP",
+          "hi-IN"
+        ],
+        "reportFallbacks": {},
+        "sourceLocale": "en-US"
+      },
+      "defaultLocale": "en-US",
+      "defaultText": "{family} {familyTitle}",
+      "icuArgs": {
+        "family": "AU",
+        "familyTitle": "Audit and Accountability"
+      },
+      "msgid": "scribe.report.nistCoverage.sourceRow.family",
+      "provenance": "template",
+      "reviewState": "reviewed",
+      "values": {
+        "cy-GB": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "{family} {familyTitle}"
+        },
+        "de-DE": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "{family} {familyTitle}"
+        },
+        "en-CA": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "{family} {familyTitle}"
+        },
+        "en-GB": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "{family} {familyTitle}"
+        },
+        "en-IN": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "{family} {familyTitle}"
+        },
+        "en-US": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "{family} {familyTitle}"
+        },
+        "es-ES": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "{family} {familyTitle}"
+        },
+        "es-MX": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "{family} {familyTitle}"
+        },
+        "es-US": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "{family} {familyTitle}"
+        },
+        "fr-CA": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "{family} {familyTitle}"
+        },
+        "fr-FR": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "{family} {familyTitle}"
+        },
+        "hi-IN": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "{family} {familyTitle}"
+        },
+        "it-IT": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "{family} {familyTitle}"
+        },
+        "ja-JP": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "{family} {familyTitle}"
+        },
+        "ko-KR": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "{family} {familyTitle}"
+        },
+        "nl-NL": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "{family} {familyTitle}"
+        },
+        "pl-PL": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "{family} {familyTitle}"
+        },
+        "pt-BR": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "{family} {familyTitle}"
+        },
+        "pt-PT": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "{family} {familyTitle}"
+        },
+        "ro-RO": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "{family} {familyTitle}"
+        },
+        "sv-SE": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "{family} {familyTitle}"
+        },
+        "zh-CN": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "{family} {familyTitle}"
+        }
+      }
+    },
     "unit": "present controls",
     "value": "0/12"
   },
   {
     "label": "CM Configuration Management",
+    "labelText": {
+      "catalogDependency": {
+        "explicitLocales": [],
+        "lookupLocales": [
+          "en-US",
+          "en-GB",
+          "en-CA",
+          "fr-CA",
+          "en-IN",
+          "cy-GB",
+          "gd-GB",
+          "ga-GB",
+          "es-US",
+          "es-MX",
+          "de-DE",
+          "fr-FR",
+          "es-ES",
+          "it-IT",
+          "nl-NL",
+          "pl-PL",
+          "pt-PT",
+          "pt-BR",
+          "ro-RO",
+          "sv-SE",
+          "ko-KR",
+          "zh-CN",
+          "ja-JP",
+          "hi-IN"
+        ],
+        "reportFallbacks": {},
+        "sourceLocale": "en-US"
+      },
+      "defaultLocale": "en-US",
+      "defaultText": "{family} {familyTitle}",
+      "icuArgs": {
+        "family": "CM",
+        "familyTitle": "Configuration Management"
+      },
+      "msgid": "scribe.report.nistCoverage.sourceRow.family",
+      "provenance": "template",
+      "reviewState": "reviewed",
+      "values": {
+        "cy-GB": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "{family} {familyTitle}"
+        },
+        "de-DE": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "{family} {familyTitle}"
+        },
+        "en-CA": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "{family} {familyTitle}"
+        },
+        "en-GB": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "{family} {familyTitle}"
+        },
+        "en-IN": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "{family} {familyTitle}"
+        },
+        "en-US": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "{family} {familyTitle}"
+        },
+        "es-ES": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "{family} {familyTitle}"
+        },
+        "es-MX": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "{family} {familyTitle}"
+        },
+        "es-US": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "{family} {familyTitle}"
+        },
+        "fr-CA": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "{family} {familyTitle}"
+        },
+        "fr-FR": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "{family} {familyTitle}"
+        },
+        "hi-IN": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "{family} {familyTitle}"
+        },
+        "it-IT": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "{family} {familyTitle}"
+        },
+        "ja-JP": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "{family} {familyTitle}"
+        },
+        "ko-KR": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "{family} {familyTitle}"
+        },
+        "nl-NL": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "{family} {familyTitle}"
+        },
+        "pl-PL": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "{family} {familyTitle}"
+        },
+        "pt-BR": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "{family} {familyTitle}"
+        },
+        "pt-PT": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "{family} {familyTitle}"
+        },
+        "ro-RO": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "{family} {familyTitle}"
+        },
+        "sv-SE": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "{family} {familyTitle}"
+        },
+        "zh-CN": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "{family} {familyTitle}"
+        }
+      }
+    },
     "unit": "present controls",
-    "value": "1/14"
+    "value": "0/14"
   },
   {
     "label": "IA Identification and Authentication",
+    "labelText": {
+      "catalogDependency": {
+        "explicitLocales": [],
+        "lookupLocales": [
+          "en-US",
+          "en-GB",
+          "en-CA",
+          "fr-CA",
+          "en-IN",
+          "cy-GB",
+          "gd-GB",
+          "ga-GB",
+          "es-US",
+          "es-MX",
+          "de-DE",
+          "fr-FR",
+          "es-ES",
+          "it-IT",
+          "nl-NL",
+          "pl-PL",
+          "pt-PT",
+          "pt-BR",
+          "ro-RO",
+          "sv-SE",
+          "ko-KR",
+          "zh-CN",
+          "ja-JP",
+          "hi-IN"
+        ],
+        "reportFallbacks": {},
+        "sourceLocale": "en-US"
+      },
+      "defaultLocale": "en-US",
+      "defaultText": "{family} {familyTitle}",
+      "icuArgs": {
+        "family": "IA",
+        "familyTitle": "Identification and Authentication"
+      },
+      "msgid": "scribe.report.nistCoverage.sourceRow.family",
+      "provenance": "template",
+      "reviewState": "reviewed",
+      "values": {
+        "cy-GB": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "{family} {familyTitle}"
+        },
+        "de-DE": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "{family} {familyTitle}"
+        },
+        "en-CA": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "{family} {familyTitle}"
+        },
+        "en-GB": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "{family} {familyTitle}"
+        },
+        "en-IN": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "{family} {familyTitle}"
+        },
+        "en-US": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "{family} {familyTitle}"
+        },
+        "es-ES": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "{family} {familyTitle}"
+        },
+        "es-MX": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "{family} {familyTitle}"
+        },
+        "es-US": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "{family} {familyTitle}"
+        },
+        "fr-CA": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "{family} {familyTitle}"
+        },
+        "fr-FR": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "{family} {familyTitle}"
+        },
+        "hi-IN": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "{family} {familyTitle}"
+        },
+        "it-IT": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "{family} {familyTitle}"
+        },
+        "ja-JP": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "{family} {familyTitle}"
+        },
+        "ko-KR": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "{family} {familyTitle}"
+        },
+        "nl-NL": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "{family} {familyTitle}"
+        },
+        "pl-PL": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "{family} {familyTitle}"
+        },
+        "pt-BR": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "{family} {familyTitle}"
+        },
+        "pt-PT": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "{family} {familyTitle}"
+        },
+        "ro-RO": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "{family} {familyTitle}"
+        },
+        "sv-SE": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "{family} {familyTitle}"
+        },
+        "zh-CN": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "{family} {familyTitle}"
+        }
+      }
+    },
     "unit": "present controls",
     "value": "0/15"
   },
   {
     "label": "SC System and Communications Protection",
+    "labelText": {
+      "catalogDependency": {
+        "explicitLocales": [],
+        "lookupLocales": [
+          "en-US",
+          "en-GB",
+          "en-CA",
+          "fr-CA",
+          "en-IN",
+          "cy-GB",
+          "gd-GB",
+          "ga-GB",
+          "es-US",
+          "es-MX",
+          "de-DE",
+          "fr-FR",
+          "es-ES",
+          "it-IT",
+          "nl-NL",
+          "pl-PL",
+          "pt-PT",
+          "pt-BR",
+          "ro-RO",
+          "sv-SE",
+          "ko-KR",
+          "zh-CN",
+          "ja-JP",
+          "hi-IN"
+        ],
+        "reportFallbacks": {},
+        "sourceLocale": "en-US"
+      },
+      "defaultLocale": "en-US",
+      "defaultText": "{family} {familyTitle}",
+      "icuArgs": {
+        "family": "SC",
+        "familyTitle": "System and Communications Protection"
+      },
+      "msgid": "scribe.report.nistCoverage.sourceRow.family",
+      "provenance": "template",
+      "reviewState": "reviewed",
+      "values": {
+        "cy-GB": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "{family} {familyTitle}"
+        },
+        "de-DE": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "{family} {familyTitle}"
+        },
+        "en-CA": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "{family} {familyTitle}"
+        },
+        "en-GB": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "{family} {familyTitle}"
+        },
+        "en-IN": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "{family} {familyTitle}"
+        },
+        "en-US": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "{family} {familyTitle}"
+        },
+        "es-ES": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "{family} {familyTitle}"
+        },
+        "es-MX": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "{family} {familyTitle}"
+        },
+        "es-US": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "{family} {familyTitle}"
+        },
+        "fr-CA": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "{family} {familyTitle}"
+        },
+        "fr-FR": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "{family} {familyTitle}"
+        },
+        "hi-IN": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "{family} {familyTitle}"
+        },
+        "it-IT": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "{family} {familyTitle}"
+        },
+        "ja-JP": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "{family} {familyTitle}"
+        },
+        "ko-KR": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "{family} {familyTitle}"
+        },
+        "nl-NL": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "{family} {familyTitle}"
+        },
+        "pl-PL": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "{family} {familyTitle}"
+        },
+        "pt-BR": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "{family} {familyTitle}"
+        },
+        "pt-PT": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "{family} {familyTitle}"
+        },
+        "ro-RO": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "{family} {familyTitle}"
+        },
+        "sv-SE": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "{family} {familyTitle}"
+        },
+        "zh-CN": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "{family} {familyTitle}"
+        }
+      }
+    },
     "unit": "present controls",
-    "value": "1/15"
+    "value": "0/15"
   },
   {
     "label": "SI System and Information Integrity",
+    "labelText": {
+      "catalogDependency": {
+        "explicitLocales": [],
+        "lookupLocales": [
+          "en-US",
+          "en-GB",
+          "en-CA",
+          "fr-CA",
+          "en-IN",
+          "cy-GB",
+          "gd-GB",
+          "ga-GB",
+          "es-US",
+          "es-MX",
+          "de-DE",
+          "fr-FR",
+          "es-ES",
+          "it-IT",
+          "nl-NL",
+          "pl-PL",
+          "pt-PT",
+          "pt-BR",
+          "ro-RO",
+          "sv-SE",
+          "ko-KR",
+          "zh-CN",
+          "ja-JP",
+          "hi-IN"
+        ],
+        "reportFallbacks": {},
+        "sourceLocale": "en-US"
+      },
+      "defaultLocale": "en-US",
+      "defaultText": "{family} {familyTitle}",
+      "icuArgs": {
+        "family": "SI",
+        "familyTitle": "System and Information Integrity"
+      },
+      "msgid": "scribe.report.nistCoverage.sourceRow.family",
+      "provenance": "template",
+      "reviewState": "reviewed",
+      "values": {
+        "cy-GB": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "{family} {familyTitle}"
+        },
+        "de-DE": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "{family} {familyTitle}"
+        },
+        "en-CA": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "{family} {familyTitle}"
+        },
+        "en-GB": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "{family} {familyTitle}"
+        },
+        "en-IN": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "{family} {familyTitle}"
+        },
+        "en-US": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "{family} {familyTitle}"
+        },
+        "es-ES": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "{family} {familyTitle}"
+        },
+        "es-MX": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "{family} {familyTitle}"
+        },
+        "es-US": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "{family} {familyTitle}"
+        },
+        "fr-CA": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "{family} {familyTitle}"
+        },
+        "fr-FR": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "{family} {familyTitle}"
+        },
+        "hi-IN": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "{family} {familyTitle}"
+        },
+        "it-IT": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "{family} {familyTitle}"
+        },
+        "ja-JP": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "{family} {familyTitle}"
+        },
+        "ko-KR": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "{family} {familyTitle}"
+        },
+        "nl-NL": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "{family} {familyTitle}"
+        },
+        "pl-PL": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "{family} {familyTitle}"
+        },
+        "pt-BR": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "{family} {familyTitle}"
+        },
+        "pt-PT": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "{family} {familyTitle}"
+        },
+        "ro-RO": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "{family} {familyTitle}"
+        },
+        "sv-SE": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "{family} {familyTitle}"
+        },
+        "zh-CN": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "{family} {familyTitle}"
+        }
+      }
+    },
     "unit": "present controls",
     "value": "1/14"
   },
   {
     "label": "RA Risk Assessment",
+    "labelText": {
+      "catalogDependency": {
+        "explicitLocales": [],
+        "lookupLocales": [
+          "en-US",
+          "en-GB",
+          "en-CA",
+          "fr-CA",
+          "en-IN",
+          "cy-GB",
+          "gd-GB",
+          "ga-GB",
+          "es-US",
+          "es-MX",
+          "de-DE",
+          "fr-FR",
+          "es-ES",
+          "it-IT",
+          "nl-NL",
+          "pl-PL",
+          "pt-PT",
+          "pt-BR",
+          "ro-RO",
+          "sv-SE",
+          "ko-KR",
+          "zh-CN",
+          "ja-JP",
+          "hi-IN"
+        ],
+        "reportFallbacks": {},
+        "sourceLocale": "en-US"
+      },
+      "defaultLocale": "en-US",
+      "defaultText": "{family} {familyTitle}",
+      "icuArgs": {
+        "family": "RA",
+        "familyTitle": "Risk Assessment"
+      },
+      "msgid": "scribe.report.nistCoverage.sourceRow.family",
+      "provenance": "template",
+      "reviewState": "reviewed",
+      "values": {
+        "cy-GB": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "{family} {familyTitle}"
+        },
+        "de-DE": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "{family} {familyTitle}"
+        },
+        "en-CA": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "{family} {familyTitle}"
+        },
+        "en-GB": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "{family} {familyTitle}"
+        },
+        "en-IN": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "{family} {familyTitle}"
+        },
+        "en-US": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "{family} {familyTitle}"
+        },
+        "es-ES": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "{family} {familyTitle}"
+        },
+        "es-MX": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "{family} {familyTitle}"
+        },
+        "es-US": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "{family} {familyTitle}"
+        },
+        "fr-CA": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "{family} {familyTitle}"
+        },
+        "fr-FR": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "{family} {familyTitle}"
+        },
+        "hi-IN": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "{family} {familyTitle}"
+        },
+        "it-IT": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "{family} {familyTitle}"
+        },
+        "ja-JP": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "{family} {familyTitle}"
+        },
+        "ko-KR": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "{family} {familyTitle}"
+        },
+        "nl-NL": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "{family} {familyTitle}"
+        },
+        "pl-PL": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "{family} {familyTitle}"
+        },
+        "pt-BR": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "{family} {familyTitle}"
+        },
+        "pt-PT": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "{family} {familyTitle}"
+        },
+        "ro-RO": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "{family} {familyTitle}"
+        },
+        "sv-SE": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "{family} {familyTitle}"
+        },
+        "zh-CN": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "{family} {familyTitle}"
+        }
+      }
+    },
     "unit": "present controls",
     "value": "0/4"
   },
   {
     "label": "SA System and Services Acquisition",
+    "labelText": {
+      "catalogDependency": {
+        "explicitLocales": [],
+        "lookupLocales": [
+          "en-US",
+          "en-GB",
+          "en-CA",
+          "fr-CA",
+          "en-IN",
+          "cy-GB",
+          "gd-GB",
+          "ga-GB",
+          "es-US",
+          "es-MX",
+          "de-DE",
+          "fr-FR",
+          "es-ES",
+          "it-IT",
+          "nl-NL",
+          "pl-PL",
+          "pt-PT",
+          "pt-BR",
+          "ro-RO",
+          "sv-SE",
+          "ko-KR",
+          "zh-CN",
+          "ja-JP",
+          "hi-IN"
+        ],
+        "reportFallbacks": {},
+        "sourceLocale": "en-US"
+      },
+      "defaultLocale": "en-US",
+      "defaultText": "{family} {familyTitle}",
+      "icuArgs": {
+        "family": "SA",
+        "familyTitle": "System and Services Acquisition"
+      },
+      "msgid": "scribe.report.nistCoverage.sourceRow.family",
+      "provenance": "template",
+      "reviewState": "reviewed",
+      "values": {
+        "cy-GB": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "{family} {familyTitle}"
+        },
+        "de-DE": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "{family} {familyTitle}"
+        },
+        "en-CA": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "{family} {familyTitle}"
+        },
+        "en-GB": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "{family} {familyTitle}"
+        },
+        "en-IN": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "{family} {familyTitle}"
+        },
+        "en-US": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "{family} {familyTitle}"
+        },
+        "es-ES": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "{family} {familyTitle}"
+        },
+        "es-MX": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "{family} {familyTitle}"
+        },
+        "es-US": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "{family} {familyTitle}"
+        },
+        "fr-CA": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "{family} {familyTitle}"
+        },
+        "fr-FR": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "{family} {familyTitle}"
+        },
+        "hi-IN": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "{family} {familyTitle}"
+        },
+        "it-IT": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "{family} {familyTitle}"
+        },
+        "ja-JP": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "{family} {familyTitle}"
+        },
+        "ko-KR": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "{family} {familyTitle}"
+        },
+        "nl-NL": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "{family} {familyTitle}"
+        },
+        "pl-PL": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "{family} {familyTitle}"
+        },
+        "pt-BR": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "{family} {familyTitle}"
+        },
+        "pt-PT": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "{family} {familyTitle}"
+        },
+        "ro-RO": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "{family} {familyTitle}"
+        },
+        "sv-SE": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "{family} {familyTitle}"
+        },
+        "zh-CN": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "{family} {familyTitle}"
+        }
+      }
+    },
     "unit": "present controls",
     "value": "0/6"
   },
   {
     "label": "PT PII Processing and Transparency",
+    "labelText": {
+      "catalogDependency": {
+        "explicitLocales": [],
+        "lookupLocales": [
+          "en-US",
+          "en-GB",
+          "en-CA",
+          "fr-CA",
+          "en-IN",
+          "cy-GB",
+          "gd-GB",
+          "ga-GB",
+          "es-US",
+          "es-MX",
+          "de-DE",
+          "fr-FR",
+          "es-ES",
+          "it-IT",
+          "nl-NL",
+          "pl-PL",
+          "pt-PT",
+          "pt-BR",
+          "ro-RO",
+          "sv-SE",
+          "ko-KR",
+          "zh-CN",
+          "ja-JP",
+          "hi-IN"
+        ],
+        "reportFallbacks": {},
+        "sourceLocale": "en-US"
+      },
+      "defaultLocale": "en-US",
+      "defaultText": "{family} {familyTitle}",
+      "icuArgs": {
+        "family": "PT",
+        "familyTitle": "PII Processing and Transparency"
+      },
+      "msgid": "scribe.report.nistCoverage.sourceRow.family",
+      "provenance": "template",
+      "reviewState": "reviewed",
+      "values": {
+        "cy-GB": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "{family} {familyTitle}"
+        },
+        "de-DE": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "{family} {familyTitle}"
+        },
+        "en-CA": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "{family} {familyTitle}"
+        },
+        "en-GB": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "{family} {familyTitle}"
+        },
+        "en-IN": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "{family} {familyTitle}"
+        },
+        "en-US": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "{family} {familyTitle}"
+        },
+        "es-ES": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "{family} {familyTitle}"
+        },
+        "es-MX": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "{family} {familyTitle}"
+        },
+        "es-US": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "{family} {familyTitle}"
+        },
+        "fr-CA": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "{family} {familyTitle}"
+        },
+        "fr-FR": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "{family} {familyTitle}"
+        },
+        "hi-IN": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "{family} {familyTitle}"
+        },
+        "it-IT": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "{family} {familyTitle}"
+        },
+        "ja-JP": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "{family} {familyTitle}"
+        },
+        "ko-KR": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "{family} {familyTitle}"
+        },
+        "nl-NL": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "{family} {familyTitle}"
+        },
+        "pl-PL": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "{family} {familyTitle}"
+        },
+        "pt-BR": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "{family} {familyTitle}"
+        },
+        "pt-PT": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "{family} {familyTitle}"
+        },
+        "ro-RO": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "{family} {familyTitle}"
+        },
+        "sv-SE": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "{family} {familyTitle}"
+        },
+        "zh-CN": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "{family} {familyTitle}"
+        }
+      }
+    },
     "unit": "present controls",
     "value": "0/4"
   }

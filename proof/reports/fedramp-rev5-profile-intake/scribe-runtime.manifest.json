@@ -1,5 +1,40 @@
 {
   "analysisScopeLabel": {
+    "catalogDependency": {
+      "explicitLocales": [
+        "es-US"
+      ],
+      "lookupLocales": [
+        "en-US",
+        "en-GB",
+        "en-CA",
+        "fr-CA",
+        "en-IN",
+        "cy-GB",
+        "gd-GB",
+        "ga-GB",
+        "es-US",
+        "es-MX",
+        "de-DE",
+        "fr-FR",
+        "es-ES",
+        "it-IT",
+        "nl-NL",
+        "pl-PL",
+        "pt-PT",
+        "pt-BR",
+        "ro-RO",
+        "sv-SE",
+        "ko-KR",
+        "zh-CN",
+        "ja-JP",
+        "hi-IN"
+      ],
+      "reportFallbacks": {
+        "ja-JP": "FedRAMP Rev 5 OSCAL プロファイルコーパス"
+      },
+      "sourceLocale": "en-US"
+    },
     "defaultLocale": "en-US",
     "defaultText": "FedRAMP Resources and NIST OSCAL Content Catalog/Profile corpora",
     "icuArgs": {},
@@ -24,6 +59,39 @@
       "anchorId": "section-overview",
       "indexTermIds": [],
       "label": {
+        "catalogDependency": {
+          "explicitLocales": [],
+          "lookupLocales": [
+            "en-US",
+            "en-GB",
+            "en-CA",
+            "fr-CA",
+            "en-IN",
+            "cy-GB",
+            "gd-GB",
+            "ga-GB",
+            "es-US",
+            "es-MX",
+            "de-DE",
+            "fr-FR",
+            "es-ES",
+            "it-IT",
+            "nl-NL",
+            "pl-PL",
+            "pt-PT",
+            "pt-BR",
+            "ro-RO",
+            "sv-SE",
+            "ko-KR",
+            "zh-CN",
+            "ja-JP",
+            "hi-IN"
+          ],
+          "reportFallbacks": {
+            "ja-JP": "概要"
+          },
+          "sourceLocale": "en-US"
+        },
         "defaultLocale": "en-US",
         "defaultText": "Overview",
         "icuArgs": {},
@@ -55,6 +123,41 @@
         "oscal-profile-intake"
       ],
       "label": {
+        "catalogDependency": {
+          "explicitLocales": [
+            "es-US"
+          ],
+          "lookupLocales": [
+            "en-US",
+            "en-GB",
+            "en-CA",
+            "fr-CA",
+            "en-IN",
+            "cy-GB",
+            "gd-GB",
+            "ga-GB",
+            "es-US",
+            "es-MX",
+            "de-DE",
+            "fr-FR",
+            "es-ES",
+            "it-IT",
+            "nl-NL",
+            "pl-PL",
+            "pt-PT",
+            "pt-BR",
+            "ro-RO",
+            "sv-SE",
+            "ko-KR",
+            "zh-CN",
+            "ja-JP",
+            "hi-IN"
+          ],
+          "reportFallbacks": {
+            "ja-JP": "OSCAL Catalog/Profile 取り込みは由来情報に紐づきます"
+          },
+          "sourceLocale": "en-US"
+        },
         "defaultLocale": "en-US",
         "defaultText": "OSCAL Catalog/Profile intake is provenance-bound",
         "icuArgs": {},
@@ -81,6 +184,41 @@
       "parentAnchorId": "section-overview",
       "role": "finding",
       "shareSummary": {
+        "catalogDependency": {
+          "explicitLocales": [
+            "es-US"
+          ],
+          "lookupLocales": [
+            "en-US",
+            "en-GB",
+            "en-CA",
+            "fr-CA",
+            "en-IN",
+            "cy-GB",
+            "gd-GB",
+            "ga-GB",
+            "es-US",
+            "es-MX",
+            "de-DE",
+            "fr-FR",
+            "es-ES",
+            "it-IT",
+            "nl-NL",
+            "pl-PL",
+            "pt-PT",
+            "pt-BR",
+            "ro-RO",
+            "sv-SE",
+            "ko-KR",
+            "zh-CN",
+            "ja-JP",
+            "hi-IN"
+          ],
+          "reportFallbacks": {
+            "ja-JP": "未対応の連邦パッケージ成果物を生成せず、検証済みの取り込み証拠を示します。"
+          },
+          "sourceLocale": "en-US"
+        },
         "defaultLocale": "en-US",
         "defaultText": "The report exposes validated Catalog/Profile intake evidence without fabricating unsupported federal package artifacts.",
         "icuArgs": {},
@@ -101,6 +239,41 @@
         }
       },
       "shareTitle": {
+        "catalogDependency": {
+          "explicitLocales": [
+            "es-US"
+          ],
+          "lookupLocales": [
+            "en-US",
+            "en-GB",
+            "en-CA",
+            "fr-CA",
+            "en-IN",
+            "cy-GB",
+            "gd-GB",
+            "ga-GB",
+            "es-US",
+            "es-MX",
+            "de-DE",
+            "fr-FR",
+            "es-ES",
+            "it-IT",
+            "nl-NL",
+            "pl-PL",
+            "pt-PT",
+            "pt-BR",
+            "ro-RO",
+            "sv-SE",
+            "ko-KR",
+            "zh-CN",
+            "ja-JP",
+            "hi-IN"
+          ],
+          "reportFallbacks": {
+            "ja-JP": "OSCAL Catalog/Profile 取り込みは由来情報に紐づきます"
+          },
+          "sourceLocale": "en-US"
+        },
         "defaultLocale": "en-US",
         "defaultText": "OSCAL Catalog/Profile intake is provenance-bound",
         "icuArgs": {},
@@ -127,6 +300,41 @@
         "oscal-profile-intake"
       ],
       "label": {
+        "catalogDependency": {
+          "explicitLocales": [
+            "es-US"
+          ],
+          "lookupLocales": [
+            "en-US",
+            "en-GB",
+            "en-CA",
+            "fr-CA",
+            "en-IN",
+            "cy-GB",
+            "gd-GB",
+            "ga-GB",
+            "es-US",
+            "es-MX",
+            "de-DE",
+            "fr-FR",
+            "es-ES",
+            "it-IT",
+            "nl-NL",
+            "pl-PL",
+            "pt-PT",
+            "pt-BR",
+            "ro-RO",
+            "sv-SE",
+            "ko-KR",
+            "zh-CN",
+            "ja-JP",
+            "hi-IN"
+          ],
+          "reportFallbacks": {
+            "ja-JP": "OSCAL 取り込み解釈"
+          },
+          "sourceLocale": "en-US"
+        },
         "defaultLocale": "en-US",
         "defaultText": "OSCAL intake interpretation",
         "icuArgs": {},
@@ -154,6 +362,41 @@
       "parentAnchorId": "finding-oscal-profile-intake",
       "role": "source-snippet",
       "shareSummary": {
+        "catalogDependency": {
+          "explicitLocales": [
+            "es-US"
+          ],
+          "lookupLocales": [
+            "en-US",
+            "en-GB",
+            "en-CA",
+            "fr-CA",
+            "en-IN",
+            "cy-GB",
+            "gd-GB",
+            "ga-GB",
+            "es-US",
+            "es-MX",
+            "de-DE",
+            "fr-FR",
+            "es-ES",
+            "it-IT",
+            "nl-NL",
+            "pl-PL",
+            "pt-PT",
+            "pt-BR",
+            "ro-RO",
+            "sv-SE",
+            "ko-KR",
+            "zh-CN",
+            "ja-JP",
+            "hi-IN"
+          ],
+          "reportFallbacks": {
+            "ja-JP": "生の OSCAL 取り込み JSON はダウンロード成果物として提供され、この節はレビュー向けに要約します。"
+          },
+          "sourceLocale": "en-US"
+        },
         "defaultLocale": "en-US",
         "defaultText": "Raw OSCAL intake JSON ships as a downloadable artifact; this report section summarizes what the intake means for review.",
         "icuArgs": {},
@@ -174,6 +417,41 @@
         }
       },
       "shareTitle": {
+        "catalogDependency": {
+          "explicitLocales": [
+            "es-US"
+          ],
+          "lookupLocales": [
+            "en-US",
+            "en-GB",
+            "en-CA",
+            "fr-CA",
+            "en-IN",
+            "cy-GB",
+            "gd-GB",
+            "ga-GB",
+            "es-US",
+            "es-MX",
+            "de-DE",
+            "fr-FR",
+            "es-ES",
+            "it-IT",
+            "nl-NL",
+            "pl-PL",
+            "pt-PT",
+            "pt-BR",
+            "ro-RO",
+            "sv-SE",
+            "ko-KR",
+            "zh-CN",
+            "ja-JP",
+            "hi-IN"
+          ],
+          "reportFallbacks": {
+            "ja-JP": "OSCAL 取り込み解釈"
+          },
+          "sourceLocale": "en-US"
+        },
         "defaultLocale": "en-US",
         "defaultText": "OSCAL intake interpretation",
         "icuArgs": {},
@@ -200,6 +478,41 @@
         "oscal-profile-intake"
       ],
       "label": {
+        "catalogDependency": {
+          "explicitLocales": [
+            "es-US"
+          ],
+          "lookupLocales": [
+            "en-US",
+            "en-GB",
+            "en-CA",
+            "fr-CA",
+            "en-IN",
+            "cy-GB",
+            "gd-GB",
+            "ga-GB",
+            "es-US",
+            "es-MX",
+            "de-DE",
+            "fr-FR",
+            "es-ES",
+            "it-IT",
+            "nl-NL",
+            "pl-PL",
+            "pt-PT",
+            "pt-BR",
+            "ro-RO",
+            "sv-SE",
+            "ko-KR",
+            "zh-CN",
+            "ja-JP",
+            "hi-IN"
+          ],
+          "reportFallbacks": {
+            "ja-JP": "OSCAL 取り込み概要"
+          },
+          "sourceLocale": "en-US"
+        },
         "defaultLocale": "en-US",
         "defaultText": "OSCAL intake summary",
         "icuArgs": {},
@@ -227,6 +540,41 @@
       "parentAnchorId": "finding-oscal-profile-intake",
       "role": "diagram",
       "shareSummary": {
+        "catalogDependency": {
+          "explicitLocales": [
+            "es-US"
+          ],
+          "lookupLocales": [
+            "en-US",
+            "en-GB",
+            "en-CA",
+            "fr-CA",
+            "en-IN",
+            "cy-GB",
+            "gd-GB",
+            "ga-GB",
+            "es-US",
+            "es-MX",
+            "de-DE",
+            "fr-FR",
+            "es-ES",
+            "it-IT",
+            "nl-NL",
+            "pl-PL",
+            "pt-PT",
+            "pt-BR",
+            "ro-RO",
+            "sv-SE",
+            "ko-KR",
+            "zh-CN",
+            "ja-JP",
+            "hi-IN"
+          ],
+          "reportFallbacks": {
+            "ja-JP": "表はプロファイル、カタログ、インポート解決、検証問題、未対応成果物を要約します。"
+          },
+          "sourceLocale": "en-US"
+        },
         "defaultLocale": "en-US",
         "defaultText": "Table rows summarize profiles, catalogs, import resolution, validation issues, and fail-closed unsupported artifacts.",
         "icuArgs": {},
@@ -247,6 +595,41 @@
         }
       },
       "shareTitle": {
+        "catalogDependency": {
+          "explicitLocales": [
+            "es-US"
+          ],
+          "lookupLocales": [
+            "en-US",
+            "en-GB",
+            "en-CA",
+            "fr-CA",
+            "en-IN",
+            "cy-GB",
+            "gd-GB",
+            "ga-GB",
+            "es-US",
+            "es-MX",
+            "de-DE",
+            "fr-FR",
+            "es-ES",
+            "it-IT",
+            "nl-NL",
+            "pl-PL",
+            "pt-PT",
+            "pt-BR",
+            "ro-RO",
+            "sv-SE",
+            "ko-KR",
+            "zh-CN",
+            "ja-JP",
+            "hi-IN"
+          ],
+          "reportFallbacks": {
+            "ja-JP": "OSCAL 取り込み概要"
+          },
+          "sourceLocale": "en-US"
+        },
         "defaultLocale": "en-US",
         "defaultText": "OSCAL intake summary",
         "icuArgs": {},
@@ -273,6 +656,37 @@
         "oscal-profile-intake"
       ],
       "label": {
+        "catalogDependency": {
+          "explicitLocales": [],
+          "lookupLocales": [
+            "en-US",
+            "en-GB",
+            "en-CA",
+            "fr-CA",
+            "en-IN",
+            "cy-GB",
+            "gd-GB",
+            "ga-GB",
+            "es-US",
+            "es-MX",
+            "de-DE",
+            "fr-FR",
+            "es-ES",
+            "it-IT",
+            "nl-NL",
+            "pl-PL",
+            "pt-PT",
+            "pt-BR",
+            "ro-RO",
+            "sv-SE",
+            "ko-KR",
+            "zh-CN",
+            "ja-JP",
+            "hi-IN"
+          ],
+          "reportFallbacks": {},
+          "sourceLocale": "en-US"
+        },
         "defaultLocale": "en-US",
         "defaultText": "Fix plan",
         "icuArgs": {},
@@ -300,6 +714,37 @@
       "parentAnchorId": "finding-oscal-profile-intake",
       "role": "fix-plan",
       "shareSummary": {
+        "catalogDependency": {
+          "explicitLocales": [],
+          "lookupLocales": [
+            "en-US",
+            "en-GB",
+            "en-CA",
+            "fr-CA",
+            "en-IN",
+            "cy-GB",
+            "gd-GB",
+            "ga-GB",
+            "es-US",
+            "es-MX",
+            "de-DE",
+            "fr-FR",
+            "es-ES",
+            "it-IT",
+            "nl-NL",
+            "pl-PL",
+            "pt-PT",
+            "pt-BR",
+            "ro-RO",
+            "sv-SE",
+            "ko-KR",
+            "zh-CN",
+            "ja-JP",
+            "hi-IN"
+          ],
+          "reportFallbacks": {},
+          "sourceLocale": "en-US"
+        },
         "defaultLocale": "en-US",
         "defaultText": "Live, per-finding fix plans generate automatically when Sonde analyzes your repository. This curated showcase demonstrates the report; see automated remediation in action on a live example.",
         "icuArgs": {},
@@ -320,6 +765,37 @@
         }
       },
       "shareTitle": {
+        "catalogDependency": {
+          "explicitLocales": [],
+          "lookupLocales": [
+            "en-US",
+            "en-GB",
+            "en-CA",
+            "fr-CA",
+            "en-IN",
+            "cy-GB",
+            "gd-GB",
+            "ga-GB",
+            "es-US",
+            "es-MX",
+            "de-DE",
+            "fr-FR",
+            "es-ES",
+            "it-IT",
+            "nl-NL",
+            "pl-PL",
+            "pt-PT",
+            "pt-BR",
+            "ro-RO",
+            "sv-SE",
+            "ko-KR",
+            "zh-CN",
+            "ja-JP",
+            "hi-IN"
+          ],
+          "reportFallbacks": {},
+          "sourceLocale": "en-US"
+        },
         "defaultLocale": "en-US",
         "defaultText": "Fix plan",
         "icuArgs": {},
@@ -344,6 +820,39 @@
   "assets": [
     {
       "altText": {
+        "catalogDependency": {
+          "explicitLocales": [
+            "es-US"
+          ],
+          "lookupLocales": [
+            "en-US",
+            "en-GB",
+            "en-CA",
+            "fr-CA",
+            "en-IN",
+            "cy-GB",
+            "gd-GB",
+            "ga-GB",
+            "es-US",
+            "es-MX",
+            "de-DE",
+            "fr-FR",
+            "es-ES",
+            "it-IT",
+            "nl-NL",
+            "pl-PL",
+            "pt-PT",
+            "pt-BR",
+            "ro-RO",
+            "sv-SE",
+            "ko-KR",
+            "zh-CN",
+            "ja-JP",
+            "hi-IN"
+          ],
+          "reportFallbacks": {},
+          "sourceLocale": "en-US"
+        },
         "defaultLocale": "en-US",
         "defaultText": "Sonde Scribe {version} compliance report mark",
         "icuArgs": {
@@ -366,9 +875,42 @@
         }
       },
       "assetId": "report-mark",
-      "defaultPath": "assets/brand/report-mark.svg",
+      "defaultPath": "assets/immutable/report-mark.8de0f91487c32afd.svg",
       "kind": "icon",
       "label": {
+        "catalogDependency": {
+          "explicitLocales": [
+            "es-US"
+          ],
+          "lookupLocales": [
+            "en-US",
+            "en-GB",
+            "en-CA",
+            "fr-CA",
+            "en-IN",
+            "cy-GB",
+            "gd-GB",
+            "ga-GB",
+            "es-US",
+            "es-MX",
+            "de-DE",
+            "fr-FR",
+            "es-ES",
+            "it-IT",
+            "nl-NL",
+            "pl-PL",
+            "pt-PT",
+            "pt-BR",
+            "ro-RO",
+            "sv-SE",
+            "ko-KR",
+            "zh-CN",
+            "ja-JP",
+            "hi-IN"
+          ],
+          "reportFallbacks": {},
+          "sourceLocale": "en-US"
+        },
         "defaultLocale": "en-US",
         "defaultText": "Scribe {version} report mark",
         "icuArgs": {
@@ -397,6 +939,39 @@
       "defaultPath": "exports/report.md",
       "kind": "export",
       "label": {
+        "catalogDependency": {
+          "explicitLocales": [
+            "es-US"
+          ],
+          "lookupLocales": [
+            "en-US",
+            "en-GB",
+            "en-CA",
+            "fr-CA",
+            "en-IN",
+            "cy-GB",
+            "gd-GB",
+            "ga-GB",
+            "es-US",
+            "es-MX",
+            "de-DE",
+            "fr-FR",
+            "es-ES",
+            "it-IT",
+            "nl-NL",
+            "pl-PL",
+            "pt-PT",
+            "pt-BR",
+            "ro-RO",
+            "sv-SE",
+            "ko-KR",
+            "zh-CN",
+            "ja-JP",
+            "hi-IN"
+          ],
+          "reportFallbacks": {},
+          "sourceLocale": "en-US"
+        },
         "defaultLocale": "en-US",
         "defaultText": "Markdown export",
         "icuArgs": {},
@@ -423,6 +998,39 @@
       "defaultPath": "exports/oscal-profile-intake.json",
       "kind": "export",
       "label": {
+        "catalogDependency": {
+          "explicitLocales": [
+            "es-US"
+          ],
+          "lookupLocales": [
+            "en-US",
+            "en-GB",
+            "en-CA",
+            "fr-CA",
+            "en-IN",
+            "cy-GB",
+            "gd-GB",
+            "ga-GB",
+            "es-US",
+            "es-MX",
+            "de-DE",
+            "fr-FR",
+            "es-ES",
+            "it-IT",
+            "nl-NL",
+            "pl-PL",
+            "pt-PT",
+            "pt-BR",
+            "ro-RO",
+            "sv-SE",
+            "ko-KR",
+            "zh-CN",
+            "ja-JP",
+            "hi-IN"
+          ],
+          "reportFallbacks": {},
+          "sourceLocale": "en-US"
+        },
         "defaultLocale": "en-US",
         "defaultText": "OSCAL Catalog/Profile intake export",
         "icuArgs": {},
@@ -449,6 +1057,39 @@
       "defaultPath": "data/oscal-catalog-provenance.json",
       "kind": "export",
       "label": {
+        "catalogDependency": {
+          "explicitLocales": [
+            "es-US"
+          ],
+          "lookupLocales": [
+            "en-US",
+            "en-GB",
+            "en-CA",
+            "fr-CA",
+            "en-IN",
+            "cy-GB",
+            "gd-GB",
+            "ga-GB",
+            "es-US",
+            "es-MX",
+            "de-DE",
+            "fr-FR",
+            "es-ES",
+            "it-IT",
+            "nl-NL",
+            "pl-PL",
+            "pt-PT",
+            "pt-BR",
+            "ro-RO",
+            "sv-SE",
+            "ko-KR",
+            "zh-CN",
+            "ja-JP",
+            "hi-IN"
+          ],
+          "reportFallbacks": {},
+          "sourceLocale": "en-US"
+        },
         "defaultLocale": "en-US",
         "defaultText": "OSCAL catalog provenance data",
         "icuArgs": {},
@@ -472,9 +1113,40 @@
     },
     {
       "assetId": "theme-daylight",
-      "defaultPath": "assets/themes/daylight.css",
+      "defaultPath": "assets/immutable/theme-daylight.ffce2abf0c8dffe5.css",
       "kind": "theme",
       "label": {
+        "catalogDependency": {
+          "explicitLocales": [],
+          "lookupLocales": [
+            "en-US",
+            "en-GB",
+            "en-CA",
+            "fr-CA",
+            "en-IN",
+            "cy-GB",
+            "gd-GB",
+            "ga-GB",
+            "es-US",
+            "es-MX",
+            "de-DE",
+            "fr-FR",
+            "es-ES",
+            "it-IT",
+            "nl-NL",
+            "pl-PL",
+            "pt-PT",
+            "pt-BR",
+            "ro-RO",
+            "sv-SE",
+            "ko-KR",
+            "zh-CN",
+            "ja-JP",
+            "hi-IN"
+          ],
+          "reportFallbacks": {},
+          "sourceLocale": "en-US"
+        },
         "defaultLocale": "en-US",
         "defaultText": "Daylight theme",
         "icuArgs": {},
@@ -498,9 +1170,40 @@
     },
     {
       "assetId": "theme-ultraviolet",
-      "defaultPath": "assets/themes/ultraviolet.css",
+      "defaultPath": "assets/immutable/theme-ultraviolet.e8d1e286a433a1f6.css",
       "kind": "theme",
       "label": {
+        "catalogDependency": {
+          "explicitLocales": [],
+          "lookupLocales": [
+            "en-US",
+            "en-GB",
+            "en-CA",
+            "fr-CA",
+            "en-IN",
+            "cy-GB",
+            "gd-GB",
+            "ga-GB",
+            "es-US",
+            "es-MX",
+            "de-DE",
+            "fr-FR",
+            "es-ES",
+            "it-IT",
+            "nl-NL",
+            "pl-PL",
+            "pt-PT",
+            "pt-BR",
+            "ro-RO",
+            "sv-SE",
+            "ko-KR",
+            "zh-CN",
+            "ja-JP",
+            "hi-IN"
+          ],
+          "reportFallbacks": {},
+          "sourceLocale": "en-US"
+        },
         "defaultLocale": "en-US",
         "defaultText": "Ultraviolet theme",
         "icuArgs": {},
@@ -524,9 +1227,40 @@
     },
     {
       "assetId": "theme-infrared",
-      "defaultPath": "assets/themes/infrared.css",
+      "defaultPath": "assets/immutable/theme-infrared.caf6e90430229b41.css",
       "kind": "theme",
       "label": {
+        "catalogDependency": {
+          "explicitLocales": [],
+          "lookupLocales": [
+            "en-US",
+            "en-GB",
+            "en-CA",
+            "fr-CA",
+            "en-IN",
+            "cy-GB",
+            "gd-GB",
+            "ga-GB",
+            "es-US",
+            "es-MX",
+            "de-DE",
+            "fr-FR",
+            "es-ES",
+            "it-IT",
+            "nl-NL",
+            "pl-PL",
+            "pt-PT",
+            "pt-BR",
+            "ro-RO",
+            "sv-SE",
+            "ko-KR",
+            "zh-CN",
+            "ja-JP",
+            "hi-IN"
+          ],
+          "reportFallbacks": {},
+          "sourceLocale": "en-US"
+        },
         "defaultLocale": "en-US",
         "defaultText": "Infrared theme",
         "icuArgs": {},
@@ -550,9 +1284,40 @@
     },
     {
       "assetId": "theme-high-contrast",
-      "defaultPath": "assets/themes/high-contrast.css",
+      "defaultPath": "assets/immutable/theme-high-contrast.32d22d1a3f404d86.css",
       "kind": "theme",
       "label": {
+        "catalogDependency": {
+          "explicitLocales": [],
+          "lookupLocales": [
+            "en-US",
+            "en-GB",
+            "en-CA",
+            "fr-CA",
+            "en-IN",
+            "cy-GB",
+            "gd-GB",
+            "ga-GB",
+            "es-US",
+            "es-MX",
+            "de-DE",
+            "fr-FR",
+            "es-ES",
+            "it-IT",
+            "nl-NL",
+            "pl-PL",
+            "pt-PT",
+            "pt-BR",
+            "ro-RO",
+            "sv-SE",
+            "ko-KR",
+            "zh-CN",
+            "ja-JP",
+            "hi-IN"
+          ],
+          "reportFallbacks": {},
+          "sourceLocale": "en-US"
+        },
         "defaultLocale": "en-US",
         "defaultText": "High Contrast theme",
         "icuArgs": {},
@@ -590,6 +1355,41 @@
       "href": "exports/report.md",
       "includesPrivateReceipt": false,
       "label": {
+        "catalogDependency": {
+          "explicitLocales": [
+            "es-US"
+          ],
+          "lookupLocales": [
+            "en-US",
+            "en-GB",
+            "en-CA",
+            "fr-CA",
+            "en-IN",
+            "cy-GB",
+            "gd-GB",
+            "ga-GB",
+            "es-US",
+            "es-MX",
+            "de-DE",
+            "fr-FR",
+            "es-ES",
+            "it-IT",
+            "nl-NL",
+            "pl-PL",
+            "pt-PT",
+            "pt-BR",
+            "ro-RO",
+            "sv-SE",
+            "ko-KR",
+            "zh-CN",
+            "ja-JP",
+            "hi-IN"
+          ],
+          "reportFallbacks": {
+            "ja-JP": "Markdown レポートをダウンロード"
+          },
+          "sourceLocale": "en-US"
+        },
         "defaultLocale": "en-US",
         "defaultText": "Download Markdown report",
         "icuArgs": {},
@@ -623,6 +1423,41 @@
         {
           "id": "info",
           "label": {
+            "catalogDependency": {
+              "explicitLocales": [
+                "es-US"
+              ],
+              "lookupLocales": [
+                "en-US",
+                "en-GB",
+                "en-CA",
+                "fr-CA",
+                "en-IN",
+                "cy-GB",
+                "gd-GB",
+                "ga-GB",
+                "es-US",
+                "es-MX",
+                "de-DE",
+                "fr-FR",
+                "es-ES",
+                "it-IT",
+                "nl-NL",
+                "pl-PL",
+                "pt-PT",
+                "pt-BR",
+                "ro-RO",
+                "sv-SE",
+                "ko-KR",
+                "zh-CN",
+                "ja-JP",
+                "hi-IN"
+              ],
+              "reportFallbacks": {
+                "ja-JP": "情報"
+              },
+              "sourceLocale": "en-US"
+            },
             "defaultLocale": "en-US",
             "defaultText": "Info",
             "icuArgs": {},
@@ -659,6 +1494,40 @@
         {
           "id": "present",
           "label": {
+            "catalogDependency": {
+              "explicitLocales": [
+                "es-US",
+                "ja-JP"
+              ],
+              "lookupLocales": [
+                "en-US",
+                "en-GB",
+                "en-CA",
+                "fr-CA",
+                "en-IN",
+                "cy-GB",
+                "gd-GB",
+                "ga-GB",
+                "es-US",
+                "es-MX",
+                "de-DE",
+                "fr-FR",
+                "es-ES",
+                "it-IT",
+                "nl-NL",
+                "pl-PL",
+                "pt-PT",
+                "pt-BR",
+                "ro-RO",
+                "sv-SE",
+                "ko-KR",
+                "zh-CN",
+                "ja-JP",
+                "hi-IN"
+              ],
+              "reportFallbacks": {},
+              "sourceLocale": "en-US"
+            },
             "defaultLocale": "en-US",
             "defaultText": "Present",
             "icuArgs": {},
@@ -683,6 +1552,41 @@
         {
           "id": "partial",
           "label": {
+            "catalogDependency": {
+              "explicitLocales": [
+                "es-US"
+              ],
+              "lookupLocales": [
+                "en-US",
+                "en-GB",
+                "en-CA",
+                "fr-CA",
+                "en-IN",
+                "cy-GB",
+                "gd-GB",
+                "ga-GB",
+                "es-US",
+                "es-MX",
+                "de-DE",
+                "fr-FR",
+                "es-ES",
+                "it-IT",
+                "nl-NL",
+                "pl-PL",
+                "pt-PT",
+                "pt-BR",
+                "ro-RO",
+                "sv-SE",
+                "ko-KR",
+                "zh-CN",
+                "ja-JP",
+                "hi-IN"
+              ],
+              "reportFallbacks": {
+                "ja-JP": "部分的"
+              },
+              "sourceLocale": "en-US"
+            },
             "defaultLocale": "en-US",
             "defaultText": "Partial",
             "icuArgs": {},
@@ -707,6 +1611,41 @@
         {
           "id": "gap",
           "label": {
+            "catalogDependency": {
+              "explicitLocales": [
+                "es-US"
+              ],
+              "lookupLocales": [
+                "en-US",
+                "en-GB",
+                "en-CA",
+                "fr-CA",
+                "en-IN",
+                "cy-GB",
+                "gd-GB",
+                "ga-GB",
+                "es-US",
+                "es-MX",
+                "de-DE",
+                "fr-FR",
+                "es-ES",
+                "it-IT",
+                "nl-NL",
+                "pl-PL",
+                "pt-PT",
+                "pt-BR",
+                "ro-RO",
+                "sv-SE",
+                "ko-KR",
+                "zh-CN",
+                "ja-JP",
+                "hi-IN"
+              ],
+              "reportFallbacks": {
+                "ja-JP": "不足"
+              },
+              "sourceLocale": "en-US"
+            },
             "defaultLocale": "en-US",
             "defaultText": "Gap",
             "icuArgs": {},
@@ -731,6 +1670,41 @@
         {
           "id": "requires-customer-context",
           "label": {
+            "catalogDependency": {
+              "explicitLocales": [
+                "es-US"
+              ],
+              "lookupLocales": [
+                "en-US",
+                "en-GB",
+                "en-CA",
+                "fr-CA",
+                "en-IN",
+                "cy-GB",
+                "gd-GB",
+                "ga-GB",
+                "es-US",
+                "es-MX",
+                "de-DE",
+                "fr-FR",
+                "es-ES",
+                "it-IT",
+                "nl-NL",
+                "pl-PL",
+                "pt-PT",
+                "pt-BR",
+                "ro-RO",
+                "sv-SE",
+                "ko-KR",
+                "zh-CN",
+                "ja-JP",
+                "hi-IN"
+              ],
+              "reportFallbacks": {
+                "ja-JP": "顧客コンテキストが必要"
+              },
+              "sourceLocale": "en-US"
+            },
             "defaultLocale": "en-US",
             "defaultText": "Needs customer context",
             "icuArgs": {},
@@ -755,6 +1729,41 @@
         {
           "id": "absent",
           "label": {
+            "catalogDependency": {
+              "explicitLocales": [
+                "es-US"
+              ],
+              "lookupLocales": [
+                "en-US",
+                "en-GB",
+                "en-CA",
+                "fr-CA",
+                "en-IN",
+                "cy-GB",
+                "gd-GB",
+                "ga-GB",
+                "es-US",
+                "es-MX",
+                "de-DE",
+                "fr-FR",
+                "es-ES",
+                "it-IT",
+                "nl-NL",
+                "pl-PL",
+                "pt-PT",
+                "pt-BR",
+                "ro-RO",
+                "sv-SE",
+                "ko-KR",
+                "zh-CN",
+                "ja-JP",
+                "hi-IN"
+              ],
+              "reportFallbacks": {
+                "ja-JP": "非対応"
+              },
+              "sourceLocale": "en-US"
+            },
             "defaultLocale": "en-US",
             "defaultText": "Absent",
             "icuArgs": {},
@@ -785,6 +1794,41 @@
         {
           "id": "oscal-profile-intake",
           "label": {
+            "catalogDependency": {
+              "explicitLocales": [
+                "es-US"
+              ],
+              "lookupLocales": [
+                "en-US",
+                "en-GB",
+                "en-CA",
+                "fr-CA",
+                "en-IN",
+                "cy-GB",
+                "gd-GB",
+                "ga-GB",
+                "es-US",
+                "es-MX",
+                "de-DE",
+                "fr-FR",
+                "es-ES",
+                "it-IT",
+                "nl-NL",
+                "pl-PL",
+                "pt-PT",
+                "pt-BR",
+                "ro-RO",
+                "sv-SE",
+                "ko-KR",
+                "zh-CN",
+                "ja-JP",
+                "hi-IN"
+              ],
+              "reportFallbacks": {
+                "ja-JP": "OSCAL プロファイル取り込み"
+              },
+              "sourceLocale": "en-US"
+            },
             "defaultLocale": "en-US",
             "defaultText": "OSCAL profile intake",
             "icuArgs": {},
@@ -813,6 +1857,41 @@
       "actionId": "feedback-finding-oscal-profile-intake",
       "anchorId": "finding-oscal-profile-intake",
       "label": {
+        "catalogDependency": {
+          "explicitLocales": [
+            "es-US"
+          ],
+          "lookupLocales": [
+            "en-US",
+            "en-GB",
+            "en-CA",
+            "fr-CA",
+            "en-IN",
+            "cy-GB",
+            "gd-GB",
+            "ga-GB",
+            "es-US",
+            "es-MX",
+            "de-DE",
+            "fr-FR",
+            "es-ES",
+            "it-IT",
+            "nl-NL",
+            "pl-PL",
+            "pt-PT",
+            "pt-BR",
+            "ro-RO",
+            "sv-SE",
+            "ko-KR",
+            "zh-CN",
+            "ja-JP",
+            "hi-IN"
+          ],
+          "reportFallbacks": {
+            "ja-JP": "フィードバックを送信"
+          },
+          "sourceLocale": "en-US"
+        },
         "defaultLocale": "en-US",
         "defaultText": "Send feedback",
         "icuArgs": {},
@@ -890,6 +1969,7 @@
         }
       ],
       "classification": "oscal-profile-intake",
+      "contextLinks": [],
       "controlIds": [
         "catalog-profile-intake"
       ],
@@ -899,12 +1979,98 @@
         "oscal-profile-catalog"
       ],
       "language": "text",
+      "recommendation": {
+        "catalogDependency": {
+          "explicitLocales": [
+            "es-US"
+          ],
+          "lookupLocales": [
+            "en-US",
+            "en-GB",
+            "en-CA",
+            "fr-CA",
+            "en-IN",
+            "cy-GB",
+            "gd-GB",
+            "ga-GB",
+            "es-US",
+            "es-MX",
+            "de-DE",
+            "fr-FR",
+            "es-ES",
+            "it-IT",
+            "nl-NL",
+            "pl-PL",
+            "pt-PT",
+            "pt-BR",
+            "ro-RO",
+            "sv-SE",
+            "ko-KR",
+            "zh-CN",
+            "ja-JP",
+            "hi-IN"
+          ],
+          "reportFallbacks": {},
+          "sourceLocale": "en-US"
+        },
+        "defaultLocale": "en-US",
+        "defaultText": "Resolve dangling imports or unknown controls and keep unsupported package families fail-closed.",
+        "icuArgs": {},
+        "msgid": "scribe.report.oscalProfileIntake.finding.fix",
+        "provenance": "template",
+        "reviewState": "reviewed",
+        "values": {
+          "en-US": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Resolve dangling imports or unknown controls and keep unsupported package families fail-closed."
+          },
+          "es-US": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Resuelva importaciones colgantes o controles desconocidos y mantenga en fallo cerrado las familias de paquetes no compatibles."
+          }
+        }
+      },
       "severity": "info",
       "shareActionId": "share-finding-oscal-profile-intake",
       "sourceSnippetIds": [
         "source-oscal-profile-intake"
       ],
       "summary": {
+        "catalogDependency": {
+          "explicitLocales": [
+            "es-US"
+          ],
+          "lookupLocales": [
+            "en-US",
+            "en-GB",
+            "en-CA",
+            "fr-CA",
+            "en-IN",
+            "cy-GB",
+            "gd-GB",
+            "ga-GB",
+            "es-US",
+            "es-MX",
+            "de-DE",
+            "fr-FR",
+            "es-ES",
+            "it-IT",
+            "nl-NL",
+            "pl-PL",
+            "pt-PT",
+            "pt-BR",
+            "ro-RO",
+            "sv-SE",
+            "ko-KR",
+            "zh-CN",
+            "ja-JP",
+            "hi-IN"
+          ],
+          "reportFallbacks": {},
+          "sourceLocale": "en-US"
+        },
         "defaultLocale": "en-US",
         "defaultText": "The package emits Catalog/Profile intake evidence and leaves human-process package families fail-closed.",
         "icuArgs": {},
@@ -925,6 +2091,39 @@
         }
       },
       "title": {
+        "catalogDependency": {
+          "explicitLocales": [
+            "es-US"
+          ],
+          "lookupLocales": [
+            "en-US",
+            "en-GB",
+            "en-CA",
+            "fr-CA",
+            "en-IN",
+            "cy-GB",
+            "gd-GB",
+            "ga-GB",
+            "es-US",
+            "es-MX",
+            "de-DE",
+            "fr-FR",
+            "es-ES",
+            "it-IT",
+            "nl-NL",
+            "pl-PL",
+            "pt-PT",
+            "pt-BR",
+            "ro-RO",
+            "sv-SE",
+            "ko-KR",
+            "zh-CN",
+            "ja-JP",
+            "hi-IN"
+          ],
+          "reportFallbacks": {},
+          "sourceLocale": "en-US"
+        },
         "defaultLocale": "en-US",
         "defaultText": "OSCAL Catalog/Profile intake is provenance-bound",
         "icuArgs": {},
@@ -966,6 +2165,7 @@
         }
       ],
       "classification": "oscal-profile-intake",
+      "contextLinks": [],
       "controlIds": [
         "catalog-profile-import-resolution"
       ],
@@ -975,12 +2175,98 @@
         "oscal-profile-catalog"
       ],
       "language": "text",
+      "recommendation": {
+        "catalogDependency": {
+          "explicitLocales": [
+            "es-US"
+          ],
+          "lookupLocales": [
+            "en-US",
+            "en-GB",
+            "en-CA",
+            "fr-CA",
+            "en-IN",
+            "cy-GB",
+            "gd-GB",
+            "ga-GB",
+            "es-US",
+            "es-MX",
+            "de-DE",
+            "fr-FR",
+            "es-ES",
+            "it-IT",
+            "nl-NL",
+            "pl-PL",
+            "pt-PT",
+            "pt-BR",
+            "ro-RO",
+            "sv-SE",
+            "ko-KR",
+            "zh-CN",
+            "ja-JP",
+            "hi-IN"
+          ],
+          "reportFallbacks": {},
+          "sourceLocale": "en-US"
+        },
+        "defaultLocale": "en-US",
+        "defaultText": "Pin the missing OSCAL catalogs or profiles beside the baseline corpus before claiming a complete package.",
+        "icuArgs": {},
+        "msgid": "scribe.report.oscalProfileIntake.finding.imports.fix",
+        "provenance": "template",
+        "reviewState": "reviewed",
+        "values": {
+          "en-US": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Pin the missing OSCAL catalogs or profiles beside the baseline corpus before claiming a complete package."
+          },
+          "es-US": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Fije los catálogos o perfiles OSCAL faltantes junto al corpus de línea base antes de declarar un paquete completo."
+          }
+        }
+      },
       "severity": "info",
       "shareActionId": "share-finding-oscal-profile-intake",
       "sourceSnippetIds": [
         "source-oscal-profile-imports"
       ],
       "summary": {
+        "catalogDependency": {
+          "explicitLocales": [
+            "es-US"
+          ],
+          "lookupLocales": [
+            "en-US",
+            "en-GB",
+            "en-CA",
+            "fr-CA",
+            "en-IN",
+            "cy-GB",
+            "gd-GB",
+            "ga-GB",
+            "es-US",
+            "es-MX",
+            "de-DE",
+            "fr-FR",
+            "es-ES",
+            "it-IT",
+            "nl-NL",
+            "pl-PL",
+            "pt-PT",
+            "pt-BR",
+            "ro-RO",
+            "sv-SE",
+            "ko-KR",
+            "zh-CN",
+            "ja-JP",
+            "hi-IN"
+          ],
+          "reportFallbacks": {},
+          "sourceLocale": "en-US"
+        },
         "defaultLocale": "en-US",
         "defaultText": "{resolved} import links resolved and {dangling} remain dangling.",
         "icuArgs": {
@@ -1004,6 +2290,39 @@
         }
       },
       "title": {
+        "catalogDependency": {
+          "explicitLocales": [
+            "es-US"
+          ],
+          "lookupLocales": [
+            "en-US",
+            "en-GB",
+            "en-CA",
+            "fr-CA",
+            "en-IN",
+            "cy-GB",
+            "gd-GB",
+            "ga-GB",
+            "es-US",
+            "es-MX",
+            "de-DE",
+            "fr-FR",
+            "es-ES",
+            "it-IT",
+            "nl-NL",
+            "pl-PL",
+            "pt-PT",
+            "pt-BR",
+            "ro-RO",
+            "sv-SE",
+            "ko-KR",
+            "zh-CN",
+            "ja-JP",
+            "hi-IN"
+          ],
+          "reportFallbacks": {},
+          "sourceLocale": "en-US"
+        },
         "defaultLocale": "en-US",
         "defaultText": "OSCAL imports resolved: {resolved} linked, {dangling} dangling",
         "icuArgs": {
@@ -1048,6 +2367,7 @@
         }
       ],
       "classification": "oscal-profile-intake",
+      "contextLinks": [],
       "controlIds": [
         "catalog-profile-control-selection"
       ],
@@ -1057,12 +2377,98 @@
         "oscal-profile-catalog"
       ],
       "language": "text",
+      "recommendation": {
+        "catalogDependency": {
+          "explicitLocales": [
+            "es-US"
+          ],
+          "lookupLocales": [
+            "en-US",
+            "en-GB",
+            "en-CA",
+            "fr-CA",
+            "en-IN",
+            "cy-GB",
+            "gd-GB",
+            "ga-GB",
+            "es-US",
+            "es-MX",
+            "de-DE",
+            "fr-FR",
+            "es-ES",
+            "it-IT",
+            "nl-NL",
+            "pl-PL",
+            "pt-PT",
+            "pt-BR",
+            "ro-RO",
+            "sv-SE",
+            "ko-KR",
+            "zh-CN",
+            "ja-JP",
+            "hi-IN"
+          ],
+          "reportFallbacks": {},
+          "sourceLocale": "en-US"
+        },
+        "defaultLocale": "en-US",
+        "defaultText": "Review tailoring deltas against the intended FedRAMP baseline before publishing downstream artifacts.",
+        "icuArgs": {},
+        "msgid": "scribe.report.oscalProfileIntake.finding.controls.fix",
+        "provenance": "template",
+        "reviewState": "reviewed",
+        "values": {
+          "en-US": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Review tailoring deltas against the intended FedRAMP baseline before publishing downstream artifacts."
+          },
+          "es-US": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Revise los deltas de tailoring contra la línea base FedRAMP prevista antes de publicar artefactos derivados."
+          }
+        }
+      },
       "severity": "info",
       "shareActionId": "share-finding-oscal-profile-intake",
       "sourceSnippetIds": [
         "source-oscal-profile-controls"
       ],
       "summary": {
+        "catalogDependency": {
+          "explicitLocales": [
+            "es-US"
+          ],
+          "lookupLocales": [
+            "en-US",
+            "en-GB",
+            "en-CA",
+            "fr-CA",
+            "en-IN",
+            "cy-GB",
+            "gd-GB",
+            "ga-GB",
+            "es-US",
+            "es-MX",
+            "de-DE",
+            "fr-FR",
+            "es-ES",
+            "it-IT",
+            "nl-NL",
+            "pl-PL",
+            "pt-PT",
+            "pt-BR",
+            "ro-RO",
+            "sv-SE",
+            "ko-KR",
+            "zh-CN",
+            "ja-JP",
+            "hi-IN"
+          ],
+          "reportFallbacks": {},
+          "sourceLocale": "en-US"
+        },
         "defaultLocale": "en-US",
         "defaultText": "{controls} profile controls and {odps} ODP parameter summaries are ready for review.",
         "icuArgs": {
@@ -1086,6 +2492,39 @@
         }
       },
       "title": {
+        "catalogDependency": {
+          "explicitLocales": [
+            "es-US"
+          ],
+          "lookupLocales": [
+            "en-US",
+            "en-GB",
+            "en-CA",
+            "fr-CA",
+            "en-IN",
+            "cy-GB",
+            "gd-GB",
+            "ga-GB",
+            "es-US",
+            "es-MX",
+            "de-DE",
+            "fr-FR",
+            "es-ES",
+            "it-IT",
+            "nl-NL",
+            "pl-PL",
+            "pt-PT",
+            "pt-BR",
+            "ro-RO",
+            "sv-SE",
+            "ko-KR",
+            "zh-CN",
+            "ja-JP",
+            "hi-IN"
+          ],
+          "reportFallbacks": {},
+          "sourceLocale": "en-US"
+        },
         "defaultLocale": "en-US",
         "defaultText": "OSCAL profile controls normalized: {controls} controls, {odps} ODP summaries",
         "icuArgs": {
@@ -1130,6 +2569,7 @@
         }
       ],
       "classification": "oscal-profile-intake",
+      "contextLinks": [],
       "controlIds": [
         "catalog-profile-unsupported-boundary"
       ],
@@ -1139,12 +2579,98 @@
         "oscal-profile-catalog"
       ],
       "language": "text",
+      "recommendation": {
+        "catalogDependency": {
+          "explicitLocales": [
+            "es-US"
+          ],
+          "lookupLocales": [
+            "en-US",
+            "en-GB",
+            "en-CA",
+            "fr-CA",
+            "en-IN",
+            "cy-GB",
+            "gd-GB",
+            "ga-GB",
+            "es-US",
+            "es-MX",
+            "de-DE",
+            "fr-FR",
+            "es-ES",
+            "it-IT",
+            "nl-NL",
+            "pl-PL",
+            "pt-PT",
+            "pt-BR",
+            "ro-RO",
+            "sv-SE",
+            "ko-KR",
+            "zh-CN",
+            "ja-JP",
+            "hi-IN"
+          ],
+          "reportFallbacks": {},
+          "sourceLocale": "en-US"
+        },
+        "defaultLocale": "en-US",
+        "defaultText": "Add SSP, SAP, SAR, and POA&M only after human-process evidence and G11 artifact conformance are certified.",
+        "icuArgs": {},
+        "msgid": "scribe.report.oscalProfileIntake.finding.unsupported.fix",
+        "provenance": "template",
+        "reviewState": "reviewed",
+        "values": {
+          "en-US": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Add SSP, SAP, SAR, and POA&M only after human-process evidence and G11 artifact conformance are certified."
+          },
+          "es-US": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Agregue SSP, SAP, SAR y POA&M solo después de certificar evidencia de proceso humano y conformidad G11 de artefactos."
+          }
+        }
+      },
       "severity": "info",
       "shareActionId": "share-finding-oscal-profile-intake",
       "sourceSnippetIds": [
         "source-oscal-profile-unsupported-boundary"
       ],
       "summary": {
+        "catalogDependency": {
+          "explicitLocales": [
+            "es-US"
+          ],
+          "lookupLocales": [
+            "en-US",
+            "en-GB",
+            "en-CA",
+            "fr-CA",
+            "en-IN",
+            "cy-GB",
+            "gd-GB",
+            "ga-GB",
+            "es-US",
+            "es-MX",
+            "de-DE",
+            "fr-FR",
+            "es-ES",
+            "it-IT",
+            "nl-NL",
+            "pl-PL",
+            "pt-PT",
+            "pt-BR",
+            "ro-RO",
+            "sv-SE",
+            "ko-KR",
+            "zh-CN",
+            "ja-JP",
+            "hi-IN"
+          ],
+          "reportFallbacks": {},
+          "sourceLocale": "en-US"
+        },
         "defaultLocale": "en-US",
         "defaultText": "{unsupported} unsupported artifact occurrence(s) are declared instead of generated.",
         "icuArgs": {
@@ -1167,6 +2693,39 @@
         }
       },
       "title": {
+        "catalogDependency": {
+          "explicitLocales": [
+            "es-US"
+          ],
+          "lookupLocales": [
+            "en-US",
+            "en-GB",
+            "en-CA",
+            "fr-CA",
+            "en-IN",
+            "cy-GB",
+            "gd-GB",
+            "ga-GB",
+            "es-US",
+            "es-MX",
+            "de-DE",
+            "fr-FR",
+            "es-ES",
+            "it-IT",
+            "nl-NL",
+            "pl-PL",
+            "pt-PT",
+            "pt-BR",
+            "ro-RO",
+            "sv-SE",
+            "ko-KR",
+            "zh-CN",
+            "ja-JP",
+            "hi-IN"
+          ],
+          "reportFallbacks": {},
+          "sourceLocale": "en-US"
+        },
         "defaultLocale": "en-US",
         "defaultText": "SSP/SAP/SAR/POA&M remain fail-closed: {unsupported} unsupported artifact occurrence(s)",
         "icuArgs": {
@@ -1196,6 +2755,37 @@
       "href": "fix-plans/finding-oscal-profile-intake/index.html",
       "licenseState": "visible",
       "title": {
+        "catalogDependency": {
+          "explicitLocales": [],
+          "lookupLocales": [
+            "en-US",
+            "en-GB",
+            "en-CA",
+            "fr-CA",
+            "en-IN",
+            "cy-GB",
+            "gd-GB",
+            "ga-GB",
+            "es-US",
+            "es-MX",
+            "de-DE",
+            "fr-FR",
+            "es-ES",
+            "it-IT",
+            "nl-NL",
+            "pl-PL",
+            "pt-PT",
+            "pt-BR",
+            "ro-RO",
+            "sv-SE",
+            "ko-KR",
+            "zh-CN",
+            "ja-JP",
+            "hi-IN"
+          ],
+          "reportFallbacks": {},
+          "sourceLocale": "en-US"
+        },
         "defaultLocale": "en-US",
         "defaultText": "Fix plan",
         "icuArgs": {},
@@ -1221,10 +2811,41 @@
     {
       "aliases": [
         {
+          "catalogDependency": {
+            "explicitLocales": [],
+            "lookupLocales": [
+              "en-US",
+              "en-GB",
+              "en-CA",
+              "fr-CA",
+              "en-IN",
+              "cy-GB",
+              "gd-GB",
+              "ga-GB",
+              "es-US",
+              "es-MX",
+              "de-DE",
+              "fr-FR",
+              "es-ES",
+              "it-IT",
+              "nl-NL",
+              "pl-PL",
+              "pt-PT",
+              "pt-BR",
+              "ro-RO",
+              "sv-SE",
+              "ko-KR",
+              "zh-CN",
+              "ja-JP",
+              "hi-IN"
+            ],
+            "reportFallbacks": {},
+            "sourceLocale": "en-US"
+          },
           "defaultLocale": "en-US",
           "defaultText": "FedRAMP Rev 5 profile intake",
           "icuArgs": {},
-          "msgid": "scribe.report.term.alias",
+          "msgid": "scribe.report.term.oscal-profile-intake.alias",
           "provenance": "template",
           "reviewState": "reviewed",
           "values": {
@@ -1232,15 +2853,51 @@
               "fallback": false,
               "reviewed": true,
               "text": "FedRAMP Rev 5 profile intake"
+            },
+            "es-US": {
+              "fallback": false,
+              "reviewed": true,
+              "text": "Ingesta de perfil FedRAMP Rev 5"
             }
           }
         }
       ],
       "label": {
+        "catalogDependency": {
+          "explicitLocales": [],
+          "lookupLocales": [
+            "en-US",
+            "en-GB",
+            "en-CA",
+            "fr-CA",
+            "en-IN",
+            "cy-GB",
+            "gd-GB",
+            "ga-GB",
+            "es-US",
+            "es-MX",
+            "de-DE",
+            "fr-FR",
+            "es-ES",
+            "it-IT",
+            "nl-NL",
+            "pl-PL",
+            "pt-PT",
+            "pt-BR",
+            "ro-RO",
+            "sv-SE",
+            "ko-KR",
+            "zh-CN",
+            "ja-JP",
+            "hi-IN"
+          ],
+          "reportFallbacks": {},
+          "sourceLocale": "en-US"
+        },
         "defaultLocale": "en-US",
         "defaultText": "OSCAL Catalog/Profile intake",
         "icuArgs": {},
-        "msgid": "scribe.report.term.primary",
+        "msgid": "scribe.report.term.oscal-profile-intake.primary",
         "provenance": "template",
         "reviewState": "reviewed",
         "values": {
@@ -1248,6 +2905,11 @@
             "fallback": false,
             "reviewed": true,
             "text": "OSCAL Catalog/Profile intake"
+          },
+          "es-US": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Ingesta de Catálogo/Perfil OSCAL"
           }
         }
       },
@@ -1282,7 +2944,7 @@
         "coverage": {
           "complete": true,
           "fallbackCount": 0,
-          "messageCount": 112
+          "messageCount": 189
         },
         "dir": "ltr",
         "lang": "en-US",
@@ -1292,8 +2954,8 @@
       {
         "coverage": {
           "complete": false,
-          "fallbackCount": 3,
-          "messageCount": 112
+          "fallbackCount": 1,
+          "messageCount": 189
         },
         "dir": "ltr",
         "lang": "es-US",
@@ -1329,6 +2991,41 @@
       "density": "full",
       "hiddenAnchorIds": [],
       "label": {
+        "catalogDependency": {
+          "explicitLocales": [
+            "es-US"
+          ],
+          "lookupLocales": [
+            "en-US",
+            "en-GB",
+            "en-CA",
+            "fr-CA",
+            "en-IN",
+            "cy-GB",
+            "gd-GB",
+            "ga-GB",
+            "es-US",
+            "es-MX",
+            "de-DE",
+            "fr-FR",
+            "es-ES",
+            "it-IT",
+            "nl-NL",
+            "pl-PL",
+            "pt-PT",
+            "pt-BR",
+            "ro-RO",
+            "sv-SE",
+            "ko-KR",
+            "zh-CN",
+            "ja-JP",
+            "hi-IN"
+          ],
+          "reportFallbacks": {
+            "ja-JP": "開発者"
+          },
+          "sourceLocale": "en-US"
+        },
         "defaultLocale": "en-US",
         "defaultText": "Developer",
         "icuArgs": {},
@@ -1374,6 +3071,41 @@
         "source-oscal-profile-unsupported-boundary"
       ],
       "label": {
+        "catalogDependency": {
+          "explicitLocales": [
+            "es-US"
+          ],
+          "lookupLocales": [
+            "en-US",
+            "en-GB",
+            "en-CA",
+            "fr-CA",
+            "en-IN",
+            "cy-GB",
+            "gd-GB",
+            "ga-GB",
+            "es-US",
+            "es-MX",
+            "de-DE",
+            "fr-FR",
+            "es-ES",
+            "it-IT",
+            "nl-NL",
+            "pl-PL",
+            "pt-PT",
+            "pt-BR",
+            "ro-RO",
+            "sv-SE",
+            "ko-KR",
+            "zh-CN",
+            "ja-JP",
+            "hi-IN"
+          ],
+          "reportFallbacks": {
+            "ja-JP": "エグゼクティブ"
+          },
+          "sourceLocale": "en-US"
+        },
         "defaultLocale": "en-US",
         "defaultText": "Executive",
         "icuArgs": {},
@@ -1411,6 +3143,41 @@
       "density": "normal",
       "hiddenAnchorIds": [],
       "label": {
+        "catalogDependency": {
+          "explicitLocales": [
+            "es-US"
+          ],
+          "lookupLocales": [
+            "en-US",
+            "en-GB",
+            "en-CA",
+            "fr-CA",
+            "en-IN",
+            "cy-GB",
+            "gd-GB",
+            "ga-GB",
+            "es-US",
+            "es-MX",
+            "de-DE",
+            "fr-FR",
+            "es-ES",
+            "it-IT",
+            "nl-NL",
+            "pl-PL",
+            "pt-PT",
+            "pt-BR",
+            "ro-RO",
+            "sv-SE",
+            "ko-KR",
+            "zh-CN",
+            "ja-JP",
+            "hi-IN"
+          ],
+          "reportFallbacks": {
+            "ja-JP": "監査担当"
+          },
+          "sourceLocale": "en-US"
+        },
         "defaultLocale": "en-US",
         "defaultText": "Auditor",
         "icuArgs": {},
@@ -1441,7 +3208,7 @@
   "reportFamily": "compliance",
   "reportId": "scribe-oscal-profile-intake-fedramp-rev5",
   "reportProfile": {
-    "catalogHash": "-1dci7n",
+    "catalogHash": "6p0i5t",
     "profileId": "oscal",
     "rendererBinding": "oscal-profile-intake",
     "reportFamilyId": "compliance",
@@ -1470,6 +3237,41 @@
       "hash": "finding-oscal-profile-intake",
       "href": "findings/finding-oscal-profile-intake/index.html#finding-oscal-profile-intake",
       "label": {
+        "catalogDependency": {
+          "explicitLocales": [
+            "es-US"
+          ],
+          "lookupLocales": [
+            "en-US",
+            "en-GB",
+            "en-CA",
+            "fr-CA",
+            "en-IN",
+            "cy-GB",
+            "gd-GB",
+            "ga-GB",
+            "es-US",
+            "es-MX",
+            "de-DE",
+            "fr-FR",
+            "es-ES",
+            "it-IT",
+            "nl-NL",
+            "pl-PL",
+            "pt-PT",
+            "pt-BR",
+            "ro-RO",
+            "sv-SE",
+            "ko-KR",
+            "zh-CN",
+            "ja-JP",
+            "hi-IN"
+          ],
+          "reportFallbacks": {
+            "ja-JP": "検出結果を共有"
+          },
+          "sourceLocale": "en-US"
+        },
         "defaultLocale": "en-US",
         "defaultText": "Share finding",
         "icuArgs": {},
@@ -1490,6 +3292,41 @@
         }
       },
       "summary": {
+        "catalogDependency": {
+          "explicitLocales": [
+            "es-US"
+          ],
+          "lookupLocales": [
+            "en-US",
+            "en-GB",
+            "en-CA",
+            "fr-CA",
+            "en-IN",
+            "cy-GB",
+            "gd-GB",
+            "ga-GB",
+            "es-US",
+            "es-MX",
+            "de-DE",
+            "fr-FR",
+            "es-ES",
+            "it-IT",
+            "nl-NL",
+            "pl-PL",
+            "pt-PT",
+            "pt-BR",
+            "ro-RO",
+            "sv-SE",
+            "ko-KR",
+            "zh-CN",
+            "ja-JP",
+            "hi-IN"
+          ],
+          "reportFallbacks": {
+            "ja-JP": "未対応の連邦パッケージ成果物を生成せず、検証済みの取り込み証拠を示します。"
+          },
+          "sourceLocale": "en-US"
+        },
         "defaultLocale": "en-US",
         "defaultText": "The report exposes validated Catalog/Profile intake evidence without fabricating unsupported federal package artifacts.",
         "icuArgs": {},
@@ -1510,6 +3347,41 @@
         }
       },
       "title": {
+        "catalogDependency": {
+          "explicitLocales": [
+            "es-US"
+          ],
+          "lookupLocales": [
+            "en-US",
+            "en-GB",
+            "en-CA",
+            "fr-CA",
+            "en-IN",
+            "cy-GB",
+            "gd-GB",
+            "ga-GB",
+            "es-US",
+            "es-MX",
+            "de-DE",
+            "fr-FR",
+            "es-ES",
+            "it-IT",
+            "nl-NL",
+            "pl-PL",
+            "pt-PT",
+            "pt-BR",
+            "ro-RO",
+            "sv-SE",
+            "ko-KR",
+            "zh-CN",
+            "ja-JP",
+            "hi-IN"
+          ],
+          "reportFallbacks": {
+            "ja-JP": "OSCAL Catalog/Profile 取り込みは由来情報に紐づきます"
+          },
+          "sourceLocale": "en-US"
+        },
         "defaultLocale": "en-US",
         "defaultText": "OSCAL Catalog/Profile intake is provenance-bound",
         "icuArgs": {},
@@ -1588,13 +3460,50 @@
     ],
     "xmlPath": "sitemap.xml"
   },
-  "sourcesAttribution": [],
   "sourceSnippets": [
     {
       "anchorId": "source-oscal-profile-intake",
-      "code": "OSCAL Catalog/Profile intake summary\nProfiles normalized: 22\nCatalogs linked: 23\nImport links resolved: 22\nDangling import links: 0\nUnique controls selected or excluded: 463\nValidation issues: 0\nUnsupported package-family artifacts: 12\nRaw intake JSON download: exports/oscal-profile-intake.json\nCatalog provenance data: data/oscal-catalog-provenance.json",
+      "body": {
+        "code": "OSCAL Catalog/Profile intake summary\nProfiles normalized: 22\nCatalogs linked: 23\nImport links resolved: 22\nDangling import links: 0\nUnique controls selected or excluded: 463\nValidation issues: 0\nUnsupported package-family artifacts: 12\nRaw intake JSON download: exports/oscal-profile-intake.json\nCatalog provenance data: data/oscal-catalog-provenance.json",
+        "kind": "snippet"
+      },
       "endLine": 10,
       "label": {
+        "catalogDependency": {
+          "explicitLocales": [
+            "es-US"
+          ],
+          "lookupLocales": [
+            "en-US",
+            "en-GB",
+            "en-CA",
+            "fr-CA",
+            "en-IN",
+            "cy-GB",
+            "gd-GB",
+            "ga-GB",
+            "es-US",
+            "es-MX",
+            "de-DE",
+            "fr-FR",
+            "es-ES",
+            "it-IT",
+            "nl-NL",
+            "pl-PL",
+            "pt-PT",
+            "pt-BR",
+            "ro-RO",
+            "sv-SE",
+            "ko-KR",
+            "zh-CN",
+            "ja-JP",
+            "hi-IN"
+          ],
+          "reportFallbacks": {
+            "ja-JP": "{framework} のソース証拠"
+          },
+          "sourceLocale": "en-US"
+        },
         "defaultLocale": "en-US",
         "defaultText": "{framework} source evidence",
         "icuArgs": {
@@ -1625,9 +3534,47 @@
     },
     {
       "anchorId": "source-oscal-profile-imports",
-      "code": "OSCAL import-resolution summary\nResolved imports: 22\nDangling imports: 0\nProfiles scanned: 22\nCatalog/profile provenance records: 45\nRepresentative import links:\n- resolved: fedramp-resources/baselines/rev5/json/FedRAMP_rev5_catalog_tailoring_profile.json imports #39653e2d-c342-4b6e-93bd-5a324e8f7e3f -> nist-oscal-content-v1-4/nist.gov/SP800-53/rev5/json/NIST_SP-800-53_rev5_catalog.json\n- resolved: fedramp-resources/baselines/rev5/json/FedRAMP_rev5_HIGH-baseline_profile.json imports #051a77c1-b61d-4995-8275-dacfe688d510 -> fedramp-resources/baselines/rev5/json/FedRAMP_rev5_catalog_tailoring_profile.json\n- resolved: fedramp-resources/baselines/rev5/json/FedRAMP_rev5_LI-SaaS-baseline_profile.json imports #051a77c1-b61d-4995-8275-dacfe688d510 -> fedramp-resources/baselines/rev5/json/FedRAMP_rev5_LOW-baseline_profile.json\n- resolved: fedramp-resources/baselines/rev5/json/FedRAMP_rev5_LOW-baseline_profile.json imports #051a77c1-b61d-4995-8275-dacfe688d510 -> fedramp-resources/baselines/rev5/json/FedRAMP_rev5_catalog_tailoring_profile.json",
+      "body": {
+        "code": "OSCAL import-resolution summary\nResolved imports: 22\nDangling imports: 0\nProfiles scanned: 22\nCatalog/profile provenance records: 45\nRepresentative import links:\n- resolved: fedramp-resources/baselines/rev5/json/FedRAMP_rev5_catalog_tailoring_profile.json imports #39653e2d-c342-4b6e-93bd-5a324e8f7e3f -> nist-oscal-content-v1-4/nist.gov/SP800-53/rev5/json/NIST_SP-800-53_rev5_catalog.json\n- resolved: fedramp-resources/baselines/rev5/json/FedRAMP_rev5_HIGH-baseline_profile.json imports #051a77c1-b61d-4995-8275-dacfe688d510 -> fedramp-resources/baselines/rev5/json/FedRAMP_rev5_catalog_tailoring_profile.json\n- resolved: fedramp-resources/baselines/rev5/json/FedRAMP_rev5_LI-SaaS-baseline_profile.json imports #051a77c1-b61d-4995-8275-dacfe688d510 -> fedramp-resources/baselines/rev5/json/FedRAMP_rev5_LOW-baseline_profile.json\n- resolved: fedramp-resources/baselines/rev5/json/FedRAMP_rev5_LOW-baseline_profile.json imports #051a77c1-b61d-4995-8275-dacfe688d510 -> fedramp-resources/baselines/rev5/json/FedRAMP_rev5_catalog_tailoring_profile.json",
+        "kind": "snippet"
+      },
       "endLine": 10,
       "label": {
+        "catalogDependency": {
+          "explicitLocales": [
+            "es-US"
+          ],
+          "lookupLocales": [
+            "en-US",
+            "en-GB",
+            "en-CA",
+            "fr-CA",
+            "en-IN",
+            "cy-GB",
+            "gd-GB",
+            "ga-GB",
+            "es-US",
+            "es-MX",
+            "de-DE",
+            "fr-FR",
+            "es-ES",
+            "it-IT",
+            "nl-NL",
+            "pl-PL",
+            "pt-PT",
+            "pt-BR",
+            "ro-RO",
+            "sv-SE",
+            "ko-KR",
+            "zh-CN",
+            "ja-JP",
+            "hi-IN"
+          ],
+          "reportFallbacks": {
+            "ja-JP": "{framework} のソース証拠"
+          },
+          "sourceLocale": "en-US"
+        },
         "defaultLocale": "en-US",
         "defaultText": "{framework} source evidence",
         "icuArgs": {
@@ -1658,9 +3605,47 @@
     },
     {
       "anchorId": "source-oscal-profile-controls",
-      "code": "OSCAL control-selection summary\nUnique profile controls selected or excluded: 463\nUnique catalog controls in provenance: 1216\nProfiles with tailoring: 8\nODP parameter summaries: 1818\nRepresentative controls: ac-1, ac-2, ac-2.1, ac-2.2, ac-2.3, ac-2.4, ac-2.5, ac-2.7, ac-2.9, ac-2.11, ac-2.12, ac-2.13",
+      "body": {
+        "code": "OSCAL control-selection summary\nUnique profile controls selected or excluded: 463\nUnique catalog controls in provenance: 1216\nProfiles with tailoring: 8\nODP parameter summaries: 1818\nRepresentative controls: ac-1, ac-2, ac-2.1, ac-2.2, ac-2.3, ac-2.4, ac-2.5, ac-2.7, ac-2.9, ac-2.11, ac-2.12, ac-2.13",
+        "kind": "snippet"
+      },
       "endLine": 6,
       "label": {
+        "catalogDependency": {
+          "explicitLocales": [
+            "es-US"
+          ],
+          "lookupLocales": [
+            "en-US",
+            "en-GB",
+            "en-CA",
+            "fr-CA",
+            "en-IN",
+            "cy-GB",
+            "gd-GB",
+            "ga-GB",
+            "es-US",
+            "es-MX",
+            "de-DE",
+            "fr-FR",
+            "es-ES",
+            "it-IT",
+            "nl-NL",
+            "pl-PL",
+            "pt-PT",
+            "pt-BR",
+            "ro-RO",
+            "sv-SE",
+            "ko-KR",
+            "zh-CN",
+            "ja-JP",
+            "hi-IN"
+          ],
+          "reportFallbacks": {
+            "ja-JP": "{framework} のソース証拠"
+          },
+          "sourceLocale": "en-US"
+        },
         "defaultLocale": "en-US",
         "defaultText": "{framework} source evidence",
         "icuArgs": {
@@ -1691,9 +3676,47 @@
     },
     {
       "anchorId": "source-oscal-profile-unsupported-boundary",
-      "code": "Unsupported OSCAL package-family boundary\nFamilies kept fail-closed: poam, sap, sar, ssp\nDetected unsupported artifact files: 12\nProfile-declared unsupported boundaries: 88\nReasoning:\n- System Security Plan packages require system ownership and implementation statements beyond artifact analysis.\n- System Security Plan packages require system ownership and implementation statements beyond artifact analysis.\n- System Security Plan packages require system ownership and implementation statements beyond artifact analysis.\n- System Security Plan packages require system ownership and implementation statements beyond artifact analysis.\nRaw intake JSON download: exports/oscal-profile-intake.json",
+      "body": {
+        "code": "Unsupported OSCAL package-family boundary\nFamilies kept fail-closed: poam, sap, sar, ssp\nDetected unsupported artifact files: 12\nProfile-declared unsupported boundaries: 88\nReasoning:\n- System Security Plan packages require system ownership and implementation statements beyond artifact analysis.\n- System Security Plan packages require system ownership and implementation statements beyond artifact analysis.\n- System Security Plan packages require system ownership and implementation statements beyond artifact analysis.\n- System Security Plan packages require system ownership and implementation statements beyond artifact analysis.\nRaw intake JSON download: exports/oscal-profile-intake.json",
+        "kind": "snippet"
+      },
       "endLine": 10,
       "label": {
+        "catalogDependency": {
+          "explicitLocales": [
+            "es-US"
+          ],
+          "lookupLocales": [
+            "en-US",
+            "en-GB",
+            "en-CA",
+            "fr-CA",
+            "en-IN",
+            "cy-GB",
+            "gd-GB",
+            "ga-GB",
+            "es-US",
+            "es-MX",
+            "de-DE",
+            "fr-FR",
+            "es-ES",
+            "it-IT",
+            "nl-NL",
+            "pl-PL",
+            "pt-PT",
+            "pt-BR",
+            "ro-RO",
+            "sv-SE",
+            "ko-KR",
+            "zh-CN",
+            "ja-JP",
+            "hi-IN"
+          ],
+          "reportFallbacks": {
+            "ja-JP": "{framework} のソース証拠"
+          },
+          "sourceLocale": "en-US"
+        },
         "defaultLocale": "en-US",
         "defaultText": "{framework} source evidence",
         "icuArgs": {
@@ -1723,10 +3746,46 @@
       "verifiedSourceHash": "sha256:fbbbf249876281a6bc4ae8925c317f46d10f0f0a145daeefcf8597cee40ebe12"
     }
   ],
+  "sourcesAttribution": [],
   "theme": {
     "availableModes": [
       {
         "label": {
+          "catalogDependency": {
+            "explicitLocales": [
+              "es-US"
+            ],
+            "lookupLocales": [
+              "en-US",
+              "en-GB",
+              "en-CA",
+              "fr-CA",
+              "en-IN",
+              "cy-GB",
+              "gd-GB",
+              "ga-GB",
+              "es-US",
+              "es-MX",
+              "de-DE",
+              "fr-FR",
+              "es-ES",
+              "it-IT",
+              "nl-NL",
+              "pl-PL",
+              "pt-PT",
+              "pt-BR",
+              "ro-RO",
+              "sv-SE",
+              "ko-KR",
+              "zh-CN",
+              "ja-JP",
+              "hi-IN"
+            ],
+            "reportFallbacks": {
+              "ja-JP": "自動"
+            },
+            "sourceLocale": "en-US"
+          },
           "defaultLocale": "en-US",
           "defaultText": "Auto",
           "icuArgs": {},
@@ -1750,6 +3809,41 @@
       },
       {
         "label": {
+          "catalogDependency": {
+            "explicitLocales": [
+              "es-US"
+            ],
+            "lookupLocales": [
+              "en-US",
+              "en-GB",
+              "en-CA",
+              "fr-CA",
+              "en-IN",
+              "cy-GB",
+              "gd-GB",
+              "ga-GB",
+              "es-US",
+              "es-MX",
+              "de-DE",
+              "fr-FR",
+              "es-ES",
+              "it-IT",
+              "nl-NL",
+              "pl-PL",
+              "pt-PT",
+              "pt-BR",
+              "ro-RO",
+              "sv-SE",
+              "ko-KR",
+              "zh-CN",
+              "ja-JP",
+              "hi-IN"
+            ],
+            "reportFallbacks": {
+              "ja-JP": "ライト"
+            },
+            "sourceLocale": "en-US"
+          },
           "defaultLocale": "en-US",
           "defaultText": "Light",
           "icuArgs": {},
@@ -1773,6 +3867,41 @@
       },
       {
         "label": {
+          "catalogDependency": {
+            "explicitLocales": [
+              "es-US"
+            ],
+            "lookupLocales": [
+              "en-US",
+              "en-GB",
+              "en-CA",
+              "fr-CA",
+              "en-IN",
+              "cy-GB",
+              "gd-GB",
+              "ga-GB",
+              "es-US",
+              "es-MX",
+              "de-DE",
+              "fr-FR",
+              "es-ES",
+              "it-IT",
+              "nl-NL",
+              "pl-PL",
+              "pt-PT",
+              "pt-BR",
+              "ro-RO",
+              "sv-SE",
+              "ko-KR",
+              "zh-CN",
+              "ja-JP",
+              "hi-IN"
+            ],
+            "reportFallbacks": {
+              "ja-JP": "ダーク"
+            },
+            "sourceLocale": "en-US"
+          },
           "defaultLocale": "en-US",
           "defaultText": "Dark",
           "icuArgs": {},
@@ -1797,8 +3926,39 @@
     ],
     "availableThemes": [
       {
-        "cssPath": "assets/themes/daylight.css",
+        "cssPath": "assets/immutable/theme-daylight.ffce2abf0c8dffe5.css",
         "label": {
+          "catalogDependency": {
+            "explicitLocales": [],
+            "lookupLocales": [
+              "en-US",
+              "en-GB",
+              "en-CA",
+              "fr-CA",
+              "en-IN",
+              "cy-GB",
+              "gd-GB",
+              "ga-GB",
+              "es-US",
+              "es-MX",
+              "de-DE",
+              "fr-FR",
+              "es-ES",
+              "it-IT",
+              "nl-NL",
+              "pl-PL",
+              "pt-PT",
+              "pt-BR",
+              "ro-RO",
+              "sv-SE",
+              "ko-KR",
+              "zh-CN",
+              "ja-JP",
+              "hi-IN"
+            ],
+            "reportFallbacks": {},
+            "sourceLocale": "en-US"
+          },
           "defaultLocale": "en-US",
           "defaultText": "Daylight",
           "icuArgs": {},
@@ -1821,8 +3981,39 @@
         "themeId": "daylight"
       },
       {
-        "cssPath": "assets/themes/ultraviolet.css",
+        "cssPath": "assets/immutable/theme-ultraviolet.e8d1e286a433a1f6.css",
         "label": {
+          "catalogDependency": {
+            "explicitLocales": [],
+            "lookupLocales": [
+              "en-US",
+              "en-GB",
+              "en-CA",
+              "fr-CA",
+              "en-IN",
+              "cy-GB",
+              "gd-GB",
+              "ga-GB",
+              "es-US",
+              "es-MX",
+              "de-DE",
+              "fr-FR",
+              "es-ES",
+              "it-IT",
+              "nl-NL",
+              "pl-PL",
+              "pt-PT",
+              "pt-BR",
+              "ro-RO",
+              "sv-SE",
+              "ko-KR",
+              "zh-CN",
+              "ja-JP",
+              "hi-IN"
+            ],
+            "reportFallbacks": {},
+            "sourceLocale": "en-US"
+          },
           "defaultLocale": "en-US",
           "defaultText": "Ultraviolet",
           "icuArgs": {},
@@ -1845,8 +4036,39 @@
         "themeId": "ultraviolet"
       },
       {
-        "cssPath": "assets/themes/infrared.css",
+        "cssPath": "assets/immutable/theme-infrared.caf6e90430229b41.css",
         "label": {
+          "catalogDependency": {
+            "explicitLocales": [],
+            "lookupLocales": [
+              "en-US",
+              "en-GB",
+              "en-CA",
+              "fr-CA",
+              "en-IN",
+              "cy-GB",
+              "gd-GB",
+              "ga-GB",
+              "es-US",
+              "es-MX",
+              "de-DE",
+              "fr-FR",
+              "es-ES",
+              "it-IT",
+              "nl-NL",
+              "pl-PL",
+              "pt-PT",
+              "pt-BR",
+              "ro-RO",
+              "sv-SE",
+              "ko-KR",
+              "zh-CN",
+              "ja-JP",
+              "hi-IN"
+            ],
+            "reportFallbacks": {},
+            "sourceLocale": "en-US"
+          },
           "defaultLocale": "en-US",
           "defaultText": "Infrared",
           "icuArgs": {},
@@ -1869,8 +4091,39 @@
         "themeId": "infrared"
       },
       {
-        "cssPath": "assets/themes/high-contrast.css",
+        "cssPath": "assets/immutable/theme-high-contrast.32d22d1a3f404d86.css",
         "label": {
+          "catalogDependency": {
+            "explicitLocales": [],
+            "lookupLocales": [
+              "en-US",
+              "en-GB",
+              "en-CA",
+              "fr-CA",
+              "en-IN",
+              "cy-GB",
+              "gd-GB",
+              "ga-GB",
+              "es-US",
+              "es-MX",
+              "de-DE",
+              "fr-FR",
+              "es-ES",
+              "it-IT",
+              "nl-NL",
+              "pl-PL",
+              "pt-PT",
+              "pt-BR",
+              "ro-RO",
+              "sv-SE",
+              "ko-KR",
+              "zh-CN",
+              "ja-JP",
+              "hi-IN"
+            ],
+            "reportFallbacks": {},
+            "sourceLocale": "en-US"
+          },
           "defaultLocale": "en-US",
           "defaultText": "High Contrast",
           "icuArgs": {},
@@ -1898,6 +4151,37 @@
     "density": "normal"
   },
   "title": {
+    "catalogDependency": {
+      "explicitLocales": [],
+      "lookupLocales": [
+        "en-US",
+        "en-GB",
+        "en-CA",
+        "fr-CA",
+        "en-IN",
+        "cy-GB",
+        "gd-GB",
+        "ga-GB",
+        "es-US",
+        "es-MX",
+        "de-DE",
+        "fr-FR",
+        "es-ES",
+        "it-IT",
+        "nl-NL",
+        "pl-PL",
+        "pt-PT",
+        "pt-BR",
+        "ro-RO",
+        "sv-SE",
+        "ko-KR",
+        "zh-CN",
+        "ja-JP",
+        "hi-IN"
+      ],
+      "reportFallbacks": {},
+      "sourceLocale": "en-US"
+    },
     "defaultLocale": "en-US",
     "defaultText": "FedRAMP Rev 5 OSCAL Profile Intake",
     "icuArgs": {},
@@ -1925,6 +4209,41 @@
               "pagePath": "findings/finding-oscal-profile-intake/index.html",
               "role": "source-snippet",
               "title": {
+                "catalogDependency": {
+                  "explicitLocales": [
+                    "es-US"
+                  ],
+                  "lookupLocales": [
+                    "en-US",
+                    "en-GB",
+                    "en-CA",
+                    "fr-CA",
+                    "en-IN",
+                    "cy-GB",
+                    "gd-GB",
+                    "ga-GB",
+                    "es-US",
+                    "es-MX",
+                    "de-DE",
+                    "fr-FR",
+                    "es-ES",
+                    "it-IT",
+                    "nl-NL",
+                    "pl-PL",
+                    "pt-PT",
+                    "pt-BR",
+                    "ro-RO",
+                    "sv-SE",
+                    "ko-KR",
+                    "zh-CN",
+                    "ja-JP",
+                    "hi-IN"
+                  ],
+                  "reportFallbacks": {
+                    "ja-JP": "OSCAL 取り込み解釈"
+                  },
+                  "sourceLocale": "en-US"
+                },
                 "defaultLocale": "en-US",
                 "defaultText": "OSCAL intake interpretation",
                 "icuArgs": {},
@@ -1951,6 +4270,41 @@
               "pagePath": "findings/finding-oscal-profile-intake/index.html",
               "role": "diagram",
               "title": {
+                "catalogDependency": {
+                  "explicitLocales": [
+                    "es-US"
+                  ],
+                  "lookupLocales": [
+                    "en-US",
+                    "en-GB",
+                    "en-CA",
+                    "fr-CA",
+                    "en-IN",
+                    "cy-GB",
+                    "gd-GB",
+                    "ga-GB",
+                    "es-US",
+                    "es-MX",
+                    "de-DE",
+                    "fr-FR",
+                    "es-ES",
+                    "it-IT",
+                    "nl-NL",
+                    "pl-PL",
+                    "pt-PT",
+                    "pt-BR",
+                    "ro-RO",
+                    "sv-SE",
+                    "ko-KR",
+                    "zh-CN",
+                    "ja-JP",
+                    "hi-IN"
+                  ],
+                  "reportFallbacks": {
+                    "ja-JP": "OSCAL 取り込み概要"
+                  },
+                  "sourceLocale": "en-US"
+                },
                 "defaultLocale": "en-US",
                 "defaultText": "OSCAL intake summary",
                 "icuArgs": {},
@@ -1977,6 +4331,37 @@
               "pagePath": "fix-plans/finding-oscal-profile-intake/index.html",
               "role": "fix-plan",
               "title": {
+                "catalogDependency": {
+                  "explicitLocales": [],
+                  "lookupLocales": [
+                    "en-US",
+                    "en-GB",
+                    "en-CA",
+                    "fr-CA",
+                    "en-IN",
+                    "cy-GB",
+                    "gd-GB",
+                    "ga-GB",
+                    "es-US",
+                    "es-MX",
+                    "de-DE",
+                    "fr-FR",
+                    "es-ES",
+                    "it-IT",
+                    "nl-NL",
+                    "pl-PL",
+                    "pt-PT",
+                    "pt-BR",
+                    "ro-RO",
+                    "sv-SE",
+                    "ko-KR",
+                    "zh-CN",
+                    "ja-JP",
+                    "hi-IN"
+                  ],
+                  "reportFallbacks": {},
+                  "sourceLocale": "en-US"
+                },
                 "defaultLocale": "en-US",
                 "defaultText": "Fix plan",
                 "icuArgs": {},
@@ -2001,6 +4386,41 @@
           "pagePath": "findings/finding-oscal-profile-intake/index.html",
           "role": "finding",
           "title": {
+            "catalogDependency": {
+              "explicitLocales": [
+                "es-US"
+              ],
+              "lookupLocales": [
+                "en-US",
+                "en-GB",
+                "en-CA",
+                "fr-CA",
+                "en-IN",
+                "cy-GB",
+                "gd-GB",
+                "ga-GB",
+                "es-US",
+                "es-MX",
+                "de-DE",
+                "fr-FR",
+                "es-ES",
+                "it-IT",
+                "nl-NL",
+                "pl-PL",
+                "pt-PT",
+                "pt-BR",
+                "ro-RO",
+                "sv-SE",
+                "ko-KR",
+                "zh-CN",
+                "ja-JP",
+                "hi-IN"
+              ],
+              "reportFallbacks": {
+                "ja-JP": "OSCAL Catalog/Profile 取り込みは由来情報に紐づきます"
+              },
+              "sourceLocale": "en-US"
+            },
             "defaultLocale": "en-US",
             "defaultText": "OSCAL Catalog/Profile intake is provenance-bound",
             "icuArgs": {},
@@ -2025,6 +4445,39 @@
       "pagePath": "index.html",
       "role": "section",
       "title": {
+        "catalogDependency": {
+          "explicitLocales": [],
+          "lookupLocales": [
+            "en-US",
+            "en-GB",
+            "en-CA",
+            "fr-CA",
+            "en-IN",
+            "cy-GB",
+            "gd-GB",
+            "ga-GB",
+            "es-US",
+            "es-MX",
+            "de-DE",
+            "fr-FR",
+            "es-ES",
+            "it-IT",
+            "nl-NL",
+            "pl-PL",
+            "pt-PT",
+            "pt-BR",
+            "ro-RO",
+            "sv-SE",
+            "ko-KR",
+            "zh-CN",
+            "ja-JP",
+            "hi-IN"
+          ],
+          "reportFallbacks": {
+            "ja-JP": "概要"
+          },
+          "sourceLocale": "en-US"
+        },
         "defaultLocale": "en-US",
         "defaultText": "Overview",
         "icuArgs": {},
@@ -2049,6 +4502,41 @@
   "visualizations": [
     {
       "altText": {
+        "catalogDependency": {
+          "explicitLocales": [
+            "es-US"
+          ],
+          "lookupLocales": [
+            "en-US",
+            "en-GB",
+            "en-CA",
+            "fr-CA",
+            "en-IN",
+            "cy-GB",
+            "gd-GB",
+            "ga-GB",
+            "es-US",
+            "es-MX",
+            "de-DE",
+            "fr-FR",
+            "es-ES",
+            "it-IT",
+            "nl-NL",
+            "pl-PL",
+            "pt-PT",
+            "pt-BR",
+            "ro-RO",
+            "sv-SE",
+            "ko-KR",
+            "zh-CN",
+            "ja-JP",
+            "hi-IN"
+          ],
+          "reportFallbacks": {
+            "ja-JP": "OSCAL 取り込み件数の表形式概要。"
+          },
+          "sourceLocale": "en-US"
+        },
         "defaultLocale": "en-US",
         "defaultText": "Table summary of OSCAL profile intake and catalog provenance counts.",
         "icuArgs": {},
@@ -2074,6 +4562,41 @@
         "table"
       ],
       "label": {
+        "catalogDependency": {
+          "explicitLocales": [
+            "es-US"
+          ],
+          "lookupLocales": [
+            "en-US",
+            "en-GB",
+            "en-CA",
+            "fr-CA",
+            "en-IN",
+            "cy-GB",
+            "gd-GB",
+            "ga-GB",
+            "es-US",
+            "es-MX",
+            "de-DE",
+            "fr-FR",
+            "es-ES",
+            "it-IT",
+            "nl-NL",
+            "pl-PL",
+            "pt-PT",
+            "pt-BR",
+            "ro-RO",
+            "sv-SE",
+            "ko-KR",
+            "zh-CN",
+            "ja-JP",
+            "hi-IN"
+          ],
+          "reportFallbacks": {
+            "ja-JP": "OSCAL 取り込み概要"
+          },
+          "sourceLocale": "en-US"
+        },
         "defaultLocale": "en-US",
         "defaultText": "OSCAL intake summary",
         "icuArgs": {},
@@ -2094,6 +4617,41 @@
         }
       },
       "longDescription": {
+        "catalogDependency": {
+          "explicitLocales": [
+            "es-US"
+          ],
+          "lookupLocales": [
+            "en-US",
+            "en-GB",
+            "en-CA",
+            "fr-CA",
+            "en-IN",
+            "cy-GB",
+            "gd-GB",
+            "ga-GB",
+            "es-US",
+            "es-MX",
+            "de-DE",
+            "fr-FR",
+            "es-ES",
+            "it-IT",
+            "nl-NL",
+            "pl-PL",
+            "pt-PT",
+            "pt-BR",
+            "ro-RO",
+            "sv-SE",
+            "ko-KR",
+            "zh-CN",
+            "ja-JP",
+            "hi-IN"
+          ],
+          "reportFallbacks": {
+            "ja-JP": "可視化は取り込み結果の件数を示すソースデータ表です。"
+          },
+          "sourceLocale": "en-US"
+        },
         "defaultLocale": "en-US",
         "defaultText": "The visualization is a source-data table showing the count of normalized profiles, catalogs, resolved imports, dangling imports, issues, and unsupported artifacts.",
         "icuArgs": {},
@@ -2119,6 +4677,57 @@
       },
       "projection": "matrix",
       "projectionLabel": "OSCAL profile intake summary",
+      "projectionLabelText": {
+        "catalogDependency": {
+          "explicitLocales": [],
+          "lookupLocales": [
+            "en-US",
+            "en-GB",
+            "en-CA",
+            "fr-CA",
+            "en-IN",
+            "cy-GB",
+            "gd-GB",
+            "ga-GB",
+            "es-US",
+            "es-MX",
+            "de-DE",
+            "fr-FR",
+            "es-ES",
+            "it-IT",
+            "nl-NL",
+            "pl-PL",
+            "pt-PT",
+            "pt-BR",
+            "ro-RO",
+            "sv-SE",
+            "ko-KR",
+            "zh-CN",
+            "ja-JP",
+            "hi-IN"
+          ],
+          "reportFallbacks": {},
+          "sourceLocale": "en-US"
+        },
+        "defaultLocale": "en-US",
+        "defaultText": "OSCAL profile intake summary",
+        "icuArgs": {},
+        "msgid": "scribe.report.visualization.visualization-oscal-profile-intake.projection",
+        "provenance": "template",
+        "reviewState": "reviewed",
+        "values": {
+          "en-US": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "OSCAL profile intake summary"
+          },
+          "es-US": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Resumen de ingesta del perfil OSCAL"
+          }
+        }
+      },
       "renderer": "table",
       "source": {
         "id": "finding-oscal-profile-intake",
@@ -2128,31 +4737,337 @@
       "sourceDataRows": [
         {
           "label": "Profiles",
+          "labelText": {
+            "catalogDependency": {
+              "explicitLocales": [],
+              "lookupLocales": [
+                "en-US",
+                "en-GB",
+                "en-CA",
+                "fr-CA",
+                "en-IN",
+                "cy-GB",
+                "gd-GB",
+                "ga-GB",
+                "es-US",
+                "es-MX",
+                "de-DE",
+                "fr-FR",
+                "es-ES",
+                "it-IT",
+                "nl-NL",
+                "pl-PL",
+                "pt-PT",
+                "pt-BR",
+                "ro-RO",
+                "sv-SE",
+                "ko-KR",
+                "zh-CN",
+                "ja-JP",
+                "hi-IN"
+              ],
+              "reportFallbacks": {},
+              "sourceLocale": "en-US"
+            },
+            "defaultLocale": "en-US",
+            "defaultText": "Profiles",
+            "icuArgs": {},
+            "msgid": "scribe.report.oscalIntake.sourceRow.profiles",
+            "provenance": "template",
+            "reviewState": "reviewed",
+            "values": {
+              "en-US": {
+                "fallback": false,
+                "reviewed": true,
+                "text": "Profiles"
+              },
+              "es-US": {
+                "fallback": false,
+                "reviewed": true,
+                "text": "Perfiles"
+              }
+            }
+          },
           "unit": "artifacts",
           "value": "22"
         },
         {
           "label": "Catalogs",
+          "labelText": {
+            "catalogDependency": {
+              "explicitLocales": [],
+              "lookupLocales": [
+                "en-US",
+                "en-GB",
+                "en-CA",
+                "fr-CA",
+                "en-IN",
+                "cy-GB",
+                "gd-GB",
+                "ga-GB",
+                "es-US",
+                "es-MX",
+                "de-DE",
+                "fr-FR",
+                "es-ES",
+                "it-IT",
+                "nl-NL",
+                "pl-PL",
+                "pt-PT",
+                "pt-BR",
+                "ro-RO",
+                "sv-SE",
+                "ko-KR",
+                "zh-CN",
+                "ja-JP",
+                "hi-IN"
+              ],
+              "reportFallbacks": {},
+              "sourceLocale": "en-US"
+            },
+            "defaultLocale": "en-US",
+            "defaultText": "Catalogs",
+            "icuArgs": {},
+            "msgid": "scribe.report.oscalIntake.sourceRow.catalogs",
+            "provenance": "template",
+            "reviewState": "reviewed",
+            "values": {
+              "en-US": {
+                "fallback": false,
+                "reviewed": true,
+                "text": "Catalogs"
+              },
+              "es-US": {
+                "fallback": false,
+                "reviewed": true,
+                "text": "Catálogos"
+              }
+            }
+          },
           "unit": "artifacts",
           "value": "23"
         },
         {
           "label": "Resolved imports",
+          "labelText": {
+            "catalogDependency": {
+              "explicitLocales": [],
+              "lookupLocales": [
+                "en-US",
+                "en-GB",
+                "en-CA",
+                "fr-CA",
+                "en-IN",
+                "cy-GB",
+                "gd-GB",
+                "ga-GB",
+                "es-US",
+                "es-MX",
+                "de-DE",
+                "fr-FR",
+                "es-ES",
+                "it-IT",
+                "nl-NL",
+                "pl-PL",
+                "pt-PT",
+                "pt-BR",
+                "ro-RO",
+                "sv-SE",
+                "ko-KR",
+                "zh-CN",
+                "ja-JP",
+                "hi-IN"
+              ],
+              "reportFallbacks": {},
+              "sourceLocale": "en-US"
+            },
+            "defaultLocale": "en-US",
+            "defaultText": "Resolved imports",
+            "icuArgs": {},
+            "msgid": "scribe.report.oscalIntake.sourceRow.resolvedImports",
+            "provenance": "template",
+            "reviewState": "reviewed",
+            "values": {
+              "en-US": {
+                "fallback": false,
+                "reviewed": true,
+                "text": "Resolved imports"
+              },
+              "es-US": {
+                "fallback": false,
+                "reviewed": true,
+                "text": "Importaciones resueltas"
+              }
+            }
+          },
           "unit": "links",
           "value": "22"
         },
         {
           "label": "Dangling imports",
+          "labelText": {
+            "catalogDependency": {
+              "explicitLocales": [],
+              "lookupLocales": [
+                "en-US",
+                "en-GB",
+                "en-CA",
+                "fr-CA",
+                "en-IN",
+                "cy-GB",
+                "gd-GB",
+                "ga-GB",
+                "es-US",
+                "es-MX",
+                "de-DE",
+                "fr-FR",
+                "es-ES",
+                "it-IT",
+                "nl-NL",
+                "pl-PL",
+                "pt-PT",
+                "pt-BR",
+                "ro-RO",
+                "sv-SE",
+                "ko-KR",
+                "zh-CN",
+                "ja-JP",
+                "hi-IN"
+              ],
+              "reportFallbacks": {},
+              "sourceLocale": "en-US"
+            },
+            "defaultLocale": "en-US",
+            "defaultText": "Dangling imports",
+            "icuArgs": {},
+            "msgid": "scribe.report.oscalIntake.sourceRow.danglingImports",
+            "provenance": "template",
+            "reviewState": "reviewed",
+            "values": {
+              "en-US": {
+                "fallback": false,
+                "reviewed": true,
+                "text": "Dangling imports"
+              },
+              "es-US": {
+                "fallback": false,
+                "reviewed": true,
+                "text": "Importaciones huérfanas"
+              }
+            }
+          },
           "unit": "links",
           "value": "0"
         },
         {
           "label": "Validation issues",
+          "labelText": {
+            "catalogDependency": {
+              "explicitLocales": [],
+              "lookupLocales": [
+                "en-US",
+                "en-GB",
+                "en-CA",
+                "fr-CA",
+                "en-IN",
+                "cy-GB",
+                "gd-GB",
+                "ga-GB",
+                "es-US",
+                "es-MX",
+                "de-DE",
+                "fr-FR",
+                "es-ES",
+                "it-IT",
+                "nl-NL",
+                "pl-PL",
+                "pt-PT",
+                "pt-BR",
+                "ro-RO",
+                "sv-SE",
+                "ko-KR",
+                "zh-CN",
+                "ja-JP",
+                "hi-IN"
+              ],
+              "reportFallbacks": {},
+              "sourceLocale": "en-US"
+            },
+            "defaultLocale": "en-US",
+            "defaultText": "Validation issues",
+            "icuArgs": {},
+            "msgid": "scribe.report.oscalIntake.sourceRow.validationIssues",
+            "provenance": "template",
+            "reviewState": "reviewed",
+            "values": {
+              "en-US": {
+                "fallback": false,
+                "reviewed": true,
+                "text": "Validation issues"
+              },
+              "es-US": {
+                "fallback": false,
+                "reviewed": true,
+                "text": "Problemas de validación"
+              }
+            }
+          },
           "unit": "issues",
           "value": "0"
         },
         {
           "label": "Unsupported artifacts",
+          "labelText": {
+            "catalogDependency": {
+              "explicitLocales": [],
+              "lookupLocales": [
+                "en-US",
+                "en-GB",
+                "en-CA",
+                "fr-CA",
+                "en-IN",
+                "cy-GB",
+                "gd-GB",
+                "ga-GB",
+                "es-US",
+                "es-MX",
+                "de-DE",
+                "fr-FR",
+                "es-ES",
+                "it-IT",
+                "nl-NL",
+                "pl-PL",
+                "pt-PT",
+                "pt-BR",
+                "ro-RO",
+                "sv-SE",
+                "ko-KR",
+                "zh-CN",
+                "ja-JP",
+                "hi-IN"
+              ],
+              "reportFallbacks": {},
+              "sourceLocale": "en-US"
+            },
+            "defaultLocale": "en-US",
+            "defaultText": "Unsupported artifacts",
+            "icuArgs": {},
+            "msgid": "scribe.report.oscalIntake.sourceRow.unsupportedArtifacts",
+            "provenance": "template",
+            "reviewState": "reviewed",
+            "values": {
+              "en-US": {
+                "fallback": false,
+                "reviewed": true,
+                "text": "Unsupported artifacts"
+              },
+              "es-US": {
+                "fallback": false,
+                "reviewed": true,
+                "text": "Artefactos no compatibles"
+              }
+            }
+          },
           "unit": "fail-closed",
           "value": "12"
         }

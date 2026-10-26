@@ -60,13 +60,13 @@
     },
     "results": [
       {
-        "description": "Sonde automated NIST 800-53 assessment derived from validation rack validators. Coverage ratio: 0.1068 (11/103 controls present across 9 families).",
+        "description": "Sonde automated NIST 800-53 assessment derived from validation rack validators. Coverage ratio: 0.0583 (6/103 controls present across 9 families).",
         "findings": [
           {
-            "description": "AC (Access Control) control AC-3 not satisfied — no source-visible evidence detected for validation \"access-enforcement\".",
+            "description": "AC (Access Control) control AC-3 satisfied by validation \"access-enforcement\".",
             "target": {
               "status": {
-                "state": "not-satisfied"
+                "state": "satisfied"
               },
               "target-id": "ac-3",
               "type": "objective-id"
@@ -75,10 +75,10 @@
             "uuid": "00451ced-77f1-5b94-b500-194feeb23396"
           },
           {
-            "description": "AC (Access Control) control AC-3.7 not satisfied — no source-visible evidence detected for validation \"access-enforcement\".",
+            "description": "AC (Access Control) control AC-3.7 satisfied by validation \"access-enforcement\".",
             "target": {
               "status": {
-                "state": "not-satisfied"
+                "state": "satisfied"
               },
               "target-id": "ac-3.7",
               "type": "objective-id"
@@ -87,10 +87,10 @@
             "uuid": "f94511e8-76f1-5a01-b200-1496f1b2384f"
           },
           {
-            "description": "AC (Access Control) control AC-3.8 not satisfied — no source-visible evidence detected for validation \"access-enforcement\".",
+            "description": "AC (Access Control) control AC-3.8 satisfied by validation \"access-enforcement\".",
             "target": {
               "status": {
-                "state": "not-satisfied"
+                "state": "satisfied"
               },
               "target-id": "ac-3.8",
               "type": "objective-id"
@@ -99,10 +99,10 @@
             "uuid": "fa45137b-75f1-586e-b300-1629f0b236bc"
           },
           {
-            "description": "AC (Access Control) control AC-3.13 not satisfied — no source-visible evidence detected for validation \"access-enforcement\".",
+            "description": "AC (Access Control) control AC-3.13 satisfied by validation \"access-enforcement\".",
             "target": {
               "status": {
-                "state": "not-satisfied"
+                "state": "satisfied"
               },
               "target-id": "ac-3.13",
               "type": "objective-id"
@@ -123,10 +123,10 @@
             "uuid": "fc4516a1-73f1-5548-b100-1303f2b239e2"
           },
           {
-            "description": "AC (Access Control) control AC-6 satisfied by validation \"least-privilege\".",
+            "description": "AC (Access Control) control AC-6 not satisfied — no source-visible evidence detected for validation \"least-privilege\".",
             "target": {
               "status": {
-                "state": "satisfied"
+                "state": "not-satisfied"
               },
               "target-id": "ac-6",
               "type": "objective-id"
@@ -135,10 +135,10 @@
             "uuid": "f5450b9c-72f1-53b5-be00-277af5b23e9b"
           },
           {
-            "description": "AC (Access Control) control AC-6.1 satisfied by validation \"least-privilege\".",
+            "description": "AC (Access Control) control AC-6.1 not satisfied — no source-visible evidence detected for validation \"least-privilege\".",
             "target": {
               "status": {
-                "state": "satisfied"
+                "state": "not-satisfied"
               },
               "target-id": "ac-6.1",
               "type": "objective-id"
@@ -147,10 +147,10 @@
             "uuid": "f6450d2f-71f1-5222-bf00-290df4b23d08"
           },
           {
-            "description": "AC (Access Control) control AC-6.2 satisfied by validation \"least-privilege\".",
+            "description": "AC (Access Control) control AC-6.2 not satisfied — no source-visible evidence detected for validation \"least-privilege\".",
             "target": {
               "status": {
-                "state": "satisfied"
+                "state": "not-satisfied"
               },
               "target-id": "ac-6.2",
               "type": "objective-id"
@@ -159,10 +159,10 @@
             "uuid": "3dc7dfd5-81da-533e-9a2c-809fdc81f4c0"
           },
           {
-            "description": "AC (Access Control) control AC-6.5 satisfied by validation \"least-privilege\".",
+            "description": "AC (Access Control) control AC-6.5 not satisfied — no source-visible evidence detected for validation \"least-privilege\".",
             "target": {
               "status": {
-                "state": "satisfied"
+                "state": "not-satisfied"
               },
               "target-id": "ac-6.5",
               "type": "objective-id"
@@ -183,10 +183,10 @@
             "uuid": "3bc7dcaf-7fda-5018-9c2c-83c5de81f7e6"
           },
           {
-            "description": "AC (Access Control) control AC-6.9 satisfied by validation \"least-privilege\".",
+            "description": "AC (Access Control) control AC-6.9 not satisfied — no source-visible evidence detected for validation \"least-privilege\".",
             "target": {
               "status": {
-                "state": "satisfied"
+                "state": "not-satisfied"
               },
               "target-id": "ac-6.9",
               "type": "objective-id"
@@ -195,10 +195,10 @@
             "uuid": "3ac7db1c-80da-51ab-9b2c-8232df81f979"
           },
           {
-            "description": "AC (Access Control) control AC-6.10 satisfied by validation \"least-privilege\".",
+            "description": "AC (Access Control) control AC-6.10 not satisfied — no source-visible evidence detected for validation \"least-privilege\".",
             "target": {
               "status": {
-                "state": "satisfied"
+                "state": "not-satisfied"
               },
               "target-id": "ac-6.10",
               "type": "objective-id"
@@ -207,10 +207,10 @@
             "uuid": "39c7d989-85da-598a-962c-7a53e081fb0c"
           },
           {
-            "description": "AC (Access Control) control AC-7 not satisfied — no source-visible evidence detected for validation \"access-enforcement\".",
+            "description": "AC (Access Control) control AC-7 satisfied by validation \"access-enforcement\".",
             "target": {
               "status": {
-                "state": "not-satisfied"
+                "state": "satisfied"
               },
               "target-id": "ac-7",
               "type": "objective-id"
@@ -219,10 +219,10 @@
             "uuid": "38c7d7f6-86da-5b1d-952c-78c0e181fc9f"
           },
           {
-            "description": "AC (Access Control) control AC-11 satisfied by validation \"session-management\".",
+            "description": "AC (Access Control) control AC-11 not satisfied — no source-visible evidence detected for validation \"session-management\".",
             "target": {
               "status": {
-                "state": "satisfied"
+                "state": "not-satisfied"
               },
               "target-id": "ac-11",
               "type": "objective-id"
@@ -231,10 +231,10 @@
             "uuid": "37c7d663-83da-5664-982c-7d79e281fe32"
           },
           {
-            "description": "AC (Access Control) control AC-12 satisfied by validation \"session-management\".",
+            "description": "AC (Access Control) control AC-12 not satisfied — no source-visible evidence detected for validation \"session-management\".",
             "target": {
               "status": {
-                "state": "satisfied"
+                "state": "not-satisfied"
               },
               "target-id": "ac-12",
               "type": "objective-id"
@@ -243,7 +243,7 @@
             "uuid": "36c7d4d0-84da-57f7-972c-7be6e381ffc5"
           },
           {
-            "description": "AC (Access Control) control AC-17 not satisfied — validation \"transmission-encryption\" reports a gap (weak evidence or negating findings present).",
+            "description": "AC (Access Control) control AC-17 not satisfied — no source-visible evidence detected for validation \"transmission-encryption\".",
             "target": {
               "status": {
                 "state": "not-satisfied"
@@ -255,7 +255,7 @@
             "uuid": "45c7ec6d-79da-56a6-a22c-8d37e4820158"
           },
           {
-            "description": "AC (Access Control) control AC-17.2 not satisfied — validation \"transmission-encryption\" reports a gap (weak evidence or negating findings present).",
+            "description": "AC (Access Control) control AC-17.2 not satisfied — no source-visible evidence detected for validation \"transmission-encryption\".",
             "target": {
               "status": {
                 "state": "not-satisfied"
@@ -267,7 +267,7 @@
             "uuid": "44c7eada-7ada-5839-a12c-8ba4e58202eb"
           },
           {
-            "description": "AC (Access Control) control AC-17.8 not satisfied — validation \"transmission-encryption\" reports a gap (weak evidence or negating findings present).",
+            "description": "AC (Access Control) control AC-17.8 not satisfied — no source-visible evidence detected for validation \"transmission-encryption\".",
             "target": {
               "status": {
                 "state": "not-satisfied"
@@ -471,10 +471,10 @@
             "uuid": "47cc6cc1-73d5-5006-a828-197b628744e0"
           },
           {
-            "description": "CM (Configuration Management) control CM-5 satisfied by validation \"least-privilege\".",
+            "description": "CM (Configuration Management) control CM-5 not satisfied — no source-visible evidence detected for validation \"least-privilege\".",
             "target": {
               "status": {
-                "state": "satisfied"
+                "state": "not-satisfied"
               },
               "target-id": "cm-5",
               "type": "objective-id"
@@ -483,7 +483,7 @@
             "uuid": "46cc6b2e-74d5-5199-a728-17e863874673"
           },
           {
-            "description": "CM (Configuration Management) control CM-6 not satisfied — no source-visible evidence detected for validation \"configuration-defaults-safety\".",
+            "description": "CM (Configuration Management) control CM-6 partially satisfied — validation \"configuration-defaults-safety\" reports limited evidence coverage.",
             "target": {
               "status": {
                 "state": "not-satisfied"
@@ -615,7 +615,7 @@
             "uuid": "37bb0a70-77d3-57bb-a420-8deaf28ee355"
           },
           {
-            "description": "IA (Identification and Authentication) control IA-2.1 partially satisfied — validation \"mfa-required\" reports limited evidence coverage.",
+            "description": "IA (Identification and Authentication) control IA-2.1 not satisfied — no source-visible evidence detected for validation \"mfa-required\".",
             "target": {
               "status": {
                 "state": "not-satisfied"
@@ -627,7 +627,7 @@
             "uuid": "38bb0c03-76d3-5628-a520-8f7df18ee1c2"
           },
           {
-            "description": "IA (Identification and Authentication) control IA-2.2 partially satisfied — validation \"mfa-required\" reports limited evidence coverage.",
+            "description": "IA (Identification and Authentication) control IA-2.2 not satisfied — no source-visible evidence detected for validation \"mfa-required\".",
             "target": {
               "status": {
                 "state": "not-satisfied"
@@ -843,7 +843,7 @@
             "uuid": "c6c068bb-04ce-5584-971b-32c5e39348e6"
           },
           {
-            "description": "SC (System and Communications Protection) control SC-8 not satisfied — validation \"transmission-encryption\" reports a gap (weak evidence or negating findings present).",
+            "description": "SC (System and Communications Protection) control SC-8 not satisfied — no source-visible evidence detected for validation \"transmission-encryption\".",
             "target": {
               "status": {
                 "state": "not-satisfied"
@@ -855,7 +855,7 @@
             "uuid": "c3c06402-fbce-5759-981b-3458ee935a37"
           },
           {
-            "description": "SC (System and Communications Protection) control SC-8.1 not satisfied — validation \"transmission-encryption\" reports a gap (weak evidence or negating findings present).",
+            "description": "SC (System and Communications Protection) control SC-8.1 not satisfied — no source-visible evidence detected for validation \"transmission-encryption\".",
             "target": {
               "status": {
                 "state": "not-satisfied"
@@ -879,7 +879,7 @@
             "uuid": "b1c28643-fdcc-5be8-961e-3949e0910596"
           },
           {
-            "description": "SC (System and Communications Protection) control SC-13 not satisfied — validation \"cryptographic-strength\" reports a gap (weak evidence or negating findings present).",
+            "description": "SC (System and Communications Protection) control SC-13 not satisfied — no source-visible evidence detected for validation \"cryptographic-strength\".",
             "target": {
               "status": {
                 "state": "not-satisfied"
@@ -915,10 +915,10 @@
             "uuid": "b2c287d6-00cc-50a1-931e-3490df910403"
           },
           {
-            "description": "SC (System and Communications Protection) control SC-23 satisfied by validation \"session-management\".",
+            "description": "SC (System and Communications Protection) control SC-23 not satisfied — no source-visible evidence detected for validation \"session-management\".",
             "target": {
               "status": {
-                "state": "satisfied"
+                "state": "not-satisfied"
               },
               "target-id": "sc-23",
               "type": "objective-id"

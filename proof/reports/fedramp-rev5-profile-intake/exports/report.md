@@ -49,6 +49,7 @@ The package emits Catalog/Profile intake evidence and leaves human-process packa
 
 **Recommended next step:** Resolve dangling imports or unknown controls and keep unsupported package families fail-closed.
 
+
 <a id="source-oscal-profile-intake"></a>
 ### OSCAL Catalog/Profile / FedRAMP Rev. 5 source evidence
 
@@ -82,6 +83,7 @@ Framework: OSCAL Catalog/Profile / FedRAMP Rev. 5
 **Criterion:** Profile import hrefs must resolve to pinned Catalog/Profile provenance.
 
 **Recommended next step:** Pin the missing OSCAL catalogs or profiles beside the baseline corpus before claiming a complete package.
+
 
 <a id="source-oscal-profile-imports"></a>
 ### OSCAL Catalog/Profile / FedRAMP Rev. 5 source evidence
@@ -117,6 +119,7 @@ Framework: OSCAL Catalog/Profile / FedRAMP Rev. 5
 
 **Recommended next step:** Review tailoring deltas against the intended FedRAMP baseline before publishing downstream artifacts.
 
+
 <a id="source-oscal-profile-controls"></a>
 ### OSCAL Catalog/Profile / FedRAMP Rev. 5 source evidence
 
@@ -147,6 +150,7 @@ Framework: OSCAL Catalog/Profile / FedRAMP Rev. 5
 
 **Recommended next step:** Add SSP, SAP, SAR, and POA&M only after human-process evidence and G11 artifact conformance are certified.
 
+
 <a id="source-oscal-profile-unsupported-boundary"></a>
 ### OSCAL Catalog/Profile / FedRAMP Rev. 5 source evidence
 
@@ -174,4 +178,4 @@ Live, per-finding fix plans generate automatically when Sonde analyzes your repo
 
 Fix plan link: [Fix plan](../fix-plans/finding-oscal-profile-intake/index.html#fix-plan-oscal-profile-intake)
 
-Public export note: this Markdown file is derived from public runtime manifest and search-source data only. Private receipt data and gated fix-plan prose are excluded.
+Public export note: this Markdown file is derived from authorized public report data. Private receipt data and gated fix-plan prose are excluded.

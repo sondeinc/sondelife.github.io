@@ -1,8 +1,13 @@
 window.__SCRIBE_LOCALES__ = window.__SCRIBE_LOCALES__ || {};
 window.__SCRIBE_LOCALES__["ga-GB"] = {
-  "fallbackCount": 94,
+  "fallbackCount": 120,
   "locale": "ga-GB",
   "messages": {
+    "scribe.leaderboard.language": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Teanga"
+    },
     "scribe.report.action.backToFinding": {
       "fallback": false,
       "reviewed": true,
@@ -303,11 +308,6 @@ window.__SCRIBE_LOCALES__["ga-GB"] = {
       "reviewed": true,
       "text": "An Chéad"
     },
-    "scribe.report.control.language": {
-      "fallback": false,
-      "reviewed": true,
-      "text": "Teanga"
-    },
     "scribe.report.control.languageSearch": {
       "fallback": false,
       "reviewed": true,
@@ -438,6 +438,11 @@ window.__SCRIBE_LOCALES__["ga-GB"] = {
       "reviewed": true,
       "text": "Rianú Foinse"
     },
+    "scribe.report.finding.autofix.title": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Autofix"
+    },
     "scribe.report.finding.missingAlt.summary": {
       "fallback": false,
       "reviewed": true,
@@ -458,6 +463,51 @@ window.__SCRIBE_LOCALES__["ga-GB"] = {
       "reviewed": true,
       "text": "Achoimre phoiblí ar an bhfianaise gan ábhar socraithe gated."
     },
+    "scribe.report.fixPlan.component.beforeAfter": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Roimh / tar éis (réamhamharc deisithe uathoibríoch)"
+    },
+    "scribe.report.fixPlan.component.closeFullScreen": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Dún"
+    },
+    "scribe.report.fixPlan.component.fixGroups": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Grúpaí deisithe"
+    },
+    "scribe.report.fixPlan.component.fixed": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Fixed"
+    },
+    "scribe.report.fixPlan.component.original": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Original"
+    },
+    "scribe.report.fixPlan.component.source": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Foinse"
+    },
+    "scribe.report.fixPlan.component.splitView": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Split"
+    },
+    "scribe.report.fixPlan.component.unifiedView": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Unified"
+    },
+    "scribe.report.fixPlan.component.verify": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Fíoraigh"
+    },
     "scribe.report.fixPlan.pageTitle": {
       "fallback": false,
       "reviewed": true,
@@ -472,6 +522,26 @@ window.__SCRIBE_LOCALES__["ga-GB"] = {
       "fallback": false,
       "reviewed": true,
       "text": "Gintear pleananna deisithe beo, in aghaidh an toraidh, go huathoibríoch nuair a dhéanann Sonde anailís ar do stóras. Léiríonn an taispeántas coimeádaithe seo an tuairisc; féach feabhsú uathoibríoch i mbun gnímh ar shampla beo."
+    },
+    "scribe.report.metric.severity.critical": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Criticiúil"
+    },
+    "scribe.report.metric.severity.good": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Maith"
+    },
+    "scribe.report.metric.severity.high": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Ard"
+    },
+    "scribe.report.metric.severity.moderate": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Measartha"
     },
     "scribe.report.mobileAccessibilityScan.metric.complianceMatrix.body": {
       "fallback": false,
@@ -588,27 +658,7 @@ window.__SCRIBE_LOCALES__["ga-GB"] = {
       "reviewed": true,
       "text": "Forbhreathnú"
     },
-    "scribe.report.repositoryHealth.fixPlan.generic.step.inspect": {
-      "fallback": false,
-      "reviewed": true,
-      "text": "Fíoraigh an raon foinse luaite i línte {sourcePath} {startLine} trí {endLine}."
-    },
-    "scribe.report.repositoryHealth.fixPlan.generic.step.resolve": {
-      "fallback": false,
-      "reviewed": true,
-      "text": "Cuir an leigheas ag baint úsáide as an t-athrú foinse is lú a réitíonn an toradh."
-    },
-    "scribe.report.repositoryHealth.fixPlan.generic.step.validate": {
-      "fallback": false,
-      "reviewed": true,
-      "text": "Ath-rith an tuarascáil sláinte stórtha agus na tástálacha pacáiste-leibhéal is gaire sula bhfoilsítear an socrú."
-    },
-    "scribe.report.repositoryHealth.fixPlan.scope": {
-      "fallback": false,
-      "reviewed": true,
-      "text": "Raon foinse sprice: línte {sourcePath} ó {startLine} go dtí {endLine}."
-    },
-    "scribe.report.sondeScore.title": {
+    "scribe.report.repositoryHealth.sondeScore.title": {
       "fallback": false,
       "reviewed": true,
       "text": "Sonde Score"

@@ -12,10 +12,10 @@ Export source: exports/report.md
 
 This report packages a pinned NIST/FedRAMP rollup as a Scribe html-daylight report and exposes only supported standard artifacts.
 
-**Coverage boundary:** 11 controls are satisfied, 35 are unsatisfied, and 55 require customer context instead of being mislabeled as SSP evidence.
+**Coverage boundary:** 6 controls are satisfied, 41 are unsatisfied, and 55 require customer context instead of being mislabeled as SSP evidence.
 
 - **Control accounting:** 103 NIST controls across 9 families are accounted with 55 customer-context entries left explicit.
-- **Coverage score:** **107** / 1000 (11/103 controls satisfied)
+- **Coverage score:** **58** / 1000 (6/103 controls satisfied)
 - **Conformance boundary:** OSCAL Assessment Results are emitted. OSCAL SSP, SAP, SAR, POA&M, Component Definition, Catalog, and Profile artifacts are declared unsupported for this package.
 
 <a id="diagram-nist-coverage-controls"></a>
@@ -28,11 +28,11 @@ Source: finding-nist-coverage
 Mermaid: unavailable
 SVG: unavailable
 
-- **AC Access Control:** 8/19 present controls
+- **AC Access Control:** 5/19 present controls
 - **AU Audit and Accountability:** 0/12 present controls
-- **CM Configuration Management:** 1/14 present controls
+- **CM Configuration Management:** 0/14 present controls
 - **IA Identification and Authentication:** 0/15 present controls
-- **SC System and Communications Protection:** 1/15 present controls
+- **SC System and Communications Protection:** 0/15 present controls
 - **SI System and Information Integrity:** 1/14 present controls
 - **RA Risk Assessment:** 0/4 present controls
 - **SA System and Services Acquisition:** 0/6 present controls
@@ -52,6 +52,7 @@ The NIST coverage package emits supported OSCAL Assessment Results and declares 
 
 **Recommended next step:** Keep unsupported standard artifacts fail-closed until G11 data-model conformance is implemented.
 
+
 <a id="source-nist-coverage-rollup"></a>
 ### NIST SP 800-53 Rev. 5 / FedRAMP Rev. 5 source evidence
 
@@ -63,18 +64,18 @@ Source: data/nist-rollup-summary.txt L1-L19
 NIST/FedRAMP coverage summary
 Total control families: 9
 Total controls accounted: 103
-Satisfied controls: 11
+Satisfied controls: 6
 Customer-context controls: 55
-Unsatisfied controls: 35
-Coverage ratio: 10.7%
+Unsatisfied controls: 41
+Coverage ratio: 5.8%
 Raw rollup JSON download: data/nist-rollup.json
 OSCAL Assessment Results download: exports/nist-coverage.oscal-assessment-results.json
 Family summary:
-- AC Access Control: 8/19 satisfied, 3 customer-context, 8 unsatisfied
+- AC Access Control: 5/19 satisfied, 3 customer-context, 11 unsatisfied
 - AU Audit and Accountability: 0/12 satisfied, 7 customer-context, 5 unsatisfied
-- CM Configuration Management: 1/14 satisfied, 11 customer-context, 2 unsatisfied
-- IA Identification and Authentication: 0/15 satisfied, 3 customer-context, 10 unsatisfied
-- SC System and Communications Protection: 1/15 satisfied, 9 customer-context, 5 unsatisfied
+- CM Configuration Management: 0/14 satisfied, 11 customer-context, 2 unsatisfied
+- IA Identification and Authentication: 0/15 satisfied, 3 customer-context, 12 unsatisfied
+- SC System and Communications Protection: 0/15 satisfied, 9 customer-context, 6 unsatisfied
 - SI System and Information Integrity: 1/14 satisfied, 9 customer-context, 4 unsatisfied
 - RA Risk Assessment: 0/4 satisfied, 3 customer-context, 1 unsatisfied
 - SA System and Services Acquisition: 0/6 satisfied, 6 customer-context, 0 unsatisfied
@@ -82,18 +83,19 @@ Family summary:
 ```
 
 <a id="finding-nist-coverage-family-ac"></a>
-## AC Access Control coverage: 8/19 controls satisfied
+## AC Access Control coverage: 5/19 controls satisfied
 
 Severity: Warning
 Classification: NIST FedRAMP coverage
 Language: text
 Framework: NIST SP 800-53 Rev. 5 / FedRAMP Rev. 5
 
-Access Control has 8 satisfied controls, 3 customer-context controls, and 8 unsatisfied controls.
+Access Control has 5 satisfied controls, 3 customer-context controls, and 11 unsatisfied controls.
 
 **Criterion:** Family-level NIST controls must keep satisfied, customer-context, and unsatisfied states separate.
 
 **Recommended next step:** Review customer-context and unsatisfied controls before making SSP/SAP/SAR/POA&M claims.
+
 
 <a id="source-nist-coverage-family-ac"></a>
 ### NIST SP 800-53 Rev. 5 / FedRAMP Rev. 5 source evidence
@@ -105,13 +107,13 @@ Source: data/nist-coverage-family-ac-summary.txt L1-L10
 ```text
 NIST family AC: Access Control
 Total controls: 19
-Satisfied controls: 8
+Satisfied controls: 5
 Customer-context controls: 3
-Unsatisfied controls: 8
+Unsatisfied controls: 11
 Validation-resolved controls: 10
 Evidence-tier controls: 9
 Deferred-elsewhere controls: 0
-Representative controls: ac-3:absent, ac-3.7:absent, ac-3.8:absent, ac-3.13:absent, ac-4:requires-customer-context, ac-6:present, ac-6.1:present, ac-6.2:present, ac-6.5:present, ac-6.8:requires-customer-context
+Representative controls: ac-3:present, ac-3.7:present, ac-3.8:present, ac-3.13:present, ac-4:requires-customer-context, ac-6:absent, ac-6.1:absent, ac-6.2:absent, ac-6.5:absent, ac-6.8:requires-customer-context
 Raw rollup JSON download: data/nist-rollup.json
 ```
 
@@ -128,6 +130,7 @@ Audit and Accountability has 0 satisfied controls, 7 customer-context controls, 
 **Criterion:** Family-level NIST controls must keep satisfied, customer-context, and unsatisfied states separate.
 
 **Recommended next step:** Review customer-context and unsatisfied controls before making SSP/SAP/SAR/POA&M claims.
+
 
 <a id="source-nist-coverage-family-au"></a>
 ### NIST SP 800-53 Rev. 5 / FedRAMP Rev. 5 source evidence
@@ -150,18 +153,19 @@ Raw rollup JSON download: data/nist-rollup.json
 ```
 
 <a id="finding-nist-coverage-family-cm"></a>
-## CM Configuration Management coverage: 1/14 controls satisfied
+## CM Configuration Management coverage: 0/14 controls satisfied
 
 Severity: Warning
 Classification: NIST FedRAMP coverage
 Language: text
 Framework: NIST SP 800-53 Rev. 5 / FedRAMP Rev. 5
 
-Configuration Management has 1 satisfied controls, 11 customer-context controls, and 2 unsatisfied controls.
+Configuration Management has 0 satisfied controls, 11 customer-context controls, and 2 unsatisfied controls.
 
 **Criterion:** Family-level NIST controls must keep satisfied, customer-context, and unsatisfied states separate.
 
 **Recommended next step:** Review customer-context and unsatisfied controls before making SSP/SAP/SAR/POA&M claims.
+
 
 <a id="source-nist-coverage-family-cm"></a>
 ### NIST SP 800-53 Rev. 5 / FedRAMP Rev. 5 source evidence
@@ -173,13 +177,13 @@ Source: data/nist-coverage-family-cm-summary.txt L1-L10
 ```text
 NIST family CM: Configuration Management
 Total controls: 14
-Satisfied controls: 1
+Satisfied controls: 0
 Customer-context controls: 11
 Unsatisfied controls: 2
 Validation-resolved controls: 2
 Evidence-tier controls: 12
 Deferred-elsewhere controls: 0
-Representative controls: cm-2:requires-customer-context, cm-3:requires-customer-context, cm-4:requires-customer-context, cm-5:present, cm-6:absent, cm-6.1:requires-customer-context, cm-7:absent, cm-7.1:requires-customer-context, cm-7.2:requires-customer-context, cm-7.4:requires-customer-context
+Representative controls: cm-2:requires-customer-context, cm-3:requires-customer-context, cm-4:requires-customer-context, cm-5:absent, cm-6:partial, cm-6.1:requires-customer-context, cm-7:absent, cm-7.1:requires-customer-context, cm-7.2:requires-customer-context, cm-7.4:requires-customer-context
 Raw rollup JSON download: data/nist-rollup.json
 ```
 
@@ -191,11 +195,12 @@ Classification: NIST FedRAMP coverage
 Language: text
 Framework: NIST SP 800-53 Rev. 5 / FedRAMP Rev. 5
 
-Identification and Authentication has 0 satisfied controls, 3 customer-context controls, and 10 unsatisfied controls.
+Identification and Authentication has 0 satisfied controls, 3 customer-context controls, and 12 unsatisfied controls.
 
 **Criterion:** Family-level NIST controls must keep satisfied, customer-context, and unsatisfied states separate.
 
 **Recommended next step:** Review customer-context and unsatisfied controls before making SSP/SAP/SAR/POA&M claims.
+
 
 <a id="source-nist-coverage-family-ia"></a>
 ### NIST SP 800-53 Rev. 5 / FedRAMP Rev. 5 source evidence
@@ -209,27 +214,28 @@ NIST family IA: Identification and Authentication
 Total controls: 15
 Satisfied controls: 0
 Customer-context controls: 3
-Unsatisfied controls: 10
+Unsatisfied controls: 12
 Validation-resolved controls: 6
 Evidence-tier controls: 9
 Deferred-elsewhere controls: 0
-Representative controls: ia-2:absent, ia-2.1:partial, ia-2.2:partial, ia-2.6:absent, ia-2.8:absent, ia-5:absent, ia-5.1:absent, ia-5.2:requires-customer-context, ia-5.4:absent, ia-5.6:absent
+Representative controls: ia-2:absent, ia-2.1:absent, ia-2.2:absent, ia-2.6:absent, ia-2.8:absent, ia-5:absent, ia-5.1:absent, ia-5.2:requires-customer-context, ia-5.4:absent, ia-5.6:absent
 Raw rollup JSON download: data/nist-rollup.json
 ```
 
 <a id="finding-nist-coverage-family-sc"></a>
-## SC System and Communications Protection coverage: 1/15 controls satisfied
+## SC System and Communications Protection coverage: 0/15 controls satisfied
 
 Severity: Warning
 Classification: NIST FedRAMP coverage
 Language: text
 Framework: NIST SP 800-53 Rev. 5 / FedRAMP Rev. 5
 
-System and Communications Protection has 1 satisfied controls, 9 customer-context controls, and 5 unsatisfied controls.
+System and Communications Protection has 0 satisfied controls, 9 customer-context controls, and 6 unsatisfied controls.
 
 **Criterion:** Family-level NIST controls must keep satisfied, customer-context, and unsatisfied states separate.
 
 **Recommended next step:** Review customer-context and unsatisfied controls before making SSP/SAP/SAR/POA&M claims.
+
 
 <a id="source-nist-coverage-family-sc"></a>
 ### NIST SP 800-53 Rev. 5 / FedRAMP Rev. 5 source evidence
@@ -241,13 +247,13 @@ Source: data/nist-coverage-family-sc-summary.txt L1-L10
 ```text
 NIST family SC: System and Communications Protection
 Total controls: 15
-Satisfied controls: 1
+Satisfied controls: 0
 Customer-context controls: 9
-Unsatisfied controls: 5
+Unsatisfied controls: 6
 Validation-resolved controls: 6
 Evidence-tier controls: 9
 Deferred-elsewhere controls: 0
-Representative controls: sc-2:requires-customer-context, sc-3:requires-customer-context, sc-4:requires-customer-context, sc-5:requires-customer-context, sc-7:requires-customer-context, sc-8:gap, sc-8.1:gap, sc-12:requires-customer-context, sc-13:gap, sc-13.1:requires-customer-context
+Representative controls: sc-2:requires-customer-context, sc-3:requires-customer-context, sc-4:requires-customer-context, sc-5:requires-customer-context, sc-7:requires-customer-context, sc-8:absent, sc-8.1:absent, sc-12:requires-customer-context, sc-13:absent, sc-13.1:requires-customer-context
 Raw rollup JSON download: data/nist-rollup.json
 ```
 
@@ -264,6 +270,7 @@ System and Information Integrity has 1 satisfied controls, 9 customer-context co
 **Criterion:** Family-level NIST controls must keep satisfied, customer-context, and unsatisfied states separate.
 
 **Recommended next step:** Review customer-context and unsatisfied controls before making SSP/SAP/SAR/POA&M claims.
+
 
 <a id="source-nist-coverage-family-si"></a>
 ### NIST SP 800-53 Rev. 5 / FedRAMP Rev. 5 source evidence
@@ -299,6 +306,7 @@ Risk Assessment has 0 satisfied controls, 3 customer-context controls, and 1 uns
 
 **Recommended next step:** Review customer-context and unsatisfied controls before making SSP/SAP/SAR/POA&M claims.
 
+
 <a id="source-nist-coverage-family-ra"></a>
 ### NIST SP 800-53 Rev. 5 / FedRAMP Rev. 5 source evidence
 
@@ -332,6 +340,7 @@ System and Services Acquisition has 0 satisfied controls, 6 customer-context con
 **Criterion:** Family-level NIST controls must keep satisfied, customer-context, and unsatisfied states separate.
 
 **Recommended next step:** Review customer-context and unsatisfied controls before making SSP/SAP/SAR/POA&M claims.
+
 
 <a id="source-nist-coverage-family-sa"></a>
 ### NIST SP 800-53 Rev. 5 / FedRAMP Rev. 5 source evidence
@@ -367,6 +376,7 @@ PII Processing and Transparency has 0 satisfied controls, 4 customer-context con
 
 **Recommended next step:** Review customer-context and unsatisfied controls before making SSP/SAP/SAR/POA&M claims.
 
+
 <a id="source-nist-coverage-family-pt"></a>
 ### NIST SP 800-53 Rev. 5 / FedRAMP Rev. 5 source evidence
 
@@ -394,4 +404,4 @@ Live, per-finding fix plans generate automatically when Sonde analyzes your repo
 
 Fix plan link: [Fix plan](../fix-plans/finding-nist-coverage/index.html#fix-plan-nist-coverage)
 
-Public export note: this Markdown file is derived from public runtime manifest and search-source data only. Private receipt data and gated fix-plan prose are excluded.
+Public export note: this Markdown file is derived from authorized public report data. Private receipt data and gated fix-plan prose are excluded.
