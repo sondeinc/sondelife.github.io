@@ -1,8 +1,13 @@
 window.__SCRIBE_LOCALES__ = window.__SCRIBE_LOCALES__ || {};
 window.__SCRIBE_LOCALES__["cy-GB"] = {
-  "fallbackCount": 86,
+  "fallbackCount": 78,
   "locale": "cy-GB",
   "messages": {
+    "scribe.leaderboard.language": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Iaith"
+    },
     "scribe.report.action.backToFinding": {
       "fallback": false,
       "reviewed": true,
@@ -27,6 +32,11 @@ window.__SCRIBE_LOCALES__["cy-GB"] = {
       "fallback": false,
       "reviewed": true,
       "text": "Cwympo'r darn"
+    },
+    "scribe.report.action.completeFixPlan": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Cwblhau cynllun trwsio"
     },
     "scribe.report.action.copyDiagramLink": {
       "fallback": false,
@@ -176,7 +186,7 @@ window.__SCRIBE_LOCALES__["cy-GB"] = {
     "scribe.report.asset.overviewScreenshot.caption": {
       "fallback": false,
       "reviewed": true,
-      "text": "Copïwyd o'r un darlunwr tystiolaeth annotedig a ddefnyddir gan y dudalen cydymffurfio sonde.life gyhoeddus."
+      "text": "Copïwyd o'r un darlunwr tystiolaeth annotedig a ddefnyddir gan y dudalen cydymffurfio sonde.tech gyhoeddus."
     },
     "scribe.report.asset.theme.daylight": {
       "fallback": false,
@@ -197,6 +207,26 @@ window.__SCRIBE_LOCALES__["cy-GB"] = {
       "fallback": false,
       "reviewed": true,
       "text": "Thema ultraviolet"
+    },
+    "scribe.report.autofixFilter.fullExplanation": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Esboniad llawn"
+    },
+    "scribe.report.autofixFilter.help": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Mae'r cyfrifau yn adlewyrith chCweliadau a philtrau cyfredol. Mae rhagwelys yn dangos newid a gynhyrchiwyd. Nid yw hyn yn profi bod y newid wedi'i gymhwysu neu wedi'i gwirio."
+    },
+    "scribe.report.autofixFilter.label": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Canlyniadau autofix"
+    },
+    "scribe.report.autofixFilter.preview": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Rhagwelysiau autofix"
     },
     "scribe.report.brand": {
       "fallback": false,
@@ -268,6 +298,36 @@ window.__SCRIBE_LOCALES__["cy-GB"] = {
       "reviewed": true,
       "text": "& Cronfa ddata:"
     },
+    "scribe.report.complianceExample.0.criterion": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "WCAG 1.1.1 Cynnwys nad yw'n destun"
+    },
+    "scribe.report.complianceExample.0.finding.fix": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Ychwanegu addasydd.accessibilityLabel(...) penodol i'r cynnyrch neu farcio'r Delwedd addurnedig gyda.accessibilityHidden(true)."
+    },
+    "scribe.report.complianceExample.0.finding.summary": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Mae'r Delwedd SwiftUI yn llenwi'r rhes rhybudd proffil â chynnwys perthnasol ond nid yw'n datgelu label hygyrchedd."
+    },
+    "scribe.report.complianceExample.0.finding.title": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Mae'r ddelwedd SwiftUI yn colli enw hygyrchol"
+    },
+    "scribe.report.complianceExample.0.framework": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "SwiftUI - amser rhedeg iOS"
+    },
+    "scribe.report.complianceExample.0.runtime": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Wedi'i ddal gan ail-chwarae'r fflach SwiftUI ar iPhone 17 Pro."
+    },
     "scribe.report.complianceExample.source.summary": {
       "fallback": false,
       "reviewed": true,
@@ -323,6 +383,16 @@ window.__SCRIBE_LOCALES__["cy-GB"] = {
       "reviewed": true,
       "text": "Cynnwys"
     },
+    "scribe.report.control.emptyPlan": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Nid oes cynnwys cynllun strwythuredig ar gael."
+    },
+    "scribe.report.control.evictedPlan": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Cafodd cynnwys y cynllun ei ryddhau. Agorwch y cynllun eto i'w oload."
+    },
     "scribe.report.control.expandContents": {
       "fallback": false,
       "reviewed": true,
@@ -338,10 +408,10 @@ window.__SCRIBE_LOCALES__["cy-GB"] = {
       "reviewed": true,
       "text": "Cyntaf"
     },
-    "scribe.report.control.language": {
+    "scribe.report.control.guidance": {
       "fallback": false,
       "reviewed": true,
-      "text": "Iaith"
+      "text": "Arweiniad"
     },
     "scribe.report.control.languageSearch": {
       "fallback": false,
@@ -352,6 +422,11 @@ window.__SCRIBE_LOCALES__["cy-GB"] = {
       "fallback": false,
       "reviewed": true,
       "text": "Diweddaraf"
+    },
+    "scribe.report.control.loadingPlan": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Yn oload y cynllun i drws…"
     },
     "scribe.report.control.locale": {
       "fallback": false,
@@ -368,6 +443,11 @@ window.__SCRIBE_LOCALES__["cy-GB"] = {
       "reviewed": true,
       "text": "& Nesaf"
     },
+    "scribe.report.control.outsideResults": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Yn ymhell o'r canlyniadau presennol"
+    },
     "scribe.report.control.pageSize": {
       "fallback": false,
       "reviewed": true,
@@ -377,6 +457,11 @@ window.__SCRIBE_LOCALES__["cy-GB"] = {
       "fallback": false,
       "reviewed": true,
       "text": "Tudalen"
+    },
+    "scribe.report.control.pinContents": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Pinio’r llywio"
     },
     "scribe.report.control.previousPage": {
       "fallback": false,
@@ -388,6 +473,11 @@ window.__SCRIBE_LOCALES__["cy-GB"] = {
       "reviewed": true,
       "text": "Golwg Darllenydd"
     },
+    "scribe.report.control.referenceMaterial": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Deunydd cyfeirnod"
+    },
     "scribe.report.control.remediation": {
       "fallback": false,
       "reviewed": true,
@@ -397,6 +487,16 @@ window.__SCRIBE_LOCALES__["cy-GB"] = {
       "fallback": false,
       "reviewed": true,
       "text": "Canlyniadau"
+    },
+    "scribe.report.control.retryPlan": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Ceisio oload y cynllun eto"
+    },
+    "scribe.report.control.returnToResults": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Dychwelyd i'r canlyniadau"
     },
     "scribe.report.control.search": {
       "fallback": false,
@@ -408,10 +508,20 @@ window.__SCRIBE_LOCALES__["cy-GB"] = {
       "reviewed": true,
       "text": "Difrifwch"
     },
+    "scribe.report.control.targetUnavailable": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Mae targed y rapord hwn ar gael"
+    },
     "scribe.report.control.theme": {
       "fallback": false,
       "reviewed": true,
       "text": "Thema"
+    },
+    "scribe.report.control.unavailablePlan": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Ni allai ownlo'r cynllun. Agorwch y cynllun cyflym neu ailymunwch."
     },
     "scribe.report.discoverySummary.title": {
       "fallback": false,
@@ -473,6 +583,11 @@ window.__SCRIBE_LOCALES__["cy-GB"] = {
       "reviewed": true,
       "text": "Tarddiad"
     },
+    "scribe.report.finding.autofix.title": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Hunan- gywiro"
+    },
     "scribe.report.finding.missingAlt.summary": {
       "fallback": false,
       "reviewed": true,
@@ -493,6 +608,66 @@ window.__SCRIBE_LOCALES__["cy-GB"] = {
       "reviewed": true,
       "text": "Crynodeb chwilio cyhoeddus heb gynnwys cywiro wedi ei rwystro."
     },
+    "scribe.report.fixPlan.component.acceptanceCriteria": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Meini prawf derbyn"
+    },
+    "scribe.report.fixPlan.component.beforeAfter": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Cymryd / Wedi (rhagwelys auto-gywiru)"
+    },
+    "scribe.report.fixPlan.component.closeFullScreen": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Cau"
+    },
+    "scribe.report.fixPlan.component.fixGroups": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Grwpiau trwsio"
+    },
+    "scribe.report.fixPlan.component.fixed": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Ffeil:"
+    },
+    "scribe.report.fixPlan.component.fullScreen": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Diff Sgrîn Llawn"
+    },
+    "scribe.report.fixPlan.component.manualSteps": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Cam atgyweirio â llaw"
+    },
+    "scribe.report.fixPlan.component.original": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "& Gwaredu Iaith"
+    },
+    "scribe.report.fixPlan.component.source": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Hanes"
+    },
+    "scribe.report.fixPlan.component.splitView": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Rhannu"
+    },
+    "scribe.report.fixPlan.component.unifiedView": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Unedig"
+    },
+    "scribe.report.fixPlan.component.verify": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Gwiriwch"
+    },
     "scribe.report.fixPlan.pageTitle": {
       "fallback": false,
       "reviewed": true,
@@ -507,6 +682,61 @@ window.__SCRIBE_LOCALES__["cy-GB"] = {
       "fallback": false,
       "reviewed": true,
       "text": "Cynlluniau trwsio byw, per-finding, yn cael eu creu'n awtomatig pan fo Sonde yn dadansoddi eich storfa. Mae'r arddangosfa wedi'i chynnal yn dangos yr adroddiad; gweler adfer awtomatig yn gweithredu ar enghraifft fyw."
+    },
+    "scribe.report.metric.displayedScale": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Y graddfa a ddangosir"
+    },
+    "scribe.report.metric.explanation": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Mae pob llinell yn dangos ei bandiau cyfeirnod trefedig a'i gwerth a meswyd. Mae label y metrig yn noddi pa gyfeiriodd yw'r gorau."
+    },
+    "scribe.report.metric.higherIsBetter": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Yn well nes yw'n uwch"
+    },
+    "scribe.report.metric.lowerIsBetter": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Yn well nes yw'n is"
+    },
+    "scribe.report.metric.measured": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "mesuriwyd"
+    },
+    "scribe.report.metric.measuredResults": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Canlyniadau mesuriwyd"
+    },
+    "scribe.report.metric.referenceRanges": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Ystodau cyfeirio"
+    },
+    "scribe.report.metric.severity.critical": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Critigol"
+    },
+    "scribe.report.metric.severity.good": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Da"
+    },
+    "scribe.report.metric.severity.high": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Uchel"
+    },
+    "scribe.report.metric.severity.moderate": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Cyfnodol"
     },
     "scribe.report.mobileAccessibilityScan.metric.complianceMatrix.body": {
       "fallback": false,
@@ -623,27 +853,7 @@ window.__SCRIBE_LOCALES__["cy-GB"] = {
       "reviewed": true,
       "text": "Crynodeb"
     },
-    "scribe.report.repositoryHealth.fixPlan.generic.step.inspect": {
-      "fallback": false,
-      "reviewed": true,
-      "text": "Gwirio'r amrediad ffynhonnell a ddyfynnir yn {sourcePath} llinellau {startLine} trwy {endLine}."
-    },
-    "scribe.report.repositoryHealth.fixPlan.generic.step.resolve": {
-      "fallback": false,
-      "reviewed": true,
-      "text": "Gweithredu'r adfer gan ddefnyddio'r newid ffynhonnell lleiaf sy'n datrys y canfyddiad."
-    },
-    "scribe.report.repositoryHealth.fixPlan.generic.step.validate": {
-      "fallback": false,
-      "reviewed": true,
-      "text": "Ail-redeg yr adroddiad iechyd y storfa a'r profion lefel pecyn agosaf cyn cyhoeddi'r cywiriad."
-    },
-    "scribe.report.repositoryHealth.fixPlan.scope": {
-      "fallback": false,
-      "reviewed": true,
-      "text": "Amrediad ffynhonnell cyrchfan: {sourcePath} llinellau {startLine} trwy {endLine}."
-    },
-    "scribe.report.sondeScore.title": {
+    "scribe.report.repositoryHealth.sondeScore.title": {
       "fallback": false,
       "reviewed": true,
       "text": "Sonde Score"
@@ -687,6 +897,16 @@ window.__SCRIBE_LOCALES__["cy-GB"] = {
       "fallback": false,
       "reviewed": true,
       "text": "Tarddiad"
+    },
+    "scribe.report.term.altText": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Testun Alt"
+    },
+    "scribe.report.term.textAlternative": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Testun dewisol"
     },
     "scribe.report.theme.daylight": {
       "fallback": false,

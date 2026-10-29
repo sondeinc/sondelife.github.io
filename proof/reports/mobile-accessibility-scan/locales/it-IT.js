@@ -1,8 +1,13 @@
 window.__SCRIBE_LOCALES__ = window.__SCRIBE_LOCALES__ || {};
 window.__SCRIBE_LOCALES__["it-IT"] = {
-  "fallbackCount": 86,
+  "fallbackCount": 78,
   "locale": "it-IT",
   "messages": {
+    "scribe.leaderboard.language": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Lingua"
+    },
     "scribe.report.action.backToFinding": {
       "fallback": false,
       "reviewed": true,
@@ -27,6 +32,11 @@ window.__SCRIBE_LOCALES__["it-IT"] = {
       "fallback": false,
       "reviewed": true,
       "text": "Comprimi frammento"
+    },
+    "scribe.report.action.completeFixPlan": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Completa il piano di correzione"
     },
     "scribe.report.action.copyDiagramLink": {
       "fallback": false,
@@ -176,7 +186,7 @@ window.__SCRIBE_LOCALES__["it-IT"] = {
     "scribe.report.asset.overviewScreenshot.caption": {
       "fallback": false,
       "reviewed": true,
-      "text": "Copiato dallo stesso renderer di prove annotate utilizzato dalla pagina pubblica di conformità di sonde.life."
+      "text": "Copiato dallo stesso renderer di prove annotate utilizzato dalla pagina pubblica di conformità di sonde.tech."
     },
     "scribe.report.asset.theme.daylight": {
       "fallback": false,
@@ -197,6 +207,26 @@ window.__SCRIBE_LOCALES__["it-IT"] = {
       "fallback": false,
       "reviewed": true,
       "text": "Tema Ultravioletto"
+    },
+    "scribe.report.autofixFilter.fullExplanation": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Spiegazione completa"
+    },
+    "scribe.report.autofixFilter.help": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "I conteggi riflettono la ricerca e i filtri correnti. L'anteprima mostra una modifica generata. Ciò non stabilisce che la modifica sia stata applicata o verificata."
+    },
+    "scribe.report.autofixFilter.label": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Risultati Autofix"
+    },
+    "scribe.report.autofixFilter.preview": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Anteprime Autofix"
     },
     "scribe.report.brand": {
       "fallback": false,
@@ -268,6 +298,36 @@ window.__SCRIBE_LOCALES__["it-IT"] = {
       "reviewed": true,
       "text": "Capacità ORM e database"
     },
+    "scribe.report.complianceExample.0.criterion": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "WCAG 1.1.1 Contenuti non testuali"
+    },
+    "scribe.report.complianceExample.0.finding.fix": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Aggiungi un modificatore .accessibilityLabel(...) specifico per il prodotto oppure contrassegna l'immagine come decorativa con .accessibilityHidden(true)."
+    },
+    "scribe.report.complianceExample.0.finding.summary": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "L'immagine SwiftUI viene renderizzata come contenuto significativo nella riga dell'avviso del profilo, ma non espone alcun accessibilityLabel."
+    },
+    "scribe.report.complianceExample.0.finding.title": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "L'immagine SwiftUI non ha un nome accessibile"
+    },
+    "scribe.report.complianceExample.0.framework": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "SwiftUI - runtime iOS"
+    },
+    "scribe.report.complianceExample.0.runtime": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Catturato tramite il replay della fixture SwiftUI su iPhone 17 Pro."
+    },
     "scribe.report.complianceExample.source.summary": {
       "fallback": false,
       "reviewed": true,
@@ -323,6 +383,16 @@ window.__SCRIBE_LOCALES__["it-IT"] = {
       "reviewed": true,
       "text": "Contenuto"
     },
+    "scribe.report.control.emptyPlan": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Non è disponibile alcun contenuto strutturato del piano."
+    },
+    "scribe.report.control.evictedPlan": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Il contenuto del piano è stato rilasciato. Riapri il piano per caricarlo nuovamente."
+    },
     "scribe.report.control.expandContents": {
       "fallback": false,
       "reviewed": true,
@@ -338,10 +408,10 @@ window.__SCRIBE_LOCALES__["it-IT"] = {
       "reviewed": true,
       "text": "Primo"
     },
-    "scribe.report.control.language": {
+    "scribe.report.control.guidance": {
       "fallback": false,
       "reviewed": true,
-      "text": "Lingua"
+      "text": "Guida"
     },
     "scribe.report.control.languageSearch": {
       "fallback": false,
@@ -352,6 +422,11 @@ window.__SCRIBE_LOCALES__["it-IT"] = {
       "fallback": false,
       "reviewed": true,
       "text": "Ultimo"
+    },
+    "scribe.report.control.loadingPlan": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Caricamento piano di correzione…"
     },
     "scribe.report.control.locale": {
       "fallback": false,
@@ -368,6 +443,11 @@ window.__SCRIBE_LOCALES__["it-IT"] = {
       "reviewed": true,
       "text": "Avanti"
     },
+    "scribe.report.control.outsideResults": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Al di fuori dei risultati correnti"
+    },
     "scribe.report.control.pageSize": {
       "fallback": false,
       "reviewed": true,
@@ -377,6 +457,11 @@ window.__SCRIBE_LOCALES__["it-IT"] = {
       "fallback": false,
       "reviewed": true,
       "text": "Pagina"
+    },
+    "scribe.report.control.pinContents": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Fissa navigazione"
     },
     "scribe.report.control.previousPage": {
       "fallback": false,
@@ -388,6 +473,11 @@ window.__SCRIBE_LOCALES__["it-IT"] = {
       "reviewed": true,
       "text": "Vista del lettore"
     },
+    "scribe.report.control.referenceMaterial": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Materiale di riferimento"
+    },
     "scribe.report.control.remediation": {
       "fallback": false,
       "reviewed": true,
@@ -397,6 +487,16 @@ window.__SCRIBE_LOCALES__["it-IT"] = {
       "fallback": false,
       "reviewed": true,
       "text": "Risultati"
+    },
+    "scribe.report.control.retryPlan": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Riprova a caricare il piano"
+    },
+    "scribe.report.control.returnToResults": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Ritorna ai risultati"
     },
     "scribe.report.control.search": {
       "fallback": false,
@@ -408,10 +508,20 @@ window.__SCRIBE_LOCALES__["it-IT"] = {
       "reviewed": true,
       "text": "Gravità"
     },
+    "scribe.report.control.targetUnavailable": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Il target di questo report non è disponibile"
+    },
     "scribe.report.control.theme": {
       "fallback": false,
       "reviewed": true,
       "text": "Tema"
+    },
+    "scribe.report.control.unavailablePlan": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Il piano non è stato possibile caricarlo. Apri il piano completo o riprova."
     },
     "scribe.report.discoverySummary.title": {
       "fallback": false,
@@ -473,6 +583,11 @@ window.__SCRIBE_LOCALES__["it-IT"] = {
       "reviewed": true,
       "text": "Sorgente Trace"
     },
+    "scribe.report.finding.autofix.title": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Correzione automatica"
+    },
     "scribe.report.finding.missingAlt.summary": {
       "fallback": false,
       "reviewed": true,
@@ -493,6 +608,66 @@ window.__SCRIBE_LOCALES__["it-IT"] = {
       "reviewed": true,
       "text": "Riepilogo pubblico dei risultati senza contenuto di correzione gated."
     },
+    "scribe.report.fixPlan.component.acceptanceCriteria": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Criteri di accettazione"
+    },
+    "scribe.report.fixPlan.component.beforeAfter": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Prima / dopo (anteprima correzione automatica)"
+    },
+    "scribe.report.fixPlan.component.closeFullScreen": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Chiudi"
+    },
+    "scribe.report.fixPlan.component.fixGroups": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Gruppi di correzione"
+    },
+    "scribe.report.fixPlan.component.fixed": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Corretto"
+    },
+    "scribe.report.fixPlan.component.fullScreen": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Diff a schermo intero"
+    },
+    "scribe.report.fixPlan.component.manualSteps": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Passaggi manuali per la correzione"
+    },
+    "scribe.report.fixPlan.component.original": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Originale"
+    },
+    "scribe.report.fixPlan.component.source": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Sorgente"
+    },
+    "scribe.report.fixPlan.component.splitView": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Divisione"
+    },
+    "scribe.report.fixPlan.component.unifiedView": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Unificato"
+    },
+    "scribe.report.fixPlan.component.verify": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Verifica"
+    },
     "scribe.report.fixPlan.pageTitle": {
       "fallback": false,
       "reviewed": true,
@@ -507,6 +682,61 @@ window.__SCRIBE_LOCALES__["it-IT"] = {
       "fallback": false,
       "reviewed": true,
       "text": "I piani di correzione live, basati su ogni singolo riscontro, vengono generati automaticamente quando Sonde analizza il tuo repository. Questa vetrina curata mostra il report; guarda la correzione automatizzata in azione su un esempio live."
+    },
+    "scribe.report.metric.displayedScale": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Scala visualizzata"
+    },
+    "scribe.report.metric.explanation": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Ogni riga mostra le proprie bande di riferimento ordinate e il valore misurato. L'etichetta della metrica indica quale direzione è preferibile."
+    },
+    "scribe.report.metric.higherIsBetter": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Più alto è meglio"
+    },
+    "scribe.report.metric.lowerIsBetter": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Più basso è meglio"
+    },
+    "scribe.report.metric.measured": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "misurato"
+    },
+    "scribe.report.metric.measuredResults": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Risultati misurati"
+    },
+    "scribe.report.metric.referenceRanges": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Intervalli di riferimento"
+    },
+    "scribe.report.metric.severity.critical": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "critico"
+    },
+    "scribe.report.metric.severity.good": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Buono"
+    },
+    "scribe.report.metric.severity.high": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Alto"
+    },
+    "scribe.report.metric.severity.moderate": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Moderato"
     },
     "scribe.report.mobileAccessibilityScan.metric.complianceMatrix.body": {
       "fallback": false,
@@ -623,27 +853,7 @@ window.__SCRIBE_LOCALES__["it-IT"] = {
       "reviewed": true,
       "text": "Panoramica"
     },
-    "scribe.report.repositoryHealth.fixPlan.generic.step.inspect": {
-      "fallback": false,
-      "reviewed": true,
-      "text": "Verificare l'intervallo di origine citato nelle righe {sourcePath} da {startLine} a {endLine}."
-    },
-    "scribe.report.repositoryHealth.fixPlan.generic.step.resolve": {
-      "fallback": false,
-      "reviewed": true,
-      "text": "Applicare la correzione utilizzando la modifica di origine più piccola che risolve il risultato."
-    },
-    "scribe.report.repositoryHealth.fixPlan.generic.step.validate": {
-      "fallback": false,
-      "reviewed": true,
-      "text": "Eseguire nuovamente il report di integrità del repository e i test a livello di pacchetto più vicini prima di pubblicare la correzione."
-    },
-    "scribe.report.repositoryHealth.fixPlan.scope": {
-      "fallback": false,
-      "reviewed": true,
-      "text": "Intervallo di origine di destinazione: {sourcePath} linee da {startLine} a {endLine}."
-    },
-    "scribe.report.sondeScore.title": {
+    "scribe.report.repositoryHealth.sondeScore.title": {
       "fallback": false,
       "reviewed": true,
       "text": "Sonde Score"
@@ -687,6 +897,16 @@ window.__SCRIBE_LOCALES__["it-IT"] = {
       "fallback": false,
       "reviewed": true,
       "text": "Sorgente"
+    },
+    "scribe.report.term.altText": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Testo alternativo"
+    },
+    "scribe.report.term.textAlternative": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Alternativa testuale"
     },
     "scribe.report.theme.daylight": {
       "fallback": false,

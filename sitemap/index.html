@@ -1,0 +1,1163 @@
+<!DOCTYPE html>
+<html lang="en-US" dir="ltr" data-theme="airglow" data-mode="dark">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="generator" content="sonde-scribe">
+  <meta name="description" content="Sonde checks the software your team ships — for accessibility, compliance, and quality — and shows you exactly what to fix." data-msg-content-id="sondeLife.metadata.description">
+  <link rel="canonical" href="https://sonde.tech/sitemap/">
+  <script>(function () {
+  if ((function () { try { return window.self !== window.top && window.parent.location.origin === location.origin && new URLSearchParams(location.search).get('print') === '1'; } catch (_error) { return false; } })()) return;
+  var HOSTS = ["sonde.tech"];
+  var CODES = ["AT","BE","BG","HR","CY","CZ","DK","EE","FI","FR","DE","GR","HU","IE","IT","LV","LT","LU","MT","NL","PL","PT","RO","SK","SI","ES","SE","IS","LI","NO","GB","GP","MQ","GF","RE","YT","MF","AX","GI","GG","JE","IM"];
+  var CONSENT_KEY = "sonde-analytics-consent";
+  var COUNTRY_KEY = "sonde-analytics-country";
+  var OFF_TAB_NAME = "sonde-analytics-off";
+  var LIFETIME = 15811200000;
+  var BEACON_SRC = "https://static.cloudflareinsights.com/beacon.min.js";
+  var BEACON_CONFIG = "{\"token\":\"07871f5aa9e44ce2b83a37f8924fb4a6\",\"spa\":true}";
+  var BANNER_SRC = "../assets/immutable/consent-banner.e5375b5fe93016c6.js";
+  var RESET_ATTRIBUTE = 'data-sonde-preferences-reset';
+  function insert(src, config) {
+    var script = document.createElement('script');
+    script.defer = true;
+    script.src = src;
+    if (config) script.setAttribute('data-cf-beacon', config);
+    document.head.appendChild(script);
+  }
+  // The banner script also installs the "reset remembered preferences" control, which every host needs; only
+  // analytics and the country lookup are limited to the listed hosts.
+  insert(BANNER_SRC, null);
+  if (HOSTS.indexOf(location.hostname) === -1) return;
+  var root = document.documentElement;
+  var beaconInserted = false;
+  var pending = null;
+  function loadBeacon() {
+    if (beaconInserted) return;
+    beaconInserted = true;
+    insert(BEACON_SRC, BEACON_CONFIG);
+    insert("../assets/immutable/video-engagement.6e38ee4a462bcccb.js", null);
+  }
+  function needed() {
+    root.setAttribute('data-analytics-consent', 'needed');
+    document.dispatchEvent(new CustomEvent('sonde:analytics-consent-needed'));
+  }
+  function browserOff() {
+    return navigator.globalPrivacyControl === true || navigator.doNotTrack === '1';
+  }
+  function storedChoice() {
+    var record = null;
+    try { record = JSON.parse(localStorage.getItem(CONSENT_KEY)); } catch (e) { return null; }
+    var now = Date.now();
+    if (!record || typeof record !== 'object' || (record.choice !== 'allowed' && record.choice !== 'off')) return null;
+    if (typeof record.at !== 'number' || record.at > now || now - record.at > LIFETIME) return null;
+    return record.choice;
+  }
+  function knownCountry(code) {
+    return typeof code === 'string' && /^[A-Z]{2}$/.test(code) && code !== 'XX';
+  }
+  function withCountry(callback) {
+    var saved = null;
+    try { saved = sessionStorage.getItem(COUNTRY_KEY); } catch (e) { saved = null; }
+    if (saved) { callback(saved); return; }
+    if (pending) { pending.push(callback); return; }
+    pending = [callback];
+    var finished = false;
+    var controller = typeof AbortController === 'function' ? new AbortController() : null;
+    var timer = setTimeout(function () {
+      if (controller) controller.abort();
+      finish(null);
+    }, 3000);
+    function finish(code) {
+      if (finished) return;
+      finished = true;
+      clearTimeout(timer);
+      if (code) { try { sessionStorage.setItem(COUNTRY_KEY, code); } catch (e) { /* blocked store */ } }
+      var waiting = pending;
+      pending = null;
+      for (var i = 0; i < waiting.length; i++) waiting[i](code);
+    }
+    var init = { cache: 'no-store', credentials: 'omit' };
+    if (controller) init.signal = controller.signal;
+    try {
+      fetch('/cdn-cgi/trace', init)
+        .then(function (response) { return response.ok ? response.text() : ''; })
+        .then(function (text) {
+          var match = /^loc=([A-Z0-9]{2})$/m.exec(typeof text === 'string' ? text : '');
+          finish(match ? match[1] : null);
+        }, function () { finish(null); });
+    } catch (e) {
+      finish(null);
+    }
+  }
+  function check() {
+    if (browserOff()) return;
+    // An "off" the browser would not store, kept for this tab by the banner.
+    if (typeof name === 'string' && name === OFF_TAB_NAME) return;
+    var choice = storedChoice();
+    if (choice === 'off') return;
+    if (choice === 'allowed') {
+      if (!root.hasAttribute(RESET_ATTRIBUTE)) loadBeacon();
+      return;
+    }
+    withCountry(function (code) {
+      if (knownCountry(code) && CODES.indexOf(code) === -1) {
+        if (!root.hasAttribute(RESET_ATTRIBUTE)) loadBeacon();
+      } else {
+        needed();
+      }
+    });
+  }
+  document.addEventListener('sonde:analytics-consent-chosen', function (event) {
+    if (event.detail && event.detail.choice === 'allowed' && !browserOff()) loadBeacon();
+  });
+  window.sondeAnalytics = { check: check };
+  check();
+})();</script>
+  <title data-msg-id="sondeLife.metadata.sitemap.title">Site map - Sonde</title>
+  <meta property="og:title" content="Sonde — Software That Understands Software" data-msg-content-id="sondeLife.metadata.sitemap.title">
+  <meta property="og:description" content="Sonde checks the software your team ships — for accessibility, compliance, and quality — and shows you exactly what to fix." data-msg-content-id="sondeLife.metadata.description">
+  <meta property="og:image" content="https://sonde.tech/assets/media/og-sonde.bcedbdc6e4ec406d.png">
+  <meta property="og:url" content="https://sonde.tech/sitemap/">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Sonde — Software That Understands Software" data-msg-content-id="sondeLife.metadata.sitemap.title">
+  <meta name="twitter:description" content="Sonde checks the software your team ships — for accessibility, compliance, and quality — and shows you exactly what to fix." data-msg-content-id="sondeLife.metadata.description">
+  <meta name="twitter:image" content="https://sonde.tech/assets/media/og-sonde.bcedbdc6e4ec406d.png">
+  <link rel="icon" href="/favicon.ico" sizes="32x32">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link id="sonde-active-platform-theme" rel="stylesheet" href="../assets/immutable/theme-airglow.1c68f85145a8170b.css">
+  <link rel="stylesheet" href="../assets/immutable/style.94ca7a0ca2f37b9d.css">
+  <script src="../assets/immutable/navigation-rail.383c60fe9d907824.js" defer></script><script>(function () {
+  var LIFETIMES = {"sonde-locale":31536000000,"sonde-platform-theme":31536000000,"sonde-theme":31536000000,"sonde-settings-sections":31536000000,"sonde-motion":31536000000};
+  var OFFERED = {"sonde-locale":["en-US"],"sonde-platform-theme":["airglow","ultraviolet","infrared","high-contrast"],"sonde-theme":["auto","light","dark"],"sonde-motion":["normal","reduce","auto"]};
+  var CONSENT_KEY = "sonde-analytics-consent";
+  var CONSENT_LIFETIME = 15811200000;
+  var TIMES_KEY = "sonde-preference-times";
+  function store() { try { return window.localStorage; } catch (e) { return null; } }
+  function read(s, key) { try { return s.getItem(key); } catch (e) { return null; } }
+  function remove(s, key) { try { s.removeItem(key); } catch (e) { /* blocked store */ } }
+  function write(s, key, value) { try { s.setItem(key, value); } catch (e) { /* blocked store */ } }
+  function parse(raw) { try { return JSON.parse(raw); } catch (e) { return null; } }
+  function isRecord(value) { return value !== null && typeof value === 'object' && !Array.isArray(value); }
+  function sweep(now) {
+    var s = store();
+    if (!s) return;
+    var recorded = parse(read(s, TIMES_KEY) || 'null');
+    if (!isRecord(recorded)) recorded = {};
+    var next = {};
+    var kept = 0;
+    for (var key in LIFETIMES) {
+      var value = read(s, key);
+      if (value === null) continue;
+      if (OFFERED[key] && OFFERED[key].indexOf(value) === -1) { remove(s, key); continue; }
+      var entry = recorded[key];
+      var at = isRecord(entry) && entry.value === value && typeof entry.at === 'number' && entry.at <= now ? entry.at : now;
+      if (now - at > LIFETIMES[key]) { remove(s, key); continue; }
+      next[key] = { at: at, value: value };
+      kept++;
+    }
+    var rawConsent = read(s, CONSENT_KEY);
+    if (rawConsent !== null) {
+      var consent = parse(rawConsent);
+      var valid = isRecord(consent) && (consent.choice === 'allowed' || consent.choice === 'off') &&
+        typeof consent.at === 'number' && consent.at <= now && now - consent.at <= CONSENT_LIFETIME;
+      if (!valid) remove(s, CONSENT_KEY);
+    }
+    if (kept > 0) write(s, TIMES_KEY, JSON.stringify(next));
+    else remove(s, TIMES_KEY);
+  }
+  sweep(Date.now());
+  if (window.addEventListener) window.addEventListener('pagehide', function () { sweep(Date.now()); });
+})();
+(function () {
+  var THEME_KEY = "sonde-theme";
+  var LOCALE_KEY = "sonde-locale";
+  var MOTION_KEY = "sonde-motion";
+  var SETTINGS_SECTIONS_KEY = "sonde-settings-sections";
+  var VALID_THEMES = ["auto","light","dark"];
+  var VALID_MOTION = ["normal","reduce","auto"];
+  var THEME_ATTRIBUTE = "data-mode";
+  var REMOVE_THEME_ATTRIBUTE_ON_AUTO = true;
+  var CLOSE_DROPDOWN_ON_SELECT = false;
+  var DEFAULT_MODE = "dark";
+  var el = document.documentElement;
+  var mm = window.matchMedia;
+  var darkMq = mm && mm('(prefers-color-scheme: dark)');
+  var motionMq = mm && mm('(prefers-reduced-motion: reduce)');
+
+  function safeRead(key) {
+    try { return window.localStorage.getItem(key); } catch (e) { return null; }
+  }
+  function safeWrite(key, value) {
+    try { window.localStorage.setItem(key, value); } catch (e) { /* quota / private mode */ }
+  }
+  function certificationParam(name) {
+    try { return new URL(window.location.href).searchParams.get(name); } catch (e) { return null; }
+  }
+  function readAll() {
+    try {
+      var ls = window.localStorage;
+      return { t: ls.getItem(THEME_KEY), l: ls.getItem(LOCALE_KEY), m: ls.getItem(MOTION_KEY) };
+    } catch (e) { return { t: null, l: null, m: null }; }
+  }
+
+  function resolveTheme(stored) {
+    if (VALID_THEMES.indexOf(stored || '') !== -1 && stored !== 'auto') return stored;
+    return darkMq && darkMq.matches ? 'dark' : 'light';
+  }
+  function resolveMotion(stored) {
+    if (stored === 'normal' || stored === 'reduce') return stored;
+    return motionMq && motionMq.matches ? 'reduce' : 'normal';
+  }
+
+  function applyTheme(stored) {
+    if (stored !== 'auto' && VALID_THEMES.indexOf(stored || '') === -1) stored = DEFAULT_MODE;
+    if (REMOVE_THEME_ATTRIBUTE_ON_AUTO && (stored === 'auto' || VALID_THEMES.indexOf(stored || '') === -1)) {
+      el.removeAttribute(THEME_ATTRIBUTE);
+      syncThemePreviewMode(stored);
+      return;
+    }
+    el.setAttribute(THEME_ATTRIBUTE, resolveTheme(stored));
+    syncThemePreviewMode(stored);
+  }
+  function syncThemePreviewMode(stored) {
+    var explicitMode = stored === 'light' || stored === 'dark' ? stored : '';
+    var previews = document.querySelectorAll('.settings-platform-theme-option .theme-preview[data-platform-theme]');
+    for (var previewIndex = 0; previewIndex < previews.length; previewIndex++) {
+      if (explicitMode) previews[previewIndex].setAttribute('data-mode', explicitMode);
+      else previews[previewIndex].removeAttribute('data-mode');
+    }
+  }
+  function applyMotion(stored) { el.setAttribute('data-motion', resolveMotion(stored)); }
+  function applyLocale(stored) {
+    if (typeof stored === 'string' && stored.length > 0) el.setAttribute('lang', stored);
+  }
+
+  var PLATFORM_THEME_KEY = "sonde-platform-theme";
+  var PLATFORM_THEME_LINK_ID = "sonde-active-platform-theme";
+  var PLATFORM_THEME_HREFS = {"airglow":"../assets/immutable/theme-airglow.1c68f85145a8170b.css","ultraviolet":"../assets/immutable/theme-ultraviolet.b8925766fdfdab46.css","infrared":"../assets/immutable/theme-infrared.9789fb6eae62141a.css","high-contrast":"../assets/immutable/theme-high-contrast.0afc0c2fb8c46969.css"};
+  var PLATFORM_THEME_ATTRIBUTE = "data-theme";
+
+  function applyPlatformTheme(stored) {
+    if (typeof stored !== 'string') return;
+    var href = PLATFORM_THEME_HREFS[stored];
+    if (!href) return;
+    var link = document.getElementById(PLATFORM_THEME_LINK_ID);
+    if (!link) {
+      link = document.createElement('link');
+      link.id = PLATFORM_THEME_LINK_ID;
+      link.setAttribute('rel', 'stylesheet');
+      document.head.appendChild(link);
+    }
+    var absoluteHref = new URL(href, document.baseURI).href;
+    var currentHref = link.getAttribute('href');
+    var currentAbsoluteHref = currentHref ? new URL(currentHref, document.baseURI).href : null;
+    if (currentAbsoluteHref !== absoluteHref) link.setAttribute('href', href);
+    if (PLATFORM_THEME_ATTRIBUTE) el.setAttribute(PLATFORM_THEME_ATTRIBUTE, stored);
+  }
+  var certificationPlatformTheme = certificationParam('scan_theme');
+  applyPlatformTheme(PLATFORM_THEME_HREFS[certificationPlatformTheme] ? certificationPlatformTheme : safeRead(PLATFORM_THEME_KEY));
+
+
+  var prefs = readAll();
+  var certificationTheme = certificationParam('scan_theme_mode');
+  applyTheme(VALID_THEMES.indexOf(certificationTheme || '') !== -1 ? certificationTheme : prefs.t);
+  applyMotion(prefs.m);
+  applyLocale(certificationParam('scan_locale') || prefs.l);
+
+  if (darkMq && darkMq.addEventListener) {
+    darkMq.addEventListener('change', function () {
+      if (VALID_THEMES.indexOf(safeRead(THEME_KEY) || '') === -1) applyTheme(null);
+    });
+  }
+  if (motionMq && motionMq.addEventListener) {
+    motionMq.addEventListener('change', function () {
+      if (VALID_MOTION.indexOf(safeRead(MOTION_KEY) || '') === -1) applyMotion(null);
+    });
+  }
+
+  window.sondePrefs = {
+    getTheme: function () { return el.getAttribute(THEME_ATTRIBUTE) || 'light'; },
+    getMotion: function () { return el.getAttribute('data-motion') || 'normal'; },
+    setTheme: function (value) {
+      if (value === 'auto') { safeWrite(THEME_KEY, 'auto'); applyTheme('auto'); return; }
+      if (VALID_THEMES.indexOf(value) !== -1) { safeWrite(THEME_KEY, value); applyTheme(value); }
+    },
+    setMotion: function (value) {
+      if (value === 'auto') { safeWrite(MOTION_KEY, 'auto'); applyMotion(null); return; }
+      if (VALID_MOTION.indexOf(value) !== -1) { safeWrite(MOTION_KEY, value); applyMotion(value); }
+    },
+    setLocale: function (value) {
+      if (typeof value === 'string' && value.length > 0) safeWrite(LOCALE_KEY, value);
+    },
+  };
+
+  function initThemeControls() {
+    var activeTheme = safeRead(THEME_KEY) || DEFAULT_MODE;
+    if (VALID_THEMES.indexOf(activeTheme) === -1) activeTheme = DEFAULT_MODE;
+    var themeInputs = document.querySelectorAll('input[name="sonde-theme-toggle"]');
+    for (var i = 0; i < themeInputs.length; i++) {
+      var input = themeInputs[i];
+      if (input.value === activeTheme) input.checked = true;
+      input.addEventListener('change', function (event) {
+        if (!event.target.checked) return;
+        window.sondePrefs.setTheme(event.target.value);
+        if (CLOSE_DROPDOWN_ON_SELECT) closeSettingsDropdown(event.target);
+      });
+    }
+    syncThemePreviewMode(activeTheme);
+  }
+
+  function initPlatformThemeControls() {
+    var activePlatformTheme = safeRead(PLATFORM_THEME_KEY);
+    if (!PLATFORM_THEME_HREFS[activePlatformTheme]) {
+      var link = document.getElementById(PLATFORM_THEME_LINK_ID);
+      var currentHref = link && link.getAttribute('href') ? new URL(link.getAttribute('href'), document.baseURI).href : '';
+      for (var key in PLATFORM_THEME_HREFS) {
+        if (new URL(PLATFORM_THEME_HREFS[key], document.baseURI).href === currentHref) activePlatformTheme = key;
+      }
+    }
+    var platformInputs = document.querySelectorAll('input[name="sonde-platform-theme-toggle"]');
+    for (var p = 0; p < platformInputs.length; p++) {
+      var input = platformInputs[p];
+      if (input.value === activePlatformTheme) input.checked = true;
+      input.addEventListener('change', function (event) {
+        if (!event.target.checked || !PLATFORM_THEME_HREFS[event.target.value]) return;
+        safeWrite(PLATFORM_THEME_KEY, event.target.value);
+        applyPlatformTheme(event.target.value);
+        if (CLOSE_DROPDOWN_ON_SELECT) closeSettingsDropdown(event.target);
+      });
+    }
+  }
+
+  function initControls() {
+    initSettingsSectionControls();
+    initThemeControls();
+    initPlatformThemeControls();
+    initLocaleControls();
+    initSettingsDropdownDismiss();
+    initMotionControls();
+  }
+  function initMotionControls() {
+    var motionInputs = document.querySelectorAll('input[name="sonde-motion-toggle"]');
+    for (var m = 0; m < motionInputs.length; m++) {
+      motionInputs[m].checked = safeRead(MOTION_KEY) === 'reduce';
+      motionInputs[m].addEventListener('change', function (event) {
+        window.sondePrefs.setMotion(event.target.checked ? 'reduce' : 'auto');
+      });
+    }
+  }
+  // Single-sourced settings-dropdown dismissal (was inline-duplicated per site chrome): an outside click or
+  // Escape closes any open .settings-dropdown and returns focus to its summary trigger, so keyboard users land
+  // somewhere sensible regardless of how the panel was dismissed.
+  function initSettingsDropdownDismiss() {
+    function closeOpenSettings() {
+      var dropdowns = document.querySelectorAll('.settings-dropdown[open]');
+      for (var i = 0; i < dropdowns.length; i++) {
+        dropdowns[i].removeAttribute('open');
+        var summary = dropdowns[i].querySelector('summary');
+        if (summary) summary.focus();
+      }
+    }
+    document.addEventListener('click', function (event) {
+      var open = document.querySelector('.settings-dropdown[open]');
+      if (!open) return;
+      if (open.contains(event.target)) return;
+      closeOpenSettings();
+    });
+    document.addEventListener('keydown', function (event) {
+      if (event.key === 'Escape') closeOpenSettings();
+    });
+  }
+  function settingsSectionId(section) {
+    if (!section || !section.classList) return '';
+    if (section.classList.contains('settings-platform-theme-section')) return 'theme';
+    if (section.classList.contains('settings-theme-section')) return 'mode';
+    if (section.classList.contains('settings-language-section')) return 'language';
+    return '';
+  }
+  function settingsSections() {
+    return document.querySelectorAll('.settings-section');
+  }
+  function persistSettingsSectionState() {
+    var sections = settingsSections();
+    var openIds = [];
+    for (var s = 0; s < sections.length; s++) {
+      var id = settingsSectionId(sections[s]);
+      if (id && sections[s].hasAttribute('open')) openIds.push(id);
+    }
+    safeWrite(SETTINGS_SECTIONS_KEY, openIds.join(','));
+  }
+  function applySettingsSectionState() {
+    var stored = safeRead(SETTINGS_SECTIONS_KEY);
+    if (typeof stored !== 'string') return;
+    var openIds = stored ? stored.split(',') : [];
+    var sections = settingsSections();
+    for (var s = 0; s < sections.length; s++) {
+      var id = settingsSectionId(sections[s]);
+      if (!id) continue;
+      if (openIds.indexOf(id) !== -1) sections[s].setAttribute('open', '');
+      else sections[s].removeAttribute('open');
+    }
+  }
+  function syncLanguageSectionExclusivity(section) {
+    if (!section || !section.classList || !section.hasAttribute('open')) return;
+    var isLanguage = section.classList.contains('settings-language-section');
+    var sections = settingsSections();
+    for (var r = 0; r < sections.length; r++) {
+      if (sections[r] === section) continue;
+      var otherIsLanguage = sections[r].classList.contains('settings-language-section');
+      if (isLanguage || otherIsLanguage) sections[r].removeAttribute('open');
+    }
+  }
+  function initSettingsSectionControls() {
+    applySettingsSectionState();
+    var sections = settingsSections();
+    for (var s = 0; s < sections.length; s++) {
+      sections[s].addEventListener('toggle', function (event) {
+        var section = event.currentTarget;
+        syncLanguageSectionExclusivity(section);
+        persistSettingsSectionState();
+      });
+    }
+  }
+  function initLocaleControls() {
+    var localeInputs = document.querySelectorAll('input[name="sonde-locale-picker-radio"]');
+    for (var l = 0; l < localeInputs.length; l++) {
+      localeInputs[l].addEventListener('change', function (event) {
+        if (!event.target.checked) return;
+        var section = event.target.closest ? event.target.closest('.settings-language-section') : null;
+        if (section) {
+          section.setAttribute('open', '');
+          syncLanguageSectionExclusivity(section);
+          persistSettingsSectionState();
+        }
+        if (CLOSE_DROPDOWN_ON_SELECT) closeSettingsDropdown(event.target);
+      });
+    }
+  }
+  function closeSettingsDropdown(target) {
+    var dropdown = target && target.closest ? target.closest('.settings-dropdown') : null;
+    if (dropdown) dropdown.removeAttribute('open');
+  }
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initControls);
+  } else {
+    initControls();
+  }
+})();</script>
+  <script>(function() {
+  var locales = ["en-US"];
+  var lower = ["en-us"];
+  var forbidden = ["pt"];
+  var defaultRegions = {"en":"US","de":"DE","fr":"FR","es":"ES","it":"IT","ja":"JP","zh":"CN","ko":"KR","ar":"SA","pt":"PT","nl":"NL","sv":"SE","pl":"PL","ro":"RO","cy":"GB","gd":"GB","ga":"GB","sco":"GB","kw":"GB"};
+  var inheritancePolicy = {"sourceLocale":"en-US","chains":[{"locale":"en-IN","inherits":["en-GB","en-US"],"syntheticEmptyCatalog":true},{"locale":"es-MX","inherits":["es-US","en-US"],"syntheticEmptyCatalog":false}]};
+  var rtlLangs = ["ar","he","fa","ur","ps","sd","yi","dv","ks","ckb"];
+  var storageKey = "sonde-locale";
+  var defaultLocale = "en-US";
+  var bundleBaseHref = "../assets/locales/daylight-";
+  var localeHydrationAttr = 'data-sonde-locale-hydrating';
+  var localeHydrationStyleId = 'sonde-locale-hydration-style';
+  var localeHydrationEpoch = 0;
+  var activeLocale = null;
+  var pendingLocale = null;
+  var richSourceSelector = 'abbr.sl-glossary, code.sl-inline-code';
+  var sourceHtmlKey = '__sondeSourceHtml';
+  var translatableAttrs = [
+    ['data-msg-id', function(el, txt, locale) { applyTranslatedHtml(el, txt, locale); }],
+    ['data-msg-title-id', function(el, txt) { el.setAttribute('title', txt); }],
+    ['data-msg-aria-label-id', function(el, txt) { el.setAttribute('aria-label', txt); }],
+    ['data-msg-placeholder-id', function(el, txt) { el.setAttribute('placeholder', txt); }],
+    ['data-msg-content-id', function(el, txt) { el.setAttribute('content', txt); }],
+    ['data-msg-alt-id', function(el, txt) { el.setAttribute('alt', txt); }]
+  ];
+  function pickLocale() {
+    try {
+      var saved = localStorage.getItem(storageKey);
+      if (saved) {
+        var savedIdx = lower.indexOf(saved.toLowerCase());
+        if (savedIdx !== -1) return locales[savedIdx];
+      }
+    } catch (e) { /* storage disabled */ }
+    var langs = (navigator.languages && navigator.languages.length) ? navigator.languages : [navigator.language];
+    for (var i = 0; i < langs.length; i++) {
+      var raw = langs[i];
+      if (!raw) continue;
+      var tag = canonicalLocale(raw);
+      var exactIdx = lower.indexOf(tag);
+      if (exactIdx !== -1) return locales[exactIdx];
+      var base = tag.split('-')[0];
+      if (!base) continue;
+      if (tag.indexOf('-') !== -1) {
+        var inherited = explicitCatalogFallbackChain(tag);
+        for (var parent = 1; parent < inherited.length; parent++) {
+          var inheritedIdx = lower.indexOf(canonicalLocale(inherited[parent]));
+          if (inheritedIdx !== -1) return locales[inheritedIdx];
+        }
+      }
+      if (forbidden.indexOf(base) !== -1) continue;
+      var prefix = base + '-';
+      var defaultRegion = defaultRegions[base];
+      if (defaultRegion) {
+        var defaultIdx = lower.indexOf(prefix + defaultRegion.toLowerCase());
+        if (defaultIdx !== -1) return locales[defaultIdx];
+      }
+      for (var j = 0; j < lower.length; j++) {
+        if (lower[j].indexOf(prefix) === 0) return locales[j];
+      }
+    }
+    return defaultLocale;
+  }
+  function explicitCatalogFallbackChain(tag) {
+    for (var chain = 0; chain < inheritancePolicy.chains.length; chain++) {
+      if (canonicalLocale(inheritancePolicy.chains[chain].locale) !== tag) continue;
+      return [inheritancePolicy.chains[chain].locale].concat(inheritancePolicy.chains[chain].inherits);
+    }
+    return [];
+  }
+  function canonicalLocale(locale) {
+    var parts = String(locale || '').trim().split('-').filter(function(part) { return part.length > 0; });
+    var extensionIndex = -1;
+    for (var e = 1; e < parts.length; e++) {
+      if (parts[e].length === 1) {
+        extensionIndex = e;
+        break;
+      }
+    }
+    if (extensionIndex !== -1) parts = parts.slice(0, extensionIndex);
+    return (parts.length === 0 ? String(locale || '').trim() : parts.join('-')).toLowerCase();
+  }
+  function isSourceLocale(locale) {
+    return locale === defaultLocale;
+  }
+  function hasRichSourceHtml(el) {
+    return Boolean(el && el.querySelector && el.querySelector(richSourceSelector));
+  }
+  function rememberRichSourceHtml(el) {
+    if (!hasRichSourceHtml(el)) return;
+    if (typeof el[sourceHtmlKey] !== 'string') el[sourceHtmlKey] = el.innerHTML;
+  }
+  function applyTranslatedHtml(el, txt, locale) {
+    rememberRichSourceHtml(el);
+    if (isSourceLocale(locale) && typeof el[sourceHtmlKey] === 'string') {
+      el.innerHTML = el[sourceHtmlKey];
+      return;
+    }
+    el.innerHTML = txt;
+  }
+  function ensureLocaleHydrationStyle() {
+    if (document.getElementById && document.getElementById(localeHydrationStyleId)) return;
+    if (!document.createElement || !document.head) return;
+    var style = document.createElement('style');
+    style.id = localeHydrationStyleId;
+    var hiddenSelectors = [];
+    for (var h = 0; h < translatableAttrs.length; h++) {
+      hiddenSelectors.push('html[' + localeHydrationAttr + '] [' + translatableAttrs[h][0] + ']');
+    }
+    style.textContent = hiddenSelectors.join(',') + '{visibility:hidden!important;}';
+    document.head.appendChild(style);
+  }
+  function markLocaleHydrating(locale, force) {
+    if (!force && isSourceLocale(locale)) return;
+    ensureLocaleHydrationStyle();
+    localeHydrationEpoch++;
+    document.documentElement.setAttribute(localeHydrationAttr, locale);
+    var epoch = localeHydrationEpoch;
+    setTimeout(function() {
+      if (epoch === localeHydrationEpoch) clearLocaleHydration();
+    }, 4000);
+  }
+  function clearLocaleHydration() {
+    localeHydrationEpoch++;
+    document.documentElement.removeAttribute(localeHydrationAttr);
+  }
+  function applyLocale(locale, forceHydrationGuard) {
+    activeLocale = locale;
+    var base = locale.split('-')[0].toLowerCase();
+    var dir = rtlLangs.indexOf(base) !== -1 ? 'rtl' : 'ltr';
+    document.documentElement.lang = locale;
+    document.documentElement.dir = dir;
+    markLocaleHydrating(locale, forceHydrationGuard === true);
+
+    var scriptId = 'sonde-locale-bundle';
+    var existing = document.getElementById(scriptId);
+    if (existing) existing.remove();
+    var script = document.createElement('script');
+    script.id = scriptId;
+    script.src = bundleBaseHref + locale + '.js';
+    script.onload = function() {
+      if (activeLocale !== locale) return;
+      pendingLocale = locale;
+      if (document.readyState === 'loading') return;
+      applyPendingLocale();
+    };
+    script.onerror = function() {
+      if (activeLocale === locale) clearLocaleHydration();
+    };
+    document.head.appendChild(script);
+  }
+  function applyPendingLocale() {
+      var locale = pendingLocale;
+      if (!locale) return;
+      pendingLocale = null;
+      var dict = window.SondeDaylightI18n;
+      if (!dict) {
+        clearLocaleHydration();
+        return;
+      }
+      // Values come from same-origin compiled .po bundles we emit; Lingui msgids
+      // may contain inline markup (<strong>, <a>), so we apply as HTML, not text.
+      for (var a = 0; a < translatableAttrs.length; a++) {
+        var attrName = translatableAttrs[a][0];
+        var apply = translatableAttrs[a][1];
+        var els = document.querySelectorAll('[' + attrName + ']');
+        for (var j = 0; j < els.length; j++) {
+          var el = els[j];
+          var id = el.getAttribute(attrName);
+          if (!id || !dict[id]) continue;
+          var text = dict[id];
+          var args = el.getAttribute('data-msg-args');
+          if (args) {
+            try {
+              var parsed = JSON.parse(args);
+              for (var key in parsed) {
+                text = text.replace('{'+key+'}', parsed[key]);
+              }
+            } catch(e) {}
+          }
+          apply(el, text, locale);
+        }
+      }
+      var localeLinks = document.querySelectorAll('[data-locale-link]');
+      for (var l = 0; l < localeLinks.length; l++) {
+        var base = localeLinks[l].getAttribute('data-locale-link');
+        var ext = localeLinks[l].getAttribute('data-locale-ext') || '';
+        if (locale === 'en-US') {
+          localeLinks[l].setAttribute('href', './' + base + ext);
+        } else {
+          localeLinks[l].setAttribute('href', './' + base + '-' + locale + ext);
+        }
+      }
+      if (typeof document.dispatchEvent === 'function') {
+        var localeEvent = typeof CustomEvent === 'function'
+          ? new CustomEvent('sonde:locale-applied', { detail: { locale: locale } })
+          : { type: 'sonde:locale-applied', detail: { locale: locale } };
+        document.dispatchEvent(localeEvent);
+      }
+      clearLocaleHydration();
+  }
+  function normalizeLocaleSearch(value) {
+    var normalized = String(value || '').toLowerCase();
+    if (typeof normalized.normalize === 'function') {
+      normalized = normalized.normalize('NFKD').replace(/[\u0300-\u036f]/g, '');
+    }
+    return normalized.replace(/[-_/]+/g, ' ').replace(/\s+/g, ' ').trim();
+  }
+  function localeOptionSearchText(option) {
+    var input = option.querySelector && option.querySelector('input[data-sonde-locale-picker], input[data-sonde-locale-select-option]');
+    return normalizeLocaleSearch([
+      option.getAttribute('data-locale-search') || '',
+      option.textContent || '',
+      input && input.value ? input.value : ''
+    ].join(' '));
+  }
+  function localeSearchRoot(input) {
+    if (input.closest) {
+      return input.closest('.sonde-locale-select-menu') || input.closest('.settings-language-section') || input.closest('[data-report-settings-dialog]') || input.parentElement || document;
+    }
+    return document;
+  }
+  function filterLocaleSearchOptions(input) {
+    var query = normalizeLocaleSearch(input.value);
+    var root = localeSearchRoot(input);
+    var options = root.querySelectorAll('.settings-language-option, .sonde-locale-select-option:not(.sonde-locale-select-all)');
+    for (var i = 0; i < options.length; i++) {
+      var option = options[i];
+      var hidden = Boolean(query) && localeOptionSearchText(option).indexOf(query) === -1;
+      option.hidden = hidden;
+      option.setAttribute('aria-hidden', hidden ? 'true' : 'false');
+    }
+  }
+  function initLocaleSearchControls() {
+    var inputs = document.querySelectorAll('input[data-sonde-locale-search]');
+    for (var i = 0; i < inputs.length; i++) {
+      var input = inputs[i];
+      filterLocaleSearchOptions(input);
+      if (input.getAttribute('data-sonde-locale-search-bound') === 'true') continue;
+      input.setAttribute('data-sonde-locale-search-bound', 'true');
+      input.addEventListener('input', function(ev) {
+        filterLocaleSearchOptions(ev.target);
+      });
+    }
+  }
+  function initLocaleSelects() {
+    var selects = document.querySelectorAll('[data-sonde-locale-select]');
+    for (var s = 0; s < selects.length; s++) {
+      var sel = selects[s];
+      if (sel.getAttribute('data-sonde-locale-select-bound') === 'true') continue;
+      sel.setAttribute('data-sonde-locale-select-bound', 'true');
+      bindLocaleSelect(sel);
+    }
+  }
+  function bindLocaleSelect(sel) {
+    var radios = sel.querySelectorAll('input[data-sonde-locale-select-option]');
+    for (var r = 0; r < radios.length; r++) {
+      var radio = radios[r];
+      if (radio.checked) {
+        sel.value = radio.value;
+        sel.setAttribute('data-value', radio.value);
+      }
+      radio.addEventListener('change', function(ev) {
+        if (!ev.target.checked) return;
+        // Mirror the chosen value onto the host element so consumers that read
+        // element.value (e.g. the Scribe gallery card filter) keep working exactly
+        // as they did with a native <select>. The native change event bubbles to the
+        // host on its own (target phase before ancestor phase), so consumers see the
+        // updated value without a synthetic dispatch. This is a locale FILTER, not the
+        // site-locale switcher — it must never call applyLocale.
+        sel.value = ev.target.value;
+        sel.setAttribute('data-value', ev.target.value);
+        syncLocaleSelectTrigger(sel, ev.target);
+        if (sel.tagName === 'DETAILS') sel.removeAttribute('open');
+      });
+    }
+  }
+  function syncLocaleSelectTrigger(sel, radio) {
+    var current = sel.querySelector('.sonde-locale-select-current');
+    var option = radio.closest && radio.closest('.sonde-locale-select-option');
+    var preview = option && option.querySelector('.locale-option-preview');
+    if (!current || !preview) return;
+    var flag = preview.querySelector('.locale-option-flag');
+    var label = preview.querySelector('.locale-option-label');
+    // The trigger shows the bare endonym; strip the trailing " (n)" count suffix
+    // that option labels carry. Endonyms never end in " (digits)", so this only
+    // removes the count.
+    var labelText = label ? String(label.textContent || '').replace(/\s*\(\d+\)\s*$/, '') : '';
+    while (current.firstChild) current.removeChild(current.firstChild);
+    if (flag) current.appendChild(flag.cloneNode(true));
+    var labelSpan = document.createElement('span');
+    labelSpan.className = 'sonde-locale-select-current-label';
+    labelSpan.textContent = labelText;
+    current.appendChild(labelSpan);
+  }
+  var initialLocale = pickLocale();
+  applyLocale(initialLocale, false);
+  function init() {
+    var active = activeLocale || initialLocale;
+    applyPendingLocale();
+    initLocaleSearchControls();
+    initLocaleSelects();
+    var pickers = document.querySelectorAll('sonde-locale-picker');
+    for (var p = 0; p < pickers.length; p++) {
+      pickers[p].setAttribute('value', active);
+      pickers[p].addEventListener('sonde-locale-change', function(ev) {
+        var next = ev.detail && ev.detail.locale;
+        if (!next || lower.indexOf(next.toLowerCase()) === -1) return;
+        try { localStorage.setItem(storageKey, next); } catch (e) {}
+        applyLocale(next, true);
+      });
+    }
+    var radios = document.querySelectorAll('input[type="radio"][data-sonde-locale-picker]');
+    for (var k = 0; k < radios.length; k++) {
+      var radio = radios[k];
+      if (radio.value === active) radio.checked = true;
+      radio.addEventListener('change', function(ev) {
+        var next = ev.target.value;
+        if (lower.indexOf(next.toLowerCase()) === -1) return;
+        try { localStorage.setItem(storageKey, next); } catch (e) {}
+        applyLocale(next, true);
+      });
+    }
+  }
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', init);
+  } else {
+    init();
+  }
+})();</script>
+</head>
+<body>
+  <a href="#main-content" class="skip-link" data-msg-id="sondeLife.skipToContent">Skip to content</a>
+<header class="site-header">
+  <div class="container nav-row">
+    <a class="logo" href="../">
+      <img src="../favicon.svg" alt="" width="28" height="28" class="logo-icon">
+      <span data-msg-id="sondeLife.nav.home">Sonde</span>
+    </a>
+    <nav class="primary-nav" aria-label="Primary" data-msg-aria-label-id="sondeLife.nav.aria">
+      <ul>
+        <li class="has-children">
+          <a href="../solutions/" data-msg-id="sondeLife.nav.solutions">Solutions</a><button class="submenu-toggle" type="button" aria-expanded="false" aria-controls="submenu-solutions" hidden>
+            <span class="sonde-visually-hidden" data-msg-id="sondeLife.nav.solutionsMenu">Solutions menu</span>
+            <svg viewBox="0 0 12 12" width="12" height="12" aria-hidden="true" focusable="false"><path d="M2.5 4.5 6 8l3.5-3.5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+          <ul class="dropdown" id="submenu-solutions" hidden>
+            <li><a href="../solutions/ai-guardrails/" data-msg-id="sondeLife.nav.aiGuardrails">AI Guardrails & Governance</a></li>
+            <li><a href="../solutions/compliance/" data-msg-id="sondeLife.nav.complianceAccessibility">Compliance & Accessibility</a></li>
+          </ul>
+        </li>
+        <li><a href="../how-it-works/" data-msg-id="sondeLife.nav.howItWorks">How it Works</a></li>
+        <li><a href="../pricing/" data-msg-id="sondeLife.nav.pricing">Pricing</a></li>
+        <li class="has-children">
+          <a href="../resources/" data-msg-id="sondeLife.nav.resources">Resources</a><button class="submenu-toggle" type="button" aria-expanded="false" aria-controls="submenu-resources" hidden>
+            <span class="sonde-visually-hidden" data-msg-id="sondeLife.nav.resourcesMenu">Resources menu</span>
+            <svg viewBox="0 0 12 12" width="12" height="12" aria-hidden="true" focusable="false"><path d="M2.5 4.5 6 8l3.5-3.5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+          <ul class="dropdown" id="submenu-resources" hidden>
+            <li><a href="../resources/explore/" data-msg-id="sondeLife.nav.features">Explore</a></li>
+            <li><a href="../resources/methodology/" data-msg-id="sondeLife.nav.methodology">Methodology</a></li>
+            <li><a href="../resources/architecture/" data-msg-id="sondeLife.nav.architecture">Architecture</a></li>
+          </ul>
+        </li>
+        <li><a href="../company/" data-msg-id="sondeLife.nav.company">Company</a></li>
+      </ul>
+    </nav>
+    <div class="header-actions">
+      <sonde-search-dialog
+        hidden
+        data-sl-reveal
+        indexes="document,helm"
+        site-root="../"
+        bundle-manifest="data/search-bundles.js"
+        placeholder="Search"
+        data-msg-placeholder-id="sondeLife.header.search"></sonde-search-dialog>
+      <div class="download-menu scribe-page-pdf" data-scribe-paged-polyfill="../assets/vendor/paged.polyfill.min.js?v=-o90dlq" data-search-exclude hidden><button type="button" class="download-menu-trigger" data-action="download-menu-toggle" aria-expanded="false" aria-controls="scribe-page-pdf-menu-list" aria-label="Download" data-msg-aria-label-id="audit.download" title="Download" data-msg-title-id="audit.download"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="12" y1="18" x2="12" y2="12"/><polyline points="9 15 12 18 15 15"/></svg></button><div class="download-menu-list" id="scribe-page-pdf-menu-list" role="group" aria-label="Download" data-msg-aria-label-id="audit.download" hidden><button type="button" class="download-menu-item" data-scribe-download-pdf><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="12" y1="18" x2="12" y2="12"/><polyline points="9 15 12 18 15 15"/></svg><span class="download-menu-item-label" data-msg-id="audit.downloadPdf">Download PDF</span></button></div><span class="sonde-visually-hidden" role="status" data-scribe-page-pdf-status></span></div>
+      <details class="settings-dropdown" hidden data-sl-reveal>
+        <summary class="settings-dropdown-trigger sl-settings-trigger">
+          <svg class="sl-settings-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+            <path d="M19.4 13.5c.1-.5.1-1 .1-1.5s0-1-.1-1.5l2-1.5-2-3.5-2.4 1a7.3 7.3 0 0 0-2.6-1.5L14 2h-4l-.4 3a7.3 7.3 0 0 0-2.6 1.5l-2.4-1-2 3.5 2 1.5c-.1.5-.1 1-.1 1.5s0 1 .1 1.5l-2 1.5 2 3.5 2.4-1a7.3 7.3 0 0 0 2.6 1.5l.4 3h4l.4-3a7.3 7.3 0 0 0 2.6-1.5l2.4 1 2-3.5-2-1.5ZM12 15.5a3.5 3.5 0 1 1 0-7 3.5 3.5 0 0 1 0 7Z"/>
+          </svg>
+          <span class="sl-settings-label" data-msg-id="sondeLife.settings.aria">Settings</span>
+        </summary>
+        <div class="settings-dropdown-menu" data-report-settings-dialog>
+  <details class="settings-section settings-platform-theme-section" open>
+    <summary class="settings-section-trigger" data-msg-id="settings.theme.legend" data-scribe-msgid="settings.theme.legend">Theme</summary>
+    <div class="settings-section-body">
+      <label class="theme-toggle-option settings-platform-theme-option">
+  <input type="radio" name="sonde-platform-theme-toggle" value="airglow" checked>
+  <div class="theme-preview" data-platform-theme="airglow" data-theme="dark">
+    <span class="settings-theme-preview-icon" aria-hidden="true"><svg class="settings-theme-mark sonde-daylight-mark" viewBox="0 0 512 512" width="28" height="28" aria-hidden="true"><defs><radialGradient id="settings-theme-airglow-sun" cx="50%" cy="50%" r="50%"><stop offset="0%" stop-color="var(--sonde-daylight-mark-sun-stop-0)"/><stop offset="60%" stop-color="var(--sonde-daylight-mark-sun-stop-1)"/><stop offset="100%" stop-color="var(--sonde-daylight-mark-sun-stop-2)"/></radialGradient><clipPath id="settings-theme-airglow-disc"><circle cx="256" cy="256" r="240"/></clipPath></defs><g style="display:var(--sonde-daylight-mark-solid-display)"><circle cx="256" cy="256" r="240" fill="url(#settings-theme-airglow-sun)"/><g clip-path="url(#settings-theme-airglow-disc)"><g fill="var(--sonde-daylight-mark-crater)" stroke="var(--sonde-daylight-mark-crater)"><g opacity="0.7"><path d="M40,240 C60,110 170,40 250,90 C320,130 330,210 260,280 C200,340 50,340 40,240 Z" opacity="0.6"/><path d="M290,130 C360,60 460,110 470,190 C480,270 410,350 330,320 C260,290 230,190 290,130 Z" opacity="0.7"/><path d="M390,280 C470,250 510,300 480,380 C450,440 380,410 390,280 Z" opacity="0.5"/><path d="M130,350 C180,290 260,350 230,430 C200,510 60,450 130,350 Z" opacity="0.5"/><circle cx="230" cy="430" r="18" fill="transparent" stroke-width="4" opacity="0.8"/><circle cx="170" cy="190" r="12" fill="transparent" stroke-width="3" opacity="0.7"/><circle cx="90" cy="230" r="8" opacity="0.8"/></g></g></g><g clip-path="url(#settings-theme-airglow-disc)"><g transform="translate(250,240) rotate(-40)" fill="var(--sonde-daylight-mark-probe)" stroke="var(--sonde-daylight-mark-probe)"><line x1="-32" y1="-8" x2="-160" y2="-40" stroke-width="6" stroke-linecap="round"/><circle cx="-160" cy="-40" r="10"/><line x1="-32" y1="16" x2="-125" y2="62" stroke-width="8" stroke-linecap="round"/><rect x="-141" y="38" width="32" height="60" rx="4" transform="rotate(20,-125,62)"/><line x1="-16" y1="-40" x2="-46" y2="-92" stroke-width="7" stroke-linecap="round"/><rect x="-70" y="-108" width="48" height="28" rx="4"/><circle cx="-56" cy="-98" r="8"/><circle cx="-36" cy="-98" r="6"/><path d="M48,-108 Q128,-78 128,0 Q128,78 48,108" stroke-width="5" stroke-linejoin="round"/><line x1="58" y1="-50" x2="108" y2="0" stroke-width="5"/><line x1="58" y1="50" x2="108" y2="0" stroke-width="5"/><line x1="48" y1="0" x2="108" y2="0" stroke-width="5"/><circle cx="110" cy="0" r="14"/><polygon points="-16,-40 48,-40 62,-24 62,24 48,40 -16,40 -30,24 -30,-24"/></g></g></g><g style="display:var(--sonde-daylight-mark-line-display)"><circle cx="256" cy="256" r="232" fill="none" stroke="var(--sonde-daylight-hc-mark-earth-blue)" stroke-width="28"/><defs><clipPath id="settings-theme-airglow-hc-clip"><circle cx="256" cy="256" r="214"/></clipPath></defs><g clip-path="url(#settings-theme-airglow-hc-clip)"><g transform="translate(276,228) scale(1.3) rotate(-40)" fill="none" stroke-linecap="round" stroke-linejoin="round"><line x1="-32" y1="-8" x2="-165" y2="-42" stroke="var(--sonde-daylight-hc-mark-metal)" stroke-width="8"/><circle cx="-80" cy="-20" r="3" stroke="var(--sonde-daylight-hc-mark-metal)" stroke-width="3"/><circle cx="-125" cy="-32" r="2.5" stroke="var(--sonde-daylight-hc-mark-metal)" stroke-width="3"/><circle cx="-165" cy="-42" r="8" stroke="var(--sonde-daylight-hc-mark-metal)" stroke-width="4"/><circle cx="-165" cy="-42" r="4" stroke="var(--sonde-daylight-hc-mark-metal)" stroke-width="2"/><line x1="-165" y1="-48" x2="-165" y2="-36" stroke="var(--sonde-daylight-hc-mark-metal)" stroke-width="2"/><line x1="-171" y1="-42" x2="-159" y2="-42" stroke="var(--sonde-daylight-hc-mark-metal)" stroke-width="2"/><line x1="-32" y1="16" x2="-130" y2="64" stroke="var(--sonde-daylight-hc-mark-metal)" stroke-width="12"/><circle cx="-80" cy="40" r="4" stroke="var(--sonde-daylight-hc-mark-metal)" stroke-width="4"/><g transform="translate(-130,64) rotate(20)"><rect x="-16" y="-32" width="32" height="64" rx="4" stroke="var(--sonde-daylight-hc-mark-rtg-brown)" stroke-width="6"/><line x1="-16" y1="-22" x2="16" y2="-22" stroke="var(--sonde-daylight-hc-mark-rtg-brown)" stroke-width="4"/><line x1="-16" y1="-12" x2="16" y2="-12" stroke="var(--sonde-daylight-hc-mark-rtg-brown)" stroke-width="4"/><line x1="-16" y1="-2" x2="16" y2="-2" stroke="var(--sonde-daylight-hc-mark-rtg-brown)" stroke-width="4"/><line x1="-16" y1="8" x2="16" y2="8" stroke="var(--sonde-daylight-hc-mark-rtg-brown)" stroke-width="4"/><line x1="-16" y1="18" x2="16" y2="18" stroke="var(--sonde-daylight-hc-mark-rtg-brown)" stroke-width="4"/><line x1="-16" y1="28" x2="16" y2="28" stroke="var(--sonde-daylight-hc-mark-rtg-brown)" stroke-width="4"/><rect x="-18" y="-34" width="36" height="4" rx="2" stroke="var(--sonde-daylight-hc-mark-rtg-brown)" stroke-width="3"/><rect x="-18" y="30" width="36" height="4" rx="2" stroke="var(--sonde-daylight-hc-mark-rtg-brown)" stroke-width="3"/></g><line x1="-16" y1="-40" x2="-48" y2="-96" stroke="var(--sonde-daylight-hc-mark-metal)" stroke-width="10"/><circle cx="-30" cy="-64" r="4" stroke="var(--sonde-daylight-hc-mark-metal)" stroke-width="4"/><g transform="translate(-48,-96)"><rect x="-24" y="-16" width="48" height="28" rx="4" stroke="var(--sonde-daylight-hc-mark-metal)" stroke-width="6"/><line x1="-20" y1="-8" x2="20" y2="-8" stroke="var(--sonde-daylight-hc-mark-metal)" stroke-width="2"/><line x1="-20" y1="0" x2="20" y2="0" stroke="var(--sonde-daylight-hc-mark-metal)" stroke-width="2"/><circle cx="-10" cy="-4" r="8" stroke="var(--sonde-daylight-hc-mark-metal)" stroke-width="5"/><circle cx="-10" cy="-4" r="4" stroke="var(--sonde-daylight-hc-mark-metal)" stroke-width="2"/><circle cx="10" cy="-4" r="6" stroke="var(--sonde-daylight-hc-mark-metal)" stroke-width="4"/><circle cx="10" cy="-4" r="3" stroke="var(--sonde-daylight-hc-mark-metal)" stroke-width="2"/><rect x="-4" y="4" width="8" height="6" rx="1.5" stroke="var(--sonde-daylight-hc-mark-metal)" stroke-width="3"/></g><path d="M48,-112 Q130,-80 130,0 Q130,80 48,112" stroke="var(--sonde-daylight-hc-mark-earth-blue)" stroke-width="8"/><path d="M56,-96 Q118,-68 118,0 Q118,68 56,96" stroke="var(--sonde-daylight-hc-mark-earth-blue)" stroke-width="2"/><path d="M64,-80 Q106,-56 106,0 Q106,56 64,80" stroke="var(--sonde-daylight-hc-mark-earth-blue)" stroke-width="2"/><path d="M72,-60 Q94,-40 94,0 Q94,40 72,60" stroke="var(--sonde-daylight-hc-mark-earth-blue)" stroke-width="2"/><line x1="60" y1="-52" x2="110" y2="0" stroke="var(--sonde-daylight-hc-mark-earth-blue)" stroke-width="8"/><line x1="60" y1="52" x2="110" y2="0" stroke="var(--sonde-daylight-hc-mark-earth-blue)" stroke-width="8"/><line x1="48" y1="0" x2="110" y2="0" stroke="var(--sonde-daylight-hc-mark-earth-blue)" stroke-width="8"/><circle cx="112" cy="0" r="14" stroke="var(--sonde-daylight-hc-mark-earth-blue)" stroke-width="6"/><circle cx="112" cy="0" r="8" stroke="var(--sonde-daylight-hc-mark-earth-blue)" stroke-width="3"/><polygon points="-16,-40 48,-40 64,-24 64,24 48,40 -16,40 -32,24 -32,-24" stroke="var(--sonde-daylight-hc-mark-bus-gold)" stroke-width="8"/><line x1="0" y1="-40" x2="0" y2="40" stroke="var(--sonde-daylight-hc-mark-bus-gold)" stroke-width="4"/><line x1="24" y1="-40" x2="24" y2="40" stroke="var(--sonde-daylight-hc-mark-bus-gold)" stroke-width="4"/><line x1="-16" y1="-20" x2="48" y2="-20" stroke="var(--sonde-daylight-hc-mark-bus-gold)" stroke-width="3"/><line x1="-16" y1="0" x2="48" y2="0" stroke="var(--sonde-daylight-hc-mark-bus-gold)" stroke-width="3"/><line x1="-16" y1="20" x2="48" y2="20" stroke="var(--sonde-daylight-hc-mark-bus-gold)" stroke-width="3"/><rect x="4" y="-16" width="16" height="12" rx="1.5" stroke="var(--sonde-daylight-hc-mark-bus-gold)" stroke-width="3"/><rect x="28" y="-16" width="16" height="12" rx="1.5" stroke="var(--sonde-daylight-hc-mark-bus-gold)" stroke-width="3"/><rect x="4" y="4" width="16" height="12" rx="1.5" stroke="var(--sonde-daylight-hc-mark-bus-gold)" stroke-width="3"/><rect x="28" y="4" width="16" height="12" rx="1.5" stroke="var(--sonde-daylight-hc-mark-bus-gold)" stroke-width="3"/><rect x="-36" y="-12" width="8" height="24" rx="2" stroke="var(--sonde-daylight-hc-mark-metal)" stroke-width="4"/><path d="M-44,-8 L-52,-14 L-52,14 L-44,8 Z" stroke="var(--sonde-daylight-hc-mark-metal)" stroke-width="4"/><g transform="translate(-8,0)" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M-52,-14 Q-86,-20 -112,-8 Q-120,0 -112,8 Q-86,20 -52,14" stroke="var(--sonde-daylight-hc-mark-flame-deep)" stroke-width="6"/><path d="M-52,-10 Q-78,-14 -96,-5 Q-102,0 -96,5 Q-78,14 -52,10" stroke="var(--sonde-daylight-hc-mark-flame-mid)" stroke-width="5"/><path d="M-52,-6 Q-68,-8 -78,-2 Q-82,0 -78,2 Q-68,8 -52,6" stroke="var(--sonde-daylight-hc-mark-flame-hot)" stroke-width="4"/></g><line x1="16" y1="-40" x2="24" y2="-56" stroke="var(--sonde-daylight-hc-mark-metal)" stroke-width="5"/><circle cx="24" cy="-56" r="3" stroke="var(--sonde-daylight-hc-mark-metal)" stroke-width="3"/></g></g></g></svg></span>
+    <span data-msg-id="settings.theme.airglow" data-scribe-msgid="settings.theme.airglow">Airglow</span>
+  </div>
+</label>
+      <label class="theme-toggle-option settings-platform-theme-option">
+  <input type="radio" name="sonde-platform-theme-toggle" value="ultraviolet">
+  <div class="theme-preview" data-platform-theme="ultraviolet" data-theme="dark">
+    <span class="settings-theme-preview-icon" aria-hidden="true"><svg class="settings-theme-mark sonde-daylight-mark" viewBox="0 0 512 512" width="28" height="28" aria-hidden="true"><defs><radialGradient id="settings-theme-ultraviolet-sun" cx="50%" cy="50%" r="50%"><stop offset="0%" stop-color="var(--sonde-daylight-mark-sun-stop-0)"/><stop offset="60%" stop-color="var(--sonde-daylight-mark-sun-stop-1)"/><stop offset="100%" stop-color="var(--sonde-daylight-mark-sun-stop-2)"/></radialGradient><clipPath id="settings-theme-ultraviolet-disc"><circle cx="256" cy="256" r="240"/></clipPath></defs><g style="display:var(--sonde-daylight-mark-solid-display)"><circle cx="256" cy="256" r="240" fill="url(#settings-theme-ultraviolet-sun)"/><g clip-path="url(#settings-theme-ultraviolet-disc)"><g fill="var(--sonde-daylight-mark-crater)" stroke="var(--sonde-daylight-mark-crater)"><g opacity="0.7"><path d="M40,240 C60,110 170,40 250,90 C320,130 330,210 260,280 C200,340 50,340 40,240 Z" opacity="0.6"/><path d="M290,130 C360,60 460,110 470,190 C480,270 410,350 330,320 C260,290 230,190 290,130 Z" opacity="0.7"/><path d="M390,280 C470,250 510,300 480,380 C450,440 380,410 390,280 Z" opacity="0.5"/><path d="M130,350 C180,290 260,350 230,430 C200,510 60,450 130,350 Z" opacity="0.5"/><circle cx="230" cy="430" r="18" fill="transparent" stroke-width="4" opacity="0.8"/><circle cx="170" cy="190" r="12" fill="transparent" stroke-width="3" opacity="0.7"/><circle cx="90" cy="230" r="8" opacity="0.8"/></g></g></g><g clip-path="url(#settings-theme-ultraviolet-disc)"><g transform="translate(250,240) rotate(-40)" fill="var(--sonde-daylight-mark-probe)" stroke="var(--sonde-daylight-mark-probe)"><line x1="-32" y1="-8" x2="-160" y2="-40" stroke-width="6" stroke-linecap="round"/><circle cx="-160" cy="-40" r="10"/><line x1="-32" y1="16" x2="-125" y2="62" stroke-width="8" stroke-linecap="round"/><rect x="-141" y="38" width="32" height="60" rx="4" transform="rotate(20,-125,62)"/><line x1="-16" y1="-40" x2="-46" y2="-92" stroke-width="7" stroke-linecap="round"/><rect x="-70" y="-108" width="48" height="28" rx="4"/><circle cx="-56" cy="-98" r="8"/><circle cx="-36" cy="-98" r="6"/><path d="M48,-108 Q128,-78 128,0 Q128,78 48,108" stroke-width="5" stroke-linejoin="round"/><line x1="58" y1="-50" x2="108" y2="0" stroke-width="5"/><line x1="58" y1="50" x2="108" y2="0" stroke-width="5"/><line x1="48" y1="0" x2="108" y2="0" stroke-width="5"/><circle cx="110" cy="0" r="14"/><polygon points="-16,-40 48,-40 62,-24 62,24 48,40 -16,40 -30,24 -30,-24"/></g></g></g><g style="display:var(--sonde-daylight-mark-line-display)"><circle cx="256" cy="256" r="232" fill="none" stroke="var(--sonde-daylight-hc-mark-earth-blue)" stroke-width="28"/><defs><clipPath id="settings-theme-ultraviolet-hc-clip"><circle cx="256" cy="256" r="214"/></clipPath></defs><g clip-path="url(#settings-theme-ultraviolet-hc-clip)"><g transform="translate(276,228) scale(1.3) rotate(-40)" fill="none" stroke-linecap="round" stroke-linejoin="round"><line x1="-32" y1="-8" x2="-165" y2="-42" stroke="var(--sonde-daylight-hc-mark-metal)" stroke-width="8"/><circle cx="-80" cy="-20" r="3" stroke="var(--sonde-daylight-hc-mark-metal)" stroke-width="3"/><circle cx="-125" cy="-32" r="2.5" stroke="var(--sonde-daylight-hc-mark-metal)" stroke-width="3"/><circle cx="-165" cy="-42" r="8" stroke="var(--sonde-daylight-hc-mark-metal)" stroke-width="4"/><circle cx="-165" cy="-42" r="4" stroke="var(--sonde-daylight-hc-mark-metal)" stroke-width="2"/><line x1="-165" y1="-48" x2="-165" y2="-36" stroke="var(--sonde-daylight-hc-mark-metal)" stroke-width="2"/><line x1="-171" y1="-42" x2="-159" y2="-42" stroke="var(--sonde-daylight-hc-mark-metal)" stroke-width="2"/><line x1="-32" y1="16" x2="-130" y2="64" stroke="var(--sonde-daylight-hc-mark-metal)" stroke-width="12"/><circle cx="-80" cy="40" r="4" stroke="var(--sonde-daylight-hc-mark-metal)" stroke-width="4"/><g transform="translate(-130,64) rotate(20)"><rect x="-16" y="-32" width="32" height="64" rx="4" stroke="var(--sonde-daylight-hc-mark-rtg-brown)" stroke-width="6"/><line x1="-16" y1="-22" x2="16" y2="-22" stroke="var(--sonde-daylight-hc-mark-rtg-brown)" stroke-width="4"/><line x1="-16" y1="-12" x2="16" y2="-12" stroke="var(--sonde-daylight-hc-mark-rtg-brown)" stroke-width="4"/><line x1="-16" y1="-2" x2="16" y2="-2" stroke="var(--sonde-daylight-hc-mark-rtg-brown)" stroke-width="4"/><line x1="-16" y1="8" x2="16" y2="8" stroke="var(--sonde-daylight-hc-mark-rtg-brown)" stroke-width="4"/><line x1="-16" y1="18" x2="16" y2="18" stroke="var(--sonde-daylight-hc-mark-rtg-brown)" stroke-width="4"/><line x1="-16" y1="28" x2="16" y2="28" stroke="var(--sonde-daylight-hc-mark-rtg-brown)" stroke-width="4"/><rect x="-18" y="-34" width="36" height="4" rx="2" stroke="var(--sonde-daylight-hc-mark-rtg-brown)" stroke-width="3"/><rect x="-18" y="30" width="36" height="4" rx="2" stroke="var(--sonde-daylight-hc-mark-rtg-brown)" stroke-width="3"/></g><line x1="-16" y1="-40" x2="-48" y2="-96" stroke="var(--sonde-daylight-hc-mark-metal)" stroke-width="10"/><circle cx="-30" cy="-64" r="4" stroke="var(--sonde-daylight-hc-mark-metal)" stroke-width="4"/><g transform="translate(-48,-96)"><rect x="-24" y="-16" width="48" height="28" rx="4" stroke="var(--sonde-daylight-hc-mark-metal)" stroke-width="6"/><line x1="-20" y1="-8" x2="20" y2="-8" stroke="var(--sonde-daylight-hc-mark-metal)" stroke-width="2"/><line x1="-20" y1="0" x2="20" y2="0" stroke="var(--sonde-daylight-hc-mark-metal)" stroke-width="2"/><circle cx="-10" cy="-4" r="8" stroke="var(--sonde-daylight-hc-mark-metal)" stroke-width="5"/><circle cx="-10" cy="-4" r="4" stroke="var(--sonde-daylight-hc-mark-metal)" stroke-width="2"/><circle cx="10" cy="-4" r="6" stroke="var(--sonde-daylight-hc-mark-metal)" stroke-width="4"/><circle cx="10" cy="-4" r="3" stroke="var(--sonde-daylight-hc-mark-metal)" stroke-width="2"/><rect x="-4" y="4" width="8" height="6" rx="1.5" stroke="var(--sonde-daylight-hc-mark-metal)" stroke-width="3"/></g><path d="M48,-112 Q130,-80 130,0 Q130,80 48,112" stroke="var(--sonde-daylight-hc-mark-earth-blue)" stroke-width="8"/><path d="M56,-96 Q118,-68 118,0 Q118,68 56,96" stroke="var(--sonde-daylight-hc-mark-earth-blue)" stroke-width="2"/><path d="M64,-80 Q106,-56 106,0 Q106,56 64,80" stroke="var(--sonde-daylight-hc-mark-earth-blue)" stroke-width="2"/><path d="M72,-60 Q94,-40 94,0 Q94,40 72,60" stroke="var(--sonde-daylight-hc-mark-earth-blue)" stroke-width="2"/><line x1="60" y1="-52" x2="110" y2="0" stroke="var(--sonde-daylight-hc-mark-earth-blue)" stroke-width="8"/><line x1="60" y1="52" x2="110" y2="0" stroke="var(--sonde-daylight-hc-mark-earth-blue)" stroke-width="8"/><line x1="48" y1="0" x2="110" y2="0" stroke="var(--sonde-daylight-hc-mark-earth-blue)" stroke-width="8"/><circle cx="112" cy="0" r="14" stroke="var(--sonde-daylight-hc-mark-earth-blue)" stroke-width="6"/><circle cx="112" cy="0" r="8" stroke="var(--sonde-daylight-hc-mark-earth-blue)" stroke-width="3"/><polygon points="-16,-40 48,-40 64,-24 64,24 48,40 -16,40 -32,24 -32,-24" stroke="var(--sonde-daylight-hc-mark-bus-gold)" stroke-width="8"/><line x1="0" y1="-40" x2="0" y2="40" stroke="var(--sonde-daylight-hc-mark-bus-gold)" stroke-width="4"/><line x1="24" y1="-40" x2="24" y2="40" stroke="var(--sonde-daylight-hc-mark-bus-gold)" stroke-width="4"/><line x1="-16" y1="-20" x2="48" y2="-20" stroke="var(--sonde-daylight-hc-mark-bus-gold)" stroke-width="3"/><line x1="-16" y1="0" x2="48" y2="0" stroke="var(--sonde-daylight-hc-mark-bus-gold)" stroke-width="3"/><line x1="-16" y1="20" x2="48" y2="20" stroke="var(--sonde-daylight-hc-mark-bus-gold)" stroke-width="3"/><rect x="4" y="-16" width="16" height="12" rx="1.5" stroke="var(--sonde-daylight-hc-mark-bus-gold)" stroke-width="3"/><rect x="28" y="-16" width="16" height="12" rx="1.5" stroke="var(--sonde-daylight-hc-mark-bus-gold)" stroke-width="3"/><rect x="4" y="4" width="16" height="12" rx="1.5" stroke="var(--sonde-daylight-hc-mark-bus-gold)" stroke-width="3"/><rect x="28" y="4" width="16" height="12" rx="1.5" stroke="var(--sonde-daylight-hc-mark-bus-gold)" stroke-width="3"/><rect x="-36" y="-12" width="8" height="24" rx="2" stroke="var(--sonde-daylight-hc-mark-metal)" stroke-width="4"/><path d="M-44,-8 L-52,-14 L-52,14 L-44,8 Z" stroke="var(--sonde-daylight-hc-mark-metal)" stroke-width="4"/><g transform="translate(-8,0)" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M-52,-14 Q-86,-20 -112,-8 Q-120,0 -112,8 Q-86,20 -52,14" stroke="var(--sonde-daylight-hc-mark-flame-deep)" stroke-width="6"/><path d="M-52,-10 Q-78,-14 -96,-5 Q-102,0 -96,5 Q-78,14 -52,10" stroke="var(--sonde-daylight-hc-mark-flame-mid)" stroke-width="5"/><path d="M-52,-6 Q-68,-8 -78,-2 Q-82,0 -78,2 Q-68,8 -52,6" stroke="var(--sonde-daylight-hc-mark-flame-hot)" stroke-width="4"/></g><line x1="16" y1="-40" x2="24" y2="-56" stroke="var(--sonde-daylight-hc-mark-metal)" stroke-width="5"/><circle cx="24" cy="-56" r="3" stroke="var(--sonde-daylight-hc-mark-metal)" stroke-width="3"/></g></g></g></svg></span>
+    <span data-msg-id="settings.theme.ultraviolet" data-scribe-msgid="settings.theme.ultraviolet">Ultraviolet</span>
+  </div>
+</label>
+      <label class="theme-toggle-option settings-platform-theme-option">
+  <input type="radio" name="sonde-platform-theme-toggle" value="infrared">
+  <div class="theme-preview" data-platform-theme="infrared" data-theme="dark">
+    <span class="settings-theme-preview-icon" aria-hidden="true"><svg class="settings-theme-mark sonde-daylight-mark" viewBox="0 0 512 512" width="28" height="28" aria-hidden="true"><defs><radialGradient id="settings-theme-infrared-sun" cx="50%" cy="50%" r="50%"><stop offset="0%" stop-color="var(--sonde-daylight-mark-sun-stop-0)"/><stop offset="60%" stop-color="var(--sonde-daylight-mark-sun-stop-1)"/><stop offset="100%" stop-color="var(--sonde-daylight-mark-sun-stop-2)"/></radialGradient><clipPath id="settings-theme-infrared-disc"><circle cx="256" cy="256" r="240"/></clipPath></defs><g style="display:var(--sonde-daylight-mark-solid-display)"><circle cx="256" cy="256" r="240" fill="url(#settings-theme-infrared-sun)"/><g clip-path="url(#settings-theme-infrared-disc)"><g fill="var(--sonde-daylight-mark-crater)" stroke="var(--sonde-daylight-mark-crater)"><g opacity="0.7"><path d="M40,240 C60,110 170,40 250,90 C320,130 330,210 260,280 C200,340 50,340 40,240 Z" opacity="0.6"/><path d="M290,130 C360,60 460,110 470,190 C480,270 410,350 330,320 C260,290 230,190 290,130 Z" opacity="0.7"/><path d="M390,280 C470,250 510,300 480,380 C450,440 380,410 390,280 Z" opacity="0.5"/><path d="M130,350 C180,290 260,350 230,430 C200,510 60,450 130,350 Z" opacity="0.5"/><circle cx="230" cy="430" r="18" fill="transparent" stroke-width="4" opacity="0.8"/><circle cx="170" cy="190" r="12" fill="transparent" stroke-width="3" opacity="0.7"/><circle cx="90" cy="230" r="8" opacity="0.8"/></g></g></g><g clip-path="url(#settings-theme-infrared-disc)"><g transform="translate(250,240) rotate(-40)" fill="var(--sonde-daylight-mark-probe)" stroke="var(--sonde-daylight-mark-probe)"><line x1="-32" y1="-8" x2="-160" y2="-40" stroke-width="6" stroke-linecap="round"/><circle cx="-160" cy="-40" r="10"/><line x1="-32" y1="16" x2="-125" y2="62" stroke-width="8" stroke-linecap="round"/><rect x="-141" y="38" width="32" height="60" rx="4" transform="rotate(20,-125,62)"/><line x1="-16" y1="-40" x2="-46" y2="-92" stroke-width="7" stroke-linecap="round"/><rect x="-70" y="-108" width="48" height="28" rx="4"/><circle cx="-56" cy="-98" r="8"/><circle cx="-36" cy="-98" r="6"/><path d="M48,-108 Q128,-78 128,0 Q128,78 48,108" stroke-width="5" stroke-linejoin="round"/><line x1="58" y1="-50" x2="108" y2="0" stroke-width="5"/><line x1="58" y1="50" x2="108" y2="0" stroke-width="5"/><line x1="48" y1="0" x2="108" y2="0" stroke-width="5"/><circle cx="110" cy="0" r="14"/><polygon points="-16,-40 48,-40 62,-24 62,24 48,40 -16,40 -30,24 -30,-24"/></g></g></g><g style="display:var(--sonde-daylight-mark-line-display)"><circle cx="256" cy="256" r="232" fill="none" stroke="var(--sonde-daylight-hc-mark-earth-blue)" stroke-width="28"/><defs><clipPath id="settings-theme-infrared-hc-clip"><circle cx="256" cy="256" r="214"/></clipPath></defs><g clip-path="url(#settings-theme-infrared-hc-clip)"><g transform="translate(276,228) scale(1.3) rotate(-40)" fill="none" stroke-linecap="round" stroke-linejoin="round"><line x1="-32" y1="-8" x2="-165" y2="-42" stroke="var(--sonde-daylight-hc-mark-metal)" stroke-width="8"/><circle cx="-80" cy="-20" r="3" stroke="var(--sonde-daylight-hc-mark-metal)" stroke-width="3"/><circle cx="-125" cy="-32" r="2.5" stroke="var(--sonde-daylight-hc-mark-metal)" stroke-width="3"/><circle cx="-165" cy="-42" r="8" stroke="var(--sonde-daylight-hc-mark-metal)" stroke-width="4"/><circle cx="-165" cy="-42" r="4" stroke="var(--sonde-daylight-hc-mark-metal)" stroke-width="2"/><line x1="-165" y1="-48" x2="-165" y2="-36" stroke="var(--sonde-daylight-hc-mark-metal)" stroke-width="2"/><line x1="-171" y1="-42" x2="-159" y2="-42" stroke="var(--sonde-daylight-hc-mark-metal)" stroke-width="2"/><line x1="-32" y1="16" x2="-130" y2="64" stroke="var(--sonde-daylight-hc-mark-metal)" stroke-width="12"/><circle cx="-80" cy="40" r="4" stroke="var(--sonde-daylight-hc-mark-metal)" stroke-width="4"/><g transform="translate(-130,64) rotate(20)"><rect x="-16" y="-32" width="32" height="64" rx="4" stroke="var(--sonde-daylight-hc-mark-rtg-brown)" stroke-width="6"/><line x1="-16" y1="-22" x2="16" y2="-22" stroke="var(--sonde-daylight-hc-mark-rtg-brown)" stroke-width="4"/><line x1="-16" y1="-12" x2="16" y2="-12" stroke="var(--sonde-daylight-hc-mark-rtg-brown)" stroke-width="4"/><line x1="-16" y1="-2" x2="16" y2="-2" stroke="var(--sonde-daylight-hc-mark-rtg-brown)" stroke-width="4"/><line x1="-16" y1="8" x2="16" y2="8" stroke="var(--sonde-daylight-hc-mark-rtg-brown)" stroke-width="4"/><line x1="-16" y1="18" x2="16" y2="18" stroke="var(--sonde-daylight-hc-mark-rtg-brown)" stroke-width="4"/><line x1="-16" y1="28" x2="16" y2="28" stroke="var(--sonde-daylight-hc-mark-rtg-brown)" stroke-width="4"/><rect x="-18" y="-34" width="36" height="4" rx="2" stroke="var(--sonde-daylight-hc-mark-rtg-brown)" stroke-width="3"/><rect x="-18" y="30" width="36" height="4" rx="2" stroke="var(--sonde-daylight-hc-mark-rtg-brown)" stroke-width="3"/></g><line x1="-16" y1="-40" x2="-48" y2="-96" stroke="var(--sonde-daylight-hc-mark-metal)" stroke-width="10"/><circle cx="-30" cy="-64" r="4" stroke="var(--sonde-daylight-hc-mark-metal)" stroke-width="4"/><g transform="translate(-48,-96)"><rect x="-24" y="-16" width="48" height="28" rx="4" stroke="var(--sonde-daylight-hc-mark-metal)" stroke-width="6"/><line x1="-20" y1="-8" x2="20" y2="-8" stroke="var(--sonde-daylight-hc-mark-metal)" stroke-width="2"/><line x1="-20" y1="0" x2="20" y2="0" stroke="var(--sonde-daylight-hc-mark-metal)" stroke-width="2"/><circle cx="-10" cy="-4" r="8" stroke="var(--sonde-daylight-hc-mark-metal)" stroke-width="5"/><circle cx="-10" cy="-4" r="4" stroke="var(--sonde-daylight-hc-mark-metal)" stroke-width="2"/><circle cx="10" cy="-4" r="6" stroke="var(--sonde-daylight-hc-mark-metal)" stroke-width="4"/><circle cx="10" cy="-4" r="3" stroke="var(--sonde-daylight-hc-mark-metal)" stroke-width="2"/><rect x="-4" y="4" width="8" height="6" rx="1.5" stroke="var(--sonde-daylight-hc-mark-metal)" stroke-width="3"/></g><path d="M48,-112 Q130,-80 130,0 Q130,80 48,112" stroke="var(--sonde-daylight-hc-mark-earth-blue)" stroke-width="8"/><path d="M56,-96 Q118,-68 118,0 Q118,68 56,96" stroke="var(--sonde-daylight-hc-mark-earth-blue)" stroke-width="2"/><path d="M64,-80 Q106,-56 106,0 Q106,56 64,80" stroke="var(--sonde-daylight-hc-mark-earth-blue)" stroke-width="2"/><path d="M72,-60 Q94,-40 94,0 Q94,40 72,60" stroke="var(--sonde-daylight-hc-mark-earth-blue)" stroke-width="2"/><line x1="60" y1="-52" x2="110" y2="0" stroke="var(--sonde-daylight-hc-mark-earth-blue)" stroke-width="8"/><line x1="60" y1="52" x2="110" y2="0" stroke="var(--sonde-daylight-hc-mark-earth-blue)" stroke-width="8"/><line x1="48" y1="0" x2="110" y2="0" stroke="var(--sonde-daylight-hc-mark-earth-blue)" stroke-width="8"/><circle cx="112" cy="0" r="14" stroke="var(--sonde-daylight-hc-mark-earth-blue)" stroke-width="6"/><circle cx="112" cy="0" r="8" stroke="var(--sonde-daylight-hc-mark-earth-blue)" stroke-width="3"/><polygon points="-16,-40 48,-40 64,-24 64,24 48,40 -16,40 -32,24 -32,-24" stroke="var(--sonde-daylight-hc-mark-bus-gold)" stroke-width="8"/><line x1="0" y1="-40" x2="0" y2="40" stroke="var(--sonde-daylight-hc-mark-bus-gold)" stroke-width="4"/><line x1="24" y1="-40" x2="24" y2="40" stroke="var(--sonde-daylight-hc-mark-bus-gold)" stroke-width="4"/><line x1="-16" y1="-20" x2="48" y2="-20" stroke="var(--sonde-daylight-hc-mark-bus-gold)" stroke-width="3"/><line x1="-16" y1="0" x2="48" y2="0" stroke="var(--sonde-daylight-hc-mark-bus-gold)" stroke-width="3"/><line x1="-16" y1="20" x2="48" y2="20" stroke="var(--sonde-daylight-hc-mark-bus-gold)" stroke-width="3"/><rect x="4" y="-16" width="16" height="12" rx="1.5" stroke="var(--sonde-daylight-hc-mark-bus-gold)" stroke-width="3"/><rect x="28" y="-16" width="16" height="12" rx="1.5" stroke="var(--sonde-daylight-hc-mark-bus-gold)" stroke-width="3"/><rect x="4" y="4" width="16" height="12" rx="1.5" stroke="var(--sonde-daylight-hc-mark-bus-gold)" stroke-width="3"/><rect x="28" y="4" width="16" height="12" rx="1.5" stroke="var(--sonde-daylight-hc-mark-bus-gold)" stroke-width="3"/><rect x="-36" y="-12" width="8" height="24" rx="2" stroke="var(--sonde-daylight-hc-mark-metal)" stroke-width="4"/><path d="M-44,-8 L-52,-14 L-52,14 L-44,8 Z" stroke="var(--sonde-daylight-hc-mark-metal)" stroke-width="4"/><g transform="translate(-8,0)" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M-52,-14 Q-86,-20 -112,-8 Q-120,0 -112,8 Q-86,20 -52,14" stroke="var(--sonde-daylight-hc-mark-flame-deep)" stroke-width="6"/><path d="M-52,-10 Q-78,-14 -96,-5 Q-102,0 -96,5 Q-78,14 -52,10" stroke="var(--sonde-daylight-hc-mark-flame-mid)" stroke-width="5"/><path d="M-52,-6 Q-68,-8 -78,-2 Q-82,0 -78,2 Q-68,8 -52,6" stroke="var(--sonde-daylight-hc-mark-flame-hot)" stroke-width="4"/></g><line x1="16" y1="-40" x2="24" y2="-56" stroke="var(--sonde-daylight-hc-mark-metal)" stroke-width="5"/><circle cx="24" cy="-56" r="3" stroke="var(--sonde-daylight-hc-mark-metal)" stroke-width="3"/></g></g></g></svg></span>
+    <span data-msg-id="settings.theme.infrared" data-scribe-msgid="settings.theme.infrared">Infrared</span>
+  </div>
+</label>
+      <label class="theme-toggle-option settings-platform-theme-option">
+  <input type="radio" name="sonde-platform-theme-toggle" value="high-contrast">
+  <div class="theme-preview" data-platform-theme="high-contrast" data-theme="high-contrast">
+    <span class="settings-theme-preview-icon" aria-hidden="true"><svg class="settings-theme-mark sonde-daylight-mark" viewBox="0 0 512 512" width="28" height="28" aria-hidden="true"><defs><radialGradient id="settings-theme-high-contrast-sun" cx="50%" cy="50%" r="50%"><stop offset="0%" stop-color="var(--sonde-daylight-mark-sun-stop-0)"/><stop offset="60%" stop-color="var(--sonde-daylight-mark-sun-stop-1)"/><stop offset="100%" stop-color="var(--sonde-daylight-mark-sun-stop-2)"/></radialGradient><clipPath id="settings-theme-high-contrast-disc"><circle cx="256" cy="256" r="240"/></clipPath></defs><g style="display:var(--sonde-daylight-mark-solid-display)"><circle cx="256" cy="256" r="240" fill="url(#settings-theme-high-contrast-sun)"/><g clip-path="url(#settings-theme-high-contrast-disc)"><g fill="var(--sonde-daylight-mark-crater)" stroke="var(--sonde-daylight-mark-crater)"><g opacity="0.7"><path d="M40,240 C60,110 170,40 250,90 C320,130 330,210 260,280 C200,340 50,340 40,240 Z" opacity="0.6"/><path d="M290,130 C360,60 460,110 470,190 C480,270 410,350 330,320 C260,290 230,190 290,130 Z" opacity="0.7"/><path d="M390,280 C470,250 510,300 480,380 C450,440 380,410 390,280 Z" opacity="0.5"/><path d="M130,350 C180,290 260,350 230,430 C200,510 60,450 130,350 Z" opacity="0.5"/><circle cx="230" cy="430" r="18" fill="transparent" stroke-width="4" opacity="0.8"/><circle cx="170" cy="190" r="12" fill="transparent" stroke-width="3" opacity="0.7"/><circle cx="90" cy="230" r="8" opacity="0.8"/></g></g></g><g clip-path="url(#settings-theme-high-contrast-disc)"><g transform="translate(250,240) rotate(-40)" fill="var(--sonde-daylight-mark-probe)" stroke="var(--sonde-daylight-mark-probe)"><line x1="-32" y1="-8" x2="-160" y2="-40" stroke-width="6" stroke-linecap="round"/><circle cx="-160" cy="-40" r="10"/><line x1="-32" y1="16" x2="-125" y2="62" stroke-width="8" stroke-linecap="round"/><rect x="-141" y="38" width="32" height="60" rx="4" transform="rotate(20,-125,62)"/><line x1="-16" y1="-40" x2="-46" y2="-92" stroke-width="7" stroke-linecap="round"/><rect x="-70" y="-108" width="48" height="28" rx="4"/><circle cx="-56" cy="-98" r="8"/><circle cx="-36" cy="-98" r="6"/><path d="M48,-108 Q128,-78 128,0 Q128,78 48,108" stroke-width="5" stroke-linejoin="round"/><line x1="58" y1="-50" x2="108" y2="0" stroke-width="5"/><line x1="58" y1="50" x2="108" y2="0" stroke-width="5"/><line x1="48" y1="0" x2="108" y2="0" stroke-width="5"/><circle cx="110" cy="0" r="14"/><polygon points="-16,-40 48,-40 62,-24 62,24 48,40 -16,40 -30,24 -30,-24"/></g></g></g><g style="display:var(--sonde-daylight-mark-line-display)"><circle cx="256" cy="256" r="232" fill="none" stroke="var(--sonde-daylight-hc-mark-earth-blue)" stroke-width="28"/><defs><clipPath id="settings-theme-high-contrast-hc-clip"><circle cx="256" cy="256" r="214"/></clipPath></defs><g clip-path="url(#settings-theme-high-contrast-hc-clip)"><g transform="translate(276,228) scale(1.3) rotate(-40)" fill="none" stroke-linecap="round" stroke-linejoin="round"><line x1="-32" y1="-8" x2="-165" y2="-42" stroke="var(--sonde-daylight-hc-mark-metal)" stroke-width="8"/><circle cx="-80" cy="-20" r="3" stroke="var(--sonde-daylight-hc-mark-metal)" stroke-width="3"/><circle cx="-125" cy="-32" r="2.5" stroke="var(--sonde-daylight-hc-mark-metal)" stroke-width="3"/><circle cx="-165" cy="-42" r="8" stroke="var(--sonde-daylight-hc-mark-metal)" stroke-width="4"/><circle cx="-165" cy="-42" r="4" stroke="var(--sonde-daylight-hc-mark-metal)" stroke-width="2"/><line x1="-165" y1="-48" x2="-165" y2="-36" stroke="var(--sonde-daylight-hc-mark-metal)" stroke-width="2"/><line x1="-171" y1="-42" x2="-159" y2="-42" stroke="var(--sonde-daylight-hc-mark-metal)" stroke-width="2"/><line x1="-32" y1="16" x2="-130" y2="64" stroke="var(--sonde-daylight-hc-mark-metal)" stroke-width="12"/><circle cx="-80" cy="40" r="4" stroke="var(--sonde-daylight-hc-mark-metal)" stroke-width="4"/><g transform="translate(-130,64) rotate(20)"><rect x="-16" y="-32" width="32" height="64" rx="4" stroke="var(--sonde-daylight-hc-mark-rtg-brown)" stroke-width="6"/><line x1="-16" y1="-22" x2="16" y2="-22" stroke="var(--sonde-daylight-hc-mark-rtg-brown)" stroke-width="4"/><line x1="-16" y1="-12" x2="16" y2="-12" stroke="var(--sonde-daylight-hc-mark-rtg-brown)" stroke-width="4"/><line x1="-16" y1="-2" x2="16" y2="-2" stroke="var(--sonde-daylight-hc-mark-rtg-brown)" stroke-width="4"/><line x1="-16" y1="8" x2="16" y2="8" stroke="var(--sonde-daylight-hc-mark-rtg-brown)" stroke-width="4"/><line x1="-16" y1="18" x2="16" y2="18" stroke="var(--sonde-daylight-hc-mark-rtg-brown)" stroke-width="4"/><line x1="-16" y1="28" x2="16" y2="28" stroke="var(--sonde-daylight-hc-mark-rtg-brown)" stroke-width="4"/><rect x="-18" y="-34" width="36" height="4" rx="2" stroke="var(--sonde-daylight-hc-mark-rtg-brown)" stroke-width="3"/><rect x="-18" y="30" width="36" height="4" rx="2" stroke="var(--sonde-daylight-hc-mark-rtg-brown)" stroke-width="3"/></g><line x1="-16" y1="-40" x2="-48" y2="-96" stroke="var(--sonde-daylight-hc-mark-metal)" stroke-width="10"/><circle cx="-30" cy="-64" r="4" stroke="var(--sonde-daylight-hc-mark-metal)" stroke-width="4"/><g transform="translate(-48,-96)"><rect x="-24" y="-16" width="48" height="28" rx="4" stroke="var(--sonde-daylight-hc-mark-metal)" stroke-width="6"/><line x1="-20" y1="-8" x2="20" y2="-8" stroke="var(--sonde-daylight-hc-mark-metal)" stroke-width="2"/><line x1="-20" y1="0" x2="20" y2="0" stroke="var(--sonde-daylight-hc-mark-metal)" stroke-width="2"/><circle cx="-10" cy="-4" r="8" stroke="var(--sonde-daylight-hc-mark-metal)" stroke-width="5"/><circle cx="-10" cy="-4" r="4" stroke="var(--sonde-daylight-hc-mark-metal)" stroke-width="2"/><circle cx="10" cy="-4" r="6" stroke="var(--sonde-daylight-hc-mark-metal)" stroke-width="4"/><circle cx="10" cy="-4" r="3" stroke="var(--sonde-daylight-hc-mark-metal)" stroke-width="2"/><rect x="-4" y="4" width="8" height="6" rx="1.5" stroke="var(--sonde-daylight-hc-mark-metal)" stroke-width="3"/></g><path d="M48,-112 Q130,-80 130,0 Q130,80 48,112" stroke="var(--sonde-daylight-hc-mark-earth-blue)" stroke-width="8"/><path d="M56,-96 Q118,-68 118,0 Q118,68 56,96" stroke="var(--sonde-daylight-hc-mark-earth-blue)" stroke-width="2"/><path d="M64,-80 Q106,-56 106,0 Q106,56 64,80" stroke="var(--sonde-daylight-hc-mark-earth-blue)" stroke-width="2"/><path d="M72,-60 Q94,-40 94,0 Q94,40 72,60" stroke="var(--sonde-daylight-hc-mark-earth-blue)" stroke-width="2"/><line x1="60" y1="-52" x2="110" y2="0" stroke="var(--sonde-daylight-hc-mark-earth-blue)" stroke-width="8"/><line x1="60" y1="52" x2="110" y2="0" stroke="var(--sonde-daylight-hc-mark-earth-blue)" stroke-width="8"/><line x1="48" y1="0" x2="110" y2="0" stroke="var(--sonde-daylight-hc-mark-earth-blue)" stroke-width="8"/><circle cx="112" cy="0" r="14" stroke="var(--sonde-daylight-hc-mark-earth-blue)" stroke-width="6"/><circle cx="112" cy="0" r="8" stroke="var(--sonde-daylight-hc-mark-earth-blue)" stroke-width="3"/><polygon points="-16,-40 48,-40 64,-24 64,24 48,40 -16,40 -32,24 -32,-24" stroke="var(--sonde-daylight-hc-mark-bus-gold)" stroke-width="8"/><line x1="0" y1="-40" x2="0" y2="40" stroke="var(--sonde-daylight-hc-mark-bus-gold)" stroke-width="4"/><line x1="24" y1="-40" x2="24" y2="40" stroke="var(--sonde-daylight-hc-mark-bus-gold)" stroke-width="4"/><line x1="-16" y1="-20" x2="48" y2="-20" stroke="var(--sonde-daylight-hc-mark-bus-gold)" stroke-width="3"/><line x1="-16" y1="0" x2="48" y2="0" stroke="var(--sonde-daylight-hc-mark-bus-gold)" stroke-width="3"/><line x1="-16" y1="20" x2="48" y2="20" stroke="var(--sonde-daylight-hc-mark-bus-gold)" stroke-width="3"/><rect x="4" y="-16" width="16" height="12" rx="1.5" stroke="var(--sonde-daylight-hc-mark-bus-gold)" stroke-width="3"/><rect x="28" y="-16" width="16" height="12" rx="1.5" stroke="var(--sonde-daylight-hc-mark-bus-gold)" stroke-width="3"/><rect x="4" y="4" width="16" height="12" rx="1.5" stroke="var(--sonde-daylight-hc-mark-bus-gold)" stroke-width="3"/><rect x="28" y="4" width="16" height="12" rx="1.5" stroke="var(--sonde-daylight-hc-mark-bus-gold)" stroke-width="3"/><rect x="-36" y="-12" width="8" height="24" rx="2" stroke="var(--sonde-daylight-hc-mark-metal)" stroke-width="4"/><path d="M-44,-8 L-52,-14 L-52,14 L-44,8 Z" stroke="var(--sonde-daylight-hc-mark-metal)" stroke-width="4"/><g transform="translate(-8,0)" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M-52,-14 Q-86,-20 -112,-8 Q-120,0 -112,8 Q-86,20 -52,14" stroke="var(--sonde-daylight-hc-mark-flame-deep)" stroke-width="6"/><path d="M-52,-10 Q-78,-14 -96,-5 Q-102,0 -96,5 Q-78,14 -52,10" stroke="var(--sonde-daylight-hc-mark-flame-mid)" stroke-width="5"/><path d="M-52,-6 Q-68,-8 -78,-2 Q-82,0 -78,2 Q-68,8 -52,6" stroke="var(--sonde-daylight-hc-mark-flame-hot)" stroke-width="4"/></g><line x1="16" y1="-40" x2="24" y2="-56" stroke="var(--sonde-daylight-hc-mark-metal)" stroke-width="5"/><circle cx="24" cy="-56" r="3" stroke="var(--sonde-daylight-hc-mark-metal)" stroke-width="3"/></g></g></g></svg></span>
+    <span data-msg-id="settings.theme.hc" data-scribe-msgid="settings.theme.hc">High Contrast</span>
+  </div>
+</label>
+    </div>
+  </details>
+  <details class="settings-section settings-theme-section" open>
+    <summary class="settings-section-trigger" data-msg-id="settings.mode.legend" data-scribe-msgid="settings.mode.legend">Mode</summary>
+    <div class="settings-section-body">
+      <label class="theme-toggle-option theme-option-auto">
+  <input type="radio" name="sonde-theme-toggle" value="auto">
+  <div class="theme-preview" data-theme="auto">
+    <span data-msg-id="settings.theme.auto" data-scribe-msgid="settings.theme.auto">Auto</span>
+  </div>
+</label>
+      <label class="theme-toggle-option theme-option-light">
+  <input type="radio" name="sonde-theme-toggle" value="light">
+  <div class="theme-preview" data-theme="light">
+    <span data-msg-id="settings.theme.light" data-scribe-msgid="settings.theme.light">Light</span>
+  </div>
+</label>
+      <label class="theme-toggle-option theme-option-dark">
+  <input type="radio" name="sonde-theme-toggle" value="dark" checked>
+  <div class="theme-preview" data-theme="dark">
+    <span data-msg-id="settings.theme.dark" data-scribe-msgid="settings.theme.dark">Dark</span>
+  </div>
+</label>
+    </div>
+  </details>
+  <div class="settings-preferences">
+    <label class="settings-motion-option"><input type="checkbox" name="sonde-motion-toggle"> <span data-msg-id="settings.motion.reduce">Reduce motion</span></label>
+    <button type="button" class="settings-reset" data-sonde-preference-reset hidden><span data-msg-id="settings.reset">Reset remembered preferences</span></button>
+    <p class="settings-reset-done" role="status" data-sonde-preference-reset-confirmation hidden><span data-msg-id="settings.reset.done">Your preferences are reset. Where we need your consent, we will ask again; elsewhere analytics returns to its default, which is on.</span></p>
+  </div>
+</div>
+      </details>
+      <a class="btn btn-primary" href="../contact/" data-msg-id="sondeLife.nav.talkToUs">Talk to us</a>
+    </div>
+  </div>
+</header>
+<script>
+  (function () {
+    var header = document.querySelector('header.site-header');
+    if (!header) return;
+    var revealed = header.querySelectorAll('[data-sl-reveal]');
+    for (var r = 0; r < revealed.length; r += 1) revealed[r].hidden = false;
+
+    var HOVER_DELAY_MS = 150;
+    var toggles = Array.prototype.slice.call(header.querySelectorAll('.submenu-toggle'));
+    function menuOf(toggle) {
+      return document.getElementById(toggle.getAttribute('aria-controls'));
+    }
+    function isOpen(toggle) {
+      return toggle.getAttribute('aria-expanded') === 'true';
+    }
+    function setOpen(toggle, open) {
+      toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+      var menu = menuOf(toggle);
+      if (menu) menu.hidden = !open;
+    }
+    function closeOthers(keep) {
+      for (var i = 0; i < toggles.length; i += 1) {
+        if (toggles[i] !== keep && isOpen(toggles[i])) setOpen(toggles[i], false);
+      }
+    }
+    toggles.forEach(function (toggle) {
+      var item = toggle.closest('.has-children');
+      var timer = 0;
+      toggle.hidden = false;
+      toggle.addEventListener('click', function () {
+        window.clearTimeout(timer);
+        var open = !isOpen(toggle);
+        closeOthers(toggle);
+        setOpen(toggle, open);
+      });
+      if (!item) return;
+      item.addEventListener('pointerenter', function (event) {
+        if (event.pointerType !== 'mouse') return;
+        window.clearTimeout(timer);
+        timer = window.setTimeout(function () {
+          closeOthers(toggle);
+          setOpen(toggle, true);
+        }, HOVER_DELAY_MS);
+      });
+      item.addEventListener('pointerleave', function (event) {
+        if (event.pointerType !== 'mouse') return;
+        window.clearTimeout(timer);
+        timer = window.setTimeout(function () {
+          if (!item.contains(document.activeElement)) setOpen(toggle, false);
+        }, HOVER_DELAY_MS);
+      });
+    });
+    document.addEventListener('keydown', function (event) {
+      if (event.key !== 'Escape') return;
+      toggles.forEach(function (toggle) {
+        if (!isOpen(toggle)) return;
+        var menu = menuOf(toggle);
+        var focused = document.activeElement;
+        var focusWasInside = focused === toggle || (menu !== null && menu.contains(focused));
+        setOpen(toggle, false);
+        if (focusWasInside) toggle.focus();
+      });
+    });
+    document.addEventListener('click', function (event) {
+      var target = event.target instanceof Element ? event.target : null;
+      toggles.forEach(function (toggle) {
+        var item = toggle.closest('.has-children');
+        if (isOpen(toggle) && !(item && target && item.contains(target))) setOpen(toggle, false);
+      });
+    });
+
+    var root = document.documentElement;
+    var shortViewport = window.matchMedia ? window.matchMedia('(max-height: 499px)') : null;
+    function clearHeader() {
+      root.style.scrollPaddingTop = shortViewport && shortViewport.matches ? '0px' : header.offsetHeight + 'px';
+      root.style.setProperty('--sl-header-block-size', header.offsetHeight + 'px');
+    }
+    clearHeader();
+    if (typeof ResizeObserver === 'function') new ResizeObserver(clearHeader).observe(header);
+    if (shortViewport && shortViewport.addEventListener) shortViewport.addEventListener('change', clearHeader);
+  })();
+</script>
+
+  <main id="main-content" class="sonde-exhibit" data-presentation-active="true" tabindex="-1">
+<section class="page-hero">
+  <div class="container">
+    <div class="eyebrow" data-msg-id="sondeLife.content.sitemap.eyebrow">Site map</div>
+    <h1 data-msg-id="sondeLife.content.sitemap.title">Site map</h1>
+    <p class="lede" data-msg-id="sondeLife.content.sitemap.lede">Every page on this site, grouped the way the main menu groups them.</p>
+  </div>
+</section>
+<section>
+  <div class="container">
+    <a class="site-map-skip" href="#site-map-end" data-msg-id="sondeLife.content.sitemap.skipNav">Skip past the site map</a>
+    <nav aria-label="Site map" data-msg-aria-label-id="sondeLife.content.sitemap.navLabel" class="site-map">
+      <ul>
+        <li><a href="../"><span data-msg-id="sondeLife.routeLabel.home">Home</span></a>
+        </li>
+        <li><a href="../solutions/"><span data-msg-id="sondeLife.nav.solutions">Solutions</span></a>
+          <ul>
+            <li><a href="../solutions/ai-guardrails/"><span data-msg-id="sondeLife.nav.aiGuardrails">AI Guardrails & Governance</span></a></li>
+            <li><a href="../solutions/compliance/"><span data-msg-id="sondeLife.nav.complianceAccessibility">Compliance & Accessibility</span></a></li>
+          </ul>
+        </li>
+        <li><a href="../how-it-works/"><span data-msg-id="sondeLife.nav.howItWorks">How it Works</span></a>
+        </li>
+        <li><a href="../pricing/"><span data-msg-id="sondeLife.nav.pricing">Pricing</span></a>
+        </li>
+        <li><a href="../resources/"><span data-msg-id="sondeLife.nav.resources">Resources</span></a>
+          <ul>
+            <li><a href="../resources/explore/"><span data-msg-id="sondeLife.nav.features">Explore</span></a></li>
+            <li><a href="../resources/methodology/"><span data-msg-id="sondeLife.nav.methodology">Methodology</span></a></li>
+            <li><a href="../resources/architecture/"><span data-msg-id="sondeLife.nav.architecture">Architecture</span></a></li>
+          </ul>
+        </li>
+        <li><a href="../company/"><span data-msg-id="sondeLife.nav.company">Company</span></a>
+        </li>
+        <li><span data-msg-id="sondeLife.content.sitemap.more">More</span>
+          <ul>
+            <li><a href="../proof/"><span data-msg-id="sondeLife.routeLabel.proof">Proof</span></a></li>
+            <li><a href="../contact/"><span data-msg-id="sondeLife.routeLabel.contact">Contact</span></a></li>
+            <li><a href="../policy/privacy/"><span data-msg-id="sondeLife.routeLabel.privacy">Privacy Notice</span></a></li>
+            <li><a href="../policy/cookies/"><span data-msg-id="sondeLife.routeLabel.cookies">Cookie Policy</span></a></li>
+            <li><a href="../policy/subprocessors/"><span data-msg-id="sondeLife.routeLabel.subprocessors">Subprocessors</span></a></li>
+          </ul>
+        </li>
+      </ul>
+    </nav>
+    <div id="site-map-end" tabindex="-1"></div>
+  </div>
+</section>
+
+
+  </main>
+<footer class="site-footer">
+  <div class="container footer-row">
+    <div>&copy; 2026 Sonde. <span data-msg-id="sondeLife.footer.rights">All rights reserved.</span></div>
+    <div>
+      <a href="../policy/privacy/" data-msg-id="sondeLife.footer.privacy">Privacy</a> &middot;
+      <a href="../policy/cookies/" data-msg-id="sondeLife.footer.cookies">Cookie and browser storage</a> &middot;
+      <a href="../sitemap/" data-msg-id="sondeLife.footer.siteMap" aria-current="page">Site map</a>
+    </div>
+  </div>
+</footer>
+<section class="cookie-banner" data-sonde-consent-banner hidden role="region" aria-label="Analytics choice" data-msg-aria-label-id="sondeLife.consent.region" data-search-exclude>
+  <div class="container cookie-banner-row">
+    <p data-sonde-consent-status></p>
+    <span hidden data-sonde-consent-message="available" data-msg-id="sondeLife.consent.available">An analytics choice is available at the bottom of the page.</span>
+    <span hidden data-sonde-consent-message="allowed" data-msg-id="sondeLife.consent.allowed">Analytics allowed.</span>
+    <span hidden data-sonde-consent-message="off" data-msg-id="sondeLife.consent.off">Analytics kept off.</span>
+    <span hidden data-sonde-consent-message="browser-off" data-msg-id="sondeLife.consent.browserOff">Your browser asks sites not to track you, so analytics stays off.</span>
+    <div class="cookie-banner-actions">
+      <button class="btn btn-secondary" type="button" data-sonde-consent-choice="off" data-msg-id="sondeLife.consent.keepOff">Keep analytics off</button>
+      <button class="btn btn-secondary" type="button" data-sonde-consent-choice="allowed" data-msg-id="sondeLife.consent.allow">Allow analytics</button>
+    </div>
+  </div>
+</section>
+<div hidden aria-hidden="true">
+  <span data-msg-id="sondeLife.metadata.description">Sonde checks the software your team ships for accessibility, compliance, and quality — and shows you exactly what to fix.</span>
+  <span data-msg-id="sondeLife.metadata.home.title">Sonde - Software That Understands Software</span>
+  <span data-msg-id="sondeLife.metadata.solutions.title">Solutions - Sonde</span>
+  <span data-msg-id="sondeLife.metadata.solutions-ai-guardrails.title">AI Guardrails & Governance - Sonde</span>
+  <span data-msg-id="sondeLife.metadata.solutions-compliance.title">Compliance & Accessibility - Sonde</span>
+  <span data-msg-id="sondeLife.metadata.how-it-works.title">How it works - Sonde</span>
+  <span data-msg-id="sondeLife.metadata.pricing.title">Pricing - Sonde</span>
+  <span data-msg-id="sondeLife.metadata.resources.title">Resources - Sonde</span>
+  <span data-msg-id="sondeLife.metadata.resources-explore.title">Explore - Sonde</span>
+  <span data-msg-id="sondeLife.metadata.resources-methodology.title">Methodology - Sonde</span>
+  <span data-msg-id="sondeLife.metadata.resources-architecture.title">Architecture - Sonde</span>
+  <span data-msg-id="sondeLife.metadata.company.title">Company - Sonde</span>
+  <span data-msg-id="sondeLife.metadata.proof.title">Proof - Sonde</span>
+  <span data-msg-id="sondeLife.metadata.contact.title">Contact - Sonde</span>
+  <span data-msg-id="sondeLife.metadata.policy-cookies.title">Cookie and browser storage - Sonde</span>
+  <span data-msg-id="sondeLife.metadata.policy-privacy.title">Privacy Policy - Sonde</span>
+  <span data-msg-id="sondeLife.metadata.policy-subprocessors.title">Subprocessors - Sonde</span>
+  <span data-msg-id="sondeLife.metadata.sitemap.title">Site map - Sonde</span>
+  <span data-msg-id="settings.trigger.aria">Open display settings</span>
+  <span data-msg-id="settings.trigger.title">Settings</span>
+  <span data-msg-id="settings.theme.legend">Theme</span>
+  <span data-msg-id="settings.mode.legend">Mode</span>
+  <span data-msg-id="settings.language.legend">Language</span>
+  <span data-msg-id="settings.theme.ultraviolet">Ultraviolet</span>
+  <span data-msg-id="settings.theme.infrared">Infrared</span>
+  <span data-msg-id="settings.theme.daylight">Daylight</span>
+  <span data-msg-id="settings.theme.auto">Auto</span>
+  <span data-msg-id="settings.theme.light">Light</span>
+  <span data-msg-id="settings.theme.dark">Dark</span>
+  <span data-msg-id="settings.theme.hc">High Contrast</span>
+</div>
+<script>
+  (function () {
+    var main = document.getElementById('main-content');
+    if (!main || main.querySelector('[data-explore]')) return;
+
+    function wrapHeadings() {
+      var headings = main.querySelectorAll('h2[id], h3[id], h4[id]');
+      for (var i = 0; i < headings.length; i += 1) {
+        var heading = headings[i];
+        var first = heading.firstElementChild;
+        if (first && first.tagName === 'A') continue;
+        if (heading.closest('a, summary, button, [hidden]')) continue;
+        var link = document.createElement('a');
+        link.className = 'heading-anchor';
+        link.href = '#' + heading.id;
+        while (heading.firstChild) link.appendChild(heading.firstChild);
+        heading.appendChild(link);
+      }
+    }
+
+    function targetOf(fragment) {
+      if (!fragment || fragment.length < 2) return null;
+      var raw = fragment.slice(1);
+      var decoded = null;
+      try {
+        decoded = document.getElementById(decodeURIComponent(raw));
+      } catch (error) {
+        decoded = null;
+      }
+      return decoded || document.getElementById(raw);
+    }
+
+    function reveal(target, focus) {
+      for (var node = target; node && node !== document.body; node = node.parentElement) {
+        if (node.tagName === 'DETAILS' && !node.open) node.open = true;
+      }
+      var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      target.scrollIntoView({ behavior: reduce ? 'auto' : 'smooth', block: 'start' });
+      if (!focus) return;
+      if (!target.hasAttribute('tabindex')) target.setAttribute('tabindex', '-1');
+      target.focus({ preventScroll: true });
+    }
+
+    wrapHeadings();
+    document.addEventListener('sonde:locale-applied', wrapHeadings);
+
+    main.addEventListener('click', function (event) {
+      if (event.defaultPrevented || event.button !== 0 || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
+      var link = event.target instanceof Element ? event.target.closest('a.heading-anchor') : null;
+      if (!link) return;
+      var fragment = link.getAttribute('href');
+      var target = targetOf(fragment);
+      if (!target) return;
+      event.preventDefault();
+      history.pushState(null, '', fragment);
+      reveal(target.closest('h2, h3, h4') || target, true);
+    });
+
+    function revealHash() {
+      var target = targetOf(window.location.hash);
+      if (target) reveal(target, false);
+    }
+    window.addEventListener('hashchange', revealHash);
+    if (window.location.hash) revealHash();
+  })();
+</script>
+
+
+  <script src="../assets/immutable/leaderboard.df428abc18725d52.js"></script>
+  <script src="../assets/immutable/search-dialog-bundle.b668c77a9575fe79.js" defer></script>
+  <script src="../assets/scribe-page-pdf.js?v=xm0tyf" defer></script>
+</body>
+</html>

@@ -1,8 +1,13 @@
 window.__SCRIBE_LOCALES__ = window.__SCRIBE_LOCALES__ || {};
 window.__SCRIBE_LOCALES__["sv-SE"] = {
-  "fallbackCount": 6,
+  "fallbackCount": 13,
   "locale": "sv-SE",
   "messages": {
+    "scribe.leaderboard.language": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Språk"
+    },
     "scribe.report.action.backToFinding": {
       "fallback": false,
       "reviewed": true,
@@ -27,6 +32,11 @@ window.__SCRIBE_LOCALES__["sv-SE"] = {
       "fallback": false,
       "reviewed": true,
       "text": "Dölj utdrag"
+    },
+    "scribe.report.action.completeFixPlan": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Slutför åtgärdsplan"
     },
     "scribe.report.action.copyDiagramLink": {
       "fallback": false,
@@ -138,6 +148,36 @@ window.__SCRIBE_LOCALES__["sv-SE"] = {
       "reviewed": true,
       "text": "Visa källkod för diagram"
     },
+    "scribe.report.actionPriorities.affectedLocations": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "{count, plural, one {# berörd plats} other {# berörda platser}}"
+    },
+    "scribe.report.actionPriorities.nextAction": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Nästa åtgärd"
+    },
+    "scribe.report.actionPriorities.originalEvidence": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Visa ursprungligt bevis"
+    },
+    "scribe.report.actionPriorities.summary": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Dessa prioriteringar kombinerar påverkan, räckvidd och tillgängliga bevis. Börja uppifrån och öppna sedan de påverkade platserna för tekniska detaljer."
+    },
+    "scribe.report.actionPriorities.title": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Vad som ska åtgärdas först"
+    },
+    "scribe.report.actionPriorities.why": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Varför detta är viktigt"
+    },
     "scribe.report.asset.export.markdown": {
       "fallback": false,
       "reviewed": true,
@@ -187,6 +227,26 @@ window.__SCRIBE_LOCALES__["sv-SE"] = {
       "fallback": false,
       "reviewed": true,
       "text": "Ultraviolett tema"
+    },
+    "scribe.report.autofixFilter.fullExplanation": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Fullständig förklaring"
+    },
+    "scribe.report.autofixFilter.help": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Antalen återspeglar nuvarande sökning och filter. En förhandsvisning visar en genererad ändring. Det innebär inte att ändringen har tillämpats eller verifierats."
+    },
+    "scribe.report.autofixFilter.label": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Resultat för automatisk korrigering"
+    },
+    "scribe.report.autofixFilter.preview": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Förhandsvisningar av automatisk korrigering"
     },
     "scribe.report.brand": {
       "fallback": false,
@@ -258,10 +318,20 @@ window.__SCRIBE_LOCALES__["sv-SE"] = {
       "reviewed": true,
       "text": "ORM- och databaskapacitet"
     },
+    "scribe.report.complianceEvidence.criterion": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "{criterion}"
+    },
     "scribe.report.complianceExample.source.summary": {
       "fallback": false,
       "reviewed": true,
       "text": "{sourcePath} L{startLine}-L{endLine}"
+    },
+    "scribe.report.context.title": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Mer information"
     },
     "scribe.report.control.allClassifications": {
       "fallback": false,
@@ -303,6 +373,16 @@ window.__SCRIBE_LOCALES__["sv-SE"] = {
       "reviewed": true,
       "text": "Innehåll"
     },
+    "scribe.report.control.emptyPlan": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Inget strukturerat innehåll för planen är tillgängligt."
+    },
+    "scribe.report.control.evictedPlan": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Planinnehållet har frigjorts. Öppna planen igen för att ladda den på nytt."
+    },
     "scribe.report.control.expandContents": {
       "fallback": false,
       "reviewed": true,
@@ -318,10 +398,10 @@ window.__SCRIBE_LOCALES__["sv-SE"] = {
       "reviewed": true,
       "text": "Först"
     },
-    "scribe.report.control.language": {
+    "scribe.report.control.guidance": {
       "fallback": false,
       "reviewed": true,
-      "text": "Språk"
+      "text": "Vägledning"
     },
     "scribe.report.control.languageSearch": {
       "fallback": false,
@@ -332,6 +412,11 @@ window.__SCRIBE_LOCALES__["sv-SE"] = {
       "fallback": false,
       "reviewed": true,
       "text": "Senast"
+    },
+    "scribe.report.control.loadingPlan": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Laddar åtgärdsplan…"
     },
     "scribe.report.control.locale": {
       "fallback": false,
@@ -348,6 +433,11 @@ window.__SCRIBE_LOCALES__["sv-SE"] = {
       "reviewed": true,
       "text": "Nästa"
     },
+    "scribe.report.control.outsideResults": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Utanför de aktuella resultaten"
+    },
     "scribe.report.control.pageSize": {
       "fallback": false,
       "reviewed": true,
@@ -357,6 +447,11 @@ window.__SCRIBE_LOCALES__["sv-SE"] = {
       "fallback": false,
       "reviewed": true,
       "text": "Sida"
+    },
+    "scribe.report.control.pinContents": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Fäst navigeringen"
     },
     "scribe.report.control.previousPage": {
       "fallback": false,
@@ -368,6 +463,11 @@ window.__SCRIBE_LOCALES__["sv-SE"] = {
       "reviewed": true,
       "text": "Läsarvy"
     },
+    "scribe.report.control.referenceMaterial": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Referensmaterial"
+    },
     "scribe.report.control.remediation": {
       "fallback": false,
       "reviewed": true,
@@ -377,6 +477,16 @@ window.__SCRIBE_LOCALES__["sv-SE"] = {
       "fallback": false,
       "reviewed": true,
       "text": "Resultat"
+    },
+    "scribe.report.control.retryPlan": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Försök ladda planen igen"
+    },
+    "scribe.report.control.returnToResults": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Återgå till resultat"
     },
     "scribe.report.control.search": {
       "fallback": false,
@@ -388,10 +498,20 @@ window.__SCRIBE_LOCALES__["sv-SE"] = {
       "reviewed": true,
       "text": "Allvarlighetsgrad"
     },
+    "scribe.report.control.targetUnavailable": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Det här rapportmålet är inte tillgängligt"
+    },
     "scribe.report.control.theme": {
       "fallback": false,
       "reviewed": true,
       "text": "Tema"
+    },
+    "scribe.report.control.unavailablePlan": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Planen kunde inte laddas. Öppna den fullständiga planen eller försök igen."
     },
     "scribe.report.facet.status.absent": {
       "fallback": false,
@@ -463,6 +583,66 @@ window.__SCRIBE_LOCALES__["sv-SE"] = {
       "reviewed": true,
       "text": "Automatiskt åtgärda"
     },
+    "scribe.report.fixPlan.component.acceptanceCriteria": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Acceptanskriterier"
+    },
+    "scribe.report.fixPlan.component.beforeAfter": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Före / efter (förhandsgranskning av autofix)"
+    },
+    "scribe.report.fixPlan.component.closeFullScreen": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Stäng"
+    },
+    "scribe.report.fixPlan.component.fixGroups": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Åtgärdsgrupper"
+    },
+    "scribe.report.fixPlan.component.fixed": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Åtgärdad"
+    },
+    "scribe.report.fixPlan.component.fullScreen": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Helskärmsdiff"
+    },
+    "scribe.report.fixPlan.component.manualSteps": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Manuella åtgärdssteg"
+    },
+    "scribe.report.fixPlan.component.original": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Ursprunglig"
+    },
+    "scribe.report.fixPlan.component.source": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Källa"
+    },
+    "scribe.report.fixPlan.component.splitView": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Delad vy"
+    },
+    "scribe.report.fixPlan.component.unifiedView": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Enhetlig"
+    },
+    "scribe.report.fixPlan.component.verify": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Verifiera"
+    },
     "scribe.report.fixPlan.pageTitle": {
       "fallback": false,
       "reviewed": true,
@@ -477,6 +657,61 @@ window.__SCRIBE_LOCALES__["sv-SE"] = {
       "fallback": false,
       "reviewed": true,
       "text": "Vägledning för åtgärder av de fynd som finns i denna rapport."
+    },
+    "scribe.report.metric.displayedScale": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Visad skala"
+    },
+    "scribe.report.metric.explanation": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Varje rad visar sina egna ordnade referensband och det uppmätta värdet. Metriketiketten anger vilken riktning som är bättre."
+    },
+    "scribe.report.metric.higherIsBetter": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Högre är bättre"
+    },
+    "scribe.report.metric.lowerIsBetter": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Lägre är bättre"
+    },
+    "scribe.report.metric.measured": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "uppmätt"
+    },
+    "scribe.report.metric.measuredResults": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Uppmätta resultat"
+    },
+    "scribe.report.metric.referenceRanges": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Referensintervall"
+    },
+    "scribe.report.metric.severity.critical": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Kritisk"
+    },
+    "scribe.report.metric.severity.good": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Bra"
+    },
+    "scribe.report.metric.severity.high": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Hög"
+    },
+    "scribe.report.metric.severity.moderate": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Måttlig"
     },
     "scribe.report.mode.auto": {
       "fallback": false,
@@ -573,26 +808,6 @@ window.__SCRIBE_LOCALES__["sv-SE"] = {
       "reviewed": true,
       "text": "Form för förråd"
     },
-    "scribe.report.repositoryHealth.finding.analysisIncomplete.criterion": {
-      "fallback": false,
-      "reviewed": true,
-      "text": "Lagringsplatshälsosökningar kräver att alla valda prober och resursdetektorer slutförs på ett rent sätt."
-    },
-    "scribe.report.repositoryHealth.finding.analysisIncomplete.fix": {
-      "fallback": false,
-      "reviewed": true,
-      "text": "Fixa misslyckade sonder innan du publicerar resultat som riktar sig till kunden. Varningar ska identifiera detektorn och undantagsmeddelandet."
-    },
-    "scribe.report.repositoryHealth.finding.analysisIncomplete.summary": {
-      "fallback": false,
-      "reviewed": true,
-      "text": "{failedProbeCount} sonde(r) misslyckades och {detectorWarningCount} detektorvarningar registrerades."
-    },
-    "scribe.report.repositoryHealth.finding.analysisIncomplete.title": {
-      "fallback": false,
-      "reviewed": true,
-      "text": "Lagringsplatsens hälsoanalys hade ofullständig sondtäckning"
-    },
     "scribe.report.repositoryHealth.finding.complexity.criterion": {
       "fallback": false,
       "reviewed": true,
@@ -601,7 +816,7 @@ window.__SCRIBE_LOCALES__["sv-SE"] = {
     "scribe.report.repositoryHealth.finding.complexity.fix": {
       "fallback": false,
       "reviewed": true,
-      "text": "Dela upp hotspoten i mindre beslutsenheter, bevara det aktuella beteendet med fokuserade tester och kör hälsorapporten igen innan du använder automatisk rensning."
+      "text": "Dela upp {symbol} i mindre beslutsenheter, bevara dess nuvarande beteende med fokuserade tester och kör hälsorapporten igen innan du använder automatisk rensning."
     },
     "scribe.report.repositoryHealth.finding.complexity.summary": {
       "fallback": false,
@@ -622,11 +837,6 @@ window.__SCRIBE_LOCALES__["sv-SE"] = {
       "fallback": false,
       "reviewed": true,
       "text": "Sammanfattning av hälsotillståndet i det offentliga förrådet med källbaserade bevis för täckning."
-    },
-    "scribe.report.repositoryHealth.finding.raw.criterion": {
-      "fallback": false,
-      "reviewed": true,
-      "text": "{criterion}"
     },
     "scribe.report.repositoryHealth.finding.raw.fix": {
       "fallback": false,
@@ -678,41 +888,6 @@ window.__SCRIBE_LOCALES__["sv-SE"] = {
       "reviewed": true,
       "text": "Hälsokontroll av förråd har återanvändbara källbaserade bevis"
     },
-    "scribe.report.repositoryHealth.fixPlan.codeHealth.step.extract": {
-      "fallback": false,
-      "reviewed": true,
-      "text": "Refaktorera det angivna intervallet i fallande riskordning: dela upp de mest komplexa beslutsklusterna i namngivna hjälpare eller smalare beslutsenheter samtidigt som beteendet bevaras."
-    },
-    "scribe.report.repositoryHealth.fixPlan.codeHealth.step.inspect": {
-      "fallback": false,
-      "reviewed": true,
-      "text": "Kontrollera {sourcePath}-linjerna {startLine} till och med {endLine} och lista gren-, slinga-, tidig återkomst- och undantagssökvägarna som driver den uppmätta komplexiteten."
-    },
-    "scribe.report.repositoryHealth.fixPlan.codeHealth.step.validate": {
-      "fallback": false,
-      "reviewed": true,
-      "text": "Lägg till eller uppdatera fokuserade tester för de ändrade grenarna på raderna {startLine} till och med {endLine}, kör de närmaste paketkontrollerna och återskapa sedan förrådets hälsorapport."
-    },
-    "scribe.report.repositoryHealth.fixPlan.generic.step.inspect": {
-      "fallback": false,
-      "reviewed": true,
-      "text": "Kontrollera det citerade källintervallet i {sourcePath} rader {startLine} till och med {endLine}."
-    },
-    "scribe.report.repositoryHealth.fixPlan.generic.step.resolve": {
-      "fallback": false,
-      "reviewed": true,
-      "text": "Tillämpa åtgärden med hjälp av den minsta källändringen som löser problemet."
-    },
-    "scribe.report.repositoryHealth.fixPlan.generic.step.validate": {
-      "fallback": false,
-      "reviewed": true,
-      "text": "Kör om hälsorapporten för lagringsplatsen och de närmaste testerna på paketnivå innan du publicerar korrigeringen."
-    },
-    "scribe.report.repositoryHealth.fixPlan.scope": {
-      "fallback": false,
-      "reviewed": true,
-      "text": "Målkällområde: {sourcePath} rader {startLine} till och med {endLine}."
-    },
     "scribe.report.repositoryHealth.overview.body": {
       "fallback": false,
       "reviewed": true,
@@ -743,6 +918,56 @@ window.__SCRIBE_LOCALES__["sv-SE"] = {
       "reviewed": true,
       "text": "Sonde Score"
     },
+    "scribe.report.repositoryHealth.sourceRow.apiEndpoints": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "API-slutpunkter"
+    },
+    "scribe.report.repositoryHealth.sourceRow.cicd": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "CI/CD"
+    },
+    "scribe.report.repositoryHealth.sourceRow.databaseModel": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Databasmodell"
+    },
+    "scribe.report.repositoryHealth.sourceRow.frameworks": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Ramverk"
+    },
+    "scribe.report.repositoryHealth.sourceRow.languages": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Språk"
+    },
+    "scribe.report.repositoryHealth.sourceRow.otherRuntimeSurfaces": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Andra runtime-ytor"
+    },
+    "scribe.report.repositoryHealth.sourceRow.packagesAndBuild": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Paket och bygge"
+    },
+    "scribe.report.repositoryHealth.sourceRow.resourceDetections": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Resursdetekteringar"
+    },
+    "scribe.report.repositoryHealth.sourceRow.sondePerformance": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Sonde-prestanda"
+    },
+    "scribe.report.repositoryHealth.sourceRow.source": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Källa"
+    },
     "scribe.report.repositoryHealth.sourceSnippet.summary": {
       "fallback": false,
       "reviewed": true,
@@ -757,21 +982,6 @@ window.__SCRIBE_LOCALES__["sv-SE"] = {
       "fallback": false,
       "reviewed": true,
       "text": "Källdata för repositoriehälsa som visar {sourceFileCount, number} källfiler, {languageCount, number} språk, {packageManifestCount, number} paketmanifest, {buildConfigCount, number} byggkonfigurationer, {frameworkDetectionCount, number} resursdetekteringar och {databaseSchemaCount, number} databasscheman."
-    },
-    "scribe.report.repositoryHealth.visualization.finding.controlFlow.alt": {
-      "fallback": false,
-      "reviewed": true,
-      "text": "Kontrollflödesgraf för {subject} i {sourcePath} rader {startLine} till och med {endLine}."
-    },
-    "scribe.report.repositoryHealth.visualization.finding.controlFlow.title": {
-      "fallback": false,
-      "reviewed": true,
-      "text": "Kontrollflödesgraf för {subject}"
-    },
-    "scribe.report.repositoryHealth.visualization.finding.description": {
-      "fallback": false,
-      "reviewed": true,
-      "text": "Diagrammet genereras från {sourcePath}-raderna {startLine} till och med {endLine} och belyser källbaserade kontrollflödes- eller schemabevis för resultatet."
     },
     "scribe.report.repositoryHealth.visualization.longDescription": {
       "fallback": false,
@@ -823,10 +1033,15 @@ window.__SCRIBE_LOCALES__["sv-SE"] = {
       "reviewed": true,
       "text": "Källa"
     },
-    "scribe.report.term.primary": {
+    "scribe.report.term.repository-health.alias": {
       "fallback": false,
       "reviewed": true,
-      "text": "Repository-hälsa"
+      "text": "Hälsorapport"
+    },
+    "scribe.report.term.repository-health.primary": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Repositoryhälsa"
     },
     "scribe.report.theme.daylight": {
       "fallback": false,
@@ -867,6 +1082,11 @@ window.__SCRIBE_LOCALES__["sv-SE"] = {
       "fallback": false,
       "reviewed": true,
       "text": "Ingen visualiseringsartefakt genererades för detta fynd."
+    },
+    "scribe.report.visualization.visualization-repository-health.projection": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Källdata för lagringsplatshälsa"
     },
     "settings.theme.daylight": {
       "fallback": false,

@@ -1,8 +1,13 @@
 window.__SCRIBE_LOCALES__ = window.__SCRIBE_LOCALES__ || {};
 window.__SCRIBE_LOCALES__["ja-JP"] = {
-  "fallbackCount": 23,
+  "fallbackCount": 21,
   "locale": "ja-JP",
   "messages": {
+    "scribe.leaderboard.language": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "言語"
+    },
     "scribe.report.action.backToFinding": {
       "fallback": false,
       "reviewed": true,
@@ -27,6 +32,11 @@ window.__SCRIBE_LOCALES__["ja-JP"] = {
       "fallback": false,
       "reviewed": true,
       "text": "スニペットを折りたたむ"
+    },
+    "scribe.report.action.completeFixPlan": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "修正プランを完了する"
     },
     "scribe.report.action.copyDiagramLink": {
       "fallback": false,
@@ -176,7 +186,7 @@ window.__SCRIBE_LOCALES__["ja-JP"] = {
     "scribe.report.asset.overviewScreenshot.caption": {
       "fallback": false,
       "reviewed": true,
-      "text": "公開 sonde.life コンプライアンスページで使用される同じ注釈付き証拠レンダラーからコピーしました。"
+      "text": "公開 sonde.tech コンプライアンスページで使用される同じ注釈付き証拠レンダラーからコピーしました。"
     },
     "scribe.report.asset.theme.daylight": {
       "fallback": false,
@@ -197,6 +207,26 @@ window.__SCRIBE_LOCALES__["ja-JP"] = {
       "fallback": false,
       "reviewed": true,
       "text": "紫外線"
+    },
+    "scribe.report.autofixFilter.fullExplanation": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "詳細な説明"
+    },
+    "scribe.report.autofixFilter.help": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "カウントは現在の検索およびフィルターを反映しています。プレビューには生成された変更が表示されます。これは、変更が適用されたことや検証されたことを証明するものではありません。"
+    },
+    "scribe.report.autofixFilter.label": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "自動修正の結果"
+    },
+    "scribe.report.autofixFilter.preview": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "自動修正のプレビュー"
     },
     "scribe.report.brand": {
       "fallback": false,
@@ -276,12 +306,12 @@ window.__SCRIBE_LOCALES__["ja-JP"] = {
     "scribe.report.complianceExample.0.finding.fix": {
       "fallback": false,
       "reviewed": true,
-      "text": "説明的な Compose semantics の contentDescription を追加するか、アイコンのみの操作をラベル付きコントロールに置き換えてから、ローカル実行時ハンドオフを再実行します。"
+      "text": "製品固有の .accessibilityLabel(...) モディファイアを追加するか、.accessibilityHidden(true) で Image を装飾用としてマークしてください。"
     },
     "scribe.report.complianceExample.0.finding.summary": {
       "fallback": false,
       "reviewed": true,
-      "text": "ローカル実行時のアクセシビリティツリーでは、cockpit-mobile のシードアイコン操作が、耐久性のあるアクセシブル名ではなく記号名として公開されています。"
+      "text": "SwiftUI の Image はプロファイルの警告行で意味のあるコンテンツとしてレンダリングされますが、accessibilityLabel が設定されていません。"
     },
     "scribe.report.complianceExample.0.finding.title": {
       "fallback": false,
@@ -296,7 +326,7 @@ window.__SCRIBE_LOCALES__["ja-JP"] = {
     "scribe.report.complianceExample.0.runtime": {
       "fallback": false,
       "reviewed": true,
-      "text": "ローカル実行時ハンドオフで取得（記録元ラベル: `appium-uiautomator2 Pixel 8`）。"
+      "text": "iPhone 17 Pro の SwiftUI フィクスチャ再生キャプチャ。"
     },
     "scribe.report.complianceExample.1.criterion": {
       "fallback": false,
@@ -566,7 +596,7 @@ window.__SCRIBE_LOCALES__["ja-JP"] = {
     "scribe.report.complianceExample.9.runtime": {
       "fallback": false,
       "reviewed": true,
-      "text": "静的 HTML 解析です。fix-apply E2E スイートは、このソースに対して `sonde lint --fix --apply` を実行し、ルールが発火して決定的パッチが適用されることを検証します。"
+      "text": "静的 HTML 解析です。fix-apply E2E スイートは、このソースに対して `sonde fix --apply-kinds wcagMechanical --apply` を実行し、ルールが発火して決定的パッチが適用されることを検証します。"
     },
     "scribe.report.complianceExample.source.summary": {
       "fallback": false,
@@ -623,6 +653,16 @@ window.__SCRIBE_LOCALES__["ja-JP"] = {
       "reviewed": true,
       "text": "目次"
     },
+    "scribe.report.control.emptyPlan": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "構造化されたプランの内容はありません。"
+    },
+    "scribe.report.control.evictedPlan": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "プランの内容が解放されました。プランを再度開いて読み込んでください。"
+    },
     "scribe.report.control.expandContents": {
       "fallback": false,
       "reviewed": true,
@@ -638,10 +678,10 @@ window.__SCRIBE_LOCALES__["ja-JP"] = {
       "reviewed": true,
       "text": "先頭"
     },
-    "scribe.report.control.language": {
+    "scribe.report.control.guidance": {
       "fallback": false,
       "reviewed": true,
-      "text": "言語"
+      "text": "ガイダンス"
     },
     "scribe.report.control.languageSearch": {
       "fallback": false,
@@ -652,6 +692,11 @@ window.__SCRIBE_LOCALES__["ja-JP"] = {
       "fallback": false,
       "reviewed": true,
       "text": "最後"
+    },
+    "scribe.report.control.loadingPlan": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "修正プランを読み込んでいます…"
     },
     "scribe.report.control.locale": {
       "fallback": false,
@@ -668,6 +713,11 @@ window.__SCRIBE_LOCALES__["ja-JP"] = {
       "reviewed": true,
       "text": "次へ"
     },
+    "scribe.report.control.outsideResults": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "現在の結果範囲外"
+    },
     "scribe.report.control.pageSize": {
       "fallback": false,
       "reviewed": true,
@@ -677,6 +727,11 @@ window.__SCRIBE_LOCALES__["ja-JP"] = {
       "fallback": false,
       "reviewed": true,
       "text": "ページ"
+    },
+    "scribe.report.control.pinContents": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "ナビゲーションをピン留め"
     },
     "scribe.report.control.previousPage": {
       "fallback": false,
@@ -688,6 +743,11 @@ window.__SCRIBE_LOCALES__["ja-JP"] = {
       "reviewed": true,
       "text": "閲覧ビュー"
     },
+    "scribe.report.control.referenceMaterial": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "参照資料"
+    },
     "scribe.report.control.remediation": {
       "fallback": false,
       "reviewed": true,
@@ -697,6 +757,16 @@ window.__SCRIBE_LOCALES__["ja-JP"] = {
       "fallback": false,
       "reviewed": true,
       "text": "結果"
+    },
+    "scribe.report.control.retryPlan": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "プランの読み込みを再試行する"
+    },
+    "scribe.report.control.returnToResults": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "結果に戻る"
     },
     "scribe.report.control.search": {
       "fallback": false,
@@ -708,10 +778,20 @@ window.__SCRIBE_LOCALES__["ja-JP"] = {
       "reviewed": true,
       "text": "重要度"
     },
+    "scribe.report.control.targetUnavailable": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "このレポートターゲットは利用できません"
+    },
     "scribe.report.control.theme": {
       "fallback": false,
       "reviewed": true,
       "text": "テーマ"
+    },
+    "scribe.report.control.unavailablePlan": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "プランを読み込めませんでした。完全なプランを開くか、再試行してください。"
     },
     "scribe.report.discoverySummary.title": {
       "fallback": false,
@@ -773,6 +853,11 @@ window.__SCRIBE_LOCALES__["ja-JP"] = {
       "reviewed": true,
       "text": "ソーストレース"
     },
+    "scribe.report.finding.autofix.title": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "自動修正"
+    },
     "scribe.report.finding.missingAlt.summary": {
       "fallback": false,
       "reviewed": true,
@@ -793,6 +878,66 @@ window.__SCRIBE_LOCALES__["ja-JP"] = {
       "reviewed": true,
       "text": "ゲート付きの修正内容なしの公開発見要約。"
     },
+    "scribe.report.fixPlan.component.acceptanceCriteria": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "受入基準"
+    },
+    "scribe.report.fixPlan.component.beforeAfter": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "前後 (自動修正のプレビュー)"
+    },
+    "scribe.report.fixPlan.component.closeFullScreen": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "閉じる"
+    },
+    "scribe.report.fixPlan.component.fixGroups": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "修正グループ"
+    },
+    "scribe.report.fixPlan.component.fixed": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "修正済み"
+    },
+    "scribe.report.fixPlan.component.fullScreen": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "フルスクリーン差分表示"
+    },
+    "scribe.report.fixPlan.component.manualSteps": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "手動リメジエーション手順"
+    },
+    "scribe.report.fixPlan.component.original": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "元々"
+    },
+    "scribe.report.fixPlan.component.source": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "ソース"
+    },
+    "scribe.report.fixPlan.component.splitView": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "分割"
+    },
+    "scribe.report.fixPlan.component.unifiedView": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "統合"
+    },
+    "scribe.report.fixPlan.component.verify": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "確認"
+    },
     "scribe.report.fixPlan.pageTitle": {
       "fallback": false,
       "reviewed": true,
@@ -807,6 +952,61 @@ window.__SCRIBE_LOCALES__["ja-JP"] = {
       "fallback": false,
       "reviewed": true,
       "text": "Sondeがリポジトリを分析すると、検出結果ごとに自動で修正プランが生成されます。この厳選されたショーケースはレポートの例を示しています。ライブの事例で自動修復の実行をご覧ください。"
+    },
+    "scribe.report.metric.displayedScale": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "表示スケール"
+    },
+    "scribe.report.metric.explanation": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "各行には、独自の順序付けられたリファレンスバンドと測定値が表示されます。メトリックラベルには、どちらの方向がより良いかが記載されています。"
+    },
+    "scribe.report.metric.higherIsBetter": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "高いほど良い"
+    },
+    "scribe.report.metric.lowerIsBetter": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "低いほど良い"
+    },
+    "scribe.report.metric.measured": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "測定済み"
+    },
+    "scribe.report.metric.measuredResults": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "測定結果"
+    },
+    "scribe.report.metric.referenceRanges": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "基準範囲"
+    },
+    "scribe.report.metric.severity.critical": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "致命的"
+    },
+    "scribe.report.metric.severity.good": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "良好"
+    },
+    "scribe.report.metric.severity.high": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "高"
+    },
+    "scribe.report.metric.severity.moderate": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "中程度"
     },
     "scribe.report.mobileAccessibilityScan.metric.complianceMatrix.body": {
       "fallback": false,
@@ -928,35 +1128,15 @@ window.__SCRIBE_LOCALES__["ja-JP"] = {
       "reviewed": true,
       "text": "概要"
     },
-    "scribe.report.repositoryHealth.fixPlan.generic.step.inspect": {
+    "scribe.report.repositoryHealth.sondeScore.title": {
       "fallback": false,
       "reviewed": true,
-      "text": "{sourcePath} の {startLine} 行目から {endLine} 行目までの引用ソース範囲を確認します。"
-    },
-    "scribe.report.repositoryHealth.fixPlan.generic.step.resolve": {
-      "fallback": false,
-      "reviewed": true,
-      "text": "検出結果を解決する最小限のソース変更で修正を適用します。"
-    },
-    "scribe.report.repositoryHealth.fixPlan.generic.step.validate": {
-      "fallback": false,
-      "reviewed": true,
-      "text": "修正を公開する前に、リポジトリ健全性レポートと最も近いパッケージレベルのテストを再実行します。"
-    },
-    "scribe.report.repositoryHealth.fixPlan.scope": {
-      "fallback": false,
-      "reviewed": true,
-      "text": "対象ソース範囲: {sourcePath} の {startLine} 行目から {endLine} 行目。"
+      "text": "Sonde Score"
     },
     "scribe.report.scope": {
       "fallback": false,
       "reviewed": true,
       "text": "フィクスチャアプリケーション"
-    },
-    "scribe.report.sondeScore.title": {
-      "fallback": false,
-      "reviewed": true,
-      "text": "Sonde Score"
     },
     "scribe.report.source.swiftUiMissingImageLabel.summary": {
       "fallback": false,
@@ -997,6 +1177,16 @@ window.__SCRIBE_LOCALES__["ja-JP"] = {
       "fallback": false,
       "reviewed": true,
       "text": "ソース"
+    },
+    "scribe.report.term.altText": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "代替テキスト"
+    },
+    "scribe.report.term.textAlternative": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "テキスト代替物"
     },
     "scribe.report.theme.daylight": {
       "fallback": false,

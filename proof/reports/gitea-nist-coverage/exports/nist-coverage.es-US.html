@@ -4,7 +4,11 @@
   <base data-sonde-hosted-report-base href="/proof/reports/gitea-nist-coverage/exports/">
   <script>(function(){if(window.location.protocol==='file:'){var base=document.querySelector('base[data-sonde-hosted-report-base]');if(base)base.remove();}})();</script>
 <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Gitea — NIST 800-53 Coverage</title>
+<link rel="icon" href="../favicon.ico" sizes="32x32">
+  <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+  <link rel="apple-touch-icon" href="../apple-touch-icon.png">
 <style>[data-active-baseline="low"] tr[data-fedramp-min="moderate"],
 [data-active-baseline="low"] tr[data-fedramp-min="high"],
 [data-active-baseline="moderate"] tr[data-fedramp-min="high"] { display: none; }
@@ -12,10 +16,21 @@
 [data-privacy-overlay="on"] tr[data-privacy-only="true"] { display: table-row; }
 .nist-baseline-controls { display: flex; gap: 1rem; align-items: center; padding: 0.5rem 1rem; }
 .nist-baseline-controls fieldset { display: inline-flex; gap: 0.75rem; border: 1px solid currentColor; padding: 0.25rem 0.5rem; }
-.nist-baseline-option, .nist-privacy-overlay { cursor: pointer; }</style>
+.nist-baseline-option, .nist-privacy-overlay { cursor: pointer; }
+.nist-control-table-region { overflow-x: auto; max-inline-size: 100%; }
+/* Without this the region never engages: a table whose cells can wrap shrinks to the container
+   rather than overflowing it, so the row is crammed instead of scrollable. */
+.nist-control-table-region > table { inline-size: max-content; min-inline-size: 100%; }
+.nist-control-table-region:focus-visible { outline: 2px solid currentColor; outline-offset: 2px; }
+@media (max-width: 40rem) {
+  .nist-baseline-controls { align-items: stretch; flex-direction: column; }
+  .nist-baseline-controls fieldset { min-width: 0; }
+  .nist-baseline-options { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+}</style>
 </head>
 <body data-source-line="data/nist-rollup-summary.txt" data-active-baseline="moderate" data-privacy-overlay="off">
-<header><h1>Gitea — NIST 800-53 Coverage</h1></header>
+<header><a href="#main-content">Skip to main content</a><h1>Gitea — NIST 800-53 Coverage</h1></header>
+<main id="main-content">
 <aside class="nist-baseline-controls" role="region" aria-label="Línea base FedRAMP">
   <fieldset class="nist-baseline-fieldset">
     <legend>Línea base FedRAMP</legend>
@@ -31,32 +46,35 @@
   </label>
 </aside>
 <section id="summary"><h2>Resumen</h2>
-<p>11/103 controles cumplidos — Cobertura 10.7%.</p></section>
+<p>6/103 controles cumplidos — Cobertura 5.8%.</p></section>
 <section id="families"><h2>Familias de controles</h2>
 <section id="oscal-family-ac"><h3>AC — Access Control</h3>
+<div class="nist-control-table-region" role="region" aria-label="AC Familia" tabindex="0" data-sonde-two-dimensional-scroll-region>
 <table><thead><tr><th>Control</th><th>Estado</th><th>Atestiguación</th><th>Justificación</th></tr></thead>
 <tbody>
-<tr id="oscal-control-ac-3" class="status-absent" data-fedramp-min="low"><td><code>AC-3</code></td><td>No cumplido</td><td>access-enforcement</td><td></td></tr>
-<tr id="oscal-control-ac-3.7" class="status-absent" data-fedramp-min="moderate"><td><code>AC-3.7</code></td><td>No cumplido</td><td>access-enforcement</td><td></td></tr>
-<tr id="oscal-control-ac-3.8" class="status-absent" data-fedramp-min="high"><td><code>AC-3.8</code></td><td>No cumplido</td><td>access-enforcement</td><td>Runtime revocation and route-level deny evidence require customer tenancy context.</td></tr>
-<tr id="oscal-control-ac-3.13" class="status-absent" data-fedramp-min="high"><td><code>AC-3.13</code></td><td>No cumplido</td><td>access-enforcement</td><td></td></tr>
+<tr id="oscal-control-ac-3" class="status-present" data-fedramp-min="low"><td><code>AC-3</code></td><td>Cumplido</td><td>access-enforcement</td><td></td></tr>
+<tr id="oscal-control-ac-3.7" class="status-present" data-fedramp-min="moderate"><td><code>AC-3.7</code></td><td>Cumplido</td><td>access-enforcement</td><td></td></tr>
+<tr id="oscal-control-ac-3.8" class="status-present" data-fedramp-min="high"><td><code>AC-3.8</code></td><td>Cumplido</td><td>access-enforcement</td><td>Runtime revocation and route-level deny evidence require customer tenancy context.</td></tr>
+<tr id="oscal-control-ac-3.13" class="status-present" data-fedramp-min="high"><td><code>AC-3.13</code></td><td>Cumplido</td><td>access-enforcement</td><td></td></tr>
 <tr id="oscal-control-ac-4" class="status-requires_customer_context" data-fedramp-min="moderate"><td><code>AC-4</code></td><td>Requiere contexto del cliente</td><td>—</td><td>Information-flow enforcement needs parseable allowlist or boundary enforcement evidence.</td></tr>
-<tr id="oscal-control-ac-6" class="status-present" data-fedramp-min="moderate"><td><code>AC-6</code></td><td>Cumplido</td><td>least-privilege</td><td></td></tr>
-<tr id="oscal-control-ac-6.1" class="status-present" data-fedramp-min="moderate"><td><code>AC-6.1</code></td><td>Cumplido</td><td>least-privilege</td><td>Authorized access-to-security-functions review needs role inventory and operator policy.</td></tr>
-<tr id="oscal-control-ac-6.2" class="status-present" data-fedramp-min="moderate"><td><code>AC-6.2</code></td><td>Cumplido</td><td>least-privilege</td><td>Non-privileged account use needs identity-provider and break-glass procedure evidence.</td></tr>
-<tr id="oscal-control-ac-6.5" class="status-present" data-fedramp-min="high"><td><code>AC-6.5</code></td><td>Cumplido</td><td>least-privilege</td><td>Privileged group membership is customer environment state, not source-only evidence.</td></tr>
+<tr id="oscal-control-ac-6" class="status-absent" data-fedramp-min="moderate"><td><code>AC-6</code></td><td>No cumplido</td><td>least-privilege</td><td></td></tr>
+<tr id="oscal-control-ac-6.1" class="status-absent" data-fedramp-min="moderate"><td><code>AC-6.1</code></td><td>No cumplido</td><td>least-privilege</td><td>Authorized access-to-security-functions review needs role inventory and operator policy.</td></tr>
+<tr id="oscal-control-ac-6.2" class="status-absent" data-fedramp-min="moderate"><td><code>AC-6.2</code></td><td>No cumplido</td><td>least-privilege</td><td>Non-privileged account use needs identity-provider and break-glass procedure evidence.</td></tr>
+<tr id="oscal-control-ac-6.5" class="status-absent" data-fedramp-min="high"><td><code>AC-6.5</code></td><td>No cumplido</td><td>least-privilege</td><td>Privileged group membership is customer environment state, not source-only evidence.</td></tr>
 <tr id="oscal-control-ac-6.8" class="status-requires_customer_context" data-fedramp-min="high"><td><code>AC-6.8</code></td><td>Requiere contexto del cliente</td><td>—</td><td>Privileged command auditing requires source audit instrumentation plus runtime command-policy evidence; source-only audit events do not prove privileged command analysis.</td></tr>
-<tr id="oscal-control-ac-6.9" class="status-present" data-fedramp-min="high"><td><code>AC-6.9</code></td><td>Cumplido</td><td>least-privilege</td><td>Requires audit witness on privileged-function call sites plus least-privilege evidence.</td></tr>
-<tr id="oscal-control-ac-6.10" class="status-present" data-fedramp-min="moderate"><td><code>AC-6.10</code></td><td>Cumplido</td><td>least-privilege</td><td></td></tr>
-<tr id="oscal-control-ac-7" class="status-absent" data-fedramp-min="low"><td><code>AC-7</code></td><td>No cumplido</td><td>access-enforcement</td><td></td></tr>
-<tr id="oscal-control-ac-11" class="status-present" data-fedramp-min="moderate"><td><code>AC-11</code></td><td>Cumplido</td><td>session-management</td><td>Session-timeout values live in deployment config; source-pattern coverage is partial.</td></tr>
-<tr id="oscal-control-ac-12" class="status-present" data-fedramp-min="moderate"><td><code>AC-12</code></td><td>Cumplido</td><td>session-management</td><td></td></tr>
-<tr id="oscal-control-ac-17" class="status-gap" data-fedramp-min="low"><td><code>AC-17</code></td><td>Brecha</td><td>transmission-encryption</td><td></td></tr>
-<tr id="oscal-control-ac-17.2" class="status-gap" data-fedramp-min="moderate"><td><code>AC-17.2</code></td><td>Brecha</td><td>transmission-encryption</td><td></td></tr>
-<tr id="oscal-control-ac-17.8" class="status-gap" data-fedramp-min="moderate"><td><code>AC-17.8</code></td><td>Brecha</td><td>transmission-encryption</td><td></td></tr>
+<tr id="oscal-control-ac-6.9" class="status-absent" data-fedramp-min="high"><td><code>AC-6.9</code></td><td>No cumplido</td><td>least-privilege</td><td>Requires audit witness on privileged-function call sites plus least-privilege evidence.</td></tr>
+<tr id="oscal-control-ac-6.10" class="status-absent" data-fedramp-min="moderate"><td><code>AC-6.10</code></td><td>No cumplido</td><td>least-privilege</td><td></td></tr>
+<tr id="oscal-control-ac-7" class="status-present" data-fedramp-min="low"><td><code>AC-7</code></td><td>Cumplido</td><td>access-enforcement</td><td></td></tr>
+<tr id="oscal-control-ac-11" class="status-absent" data-fedramp-min="moderate"><td><code>AC-11</code></td><td>No cumplido</td><td>session-management</td><td>Session-timeout values live in deployment config; source-pattern coverage is partial.</td></tr>
+<tr id="oscal-control-ac-12" class="status-absent" data-fedramp-min="moderate"><td><code>AC-12</code></td><td>No cumplido</td><td>session-management</td><td></td></tr>
+<tr id="oscal-control-ac-17" class="status-absent" data-fedramp-min="low"><td><code>AC-17</code></td><td>No cumplido</td><td>transmission-encryption</td><td></td></tr>
+<tr id="oscal-control-ac-17.2" class="status-absent" data-fedramp-min="moderate"><td><code>AC-17.2</code></td><td>No cumplido</td><td>transmission-encryption</td><td></td></tr>
+<tr id="oscal-control-ac-17.8" class="status-absent" data-fedramp-min="moderate"><td><code>AC-17.8</code></td><td>No cumplido</td><td>transmission-encryption</td><td></td></tr>
 <tr id="oscal-control-ac-18" class="status-requires_customer_context" data-fedramp-min="moderate"><td><code>AC-18</code></td><td>Requiere contexto del cliente</td><td>—</td><td>Wireless access restrictions require deployment and device-management evidence.</td></tr>
-</tbody></table></section>
+</tbody></table>
+</div></section>
 <section id="oscal-family-au"><h3>AU — Audit and Accountability</h3>
+<div class="nist-control-table-region" role="region" aria-label="AU Familia" tabindex="0" data-sonde-two-dimensional-scroll-region>
 <table><thead><tr><th>Control</th><th>Estado</th><th>Atestiguación</th><th>Justificación</th></tr></thead>
 <tbody>
 <tr id="oscal-control-au-2" class="status-absent" data-fedramp-min="low"><td><code>AU-2</code></td><td>No cumplido</td><td>audit-event-coverage</td><td></td></tr>
@@ -71,15 +89,17 @@
 <tr id="oscal-control-au-12" class="status-absent" data-fedramp-min="low"><td><code>AU-12</code></td><td>No cumplido</td><td>audit-event-coverage</td><td></td></tr>
 <tr id="oscal-control-au-12.1" class="status-requires_customer_context" data-fedramp-min="high"><td><code>AU-12.1</code></td><td>Requiere contexto del cliente</td><td>—</td><td>System-wide audit generation requires deployment topology and platform coverage evidence; source coverage attests application instrumentation only.</td></tr>
 <tr id="oscal-control-au-12.3" class="status-requires_customer_context" data-fedramp-min="moderate"><td><code>AU-12.3</code></td><td>Requiere contexto del cliente</td><td>—</td><td>Changes by authorized individuals need release-control and approval evidence plus audit instrumentation.</td></tr>
-</tbody></table></section>
+</tbody></table>
+</div></section>
 <section id="oscal-family-cm"><h3>CM — Configuration Management</h3>
+<div class="nist-control-table-region" role="region" aria-label="CM Familia" tabindex="0" data-sonde-two-dimensional-scroll-region>
 <table><thead><tr><th>Control</th><th>Estado</th><th>Atestiguación</th><th>Justificación</th></tr></thead>
 <tbody>
 <tr id="oscal-control-cm-2" class="status-requires_customer_context" data-fedramp-min="low"><td><code>CM-2</code></td><td>Requiere contexto del cliente</td><td>—</td><td>Baseline configuration derives from declarative GitOps reconciliation (e.g. a Flux Kustomization pruning a committed source baseline) or otherwise needs committed manifests plus operator-approved baseline policy.</td></tr>
 <tr id="oscal-control-cm-3" class="status-requires_customer_context" data-fedramp-min="low"><td><code>CM-3</code></td><td>Requiere contexto del cliente</td><td>—</td><td>Configuration change control needs VCS and approval workflow evidence.</td></tr>
 <tr id="oscal-control-cm-4" class="status-requires_customer_context" data-fedramp-min="moderate"><td><code>CM-4</code></td><td>Requiere contexto del cliente</td><td>—</td><td>Impact analysis derives from blast-radius probe rather than a single validation.</td></tr>
-<tr id="oscal-control-cm-5" class="status-present" data-fedramp-min="moderate"><td><code>CM-5</code></td><td>Cumplido</td><td>least-privilege</td><td>Access restrictions for change need repository permissions and deployment policy evidence.</td></tr>
-<tr id="oscal-control-cm-6" class="status-absent" data-fedramp-min="low"><td><code>CM-6</code></td><td>No cumplido</td><td>configuration-defaults-safety</td><td></td></tr>
+<tr id="oscal-control-cm-5" class="status-absent" data-fedramp-min="moderate"><td><code>CM-5</code></td><td>No cumplido</td><td>least-privilege</td><td>Access restrictions for change need repository permissions and deployment policy evidence.</td></tr>
+<tr id="oscal-control-cm-6" class="status-partial" data-fedramp-min="low"><td><code>CM-6</code></td><td>Parcialmente cumplido</td><td>configuration-defaults-safety</td><td></td></tr>
 <tr id="oscal-control-cm-6.1" class="status-requires_customer_context" data-fedramp-min="moderate"><td><code>CM-6.1</code></td><td>Requiere contexto del cliente</td><td>—</td><td>Automated configuration enforcement counts only a Kubernetes Namespace whose metadata.labels set pod-security.kubernetes.io/enforce to an enforcing Pod Security Admission level (restricted or baseline); audit/warn-only labels, the privileged no-op level, and Helm values without a Namespace kind remain customer deployment evidence.</td></tr>
 <tr id="oscal-control-cm-7" class="status-absent" data-fedramp-min="low"><td><code>CM-7</code></td><td>No cumplido</td><td>least-functionality</td><td></td></tr>
 <tr id="oscal-control-cm-7.1" class="status-requires_customer_context" data-fedramp-min="moderate"><td><code>CM-7.1</code></td><td>Requiere contexto del cliente</td><td>—</td><td>Periodic review of allowed functions requires operator review cadence evidence.</td></tr>
@@ -89,13 +109,15 @@
 <tr id="oscal-control-cm-8" class="status-requires_customer_context" data-fedramp-min="low"><td><code>CM-8</code></td><td>Requiere contexto del cliente</td><td>—</td><td>Component inventory derives from parseable dependency graph or lockfile inventory evidence.</td></tr>
 <tr id="oscal-control-cm-10" class="status-requires_customer_context" data-fedramp-min="moderate"><td><code>CM-10</code></td><td>Requiere contexto del cliente</td><td>—</td><td>Software usage restrictions require license and operator policy evidence.</td></tr>
 <tr id="oscal-control-cm-11" class="status-requires_customer_context" data-fedramp-min="moderate"><td><code>CM-11</code></td><td>Requiere contexto del cliente</td><td>—</td><td>User-installed software restrictions require endpoint management evidence.</td></tr>
-</tbody></table></section>
+</tbody></table>
+</div></section>
 <section id="oscal-family-ia"><h3>IA — Identification and Authentication</h3>
+<div class="nist-control-table-region" role="region" aria-label="IA Familia" tabindex="0" data-sonde-two-dimensional-scroll-region>
 <table><thead><tr><th>Control</th><th>Estado</th><th>Atestiguación</th><th>Justificación</th></tr></thead>
 <tbody>
 <tr id="oscal-control-ia-2" class="status-absent" data-fedramp-min="low"><td><code>IA-2</code></td><td>No cumplido</td><td>auth-required</td><td></td></tr>
-<tr id="oscal-control-ia-2.1" class="status-partial" data-fedramp-min="moderate"><td><code>IA-2.1</code></td><td>Parcialmente cumplido</td><td>mfa-required</td><td>Multifactor authentication for privileged accounts requires IdP configuration evidence.</td></tr>
-<tr id="oscal-control-ia-2.2" class="status-partial" data-fedramp-min="moderate"><td><code>IA-2.2</code></td><td>Parcialmente cumplido</td><td>mfa-required</td><td>Multifactor authentication for non-privileged accounts requires IdP configuration evidence.</td></tr>
+<tr id="oscal-control-ia-2.1" class="status-absent" data-fedramp-min="moderate"><td><code>IA-2.1</code></td><td>No cumplido</td><td>mfa-required</td><td>Multifactor authentication for privileged accounts requires IdP configuration evidence.</td></tr>
+<tr id="oscal-control-ia-2.2" class="status-absent" data-fedramp-min="moderate"><td><code>IA-2.2</code></td><td>No cumplido</td><td>mfa-required</td><td>Multifactor authentication for non-privileged accounts requires IdP configuration evidence.</td></tr>
 <tr id="oscal-control-ia-2.6" class="status-absent" data-fedramp-min="moderate"><td><code>IA-2.6</code></td><td>No cumplido</td><td>auth-required</td><td>Network access to privileged accounts requires runtime access-policy evidence.</td></tr>
 <tr id="oscal-control-ia-2.8" class="status-absent" data-fedramp-min="moderate"><td><code>IA-2.8</code></td><td>No cumplido</td><td>auth-required</td><td>Replay-resistant authentication needs protocol and IdP configuration evidence.</td></tr>
 <tr id="oscal-control-ia-5" class="status-absent" data-fedramp-min="low"><td><code>IA-5</code></td><td>No cumplido</td><td>credential-storage-safety</td><td></td></tr>
@@ -108,8 +130,10 @@
 <tr id="oscal-control-ia-6" class="status-absent" data-fedramp-min="low"><td><code>IA-6</code></td><td>No cumplido</td><td>auth-required</td><td></td></tr>
 <tr id="oscal-control-ia-7" class="status-requires_customer_context" data-fedramp-min="moderate"><td><code>IA-7</code></td><td>Requiere contexto del cliente</td><td>—</td><td>Cryptographic module authentication requires module inventory and FIPS evidence.</td></tr>
 <tr id="oscal-control-ia-8" class="status-absent" data-fedramp-min="low"><td><code>IA-8</code></td><td>No cumplido</td><td>auth-required</td><td>Non-organizational user identification needs tenant and federation-policy evidence.</td></tr>
-</tbody></table></section>
+</tbody></table>
+</div></section>
 <section id="oscal-family-sc"><h3>SC — System and Communications Protection</h3>
+<div class="nist-control-table-region" role="region" aria-label="SC Familia" tabindex="0" data-sonde-two-dimensional-scroll-region>
 <table><thead><tr><th>Control</th><th>Estado</th><th>Atestiguación</th><th>Justificación</th></tr></thead>
 <tbody>
 <tr id="oscal-control-sc-2" class="status-requires_customer_context" data-fedramp-min="moderate"><td><code>SC-2</code></td><td>Requiere contexto del cliente</td><td>—</td><td>Application partitioning needs process/runtime deployment evidence.</td></tr>
@@ -117,18 +141,20 @@
 <tr id="oscal-control-sc-4" class="status-requires_customer_context" data-fedramp-min="moderate"><td><code>SC-4</code></td><td>Requiere contexto del cliente</td><td>—</td><td>Information in shared system resources requires runtime isolation evidence.</td></tr>
 <tr id="oscal-control-sc-5" class="status-requires_customer_context" data-fedramp-min="moderate"><td><code>SC-5</code></td><td>Requiere contexto del cliente</td><td>—</td><td>Denial-of-service protection requires perimeter and capacity evidence.</td></tr>
 <tr id="oscal-control-sc-7" class="status-requires_customer_context" data-fedramp-min="low"><td><code>SC-7</code></td><td>Requiere contexto del cliente</td><td>—</td><td>Boundary protection requires network architecture and ingress policy evidence.</td></tr>
-<tr id="oscal-control-sc-8" class="status-gap" data-fedramp-min="moderate"><td><code>SC-8</code></td><td>Brecha</td><td>transmission-encryption</td><td></td></tr>
-<tr id="oscal-control-sc-8.1" class="status-gap" data-fedramp-min="moderate"><td><code>SC-8.1</code></td><td>Brecha</td><td>transmission-encryption</td><td></td></tr>
+<tr id="oscal-control-sc-8" class="status-absent" data-fedramp-min="moderate"><td><code>SC-8</code></td><td>No cumplido</td><td>transmission-encryption</td><td></td></tr>
+<tr id="oscal-control-sc-8.1" class="status-absent" data-fedramp-min="moderate"><td><code>SC-8.1</code></td><td>No cumplido</td><td>transmission-encryption</td><td></td></tr>
 <tr id="oscal-control-sc-12" class="status-requires_customer_context" data-fedramp-min="moderate"><td><code>SC-12</code></td><td>Requiere contexto del cliente</td><td>—</td><td>Cryptographic key establishment needs key-management lifecycle evidence.</td></tr>
-<tr id="oscal-control-sc-13" class="status-gap" data-fedramp-min="low"><td><code>SC-13</code></td><td>Brecha</td><td>cryptographic-strength</td><td></td></tr>
+<tr id="oscal-control-sc-13" class="status-absent" data-fedramp-min="low"><td><code>SC-13</code></td><td>No cumplido</td><td>cryptographic-strength</td><td></td></tr>
 <tr id="oscal-control-sc-13.1" class="status-requires_customer_context" data-fedramp-min="moderate"><td><code>SC-13.1</code></td><td>Requiere contexto del cliente</td><td>—</td><td>FIPS-validated cryptography needs module inventory and validation evidence.</td></tr>
 <tr id="oscal-control-sc-17" class="status-requires_customer_context" data-fedramp-min="moderate"><td><code>SC-17</code></td><td>Requiere contexto del cliente</td><td>—</td><td>Public key infrastructure certificates count only declarative cert-manager source of truth: a Certificate resource with an issuerRef, a managed secretName, and a subject identity (commonName/dnsNames/uris/ipAddresses), or an Issuer/ClusterIssuer with a configured backend (selfSigned/ca/acme/vault/venafi). Trust-anchor approval, CA accreditation, and approved-service-provider facts remain customer/policy evidence.</td></tr>
-<tr id="oscal-control-sc-23" class="status-present" data-fedramp-min="moderate"><td><code>SC-23</code></td><td>Cumplido</td><td>session-management</td><td></td></tr>
+<tr id="oscal-control-sc-23" class="status-absent" data-fedramp-min="moderate"><td><code>SC-23</code></td><td>No cumplido</td><td>session-management</td><td></td></tr>
 <tr id="oscal-control-sc-28" class="status-absent" data-fedramp-min="moderate"><td><code>SC-28</code></td><td>No cumplido</td><td>data-at-rest-encryption</td><td></td></tr>
 <tr id="oscal-control-sc-28.1" class="status-absent" data-fedramp-min="moderate"><td><code>SC-28.1</code></td><td>No cumplido</td><td>data-at-rest-encryption</td><td></td></tr>
 <tr id="oscal-control-sc-39" class="status-requires_customer_context" data-fedramp-min="moderate"><td><code>SC-39</code></td><td>Requiere contexto del cliente</td><td>—</td><td>Process isolation counts only fully hardened workload securityContext source evidence (runAsNonRoot, allowPrivilegeEscalation:false, readOnlyRootFilesystem, dropped ALL capabilities, and a seccomp profile); broader runtime-sandbox posture remains customer deployment evidence.</td></tr>
-</tbody></table></section>
+</tbody></table>
+</div></section>
 <section id="oscal-family-si"><h3>SI — System and Information Integrity</h3>
+<div class="nist-control-table-region" role="region" aria-label="SI Familia" tabindex="0" data-sonde-two-dimensional-scroll-region>
 <table><thead><tr><th>Control</th><th>Estado</th><th>Atestiguación</th><th>Justificación</th></tr></thead>
 <tbody>
 <tr id="oscal-control-si-2" class="status-absent" data-fedramp-min="low"><td><code>SI-2</code></td><td>No cumplido</td><td>dependency-vulnerability-status</td><td></td></tr>
@@ -145,16 +171,20 @@
 <tr id="oscal-control-si-11" class="status-absent" data-fedramp-min="moderate"><td><code>SI-11</code></td><td>No cumplido</td><td>error-message-safety</td><td></td></tr>
 <tr id="oscal-control-si-12" class="status-requires_customer_context" data-privacy-only="true"><td><code>SI-12</code></td><td>Requiere contexto del cliente</td><td>—</td><td>Information management and retention is policy-backed customer context.</td></tr>
 <tr id="oscal-control-si-16" class="status-requires_customer_context" data-fedramp-min="moderate"><td><code>SI-16</code></td><td>Requiere contexto del cliente</td><td>—</td><td>Memory protection requires runtime/compiler hardening evidence outside source-only checks.</td></tr>
-</tbody></table></section>
+</tbody></table>
+</div></section>
 <section id="oscal-family-ra"><h3>RA — Risk Assessment</h3>
+<div class="nist-control-table-region" role="region" aria-label="RA Familia" tabindex="0" data-sonde-two-dimensional-scroll-region>
 <table><thead><tr><th>Control</th><th>Estado</th><th>Atestiguación</th><th>Justificación</th></tr></thead>
 <tbody>
 <tr id="oscal-control-ra-5" class="status-absent" data-fedramp-min="low"><td><code>RA-5</code></td><td>No cumplido</td><td>dependency-vulnerability-status</td><td></td></tr>
 <tr id="oscal-control-ra-5.2" class="status-requires_customer_context" data-fedramp-min="moderate"><td><code>RA-5.2</code></td><td>Requiere contexto del cliente</td><td>—</td><td>Update-by-prior-vulnerability evidence needs dependency status plus release cadence.</td></tr>
 <tr id="oscal-control-ra-5.4" class="status-requires_customer_context" data-fedramp-min="moderate"><td><code>RA-5.4</code></td><td>Requiere contexto del cliente</td><td>—</td><td>Discoverable information analysis requires public surface and deployment evidence.</td></tr>
 <tr id="oscal-control-ra-5.5" class="status-requires_customer_context" data-fedramp-min="high"><td><code>RA-5.5</code></td><td>Requiere contexto del cliente</td><td>—</td><td>Privileged vulnerability scanning requires scanner credential and environment evidence.</td></tr>
-</tbody></table></section>
+</tbody></table>
+</div></section>
 <section id="oscal-family-sa"><h3>SA — System and Services Acquisition</h3>
+<div class="nist-control-table-region" role="region" aria-label="SA Familia" tabindex="0" data-sonde-two-dimensional-scroll-region>
 <table><thead><tr><th>Control</th><th>Estado</th><th>Atestiguación</th><th>Justificación</th></tr></thead>
 <tbody>
 <tr id="oscal-control-sa-4.9" class="status-requires_customer_context" data-fedramp-min="moderate"><td><code>SA-4.9</code></td><td>Requiere contexto del cliente</td><td>—</td><td>Developer security testing requirements need acquisition-contract evidence plus Sonde results.</td></tr>
@@ -163,16 +193,20 @@
 <tr id="oscal-control-sa-11" class="status-requires_customer_context" data-fedramp-min="moderate"><td><code>SA-11</code></td><td>Requiere contexto del cliente</td><td>—</td><td>Developer security testing is represented by a committed CI static-analysis workflow (e.g. CodeQL), Sonde findings, and certification evidence.</td></tr>
 <tr id="oscal-control-sa-11.1" class="status-requires_customer_context" data-fedramp-min="moderate"><td><code>SA-11.1</code></td><td>Requiere contexto del cliente</td><td>—</td><td>Static code analysis is represented by a committed CodeQL/SAST CI workflow, Sonde execution evidence, and probe certification.</td></tr>
 <tr id="oscal-control-sa-15" class="status-requires_customer_context" data-fedramp-min="moderate"><td><code>SA-15</code></td><td>Requiere contexto del cliente</td><td>—</td><td>Development process standards require SDLC policy and repository workflow evidence.</td></tr>
-</tbody></table></section>
+</tbody></table>
+</div></section>
 <section id="oscal-family-pt"><h3>PT — PII Processing and Transparency</h3>
+<div class="nist-control-table-region" role="region" aria-label="PT Familia" tabindex="0" data-sonde-two-dimensional-scroll-region>
 <table><thead><tr><th>Control</th><th>Estado</th><th>Atestiguación</th><th>Justificación</th></tr></thead>
 <tbody>
 <tr id="oscal-control-pt-2" class="status-requires_customer_context" data-privacy-only="true"><td><code>PT-2</code></td><td>Requiere contexto del cliente</td><td>—</td><td>Authority to process PII is policy and authorization evidence, not source-only evidence.</td></tr>
 <tr id="oscal-control-pt-3" class="status-requires_customer_context" data-privacy-only="true"><td><code>PT-3</code></td><td>Requiere contexto del cliente</td><td>—</td><td>PII processing purpose is policy-driven; source validation covers credential storage only.</td></tr>
 <tr id="oscal-control-pt-6" class="status-requires_customer_context" data-privacy-only="true"><td><code>PT-6</code></td><td>Requiere contexto del cliente</td><td>—</td><td>System of records notice coverage requires privacy program and publication evidence.</td></tr>
 <tr id="oscal-control-pt-7" class="status-requires_customer_context" data-privacy-only="true"><td><code>PT-7</code></td><td>Requiere contexto del cliente</td><td>—</td><td>Specific categories of PII processing require data inventory and privacy evidence.</td></tr>
-</tbody></table></section>
+</tbody></table>
+</div></section>
 </section>
+</main>
 <script>(function () {
   var body = document.body;
   var storageKeyBaseline = 'sonde.nist-coverage.baseline';

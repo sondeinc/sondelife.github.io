@@ -3,6 +3,11 @@ window.__SCRIBE_LOCALES__["en-US"] = {
   "fallbackCount": 0,
   "locale": "en-US",
   "messages": {
+    "scribe.leaderboard.language": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Language"
+    },
     "scribe.report.action.backToFinding": {
       "fallback": false,
       "reviewed": true,
@@ -27,6 +32,11 @@ window.__SCRIBE_LOCALES__["en-US"] = {
       "fallback": false,
       "reviewed": true,
       "text": "Collapse snippet"
+    },
+    "scribe.report.action.completeFixPlan": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Complete fix plan"
     },
     "scribe.report.action.copyDiagramLink": {
       "fallback": false,
@@ -138,6 +148,36 @@ window.__SCRIBE_LOCALES__["en-US"] = {
       "reviewed": true,
       "text": "View diagram source"
     },
+    "scribe.report.actionPriorities.affectedLocations": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "{count, plural, one {# affected location} other {# affected locations}}"
+    },
+    "scribe.report.actionPriorities.nextAction": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Next action"
+    },
+    "scribe.report.actionPriorities.originalEvidence": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "View original evidence"
+    },
+    "scribe.report.actionPriorities.summary": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "These priorities combine impact, reach, and available evidence. Start at the top, then open the affected locations for technical detail."
+    },
+    "scribe.report.actionPriorities.title": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "What to fix first"
+    },
+    "scribe.report.actionPriorities.why": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Why this matters"
+    },
     "scribe.report.asset.export.markdown": {
       "fallback": false,
       "reviewed": true,
@@ -187,6 +227,26 @@ window.__SCRIBE_LOCALES__["en-US"] = {
       "fallback": false,
       "reviewed": true,
       "text": "Ultraviolet theme"
+    },
+    "scribe.report.autofixFilter.fullExplanation": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Full explanation"
+    },
+    "scribe.report.autofixFilter.help": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Counts reflect the current search and filters. A preview shows a generated change. It does not establish that the change was applied or verified."
+    },
+    "scribe.report.autofixFilter.label": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Autofix results"
+    },
+    "scribe.report.autofixFilter.preview": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Autofix previews"
     },
     "scribe.report.brand": {
       "fallback": false,
@@ -258,10 +318,20 @@ window.__SCRIBE_LOCALES__["en-US"] = {
       "reviewed": true,
       "text": "ORM & database capability"
     },
+    "scribe.report.complianceEvidence.criterion": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "{criterion}"
+    },
     "scribe.report.complianceExample.source.summary": {
       "fallback": false,
       "reviewed": true,
       "text": "{sourcePath} L{startLine}-L{endLine}"
+    },
+    "scribe.report.context.title": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "More information"
     },
     "scribe.report.control.allClassifications": {
       "fallback": false,
@@ -303,6 +373,16 @@ window.__SCRIBE_LOCALES__["en-US"] = {
       "reviewed": true,
       "text": "Contents"
     },
+    "scribe.report.control.emptyPlan": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "No structured plan content is available."
+    },
+    "scribe.report.control.evictedPlan": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Plan content was released. Reopen the plan to load it again."
+    },
     "scribe.report.control.expandContents": {
       "fallback": false,
       "reviewed": true,
@@ -318,10 +398,10 @@ window.__SCRIBE_LOCALES__["en-US"] = {
       "reviewed": true,
       "text": "First"
     },
-    "scribe.report.control.language": {
+    "scribe.report.control.guidance": {
       "fallback": false,
       "reviewed": true,
-      "text": "Language"
+      "text": "Guidance"
     },
     "scribe.report.control.languageSearch": {
       "fallback": false,
@@ -332,6 +412,11 @@ window.__SCRIBE_LOCALES__["en-US"] = {
       "fallback": false,
       "reviewed": true,
       "text": "Last"
+    },
+    "scribe.report.control.loadingPlan": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Loading fix plan…"
     },
     "scribe.report.control.locale": {
       "fallback": false,
@@ -348,6 +433,11 @@ window.__SCRIBE_LOCALES__["en-US"] = {
       "reviewed": true,
       "text": "Next"
     },
+    "scribe.report.control.outsideResults": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Outside the current results"
+    },
     "scribe.report.control.pageSize": {
       "fallback": false,
       "reviewed": true,
@@ -357,6 +447,11 @@ window.__SCRIBE_LOCALES__["en-US"] = {
       "fallback": false,
       "reviewed": true,
       "text": "Page"
+    },
+    "scribe.report.control.pinContents": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Pin navigation"
     },
     "scribe.report.control.previousPage": {
       "fallback": false,
@@ -368,6 +463,11 @@ window.__SCRIBE_LOCALES__["en-US"] = {
       "reviewed": true,
       "text": "Reader view"
     },
+    "scribe.report.control.referenceMaterial": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Reference material"
+    },
     "scribe.report.control.remediation": {
       "fallback": false,
       "reviewed": true,
@@ -377,6 +477,16 @@ window.__SCRIBE_LOCALES__["en-US"] = {
       "fallback": false,
       "reviewed": true,
       "text": "Results"
+    },
+    "scribe.report.control.retryPlan": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Retry loading plan"
+    },
+    "scribe.report.control.returnToResults": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Return to results"
     },
     "scribe.report.control.search": {
       "fallback": false,
@@ -388,10 +498,20 @@ window.__SCRIBE_LOCALES__["en-US"] = {
       "reviewed": true,
       "text": "Severity"
     },
+    "scribe.report.control.targetUnavailable": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "This report target is unavailable"
+    },
     "scribe.report.control.theme": {
       "fallback": false,
       "reviewed": true,
       "text": "Theme"
+    },
+    "scribe.report.control.unavailablePlan": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "The plan could not be loaded. Open the complete plan or retry."
     },
     "scribe.report.facet.status.absent": {
       "fallback": false,
@@ -463,6 +583,66 @@ window.__SCRIBE_LOCALES__["en-US"] = {
       "reviewed": true,
       "text": "Autofix"
     },
+    "scribe.report.fixPlan.component.acceptanceCriteria": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Acceptance criteria"
+    },
+    "scribe.report.fixPlan.component.beforeAfter": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Before / after (auto-fix preview)"
+    },
+    "scribe.report.fixPlan.component.closeFullScreen": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Close"
+    },
+    "scribe.report.fixPlan.component.fixGroups": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Fix groups"
+    },
+    "scribe.report.fixPlan.component.fixed": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Fixed"
+    },
+    "scribe.report.fixPlan.component.fullScreen": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Full screen diff"
+    },
+    "scribe.report.fixPlan.component.manualSteps": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Manual remediation steps"
+    },
+    "scribe.report.fixPlan.component.original": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Original"
+    },
+    "scribe.report.fixPlan.component.source": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Source"
+    },
+    "scribe.report.fixPlan.component.splitView": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Split"
+    },
+    "scribe.report.fixPlan.component.unifiedView": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Unified"
+    },
+    "scribe.report.fixPlan.component.verify": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Verify"
+    },
     "scribe.report.fixPlan.pageTitle": {
       "fallback": false,
       "reviewed": true,
@@ -477,6 +657,61 @@ window.__SCRIBE_LOCALES__["en-US"] = {
       "fallback": false,
       "reviewed": true,
       "text": "Remediation guidance for the findings in this report."
+    },
+    "scribe.report.metric.displayedScale": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Displayed scale"
+    },
+    "scribe.report.metric.explanation": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Each row shows its own ordered reference bands and measured value. The metric label states which direction is better."
+    },
+    "scribe.report.metric.higherIsBetter": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Higher is better"
+    },
+    "scribe.report.metric.lowerIsBetter": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Lower is better"
+    },
+    "scribe.report.metric.measured": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "measured"
+    },
+    "scribe.report.metric.measuredResults": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Measured results"
+    },
+    "scribe.report.metric.referenceRanges": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Reference ranges"
+    },
+    "scribe.report.metric.severity.critical": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Critical"
+    },
+    "scribe.report.metric.severity.good": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Good"
+    },
+    "scribe.report.metric.severity.high": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "High"
+    },
+    "scribe.report.metric.severity.moderate": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Moderate"
     },
     "scribe.report.mode.auto": {
       "fallback": false,
@@ -573,26 +808,6 @@ window.__SCRIBE_LOCALES__["en-US"] = {
       "reviewed": true,
       "text": "Repository shape"
     },
-    "scribe.report.repositoryHealth.finding.analysisIncomplete.criterion": {
-      "fallback": false,
-      "reviewed": true,
-      "text": "Repository health scans require all selected probes and resource detectors to complete cleanly."
-    },
-    "scribe.report.repositoryHealth.finding.analysisIncomplete.fix": {
-      "fallback": false,
-      "reviewed": true,
-      "text": "Fix failed probes before publishing customer-facing results; warnings should identify the detector and exception message."
-    },
-    "scribe.report.repositoryHealth.finding.analysisIncomplete.summary": {
-      "fallback": false,
-      "reviewed": true,
-      "text": "{failedProbeCount} probe(s) failed and {detectorWarningCount} detector warning(s) were recorded."
-    },
-    "scribe.report.repositoryHealth.finding.analysisIncomplete.title": {
-      "fallback": false,
-      "reviewed": true,
-      "text": "Repository health analysis had incomplete probe coverage"
-    },
     "scribe.report.repositoryHealth.finding.complexity.criterion": {
       "fallback": false,
       "reviewed": true,
@@ -601,7 +816,7 @@ window.__SCRIBE_LOCALES__["en-US"] = {
     "scribe.report.repositoryHealth.finding.complexity.fix": {
       "fallback": false,
       "reviewed": true,
-      "text": "Split the hotspot into smaller decision units, preserve the current behavior with focused tests, and rerun the health report before applying automated cleanup."
+      "text": "Split {symbol} into smaller decision units, preserve its current behavior with focused tests, and rerun the health report before applying automated cleanup."
     },
     "scribe.report.repositoryHealth.finding.complexity.summary": {
       "fallback": false,
@@ -622,11 +837,6 @@ window.__SCRIBE_LOCALES__["en-US"] = {
       "fallback": false,
       "reviewed": true,
       "text": "Public repository health summary with source-backed coverage evidence."
-    },
-    "scribe.report.repositoryHealth.finding.raw.criterion": {
-      "fallback": false,
-      "reviewed": true,
-      "text": "{criterion}"
     },
     "scribe.report.repositoryHealth.finding.raw.fix": {
       "fallback": false,
@@ -678,41 +888,6 @@ window.__SCRIBE_LOCALES__["en-US"] = {
       "reviewed": true,
       "text": "Repository health scan has reusable source-backed evidence"
     },
-    "scribe.report.repositoryHealth.fixPlan.codeHealth.step.extract": {
-      "fallback": false,
-      "reviewed": true,
-      "text": "Refactor the cited range in descending risk order: split the highest-complexity decision clusters into named helpers or narrower decision units while preserving behavior."
-    },
-    "scribe.report.repositoryHealth.fixPlan.codeHealth.step.inspect": {
-      "fallback": false,
-      "reviewed": true,
-      "text": "Inspect {sourcePath} lines {startLine} through {endLine} and list the branch, loop, early-return, and exception paths that drive the measured complexity."
-    },
-    "scribe.report.repositoryHealth.fixPlan.codeHealth.step.validate": {
-      "fallback": false,
-      "reviewed": true,
-      "text": "Add or update focused tests for the changed branches in lines {startLine} through {endLine}, run the nearest package checks, then regenerate the repository health report."
-    },
-    "scribe.report.repositoryHealth.fixPlan.generic.step.inspect": {
-      "fallback": false,
-      "reviewed": true,
-      "text": "Verify the cited source range in {sourcePath} lines {startLine} through {endLine}."
-    },
-    "scribe.report.repositoryHealth.fixPlan.generic.step.resolve": {
-      "fallback": false,
-      "reviewed": true,
-      "text": "Apply the remediation using the smallest source change that resolves the finding."
-    },
-    "scribe.report.repositoryHealth.fixPlan.generic.step.validate": {
-      "fallback": false,
-      "reviewed": true,
-      "text": "Rerun the repository health report and the nearest package-level tests before publishing the fix."
-    },
-    "scribe.report.repositoryHealth.fixPlan.scope": {
-      "fallback": false,
-      "reviewed": true,
-      "text": "Target source range: {sourcePath} lines {startLine} through {endLine}."
-    },
     "scribe.report.repositoryHealth.overview.body": {
       "fallback": false,
       "reviewed": true,
@@ -743,6 +918,56 @@ window.__SCRIBE_LOCALES__["en-US"] = {
       "reviewed": true,
       "text": "Sonde Score"
     },
+    "scribe.report.repositoryHealth.sourceRow.apiEndpoints": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "API endpoints"
+    },
+    "scribe.report.repositoryHealth.sourceRow.cicd": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "CI/CD"
+    },
+    "scribe.report.repositoryHealth.sourceRow.databaseModel": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Database model"
+    },
+    "scribe.report.repositoryHealth.sourceRow.frameworks": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Frameworks"
+    },
+    "scribe.report.repositoryHealth.sourceRow.languages": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Languages"
+    },
+    "scribe.report.repositoryHealth.sourceRow.otherRuntimeSurfaces": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Other runtime surfaces"
+    },
+    "scribe.report.repositoryHealth.sourceRow.packagesAndBuild": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Packages and build"
+    },
+    "scribe.report.repositoryHealth.sourceRow.resourceDetections": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Resource detections"
+    },
+    "scribe.report.repositoryHealth.sourceRow.sondePerformance": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Sonde Performance"
+    },
+    "scribe.report.repositoryHealth.sourceRow.source": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Source"
+    },
     "scribe.report.repositoryHealth.sourceSnippet.summary": {
       "fallback": false,
       "reviewed": true,
@@ -757,21 +982,6 @@ window.__SCRIBE_LOCALES__["en-US"] = {
       "fallback": false,
       "reviewed": true,
       "text": "Repository health source data showing {sourceFileCount, number} source files, {languageCount, number} languages, {packageManifestCount, number} package manifests, {buildConfigCount, number} build configs, {frameworkDetectionCount, number} resource detections, and {databaseSchemaCount, number} database schema artifacts."
-    },
-    "scribe.report.repositoryHealth.visualization.finding.controlFlow.alt": {
-      "fallback": false,
-      "reviewed": true,
-      "text": "Control-flow graph for {subject} in {sourcePath} lines {startLine} through {endLine}."
-    },
-    "scribe.report.repositoryHealth.visualization.finding.controlFlow.title": {
-      "fallback": false,
-      "reviewed": true,
-      "text": "Control-flow graph for {subject}"
-    },
-    "scribe.report.repositoryHealth.visualization.finding.description": {
-      "fallback": false,
-      "reviewed": true,
-      "text": "The diagram is generated from {sourcePath} lines {startLine} through {endLine} and highlights source-backed control-flow or schema evidence for the finding."
     },
     "scribe.report.repositoryHealth.visualization.longDescription": {
       "fallback": false,
@@ -828,12 +1038,12 @@ window.__SCRIBE_LOCALES__["en-US"] = {
       "reviewed": true,
       "text": "Source"
     },
-    "scribe.report.term.alias": {
+    "scribe.report.term.repository-health.alias": {
       "fallback": false,
       "reviewed": true,
       "text": "Health report"
     },
-    "scribe.report.term.primary": {
+    "scribe.report.term.repository-health.primary": {
       "fallback": false,
       "reviewed": true,
       "text": "Repository health"
@@ -858,11 +1068,6 @@ window.__SCRIBE_LOCALES__["en-US"] = {
       "reviewed": true,
       "text": "Ultraviolet"
     },
-    "scribe.report.title": {
-      "fallback": false,
-      "reviewed": true,
-      "text": "Cal.diy Repository Health"
-    },
     "scribe.report.view.auditor": {
       "fallback": false,
       "reviewed": true,
@@ -882,6 +1087,11 @@ window.__SCRIBE_LOCALES__["en-US"] = {
       "fallback": false,
       "reviewed": true,
       "text": "No visualization artifact was generated for this finding."
+    },
+    "scribe.report.visualization.visualization-repository-health.projection": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Source data"
     },
     "settings.theme.daylight": {
       "fallback": false,

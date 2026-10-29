@@ -1,48 +1,60 @@
 {
   "entrypoint": "index.html",
-  "fileCount": 42,
+  "fileCount": 49,
   "files": [
     {
+      "bytes": 13612,
+      "path": "apple-touch-icon.png",
+      "role": "asset",
+      "sha256": "sha256:7a0e5b60dce3eafaa57cdd713830dde9da56c61a6226bbaafcada11b426f4d42"
+    },
+    {
+      "bytes": 12792,
+      "path": "assets/immutable/navigation-rail.383c60fe9d907824.js",
+      "role": "asset",
+      "sha256": "sha256:383c60fe9d907824c9789a8f6451974041c45677927d869c3eab90f29d44c6cb"
+    },
+    {
       "bytes": 2142,
-      "path": "assets/brand/report-mark.svg",
+      "path": "assets/immutable/report-mark.8de0f91487c32afd.svg",
       "role": "asset",
       "sha256": "sha256:8de0f91487c32afd293571e46f55be956a02e29c353a0d08897bc1cb37885f75"
     },
     {
-      "bytes": 804263,
-      "path": "assets/search-dialog-bundle.js",
+      "bytes": 69895,
+      "path": "assets/immutable/search-dialog-bundle.b668c77a9575fe79.js",
       "role": "asset",
-      "sha256": "sha256:bc3bca5aad254851cc2ee3448d0540db6fc3aa4c0de44e19781e8caa2c7c2aca"
+      "sha256": "sha256:b668c77a9575fe79af09713ac10d0376ce568919af39affeb577b7c442cc8e88"
     },
     {
-      "bytes": 10402,
-      "path": "assets/source-highlight-bundle.js",
+      "bytes": 17696,
+      "path": "assets/immutable/source-highlight-bundle.452cd0766e61a764.js",
       "role": "asset",
-      "sha256": "sha256:009210a0db63b98c4871148d98a2852fa6147d39bf1891674020dfe71283a179"
+      "sha256": "sha256:452cd0766e61a7647afb16112c6f3b0dd84aee9879b2c007f3dddf33d8ce5d81"
     },
     {
-      "bytes": 522865,
-      "path": "assets/themes/daylight.css",
+      "bytes": 590577,
+      "path": "assets/immutable/theme-daylight.ffce2abf0c8dffe5.css",
       "role": "theme",
-      "sha256": "sha256:0819e7f2b22af85248fd3dce98eaddaba1a28d7fee1e69a4d83376c09a31208c"
+      "sha256": "sha256:ffce2abf0c8dffe5703942b87df9dc103fc95861b1dc98059d79825af246e767"
     },
     {
-      "bytes": 515169,
-      "path": "assets/themes/high-contrast.css",
+      "bytes": 582955,
+      "path": "assets/immutable/theme-high-contrast.32d22d1a3f404d86.css",
       "role": "theme",
-      "sha256": "sha256:94fa3365774f14b6badb9aa4af11e06d32d505cd26a0b0c029703c39e37eaebd"
+      "sha256": "sha256:32d22d1a3f404d86ae765c58129b05f4defcb3dbfd563ff62d73295e05e0ad20"
     },
     {
-      "bytes": 514349,
-      "path": "assets/themes/infrared.css",
+      "bytes": 582161,
+      "path": "assets/immutable/theme-infrared.caf6e90430229b41.css",
       "role": "theme",
-      "sha256": "sha256:a573701c867b9d7a0c7489fe8eef31cff330c5dc11ba80baae790b46fa624956"
+      "sha256": "sha256:caf6e90430229b41cc417f7b23c6a3cd63f26d27490d33ccb3056904948b60f9"
     },
     {
-      "bytes": 514474,
-      "path": "assets/themes/ultraviolet.css",
+      "bytes": 582288,
+      "path": "assets/immutable/theme-ultraviolet.e8d1e286a433a1f6.css",
       "role": "theme",
-      "sha256": "sha256:9b9ff662a91db77e8642aa172599f4ed9f8ff3a62386c574ce50a1bd55ebd91d"
+      "sha256": "sha256:e8d1e286a433a1f6b9ccc9ba833c8de4ada7f96a4a468859b39690e9c32fd2a9"
     },
     {
       "bytes": 503181,
@@ -51,46 +63,46 @@
       "sha256": "sha256:f44e35a6d5106d819c3415fd38591de04d3834343c14e50a562b84257e204692"
     },
     {
-      "bytes": 138216,
+      "bytes": 215722,
       "path": "boot/file-direct.js",
       "role": "runtime-script",
-      "sha256": "sha256:97355b7c8cc8ef3c68786584d6a88fac561a676762ffbd3df9ee9f2c57849896"
+      "sha256": "sha256:b08804cef60da783c529e30e5c71fe969802430004bea77be3a71f78765d500b"
     },
     {
-      "bytes": 9963,
+      "bytes": 19244,
       "path": "data/anchors.js",
       "role": "runtime-data",
-      "sha256": "sha256:b7004465f9c3367cef593b265c407930a969820ee5cd2deff60bbf869e99f8d0"
+      "sha256": "sha256:0d6b719266902fe5e176c352fa076a7c250156c43856c26477531495b981c3c6"
     },
     {
-      "bytes": 4005,
+      "bytes": 4730,
       "path": "data/export-actions.js",
       "role": "runtime-data",
-      "sha256": "sha256:ad48650d5ded1a6c375c1e427978f2fcafc6bae81400d4cd6055459cb5c4146f"
+      "sha256": "sha256:3e9e72e6a25b22c222d9db7ab5fbd14276394391590ad1d5d892212b5ff9bbd8"
     },
     {
-      "bytes": 3866,
+      "bytes": 4579,
       "path": "data/feedback-actions.js",
       "role": "runtime-data",
-      "sha256": "sha256:8b2ae3cd3e87ce2cc237741c1998ff76861ee762ee4880de9805ef351ecdc2c4"
+      "sha256": "sha256:08b21b18443e4645a01827c7be69ca6e646e3d4fe6d65446a06fc5fd5ec79883"
     },
     {
-      "bytes": 7947,
+      "bytes": 18190,
       "path": "data/findings.js",
       "role": "runtime-data",
-      "sha256": "sha256:0b36f6ea4a7282cd2d8817fba8b48a667acb4d80a90a5e7948916435b07d4994"
+      "sha256": "sha256:b85e423dadeecea387e477b3c95c388c0e3605d37aec0d4486036bd83123f34e"
     },
     {
-      "bytes": 66972,
+      "bytes": 138225,
       "path": "data/manifest.js",
       "role": "runtime-data",
-      "sha256": "sha256:cba1c99a29adf85e84fe4d9a63e8dd33d8428e1dfb647d41a64f5be30b9bebac"
+      "sha256": "sha256:09b3d7ec70475afca295aa1b418410ede56e6b44b33a8859477f535a5311a39d"
     },
     {
       "bytes": 270022,
       "path": "data/oscal-catalog-provenance.json",
       "role": "runtime-data",
-      "sha256": "sha256:b53fe1be493f1590b18a69e30ecf93ddb4c67e5453827e2e06b541493764c4a0"
+      "sha256": "sha256:8d7eca255f17fb1e2cca0f19ebf1110945c7a3e28bb639fdca0d1d178c73457d"
     },
     {
       "bytes": 301,
@@ -117,28 +129,34 @@
       "sha256": "sha256:fbbbf249876281a6bc4ae8925c317f46d10f0f0a145daeefcf8597cee40ebe12"
     },
     {
-      "bytes": 764601,
+      "bytes": 764593,
       "path": "data/oscal-profile-intake.json",
       "role": "runtime-data",
-      "sha256": "sha256:e7d7e95ffa82f3022d815555d1fed61b44b10b10b80a2907f9c34be7e2955391"
+      "sha256": "sha256:de2ea48c84b1093b9556ec1185d19e9d0ca34b73e4d8b9961bff6719a1d2091f"
     },
     {
-      "bytes": 11037,
+      "bytes": 37,
+      "path": "data/plan-slices.js",
+      "role": "runtime-data",
+      "sha256": "sha256:9107a7ba39747438705040b6cc0df8d920d568416ac80f5425d4be9385d94707"
+    },
+    {
+      "bytes": 13128,
       "path": "data/reader-views.js",
       "role": "runtime-data",
-      "sha256": "sha256:8d0b70c6c0cd6690e8432854b4e21f0839717053244505b1299945bce4ade4dc"
+      "sha256": "sha256:8e6be81cb5780d4e09339da55027570899d83ebe6461cdbfa5cbbca747b7c9fe"
     },
     {
-      "bytes": 575845,
+      "bytes": 552689,
       "path": "data/search-index.en-US.js",
       "role": "runtime-data",
-      "sha256": "sha256:7ac5ab57449bde7550ad7ba2449acbd3302fef3afc772557f043fe1e6667a78d"
+      "sha256": "sha256:f2a3f90bb4e99f7d6149106f25cdfba8bbd7cdfb6c390f3e25e40cc61a6d0a67"
     },
     {
-      "bytes": 577909,
+      "bytes": 554753,
       "path": "data/search-index.es-US.js",
       "role": "runtime-data",
-      "sha256": "sha256:01b88cff4bf2bf55ffe76e01737d389464799c6ec01912391c7e2b9f8249357c"
+      "sha256": "sha256:0ed7c29c544a6035efa33ef67ae46f64cbec7fba00e17f50f6ed5066dad05c4a"
     },
     {
       "bytes": 3125730,
@@ -147,10 +165,10 @@
       "sha256": "sha256:25cbf3f943c5acc5a951fc0e7941dae4e1c44c3352df3ef9236c39df43a536ee"
     },
     {
-      "bytes": 9066,
+      "bytes": 16128,
       "path": "data/share-actions.js",
       "role": "runtime-data",
-      "sha256": "sha256:102a131663ce2e6aeb4b1ba44d6ba6af9d1d73ce0b2be31cee9e76a9eb11d377"
+      "sha256": "sha256:ccbb8c0b5fc57e36434fa2307466686527d5c070eaafc91f706133d75703cc6a"
     },
     {
       "bytes": 1555,
@@ -159,94 +177,118 @@
       "sha256": "sha256:378160dafa13de5795ca6f0245fd6029bc09057ac541666485434f2f983ebdcb"
     },
     {
-      "bytes": 6115,
+      "bytes": 9155,
       "path": "data/source-snippets.js",
       "role": "runtime-data",
-      "sha256": "sha256:0710f5b85c998e8bbef2ba8b976345d1b399c1e528cea6850ec0e00b132b26aa"
+      "sha256": "sha256:1fc94f0d178714977d9a6cce7971edc12436da5a291d4251e846bf0769af06a5"
     },
     {
-      "bytes": 4271,
+      "bytes": 8670,
       "path": "data/toc.js",
       "role": "runtime-data",
-      "sha256": "sha256:81a2e76b70cb44be06f34ee8048734ae2f45540270b95b9e1c39fda2e3cdd201"
+      "sha256": "sha256:2602d31d6b88a445faaf20a997397625104709e32becf3588b901c3e126bd6fb"
     },
     {
-      "bytes": 492,
+      "bytes": 22659,
       "path": "data/visualization-source-data.oscal-profile-intake.json",
       "role": "runtime-data",
-      "sha256": "sha256:84d17e12a92edd2236a89fb50ab60263aab3b45d41c3ea14b825d7682fa07e13"
+      "sha256": "sha256:3c559616e4877ee35c501d07dea20ea88ca39b303a51f56ea936556430c6398d"
     },
     {
-      "bytes": 2918,
+      "bytes": 13449,
       "path": "data/visualizations.js",
       "role": "runtime-data",
-      "sha256": "sha256:87b7d6649e4cafd5560ec847f1561a395c9ecc0c35c3feea258407d6bdaae6f8"
+      "sha256": "sha256:4e07a913655c84d6c584bd6dc343442ba2f6fddc1f436f47233eca9df2e570bd"
     },
     {
-      "bytes": 764601,
+      "bytes": 764593,
       "path": "exports/oscal-profile-intake.json",
       "role": "export",
-      "sha256": "sha256:e7d7e95ffa82f3022d815555d1fed61b44b10b10b80a2907f9c34be7e2955391"
+      "sha256": "sha256:de2ea48c84b1093b9556ec1185d19e9d0ca34b73e4d8b9961bff6719a1d2091f"
     },
     {
-      "bytes": 7482,
+      "bytes": 7464,
       "path": "exports/report.md",
       "role": "export",
-      "sha256": "sha256:ec1f8b909c0aaca7a5c34e6c66cdb1c0f51cf05bd55d67953d44231278ab56ec"
+      "sha256": "sha256:b8eb77deb0eca88995e10552c23bf1609a971951ee784f861332c68d3c618ac8"
     },
     {
-      "bytes": 63688,
+      "bytes": 88935,
+      "path": "exports/report/index.html",
+      "role": "page",
+      "sha256": "sha256:e5a29dbbc6c5e8a8fb38dc6d63e24ff4fd7ac445548936fa0b7a43a9f6b79a03"
+    },
+    {
+      "bytes": 1759,
+      "path": "favicon.ico",
+      "role": "asset",
+      "sha256": "sha256:2ca33c81194eb62619c451878e6e40eff5075904871b102cf6ef243c3cb95ece"
+    },
+    {
+      "bytes": 2097,
+      "path": "favicon.svg",
+      "role": "asset",
+      "sha256": "sha256:fe052c3c245b1346c7545a193475d2433edd4dca45eedd2a4b010a4ad3b93900"
+    },
+    {
+      "bytes": 65627,
       "path": "findings/finding-oscal-profile-controls/index.html",
       "role": "page",
-      "sha256": "sha256:61e958ba0720fe61cefca18e2d64f5bd8c31e0c2b7d4c81c6c6571dfaf41d784"
+      "sha256": "sha256:d70b5c57a5f2d6ee37a8e858e74f8c879fe472f8af2bd9fb7ccd2dbb66689b00"
     },
     {
-      "bytes": 64749,
+      "bytes": 66683,
       "path": "findings/finding-oscal-profile-imports/index.html",
       "role": "page",
-      "sha256": "sha256:8d3b1bf1acc3d9363c6c0acd0cbc1f066f04a44603b9b7d27d7d37eadf07a894"
+      "sha256": "sha256:017fc2d90511d1f6fe0c36837c681f8a60647eccdb87bfef5f79c7fce0dffa3c"
     },
     {
-      "bytes": 63904,
+      "bytes": 65822,
       "path": "findings/finding-oscal-profile-intake/index.html",
       "role": "page",
-      "sha256": "sha256:bd5e4eaa1aa9593436794942c90c8027a7dc7204c7bcd5af6b9e04999d3e7b4a"
+      "sha256": "sha256:498a82c8ab2d1eefe935b5789c0ba612e39cece3a78de187fda608f72fefc210"
     },
     {
-      "bytes": 64586,
+      "bytes": 66601,
       "path": "findings/finding-oscal-profile-unsupported-boundary/index.html",
       "role": "page",
-      "sha256": "sha256:721c4d217db9d5cddff001712bc0539684757ccf1fd079e3687c500e865fdd15"
+      "sha256": "sha256:6ac776d16c4a7ca69e0b16203d2567cd90af83a3f654cb98c5c0f7726c890857"
     },
     {
-      "bytes": 56983,
+      "bytes": 57398,
       "path": "fix-plans/finding-oscal-profile-intake/index.html",
       "role": "page",
-      "sha256": "sha256:84cf83e99fcfa610adfc078bfe6c78c984be17aeed9db562fc2ae2f308e6d9b2"
+      "sha256": "sha256:7f7a2c05a6640b132201ebc9d43263424afee69049a8be73b566f4236867fce2"
     },
     {
-      "bytes": 117265,
+      "bytes": 127767,
       "path": "index.html",
       "role": "page",
-      "sha256": "sha256:e9edb15c8e6e6e3003715f0d84435d4f3000b1b5ce5233cfeecb877d370d8e31"
+      "sha256": "sha256:218db5e477b99385a620c2f563ec18fed4f9a4972f2602455793e8ebc3138689"
     },
     {
-      "bytes": 26824,
+      "bytes": 32745,
       "path": "locales/en-US.js",
       "role": "locale-bundle",
-      "sha256": "sha256:e16ee3e22ae9b22ed41acb5fba833773d7a4043c6f3dbf739e078ce94af00502"
+      "sha256": "sha256:7165983eb6f2669751fa7a105645934ef6c3a6d38ff2c14cabed6bf786c6fd29"
     },
     {
-      "bytes": 27603,
+      "bytes": 34028,
       "path": "locales/es-US.js",
       "role": "locale-bundle",
-      "sha256": "sha256:565e588871503a44733c236c6900ebcfd08b431f83515f194eb148df0355ee8a"
+      "sha256": "sha256:33092fce9b7fd572d2548a573c08663eacd6027cddc9a852c82c10c6bd3abefc"
     },
     {
-      "bytes": 66941,
+      "bytes": 57306,
+      "path": "references/index.html",
+      "role": "page",
+      "sha256": "sha256:445d8bf6527092e24bd0d5fbb49bd088fbe08f477b515a24233347828142db05"
+    },
+    {
+      "bytes": 138194,
       "path": "scribe-runtime.manifest.json",
       "role": "runtime-manifest",
-      "sha256": "sha256:7a28d4103159e77c01a8a0102f6ba2ae80c0d95aa7f0dc4a8e67a1db8a0763a9"
+      "sha256": "sha256:5a0bea95b1709e42ce0685587232d191308e24e99ae62aa2c0825b73a40cc96a"
     },
     {
       "bytes": 334,

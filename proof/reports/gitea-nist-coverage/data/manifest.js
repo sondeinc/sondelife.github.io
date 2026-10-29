@@ -1,5 +1,40 @@
 window.__SCRIBE_MANIFEST__ = {
   "analysisScopeLabel": {
+    "catalogDependency": {
+      "explicitLocales": [
+        "es-US"
+      ],
+      "lookupLocales": [
+        "en-US",
+        "en-GB",
+        "en-CA",
+        "fr-CA",
+        "en-IN",
+        "cy-GB",
+        "gd-GB",
+        "ga-GB",
+        "es-US",
+        "es-MX",
+        "de-DE",
+        "fr-FR",
+        "es-ES",
+        "it-IT",
+        "nl-NL",
+        "pl-PL",
+        "pt-PT",
+        "pt-BR",
+        "ro-RO",
+        "sv-SE",
+        "ko-KR",
+        "zh-CN",
+        "ja-JP",
+        "hi-IN"
+      ],
+      "reportFallbacks": {
+        "ja-JP": "NIST/FedRAMP カバレッジコーパス"
+      },
+      "sourceLocale": "en-US"
+    },
     "defaultLocale": "en-US",
     "defaultText": "Gitea NIST/FedRAMP coverage corpus",
     "icuArgs": {},
@@ -24,6 +59,39 @@ window.__SCRIBE_MANIFEST__ = {
       "anchorId": "section-overview",
       "indexTermIds": [],
       "label": {
+        "catalogDependency": {
+          "explicitLocales": [],
+          "lookupLocales": [
+            "en-US",
+            "en-GB",
+            "en-CA",
+            "fr-CA",
+            "en-IN",
+            "cy-GB",
+            "gd-GB",
+            "ga-GB",
+            "es-US",
+            "es-MX",
+            "de-DE",
+            "fr-FR",
+            "es-ES",
+            "it-IT",
+            "nl-NL",
+            "pl-PL",
+            "pt-PT",
+            "pt-BR",
+            "ro-RO",
+            "sv-SE",
+            "ko-KR",
+            "zh-CN",
+            "ja-JP",
+            "hi-IN"
+          ],
+          "reportFallbacks": {
+            "ja-JP": "概要"
+          },
+          "sourceLocale": "en-US"
+        },
         "defaultLocale": "en-US",
         "defaultText": "Overview",
         "icuArgs": {},
@@ -55,6 +123,41 @@ window.__SCRIBE_MANIFEST__ = {
         "nist-fedramp-coverage"
       ],
       "label": {
+        "catalogDependency": {
+          "explicitLocales": [
+            "es-US"
+          ],
+          "lookupLocales": [
+            "en-US",
+            "en-GB",
+            "en-CA",
+            "fr-CA",
+            "en-IN",
+            "cy-GB",
+            "gd-GB",
+            "ga-GB",
+            "es-US",
+            "es-MX",
+            "de-DE",
+            "fr-FR",
+            "es-ES",
+            "it-IT",
+            "nl-NL",
+            "pl-PL",
+            "pt-PT",
+            "pt-BR",
+            "ro-RO",
+            "sv-SE",
+            "ko-KR",
+            "zh-CN",
+            "ja-JP",
+            "hi-IN"
+          ],
+          "reportFallbacks": {
+            "ja-JP": "NIST コントロールには明示的な対応アーティファクト境界が必要です"
+          },
+          "sourceLocale": "en-US"
+        },
         "defaultLocale": "en-US",
         "defaultText": "NIST controls require explicit supported-artifact boundaries",
         "icuArgs": {},
@@ -81,6 +184,41 @@ window.__SCRIBE_MANIFEST__ = {
       "parentAnchorId": "section-overview",
       "role": "finding",
       "shareSummary": {
+        "catalogDependency": {
+          "explicitLocales": [
+            "es-US"
+          ],
+          "lookupLocales": [
+            "en-US",
+            "en-GB",
+            "en-CA",
+            "fr-CA",
+            "en-IN",
+            "cy-GB",
+            "gd-GB",
+            "ga-GB",
+            "es-US",
+            "es-MX",
+            "de-DE",
+            "fr-FR",
+            "es-ES",
+            "it-IT",
+            "nl-NL",
+            "pl-PL",
+            "pt-PT",
+            "pt-BR",
+            "ro-RO",
+            "sv-SE",
+            "ko-KR",
+            "zh-CN",
+            "ja-JP",
+            "hi-IN"
+          ],
+          "reportFallbacks": {
+            "ja-JP": "Scribe パッケージは OSCAL Assessment Results を出力し、未対応の SSP/SAP/SAR/POA&M を完成扱いしません。"
+          },
+          "sourceLocale": "en-US"
+        },
         "defaultLocale": "en-US",
         "defaultText": "The Scribe package emits OSCAL Assessment Results and refuses to label unsupported SSP/SAP/SAR/POA&M artifacts as complete.",
         "icuArgs": {},
@@ -101,6 +239,41 @@ window.__SCRIBE_MANIFEST__ = {
         }
       },
       "shareTitle": {
+        "catalogDependency": {
+          "explicitLocales": [
+            "es-US"
+          ],
+          "lookupLocales": [
+            "en-US",
+            "en-GB",
+            "en-CA",
+            "fr-CA",
+            "en-IN",
+            "cy-GB",
+            "gd-GB",
+            "ga-GB",
+            "es-US",
+            "es-MX",
+            "de-DE",
+            "fr-FR",
+            "es-ES",
+            "it-IT",
+            "nl-NL",
+            "pl-PL",
+            "pt-PT",
+            "pt-BR",
+            "ro-RO",
+            "sv-SE",
+            "ko-KR",
+            "zh-CN",
+            "ja-JP",
+            "hi-IN"
+          ],
+          "reportFallbacks": {
+            "ja-JP": "NIST コントロールには明示的な対応アーティファクト境界が必要です"
+          },
+          "sourceLocale": "en-US"
+        },
         "defaultLocale": "en-US",
         "defaultText": "NIST controls require explicit supported-artifact boundaries",
         "icuArgs": {},
@@ -127,6 +300,41 @@ window.__SCRIBE_MANIFEST__ = {
         "nist-fedramp-coverage"
       ],
       "label": {
+        "catalogDependency": {
+          "explicitLocales": [
+            "es-US"
+          ],
+          "lookupLocales": [
+            "en-US",
+            "en-GB",
+            "en-CA",
+            "fr-CA",
+            "en-IN",
+            "cy-GB",
+            "gd-GB",
+            "ga-GB",
+            "es-US",
+            "es-MX",
+            "de-DE",
+            "fr-FR",
+            "es-ES",
+            "it-IT",
+            "nl-NL",
+            "pl-PL",
+            "pt-PT",
+            "pt-BR",
+            "ro-RO",
+            "sv-SE",
+            "ko-KR",
+            "zh-CN",
+            "ja-JP",
+            "hi-IN"
+          ],
+          "reportFallbacks": {
+            "ja-JP": "NIST カバレッジ解釈"
+          },
+          "sourceLocale": "en-US"
+        },
         "defaultLocale": "en-US",
         "defaultText": "NIST coverage interpretation",
         "icuArgs": {},
@@ -154,6 +362,41 @@ window.__SCRIBE_MANIFEST__ = {
       "parentAnchorId": "finding-nist-coverage",
       "role": "source-snippet",
       "shareSummary": {
+        "catalogDependency": {
+          "explicitLocales": [
+            "es-US"
+          ],
+          "lookupLocales": [
+            "en-US",
+            "en-GB",
+            "en-CA",
+            "fr-CA",
+            "en-IN",
+            "cy-GB",
+            "gd-GB",
+            "ga-GB",
+            "es-US",
+            "es-MX",
+            "de-DE",
+            "fr-FR",
+            "es-ES",
+            "it-IT",
+            "nl-NL",
+            "pl-PL",
+            "pt-PT",
+            "pt-BR",
+            "ro-RO",
+            "sv-SE",
+            "ko-KR",
+            "zh-CN",
+            "ja-JP",
+            "hi-IN"
+          ],
+          "reportFallbacks": {
+            "ja-JP": "生のロールアップ JSON と OSCAL Assessment Results はダウンロードとして提供されます。"
+          },
+          "sourceLocale": "en-US"
+        },
         "defaultLocale": "en-US",
         "defaultText": "Raw rollup JSON and OSCAL Assessment Results ship as downloads; this section summarizes the source-backed control accounting.",
         "icuArgs": {},
@@ -174,6 +417,41 @@ window.__SCRIBE_MANIFEST__ = {
         }
       },
       "shareTitle": {
+        "catalogDependency": {
+          "explicitLocales": [
+            "es-US"
+          ],
+          "lookupLocales": [
+            "en-US",
+            "en-GB",
+            "en-CA",
+            "fr-CA",
+            "en-IN",
+            "cy-GB",
+            "gd-GB",
+            "ga-GB",
+            "es-US",
+            "es-MX",
+            "de-DE",
+            "fr-FR",
+            "es-ES",
+            "it-IT",
+            "nl-NL",
+            "pl-PL",
+            "pt-PT",
+            "pt-BR",
+            "ro-RO",
+            "sv-SE",
+            "ko-KR",
+            "zh-CN",
+            "ja-JP",
+            "hi-IN"
+          ],
+          "reportFallbacks": {
+            "ja-JP": "NIST カバレッジ解釈"
+          },
+          "sourceLocale": "en-US"
+        },
         "defaultLocale": "en-US",
         "defaultText": "NIST coverage interpretation",
         "icuArgs": {},
@@ -200,6 +478,41 @@ window.__SCRIBE_MANIFEST__ = {
         "nist-fedramp-coverage"
       ],
       "label": {
+        "catalogDependency": {
+          "explicitLocales": [
+            "es-US"
+          ],
+          "lookupLocales": [
+            "en-US",
+            "en-GB",
+            "en-CA",
+            "fr-CA",
+            "en-IN",
+            "cy-GB",
+            "gd-GB",
+            "ga-GB",
+            "es-US",
+            "es-MX",
+            "de-DE",
+            "fr-FR",
+            "es-ES",
+            "it-IT",
+            "nl-NL",
+            "pl-PL",
+            "pt-PT",
+            "pt-BR",
+            "ro-RO",
+            "sv-SE",
+            "ko-KR",
+            "zh-CN",
+            "ja-JP",
+            "hi-IN"
+          ],
+          "reportFallbacks": {
+            "ja-JP": "NIST ファミリーカバレッジマトリクス"
+          },
+          "sourceLocale": "en-US"
+        },
         "defaultLocale": "en-US",
         "defaultText": "NIST family coverage matrix",
         "icuArgs": {},
@@ -227,6 +540,41 @@ window.__SCRIBE_MANIFEST__ = {
       "parentAnchorId": "finding-nist-coverage",
       "role": "diagram",
       "shareSummary": {
+        "catalogDependency": {
+          "explicitLocales": [
+            "es-US"
+          ],
+          "lookupLocales": [
+            "en-US",
+            "en-GB",
+            "en-CA",
+            "fr-CA",
+            "en-IN",
+            "cy-GB",
+            "gd-GB",
+            "ga-GB",
+            "es-US",
+            "es-MX",
+            "de-DE",
+            "fr-FR",
+            "es-ES",
+            "it-IT",
+            "nl-NL",
+            "pl-PL",
+            "pt-PT",
+            "pt-BR",
+            "ro-RO",
+            "sv-SE",
+            "ko-KR",
+            "zh-CN",
+            "ja-JP",
+            "hi-IN"
+          ],
+          "reportFallbacks": {
+            "ja-JP": "ファミリー別の件数で充足、顧客コンテキスト必要、未充足を区別します。"
+          },
+          "sourceLocale": "en-US"
+        },
         "defaultLocale": "en-US",
         "defaultText": "Family-level counts distinguish satisfied controls from context-required and unsatisfied controls.",
         "icuArgs": {},
@@ -247,6 +595,41 @@ window.__SCRIBE_MANIFEST__ = {
         }
       },
       "shareTitle": {
+        "catalogDependency": {
+          "explicitLocales": [
+            "es-US"
+          ],
+          "lookupLocales": [
+            "en-US",
+            "en-GB",
+            "en-CA",
+            "fr-CA",
+            "en-IN",
+            "cy-GB",
+            "gd-GB",
+            "ga-GB",
+            "es-US",
+            "es-MX",
+            "de-DE",
+            "fr-FR",
+            "es-ES",
+            "it-IT",
+            "nl-NL",
+            "pl-PL",
+            "pt-PT",
+            "pt-BR",
+            "ro-RO",
+            "sv-SE",
+            "ko-KR",
+            "zh-CN",
+            "ja-JP",
+            "hi-IN"
+          ],
+          "reportFallbacks": {
+            "ja-JP": "NIST ファミリーカバレッジマトリクス"
+          },
+          "sourceLocale": "en-US"
+        },
         "defaultLocale": "en-US",
         "defaultText": "NIST family coverage matrix",
         "icuArgs": {},
@@ -273,6 +656,37 @@ window.__SCRIBE_MANIFEST__ = {
         "nist-fedramp-coverage"
       ],
       "label": {
+        "catalogDependency": {
+          "explicitLocales": [],
+          "lookupLocales": [
+            "en-US",
+            "en-GB",
+            "en-CA",
+            "fr-CA",
+            "en-IN",
+            "cy-GB",
+            "gd-GB",
+            "ga-GB",
+            "es-US",
+            "es-MX",
+            "de-DE",
+            "fr-FR",
+            "es-ES",
+            "it-IT",
+            "nl-NL",
+            "pl-PL",
+            "pt-PT",
+            "pt-BR",
+            "ro-RO",
+            "sv-SE",
+            "ko-KR",
+            "zh-CN",
+            "ja-JP",
+            "hi-IN"
+          ],
+          "reportFallbacks": {},
+          "sourceLocale": "en-US"
+        },
         "defaultLocale": "en-US",
         "defaultText": "Fix plan",
         "icuArgs": {},
@@ -300,6 +714,37 @@ window.__SCRIBE_MANIFEST__ = {
       "parentAnchorId": "finding-nist-coverage",
       "role": "fix-plan",
       "shareSummary": {
+        "catalogDependency": {
+          "explicitLocales": [],
+          "lookupLocales": [
+            "en-US",
+            "en-GB",
+            "en-CA",
+            "fr-CA",
+            "en-IN",
+            "cy-GB",
+            "gd-GB",
+            "ga-GB",
+            "es-US",
+            "es-MX",
+            "de-DE",
+            "fr-FR",
+            "es-ES",
+            "it-IT",
+            "nl-NL",
+            "pl-PL",
+            "pt-PT",
+            "pt-BR",
+            "ro-RO",
+            "sv-SE",
+            "ko-KR",
+            "zh-CN",
+            "ja-JP",
+            "hi-IN"
+          ],
+          "reportFallbacks": {},
+          "sourceLocale": "en-US"
+        },
         "defaultLocale": "en-US",
         "defaultText": "Live, per-finding fix plans generate automatically when Sonde analyzes your repository. This curated showcase demonstrates the report; see automated remediation in action on a live example.",
         "icuArgs": {},
@@ -320,6 +765,37 @@ window.__SCRIBE_MANIFEST__ = {
         }
       },
       "shareTitle": {
+        "catalogDependency": {
+          "explicitLocales": [],
+          "lookupLocales": [
+            "en-US",
+            "en-GB",
+            "en-CA",
+            "fr-CA",
+            "en-IN",
+            "cy-GB",
+            "gd-GB",
+            "ga-GB",
+            "es-US",
+            "es-MX",
+            "de-DE",
+            "fr-FR",
+            "es-ES",
+            "it-IT",
+            "nl-NL",
+            "pl-PL",
+            "pt-PT",
+            "pt-BR",
+            "ro-RO",
+            "sv-SE",
+            "ko-KR",
+            "zh-CN",
+            "ja-JP",
+            "hi-IN"
+          ],
+          "reportFallbacks": {},
+          "sourceLocale": "en-US"
+        },
         "defaultLocale": "en-US",
         "defaultText": "Fix plan",
         "icuArgs": {},
@@ -344,6 +820,39 @@ window.__SCRIBE_MANIFEST__ = {
   "assets": [
     {
       "altText": {
+        "catalogDependency": {
+          "explicitLocales": [
+            "es-US"
+          ],
+          "lookupLocales": [
+            "en-US",
+            "en-GB",
+            "en-CA",
+            "fr-CA",
+            "en-IN",
+            "cy-GB",
+            "gd-GB",
+            "ga-GB",
+            "es-US",
+            "es-MX",
+            "de-DE",
+            "fr-FR",
+            "es-ES",
+            "it-IT",
+            "nl-NL",
+            "pl-PL",
+            "pt-PT",
+            "pt-BR",
+            "ro-RO",
+            "sv-SE",
+            "ko-KR",
+            "zh-CN",
+            "ja-JP",
+            "hi-IN"
+          ],
+          "reportFallbacks": {},
+          "sourceLocale": "en-US"
+        },
         "defaultLocale": "en-US",
         "defaultText": "Sonde Scribe {version} compliance report mark",
         "icuArgs": {
@@ -366,9 +875,42 @@ window.__SCRIBE_MANIFEST__ = {
         }
       },
       "assetId": "report-mark",
-      "defaultPath": "assets/brand/report-mark.svg",
+      "defaultPath": "assets/immutable/report-mark.8de0f91487c32afd.svg",
       "kind": "icon",
       "label": {
+        "catalogDependency": {
+          "explicitLocales": [
+            "es-US"
+          ],
+          "lookupLocales": [
+            "en-US",
+            "en-GB",
+            "en-CA",
+            "fr-CA",
+            "en-IN",
+            "cy-GB",
+            "gd-GB",
+            "ga-GB",
+            "es-US",
+            "es-MX",
+            "de-DE",
+            "fr-FR",
+            "es-ES",
+            "it-IT",
+            "nl-NL",
+            "pl-PL",
+            "pt-PT",
+            "pt-BR",
+            "ro-RO",
+            "sv-SE",
+            "ko-KR",
+            "zh-CN",
+            "ja-JP",
+            "hi-IN"
+          ],
+          "reportFallbacks": {},
+          "sourceLocale": "en-US"
+        },
         "defaultLocale": "en-US",
         "defaultText": "Scribe {version} report mark",
         "icuArgs": {
@@ -397,6 +939,39 @@ window.__SCRIBE_MANIFEST__ = {
       "defaultPath": "exports/report.md",
       "kind": "export",
       "label": {
+        "catalogDependency": {
+          "explicitLocales": [
+            "es-US"
+          ],
+          "lookupLocales": [
+            "en-US",
+            "en-GB",
+            "en-CA",
+            "fr-CA",
+            "en-IN",
+            "cy-GB",
+            "gd-GB",
+            "ga-GB",
+            "es-US",
+            "es-MX",
+            "de-DE",
+            "fr-FR",
+            "es-ES",
+            "it-IT",
+            "nl-NL",
+            "pl-PL",
+            "pt-PT",
+            "pt-BR",
+            "ro-RO",
+            "sv-SE",
+            "ko-KR",
+            "zh-CN",
+            "ja-JP",
+            "hi-IN"
+          ],
+          "reportFallbacks": {},
+          "sourceLocale": "en-US"
+        },
         "defaultLocale": "en-US",
         "defaultText": "Markdown export",
         "icuArgs": {},
@@ -423,6 +998,39 @@ window.__SCRIBE_MANIFEST__ = {
       "defaultPath": "exports/nist-coverage.oscal-assessment-results.json",
       "kind": "export",
       "label": {
+        "catalogDependency": {
+          "explicitLocales": [
+            "es-US"
+          ],
+          "lookupLocales": [
+            "en-US",
+            "en-GB",
+            "en-CA",
+            "fr-CA",
+            "en-IN",
+            "cy-GB",
+            "gd-GB",
+            "ga-GB",
+            "es-US",
+            "es-MX",
+            "de-DE",
+            "fr-FR",
+            "es-ES",
+            "it-IT",
+            "nl-NL",
+            "pl-PL",
+            "pt-PT",
+            "pt-BR",
+            "ro-RO",
+            "sv-SE",
+            "ko-KR",
+            "zh-CN",
+            "ja-JP",
+            "hi-IN"
+          ],
+          "reportFallbacks": {},
+          "sourceLocale": "en-US"
+        },
         "defaultLocale": "en-US",
         "defaultText": "OSCAL Assessment Results export",
         "icuArgs": {},
@@ -449,6 +1057,39 @@ window.__SCRIBE_MANIFEST__ = {
       "defaultPath": "data/nist-conformance.json",
       "kind": "export",
       "label": {
+        "catalogDependency": {
+          "explicitLocales": [
+            "es-US"
+          ],
+          "lookupLocales": [
+            "en-US",
+            "en-GB",
+            "en-CA",
+            "fr-CA",
+            "en-IN",
+            "cy-GB",
+            "gd-GB",
+            "ga-GB",
+            "es-US",
+            "es-MX",
+            "de-DE",
+            "fr-FR",
+            "es-ES",
+            "it-IT",
+            "nl-NL",
+            "pl-PL",
+            "pt-PT",
+            "pt-BR",
+            "ro-RO",
+            "sv-SE",
+            "ko-KR",
+            "zh-CN",
+            "ja-JP",
+            "hi-IN"
+          ],
+          "reportFallbacks": {},
+          "sourceLocale": "en-US"
+        },
         "defaultLocale": "en-US",
         "defaultText": "NIST conformance boundary",
         "icuArgs": {},
@@ -475,6 +1116,39 @@ window.__SCRIBE_MANIFEST__ = {
       "defaultPath": "data/nist-rollup.json",
       "kind": "export",
       "label": {
+        "catalogDependency": {
+          "explicitLocales": [
+            "es-US"
+          ],
+          "lookupLocales": [
+            "en-US",
+            "en-GB",
+            "en-CA",
+            "fr-CA",
+            "en-IN",
+            "cy-GB",
+            "gd-GB",
+            "ga-GB",
+            "es-US",
+            "es-MX",
+            "de-DE",
+            "fr-FR",
+            "es-ES",
+            "it-IT",
+            "nl-NL",
+            "pl-PL",
+            "pt-PT",
+            "pt-BR",
+            "ro-RO",
+            "sv-SE",
+            "ko-KR",
+            "zh-CN",
+            "ja-JP",
+            "hi-IN"
+          ],
+          "reportFallbacks": {},
+          "sourceLocale": "en-US"
+        },
         "defaultLocale": "en-US",
         "defaultText": "NIST rollup source data",
         "icuArgs": {},
@@ -498,9 +1172,40 @@ window.__SCRIBE_MANIFEST__ = {
     },
     {
       "assetId": "theme-daylight",
-      "defaultPath": "assets/themes/daylight.css",
+      "defaultPath": "assets/immutable/theme-daylight.ffce2abf0c8dffe5.css",
       "kind": "theme",
       "label": {
+        "catalogDependency": {
+          "explicitLocales": [],
+          "lookupLocales": [
+            "en-US",
+            "en-GB",
+            "en-CA",
+            "fr-CA",
+            "en-IN",
+            "cy-GB",
+            "gd-GB",
+            "ga-GB",
+            "es-US",
+            "es-MX",
+            "de-DE",
+            "fr-FR",
+            "es-ES",
+            "it-IT",
+            "nl-NL",
+            "pl-PL",
+            "pt-PT",
+            "pt-BR",
+            "ro-RO",
+            "sv-SE",
+            "ko-KR",
+            "zh-CN",
+            "ja-JP",
+            "hi-IN"
+          ],
+          "reportFallbacks": {},
+          "sourceLocale": "en-US"
+        },
         "defaultLocale": "en-US",
         "defaultText": "Daylight theme",
         "icuArgs": {},
@@ -524,9 +1229,40 @@ window.__SCRIBE_MANIFEST__ = {
     },
     {
       "assetId": "theme-ultraviolet",
-      "defaultPath": "assets/themes/ultraviolet.css",
+      "defaultPath": "assets/immutable/theme-ultraviolet.e8d1e286a433a1f6.css",
       "kind": "theme",
       "label": {
+        "catalogDependency": {
+          "explicitLocales": [],
+          "lookupLocales": [
+            "en-US",
+            "en-GB",
+            "en-CA",
+            "fr-CA",
+            "en-IN",
+            "cy-GB",
+            "gd-GB",
+            "ga-GB",
+            "es-US",
+            "es-MX",
+            "de-DE",
+            "fr-FR",
+            "es-ES",
+            "it-IT",
+            "nl-NL",
+            "pl-PL",
+            "pt-PT",
+            "pt-BR",
+            "ro-RO",
+            "sv-SE",
+            "ko-KR",
+            "zh-CN",
+            "ja-JP",
+            "hi-IN"
+          ],
+          "reportFallbacks": {},
+          "sourceLocale": "en-US"
+        },
         "defaultLocale": "en-US",
         "defaultText": "Ultraviolet theme",
         "icuArgs": {},
@@ -550,9 +1286,40 @@ window.__SCRIBE_MANIFEST__ = {
     },
     {
       "assetId": "theme-infrared",
-      "defaultPath": "assets/themes/infrared.css",
+      "defaultPath": "assets/immutable/theme-infrared.caf6e90430229b41.css",
       "kind": "theme",
       "label": {
+        "catalogDependency": {
+          "explicitLocales": [],
+          "lookupLocales": [
+            "en-US",
+            "en-GB",
+            "en-CA",
+            "fr-CA",
+            "en-IN",
+            "cy-GB",
+            "gd-GB",
+            "ga-GB",
+            "es-US",
+            "es-MX",
+            "de-DE",
+            "fr-FR",
+            "es-ES",
+            "it-IT",
+            "nl-NL",
+            "pl-PL",
+            "pt-PT",
+            "pt-BR",
+            "ro-RO",
+            "sv-SE",
+            "ko-KR",
+            "zh-CN",
+            "ja-JP",
+            "hi-IN"
+          ],
+          "reportFallbacks": {},
+          "sourceLocale": "en-US"
+        },
         "defaultLocale": "en-US",
         "defaultText": "Infrared theme",
         "icuArgs": {},
@@ -576,9 +1343,40 @@ window.__SCRIBE_MANIFEST__ = {
     },
     {
       "assetId": "theme-high-contrast",
-      "defaultPath": "assets/themes/high-contrast.css",
+      "defaultPath": "assets/immutable/theme-high-contrast.32d22d1a3f404d86.css",
       "kind": "theme",
       "label": {
+        "catalogDependency": {
+          "explicitLocales": [],
+          "lookupLocales": [
+            "en-US",
+            "en-GB",
+            "en-CA",
+            "fr-CA",
+            "en-IN",
+            "cy-GB",
+            "gd-GB",
+            "ga-GB",
+            "es-US",
+            "es-MX",
+            "de-DE",
+            "fr-FR",
+            "es-ES",
+            "it-IT",
+            "nl-NL",
+            "pl-PL",
+            "pt-PT",
+            "pt-BR",
+            "ro-RO",
+            "sv-SE",
+            "ko-KR",
+            "zh-CN",
+            "ja-JP",
+            "hi-IN"
+          ],
+          "reportFallbacks": {},
+          "sourceLocale": "en-US"
+        },
         "defaultLocale": "en-US",
         "defaultText": "High Contrast theme",
         "icuArgs": {},
@@ -616,6 +1414,41 @@ window.__SCRIBE_MANIFEST__ = {
       "href": "exports/report.md",
       "includesPrivateReceipt": false,
       "label": {
+        "catalogDependency": {
+          "explicitLocales": [
+            "es-US"
+          ],
+          "lookupLocales": [
+            "en-US",
+            "en-GB",
+            "en-CA",
+            "fr-CA",
+            "en-IN",
+            "cy-GB",
+            "gd-GB",
+            "ga-GB",
+            "es-US",
+            "es-MX",
+            "de-DE",
+            "fr-FR",
+            "es-ES",
+            "it-IT",
+            "nl-NL",
+            "pl-PL",
+            "pt-PT",
+            "pt-BR",
+            "ro-RO",
+            "sv-SE",
+            "ko-KR",
+            "zh-CN",
+            "ja-JP",
+            "hi-IN"
+          ],
+          "reportFallbacks": {
+            "ja-JP": "Markdown レポートをダウンロード"
+          },
+          "sourceLocale": "en-US"
+        },
         "defaultLocale": "en-US",
         "defaultText": "Download Markdown report",
         "icuArgs": {},
@@ -649,6 +1482,41 @@ window.__SCRIBE_MANIFEST__ = {
         {
           "id": "warning",
           "label": {
+            "catalogDependency": {
+              "explicitLocales": [
+                "es-US"
+              ],
+              "lookupLocales": [
+                "en-US",
+                "en-GB",
+                "en-CA",
+                "fr-CA",
+                "en-IN",
+                "cy-GB",
+                "gd-GB",
+                "ga-GB",
+                "es-US",
+                "es-MX",
+                "de-DE",
+                "fr-FR",
+                "es-ES",
+                "it-IT",
+                "nl-NL",
+                "pl-PL",
+                "pt-PT",
+                "pt-BR",
+                "ro-RO",
+                "sv-SE",
+                "ko-KR",
+                "zh-CN",
+                "ja-JP",
+                "hi-IN"
+              ],
+              "reportFallbacks": {
+                "ja-JP": "警告"
+              },
+              "sourceLocale": "en-US"
+            },
             "defaultLocale": "en-US",
             "defaultText": "Warning",
             "icuArgs": {},
@@ -685,6 +1553,40 @@ window.__SCRIBE_MANIFEST__ = {
         {
           "id": "present",
           "label": {
+            "catalogDependency": {
+              "explicitLocales": [
+                "es-US",
+                "ja-JP"
+              ],
+              "lookupLocales": [
+                "en-US",
+                "en-GB",
+                "en-CA",
+                "fr-CA",
+                "en-IN",
+                "cy-GB",
+                "gd-GB",
+                "ga-GB",
+                "es-US",
+                "es-MX",
+                "de-DE",
+                "fr-FR",
+                "es-ES",
+                "it-IT",
+                "nl-NL",
+                "pl-PL",
+                "pt-PT",
+                "pt-BR",
+                "ro-RO",
+                "sv-SE",
+                "ko-KR",
+                "zh-CN",
+                "ja-JP",
+                "hi-IN"
+              ],
+              "reportFallbacks": {},
+              "sourceLocale": "en-US"
+            },
             "defaultLocale": "en-US",
             "defaultText": "Present",
             "icuArgs": {},
@@ -709,6 +1611,41 @@ window.__SCRIBE_MANIFEST__ = {
         {
           "id": "partial",
           "label": {
+            "catalogDependency": {
+              "explicitLocales": [
+                "es-US"
+              ],
+              "lookupLocales": [
+                "en-US",
+                "en-GB",
+                "en-CA",
+                "fr-CA",
+                "en-IN",
+                "cy-GB",
+                "gd-GB",
+                "ga-GB",
+                "es-US",
+                "es-MX",
+                "de-DE",
+                "fr-FR",
+                "es-ES",
+                "it-IT",
+                "nl-NL",
+                "pl-PL",
+                "pt-PT",
+                "pt-BR",
+                "ro-RO",
+                "sv-SE",
+                "ko-KR",
+                "zh-CN",
+                "ja-JP",
+                "hi-IN"
+              ],
+              "reportFallbacks": {
+                "ja-JP": "部分的"
+              },
+              "sourceLocale": "en-US"
+            },
             "defaultLocale": "en-US",
             "defaultText": "Partial",
             "icuArgs": {},
@@ -733,6 +1670,41 @@ window.__SCRIBE_MANIFEST__ = {
         {
           "id": "gap",
           "label": {
+            "catalogDependency": {
+              "explicitLocales": [
+                "es-US"
+              ],
+              "lookupLocales": [
+                "en-US",
+                "en-GB",
+                "en-CA",
+                "fr-CA",
+                "en-IN",
+                "cy-GB",
+                "gd-GB",
+                "ga-GB",
+                "es-US",
+                "es-MX",
+                "de-DE",
+                "fr-FR",
+                "es-ES",
+                "it-IT",
+                "nl-NL",
+                "pl-PL",
+                "pt-PT",
+                "pt-BR",
+                "ro-RO",
+                "sv-SE",
+                "ko-KR",
+                "zh-CN",
+                "ja-JP",
+                "hi-IN"
+              ],
+              "reportFallbacks": {
+                "ja-JP": "不足"
+              },
+              "sourceLocale": "en-US"
+            },
             "defaultLocale": "en-US",
             "defaultText": "Gap",
             "icuArgs": {},
@@ -757,6 +1729,41 @@ window.__SCRIBE_MANIFEST__ = {
         {
           "id": "requires-customer-context",
           "label": {
+            "catalogDependency": {
+              "explicitLocales": [
+                "es-US"
+              ],
+              "lookupLocales": [
+                "en-US",
+                "en-GB",
+                "en-CA",
+                "fr-CA",
+                "en-IN",
+                "cy-GB",
+                "gd-GB",
+                "ga-GB",
+                "es-US",
+                "es-MX",
+                "de-DE",
+                "fr-FR",
+                "es-ES",
+                "it-IT",
+                "nl-NL",
+                "pl-PL",
+                "pt-PT",
+                "pt-BR",
+                "ro-RO",
+                "sv-SE",
+                "ko-KR",
+                "zh-CN",
+                "ja-JP",
+                "hi-IN"
+              ],
+              "reportFallbacks": {
+                "ja-JP": "顧客コンテキストが必要"
+              },
+              "sourceLocale": "en-US"
+            },
             "defaultLocale": "en-US",
             "defaultText": "Needs customer context",
             "icuArgs": {},
@@ -781,6 +1788,41 @@ window.__SCRIBE_MANIFEST__ = {
         {
           "id": "absent",
           "label": {
+            "catalogDependency": {
+              "explicitLocales": [
+                "es-US"
+              ],
+              "lookupLocales": [
+                "en-US",
+                "en-GB",
+                "en-CA",
+                "fr-CA",
+                "en-IN",
+                "cy-GB",
+                "gd-GB",
+                "ga-GB",
+                "es-US",
+                "es-MX",
+                "de-DE",
+                "fr-FR",
+                "es-ES",
+                "it-IT",
+                "nl-NL",
+                "pl-PL",
+                "pt-PT",
+                "pt-BR",
+                "ro-RO",
+                "sv-SE",
+                "ko-KR",
+                "zh-CN",
+                "ja-JP",
+                "hi-IN"
+              ],
+              "reportFallbacks": {
+                "ja-JP": "非対応"
+              },
+              "sourceLocale": "en-US"
+            },
             "defaultLocale": "en-US",
             "defaultText": "Absent",
             "icuArgs": {},
@@ -811,6 +1853,41 @@ window.__SCRIBE_MANIFEST__ = {
         {
           "id": "nist-fedramp-coverage",
           "label": {
+            "catalogDependency": {
+              "explicitLocales": [
+                "es-US"
+              ],
+              "lookupLocales": [
+                "en-US",
+                "en-GB",
+                "en-CA",
+                "fr-CA",
+                "en-IN",
+                "cy-GB",
+                "gd-GB",
+                "ga-GB",
+                "es-US",
+                "es-MX",
+                "de-DE",
+                "fr-FR",
+                "es-ES",
+                "it-IT",
+                "nl-NL",
+                "pl-PL",
+                "pt-PT",
+                "pt-BR",
+                "ro-RO",
+                "sv-SE",
+                "ko-KR",
+                "zh-CN",
+                "ja-JP",
+                "hi-IN"
+              ],
+              "reportFallbacks": {
+                "ja-JP": "NIST FedRAMP カバレッジ"
+              },
+              "sourceLocale": "en-US"
+            },
             "defaultLocale": "en-US",
             "defaultText": "NIST FedRAMP coverage",
             "icuArgs": {},
@@ -839,6 +1916,41 @@ window.__SCRIBE_MANIFEST__ = {
       "actionId": "feedback-finding-nist-coverage",
       "anchorId": "finding-nist-coverage",
       "label": {
+        "catalogDependency": {
+          "explicitLocales": [
+            "es-US"
+          ],
+          "lookupLocales": [
+            "en-US",
+            "en-GB",
+            "en-CA",
+            "fr-CA",
+            "en-IN",
+            "cy-GB",
+            "gd-GB",
+            "ga-GB",
+            "es-US",
+            "es-MX",
+            "de-DE",
+            "fr-FR",
+            "es-ES",
+            "it-IT",
+            "nl-NL",
+            "pl-PL",
+            "pt-PT",
+            "pt-BR",
+            "ro-RO",
+            "sv-SE",
+            "ko-KR",
+            "zh-CN",
+            "ja-JP",
+            "hi-IN"
+          ],
+          "reportFallbacks": {
+            "ja-JP": "フィードバックを送信"
+          },
+          "sourceLocale": "en-US"
+        },
         "defaultLocale": "en-US",
         "defaultText": "Send feedback",
         "icuArgs": {},
@@ -916,6 +2028,7 @@ window.__SCRIBE_MANIFEST__ = {
         }
       ],
       "classification": "nist-fedramp-coverage",
+      "contextLinks": [],
       "controlIds": [
         "oscal-assessment-results"
       ],
@@ -925,12 +2038,98 @@ window.__SCRIBE_MANIFEST__ = {
         "nist-800-53-fedramp"
       ],
       "language": "text",
+      "recommendation": {
+        "catalogDependency": {
+          "explicitLocales": [
+            "es-US"
+          ],
+          "lookupLocales": [
+            "en-US",
+            "en-GB",
+            "en-CA",
+            "fr-CA",
+            "en-IN",
+            "cy-GB",
+            "gd-GB",
+            "ga-GB",
+            "es-US",
+            "es-MX",
+            "de-DE",
+            "fr-FR",
+            "es-ES",
+            "it-IT",
+            "nl-NL",
+            "pl-PL",
+            "pt-PT",
+            "pt-BR",
+            "ro-RO",
+            "sv-SE",
+            "ko-KR",
+            "zh-CN",
+            "ja-JP",
+            "hi-IN"
+          ],
+          "reportFallbacks": {},
+          "sourceLocale": "en-US"
+        },
+        "defaultLocale": "en-US",
+        "defaultText": "Keep unsupported standard artifacts fail-closed until G11 data-model conformance is implemented.",
+        "icuArgs": {},
+        "msgid": "scribe.report.nistCoverage.finding.fix",
+        "provenance": "template",
+        "reviewState": "reviewed",
+        "values": {
+          "en-US": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Keep unsupported standard artifacts fail-closed until G11 data-model conformance is implemented."
+          },
+          "es-US": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Mantenga los artefactos estándar no compatibles en estado fallido cerrado hasta implementar la conformidad G11 del modelo de datos."
+          }
+        }
+      },
       "severity": "warning",
       "shareActionId": "share-finding-nist-coverage",
       "sourceSnippetIds": [
         "source-nist-coverage-rollup"
       ],
       "summary": {
+        "catalogDependency": {
+          "explicitLocales": [
+            "es-US"
+          ],
+          "lookupLocales": [
+            "en-US",
+            "en-GB",
+            "en-CA",
+            "fr-CA",
+            "en-IN",
+            "cy-GB",
+            "gd-GB",
+            "ga-GB",
+            "es-US",
+            "es-MX",
+            "de-DE",
+            "fr-FR",
+            "es-ES",
+            "it-IT",
+            "nl-NL",
+            "pl-PL",
+            "pt-PT",
+            "pt-BR",
+            "ro-RO",
+            "sv-SE",
+            "ko-KR",
+            "zh-CN",
+            "ja-JP",
+            "hi-IN"
+          ],
+          "reportFallbacks": {},
+          "sourceLocale": "en-US"
+        },
         "defaultLocale": "en-US",
         "defaultText": "The NIST coverage package emits supported OSCAL Assessment Results and declares unsupported federal package artifacts separately.",
         "icuArgs": {},
@@ -951,6 +2150,39 @@ window.__SCRIBE_MANIFEST__ = {
         }
       },
       "title": {
+        "catalogDependency": {
+          "explicitLocales": [
+            "es-US"
+          ],
+          "lookupLocales": [
+            "en-US",
+            "en-GB",
+            "en-CA",
+            "fr-CA",
+            "en-IN",
+            "cy-GB",
+            "gd-GB",
+            "ga-GB",
+            "es-US",
+            "es-MX",
+            "de-DE",
+            "fr-FR",
+            "es-ES",
+            "it-IT",
+            "nl-NL",
+            "pl-PL",
+            "pt-PT",
+            "pt-BR",
+            "ro-RO",
+            "sv-SE",
+            "ko-KR",
+            "zh-CN",
+            "ja-JP",
+            "hi-IN"
+          ],
+          "reportFallbacks": {},
+          "sourceLocale": "en-US"
+        },
         "defaultLocale": "en-US",
         "defaultText": "NIST controls require explicit supported-artifact boundaries",
         "icuArgs": {},
@@ -992,6 +2224,7 @@ window.__SCRIBE_MANIFEST__ = {
         }
       ],
       "classification": "nist-fedramp-coverage",
+      "contextLinks": [],
       "controlIds": [
         "nist-family-ac"
       ],
@@ -1001,19 +2234,105 @@ window.__SCRIBE_MANIFEST__ = {
         "nist-800-53-fedramp"
       ],
       "language": "text",
+      "recommendation": {
+        "catalogDependency": {
+          "explicitLocales": [
+            "es-US"
+          ],
+          "lookupLocales": [
+            "en-US",
+            "en-GB",
+            "en-CA",
+            "fr-CA",
+            "en-IN",
+            "cy-GB",
+            "gd-GB",
+            "ga-GB",
+            "es-US",
+            "es-MX",
+            "de-DE",
+            "fr-FR",
+            "es-ES",
+            "it-IT",
+            "nl-NL",
+            "pl-PL",
+            "pt-PT",
+            "pt-BR",
+            "ro-RO",
+            "sv-SE",
+            "ko-KR",
+            "zh-CN",
+            "ja-JP",
+            "hi-IN"
+          ],
+          "reportFallbacks": {},
+          "sourceLocale": "en-US"
+        },
+        "defaultLocale": "en-US",
+        "defaultText": "Review customer-context and unsatisfied controls before making SSP/SAP/SAR/POA&M claims.",
+        "icuArgs": {},
+        "msgid": "scribe.report.nistCoverage.familyFinding.fix",
+        "provenance": "template",
+        "reviewState": "reviewed",
+        "values": {
+          "en-US": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Review customer-context and unsatisfied controls before making SSP/SAP/SAR/POA&M claims."
+          },
+          "es-US": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Revise los controles de contexto del cliente y no cumplidos antes de hacer afirmaciones SSP/SAP/SAR/POA&M."
+          }
+        }
+      },
       "severity": "warning",
       "shareActionId": "share-finding-nist-coverage",
       "sourceSnippetIds": [
         "source-nist-coverage-family-ac"
       ],
       "summary": {
+        "catalogDependency": {
+          "explicitLocales": [
+            "es-US"
+          ],
+          "lookupLocales": [
+            "en-US",
+            "en-GB",
+            "en-CA",
+            "fr-CA",
+            "en-IN",
+            "cy-GB",
+            "gd-GB",
+            "ga-GB",
+            "es-US",
+            "es-MX",
+            "de-DE",
+            "fr-FR",
+            "es-ES",
+            "it-IT",
+            "nl-NL",
+            "pl-PL",
+            "pt-PT",
+            "pt-BR",
+            "ro-RO",
+            "sv-SE",
+            "ko-KR",
+            "zh-CN",
+            "ja-JP",
+            "hi-IN"
+          ],
+          "reportFallbacks": {},
+          "sourceLocale": "en-US"
+        },
         "defaultLocale": "en-US",
         "defaultText": "{familyTitle} has {present} satisfied controls, {customerContext} customer-context controls, and {unsatisfied} unsatisfied controls.",
         "icuArgs": {
           "customerContext": 3,
           "familyTitle": "Access Control",
-          "present": 8,
-          "unsatisfied": 8
+          "present": 5,
+          "unsatisfied": 11
         },
         "msgid": "scribe.report.nistCoverage.familyFinding.summary",
         "provenance": "template",
@@ -1032,12 +2351,45 @@ window.__SCRIBE_MANIFEST__ = {
         }
       },
       "title": {
+        "catalogDependency": {
+          "explicitLocales": [
+            "es-US"
+          ],
+          "lookupLocales": [
+            "en-US",
+            "en-GB",
+            "en-CA",
+            "fr-CA",
+            "en-IN",
+            "cy-GB",
+            "gd-GB",
+            "ga-GB",
+            "es-US",
+            "es-MX",
+            "de-DE",
+            "fr-FR",
+            "es-ES",
+            "it-IT",
+            "nl-NL",
+            "pl-PL",
+            "pt-PT",
+            "pt-BR",
+            "ro-RO",
+            "sv-SE",
+            "ko-KR",
+            "zh-CN",
+            "ja-JP",
+            "hi-IN"
+          ],
+          "reportFallbacks": {},
+          "sourceLocale": "en-US"
+        },
         "defaultLocale": "en-US",
         "defaultText": "{family} {familyTitle} coverage: {present}/{total} controls satisfied",
         "icuArgs": {
           "family": "AC",
           "familyTitle": "Access Control",
-          "present": 8,
+          "present": 5,
           "total": 19
         },
         "msgid": "scribe.report.nistCoverage.familyFinding.title",
@@ -1078,6 +2430,7 @@ window.__SCRIBE_MANIFEST__ = {
         }
       ],
       "classification": "nist-fedramp-coverage",
+      "contextLinks": [],
       "controlIds": [
         "nist-family-au"
       ],
@@ -1087,12 +2440,98 @@ window.__SCRIBE_MANIFEST__ = {
         "nist-800-53-fedramp"
       ],
       "language": "text",
+      "recommendation": {
+        "catalogDependency": {
+          "explicitLocales": [
+            "es-US"
+          ],
+          "lookupLocales": [
+            "en-US",
+            "en-GB",
+            "en-CA",
+            "fr-CA",
+            "en-IN",
+            "cy-GB",
+            "gd-GB",
+            "ga-GB",
+            "es-US",
+            "es-MX",
+            "de-DE",
+            "fr-FR",
+            "es-ES",
+            "it-IT",
+            "nl-NL",
+            "pl-PL",
+            "pt-PT",
+            "pt-BR",
+            "ro-RO",
+            "sv-SE",
+            "ko-KR",
+            "zh-CN",
+            "ja-JP",
+            "hi-IN"
+          ],
+          "reportFallbacks": {},
+          "sourceLocale": "en-US"
+        },
+        "defaultLocale": "en-US",
+        "defaultText": "Review customer-context and unsatisfied controls before making SSP/SAP/SAR/POA&M claims.",
+        "icuArgs": {},
+        "msgid": "scribe.report.nistCoverage.familyFinding.fix",
+        "provenance": "template",
+        "reviewState": "reviewed",
+        "values": {
+          "en-US": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Review customer-context and unsatisfied controls before making SSP/SAP/SAR/POA&M claims."
+          },
+          "es-US": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Revise los controles de contexto del cliente y no cumplidos antes de hacer afirmaciones SSP/SAP/SAR/POA&M."
+          }
+        }
+      },
       "severity": "warning",
       "shareActionId": "share-finding-nist-coverage",
       "sourceSnippetIds": [
         "source-nist-coverage-family-au"
       ],
       "summary": {
+        "catalogDependency": {
+          "explicitLocales": [
+            "es-US"
+          ],
+          "lookupLocales": [
+            "en-US",
+            "en-GB",
+            "en-CA",
+            "fr-CA",
+            "en-IN",
+            "cy-GB",
+            "gd-GB",
+            "ga-GB",
+            "es-US",
+            "es-MX",
+            "de-DE",
+            "fr-FR",
+            "es-ES",
+            "it-IT",
+            "nl-NL",
+            "pl-PL",
+            "pt-PT",
+            "pt-BR",
+            "ro-RO",
+            "sv-SE",
+            "ko-KR",
+            "zh-CN",
+            "ja-JP",
+            "hi-IN"
+          ],
+          "reportFallbacks": {},
+          "sourceLocale": "en-US"
+        },
         "defaultLocale": "en-US",
         "defaultText": "{familyTitle} has {present} satisfied controls, {customerContext} customer-context controls, and {unsatisfied} unsatisfied controls.",
         "icuArgs": {
@@ -1118,6 +2557,39 @@ window.__SCRIBE_MANIFEST__ = {
         }
       },
       "title": {
+        "catalogDependency": {
+          "explicitLocales": [
+            "es-US"
+          ],
+          "lookupLocales": [
+            "en-US",
+            "en-GB",
+            "en-CA",
+            "fr-CA",
+            "en-IN",
+            "cy-GB",
+            "gd-GB",
+            "ga-GB",
+            "es-US",
+            "es-MX",
+            "de-DE",
+            "fr-FR",
+            "es-ES",
+            "it-IT",
+            "nl-NL",
+            "pl-PL",
+            "pt-PT",
+            "pt-BR",
+            "ro-RO",
+            "sv-SE",
+            "ko-KR",
+            "zh-CN",
+            "ja-JP",
+            "hi-IN"
+          ],
+          "reportFallbacks": {},
+          "sourceLocale": "en-US"
+        },
         "defaultLocale": "en-US",
         "defaultText": "{family} {familyTitle} coverage: {present}/{total} controls satisfied",
         "icuArgs": {
@@ -1164,6 +2636,7 @@ window.__SCRIBE_MANIFEST__ = {
         }
       ],
       "classification": "nist-fedramp-coverage",
+      "contextLinks": [],
       "controlIds": [
         "nist-family-cm"
       ],
@@ -1173,18 +2646,104 @@ window.__SCRIBE_MANIFEST__ = {
         "nist-800-53-fedramp"
       ],
       "language": "text",
+      "recommendation": {
+        "catalogDependency": {
+          "explicitLocales": [
+            "es-US"
+          ],
+          "lookupLocales": [
+            "en-US",
+            "en-GB",
+            "en-CA",
+            "fr-CA",
+            "en-IN",
+            "cy-GB",
+            "gd-GB",
+            "ga-GB",
+            "es-US",
+            "es-MX",
+            "de-DE",
+            "fr-FR",
+            "es-ES",
+            "it-IT",
+            "nl-NL",
+            "pl-PL",
+            "pt-PT",
+            "pt-BR",
+            "ro-RO",
+            "sv-SE",
+            "ko-KR",
+            "zh-CN",
+            "ja-JP",
+            "hi-IN"
+          ],
+          "reportFallbacks": {},
+          "sourceLocale": "en-US"
+        },
+        "defaultLocale": "en-US",
+        "defaultText": "Review customer-context and unsatisfied controls before making SSP/SAP/SAR/POA&M claims.",
+        "icuArgs": {},
+        "msgid": "scribe.report.nistCoverage.familyFinding.fix",
+        "provenance": "template",
+        "reviewState": "reviewed",
+        "values": {
+          "en-US": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Review customer-context and unsatisfied controls before making SSP/SAP/SAR/POA&M claims."
+          },
+          "es-US": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Revise los controles de contexto del cliente y no cumplidos antes de hacer afirmaciones SSP/SAP/SAR/POA&M."
+          }
+        }
+      },
       "severity": "warning",
       "shareActionId": "share-finding-nist-coverage",
       "sourceSnippetIds": [
         "source-nist-coverage-family-cm"
       ],
       "summary": {
+        "catalogDependency": {
+          "explicitLocales": [
+            "es-US"
+          ],
+          "lookupLocales": [
+            "en-US",
+            "en-GB",
+            "en-CA",
+            "fr-CA",
+            "en-IN",
+            "cy-GB",
+            "gd-GB",
+            "ga-GB",
+            "es-US",
+            "es-MX",
+            "de-DE",
+            "fr-FR",
+            "es-ES",
+            "it-IT",
+            "nl-NL",
+            "pl-PL",
+            "pt-PT",
+            "pt-BR",
+            "ro-RO",
+            "sv-SE",
+            "ko-KR",
+            "zh-CN",
+            "ja-JP",
+            "hi-IN"
+          ],
+          "reportFallbacks": {},
+          "sourceLocale": "en-US"
+        },
         "defaultLocale": "en-US",
         "defaultText": "{familyTitle} has {present} satisfied controls, {customerContext} customer-context controls, and {unsatisfied} unsatisfied controls.",
         "icuArgs": {
           "customerContext": 11,
           "familyTitle": "Configuration Management",
-          "present": 1,
+          "present": 0,
           "unsatisfied": 2
         },
         "msgid": "scribe.report.nistCoverage.familyFinding.summary",
@@ -1204,12 +2763,45 @@ window.__SCRIBE_MANIFEST__ = {
         }
       },
       "title": {
+        "catalogDependency": {
+          "explicitLocales": [
+            "es-US"
+          ],
+          "lookupLocales": [
+            "en-US",
+            "en-GB",
+            "en-CA",
+            "fr-CA",
+            "en-IN",
+            "cy-GB",
+            "gd-GB",
+            "ga-GB",
+            "es-US",
+            "es-MX",
+            "de-DE",
+            "fr-FR",
+            "es-ES",
+            "it-IT",
+            "nl-NL",
+            "pl-PL",
+            "pt-PT",
+            "pt-BR",
+            "ro-RO",
+            "sv-SE",
+            "ko-KR",
+            "zh-CN",
+            "ja-JP",
+            "hi-IN"
+          ],
+          "reportFallbacks": {},
+          "sourceLocale": "en-US"
+        },
         "defaultLocale": "en-US",
         "defaultText": "{family} {familyTitle} coverage: {present}/{total} controls satisfied",
         "icuArgs": {
           "family": "CM",
           "familyTitle": "Configuration Management",
-          "present": 1,
+          "present": 0,
           "total": 14
         },
         "msgid": "scribe.report.nistCoverage.familyFinding.title",
@@ -1250,6 +2842,7 @@ window.__SCRIBE_MANIFEST__ = {
         }
       ],
       "classification": "nist-fedramp-coverage",
+      "contextLinks": [],
       "controlIds": [
         "nist-family-ia"
       ],
@@ -1259,19 +2852,105 @@ window.__SCRIBE_MANIFEST__ = {
         "nist-800-53-fedramp"
       ],
       "language": "text",
+      "recommendation": {
+        "catalogDependency": {
+          "explicitLocales": [
+            "es-US"
+          ],
+          "lookupLocales": [
+            "en-US",
+            "en-GB",
+            "en-CA",
+            "fr-CA",
+            "en-IN",
+            "cy-GB",
+            "gd-GB",
+            "ga-GB",
+            "es-US",
+            "es-MX",
+            "de-DE",
+            "fr-FR",
+            "es-ES",
+            "it-IT",
+            "nl-NL",
+            "pl-PL",
+            "pt-PT",
+            "pt-BR",
+            "ro-RO",
+            "sv-SE",
+            "ko-KR",
+            "zh-CN",
+            "ja-JP",
+            "hi-IN"
+          ],
+          "reportFallbacks": {},
+          "sourceLocale": "en-US"
+        },
+        "defaultLocale": "en-US",
+        "defaultText": "Review customer-context and unsatisfied controls before making SSP/SAP/SAR/POA&M claims.",
+        "icuArgs": {},
+        "msgid": "scribe.report.nistCoverage.familyFinding.fix",
+        "provenance": "template",
+        "reviewState": "reviewed",
+        "values": {
+          "en-US": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Review customer-context and unsatisfied controls before making SSP/SAP/SAR/POA&M claims."
+          },
+          "es-US": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Revise los controles de contexto del cliente y no cumplidos antes de hacer afirmaciones SSP/SAP/SAR/POA&M."
+          }
+        }
+      },
       "severity": "warning",
       "shareActionId": "share-finding-nist-coverage",
       "sourceSnippetIds": [
         "source-nist-coverage-family-ia"
       ],
       "summary": {
+        "catalogDependency": {
+          "explicitLocales": [
+            "es-US"
+          ],
+          "lookupLocales": [
+            "en-US",
+            "en-GB",
+            "en-CA",
+            "fr-CA",
+            "en-IN",
+            "cy-GB",
+            "gd-GB",
+            "ga-GB",
+            "es-US",
+            "es-MX",
+            "de-DE",
+            "fr-FR",
+            "es-ES",
+            "it-IT",
+            "nl-NL",
+            "pl-PL",
+            "pt-PT",
+            "pt-BR",
+            "ro-RO",
+            "sv-SE",
+            "ko-KR",
+            "zh-CN",
+            "ja-JP",
+            "hi-IN"
+          ],
+          "reportFallbacks": {},
+          "sourceLocale": "en-US"
+        },
         "defaultLocale": "en-US",
         "defaultText": "{familyTitle} has {present} satisfied controls, {customerContext} customer-context controls, and {unsatisfied} unsatisfied controls.",
         "icuArgs": {
           "customerContext": 3,
           "familyTitle": "Identification and Authentication",
           "present": 0,
-          "unsatisfied": 10
+          "unsatisfied": 12
         },
         "msgid": "scribe.report.nistCoverage.familyFinding.summary",
         "provenance": "template",
@@ -1290,6 +2969,39 @@ window.__SCRIBE_MANIFEST__ = {
         }
       },
       "title": {
+        "catalogDependency": {
+          "explicitLocales": [
+            "es-US"
+          ],
+          "lookupLocales": [
+            "en-US",
+            "en-GB",
+            "en-CA",
+            "fr-CA",
+            "en-IN",
+            "cy-GB",
+            "gd-GB",
+            "ga-GB",
+            "es-US",
+            "es-MX",
+            "de-DE",
+            "fr-FR",
+            "es-ES",
+            "it-IT",
+            "nl-NL",
+            "pl-PL",
+            "pt-PT",
+            "pt-BR",
+            "ro-RO",
+            "sv-SE",
+            "ko-KR",
+            "zh-CN",
+            "ja-JP",
+            "hi-IN"
+          ],
+          "reportFallbacks": {},
+          "sourceLocale": "en-US"
+        },
         "defaultLocale": "en-US",
         "defaultText": "{family} {familyTitle} coverage: {present}/{total} controls satisfied",
         "icuArgs": {
@@ -1336,6 +3048,7 @@ window.__SCRIBE_MANIFEST__ = {
         }
       ],
       "classification": "nist-fedramp-coverage",
+      "contextLinks": [],
       "controlIds": [
         "nist-family-sc"
       ],
@@ -1345,19 +3058,105 @@ window.__SCRIBE_MANIFEST__ = {
         "nist-800-53-fedramp"
       ],
       "language": "text",
+      "recommendation": {
+        "catalogDependency": {
+          "explicitLocales": [
+            "es-US"
+          ],
+          "lookupLocales": [
+            "en-US",
+            "en-GB",
+            "en-CA",
+            "fr-CA",
+            "en-IN",
+            "cy-GB",
+            "gd-GB",
+            "ga-GB",
+            "es-US",
+            "es-MX",
+            "de-DE",
+            "fr-FR",
+            "es-ES",
+            "it-IT",
+            "nl-NL",
+            "pl-PL",
+            "pt-PT",
+            "pt-BR",
+            "ro-RO",
+            "sv-SE",
+            "ko-KR",
+            "zh-CN",
+            "ja-JP",
+            "hi-IN"
+          ],
+          "reportFallbacks": {},
+          "sourceLocale": "en-US"
+        },
+        "defaultLocale": "en-US",
+        "defaultText": "Review customer-context and unsatisfied controls before making SSP/SAP/SAR/POA&M claims.",
+        "icuArgs": {},
+        "msgid": "scribe.report.nistCoverage.familyFinding.fix",
+        "provenance": "template",
+        "reviewState": "reviewed",
+        "values": {
+          "en-US": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Review customer-context and unsatisfied controls before making SSP/SAP/SAR/POA&M claims."
+          },
+          "es-US": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Revise los controles de contexto del cliente y no cumplidos antes de hacer afirmaciones SSP/SAP/SAR/POA&M."
+          }
+        }
+      },
       "severity": "warning",
       "shareActionId": "share-finding-nist-coverage",
       "sourceSnippetIds": [
         "source-nist-coverage-family-sc"
       ],
       "summary": {
+        "catalogDependency": {
+          "explicitLocales": [
+            "es-US"
+          ],
+          "lookupLocales": [
+            "en-US",
+            "en-GB",
+            "en-CA",
+            "fr-CA",
+            "en-IN",
+            "cy-GB",
+            "gd-GB",
+            "ga-GB",
+            "es-US",
+            "es-MX",
+            "de-DE",
+            "fr-FR",
+            "es-ES",
+            "it-IT",
+            "nl-NL",
+            "pl-PL",
+            "pt-PT",
+            "pt-BR",
+            "ro-RO",
+            "sv-SE",
+            "ko-KR",
+            "zh-CN",
+            "ja-JP",
+            "hi-IN"
+          ],
+          "reportFallbacks": {},
+          "sourceLocale": "en-US"
+        },
         "defaultLocale": "en-US",
         "defaultText": "{familyTitle} has {present} satisfied controls, {customerContext} customer-context controls, and {unsatisfied} unsatisfied controls.",
         "icuArgs": {
           "customerContext": 9,
           "familyTitle": "System and Communications Protection",
-          "present": 1,
-          "unsatisfied": 5
+          "present": 0,
+          "unsatisfied": 6
         },
         "msgid": "scribe.report.nistCoverage.familyFinding.summary",
         "provenance": "template",
@@ -1376,12 +3175,45 @@ window.__SCRIBE_MANIFEST__ = {
         }
       },
       "title": {
+        "catalogDependency": {
+          "explicitLocales": [
+            "es-US"
+          ],
+          "lookupLocales": [
+            "en-US",
+            "en-GB",
+            "en-CA",
+            "fr-CA",
+            "en-IN",
+            "cy-GB",
+            "gd-GB",
+            "ga-GB",
+            "es-US",
+            "es-MX",
+            "de-DE",
+            "fr-FR",
+            "es-ES",
+            "it-IT",
+            "nl-NL",
+            "pl-PL",
+            "pt-PT",
+            "pt-BR",
+            "ro-RO",
+            "sv-SE",
+            "ko-KR",
+            "zh-CN",
+            "ja-JP",
+            "hi-IN"
+          ],
+          "reportFallbacks": {},
+          "sourceLocale": "en-US"
+        },
         "defaultLocale": "en-US",
         "defaultText": "{family} {familyTitle} coverage: {present}/{total} controls satisfied",
         "icuArgs": {
           "family": "SC",
           "familyTitle": "System and Communications Protection",
-          "present": 1,
+          "present": 0,
           "total": 15
         },
         "msgid": "scribe.report.nistCoverage.familyFinding.title",
@@ -1422,6 +3254,7 @@ window.__SCRIBE_MANIFEST__ = {
         }
       ],
       "classification": "nist-fedramp-coverage",
+      "contextLinks": [],
       "controlIds": [
         "nist-family-si"
       ],
@@ -1431,12 +3264,98 @@ window.__SCRIBE_MANIFEST__ = {
         "nist-800-53-fedramp"
       ],
       "language": "text",
+      "recommendation": {
+        "catalogDependency": {
+          "explicitLocales": [
+            "es-US"
+          ],
+          "lookupLocales": [
+            "en-US",
+            "en-GB",
+            "en-CA",
+            "fr-CA",
+            "en-IN",
+            "cy-GB",
+            "gd-GB",
+            "ga-GB",
+            "es-US",
+            "es-MX",
+            "de-DE",
+            "fr-FR",
+            "es-ES",
+            "it-IT",
+            "nl-NL",
+            "pl-PL",
+            "pt-PT",
+            "pt-BR",
+            "ro-RO",
+            "sv-SE",
+            "ko-KR",
+            "zh-CN",
+            "ja-JP",
+            "hi-IN"
+          ],
+          "reportFallbacks": {},
+          "sourceLocale": "en-US"
+        },
+        "defaultLocale": "en-US",
+        "defaultText": "Review customer-context and unsatisfied controls before making SSP/SAP/SAR/POA&M claims.",
+        "icuArgs": {},
+        "msgid": "scribe.report.nistCoverage.familyFinding.fix",
+        "provenance": "template",
+        "reviewState": "reviewed",
+        "values": {
+          "en-US": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Review customer-context and unsatisfied controls before making SSP/SAP/SAR/POA&M claims."
+          },
+          "es-US": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Revise los controles de contexto del cliente y no cumplidos antes de hacer afirmaciones SSP/SAP/SAR/POA&M."
+          }
+        }
+      },
       "severity": "warning",
       "shareActionId": "share-finding-nist-coverage",
       "sourceSnippetIds": [
         "source-nist-coverage-family-si"
       ],
       "summary": {
+        "catalogDependency": {
+          "explicitLocales": [
+            "es-US"
+          ],
+          "lookupLocales": [
+            "en-US",
+            "en-GB",
+            "en-CA",
+            "fr-CA",
+            "en-IN",
+            "cy-GB",
+            "gd-GB",
+            "ga-GB",
+            "es-US",
+            "es-MX",
+            "de-DE",
+            "fr-FR",
+            "es-ES",
+            "it-IT",
+            "nl-NL",
+            "pl-PL",
+            "pt-PT",
+            "pt-BR",
+            "ro-RO",
+            "sv-SE",
+            "ko-KR",
+            "zh-CN",
+            "ja-JP",
+            "hi-IN"
+          ],
+          "reportFallbacks": {},
+          "sourceLocale": "en-US"
+        },
         "defaultLocale": "en-US",
         "defaultText": "{familyTitle} has {present} satisfied controls, {customerContext} customer-context controls, and {unsatisfied} unsatisfied controls.",
         "icuArgs": {
@@ -1462,6 +3381,39 @@ window.__SCRIBE_MANIFEST__ = {
         }
       },
       "title": {
+        "catalogDependency": {
+          "explicitLocales": [
+            "es-US"
+          ],
+          "lookupLocales": [
+            "en-US",
+            "en-GB",
+            "en-CA",
+            "fr-CA",
+            "en-IN",
+            "cy-GB",
+            "gd-GB",
+            "ga-GB",
+            "es-US",
+            "es-MX",
+            "de-DE",
+            "fr-FR",
+            "es-ES",
+            "it-IT",
+            "nl-NL",
+            "pl-PL",
+            "pt-PT",
+            "pt-BR",
+            "ro-RO",
+            "sv-SE",
+            "ko-KR",
+            "zh-CN",
+            "ja-JP",
+            "hi-IN"
+          ],
+          "reportFallbacks": {},
+          "sourceLocale": "en-US"
+        },
         "defaultLocale": "en-US",
         "defaultText": "{family} {familyTitle} coverage: {present}/{total} controls satisfied",
         "icuArgs": {
@@ -1508,6 +3460,7 @@ window.__SCRIBE_MANIFEST__ = {
         }
       ],
       "classification": "nist-fedramp-coverage",
+      "contextLinks": [],
       "controlIds": [
         "nist-family-ra"
       ],
@@ -1517,12 +3470,98 @@ window.__SCRIBE_MANIFEST__ = {
         "nist-800-53-fedramp"
       ],
       "language": "text",
+      "recommendation": {
+        "catalogDependency": {
+          "explicitLocales": [
+            "es-US"
+          ],
+          "lookupLocales": [
+            "en-US",
+            "en-GB",
+            "en-CA",
+            "fr-CA",
+            "en-IN",
+            "cy-GB",
+            "gd-GB",
+            "ga-GB",
+            "es-US",
+            "es-MX",
+            "de-DE",
+            "fr-FR",
+            "es-ES",
+            "it-IT",
+            "nl-NL",
+            "pl-PL",
+            "pt-PT",
+            "pt-BR",
+            "ro-RO",
+            "sv-SE",
+            "ko-KR",
+            "zh-CN",
+            "ja-JP",
+            "hi-IN"
+          ],
+          "reportFallbacks": {},
+          "sourceLocale": "en-US"
+        },
+        "defaultLocale": "en-US",
+        "defaultText": "Review customer-context and unsatisfied controls before making SSP/SAP/SAR/POA&M claims.",
+        "icuArgs": {},
+        "msgid": "scribe.report.nistCoverage.familyFinding.fix",
+        "provenance": "template",
+        "reviewState": "reviewed",
+        "values": {
+          "en-US": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Review customer-context and unsatisfied controls before making SSP/SAP/SAR/POA&M claims."
+          },
+          "es-US": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Revise los controles de contexto del cliente y no cumplidos antes de hacer afirmaciones SSP/SAP/SAR/POA&M."
+          }
+        }
+      },
       "severity": "warning",
       "shareActionId": "share-finding-nist-coverage",
       "sourceSnippetIds": [
         "source-nist-coverage-family-ra"
       ],
       "summary": {
+        "catalogDependency": {
+          "explicitLocales": [
+            "es-US"
+          ],
+          "lookupLocales": [
+            "en-US",
+            "en-GB",
+            "en-CA",
+            "fr-CA",
+            "en-IN",
+            "cy-GB",
+            "gd-GB",
+            "ga-GB",
+            "es-US",
+            "es-MX",
+            "de-DE",
+            "fr-FR",
+            "es-ES",
+            "it-IT",
+            "nl-NL",
+            "pl-PL",
+            "pt-PT",
+            "pt-BR",
+            "ro-RO",
+            "sv-SE",
+            "ko-KR",
+            "zh-CN",
+            "ja-JP",
+            "hi-IN"
+          ],
+          "reportFallbacks": {},
+          "sourceLocale": "en-US"
+        },
         "defaultLocale": "en-US",
         "defaultText": "{familyTitle} has {present} satisfied controls, {customerContext} customer-context controls, and {unsatisfied} unsatisfied controls.",
         "icuArgs": {
@@ -1548,6 +3587,39 @@ window.__SCRIBE_MANIFEST__ = {
         }
       },
       "title": {
+        "catalogDependency": {
+          "explicitLocales": [
+            "es-US"
+          ],
+          "lookupLocales": [
+            "en-US",
+            "en-GB",
+            "en-CA",
+            "fr-CA",
+            "en-IN",
+            "cy-GB",
+            "gd-GB",
+            "ga-GB",
+            "es-US",
+            "es-MX",
+            "de-DE",
+            "fr-FR",
+            "es-ES",
+            "it-IT",
+            "nl-NL",
+            "pl-PL",
+            "pt-PT",
+            "pt-BR",
+            "ro-RO",
+            "sv-SE",
+            "ko-KR",
+            "zh-CN",
+            "ja-JP",
+            "hi-IN"
+          ],
+          "reportFallbacks": {},
+          "sourceLocale": "en-US"
+        },
         "defaultLocale": "en-US",
         "defaultText": "{family} {familyTitle} coverage: {present}/{total} controls satisfied",
         "icuArgs": {
@@ -1594,6 +3666,7 @@ window.__SCRIBE_MANIFEST__ = {
         }
       ],
       "classification": "nist-fedramp-coverage",
+      "contextLinks": [],
       "controlIds": [
         "nist-family-sa"
       ],
@@ -1603,12 +3676,98 @@ window.__SCRIBE_MANIFEST__ = {
         "nist-800-53-fedramp"
       ],
       "language": "text",
+      "recommendation": {
+        "catalogDependency": {
+          "explicitLocales": [
+            "es-US"
+          ],
+          "lookupLocales": [
+            "en-US",
+            "en-GB",
+            "en-CA",
+            "fr-CA",
+            "en-IN",
+            "cy-GB",
+            "gd-GB",
+            "ga-GB",
+            "es-US",
+            "es-MX",
+            "de-DE",
+            "fr-FR",
+            "es-ES",
+            "it-IT",
+            "nl-NL",
+            "pl-PL",
+            "pt-PT",
+            "pt-BR",
+            "ro-RO",
+            "sv-SE",
+            "ko-KR",
+            "zh-CN",
+            "ja-JP",
+            "hi-IN"
+          ],
+          "reportFallbacks": {},
+          "sourceLocale": "en-US"
+        },
+        "defaultLocale": "en-US",
+        "defaultText": "Review customer-context and unsatisfied controls before making SSP/SAP/SAR/POA&M claims.",
+        "icuArgs": {},
+        "msgid": "scribe.report.nistCoverage.familyFinding.fix",
+        "provenance": "template",
+        "reviewState": "reviewed",
+        "values": {
+          "en-US": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Review customer-context and unsatisfied controls before making SSP/SAP/SAR/POA&M claims."
+          },
+          "es-US": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Revise los controles de contexto del cliente y no cumplidos antes de hacer afirmaciones SSP/SAP/SAR/POA&M."
+          }
+        }
+      },
       "severity": "info",
       "shareActionId": "share-finding-nist-coverage",
       "sourceSnippetIds": [
         "source-nist-coverage-family-sa"
       ],
       "summary": {
+        "catalogDependency": {
+          "explicitLocales": [
+            "es-US"
+          ],
+          "lookupLocales": [
+            "en-US",
+            "en-GB",
+            "en-CA",
+            "fr-CA",
+            "en-IN",
+            "cy-GB",
+            "gd-GB",
+            "ga-GB",
+            "es-US",
+            "es-MX",
+            "de-DE",
+            "fr-FR",
+            "es-ES",
+            "it-IT",
+            "nl-NL",
+            "pl-PL",
+            "pt-PT",
+            "pt-BR",
+            "ro-RO",
+            "sv-SE",
+            "ko-KR",
+            "zh-CN",
+            "ja-JP",
+            "hi-IN"
+          ],
+          "reportFallbacks": {},
+          "sourceLocale": "en-US"
+        },
         "defaultLocale": "en-US",
         "defaultText": "{familyTitle} has {present} satisfied controls, {customerContext} customer-context controls, and {unsatisfied} unsatisfied controls.",
         "icuArgs": {
@@ -1634,6 +3793,39 @@ window.__SCRIBE_MANIFEST__ = {
         }
       },
       "title": {
+        "catalogDependency": {
+          "explicitLocales": [
+            "es-US"
+          ],
+          "lookupLocales": [
+            "en-US",
+            "en-GB",
+            "en-CA",
+            "fr-CA",
+            "en-IN",
+            "cy-GB",
+            "gd-GB",
+            "ga-GB",
+            "es-US",
+            "es-MX",
+            "de-DE",
+            "fr-FR",
+            "es-ES",
+            "it-IT",
+            "nl-NL",
+            "pl-PL",
+            "pt-PT",
+            "pt-BR",
+            "ro-RO",
+            "sv-SE",
+            "ko-KR",
+            "zh-CN",
+            "ja-JP",
+            "hi-IN"
+          ],
+          "reportFallbacks": {},
+          "sourceLocale": "en-US"
+        },
         "defaultLocale": "en-US",
         "defaultText": "{family} {familyTitle} coverage: {present}/{total} controls satisfied",
         "icuArgs": {
@@ -1680,6 +3872,7 @@ window.__SCRIBE_MANIFEST__ = {
         }
       ],
       "classification": "nist-fedramp-coverage",
+      "contextLinks": [],
       "controlIds": [
         "nist-family-pt"
       ],
@@ -1689,12 +3882,98 @@ window.__SCRIBE_MANIFEST__ = {
         "nist-800-53-fedramp"
       ],
       "language": "text",
+      "recommendation": {
+        "catalogDependency": {
+          "explicitLocales": [
+            "es-US"
+          ],
+          "lookupLocales": [
+            "en-US",
+            "en-GB",
+            "en-CA",
+            "fr-CA",
+            "en-IN",
+            "cy-GB",
+            "gd-GB",
+            "ga-GB",
+            "es-US",
+            "es-MX",
+            "de-DE",
+            "fr-FR",
+            "es-ES",
+            "it-IT",
+            "nl-NL",
+            "pl-PL",
+            "pt-PT",
+            "pt-BR",
+            "ro-RO",
+            "sv-SE",
+            "ko-KR",
+            "zh-CN",
+            "ja-JP",
+            "hi-IN"
+          ],
+          "reportFallbacks": {},
+          "sourceLocale": "en-US"
+        },
+        "defaultLocale": "en-US",
+        "defaultText": "Review customer-context and unsatisfied controls before making SSP/SAP/SAR/POA&M claims.",
+        "icuArgs": {},
+        "msgid": "scribe.report.nistCoverage.familyFinding.fix",
+        "provenance": "template",
+        "reviewState": "reviewed",
+        "values": {
+          "en-US": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Review customer-context and unsatisfied controls before making SSP/SAP/SAR/POA&M claims."
+          },
+          "es-US": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Revise los controles de contexto del cliente y no cumplidos antes de hacer afirmaciones SSP/SAP/SAR/POA&M."
+          }
+        }
+      },
       "severity": "info",
       "shareActionId": "share-finding-nist-coverage",
       "sourceSnippetIds": [
         "source-nist-coverage-family-pt"
       ],
       "summary": {
+        "catalogDependency": {
+          "explicitLocales": [
+            "es-US"
+          ],
+          "lookupLocales": [
+            "en-US",
+            "en-GB",
+            "en-CA",
+            "fr-CA",
+            "en-IN",
+            "cy-GB",
+            "gd-GB",
+            "ga-GB",
+            "es-US",
+            "es-MX",
+            "de-DE",
+            "fr-FR",
+            "es-ES",
+            "it-IT",
+            "nl-NL",
+            "pl-PL",
+            "pt-PT",
+            "pt-BR",
+            "ro-RO",
+            "sv-SE",
+            "ko-KR",
+            "zh-CN",
+            "ja-JP",
+            "hi-IN"
+          ],
+          "reportFallbacks": {},
+          "sourceLocale": "en-US"
+        },
         "defaultLocale": "en-US",
         "defaultText": "{familyTitle} has {present} satisfied controls, {customerContext} customer-context controls, and {unsatisfied} unsatisfied controls.",
         "icuArgs": {
@@ -1720,6 +3999,39 @@ window.__SCRIBE_MANIFEST__ = {
         }
       },
       "title": {
+        "catalogDependency": {
+          "explicitLocales": [
+            "es-US"
+          ],
+          "lookupLocales": [
+            "en-US",
+            "en-GB",
+            "en-CA",
+            "fr-CA",
+            "en-IN",
+            "cy-GB",
+            "gd-GB",
+            "ga-GB",
+            "es-US",
+            "es-MX",
+            "de-DE",
+            "fr-FR",
+            "es-ES",
+            "it-IT",
+            "nl-NL",
+            "pl-PL",
+            "pt-PT",
+            "pt-BR",
+            "ro-RO",
+            "sv-SE",
+            "ko-KR",
+            "zh-CN",
+            "ja-JP",
+            "hi-IN"
+          ],
+          "reportFallbacks": {},
+          "sourceLocale": "en-US"
+        },
         "defaultLocale": "en-US",
         "defaultText": "{family} {familyTitle} coverage: {present}/{total} controls satisfied",
         "icuArgs": {
@@ -1752,6 +4064,37 @@ window.__SCRIBE_MANIFEST__ = {
       "href": "fix-plans/finding-nist-coverage/index.html",
       "licenseState": "visible",
       "title": {
+        "catalogDependency": {
+          "explicitLocales": [],
+          "lookupLocales": [
+            "en-US",
+            "en-GB",
+            "en-CA",
+            "fr-CA",
+            "en-IN",
+            "cy-GB",
+            "gd-GB",
+            "ga-GB",
+            "es-US",
+            "es-MX",
+            "de-DE",
+            "fr-FR",
+            "es-ES",
+            "it-IT",
+            "nl-NL",
+            "pl-PL",
+            "pt-PT",
+            "pt-BR",
+            "ro-RO",
+            "sv-SE",
+            "ko-KR",
+            "zh-CN",
+            "ja-JP",
+            "hi-IN"
+          ],
+          "reportFallbacks": {},
+          "sourceLocale": "en-US"
+        },
         "defaultLocale": "en-US",
         "defaultText": "Fix plan",
         "icuArgs": {},
@@ -1777,10 +4120,43 @@ window.__SCRIBE_MANIFEST__ = {
     {
       "aliases": [
         {
+          "catalogDependency": {
+            "explicitLocales": [
+              "es-US"
+            ],
+            "lookupLocales": [
+              "en-US",
+              "en-GB",
+              "en-CA",
+              "fr-CA",
+              "en-IN",
+              "cy-GB",
+              "gd-GB",
+              "ga-GB",
+              "es-US",
+              "es-MX",
+              "de-DE",
+              "fr-FR",
+              "es-ES",
+              "it-IT",
+              "nl-NL",
+              "pl-PL",
+              "pt-PT",
+              "pt-BR",
+              "ro-RO",
+              "sv-SE",
+              "ko-KR",
+              "zh-CN",
+              "ja-JP",
+              "hi-IN"
+            ],
+            "reportFallbacks": {},
+            "sourceLocale": "en-US"
+          },
           "defaultLocale": "en-US",
           "defaultText": "OSCAL Assessment Results",
           "icuArgs": {},
-          "msgid": "scribe.report.term.alias",
+          "msgid": "scribe.report.term.nist-fedramp-coverage.alias",
           "provenance": "template",
           "reviewState": "reviewed",
           "values": {
@@ -1798,10 +4174,43 @@ window.__SCRIBE_MANIFEST__ = {
         }
       ],
       "label": {
+        "catalogDependency": {
+          "explicitLocales": [
+            "es-US"
+          ],
+          "lookupLocales": [
+            "en-US",
+            "en-GB",
+            "en-CA",
+            "fr-CA",
+            "en-IN",
+            "cy-GB",
+            "gd-GB",
+            "ga-GB",
+            "es-US",
+            "es-MX",
+            "de-DE",
+            "fr-FR",
+            "es-ES",
+            "it-IT",
+            "nl-NL",
+            "pl-PL",
+            "pt-PT",
+            "pt-BR",
+            "ro-RO",
+            "sv-SE",
+            "ko-KR",
+            "zh-CN",
+            "ja-JP",
+            "hi-IN"
+          ],
+          "reportFallbacks": {},
+          "sourceLocale": "en-US"
+        },
         "defaultLocale": "en-US",
         "defaultText": "NIST/FedRAMP coverage",
         "icuArgs": {},
-        "msgid": "scribe.report.term.primary",
+        "msgid": "scribe.report.term.nist-fedramp-coverage.primary",
         "provenance": "template",
         "reviewState": "reviewed",
         "values": {
@@ -1847,7 +4256,7 @@ window.__SCRIBE_MANIFEST__ = {
         "coverage": {
           "complete": true,
           "fallbackCount": 0,
-          "messageCount": 132
+          "messageCount": 204
         },
         "dir": "ltr",
         "lang": "en-US",
@@ -1858,7 +4267,7 @@ window.__SCRIBE_MANIFEST__ = {
         "coverage": {
           "complete": false,
           "fallbackCount": 1,
-          "messageCount": 132
+          "messageCount": 204
         },
         "dir": "ltr",
         "lang": "es-US",
@@ -1900,6 +4309,41 @@ window.__SCRIBE_MANIFEST__ = {
       "density": "full",
       "hiddenAnchorIds": [],
       "label": {
+        "catalogDependency": {
+          "explicitLocales": [
+            "es-US"
+          ],
+          "lookupLocales": [
+            "en-US",
+            "en-GB",
+            "en-CA",
+            "fr-CA",
+            "en-IN",
+            "cy-GB",
+            "gd-GB",
+            "ga-GB",
+            "es-US",
+            "es-MX",
+            "de-DE",
+            "fr-FR",
+            "es-ES",
+            "it-IT",
+            "nl-NL",
+            "pl-PL",
+            "pt-PT",
+            "pt-BR",
+            "ro-RO",
+            "sv-SE",
+            "ko-KR",
+            "zh-CN",
+            "ja-JP",
+            "hi-IN"
+          ],
+          "reportFallbacks": {
+            "ja-JP": "開発者"
+          },
+          "sourceLocale": "en-US"
+        },
         "defaultLocale": "en-US",
         "defaultText": "Developer",
         "icuArgs": {},
@@ -1957,6 +4401,41 @@ window.__SCRIBE_MANIFEST__ = {
         "source-nist-coverage-family-pt"
       ],
       "label": {
+        "catalogDependency": {
+          "explicitLocales": [
+            "es-US"
+          ],
+          "lookupLocales": [
+            "en-US",
+            "en-GB",
+            "en-CA",
+            "fr-CA",
+            "en-IN",
+            "cy-GB",
+            "gd-GB",
+            "ga-GB",
+            "es-US",
+            "es-MX",
+            "de-DE",
+            "fr-FR",
+            "es-ES",
+            "it-IT",
+            "nl-NL",
+            "pl-PL",
+            "pt-PT",
+            "pt-BR",
+            "ro-RO",
+            "sv-SE",
+            "ko-KR",
+            "zh-CN",
+            "ja-JP",
+            "hi-IN"
+          ],
+          "reportFallbacks": {
+            "ja-JP": "エグゼクティブ"
+          },
+          "sourceLocale": "en-US"
+        },
         "defaultLocale": "en-US",
         "defaultText": "Executive",
         "icuArgs": {},
@@ -1994,6 +4473,41 @@ window.__SCRIBE_MANIFEST__ = {
       "density": "normal",
       "hiddenAnchorIds": [],
       "label": {
+        "catalogDependency": {
+          "explicitLocales": [
+            "es-US"
+          ],
+          "lookupLocales": [
+            "en-US",
+            "en-GB",
+            "en-CA",
+            "fr-CA",
+            "en-IN",
+            "cy-GB",
+            "gd-GB",
+            "ga-GB",
+            "es-US",
+            "es-MX",
+            "de-DE",
+            "fr-FR",
+            "es-ES",
+            "it-IT",
+            "nl-NL",
+            "pl-PL",
+            "pt-PT",
+            "pt-BR",
+            "ro-RO",
+            "sv-SE",
+            "ko-KR",
+            "zh-CN",
+            "ja-JP",
+            "hi-IN"
+          ],
+          "reportFallbacks": {
+            "ja-JP": "監査担当"
+          },
+          "sourceLocale": "en-US"
+        },
         "defaultLocale": "en-US",
         "defaultText": "Auditor",
         "icuArgs": {},
@@ -2024,7 +4538,7 @@ window.__SCRIBE_MANIFEST__ = {
   "reportFamily": "compliance",
   "reportId": "scribe-nist-coverage-gitea",
   "reportProfile": {
-    "catalogHash": "-1dci7n",
+    "catalogHash": "6p0i5t",
     "profileId": "nist-800-53",
     "rendererBinding": "nist-coverage",
     "reportFamilyId": "compliance",
@@ -2038,12 +4552,12 @@ window.__SCRIBE_MANIFEST__ = {
     {
       "locale": "en-US",
       "path": "data/search-index.en-US.js",
-      "tokenCount": 132
+      "tokenCount": 131
     },
     {
       "locale": "es-US",
       "path": "data/search-index.es-US.js",
-      "tokenCount": 147
+      "tokenCount": 146
     }
   ],
   "shareActions": [
@@ -2053,6 +4567,41 @@ window.__SCRIBE_MANIFEST__ = {
       "hash": "finding-nist-coverage",
       "href": "findings/finding-nist-coverage/index.html#finding-nist-coverage",
       "label": {
+        "catalogDependency": {
+          "explicitLocales": [
+            "es-US"
+          ],
+          "lookupLocales": [
+            "en-US",
+            "en-GB",
+            "en-CA",
+            "fr-CA",
+            "en-IN",
+            "cy-GB",
+            "gd-GB",
+            "ga-GB",
+            "es-US",
+            "es-MX",
+            "de-DE",
+            "fr-FR",
+            "es-ES",
+            "it-IT",
+            "nl-NL",
+            "pl-PL",
+            "pt-PT",
+            "pt-BR",
+            "ro-RO",
+            "sv-SE",
+            "ko-KR",
+            "zh-CN",
+            "ja-JP",
+            "hi-IN"
+          ],
+          "reportFallbacks": {
+            "ja-JP": "検出結果を共有"
+          },
+          "sourceLocale": "en-US"
+        },
         "defaultLocale": "en-US",
         "defaultText": "Share finding",
         "icuArgs": {},
@@ -2073,6 +4622,41 @@ window.__SCRIBE_MANIFEST__ = {
         }
       },
       "summary": {
+        "catalogDependency": {
+          "explicitLocales": [
+            "es-US"
+          ],
+          "lookupLocales": [
+            "en-US",
+            "en-GB",
+            "en-CA",
+            "fr-CA",
+            "en-IN",
+            "cy-GB",
+            "gd-GB",
+            "ga-GB",
+            "es-US",
+            "es-MX",
+            "de-DE",
+            "fr-FR",
+            "es-ES",
+            "it-IT",
+            "nl-NL",
+            "pl-PL",
+            "pt-PT",
+            "pt-BR",
+            "ro-RO",
+            "sv-SE",
+            "ko-KR",
+            "zh-CN",
+            "ja-JP",
+            "hi-IN"
+          ],
+          "reportFallbacks": {
+            "ja-JP": "Scribe パッケージは OSCAL Assessment Results を出力し、未対応の SSP/SAP/SAR/POA&M を完成扱いしません。"
+          },
+          "sourceLocale": "en-US"
+        },
         "defaultLocale": "en-US",
         "defaultText": "The Scribe package emits OSCAL Assessment Results and refuses to label unsupported SSP/SAP/SAR/POA&M artifacts as complete.",
         "icuArgs": {},
@@ -2093,6 +4677,41 @@ window.__SCRIBE_MANIFEST__ = {
         }
       },
       "title": {
+        "catalogDependency": {
+          "explicitLocales": [
+            "es-US"
+          ],
+          "lookupLocales": [
+            "en-US",
+            "en-GB",
+            "en-CA",
+            "fr-CA",
+            "en-IN",
+            "cy-GB",
+            "gd-GB",
+            "ga-GB",
+            "es-US",
+            "es-MX",
+            "de-DE",
+            "fr-FR",
+            "es-ES",
+            "it-IT",
+            "nl-NL",
+            "pl-PL",
+            "pt-PT",
+            "pt-BR",
+            "ro-RO",
+            "sv-SE",
+            "ko-KR",
+            "zh-CN",
+            "ja-JP",
+            "hi-IN"
+          ],
+          "reportFallbacks": {
+            "ja-JP": "NIST コントロールには明示的な対応アーティファクト境界が必要です"
+          },
+          "sourceLocale": "en-US"
+        },
         "defaultLocale": "en-US",
         "defaultText": "NIST controls require explicit supported-artifact boundaries",
         "icuArgs": {},
@@ -2171,13 +4790,50 @@ window.__SCRIBE_MANIFEST__ = {
     ],
     "xmlPath": "sitemap.xml"
   },
-  "sourcesAttribution": [],
   "sourceSnippets": [
     {
       "anchorId": "source-nist-coverage-rollup",
-      "code": "NIST/FedRAMP coverage summary\nTotal control families: 9\nTotal controls accounted: 103\nSatisfied controls: 11\nCustomer-context controls: 55\nUnsatisfied controls: 35\nCoverage ratio: 10.7%\nRaw rollup JSON download: data/nist-rollup.json\nOSCAL Assessment Results download: exports/nist-coverage.oscal-assessment-results.json\nFamily summary:\n- AC Access Control: 8/19 satisfied, 3 customer-context, 8 unsatisfied\n- AU Audit and Accountability: 0/12 satisfied, 7 customer-context, 5 unsatisfied\n- CM Configuration Management: 1/14 satisfied, 11 customer-context, 2 unsatisfied\n- IA Identification and Authentication: 0/15 satisfied, 3 customer-context, 10 unsatisfied\n- SC System and Communications Protection: 1/15 satisfied, 9 customer-context, 5 unsatisfied\n- SI System and Information Integrity: 1/14 satisfied, 9 customer-context, 4 unsatisfied\n- RA Risk Assessment: 0/4 satisfied, 3 customer-context, 1 unsatisfied\n- SA System and Services Acquisition: 0/6 satisfied, 6 customer-context, 0 unsatisfied\n- PT PII Processing and Transparency: 0/4 satisfied, 4 customer-context, 0 unsatisfied",
+      "body": {
+        "code": "NIST/FedRAMP coverage summary\nTotal control families: 9\nTotal controls accounted: 103\nSatisfied controls: 6\nCustomer-context controls: 55\nUnsatisfied controls: 41\nCoverage ratio: 5.8%\nRaw rollup JSON download: data/nist-rollup.json\nOSCAL Assessment Results download: exports/nist-coverage.oscal-assessment-results.json\nFamily summary:\n- AC Access Control: 5/19 satisfied, 3 customer-context, 11 unsatisfied\n- AU Audit and Accountability: 0/12 satisfied, 7 customer-context, 5 unsatisfied\n- CM Configuration Management: 0/14 satisfied, 11 customer-context, 2 unsatisfied\n- IA Identification and Authentication: 0/15 satisfied, 3 customer-context, 12 unsatisfied\n- SC System and Communications Protection: 0/15 satisfied, 9 customer-context, 6 unsatisfied\n- SI System and Information Integrity: 1/14 satisfied, 9 customer-context, 4 unsatisfied\n- RA Risk Assessment: 0/4 satisfied, 3 customer-context, 1 unsatisfied\n- SA System and Services Acquisition: 0/6 satisfied, 6 customer-context, 0 unsatisfied\n- PT PII Processing and Transparency: 0/4 satisfied, 4 customer-context, 0 unsatisfied",
+        "kind": "snippet"
+      },
       "endLine": 19,
       "label": {
+        "catalogDependency": {
+          "explicitLocales": [
+            "es-US"
+          ],
+          "lookupLocales": [
+            "en-US",
+            "en-GB",
+            "en-CA",
+            "fr-CA",
+            "en-IN",
+            "cy-GB",
+            "gd-GB",
+            "ga-GB",
+            "es-US",
+            "es-MX",
+            "de-DE",
+            "fr-FR",
+            "es-ES",
+            "it-IT",
+            "nl-NL",
+            "pl-PL",
+            "pt-PT",
+            "pt-BR",
+            "ro-RO",
+            "sv-SE",
+            "ko-KR",
+            "zh-CN",
+            "ja-JP",
+            "hi-IN"
+          ],
+          "reportFallbacks": {
+            "ja-JP": "{framework} のソース証拠"
+          },
+          "sourceLocale": "en-US"
+        },
         "defaultLocale": "en-US",
         "defaultText": "{framework} source evidence",
         "icuArgs": {
@@ -2204,13 +4860,51 @@ window.__SCRIBE_MANIFEST__ = {
       "snippetId": "source-nist-coverage-rollup",
       "sourcePath": "data/nist-rollup-summary.txt",
       "startLine": 1,
-      "verifiedSourceHash": "sha256:b3e658ace64b6e2087f09e3e0a3cdf62def5efb2dcf6f9b4bf9433c1442f7d24"
+      "verifiedSourceHash": "sha256:0a6e3d35b9f6fad3c0816d1b49412fa2928128923d4c59cd84ecf0d8d41ccd8f"
     },
     {
       "anchorId": "source-nist-coverage-family-ac",
-      "code": "NIST family AC: Access Control\nTotal controls: 19\nSatisfied controls: 8\nCustomer-context controls: 3\nUnsatisfied controls: 8\nValidation-resolved controls: 10\nEvidence-tier controls: 9\nDeferred-elsewhere controls: 0\nRepresentative controls: ac-3:absent, ac-3.7:absent, ac-3.8:absent, ac-3.13:absent, ac-4:requires-customer-context, ac-6:present, ac-6.1:present, ac-6.2:present, ac-6.5:present, ac-6.8:requires-customer-context\nRaw rollup JSON download: data/nist-rollup.json",
+      "body": {
+        "code": "NIST family AC: Access Control\nTotal controls: 19\nSatisfied controls: 5\nCustomer-context controls: 3\nUnsatisfied controls: 11\nValidation-resolved controls: 10\nEvidence-tier controls: 9\nDeferred-elsewhere controls: 0\nRepresentative controls: ac-3:present, ac-3.7:present, ac-3.8:present, ac-3.13:present, ac-4:requires-customer-context, ac-6:absent, ac-6.1:absent, ac-6.2:absent, ac-6.5:absent, ac-6.8:requires-customer-context\nRaw rollup JSON download: data/nist-rollup.json",
+        "kind": "snippet"
+      },
       "endLine": 10,
       "label": {
+        "catalogDependency": {
+          "explicitLocales": [
+            "es-US"
+          ],
+          "lookupLocales": [
+            "en-US",
+            "en-GB",
+            "en-CA",
+            "fr-CA",
+            "en-IN",
+            "cy-GB",
+            "gd-GB",
+            "ga-GB",
+            "es-US",
+            "es-MX",
+            "de-DE",
+            "fr-FR",
+            "es-ES",
+            "it-IT",
+            "nl-NL",
+            "pl-PL",
+            "pt-PT",
+            "pt-BR",
+            "ro-RO",
+            "sv-SE",
+            "ko-KR",
+            "zh-CN",
+            "ja-JP",
+            "hi-IN"
+          ],
+          "reportFallbacks": {
+            "ja-JP": "{framework} のソース証拠"
+          },
+          "sourceLocale": "en-US"
+        },
         "defaultLocale": "en-US",
         "defaultText": "{framework} source evidence",
         "icuArgs": {
@@ -2237,13 +4931,51 @@ window.__SCRIBE_MANIFEST__ = {
       "snippetId": "source-nist-coverage-family-ac",
       "sourcePath": "data/nist-coverage-family-ac-summary.txt",
       "startLine": 1,
-      "verifiedSourceHash": "sha256:32031661426ff95e433f171845a499372d9a894b13511a38c0edd0780a3169d4"
+      "verifiedSourceHash": "sha256:3dc7b4cbd43b1a29452a9cb60cd7fc4d696211a7aa16bad7c7b7dc23a041f0b8"
     },
     {
       "anchorId": "source-nist-coverage-family-au",
-      "code": "NIST family AU: Audit and Accountability\nTotal controls: 12\nSatisfied controls: 0\nCustomer-context controls: 7\nUnsatisfied controls: 5\nValidation-resolved controls: 5\nEvidence-tier controls: 7\nDeferred-elsewhere controls: 0\nRepresentative controls: au-2:absent, au-3:absent, au-3.1:absent, au-4:requires-customer-context, au-5:requires-customer-context, au-6:requires-customer-context, au-8:absent, au-9:requires-customer-context, au-10:requires-customer-context, au-12:absent\nRaw rollup JSON download: data/nist-rollup.json",
+      "body": {
+        "code": "NIST family AU: Audit and Accountability\nTotal controls: 12\nSatisfied controls: 0\nCustomer-context controls: 7\nUnsatisfied controls: 5\nValidation-resolved controls: 5\nEvidence-tier controls: 7\nDeferred-elsewhere controls: 0\nRepresentative controls: au-2:absent, au-3:absent, au-3.1:absent, au-4:requires-customer-context, au-5:requires-customer-context, au-6:requires-customer-context, au-8:absent, au-9:requires-customer-context, au-10:requires-customer-context, au-12:absent\nRaw rollup JSON download: data/nist-rollup.json",
+        "kind": "snippet"
+      },
       "endLine": 10,
       "label": {
+        "catalogDependency": {
+          "explicitLocales": [
+            "es-US"
+          ],
+          "lookupLocales": [
+            "en-US",
+            "en-GB",
+            "en-CA",
+            "fr-CA",
+            "en-IN",
+            "cy-GB",
+            "gd-GB",
+            "ga-GB",
+            "es-US",
+            "es-MX",
+            "de-DE",
+            "fr-FR",
+            "es-ES",
+            "it-IT",
+            "nl-NL",
+            "pl-PL",
+            "pt-PT",
+            "pt-BR",
+            "ro-RO",
+            "sv-SE",
+            "ko-KR",
+            "zh-CN",
+            "ja-JP",
+            "hi-IN"
+          ],
+          "reportFallbacks": {
+            "ja-JP": "{framework} のソース証拠"
+          },
+          "sourceLocale": "en-US"
+        },
         "defaultLocale": "en-US",
         "defaultText": "{framework} source evidence",
         "icuArgs": {
@@ -2274,9 +5006,47 @@ window.__SCRIBE_MANIFEST__ = {
     },
     {
       "anchorId": "source-nist-coverage-family-cm",
-      "code": "NIST family CM: Configuration Management\nTotal controls: 14\nSatisfied controls: 1\nCustomer-context controls: 11\nUnsatisfied controls: 2\nValidation-resolved controls: 2\nEvidence-tier controls: 12\nDeferred-elsewhere controls: 0\nRepresentative controls: cm-2:requires-customer-context, cm-3:requires-customer-context, cm-4:requires-customer-context, cm-5:present, cm-6:absent, cm-6.1:requires-customer-context, cm-7:absent, cm-7.1:requires-customer-context, cm-7.2:requires-customer-context, cm-7.4:requires-customer-context\nRaw rollup JSON download: data/nist-rollup.json",
+      "body": {
+        "code": "NIST family CM: Configuration Management\nTotal controls: 14\nSatisfied controls: 0\nCustomer-context controls: 11\nUnsatisfied controls: 2\nValidation-resolved controls: 2\nEvidence-tier controls: 12\nDeferred-elsewhere controls: 0\nRepresentative controls: cm-2:requires-customer-context, cm-3:requires-customer-context, cm-4:requires-customer-context, cm-5:absent, cm-6:partial, cm-6.1:requires-customer-context, cm-7:absent, cm-7.1:requires-customer-context, cm-7.2:requires-customer-context, cm-7.4:requires-customer-context\nRaw rollup JSON download: data/nist-rollup.json",
+        "kind": "snippet"
+      },
       "endLine": 10,
       "label": {
+        "catalogDependency": {
+          "explicitLocales": [
+            "es-US"
+          ],
+          "lookupLocales": [
+            "en-US",
+            "en-GB",
+            "en-CA",
+            "fr-CA",
+            "en-IN",
+            "cy-GB",
+            "gd-GB",
+            "ga-GB",
+            "es-US",
+            "es-MX",
+            "de-DE",
+            "fr-FR",
+            "es-ES",
+            "it-IT",
+            "nl-NL",
+            "pl-PL",
+            "pt-PT",
+            "pt-BR",
+            "ro-RO",
+            "sv-SE",
+            "ko-KR",
+            "zh-CN",
+            "ja-JP",
+            "hi-IN"
+          ],
+          "reportFallbacks": {
+            "ja-JP": "{framework} のソース証拠"
+          },
+          "sourceLocale": "en-US"
+        },
         "defaultLocale": "en-US",
         "defaultText": "{framework} source evidence",
         "icuArgs": {
@@ -2303,13 +5073,51 @@ window.__SCRIBE_MANIFEST__ = {
       "snippetId": "source-nist-coverage-family-cm",
       "sourcePath": "data/nist-coverage-family-cm-summary.txt",
       "startLine": 1,
-      "verifiedSourceHash": "sha256:921f917b1814095f125c87eb03cc19619654f6ea25d732d18c8161acf6b0cc04"
+      "verifiedSourceHash": "sha256:e745230d24e5bcc8824e6f7f432f87246670c3f295cf144a57fbae57c024897f"
     },
     {
       "anchorId": "source-nist-coverage-family-ia",
-      "code": "NIST family IA: Identification and Authentication\nTotal controls: 15\nSatisfied controls: 0\nCustomer-context controls: 3\nUnsatisfied controls: 10\nValidation-resolved controls: 6\nEvidence-tier controls: 9\nDeferred-elsewhere controls: 0\nRepresentative controls: ia-2:absent, ia-2.1:partial, ia-2.2:partial, ia-2.6:absent, ia-2.8:absent, ia-5:absent, ia-5.1:absent, ia-5.2:requires-customer-context, ia-5.4:absent, ia-5.6:absent\nRaw rollup JSON download: data/nist-rollup.json",
+      "body": {
+        "code": "NIST family IA: Identification and Authentication\nTotal controls: 15\nSatisfied controls: 0\nCustomer-context controls: 3\nUnsatisfied controls: 12\nValidation-resolved controls: 6\nEvidence-tier controls: 9\nDeferred-elsewhere controls: 0\nRepresentative controls: ia-2:absent, ia-2.1:absent, ia-2.2:absent, ia-2.6:absent, ia-2.8:absent, ia-5:absent, ia-5.1:absent, ia-5.2:requires-customer-context, ia-5.4:absent, ia-5.6:absent\nRaw rollup JSON download: data/nist-rollup.json",
+        "kind": "snippet"
+      },
       "endLine": 10,
       "label": {
+        "catalogDependency": {
+          "explicitLocales": [
+            "es-US"
+          ],
+          "lookupLocales": [
+            "en-US",
+            "en-GB",
+            "en-CA",
+            "fr-CA",
+            "en-IN",
+            "cy-GB",
+            "gd-GB",
+            "ga-GB",
+            "es-US",
+            "es-MX",
+            "de-DE",
+            "fr-FR",
+            "es-ES",
+            "it-IT",
+            "nl-NL",
+            "pl-PL",
+            "pt-PT",
+            "pt-BR",
+            "ro-RO",
+            "sv-SE",
+            "ko-KR",
+            "zh-CN",
+            "ja-JP",
+            "hi-IN"
+          ],
+          "reportFallbacks": {
+            "ja-JP": "{framework} のソース証拠"
+          },
+          "sourceLocale": "en-US"
+        },
         "defaultLocale": "en-US",
         "defaultText": "{framework} source evidence",
         "icuArgs": {
@@ -2336,13 +5144,51 @@ window.__SCRIBE_MANIFEST__ = {
       "snippetId": "source-nist-coverage-family-ia",
       "sourcePath": "data/nist-coverage-family-ia-summary.txt",
       "startLine": 1,
-      "verifiedSourceHash": "sha256:7e30b610c2f2b69e2d7869e01b98d025ce18df7e893c4727eb51fd6c2be19752"
+      "verifiedSourceHash": "sha256:964b92cc7e2ac07f26f2cd8abbc33459bf1b06c9d5ddf555c03664ce37cc1274"
     },
     {
       "anchorId": "source-nist-coverage-family-sc",
-      "code": "NIST family SC: System and Communications Protection\nTotal controls: 15\nSatisfied controls: 1\nCustomer-context controls: 9\nUnsatisfied controls: 5\nValidation-resolved controls: 6\nEvidence-tier controls: 9\nDeferred-elsewhere controls: 0\nRepresentative controls: sc-2:requires-customer-context, sc-3:requires-customer-context, sc-4:requires-customer-context, sc-5:requires-customer-context, sc-7:requires-customer-context, sc-8:gap, sc-8.1:gap, sc-12:requires-customer-context, sc-13:gap, sc-13.1:requires-customer-context\nRaw rollup JSON download: data/nist-rollup.json",
+      "body": {
+        "code": "NIST family SC: System and Communications Protection\nTotal controls: 15\nSatisfied controls: 0\nCustomer-context controls: 9\nUnsatisfied controls: 6\nValidation-resolved controls: 6\nEvidence-tier controls: 9\nDeferred-elsewhere controls: 0\nRepresentative controls: sc-2:requires-customer-context, sc-3:requires-customer-context, sc-4:requires-customer-context, sc-5:requires-customer-context, sc-7:requires-customer-context, sc-8:absent, sc-8.1:absent, sc-12:requires-customer-context, sc-13:absent, sc-13.1:requires-customer-context\nRaw rollup JSON download: data/nist-rollup.json",
+        "kind": "snippet"
+      },
       "endLine": 10,
       "label": {
+        "catalogDependency": {
+          "explicitLocales": [
+            "es-US"
+          ],
+          "lookupLocales": [
+            "en-US",
+            "en-GB",
+            "en-CA",
+            "fr-CA",
+            "en-IN",
+            "cy-GB",
+            "gd-GB",
+            "ga-GB",
+            "es-US",
+            "es-MX",
+            "de-DE",
+            "fr-FR",
+            "es-ES",
+            "it-IT",
+            "nl-NL",
+            "pl-PL",
+            "pt-PT",
+            "pt-BR",
+            "ro-RO",
+            "sv-SE",
+            "ko-KR",
+            "zh-CN",
+            "ja-JP",
+            "hi-IN"
+          ],
+          "reportFallbacks": {
+            "ja-JP": "{framework} のソース証拠"
+          },
+          "sourceLocale": "en-US"
+        },
         "defaultLocale": "en-US",
         "defaultText": "{framework} source evidence",
         "icuArgs": {
@@ -2369,13 +5215,51 @@ window.__SCRIBE_MANIFEST__ = {
       "snippetId": "source-nist-coverage-family-sc",
       "sourcePath": "data/nist-coverage-family-sc-summary.txt",
       "startLine": 1,
-      "verifiedSourceHash": "sha256:82be3f1699aad7545541170f2b40baabca46019c10040f239c0e57376c6b91c6"
+      "verifiedSourceHash": "sha256:d14ca2cd8116644a60e9c495e3f1ffd1cb8ed3afdf3b1f444ba911e320129017"
     },
     {
       "anchorId": "source-nist-coverage-family-si",
-      "code": "NIST family SI: System and Information Integrity\nTotal controls: 14\nSatisfied controls: 1\nCustomer-context controls: 9\nUnsatisfied controls: 4\nValidation-resolved controls: 4\nEvidence-tier controls: 10\nDeferred-elsewhere controls: 0\nRepresentative controls: si-2:absent, si-2.2:requires-customer-context, si-2.4:requires-customer-context, si-3:requires-customer-context, si-4:requires-customer-context, si-7:requires-customer-context, si-7.1:requires-customer-context, si-7.6:requires-customer-context, si-10:absent, si-10.5:absent\nRaw rollup JSON download: data/nist-rollup.json",
+      "body": {
+        "code": "NIST family SI: System and Information Integrity\nTotal controls: 14\nSatisfied controls: 1\nCustomer-context controls: 9\nUnsatisfied controls: 4\nValidation-resolved controls: 4\nEvidence-tier controls: 10\nDeferred-elsewhere controls: 0\nRepresentative controls: si-2:absent, si-2.2:requires-customer-context, si-2.4:requires-customer-context, si-3:requires-customer-context, si-4:requires-customer-context, si-7:requires-customer-context, si-7.1:requires-customer-context, si-7.6:requires-customer-context, si-10:absent, si-10.5:absent\nRaw rollup JSON download: data/nist-rollup.json",
+        "kind": "snippet"
+      },
       "endLine": 10,
       "label": {
+        "catalogDependency": {
+          "explicitLocales": [
+            "es-US"
+          ],
+          "lookupLocales": [
+            "en-US",
+            "en-GB",
+            "en-CA",
+            "fr-CA",
+            "en-IN",
+            "cy-GB",
+            "gd-GB",
+            "ga-GB",
+            "es-US",
+            "es-MX",
+            "de-DE",
+            "fr-FR",
+            "es-ES",
+            "it-IT",
+            "nl-NL",
+            "pl-PL",
+            "pt-PT",
+            "pt-BR",
+            "ro-RO",
+            "sv-SE",
+            "ko-KR",
+            "zh-CN",
+            "ja-JP",
+            "hi-IN"
+          ],
+          "reportFallbacks": {
+            "ja-JP": "{framework} のソース証拠"
+          },
+          "sourceLocale": "en-US"
+        },
         "defaultLocale": "en-US",
         "defaultText": "{framework} source evidence",
         "icuArgs": {
@@ -2406,9 +5290,47 @@ window.__SCRIBE_MANIFEST__ = {
     },
     {
       "anchorId": "source-nist-coverage-family-ra",
-      "code": "NIST family RA: Risk Assessment\nTotal controls: 4\nSatisfied controls: 0\nCustomer-context controls: 3\nUnsatisfied controls: 1\nValidation-resolved controls: 1\nEvidence-tier controls: 3\nDeferred-elsewhere controls: 0\nRepresentative controls: ra-5:absent, ra-5.2:requires-customer-context, ra-5.4:requires-customer-context, ra-5.5:requires-customer-context\nRaw rollup JSON download: data/nist-rollup.json",
+      "body": {
+        "code": "NIST family RA: Risk Assessment\nTotal controls: 4\nSatisfied controls: 0\nCustomer-context controls: 3\nUnsatisfied controls: 1\nValidation-resolved controls: 1\nEvidence-tier controls: 3\nDeferred-elsewhere controls: 0\nRepresentative controls: ra-5:absent, ra-5.2:requires-customer-context, ra-5.4:requires-customer-context, ra-5.5:requires-customer-context\nRaw rollup JSON download: data/nist-rollup.json",
+        "kind": "snippet"
+      },
       "endLine": 10,
       "label": {
+        "catalogDependency": {
+          "explicitLocales": [
+            "es-US"
+          ],
+          "lookupLocales": [
+            "en-US",
+            "en-GB",
+            "en-CA",
+            "fr-CA",
+            "en-IN",
+            "cy-GB",
+            "gd-GB",
+            "ga-GB",
+            "es-US",
+            "es-MX",
+            "de-DE",
+            "fr-FR",
+            "es-ES",
+            "it-IT",
+            "nl-NL",
+            "pl-PL",
+            "pt-PT",
+            "pt-BR",
+            "ro-RO",
+            "sv-SE",
+            "ko-KR",
+            "zh-CN",
+            "ja-JP",
+            "hi-IN"
+          ],
+          "reportFallbacks": {
+            "ja-JP": "{framework} のソース証拠"
+          },
+          "sourceLocale": "en-US"
+        },
         "defaultLocale": "en-US",
         "defaultText": "{framework} source evidence",
         "icuArgs": {
@@ -2439,9 +5361,47 @@ window.__SCRIBE_MANIFEST__ = {
     },
     {
       "anchorId": "source-nist-coverage-family-sa",
-      "code": "NIST family SA: System and Services Acquisition\nTotal controls: 6\nSatisfied controls: 0\nCustomer-context controls: 6\nUnsatisfied controls: 0\nValidation-resolved controls: 0\nEvidence-tier controls: 6\nDeferred-elsewhere controls: 0\nRepresentative controls: sa-4.9:requires-customer-context, sa-8:requires-customer-context, sa-10:requires-customer-context, sa-11:requires-customer-context, sa-11.1:requires-customer-context, sa-15:requires-customer-context\nRaw rollup JSON download: data/nist-rollup.json",
+      "body": {
+        "code": "NIST family SA: System and Services Acquisition\nTotal controls: 6\nSatisfied controls: 0\nCustomer-context controls: 6\nUnsatisfied controls: 0\nValidation-resolved controls: 0\nEvidence-tier controls: 6\nDeferred-elsewhere controls: 0\nRepresentative controls: sa-4.9:requires-customer-context, sa-8:requires-customer-context, sa-10:requires-customer-context, sa-11:requires-customer-context, sa-11.1:requires-customer-context, sa-15:requires-customer-context\nRaw rollup JSON download: data/nist-rollup.json",
+        "kind": "snippet"
+      },
       "endLine": 10,
       "label": {
+        "catalogDependency": {
+          "explicitLocales": [
+            "es-US"
+          ],
+          "lookupLocales": [
+            "en-US",
+            "en-GB",
+            "en-CA",
+            "fr-CA",
+            "en-IN",
+            "cy-GB",
+            "gd-GB",
+            "ga-GB",
+            "es-US",
+            "es-MX",
+            "de-DE",
+            "fr-FR",
+            "es-ES",
+            "it-IT",
+            "nl-NL",
+            "pl-PL",
+            "pt-PT",
+            "pt-BR",
+            "ro-RO",
+            "sv-SE",
+            "ko-KR",
+            "zh-CN",
+            "ja-JP",
+            "hi-IN"
+          ],
+          "reportFallbacks": {
+            "ja-JP": "{framework} のソース証拠"
+          },
+          "sourceLocale": "en-US"
+        },
         "defaultLocale": "en-US",
         "defaultText": "{framework} source evidence",
         "icuArgs": {
@@ -2472,9 +5432,47 @@ window.__SCRIBE_MANIFEST__ = {
     },
     {
       "anchorId": "source-nist-coverage-family-pt",
-      "code": "NIST family PT: PII Processing and Transparency\nTotal controls: 4\nSatisfied controls: 0\nCustomer-context controls: 4\nUnsatisfied controls: 0\nValidation-resolved controls: 0\nEvidence-tier controls: 4\nDeferred-elsewhere controls: 0\nRepresentative controls: pt-2:requires-customer-context, pt-3:requires-customer-context, pt-6:requires-customer-context, pt-7:requires-customer-context\nRaw rollup JSON download: data/nist-rollup.json",
+      "body": {
+        "code": "NIST family PT: PII Processing and Transparency\nTotal controls: 4\nSatisfied controls: 0\nCustomer-context controls: 4\nUnsatisfied controls: 0\nValidation-resolved controls: 0\nEvidence-tier controls: 4\nDeferred-elsewhere controls: 0\nRepresentative controls: pt-2:requires-customer-context, pt-3:requires-customer-context, pt-6:requires-customer-context, pt-7:requires-customer-context\nRaw rollup JSON download: data/nist-rollup.json",
+        "kind": "snippet"
+      },
       "endLine": 10,
       "label": {
+        "catalogDependency": {
+          "explicitLocales": [
+            "es-US"
+          ],
+          "lookupLocales": [
+            "en-US",
+            "en-GB",
+            "en-CA",
+            "fr-CA",
+            "en-IN",
+            "cy-GB",
+            "gd-GB",
+            "ga-GB",
+            "es-US",
+            "es-MX",
+            "de-DE",
+            "fr-FR",
+            "es-ES",
+            "it-IT",
+            "nl-NL",
+            "pl-PL",
+            "pt-PT",
+            "pt-BR",
+            "ro-RO",
+            "sv-SE",
+            "ko-KR",
+            "zh-CN",
+            "ja-JP",
+            "hi-IN"
+          ],
+          "reportFallbacks": {
+            "ja-JP": "{framework} のソース証拠"
+          },
+          "sourceLocale": "en-US"
+        },
         "defaultLocale": "en-US",
         "defaultText": "{framework} source evidence",
         "icuArgs": {
@@ -2504,10 +5502,46 @@ window.__SCRIBE_MANIFEST__ = {
       "verifiedSourceHash": "sha256:3ebce0d20acb0e77efbf4aab150665f4d00acdb8eff08aa298b6fe1b3c6964f0"
     }
   ],
+  "sourcesAttribution": [],
   "theme": {
     "availableModes": [
       {
         "label": {
+          "catalogDependency": {
+            "explicitLocales": [
+              "es-US"
+            ],
+            "lookupLocales": [
+              "en-US",
+              "en-GB",
+              "en-CA",
+              "fr-CA",
+              "en-IN",
+              "cy-GB",
+              "gd-GB",
+              "ga-GB",
+              "es-US",
+              "es-MX",
+              "de-DE",
+              "fr-FR",
+              "es-ES",
+              "it-IT",
+              "nl-NL",
+              "pl-PL",
+              "pt-PT",
+              "pt-BR",
+              "ro-RO",
+              "sv-SE",
+              "ko-KR",
+              "zh-CN",
+              "ja-JP",
+              "hi-IN"
+            ],
+            "reportFallbacks": {
+              "ja-JP": "自動"
+            },
+            "sourceLocale": "en-US"
+          },
           "defaultLocale": "en-US",
           "defaultText": "Auto",
           "icuArgs": {},
@@ -2531,6 +5565,41 @@ window.__SCRIBE_MANIFEST__ = {
       },
       {
         "label": {
+          "catalogDependency": {
+            "explicitLocales": [
+              "es-US"
+            ],
+            "lookupLocales": [
+              "en-US",
+              "en-GB",
+              "en-CA",
+              "fr-CA",
+              "en-IN",
+              "cy-GB",
+              "gd-GB",
+              "ga-GB",
+              "es-US",
+              "es-MX",
+              "de-DE",
+              "fr-FR",
+              "es-ES",
+              "it-IT",
+              "nl-NL",
+              "pl-PL",
+              "pt-PT",
+              "pt-BR",
+              "ro-RO",
+              "sv-SE",
+              "ko-KR",
+              "zh-CN",
+              "ja-JP",
+              "hi-IN"
+            ],
+            "reportFallbacks": {
+              "ja-JP": "ライト"
+            },
+            "sourceLocale": "en-US"
+          },
           "defaultLocale": "en-US",
           "defaultText": "Light",
           "icuArgs": {},
@@ -2554,6 +5623,41 @@ window.__SCRIBE_MANIFEST__ = {
       },
       {
         "label": {
+          "catalogDependency": {
+            "explicitLocales": [
+              "es-US"
+            ],
+            "lookupLocales": [
+              "en-US",
+              "en-GB",
+              "en-CA",
+              "fr-CA",
+              "en-IN",
+              "cy-GB",
+              "gd-GB",
+              "ga-GB",
+              "es-US",
+              "es-MX",
+              "de-DE",
+              "fr-FR",
+              "es-ES",
+              "it-IT",
+              "nl-NL",
+              "pl-PL",
+              "pt-PT",
+              "pt-BR",
+              "ro-RO",
+              "sv-SE",
+              "ko-KR",
+              "zh-CN",
+              "ja-JP",
+              "hi-IN"
+            ],
+            "reportFallbacks": {
+              "ja-JP": "ダーク"
+            },
+            "sourceLocale": "en-US"
+          },
           "defaultLocale": "en-US",
           "defaultText": "Dark",
           "icuArgs": {},
@@ -2578,8 +5682,39 @@ window.__SCRIBE_MANIFEST__ = {
     ],
     "availableThemes": [
       {
-        "cssPath": "assets/themes/daylight.css",
+        "cssPath": "assets/immutable/theme-daylight.ffce2abf0c8dffe5.css",
         "label": {
+          "catalogDependency": {
+            "explicitLocales": [],
+            "lookupLocales": [
+              "en-US",
+              "en-GB",
+              "en-CA",
+              "fr-CA",
+              "en-IN",
+              "cy-GB",
+              "gd-GB",
+              "ga-GB",
+              "es-US",
+              "es-MX",
+              "de-DE",
+              "fr-FR",
+              "es-ES",
+              "it-IT",
+              "nl-NL",
+              "pl-PL",
+              "pt-PT",
+              "pt-BR",
+              "ro-RO",
+              "sv-SE",
+              "ko-KR",
+              "zh-CN",
+              "ja-JP",
+              "hi-IN"
+            ],
+            "reportFallbacks": {},
+            "sourceLocale": "en-US"
+          },
           "defaultLocale": "en-US",
           "defaultText": "Daylight",
           "icuArgs": {},
@@ -2602,8 +5737,39 @@ window.__SCRIBE_MANIFEST__ = {
         "themeId": "daylight"
       },
       {
-        "cssPath": "assets/themes/ultraviolet.css",
+        "cssPath": "assets/immutable/theme-ultraviolet.e8d1e286a433a1f6.css",
         "label": {
+          "catalogDependency": {
+            "explicitLocales": [],
+            "lookupLocales": [
+              "en-US",
+              "en-GB",
+              "en-CA",
+              "fr-CA",
+              "en-IN",
+              "cy-GB",
+              "gd-GB",
+              "ga-GB",
+              "es-US",
+              "es-MX",
+              "de-DE",
+              "fr-FR",
+              "es-ES",
+              "it-IT",
+              "nl-NL",
+              "pl-PL",
+              "pt-PT",
+              "pt-BR",
+              "ro-RO",
+              "sv-SE",
+              "ko-KR",
+              "zh-CN",
+              "ja-JP",
+              "hi-IN"
+            ],
+            "reportFallbacks": {},
+            "sourceLocale": "en-US"
+          },
           "defaultLocale": "en-US",
           "defaultText": "Ultraviolet",
           "icuArgs": {},
@@ -2626,8 +5792,39 @@ window.__SCRIBE_MANIFEST__ = {
         "themeId": "ultraviolet"
       },
       {
-        "cssPath": "assets/themes/infrared.css",
+        "cssPath": "assets/immutable/theme-infrared.caf6e90430229b41.css",
         "label": {
+          "catalogDependency": {
+            "explicitLocales": [],
+            "lookupLocales": [
+              "en-US",
+              "en-GB",
+              "en-CA",
+              "fr-CA",
+              "en-IN",
+              "cy-GB",
+              "gd-GB",
+              "ga-GB",
+              "es-US",
+              "es-MX",
+              "de-DE",
+              "fr-FR",
+              "es-ES",
+              "it-IT",
+              "nl-NL",
+              "pl-PL",
+              "pt-PT",
+              "pt-BR",
+              "ro-RO",
+              "sv-SE",
+              "ko-KR",
+              "zh-CN",
+              "ja-JP",
+              "hi-IN"
+            ],
+            "reportFallbacks": {},
+            "sourceLocale": "en-US"
+          },
           "defaultLocale": "en-US",
           "defaultText": "Infrared",
           "icuArgs": {},
@@ -2650,8 +5847,39 @@ window.__SCRIBE_MANIFEST__ = {
         "themeId": "infrared"
       },
       {
-        "cssPath": "assets/themes/high-contrast.css",
+        "cssPath": "assets/immutable/theme-high-contrast.32d22d1a3f404d86.css",
         "label": {
+          "catalogDependency": {
+            "explicitLocales": [],
+            "lookupLocales": [
+              "en-US",
+              "en-GB",
+              "en-CA",
+              "fr-CA",
+              "en-IN",
+              "cy-GB",
+              "gd-GB",
+              "ga-GB",
+              "es-US",
+              "es-MX",
+              "de-DE",
+              "fr-FR",
+              "es-ES",
+              "it-IT",
+              "nl-NL",
+              "pl-PL",
+              "pt-PT",
+              "pt-BR",
+              "ro-RO",
+              "sv-SE",
+              "ko-KR",
+              "zh-CN",
+              "ja-JP",
+              "hi-IN"
+            ],
+            "reportFallbacks": {},
+            "sourceLocale": "en-US"
+          },
           "defaultLocale": "en-US",
           "defaultText": "High Contrast",
           "icuArgs": {},
@@ -2679,6 +5907,37 @@ window.__SCRIBE_MANIFEST__ = {
     "density": "normal"
   },
   "title": {
+    "catalogDependency": {
+      "explicitLocales": [],
+      "lookupLocales": [
+        "en-US",
+        "en-GB",
+        "en-CA",
+        "fr-CA",
+        "en-IN",
+        "cy-GB",
+        "gd-GB",
+        "ga-GB",
+        "es-US",
+        "es-MX",
+        "de-DE",
+        "fr-FR",
+        "es-ES",
+        "it-IT",
+        "nl-NL",
+        "pl-PL",
+        "pt-PT",
+        "pt-BR",
+        "ro-RO",
+        "sv-SE",
+        "ko-KR",
+        "zh-CN",
+        "ja-JP",
+        "hi-IN"
+      ],
+      "reportFallbacks": {},
+      "sourceLocale": "en-US"
+    },
     "defaultLocale": "en-US",
     "defaultText": "Gitea — NIST 800-53 Coverage",
     "icuArgs": {},
@@ -2706,6 +5965,41 @@ window.__SCRIBE_MANIFEST__ = {
               "pagePath": "findings/finding-nist-coverage/index.html",
               "role": "source-snippet",
               "title": {
+                "catalogDependency": {
+                  "explicitLocales": [
+                    "es-US"
+                  ],
+                  "lookupLocales": [
+                    "en-US",
+                    "en-GB",
+                    "en-CA",
+                    "fr-CA",
+                    "en-IN",
+                    "cy-GB",
+                    "gd-GB",
+                    "ga-GB",
+                    "es-US",
+                    "es-MX",
+                    "de-DE",
+                    "fr-FR",
+                    "es-ES",
+                    "it-IT",
+                    "nl-NL",
+                    "pl-PL",
+                    "pt-PT",
+                    "pt-BR",
+                    "ro-RO",
+                    "sv-SE",
+                    "ko-KR",
+                    "zh-CN",
+                    "ja-JP",
+                    "hi-IN"
+                  ],
+                  "reportFallbacks": {
+                    "ja-JP": "NIST カバレッジ解釈"
+                  },
+                  "sourceLocale": "en-US"
+                },
                 "defaultLocale": "en-US",
                 "defaultText": "NIST coverage interpretation",
                 "icuArgs": {},
@@ -2732,6 +6026,41 @@ window.__SCRIBE_MANIFEST__ = {
               "pagePath": "findings/finding-nist-coverage/index.html",
               "role": "diagram",
               "title": {
+                "catalogDependency": {
+                  "explicitLocales": [
+                    "es-US"
+                  ],
+                  "lookupLocales": [
+                    "en-US",
+                    "en-GB",
+                    "en-CA",
+                    "fr-CA",
+                    "en-IN",
+                    "cy-GB",
+                    "gd-GB",
+                    "ga-GB",
+                    "es-US",
+                    "es-MX",
+                    "de-DE",
+                    "fr-FR",
+                    "es-ES",
+                    "it-IT",
+                    "nl-NL",
+                    "pl-PL",
+                    "pt-PT",
+                    "pt-BR",
+                    "ro-RO",
+                    "sv-SE",
+                    "ko-KR",
+                    "zh-CN",
+                    "ja-JP",
+                    "hi-IN"
+                  ],
+                  "reportFallbacks": {
+                    "ja-JP": "NIST ファミリーカバレッジマトリクス"
+                  },
+                  "sourceLocale": "en-US"
+                },
                 "defaultLocale": "en-US",
                 "defaultText": "NIST family coverage matrix",
                 "icuArgs": {},
@@ -2758,6 +6087,37 @@ window.__SCRIBE_MANIFEST__ = {
               "pagePath": "fix-plans/finding-nist-coverage/index.html",
               "role": "fix-plan",
               "title": {
+                "catalogDependency": {
+                  "explicitLocales": [],
+                  "lookupLocales": [
+                    "en-US",
+                    "en-GB",
+                    "en-CA",
+                    "fr-CA",
+                    "en-IN",
+                    "cy-GB",
+                    "gd-GB",
+                    "ga-GB",
+                    "es-US",
+                    "es-MX",
+                    "de-DE",
+                    "fr-FR",
+                    "es-ES",
+                    "it-IT",
+                    "nl-NL",
+                    "pl-PL",
+                    "pt-PT",
+                    "pt-BR",
+                    "ro-RO",
+                    "sv-SE",
+                    "ko-KR",
+                    "zh-CN",
+                    "ja-JP",
+                    "hi-IN"
+                  ],
+                  "reportFallbacks": {},
+                  "sourceLocale": "en-US"
+                },
                 "defaultLocale": "en-US",
                 "defaultText": "Fix plan",
                 "icuArgs": {},
@@ -2782,6 +6142,41 @@ window.__SCRIBE_MANIFEST__ = {
           "pagePath": "findings/finding-nist-coverage/index.html",
           "role": "finding",
           "title": {
+            "catalogDependency": {
+              "explicitLocales": [
+                "es-US"
+              ],
+              "lookupLocales": [
+                "en-US",
+                "en-GB",
+                "en-CA",
+                "fr-CA",
+                "en-IN",
+                "cy-GB",
+                "gd-GB",
+                "ga-GB",
+                "es-US",
+                "es-MX",
+                "de-DE",
+                "fr-FR",
+                "es-ES",
+                "it-IT",
+                "nl-NL",
+                "pl-PL",
+                "pt-PT",
+                "pt-BR",
+                "ro-RO",
+                "sv-SE",
+                "ko-KR",
+                "zh-CN",
+                "ja-JP",
+                "hi-IN"
+              ],
+              "reportFallbacks": {
+                "ja-JP": "NIST コントロールには明示的な対応アーティファクト境界が必要です"
+              },
+              "sourceLocale": "en-US"
+            },
             "defaultLocale": "en-US",
             "defaultText": "NIST controls require explicit supported-artifact boundaries",
             "icuArgs": {},
@@ -2806,6 +6201,39 @@ window.__SCRIBE_MANIFEST__ = {
       "pagePath": "index.html",
       "role": "section",
       "title": {
+        "catalogDependency": {
+          "explicitLocales": [],
+          "lookupLocales": [
+            "en-US",
+            "en-GB",
+            "en-CA",
+            "fr-CA",
+            "en-IN",
+            "cy-GB",
+            "gd-GB",
+            "ga-GB",
+            "es-US",
+            "es-MX",
+            "de-DE",
+            "fr-FR",
+            "es-ES",
+            "it-IT",
+            "nl-NL",
+            "pl-PL",
+            "pt-PT",
+            "pt-BR",
+            "ro-RO",
+            "sv-SE",
+            "ko-KR",
+            "zh-CN",
+            "ja-JP",
+            "hi-IN"
+          ],
+          "reportFallbacks": {
+            "ja-JP": "概要"
+          },
+          "sourceLocale": "en-US"
+        },
         "defaultLocale": "en-US",
         "defaultText": "Overview",
         "icuArgs": {},
@@ -2830,6 +6258,41 @@ window.__SCRIBE_MANIFEST__ = {
   "visualizations": [
     {
       "altText": {
+        "catalogDependency": {
+          "explicitLocales": [
+            "es-US"
+          ],
+          "lookupLocales": [
+            "en-US",
+            "en-GB",
+            "en-CA",
+            "fr-CA",
+            "en-IN",
+            "cy-GB",
+            "gd-GB",
+            "ga-GB",
+            "es-US",
+            "es-MX",
+            "de-DE",
+            "fr-FR",
+            "es-ES",
+            "it-IT",
+            "nl-NL",
+            "pl-PL",
+            "pt-PT",
+            "pt-BR",
+            "ro-RO",
+            "sv-SE",
+            "ko-KR",
+            "zh-CN",
+            "ja-JP",
+            "hi-IN"
+          ],
+          "reportFallbacks": {
+            "ja-JP": "NIST コントロール件数をファミリーと状態別に示す表。"
+          },
+          "sourceLocale": "en-US"
+        },
         "defaultLocale": "en-US",
         "defaultText": "Table showing NIST control counts by family and status.",
         "icuArgs": {},
@@ -2855,6 +6318,41 @@ window.__SCRIBE_MANIFEST__ = {
         "table"
       ],
       "label": {
+        "catalogDependency": {
+          "explicitLocales": [
+            "es-US"
+          ],
+          "lookupLocales": [
+            "en-US",
+            "en-GB",
+            "en-CA",
+            "fr-CA",
+            "en-IN",
+            "cy-GB",
+            "gd-GB",
+            "ga-GB",
+            "es-US",
+            "es-MX",
+            "de-DE",
+            "fr-FR",
+            "es-ES",
+            "it-IT",
+            "nl-NL",
+            "pl-PL",
+            "pt-PT",
+            "pt-BR",
+            "ro-RO",
+            "sv-SE",
+            "ko-KR",
+            "zh-CN",
+            "ja-JP",
+            "hi-IN"
+          ],
+          "reportFallbacks": {
+            "ja-JP": "NIST ファミリーカバレッジマトリクス"
+          },
+          "sourceLocale": "en-US"
+        },
         "defaultLocale": "en-US",
         "defaultText": "NIST family coverage matrix",
         "icuArgs": {},
@@ -2875,6 +6373,41 @@ window.__SCRIBE_MANIFEST__ = {
         }
       },
       "longDescription": {
+        "catalogDependency": {
+          "explicitLocales": [
+            "es-US"
+          ],
+          "lookupLocales": [
+            "en-US",
+            "en-GB",
+            "en-CA",
+            "fr-CA",
+            "en-IN",
+            "cy-GB",
+            "gd-GB",
+            "ga-GB",
+            "es-US",
+            "es-MX",
+            "de-DE",
+            "fr-FR",
+            "es-ES",
+            "it-IT",
+            "nl-NL",
+            "pl-PL",
+            "pt-PT",
+            "pt-BR",
+            "ro-RO",
+            "sv-SE",
+            "ko-KR",
+            "zh-CN",
+            "ja-JP",
+            "hi-IN"
+          ],
+          "reportFallbacks": {
+            "ja-JP": "このマトリクスは HTML、Markdown、OSCAL Assessment Results と同じロールアップから生成されます。"
+          },
+          "sourceLocale": "en-US"
+        },
         "defaultLocale": "en-US",
         "defaultText": "The matrix is generated from the same rollup used for HTML, Markdown, and OSCAL Assessment Results.",
         "icuArgs": {},
@@ -2900,6 +6433,57 @@ window.__SCRIBE_MANIFEST__ = {
       },
       "projection": "matrix",
       "projectionLabel": "NIST family coverage matrix",
+      "projectionLabelText": {
+        "catalogDependency": {
+          "explicitLocales": [],
+          "lookupLocales": [
+            "en-US",
+            "en-GB",
+            "en-CA",
+            "fr-CA",
+            "en-IN",
+            "cy-GB",
+            "gd-GB",
+            "ga-GB",
+            "es-US",
+            "es-MX",
+            "de-DE",
+            "fr-FR",
+            "es-ES",
+            "it-IT",
+            "nl-NL",
+            "pl-PL",
+            "pt-PT",
+            "pt-BR",
+            "ro-RO",
+            "sv-SE",
+            "ko-KR",
+            "zh-CN",
+            "ja-JP",
+            "hi-IN"
+          ],
+          "reportFallbacks": {},
+          "sourceLocale": "en-US"
+        },
+        "defaultLocale": "en-US",
+        "defaultText": "NIST family coverage matrix",
+        "icuArgs": {},
+        "msgid": "scribe.report.visualization.visualization-nist-coverage-controls.projection",
+        "provenance": "template",
+        "reviewState": "reviewed",
+        "values": {
+          "en-US": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "NIST family coverage matrix"
+          },
+          "es-US": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Matriz de cobertura de familias de NIST"
+          }
+        }
+      },
       "renderer": "table",
       "source": {
         "id": "finding-nist-coverage",
@@ -2909,46 +6493,532 @@ window.__SCRIBE_MANIFEST__ = {
       "sourceDataRows": [
         {
           "label": "AC Access Control",
+          "labelText": {
+            "catalogDependency": {
+              "explicitLocales": [],
+              "lookupLocales": [
+                "en-US",
+                "en-GB",
+                "en-CA",
+                "fr-CA",
+                "en-IN",
+                "cy-GB",
+                "gd-GB",
+                "ga-GB",
+                "es-US",
+                "es-MX",
+                "de-DE",
+                "fr-FR",
+                "es-ES",
+                "it-IT",
+                "nl-NL",
+                "pl-PL",
+                "pt-PT",
+                "pt-BR",
+                "ro-RO",
+                "sv-SE",
+                "ko-KR",
+                "zh-CN",
+                "ja-JP",
+                "hi-IN"
+              ],
+              "reportFallbacks": {},
+              "sourceLocale": "en-US"
+            },
+            "defaultLocale": "en-US",
+            "defaultText": "{family} {familyTitle}",
+            "icuArgs": {
+              "family": "AC",
+              "familyTitle": "Access Control"
+            },
+            "msgid": "scribe.report.nistCoverage.sourceRow.family",
+            "provenance": "template",
+            "reviewState": "reviewed",
+            "values": {
+              "en-US": {
+                "fallback": false,
+                "reviewed": true,
+                "text": "{family} {familyTitle}"
+              },
+              "es-US": {
+                "fallback": false,
+                "reviewed": true,
+                "text": "{family} {familyTitle}"
+              }
+            }
+          },
           "unit": "present controls",
-          "value": "8/19"
+          "value": "5/19"
         },
         {
           "label": "AU Audit and Accountability",
+          "labelText": {
+            "catalogDependency": {
+              "explicitLocales": [],
+              "lookupLocales": [
+                "en-US",
+                "en-GB",
+                "en-CA",
+                "fr-CA",
+                "en-IN",
+                "cy-GB",
+                "gd-GB",
+                "ga-GB",
+                "es-US",
+                "es-MX",
+                "de-DE",
+                "fr-FR",
+                "es-ES",
+                "it-IT",
+                "nl-NL",
+                "pl-PL",
+                "pt-PT",
+                "pt-BR",
+                "ro-RO",
+                "sv-SE",
+                "ko-KR",
+                "zh-CN",
+                "ja-JP",
+                "hi-IN"
+              ],
+              "reportFallbacks": {},
+              "sourceLocale": "en-US"
+            },
+            "defaultLocale": "en-US",
+            "defaultText": "{family} {familyTitle}",
+            "icuArgs": {
+              "family": "AU",
+              "familyTitle": "Audit and Accountability"
+            },
+            "msgid": "scribe.report.nistCoverage.sourceRow.family",
+            "provenance": "template",
+            "reviewState": "reviewed",
+            "values": {
+              "en-US": {
+                "fallback": false,
+                "reviewed": true,
+                "text": "{family} {familyTitle}"
+              },
+              "es-US": {
+                "fallback": false,
+                "reviewed": true,
+                "text": "{family} {familyTitle}"
+              }
+            }
+          },
           "unit": "present controls",
           "value": "0/12"
         },
         {
           "label": "CM Configuration Management",
+          "labelText": {
+            "catalogDependency": {
+              "explicitLocales": [],
+              "lookupLocales": [
+                "en-US",
+                "en-GB",
+                "en-CA",
+                "fr-CA",
+                "en-IN",
+                "cy-GB",
+                "gd-GB",
+                "ga-GB",
+                "es-US",
+                "es-MX",
+                "de-DE",
+                "fr-FR",
+                "es-ES",
+                "it-IT",
+                "nl-NL",
+                "pl-PL",
+                "pt-PT",
+                "pt-BR",
+                "ro-RO",
+                "sv-SE",
+                "ko-KR",
+                "zh-CN",
+                "ja-JP",
+                "hi-IN"
+              ],
+              "reportFallbacks": {},
+              "sourceLocale": "en-US"
+            },
+            "defaultLocale": "en-US",
+            "defaultText": "{family} {familyTitle}",
+            "icuArgs": {
+              "family": "CM",
+              "familyTitle": "Configuration Management"
+            },
+            "msgid": "scribe.report.nistCoverage.sourceRow.family",
+            "provenance": "template",
+            "reviewState": "reviewed",
+            "values": {
+              "en-US": {
+                "fallback": false,
+                "reviewed": true,
+                "text": "{family} {familyTitle}"
+              },
+              "es-US": {
+                "fallback": false,
+                "reviewed": true,
+                "text": "{family} {familyTitle}"
+              }
+            }
+          },
           "unit": "present controls",
-          "value": "1/14"
+          "value": "0/14"
         },
         {
           "label": "IA Identification and Authentication",
+          "labelText": {
+            "catalogDependency": {
+              "explicitLocales": [],
+              "lookupLocales": [
+                "en-US",
+                "en-GB",
+                "en-CA",
+                "fr-CA",
+                "en-IN",
+                "cy-GB",
+                "gd-GB",
+                "ga-GB",
+                "es-US",
+                "es-MX",
+                "de-DE",
+                "fr-FR",
+                "es-ES",
+                "it-IT",
+                "nl-NL",
+                "pl-PL",
+                "pt-PT",
+                "pt-BR",
+                "ro-RO",
+                "sv-SE",
+                "ko-KR",
+                "zh-CN",
+                "ja-JP",
+                "hi-IN"
+              ],
+              "reportFallbacks": {},
+              "sourceLocale": "en-US"
+            },
+            "defaultLocale": "en-US",
+            "defaultText": "{family} {familyTitle}",
+            "icuArgs": {
+              "family": "IA",
+              "familyTitle": "Identification and Authentication"
+            },
+            "msgid": "scribe.report.nistCoverage.sourceRow.family",
+            "provenance": "template",
+            "reviewState": "reviewed",
+            "values": {
+              "en-US": {
+                "fallback": false,
+                "reviewed": true,
+                "text": "{family} {familyTitle}"
+              },
+              "es-US": {
+                "fallback": false,
+                "reviewed": true,
+                "text": "{family} {familyTitle}"
+              }
+            }
+          },
           "unit": "present controls",
           "value": "0/15"
         },
         {
           "label": "SC System and Communications Protection",
+          "labelText": {
+            "catalogDependency": {
+              "explicitLocales": [],
+              "lookupLocales": [
+                "en-US",
+                "en-GB",
+                "en-CA",
+                "fr-CA",
+                "en-IN",
+                "cy-GB",
+                "gd-GB",
+                "ga-GB",
+                "es-US",
+                "es-MX",
+                "de-DE",
+                "fr-FR",
+                "es-ES",
+                "it-IT",
+                "nl-NL",
+                "pl-PL",
+                "pt-PT",
+                "pt-BR",
+                "ro-RO",
+                "sv-SE",
+                "ko-KR",
+                "zh-CN",
+                "ja-JP",
+                "hi-IN"
+              ],
+              "reportFallbacks": {},
+              "sourceLocale": "en-US"
+            },
+            "defaultLocale": "en-US",
+            "defaultText": "{family} {familyTitle}",
+            "icuArgs": {
+              "family": "SC",
+              "familyTitle": "System and Communications Protection"
+            },
+            "msgid": "scribe.report.nistCoverage.sourceRow.family",
+            "provenance": "template",
+            "reviewState": "reviewed",
+            "values": {
+              "en-US": {
+                "fallback": false,
+                "reviewed": true,
+                "text": "{family} {familyTitle}"
+              },
+              "es-US": {
+                "fallback": false,
+                "reviewed": true,
+                "text": "{family} {familyTitle}"
+              }
+            }
+          },
           "unit": "present controls",
-          "value": "1/15"
+          "value": "0/15"
         },
         {
           "label": "SI System and Information Integrity",
+          "labelText": {
+            "catalogDependency": {
+              "explicitLocales": [],
+              "lookupLocales": [
+                "en-US",
+                "en-GB",
+                "en-CA",
+                "fr-CA",
+                "en-IN",
+                "cy-GB",
+                "gd-GB",
+                "ga-GB",
+                "es-US",
+                "es-MX",
+                "de-DE",
+                "fr-FR",
+                "es-ES",
+                "it-IT",
+                "nl-NL",
+                "pl-PL",
+                "pt-PT",
+                "pt-BR",
+                "ro-RO",
+                "sv-SE",
+                "ko-KR",
+                "zh-CN",
+                "ja-JP",
+                "hi-IN"
+              ],
+              "reportFallbacks": {},
+              "sourceLocale": "en-US"
+            },
+            "defaultLocale": "en-US",
+            "defaultText": "{family} {familyTitle}",
+            "icuArgs": {
+              "family": "SI",
+              "familyTitle": "System and Information Integrity"
+            },
+            "msgid": "scribe.report.nistCoverage.sourceRow.family",
+            "provenance": "template",
+            "reviewState": "reviewed",
+            "values": {
+              "en-US": {
+                "fallback": false,
+                "reviewed": true,
+                "text": "{family} {familyTitle}"
+              },
+              "es-US": {
+                "fallback": false,
+                "reviewed": true,
+                "text": "{family} {familyTitle}"
+              }
+            }
+          },
           "unit": "present controls",
           "value": "1/14"
         },
         {
           "label": "RA Risk Assessment",
+          "labelText": {
+            "catalogDependency": {
+              "explicitLocales": [],
+              "lookupLocales": [
+                "en-US",
+                "en-GB",
+                "en-CA",
+                "fr-CA",
+                "en-IN",
+                "cy-GB",
+                "gd-GB",
+                "ga-GB",
+                "es-US",
+                "es-MX",
+                "de-DE",
+                "fr-FR",
+                "es-ES",
+                "it-IT",
+                "nl-NL",
+                "pl-PL",
+                "pt-PT",
+                "pt-BR",
+                "ro-RO",
+                "sv-SE",
+                "ko-KR",
+                "zh-CN",
+                "ja-JP",
+                "hi-IN"
+              ],
+              "reportFallbacks": {},
+              "sourceLocale": "en-US"
+            },
+            "defaultLocale": "en-US",
+            "defaultText": "{family} {familyTitle}",
+            "icuArgs": {
+              "family": "RA",
+              "familyTitle": "Risk Assessment"
+            },
+            "msgid": "scribe.report.nistCoverage.sourceRow.family",
+            "provenance": "template",
+            "reviewState": "reviewed",
+            "values": {
+              "en-US": {
+                "fallback": false,
+                "reviewed": true,
+                "text": "{family} {familyTitle}"
+              },
+              "es-US": {
+                "fallback": false,
+                "reviewed": true,
+                "text": "{family} {familyTitle}"
+              }
+            }
+          },
           "unit": "present controls",
           "value": "0/4"
         },
         {
           "label": "SA System and Services Acquisition",
+          "labelText": {
+            "catalogDependency": {
+              "explicitLocales": [],
+              "lookupLocales": [
+                "en-US",
+                "en-GB",
+                "en-CA",
+                "fr-CA",
+                "en-IN",
+                "cy-GB",
+                "gd-GB",
+                "ga-GB",
+                "es-US",
+                "es-MX",
+                "de-DE",
+                "fr-FR",
+                "es-ES",
+                "it-IT",
+                "nl-NL",
+                "pl-PL",
+                "pt-PT",
+                "pt-BR",
+                "ro-RO",
+                "sv-SE",
+                "ko-KR",
+                "zh-CN",
+                "ja-JP",
+                "hi-IN"
+              ],
+              "reportFallbacks": {},
+              "sourceLocale": "en-US"
+            },
+            "defaultLocale": "en-US",
+            "defaultText": "{family} {familyTitle}",
+            "icuArgs": {
+              "family": "SA",
+              "familyTitle": "System and Services Acquisition"
+            },
+            "msgid": "scribe.report.nistCoverage.sourceRow.family",
+            "provenance": "template",
+            "reviewState": "reviewed",
+            "values": {
+              "en-US": {
+                "fallback": false,
+                "reviewed": true,
+                "text": "{family} {familyTitle}"
+              },
+              "es-US": {
+                "fallback": false,
+                "reviewed": true,
+                "text": "{family} {familyTitle}"
+              }
+            }
+          },
           "unit": "present controls",
           "value": "0/6"
         },
         {
           "label": "PT PII Processing and Transparency",
+          "labelText": {
+            "catalogDependency": {
+              "explicitLocales": [],
+              "lookupLocales": [
+                "en-US",
+                "en-GB",
+                "en-CA",
+                "fr-CA",
+                "en-IN",
+                "cy-GB",
+                "gd-GB",
+                "ga-GB",
+                "es-US",
+                "es-MX",
+                "de-DE",
+                "fr-FR",
+                "es-ES",
+                "it-IT",
+                "nl-NL",
+                "pl-PL",
+                "pt-PT",
+                "pt-BR",
+                "ro-RO",
+                "sv-SE",
+                "ko-KR",
+                "zh-CN",
+                "ja-JP",
+                "hi-IN"
+              ],
+              "reportFallbacks": {},
+              "sourceLocale": "en-US"
+            },
+            "defaultLocale": "en-US",
+            "defaultText": "{family} {familyTitle}",
+            "icuArgs": {
+              "family": "PT",
+              "familyTitle": "PII Processing and Transparency"
+            },
+            "msgid": "scribe.report.nistCoverage.sourceRow.family",
+            "provenance": "template",
+            "reviewState": "reviewed",
+            "values": {
+              "en-US": {
+                "fallback": false,
+                "reviewed": true,
+                "text": "{family} {familyTitle}"
+              },
+              "es-US": {
+                "fallback": false,
+                "reviewed": true,
+                "text": "{family} {familyTitle}"
+              }
+            }
+          },
           "unit": "present controls",
           "value": "0/4"
         }

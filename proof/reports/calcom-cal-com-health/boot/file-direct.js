@@ -5,6 +5,111 @@ window.__SCRIBE_FILE_DIRECT_RUNTIME__ = {
 };
 
 
+  var canonicalPermalinkTemplate = document.createElement('template');
+  canonicalPermalinkTemplate.innerHTML = "<a href=\"#section-sonde-runtime-anchor\" title=\"Permalink\" aria-label=\"Permalink\" data-sonde-permalink=\"#section-sonde-runtime-anchor\"><svg width=\"14\" height=\"14\" viewBox=\"0 0 24 24\" fill=\"currentColor\" aria-hidden=\"true\" focusable=\"false\" data-sonde-icon=\"link\" data-sonde-icon-provider=\"material\"><g><path d=\"M17 7h-3c-.55 0-1 .45-1 1s.45 1 1 1h3c1.65 0 3 1.35 3 3s-1.35 3-3 3h-3c-.55 0-1 .45-1 1s.45 1 1 1h3c2.76 0 5-2.24 5-5s-2.24-5-5-5m-9 5c0 .55.45 1 1 1h6c.55 0 1-.45 1-1s-.45-1-1-1H9c-.55 0-1 .45-1 1m2 3H7c-1.65 0-3-1.35-3-3s1.35-3 3-3h3c.55 0 1-.45 1-1s-.45-1-1-1H7c-2.76 0-5 2.24-5 5s2.24 5 5 5h3c.55 0 1-.45 1-1s-.45-1-1-1\"></path></g></svg></a>";
+  function configureCanonicalPermalinkAnchor(link, anchorId, options) {
+    var fragment = '#' + anchorId;
+    link.setAttribute('href', fragment);
+    link.setAttribute('data-sonde-permalink', fragment);
+    if (options && options.share) link.setAttribute('data-share-anchor', anchorId);
+    if (options && options.messageId) link.setAttribute('data-scribe-label-msgid', options.messageId);
+    if (options && options.label) {
+      link.setAttribute('title', options.label);
+      link.setAttribute('aria-label', options.label);
+    }
+  }
+  function createCanonicalPermalinkAnchor(anchorId, options) {
+    var templateLink = canonicalPermalinkTemplate.content.firstElementChild;
+    if (!templateLink) throw new Error('Canonical permalink template did not create an anchor.');
+    var link = templateLink.cloneNode(true);
+    configureCanonicalPermalinkAnchor(link, anchorId, options || {});
+    return link;
+  }
+  function attachCanonicalPermalinkBehavior(options) {
+    document.querySelectorAll('[data-sonde-permalink]:not([data-sonde-permalink-bound])').forEach(function (link) {
+      link.setAttribute('data-sonde-permalink-bound', 'true');
+      link.addEventListener('click', function (event) {
+        var fragment = link.getAttribute('data-sonde-permalink') || link.getAttribute('href') || '';
+        if (!fragment) return;
+        if (options && options.beforeActivate) options.beforeActivate(event, link, fragment);
+        if (options && options.activate && !options.activate(fragment, link)) return;
+        if (options && options.copyText) {
+          var copiedValue = options.copyValue
+            ? options.copyValue(fragment, link)
+            : window.location.href.split('#')[0] + fragment;
+          options.copyText(copiedValue);
+        }
+        if (options && options.onShare && link.hasAttribute('data-share-anchor')) {
+          options.onShare(fragment, link);
+        }
+        link.classList.add('is-copied');
+        window.setTimeout(function () {
+          link.classList.remove('is-copied');
+        }, 1600);
+      });
+    });
+  }
+
+
+function createReportContentCache(capacityBytes, load) {
+  var entries = new Map();
+  var pending = new Map();
+  var observers = new Map();
+  var residentBytes = 0;
+  function discard(key) {
+    var entry = entries.get(key);
+    if (!entry) return;
+    entries.delete(key);
+    residentBytes -= entry.bytes;
+    var listeners = observers.get(key);
+    observers.delete(key);
+    if (listeners) listeners.forEach(function (listener) { listener.evict(); });
+  }
+  return {
+    peek: function (key) { var entry = entries.get(key); return entry ? entry.value : undefined; },
+    get: function (key, path, expectedBytes) {
+      observers.forEach(function (listeners, observedKey) {
+        listeners.forEach(function (listener) { if (listener.connected && !listener.connected()) listeners.delete(listener); });
+        if (listeners.size === 0) observers.delete(observedKey);
+      });
+      if (!Number.isSafeInteger(expectedBytes) || expectedBytes < 0 || expectedBytes > capacityBytes) {
+        return Promise.reject(new Error('content-slice-too-large'));
+      }
+      var resident = entries.get(key);
+      if (resident) {
+        entries.delete(key);
+        entries.set(key, resident);
+        return Promise.resolve(resident.value);
+      }
+      if (pending.has(key)) return pending.get(key);
+      var request = Promise.resolve().then(function () { return load(key, path); }).then(function (value) {
+        var bytes = new TextEncoder().encode(value).byteLength;
+        if (bytes !== expectedBytes) throw new Error('content-slice-size-mismatch');
+        while (residentBytes + bytes > capacityBytes && entries.size > 0) discard(entries.keys().next().value);
+        entries.set(key, { value: value, bytes: bytes });
+        residentBytes += bytes;
+        return value;
+      }).finally(function () { pending.delete(key); });
+      pending.set(key, request);
+      return request;
+    },
+    observe: function (key, onEvict, connected) {
+      if (!entries.has(key)) { onEvict(); return function () {}; }
+      var listeners = observers.get(key) || new Set();
+      var listener = { evict: onEvict, connected: connected };
+      listeners.add(listener);
+      observers.set(key, listeners);
+      return function () {
+        listeners.delete(listener);
+        if (listeners.size === 0) observers.delete(key);
+      };
+    },
+    stats: function () { return { residentBytes: residentBytes, entries: entries.size, pending: pending.size }; }
+  };
+}
+
+
+
 (function () {
   // The runtime is always inlined into a browser document — no SSR
   // guard needed. The idempotent check below silently returns if the
@@ -254,7 +359,10 @@ window.__SCRIBE_FILE_DIRECT_RUNTIME__ = {
     }
     function prepareFrame() {
       if (printFrameCancelled) return;
-      materializeCompleteReportForPrint(prepareMaterializedFrame);
+      materializeCompleteReportForPrint(function () {
+        applyFiltersNow();
+        prepareMaterializedFrame();
+      });
     }
     if (document.readyState === 'loading') {
       document.addEventListener('DOMContentLoaded', prepareFrame, { once: true });
@@ -317,13 +425,18 @@ window.__SCRIBE_FILE_DIRECT_RUNTIME__ = {
   var settingsSectionStorageKey = 'sonde-scribe-report-settings-sections';
   var languageSearchLabel = {"msgid":"scribe.report.control.languageSearch","defaultText":"Search languages"};
   var pageStatusLabel = {"msgid":"scribe.report.control.pageStatus","defaultText":"Page"};
-  var chunkedFindingLabels = {"sourceSnippetTitle":{"msgid":"scribe.report.repositoryHealth.sourceSnippet.title","defaultText":"Source evidence"},"sourcePermalink":{"msgid":"scribe.report.action.sourcePermalink","defaultText":"Open source permalink"},"collapseSourceSnippet":{"msgid":"scribe.report.action.collapseSourceSnippet","defaultText":"Collapse snippet"},"expandSourceSnippet":{"msgid":"scribe.report.action.expandSourceSnippet","defaultText":"Expand snippet"},"fullScreenSourceSnippet":{"msgid":"scribe.report.action.fullScreenSourceSnippet","defaultText":"Full screen snippet"},"closeFullScreenSourceSnippet":{"msgid":"scribe.report.action.closeFullScreenSourceSnippet","defaultText":"Close full screen snippet"},"shareFinding":{"msgid":"scribe.report.action.shareFinding","defaultText":"Share finding"},"feedbackFinding":{"msgid":"scribe.report.action.feedbackFinding","defaultText":"Send feedback"},"findingPermalink":{"msgid":"scribe.report.action.findingPermalink","defaultText":"Copy finding link"},"openFixPlan":{"msgid":"scribe.report.action.openFixPlan","defaultText":"Open fix plan"}};
+  var chunkedFindingLabels = {"sourceSnippetTitle":{"msgid":"scribe.report.repositoryHealth.sourceSnippet.title","defaultText":"Source evidence"},"sourcePermalink":{"msgid":"scribe.report.action.sourcePermalink","defaultText":"Open source permalink"},"collapseSourceSnippet":{"msgid":"scribe.report.action.collapseSourceSnippet","defaultText":"Collapse snippet"},"expandSourceSnippet":{"msgid":"scribe.report.action.expandSourceSnippet","defaultText":"Expand snippet"},"fullScreenSourceSnippet":{"msgid":"scribe.report.action.fullScreenSourceSnippet","defaultText":"Full screen snippet"},"closeFullScreenSourceSnippet":{"msgid":"scribe.report.action.closeFullScreenSourceSnippet","defaultText":"Close full screen snippet"},"shareFinding":{"msgid":"scribe.report.action.shareFinding","defaultText":"Share finding"},"feedbackFinding":{"msgid":"scribe.report.action.feedbackFinding","defaultText":"Send feedback"},"findingPermalink":{"msgid":"scribe.report.action.findingPermalink","defaultText":"Copy finding link"},"openFixPlan":{"msgid":"scribe.report.action.openFixPlan","defaultText":"Open fix plan"},"diffBeforeAfter":{"msgid":"scribe.report.fixPlan.component.beforeAfter","defaultText":"Before / after (auto-fix preview)"},"diffOriginal":{"msgid":"scribe.report.fixPlan.component.original","defaultText":"Original"},"diffFixed":{"msgid":"scribe.report.fixPlan.component.fixed","defaultText":"Fixed"},"diffSplitView":{"msgid":"scribe.report.fixPlan.component.splitView","defaultText":"Split"},"diffUnifiedView":{"msgid":"scribe.report.fixPlan.component.unifiedView","defaultText":"Unified"},"diffFullScreen":{"msgid":"scribe.report.fixPlan.component.fullScreen","defaultText":"Full screen diff"},"diffCloseFullScreen":{"msgid":"scribe.report.fixPlan.component.closeFullScreen","defaultText":"Close"},"autofixTitle":{"msgid":"scribe.report.finding.autofix.title","defaultText":"Autofix"},"measuredResults":{"msgid":"scribe.report.metric.measuredResults","defaultText":"Measured results"},"measuredResultsExplanation":{"msgid":"scribe.report.metric.explanation","defaultText":"Each row shows its own ordered reference bands and measured value. The metric label states which direction is better."},"lowerIsBetter":{"msgid":"scribe.report.metric.lowerIsBetter","defaultText":"Lower is better"},"higherIsBetter":{"msgid":"scribe.report.metric.higherIsBetter","defaultText":"Higher is better"},"measured":{"msgid":"scribe.report.metric.measured","defaultText":"measured"},"referenceRanges":{"msgid":"scribe.report.metric.referenceRanges","defaultText":"Reference ranges"},"displayedScale":{"msgid":"scribe.report.metric.displayedScale","defaultText":"Displayed scale"},"good":{"msgid":"scribe.report.metric.severity.good","defaultText":"Good"},"moderate":{"msgid":"scribe.report.metric.severity.moderate","defaultText":"Moderate"},"high":{"msgid":"scribe.report.metric.severity.high","defaultText":"High"},"critical":{"msgid":"scribe.report.metric.severity.critical","defaultText":"Critical"}};
+  var fullscreenIconSvg = "<svg width=\"16\" height=\"16\" viewBox=\"0 0 24 24\" fill=\"currentColor\" aria-hidden=\"true\" focusable=\"false\" data-sonde-icon=\"material:OpenInFull\" data-sonde-icon-provider=\"material\"><g><path d=\"M21 8.59V4c0-.55-.45-1-1-1h-4.59c-.89 0-1.34 1.08-.71 1.71l1.59 1.59-10 10-1.59-1.59c-.62-.63-1.7-.19-1.7.7V20c0 .55.45 1 1 1h4.59c.89 0 1.34-1.08.71-1.71L7.71 17.7l10-10 1.59 1.59c.62.63 1.7.19 1.7-.7\"></path></g></svg>";
+  var externalLinkIconSvg = "<svg width=\"16\" height=\"16\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\" focusable=\"false\"><path d=\"M15 3h6v6\"/><path d=\"M10 14 21 3\"/><path d=\"M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6\"/></svg>";
   var reportCurrentPage = 1;
   var reportCurrentPageCount = 1;
   var pendingFilterTimer = 0;
   var reportFilterGeneration = 0;
   var reportFilterBatchSize = 500;
+  var reportQueryFilter = '';
   var reportResultTextCache = typeof WeakMap === 'function' ? new WeakMap() : null;
+  var revealedFinding = null;
+  var evidenceReturnContext = null;
   var activeReportOperation = null;
 
   function reportOperationRuntime() {
@@ -353,6 +466,7 @@ window.__SCRIBE_FILE_DIRECT_RUNTIME__ = {
 
   function finishReportOperation(operation) {
     if (operation && activeReportOperation !== operation) return;
+    if (operation && operation.kind === 'print') restoreReportAfterPrint();
     var runtime = reportOperationRuntime();
     if (runtime) runtime.finish(operation);
     activeReportOperation = null;
@@ -362,6 +476,7 @@ window.__SCRIBE_FILE_DIRECT_RUNTIME__ = {
   function cancelReportOperation(reason) {
     var operation = activeReportOperation;
     if (!operation) return false;
+    if (operation.kind === 'print') restoreReportAfterPrint();
     if (operation.kind === 'filter') {
       reportFilterGeneration += 1;
       if (pendingFilterTimer) {
@@ -512,8 +627,9 @@ window.__SCRIBE_FILE_DIRECT_RUNTIME__ = {
       .replace(/</g, '&lt;')
       .replace(/>/g, '&gt;')
       .replace(/"/g, '&quot;')
-      .replace(/&lt;strong&gt;/g, '<strong>')
-      .replace(/&lt;\/strong&gt;/g, '</strong>');
+      .replace(/&lt;\/?(?:strong|code)&gt;|&lt;span class=&quot;scribe-capability-tier&quot; data-tier=&quot;[a-zA-Z0-9-]+&quot;&gt;|&lt;\/span&gt;/g, function (escaped) {
+        return escaped.replaceAll('&lt;', '<').replaceAll('&gt;', '>').replaceAll('&quot;', '"').replaceAll('&amp;', '&');
+      });
   }
 
   function isSafeReportAssetPath(path) {
@@ -529,13 +645,13 @@ window.__SCRIBE_FILE_DIRECT_RUNTIME__ = {
   function themeHrefForCurrentPage(link, theme) {
     var currentHref = link.getAttribute('href') || '';
     if (!isSafeReportAssetPath(theme.cssPath || '')) return currentHref;
-    var marker = 'assets/themes/';
+    var marker = 'assets/immutable/';
     var markerIndex = currentHref.indexOf(marker);
     var prefix = markerIndex >= 0 ? currentHref.slice(0, markerIndex) : '';
     return prefix + theme.cssPath;
   }
 
-  function applyReportTheme(themeId) {
+  function applyReportTheme(themeId, persistTheme) {
     var theme = themeById(themeId);
     var link = document.querySelector('[data-scribe-theme-stylesheet]');
     if (!theme || !link) return;
@@ -546,7 +662,7 @@ window.__SCRIBE_FILE_DIRECT_RUNTIME__ = {
     document.querySelectorAll('input[name="sonde-platform-theme-toggle"]').forEach(function (input) {
       input.checked = input.value === theme.themeId;
     });
-    storeThemeId(theme.themeId);
+    if (persistTheme !== false) storeThemeId(theme.themeId);
   }
 
   function defaultReportThemeId() {
@@ -586,7 +702,7 @@ window.__SCRIBE_FILE_DIRECT_RUNTIME__ = {
     });
   }
 
-  function applyReportMode(mode) {
+  function applyReportMode(mode, persistMode) {
     var nextMode = isSupportedMode(mode) ? mode : 'auto';
     document.documentElement.setAttribute('data-theme', nextMode);
     document.documentElement.setAttribute('data-mode', nextMode);
@@ -594,7 +710,7 @@ window.__SCRIBE_FILE_DIRECT_RUNTIME__ = {
     document.querySelectorAll('input[name="sonde-theme-toggle"]').forEach(function (input) {
       input.checked = input.value === nextMode;
     });
-    storeMode(nextMode);
+    if (persistMode !== false) storeMode(nextMode);
   }
 
   function restoreReportMode() {
@@ -965,12 +1081,31 @@ window.__SCRIBE_FILE_DIRECT_RUNTIME__ = {
     return isSupportedMode(mode || '') ? mode : null;
   }
 
+  // Presentation certification supplies these standard scan inputs. They
+  // intentionally override restored preferences without persisting, so an
+  // exact matrix capture never changes a reader's chosen report appearance.
+  function requestedCertificationThemeId() {
+    var themeId = queryParam('scan_theme');
+    return themeById(themeId || '') ? themeId : null;
+  }
+
+  function requestedCertificationMode() {
+    var mode = queryParam('scan_theme_mode');
+    return isSupportedMode(mode || '') ? mode : null;
+  }
+
+  function requestedCertificationLocale() {
+    var locale = queryParam('scan_locale');
+    return localeBundle(locale || '') ? locale : null;
+  }
+
   function requestedPrintFilters() {
     return {
       query: queryParam('scribe_filter_query') || '',
       severity: queryParam('scribe_filter_severity') || '',
       language: queryParam('scribe_filter_language') || '',
-      classification: queryParam('scribe_filter_classification') || ''
+      classification: queryParam('scribe_filter_classification') || '',
+      autofix: queryParam('scribe_filter_autofix') || ''
     };
   }
 
@@ -996,7 +1131,9 @@ window.__SCRIBE_FILE_DIRECT_RUNTIME__ = {
     document.documentElement.lang = locale;
     if (window.__SCRIBE_MANIFEST__ && window.__SCRIBE_MANIFEST__.title) {
       var titleEntry = bundle.messages[window.__SCRIBE_MANIFEST__.title.msgid];
-      document.title = titleEntry ? formatLocalizedTemplate(titleEntry.text, {}) : defaultDocumentTitle;
+      document.title = titleEntry
+        ? formatLocalizedTemplate(titleEntry.text, window.__SCRIBE_MANIFEST__.title.icuArgs || {})
+        : defaultDocumentTitle;
     }
     document.querySelectorAll('[data-scribe-msgid]').forEach(function (element) {
       var entry = localeEntry(bundle, element, 'data-scribe-msgid');
@@ -1039,15 +1176,72 @@ window.__SCRIBE_FILE_DIRECT_RUNTIME__ = {
     });
     syncSearchDialogLocale(locale);
     syncLanguageSearchLabel();
+    syncBeforeAfterDiffLabels();
     filterLanguageOptions();
     hydrateLocalizedNumbers();
-    updateSidebarToggleLabel(isSidebarCollapsed());
+    refreshOpenPlanLocales();
   }
 
   function localizedText(msgid, fallback) {
     var bundle = localeBundle(currentLocale() || document.documentElement.lang);
     var entry = bundle && msgid ? bundle.messages[msgid] : undefined;
     return entry && entry.text ? entry.text : fallback;
+  }
+
+  // The before/after diff's chrome in the ACTIVE locale. The build-time path resolves the same
+  // seven msgids through msg(), which bakes one locale into the HTML; reading them from the
+  // report's own locale bundle is what lets a client-rendered diff follow a locale switch.
+  // The two pane names are composed, not their own msgids: both halves are already localized
+  // and an ICU template would have to bake one locale's arguments into every locale's string.
+  function beforeAfterDiffLabels() {
+    var beforeAfter = localizedText(chunkedFindingLabels.diffBeforeAfter.msgid, chunkedFindingLabels.diffBeforeAfter.defaultText);
+    var original = localizedText(chunkedFindingLabels.diffOriginal.msgid, chunkedFindingLabels.diffOriginal.defaultText);
+    var fixed = localizedText(chunkedFindingLabels.diffFixed.msgid, chunkedFindingLabels.diffFixed.defaultText);
+    return {
+      beforeAfter: beforeAfter,
+      original: original,
+      fixed: fixed,
+      originalPane: beforeAfter + ': ' + original,
+      fixedPane: beforeAfter + ': ' + fixed,
+      splitView: localizedText(chunkedFindingLabels.diffSplitView.msgid, chunkedFindingLabels.diffSplitView.defaultText),
+      unifiedView: localizedText(chunkedFindingLabels.diffUnifiedView.msgid, chunkedFindingLabels.diffUnifiedView.defaultText),
+      fullScreen: localizedText(chunkedFindingLabels.diffFullScreen.msgid, chunkedFindingLabels.diffFullScreen.defaultText),
+      closeFullScreen: localizedText(chunkedFindingLabels.diffCloseFullScreen.msgid, chunkedFindingLabels.diffCloseFullScreen.defaultText)
+    };
+  }
+
+  // A rendered diff is one innerHTML blob, so the [data-scribe-msgid] sweep cannot reach inside
+  // it. Re-labelling in place beats re-rendering: the code itself never changes with the locale,
+  // and re-diffing every open finding on a locale switch would be pure waste.
+  function syncBeforeAfterDiffLabels() {
+    var containers = document.querySelectorAll('[data-scribe-fixplan-before-after]');
+    if (containers.length === 0) return;
+    var labels = beforeAfterDiffLabels();
+    containers.forEach(function (container) {
+      container.setAttribute('data-scribe-diff-close-fullscreen-label', labels.closeFullScreen);
+      var label = container.querySelector('[data-scribe-diff-label]');
+      if (label) label.textContent = labels.beforeAfter;
+      var group = container.querySelector('.scribe-diff-view-toggle');
+      if (group) group.setAttribute('aria-label', labels.beforeAfter);
+      var split = container.querySelector('[data-scribe-diff-view="split"]');
+      if (split) split.textContent = labels.splitView;
+      var unified = container.querySelector('[data-scribe-diff-view="unified"]');
+      if (unified) unified.textContent = labels.unifiedView;
+      var fullscreen = container.querySelector('[data-scribe-diff-fullscreen]');
+      if (fullscreen) {
+        fullscreen.setAttribute('title', labels.fullScreen);
+        fullscreen.setAttribute('aria-label', labels.fullScreen);
+      }
+      container.querySelectorAll('.sonde-diff').forEach(function (region) {
+        region.setAttribute('aria-label', labels.beforeAfter);
+      });
+      container.querySelectorAll('.sonde-diff-pane').forEach(function (pane) {
+        var isOld = pane.className.indexOf('sonde-diff-pane--old') >= 0;
+        pane.setAttribute('aria-label', isOld ? labels.originalPane : labels.fixedPane);
+        var header = pane.querySelector('.sonde-diff-pane-header');
+        if (header) header.textContent = isOld ? labels.original : labels.fixed;
+      });
+    });
   }
 
   function languageSearchInput() {
@@ -1141,7 +1335,10 @@ window.__SCRIBE_FILE_DIRECT_RUNTIME__ = {
 
   function readFilter(id) {
     var input = byId(id);
-    return input ? input.value.toLowerCase() : '';
+    if (!input && id === 'report-search') return reportQueryFilter;
+    if (!input) return '';
+    if (input.type === 'checkbox') return input.checked ? input.value.toLowerCase() : '';
+    return input.value.toLowerCase();
   }
 
   function readPageSize() {
@@ -1237,11 +1434,21 @@ window.__SCRIBE_FILE_DIRECT_RUNTIME__ = {
   }
 
   function readCurrentReportFilters() {
+    // Native controls serialize the shared ActiveFilter column/value model.
+    var activeFilters = [];
+    var selected = {};
+    document.querySelectorAll('[data-scribe-filter-column]').forEach(function (control) {
+      var columnId = control.getAttribute('data-scribe-filter-column');
+      var value = control.type === 'checkbox' && !control.checked ? '' : control.value || '';
+      if (columnId && value) { activeFilters.push({ columnId: columnId, value: value }); selected[columnId] = value; }
+    });
     return {
+      activeFilters: activeFilters,
       query: readFilter('report-search'),
       severity: readFilter('filter-severity'),
       language: readFilter('filter-language'),
       classification: readFilter('filter-classification'),
+      autofix: selected.autofix || '',
       pageSize: readPageSize()
     };
   }
@@ -1251,7 +1458,8 @@ window.__SCRIBE_FILE_DIRECT_RUNTIME__ = {
       readFilter('report-search').length > 0 ||
       readFilter('filter-severity').length > 0 ||
       readFilter('filter-language').length > 0 ||
-      readFilter('filter-classification').length > 0
+      readFilter('filter-classification').length > 0 ||
+      readFilter('filter-autofix').length > 0
     );
   }
 
@@ -1264,17 +1472,26 @@ window.__SCRIBE_FILE_DIRECT_RUNTIME__ = {
   }
 
   function clearReportFilters() {
-    ['report-search', 'filter-severity', 'filter-language', 'filter-classification'].forEach(function (id) {
-      var input = byId(id);
-      if (input) input.value = '';
+    ['report-search', 'filter-severity', 'filter-language', 'filter-classification', 'filter-autofix'].forEach(function (id) {
+      setReportFilterValue(id, '');
     });
     updateSeverityShortcutState('');
     updateFilterClearControl();
+    persistReportFilters(true);
     scheduleApplyFilters(true, 'Clearing filters...', 'Sonde is restoring the full finding set.');
   }
 
   function setReportFilterValue(id, value) {
     var input = byId(id);
+    if (!input && id === 'report-search') {
+      reportQueryFilter = String(value || '').toLowerCase();
+      return;
+    }
+    if (input && input.type === 'checkbox') {
+      input.checked = value === input.value;
+      return;
+    }
+    if (input && input.tagName === 'SELECT' && value && !Array.from(input.options).some(function (option) { return option.value === value; })) value = '';
     if (input) input.value = value || '';
   }
 
@@ -1283,6 +1500,7 @@ window.__SCRIBE_FILE_DIRECT_RUNTIME__ = {
     setReportFilterValue('filter-severity', filters.severity || '');
     setReportFilterValue('filter-language', filters.language || '');
     setReportFilterValue('filter-classification', filters.classification || '');
+    setReportFilterValue('filter-autofix', filters.autofix || '');
     updateSeverityShortcutState(readFilter('filter-severity'));
     updateFilterClearControl();
   }
@@ -1294,10 +1512,107 @@ window.__SCRIBE_FILE_DIRECT_RUNTIME__ = {
   }
 
   function resultMatchesFilters(card, filters) {
+    var classification = card.getAttribute('data-scribe-has-autofix');
+    if (!autofixSelectionMatches(classification === 'true' ? true : classification === 'false' ? false : undefined, filters.autofix)) return false;
     if (!matchesFilter(card.getAttribute('data-severity') || '', filters.severity)) return false;
     if (!matchesFilter(card.getAttribute('data-language') || '', filters.language)) return false;
     if (!matchesFilter(card.getAttribute('data-classification') || '', filters.classification)) return false;
     return filters.query.length === 0 || cachedResultText(card).indexOf(filters.query) !== -1;
+  }
+
+  function autofixSelectionMatches(hasAutofix, selection) {
+    if (selection === 'preview') return hasAutofix === true;
+    return !selection;
+  }
+
+  function updateAutofixQualification() {
+    var index = window.__SCRIBE_FINDINGS_INDEX__;
+    var entries = index && index.filterEntries;
+    if (!entries) entries = Array.from(document.querySelectorAll('[data-scribe-result]')).map(function (card) {
+      var value = card.getAttribute('data-scribe-has-autofix');
+      return { hasAutofix: value === 'true' ? true : value === 'false' ? false : undefined,
+        severity: card.getAttribute('data-severity'), language: card.getAttribute('data-language'),
+        classification: card.getAttribute('data-classification'), searchText: cachedResultText(card) };
+    });
+    var filters = readCurrentReportFilters();
+    filters.autofix = '';
+    var population = entries.filter(function (entry) { return chunkedFindingEntryMatchesFilters(entry, filters); });
+    var known = population.filter(function (entry) { return entry.hasAutofix === true; }).length;
+    document.querySelectorAll('[data-scribe-autofix-stat]').forEach(function (button) {
+      var value = button.querySelector('[data-scribe-number]');
+      if (value) {
+        value.setAttribute('data-scribe-number', String(known));
+        value.textContent = formatNumber(known);
+      }
+      button.setAttribute('aria-describedby', 'report-autofix-help');
+    });
+  }
+
+  function persistReportFilters(resetPage, replaceHistory) {
+    if (pdfPrintFrameActive) return;
+    if (resetPage) reportCurrentPage = 1;
+    var filters = readCurrentReportFilters();
+    var url = new URL(location.href);
+    function set(name, value) { if (value) url.searchParams.set(name, String(value)); else url.searchParams.delete(name); }
+    set('q', byId('report-search') ? byId('report-search').value : filters.query);
+    url.searchParams.delete('scribe_filter_query');
+    ['severity', 'language', 'classification', 'autofix'].forEach(function (name) { set('scribe_filter_' + name, filters[name]); });
+    set('scribe_page', reportCurrentPage > 1 ? reportCurrentPage : '');
+    set('scribe_page_size', readFilter('filter-page-size') === '100' ? '' : readFilter('filter-page-size'));
+    if (url.toString() !== location.href) history[replaceHistory ? 'replaceState' : 'pushState'](null, '', url.toString());
+  }
+
+  function restoreReportFiltersFromUrl() {
+    var filters = requestedPrintFilters();
+    filters.query = queryParam('q') || filters.query;
+    setOverviewFilterState(filters);
+    var size = queryParam('scribe_page_size') || '100';
+    var control = byId('filter-page-size');
+    if (control && Array.from(control.options).some(function (option) { return option.value === size; })) control.value = size;
+    var page = Number(queryParam('scribe_page') || 1);
+    reportCurrentPage = Number.isSafeInteger(page) && page > 0 ? page : 1;
+  }
+
+  function updateVisibleTocAnchors(visibleAnchors) {
+    var activeFilters = hasActiveReportFilters();
+    document.querySelectorAll('[data-scribe-toc-result]').forEach(function (item) {
+      var anchorId = item.getAttribute('data-scribe-toc-anchor') || '';
+      item.hidden = anchorId.length > 0 && !visibleAnchors[anchorId];
+    });
+    document.querySelectorAll('[data-scribe-toc-group-container]').forEach(function (group) {
+      var visibleItems = Array.from(group.querySelectorAll('[data-scribe-toc-result]')).some(function (item) {
+        return !item.hidden;
+      });
+      group.hidden = !visibleItems;
+      // Un-hiding the matching entries is not enough: they live inside a
+      // <details>, so a collapsed group keeps every match out of the rendered
+      // page and out of the accessibility tree. A search that finds something
+      // has to reveal it.
+      var disclosure = group.querySelector('details');
+      if (!disclosure) return;
+      var filterExpanded = disclosure.hasAttribute('data-scribe-filter-expanded');
+      if (visibleItems && activeFilters) {
+        if (!filterExpanded) {
+          disclosure.setAttribute('data-scribe-open-before-filter', String(disclosure.open));
+          disclosure.setAttribute('data-scribe-filter-expanded', 'true');
+          var disclosureName = disclosure.getAttribute('name');
+          if (disclosureName !== null) {
+            disclosure.setAttribute('data-scribe-name-before-filter', disclosureName);
+            disclosure.removeAttribute('name');
+          }
+        }
+        disclosure.open = true;
+        return;
+      }
+      if (filterExpanded) {
+        disclosure.open = disclosure.getAttribute('data-scribe-open-before-filter') === 'true';
+        var nameBeforeFilter = disclosure.getAttribute('data-scribe-name-before-filter');
+        if (nameBeforeFilter !== null) disclosure.setAttribute('name', nameBeforeFilter);
+        disclosure.removeAttribute('data-scribe-open-before-filter');
+        disclosure.removeAttribute('data-scribe-name-before-filter');
+        disclosure.removeAttribute('data-scribe-filter-expanded');
+      }
+    });
   }
 
   function completeFilterApplication(matches, pageSize) {
@@ -1313,22 +1628,54 @@ window.__SCRIBE_FILE_DIRECT_RUNTIME__ = {
       card.hidden = !onPage;
       if (onPage && card.id) visibleAnchors[card.id] = true;
     });
-    document.querySelectorAll('[data-scribe-toc-result]').forEach(function (item) {
-      var anchorId = item.getAttribute('data-scribe-toc-anchor') || '';
-      item.hidden = anchorId.length > 0 && !visibleAnchors[anchorId];
-    });
-    document.querySelectorAll('[data-scribe-toc-group-container]').forEach(function (group) {
-      var visibleItems = Array.from(group.querySelectorAll('[data-scribe-toc-result]')).some(function (item) {
-        return !item.hidden;
-      });
-      group.hidden = !visibleItems;
-    });
+    updateVisibleTocAnchors(visibleAnchors);
     var count = byId('report-result-count');
     if (count) count.textContent = visibleResultText(pageStart, pageEnd, total, pageSize);
     updatePagination(total, pageSize, pageCount);
     hydrateLocalizedNumbers();
     updateSeverityShortcutState(readFilter('filter-severity'));
     updateFilterClearControl();
+    updateAutofixQualification();
+    updateAutofixPresentation();
+  }
+
+  function updateAutofixPresentation() {
+    var focused = readFilter('filter-autofix') === 'preview';
+    document.querySelectorAll('[data-scribe-autofix-stat]').forEach(function (button) {
+      button.setAttribute('aria-pressed', String(focused));
+    });
+    document.querySelectorAll('[data-scribe-result][data-scribe-has-autofix="true"] > .scribe-finding-body').forEach(function (body) {
+      var explanation = body.querySelector(':scope > [data-scribe-full-explanation]');
+      if (!focused) {
+        if (!explanation) return;
+        explanation._scribeOriginalPositions.forEach(function (entry) {
+          entry.marker.replaceWith(entry.element);
+        });
+        explanation.remove();
+        return;
+      }
+      if (explanation) return;
+      explanation = document.createElement('details');
+      explanation.setAttribute('data-scribe-full-explanation', '');
+      var findingId = body.parentElement.id;
+      explanation.open = explanationDisclosureState.get(findingId) === true;
+      explanation.addEventListener('toggle', function () {
+        if (explanation.isConnected && !planPrintActive) explanationDisclosureState.set(findingId, explanation.open);
+      });
+      var summary = document.createElement('summary');
+      summary.setAttribute('data-scribe-msgid', 'scribe.report.autofixFilter.fullExplanation');
+      summary.textContent = localizedText('scribe.report.autofixFilter.fullExplanation', 'Full explanation');
+      explanation.appendChild(summary);
+      explanation._scribeOriginalPositions = [];
+      Array.from(body.children).forEach(function (element) {
+        if (element.matches('.source-evidence, .finding-fix, [data-scribe-plan-slice], .scribe-report-link-stack')) return;
+        var marker = document.createComment('explanation-position');
+        element.before(marker);
+        explanation._scribeOriginalPositions.push({ marker: marker, element: element });
+        explanation.appendChild(element);
+      });
+      if (explanation._scribeOriginalPositions.length) body.appendChild(explanation);
+    });
   }
 
   function applyFiltersNow() {
@@ -1341,6 +1688,7 @@ window.__SCRIBE_FILE_DIRECT_RUNTIME__ = {
       if (cardMatches) matches.push(card);
     });
     completeFilterApplication(matches, filters.pageSize);
+    reconcileEvidenceReveal(true);
   }
 
   function applyFiltersChunked(generation, operation, done) {
@@ -1367,6 +1715,7 @@ window.__SCRIBE_FILE_DIRECT_RUNTIME__ = {
         return;
       }
       completeFilterApplication(matches, filters.pageSize);
+      reconcileEvidenceReveal(true);
       done(false);
     };
     processCards(0);
@@ -1391,6 +1740,12 @@ window.__SCRIBE_FILE_DIRECT_RUNTIME__ = {
     pendingFilterTimer = window.setTimeout(function () {
       pendingFilterTimer = 0;
       if (generation !== reportFilterGeneration) return;
+      if (reportUsesChunkedFindings() && !pdfPrintFrameActive && !document.body.hasAttribute('data-scribe-printing')) {
+        applyChunkedFindingFilters(function () {
+          if (generation === reportFilterGeneration && operation) finishReportOperation(operation);
+        });
+        return;
+      }
       ensureFindingsForCurrentFilterPass(function () {
         if (generation !== reportFilterGeneration || reportOperationIsAborted(operation)) return;
         if (!showSpinner) {
@@ -1481,6 +1836,7 @@ window.__SCRIBE_FILE_DIRECT_RUNTIME__ = {
         var select = byId('filter-severity');
         if (!select) return;
         select.value = select.value === severity ? '' : severity;
+        persistReportFilters(true);
         scheduleApplyFilters(true);
       });
     });
@@ -1488,23 +1844,36 @@ window.__SCRIBE_FILE_DIRECT_RUNTIME__ = {
 
   function attachOverviewFilters() {
     document.querySelectorAll('[data-scribe-overview-filter]').forEach(function (row) {
-      row.tabIndex = 0;
-      row.setAttribute('role', 'button');
+      var nativeButton = row.tagName === 'BUTTON';
+      if (!nativeButton) {
+        row.tabIndex = 0;
+        row.setAttribute('role', 'button');
+      }
       var activate = function () {
+        var autofix = row.getAttribute('data-scribe-filter-autofix');
+        if (autofix !== null) {
+          setReportFilterValue('filter-autofix', autofix);
+          persistReportFilters(true);
+          scheduleApplyFilters(true);
+          return;
+        }
         setOverviewFilterState({
           query: row.getAttribute('data-scribe-filter-query') || '',
           severity: row.getAttribute('data-scribe-filter-severity') || '',
           language: row.getAttribute('data-scribe-filter-language') || '',
           classification: row.getAttribute('data-scribe-filter-classification') || ''
         });
+        persistReportFilters(true);
         scheduleApplyFilters(true);
       };
       row.addEventListener('click', activate);
-      row.addEventListener('keydown', function (event) {
-        if (event.key !== 'Enter' && event.key !== ' ') return;
-        event.preventDefault();
-        activate();
-      });
+      if (!nativeButton) {
+        row.addEventListener('keydown', function (event) {
+          if (event.key !== 'Enter' && event.key !== ' ') return;
+          event.preventDefault();
+          activate();
+        });
+      }
     });
   }
 
@@ -1609,17 +1978,23 @@ window.__SCRIBE_FILE_DIRECT_RUNTIME__ = {
   function activateAnchorFragment(fragment) {
     if (!fragment) return false;
     var normalizedFragment = fragment.charAt(0) === '#' ? fragment : '#' + fragment;
+    function commitFragment() {
+      var targetUrl = new URL(location.href);
+      targetUrl.hash = normalizedFragment;
+      if (targetUrl.href === location.href) return;
+      history.pushState(null, '', targetUrl.href);
+    }
     if (!findingTargetFromFragment(normalizedFragment)) {
       var missingAnchorId = fragmentIdFromHref(normalizedFragment);
       ensureFindingChunkForAnchor(missingAnchorId, function (loaded) {
         if (!loaded || !findingTargetFromFragment(normalizedFragment)) return;
-        history.replaceState(null, '', normalizedFragment);
+        commitFragment();
         ensureFindingTargetOpen();
         scheduleApplyFilters(false);
       });
       return true;
     }
-    history.replaceState(null, '', normalizedFragment);
+    commitFragment();
     ensureFindingTargetOpen();
     return true;
   }
@@ -1634,7 +2009,7 @@ window.__SCRIBE_FILE_DIRECT_RUNTIME__ = {
 
   function openAnchorAncestorDetails(target) {
     if (!target) return;
-    var ancestor = target.parentElement;
+    var ancestor = target;
     while (ancestor) {
       if (ancestor.matches && ancestor.matches('details') && !ancestor.open) ancestor.open = true;
       ancestor = ancestor.parentElement;
@@ -1650,7 +2025,7 @@ window.__SCRIBE_FILE_DIRECT_RUNTIME__ = {
   function scrollNavigationTarget(target) {
     if (!target || !target.scrollIntoView) return;
     window.requestAnimationFrame(function () {
-      focusNavigationTarget(target);
+      if (!document.activeElement || !document.activeElement.closest('.scribe-report-toc')) focusNavigationTarget(target);
       target.scrollIntoView({ block: 'start' });
     });
   }
@@ -1731,17 +2106,91 @@ window.__SCRIBE_FILE_DIRECT_RUNTIME__ = {
     });
   }
 
-  function ensureFindingTargetOpen() {
+  function clearEvidenceReveal(hide) {
+    if (revealedFinding) {
+      if (hide !== false) revealedFinding.hidden = true;
+      revealedFinding.removeAttribute('data-scribe-outside-results');
+    }
+    revealedFinding = null;
+    document.querySelectorAll('[data-scribe-target-reveal]').forEach(function (notice) { notice.remove(); });
+  }
+
+  function reconcileEvidenceReveal(afterFilter) {
     var target = findingTargetFromHash();
+    var finding = target && target.closest ? target.closest('[data-scribe-result]') : null;
+    if (revealedFinding && revealedFinding !== finding) clearEvidenceReveal();
+    if (afterFilter && finding && !finding.hidden && finding === revealedFinding) {
+      clearEvidenceReveal(false);
+      return;
+    }
+    if (!finding || (!finding.hidden && finding !== revealedFinding)) return;
+    // Filtering owns counts and pagination. This navigation exception never joins the matches.
+    if (!finding.hidden && finding === revealedFinding && !finding.hasAttribute('data-scribe-outside-results')) return;
+    revealedFinding = finding;
+    finding.hidden = false;
+    finding.setAttribute('data-scribe-outside-results', '');
+    if (document.querySelector('[data-scribe-target-reveal]')) return;
+    finding.before(targetNavigationNotice('scribe.report.control.outsideResults', 'Outside the current results'));
+  }
+
+  function targetNavigationNotice(msgid, fallback) {
+    var notice = document.createElement('p');
+    notice.setAttribute('data-scribe-target-reveal', '');
+    notice.setAttribute('data-scribe-target-hash', location.hash);
+    notice.setAttribute('role', 'status');
+    var explanation = document.createElement('span');
+    explanation.setAttribute('data-scribe-msgid', msgid);
+    explanation.textContent = localizedText(msgid, fallback);
+    notice.appendChild(explanation);
+    notice.appendChild(document.createTextNode(' '));
+    var back = document.createElement('button');
+    back.type = 'button';
+    back.setAttribute('data-scribe-return-results', '');
+    back.setAttribute('data-scribe-msgid', 'scribe.report.control.returnToResults');
+    back.textContent = localizedText('scribe.report.control.returnToResults', 'Return to results');
+    back.addEventListener('click', function () {
+      var context = evidenceReturnContext;
+      var url = new URL(context ? context.url : location.href);
+      if (!context) url.hash = '';
+      history.pushState(null, '', url.toString());
+      clearEvidenceReveal();
+      evidenceReturnContext = null;
+      scheduleApplyFilters(false);
+      var focus = context && context.focus && context.focus.isConnected ? context.focus : byId('report-search');
+      if (focus) focus.focus({ preventScroll: true });
+      if (context) window.scrollTo(context.x, context.y);
+    });
+    notice.appendChild(back);
+    return notice;
+  }
+
+  function ensureFindingTargetOpen() {
+    var notice = document.querySelector('[data-scribe-target-reveal]');
+    if (notice && notice.getAttribute('data-scribe-target-hash') !== location.hash) clearEvidenceReveal();
+    var target = findingTargetFromHash();
+    var currentFinding = target && target.closest ? target.closest('[data-scribe-result]') : null;
+    if (revealedFinding && currentFinding !== revealedFinding) clearEvidenceReveal();
     if (!target) {
       var anchorId = fragmentIdFromHref(window.location.hash);
       if (!anchorId) return;
       ensureFindingChunkForAnchor(anchorId, function (loaded) {
-        if (loaded) ensureFindingTargetOpen();
+        if (loaded && fragmentIdFromHref(window.location.hash) === anchorId) ensureFindingTargetOpen();
+        if (!loaded && fragmentIdFromHref(window.location.hash) === anchorId && !document.querySelector('[data-scribe-target-reveal]')) {
+          var host = byId('main-content');
+          if (!host) return;
+          var notice = targetNavigationNotice('scribe.report.control.targetUnavailable', 'This report target is unavailable');
+          var identity = document.createElement('code');
+          identity.textContent = anchorId;
+          notice.appendChild(document.createTextNode(' '));
+          notice.appendChild(identity);
+          host.prepend(notice);
+        }
       });
       return;
     }
     var details = findingDetailsForTarget(target);
+    if (details) details.open = true;
+    reconcileEvidenceReveal();
     openAnchorAncestorDetails(target);
     var navigationTarget = visibleNavigationTarget(target, details);
     flashFindingHeader(details);
@@ -1754,7 +2203,25 @@ window.__SCRIBE_FILE_DIRECT_RUNTIME__ = {
   function copyText(text) {
     if (navigator.clipboard && navigator.clipboard.writeText) {
       navigator.clipboard.writeText(text).catch(function () {});
+      return;
     }
+    var textarea = document.createElement('textarea');
+    textarea.value = text;
+    textarea.setAttribute('readonly', '');
+    textarea.style.position = 'fixed';
+    textarea.style.insetInlineStart = '-9999px';
+    document.body.appendChild(textarea);
+    textarea.select();
+    try { document.execCommand('copy'); } catch (_error) {}
+    textarea.remove();
+  }
+
+  function selectedTextWithin(element) {
+    var selection = window.getSelection ? window.getSelection() : null;
+    if (!selection || selection.isCollapsed || selection.rangeCount === 0) return '';
+    var range = selection.getRangeAt(0);
+    if (!element.contains(range.startContainer) || !element.contains(range.endContainer)) return '';
+    return selection.toString();
   }
 
   var sourceSnippetCallbacks = [];
@@ -1812,6 +2279,7 @@ window.__SCRIBE_FILE_DIRECT_RUNTIME__ = {
   var findingChunkRendered = {};
   var findingChunkIndexCallbacks = [];
   var findingChunkIndexLoading = false;
+  var findingChunkHashSelectionApplied = '';
 
   function findingChunkDelivery() {
     var manifest = window.__SCRIBE_MANIFEST__;
@@ -1871,6 +2339,12 @@ window.__SCRIBE_FILE_DIRECT_RUNTIME__ = {
     return document.querySelector('[data-scribe-chunked-status]');
   }
 
+  function chunkedFindingTocContainer(printOnly) {
+    return document.querySelector(
+      printOnly ? '[data-scribe-chunked-print-toc-results]' : '[data-scribe-chunked-toc-results]'
+    );
+  }
+
   function setChunkedFindingStatus(message, hidden) {
     var status = chunkedFindingStatus();
     if (!status) return;
@@ -1907,18 +2381,153 @@ window.__SCRIBE_FILE_DIRECT_RUNTIME__ = {
     if (!element || !text || !text.msgid) return;
     element.setAttribute('data-scribe-msgid', text.msgid);
     if (text.icuArgs) element.setAttribute('data-scribe-icu-args', JSON.stringify(text.icuArgs));
+    // captureDefaultLocalizedText() runs ONCE at boot, before any runtime-built element exists,
+    // so without this an injected element has no fallback: switching to a locale whose bundle
+    // lacks this msgid makes updateText() bail and leave the PREVIOUS locale's text sitting
+    // there. Stamp the same formatted default localizableRuntimeText() falls back to.
+    if (!element.hasAttribute('data-scribe-default-text')) {
+      element.setAttribute(
+        'data-scribe-default-text',
+        formatLocalizedTemplate(text.defaultText || '', text.icuArgs || {})
+      );
+    }
+  }
+
+  // The source-evidence title comes from the snippet RECORD, never from a build-time constant.
+  // The record is where the one title/body decision was made, and the schema refuses a record
+  // whose halves disagree — so reading the title from the same object that carries the body is
+  // what makes them agree here. Titling from a constant is exactly how 80 snippets came to read
+  // "Autofix" over unfixed source: the constant cannot know what the body turned out to be.
+  // Returns false when the record is not loaded yet; see enrichSourceEvidenceTitles.
+  function applySourceEvidenceTitle(element, snippetId) {
+    var snippet = sourceSnippetById(snippetId);
+    if (!snippet || !snippet.label || !snippet.label.msgid) return false;
+    element.textContent = localizableRuntimeText(snippet.label);
+    addLocalizableTextAttributes(element, snippet.label);
+    var section = element.closest ? element.closest('.source-evidence') : null;
+    if (section && snippet.body && snippet.body.kind === 'autofix') {
+      // Same attribute the static finding-detail page stamps, so one selector answers
+      // "is this section a diff?" on every surface.
+      section.setAttribute('data-scribe-source-evidence', 'before-after');
+    }
+    return true;
+  }
+
+  var chunkedAutofixAnchorSet = null;
+
+  // Which findings the overview may badge, count and filter as an autofix.
+  //
+  // Read from the chunk index's filter entries, which is where the build puts it precisely so it
+  // is available WITHOUT the finding's snippet record — the record is 651 KB and arrives later,
+  // and the overview has to answer "is this an autofix?" for a card it is rendering right now.
+  // Empty when the index predates the field, which reads as "none known", never as "none".
+  function chunkedAutofixAnchorIds() {
+    if (chunkedAutofixAnchorSet) return chunkedAutofixAnchorSet;
+    chunkedAutofixAnchorSet = {};
+    var index = window.__SCRIBE_FINDINGS_INDEX__;
+    var entries = index && Array.isArray(index.filterEntries) ? index.filterEntries : [];
+    entries.forEach(function (entry) {
+      if (entry && typeof entry.hasAutofix === 'boolean' && entry.anchorId) chunkedAutofixAnchorSet[entry.anchorId] = entry.hasAutofix;
+    });
+    return chunkedAutofixAnchorSet;
+  }
+
+  function chunkedFindingHasAutofix(anchorId) {
+    return Boolean(anchorId) && chunkedAutofixAnchorIds()[anchorId] === true;
+  }
+
+  // Cards and TOC entries can be built before data/source-snippets.js has run. They carry the
+  // snippet id and NO text until it does — an empty heading for the instant before the record
+  // arrives is honest; a guessed one is the defect this milestone exists to remove.
+  function enrichSourceEvidenceTitles(root) {
+    if (!sourceSnippetDataReady()) return;
+    (root || document).querySelectorAll('[data-scribe-deferred-source-evidence-title]').forEach(function (element) {
+      var snippetId = element.getAttribute('data-scribe-deferred-source-evidence-title') || '';
+      if (applySourceEvidenceTitle(element, snippetId)) {
+        element.removeAttribute('data-scribe-deferred-source-evidence-title');
+      }
+    });
+  }
+
+  function createChunkedFindingTocItem(summary, printOnly) {
+    var item = document.createElement('li');
+    if (!printOnly) {
+      item.setAttribute('data-scribe-toc-result', '');
+      item.setAttribute('data-scribe-toc-anchor', summary.anchorId);
+    }
+    var findingLink = document.createElement('a');
+    if (!printOnly) findingLink.className = 'scribe-toc-link';
+    findingLink.href = '#' + summary.anchorId;
+    findingLink.textContent = localizableRuntimeText(summary.title);
+    addLocalizableTextAttributes(findingLink, summary.title);
+    item.appendChild(findingLink);
+
+    if (summary.sourceSnippetIds && summary.sourceSnippetIds.length > 0) {
+      var children = document.createElement('ol');
+      if (!printOnly) children.className = 'scribe-toc-child-icons';
+      var sourceItem = document.createElement('li');
+      var sourceLink = document.createElement('a');
+      if (!printOnly) sourceLink.className = 'scribe-toc-link scribe-toc-link--child';
+      sourceLink.href = '#' + summary.sourceSnippetIds[0];
+      // The TOC entry names the same section the card heads, so it takes the same title from
+      // the same record. A TOC reading "Source evidence" over a section reading "Autofix" is
+      // the divergence across surfaces the IA directive forbids.
+      sourceLink.setAttribute('data-scribe-deferred-source-evidence-title', summary.sourceSnippetIds[0]);
+      // The role the static sidebar has always set for a fixable finding, which the chunked TOC
+      // never did because it had nothing to decide it from. Attribute only — the icon-link shape
+      // and its role-selects-glyph contract are the static path's and stay untouched.
+      sourceLink.setAttribute(
+        'data-scribe-toc-child-role',
+        chunkedFindingHasAutofix(summary.anchorId) ? 'autofix' : 'source-evidence'
+      );
+      if (applySourceEvidenceTitle(sourceLink, summary.sourceSnippetIds[0])) {
+        sourceLink.removeAttribute('data-scribe-deferred-source-evidence-title');
+      }
+      sourceItem.appendChild(sourceLink);
+      children.appendChild(sourceItem);
+      item.appendChild(children);
+    }
+    return item;
+  }
+
+  function replaceChunkedFindingToc(summaries, visibleAnchorIds, printOnly) {
+    var container = chunkedFindingTocContainer(printOnly);
+    if (!container) return;
+    container.replaceChildren();
+    summaries.forEach(function (summary) {
+      if (!summary || !summary.anchorId) return;
+      if (visibleAnchorIds && !visibleAnchorIds[summary.anchorId]) return;
+      container.appendChild(createChunkedFindingTocItem(summary, printOnly));
+    });
+  }
+
+  function hydrateDeferredFindingToc() {
+    var findings = window.__SCRIBE_FINDINGS__;
+    if (!Array.isArray(findings) || findings.length === 0) return;
+    replaceChunkedFindingToc(findings, null, false);
+    replaceChunkedFindingToc(findings, null, true);
+    // data/source-snippets.js is an eager deferred script, so it has normally run by
+    // DOMContentLoaded and the titles above are already stamped. This covers the case where it
+    // has not: the TOC keeps its untitled entries until the records that title them arrive.
+    if (!sourceSnippetDataReady()) ensureSourceSnippetData(enrichChunkedSourceSnippetPlaceholders);
+  }
+
+  function chunkedFindingSummaries(chunkIndexes) {
+    var summaries = [];
+    chunkIndexes.forEach(function (chunkIndex) {
+      var payload = findingChunkPayload(chunkIndex);
+      if (Array.isArray(payload)) summaries = summaries.concat(payload);
+    });
+    return summaries;
   }
 
   function createChunkedFindingPermalink(anchorId, label) {
-    var link = document.createElement('a');
+    var link = createCanonicalPermalinkAnchor(anchorId, {
+      label: label,
+      messageId: chunkedFindingLabels.findingPermalink.msgid,
+      share: true
+    });
     link.className = 'scribe-finding-heading-permalink';
-    link.href = '#' + anchorId;
-    link.setAttribute('data-share-anchor', anchorId);
-    link.setAttribute('data-scribe-permalink', '#' + anchorId);
-    link.setAttribute('data-scribe-label-msgid', chunkedFindingLabels.findingPermalink.msgid);
-    link.setAttribute('title', label);
-    link.setAttribute('aria-label', label);
-    link.textContent = '#';
     return link;
   }
 
@@ -1926,16 +2535,13 @@ window.__SCRIBE_FILE_DIRECT_RUNTIME__ = {
     var actions = document.createElement('div');
     actions.className = 'finding-action-icons scribe-finding-action-icons';
     var shareLabel = localizedText(chunkedFindingLabels.shareFinding.msgid, chunkedFindingLabels.shareFinding.defaultText);
-    var share = document.createElement('a');
+    var share = createCanonicalPermalinkAnchor(summary.anchorId, {
+      label: shareLabel,
+      messageId: chunkedFindingLabels.shareFinding.msgid,
+      share: true
+    });
     share.className = 'finding-link-btn scribe-finding-permalink';
-    share.href = '#' + summary.anchorId;
-    share.setAttribute('data-share-anchor', summary.anchorId);
-    share.setAttribute('data-scribe-permalink', '#' + summary.anchorId);
-    share.setAttribute('data-scribe-label-msgid', chunkedFindingLabels.shareFinding.msgid);
-    share.setAttribute('title', shareLabel);
-    share.setAttribute('aria-label', shareLabel);
     share.setAttribute('aria-live', 'polite');
-    share.innerHTML = "<svg width=\"14\" height=\"14\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\">\n          <path d=\"M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71\"></path>\n          <path d=\"M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71\"></path>\n        </svg>";
     actions.appendChild(share);
     if (summary.feedbackActionId) {
       var feedbackLabel = localizedText(
@@ -1950,7 +2556,7 @@ window.__SCRIBE_FILE_DIRECT_RUNTIME__ = {
       feedback.setAttribute('data-scribe-label-msgid', chunkedFindingLabels.feedbackFinding.msgid);
       feedback.setAttribute('title', feedbackLabel);
       feedback.setAttribute('aria-label', feedbackLabel);
-      feedback.innerHTML = "<svg width=\"14\" height=\"14\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\">\n          <path d=\"M3 11l18-5v14L3 15v-4z\"></path>\n          <path d=\"M3 11v4\"></path>\n          <path d=\"M6 15v4a1 1 0 0 0 1 1h2a1 1 0 0 0 1-1v-3.5\"></path>\n        </svg>";
+      feedback.innerHTML = "<svg width=\"14\" height=\"14\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\" focusable=\"false\"><path d=\"M3 11l18-5v14L3 15v-4z\"/><path d=\"M3 11v4\"/><path d=\"M6 15v4a1 1 0 0 0 1 1h2a1 1 0 0 0 1-1v-3.5\"/></svg>";
       feedback.addEventListener('click', function (event) {
         emitFeedback(feedback, event);
       });
@@ -1990,11 +2596,319 @@ window.__SCRIBE_FILE_DIRECT_RUNTIME__ = {
       'data-scribe-source-close-fullscreen-label',
       localizedText(chunkedFindingLabels.closeFullScreenSourceSnippet.msgid, chunkedFindingLabels.closeFullScreenSourceSnippet.defaultText)
     );
+    placeholder.setAttribute(
+      'data-scribe-source-code-label',
+      snippet && snippet.label
+        ? localizableRuntimeText(snippet.label)
+        : localizedText(chunkedFindingLabels.sourceSnippetTitle.msgid, chunkedFindingLabels.sourceSnippetTitle.defaultText)
+    );
     return placeholder;
+  }
+
+  var contentSliceRequests = new Map();
+  var planDisclosureState = new Map();
+  var findingDisclosureState = new Map();
+  var sourceDisclosureState = new Map();
+  var explanationDisclosureState = new Map();
+  var planPrintActive = false;
+  var planPrintCallbacks = null;
+  var planPrintReady = false;
+  var planPrintGeneration = 0;
+  window.__SCRIBE_ACCEPT_CONTENT_SLICE__ = function (key, html) {
+    var request = contentSliceRequests.get(key);
+    if (request && typeof html === 'string') request.html = html;
+  };
+  function loadReportContentSlice(key, path) {
+    var sourceKey = key.split(':')[0];
+    if (contentSliceRequests.has(sourceKey)) return contentSliceRequests.get(sourceKey).promise;
+    var request = {};
+    request.promise = new Promise(function (resolve, reject) {
+      var script = document.createElement('script');
+      script.src = reportAssetPrefix() + path;
+      script.onload = function () {
+        script.remove();
+        contentSliceRequests.delete(sourceKey);
+        if (typeof request.html === 'string') resolve(request.html);
+        else reject(new Error('content-slice-missing'));
+      };
+      script.onerror = function () {
+        script.remove();
+        contentSliceRequests.delete(sourceKey);
+        reject(new Error('content-slice-unavailable'));
+      };
+      contentSliceRequests.set(sourceKey, request);
+      document.head.appendChild(script);
+    });
+    return request.promise;
+  }
+  var reportContentCache = createReportContentCache(4 * 1024 * 1024, loadReportContentSlice);
+  window.__SCRIBE_CONTENT_CACHE__ = reportContentCache;
+
+  function refreshOpenPlanLocales() {
+    document.querySelectorAll('[data-scribe-plan-slice]').forEach(function (details) {
+      if (details.open && details.getAttribute('data-scribe-plan-request-locale') !== currentLocale()) {
+        details.dispatchEvent(new Event('scribe-plan-load'));
+      }
+    });
+  }
+
+  function bindInlinePlanDisclosures() {
+    document.querySelectorAll('[data-scribe-inline-plan]').forEach(function (placeholder) {
+      var anchorId = placeholder.getAttribute('data-scribe-inline-plan');
+      var descriptor = (window.__SCRIBE_PLAN_SLICES__ || {})[anchorId];
+      var link = placeholder.querySelector('[data-scribe-complete-plan]');
+      if (!descriptor || !link) return;
+      var replacement = createChunkedPlanDisclosure(
+        { anchorId: anchorId, fixPlanHref: link.getAttribute('href'), summaryNode: placeholder.querySelector('summary') },
+        descriptor,
+      );
+      replacement.open = placeholder.open;
+      placeholder.replaceWith(replacement);
+    });
+    if (document.documentElement.getAttribute('data-scribe-disclosure-anchor-bound') !== 'true') {
+      document.documentElement.setAttribute('data-scribe-disclosure-anchor-bound', 'true');
+      document.addEventListener('click', function (event) {
+        if (event.defaultPrevented || !(event.target instanceof Element)) return;
+        var summary = event.target.closest('summary');
+        var details = summary && summary.parentElement;
+        if (!(details instanceof HTMLDetailsElement) || details.open || !details.id) return;
+        if (event.target.closest('a, button, input, select, textarea')) return;
+        history.replaceState(null, '', '#' + details.id);
+      });
+    }
+  }
+
+  function createChunkedPlanDisclosure(summary, descriptor) {
+    var details = document.createElement('details');
+    details.className = 'scribe-finding-fix-plan';
+    details.id = 'fix-plan-' + summary.anchorId;
+    details.setAttribute('data-scribe-plan-slice', descriptor.key);
+    details.open = planDisclosureState.get(summary.anchorId) === true;
+    var heading = summary.summaryNode ? summary.summaryNode.cloneNode(true) : document.createElement('summary');
+    if (!summary.summaryNode) {
+      var title = document.createElement('span');
+      title.className = 'scribe-finding-fix-plan__label';
+      title.setAttribute('data-scribe-msgid', 'scribe.report.fixPlan.pageTitle');
+      title.textContent = localizedText('scribe.report.fixPlan.pageTitle', 'Fix plan');
+      heading.appendChild(title);
+      if (summary.recommendation) {
+        var guidance = document.createElement('span');
+        guidance.id = 'remediation-' + summary.anchorId;
+        guidance.className = 'scribe-finding-fix-plan__guidance';
+        guidance.setAttribute('data-scribe-anchor', guidance.id);
+        guidance.textContent = localizableRuntimeText(summary.recommendation);
+        addLocalizableTextAttributes(guidance, summary.recommendation);
+        heading.appendChild(guidance);
+      }
+    }
+    details.appendChild(heading);
+    var content = document.createElement('div');
+    content.setAttribute('data-scribe-plan-content', '');
+    details.appendChild(content);
+    var status = document.createElement('p');
+    status.setAttribute('role', 'status');
+    details.appendChild(status);
+    var complete = document.createElement('a');
+    complete.href = summary.fixPlanHref;
+    complete.setAttribute('data-scribe-msgid', 'scribe.report.action.completeFixPlan');
+    complete.textContent = localizedText('scribe.report.action.completeFixPlan', 'Complete fix plan');
+    details.appendChild(complete);
+    var generation = 0;
+    var unsubscribe = null;
+    function loadPlan() {
+      var locale = currentLocale();
+      var finding = details.closest('details[data-scribe-result]');
+      if (planPrintActive || !details.open || (finding && !finding.open) || details.getAttribute('data-scribe-plan-locale') === locale) return;
+      var requested = ++generation;
+      details.setAttribute('data-scribe-plan-request-locale', locale);
+      if (unsubscribe) unsubscribe();
+      content.replaceChildren();
+      status.textContent = localizedText('scribe.report.control.loadingPlan', 'Loading fix plan…');
+      var key = descriptor.key + ':' + locale;
+      reportContentCache.get(key, descriptor.path, descriptor.bytes).then(function (html) {
+        if (requested !== generation || !details.open || !details.isConnected || currentLocale() !== locale) return;
+        content.innerHTML = html;
+        details.setAttribute('data-scribe-plan-locale', locale);
+        status.textContent = html ? '' : localizedText('scribe.report.control.emptyPlan', 'No structured plan content is available.');
+        unsubscribe = reportContentCache.observe(key, function () {
+          content.replaceChildren();
+          details.removeAttribute('data-scribe-plan-locale');
+          status.textContent = localizedText('scribe.report.control.evictedPlan', 'Plan content was released. Reopen the plan to load it again.');
+        }, function () { return details.isConnected; });
+        updateText(locale, false);
+      }).catch(function () {
+        if (requested !== generation || !details.open || !details.isConnected || currentLocale() !== locale) return;
+        status.textContent = localizedText('scribe.report.control.unavailablePlan', 'The plan could not be loaded. Open the complete plan or retry.');
+        var retry = document.createElement('button');
+        retry.type = 'button';
+        retry.textContent = localizedText('scribe.report.control.retryPlan', 'Retry loading plan');
+        retry.addEventListener('click', loadPlan);
+        status.appendChild(retry);
+      });
+    }
+    details.addEventListener('toggle', function () {
+      if (!planPrintActive) planDisclosureState.set(summary.anchorId, details.open);
+      if (details.open) loadPlan();
+      else generation += 1;
+    });
+    details.addEventListener('scribe-plan-load', loadPlan);
+    return details;
+  }
+
+  function metricResultSeverity(result) {
+    var threshold = result.thresholds;
+    if (threshold.direction === 'asc') {
+      if (result.value <= threshold.good) return 'good';
+      if (result.value <= threshold.moderate) return 'moderate';
+      if (result.value <= threshold.warning) return 'warning';
+      return 'critical';
+    }
+    if (result.value >= threshold.good) return 'good';
+    if (result.value >= threshold.moderate) return 'moderate';
+    if (result.value >= threshold.warning) return 'warning';
+    return 'critical';
+  }
+
+  function metricResultBands(result) {
+    var threshold = result.thresholds;
+    var scaleMaximum = metricResultScaleMaximum(result);
+    function band(severity, range, start, end) {
+      return {
+        severity: severity,
+        range: range,
+        widthPercent: Math.max(0, Math.min(100, ((end - start) / scaleMaximum) * 100)),
+      };
+    }
+    var bands = threshold.direction === 'asc'
+      ? [
+          band('good', '≤ ' + threshold.good, 0, threshold.good),
+          band('moderate', '> ' + threshold.good + '–' + threshold.moderate, threshold.good, threshold.moderate),
+          band('warning', '> ' + threshold.moderate + '–' + threshold.warning, threshold.moderate, threshold.warning),
+          band('critical', '> ' + threshold.warning, threshold.warning, scaleMaximum),
+        ]
+      : [
+          band('good', '≥ ' + threshold.good, threshold.good, scaleMaximum),
+          band('moderate', threshold.moderate + '–< ' + threshold.good, threshold.moderate, threshold.good),
+          band('warning', threshold.warning + '–< ' + threshold.moderate, threshold.warning, threshold.moderate),
+          band('critical', '< ' + threshold.warning, 0, threshold.warning),
+        ];
+    return threshold.direction === 'asc' ? bands : bands.reverse();
+  }
+
+  function metricResultScaleMaximum(result) {
+    var threshold = result.thresholds;
+    return Number((Math.max(result.value, threshold.good, threshold.moderate, threshold.warning, 1) * 1.1).toPrecision(12));
+  }
+
+  function metricSeverityLabel(severity) {
+    var label = severity === 'warning' ? chunkedFindingLabels.high : chunkedFindingLabels[severity];
+    return localizedText(label.msgid, label.defaultText);
+  }
+
+  function appendLocalizedMetricText(parent, label) {
+    var span = document.createElement('span');
+    span.textContent = localizedText(label.msgid, label.defaultText);
+    span.setAttribute('data-scribe-msgid', label.msgid);
+    parent.appendChild(span);
+  }
+
+  function populateMetricAccessibleSummary(parent, result, severity, bands) {
+    parent.appendChild(document.createTextNode(result.label + ': '));
+    appendLocalizedMetricText(parent, chunkedFindingLabels.measured);
+    parent.appendChild(document.createTextNode(' ' + result.value + '; '));
+    appendLocalizedMetricText(parent, severity === 'warning' ? chunkedFindingLabels.high : chunkedFindingLabels[severity]);
+    parent.appendChild(document.createTextNode('. '));
+    appendLocalizedMetricText(parent, chunkedFindingLabels.referenceRanges);
+    parent.appendChild(document.createTextNode(': '));
+    bands.forEach(function (band, index) {
+      if (index > 0) parent.appendChild(document.createTextNode(', '));
+      appendLocalizedMetricText(parent, band.severity === 'warning' ? chunkedFindingLabels.high : chunkedFindingLabels[band.severity]);
+      parent.appendChild(document.createTextNode(' ' + band.range));
+    });
+    parent.appendChild(document.createTextNode('. '));
+    appendLocalizedMetricText(parent, chunkedFindingLabels.displayedScale);
+    parent.appendChild(document.createTextNode(': 0 to ' + metricResultScaleMaximum(result) + '.'));
+  }
+
+  function createMetricResultsPanel(findingAnchorId, results, contextLinks) {
+    if (!results || results.length === 0) return null;
+    var linksByLabel = {};
+    (contextLinks || []).forEach(function (link) { linksByLabel[link.label] = link.href; });
+    var panel = document.createElement('details');
+    panel.id = 'metrics-' + findingAnchorId;
+    panel.className = 'sonde-metric-results';
+    panel.setAttribute('data-scribe-anchor', panel.id);
+    panel.open = true;
+    var heading = document.createElement('summary');
+    heading.textContent = localizedText(chunkedFindingLabels.measuredResults.msgid, chunkedFindingLabels.measuredResults.defaultText);
+    heading.setAttribute('data-scribe-msgid', chunkedFindingLabels.measuredResults.msgid);
+    panel.appendChild(heading);
+    var panelBody = document.createElement('div');
+    panelBody.className = 'sonde-metric-results__body';
+    var explanation = document.createElement('p');
+    explanation.className = 'sonde-metric-results__explanation';
+    explanation.textContent = localizedText(chunkedFindingLabels.measuredResultsExplanation.msgid, chunkedFindingLabels.measuredResultsExplanation.defaultText);
+    explanation.setAttribute('data-scribe-msgid', chunkedFindingLabels.measuredResultsExplanation.msgid);
+    panelBody.appendChild(explanation);
+    results.forEach(function (result) {
+      var severity = metricResultSeverity(result);
+      var bands = metricResultBands(result);
+      var row = document.createElement('div');
+      row.className = 'sonde-metric-result';
+      row.setAttribute('data-metric', result.metric);
+      var identity = document.createElement('div');
+      identity.className = 'sonde-metric-result__identity';
+      var label = document.createElement(linksByLabel[result.label] ? 'a' : 'strong');
+      label.textContent = result.label;
+      if (linksByLabel[result.label]) label.href = linksByLabel[result.label];
+      identity.appendChild(label);
+      var direction = document.createElement('span');
+      direction.className = 'sonde-metric-result__direction';
+      var directionLabel = result.thresholds.direction === 'asc' ? chunkedFindingLabels.lowerIsBetter : chunkedFindingLabels.higherIsBetter;
+      direction.textContent = localizedText(directionLabel.msgid, directionLabel.defaultText);
+      direction.setAttribute('data-scribe-msgid', directionLabel.msgid);
+      identity.appendChild(direction);
+      var accessible = document.createElement('span');
+      accessible.className = 'sonde-visually-hidden';
+      populateMetricAccessibleSummary(accessible, result, severity, bands);
+      identity.appendChild(accessible);
+      row.appendChild(identity);
+      var scale = document.createElement('div');
+      scale.className = 'sonde-metric-result__scale sonde-metric-result__scale--' + result.thresholds.direction;
+      scale.setAttribute('aria-hidden', 'true');
+      bands.forEach(function (band) {
+        var segment = document.createElement('span');
+        segment.className = 'sonde-metric-result__band sonde-metric-result__band--' + band.severity;
+        segment.style.setProperty('--sonde-metric-band-width', String(band.widthPercent) + '%');
+        var bandLabel = document.createElement('strong');
+        bandLabel.textContent = metricSeverityLabel(band.severity);
+        var bandText = band.severity === 'warning' ? chunkedFindingLabels.high : chunkedFindingLabels[band.severity];
+        bandLabel.setAttribute('data-scribe-msgid', bandText.msgid);
+        segment.appendChild(bandLabel);
+        var bandRange = document.createElement('span');
+        bandRange.textContent = band.range;
+        segment.appendChild(bandRange);
+        scale.appendChild(segment);
+      });
+      var marker = document.createElement('span');
+      marker.className = 'sonde-metric-result__marker';
+      marker.style.setProperty('--sonde-metric-marker', String(Math.max(0, Math.min(100, (result.value / metricResultScaleMaximum(result)) * 100))) + '%');
+      marker.setAttribute('aria-hidden', 'true');
+      var markerValue = document.createElement('span');
+      markerValue.textContent = String(result.value);
+      marker.appendChild(markerValue);
+      scale.appendChild(marker);
+      row.appendChild(scale);
+      panelBody.appendChild(row);
+    });
+    panel.appendChild(panelBody);
+    return panel;
   }
 
   function createChunkedFindingCard(summary) {
     var details = document.createElement('details');
+    details.open = findingDisclosureState.get(summary.anchorId) === true;
+    details.addEventListener('toggle', function () { if (!planPrintActive) findingDisclosureState.set(summary.anchorId, details.open); });
     details.id = summary.anchorId;
     details.className = 'finding-item scribe-finding-details severity-' + summary.severity;
     details.setAttribute('data-scribe-anchor', summary.anchorId);
@@ -2002,14 +2916,21 @@ window.__SCRIBE_FILE_DIRECT_RUNTIME__ = {
     details.setAttribute('data-severity', summary.severity || '');
     details.setAttribute('data-language', summary.language || '');
     details.setAttribute('data-classification', summary.classification || '');
+    var autofix = chunkedAutofixAnchorIds()[summary.anchorId];
+    details.setAttribute('data-scribe-has-autofix', typeof autofix === 'boolean' ? String(autofix) : 'unknown');
     details.setAttribute('data-scribe-chunked-finding', 'true');
 
     var summaryElement = document.createElement('summary');
     summaryElement.className = 'scribe-finding-summary';
+    summaryElement.addEventListener('keydown', function (event) {
+      if (event.target !== summaryElement || (event.key !== 'Enter' && event.key !== ' ')) return;
+      event.preventDefault();
+      details.open = !details.open;
+    });
     var toggle = document.createElement('span');
     toggle.className = 'scribe-finding-toggle';
     toggle.setAttribute('aria-hidden', 'true');
-    toggle.innerHTML = "<svg width=\"16\" height=\"16\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.5\" stroke-linecap=\"round\" stroke-linejoin=\"round\" focusable=\"false\" aria-hidden=\"true\">\n          <path d=\"m6 9 6 6 6-6\"></path>\n        </svg>";
+    toggle.innerHTML = "<svg width=\"16\" height=\"16\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.5\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\" focusable=\"false\"><path d=\"m6 9 6 6 6-6\"/></svg>";
     summaryElement.appendChild(toggle);
 
     var row = document.createElement('div');
@@ -2026,6 +2947,20 @@ window.__SCRIBE_FILE_DIRECT_RUNTIME__ = {
     title.textContent = localizableRuntimeText(summary.title);
     addLocalizableTextAttributes(title, summary.title);
     line.appendChild(badge);
+    // The overview's answer to "which of these are already fixed?" without opening any of them.
+    // Same msgid the section heading uses, so the badge and the section cannot disagree.
+    if (chunkedFindingHasAutofix(summary.anchorId)) {
+      var autofixBadge = document.createElement('span');
+      autofixBadge.className = 'scribe-finding-severity-badge scribe-finding-autofix-badge';
+      autofixBadge.setAttribute('data-scribe-autofix-badge', '');
+      autofixBadge.textContent = localizedText(
+        chunkedFindingLabels.autofixTitle.msgid,
+        chunkedFindingLabels.autofixTitle.defaultText
+      );
+      autofixBadge.setAttribute('data-scribe-msgid', chunkedFindingLabels.autofixTitle.msgid);
+      autofixBadge.setAttribute('data-scribe-default-text', chunkedFindingLabels.autofixTitle.defaultText);
+      line.appendChild(autofixBadge);
+    }
     line.appendChild(title);
     main.appendChild(line);
     row.appendChild(main);
@@ -2039,8 +2974,46 @@ window.__SCRIBE_FILE_DIRECT_RUNTIME__ = {
     paragraph.textContent = localizableRuntimeText(summary.summary);
     addLocalizableTextAttributes(paragraph, summary.summary);
     body.appendChild(paragraph);
+    var metricResults = createMetricResultsPanel(summary.anchorId, summary.metricResults, summary.contextLinks);
+    if (metricResults) body.appendChild(metricResults);
 
-    if (summary.fixPlanHref) {
+    if ((!summary.metricResults || summary.metricResults.length === 0) && summary.contextLinks && summary.contextLinks.length) {
+      var contextLinks = document.createElement('p');
+      contextLinks.className = 'scribe-finding-context-links';
+      summary.contextLinks.forEach(function (contextLink, index) {
+        if (index > 0) contextLinks.appendChild(document.createTextNode(' · '));
+        var contextAnchor = document.createElement('a');
+        contextAnchor.className = 'scribe-report-link-action';
+        contextAnchor.href = contextLink.href;
+        contextAnchor.textContent = contextLink.label;
+        contextLinks.appendChild(contextAnchor);
+      });
+      body.appendChild(contextLinks);
+    }
+
+    var planDescriptor = (window.__SCRIBE_PLAN_SLICES__ || {})[summary.anchorId];
+    if (summary.recommendation && !planDescriptor) {
+      var recommendation = document.createElement('p');
+      recommendation.id = 'remediation-' + summary.anchorId;
+      recommendation.className = 'finding-fix';
+      recommendation.setAttribute('data-scribe-anchor', recommendation.id);
+      if (!planDescriptor) {
+        var guidance = document.createElement('strong');
+        guidance.setAttribute('data-scribe-msgid', 'scribe.report.control.guidance');
+        guidance.textContent = localizedText('scribe.report.control.guidance', 'Guidance');
+        recommendation.appendChild(guidance);
+        recommendation.appendChild(document.createTextNode(': '));
+      }
+      var action = document.createElement('span');
+      action.textContent = localizableRuntimeText(summary.recommendation);
+      addLocalizableTextAttributes(action, summary.recommendation);
+      recommendation.appendChild(action);
+      body.appendChild(recommendation);
+    }
+
+    if (summary.fixPlanHref && planDescriptor) {
+      body.appendChild(createChunkedPlanDisclosure(summary, planDescriptor));
+    } else if (summary.fixPlanHref) {
       var linkStack = document.createElement('div');
       linkStack.className = 'scribe-report-link-stack';
       var fixPlanLink = document.createElement('a');
@@ -2057,33 +3030,49 @@ window.__SCRIBE_FILE_DIRECT_RUNTIME__ = {
     }
 
     if (summary.sourceSnippetIds && summary.sourceSnippetIds.length > 0) {
-      var source = document.createElement('section');
+      var preview = chunkedFindingHasAutofix(summary.anchorId);
+      var source = document.createElement('details');
       source.className = 'source-evidence';
       // Use the canonical source-snippet anchor id — this is exactly what the TOC source-evidence link targets.
       // Re-deriving it from summary.anchorId re-introduces the finding- prefix, so the link points at a
       // nonexistent id and navigation silently does nothing.
       source.id = summary.sourceSnippetIds[0];
       source.setAttribute('data-scribe-anchor', source.id);
+      source.setAttribute('data-scribe-source-disclosure', '');
+      source.open = sourceDisclosureState.get(source.id) === true;
+      var sourceHeading = document.createElement('summary');
+      source.appendChild(sourceHeading);
       var sourceTitle = document.createElement('h3');
-      sourceTitle.textContent = localizedText(
-        chunkedFindingLabels.sourceSnippetTitle.msgid,
-        chunkedFindingLabels.sourceSnippetTitle.defaultText
-      );
-      sourceTitle.setAttribute('data-scribe-msgid', chunkedFindingLabels.sourceSnippetTitle.msgid);
-      source.appendChild(sourceTitle);
+      sourceTitle.setAttribute('data-scribe-deferred-source-evidence-title', summary.sourceSnippetIds[0]);
+      sourceHeading.appendChild(sourceTitle);
+      // Appended first so applySourceEvidenceTitle can reach the .source-evidence section and
+      // stamp data-scribe-source-evidence on it.
+      if (applySourceEvidenceTitle(sourceTitle, summary.sourceSnippetIds[0])) {
+        sourceTitle.removeAttribute('data-scribe-deferred-source-evidence-title');
+      }
+      if (preview && summary.recommendation) {
+        var sourceGuidance = document.createElement('span');
+        sourceGuidance.className = 'scribe-finding-fix-plan__guidance';
+        sourceGuidance.textContent = localizableRuntimeText(summary.recommendation);
+        addLocalizableTextAttributes(sourceGuidance, summary.recommendation);
+        sourceHeading.appendChild(sourceGuidance);
+      }
       source.appendChild(createChunkedSourceSnippetPlaceholder(summary.sourceSnippetIds[0]));
       body.appendChild(source);
     }
 
     details.appendChild(body);
     details.addEventListener('toggle', function () {
-      if (details.open) hydrateDeferredSourceSnippets(details);
+      if (details.open && details.isConnected) hydrateDeferredSourceSnippets(details);
     });
     return details;
   }
 
   function enrichChunkedSourceSnippetPlaceholders() {
     if (!sourceSnippetDataReady()) return;
+    // Titles land in the same sweep as the placeholder attributes, from the same records, so a
+    // heading and the body beneath it can never come from different loads.
+    enrichSourceEvidenceTitles(document);
     document
       .querySelectorAll('[data-scribe-deferred-source-snippet]:not([data-source-path])')
       .forEach(function (placeholder) {
@@ -2102,12 +3091,22 @@ window.__SCRIBE_FILE_DIRECT_RUNTIME__ = {
     reportResultTextCache = typeof WeakMap === 'function' ? new WeakMap() : null;
   }
 
-  function renderFindingChunk(chunkIndex) {
+  function clearRenderedFindingChunks() {
+    var container = chunkedFindingContainer();
+    if (container) container.replaceChildren();
+    replaceChunkedFindingToc([], null, false);
+    replaceChunkedFindingToc([], null, true);
+    findingChunkRendered = {};
+    reportResultTextCache = typeof WeakMap === 'function' ? new WeakMap() : null;
+  }
+
+  function renderFindingChunk(chunkIndex, visibleAnchorIds) {
     if (findingChunkRendered[chunkIndex]) return;
     var payload = findingChunkPayload(chunkIndex);
     var container = chunkedFindingContainer();
     if (!Array.isArray(payload) || !container) return;
     payload.forEach(function (summary) {
+      if (visibleAnchorIds && !visibleAnchorIds[summary.anchorId]) return;
       if (!summary || !summary.anchorId || byId(summary.anchorId)) return;
       container.appendChild(createChunkedFindingCard(summary));
     });
@@ -2115,6 +3114,7 @@ window.__SCRIBE_FILE_DIRECT_RUNTIME__ = {
     reportResultTextCache = typeof WeakMap === 'function' ? new WeakMap() : null;
     setChunkedFindingStatus('', true);
     attachFindingPermalinks();
+    attachDeferredSourceSnippetHydration();
     attachSourceSnippetActions(container);
     attachDisplayArtifactActions(container);
     if (sourceSnippetDataReady()) {
@@ -2124,18 +3124,13 @@ window.__SCRIBE_FILE_DIRECT_RUNTIME__ = {
     }
   }
 
-  function ensureFindingChunk(chunkIndex, callback) {
+  function ensureFindingChunkPayload(chunkIndex, callback) {
     ensureFindingChunkIndex(function () {
       if (!findingChunkIndexReady()) {
         callback();
         return;
       }
-      if (findingChunkRendered[chunkIndex]) {
-        callback();
-        return;
-      }
       if (findingChunkPayload(chunkIndex)) {
-        renderFindingChunk(chunkIndex);
         callback();
         return;
       }
@@ -2146,10 +3141,7 @@ window.__SCRIBE_FILE_DIRECT_RUNTIME__ = {
         return;
       }
       findingChunkCallbacks[chunkIndex] = findingChunkCallbacks[chunkIndex] || [];
-      findingChunkCallbacks[chunkIndex].push(function () {
-        renderFindingChunk(chunkIndex);
-        callback();
-      });
+      findingChunkCallbacks[chunkIndex].push(callback);
       if (findingChunkLoading[chunkIndex]) return;
       findingChunkLoading[chunkIndex] = true;
       var script = document.createElement('script');
@@ -2165,7 +3157,17 @@ window.__SCRIBE_FILE_DIRECT_RUNTIME__ = {
     });
   }
 
+  function renderFindingChunkWindow(chunkIndex, visibleAnchorIds, callback) {
+    ensureFindingChunkPayload(chunkIndex, function () {
+      clearRenderedFindingChunks();
+      renderFindingChunk(chunkIndex, visibleAnchorIds);
+      replaceChunkedFindingToc(chunkedFindingSummaries([chunkIndex]), visibleAnchorIds, false);
+      callback();
+    });
+  }
+
   function ensureFindingChunkForAnchor(anchorId, callback) {
+    var requestedFrom = location.href;
     ensureFindingChunkIndex(function () {
       var index = window.__SCRIBE_FINDINGS_INDEX__;
       var chunkIndex = index && index.anchorToChunk ? index.anchorToChunk[anchorId] : undefined;
@@ -2173,22 +3175,52 @@ window.__SCRIBE_FILE_DIRECT_RUNTIME__ = {
         callback(false);
         return;
       }
-      ensureFindingChunk(chunkIndex, function () {
-        callback(true);
+      ensureFindingChunkPayload(chunkIndex, function () {
+        if (location.href !== requestedFrom && fragmentIdFromHref(location.hash) !== anchorId) {
+          callback(false);
+          return;
+        }
+        if (byId(anchorId)) { callback(true); return; }
+        var payload = findingChunkPayload(chunkIndex);
+        var container = chunkedFindingContainer();
+        if (!Array.isArray(payload) || !container) { callback(false); return; }
+        for (var index = 0; index < payload.length; index += 1) {
+          var summary = payload[index];
+          var card = createChunkedFindingCard(summary);
+          if (card.id !== anchorId && !card.querySelector('[id="' + cssEscape(anchorId) + '"]')) continue;
+          // Keep the current page resident. Only this named finding is revealed outside its results.
+          card.hidden = true;
+          container.appendChild(card);
+          attachFindingPermalinks();
+          attachDeferredSourceSnippetHydration();
+          attachSourceSnippetActions(card);
+          attachDisplayArtifactActions(card);
+          callback(true);
+          return;
+        }
+        callback(false);
       });
     });
   }
 
   function materializeFindingChunks(chunkIndexes, callback) {
     if (!chunkIndexes.length) {
+      clearRenderedFindingChunks();
       callback();
       return;
     }
     var remaining = chunkIndexes.length;
     chunkIndexes.forEach(function (chunkIndex) {
-      ensureFindingChunk(chunkIndex, function () {
+      ensureFindingChunkPayload(chunkIndex, function () {
         remaining -= 1;
-        if (remaining === 0) callback();
+        if (remaining === 0) {
+          clearRenderedFindingChunks();
+          chunkIndexes.forEach(function (loadedChunkIndex) {
+            renderFindingChunk(loadedChunkIndex, null);
+          });
+          replaceChunkedFindingToc(chunkedFindingSummaries(chunkIndexes), null, true);
+          callback();
+        }
       });
     });
   }
@@ -2200,7 +3232,7 @@ window.__SCRIBE_FILE_DIRECT_RUNTIME__ = {
         callback();
         return;
       }
-      ensureFindingChunk(0, callback);
+      renderFindingChunkWindow(0, null, callback);
     });
   }
 
@@ -2224,6 +3256,102 @@ window.__SCRIBE_FILE_DIRECT_RUNTIME__ = {
     return Boolean(findingChunkDelivery());
   }
 
+  // The autofix label's locale texts live ONCE on the index rather than in every autofix entry's
+  // searchText, where they repeated 354 identical characters across 80 of 101 cal.com entries.
+  // A query matching any of them is a query for autofix findings, which the entry already answers
+  // with its own hasAutofix boolean — same behavior, ~28 KB less on an eagerly loaded index.
+  function chunkedQueryMatchesAutofixTerm(query) {
+    if (!query) return false;
+    var index = window.__SCRIBE_FINDINGS_INDEX__;
+    var terms = (index && index.autofixSearchTerms) || [];
+    for (var i = 0; i < terms.length; i++) {
+      if (String(terms[i]).toLowerCase().indexOf(query) !== -1) return true;
+    }
+    return false;
+  }
+
+  function chunkedFindingEntryMatchesFilters(entry, filters) {
+    if (!autofixSelectionMatches(entry.hasAutofix, filters.autofix)) return false;
+    if (!matchesFilter(entry.severity || '', filters.severity)) return false;
+    if (!matchesFilter(entry.language || '', filters.language)) return false;
+    if (!matchesFilter(entry.classification || '', filters.classification)) return false;
+    if (filters.query.length === 0) return true;
+    if (String(entry.searchText || '').indexOf(filters.query) !== -1) return true;
+    return entry.hasAutofix === true && chunkedQueryMatchesAutofixTerm(filters.query);
+  }
+
+  function hideChunkedPageSizeControl() {
+    var control = document.querySelector('.scribe-page-size-control');
+    if (control) control.hidden = true;
+  }
+
+  function applyChunkedFindingFilters(callback) {
+    ensureFindingChunkIndex(function () {
+      var index = window.__SCRIBE_FINDINGS_INDEX__;
+      var entries = index && Array.isArray(index.filterEntries) ? index.filterEntries : [];
+      var filters = readCurrentReportFilters();
+      var matches = entries.filter(function (entry) {
+        return chunkedFindingEntryMatchesFilters(entry, filters);
+      });
+      var chunkIndexes = [];
+      var seenChunkIndexes = {};
+      matches.forEach(function (entry) {
+        if (seenChunkIndexes[entry.chunkIndex]) return;
+        seenChunkIndexes[entry.chunkIndex] = true;
+        chunkIndexes.push(entry.chunkIndex);
+      });
+      var hashAnchor = fragmentIdFromHref(window.location.hash);
+      if (hashAnchor && hashAnchor !== findingChunkHashSelectionApplied) {
+        var hashChunkIndex = index && index.anchorToChunk ? index.anchorToChunk[hashAnchor] : undefined;
+        var hashPageIndex = chunkIndexes.indexOf(hashChunkIndex);
+        if (hashPageIndex >= 0) reportCurrentPage = hashPageIndex + 1;
+        findingChunkHashSelectionApplied = hashAnchor;
+      }
+      var pageCount = Math.max(1, chunkIndexes.length);
+      if (reportCurrentPage > pageCount) reportCurrentPage = pageCount;
+      if (reportCurrentPage < 1) reportCurrentPage = 1;
+      var selectedChunkIndex = chunkIndexes[reportCurrentPage - 1];
+      var selectedEntries = matches.filter(function (entry) {
+        return entry.chunkIndex === selectedChunkIndex;
+      });
+      var visibleAnchorIds = {};
+      selectedEntries.forEach(function (entry) {
+        visibleAnchorIds[entry.anchorId] = true;
+      });
+      var precedingCount = matches.filter(function (entry) {
+        return chunkIndexes.indexOf(entry.chunkIndex) < reportCurrentPage - 1;
+      }).length;
+      var finish = function () {
+        updateAutofixQualification();
+        updateAutofixPresentation();
+        var count = byId('report-result-count');
+        if (count) {
+          count.textContent = visibleResultText(
+            precedingCount,
+            precedingCount + selectedEntries.length,
+            matches.length,
+            selectedEntries.length
+          );
+        }
+        updateVisibleTocAnchors(visibleAnchorIds);
+        updatePagination(matches.length, 1, pageCount);
+        hydrateLocalizedNumbers();
+        updateSeverityShortcutState(readFilter('filter-severity'));
+        updateFilterClearControl();
+        hideChunkedPageSizeControl();
+        setChunkedFindingStatus('', true);
+        ensureFindingTargetOpen();
+        callback();
+      };
+      if (selectedChunkIndex === undefined) {
+        clearRenderedFindingChunks();
+        finish();
+        return;
+      }
+      renderFindingChunkWindow(selectedChunkIndex, visibleAnchorIds, finish);
+    });
+  }
+
   function ensureFindingsForCurrentFilterPass(callback) {
     if (!reportUsesChunkedFindings()) {
       callback();
@@ -2233,25 +3361,107 @@ window.__SCRIBE_FILE_DIRECT_RUNTIME__ = {
       materializeAllFindingChunks(callback);
       return;
     }
-    if (hasActiveReportFilters() || reportCurrentPage > 1 || readPageSize() === Infinity) {
-      materializeAllFindingChunks(callback);
-      return;
-    }
     materializeInitialFindingChunk(callback);
   }
 
   function materializeCompleteReportForPrint(callback) {
+    if (planPrintReady) { callback(); return; }
+    if (planPrintCallbacks) { planPrintCallbacks.push(callback); return; }
+    planPrintCallbacks = [callback];
+    var generation = ++planPrintGeneration;
+    var locale = currentLocale();
+    var operation = activeReportOperation;
+    function current() {
+      return generation === planPrintGeneration && currentLocale() === locale && !reportOperationIsAborted(operation);
+    }
+    function ready() {
+      if (generation !== planPrintGeneration) return;
+      if (!current()) { restoreReportAfterPrint(); return; }
+      planPrintReady = true;
+      var callbacks = planPrintCallbacks || [];
+      planPrintCallbacks = null;
+      callbacks.forEach(function (next) { next(); });
+    }
+    function failed() {
+      if (generation !== planPrintGeneration) return;
+      restoreReportAfterPrint();
+      if (pdfPrintFrameActive) parent.postMessage({ source: 'sonde-scribe-paged', type: 'content-error' }, '*');
+      showPlanExportError();
+    }
     if (!reportUsesChunkedFindings()) {
-      callback();
+      ensureSourceSnippetData(function () {
+        if (!current()) { restoreReportAfterPrint(); return; }
+        hydrateDeferredSourceSnippets(document, true);
+        materializePlanContentForPrint(ready, failed, current);
+      });
       return;
     }
     materializeAllFindingChunks(function () {
+      if (generation !== planPrintGeneration) return;
+      if (!current()) { restoreReportAfterPrint(); return; }
       window.__SCRIBE_COMPLETE_EXPORT_FINDING_COUNT__ = document.querySelectorAll('[data-scribe-result]').length;
       ensureSourceSnippetData(function () {
-        hydrateDeferredSourceSnippets(document);
-        window.setTimeout(callback, 0);
+        hydrateDeferredSourceSnippets(document, true);
+        materializePlanContentForPrint(ready, failed, current);
       });
     });
+  }
+
+  function showPlanExportError() {
+    if (activeReportOperation) cancelReportOperation('content-unavailable');
+    var status = document.createElement('p');
+    status.setAttribute('role', 'alert');
+    status.textContent = localizedText('scribe.report.control.unavailablePlan', 'The plan could not be loaded. Open the complete plan or retry.');
+    var main = byId('main-content');
+    if (main) main.prepend(status);
+  }
+
+  function materializePlanContentForPrint(callback, failed, current) {
+    planPrintActive = true;
+    var filters = readCurrentReportFilters();
+    var entries = window.__SCRIBE_FINDINGS_INDEX__ && window.__SCRIBE_FINDINGS_INDEX__.filterEntries;
+    var allowed = entries ? new Set(entries.filter(function (entry) { return chunkedFindingEntryMatchesFilters(entry, filters); }).map(function (entry) { return entry.anchorId; })) : null;
+    var groups = new Map();
+    var chain = Promise.resolve();
+    document.querySelectorAll('[data-scribe-plan-slice]').forEach(function (details) {
+      var finding = details.closest('[data-scribe-result]');
+      if (!finding || (allowed ? !allowed.has(finding.id) : !resultMatchesFilters(finding, filters))) return;
+      var descriptor = (window.__SCRIBE_PLAN_SLICES__ || {})[finding.id];
+      if (!descriptor || details.querySelector('[data-scribe-print-plan]')) return;
+      chain = chain.then(function () {
+        if (!current()) return;
+        // Export materialization is an output buffer, separate from the bounded
+        // interactive cache. Serial reads release each source string after append.
+        var resident = reportContentCache.peek(descriptor.key + ':' + currentLocale());
+        var loaded = resident === undefined ? loadReportContentSlice(descriptor.key, descriptor.path) : Promise.resolve(resident);
+        return loaded.then(function (html) {
+          if (!current() || !details.isConnected) return;
+          if (new TextEncoder().encode(html).byteLength !== descriptor.bytes) throw new Error('content-slice-size-mismatch');
+          var output = document.createElement('div');
+          output.setAttribute('data-scribe-print-plan', '');
+          output.innerHTML = html;
+          output.querySelectorAll('[data-scribe-fixplan-group]').forEach(function (group) {
+            var identity = group.outerHTML;
+            var previous = groups.get(identity);
+            if (previous) {
+              var link = document.createElement('a');
+              link.href = '#' + previous;
+              var heading = group.querySelector('.scribe-fixplan-group-title');
+              link.textContent = heading ? heading.textContent : group.getAttribute('data-scribe-fixplan-group');
+              group.replaceChildren(link);
+              group.removeAttribute('data-scribe-fixplan-group');
+            } else {
+              group.id = 'scribe-print-plan-group-' + groups.size;
+              groups.set(identity, group.id);
+            }
+          });
+          var content = details.querySelector('[data-scribe-plan-content]');
+          if (content) content.hidden = true;
+          details.appendChild(output);
+        });
+      });
+    });
+    chain.then(function () { if (current()) updateText(currentLocale(), false); callback(); }).catch(failed);
   }
 
   function appendSourceCodeLines(code, text, startLine, language) {
@@ -2272,6 +3482,83 @@ window.__SCRIBE_FILE_DIRECT_RUNTIME__ = {
       code.appendChild(span);
       if (index < lines.length - 1) code.appendChild(document.createTextNode('\n'));
     });
+  }
+
+  // The G9 VCS source-permalink icon link, shared by the source snippet and the before/after
+  // diff — a fixable finding keeps the exact permalink the snippet it replaces would have shown,
+  // because the diff's "before" side IS the flagged source. Null when the record carries none.
+  function createSourcePermalinkAction(snippet, placeholder) {
+    if (!snippet.vcsPermalink) return null;
+    var link = document.createElement('a');
+    link.className = 'finding-link-btn scribe-source-action scribe-source-action--icon';
+    link.href = snippet.vcsPermalink;
+    link.target = '_blank';
+    link.rel = 'noopener noreferrer';
+    link.setAttribute('data-scribe-source-permalink', '');
+    var linkLabel = placeholder.getAttribute('data-scribe-source-permalink-label') || 'Open source';
+    link.setAttribute('aria-label', linkLabel);
+    link.setAttribute('title', linkLabel);
+    link.innerHTML = externalLinkIconSvg;
+    return link;
+  }
+
+  // The browser twin of sourceSnippetFlaggedCode. The record carries its flagged source inside
+  // body, never at the top level: an earlier shape read snippet.code after the schema had moved
+  // it, so String(undefined || '') rendered every plain-snippet finding as one blank line, and
+  // the deliberate no-bundle autofix fallback rendered blank too. A source view that silently
+  // shows nothing is the same class of defect as a title that lies about its body.
+  function sourceSnippetFlaggedText(snippet) {
+    var body = snippet.body;
+    if (!body) return '';
+    if (body.kind !== 'autofix') return body.code || '';
+    // The rows' ORIGINAL side, in order: removed and unchanged are the lines that exist in the
+    // source file; added are the fix's, and separators are chrome.
+    var lines = [];
+    for (var i = 0; i < body.diff.length; i++) {
+      var row = body.diff[i];
+      if (row.type === 'removed' || row.type === 'unchanged') lines.push(row.content);
+    }
+    return lines.join('\n');
+  }
+
+  // The record's body, rendered as whatever the record says it is. This is the pairing the
+  // chunked path never had: it took the section TITLE from the autofix decision and the body
+  // from a raw code string, so 80 findings read "Autofix" over the source they had not fixed.
+  // One record now carries both halves, and this reads the discriminant rather than guessing.
+  function createSourceEvidenceBody(snippet, placeholder) {
+    if (snippet.body && snippet.body.kind === 'autofix') {
+      var diff = createBeforeAfterDiffElement(snippet, placeholder);
+      // A missing render bundle is the only way this returns nothing. Falling back to the
+      // snippet figure would put the unfixed source back under the "Autofix" heading, which is
+      // the defect verbatim, so the record's own before side is what renders instead.
+      if (diff) return diff;
+    }
+    return createSourceSnippetFigure(snippet, placeholder);
+  }
+
+  function createBeforeAfterDiffElement(snippet, placeholder) {
+    if (typeof window.__sondeRenderBeforeAfterDiff !== 'function') return null;
+    var host = document.createElement('div');
+    // The bundle escapes every value it interpolates, exactly as the server-static path does.
+    host.innerHTML = window.__sondeRenderBeforeAfterDiff(snippet.body.diff, beforeAfterDiffLabels(), {
+      language: snippet.language,
+      permalinkActionHtml: '',
+      fullScreenIconHtml: fullscreenIconSvg
+    });
+    var diff = host.firstElementChild;
+    if (!diff) return null;
+    diff.setAttribute('data-scribe-source-snippet', snippet.snippetId);
+    // Built with DOM APIs and inserted, rather than passed as markup, so the href never has to
+    // survive a round trip through a string the runtime assembled itself.
+    var permalink = createSourcePermalinkAction(snippet, placeholder);
+    var head = diff.querySelector('.scribe-fixplan-before-after-head');
+    var label = diff.querySelector('[data-scribe-diff-label]');
+    if (permalink && head) head.insertBefore(permalink, label ? label.nextSibling : head.firstChild);
+    // scribeBehaviors' initial sweep ran at load, before this diff existed. Its controls ship
+    // hidden and reveal only when wired, so an unwired diff would render with no split/unified
+    // toggle and no fullscreen at all.
+    if (typeof window.__sondeWireScribeDiff === 'function') window.__sondeWireScribeDiff(diff);
+    return diff;
   }
 
   function createSourceSnippetFigure(snippet, placeholder) {
@@ -2298,6 +3585,10 @@ window.__SCRIBE_FILE_DIRECT_RUNTIME__ = {
       'data-scribe-source-close-fullscreen-label',
       placeholder.getAttribute('data-scribe-source-close-fullscreen-label') || 'Close full screen snippet'
     );
+    figure.setAttribute(
+      'data-scribe-source-code-label',
+      placeholder.getAttribute('data-scribe-source-code-label') || 'Source code'
+    );
     var caption = document.createElement('figcaption');
     var captionMain = document.createElement('span');
     captionMain.className = 'scribe-source-caption-main';
@@ -2311,19 +3602,8 @@ window.__SCRIBE_FILE_DIRECT_RUNTIME__ = {
     captionMain.appendChild(captionText);
     var actions = document.createElement('span');
     actions.className = 'scribe-source-actions';
-    if (snippet.vcsPermalink) {
-      var link = document.createElement('a');
-      link.className = 'finding-link-btn scribe-source-action scribe-source-action--icon';
-      link.href = snippet.vcsPermalink;
-      link.target = '_blank';
-      link.rel = 'noopener noreferrer';
-      link.setAttribute('data-scribe-source-permalink', '');
-      var linkLabel = placeholder.getAttribute('data-scribe-source-permalink-label') || 'Open source';
-      link.setAttribute('aria-label', linkLabel);
-      link.setAttribute('title', linkLabel);
-      link.innerHTML = "<svg width=\"16\" height=\"16\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\" focusable=\"false\">\n          <path d=\"M15 3h6v6\"></path>\n          <path d=\"M10 14 21 3\"></path>\n          <path d=\"M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6\"></path>\n        </svg>";
-      captionMain.appendChild(link);
-    }
+    var permalink = createSourcePermalinkAction(snippet, placeholder);
+    if (permalink) actions.appendChild(permalink);
     caption.appendChild(captionMain);
     var regionId = 'source-code-' + snippet.snippetId;
     var toggle = document.createElement('button');
@@ -2338,7 +3618,7 @@ window.__SCRIBE_FILE_DIRECT_RUNTIME__ = {
     toggle.setAttribute('data-expand-label', expandLabel);
     toggle.setAttribute('aria-label', collapseLabel);
     toggle.setAttribute('title', collapseLabel);
-    toggle.innerHTML = "<svg width=\"16\" height=\"16\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.5\" stroke-linecap=\"round\" stroke-linejoin=\"round\" focusable=\"false\" aria-hidden=\"true\">\n          <path d=\"m6 9 6 6 6-6\"></path>\n        </svg>";
+    toggle.innerHTML = "<svg width=\"16\" height=\"16\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.5\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\" focusable=\"false\"><path d=\"m6 9 6 6 6-6\"/></svg>";
     actions.appendChild(toggle);
     caption.appendChild(actions);
     var region = document.createElement('div');
@@ -2349,19 +3629,23 @@ window.__SCRIBE_FILE_DIRECT_RUNTIME__ = {
     fullscreen.className = 'finding-link-btn scribe-source-action scribe-source-action--icon scribe-source-frame-action';
     fullscreen.type = 'button';
     fullscreen.setAttribute('data-scribe-source-fullscreen', '');
+    fullscreen.setAttribute('aria-haspopup', 'dialog');
     fullscreen.setAttribute('aria-controls', regionId);
     var fullscreenLabel = figure.getAttribute('data-scribe-source-fullscreen-label') || 'Full screen snippet';
     fullscreen.setAttribute('aria-label', fullscreenLabel);
     fullscreen.setAttribute('title', fullscreenLabel);
-    fullscreen.innerHTML = "<svg width=\"16\" height=\"16\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\" focusable=\"false\">\n          <path d=\"M8 3H3v5\"></path>\n          <path d=\"M16 3h5v5\"></path>\n          <path d=\"M8 21H3v-5\"></path>\n          <path d=\"M16 21h5v-5\"></path>\n        </svg>";
+    fullscreen.innerHTML = fullscreenIconSvg;
     region.appendChild(fullscreen);
     var pre = document.createElement('pre');
     pre.className = 'sl-code-block';
     pre.tabIndex = 0;
+    pre.setAttribute('role', 'region');
+    var sourceCodeLabel = figure.getAttribute('data-scribe-source-code-label') || 'Source code';
+    pre.setAttribute('aria-label', sourceCodeLabel + ': ' + snippet.sourcePath + ', L' + snippet.startLine + '-L' + snippet.endLine + ' (' + snippet.snippetId + ')');
     pre.setAttribute('data-language', snippet.language);
     pre.setAttribute('data-start-line', String(snippet.startLine));
     var code = document.createElement('code');
-    appendSourceCodeLines(code, snippet.code, snippet.startLine, snippet.language);
+    appendSourceCodeLines(code, sourceSnippetFlaggedText(snippet), snippet.startLine, snippet.language);
     pre.appendChild(code);
     region.appendChild(pre);
     figure.appendChild(caption);
@@ -2369,7 +3653,7 @@ window.__SCRIBE_FILE_DIRECT_RUNTIME__ = {
     return figure;
   }
 
-  function hydrateDeferredSourceSnippets(root) {
+  function hydrateDeferredSourceSnippets(root, force) {
     if (!root || !root.querySelectorAll) return;
     var placeholders = Array.from(root.querySelectorAll('[data-scribe-deferred-source-snippet]:not([data-scribe-source-hydrated])'));
     if (root.matches && root.matches('[data-scribe-deferred-source-snippet]:not([data-scribe-source-hydrated])')) {
@@ -2378,12 +3662,15 @@ window.__SCRIBE_FILE_DIRECT_RUNTIME__ = {
     if (placeholders.length === 0) return;
     ensureSourceSnippetData(function () {
       placeholders.forEach(function (placeholder) {
+        if (!placeholder.isConnected) return;
+        var disclosure = placeholder.closest('[data-scribe-source-disclosure]');
+        if (disclosure && !disclosure.open && !force) return;
         var snippetId = placeholder.getAttribute('data-scribe-deferred-source-snippet') || '';
         var snippet = sourceSnippetById(snippetId);
         if (!snippet || placeholder.getAttribute('data-scribe-source-hydrated') === 'true') return;
         placeholder.setAttribute('data-scribe-source-hydrated', 'true');
         if (placeholder.parentNode) {
-          var figure = createSourceSnippetFigure(snippet, placeholder);
+          var figure = createSourceEvidenceBody(snippet, placeholder);
           placeholder.parentNode.replaceChild(figure, placeholder);
           attachSourceSnippetActions(figure);
         }
@@ -2392,12 +3679,25 @@ window.__SCRIBE_FILE_DIRECT_RUNTIME__ = {
   }
 
   function attachDeferredSourceSnippetHydration() {
+    document.querySelectorAll('[data-scribe-source-disclosure]:not([data-scribe-source-disclosure-bound])').forEach(function (disclosure) {
+      disclosure.setAttribute('data-scribe-source-disclosure-bound', 'true');
+      disclosure.addEventListener('toggle', function () {
+        if (!planPrintActive) sourceDisclosureState.set(disclosure.id, disclosure.open);
+        if (disclosure.open && disclosure.isConnected) hydrateDeferredSourceSnippets(disclosure);
+      });
+      if (disclosure.open) hydrateDeferredSourceSnippets(disclosure);
+    });
     document
       .querySelectorAll('details.scribe-finding-details:not([data-scribe-deferred-source-bound])')
       .forEach(function (details) {
       details.setAttribute('data-scribe-deferred-source-bound', 'true');
       details.addEventListener('toggle', function () {
-        if (details.open) hydrateDeferredSourceSnippets(details);
+        if (details.open && details.isConnected) {
+          hydrateDeferredSourceSnippets(details);
+          details.querySelectorAll('[data-scribe-plan-slice][open]').forEach(function (plan) {
+            plan.dispatchEvent(new Event('scribe-plan-load'));
+          });
+        }
       });
     });
   }
@@ -2433,13 +3733,29 @@ window.__SCRIBE_FILE_DIRECT_RUNTIME__ = {
     if (existing) return existing;
     var dialog = document.createElement('dialog');
     dialog.id = 'scribe-source-fullscreen-dialog';
+    dialog.setAttribute('role', 'dialog');
     dialog.className = 'scribe-source-dialog';
     dialog.innerHTML =
       '<form method="dialog" class="scribe-source-dialog__chrome">' +
       '<strong data-scribe-source-dialog-title></strong>' +
-      '<button type="submit" class="scribe-source-action" data-scribe-source-dialog-close>Close</button>' +
+      '<button type="submit" class="scribe-source-action scribe-source-action--icon" data-scribe-source-dialog-close aria-label="Close" title="Close"></button>' +
       '</form>' +
       '<div class="scribe-source-dialog__body" data-scribe-source-dialog-body></div>';
+    var closeButton = dialog.querySelector('[data-scribe-source-dialog-close]');
+    if (closeButton) {
+      var svgNamespace = 'http://www.w3.org/2000/svg';
+      var closeIcon = document.createElementNS(svgNamespace, 'svg');
+      closeIcon.setAttribute('width', '16');
+      closeIcon.setAttribute('height', '16');
+      closeIcon.setAttribute('viewBox', '0 0 24 24');
+      closeIcon.setAttribute('fill', 'currentColor');
+      closeIcon.setAttribute('aria-hidden', 'true');
+      closeIcon.setAttribute('focusable', 'false');
+      var closeIconPath = document.createElementNS(svgNamespace, 'path');
+      closeIconPath.setAttribute('d', 'M21.29 4.12 16.7 8.71l1.59 1.59c.63.63.18 1.71-.71 1.71H13c-.55 0-1-.45-1-1v-4.6c0-.89 1.08-1.34 1.71-.71l1.59 1.59 4.59-4.59c.39-.39 1.02-.39 1.41 0 .38.4.38 1.03-.01 1.42M4.12 21.29l4.59-4.59 1.59 1.59c.63.63 1.71.18 1.71-.71V13c0-.55-.45-1-1-1h-4.6c-.89 0-1.34 1.08-.71 1.71l1.59 1.59-4.59 4.59c-.39.39-.39 1.02 0 1.41.4.38 1.03.38 1.42-.01');
+      closeIcon.appendChild(closeIconPath);
+      closeButton.appendChild(closeIcon);
+    }
     document.body.appendChild(dialog);
     dialog.addEventListener('click', function (event) {
       var rect = dialog.getBoundingClientRect();
@@ -2461,7 +3777,10 @@ window.__SCRIBE_FILE_DIRECT_RUNTIME__ = {
     var body = dialog.querySelector('[data-scribe-source-dialog-body]');
     var close = dialog.querySelector('[data-scribe-source-dialog-close]');
     if (title) title.textContent = titleText;
-    if (close) close.textContent = closeLabel;
+    if (close) {
+      close.setAttribute('aria-label', closeLabel);
+      close.setAttribute('title', closeLabel);
+    }
     if (body) {
       body.textContent = '';
       if (contentNode) body.appendChild(contentNode);
@@ -2477,11 +3796,37 @@ window.__SCRIBE_FILE_DIRECT_RUNTIME__ = {
     var titleText = caption ? caption.textContent || '' : figure.getAttribute('data-source-path') || '';
     var clone = null;
     if (region) {
-      clone = region.cloneNode(true);
+      var activeMarkdownPanel = region.querySelector('[data-scribe-markdown-panel]:not([hidden])');
+      clone = (activeMarkdownPanel || region).cloneNode(true);
       if (clone.removeAttribute) clone.removeAttribute('id');
+      if (clone.querySelectorAll) {
+        clone.querySelectorAll('[id]').forEach(function (element) {
+          element.removeAttribute('id');
+        });
+        clone.querySelectorAll('[aria-controls], [aria-labelledby]').forEach(function (element) {
+          element.removeAttribute('aria-controls');
+          element.removeAttribute('aria-labelledby');
+        });
+      }
       var nestedFullscreen = clone.querySelector ? clone.querySelector('[data-scribe-source-fullscreen]') : null;
       if (nestedFullscreen && nestedFullscreen.parentNode) {
         nestedFullscreen.parentNode.removeChild(nestedFullscreen);
+      }
+      var clonedCopy = clone.querySelector ? clone.querySelector('.scribe-code-copy') : null;
+      var clonedCode = clone.querySelector ? clone.querySelector('code') : null;
+      if (!clonedCopy && clonedCode) {
+        var sourceCopy = region.querySelector('.scribe-code-copy');
+        if (sourceCopy) {
+          clonedCopy = sourceCopy.cloneNode(true);
+          clonedCopy.removeAttribute('hidden');
+          clonedCopy.removeAttribute('data-scribe-code-copy-bound');
+          clone.insertBefore(clonedCopy, clone.firstChild);
+        }
+      }
+      if (clonedCopy && clonedCode) {
+        clonedCopy.addEventListener('click', function () {
+          copyText(selectedTextWithin(clonedCode) || clonedCode.textContent || '');
+        });
       }
     }
     openScribeFullscreenDialog(
@@ -2493,6 +3838,61 @@ window.__SCRIBE_FILE_DIRECT_RUNTIME__ = {
 
   function attachSourceSnippetActions(root) {
     var scope = root && root.querySelectorAll ? root : document;
+    scope.querySelectorAll('[data-scribe-markdown-copy]:not([data-scribe-code-copy-bound])').forEach(function (button) {
+      var figure = button.closest ? button.closest('.scribe-markdown-source') : null;
+      var code = figure ? figure.querySelector('[data-scribe-markdown-panel="source"] code') : null;
+      if (!code) return;
+      button.setAttribute('data-scribe-code-copy-bound', 'true');
+      button.removeAttribute('hidden');
+      button.addEventListener('click', function (event) {
+        stopSummaryToggle(event);
+        copyText(selectedTextWithin(code) || code.textContent || '');
+      });
+    });
+    scope.querySelectorAll('[data-scribe-markdown-tab]:not([data-scribe-markdown-tab-bound])').forEach(function (button) {
+      button.setAttribute('data-scribe-markdown-tab-bound', 'true');
+      button.setAttribute('role', 'tab');
+      var initiallySelected = button.getAttribute('data-scribe-markdown-selected') === 'true';
+      button.setAttribute('aria-selected', String(initiallySelected));
+      button.setAttribute('tabindex', initiallySelected ? '0' : '-1');
+      function selectMarkdownTab(event) {
+        if (event) event.preventDefault();
+        var figure = button.closest('.scribe-markdown-source');
+        if (!figure) return;
+        var selected = button.getAttribute('data-scribe-markdown-tab');
+        figure.querySelectorAll('[data-scribe-markdown-tab]').forEach(function (tab) {
+          tab.setAttribute('aria-selected', String(tab === button));
+          tab.setAttribute('tabindex', tab === button ? '0' : '-1');
+        });
+        figure.querySelectorAll('[data-scribe-markdown-panel]').forEach(function (panel) {
+          panel.hidden = panel.getAttribute('data-scribe-markdown-panel') !== selected;
+        });
+      }
+      button.addEventListener('click', selectMarkdownTab);
+    });
+    scope.querySelectorAll('[data-scribe-markdown-panel]').forEach(function (panel) {
+      panel.setAttribute('role', 'tabpanel');
+      panel.setAttribute('tabindex', '0');
+      panel.hidden = panel.getAttribute('data-scribe-markdown-panel') !== 'preview';
+    });
+    scope.querySelectorAll('[data-scribe-markdown-tablist]:not([data-scribe-markdown-tablist-bound])').forEach(function (tablist) {
+      tablist.setAttribute('data-scribe-markdown-tablist-bound', 'true');
+      tablist.setAttribute('role', 'tablist');
+      tablist.addEventListener('keydown', function (event) {
+        var tabs = Array.from(tablist.querySelectorAll('[role="tab"]'));
+        var current = tabs.indexOf(event.target);
+        if (current < 0 || tabs.length === 0) return;
+        var next = current;
+        if (event.key === 'ArrowRight') next = (current + 1) % tabs.length;
+        else if (event.key === 'ArrowLeft') next = (current - 1 + tabs.length) % tabs.length;
+        else if (event.key === 'Home') next = 0;
+        else if (event.key === 'End') next = tabs.length - 1;
+        else return;
+        event.preventDefault();
+        tabs[next].focus();
+        tabs[next].click();
+      });
+    });
     scope.querySelectorAll('[data-scribe-source-toggle]:not([data-scribe-source-action-bound])').forEach(function (button) {
       button.setAttribute('data-scribe-source-action-bound', 'true');
       button.addEventListener('click', function (event) {
@@ -2506,6 +3906,7 @@ window.__SCRIBE_FILE_DIRECT_RUNTIME__ = {
       .querySelectorAll('[data-scribe-source-fullscreen]:not([data-scribe-source-action-bound])')
       .forEach(function (button) {
         button.setAttribute('data-scribe-source-action-bound', 'true');
+        button.removeAttribute('hidden');
         button.addEventListener('click', function (event) {
           stopSummaryToggle(event);
           var figure = sourceSnippetFigureFromControl(button);
@@ -2554,11 +3955,12 @@ window.__SCRIBE_FILE_DIRECT_RUNTIME__ = {
     if (existing) return existing;
     var dialog = document.createElement('dialog');
     dialog.id = 'scribe-display-artifact-fullscreen-dialog';
+    dialog.setAttribute('role', 'dialog');
     dialog.className = 'scribe-display-artifact-dialog';
     dialog.innerHTML =
       '<form method="dialog" class="scribe-display-artifact-dialog__chrome">' +
       '<strong data-scribe-artifact-dialog-title></strong>' +
-      '<button type="submit" class="scribe-source-action" data-scribe-artifact-dialog-close>Close</button>' +
+      '<button type="submit" class="scribe-source-action scribe-source-action--icon" data-scribe-artifact-dialog-close aria-label="Close" title="Close"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false"><path d="M21.29 4.12 16.7 8.71l1.59 1.59c.63.63.18 1.71-.71 1.71H13c-.55 0-1-.45-1-1v-4.6c0-.89 1.08-1.34 1.71-.71l1.59 1.59 4.59-4.59c.39-.39 1.02-.39 1.41 0 .38.4.38 1.03-.01 1.42M4.12 21.29l4.59-4.59 1.59 1.59c.63.63 1.71.18 1.71-.71V13c0-.55-.45-1-1-1h-4.6c-.89 0-1.34 1.08-.71 1.71l1.59 1.59-4.59 4.59c-.39.39-.39 1.02 0 1.41.4.38 1.03.38 1.42-.01"></path></svg></button>' +
       '</form>' +
       '<div class="scribe-display-artifact-dialog__body" data-scribe-artifact-dialog-body></div>';
     document.body.appendChild(dialog);
@@ -2578,7 +3980,11 @@ window.__SCRIBE_FILE_DIRECT_RUNTIME__ = {
     var dialogTitle = heading ? heading.textContent || '' : artifact.id || '';
     dialog.setAttribute('aria-label', dialogTitle);
     if (title) title.textContent = dialogTitle;
-    if (close) close.textContent = artifact.getAttribute('data-scribe-artifact-close-fullscreen-label') || 'Close';
+    if (close) {
+      var closeLabel = artifact.getAttribute('data-scribe-artifact-close-fullscreen-label') || 'Close';
+      close.setAttribute('aria-label', closeLabel);
+      close.setAttribute('title', closeLabel);
+    }
     if (body) {
       body.textContent = '';
       if (region) {
@@ -2635,20 +4041,12 @@ window.__SCRIBE_FILE_DIRECT_RUNTIME__ = {
   }
 
   function attachFindingPermalinks() {
-    document.querySelectorAll('[data-scribe-permalink]:not([data-scribe-permalink-bound])').forEach(function (link) {
-      link.setAttribute('data-scribe-permalink-bound', 'true');
-      link.addEventListener('click', function (event) {
-        stopPermalinkActivation(event);
-        var fragment = link.getAttribute('data-scribe-permalink') || link.getAttribute('href') || '';
-        if (!fragment) return;
-        if (!activateAnchorFragment(fragment)) return;
-        copyText(window.location.href);
-        if (link.hasAttribute('data-share-anchor')) recordShare(fragmentIdFromHref(fragment));
-        link.classList.add('is-copied');
-        window.setTimeout(function () {
-          link.classList.remove('is-copied');
-        }, 1600);
-      });
+    attachCanonicalPermalinkBehavior({
+      beforeActivate: function (event) { stopPermalinkActivation(event); },
+      activate: function (fragment) { return activateAnchorFragment(fragment); },
+      copyText: copyText,
+      copyValue: function () { return window.location.href; },
+      onShare: function (fragment) { recordShare(fragmentIdFromHref(fragment)); }
     });
   }
 
@@ -2665,6 +4063,61 @@ window.__SCRIBE_FILE_DIRECT_RUNTIME__ = {
     var list = searchSuggestionList();
     if (input) input.setAttribute('aria-expanded', String(open));
     if (list) list.hidden = !open;
+    if (!open && input) input.removeAttribute('aria-activedescendant');
+    if (!open && list) {
+      list.querySelectorAll('[data-search-suggestion]').forEach(function (button) {
+        button.setAttribute('aria-selected', 'false');
+      });
+    }
+  }
+
+  function visibleSearchSuggestions() {
+    var list = searchSuggestionList();
+    if (!list) return [];
+    return Array.prototype.slice.call(list.querySelectorAll('[data-search-suggestion]')).filter(function (button) {
+      return !button.hidden;
+    });
+  }
+
+  function activeSearchSuggestionIndex(suggestions) {
+    var input = searchInput();
+    if (!input) return -1;
+    var activeId = input.getAttribute('aria-activedescendant');
+    return suggestions.findIndex(function (button) {
+      return button.id === activeId;
+    });
+  }
+
+  function setActiveSearchSuggestion(suggestions, index) {
+    var input = searchInput();
+    if (!input || suggestions.length === 0) return;
+    var normalized = (index + suggestions.length) % suggestions.length;
+    suggestions.forEach(function (button, buttonIndex) {
+      button.setAttribute('aria-selected', String(buttonIndex === normalized));
+    });
+    input.setAttribute('aria-activedescendant', suggestions[normalized].id);
+    suggestions[normalized].scrollIntoView({ block: 'nearest' });
+    setSearchSuggestionsOpen(true);
+  }
+
+  function chooseSearchSuggestion(button) {
+    var input = searchInput();
+    if (!input || !button) return;
+    input.value = button.getAttribute('data-search-suggestion') || '';
+    scheduleApplyFilters(true);
+    setSearchSuggestionsOpen(false);
+    input.focus();
+  }
+
+  function moveSearchSuggestion(event) {
+    if (event.key !== 'ArrowDown' && event.key !== 'ArrowUp') return false;
+    var suggestions = visibleSearchSuggestions();
+    if (suggestions.length === 0) return false;
+    var activeIndex = activeSearchSuggestionIndex(suggestions);
+    var offset = event.key === 'ArrowDown' ? 1 : -1;
+    setActiveSearchSuggestion(suggestions, activeIndex < 0 ? (offset > 0 ? 0 : suggestions.length - 1) : activeIndex + offset);
+    event.preventDefault();
+    return true;
   }
 
   function syncSearchSuggestions() {
@@ -2677,8 +4130,10 @@ window.__SCRIBE_FILE_DIRECT_RUNTIME__ = {
       var value = (button.getAttribute('data-search-suggestion') || '').toLowerCase();
       var matches = query.length === 0 || value.indexOf(query) !== -1;
       button.hidden = !matches;
+      if (!matches) button.setAttribute('aria-selected', 'false');
       if (matches) visible += 1;
     });
+    input.removeAttribute('aria-activedescendant');
     setSearchSuggestionsOpen(document.activeElement === input && visible > 0);
   }
 
@@ -2687,19 +4142,30 @@ window.__SCRIBE_FILE_DIRECT_RUNTIME__ = {
     var list = searchSuggestionList();
     if (!input || !list) return;
     input.addEventListener('focus', syncSearchSuggestions);
+    input.addEventListener('blur', function () {
+      setSearchSuggestionsOpen(false);
+    });
     input.addEventListener('input', syncSearchSuggestions);
     input.addEventListener('keydown', function (event) {
-      if (event.key === 'Escape') setSearchSuggestionsOpen(false);
+      if (moveSearchSuggestion(event)) return;
+      if (event.key === 'Enter') {
+        var suggestions = visibleSearchSuggestions();
+        var activeIndex = activeSearchSuggestionIndex(suggestions);
+        if (activeIndex >= 0) {
+          chooseSearchSuggestion(suggestions[activeIndex]);
+          event.preventDefault();
+        }
+      } else if (event.key === 'Escape') {
+        setSearchSuggestionsOpen(false);
+      }
     });
+    list.addEventListener('keydown', moveSearchSuggestion);
     list.querySelectorAll('[data-search-suggestion]').forEach(function (button) {
       button.addEventListener('mousedown', function (event) {
         event.preventDefault();
       });
       button.addEventListener('click', function () {
-        input.value = button.getAttribute('data-search-suggestion') || '';
-        scheduleApplyFilters(true);
-        setSearchSuggestionsOpen(false);
-        input.focus();
+        chooseSearchSuggestion(button);
       });
     });
     document.addEventListener('click', function (event) {
@@ -2708,152 +4174,16 @@ window.__SCRIBE_FILE_DIRECT_RUNTIME__ = {
     });
   }
 
-  var sidebarStorageKey = 'sonde-scribe-report-sidebar-width';
-  var sidebarCollapsedStorageKey = 'sonde-scribe-report-sidebar-collapsed';
-
-  function sidebarLayout() {
-    return document.querySelector('[data-scribe-report-layout]');
-  }
-
-  function reportSidebar() {
-    return document.querySelector('[data-scribe-report-sidebar]');
-  }
-
-  function sidebarToggleButton() {
-    return document.querySelector('[data-scribe-sidebar-toggle]');
-  }
-
-  function isSidebarCollapsed() {
-    var sidebar = reportSidebar();
-    return Boolean(sidebar && sidebar.getAttribute('data-sidebar-collapsed') === 'true');
-  }
-
-  function localizedSidebarToggleLabel(msgid, fallback) {
-    var bundle = localeBundle(currentLocale() || document.documentElement.lang);
-    var entry = bundle && msgid ? bundle.messages[msgid] : undefined;
-    return entry && entry.text ? entry.text : fallback;
-  }
-
-  function updateSidebarToggleLabel(collapsed) {
-    var button = sidebarToggleButton();
-    if (!button) return;
-    var msgid = collapsed
-      ? button.getAttribute('data-collapsed-label-msgid')
-      : button.getAttribute('data-expanded-label-msgid');
-    var label = localizedSidebarToggleLabel(msgid || '', collapsed ? 'Expand contents' : 'Collapse contents');
-    button.setAttribute('aria-expanded', String(!collapsed));
-    button.setAttribute('aria-label', label);
-    button.setAttribute('title', label);
-  }
-
-  function setSidebarCollapsed(collapsed) {
-    var layout = sidebarLayout();
-    var sidebar = reportSidebar();
-    var panel = byId('scribe-report-toc-panel');
-    if (!layout || !sidebar) return;
-    if (collapsed) {
-      storeSidebarWidth(sidebar.getBoundingClientRect().width);
-      layout.setAttribute('data-sidebar-collapsed', 'true');
-      sidebar.setAttribute('data-sidebar-collapsed', 'true');
-    } else {
-      layout.removeAttribute('data-sidebar-collapsed');
-      sidebar.removeAttribute('data-sidebar-collapsed');
-      restoreSidebarWidth();
-    }
-    if (panel) panel.hidden = collapsed;
-    updateSidebarToggleLabel(collapsed);
-    try {
-      if (window.localStorage) window.localStorage.setItem(sidebarCollapsedStorageKey, collapsed ? 'true' : 'false');
-    } catch (_error) {
-      return;
-    }
-  }
-
-  function restoreSidebarCollapsed() {
-    try {
-      var stored = window.localStorage ? window.localStorage.getItem(sidebarCollapsedStorageKey) : null;
-      setSidebarCollapsed(stored === 'true');
-    } catch (_error) {
-      setSidebarCollapsed(false);
-    }
-  }
-
-  function clampSidebarWidth(width) {
-    return Math.max(224, Math.min(520, width));
-  }
-
-  function storeSidebarWidth(width) {
-    try {
-      if (window.localStorage) window.localStorage.setItem(sidebarStorageKey, String(clampSidebarWidth(width)));
-    } catch (_error) {
-      return;
-    }
-  }
-
-  function setSidebarWidth(width) {
-    var layout = sidebarLayout();
-    if (!layout) return;
-    var nextWidth = clampSidebarWidth(width);
-    layout.style.setProperty('--scribe-sidebar-width', String(nextWidth) + 'px');
-    storeSidebarWidth(nextWidth);
-    var resizer = document.querySelector('[data-scribe-sidebar-resizer]');
-    if (resizer) resizer.setAttribute('aria-valuenow', String(Math.round(nextWidth)));
-  }
-
-  function restoreSidebarWidth() {
-    try {
-      var storedWidth = window.localStorage ? Number.parseInt(window.localStorage.getItem(sidebarStorageKey) || '', 10) : NaN;
-      if (Number.isFinite(storedWidth)) setSidebarWidth(storedWidth);
-    } catch (_error) {
-      return;
-    }
-  }
-
-  function attachSidebarResize() {
-    var sidebar = reportSidebar();
-    var resizer = document.querySelector('[data-scribe-sidebar-resizer]');
-    if (!sidebar || !resizer) return;
-    restoreSidebarWidth();
-    resizer.setAttribute('aria-valuenow', String(Math.round(sidebar.getBoundingClientRect().width)));
-    var startX = 0;
-    var startWidth = 0;
-    function onPointerMove(event) {
-      setSidebarWidth(startWidth + event.clientX - startX);
-    }
-    function onPointerUp() {
-      sidebar.removeAttribute('data-resizing');
-      document.removeEventListener('pointermove', onPointerMove);
-      document.removeEventListener('pointerup', onPointerUp);
-    }
-    resizer.addEventListener('pointerdown', function (event) {
-      startX = event.clientX;
-      startWidth = sidebar.getBoundingClientRect().width;
-      sidebar.setAttribute('data-resizing', 'true');
-      document.addEventListener('pointermove', onPointerMove);
-      document.addEventListener('pointerup', onPointerUp);
-      event.preventDefault();
-    });
-    resizer.addEventListener('keydown', function (event) {
-      if (event.key !== 'ArrowLeft' && event.key !== 'ArrowRight') return;
-      var direction = event.key === 'ArrowLeft' ? -1 : 1;
-      setSidebarWidth(sidebar.getBoundingClientRect().width + direction * 24);
-      event.preventDefault();
-    });
-  }
-
-  function attachSidebarCollapse() {
-    var button = sidebarToggleButton();
-    if (!button) return;
-    restoreSidebarCollapsed();
-    button.addEventListener('click', function () {
-      setSidebarCollapsed(!isSidebarCollapsed());
-    });
-  }
 
   var reportPrintState = null;
+  var requestedPrintState = null;
 
   function prepareReportForPrint() {
     if (reportPrintState) return;
+    var interactiveState = requestedPrintState || {
+      filters: readCurrentReportFilters(),
+      currentPage: reportCurrentPage
+    };
     var closedDetails = [];
     document.querySelectorAll('details:not([open])').forEach(function (details) {
       closedDetails.push(details);
@@ -2877,13 +4207,21 @@ window.__SCRIBE_FILE_DIRECT_RUNTIME__ = {
     reportPrintState = {
       closedDetails: closedDetails,
       lazyImages: lazyImages,
-      hiddenState: hiddenState
+      hiddenState: hiddenState,
+      filters: interactiveState.filters,
+      currentPage: interactiveState.currentPage
     };
     document.body.setAttribute('data-scribe-printing', 'true');
     applyFiltersNow();
   }
 
   function restoreReportAfterPrint() {
+    planPrintGeneration += 1;
+    planPrintCallbacks = null;
+    planPrintReady = false;
+    planPrintActive = false;
+    document.querySelectorAll('[data-scribe-print-plan]').forEach(function (output) { output.remove(); });
+    document.querySelectorAll('[data-scribe-plan-content]').forEach(function (content) { content.hidden = false; });
     if (!reportPrintState) return;
     reportPrintState.closedDetails.forEach(function (details) {
       details.removeAttribute('open');
@@ -2895,8 +4233,14 @@ window.__SCRIBE_FILE_DIRECT_RUNTIME__ = {
     reportPrintState.hiddenState.forEach(function (entry) {
       entry.element.hidden = entry.hidden;
     });
+    setOverviewFilterState(reportPrintState.filters);
+    reportCurrentPage = reportPrintState.currentPage;
     document.body.removeAttribute('data-scribe-printing');
     reportPrintState = null;
+    requestedPrintState = null;
+    if (reportUsesChunkedFindings()) {
+      applyChunkedFindingFilters(function () {});
+    }
   }
 
   function startPdfDownloadFlow() {
@@ -2923,7 +4267,9 @@ window.__SCRIBE_FILE_DIRECT_RUNTIME__ = {
     if (filters.severity) printUrl.searchParams.set('scribe_filter_severity', filters.severity);
     if (filters.language) printUrl.searchParams.set('scribe_filter_language', filters.language);
     if (filters.classification) printUrl.searchParams.set('scribe_filter_classification', filters.classification);
+    if (filters.autofix) printUrl.searchParams.set('scribe_filter_autofix', filters.autofix);
     iframe.src = printUrl.toString();
+    if (operation) operation.printFrame = iframe;
     document.body.appendChild(iframe);
     addReportOperationCleanup(operation, function () {
       try {
@@ -3127,11 +4473,18 @@ window.__SCRIBE_FILE_DIRECT_RUNTIME__ = {
       materializeCompleteReportForPrint(prepareReportForPrint);
       prepareReportForPrint();
     });
-    window.addEventListener('afterprint', restoreReportAfterPrint);
+    window.addEventListener('afterprint', function () {
+      restoreReportAfterPrint();
+      if (activeReportOperation && activeReportOperation.kind === 'print') {
+        finishReportOperation(activeReportOperation);
+      }
+    });
     window.addEventListener('message', function (event) {
       var data = event.data;
       if (!data || typeof data !== 'object') return;
       if (data.source !== 'sonde-scribe-paged') return;
+      if (!activeReportOperation || !activeReportOperation.printFrame || event.source !== activeReportOperation.printFrame.contentWindow) return;
+      if (data.type === 'content-error') { showPlanExportError(); return; }
       if (
         (data.type === 'rendered' || data.type === 'fallback') &&
         activeReportOperation &&
@@ -3143,9 +4496,25 @@ window.__SCRIBE_FILE_DIRECT_RUNTIME__ = {
     document.querySelectorAll('[data-scribe-print]').forEach(function (button) {
       button.addEventListener('click', function () {
         window.__SCRIBE_PRINT_REQUESTED__ = true;
+        requestedPrintState = {
+          filters: readCurrentReportFilters(),
+          currentPage: reportCurrentPage
+        };
+        var operation = startReportOperation(
+          'print',
+          'Preparing print view...',
+          'Sonde is preparing the complete report for printing.'
+        );
         materializeCompleteReportForPrint(function () {
+          if (reportOperationIsAborted(operation)) return;
           prepareReportForPrint();
-          if (typeof window.print === 'function') window.print();
+          try {
+            if (typeof window.print === 'function') window.print();
+          } finally {
+            // Native print blocks until its dialog closes. Finish here as well
+            // as on the afterprint event for engines that omit that event.
+            finishReportOperation(operation);
+          }
         });
       });
     });
@@ -3198,7 +4567,7 @@ window.__SCRIBE_FILE_DIRECT_RUNTIME__ = {
       if (list.hidden) openMenu();
       else closeMenu();
     });
-    list.querySelectorAll('[role="menuitem"]').forEach(function (item) {
+    list.querySelectorAll('.download-menu-item').forEach(function (item) {
       item.addEventListener('click', function () { closeMenu(); });
     });
     document.addEventListener('click', function (e) {
@@ -3215,16 +4584,22 @@ window.__SCRIBE_FILE_DIRECT_RUNTIME__ = {
   }
 
   document.addEventListener('DOMContentLoaded', function () {
+    bindInlinePlanDisclosures();
     restoreReportTheme();
     var printTheme = pdfPrintFrameActive ? requestedPrintThemeId() : null;
     if (printTheme) applyReportTheme(printTheme);
+    var certificationTheme = pdfPrintFrameActive ? null : requestedCertificationThemeId();
+    if (certificationTheme) applyReportTheme(certificationTheme, false);
     restoreReportMode();
     var printMode = pdfPrintFrameActive ? requestedPrintMode() : null;
     if (printMode) applyReportMode(printMode);
+    var certificationMode = pdfPrintFrameActive ? null : requestedCertificationMode();
+    if (certificationMode) applyReportMode(certificationMode, false);
     restoreSettingsSectionState();
     ensureLanguageSearch();
     var storedLocaleId = storedLocale() || '';
     var queryLocale = requestedLocale();
+    var certificationLocale = pdfPrintFrameActive ? null : requestedCertificationLocale();
     var printLocale = pdfPrintFrameActive ? queryLocale : null;
     var manifestLocale = window.__SCRIBE_MANIFEST__ && window.__SCRIBE_MANIFEST__.locales
       ? window.__SCRIBE_MANIFEST__.locales.fallback
@@ -3238,6 +4613,7 @@ window.__SCRIBE_FILE_DIRECT_RUNTIME__ = {
     var preferredLocale = preferredBrowserLocale();
     var initialLocale =
       printLocale ||
+      certificationLocale ||
       (pdfPrintFrameActive ? null : queryLocale) ||
       explicitDocumentLocale ||
       (localeBundle(storedLocaleId) ? storedLocaleId : null) ||
@@ -3246,11 +4622,19 @@ window.__SCRIBE_FILE_DIRECT_RUNTIME__ = {
       supportedDocumentLocale ||
       manifestLocale ||
       documentLocale;
-    updateText(initialLocale, queryLocale && !pdfPrintFrameActive ? true : false);
+    var persistInitialLocale = certificationLocale ? false : Boolean(queryLocale && !pdfPrintFrameActive);
+    updateText(initialLocale, persistInitialLocale);
     if (queryLocale && !pdfPrintFrameActive) clearTransientQueryParam('scribe_locale');
     attachOverviewSeverityShortcuts();
     attachOverviewFilters();
+    document.addEventListener('click', function (event) {
+      var clearButton = event.target && event.target.closest
+        ? event.target.closest('[data-scribe-clear-filters]')
+        : null;
+      if (clearButton) clearReportFilters();
+    });
     restoreRequestedPrintFilters();
+    if (!pdfPrintFrameActive) restoreReportFiltersFromUrl();
     // Deep-link / search hydration (G8): a q= query parameter on the report URL pre-fills the in-page
     // finding filter on first paint so a shared link lands on the already-filtered finding set. Skipped
     // inside the PDF print frame (which carries its own scribe_filter_query parameter).
@@ -3259,19 +4643,18 @@ window.__SCRIBE_FILE_DIRECT_RUNTIME__ = {
       setReportFilterValue('report-search', hydratedQuery);
       syncSearchFieldState(hydratedQuery);
     }
-    applyFilters();
     restoreNistCoverageControls();
+    hydrateDeferredFindingToc();
     if (pdfPrintFrameActive) {
       bootPdfPrintFrame();
       return;
     }
+    applyFilters();
     attachSearchSuggestions();
     attachFindingPermalinks();
     attachDeferredSourceSnippetHydration();
     attachSourceSnippetActions(document);
     attachDisplayArtifactActions(document);
-    attachSidebarResize();
-    attachSidebarCollapse();
     attachPrintActions();
     attachNistCoverageControls();
     ensureFindingTargetOpen();
@@ -3299,7 +4682,17 @@ window.__SCRIBE_FILE_DIRECT_RUNTIME__ = {
       clone
     );
   }
-  document.querySelectorAll('[data-scribe-diff-toggle]').forEach(function (container) {
+  function wireDiffToggles(root) {
+    var scope = root && root.querySelectorAll ? root : document;
+    var containers = Array.prototype.slice.call(scope.querySelectorAll('[data-scribe-diff-toggle]'));
+    if (scope.matches && scope.matches('[data-scribe-diff-toggle]')) containers.unshift(scope);
+    containers.forEach(wireDiffToggle);
+  }
+  // Exported so the report runtime can wire a diff it rendered AFTER load — the chunked
+  // overview hydrates a finding's before/after only when the reader opens it, long after this
+  // IIFE's initial sweep. Idempotent by the wired-guard, so a re-sweep costs nothing.
+  window.__sondeWireScribeDiff = wireDiffToggles;
+  function wireDiffToggle(container) {
     if (container.getAttribute('data-scribe-diff-wired')) return;
     var toolbar = container.querySelector('.scribe-diff-view-toggle');
     var splitPane = container.querySelector('[data-scribe-diff-pane="split"]');
@@ -3331,17 +4724,15 @@ window.__SCRIBE_FILE_DIRECT_RUNTIME__ = {
         select(button.getAttribute('data-scribe-diff-view'));
       });
     });
-  });
+  }
+  wireDiffToggles(document);
 })();
 
     applyReaderView(readFilter('report-reader-view') || document.body.getAttribute('data-reader-view') || "developer");
     document.querySelectorAll('[data-scribe-filter]').forEach(function (input) {
-      input.addEventListener('input', function () { scheduleApplyFilters(true); });
-      input.addEventListener('change', function () { scheduleApplyFilters(true); });
-    });
-    document.querySelectorAll('[data-scribe-clear-filters]').forEach(function (button) {
-      button.addEventListener('click', function () {
-        clearReportFilters();
+      input.addEventListener(input.tagName === 'SELECT' ? 'change' : 'input', function () {
+        persistReportFilters(true, input.tagName !== 'SELECT');
+        scheduleApplyFilters(true);
       });
     });
     document.querySelectorAll('[data-scribe-page-action]').forEach(function (button) {
@@ -3356,6 +4747,7 @@ window.__SCRIBE_FILE_DIRECT_RUNTIME__ = {
         } else if (action === 'last') {
           reportCurrentPage = reportCurrentPageCount;
         }
+        persistReportFilters(false);
         scheduleApplyFilters(false);
       });
     });
@@ -3420,11 +4812,34 @@ window.__SCRIBE_FILE_DIRECT_RUNTIME__ = {
       });
     });
     document.addEventListener('click', function (event) {
-      var link = event.target && event.target.closest ? event.target.closest('a[href^="#"]') : null;
+      var link = event.target && event.target.closest ? event.target.closest('a[href]') : null;
       if (!link) return;
-      window.setTimeout(ensureFindingTargetOpen, 0);
+      var destination;
+      try { destination = new URL(link.getAttribute('href'), location.href); } catch (_error) { return; }
+      if (!destination.hash || destination.origin !== location.origin || destination.pathname !== location.pathname) return;
+      if (event.defaultPrevented || event.button !== 0 || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
+      evidenceReturnContext = { url: location.href, focus: link, x: window.scrollX, y: window.scrollY };
+      if (link.closest('.scribe-report-toc') && !event.defaultPrevented && event.button === 0 &&
+          !event.metaKey && !event.ctrlKey && !event.shiftKey && !event.altKey) {
+        // Native fragment navigation transfers focus to the report target. Keep
+        // navigation selection in the rail so the next destination stays reachable.
+        event.preventDefault();
+        link.focus({ preventScroll: true });
+        history.pushState(null, '', link.getAttribute('href'));
+        ensureFindingTargetOpen();
+        return;
+      }
+      event.preventDefault();
+      history.pushState(null, '', destination.toString());
+      ensureFindingTargetOpen();
     });
     ensureFindingTargetOpen();
   });
   window.addEventListener('hashchange', ensureFindingTargetOpen);
+  window.addEventListener('popstate', function () {
+    clearEvidenceReveal();
+    restoreReportFiltersFromUrl();
+    scheduleApplyFilters(false);
+    ensureFindingTargetOpen();
+  });
 })();

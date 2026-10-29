@@ -1,31 +1,937 @@
 [
   {
     "label": "Profiles",
+    "labelText": {
+      "catalogDependency": {
+        "explicitLocales": [],
+        "lookupLocales": [
+          "en-US",
+          "en-GB",
+          "en-CA",
+          "fr-CA",
+          "en-IN",
+          "cy-GB",
+          "gd-GB",
+          "ga-GB",
+          "es-US",
+          "es-MX",
+          "de-DE",
+          "fr-FR",
+          "es-ES",
+          "it-IT",
+          "nl-NL",
+          "pl-PL",
+          "pt-PT",
+          "pt-BR",
+          "ro-RO",
+          "sv-SE",
+          "ko-KR",
+          "zh-CN",
+          "ja-JP",
+          "hi-IN"
+        ],
+        "reportFallbacks": {},
+        "sourceLocale": "en-US"
+      },
+      "defaultLocale": "en-US",
+      "defaultText": "Profiles",
+      "icuArgs": {},
+      "msgid": "scribe.report.oscalIntake.sourceRow.profiles",
+      "provenance": "template",
+      "reviewState": "reviewed",
+      "values": {
+        "cy-GB": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "Proffilau"
+        },
+        "de-DE": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "Profile"
+        },
+        "en-CA": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "Profiles"
+        },
+        "en-GB": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "Profiles"
+        },
+        "en-IN": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "Profiles"
+        },
+        "en-US": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "Profiles"
+        },
+        "es-ES": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "Perfiles"
+        },
+        "es-MX": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "Perfiles"
+        },
+        "es-US": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "Perfiles"
+        },
+        "fr-CA": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "Profils"
+        },
+        "fr-FR": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "Profils"
+        },
+        "hi-IN": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "प्रोफ़ाइलें"
+        },
+        "it-IT": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "Profili"
+        },
+        "ja-JP": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "プロファイル"
+        },
+        "ko-KR": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "프로필"
+        },
+        "nl-NL": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "Profielen"
+        },
+        "pl-PL": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "Profile"
+        },
+        "pt-BR": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "Perfis"
+        },
+        "pt-PT": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "Perfis"
+        },
+        "ro-RO": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "Profiluri"
+        },
+        "sv-SE": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "Profiler"
+        },
+        "zh-CN": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "配置文件"
+        }
+      }
+    },
     "unit": "artifacts",
     "value": "22"
   },
   {
     "label": "Catalogs",
+    "labelText": {
+      "catalogDependency": {
+        "explicitLocales": [],
+        "lookupLocales": [
+          "en-US",
+          "en-GB",
+          "en-CA",
+          "fr-CA",
+          "en-IN",
+          "cy-GB",
+          "gd-GB",
+          "ga-GB",
+          "es-US",
+          "es-MX",
+          "de-DE",
+          "fr-FR",
+          "es-ES",
+          "it-IT",
+          "nl-NL",
+          "pl-PL",
+          "pt-PT",
+          "pt-BR",
+          "ro-RO",
+          "sv-SE",
+          "ko-KR",
+          "zh-CN",
+          "ja-JP",
+          "hi-IN"
+        ],
+        "reportFallbacks": {},
+        "sourceLocale": "en-US"
+      },
+      "defaultLocale": "en-US",
+      "defaultText": "Catalogs",
+      "icuArgs": {},
+      "msgid": "scribe.report.oscalIntake.sourceRow.catalogs",
+      "provenance": "template",
+      "reviewState": "reviewed",
+      "values": {
+        "cy-GB": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "Catalogau"
+        },
+        "de-DE": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "Kataloge"
+        },
+        "en-CA": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "Catalogs"
+        },
+        "en-GB": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "Catalogs"
+        },
+        "en-IN": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "Catalogs"
+        },
+        "en-US": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "Catalogs"
+        },
+        "es-ES": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "Catálogos"
+        },
+        "es-MX": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "Catálogos"
+        },
+        "es-US": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "Catálogos"
+        },
+        "fr-CA": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "Catalogues"
+        },
+        "fr-FR": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "Catalogues"
+        },
+        "hi-IN": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "कैटलॉग"
+        },
+        "it-IT": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "Cataloghi"
+        },
+        "ja-JP": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "カタログ"
+        },
+        "ko-KR": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "카탈로그"
+        },
+        "nl-NL": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "Catalogi"
+        },
+        "pl-PL": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "Katalogi"
+        },
+        "pt-BR": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "Catálogos"
+        },
+        "pt-PT": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "Catálogos"
+        },
+        "ro-RO": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "Cataloage"
+        },
+        "sv-SE": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "Kataloger"
+        },
+        "zh-CN": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "目录"
+        }
+      }
+    },
     "unit": "artifacts",
     "value": "23"
   },
   {
     "label": "Resolved imports",
+    "labelText": {
+      "catalogDependency": {
+        "explicitLocales": [],
+        "lookupLocales": [
+          "en-US",
+          "en-GB",
+          "en-CA",
+          "fr-CA",
+          "en-IN",
+          "cy-GB",
+          "gd-GB",
+          "ga-GB",
+          "es-US",
+          "es-MX",
+          "de-DE",
+          "fr-FR",
+          "es-ES",
+          "it-IT",
+          "nl-NL",
+          "pl-PL",
+          "pt-PT",
+          "pt-BR",
+          "ro-RO",
+          "sv-SE",
+          "ko-KR",
+          "zh-CN",
+          "ja-JP",
+          "hi-IN"
+        ],
+        "reportFallbacks": {},
+        "sourceLocale": "en-US"
+      },
+      "defaultLocale": "en-US",
+      "defaultText": "Resolved imports",
+      "icuArgs": {},
+      "msgid": "scribe.report.oscalIntake.sourceRow.resolvedImports",
+      "provenance": "template",
+      "reviewState": "reviewed",
+      "values": {
+        "cy-GB": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "Mewnforio wedi' i ddatrys"
+        },
+        "de-DE": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "Aufgelöste Importe"
+        },
+        "en-CA": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "Resolved imports"
+        },
+        "en-GB": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "Resolved imports"
+        },
+        "en-IN": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "Resolved imports"
+        },
+        "en-US": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "Resolved imports"
+        },
+        "es-ES": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "Importaciones resueltas"
+        },
+        "es-MX": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "Importaciones resueltas"
+        },
+        "es-US": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "Importaciones resueltas"
+        },
+        "fr-CA": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "Importations résolues"
+        },
+        "fr-FR": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "Importations résolues"
+        },
+        "hi-IN": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "सुलझाए गए इम्पोर्ट्स (Resolved imports)"
+        },
+        "it-IT": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "Importazioni risolte"
+        },
+        "ja-JP": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "解決されたインポート"
+        },
+        "ko-KR": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "해결된 임포트"
+        },
+        "nl-NL": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "Opgeloste imports"
+        },
+        "pl-PL": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "Rozwiązane importy"
+        },
+        "pt-BR": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "Importações resolvidas"
+        },
+        "pt-PT": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "Importações resolvidas"
+        },
+        "ro-RO": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "Importuri rezolvate"
+        },
+        "sv-SE": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "Upplösta importer"
+        },
+        "zh-CN": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "已解析的导入"
+        }
+      }
+    },
     "unit": "links",
     "value": "22"
   },
   {
     "label": "Dangling imports",
+    "labelText": {
+      "catalogDependency": {
+        "explicitLocales": [],
+        "lookupLocales": [
+          "en-US",
+          "en-GB",
+          "en-CA",
+          "fr-CA",
+          "en-IN",
+          "cy-GB",
+          "gd-GB",
+          "ga-GB",
+          "es-US",
+          "es-MX",
+          "de-DE",
+          "fr-FR",
+          "es-ES",
+          "it-IT",
+          "nl-NL",
+          "pl-PL",
+          "pt-PT",
+          "pt-BR",
+          "ro-RO",
+          "sv-SE",
+          "ko-KR",
+          "zh-CN",
+          "ja-JP",
+          "hi-IN"
+        ],
+        "reportFallbacks": {},
+        "sourceLocale": "en-US"
+      },
+      "defaultLocale": "en-US",
+      "defaultText": "Dangling imports",
+      "icuArgs": {},
+      "msgid": "scribe.report.oscalIntake.sourceRow.danglingImports",
+      "provenance": "template",
+      "reviewState": "reviewed",
+      "values": {
+        "cy-GB": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "Mewnforio Dangling"
+        },
+        "de-DE": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "Nicht aufgelöste Importe"
+        },
+        "en-CA": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "Dangling imports"
+        },
+        "en-GB": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "Dangling imports"
+        },
+        "en-IN": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "Dangling imports"
+        },
+        "en-US": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "Dangling imports"
+        },
+        "es-ES": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "Importaciones sueltas"
+        },
+        "es-MX": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "Importaciones huérfanas"
+        },
+        "es-US": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "Importaciones huérfanas"
+        },
+        "fr-CA": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "Importations pendantes"
+        },
+        "fr-FR": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "Importations orphelines"
+        },
+        "hi-IN": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "लटकते हुए इम्पोर्ट्स (Dangling imports)"
+        },
+        "it-IT": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "Importazioni pendenti"
+        },
+        "ja-JP": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "未解決のインポート"
+        },
+        "ko-KR": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "잔류 임포트"
+        },
+        "nl-NL": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "Ongebonden imports"
+        },
+        "pl-PL": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "Wiszące importy"
+        },
+        "pt-BR": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "Importações pendentes"
+        },
+        "pt-PT": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "Importações pendentes"
+        },
+        "ro-RO": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "Importuri suspendate"
+        },
+        "sv-SE": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "Hängande importer"
+        },
+        "zh-CN": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "悬空导入"
+        }
+      }
+    },
     "unit": "links",
     "value": "0"
   },
   {
     "label": "Validation issues",
+    "labelText": {
+      "catalogDependency": {
+        "explicitLocales": [],
+        "lookupLocales": [
+          "en-US",
+          "en-GB",
+          "en-CA",
+          "fr-CA",
+          "en-IN",
+          "cy-GB",
+          "gd-GB",
+          "ga-GB",
+          "es-US",
+          "es-MX",
+          "de-DE",
+          "fr-FR",
+          "es-ES",
+          "it-IT",
+          "nl-NL",
+          "pl-PL",
+          "pt-PT",
+          "pt-BR",
+          "ro-RO",
+          "sv-SE",
+          "ko-KR",
+          "zh-CN",
+          "ja-JP",
+          "hi-IN"
+        ],
+        "reportFallbacks": {},
+        "sourceLocale": "en-US"
+      },
+      "defaultLocale": "en-US",
+      "defaultText": "Validation issues",
+      "icuArgs": {},
+      "msgid": "scribe.report.oscalIntake.sourceRow.validationIssues",
+      "provenance": "template",
+      "reviewState": "reviewed",
+      "values": {
+        "cy-GB": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "Dilysiant"
+        },
+        "de-DE": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "Validierungsprobleme"
+        },
+        "en-CA": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "Validation issues"
+        },
+        "en-GB": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "Validation issues"
+        },
+        "en-IN": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "Validation issues"
+        },
+        "en-US": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "Validation issues"
+        },
+        "es-ES": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "Problemas de validación"
+        },
+        "es-MX": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "Problemas de validación"
+        },
+        "es-US": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "Problemas de validación"
+        },
+        "fr-CA": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "Problèmes de validation"
+        },
+        "fr-FR": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "Problèmes de validation"
+        },
+        "hi-IN": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "वैलिडेशन संबंधी समस्याएँ"
+        },
+        "it-IT": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "Problemi di convalida"
+        },
+        "ja-JP": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "検証上の問題"
+        },
+        "ko-KR": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "검증 문제"
+        },
+        "nl-NL": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "Validatiefouten"
+        },
+        "pl-PL": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "Problemy z walidacją"
+        },
+        "pt-BR": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "Problemas de validação"
+        },
+        "pt-PT": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "Problemas de validação"
+        },
+        "ro-RO": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "Probleme de validare"
+        },
+        "sv-SE": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "Valideringsproblem"
+        },
+        "zh-CN": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "验证问题"
+        }
+      }
+    },
     "unit": "issues",
     "value": "0"
   },
   {
     "label": "Unsupported artifacts",
+    "labelText": {
+      "catalogDependency": {
+        "explicitLocales": [],
+        "lookupLocales": [
+          "en-US",
+          "en-GB",
+          "en-CA",
+          "fr-CA",
+          "en-IN",
+          "cy-GB",
+          "gd-GB",
+          "ga-GB",
+          "es-US",
+          "es-MX",
+          "de-DE",
+          "fr-FR",
+          "es-ES",
+          "it-IT",
+          "nl-NL",
+          "pl-PL",
+          "pt-PT",
+          "pt-BR",
+          "ro-RO",
+          "sv-SE",
+          "ko-KR",
+          "zh-CN",
+          "ja-JP",
+          "hi-IN"
+        ],
+        "reportFallbacks": {},
+        "sourceLocale": "en-US"
+      },
+      "defaultLocale": "en-US",
+      "defaultText": "Unsupported artifacts",
+      "icuArgs": {},
+      "msgid": "scribe.report.oscalIntake.sourceRow.unsupportedArtifacts",
+      "provenance": "template",
+      "reviewState": "reviewed",
+      "values": {
+        "cy-GB": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "Gwrthrychau ni chynhelir"
+        },
+        "de-DE": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "Nicht unterstützte Artefakte"
+        },
+        "en-CA": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "Unsupported artifacts"
+        },
+        "en-GB": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "Unsupported artifacts"
+        },
+        "en-IN": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "Unsupported artifacts"
+        },
+        "en-US": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "Unsupported artifacts"
+        },
+        "es-ES": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "Artefactos no compatibles"
+        },
+        "es-MX": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "Artefactos no compatibles"
+        },
+        "es-US": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "Artefactos no compatibles"
+        },
+        "fr-CA": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "Artéfacts non pris en charge"
+        },
+        "fr-FR": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "Artéfacts non pris en charge"
+        },
+        "hi-IN": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "असमर्थित आर्टिफ़ैक्ट्स (Unsupported artifacts)"
+        },
+        "it-IT": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "Artefatti non supportati"
+        },
+        "ja-JP": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "非対応のアーティファクト"
+        },
+        "ko-KR": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "지원되지 않는 아티팩트"
+        },
+        "nl-NL": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "Niet-ondersteunde artefacten"
+        },
+        "pl-PL": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "Nieobsługiwane artefakty"
+        },
+        "pt-BR": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "Artefatos não suportados"
+        },
+        "pt-PT": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "Artefactos não suportados"
+        },
+        "ro-RO": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "Artefacte neacceptate"
+        },
+        "sv-SE": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "Ej stödda artefakter"
+        },
+        "zh-CN": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "不支持的工件"
+        }
+      }
+    },
     "unit": "fail-closed",
     "value": "12"
   }

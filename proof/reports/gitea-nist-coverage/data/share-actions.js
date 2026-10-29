@@ -5,6 +5,41 @@ window.__SCRIBE_SHARE_ACTIONS__ = [
     "hash": "finding-nist-coverage",
     "href": "findings/finding-nist-coverage/index.html#finding-nist-coverage",
     "label": {
+      "catalogDependency": {
+        "explicitLocales": [
+          "es-US"
+        ],
+        "lookupLocales": [
+          "en-US",
+          "en-GB",
+          "en-CA",
+          "fr-CA",
+          "en-IN",
+          "cy-GB",
+          "gd-GB",
+          "ga-GB",
+          "es-US",
+          "es-MX",
+          "de-DE",
+          "fr-FR",
+          "es-ES",
+          "it-IT",
+          "nl-NL",
+          "pl-PL",
+          "pt-PT",
+          "pt-BR",
+          "ro-RO",
+          "sv-SE",
+          "ko-KR",
+          "zh-CN",
+          "ja-JP",
+          "hi-IN"
+        ],
+        "reportFallbacks": {
+          "ja-JP": "検出結果を共有"
+        },
+        "sourceLocale": "en-US"
+      },
       "defaultLocale": "en-US",
       "defaultText": "Share finding",
       "icuArgs": {},
@@ -135,6 +170,41 @@ window.__SCRIBE_SHARE_ACTIONS__ = [
       }
     },
     "summary": {
+      "catalogDependency": {
+        "explicitLocales": [
+          "es-US"
+        ],
+        "lookupLocales": [
+          "en-US",
+          "en-GB",
+          "en-CA",
+          "fr-CA",
+          "en-IN",
+          "cy-GB",
+          "gd-GB",
+          "ga-GB",
+          "es-US",
+          "es-MX",
+          "de-DE",
+          "fr-FR",
+          "es-ES",
+          "it-IT",
+          "nl-NL",
+          "pl-PL",
+          "pt-PT",
+          "pt-BR",
+          "ro-RO",
+          "sv-SE",
+          "ko-KR",
+          "zh-CN",
+          "ja-JP",
+          "hi-IN"
+        ],
+        "reportFallbacks": {
+          "ja-JP": "Scribe パッケージは OSCAL Assessment Results を出力し、未対応の SSP/SAP/SAR/POA&M を完成扱いしません。"
+        },
+        "sourceLocale": "en-US"
+      },
       "defaultLocale": "en-US",
       "defaultText": "The Scribe package emits OSCAL Assessment Results and refuses to label unsupported SSP/SAP/SAR/POA&M artifacts as complete.",
       "icuArgs": {},
@@ -142,24 +212,154 @@ window.__SCRIBE_SHARE_ACTIONS__ = [
       "provenance": "template",
       "reviewState": "reviewed",
       "values": {
+        "cy-GB": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "Mae'r pecyn Scribe yn anfon Canlyniadau Asesu OSCAL ac yn gwrthod labelu arteffactau SSP/SAP/SAR/POA&M ni chynhelir fel cyflawn."
+        },
+        "de-DE": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "Das Scribe-Paket gibt OSCAL Assessment Results aus und weigert sich, nicht unterstützte SSP/SAP/SAR/POA&M-Artefakte als vollständig zu kennzeichnen."
+        },
+        "en-CA": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "The Scribe package emits OSCAL Assessment Results and refuses to label unsupported SSP/SAP/SAR/POA&M artifacts as complete."
+        },
+        "en-GB": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "The Scribe package emits OSCAL Assessment Results and refuses to label unsupported SSP/SAP/SAR/POA&M artifacts as complete."
+        },
+        "en-IN": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "The Scribe package emits OSCAL Assessment Results and refuses to label unsupported SSP/SAP/SAR/POA&M artifacts as complete."
+        },
         "en-US": {
           "fallback": false,
           "reviewed": true,
           "text": "The Scribe package emits OSCAL Assessment Results and refuses to label unsupported SSP/SAP/SAR/POA&M artifacts as complete."
+        },
+        "es-ES": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "El paquete Scribe emite Assessment Results de OSCAL y se niega a etiquetar como completos los artefactos SSP/SAP/SAR/POA&M no compatibles."
+        },
+        "es-MX": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "El paquete Scribe emite Resultados de Evaluación OSCAL y se niega a etiquetar como completos los artefactos SSP/SAP/SAR/POA&M no compatibles."
         },
         "es-US": {
           "fallback": false,
           "reviewed": true,
           "text": "El paquete Scribe emite Resultados de Evaluación OSCAL y rechaza etiquetar artefactos SSP/SAP/SAR/POA&M no compatibles como completos."
         },
+        "fr-CA": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "Le package Scribe émet des résultats d'évaluation OSCAL et refuse de qualifier de complets les artéfacts SSP/SAP/SAR/POA&M non pris en charge."
+        },
+        "fr-FR": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "Le package Scribe émet des résultats d'évaluation OSCAL et refuse de qualifier de complets les artefacts SSP/SAP/SAR/POA&M non pris en charge."
+        },
+        "hi-IN": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "Scribe पैकेज OSCAL असेसमेंट रिज़ल्ट्स जारी करता है और असमर्थित SSP/SAP/SAR/POA&M आर्टिफैक्ट्स को पूर्ण के रूप में लेबल करने से इनकार करता है।"
+        },
+        "it-IT": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "Il pacchetto Scribe emette i risultati di valutazione OSCAL e rifiuta di etichettare come completi gli artefatti SSP/SAP/SAR/POA&M non supportati."
+        },
         "ja-JP": {
           "fallback": false,
           "reviewed": true,
-          "text": "Scribe パッケージは OSCAL Assessment Results を出力し、未対応の SSP/SAP/SAR/POA&M を完成扱いしません。"
+          "text": "ScribeパッケージはOSCAL評価結果を生成し、サポートされていないSSP/SAP/SAR/POA&Mアーティファクトを完了としてラベル付けすることを拒否します。"
+        },
+        "ko-KR": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "Scribe 패키지는 OSCAL 평가 결과를 생성하며, 지원되지 않는 SSP/SAP/SAR/POA&M 아티팩트를 완료된 것으로 표시하지 않습니다."
+        },
+        "nl-NL": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "Het Scribe-pakket genereert OSCAL Assessment Results en weigert niet-ondersteunde SSP/SAP/SAR/POA&M-artefacten als voltooid te labelen."
+        },
+        "pl-PL": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "Pakiet Scribe generuje wyniki oceny OSCAL i odmawia oznaczenia nieobsługiwanych artefaktów SSP/SAP/SAR/POA&M jako kompletne."
+        },
+        "pt-BR": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "O pacote Scribe emite Resultados de Avaliação OSCAL e recusa-se a rotular artefatos SSP/SAP/SAR/POA&M não suportados como concluídos."
+        },
+        "pt-PT": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "O pacote Scribe emite Resultados de Avaliação OSCAL e recusa-se a classificar artefactos SSP/SAP/SAR/POA&M não suportados como completos."
+        },
+        "ro-RO": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "Pachetul Scribe emite OSCAL Assessment Results și refuză să eticheteze artefactele SSP/SAP/SAR/POA&M necompatibile ca fiind complete."
+        },
+        "sv-SE": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "Scribe-paketet genererar OSCAL Assessment Results och vägrar att markera SSP/SAP/SAR/POA&M-artefakter som inte stöds som färdiga."
+        },
+        "zh-CN": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "Scribe 包会生成 OSCAL 评估结果，并拒绝将不受支持的 SSP/SAP/SAR/POA&M 工件标记为已完成。"
         }
       }
     },
     "title": {
+      "catalogDependency": {
+        "explicitLocales": [
+          "es-US"
+        ],
+        "lookupLocales": [
+          "en-US",
+          "en-GB",
+          "en-CA",
+          "fr-CA",
+          "en-IN",
+          "cy-GB",
+          "gd-GB",
+          "ga-GB",
+          "es-US",
+          "es-MX",
+          "de-DE",
+          "fr-FR",
+          "es-ES",
+          "it-IT",
+          "nl-NL",
+          "pl-PL",
+          "pt-PT",
+          "pt-BR",
+          "ro-RO",
+          "sv-SE",
+          "ko-KR",
+          "zh-CN",
+          "ja-JP",
+          "hi-IN"
+        ],
+        "reportFallbacks": {
+          "ja-JP": "NIST コントロールには明示的な対応アーティファクト境界が必要です"
+        },
+        "sourceLocale": "en-US"
+      },
       "defaultLocale": "en-US",
       "defaultText": "NIST controls require explicit supported-artifact boundaries",
       "icuArgs": {},

@@ -1,26 +1,177 @@
 <!DOCTYPE html>
-<html lang="en-US" dir="ltr" data-theme="ultraviolet">
+<html lang="en-US" dir="ltr" data-theme="airglow" data-mode="dark">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="generator" content="sonde-scribe">
   <meta name="description" content="Sonde checks the software your team ships — for accessibility, compliance, and quality — and shows you exactly what to fix." data-msg-content-id="sondeLife.metadata.description">
-  <link rel="canonical" href="https://sonde.life/contact/">
-  <script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon="{&quot;token&quot;:&quot;07871f5aa9e44ce2b83a37f8924fb4a6&quot;,&quot;spa&quot;:true}"></script>
+  <link rel="canonical" href="https://sonde.tech/contact/">
+  <script>(function () {
+  if ((function () { try { return window.self !== window.top && window.parent.location.origin === location.origin && new URLSearchParams(location.search).get('print') === '1'; } catch (_error) { return false; } })()) return;
+  var HOSTS = ["sonde.tech"];
+  var CODES = ["AT","BE","BG","HR","CY","CZ","DK","EE","FI","FR","DE","GR","HU","IE","IT","LV","LT","LU","MT","NL","PL","PT","RO","SK","SI","ES","SE","IS","LI","NO","GB","GP","MQ","GF","RE","YT","MF","AX","GI","GG","JE","IM"];
+  var CONSENT_KEY = "sonde-analytics-consent";
+  var COUNTRY_KEY = "sonde-analytics-country";
+  var OFF_TAB_NAME = "sonde-analytics-off";
+  var LIFETIME = 15811200000;
+  var BEACON_SRC = "https://static.cloudflareinsights.com/beacon.min.js";
+  var BEACON_CONFIG = "{\"token\":\"07871f5aa9e44ce2b83a37f8924fb4a6\",\"spa\":true}";
+  var BANNER_SRC = "../assets/immutable/consent-banner.e5375b5fe93016c6.js";
+  var RESET_ATTRIBUTE = 'data-sonde-preferences-reset';
+  function insert(src, config) {
+    var script = document.createElement('script');
+    script.defer = true;
+    script.src = src;
+    if (config) script.setAttribute('data-cf-beacon', config);
+    document.head.appendChild(script);
+  }
+  // The banner script also installs the "reset remembered preferences" control, which every host needs; only
+  // analytics and the country lookup are limited to the listed hosts.
+  insert(BANNER_SRC, null);
+  if (HOSTS.indexOf(location.hostname) === -1) return;
+  var root = document.documentElement;
+  var beaconInserted = false;
+  var pending = null;
+  function loadBeacon() {
+    if (beaconInserted) return;
+    beaconInserted = true;
+    insert(BEACON_SRC, BEACON_CONFIG);
+    insert("../assets/immutable/video-engagement.6e38ee4a462bcccb.js", null);
+  }
+  function needed() {
+    root.setAttribute('data-analytics-consent', 'needed');
+    document.dispatchEvent(new CustomEvent('sonde:analytics-consent-needed'));
+  }
+  function browserOff() {
+    return navigator.globalPrivacyControl === true || navigator.doNotTrack === '1';
+  }
+  function storedChoice() {
+    var record = null;
+    try { record = JSON.parse(localStorage.getItem(CONSENT_KEY)); } catch (e) { return null; }
+    var now = Date.now();
+    if (!record || typeof record !== 'object' || (record.choice !== 'allowed' && record.choice !== 'off')) return null;
+    if (typeof record.at !== 'number' || record.at > now || now - record.at > LIFETIME) return null;
+    return record.choice;
+  }
+  function knownCountry(code) {
+    return typeof code === 'string' && /^[A-Z]{2}$/.test(code) && code !== 'XX';
+  }
+  function withCountry(callback) {
+    var saved = null;
+    try { saved = sessionStorage.getItem(COUNTRY_KEY); } catch (e) { saved = null; }
+    if (saved) { callback(saved); return; }
+    if (pending) { pending.push(callback); return; }
+    pending = [callback];
+    var finished = false;
+    var controller = typeof AbortController === 'function' ? new AbortController() : null;
+    var timer = setTimeout(function () {
+      if (controller) controller.abort();
+      finish(null);
+    }, 3000);
+    function finish(code) {
+      if (finished) return;
+      finished = true;
+      clearTimeout(timer);
+      if (code) { try { sessionStorage.setItem(COUNTRY_KEY, code); } catch (e) { /* blocked store */ } }
+      var waiting = pending;
+      pending = null;
+      for (var i = 0; i < waiting.length; i++) waiting[i](code);
+    }
+    var init = { cache: 'no-store', credentials: 'omit' };
+    if (controller) init.signal = controller.signal;
+    try {
+      fetch('/cdn-cgi/trace', init)
+        .then(function (response) { return response.ok ? response.text() : ''; })
+        .then(function (text) {
+          var match = /^loc=([A-Z0-9]{2})$/m.exec(typeof text === 'string' ? text : '');
+          finish(match ? match[1] : null);
+        }, function () { finish(null); });
+    } catch (e) {
+      finish(null);
+    }
+  }
+  function check() {
+    if (browserOff()) return;
+    // An "off" the browser would not store, kept for this tab by the banner.
+    if (typeof name === 'string' && name === OFF_TAB_NAME) return;
+    var choice = storedChoice();
+    if (choice === 'off') return;
+    if (choice === 'allowed') {
+      if (!root.hasAttribute(RESET_ATTRIBUTE)) loadBeacon();
+      return;
+    }
+    withCountry(function (code) {
+      if (knownCountry(code) && CODES.indexOf(code) === -1) {
+        if (!root.hasAttribute(RESET_ATTRIBUTE)) loadBeacon();
+      } else {
+        needed();
+      }
+    });
+  }
+  document.addEventListener('sonde:analytics-consent-chosen', function (event) {
+    if (event.detail && event.detail.choice === 'allowed' && !browserOff()) loadBeacon();
+  });
+  window.sondeAnalytics = { check: check };
+  check();
+})();</script>
   <title data-msg-id="sondeLife.metadata.contact.title">Contact - Sonde</title>
   <meta property="og:title" content="Sonde — Software That Understands Software" data-msg-content-id="sondeLife.metadata.contact.title">
   <meta property="og:description" content="Sonde checks the software your team ships — for accessibility, compliance, and quality — and shows you exactly what to fix." data-msg-content-id="sondeLife.metadata.description">
-  <meta property="og:image" content="/og-sonde.png">
-  <meta property="og:url" content="https://sonde.life/contact/">
+  <meta property="og:image" content="https://sonde.tech/assets/media/og-sonde.bcedbdc6e4ec406d.png">
+  <meta property="og:url" content="https://sonde.tech/contact/">
   <meta property="og:type" content="website">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Sonde — Software That Understands Software" data-msg-content-id="sondeLife.metadata.contact.title">
   <meta name="twitter:description" content="Sonde checks the software your team ships — for accessibility, compliance, and quality — and shows you exactly what to fix." data-msg-content-id="sondeLife.metadata.description">
-  <meta name="twitter:image" content="/og-sonde.png">
+  <meta name="twitter:image" content="https://sonde.tech/assets/media/og-sonde.bcedbdc6e4ec406d.png">
+  <link rel="icon" href="/favicon.ico" sizes="32x32">
   <link rel="icon" type="image/svg+xml" href="/favicon.svg">
-  <link id="sonde-active-platform-theme" rel="stylesheet" href="../assets/theme-ultraviolet.css?v=mmypnw">
-  <link rel="stylesheet" href="../assets/style.css?v=-updkcb">
-  <script>(function () {
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link id="sonde-active-platform-theme" rel="stylesheet" href="../assets/immutable/theme-airglow.1c68f85145a8170b.css">
+  <link rel="stylesheet" href="../assets/immutable/style.94ca7a0ca2f37b9d.css">
+  <script src="../assets/immutable/navigation-rail.383c60fe9d907824.js" defer></script><script>(function () {
+  var LIFETIMES = {"sonde-locale":31536000000,"sonde-platform-theme":31536000000,"sonde-theme":31536000000,"sonde-settings-sections":31536000000,"sonde-motion":31536000000};
+  var OFFERED = {"sonde-locale":["en-US"],"sonde-platform-theme":["airglow","ultraviolet","infrared","high-contrast"],"sonde-theme":["auto","light","dark"],"sonde-motion":["normal","reduce","auto"]};
+  var CONSENT_KEY = "sonde-analytics-consent";
+  var CONSENT_LIFETIME = 15811200000;
+  var TIMES_KEY = "sonde-preference-times";
+  function store() { try { return window.localStorage; } catch (e) { return null; } }
+  function read(s, key) { try { return s.getItem(key); } catch (e) { return null; } }
+  function remove(s, key) { try { s.removeItem(key); } catch (e) { /* blocked store */ } }
+  function write(s, key, value) { try { s.setItem(key, value); } catch (e) { /* blocked store */ } }
+  function parse(raw) { try { return JSON.parse(raw); } catch (e) { return null; } }
+  function isRecord(value) { return value !== null && typeof value === 'object' && !Array.isArray(value); }
+  function sweep(now) {
+    var s = store();
+    if (!s) return;
+    var recorded = parse(read(s, TIMES_KEY) || 'null');
+    if (!isRecord(recorded)) recorded = {};
+    var next = {};
+    var kept = 0;
+    for (var key in LIFETIMES) {
+      var value = read(s, key);
+      if (value === null) continue;
+      if (OFFERED[key] && OFFERED[key].indexOf(value) === -1) { remove(s, key); continue; }
+      var entry = recorded[key];
+      var at = isRecord(entry) && entry.value === value && typeof entry.at === 'number' && entry.at <= now ? entry.at : now;
+      if (now - at > LIFETIMES[key]) { remove(s, key); continue; }
+      next[key] = { at: at, value: value };
+      kept++;
+    }
+    var rawConsent = read(s, CONSENT_KEY);
+    if (rawConsent !== null) {
+      var consent = parse(rawConsent);
+      var valid = isRecord(consent) && (consent.choice === 'allowed' || consent.choice === 'off') &&
+        typeof consent.at === 'number' && consent.at <= now && now - consent.at <= CONSENT_LIFETIME;
+      if (!valid) remove(s, CONSENT_KEY);
+    }
+    if (kept > 0) write(s, TIMES_KEY, JSON.stringify(next));
+    else remove(s, TIMES_KEY);
+  }
+  sweep(Date.now());
+  if (window.addEventListener) window.addEventListener('pagehide', function () { sweep(Date.now()); });
+})();
+(function () {
   var THEME_KEY = "sonde-theme";
   var LOCALE_KEY = "sonde-locale";
   var MOTION_KEY = "sonde-motion";
@@ -30,6 +181,7 @@
   var THEME_ATTRIBUTE = "data-mode";
   var REMOVE_THEME_ATTRIBUTE_ON_AUTO = true;
   var CLOSE_DROPDOWN_ON_SELECT = false;
+  var DEFAULT_MODE = "dark";
   var el = document.documentElement;
   var mm = window.matchMedia;
   var darkMq = mm && mm('(prefers-color-scheme: dark)');
@@ -40,6 +192,9 @@
   }
   function safeWrite(key, value) {
     try { window.localStorage.setItem(key, value); } catch (e) { /* quota / private mode */ }
+  }
+  function certificationParam(name) {
+    try { return new URL(window.location.href).searchParams.get(name); } catch (e) { return null; }
   }
   function readAll() {
     try {
@@ -58,6 +213,7 @@
   }
 
   function applyTheme(stored) {
+    if (stored !== 'auto' && VALID_THEMES.indexOf(stored || '') === -1) stored = DEFAULT_MODE;
     if (REMOVE_THEME_ATTRIBUTE_ON_AUTO && (stored === 'auto' || VALID_THEMES.indexOf(stored || '') === -1)) {
       el.removeAttribute(THEME_ATTRIBUTE);
       syncThemePreviewMode(stored);
@@ -81,7 +237,7 @@
 
   var PLATFORM_THEME_KEY = "sonde-platform-theme";
   var PLATFORM_THEME_LINK_ID = "sonde-active-platform-theme";
-  var PLATFORM_THEME_HREFS = {"ultraviolet":"../assets/theme-ultraviolet.css?v=mmypnw","infrared":"../assets/theme-infrared.css?v=-vz9orl","high-contrast":"../assets/theme-high-contrast.css?v=-lirq4"};
+  var PLATFORM_THEME_HREFS = {"airglow":"../assets/immutable/theme-airglow.1c68f85145a8170b.css","ultraviolet":"../assets/immutable/theme-ultraviolet.b8925766fdfdab46.css","infrared":"../assets/immutable/theme-infrared.9789fb6eae62141a.css","high-contrast":"../assets/immutable/theme-high-contrast.0afc0c2fb8c46969.css"};
   var PLATFORM_THEME_ATTRIBUTE = "data-theme";
 
   function applyPlatformTheme(stored) {
@@ -101,13 +257,15 @@
     if (currentAbsoluteHref !== absoluteHref) link.setAttribute('href', href);
     if (PLATFORM_THEME_ATTRIBUTE) el.setAttribute(PLATFORM_THEME_ATTRIBUTE, stored);
   }
-  applyPlatformTheme(safeRead(PLATFORM_THEME_KEY));
+  var certificationPlatformTheme = certificationParam('scan_theme');
+  applyPlatformTheme(PLATFORM_THEME_HREFS[certificationPlatformTheme] ? certificationPlatformTheme : safeRead(PLATFORM_THEME_KEY));
 
 
   var prefs = readAll();
-  applyTheme(prefs.t);
+  var certificationTheme = certificationParam('scan_theme_mode');
+  applyTheme(VALID_THEMES.indexOf(certificationTheme || '') !== -1 ? certificationTheme : prefs.t);
   applyMotion(prefs.m);
-  applyLocale(prefs.l);
+  applyLocale(certificationParam('scan_locale') || prefs.l);
 
   if (darkMq && darkMq.addEventListener) {
     darkMq.addEventListener('change', function () {
@@ -137,8 +295,8 @@
   };
 
   function initThemeControls() {
-    var activeTheme = safeRead(THEME_KEY) || 'auto';
-    if (VALID_THEMES.indexOf(activeTheme) === -1) activeTheme = 'auto';
+    var activeTheme = safeRead(THEME_KEY) || DEFAULT_MODE;
+    if (VALID_THEMES.indexOf(activeTheme) === -1) activeTheme = DEFAULT_MODE;
     var themeInputs = document.querySelectorAll('input[name="sonde-theme-toggle"]');
     for (var i = 0; i < themeInputs.length; i++) {
       var input = themeInputs[i];
@@ -180,6 +338,16 @@
     initPlatformThemeControls();
     initLocaleControls();
     initSettingsDropdownDismiss();
+    initMotionControls();
+  }
+  function initMotionControls() {
+    var motionInputs = document.querySelectorAll('input[name="sonde-motion-toggle"]');
+    for (var m = 0; m < motionInputs.length; m++) {
+      motionInputs[m].checked = safeRead(MOTION_KEY) === 'reduce';
+      motionInputs[m].addEventListener('change', function (event) {
+        window.sondePrefs.setMotion(event.target.checked ? 'reduce' : 'auto');
+      });
+    }
   }
   // Single-sourced settings-dropdown dismissal (was inline-duplicated per site chrome): an outside click or
   // Escape closes any open .settings-dropdown and returns focus to its summary trigger, so keyboard users land
@@ -281,8 +449,8 @@
   }
 })();</script>
   <script>(function() {
-  var locales = ["en-US","en-GB","en-CA","en-IN","fr-CA","cy-GB","es-US","de-DE","fr-FR","es-ES","it-IT","nl-NL","pl-PL","pt-PT","pt-BR","ro-RO","sv-SE","ko-KR","zh-CN","ja-JP","hi-IN"];
-  var lower = ["en-us","en-gb","en-ca","en-in","fr-ca","cy-gb","es-us","de-de","fr-fr","es-es","it-it","nl-nl","pl-pl","pt-pt","pt-br","ro-ro","sv-se","ko-kr","zh-cn","ja-jp","hi-in"];
+  var locales = ["en-US"];
+  var lower = ["en-us"];
   var forbidden = ["pt"];
   var defaultRegions = {"en":"US","de":"DE","fr":"FR","es":"ES","it":"IT","ja":"JP","zh":"CN","ko":"KR","ar":"SA","pt":"PT","nl":"NL","sv":"SE","pl":"PL","ro":"RO","cy":"GB","gd":"GB","ga":"GB","sco":"GB","kw":"GB"};
   var inheritancePolicy = {"sourceLocale":"en-US","chains":[{"locale":"en-IN","inherits":["en-GB","en-US"],"syntheticEmptyCatalog":true},{"locale":"es-MX","inherits":["es-US","en-US"],"syntheticEmptyCatalog":false}]};
@@ -611,44 +779,71 @@
 })();</script>
 </head>
 <body>
-  <header class="homepage-page-header">
-    <a href="#main-content" class="skip-link">Skip to content</a>
-  </header>
-  <main id="main-content" class="sonde-exhibit">
-
-
-<div class="sl-page">
-  <nav class="sl-nav" aria-label="Primary navigation">
-    <a class="sl-brand" href="../">
-      <svg class="sl-brand-mark sonde-daylight-mark" viewBox="0 0 512 512" width="28" height="28" aria-hidden="true"><defs><radialGradient id="sonde-life-brand-sun" cx="50%" cy="50%" r="50%"><stop offset="0%" stop-color="var(--sonde-daylight-mark-sun-stop-0)"/><stop offset="60%" stop-color="var(--sonde-daylight-mark-sun-stop-1)"/><stop offset="100%" stop-color="var(--sonde-daylight-mark-sun-stop-2)"/></radialGradient><clipPath id="sonde-life-brand-disc"><circle cx="256" cy="256" r="240"/></clipPath></defs><g style="display:var(--sonde-daylight-mark-solid-display)"><circle cx="256" cy="256" r="240" fill="url(#sonde-life-brand-sun)"/><g clip-path="url(#sonde-life-brand-disc)"><g fill="var(--sonde-daylight-mark-crater)" stroke="var(--sonde-daylight-mark-crater)"><g opacity="0.7"><path d="M40,240 C60,110 170,40 250,90 C320,130 330,210 260,280 C200,340 50,340 40,240 Z" opacity="0.6"/><path d="M290,130 C360,60 460,110 470,190 C480,270 410,350 330,320 C260,290 230,190 290,130 Z" opacity="0.7"/><path d="M390,280 C470,250 510,300 480,380 C450,440 380,410 390,280 Z" opacity="0.5"/><path d="M130,350 C180,290 260,350 230,430 C200,510 60,450 130,350 Z" opacity="0.5"/><circle cx="230" cy="430" r="18" fill="transparent" stroke-width="4" opacity="0.8"/><circle cx="170" cy="190" r="12" fill="transparent" stroke-width="3" opacity="0.7"/><circle cx="90" cy="230" r="8" opacity="0.8"/></g></g></g><g clip-path="url(#sonde-life-brand-disc)"><g transform="translate(250,240) rotate(-40)" fill="var(--sonde-daylight-mark-probe)" stroke="var(--sonde-daylight-mark-probe)"><line x1="-32" y1="-8" x2="-160" y2="-40" stroke-width="6" stroke-linecap="round"/><circle cx="-160" cy="-40" r="10"/><line x1="-32" y1="16" x2="-125" y2="62" stroke-width="8" stroke-linecap="round"/><rect x="-141" y="38" width="32" height="60" rx="4" transform="rotate(20,-125,62)"/><line x1="-16" y1="-40" x2="-46" y2="-92" stroke-width="7" stroke-linecap="round"/><rect x="-70" y="-108" width="48" height="28" rx="4"/><circle cx="-56" cy="-98" r="8"/><circle cx="-36" cy="-98" r="6"/><path d="M48,-108 Q128,-78 128,0 Q128,78 48,108" stroke-width="5" stroke-linejoin="round"/><line x1="58" y1="-50" x2="108" y2="0" stroke-width="5"/><line x1="58" y1="50" x2="108" y2="0" stroke-width="5"/><line x1="48" y1="0" x2="108" y2="0" stroke-width="5"/><circle cx="110" cy="0" r="14"/><polygon points="-16,-40 48,-40 62,-24 62,24 48,40 -16,40 -30,24 -30,-24"/></g></g></g><g style="display:var(--sonde-daylight-mark-line-display)"><circle cx="256" cy="256" r="232" fill="none" stroke="var(--sonde-daylight-hc-mark-earth-blue)" stroke-width="28"/><defs><clipPath id="sonde-life-brand-hc-clip"><circle cx="256" cy="256" r="214"/></clipPath></defs><g clip-path="url(#sonde-life-brand-hc-clip)"><g transform="translate(276,228) scale(1.3) rotate(-40)" fill="none" stroke-linecap="round" stroke-linejoin="round"><line x1="-32" y1="-8" x2="-165" y2="-42" stroke="var(--sonde-daylight-hc-mark-metal)" stroke-width="8"/><circle cx="-80" cy="-20" r="3" stroke="var(--sonde-daylight-hc-mark-metal)" stroke-width="3"/><circle cx="-125" cy="-32" r="2.5" stroke="var(--sonde-daylight-hc-mark-metal)" stroke-width="3"/><circle cx="-165" cy="-42" r="8" stroke="var(--sonde-daylight-hc-mark-metal)" stroke-width="4"/><circle cx="-165" cy="-42" r="4" stroke="var(--sonde-daylight-hc-mark-metal)" stroke-width="2"/><line x1="-165" y1="-48" x2="-165" y2="-36" stroke="var(--sonde-daylight-hc-mark-metal)" stroke-width="2"/><line x1="-171" y1="-42" x2="-159" y2="-42" stroke="var(--sonde-daylight-hc-mark-metal)" stroke-width="2"/><line x1="-32" y1="16" x2="-130" y2="64" stroke="var(--sonde-daylight-hc-mark-metal)" stroke-width="12"/><circle cx="-80" cy="40" r="4" stroke="var(--sonde-daylight-hc-mark-metal)" stroke-width="4"/><g transform="translate(-130,64) rotate(20)"><rect x="-16" y="-32" width="32" height="64" rx="4" stroke="var(--sonde-daylight-hc-mark-rtg-brown)" stroke-width="6"/><line x1="-16" y1="-22" x2="16" y2="-22" stroke="var(--sonde-daylight-hc-mark-rtg-brown)" stroke-width="4"/><line x1="-16" y1="-12" x2="16" y2="-12" stroke="var(--sonde-daylight-hc-mark-rtg-brown)" stroke-width="4"/><line x1="-16" y1="-2" x2="16" y2="-2" stroke="var(--sonde-daylight-hc-mark-rtg-brown)" stroke-width="4"/><line x1="-16" y1="8" x2="16" y2="8" stroke="var(--sonde-daylight-hc-mark-rtg-brown)" stroke-width="4"/><line x1="-16" y1="18" x2="16" y2="18" stroke="var(--sonde-daylight-hc-mark-rtg-brown)" stroke-width="4"/><line x1="-16" y1="28" x2="16" y2="28" stroke="var(--sonde-daylight-hc-mark-rtg-brown)" stroke-width="4"/><rect x="-18" y="-34" width="36" height="4" rx="2" stroke="var(--sonde-daylight-hc-mark-rtg-brown)" stroke-width="3"/><rect x="-18" y="30" width="36" height="4" rx="2" stroke="var(--sonde-daylight-hc-mark-rtg-brown)" stroke-width="3"/></g><line x1="-16" y1="-40" x2="-48" y2="-96" stroke="var(--sonde-daylight-hc-mark-metal)" stroke-width="10"/><circle cx="-30" cy="-64" r="4" stroke="var(--sonde-daylight-hc-mark-metal)" stroke-width="4"/><g transform="translate(-48,-96)"><rect x="-24" y="-16" width="48" height="28" rx="4" stroke="var(--sonde-daylight-hc-mark-metal)" stroke-width="6"/><line x1="-20" y1="-8" x2="20" y2="-8" stroke="var(--sonde-daylight-hc-mark-metal)" stroke-width="2"/><line x1="-20" y1="0" x2="20" y2="0" stroke="var(--sonde-daylight-hc-mark-metal)" stroke-width="2"/><circle cx="-10" cy="-4" r="8" stroke="var(--sonde-daylight-hc-mark-metal)" stroke-width="5"/><circle cx="-10" cy="-4" r="4" stroke="var(--sonde-daylight-hc-mark-metal)" stroke-width="2"/><circle cx="10" cy="-4" r="6" stroke="var(--sonde-daylight-hc-mark-metal)" stroke-width="4"/><circle cx="10" cy="-4" r="3" stroke="var(--sonde-daylight-hc-mark-metal)" stroke-width="2"/><rect x="-4" y="4" width="8" height="6" rx="1.5" stroke="var(--sonde-daylight-hc-mark-metal)" stroke-width="3"/></g><path d="M48,-112 Q130,-80 130,0 Q130,80 48,112" stroke="var(--sonde-daylight-hc-mark-earth-blue)" stroke-width="8"/><path d="M56,-96 Q118,-68 118,0 Q118,68 56,96" stroke="var(--sonde-daylight-hc-mark-earth-blue)" stroke-width="2"/><path d="M64,-80 Q106,-56 106,0 Q106,56 64,80" stroke="var(--sonde-daylight-hc-mark-earth-blue)" stroke-width="2"/><path d="M72,-60 Q94,-40 94,0 Q94,40 72,60" stroke="var(--sonde-daylight-hc-mark-earth-blue)" stroke-width="2"/><line x1="60" y1="-52" x2="110" y2="0" stroke="var(--sonde-daylight-hc-mark-earth-blue)" stroke-width="8"/><line x1="60" y1="52" x2="110" y2="0" stroke="var(--sonde-daylight-hc-mark-earth-blue)" stroke-width="8"/><line x1="48" y1="0" x2="110" y2="0" stroke="var(--sonde-daylight-hc-mark-earth-blue)" stroke-width="8"/><circle cx="112" cy="0" r="14" stroke="var(--sonde-daylight-hc-mark-earth-blue)" stroke-width="6"/><circle cx="112" cy="0" r="8" stroke="var(--sonde-daylight-hc-mark-earth-blue)" stroke-width="3"/><polygon points="-16,-40 48,-40 64,-24 64,24 48,40 -16,40 -32,24 -32,-24" stroke="var(--sonde-daylight-hc-mark-bus-gold)" stroke-width="8"/><line x1="0" y1="-40" x2="0" y2="40" stroke="var(--sonde-daylight-hc-mark-bus-gold)" stroke-width="4"/><line x1="24" y1="-40" x2="24" y2="40" stroke="var(--sonde-daylight-hc-mark-bus-gold)" stroke-width="4"/><line x1="-16" y1="-20" x2="48" y2="-20" stroke="var(--sonde-daylight-hc-mark-bus-gold)" stroke-width="3"/><line x1="-16" y1="0" x2="48" y2="0" stroke="var(--sonde-daylight-hc-mark-bus-gold)" stroke-width="3"/><line x1="-16" y1="20" x2="48" y2="20" stroke="var(--sonde-daylight-hc-mark-bus-gold)" stroke-width="3"/><rect x="4" y="-16" width="16" height="12" rx="1.5" stroke="var(--sonde-daylight-hc-mark-bus-gold)" stroke-width="3"/><rect x="28" y="-16" width="16" height="12" rx="1.5" stroke="var(--sonde-daylight-hc-mark-bus-gold)" stroke-width="3"/><rect x="4" y="4" width="16" height="12" rx="1.5" stroke="var(--sonde-daylight-hc-mark-bus-gold)" stroke-width="3"/><rect x="28" y="4" width="16" height="12" rx="1.5" stroke="var(--sonde-daylight-hc-mark-bus-gold)" stroke-width="3"/><rect x="-36" y="-12" width="8" height="24" rx="2" stroke="var(--sonde-daylight-hc-mark-metal)" stroke-width="4"/><path d="M-44,-8 L-52,-14 L-52,14 L-44,8 Z" stroke="var(--sonde-daylight-hc-mark-metal)" stroke-width="4"/><g transform="translate(-8,0)" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M-52,-14 Q-86,-20 -112,-8 Q-120,0 -112,8 Q-86,20 -52,14" stroke="var(--sonde-daylight-hc-mark-flame-deep)" stroke-width="6"/><path d="M-52,-10 Q-78,-14 -96,-5 Q-102,0 -96,5 Q-78,14 -52,10" stroke="var(--sonde-daylight-hc-mark-flame-mid)" stroke-width="5"/><path d="M-52,-6 Q-68,-8 -78,-2 Q-82,0 -78,2 Q-68,8 -52,6" stroke="var(--sonde-daylight-hc-mark-flame-hot)" stroke-width="4"/></g><line x1="16" y1="-40" x2="24" y2="-56" stroke="var(--sonde-daylight-hc-mark-metal)" stroke-width="5"/><circle cx="24" cy="-56" r="3" stroke="var(--sonde-daylight-hc-mark-metal)" stroke-width="3"/></g></g></g></svg>
+  <a href="#main-content" class="skip-link" data-msg-id="sondeLife.skipToContent">Skip to content</a>
+<header class="site-header">
+  <div class="container nav-row">
+    <a class="logo" href="../">
+      <img src="../favicon.svg" alt="" width="28" height="28" class="logo-icon">
       <span data-msg-id="sondeLife.nav.home">Sonde</span>
     </a>
-    <div class="sl-nav-actions">
-      <div class="sl-nav-links">
-        <a href="../ai-safety/" data-msg-id="sondeLife.nav.overview">AI Safety</a>
-        <a href="../explore/" data-msg-id="sondeLife.nav.features">Explore</a>
-        <a href="../architecture/" data-msg-id="sondeLife.nav.architecture">Architecture</a>
-        <a href="../methodology/" data-msg-id="sondeLife.nav.methodology">Methodology</a>
-        <a href="../compliance/" data-msg-id="sondeLife.nav.compliance">Compliance</a>
-        <a href="../proof/" data-msg-id="sondeLife.nav.scribe">Proof</a>
-        <a href="../contact/" data-msg-id="sondeLife.nav.contact" aria-current="page">Contact</a>
-      </div>
+    <nav class="primary-nav" aria-label="Primary" data-msg-aria-label-id="sondeLife.nav.aria">
+      <ul>
+        <li class="has-children">
+          <a href="../solutions/" data-msg-id="sondeLife.nav.solutions">Solutions</a><button class="submenu-toggle" type="button" aria-expanded="false" aria-controls="submenu-solutions" hidden>
+            <span class="sonde-visually-hidden" data-msg-id="sondeLife.nav.solutionsMenu">Solutions menu</span>
+            <svg viewBox="0 0 12 12" width="12" height="12" aria-hidden="true" focusable="false"><path d="M2.5 4.5 6 8l3.5-3.5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+          <ul class="dropdown" id="submenu-solutions" hidden>
+            <li><a href="../solutions/ai-guardrails/" data-msg-id="sondeLife.nav.aiGuardrails">AI Guardrails & Governance</a></li>
+            <li><a href="../solutions/compliance/" data-msg-id="sondeLife.nav.complianceAccessibility">Compliance & Accessibility</a></li>
+          </ul>
+        </li>
+        <li><a href="../how-it-works/" data-msg-id="sondeLife.nav.howItWorks">How it Works</a></li>
+        <li><a href="../pricing/" data-msg-id="sondeLife.nav.pricing">Pricing</a></li>
+        <li class="has-children">
+          <a href="../resources/" data-msg-id="sondeLife.nav.resources">Resources</a><button class="submenu-toggle" type="button" aria-expanded="false" aria-controls="submenu-resources" hidden>
+            <span class="sonde-visually-hidden" data-msg-id="sondeLife.nav.resourcesMenu">Resources menu</span>
+            <svg viewBox="0 0 12 12" width="12" height="12" aria-hidden="true" focusable="false"><path d="M2.5 4.5 6 8l3.5-3.5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+          <ul class="dropdown" id="submenu-resources" hidden>
+            <li><a href="../resources/explore/" data-msg-id="sondeLife.nav.features">Explore</a></li>
+            <li><a href="../resources/methodology/" data-msg-id="sondeLife.nav.methodology">Methodology</a></li>
+            <li><a href="../resources/architecture/" data-msg-id="sondeLife.nav.architecture">Architecture</a></li>
+          </ul>
+        </li>
+        <li><a href="../company/" data-msg-id="sondeLife.nav.company">Company</a></li>
+      </ul>
+    </nav>
+    <div class="header-actions">
       <sonde-search-dialog
+        hidden
+        data-sl-reveal
         indexes="document,helm"
         site-root="../"
-        placeholder="Search…"></sonde-search-dialog>
-      <details class="settings-dropdown sl-settings">
-        <summary class="settings-dropdown-trigger" aria-label="Settings" data-msg-aria-label-id="sondeLife.settings.aria">
+        bundle-manifest="data/search-bundles.js"
+        placeholder="Search"
+        data-msg-placeholder-id="sondeLife.header.search"></sonde-search-dialog>
+      <div class="download-menu scribe-page-pdf" data-scribe-paged-polyfill="../assets/vendor/paged.polyfill.min.js?v=-o90dlq" data-search-exclude hidden><button type="button" class="download-menu-trigger" data-action="download-menu-toggle" aria-expanded="false" aria-controls="scribe-page-pdf-menu-list" aria-label="Download" data-msg-aria-label-id="audit.download" title="Download" data-msg-title-id="audit.download"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="12" y1="18" x2="12" y2="12"/><polyline points="9 15 12 18 15 15"/></svg></button><div class="download-menu-list" id="scribe-page-pdf-menu-list" role="group" aria-label="Download" data-msg-aria-label-id="audit.download" hidden><button type="button" class="download-menu-item" data-scribe-download-pdf><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="12" y1="18" x2="12" y2="12"/><polyline points="9 15 12 18 15 15"/></svg><span class="download-menu-item-label" data-msg-id="audit.downloadPdf">Download PDF</span></button></div><span class="sonde-visually-hidden" role="status" data-scribe-page-pdf-status></span></div>
+      <details class="settings-dropdown" hidden data-sl-reveal>
+        <summary class="settings-dropdown-trigger sl-settings-trigger">
           <svg class="sl-settings-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
             <path d="M19.4 13.5c.1-.5.1-1 .1-1.5s0-1-.1-1.5l2-1.5-2-3.5-2.4 1a7.3 7.3 0 0 0-2.6-1.5L14 2h-4l-.4 3a7.3 7.3 0 0 0-2.6 1.5l-2.4-1-2 3.5 2 1.5c-.1.5-.1 1-.1 1.5s0 1 .1 1.5l-2 1.5 2 3.5 2.4-1a7.3 7.3 0 0 0 2.6 1.5l.4 3h4l.4-3a7.3 7.3 0 0 0 2.6-1.5l2.4 1 2-3.5-2-1.5ZM12 15.5a3.5 3.5 0 1 1 0-7 3.5 3.5 0 0 1 0 7Z"/>
           </svg>
+          <span class="sl-settings-label" data-msg-id="sondeLife.settings.aria">Settings</span>
         </summary>
         <div class="settings-dropdown-menu" data-report-settings-dialog>
   <details class="settings-section settings-platform-theme-section" open>
     <summary class="settings-section-trigger" data-msg-id="settings.theme.legend" data-scribe-msgid="settings.theme.legend">Theme</summary>
     <div class="settings-section-body">
       <label class="theme-toggle-option settings-platform-theme-option">
-  <input type="radio" name="sonde-platform-theme-toggle" value="ultraviolet" checked>
+  <input type="radio" name="sonde-platform-theme-toggle" value="airglow" checked>
+  <div class="theme-preview" data-platform-theme="airglow" data-theme="dark">
+    <span class="settings-theme-preview-icon" aria-hidden="true"><svg class="settings-theme-mark sonde-daylight-mark" viewBox="0 0 512 512" width="28" height="28" aria-hidden="true"><defs><radialGradient id="settings-theme-airglow-sun" cx="50%" cy="50%" r="50%"><stop offset="0%" stop-color="var(--sonde-daylight-mark-sun-stop-0)"/><stop offset="60%" stop-color="var(--sonde-daylight-mark-sun-stop-1)"/><stop offset="100%" stop-color="var(--sonde-daylight-mark-sun-stop-2)"/></radialGradient><clipPath id="settings-theme-airglow-disc"><circle cx="256" cy="256" r="240"/></clipPath></defs><g style="display:var(--sonde-daylight-mark-solid-display)"><circle cx="256" cy="256" r="240" fill="url(#settings-theme-airglow-sun)"/><g clip-path="url(#settings-theme-airglow-disc)"><g fill="var(--sonde-daylight-mark-crater)" stroke="var(--sonde-daylight-mark-crater)"><g opacity="0.7"><path d="M40,240 C60,110 170,40 250,90 C320,130 330,210 260,280 C200,340 50,340 40,240 Z" opacity="0.6"/><path d="M290,130 C360,60 460,110 470,190 C480,270 410,350 330,320 C260,290 230,190 290,130 Z" opacity="0.7"/><path d="M390,280 C470,250 510,300 480,380 C450,440 380,410 390,280 Z" opacity="0.5"/><path d="M130,350 C180,290 260,350 230,430 C200,510 60,450 130,350 Z" opacity="0.5"/><circle cx="230" cy="430" r="18" fill="transparent" stroke-width="4" opacity="0.8"/><circle cx="170" cy="190" r="12" fill="transparent" stroke-width="3" opacity="0.7"/><circle cx="90" cy="230" r="8" opacity="0.8"/></g></g></g><g clip-path="url(#settings-theme-airglow-disc)"><g transform="translate(250,240) rotate(-40)" fill="var(--sonde-daylight-mark-probe)" stroke="var(--sonde-daylight-mark-probe)"><line x1="-32" y1="-8" x2="-160" y2="-40" stroke-width="6" stroke-linecap="round"/><circle cx="-160" cy="-40" r="10"/><line x1="-32" y1="16" x2="-125" y2="62" stroke-width="8" stroke-linecap="round"/><rect x="-141" y="38" width="32" height="60" rx="4" transform="rotate(20,-125,62)"/><line x1="-16" y1="-40" x2="-46" y2="-92" stroke-width="7" stroke-linecap="round"/><rect x="-70" y="-108" width="48" height="28" rx="4"/><circle cx="-56" cy="-98" r="8"/><circle cx="-36" cy="-98" r="6"/><path d="M48,-108 Q128,-78 128,0 Q128,78 48,108" stroke-width="5" stroke-linejoin="round"/><line x1="58" y1="-50" x2="108" y2="0" stroke-width="5"/><line x1="58" y1="50" x2="108" y2="0" stroke-width="5"/><line x1="48" y1="0" x2="108" y2="0" stroke-width="5"/><circle cx="110" cy="0" r="14"/><polygon points="-16,-40 48,-40 62,-24 62,24 48,40 -16,40 -30,24 -30,-24"/></g></g></g><g style="display:var(--sonde-daylight-mark-line-display)"><circle cx="256" cy="256" r="232" fill="none" stroke="var(--sonde-daylight-hc-mark-earth-blue)" stroke-width="28"/><defs><clipPath id="settings-theme-airglow-hc-clip"><circle cx="256" cy="256" r="214"/></clipPath></defs><g clip-path="url(#settings-theme-airglow-hc-clip)"><g transform="translate(276,228) scale(1.3) rotate(-40)" fill="none" stroke-linecap="round" stroke-linejoin="round"><line x1="-32" y1="-8" x2="-165" y2="-42" stroke="var(--sonde-daylight-hc-mark-metal)" stroke-width="8"/><circle cx="-80" cy="-20" r="3" stroke="var(--sonde-daylight-hc-mark-metal)" stroke-width="3"/><circle cx="-125" cy="-32" r="2.5" stroke="var(--sonde-daylight-hc-mark-metal)" stroke-width="3"/><circle cx="-165" cy="-42" r="8" stroke="var(--sonde-daylight-hc-mark-metal)" stroke-width="4"/><circle cx="-165" cy="-42" r="4" stroke="var(--sonde-daylight-hc-mark-metal)" stroke-width="2"/><line x1="-165" y1="-48" x2="-165" y2="-36" stroke="var(--sonde-daylight-hc-mark-metal)" stroke-width="2"/><line x1="-171" y1="-42" x2="-159" y2="-42" stroke="var(--sonde-daylight-hc-mark-metal)" stroke-width="2"/><line x1="-32" y1="16" x2="-130" y2="64" stroke="var(--sonde-daylight-hc-mark-metal)" stroke-width="12"/><circle cx="-80" cy="40" r="4" stroke="var(--sonde-daylight-hc-mark-metal)" stroke-width="4"/><g transform="translate(-130,64) rotate(20)"><rect x="-16" y="-32" width="32" height="64" rx="4" stroke="var(--sonde-daylight-hc-mark-rtg-brown)" stroke-width="6"/><line x1="-16" y1="-22" x2="16" y2="-22" stroke="var(--sonde-daylight-hc-mark-rtg-brown)" stroke-width="4"/><line x1="-16" y1="-12" x2="16" y2="-12" stroke="var(--sonde-daylight-hc-mark-rtg-brown)" stroke-width="4"/><line x1="-16" y1="-2" x2="16" y2="-2" stroke="var(--sonde-daylight-hc-mark-rtg-brown)" stroke-width="4"/><line x1="-16" y1="8" x2="16" y2="8" stroke="var(--sonde-daylight-hc-mark-rtg-brown)" stroke-width="4"/><line x1="-16" y1="18" x2="16" y2="18" stroke="var(--sonde-daylight-hc-mark-rtg-brown)" stroke-width="4"/><line x1="-16" y1="28" x2="16" y2="28" stroke="var(--sonde-daylight-hc-mark-rtg-brown)" stroke-width="4"/><rect x="-18" y="-34" width="36" height="4" rx="2" stroke="var(--sonde-daylight-hc-mark-rtg-brown)" stroke-width="3"/><rect x="-18" y="30" width="36" height="4" rx="2" stroke="var(--sonde-daylight-hc-mark-rtg-brown)" stroke-width="3"/></g><line x1="-16" y1="-40" x2="-48" y2="-96" stroke="var(--sonde-daylight-hc-mark-metal)" stroke-width="10"/><circle cx="-30" cy="-64" r="4" stroke="var(--sonde-daylight-hc-mark-metal)" stroke-width="4"/><g transform="translate(-48,-96)"><rect x="-24" y="-16" width="48" height="28" rx="4" stroke="var(--sonde-daylight-hc-mark-metal)" stroke-width="6"/><line x1="-20" y1="-8" x2="20" y2="-8" stroke="var(--sonde-daylight-hc-mark-metal)" stroke-width="2"/><line x1="-20" y1="0" x2="20" y2="0" stroke="var(--sonde-daylight-hc-mark-metal)" stroke-width="2"/><circle cx="-10" cy="-4" r="8" stroke="var(--sonde-daylight-hc-mark-metal)" stroke-width="5"/><circle cx="-10" cy="-4" r="4" stroke="var(--sonde-daylight-hc-mark-metal)" stroke-width="2"/><circle cx="10" cy="-4" r="6" stroke="var(--sonde-daylight-hc-mark-metal)" stroke-width="4"/><circle cx="10" cy="-4" r="3" stroke="var(--sonde-daylight-hc-mark-metal)" stroke-width="2"/><rect x="-4" y="4" width="8" height="6" rx="1.5" stroke="var(--sonde-daylight-hc-mark-metal)" stroke-width="3"/></g><path d="M48,-112 Q130,-80 130,0 Q130,80 48,112" stroke="var(--sonde-daylight-hc-mark-earth-blue)" stroke-width="8"/><path d="M56,-96 Q118,-68 118,0 Q118,68 56,96" stroke="var(--sonde-daylight-hc-mark-earth-blue)" stroke-width="2"/><path d="M64,-80 Q106,-56 106,0 Q106,56 64,80" stroke="var(--sonde-daylight-hc-mark-earth-blue)" stroke-width="2"/><path d="M72,-60 Q94,-40 94,0 Q94,40 72,60" stroke="var(--sonde-daylight-hc-mark-earth-blue)" stroke-width="2"/><line x1="60" y1="-52" x2="110" y2="0" stroke="var(--sonde-daylight-hc-mark-earth-blue)" stroke-width="8"/><line x1="60" y1="52" x2="110" y2="0" stroke="var(--sonde-daylight-hc-mark-earth-blue)" stroke-width="8"/><line x1="48" y1="0" x2="110" y2="0" stroke="var(--sonde-daylight-hc-mark-earth-blue)" stroke-width="8"/><circle cx="112" cy="0" r="14" stroke="var(--sonde-daylight-hc-mark-earth-blue)" stroke-width="6"/><circle cx="112" cy="0" r="8" stroke="var(--sonde-daylight-hc-mark-earth-blue)" stroke-width="3"/><polygon points="-16,-40 48,-40 64,-24 64,24 48,40 -16,40 -32,24 -32,-24" stroke="var(--sonde-daylight-hc-mark-bus-gold)" stroke-width="8"/><line x1="0" y1="-40" x2="0" y2="40" stroke="var(--sonde-daylight-hc-mark-bus-gold)" stroke-width="4"/><line x1="24" y1="-40" x2="24" y2="40" stroke="var(--sonde-daylight-hc-mark-bus-gold)" stroke-width="4"/><line x1="-16" y1="-20" x2="48" y2="-20" stroke="var(--sonde-daylight-hc-mark-bus-gold)" stroke-width="3"/><line x1="-16" y1="0" x2="48" y2="0" stroke="var(--sonde-daylight-hc-mark-bus-gold)" stroke-width="3"/><line x1="-16" y1="20" x2="48" y2="20" stroke="var(--sonde-daylight-hc-mark-bus-gold)" stroke-width="3"/><rect x="4" y="-16" width="16" height="12" rx="1.5" stroke="var(--sonde-daylight-hc-mark-bus-gold)" stroke-width="3"/><rect x="28" y="-16" width="16" height="12" rx="1.5" stroke="var(--sonde-daylight-hc-mark-bus-gold)" stroke-width="3"/><rect x="4" y="4" width="16" height="12" rx="1.5" stroke="var(--sonde-daylight-hc-mark-bus-gold)" stroke-width="3"/><rect x="28" y="4" width="16" height="12" rx="1.5" stroke="var(--sonde-daylight-hc-mark-bus-gold)" stroke-width="3"/><rect x="-36" y="-12" width="8" height="24" rx="2" stroke="var(--sonde-daylight-hc-mark-metal)" stroke-width="4"/><path d="M-44,-8 L-52,-14 L-52,14 L-44,8 Z" stroke="var(--sonde-daylight-hc-mark-metal)" stroke-width="4"/><g transform="translate(-8,0)" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M-52,-14 Q-86,-20 -112,-8 Q-120,0 -112,8 Q-86,20 -52,14" stroke="var(--sonde-daylight-hc-mark-flame-deep)" stroke-width="6"/><path d="M-52,-10 Q-78,-14 -96,-5 Q-102,0 -96,5 Q-78,14 -52,10" stroke="var(--sonde-daylight-hc-mark-flame-mid)" stroke-width="5"/><path d="M-52,-6 Q-68,-8 -78,-2 Q-82,0 -78,2 Q-68,8 -52,6" stroke="var(--sonde-daylight-hc-mark-flame-hot)" stroke-width="4"/></g><line x1="16" y1="-40" x2="24" y2="-56" stroke="var(--sonde-daylight-hc-mark-metal)" stroke-width="5"/><circle cx="24" cy="-56" r="3" stroke="var(--sonde-daylight-hc-mark-metal)" stroke-width="3"/></g></g></g></svg></span>
+    <span data-msg-id="settings.theme.airglow" data-scribe-msgid="settings.theme.airglow">Airglow</span>
+  </div>
+</label>
+      <label class="theme-toggle-option settings-platform-theme-option">
+  <input type="radio" name="sonde-platform-theme-toggle" value="ultraviolet">
   <div class="theme-preview" data-platform-theme="ultraviolet" data-theme="dark">
     <span class="settings-theme-preview-icon" aria-hidden="true"><svg class="settings-theme-mark sonde-daylight-mark" viewBox="0 0 512 512" width="28" height="28" aria-hidden="true"><defs><radialGradient id="settings-theme-ultraviolet-sun" cx="50%" cy="50%" r="50%"><stop offset="0%" stop-color="var(--sonde-daylight-mark-sun-stop-0)"/><stop offset="60%" stop-color="var(--sonde-daylight-mark-sun-stop-1)"/><stop offset="100%" stop-color="var(--sonde-daylight-mark-sun-stop-2)"/></radialGradient><clipPath id="settings-theme-ultraviolet-disc"><circle cx="256" cy="256" r="240"/></clipPath></defs><g style="display:var(--sonde-daylight-mark-solid-display)"><circle cx="256" cy="256" r="240" fill="url(#settings-theme-ultraviolet-sun)"/><g clip-path="url(#settings-theme-ultraviolet-disc)"><g fill="var(--sonde-daylight-mark-crater)" stroke="var(--sonde-daylight-mark-crater)"><g opacity="0.7"><path d="M40,240 C60,110 170,40 250,90 C320,130 330,210 260,280 C200,340 50,340 40,240 Z" opacity="0.6"/><path d="M290,130 C360,60 460,110 470,190 C480,270 410,350 330,320 C260,290 230,190 290,130 Z" opacity="0.7"/><path d="M390,280 C470,250 510,300 480,380 C450,440 380,410 390,280 Z" opacity="0.5"/><path d="M130,350 C180,290 260,350 230,430 C200,510 60,450 130,350 Z" opacity="0.5"/><circle cx="230" cy="430" r="18" fill="transparent" stroke-width="4" opacity="0.8"/><circle cx="170" cy="190" r="12" fill="transparent" stroke-width="3" opacity="0.7"/><circle cx="90" cy="230" r="8" opacity="0.8"/></g></g></g><g clip-path="url(#settings-theme-ultraviolet-disc)"><g transform="translate(250,240) rotate(-40)" fill="var(--sonde-daylight-mark-probe)" stroke="var(--sonde-daylight-mark-probe)"><line x1="-32" y1="-8" x2="-160" y2="-40" stroke-width="6" stroke-linecap="round"/><circle cx="-160" cy="-40" r="10"/><line x1="-32" y1="16" x2="-125" y2="62" stroke-width="8" stroke-linecap="round"/><rect x="-141" y="38" width="32" height="60" rx="4" transform="rotate(20,-125,62)"/><line x1="-16" y1="-40" x2="-46" y2="-92" stroke-width="7" stroke-linecap="round"/><rect x="-70" y="-108" width="48" height="28" rx="4"/><circle cx="-56" cy="-98" r="8"/><circle cx="-36" cy="-98" r="6"/><path d="M48,-108 Q128,-78 128,0 Q128,78 48,108" stroke-width="5" stroke-linejoin="round"/><line x1="58" y1="-50" x2="108" y2="0" stroke-width="5"/><line x1="58" y1="50" x2="108" y2="0" stroke-width="5"/><line x1="48" y1="0" x2="108" y2="0" stroke-width="5"/><circle cx="110" cy="0" r="14"/><polygon points="-16,-40 48,-40 62,-24 62,24 48,40 -16,40 -30,24 -30,-24"/></g></g></g><g style="display:var(--sonde-daylight-mark-line-display)"><circle cx="256" cy="256" r="232" fill="none" stroke="var(--sonde-daylight-hc-mark-earth-blue)" stroke-width="28"/><defs><clipPath id="settings-theme-ultraviolet-hc-clip"><circle cx="256" cy="256" r="214"/></clipPath></defs><g clip-path="url(#settings-theme-ultraviolet-hc-clip)"><g transform="translate(276,228) scale(1.3) rotate(-40)" fill="none" stroke-linecap="round" stroke-linejoin="round"><line x1="-32" y1="-8" x2="-165" y2="-42" stroke="var(--sonde-daylight-hc-mark-metal)" stroke-width="8"/><circle cx="-80" cy="-20" r="3" stroke="var(--sonde-daylight-hc-mark-metal)" stroke-width="3"/><circle cx="-125" cy="-32" r="2.5" stroke="var(--sonde-daylight-hc-mark-metal)" stroke-width="3"/><circle cx="-165" cy="-42" r="8" stroke="var(--sonde-daylight-hc-mark-metal)" stroke-width="4"/><circle cx="-165" cy="-42" r="4" stroke="var(--sonde-daylight-hc-mark-metal)" stroke-width="2"/><line x1="-165" y1="-48" x2="-165" y2="-36" stroke="var(--sonde-daylight-hc-mark-metal)" stroke-width="2"/><line x1="-171" y1="-42" x2="-159" y2="-42" stroke="var(--sonde-daylight-hc-mark-metal)" stroke-width="2"/><line x1="-32" y1="16" x2="-130" y2="64" stroke="var(--sonde-daylight-hc-mark-metal)" stroke-width="12"/><circle cx="-80" cy="40" r="4" stroke="var(--sonde-daylight-hc-mark-metal)" stroke-width="4"/><g transform="translate(-130,64) rotate(20)"><rect x="-16" y="-32" width="32" height="64" rx="4" stroke="var(--sonde-daylight-hc-mark-rtg-brown)" stroke-width="6"/><line x1="-16" y1="-22" x2="16" y2="-22" stroke="var(--sonde-daylight-hc-mark-rtg-brown)" stroke-width="4"/><line x1="-16" y1="-12" x2="16" y2="-12" stroke="var(--sonde-daylight-hc-mark-rtg-brown)" stroke-width="4"/><line x1="-16" y1="-2" x2="16" y2="-2" stroke="var(--sonde-daylight-hc-mark-rtg-brown)" stroke-width="4"/><line x1="-16" y1="8" x2="16" y2="8" stroke="var(--sonde-daylight-hc-mark-rtg-brown)" stroke-width="4"/><line x1="-16" y1="18" x2="16" y2="18" stroke="var(--sonde-daylight-hc-mark-rtg-brown)" stroke-width="4"/><line x1="-16" y1="28" x2="16" y2="28" stroke="var(--sonde-daylight-hc-mark-rtg-brown)" stroke-width="4"/><rect x="-18" y="-34" width="36" height="4" rx="2" stroke="var(--sonde-daylight-hc-mark-rtg-brown)" stroke-width="3"/><rect x="-18" y="30" width="36" height="4" rx="2" stroke="var(--sonde-daylight-hc-mark-rtg-brown)" stroke-width="3"/></g><line x1="-16" y1="-40" x2="-48" y2="-96" stroke="var(--sonde-daylight-hc-mark-metal)" stroke-width="10"/><circle cx="-30" cy="-64" r="4" stroke="var(--sonde-daylight-hc-mark-metal)" stroke-width="4"/><g transform="translate(-48,-96)"><rect x="-24" y="-16" width="48" height="28" rx="4" stroke="var(--sonde-daylight-hc-mark-metal)" stroke-width="6"/><line x1="-20" y1="-8" x2="20" y2="-8" stroke="var(--sonde-daylight-hc-mark-metal)" stroke-width="2"/><line x1="-20" y1="0" x2="20" y2="0" stroke="var(--sonde-daylight-hc-mark-metal)" stroke-width="2"/><circle cx="-10" cy="-4" r="8" stroke="var(--sonde-daylight-hc-mark-metal)" stroke-width="5"/><circle cx="-10" cy="-4" r="4" stroke="var(--sonde-daylight-hc-mark-metal)" stroke-width="2"/><circle cx="10" cy="-4" r="6" stroke="var(--sonde-daylight-hc-mark-metal)" stroke-width="4"/><circle cx="10" cy="-4" r="3" stroke="var(--sonde-daylight-hc-mark-metal)" stroke-width="2"/><rect x="-4" y="4" width="8" height="6" rx="1.5" stroke="var(--sonde-daylight-hc-mark-metal)" stroke-width="3"/></g><path d="M48,-112 Q130,-80 130,0 Q130,80 48,112" stroke="var(--sonde-daylight-hc-mark-earth-blue)" stroke-width="8"/><path d="M56,-96 Q118,-68 118,0 Q118,68 56,96" stroke="var(--sonde-daylight-hc-mark-earth-blue)" stroke-width="2"/><path d="M64,-80 Q106,-56 106,0 Q106,56 64,80" stroke="var(--sonde-daylight-hc-mark-earth-blue)" stroke-width="2"/><path d="M72,-60 Q94,-40 94,0 Q94,40 72,60" stroke="var(--sonde-daylight-hc-mark-earth-blue)" stroke-width="2"/><line x1="60" y1="-52" x2="110" y2="0" stroke="var(--sonde-daylight-hc-mark-earth-blue)" stroke-width="8"/><line x1="60" y1="52" x2="110" y2="0" stroke="var(--sonde-daylight-hc-mark-earth-blue)" stroke-width="8"/><line x1="48" y1="0" x2="110" y2="0" stroke="var(--sonde-daylight-hc-mark-earth-blue)" stroke-width="8"/><circle cx="112" cy="0" r="14" stroke="var(--sonde-daylight-hc-mark-earth-blue)" stroke-width="6"/><circle cx="112" cy="0" r="8" stroke="var(--sonde-daylight-hc-mark-earth-blue)" stroke-width="3"/><polygon points="-16,-40 48,-40 64,-24 64,24 48,40 -16,40 -32,24 -32,-24" stroke="var(--sonde-daylight-hc-mark-bus-gold)" stroke-width="8"/><line x1="0" y1="-40" x2="0" y2="40" stroke="var(--sonde-daylight-hc-mark-bus-gold)" stroke-width="4"/><line x1="24" y1="-40" x2="24" y2="40" stroke="var(--sonde-daylight-hc-mark-bus-gold)" stroke-width="4"/><line x1="-16" y1="-20" x2="48" y2="-20" stroke="var(--sonde-daylight-hc-mark-bus-gold)" stroke-width="3"/><line x1="-16" y1="0" x2="48" y2="0" stroke="var(--sonde-daylight-hc-mark-bus-gold)" stroke-width="3"/><line x1="-16" y1="20" x2="48" y2="20" stroke="var(--sonde-daylight-hc-mark-bus-gold)" stroke-width="3"/><rect x="4" y="-16" width="16" height="12" rx="1.5" stroke="var(--sonde-daylight-hc-mark-bus-gold)" stroke-width="3"/><rect x="28" y="-16" width="16" height="12" rx="1.5" stroke="var(--sonde-daylight-hc-mark-bus-gold)" stroke-width="3"/><rect x="4" y="4" width="16" height="12" rx="1.5" stroke="var(--sonde-daylight-hc-mark-bus-gold)" stroke-width="3"/><rect x="28" y="4" width="16" height="12" rx="1.5" stroke="var(--sonde-daylight-hc-mark-bus-gold)" stroke-width="3"/><rect x="-36" y="-12" width="8" height="24" rx="2" stroke="var(--sonde-daylight-hc-mark-metal)" stroke-width="4"/><path d="M-44,-8 L-52,-14 L-52,14 L-44,8 Z" stroke="var(--sonde-daylight-hc-mark-metal)" stroke-width="4"/><g transform="translate(-8,0)" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M-52,-14 Q-86,-20 -112,-8 Q-120,0 -112,8 Q-86,20 -52,14" stroke="var(--sonde-daylight-hc-mark-flame-deep)" stroke-width="6"/><path d="M-52,-10 Q-78,-14 -96,-5 Q-102,0 -96,5 Q-78,14 -52,10" stroke="var(--sonde-daylight-hc-mark-flame-mid)" stroke-width="5"/><path d="M-52,-6 Q-68,-8 -78,-2 Q-82,0 -78,2 Q-68,8 -52,6" stroke="var(--sonde-daylight-hc-mark-flame-hot)" stroke-width="4"/></g><line x1="16" y1="-40" x2="24" y2="-56" stroke="var(--sonde-daylight-hc-mark-metal)" stroke-width="5"/><circle cx="24" cy="-56" r="3" stroke="var(--sonde-daylight-hc-mark-metal)" stroke-width="3"/></g></g></g></svg></span>
     <span data-msg-id="settings.theme.ultraviolet" data-scribe-msgid="settings.theme.ultraviolet">Ultraviolet</span>
@@ -674,7 +869,7 @@
     <summary class="settings-section-trigger" data-msg-id="settings.mode.legend" data-scribe-msgid="settings.mode.legend">Mode</summary>
     <div class="settings-section-body">
       <label class="theme-toggle-option theme-option-auto">
-  <input type="radio" name="sonde-theme-toggle" value="auto" checked>
+  <input type="radio" name="sonde-theme-toggle" value="auto">
   <div class="theme-preview" data-theme="auto">
     <span data-msg-id="settings.theme.auto" data-scribe-msgid="settings.theme.auto">Auto</span>
   </div>
@@ -686,428 +881,294 @@
   </div>
 </label>
       <label class="theme-toggle-option theme-option-dark">
-  <input type="radio" name="sonde-theme-toggle" value="dark">
+  <input type="radio" name="sonde-theme-toggle" value="dark" checked>
   <div class="theme-preview" data-theme="dark">
     <span data-msg-id="settings.theme.dark" data-scribe-msgid="settings.theme.dark">Dark</span>
   </div>
 </label>
     </div>
   </details>
-  <details class="settings-section settings-language-section">
-    <summary class="settings-section-trigger" data-msg-id="settings.language.legend" data-scribe-msgid="settings.language.legend">Language</summary>
-    <div class="settings-section-body">
-      <input id="settings-language-search" class="settings-language-search" type="search" autocomplete="off" spellcheck="false" aria-label="Search languages" placeholder="Search languages" title="Search languages" data-sonde-locale-search data-msg-aria-label-id="settings.language.search" data-msg-placeholder-id="settings.language.search" data-msg-title-id="settings.language.search" data-scribe-label-msgid="scribe.report.control.languageSearch" data-scribe-placeholder-msgid="scribe.report.control.languageSearch">
-      <sonde-locale-picker locales="[&quot;en-US&quot;,&quot;en-GB&quot;,&quot;en-CA&quot;,&quot;en-IN&quot;,&quot;fr-CA&quot;,&quot;cy-GB&quot;,&quot;es-US&quot;,&quot;de-DE&quot;,&quot;fr-FR&quot;,&quot;es-ES&quot;,&quot;it-IT&quot;,&quot;nl-NL&quot;,&quot;pl-PL&quot;,&quot;pt-PT&quot;,&quot;pt-BR&quot;,&quot;ro-RO&quot;,&quot;sv-SE&quot;,&quot;ko-KR&quot;,&quot;zh-CN&quot;,&quot;ja-JP&quot;,&quot;hi-IN&quot;]" value="en-US" input-name="sonde-locale-picker-radio">
-<label class="theme-toggle-option settings-language-option" dir="ltr" data-locale-search="en-US English (US) 🇺🇸 English United States">
-  <input type="radio" name="sonde-locale-picker-radio" value="en-US" data-sonde-locale-picker checked>
-  <div class="theme-preview locale-option-preview">
-    <span class="fi fi-us locale-option-flag" data-flag="🇺🇸" aria-hidden="true"></span>
-    <span class="locale-option-label">English (US)</span>
+  <div class="settings-preferences">
+    <label class="settings-motion-option"><input type="checkbox" name="sonde-motion-toggle"> <span data-msg-id="settings.motion.reduce">Reduce motion</span></label>
+    <button type="button" class="settings-reset" data-sonde-preference-reset hidden><span data-msg-id="settings.reset">Reset remembered preferences</span></button>
+    <p class="settings-reset-done" role="status" data-sonde-preference-reset-confirmation hidden><span data-msg-id="settings.reset.done">Your preferences are reset. Where we need your consent, we will ask again; elsewhere analytics returns to its default, which is on.</span></p>
   </div>
-</label>
-<label class="theme-toggle-option settings-language-option" dir="ltr" data-locale-search="en-GB English (UK) 🇬🇧 English United Kingdom">
-  <input type="radio" name="sonde-locale-picker-radio" value="en-GB" data-sonde-locale-picker>
-  <div class="theme-preview locale-option-preview">
-    <span class="fi fi-gb locale-option-flag" data-flag="🇬🇧" aria-hidden="true"></span>
-    <span class="locale-option-label">English (UK)</span>
-  </div>
-</label>
-<label class="theme-toggle-option settings-language-option" dir="ltr" data-locale-search="en-CA English (Canada) 🇨🇦 English Canada">
-  <input type="radio" name="sonde-locale-picker-radio" value="en-CA" data-sonde-locale-picker>
-  <div class="theme-preview locale-option-preview">
-    <span class="fi fi-ca locale-option-flag" data-flag="🇨🇦" aria-hidden="true"></span>
-    <span class="locale-option-label">English (Canada)</span>
-  </div>
-</label>
-<label class="theme-toggle-option settings-language-option" dir="ltr" data-locale-search="en-IN English (India) 🇮🇳 English India">
-  <input type="radio" name="sonde-locale-picker-radio" value="en-IN" data-sonde-locale-picker>
-  <div class="theme-preview locale-option-preview">
-    <span class="fi fi-in locale-option-flag" data-flag="🇮🇳" aria-hidden="true"></span>
-    <span class="locale-option-label">English (India)</span>
-  </div>
-</label>
-<label class="theme-toggle-option settings-language-option" dir="ltr" data-locale-search="fr-CA Français (Canada) 🇨🇦 French Canada">
-  <input type="radio" name="sonde-locale-picker-radio" value="fr-CA" data-sonde-locale-picker>
-  <div class="theme-preview locale-option-preview">
-    <span class="fi fi-ca locale-option-flag" data-flag="🇨🇦" aria-hidden="true"></span>
-    <span class="locale-option-label">Français (Canada)</span>
-  </div>
-</label>
-<label class="theme-toggle-option settings-language-option" dir="ltr" data-locale-search="cy-GB Cymraeg 🇬🇧 Welsh United Kingdom">
-  <input type="radio" name="sonde-locale-picker-radio" value="cy-GB" data-sonde-locale-picker>
-  <div class="theme-preview locale-option-preview">
-    <span class="fi fi-gb-wls locale-option-flag" data-flag="🇬🇧" aria-hidden="true"></span>
-    <span class="locale-option-label">Cymraeg</span>
-  </div>
-</label>
-<label class="theme-toggle-option settings-language-option" dir="ltr" data-locale-search="es-US Español (US) 🇺🇸 Spanish United States">
-  <input type="radio" name="sonde-locale-picker-radio" value="es-US" data-sonde-locale-picker>
-  <div class="theme-preview locale-option-preview">
-    <span class="fi fi-us locale-option-flag" data-flag="🇺🇸" aria-hidden="true"></span>
-    <span class="locale-option-label">Español (US)</span>
-  </div>
-</label>
-<label class="theme-toggle-option settings-language-option" dir="ltr" data-locale-search="de-DE Deutsch 🇩🇪 German Germany">
-  <input type="radio" name="sonde-locale-picker-radio" value="de-DE" data-sonde-locale-picker>
-  <div class="theme-preview locale-option-preview">
-    <span class="fi fi-de locale-option-flag" data-flag="🇩🇪" aria-hidden="true"></span>
-    <span class="locale-option-label">Deutsch</span>
-  </div>
-</label>
-<label class="theme-toggle-option settings-language-option" dir="ltr" data-locale-search="fr-FR Français 🇫🇷 French France">
-  <input type="radio" name="sonde-locale-picker-radio" value="fr-FR" data-sonde-locale-picker>
-  <div class="theme-preview locale-option-preview">
-    <span class="fi fi-fr locale-option-flag" data-flag="🇫🇷" aria-hidden="true"></span>
-    <span class="locale-option-label">Français</span>
-  </div>
-</label>
-<label class="theme-toggle-option settings-language-option" dir="ltr" data-locale-search="es-ES Español (España) 🇪🇸 Spanish Spain">
-  <input type="radio" name="sonde-locale-picker-radio" value="es-ES" data-sonde-locale-picker>
-  <div class="theme-preview locale-option-preview">
-    <span class="fi fi-es locale-option-flag" data-flag="🇪🇸" aria-hidden="true"></span>
-    <span class="locale-option-label">Español (España)</span>
-  </div>
-</label>
-<label class="theme-toggle-option settings-language-option" dir="ltr" data-locale-search="it-IT Italiano 🇮🇹 Italian Italy">
-  <input type="radio" name="sonde-locale-picker-radio" value="it-IT" data-sonde-locale-picker>
-  <div class="theme-preview locale-option-preview">
-    <span class="fi fi-it locale-option-flag" data-flag="🇮🇹" aria-hidden="true"></span>
-    <span class="locale-option-label">Italiano</span>
-  </div>
-</label>
-<label class="theme-toggle-option settings-language-option" dir="ltr" data-locale-search="nl-NL Nederlands 🇳🇱 Dutch Netherlands">
-  <input type="radio" name="sonde-locale-picker-radio" value="nl-NL" data-sonde-locale-picker>
-  <div class="theme-preview locale-option-preview">
-    <span class="fi fi-nl locale-option-flag" data-flag="🇳🇱" aria-hidden="true"></span>
-    <span class="locale-option-label">Nederlands</span>
-  </div>
-</label>
-<label class="theme-toggle-option settings-language-option" dir="ltr" data-locale-search="pl-PL Polski 🇵🇱 Polish Poland">
-  <input type="radio" name="sonde-locale-picker-radio" value="pl-PL" data-sonde-locale-picker>
-  <div class="theme-preview locale-option-preview">
-    <span class="fi fi-pl locale-option-flag" data-flag="🇵🇱" aria-hidden="true"></span>
-    <span class="locale-option-label">Polski</span>
-  </div>
-</label>
-<label class="theme-toggle-option settings-language-option" dir="ltr" data-locale-search="pt-PT Português (Portugal) 🇵🇹 Portuguese Portugal">
-  <input type="radio" name="sonde-locale-picker-radio" value="pt-PT" data-sonde-locale-picker>
-  <div class="theme-preview locale-option-preview">
-    <span class="fi fi-pt locale-option-flag" data-flag="🇵🇹" aria-hidden="true"></span>
-    <span class="locale-option-label">Português (Portugal)</span>
-  </div>
-</label>
-<label class="theme-toggle-option settings-language-option" dir="ltr" data-locale-search="pt-BR Português (Brasil) 🇧🇷 Portuguese Brazil">
-  <input type="radio" name="sonde-locale-picker-radio" value="pt-BR" data-sonde-locale-picker>
-  <div class="theme-preview locale-option-preview">
-    <span class="fi fi-br locale-option-flag" data-flag="🇧🇷" aria-hidden="true"></span>
-    <span class="locale-option-label">Português (Brasil)</span>
-  </div>
-</label>
-<label class="theme-toggle-option settings-language-option" dir="ltr" data-locale-search="ro-RO Română 🇷🇴 Romanian Romania">
-  <input type="radio" name="sonde-locale-picker-radio" value="ro-RO" data-sonde-locale-picker>
-  <div class="theme-preview locale-option-preview">
-    <span class="fi fi-ro locale-option-flag" data-flag="🇷🇴" aria-hidden="true"></span>
-    <span class="locale-option-label">Română</span>
-  </div>
-</label>
-<label class="theme-toggle-option settings-language-option" dir="ltr" data-locale-search="sv-SE Svenska 🇸🇪 Swedish Sweden">
-  <input type="radio" name="sonde-locale-picker-radio" value="sv-SE" data-sonde-locale-picker>
-  <div class="theme-preview locale-option-preview">
-    <span class="fi fi-se locale-option-flag" data-flag="🇸🇪" aria-hidden="true"></span>
-    <span class="locale-option-label">Svenska</span>
-  </div>
-</label>
-<label class="theme-toggle-option settings-language-option" dir="ltr" data-locale-search="ko-KR 한국어 🇰🇷 Korean South Korea">
-  <input type="radio" name="sonde-locale-picker-radio" value="ko-KR" data-sonde-locale-picker>
-  <div class="theme-preview locale-option-preview">
-    <span class="fi fi-kr locale-option-flag" data-flag="🇰🇷" aria-hidden="true"></span>
-    <span class="locale-option-label">한국어</span>
-  </div>
-</label>
-<label class="theme-toggle-option settings-language-option" dir="ltr" data-locale-search="zh-CN 简体中文 🇨🇳 Chinese China">
-  <input type="radio" name="sonde-locale-picker-radio" value="zh-CN" data-sonde-locale-picker>
-  <div class="theme-preview locale-option-preview">
-    <span class="fi fi-cn locale-option-flag" data-flag="🇨🇳" aria-hidden="true"></span>
-    <span class="locale-option-label">简体中文</span>
-  </div>
-</label>
-<label class="theme-toggle-option settings-language-option" dir="ltr" data-locale-search="ja-JP 日本語 🇯🇵 Japanese Japan">
-  <input type="radio" name="sonde-locale-picker-radio" value="ja-JP" data-sonde-locale-picker>
-  <div class="theme-preview locale-option-preview">
-    <span class="fi fi-jp locale-option-flag" data-flag="🇯🇵" aria-hidden="true"></span>
-    <span class="locale-option-label">日本語</span>
-  </div>
-</label>
-<label class="theme-toggle-option settings-language-option" dir="ltr" data-locale-search="hi-IN हिन्दी 🇮🇳 Hindi India">
-  <input type="radio" name="sonde-locale-picker-radio" value="hi-IN" data-sonde-locale-picker>
-  <div class="theme-preview locale-option-preview">
-    <span class="fi fi-in locale-option-flag" data-flag="🇮🇳" aria-hidden="true"></span>
-    <span class="locale-option-label">हिन्दी</span>
-  </div>
-</label>
-</sonde-locale-picker>
-    </div>
-  </details>
 </div>
       </details>
+      <a class="btn btn-primary" href="../contact/" data-msg-id="sondeLife.nav.talkToUs" aria-current="page">Talk to us</a>
     </div>
-    </nav>
+  </div>
+</header>
+<script>
+  (function () {
+    var header = document.querySelector('header.site-header');
+    if (!header) return;
+    var revealed = header.querySelectorAll('[data-sl-reveal]');
+    for (var r = 0; r < revealed.length; r += 1) revealed[r].hidden = false;
 
-<section class="sl-section sl-hero sl-hero-with-icon sl-contact-hero" aria-labelledby="contact-title">
-  <div class="sl-section-inner">
-    <span class="sl-page-icon" aria-hidden="true"><svg class="sl-page-icon-svg" viewBox="0 0 64 64" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg">
-  <g fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" opacity="0.5">
-    <line x1="6" y1="56" x2="58" y2="56" />
-    <circle cx="11" cy="11" r="0.6" fill="currentColor" stroke="none" />
-    <circle cx="55" cy="9" r="0.6" fill="currentColor" stroke="none" />
-    <circle cx="48" cy="6" r="0.45" fill="currentColor" stroke="none" />
-    <circle cx="9" cy="22" r="0.45" fill="currentColor" stroke="none" />
-  </g>
-  <g fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
-    <circle cx="19" cy="18" r="4" />
-    <line x1="19" y1="22" x2="19" y2="40" />
-    <line x1="19" y1="40" x2="15" y2="55" />
-    <line x1="19" y1="40" x2="23" y2="55" />
-    <line x1="19" y1="27" x2="13" y2="38" />
-    <line x1="19" y1="27" x2="29" y2="33" />
-  </g>
-  <g fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
-    <ellipse cx="46" cy="17" rx="5.2" ry="6" />
-    <line x1="46" y1="23" x2="46" y2="38" />
-    <line x1="46" y1="38" x2="42" y2="55" />
-    <line x1="46" y1="38" x2="50" y2="55" />
-    <line x1="46" y1="26" x2="52" y2="38" />
-    <line x1="46" y1="26" x2="35" y2="33" />
-  </g>
-  <g fill="var(--sonde-color-accent)" stroke="none">
-    <ellipse cx="43.6" cy="17" rx="1.4" ry="2.1" transform="rotate(-18 43.6 17)" />
-    <ellipse cx="48.4" cy="17" rx="1.4" ry="2.1" transform="rotate(18 48.4 17)" />
-  </g>
-  <g>
-    <circle cx="32" cy="33" r="2" fill="var(--sonde-color-accent)" />
-    <circle cx="32" cy="33" r="3.6" fill="none" stroke="var(--sonde-color-accent)" stroke-width="1" opacity="0.55" />
-    <circle cx="32" cy="33" r="5.4" fill="none" stroke="var(--sonde-color-accent)" stroke-width="0.7" opacity="0.3" />
-  </g>
-</svg>
-</span>
-    <div class="sl-hero-content">
-      <p class="sl-eyebrow" data-msg-id="sondeLife.content.contact.eyebrow">Get in touch</p>
-      <h1 id="contact-title" data-msg-id="sondeLife.content.contact.title">Contact Sonde</h1>
-      <p data-msg-id="sondeLife.content.contact.lede">Ask a question, request pre-release access, or share feedback. We read every message.</p>
-    </div>
-    <div class="sl-trailer-quotes" data-sl-trailer-quotes aria-live="polite">
-  <blockquote class="sl-trailer-quote">
-    <p data-sl-trailer-current data-msg-id="sondeLife.contact.trailerQuotes.originStory">For 70 years, humanity has searched for better ways to understand code. Every era invented new diagrams, new abstractions, new ways of seeing. Sonde is what happens when the probe comes home — carrying ALL of it.</p>
-  </blockquote>
-  <ul class="sl-trailer-quote-bank" hidden>
-    <li data-msg-id="sondeLife.contact.trailerQuotes.originStory">For 70 years, humanity has searched for better ways to understand code. Every era invented new diagrams, new abstractions, new ways of seeing. Sonde is what happens when the probe comes home — carrying ALL of it.</li>
-    <li data-msg-id="sondeLife.contact.trailerQuotes.codeResponsibly">Code responsibly.</li>
-    <li data-msg-id="sondeLife.contact.trailerQuotes.queryableGraph">The entire software system as a queryable, provenance-tracked graph.</li>
-    <li data-msg-id="sondeLife.contact.trailerQuotes.expandingUniverse">Exploring the expanding universe of software development.</li>
-    <li data-msg-id="sondeLife.contact.trailerQuotes.universalAnalysis">40+ languages. One universal analysis.</li>
-    <li data-msg-id="sondeLife.contact.trailerQuotes.everyRisk">Every function. Every dependency. Every risk. Everywhere.</li>
-    <li data-msg-id="sondeLife.contact.trailerQuotes.codeSecrets">The code already knows its secrets. Sonde listens.</li>
-    <li data-msg-id="sondeLife.contact.trailerQuotes.codebaseExplain">What if your codebase could explain itself?</li>
-    <li data-msg-id="sondeLife.contact.trailerQuotes.sondeCanRead">If you need it, Sonde can read it.</li>
-    <li data-msg-id="sondeLife.contact.trailerQuotes.diagramsFixes">Flowcharts. Class diagrams. Dependency graphs. Fixes. What comes next?</li>
-    <li data-msg-id="sondeLife.contact.trailerQuotes.infiniteDiversity">Infinite Diversity in Infinite Combinations.</li>
-    <li data-msg-id="sondeLife.contact.trailerQuotes.goodCode">Good code still matters.</li>
-    <li data-msg-id="sondeLife.contact.trailerQuotes.highVelocityVisibility">High velocity shouldn't mean low visibility.</li>
-  </ul>
-</div>
+    var HOVER_DELAY_MS = 150;
+    var toggles = Array.prototype.slice.call(header.querySelectorAll('.submenu-toggle'));
+    function menuOf(toggle) {
+      return document.getElementById(toggle.getAttribute('aria-controls'));
+    }
+    function isOpen(toggle) {
+      return toggle.getAttribute('aria-expanded') === 'true';
+    }
+    function setOpen(toggle, open) {
+      toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+      var menu = menuOf(toggle);
+      if (menu) menu.hidden = !open;
+    }
+    function closeOthers(keep) {
+      for (var i = 0; i < toggles.length; i += 1) {
+        if (toggles[i] !== keep && isOpen(toggles[i])) setOpen(toggles[i], false);
+      }
+    }
+    toggles.forEach(function (toggle) {
+      var item = toggle.closest('.has-children');
+      var timer = 0;
+      toggle.hidden = false;
+      toggle.addEventListener('click', function () {
+        window.clearTimeout(timer);
+        var open = !isOpen(toggle);
+        closeOthers(toggle);
+        setOpen(toggle, open);
+      });
+      if (!item) return;
+      item.addEventListener('pointerenter', function (event) {
+        if (event.pointerType !== 'mouse') return;
+        window.clearTimeout(timer);
+        timer = window.setTimeout(function () {
+          closeOthers(toggle);
+          setOpen(toggle, true);
+        }, HOVER_DELAY_MS);
+      });
+      item.addEventListener('pointerleave', function (event) {
+        if (event.pointerType !== 'mouse') return;
+        window.clearTimeout(timer);
+        timer = window.setTimeout(function () {
+          if (!item.contains(document.activeElement)) setOpen(toggle, false);
+        }, HOVER_DELAY_MS);
+      });
+    });
+    document.addEventListener('keydown', function (event) {
+      if (event.key !== 'Escape') return;
+      toggles.forEach(function (toggle) {
+        if (!isOpen(toggle)) return;
+        var menu = menuOf(toggle);
+        var focused = document.activeElement;
+        var focusWasInside = focused === toggle || (menu !== null && menu.contains(focused));
+        setOpen(toggle, false);
+        if (focusWasInside) toggle.focus();
+      });
+    });
+    document.addEventListener('click', function (event) {
+      var target = event.target instanceof Element ? event.target : null;
+      toggles.forEach(function (toggle) {
+        var item = toggle.closest('.has-children');
+        if (isOpen(toggle) && !(item && target && item.contains(target))) setOpen(toggle, false);
+      });
+    });
 
+    var root = document.documentElement;
+    var shortViewport = window.matchMedia ? window.matchMedia('(max-height: 499px)') : null;
+    function clearHeader() {
+      root.style.scrollPaddingTop = shortViewport && shortViewport.matches ? '0px' : header.offsetHeight + 'px';
+      root.style.setProperty('--sl-header-block-size', header.offsetHeight + 'px');
+    }
+    clearHeader();
+    if (typeof ResizeObserver === 'function') new ResizeObserver(clearHeader).observe(header);
+    if (shortViewport && shortViewport.addEventListener) shortViewport.addEventListener('change', clearHeader);
+  })();
+</script>
+
+  <main id="main-content" class="sonde-exhibit" data-presentation-active="true" tabindex="-1">
+<section class="page-hero">
+  <div class="container">
+    <div class="eyebrow" data-msg-id="sondeLife.content.contact.eyebrow">Get in touch</div>
+    <h1 data-msg-id="sondeLife.content.contact.title">Contact Sonde</h1>
+    <p class="lede" data-msg-id="sondeLife.content.contact.lede">Ask a question, request pre-release access, or share feedback. We read every message.</p>
   </div>
 </section>
-<section class="sl-section sl-contact-intake" aria-labelledby="contact-form-title">
-  <div class="sl-section-inner sl-contact-layout">
-    <div class="sl-contact-form-wrapper" id="contact-form-region">
-      <form class="sl-contact-form" data-contact-form action="https://sonde.life/api/submit" method="post">
+<section>
+  <div class="container contact-layout">
+    <div class="contact-form-wrapper" id="contact-form-region">
+      <form class="contact-form" data-contact-form action="https://sonde.tech/api/submit" method="post" novalidate>
         <input type="hidden" name="hs_analytics_source" value="DIRECT_TRAFFIC">
-        <div class="sl-contact-form-heading">
-          <h2 id="contact-form-title" data-msg-id="sondeLife.content.contact.formTitle">Send us a message</h2>
+        <div class="contact-form-heading">
+          <h2 id="send-us-a-message" data-msg-id="sondeLife.content.contact.formTitle">Send us a message</h2>
           <p data-msg-id="sondeLife.content.contact.formLede">General questions, product inquiries, and pre-release access requests are all welcome.</p>
         </div>
-        <div class="sl-contact-form-grid">
-          <label class="sl-contact-field">
-            <span data-msg-id="sondeLife.content.contact.fields.firstName">First name</span>
-            <input name="firstName" type="text" autocomplete="given-name" required>
-          </label>
-          <label class="sl-contact-field">
-            <span data-msg-id="sondeLife.content.contact.fields.lastName">Last name</span>
-            <input name="lastName" type="text" autocomplete="family-name" required>
-          </label>
-          <label class="sl-contact-field">
-            <span data-msg-id="sondeLife.content.contact.fields.email">Email</span>
-            <input name="email" type="email" autocomplete="email" required>
-          </label>
-          <label class="sl-contact-field">
-            <span data-msg-id="sondeLife.content.contact.fields.teamSize">Team size</span>
-            <select name="company_size" required>
-              <option value="solo" data-msg-id="sondeLife.content.contact.teamSizes.0.label">Solo / individual</option>
-              <option value="2-10" data-msg-id="sondeLife.content.contact.teamSizes.1.label">2–10</option>
-              <option value="11-50" data-msg-id="sondeLife.content.contact.teamSizes.2.label">11–50</option>
-              <option value="51-100" data-msg-id="sondeLife.content.contact.teamSizes.3.label">51–100</option>
-              <option value="101-plus" data-msg-id="sondeLife.content.contact.teamSizes.4.label">101+</option>
-            </select>
-          </label>
-          <label class="sl-contact-field sl-contact-field-wide">
-            <span data-msg-id="sondeLife.content.contact.fields.useCase">What brings you here?</span>
-            <textarea name="message" rows="5" maxlength="2000" required></textarea>
-          </label>
+        <div class="contact-grid">
+          <span class="sl-contact-cell">
+            <label class="contact-field">
+              <span data-msg-id="sondeLife.content.contact.fields.firstName">First name</span>
+              <input name="firstName" type="text" autocomplete="given-name" required data-error-id="contact-error-firstName" aria-errormessage="contact-error-firstName">
+            </label>
+            <span class="sl-field-error" id="contact-error-firstName" hidden data-msg-id="sondeLife.content.contact.errors.firstName">Enter your first name.</span>
+          </span>
+          <span class="sl-contact-cell">
+            <label class="contact-field">
+              <span data-msg-id="sondeLife.content.contact.fields.lastName">Last name</span>
+              <input name="lastName" type="text" autocomplete="family-name" required data-error-id="contact-error-lastName" aria-errormessage="contact-error-lastName">
+            </label>
+            <span class="sl-field-error" id="contact-error-lastName" hidden data-msg-id="sondeLife.content.contact.errors.lastName">Enter your last name.</span>
+          </span>
+          <span class="sl-contact-cell">
+            <label class="contact-field">
+              <span data-msg-id="sondeLife.content.contact.fields.email">Email</span>
+              <input name="email" type="email" autocomplete="email" required data-error-id="contact-error-email" aria-errormessage="contact-error-email">
+            </label>
+            <span class="sl-field-error" id="contact-error-email" hidden data-msg-id="sondeLife.content.contact.errors.email">Enter an email address, such as name@example.com.</span>
+          </span>
+          <span class="sl-contact-cell">
+            <label class="contact-field">
+              <span data-msg-id="sondeLife.content.contact.fields.teamSize">Team size</span>
+              <select name="company_size" required data-error-id="contact-error-teamSize" aria-errormessage="contact-error-teamSize">
+                <option value="" disabled selected data-msg-id="sondeLife.content.contact.fields.teamSizePrompt">Select team size</option>
+                <option value="solo" data-msg-id="sondeLife.content.contact.teamSizes.0.label">Solo / individual</option>
+                <option value="2-10" data-msg-id="sondeLife.content.contact.teamSizes.1.label">2–10</option>
+                <option value="11-50" data-msg-id="sondeLife.content.contact.teamSizes.2.label">11–50</option>
+                <option value="51-100" data-msg-id="sondeLife.content.contact.teamSizes.3.label">51–100</option>
+                <option value="101-plus" data-msg-id="sondeLife.content.contact.teamSizes.4.label">101+</option>
+              </select>
+            </label>
+            <span class="sl-field-error" id="contact-error-teamSize" hidden data-msg-id="sondeLife.content.contact.errors.teamSize">Select your team size.</span>
+          </span>
+          <span class="sl-contact-cell contact-field-wide">
+            <label class="contact-field">
+              <span data-msg-id="sondeLife.content.contact.fields.useCase">What brings you here?</span>
+              <textarea name="message" rows="5" maxlength="2000" required data-error-id="contact-error-message" aria-errormessage="contact-error-message"></textarea>
+            </label>
+            <span class="sl-field-error" id="contact-error-message" hidden data-msg-id="sondeLife.content.contact.errors.message">Tell us what brings you here.</span>
+          </span>
         </div>
-        <label class="sl-contact-honeypot">
-          Website
+        <label class="contact-honeypot sonde-visually-hidden" inert>
+          <span data-msg-id="sondeLife.content.contact.fields.honeypot">Website</span>
           <input name="website" tabindex="-1" autocomplete="off">
         </label>
-        <label class="sl-contact-consent">
-          <input type="checkbox" value="true" required>
-          <span data-msg-id="sondeLife.content.contact.fields.consent">I agree to be contacted about Sonde.</span>
-        </label>
-        <div
-          class="cf-turnstile sl-contact-turnstile"
-          data-sitekey="0x4AAAAAADkIZlIrHcRTlD08"
-          data-theme="auto"
-          data-response-field-name="cf-turnstile-response"></div>
-        <p class="sl-contact-note" data-msg-id="sondeLife.content.contact.rateLimitNote">Submissions are rate-limited by source IP and require a valid Turnstile token.</p>
-        <button class="sl-action sl-action-primary sl-contact-submit" type="submit" data-msg-id="sondeLife.content.contact.fields.submit">Send message</button>
-        <p class="sl-contact-privacy" data-msg-id="sondeLife.content.contact.privacyNote">We use this message only to respond to your inquiry.</p>
+        <span class="sl-contact-cell">
+          <label class="contact-consent"><input type="checkbox" value="true" required data-error-id="contact-error-consent" aria-errormessage="contact-error-consent">
+            <span><span data-msg-id="sondeLife.content.contact.fields.consent">By submitting this form, you ask Sonde to respond to this inquiry.</span> <a href="../policy/privacy/" data-msg-id="sondeLife.content.contact.fields.consentPrivacyLink">See our Privacy notice.</a></span>
+          </label>
+          <span class="sl-field-error" id="contact-error-consent" hidden data-msg-id="sondeLife.content.contact.errors.consent">Check this box so we can respond to your inquiry.</span>
+        </span>
+        <div class="cf-turnstile contact-turnstile" data-sitekey="0x4AAAAAADkIZlIrHcRTlD08" data-size="flexible" data-theme="auto" data-response-field-name="cf-turnstile-response"></div>
+        <p class="contact-note" data-msg-id="sondeLife.content.contact.rateLimitNote">Submissions are rate-limited by source IP and require a valid Turnstile token.</p>
+        <button class="btn btn-primary contact-submit" type="submit" data-msg-id="sondeLife.content.contact.fields.submit">Send message</button>
+        <p class="contact-privacy" data-msg-id="sondeLife.content.contact.privacyNote">We use this message only to respond to your inquiry.</p>
       </form>
+      <div role="alert">
+        <div class="contact-error" id="contact-error" tabindex="-1" hidden>
+          <p><span data-msg-id="sondeLife.content.contact.sendError">Something went wrong. Please try again or reach us at</span> <a translate="no" href="mailto:contact@sonde.tech">contact@sonde.tech</a><span data-msg-id="sondeLife.content.contact.sendErrorAfterEmail">.</span></p>
+        </div>
+        <div class="contact-error" id="contact-turnstile-error" tabindex="-1" hidden>
+          <p><span data-msg-id="sondeLife.content.contact.turnstileError">The anti-spam check could not load, so this form cannot be sent. What you typed is still here; please email us at</span> <a translate="no" href="mailto:contact@sonde.tech">contact@sonde.tech</a><span data-msg-id="sondeLife.content.contact.turnstileErrorAfterEmail">.</span></p>
+        </div>
+      </div>
       <noscript>
-        <p class="sl-contact-noscript-note">
-          <span data-msg-id="sondeLife.contact.noscriptNote">This form requires JavaScript for Turnstile verification. Please email us directly:</span>
-          <a href="mailto:contact@sonde.life">contact@sonde.life</a>
+        <p class="contact-noscript-note">
+          <span data-msg-id="sondeLife.content.contact.noscriptNote">This form requires JavaScript for Turnstile verification. Please email us directly:</span>
+          <a translate="no" href="mailto:contact@sonde.tech">contact@sonde.tech</a>
         </p>
       </noscript>
     </div>
-    <div class="sl-contact-success-state" id="contact-success" hidden aria-live="polite">
-      <h2 data-msg-id="sondeLife.content.contact.successTitle">Message sent</h2>
-      <p data-msg-id="sondeLife.content.contact.successBody">Thanks for reaching out. We will be in touch soon.</p>
-    </div>
-    <div class="sl-contact-error-state" id="contact-error" hidden aria-live="assertive">
-      <p>
-        <span data-msg-id="sondeLife.contact.errorMessage">Something went wrong. Please try again or reach us at</span>
-        <a href="mailto:contact@sonde.life">contact@sonde.life</a>.
-      </p>
-    </div>
-    <div class="sl-contact-aside">
-      <div class="sl-contact-email-fallback">
-        <p data-msg-id="sondeLife.content.contact.emailFallbackLabel">Or reach us directly:</p>
-        <a class="sl-contact-mail" href="mailto:contact@sonde.life">contact@sonde.life</a>
+    <div class="sl-contact-status" role="status">
+      <div class="contact-success" id="contact-success" hidden tabindex="-1">
+        <h2 data-msg-id="sondeLife.content.contact.successTitle">Message sent</h2>
+        <p data-msg-id="sondeLife.content.contact.successBody">Thanks for reaching out. We will be in touch soon.</p>
       </div>
-      <figure class="sl-contact-qr">
-        <img src="../sonde-life-qr.svg" alt="QR code linking to sonde.life" data-msg-alt-id="sondeLife.content.contact.qrAlt">
-        <figcaption data-msg-id="sondeLife.content.contact.qrCaption">Scan to open sonde.life on your device</figcaption>
-      </figure>
+    </div>
+    <div class="contact-aside">
+      <p data-msg-id="sondeLife.content.contact.emailFallbackLabel">Or reach us directly:</p>
+      <a class="contact-mail" translate="no" href="mailto:contact@sonde.tech">contact@sonde.tech</a>
     </div>
   </div>
 </section>
-<section class="sl-section sl-contact-block" aria-labelledby="feedback-title">
-  <div class="sl-section-inner sl-contact-grid">
-    <div class="sl-contact-left">
-      <div class="sl-feedback-block" id="feedback" aria-labelledby="feedback-title">
-        <h2 id="feedback-title" data-msg-id="sondeLife.feedback.sectionTitle">Have feedback?</h2>
-        <p class="sl-lede" data-msg-id="sondeLife.feedback.sectionLede">Sonde’s methodology, scoring, and product roadmap all take public input. Both feedback streams below land in the public Daylight discussions repo.</p>
-        <div class="sl-feedback-grid">
-          <article class="sl-feedback-card">
-            <h3 data-msg-id="sondeLife.compliance.methodology.feedback.title">Help Us Improve</h3>
-            <p data-msg-id="sondeLife.compliance.methodology.feedback.body">The Sonde Score is a living standard. We publish the methodology and invite public feedback because accessibility is too important for closed-door decisions. Your expertise makes it better. If you have feedback on our methodology, severity weights, or scoring approach, we want to hear from you.</p>
-            <a class="sl-action sl-action-primary sl-feedback-cta" href="https://github.com/sondeinc/daylight/discussions/categories/methodology" target="_blank" rel="noopener noreferrer" data-msg-id="sondeLife.compliance.methodology.feedback.cta">Share feedback on the Daylight Project</a>
-          </article>
-          <article class="sl-feedback-card">
-            <h3 data-msg-id="sondeLife.feedback.title">Help shape Sonde</h3>
-            <p data-msg-id="sondeLife.feedback.body">We’d love your input on Sonde’s methodology, scoring, and product roadmap. If you have feedback on which frameworks Sonde should support next, what your compliance workflow needs, or where the architecture should expand, the public Daylight discussions are where the team is listening.</p>
-            <a class="sl-action sl-action-primary sl-feedback-cta" href="https://github.com/sondeinc/daylight/discussions/categories/sonde" target="_blank" rel="noopener noreferrer" data-msg-id="sondeLife.feedback.cta">Open a Sonde product discussion</a>
-          </article>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="sl-section-inner sl-voyage-inner">
-    <a class="sl-arrival-link sl-arrival-link-bottom sl-voyage-link" href="../arrival.html">
-      <svg class="sl-voyage-probe" viewBox="-40 -40 80 80" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg">
-  <defs>
-    <linearGradient id="sl-voyage-dishGrad" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0%" stop-color="#f8faff"/>
-      <stop offset="40%" stop-color="#e8eef8"/>
-      <stop offset="100%" stop-color="#d0d8e8"/>
-    </linearGradient>
-    <linearGradient id="sl-voyage-busGrad" x1="0" y1="0" x2="0.3" y2="1">
-      <stop offset="0%" stop-color="#d8c888"/>
-      <stop offset="50%" stop-color="#c8b878"/>
-      <stop offset="100%" stop-color="#a89848"/>
-    </linearGradient>
-    <linearGradient id="sl-voyage-rtgGrad" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0%" stop-color="#9a8a7a"/>
-      <stop offset="100%" stop-color="#7a6a5a"/>
-    </linearGradient>
-  </defs>
-  <g transform="rotate(-40)">
-    <line x1="-6" y1="-1.5" x2="-32" y2="-8" stroke="#99a4b0" stroke-width="1" stroke-linecap="round"/>
-    <circle cx="-32" cy="-8" r="1.5" fill="#aab4bc" stroke="#778" stroke-width="0.5"/>
-    <line x1="-6" y1="3" x2="-25" y2="12" stroke="#889098" stroke-width="1.5"/>
-    <g transform="translate(-25, 12) rotate(20)">
-      <rect x="-3" y="-6" width="6" height="12" rx="0.8" fill="url(#sl-voyage-rtgGrad)" stroke="#556" stroke-width="0.8"/>
-      <line x1="-3" y1="-3" x2="3" y2="-3" stroke="#6a5a4a" stroke-width="0.5"/>
-      <line x1="-3" y1="0" x2="3" y2="0" stroke="#6a5a4a" stroke-width="0.5"/>
-      <line x1="-3" y1="3" x2="3" y2="3" stroke="#6a5a4a" stroke-width="0.5"/>
-    </g>
-    <line x1="-3" y1="-8" x2="-9" y2="-18" stroke="#889098" stroke-width="1.2"/>
-    <rect x="-14" y="-22" width="10" height="6" rx="1" fill="#99a4b0" stroke="#556" stroke-width="0.8"/>
-    <circle cx="-8" cy="-19" r="1.8" fill="#334455" stroke="#556" stroke-width="0.6"/>
-    <path d="M9,-22 Q25,-16 25,0 Q25,16 9,22" fill="url(#sl-voyage-dishGrad)" stroke="#556677" stroke-width="1.5" stroke-linejoin="round"/>
-    <path d="M11,-18 Q22,-12 22,0 Q22,12 11,18" fill="#d0d8e8" opacity="0.3"/>
-    <line x1="11" y1="-10" x2="21" y2="0" stroke="#778899" stroke-width="1"/>
-    <line x1="11" y1="10" x2="21" y2="0" stroke="#778899" stroke-width="1"/>
-    <line x1="9" y1="0" x2="21" y2="0" stroke="#778899" stroke-width="1"/>
-    <circle cx="21" cy="0" r="2.8" fill="#f0f4fc" stroke="#667788" stroke-width="0.8"/>
-    <polygon points="-3,-8 9,-8 12,-5 12,5 9,8 -3,8 -6,5 -6,-5" fill="url(#sl-voyage-busGrad)" stroke="#556" stroke-width="1.2"/>
-    <line x1="0" y1="-8" x2="0" y2="8" stroke="#a89848" stroke-width="0.5" opacity="0.5"/>
-    <line x1="4" y1="-8" x2="4" y2="8" stroke="#a89848" stroke-width="0.5" opacity="0.5"/>
-    <path d="M-8,-3 L-12,-5 L-12,5 L-8,3 Z" fill="#778088" stroke="#556" stroke-width="0.8"/>
-    <g class="sl-voyage-jets" opacity="0.8">
-      <ellipse cx="-29" cy="0" rx="8" ry="3.5" fill="#ff7722" opacity="0.2"/>
-      <ellipse cx="-23" cy="0" rx="5.5" ry="2.5" fill="#ffaa44" opacity="0.5"/>
-      <ellipse cx="-18" cy="0" rx="3.5" ry="1.8" fill="#ffcc66"/>
-    </g>
-  </g>
-</svg>
-
-      <span data-msg-id="sondeLife.content.contact.voyageLink">Follow Sonde's voyage through the history of software.</span>
-    </a>
-  </div>
-</section>
-<script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
 <script>
   (function () {
   var form = document.querySelector('[data-contact-form]');
-  if (!form) return;
-  if (!form.getAttribute('action')) return;
+  if (!form || !form.getAttribute('action')) return;
   var submitBtn = form.querySelector('[type="submit"]');
-  if (!submitBtn) return;
+  var widget = form.querySelector('.cf-turnstile');
   var formWrapper = document.getElementById('contact-form-region');
   var successEl = document.getElementById('contact-success');
   var errorEl = document.getElementById('contact-error');
+  var turnstileErrorEl = document.getElementById('contact-turnstile-error');
+  var controls = Array.prototype.slice.call(form.querySelectorAll('[data-error-id]'));
+  var TURNSTILE_SRC = 'https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit&onload=__sondeContactTurnstileReady';
 
   var submitting = false;
+  var turnstileRequested = false;
+  var widgetId = null;
 
-  // Keep the submit button disabled until every required field is filled and the
-  // consent checkbox is checked (and while a submit is in flight). checkValidity()
-  // encodes the field+consent constraints, so re-evaluate on each edit: the button
-  // enables the moment the form becomes submittable and disables again if a field
-  // is cleared, consent is unchecked, or a request is mid-flight.
-  function syncSubmitState() {
-    submitBtn.disabled = submitting || !form.checkValidity();
+  // Each required control shows its own message, linked by aria-describedby, only while it is invalid.
+  function showValidity(control) {
+    var message = document.getElementById(control.getAttribute('data-error-id'));
+    var valid = control.checkValidity();
+    message.hidden = valid;
+    if (valid) {
+      control.removeAttribute('aria-invalid');
+      control.removeAttribute('aria-describedby');
+    } else {
+      control.setAttribute('aria-invalid', 'true');
+      control.setAttribute('aria-describedby', message.id);
+    }
+    return valid;
   }
-  form.addEventListener('input', syncSubmitState);
-  form.addEventListener('change', syncSubmitState);
-  syncSubmitState();
 
-  form.addEventListener('submit', function (e) {
-    e.preventDefault();
-    if (submitting) { return; }
+  function onEdit(event) {
+    loadTurnstile();
+    var control = event.target;
+    if (control.hasAttribute && control.hasAttribute('aria-invalid')) showValidity(control);
+  }
+
+  // Cloudflare's anti-spam check loads on the visitor's first use of the form, not with the page.
+  function loadTurnstile() {
+    if (turnstileRequested || !widget) return;
+    turnstileRequested = true;
+    window.__sondeContactTurnstileReady = function () {
+      widgetId = window.turnstile.render(widget, {
+        sitekey: widget.getAttribute('data-sitekey'),
+        size: widget.getAttribute('data-size') || 'flexible',
+        theme: widget.getAttribute('data-theme') || 'auto',
+        'response-field-name': widget.getAttribute('data-response-field-name') || 'cf-turnstile-response',
+        'expired-callback': resetTurnstile,
+      });
+    };
+    var script = document.createElement('script');
+    script.src = TURNSTILE_SRC;
+    script.async = true;
+    script.onerror = function () {
+      turnstileErrorEl.hidden = false;
+      form.setAttribute('aria-describedby', turnstileErrorEl.id);
+    };
+    document.head.appendChild(script);
+  }
+
+  // A Turnstile token can be used once, so a failed send or an expired token needs a fresh check.
+  function resetTurnstile() {
+    if (widgetId !== null && window.turnstile) window.turnstile.reset(widgetId);
+  }
+
+  form.addEventListener('focusin', loadTurnstile);
+  form.addEventListener('input', onEdit);
+  form.addEventListener('change', onEdit);
+
+  form.addEventListener('submit', function (event) {
+    event.preventDefault();
+    if (submitting) return;
+    loadTurnstile();
+    var firstInvalid = null;
+    controls.forEach(function (control) {
+      if (!showValidity(control) && !firstInvalid) firstInvalid = control;
+    });
+    if (firstInvalid) {
+      firstInvalid.focus();
+      return;
+    }
     submitting = true;
-    if (errorEl) { errorEl.hidden = true; }
-    submitBtn.disabled = true;
+    errorEl.hidden = true;
     submitBtn.setAttribute('aria-busy', 'true');
 
     var ctrl = new AbortController();
@@ -1120,335 +1181,151 @@
     })
       .then(function (res) {
         clearTimeout(timer);
-        if (res.ok || res.status === 202) {
-          if (formWrapper) { formWrapper.hidden = true; }
-          if (successEl) { successEl.hidden = false; }
-        } else {
-          throw new Error('HTTP ' + res.status);
-        }
+        if (!res.ok && res.status !== 202) throw new Error('HTTP ' + res.status);
+        formWrapper.hidden = true;
+        successEl.hidden = false;
+        successEl.focus();
       })
       .catch(function () {
         clearTimeout(timer);
         submitting = false;
         submitBtn.removeAttribute('aria-busy');
-        syncSubmitState();
-        if (errorEl) { errorEl.hidden = false; }
+        resetTurnstile();
+        errorEl.hidden = false;
+        errorEl.focus();
       });
   });
 }());
 
 </script>
 
-    <div hidden aria-hidden="true">
-      <span data-msg-id="sondeLife.metadata.description">Sonde checks the software your team ships for accessibility, compliance, and quality — and shows you exactly what to fix.</span>
-      <span data-msg-id="sondeLife.metadata.home.title">Sonde - Software That Understands Software</span>
-      <span data-msg-id="sondeLife.metadata.overview.title">AI Safety - Sonde</span>
-      <span data-msg-id="sondeLife.metadata.secureAutonomousAgents.title">Secure Autonomous Agents - Sonde</span>
-      <span data-msg-id="sondeLife.metadata.explore.title">Explore - Sonde</span>
-      <span data-msg-id="sondeLife.metadata.architecture.title">Architecture - Sonde</span>
-      <span data-msg-id="sondeLife.metadata.methodology.title">Methodology - Sonde</span>
-      <span data-msg-id="sondeLife.metadata.compliance.title">Compliance - Sonde</span>
-      <span data-msg-id="sondeLife.metadata.compliance-how-it-works.title">How It Works - Sonde</span>
-      <span data-msg-id="sondeLife.metadata.scribe.title">Proof - Sonde</span>
-      <span data-msg-id="sondeLife.metadata.contact.title">Contact - Sonde</span>
-      <span data-msg-id="sondeLife.metadata.solutions.accessibility.title">Accessibility - Sonde</span>
-      <span data-msg-id="sondeLife.metadata.solutions.compliance.title">Compliance Solutions - Sonde</span>
-      <span data-msg-id="sondeLife.metadata.solutions.aiGovernance.title">AI Guardrails - Sonde</span>
-      <span data-msg-id="sondeLife.metadata.solutions.developer.title">Development - Sonde</span>
-      <span data-msg-id="settings.trigger.aria">Open display settings</span>
-      <span data-msg-id="settings.trigger.title">Settings</span>
-      <span data-msg-id="settings.theme.legend">Theme</span>
-      <span data-msg-id="settings.mode.legend">Mode</span>
-      <span data-msg-id="settings.language.legend">Language</span>
-      <span data-msg-id="settings.theme.ultraviolet">Ultraviolet</span>
-      <span data-msg-id="settings.theme.infrared">Infrared</span>
-      <span data-msg-id="settings.theme.daylight">Daylight</span>
-      <span data-msg-id="settings.theme.auto">Auto</span>
-      <span data-msg-id="settings.theme.light">Light</span>
-      <span data-msg-id="settings.theme.dark">Dark</span>
-      <span data-msg-id="settings.theme.hc">High Contrast</span>
+
+  </main>
+<footer class="site-footer">
+  <div class="container footer-row">
+    <div>&copy; 2026 Sonde. <span data-msg-id="sondeLife.footer.rights">All rights reserved.</span></div>
+    <div>
+      <a href="../policy/privacy/" data-msg-id="sondeLife.footer.privacy">Privacy</a> &middot;
+      <a href="../policy/cookies/" data-msg-id="sondeLife.footer.cookies">Cookie and browser storage</a> &middot;
+      <a href="../sitemap/" data-msg-id="sondeLife.footer.siteMap">Site map</a>
     </div>
-    <footer class="sl-footer">
-    <div class="sl-footer-inner">
+  </div>
+</footer>
+<section class="cookie-banner" data-sonde-consent-banner hidden role="region" aria-label="Analytics choice" data-msg-aria-label-id="sondeLife.consent.region" data-search-exclude>
+  <div class="container cookie-banner-row">
+    <p data-sonde-consent-status></p>
+    <span hidden data-sonde-consent-message="available" data-msg-id="sondeLife.consent.available">An analytics choice is available at the bottom of the page.</span>
+    <span hidden data-sonde-consent-message="allowed" data-msg-id="sondeLife.consent.allowed">Analytics allowed.</span>
+    <span hidden data-sonde-consent-message="off" data-msg-id="sondeLife.consent.off">Analytics kept off.</span>
+    <span hidden data-sonde-consent-message="browser-off" data-msg-id="sondeLife.consent.browserOff">Your browser asks sites not to track you, so analytics stays off.</span>
+    <div class="cookie-banner-actions">
+      <button class="btn btn-secondary" type="button" data-sonde-consent-choice="off" data-msg-id="sondeLife.consent.keepOff">Keep analytics off</button>
+      <button class="btn btn-secondary" type="button" data-sonde-consent-choice="allowed" data-msg-id="sondeLife.consent.allow">Allow analytics</button>
     </div>
-  </footer>
+  </div>
+</section>
+<div hidden aria-hidden="true">
+  <span data-msg-id="sondeLife.metadata.description">Sonde checks the software your team ships for accessibility, compliance, and quality — and shows you exactly what to fix.</span>
+  <span data-msg-id="sondeLife.metadata.home.title">Sonde - Software That Understands Software</span>
+  <span data-msg-id="sondeLife.metadata.solutions.title">Solutions - Sonde</span>
+  <span data-msg-id="sondeLife.metadata.solutions-ai-guardrails.title">AI Guardrails & Governance - Sonde</span>
+  <span data-msg-id="sondeLife.metadata.solutions-compliance.title">Compliance & Accessibility - Sonde</span>
+  <span data-msg-id="sondeLife.metadata.how-it-works.title">How it works - Sonde</span>
+  <span data-msg-id="sondeLife.metadata.pricing.title">Pricing - Sonde</span>
+  <span data-msg-id="sondeLife.metadata.resources.title">Resources - Sonde</span>
+  <span data-msg-id="sondeLife.metadata.resources-explore.title">Explore - Sonde</span>
+  <span data-msg-id="sondeLife.metadata.resources-methodology.title">Methodology - Sonde</span>
+  <span data-msg-id="sondeLife.metadata.resources-architecture.title">Architecture - Sonde</span>
+  <span data-msg-id="sondeLife.metadata.company.title">Company - Sonde</span>
+  <span data-msg-id="sondeLife.metadata.proof.title">Proof - Sonde</span>
+  <span data-msg-id="sondeLife.metadata.contact.title">Contact - Sonde</span>
+  <span data-msg-id="sondeLife.metadata.policy-cookies.title">Cookie and browser storage - Sonde</span>
+  <span data-msg-id="sondeLife.metadata.policy-privacy.title">Privacy Policy - Sonde</span>
+  <span data-msg-id="sondeLife.metadata.policy-subprocessors.title">Subprocessors - Sonde</span>
+  <span data-msg-id="sondeLife.metadata.sitemap.title">Site map - Sonde</span>
+  <span data-msg-id="settings.trigger.aria">Open display settings</span>
+  <span data-msg-id="settings.trigger.title">Settings</span>
+  <span data-msg-id="settings.theme.legend">Theme</span>
+  <span data-msg-id="settings.mode.legend">Mode</span>
+  <span data-msg-id="settings.language.legend">Language</span>
+  <span data-msg-id="settings.theme.ultraviolet">Ultraviolet</span>
+  <span data-msg-id="settings.theme.infrared">Infrared</span>
+  <span data-msg-id="settings.theme.daylight">Daylight</span>
+  <span data-msg-id="settings.theme.auto">Auto</span>
+  <span data-msg-id="settings.theme.light">Light</span>
+  <span data-msg-id="settings.theme.dark">Dark</span>
+  <span data-msg-id="settings.theme.hc">High Contrast</span>
 </div>
 <script>
-  // The settings-dropdown outside-click/Escape dismissal is single-sourced in the shared Daylight hydration
-  // script (buildDaylightHydrationScript settingsDropdownDismiss); it closes any open .settings-dropdown and
-  // returns focus to its summary.
+  (function () {
+    var main = document.getElementById('main-content');
+    if (!main || main.querySelector('[data-explore]')) return;
 
-  // Bookmarkable section headers. Every <h2 id> / <h3 id> inside a content
-  // <section> becomes a clickable anchor that writes its id to the URL hash
-  // via history.pushState — readers can copy the address bar to deep-link
-  // into a section. Skipped on /explore/ because Helm owns the hash for
-  // canonical kind/rack/node selection state — and Helm's `sl-page-explore`
-  // class lives on the <div class="sl-page">, NOT on <body>, so the guard
-  // tests `root.classList`, not `document.body.classList`.
-  //
-  // A single delegated click listener handles every wrapped heading so we
-  // don't allocate one listener per match. Headings whose first child is
-  // already an <a> are skipped — wrapping a link inside a link is invalid
-  // HTML (and would shadow whatever destination the heading already had).
-  // Headings that are themselves nested inside an ancestor <a> (e.g. a
-  // card-heading inside a whole-card link, like the homepage pillar cards)
-  // are skipped for the same reason — wrapping would still nest an <a>
-  // inside the card's own <a>. After pushState we move focus to the
-  // heading itself so screen-reader users hear the new section announced
-  // rather than staying on the link.
-  (() => {
-    const root = document.querySelector('.sl-page');
-    if (!root) return;
-    if (root.classList.contains('sl-page-explore')) return;
-
-    function wrapAnchorHeadings() {
-      const headings = root.querySelectorAll('section h2[id], section h3[id]');
-      headings.forEach((heading) => {
-        if (!heading.id) return;
-        const firstElement = heading.firstElementChild;
-        if (firstElement && firstElement.classList.contains('sl-anchor-heading-link')) return;
-        if (firstElement && firstElement.tagName === 'A') return;
-        if (heading.closest('a')) return;
-        // Accordion summary headings are already the <details> toggle; wrapping
-        // one in an <a> nests a link inside <summary> (invalid HTML + an axe
-        // nested-interactive failure). They stay linkable via their id.
-        if (heading.closest('summary')) return;
-        heading.classList.add('sl-anchor-heading');
-        const link = document.createElement('a');
-        link.className = 'sl-anchor-heading-link';
+    function wrapHeadings() {
+      var headings = main.querySelectorAll('h2[id], h3[id], h4[id]');
+      for (var i = 0; i < headings.length; i += 1) {
+        var heading = headings[i];
+        var first = heading.firstElementChild;
+        if (first && first.tagName === 'A') continue;
+        if (heading.closest('a, summary, button, [hidden]')) continue;
+        var link = document.createElement('a');
+        link.className = 'heading-anchor';
         link.href = '#' + heading.id;
         while (heading.firstChild) link.appendChild(heading.firstChild);
         heading.appendChild(link);
-      });
+      }
     }
 
-    wrapAnchorHeadings();
-    document.addEventListener('sonde:locale-applied', wrapAnchorHeadings);
+    function targetOf(fragment) {
+      if (!fragment || fragment.length < 2) return null;
+      var raw = fragment.slice(1);
+      var decoded = null;
+      try {
+        decoded = document.getElementById(decodeURIComponent(raw));
+      } catch (error) {
+        decoded = null;
+      }
+      return decoded || document.getElementById(raw);
+    }
 
-    root.addEventListener('click', (event) => {
-      if (event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
-      const link = event.target instanceof Element
-        ? event.target.closest('.sl-anchor-heading-link')
-        : null;
-      if (!link || !root.contains(link)) return;
-      const heading = link.closest('.sl-anchor-heading');
-      if (!heading || !heading.id) return;
+    function reveal(target, focus) {
+      for (var node = target; node && node !== document.body; node = node.parentElement) {
+        if (node.tagName === 'DETAILS' && !node.open) node.open = true;
+      }
+      var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      target.scrollIntoView({ behavior: reduce ? 'auto' : 'smooth', block: 'start' });
+      if (!focus) return;
+      if (!target.hasAttribute('tabindex')) target.setAttribute('tabindex', '-1');
+      target.focus({ preventScroll: true });
+    }
+
+    wrapHeadings();
+    document.addEventListener('sonde:locale-applied', wrapHeadings);
+
+    main.addEventListener('click', function (event) {
+      if (event.defaultPrevented || event.button !== 0 || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
+      var link = event.target instanceof Element ? event.target.closest('a.heading-anchor') : null;
+      if (!link) return;
+      var fragment = link.getAttribute('href');
+      var target = targetOf(fragment);
+      if (!target) return;
       event.preventDefault();
-      history.pushState(null, '', '#' + heading.id);
-      // A self-link may point into a collapsed accordion. pushState does NOT
-      // fire hashchange, so open the ancestor <details> here directly before
-      // scrolling — otherwise the scroll lands on hidden content.
-      openAnchorAncestorDetails(heading);
-      heading.scrollIntoView({ behavior: anchorScrollBehavior(), block: 'start' });
-      // tabindex=-1 keeps the heading out of the normal tab order while
-      // letting .focus() succeed; preventScroll avoids fighting with the
-      // scroll above.
-      heading.tabIndex = -1;
-      heading.focus({ preventScroll: true });
-      flashAnchorTarget(heading);
+      history.pushState(null, '', fragment);
+      reveal(target.closest('h2, h3, h4') || target, true);
     });
 
-    // Honor prefers-reduced-motion for anchor scrolling: vestibular-sensitive
-    // readers get an instant jump instead of a smooth animated scroll. Anchor
-    // reveals are the primary way readers reach collapsed accordion sections,
-    // so this fires far more often than before.
-    function anchorScrollBehavior() {
-      return window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches
-        ? 'auto'
-        : 'smooth';
+    function revealHash() {
+      var target = targetOf(window.location.hash);
+      if (target) reveal(target, false);
     }
-
-    function anchorTargetFromFragment(fragment) {
-      if (!fragment || fragment.length <= 1 || fragment.charAt(0) !== '#') return null;
-      try {
-        return document.getElementById(decodeURIComponent(fragment.slice(1)));
-      } catch (_error) {
-        return document.getElementById(fragment.slice(1));
-      }
-    }
-
-    function openAnchorAncestorDetails(target) {
-      if (!target) return;
-      let ancestor = target.parentElement;
-      while (ancestor) {
-        if (ancestor.matches && ancestor.matches('details') && !ancestor.open) ancestor.open = true;
-        ancestor = ancestor.parentElement;
-      }
-    }
-
-    function isNativelyFocusable(element) {
-      const tagName = element.tagName ? element.tagName.toLowerCase() : '';
-      return (
-        tagName === 'summary' ||
-        tagName === 'button' ||
-        tagName === 'select' ||
-        tagName === 'textarea' ||
-        (tagName === 'a' && element.hasAttribute('href')) ||
-        (tagName === 'input' && element.getAttribute('type') !== 'hidden')
-      );
-    }
-
-    function focusAnchorTarget(target) {
-      if (!target || !target.focus) return;
-      if (!target.hasAttribute('tabindex') && !isNativelyFocusable(target)) {
-        target.setAttribute('tabindex', '-1');
-      }
-      try {
-        target.focus({ preventScroll: true });
-      } catch (_error) {
-        target.focus();
-      }
-    }
-
-    function flashAnchorTarget(target) {
-      if (!target) return;
-      target.classList.remove('sl-anchor-target-beacon');
-      void target.offsetWidth;
-      target.classList.add('sl-anchor-target-beacon');
-      window.setTimeout(() => {
-        target.classList.remove('sl-anchor-target-beacon');
-      }, 1600);
-    }
-
-    function revealHashTarget(options = {}) {
-      const target = anchorTargetFromFragment(window.location.hash);
-      if (!target) return;
-      openAnchorAncestorDetails(target);
-      if (options.scroll && target.scrollIntoView) {
-        target.scrollIntoView({ behavior: anchorScrollBehavior(), block: 'start' });
-      }
-      focusAnchorTarget(target);
-      flashAnchorTarget(target);
-    }
-
-    // Scroll on hashchange too: after openAnchorAncestorDetails reveals a
-    // collapsed section, the target must be scrolled into view (a bare
-    // hashchange previously opened but did not re-scroll, leaving a
-    // just-revealed panel off-screen). Deep-links from Daylight's redirect and
-    // in-page fragment links both flow through here.
-    window.addEventListener('hashchange', () => revealHashTarget({ scroll: true }));
-    if (window.location.hash) {
-      window.requestAnimationFrame(() => revealHashTarget({ scroll: true }));
-    }
-  })();
-
-  // Pause the voyage-probe engine plume when the SVG is off-screen so the
-  // CSS keyframe loop doesn't burn cycles for content the user can't see.
-  // Falls back to "always animate" (matches pre-observer behavior) when the
-  // browser lacks IntersectionObserver. prefers-reduced-motion is handled
-  // separately via the CSS media query — this observer doesn't fight it.
-  (() => {
-    if (typeof IntersectionObserver === 'undefined') return;
-    const probes = document.querySelectorAll('.sl-voyage-probe');
-    if (probes.length === 0) return;
-    const observer = new IntersectionObserver((entries) => {
-      for (const entry of entries) {
-        entry.target.dataset.slOnscreen = entry.isIntersecting ? 'true' : 'false';
-      }
-    }, { rootMargin: '64px' });
-    for (const probe of probes) observer.observe(probe);
-  })();
-
-  // Contact-page trailer quotes rotate from localized strings. The quote bank
-  // is ordinary DOM with data-msg-id attributes, so locale changes update the
-  // source list first; this rotator refreshes from that list after each
-  // sonde:locale-applied event.
-  (() => {
-    const root = document.querySelector('[data-sl-trailer-quotes]');
-    if (!root) return;
-    const current = root.querySelector('[data-sl-trailer-current]');
-    const bank = Array.from(root.querySelectorAll('.sl-trailer-quote-bank li'));
-    if (!current || bank.length < 2) return;
-    const reduceMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    const quoteIntervalMs = 10000;
-    let quotes = [];
-    let idx = 0;
-    let timer = 0;
-
-    function refreshQuotes() {
-      quotes = bank.map((item) => item.textContent.trim()).filter((quote) => quote.length > 0);
-      idx = Math.max(0, quotes.indexOf(current.textContent.trim()));
-      if (quotes[idx]) current.textContent = quotes[idx];
-    }
-
-    function showNext() {
-      if (quotes.length < 2) return;
-      idx = (idx + 1) % quotes.length;
-      if (reduceMotion) {
-        current.textContent = quotes[idx];
-        return;
-      }
-      root.dataset.slTransition = 'out';
-      window.setTimeout(() => {
-        current.textContent = quotes[idx];
-        root.dataset.slTransition = 'in';
-        window.setTimeout(() => {
-          delete root.dataset.slTransition;
-        }, 430);
-      }, 430);
-    }
-
-    function schedule() {
-      window.clearInterval(timer);
-      refreshQuotes();
-      timer = window.setInterval(showNext, quoteIntervalMs);
-    }
-
-    schedule();
-    document.addEventListener('sonde:locale-applied', schedule);
-  })();
-
-  // Roving tabindex for the primary nav links. Without this, the primary
-  // nav <a>s plus brand + search + settings put many elements in the
-  // primary nav's tab sequence, tripping the keyboard-trap probe's "deep
-  // focus region" heuristic. With roving tabindex the top-level nav items
-  // collapse to a single tab stop; arrow keys (Left/Right, Up/Down)
-  // navigate within the group, Home/End jump to the ends. The aria-current
-  // item is the active tab stop on page load (or the first item if no route
-  // is current). The selector picks up direct <a> children (all seven nav
-  // items today) plus any top-level <details> > <summary> — the nav has no
-  // <details> now, but the clause keeps the group correct if a dropdown is
-  // ever reintroduced.
-  (() => {
-    const navLinks = document.querySelector('.sl-nav-links');
-    if (!navLinks) return;
-    const links = Array.from(navLinks.querySelectorAll(':scope > a, :scope > details > summary'));
-    if (links.length < 2) return;
-    let activeIdx = links.findIndex((el) => el.getAttribute('aria-current') === 'page');
-    if (activeIdx < 0) activeIdx = 0;
-    for (let i = 0; i < links.length; i += 1) {
-      links[i].setAttribute('tabindex', i === activeIdx ? '0' : '-1');
-    }
-    function focusLink(rawIdx) {
-      const idx = ((rawIdx % links.length) + links.length) % links.length;
-      for (const link of links) link.setAttribute('tabindex', '-1');
-      links[idx].setAttribute('tabindex', '0');
-      links[idx].focus();
-    }
-    navLinks.addEventListener('keydown', (event) => {
-      const idx = links.indexOf(document.activeElement);
-      if (idx < 0) return;
-      if (event.key === 'ArrowRight' || event.key === 'ArrowDown') {
-        event.preventDefault();
-        focusLink(idx + 1);
-      } else if (event.key === 'ArrowLeft' || event.key === 'ArrowUp') {
-        event.preventDefault();
-        focusLink(idx - 1);
-      } else if (event.key === 'Home') {
-        event.preventDefault();
-        focusLink(0);
-      } else if (event.key === 'End') {
-        event.preventDefault();
-        focusLink(links.length - 1);
-      }
-    });
+    window.addEventListener('hashchange', revealHash);
+    if (window.location.hash) revealHash();
   })();
 </script>
 
 
-
-  </main>
-  <script src="../assets/leaderboard.js?v=-7tzeco"></script>
-  <script src="../assets/search-dialog-bundle.js?v=-ocun41" defer></script>
+  <script src="../assets/immutable/leaderboard.df428abc18725d52.js"></script>
+  <script src="../assets/immutable/search-dialog-bundle.b668c77a9575fe79.js" defer></script>
+  <script src="../assets/scribe-page-pdf.js?v=xm0tyf" defer></script>
 </body>
 </html>

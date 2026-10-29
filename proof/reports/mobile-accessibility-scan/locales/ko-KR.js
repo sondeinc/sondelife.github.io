@@ -1,8 +1,13 @@
 window.__SCRIBE_LOCALES__ = window.__SCRIBE_LOCALES__ || {};
 window.__SCRIBE_LOCALES__["ko-KR"] = {
-  "fallbackCount": 86,
+  "fallbackCount": 78,
   "locale": "ko-KR",
   "messages": {
+    "scribe.leaderboard.language": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "언어"
+    },
     "scribe.report.action.backToFinding": {
       "fallback": false,
       "reviewed": true,
@@ -27,6 +32,11 @@ window.__SCRIBE_LOCALES__["ko-KR"] = {
       "fallback": false,
       "reviewed": true,
       "text": "스니펫 접기"
+    },
+    "scribe.report.action.completeFixPlan": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "수정 계획 완료"
     },
     "scribe.report.action.copyDiagramLink": {
       "fallback": false,
@@ -176,7 +186,7 @@ window.__SCRIBE_LOCALES__["ko-KR"] = {
     "scribe.report.asset.overviewScreenshot.caption": {
       "fallback": false,
       "reviewed": true,
-      "text": "공개 sonde.life 규정 준수 페이지에서 사용하는 주석이 있는 증거 렌더러에서 복사되었습니다."
+      "text": "공개 sonde.tech 규정 준수 페이지에서 사용하는 주석이 있는 증거 렌더러에서 복사되었습니다."
     },
     "scribe.report.asset.theme.daylight": {
       "fallback": false,
@@ -197,6 +207,26 @@ window.__SCRIBE_LOCALES__["ko-KR"] = {
       "fallback": false,
       "reviewed": true,
       "text": "자외선 테마"
+    },
+    "scribe.report.autofixFilter.fullExplanation": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "전체 설명"
+    },
+    "scribe.report.autofixFilter.help": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "개수는 현재 검색 및 필터 결과가 반영된 것입니다. 미리보기는 생성된 변경 사항을 보여주며, 변경 사항이 적용되었거나 검증되었음을 의미하지는 않습니다."
+    },
+    "scribe.report.autofixFilter.label": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "자동 수정 결과"
+    },
+    "scribe.report.autofixFilter.preview": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "자동 수정 미리보기"
     },
     "scribe.report.brand": {
       "fallback": false,
@@ -268,6 +298,36 @@ window.__SCRIBE_LOCALES__["ko-KR"] = {
       "reviewed": true,
       "text": "ORM 및 데이터베이스 기능"
     },
+    "scribe.report.complianceExample.0.criterion": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "WCAG 1.1.1 비텍스트 콘텐츠"
+    },
+    "scribe.report.complianceExample.0.finding.fix": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "제품별 .accessibilityLabel(...) 수정자를 추가하거나 .accessibilityHidden(true)로 Image를 장식용 이미지로 표시하세요."
+    },
+    "scribe.report.complianceExample.0.finding.summary": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "SwiftUI의 Image는 프로필 알림 행에서 의미 있는 콘텐츠로 렌더링되지만 accessibilityLabel이 노출되지 않습니다."
+    },
+    "scribe.report.complianceExample.0.finding.title": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "SwiftUI 이미지에 접근 가능한 이름이 누락되었습니다"
+    },
+    "scribe.report.complianceExample.0.framework": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "SwiftUI - iOS 런타임"
+    },
+    "scribe.report.complianceExample.0.runtime": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "iPhone 17 Pro의 SwiftUI 피스처 리플레이에서 캡처되었습니다."
+    },
     "scribe.report.complianceExample.source.summary": {
       "fallback": false,
       "reviewed": true,
@@ -323,6 +383,16 @@ window.__SCRIBE_LOCALES__["ko-KR"] = {
       "reviewed": true,
       "text": "내용"
     },
+    "scribe.report.control.emptyPlan": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "사용 가능한 구조화된 계획 내용이 없습니다."
+    },
+    "scribe.report.control.evictedPlan": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "플랜 내용이 해제되었습니다. 플랜을 다시 열어 로드하십시오."
+    },
     "scribe.report.control.expandContents": {
       "fallback": false,
       "reviewed": true,
@@ -338,10 +408,10 @@ window.__SCRIBE_LOCALES__["ko-KR"] = {
       "reviewed": true,
       "text": "첫번째"
     },
-    "scribe.report.control.language": {
+    "scribe.report.control.guidance": {
       "fallback": false,
       "reviewed": true,
-      "text": "언어"
+      "text": "안내"
     },
     "scribe.report.control.languageSearch": {
       "fallback": false,
@@ -352,6 +422,11 @@ window.__SCRIBE_LOCALES__["ko-KR"] = {
       "fallback": false,
       "reviewed": true,
       "text": "마지막"
+    },
+    "scribe.report.control.loadingPlan": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "수정 플랜을 로드하는 중…"
     },
     "scribe.report.control.locale": {
       "fallback": false,
@@ -368,6 +443,11 @@ window.__SCRIBE_LOCALES__["ko-KR"] = {
       "reviewed": true,
       "text": "다음"
     },
+    "scribe.report.control.outsideResults": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "현재 결과 범위 밖"
+    },
     "scribe.report.control.pageSize": {
       "fallback": false,
       "reviewed": true,
@@ -377,6 +457,11 @@ window.__SCRIBE_LOCALES__["ko-KR"] = {
       "fallback": false,
       "reviewed": true,
       "text": "페이지"
+    },
+    "scribe.report.control.pinContents": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "탐색 고정"
     },
     "scribe.report.control.previousPage": {
       "fallback": false,
@@ -388,6 +473,11 @@ window.__SCRIBE_LOCALES__["ko-KR"] = {
       "reviewed": true,
       "text": "리더 보기"
     },
+    "scribe.report.control.referenceMaterial": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "참조 자료"
+    },
     "scribe.report.control.remediation": {
       "fallback": false,
       "reviewed": true,
@@ -397,6 +487,16 @@ window.__SCRIBE_LOCALES__["ko-KR"] = {
       "fallback": false,
       "reviewed": true,
       "text": "결과"
+    },
+    "scribe.report.control.retryPlan": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "플랜 로드 재시도"
+    },
+    "scribe.report.control.returnToResults": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "결과로 돌아가기"
     },
     "scribe.report.control.search": {
       "fallback": false,
@@ -408,10 +508,20 @@ window.__SCRIBE_LOCALES__["ko-KR"] = {
       "reviewed": true,
       "text": "심각도"
     },
+    "scribe.report.control.targetUnavailable": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "이 보고서 대상은 사용할 수 없습니다"
+    },
     "scribe.report.control.theme": {
       "fallback": false,
       "reviewed": true,
       "text": "테마"
+    },
+    "scribe.report.control.unavailablePlan": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "플랜을 불러올 수 없습니다. 전체 플랜을 열거나 다시 시도하십시오."
     },
     "scribe.report.discoverySummary.title": {
       "fallback": false,
@@ -473,6 +583,11 @@ window.__SCRIBE_LOCALES__["ko-KR"] = {
       "reviewed": true,
       "text": "소스 추적"
     },
+    "scribe.report.finding.autofix.title": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "자동 수정"
+    },
     "scribe.report.finding.missingAlt.summary": {
       "fallback": false,
       "reviewed": true,
@@ -493,6 +608,66 @@ window.__SCRIBE_LOCALES__["ko-KR"] = {
       "reviewed": true,
       "text": "검색 결과는 검색 엔진에 의해 표시되지 않는다."
     },
+    "scribe.report.fixPlan.component.acceptanceCriteria": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "수용 기준"
+    },
+    "scribe.report.fixPlan.component.beforeAfter": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "이전/이후 (자동 수정 미리보기)"
+    },
+    "scribe.report.fixPlan.component.closeFullScreen": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "닫기"
+    },
+    "scribe.report.fixPlan.component.fixGroups": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "수정 그룹"
+    },
+    "scribe.report.fixPlan.component.fixed": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "수정됨"
+    },
+    "scribe.report.fixPlan.component.fullScreen": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "전체 화면 차이 보기"
+    },
+    "scribe.report.fixPlan.component.manualSteps": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "수동 개선 단계"
+    },
+    "scribe.report.fixPlan.component.original": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "원본"
+    },
+    "scribe.report.fixPlan.component.source": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "소스"
+    },
+    "scribe.report.fixPlan.component.splitView": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "분할 보기"
+    },
+    "scribe.report.fixPlan.component.unifiedView": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "통합 보기"
+    },
+    "scribe.report.fixPlan.component.verify": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "확인"
+    },
     "scribe.report.fixPlan.pageTitle": {
       "fallback": false,
       "reviewed": true,
@@ -507,6 +682,61 @@ window.__SCRIBE_LOCALES__["ko-KR"] = {
       "fallback": false,
       "reviewed": true,
       "text": "Sonde가 저장소를 분석할 때 자동으로 생성되는 실시간 개별 발견 사항별 수정 계획을 제공합니다. 이 선별된 쇼케이스는 보고서를 시연하며, 실제 예제에서 자동 개선 프로세스를 확인하세요."
+    },
+    "scribe.report.metric.displayedScale": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "표시된 척도"
+    },
+    "scribe.report.metric.explanation": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "각 행에는 해당 정렬 참조 밴드와 측정값이 표시됩니다. 메트릭 레이블은 어느 방향이 더 좋은지를 나타냅니다."
+    },
+    "scribe.report.metric.higherIsBetter": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "높을수록 좋습니다"
+    },
+    "scribe.report.metric.lowerIsBetter": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "낮을수록 좋습니다"
+    },
+    "scribe.report.metric.measured": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "측정됨"
+    },
+    "scribe.report.metric.measuredResults": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "측정 결과"
+    },
+    "scribe.report.metric.referenceRanges": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "참조 범위"
+    },
+    "scribe.report.metric.severity.critical": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "심각"
+    },
+    "scribe.report.metric.severity.good": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "좋음"
+    },
+    "scribe.report.metric.severity.high": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "높음"
+    },
+    "scribe.report.metric.severity.moderate": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "보통"
     },
     "scribe.report.mobileAccessibilityScan.metric.complianceMatrix.body": {
       "fallback": false,
@@ -623,27 +853,7 @@ window.__SCRIBE_LOCALES__["ko-KR"] = {
       "reviewed": true,
       "text": "개요"
     },
-    "scribe.report.repositoryHealth.fixPlan.generic.step.inspect": {
-      "fallback": false,
-      "reviewed": true,
-      "text": "{sourcePath}의 {startLine}~{endLine}행에서 인용된 소스 범위를 확인하세요."
-    },
-    "scribe.report.repositoryHealth.fixPlan.generic.step.resolve": {
-      "fallback": false,
-      "reviewed": true,
-      "text": "발견을 해결하는 가장 작은 소스 변경으로 개선을 적용하세요."
-    },
-    "scribe.report.repositoryHealth.fixPlan.generic.step.validate": {
-      "fallback": false,
-      "reviewed": true,
-      "text": "수정을 게시하기 전에 저장소 상태 보고서와 가장 가까운 패키지 수준 테스트를 다시 실행합니다."
-    },
-    "scribe.report.repositoryHealth.fixPlan.scope": {
-      "fallback": false,
-      "reviewed": true,
-      "text": "목표 소스 범위: {sourcePath} 라인 {startLine} 을 통해 {endLine}."
-    },
-    "scribe.report.sondeScore.title": {
+    "scribe.report.repositoryHealth.sondeScore.title": {
       "fallback": false,
       "reviewed": true,
       "text": "Sonde Score"
@@ -687,6 +897,16 @@ window.__SCRIBE_LOCALES__["ko-KR"] = {
       "fallback": false,
       "reviewed": true,
       "text": "출처"
+    },
+    "scribe.report.term.altText": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "대체 텍스트"
+    },
+    "scribe.report.term.textAlternative": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "텍스트 대체물"
     },
     "scribe.report.theme.daylight": {
       "fallback": false,

@@ -32,6 +32,7 @@ The SwiftUI Image renders as meaningful content in the profile alert row but exp
 
 **Recommended next step:** Add a product-specific .accessibilityLabel(...) modifier or mark the Image decorative with .accessibilityHidden(true) before the UIKit transform runs.
 
+
 <a id="source-swiftui-missing-image-label"></a>
 ### SwiftUI — iOS runtime source evidence
 
@@ -40,7 +41,7 @@ packages/cockpit-mobile/src/commonMain/resources/mobileA11yFixtures/swiftUiMissi
 Source: packages/cockpit-mobile/src/commonMain/resources/mobileA11yFixtures/swiftUiMissingImageLabel.swift L4-L12
 
 ```swift
-struct SondeDogfoodSwiftUIImageMissingLabel: View {
+struct SondeSiriusSwiftUIImageMissingLabel: View {
   var body: some View {
     HStack {
       Image(systemName: "person.crop.circle.badge.exclamationmark")
@@ -65,21 +66,21 @@ The local runtime accessibility tree exposes the cockpit-mobile seed icon action
 
 **Recommended next step:** Add a descriptive Compose semantics contentDescription or replace the icon-only action with a labelled control, then rerun the local runtime handoff.
 
+
 <a id="source-1-runtime-scan-found-symbolic-accessible-name"></a>
 ### Compose Multiplatform — Android runtime source evidence
 
-packages/cockpit-mobile/src/commonMain/kotlin/sonde/mobile/ui/SondeMobileApp.kt L490-L499
+packages/cockpit-mobile/src/commonMain/resources/mobileA11yFixtures/composeSymbolicAction.kt L15-L23
 
-Source: packages/cockpit-mobile/src/commonMain/kotlin/sonde/mobile/ui/SondeMobileApp.kt L490-L499
+Source: packages/cockpit-mobile/src/commonMain/resources/mobileA11yFixtures/composeSymbolicAction.kt L15-L23
 
 ```kotlin
 @Composable
-private fun StaticDogfoodSeedAction() {
+fun ComposeSymbolicActionFixture() {
   IconButton(
     onClick = {},
-    modifier = Modifier.testTag(SondeMobileTestTags.StaticDogfoodSeedAction),
+    modifier = Modifier.testTag(SondeMobileTestTags.StaticSiriusFixtureAction),
   ) {
-    // Intentional Phase 9 M2 dogfood seed: symbolic text is not a durable accessible name.
     Text("!")
   }
 }
@@ -99,21 +100,21 @@ The local runtime accessibility tree exposes the cockpit-mobile seed icon action
 
 **Recommended next step:** Add a descriptive Compose semantics contentDescription or replace the icon-only action with a labelled control, then rerun the local runtime handoff.
 
+
 <a id="source-2-runtime-scan-found-symbolic-accessible-name"></a>
 ### Compose Multiplatform — iOS runtime source evidence
 
-packages/cockpit-mobile/src/commonMain/kotlin/sonde/mobile/ui/SondeMobileApp.kt L490-L499
+packages/cockpit-mobile/src/commonMain/resources/mobileA11yFixtures/composeSymbolicAction.kt L15-L23
 
-Source: packages/cockpit-mobile/src/commonMain/kotlin/sonde/mobile/ui/SondeMobileApp.kt L490-L499
+Source: packages/cockpit-mobile/src/commonMain/resources/mobileA11yFixtures/composeSymbolicAction.kt L15-L23
 
 ```kotlin
 @Composable
-private fun StaticDogfoodSeedAction() {
+fun ComposeSymbolicActionFixture() {
   IconButton(
     onClick = {},
-    modifier = Modifier.testTag(SondeMobileTestTags.StaticDogfoodSeedAction),
+    modifier = Modifier.testTag(SondeMobileTestTags.StaticSiriusFixtureAction),
   ) {
-    // Intentional Phase 9 M2 dogfood seed: symbolic text is not a durable accessible name.
     Text("!")
   }
 }
@@ -133,12 +134,13 @@ The real cockpit-mobile Findings screen renders compact 32dp filter controls bel
 
 **Recommended next step:** Increase the filter control hit area to at least 48dp while preserving the grouped findings density.
 
+
 <a id="source-4-filter-control-target-is-below-android-minimum"></a>
 ### Compose Multiplatform — Android Material Design (target size) source evidence
 
-packages/cockpit-mobile/src/commonMain/kotlin/sonde/mobile/ui/SondeMobileApp.kt L648-L662
+packages/cockpit-mobile/src/commonMain/kotlin/sonde/mobile/ui/SondeMobileApp.kt L651-L665
 
-Source: packages/cockpit-mobile/src/commonMain/kotlin/sonde/mobile/ui/SondeMobileApp.kt L648-L662
+Source: packages/cockpit-mobile/src/commonMain/kotlin/sonde/mobile/ui/SondeMobileApp.kt L651-L665
 
 ```kotlin
 @Composable
@@ -172,12 +174,13 @@ Under the iOS runtime text scale used by the simulator, the Findings group headi
 
 **Recommended next step:** Keep heading text wrapping and spacing token-driven so the heading reflows instead of truncating.
 
+
 <a id="source-5-finding-group-heading-can-truncate-under-ios-dynamic-type"></a>
 ### Compose Multiplatform — iOS HIG (Dynamic Type) source evidence
 
-packages/cockpit-mobile/src/commonMain/kotlin/sonde/mobile/ui/SondeMobileApp.kt L530-L538
+packages/cockpit-mobile/src/commonMain/kotlin/sonde/mobile/ui/SondeMobileApp.kt L533-L541
 
-Source: packages/cockpit-mobile/src/commonMain/kotlin/sonde/mobile/ui/SondeMobileApp.kt L530-L538
+Source: packages/cockpit-mobile/src/commonMain/kotlin/sonde/mobile/ui/SondeMobileApp.kt L533-L541
 
 ```kotlin
     groups.forEach { group ->
@@ -205,21 +208,21 @@ The Android render of the summary action accent shipped a different color than t
 
 **Recommended next step:** Align the rendered Android color to the brand token defined in the design system.
 
+
 <a id="source-6-mobile-brand-consistency-gap-color-drift"></a>
 ### Compose Multiplatform — Material Design brand parity (color drift) source evidence
 
-packages/cockpit-mobile/src/commonMain/kotlin/sonde/mobile/ui/SondeMobileApp.kt L490-L499
+packages/cockpit-mobile/src/commonMain/resources/mobileA11yFixtures/composeSymbolicAction.kt L15-L23
 
-Source: packages/cockpit-mobile/src/commonMain/kotlin/sonde/mobile/ui/SondeMobileApp.kt L490-L499
+Source: packages/cockpit-mobile/src/commonMain/resources/mobileA11yFixtures/composeSymbolicAction.kt L15-L23
 
 ```kotlin
 @Composable
-private fun StaticDogfoodSeedAction() {
+fun ComposeSymbolicActionFixture() {
   IconButton(
     onClick = {},
-    modifier = Modifier.testTag(SondeMobileTestTags.StaticDogfoodSeedAction),
+    modifier = Modifier.testTag(SondeMobileTestTags.StaticSiriusFixtureAction),
   ) {
-    // Intentional Phase 9 M2 dogfood seed: symbolic text is not a durable accessible name.
     Text("!")
   }
 }
@@ -238,6 +241,7 @@ The UIImageView is explicitly marked as an accessibility element with the image 
 **Criterion:** WCAG 1.1.1 Non-text Content
 
 **Recommended next step:** Set avatarImageView.accessibilityLabel to a product-specific string in UIKit before the SwiftUI transform runs.
+
 
 <a id="source-7-objective-c-uikit-image-is-missing-an-accessible-name"></a>
 ### UIKit (Objective-C) — iOS runtime source evidence
@@ -270,6 +274,7 @@ The `<Text>` element ships with a hardcoded English `accessibilityLabel`. Non-En
 
 **Recommended next step:** Replace the hardcoded `accessibilityLabel` with a localized string lookup before the screen reaches non-English users.
 
+
 <a id="source-8-hardcoded-english-accessibility-label"></a>
 ### React Native — source trace source evidence
 
@@ -299,6 +304,7 @@ The bare `<img>` element exposes no alt attribute, so assistive technologies ann
 
 **Recommended next step:** Add `alt="description"` for informative images, or `alt=""` for decorative images.
 
+
 <a id="source-9-image-element-is-missing-the-alt-attribute"></a>
 ### React / TSX — WCAG static probe source evidence
 
@@ -326,15 +332,16 @@ The `<button tabindex="3">` creates an unpredictable focus order — positive ta
 
 **Recommended next step:** Use `tabindex="0"` to add to natural tab order, or `tabindex="-1"` for programmatic focus only. Rearrange DOM order to achieve the desired tab sequence.
 
+
 <a id="source-10-element-has-positive-tabindex-focus-order"></a>
 ### HTML — WCAG mechanical probe source evidence
 
-packages/fix-apply/e2e/fixtures/wcagMechanicalHtml/index.html L11-L14
+packages/fix-apply/e2e/fixtures/wcagMechanicalHtml/index.html L13-L16
 
-Source: packages/fix-apply/e2e/fixtures/wcagMechanicalHtml/index.html L11-L14
+Source: packages/fix-apply/e2e/fixtures/wcagMechanicalHtml/index.html L13-L16
 
 ```html
-  </nav>
+  </header>
   <img src="logo.png">
   <button tabindex="3">Submit</button>
 </body>
@@ -347,4 +354,4 @@ Live, per-finding fix plans generate automatically when Sonde analyzes your repo
 
 Fix plan link: [Fix plan](../fix-plans/finding-missing-alt/index.html#fix-plan-missing-alt)
 
-Public export note: this Markdown file is derived from public runtime manifest and search-source data only. Private receipt data and gated fix-plan prose are excluded.
+Public export note: this Markdown file is derived from authorized public report data. Private receipt data and gated fix-plan prose are excluded.

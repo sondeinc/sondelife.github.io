@@ -3,6 +3,39 @@ window.__SCRIBE_ANCHORS__ = [
     "anchorId": "section-overview",
     "indexTermIds": [],
     "label": {
+      "catalogDependency": {
+        "explicitLocales": [],
+        "lookupLocales": [
+          "en-US",
+          "en-GB",
+          "en-CA",
+          "fr-CA",
+          "en-IN",
+          "cy-GB",
+          "gd-GB",
+          "ga-GB",
+          "es-US",
+          "es-MX",
+          "de-DE",
+          "fr-FR",
+          "es-ES",
+          "it-IT",
+          "nl-NL",
+          "pl-PL",
+          "pt-PT",
+          "pt-BR",
+          "ro-RO",
+          "sv-SE",
+          "ko-KR",
+          "zh-CN",
+          "ja-JP",
+          "hi-IN"
+        ],
+        "reportFallbacks": {
+          "ja-JP": "概要"
+        },
+        "sourceLocale": "en-US"
+      },
       "defaultLocale": "en-US",
       "defaultText": "Overview",
       "icuArgs": {},
@@ -34,6 +67,41 @@ window.__SCRIBE_ANCHORS__ = [
       "nist-fedramp-coverage"
     ],
     "label": {
+      "catalogDependency": {
+        "explicitLocales": [
+          "es-US"
+        ],
+        "lookupLocales": [
+          "en-US",
+          "en-GB",
+          "en-CA",
+          "fr-CA",
+          "en-IN",
+          "cy-GB",
+          "gd-GB",
+          "ga-GB",
+          "es-US",
+          "es-MX",
+          "de-DE",
+          "fr-FR",
+          "es-ES",
+          "it-IT",
+          "nl-NL",
+          "pl-PL",
+          "pt-PT",
+          "pt-BR",
+          "ro-RO",
+          "sv-SE",
+          "ko-KR",
+          "zh-CN",
+          "ja-JP",
+          "hi-IN"
+        ],
+        "reportFallbacks": {
+          "ja-JP": "NIST コントロールには明示的な対応アーティファクト境界が必要です"
+        },
+        "sourceLocale": "en-US"
+      },
       "defaultLocale": "en-US",
       "defaultText": "NIST controls require explicit supported-artifact boundaries",
       "icuArgs": {},
@@ -60,6 +128,41 @@ window.__SCRIBE_ANCHORS__ = [
     "parentAnchorId": "section-overview",
     "role": "finding",
     "shareSummary": {
+      "catalogDependency": {
+        "explicitLocales": [
+          "es-US"
+        ],
+        "lookupLocales": [
+          "en-US",
+          "en-GB",
+          "en-CA",
+          "fr-CA",
+          "en-IN",
+          "cy-GB",
+          "gd-GB",
+          "ga-GB",
+          "es-US",
+          "es-MX",
+          "de-DE",
+          "fr-FR",
+          "es-ES",
+          "it-IT",
+          "nl-NL",
+          "pl-PL",
+          "pt-PT",
+          "pt-BR",
+          "ro-RO",
+          "sv-SE",
+          "ko-KR",
+          "zh-CN",
+          "ja-JP",
+          "hi-IN"
+        ],
+        "reportFallbacks": {
+          "ja-JP": "Scribe パッケージは OSCAL Assessment Results を出力し、未対応の SSP/SAP/SAR/POA&M を完成扱いしません。"
+        },
+        "sourceLocale": "en-US"
+      },
       "defaultLocale": "en-US",
       "defaultText": "The Scribe package emits OSCAL Assessment Results and refuses to label unsupported SSP/SAP/SAR/POA&M artifacts as complete.",
       "icuArgs": {},
@@ -80,6 +183,41 @@ window.__SCRIBE_ANCHORS__ = [
       }
     },
     "shareTitle": {
+      "catalogDependency": {
+        "explicitLocales": [
+          "es-US"
+        ],
+        "lookupLocales": [
+          "en-US",
+          "en-GB",
+          "en-CA",
+          "fr-CA",
+          "en-IN",
+          "cy-GB",
+          "gd-GB",
+          "ga-GB",
+          "es-US",
+          "es-MX",
+          "de-DE",
+          "fr-FR",
+          "es-ES",
+          "it-IT",
+          "nl-NL",
+          "pl-PL",
+          "pt-PT",
+          "pt-BR",
+          "ro-RO",
+          "sv-SE",
+          "ko-KR",
+          "zh-CN",
+          "ja-JP",
+          "hi-IN"
+        ],
+        "reportFallbacks": {
+          "ja-JP": "NIST コントロールには明示的な対応アーティファクト境界が必要です"
+        },
+        "sourceLocale": "en-US"
+      },
       "defaultLocale": "en-US",
       "defaultText": "NIST controls require explicit supported-artifact boundaries",
       "icuArgs": {},
@@ -106,6 +244,41 @@ window.__SCRIBE_ANCHORS__ = [
       "nist-fedramp-coverage"
     ],
     "label": {
+      "catalogDependency": {
+        "explicitLocales": [
+          "es-US"
+        ],
+        "lookupLocales": [
+          "en-US",
+          "en-GB",
+          "en-CA",
+          "fr-CA",
+          "en-IN",
+          "cy-GB",
+          "gd-GB",
+          "ga-GB",
+          "es-US",
+          "es-MX",
+          "de-DE",
+          "fr-FR",
+          "es-ES",
+          "it-IT",
+          "nl-NL",
+          "pl-PL",
+          "pt-PT",
+          "pt-BR",
+          "ro-RO",
+          "sv-SE",
+          "ko-KR",
+          "zh-CN",
+          "ja-JP",
+          "hi-IN"
+        ],
+        "reportFallbacks": {
+          "ja-JP": "NIST カバレッジ解釈"
+        },
+        "sourceLocale": "en-US"
+      },
       "defaultLocale": "en-US",
       "defaultText": "NIST coverage interpretation",
       "icuArgs": {},
@@ -133,6 +306,41 @@ window.__SCRIBE_ANCHORS__ = [
     "parentAnchorId": "finding-nist-coverage",
     "role": "source-snippet",
     "shareSummary": {
+      "catalogDependency": {
+        "explicitLocales": [
+          "es-US"
+        ],
+        "lookupLocales": [
+          "en-US",
+          "en-GB",
+          "en-CA",
+          "fr-CA",
+          "en-IN",
+          "cy-GB",
+          "gd-GB",
+          "ga-GB",
+          "es-US",
+          "es-MX",
+          "de-DE",
+          "fr-FR",
+          "es-ES",
+          "it-IT",
+          "nl-NL",
+          "pl-PL",
+          "pt-PT",
+          "pt-BR",
+          "ro-RO",
+          "sv-SE",
+          "ko-KR",
+          "zh-CN",
+          "ja-JP",
+          "hi-IN"
+        ],
+        "reportFallbacks": {
+          "ja-JP": "生のロールアップ JSON と OSCAL Assessment Results はダウンロードとして提供されます。"
+        },
+        "sourceLocale": "en-US"
+      },
       "defaultLocale": "en-US",
       "defaultText": "Raw rollup JSON and OSCAL Assessment Results ship as downloads; this section summarizes the source-backed control accounting.",
       "icuArgs": {},
@@ -153,6 +361,41 @@ window.__SCRIBE_ANCHORS__ = [
       }
     },
     "shareTitle": {
+      "catalogDependency": {
+        "explicitLocales": [
+          "es-US"
+        ],
+        "lookupLocales": [
+          "en-US",
+          "en-GB",
+          "en-CA",
+          "fr-CA",
+          "en-IN",
+          "cy-GB",
+          "gd-GB",
+          "ga-GB",
+          "es-US",
+          "es-MX",
+          "de-DE",
+          "fr-FR",
+          "es-ES",
+          "it-IT",
+          "nl-NL",
+          "pl-PL",
+          "pt-PT",
+          "pt-BR",
+          "ro-RO",
+          "sv-SE",
+          "ko-KR",
+          "zh-CN",
+          "ja-JP",
+          "hi-IN"
+        ],
+        "reportFallbacks": {
+          "ja-JP": "NIST カバレッジ解釈"
+        },
+        "sourceLocale": "en-US"
+      },
       "defaultLocale": "en-US",
       "defaultText": "NIST coverage interpretation",
       "icuArgs": {},
@@ -179,6 +422,41 @@ window.__SCRIBE_ANCHORS__ = [
       "nist-fedramp-coverage"
     ],
     "label": {
+      "catalogDependency": {
+        "explicitLocales": [
+          "es-US"
+        ],
+        "lookupLocales": [
+          "en-US",
+          "en-GB",
+          "en-CA",
+          "fr-CA",
+          "en-IN",
+          "cy-GB",
+          "gd-GB",
+          "ga-GB",
+          "es-US",
+          "es-MX",
+          "de-DE",
+          "fr-FR",
+          "es-ES",
+          "it-IT",
+          "nl-NL",
+          "pl-PL",
+          "pt-PT",
+          "pt-BR",
+          "ro-RO",
+          "sv-SE",
+          "ko-KR",
+          "zh-CN",
+          "ja-JP",
+          "hi-IN"
+        ],
+        "reportFallbacks": {
+          "ja-JP": "NIST ファミリーカバレッジマトリクス"
+        },
+        "sourceLocale": "en-US"
+      },
       "defaultLocale": "en-US",
       "defaultText": "NIST family coverage matrix",
       "icuArgs": {},
@@ -206,6 +484,41 @@ window.__SCRIBE_ANCHORS__ = [
     "parentAnchorId": "finding-nist-coverage",
     "role": "diagram",
     "shareSummary": {
+      "catalogDependency": {
+        "explicitLocales": [
+          "es-US"
+        ],
+        "lookupLocales": [
+          "en-US",
+          "en-GB",
+          "en-CA",
+          "fr-CA",
+          "en-IN",
+          "cy-GB",
+          "gd-GB",
+          "ga-GB",
+          "es-US",
+          "es-MX",
+          "de-DE",
+          "fr-FR",
+          "es-ES",
+          "it-IT",
+          "nl-NL",
+          "pl-PL",
+          "pt-PT",
+          "pt-BR",
+          "ro-RO",
+          "sv-SE",
+          "ko-KR",
+          "zh-CN",
+          "ja-JP",
+          "hi-IN"
+        ],
+        "reportFallbacks": {
+          "ja-JP": "ファミリー別の件数で充足、顧客コンテキスト必要、未充足を区別します。"
+        },
+        "sourceLocale": "en-US"
+      },
       "defaultLocale": "en-US",
       "defaultText": "Family-level counts distinguish satisfied controls from context-required and unsatisfied controls.",
       "icuArgs": {},
@@ -226,6 +539,41 @@ window.__SCRIBE_ANCHORS__ = [
       }
     },
     "shareTitle": {
+      "catalogDependency": {
+        "explicitLocales": [
+          "es-US"
+        ],
+        "lookupLocales": [
+          "en-US",
+          "en-GB",
+          "en-CA",
+          "fr-CA",
+          "en-IN",
+          "cy-GB",
+          "gd-GB",
+          "ga-GB",
+          "es-US",
+          "es-MX",
+          "de-DE",
+          "fr-FR",
+          "es-ES",
+          "it-IT",
+          "nl-NL",
+          "pl-PL",
+          "pt-PT",
+          "pt-BR",
+          "ro-RO",
+          "sv-SE",
+          "ko-KR",
+          "zh-CN",
+          "ja-JP",
+          "hi-IN"
+        ],
+        "reportFallbacks": {
+          "ja-JP": "NIST ファミリーカバレッジマトリクス"
+        },
+        "sourceLocale": "en-US"
+      },
       "defaultLocale": "en-US",
       "defaultText": "NIST family coverage matrix",
       "icuArgs": {},
@@ -252,6 +600,37 @@ window.__SCRIBE_ANCHORS__ = [
       "nist-fedramp-coverage"
     ],
     "label": {
+      "catalogDependency": {
+        "explicitLocales": [],
+        "lookupLocales": [
+          "en-US",
+          "en-GB",
+          "en-CA",
+          "fr-CA",
+          "en-IN",
+          "cy-GB",
+          "gd-GB",
+          "ga-GB",
+          "es-US",
+          "es-MX",
+          "de-DE",
+          "fr-FR",
+          "es-ES",
+          "it-IT",
+          "nl-NL",
+          "pl-PL",
+          "pt-PT",
+          "pt-BR",
+          "ro-RO",
+          "sv-SE",
+          "ko-KR",
+          "zh-CN",
+          "ja-JP",
+          "hi-IN"
+        ],
+        "reportFallbacks": {},
+        "sourceLocale": "en-US"
+      },
       "defaultLocale": "en-US",
       "defaultText": "Fix plan",
       "icuArgs": {},
@@ -279,6 +658,37 @@ window.__SCRIBE_ANCHORS__ = [
     "parentAnchorId": "finding-nist-coverage",
     "role": "fix-plan",
     "shareSummary": {
+      "catalogDependency": {
+        "explicitLocales": [],
+        "lookupLocales": [
+          "en-US",
+          "en-GB",
+          "en-CA",
+          "fr-CA",
+          "en-IN",
+          "cy-GB",
+          "gd-GB",
+          "ga-GB",
+          "es-US",
+          "es-MX",
+          "de-DE",
+          "fr-FR",
+          "es-ES",
+          "it-IT",
+          "nl-NL",
+          "pl-PL",
+          "pt-PT",
+          "pt-BR",
+          "ro-RO",
+          "sv-SE",
+          "ko-KR",
+          "zh-CN",
+          "ja-JP",
+          "hi-IN"
+        ],
+        "reportFallbacks": {},
+        "sourceLocale": "en-US"
+      },
       "defaultLocale": "en-US",
       "defaultText": "Live, per-finding fix plans generate automatically when Sonde analyzes your repository. This curated showcase demonstrates the report; see automated remediation in action on a live example.",
       "icuArgs": {},
@@ -299,6 +709,37 @@ window.__SCRIBE_ANCHORS__ = [
       }
     },
     "shareTitle": {
+      "catalogDependency": {
+        "explicitLocales": [],
+        "lookupLocales": [
+          "en-US",
+          "en-GB",
+          "en-CA",
+          "fr-CA",
+          "en-IN",
+          "cy-GB",
+          "gd-GB",
+          "ga-GB",
+          "es-US",
+          "es-MX",
+          "de-DE",
+          "fr-FR",
+          "es-ES",
+          "it-IT",
+          "nl-NL",
+          "pl-PL",
+          "pt-PT",
+          "pt-BR",
+          "ro-RO",
+          "sv-SE",
+          "ko-KR",
+          "zh-CN",
+          "ja-JP",
+          "hi-IN"
+        ],
+        "reportFallbacks": {},
+        "sourceLocale": "en-US"
+      },
       "defaultLocale": "en-US",
       "defaultText": "Fix plan",
       "icuArgs": {},

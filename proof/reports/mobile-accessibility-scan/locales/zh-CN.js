@@ -1,8 +1,13 @@
 window.__SCRIBE_LOCALES__ = window.__SCRIBE_LOCALES__ || {};
 window.__SCRIBE_LOCALES__["zh-CN"] = {
-  "fallbackCount": 86,
+  "fallbackCount": 78,
   "locale": "zh-CN",
   "messages": {
+    "scribe.leaderboard.language": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "语言"
+    },
     "scribe.report.action.backToFinding": {
       "fallback": false,
       "reviewed": true,
@@ -27,6 +32,11 @@ window.__SCRIBE_LOCALES__["zh-CN"] = {
       "fallback": false,
       "reviewed": true,
       "text": "收缩片段"
+    },
+    "scribe.report.action.completeFixPlan": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "完成修复计划"
     },
     "scribe.report.action.copyDiagramLink": {
       "fallback": false,
@@ -176,7 +186,7 @@ window.__SCRIBE_LOCALES__["zh-CN"] = {
     "scribe.report.asset.overviewScreenshot.caption": {
       "fallback": false,
       "reviewed": true,
-      "text": "从公共 sonde.life 合规性页面中使用的相同的注释证据渲染器中复制。"
+      "text": "从公共 sonde.tech 合规性页面中使用的相同的注释证据渲染器中复制。"
     },
     "scribe.report.asset.theme.daylight": {
       "fallback": false,
@@ -197,6 +207,26 @@ window.__SCRIBE_LOCALES__["zh-CN"] = {
       "fallback": false,
       "reviewed": true,
       "text": "紫外線主題"
+    },
+    "scribe.report.autofixFilter.fullExplanation": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "完整说明"
+    },
+    "scribe.report.autofixFilter.help": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "计数反映当前的搜索和筛选条件。预览显示的是生成的更改，并不代表该更改已被应用或验证。"
+    },
+    "scribe.report.autofixFilter.label": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "自动修复结果"
+    },
+    "scribe.report.autofixFilter.preview": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "自动修复预览"
     },
     "scribe.report.brand": {
       "fallback": false,
@@ -268,6 +298,36 @@ window.__SCRIBE_LOCALES__["zh-CN"] = {
       "reviewed": true,
       "text": "ORM 与数据库能力"
     },
+    "scribe.report.complianceExample.0.criterion": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "WCAG 1.1.1 非文本内容"
+    },
+    "scribe.report.complianceExample.0.finding.fix": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "添加一个特定于产品的 .accessibilityLabel(...) 修饰符，或将图像标记为装饰性并使用 .accessibilityHidden(true)。"
+    },
+    "scribe.report.complianceExample.0.finding.summary": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "SwiftUI Image 在个人资料警报行中呈现为有意义的内容，但未提供 accessibilityLabel。"
+    },
+    "scribe.report.complianceExample.0.finding.title": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "SwiftUI 图像缺少可访问名称"
+    },
+    "scribe.report.complianceExample.0.framework": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "SwiftUI - iOS 运行时"
+    },
+    "scribe.report.complianceExample.0.runtime": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "由 iPhone 17 Pro 上的 SwiftUI 夹具重放捕获。"
+    },
     "scribe.report.complianceExample.source.summary": {
       "fallback": false,
       "reviewed": true,
@@ -323,6 +383,16 @@ window.__SCRIBE_LOCALES__["zh-CN"] = {
       "reviewed": true,
       "text": "目录 段次"
     },
+    "scribe.report.control.emptyPlan": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "没有可用的结构化计划内容。"
+    },
+    "scribe.report.control.evictedPlan": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "计划内容已释放。请重新打开计划以再次加载。"
+    },
     "scribe.report.control.expandContents": {
       "fallback": false,
       "reviewed": true,
@@ -338,10 +408,10 @@ window.__SCRIBE_LOCALES__["zh-CN"] = {
       "reviewed": true,
       "text": "第一次"
     },
-    "scribe.report.control.language": {
+    "scribe.report.control.guidance": {
       "fallback": false,
       "reviewed": true,
-      "text": "语言"
+      "text": "指南"
     },
     "scribe.report.control.languageSearch": {
       "fallback": false,
@@ -352,6 +422,11 @@ window.__SCRIBE_LOCALES__["zh-CN"] = {
       "fallback": false,
       "reviewed": true,
       "text": "最后"
+    },
+    "scribe.report.control.loadingPlan": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "正在加载修复计划…"
     },
     "scribe.report.control.locale": {
       "fallback": false,
@@ -368,6 +443,11 @@ window.__SCRIBE_LOCALES__["zh-CN"] = {
       "reviewed": true,
       "text": "下一步"
     },
+    "scribe.report.control.outsideResults": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "在当前结果之外"
+    },
     "scribe.report.control.pageSize": {
       "fallback": false,
       "reviewed": true,
@@ -377,6 +457,11 @@ window.__SCRIBE_LOCALES__["zh-CN"] = {
       "fallback": false,
       "reviewed": true,
       "text": "页次"
+    },
+    "scribe.report.control.pinContents": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "固定导航"
     },
     "scribe.report.control.previousPage": {
       "fallback": false,
@@ -388,6 +473,11 @@ window.__SCRIBE_LOCALES__["zh-CN"] = {
       "reviewed": true,
       "text": "读者视图"
     },
+    "scribe.report.control.referenceMaterial": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "参考资料"
+    },
     "scribe.report.control.remediation": {
       "fallback": false,
       "reviewed": true,
@@ -397,6 +487,16 @@ window.__SCRIBE_LOCALES__["zh-CN"] = {
       "fallback": false,
       "reviewed": true,
       "text": "结果"
+    },
+    "scribe.report.control.retryPlan": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "重试加载计划"
+    },
+    "scribe.report.control.returnToResults": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "返回结果"
     },
     "scribe.report.control.search": {
       "fallback": false,
@@ -408,10 +508,20 @@ window.__SCRIBE_LOCALES__["zh-CN"] = {
       "reviewed": true,
       "text": "严重程度"
     },
+    "scribe.report.control.targetUnavailable": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "此报告目标不可用"
+    },
     "scribe.report.control.theme": {
       "fallback": false,
       "reviewed": true,
       "text": "主题"
+    },
+    "scribe.report.control.unavailablePlan": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "无法加载计划。请打开完整计划或重试。"
     },
     "scribe.report.discoverySummary.title": {
       "fallback": false,
@@ -473,6 +583,11 @@ window.__SCRIBE_LOCALES__["zh-CN"] = {
       "reviewed": true,
       "text": "源跟踪"
     },
+    "scribe.report.finding.autofix.title": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "自动修复"
+    },
     "scribe.report.finding.missingAlt.summary": {
       "fallback": false,
       "reviewed": true,
@@ -493,6 +608,66 @@ window.__SCRIBE_LOCALES__["zh-CN"] = {
       "reviewed": true,
       "text": "没有封闭修复内容的公共发现摘要。"
     },
+    "scribe.report.fixPlan.component.acceptanceCriteria": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "验收标准"
+    },
+    "scribe.report.fixPlan.component.beforeAfter": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "修复前后（自动修复预览）"
+    },
+    "scribe.report.fixPlan.component.closeFullScreen": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "关闭"
+    },
+    "scribe.report.fixPlan.component.fixGroups": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "修复组"
+    },
+    "scribe.report.fixPlan.component.fixed": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "已修复"
+    },
+    "scribe.report.fixPlan.component.fullScreen": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "全屏对比"
+    },
+    "scribe.report.fixPlan.component.manualSteps": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "手动修复步骤"
+    },
+    "scribe.report.fixPlan.component.original": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "原始"
+    },
+    "scribe.report.fixPlan.component.source": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "源"
+    },
+    "scribe.report.fixPlan.component.splitView": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "拆分视图"
+    },
+    "scribe.report.fixPlan.component.unifiedView": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "统一视图"
+    },
+    "scribe.report.fixPlan.component.verify": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "验证"
+    },
     "scribe.report.fixPlan.pageTitle": {
       "fallback": false,
       "reviewed": true,
@@ -507,6 +682,61 @@ window.__SCRIBE_LOCALES__["zh-CN"] = {
       "fallback": false,
       "reviewed": true,
       "text": "当 Sonde 分析您的代码库时，会自动生成针对每个发现问题的实时修复计划。此精选展示演示了报告功能；请查看实时示例中的自动化修复操作。"
+    },
+    "scribe.report.metric.displayedScale": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "显示的刻度"
+    },
+    "scribe.report.metric.explanation": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "每行显示其自身的有序参考带和测量值。指标标签说明哪个方向更好。"
+    },
+    "scribe.report.metric.higherIsBetter": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "越高越好"
+    },
+    "scribe.report.metric.lowerIsBetter": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "越低越好"
+    },
+    "scribe.report.metric.measured": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "已测量"
+    },
+    "scribe.report.metric.measuredResults": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "测量结果"
+    },
+    "scribe.report.metric.referenceRanges": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "参考范围"
+    },
+    "scribe.report.metric.severity.critical": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "紧急"
+    },
+    "scribe.report.metric.severity.good": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "良好"
+    },
+    "scribe.report.metric.severity.high": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "高"
+    },
+    "scribe.report.metric.severity.moderate": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "中等"
     },
     "scribe.report.mobileAccessibilityScan.metric.complianceMatrix.body": {
       "fallback": false,
@@ -623,27 +853,7 @@ window.__SCRIBE_LOCALES__["zh-CN"] = {
       "reviewed": true,
       "text": "概 况"
     },
-    "scribe.report.repositoryHealth.fixPlan.generic.step.inspect": {
-      "fallback": false,
-      "reviewed": true,
-      "text": "验证 {sourcePath} 行 {startLine} 到 {endLine} 中的引用源范围。"
-    },
-    "scribe.report.repositoryHealth.fixPlan.generic.step.resolve": {
-      "fallback": false,
-      "reviewed": true,
-      "text": "使用解决发现的最小源变化应用补救。"
-    },
-    "scribe.report.repositoryHealth.fixPlan.generic.step.validate": {
-      "fallback": false,
-      "reviewed": true,
-      "text": "在发布修复之前,重新运行储存库运行状况报告和最接近的软件包级别测试。"
-    },
-    "scribe.report.repositoryHealth.fixPlan.scope": {
-      "fallback": false,
-      "reviewed": true,
-      "text": "目标源范围: {sourcePath} 行 {startLine} 到 {endLine}。"
-    },
-    "scribe.report.sondeScore.title": {
+    "scribe.report.repositoryHealth.sondeScore.title": {
       "fallback": false,
       "reviewed": true,
       "text": "Sonde Score"
@@ -687,6 +897,16 @@ window.__SCRIBE_LOCALES__["zh-CN"] = {
       "fallback": false,
       "reviewed": true,
       "text": "来源"
+    },
+    "scribe.report.term.altText": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "替代文本"
+    },
+    "scribe.report.term.textAlternative": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "文本替代方案"
     },
     "scribe.report.theme.daylight": {
       "fallback": false,

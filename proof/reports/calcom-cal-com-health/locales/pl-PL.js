@@ -1,8 +1,13 @@
 window.__SCRIBE_LOCALES__ = window.__SCRIBE_LOCALES__ || {};
 window.__SCRIBE_LOCALES__["pl-PL"] = {
-  "fallbackCount": 6,
+  "fallbackCount": 13,
   "locale": "pl-PL",
   "messages": {
+    "scribe.leaderboard.language": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Język"
+    },
     "scribe.report.action.backToFinding": {
       "fallback": false,
       "reviewed": true,
@@ -27,6 +32,11 @@ window.__SCRIBE_LOCALES__["pl-PL"] = {
       "fallback": false,
       "reviewed": true,
       "text": "Zwiń fragment"
+    },
+    "scribe.report.action.completeFixPlan": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Uzupełnij plan naprawy"
     },
     "scribe.report.action.copyDiagramLink": {
       "fallback": false,
@@ -138,6 +148,36 @@ window.__SCRIBE_LOCALES__["pl-PL"] = {
       "reviewed": true,
       "text": "Wyświetl źródło schematu"
     },
+    "scribe.report.actionPriorities.affectedLocations": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "{count, plural, one {# dotknięta lokalizacja} few {# dotknięte lokalizacje} other {# dotkniętych lokalizacji}}"
+    },
+    "scribe.report.actionPriorities.nextAction": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Następne działanie"
+    },
+    "scribe.report.actionPriorities.originalEvidence": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Wyświetl oryginalny dowód"
+    },
+    "scribe.report.actionPriorities.summary": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Priorytety te łączą wpływ, zasięg i dostępne dowody. Zacznij od góry, a następnie otwórz dotknięte lokalizacje, aby zapoznać się ze szczegółami technicznymi."
+    },
+    "scribe.report.actionPriorities.title": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Co naprawić w pierwszej kolejności"
+    },
+    "scribe.report.actionPriorities.why": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Dlaczego jest to ważne"
+    },
     "scribe.report.asset.export.markdown": {
       "fallback": false,
       "reviewed": true,
@@ -187,6 +227,26 @@ window.__SCRIBE_LOCALES__["pl-PL"] = {
       "fallback": false,
       "reviewed": true,
       "text": "Ultraviolet"
+    },
+    "scribe.report.autofixFilter.fullExplanation": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Pełne wyjaśnienie"
+    },
+    "scribe.report.autofixFilter.help": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Liczby odzwierciedlają aktualne wyszukiwanie i filtry. Podgląd pokazuje wygenerowaną zmianę. Nie potwierdza to, że zmiana została zastosowana lub zweryfikowana."
+    },
+    "scribe.report.autofixFilter.label": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Wyniki autofix"
+    },
+    "scribe.report.autofixFilter.preview": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Podglądy autofix"
     },
     "scribe.report.brand": {
       "fallback": false,
@@ -258,10 +318,20 @@ window.__SCRIBE_LOCALES__["pl-PL"] = {
       "reviewed": true,
       "text": "Możliwości ORM i bazy danych"
     },
+    "scribe.report.complianceEvidence.criterion": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "{criterion}"
+    },
     "scribe.report.complianceExample.source.summary": {
       "fallback": false,
       "reviewed": true,
       "text": "{sourcePath} L{startLine}-L{endLine}"
+    },
+    "scribe.report.context.title": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Więcej informacji"
     },
     "scribe.report.control.allClassifications": {
       "fallback": false,
@@ -303,6 +373,16 @@ window.__SCRIBE_LOCALES__["pl-PL"] = {
       "reviewed": true,
       "text": "Spis treści"
     },
+    "scribe.report.control.emptyPlan": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Brak dostępnej ustrukturyzowanej treści planu."
+    },
+    "scribe.report.control.evictedPlan": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Zawartość planu została zwolniona. Otwórz plan ponownie, aby go załadować."
+    },
     "scribe.report.control.expandContents": {
       "fallback": false,
       "reviewed": true,
@@ -318,10 +398,10 @@ window.__SCRIBE_LOCALES__["pl-PL"] = {
       "reviewed": true,
       "text": "Pierwszy"
     },
-    "scribe.report.control.language": {
+    "scribe.report.control.guidance": {
       "fallback": false,
       "reviewed": true,
-      "text": "Język"
+      "text": "Wskazówki"
     },
     "scribe.report.control.languageSearch": {
       "fallback": false,
@@ -332,6 +412,11 @@ window.__SCRIBE_LOCALES__["pl-PL"] = {
       "fallback": false,
       "reviewed": true,
       "text": "Ostatnia"
+    },
+    "scribe.report.control.loadingPlan": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Ładowanie planu naprawczego…"
     },
     "scribe.report.control.locale": {
       "fallback": false,
@@ -348,6 +433,11 @@ window.__SCRIBE_LOCALES__["pl-PL"] = {
       "reviewed": true,
       "text": "Następny"
     },
+    "scribe.report.control.outsideResults": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Poza aktualnymi wynikami"
+    },
     "scribe.report.control.pageSize": {
       "fallback": false,
       "reviewed": true,
@@ -357,6 +447,11 @@ window.__SCRIBE_LOCALES__["pl-PL"] = {
       "fallback": false,
       "reviewed": true,
       "text": "Page"
+    },
+    "scribe.report.control.pinContents": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Przypnij nawigację"
     },
     "scribe.report.control.previousPage": {
       "fallback": false,
@@ -368,6 +463,11 @@ window.__SCRIBE_LOCALES__["pl-PL"] = {
       "reviewed": true,
       "text": "Widok czytnika"
     },
+    "scribe.report.control.referenceMaterial": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Materiały referencyjne"
+    },
     "scribe.report.control.remediation": {
       "fallback": false,
       "reviewed": true,
@@ -377,6 +477,16 @@ window.__SCRIBE_LOCALES__["pl-PL"] = {
       "fallback": false,
       "reviewed": true,
       "text": "Wyniki"
+    },
+    "scribe.report.control.retryPlan": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Ponów ładowanie planu"
+    },
+    "scribe.report.control.returnToResults": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Powrót do wyników"
     },
     "scribe.report.control.search": {
       "fallback": false,
@@ -388,10 +498,20 @@ window.__SCRIBE_LOCALES__["pl-PL"] = {
       "reviewed": true,
       "text": "Ciężkość"
     },
+    "scribe.report.control.targetUnavailable": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Ten cel raportu jest niedostępny"
+    },
     "scribe.report.control.theme": {
       "fallback": false,
       "reviewed": true,
       "text": "Temat"
+    },
+    "scribe.report.control.unavailablePlan": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Nie udało się załadować planu. Otwórz pełny plan lub spróbuj ponownie."
     },
     "scribe.report.facet.status.absent": {
       "fallback": false,
@@ -463,6 +583,66 @@ window.__SCRIBE_LOCALES__["pl-PL"] = {
       "reviewed": true,
       "text": "Automatyczna naprawa"
     },
+    "scribe.report.fixPlan.component.acceptanceCriteria": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Kryteria akceptacji"
+    },
+    "scribe.report.fixPlan.component.beforeAfter": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Przed / po (podgląd automatycznej poprawki)"
+    },
+    "scribe.report.fixPlan.component.closeFullScreen": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Zamknij"
+    },
+    "scribe.report.fixPlan.component.fixGroups": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Grupy poprawek"
+    },
+    "scribe.report.fixPlan.component.fixed": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Naprawiono"
+    },
+    "scribe.report.fixPlan.component.fullScreen": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Pełnoekranowe porównanie różnic"
+    },
+    "scribe.report.fixPlan.component.manualSteps": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Ręczne kroki naprawcze"
+    },
+    "scribe.report.fixPlan.component.original": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Oryginał"
+    },
+    "scribe.report.fixPlan.component.source": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Źródło"
+    },
+    "scribe.report.fixPlan.component.splitView": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Podzielony widok"
+    },
+    "scribe.report.fixPlan.component.unifiedView": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Ujednolicony"
+    },
+    "scribe.report.fixPlan.component.verify": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Weryfikuj"
+    },
     "scribe.report.fixPlan.pageTitle": {
       "fallback": false,
       "reviewed": true,
@@ -477,6 +657,61 @@ window.__SCRIBE_LOCALES__["pl-PL"] = {
       "fallback": false,
       "reviewed": true,
       "text": "Wytyczne dotyczące naprawy znalezisk zawartych w tym raporcie."
+    },
+    "scribe.report.metric.displayedScale": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Wyświetlana skala"
+    },
+    "scribe.report.metric.explanation": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Każdy wiersz pokazuje własne uporządkowane pasma referencyjne i zmierzoną wartość. Etykieta metryki określa, który kierunek jest lepszy."
+    },
+    "scribe.report.metric.higherIsBetter": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Wyższa wartość jest lepsza"
+    },
+    "scribe.report.metric.lowerIsBetter": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Niższa wartość jest lepsza"
+    },
+    "scribe.report.metric.measured": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "zmierzony"
+    },
+    "scribe.report.metric.measuredResults": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Zmierzone wyniki"
+    },
+    "scribe.report.metric.referenceRanges": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Zakresy referencyjne"
+    },
+    "scribe.report.metric.severity.critical": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Krytyczny"
+    },
+    "scribe.report.metric.severity.good": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Dobry"
+    },
+    "scribe.report.metric.severity.high": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Wysoki"
+    },
+    "scribe.report.metric.severity.moderate": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Umiarkowany"
     },
     "scribe.report.mode.auto": {
       "fallback": false,
@@ -573,26 +808,6 @@ window.__SCRIBE_LOCALES__["pl-PL"] = {
       "reviewed": true,
       "text": "Repozytorium"
     },
-    "scribe.report.repositoryHealth.finding.analysisIncomplete.criterion": {
-      "fallback": false,
-      "reviewed": true,
-      "text": "Skanowanie stanu repozytorium wymaga, aby wszystkie wybrane sondy i detektory zasobów zostały zakończone w czysty sposób."
-    },
-    "scribe.report.repositoryHealth.finding.analysisIncomplete.fix": {
-      "fallback": false,
-      "reviewed": true,
-      "text": "Napraw nieudanych sond przed opublikowaniem wyników skierowanych do klienta; ostrzeżenia powinny identyfikować komunikat detektora i wyjątku."
-    },
-    "scribe.report.repositoryHealth.finding.analysisIncomplete.summary": {
-      "fallback": false,
-      "reviewed": true,
-      "text": "Sonda(-y) {failedProbeCount} nie powiodła się(-y) i zarejestrowano ostrzeżenie(-a) detektora {detectorWarningCount}."
-    },
-    "scribe.report.repositoryHealth.finding.analysisIncomplete.title": {
-      "fallback": false,
-      "reviewed": true,
-      "text": "Analiza kondycji repozytorium miała niepełny zasięg sondy"
-    },
     "scribe.report.repositoryHealth.finding.complexity.criterion": {
       "fallback": false,
       "reviewed": true,
@@ -601,7 +816,7 @@ window.__SCRIBE_LOCALES__["pl-PL"] = {
     "scribe.report.repositoryHealth.finding.complexity.fix": {
       "fallback": false,
       "reviewed": true,
-      "text": "Podziel hotspot na mniejsze jednostki decyzyjne, zachowaj bieżące zachowanie za pomocą skoncentrowanych testów i uruchom ponownie raport o kondycji przed zastosowaniem automatycznego oczyszczania."
+      "text": "Podziel {symbol} na mniejsze jednostki decyzyjne, zachowaj jego bieżące zachowanie za pomocą skoncentrowanych testów i uruchom ponownie raport o kondycji przed zastosowaniem automatycznego oczyszczania."
     },
     "scribe.report.repositoryHealth.finding.complexity.summary": {
       "fallback": false,
@@ -622,11 +837,6 @@ window.__SCRIBE_LOCALES__["pl-PL"] = {
       "fallback": false,
       "reviewed": true,
       "text": "Podsumowanie kondycji publicznego repozytorium z dowodami na zasięg popartymi źródłami."
-    },
-    "scribe.report.repositoryHealth.finding.raw.criterion": {
-      "fallback": false,
-      "reviewed": true,
-      "text": "{criterion}"
     },
     "scribe.report.repositoryHealth.finding.raw.fix": {
       "fallback": false,
@@ -678,41 +888,6 @@ window.__SCRIBE_LOCALES__["pl-PL"] = {
       "reviewed": true,
       "text": "Skanowanie stanu repozytorium ma wielokrotnego użytku dowody poparte źródłem"
     },
-    "scribe.report.repositoryHealth.fixPlan.codeHealth.step.extract": {
-      "fallback": false,
-      "reviewed": true,
-      "text": "Refaktoryzuj cytowany zakres w malejącym porządku ryzyka: podziel klastry decyzyjne o najwyższej złożoności na nazwane pomocniki lub węższe jednostki decyzyjne, zachowując zachowanie."
-    },
-    "scribe.report.repositoryHealth.fixPlan.codeHealth.step.inspect": {
-      "fallback": false,
-      "reviewed": true,
-      "text": "Sprawdź linie {sourcePath} od {startLine} do {endLine} i wyświetl listę ścieżek gałęzi, pętli, wczesnego powrotu i wyjątków, które powodują zmierzoną złożoność."
-    },
-    "scribe.report.repositoryHealth.fixPlan.codeHealth.step.validate": {
-      "fallback": false,
-      "reviewed": true,
-      "text": "Dodaj lub zaktualizuj skoncentrowane testy dla zmienionych gałęzi w wierszach {startLine} do {endLine}, uruchom najbliższe sprawdzenia pakietów, a następnie zregeneruj raport o stanie repozytorium."
-    },
-    "scribe.report.repositoryHealth.fixPlan.generic.step.inspect": {
-      "fallback": false,
-      "reviewed": true,
-      "text": "Sprawdź zakres źródeł w liniach {sourcePath} od {startLine} do {endLine}."
-    },
-    "scribe.report.repositoryHealth.fixPlan.generic.step.resolve": {
-      "fallback": false,
-      "reviewed": true,
-      "text": "Zastosuj naprawę przy użyciu najmniejszej zmiany źródła, która rozwiązuje problem."
-    },
-    "scribe.report.repositoryHealth.fixPlan.generic.step.validate": {
-      "fallback": false,
-      "reviewed": true,
-      "text": "Przed opublikowaniem poprawki ponownie uruchom raport o stanie repozytorium i najbliższe testy na poziomie pakietu."
-    },
-    "scribe.report.repositoryHealth.fixPlan.scope": {
-      "fallback": false,
-      "reviewed": true,
-      "text": "Zakres źródłowy docelowy: linie {sourcePath} od {startLine} do {endLine}."
-    },
     "scribe.report.repositoryHealth.overview.body": {
       "fallback": false,
       "reviewed": true,
@@ -743,6 +918,56 @@ window.__SCRIBE_LOCALES__["pl-PL"] = {
       "reviewed": true,
       "text": "Sonde Score"
     },
+    "scribe.report.repositoryHealth.sourceRow.apiEndpoints": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Punkty końcowe API"
+    },
+    "scribe.report.repositoryHealth.sourceRow.cicd": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "CI/CD"
+    },
+    "scribe.report.repositoryHealth.sourceRow.databaseModel": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Model bazy danych"
+    },
+    "scribe.report.repositoryHealth.sourceRow.frameworks": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Frameworki"
+    },
+    "scribe.report.repositoryHealth.sourceRow.languages": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Języki"
+    },
+    "scribe.report.repositoryHealth.sourceRow.otherRuntimeSurfaces": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Inne powierzchnie runtime"
+    },
+    "scribe.report.repositoryHealth.sourceRow.packagesAndBuild": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Pakiety i budowanie"
+    },
+    "scribe.report.repositoryHealth.sourceRow.resourceDetections": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Wykryte zasoby"
+    },
+    "scribe.report.repositoryHealth.sourceRow.sondePerformance": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Wydajność Sonde"
+    },
+    "scribe.report.repositoryHealth.sourceRow.source": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Źródło"
+    },
     "scribe.report.repositoryHealth.sourceSnippet.summary": {
       "fallback": false,
       "reviewed": true,
@@ -757,21 +982,6 @@ window.__SCRIBE_LOCALES__["pl-PL"] = {
       "fallback": false,
       "reviewed": true,
       "text": "Dane źródłowe stanu zdrowia repozytorium pokazujące {sourceFileCount, number} plików źródłowych, {languageCount, number} języków, {packageManifestCount, number} manifestów pakietów, {buildConfigCount, number} konfiguracji budowania, {frameworkDetectionCount, number} wykrytych zasobów oraz {databaseSchemaCount, number} artefaktów schematów baz danych."
-    },
-    "scribe.report.repositoryHealth.visualization.finding.controlFlow.alt": {
-      "fallback": false,
-      "reviewed": true,
-      "text": "Wykres przepływu sterowania dla {subject} w liniach {sourcePath} od {startLine} do {endLine}."
-    },
-    "scribe.report.repositoryHealth.visualization.finding.controlFlow.title": {
-      "fallback": false,
-      "reviewed": true,
-      "text": "Wykres przepływu sterowania dla {subject}"
-    },
-    "scribe.report.repositoryHealth.visualization.finding.description": {
-      "fallback": false,
-      "reviewed": true,
-      "text": "Diagram jest generowany z linii {sourcePath} {startLine} do {endLine} i podświetla dowody przepływu sterowania lub schematu dla odkrycia."
     },
     "scribe.report.repositoryHealth.visualization.longDescription": {
       "fallback": false,
@@ -823,10 +1033,15 @@ window.__SCRIBE_LOCALES__["pl-PL"] = {
       "reviewed": true,
       "text": "Źródło"
     },
-    "scribe.report.term.primary": {
+    "scribe.report.term.repository-health.alias": {
       "fallback": false,
       "reviewed": true,
-      "text": "Stan zdrowia repozytorium"
+      "text": "Raport o stanie zdrowia"
+    },
+    "scribe.report.term.repository-health.primary": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Stan repozytorium"
     },
     "scribe.report.theme.daylight": {
       "fallback": false,
@@ -867,6 +1082,11 @@ window.__SCRIBE_LOCALES__["pl-PL"] = {
       "fallback": false,
       "reviewed": true,
       "text": "Dla tego znaleziska nie wygenerowano żadnego artefaktu wizualizacji."
+    },
+    "scribe.report.visualization.visualization-repository-health.projection": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Dane źródłowe kondycji repozytorium"
     },
     "settings.theme.daylight": {
       "fallback": false,

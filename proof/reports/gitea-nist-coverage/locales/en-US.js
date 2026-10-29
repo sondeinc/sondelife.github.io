@@ -3,6 +3,11 @@ window.__SCRIBE_LOCALES__["en-US"] = {
   "fallbackCount": 0,
   "locale": "en-US",
   "messages": {
+    "scribe.leaderboard.language": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Language"
+    },
     "scribe.report.action.backToFinding": {
       "fallback": false,
       "reviewed": true,
@@ -27,6 +32,11 @@ window.__SCRIBE_LOCALES__["en-US"] = {
       "fallback": false,
       "reviewed": true,
       "text": "Collapse snippet"
+    },
+    "scribe.report.action.completeFixPlan": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Complete fix plan"
     },
     "scribe.report.action.copyDiagramLink": {
       "fallback": false,
@@ -181,7 +191,7 @@ window.__SCRIBE_LOCALES__["en-US"] = {
     "scribe.report.asset.overviewScreenshot.caption": {
       "fallback": false,
       "reviewed": true,
-      "text": "Copied from the same annotated evidence renderer used by the public sonde.life compliance page."
+      "text": "Copied from the same annotated evidence renderer used by the public sonde.tech compliance page."
     },
     "scribe.report.asset.theme.daylight": {
       "fallback": false,
@@ -202,6 +212,26 @@ window.__SCRIBE_LOCALES__["en-US"] = {
       "fallback": false,
       "reviewed": true,
       "text": "Ultraviolet theme"
+    },
+    "scribe.report.autofixFilter.fullExplanation": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Full explanation"
+    },
+    "scribe.report.autofixFilter.help": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Counts reflect the current search and filters. A preview shows a generated change. It does not establish that the change was applied or verified."
+    },
+    "scribe.report.autofixFilter.label": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Autofix results"
+    },
+    "scribe.report.autofixFilter.preview": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Autofix previews"
     },
     "scribe.report.brand": {
       "fallback": false,
@@ -323,6 +353,16 @@ window.__SCRIBE_LOCALES__["en-US"] = {
       "reviewed": true,
       "text": "Contents"
     },
+    "scribe.report.control.emptyPlan": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "No structured plan content is available."
+    },
+    "scribe.report.control.evictedPlan": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Plan content was released. Reopen the plan to load it again."
+    },
     "scribe.report.control.expandContents": {
       "fallback": false,
       "reviewed": true,
@@ -338,10 +378,10 @@ window.__SCRIBE_LOCALES__["en-US"] = {
       "reviewed": true,
       "text": "First"
     },
-    "scribe.report.control.language": {
+    "scribe.report.control.guidance": {
       "fallback": false,
       "reviewed": true,
-      "text": "Language"
+      "text": "Guidance"
     },
     "scribe.report.control.languageSearch": {
       "fallback": false,
@@ -352,6 +392,11 @@ window.__SCRIBE_LOCALES__["en-US"] = {
       "fallback": false,
       "reviewed": true,
       "text": "Last"
+    },
+    "scribe.report.control.loadingPlan": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Loading fix plan…"
     },
     "scribe.report.control.locale": {
       "fallback": false,
@@ -368,6 +413,11 @@ window.__SCRIBE_LOCALES__["en-US"] = {
       "reviewed": true,
       "text": "Next"
     },
+    "scribe.report.control.outsideResults": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Outside the current results"
+    },
     "scribe.report.control.pageSize": {
       "fallback": false,
       "reviewed": true,
@@ -377,6 +427,11 @@ window.__SCRIBE_LOCALES__["en-US"] = {
       "fallback": false,
       "reviewed": true,
       "text": "Page"
+    },
+    "scribe.report.control.pinContents": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Pin navigation"
     },
     "scribe.report.control.previousPage": {
       "fallback": false,
@@ -388,6 +443,11 @@ window.__SCRIBE_LOCALES__["en-US"] = {
       "reviewed": true,
       "text": "Reader view"
     },
+    "scribe.report.control.referenceMaterial": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Reference material"
+    },
     "scribe.report.control.remediation": {
       "fallback": false,
       "reviewed": true,
@@ -397,6 +457,16 @@ window.__SCRIBE_LOCALES__["en-US"] = {
       "fallback": false,
       "reviewed": true,
       "text": "Results"
+    },
+    "scribe.report.control.retryPlan": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Retry loading plan"
+    },
+    "scribe.report.control.returnToResults": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Return to results"
     },
     "scribe.report.control.search": {
       "fallback": false,
@@ -408,10 +478,20 @@ window.__SCRIBE_LOCALES__["en-US"] = {
       "reviewed": true,
       "text": "Severity"
     },
+    "scribe.report.control.targetUnavailable": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "This report target is unavailable"
+    },
     "scribe.report.control.theme": {
       "fallback": false,
       "reviewed": true,
       "text": "Theme"
+    },
+    "scribe.report.control.unavailablePlan": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "The plan could not be loaded. Open the complete plan or retry."
     },
     "scribe.report.facet.status.absent": {
       "fallback": false,
@@ -448,6 +528,71 @@ window.__SCRIBE_LOCALES__["en-US"] = {
       "reviewed": true,
       "text": "Warning"
     },
+    "scribe.report.finding.autofix.title": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Autofix"
+    },
+    "scribe.report.fixPlan.component.acceptanceCriteria": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Acceptance criteria"
+    },
+    "scribe.report.fixPlan.component.beforeAfter": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Before / after (auto-fix preview)"
+    },
+    "scribe.report.fixPlan.component.closeFullScreen": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Close"
+    },
+    "scribe.report.fixPlan.component.fixGroups": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Fix groups"
+    },
+    "scribe.report.fixPlan.component.fixed": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Fixed"
+    },
+    "scribe.report.fixPlan.component.fullScreen": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Full screen diff"
+    },
+    "scribe.report.fixPlan.component.manualSteps": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Manual remediation steps"
+    },
+    "scribe.report.fixPlan.component.original": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Original"
+    },
+    "scribe.report.fixPlan.component.source": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Source"
+    },
+    "scribe.report.fixPlan.component.splitView": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Split"
+    },
+    "scribe.report.fixPlan.component.unifiedView": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Unified"
+    },
+    "scribe.report.fixPlan.component.verify": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Verify"
+    },
     "scribe.report.fixPlan.pageTitle": {
       "fallback": false,
       "reviewed": true,
@@ -462,6 +607,61 @@ window.__SCRIBE_LOCALES__["en-US"] = {
       "fallback": false,
       "reviewed": true,
       "text": "Live, per-finding fix plans generate automatically when Sonde analyzes your repository. This curated showcase demonstrates the report; see automated remediation in action on a live example."
+    },
+    "scribe.report.metric.displayedScale": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Displayed scale"
+    },
+    "scribe.report.metric.explanation": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Each row shows its own ordered reference bands and measured value. The metric label states which direction is better."
+    },
+    "scribe.report.metric.higherIsBetter": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Higher is better"
+    },
+    "scribe.report.metric.lowerIsBetter": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Lower is better"
+    },
+    "scribe.report.metric.measured": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "measured"
+    },
+    "scribe.report.metric.measuredResults": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Measured results"
+    },
+    "scribe.report.metric.referenceRanges": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Reference ranges"
+    },
+    "scribe.report.metric.severity.critical": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Critical"
+    },
+    "scribe.report.metric.severity.good": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Good"
+    },
+    "scribe.report.metric.severity.high": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "High"
+    },
+    "scribe.report.metric.severity.moderate": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Moderate"
     },
     "scribe.report.mode.auto": {
       "fallback": false,
@@ -676,7 +876,7 @@ window.__SCRIBE_LOCALES__["en-US"] = {
     "scribe.report.nistCoverage.metric.sondeScore.body": {
       "fallback": false,
       "reviewed": true,
-      "text": "<strong>107</strong> / 1000 (11/103 controls satisfied)"
+      "text": "<strong>58</strong> / 1000 (6/103 controls satisfied)"
     },
     "scribe.report.nistCoverage.overview.body": {
       "fallback": false,
@@ -686,7 +886,7 @@ window.__SCRIBE_LOCALES__["en-US"] = {
     "scribe.report.nistCoverage.overview.issue.body": {
       "fallback": false,
       "reviewed": true,
-      "text": "11 controls are satisfied, 35 are unsatisfied, and 55 require customer context instead of being mislabeled as SSP evidence."
+      "text": "6 controls are satisfied, 41 are unsatisfied, and 55 require customer context instead of being mislabeled as SSP evidence."
     },
     "scribe.report.nistCoverage.overview.issue.label": {
       "fallback": false,
@@ -707,6 +907,11 @@ window.__SCRIBE_LOCALES__["en-US"] = {
       "fallback": false,
       "reviewed": true,
       "text": "Coverage score"
+    },
+    "scribe.report.nistCoverage.sourceRow.family": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "{family} {familyTitle}"
     },
     "scribe.report.nistCoverage.sourceSnippet.summary": {
       "fallback": false,
@@ -813,26 +1018,6 @@ window.__SCRIBE_LOCALES__["en-US"] = {
       "reviewed": true,
       "text": "Overview"
     },
-    "scribe.report.repositoryHealth.fixPlan.generic.step.inspect": {
-      "fallback": false,
-      "reviewed": true,
-      "text": "Verify the cited source range in {sourcePath} lines {startLine} through {endLine}."
-    },
-    "scribe.report.repositoryHealth.fixPlan.generic.step.resolve": {
-      "fallback": false,
-      "reviewed": true,
-      "text": "Apply the remediation using the smallest source change that resolves the finding."
-    },
-    "scribe.report.repositoryHealth.fixPlan.generic.step.validate": {
-      "fallback": false,
-      "reviewed": true,
-      "text": "Rerun the repository health report and the nearest package-level tests before publishing the fix."
-    },
-    "scribe.report.repositoryHealth.fixPlan.scope": {
-      "fallback": false,
-      "reviewed": true,
-      "text": "Target source range: {sourcePath} lines {startLine} through {endLine}."
-    },
     "scribe.report.scope": {
       "fallback": false,
       "reviewed": true,
@@ -868,12 +1053,12 @@ window.__SCRIBE_LOCALES__["en-US"] = {
       "reviewed": true,
       "text": "Source"
     },
-    "scribe.report.term.alias": {
+    "scribe.report.term.nist-fedramp-coverage.alias": {
       "fallback": false,
       "reviewed": true,
       "text": "OSCAL Assessment Results"
     },
-    "scribe.report.term.primary": {
+    "scribe.report.term.nist-fedramp-coverage.primary": {
       "fallback": false,
       "reviewed": true,
       "text": "NIST/FedRAMP coverage"
@@ -917,6 +1102,11 @@ window.__SCRIBE_LOCALES__["en-US"] = {
       "fallback": false,
       "reviewed": true,
       "text": "No visualization artifact was generated for this finding."
+    },
+    "scribe.report.visualization.visualization-nist-coverage-controls.projection": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "NIST family coverage matrix"
     },
     "settings.theme.daylight": {
       "fallback": false,

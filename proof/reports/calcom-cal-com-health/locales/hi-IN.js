@@ -1,8 +1,13 @@
 window.__SCRIBE_LOCALES__ = window.__SCRIBE_LOCALES__ || {};
 window.__SCRIBE_LOCALES__["hi-IN"] = {
-  "fallbackCount": 6,
+  "fallbackCount": 13,
   "locale": "hi-IN",
   "messages": {
+    "scribe.leaderboard.language": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "भाषा"
+    },
     "scribe.report.action.backToFinding": {
       "fallback": false,
       "reviewed": true,
@@ -27,6 +32,11 @@ window.__SCRIBE_LOCALES__["hi-IN"] = {
       "fallback": false,
       "reviewed": true,
       "text": "स्निपेट संपीड़ित करें"
+    },
+    "scribe.report.action.completeFixPlan": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "फिक्स प्लान पूरा करें"
     },
     "scribe.report.action.copyDiagramLink": {
       "fallback": false,
@@ -138,6 +148,36 @@ window.__SCRIBE_LOCALES__["hi-IN"] = {
       "reviewed": true,
       "text": "डायग्राम सोर्स देखें"
     },
+    "scribe.report.actionPriorities.affectedLocations": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "{count, plural, one {# प्रभावित स्थान} other {# प्रभावित स्थान}}"
+    },
+    "scribe.report.actionPriorities.nextAction": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "अगली कार्रवाई"
+    },
+    "scribe.report.actionPriorities.originalEvidence": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "मूल साक्ष्य देखें"
+    },
+    "scribe.report.actionPriorities.summary": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "इन प्राथमिकताओं में प्रभाव, पहुंच और उपलब्ध साक्ष्यों का संयोजन है। सबसे ऊपर से शुरू करें, फिर तकनीकी विवरण के लिए प्रभावित स्थानों को खोलें।"
+    },
+    "scribe.report.actionPriorities.title": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "सबसे पहले क्या ठीक करें"
+    },
+    "scribe.report.actionPriorities.why": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "यह क्यों महत्वपूर्ण है"
+    },
     "scribe.report.asset.export.markdown": {
       "fallback": false,
       "reviewed": true,
@@ -166,7 +206,7 @@ window.__SCRIBE_LOCALES__["hi-IN"] = {
     "scribe.report.asset.overviewScreenshot.caption": {
       "fallback": false,
       "reviewed": true,
-      "text": "इसका उपयोग गूगल खोज इंजन के द्वारा खोजे गए शब्दों के आधार पर किया जाता है।"
+      "text": "पब्लिक sonde.life कॉम्प्लायंस पेज द्वारा उपयोग किए गए उसी एनोटेटेड एविडेंस रेंडरर से कॉपी किया गया है।"
     },
     "scribe.report.asset.theme.daylight": {
       "fallback": false,
@@ -187,6 +227,26 @@ window.__SCRIBE_LOCALES__["hi-IN"] = {
       "fallback": false,
       "reviewed": true,
       "text": "अल्ट्रावायलेट प्रसंग"
+    },
+    "scribe.report.autofixFilter.fullExplanation": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "पूर्ण विवरण"
+    },
+    "scribe.report.autofixFilter.help": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "गिनती वर्तमान खोज और फ़िल्टर को दर्शाती है। एक पूर्वावलोकन (preview) उत्पन्न परिवर्तन को दिखाता है। यह यह स्थापित नहीं करता है कि परिवर्तन लागू किया गया था या सत्यापित किया गया था।"
+    },
+    "scribe.report.autofixFilter.label": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Autofix परिणाम"
+    },
+    "scribe.report.autofixFilter.preview": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Autofix पूर्वावलोकन"
     },
     "scribe.report.brand": {
       "fallback": false,
@@ -258,10 +318,20 @@ window.__SCRIBE_LOCALES__["hi-IN"] = {
       "reviewed": true,
       "text": "ORM और डेटाबेस क्षमता"
     },
+    "scribe.report.complianceEvidence.criterion": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "{criterion}"
+    },
     "scribe.report.complianceExample.source.summary": {
       "fallback": false,
       "reviewed": true,
       "text": "{sourcePath} L{startLine}- L{endLine}"
+    },
+    "scribe.report.context.title": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "अधिक जानकारी"
     },
     "scribe.report.control.allClassifications": {
       "fallback": false,
@@ -303,6 +373,16 @@ window.__SCRIBE_LOCALES__["hi-IN"] = {
       "reviewed": true,
       "text": "विषयसूची"
     },
+    "scribe.report.control.emptyPlan": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "कोई संरचित प्लान सामग्री उपलब्ध नहीं है।"
+    },
+    "scribe.report.control.evictedPlan": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "प्लान की सामग्री रिलीज़ कर दी गई थी। इसे फिर से लोड करने के लिए प्लान को दोबारा खोलें।"
+    },
     "scribe.report.control.expandContents": {
       "fallback": false,
       "reviewed": true,
@@ -318,10 +398,10 @@ window.__SCRIBE_LOCALES__["hi-IN"] = {
       "reviewed": true,
       "text": "प्रथम"
     },
-    "scribe.report.control.language": {
+    "scribe.report.control.guidance": {
       "fallback": false,
       "reviewed": true,
-      "text": "भाषा"
+      "text": "मार्गदर्शन"
     },
     "scribe.report.control.languageSearch": {
       "fallback": false,
@@ -332,6 +412,11 @@ window.__SCRIBE_LOCALES__["hi-IN"] = {
       "fallback": false,
       "reviewed": true,
       "text": "अंतिम"
+    },
+    "scribe.report.control.loadingPlan": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "फिक्स प्लान लोड हो रहा है…"
     },
     "scribe.report.control.locale": {
       "fallback": false,
@@ -348,6 +433,11 @@ window.__SCRIBE_LOCALES__["hi-IN"] = {
       "reviewed": true,
       "text": "अगला"
     },
+    "scribe.report.control.outsideResults": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "वर्तमान परिणामों के बाहर"
+    },
     "scribe.report.control.pageSize": {
       "fallback": false,
       "reviewed": true,
@@ -357,6 +447,11 @@ window.__SCRIBE_LOCALES__["hi-IN"] = {
       "fallback": false,
       "reviewed": true,
       "text": "पृष्ठ"
+    },
+    "scribe.report.control.pinContents": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "नेविगेशन पिन करें"
     },
     "scribe.report.control.previousPage": {
       "fallback": false,
@@ -368,6 +463,11 @@ window.__SCRIBE_LOCALES__["hi-IN"] = {
       "reviewed": true,
       "text": "पाठक दृश्य"
     },
+    "scribe.report.control.referenceMaterial": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "संदर्भ सामग्री"
+    },
     "scribe.report.control.remediation": {
       "fallback": false,
       "reviewed": true,
@@ -377,6 +477,16 @@ window.__SCRIBE_LOCALES__["hi-IN"] = {
       "fallback": false,
       "reviewed": true,
       "text": "परिणाम"
+    },
+    "scribe.report.control.retryPlan": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "प्लान लोड करने का पुनः प्रयास करें"
+    },
+    "scribe.report.control.returnToResults": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "परिणामों पर वापस जाएँ"
     },
     "scribe.report.control.search": {
       "fallback": false,
@@ -388,10 +498,20 @@ window.__SCRIBE_LOCALES__["hi-IN"] = {
       "reviewed": true,
       "text": "गंभीरता"
     },
+    "scribe.report.control.targetUnavailable": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "यह रिपोर्ट टारगेट उपलब्ध नहीं है"
+    },
     "scribe.report.control.theme": {
       "fallback": false,
       "reviewed": true,
       "text": "प्रसंग"
+    },
+    "scribe.report.control.unavailablePlan": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "प्लान लोड नहीं किया जा सका। पूरा प्लान खोलें या पुनः प्रयास करें।"
     },
     "scribe.report.facet.status.absent": {
       "fallback": false,
@@ -463,6 +583,66 @@ window.__SCRIBE_LOCALES__["hi-IN"] = {
       "reviewed": true,
       "text": "ऑटोफ़िक्स"
     },
+    "scribe.report.fixPlan.component.acceptanceCriteria": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "स्वीकृति मानदंड"
+    },
+    "scribe.report.fixPlan.component.beforeAfter": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "पहले / बाद में (स्वचालित ठीक करने की पूर्वावलोकन)"
+    },
+    "scribe.report.fixPlan.component.closeFullScreen": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "बंद करें"
+    },
+    "scribe.report.fixPlan.component.fixGroups": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "ठीक करने के समूह"
+    },
+    "scribe.report.fixPlan.component.fixed": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "ठीक किया गया"
+    },
+    "scribe.report.fixPlan.component.fullScreen": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "फुल स्क्रीन अंतर (diff)"
+    },
+    "scribe.report.fixPlan.component.manualSteps": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "मैनुअल सुधार चरण"
+    },
+    "scribe.report.fixPlan.component.original": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "मूल"
+    },
+    "scribe.report.fixPlan.component.source": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "स्रोत"
+    },
+    "scribe.report.fixPlan.component.splitView": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "स्प्लिट"
+    },
+    "scribe.report.fixPlan.component.unifiedView": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "एकीकृत"
+    },
+    "scribe.report.fixPlan.component.verify": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "सत्यापित करें"
+    },
     "scribe.report.fixPlan.pageTitle": {
       "fallback": false,
       "reviewed": true,
@@ -477,6 +657,61 @@ window.__SCRIBE_LOCALES__["hi-IN"] = {
       "fallback": false,
       "reviewed": true,
       "text": "इस रिपोर्ट में पाए गए निष्कर्षों के लिए समाधान मार्गदर्शन।"
+    },
+    "scribe.report.metric.displayedScale": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "प्रदर्शित पैमाना"
+    },
+    "scribe.report.metric.explanation": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "प्रत्येक पंक्ति अपने स्वयं के क्रमित संदर्भ बैंड और मापे गए मान को दिखाती है। मेट्रिक लेबल बताता है कि कौन सी दिशा बेहतर है।"
+    },
+    "scribe.report.metric.higherIsBetter": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "अधिक बेहतर है"
+    },
+    "scribe.report.metric.lowerIsBetter": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "कम बेहतर है"
+    },
+    "scribe.report.metric.measured": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "मापा गया"
+    },
+    "scribe.report.metric.measuredResults": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "मापे गए परिणाम"
+    },
+    "scribe.report.metric.referenceRanges": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "संदर्भ सीमाएं"
+    },
+    "scribe.report.metric.severity.critical": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "गंभीर"
+    },
+    "scribe.report.metric.severity.good": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "अच्छा"
+    },
+    "scribe.report.metric.severity.high": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "उच्च"
+    },
+    "scribe.report.metric.severity.moderate": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "मध्यम"
     },
     "scribe.report.mode.auto": {
       "fallback": false,
@@ -573,26 +808,6 @@ window.__SCRIBE_LOCALES__["hi-IN"] = {
       "reviewed": true,
       "text": "भंडार आकारStencils"
     },
-    "scribe.report.repositoryHealth.finding.analysisIncomplete.criterion": {
-      "fallback": false,
-      "reviewed": true,
-      "text": "सभी कोशिकाओं के लिए आवश्यक प्रोटीनों और खनिज पदार्थों की उपलब्धता सुनिश्चित करने के लिए कोशिकाओं को कोशिका भित्ति की आवश्यकता होती है।"
-    },
-    "scribe.report.repositoryHealth.finding.analysisIncomplete.fix": {
-      "fallback": false,
-      "reviewed": true,
-      "text": "ग्राहक-सामने परिणाम प्रकाशित करने से पहले विफल प्रोब को ठीक करें; चेतावनी डिटेक्टर और अपवाद संदेश की पहचान करनी चाहिए।"
-    },
-    "scribe.report.repositoryHealth.finding.analysisIncomplete.summary": {
-      "fallback": false,
-      "reviewed": true,
-      "text": "{failedProbeCount} प्रोब(s) असफल और {detectorWarningCount} डिटेक्टर चेतावनी(s) रिकॉर्ड की गई थी।"
-    },
-    "scribe.report.repositoryHealth.finding.analysisIncomplete.title": {
-      "fallback": false,
-      "reviewed": true,
-      "text": "भंडार स्वास्थ्य विश्लेषण में अपूर्ण जांच कवर था"
-    },
     "scribe.report.repositoryHealth.finding.complexity.criterion": {
       "fallback": false,
       "reviewed": true,
@@ -601,7 +816,7 @@ window.__SCRIBE_LOCALES__["hi-IN"] = {
     "scribe.report.repositoryHealth.finding.complexity.fix": {
       "fallback": false,
       "reviewed": true,
-      "text": "हॉटस्पॉट को छोटे निर्णय इकाइयों में विभाजित करें, केंद्रित परीक्षणों के साथ वर्तमान व्यवहार को संरक्षित करें और स्वचालित सफाई लागू करने से पहले स्वास्थ्य रिपोर्ट को फिर से चलाएं।"
+      "text": "{symbol} को छोटी निर्णय इकाइयों में विभाजित करें, केंद्रित परीक्षणों के साथ इसके वर्तमान व्यवहार को संरक्षित करें, और स्वचालित सफाई लागू करने से पहले स्वास्थ्य रिपोर्ट को फिर से चलाएं।"
     },
     "scribe.report.repositoryHealth.finding.complexity.summary": {
       "fallback": false,
@@ -622,11 +837,6 @@ window.__SCRIBE_LOCALES__["hi-IN"] = {
       "fallback": false,
       "reviewed": true,
       "text": "1. खाद्य सुरक्षा एवं गुणवत्ता नियंत्रण के लिए आवश्यक सूचनाओं का संकलन।"
-    },
-    "scribe.report.repositoryHealth.finding.raw.criterion": {
-      "fallback": false,
-      "reviewed": true,
-      "text": "{criterion}"
     },
     "scribe.report.repositoryHealth.finding.raw.fix": {
       "fallback": false,
@@ -678,41 +888,6 @@ window.__SCRIBE_LOCALES__["hi-IN"] = {
       "reviewed": true,
       "text": "भंडार स्वास्थ्य स्कैन में पुनः उपयोगी स्रोत-बैकअप सबूत है"
     },
-    "scribe.report.repositoryHealth.fixPlan.codeHealth.step.extract": {
-      "fallback": false,
-      "reviewed": true,
-      "text": "निम्नलिखित जोखिम क्रम में उद्धृत सीमा को पुनर्कारक करें: उच्चतम जटिलता वाले निर्णय क्लस्टर को नामित सहायकों या व्यवहार को संरक्षित करते हुए संकीर्ण निर्णय इकाइयों में विभाजित करें।"
-    },
-    "scribe.report.repositoryHealth.fixPlan.codeHealth.step.inspect": {
-      "fallback": false,
-      "reviewed": true,
-      "text": "{sourcePath} लाइनों {startLine} से {endLine} की जांच करें और शाखा, लूप, प्रारंभिक वापसी और अपवाद पथों की सूची दें जो मापी गई जटिलता को चलाते हैं।"
-    },
-    "scribe.report.repositoryHealth.fixPlan.codeHealth.step.validate": {
-      "fallback": false,
-      "reviewed": true,
-      "text": "{startLine} से {endLine} लाइनों में परिवर्तित शाखाओं के लिए फोकस्ड परीक्षण जोड़ें या अद्यतन करें, निकटतम पैकेज जांच चलाएँ, फिर भंडार की स्वास्थ्य रिपोर्ट को पुनः उत्पन्न करें."
-    },
-    "scribe.report.repositoryHealth.fixPlan.generic.step.inspect": {
-      "fallback": false,
-      "reviewed": true,
-      "text": "{sourcePath} पंक्तियों में उद्धृत स्रोत सीमा {startLine} से {endLine} की पुष्टि करें।"
-    },
-    "scribe.report.repositoryHealth.fixPlan.generic.step.resolve": {
-      "fallback": false,
-      "reviewed": true,
-      "text": "इसका उपयोग सबसे छोटे स्रोत परिवर्तन का उपयोग करके सुधार लागू करें जो खोज को हल करता है।"
-    },
-    "scribe.report.repositoryHealth.fixPlan.generic.step.validate": {
-      "fallback": false,
-      "reviewed": true,
-      "text": "फिक्स को प्रकाशित करने से पहले भंडार स्वास्थ्य रिपोर्ट और निकटतम पैकेज स्तर परीक्षण को फिर से चलाएँ."
-    },
-    "scribe.report.repositoryHealth.fixPlan.scope": {
-      "fallback": false,
-      "reviewed": true,
-      "text": "लक्ष्य स्रोत सीमा: {sourcePath} पंक्तियाँ {startLine} से {endLine} तक."
-    },
     "scribe.report.repositoryHealth.overview.body": {
       "fallback": false,
       "reviewed": true,
@@ -743,6 +918,56 @@ window.__SCRIBE_LOCALES__["hi-IN"] = {
       "reviewed": true,
       "text": "Sonde Score"
     },
+    "scribe.report.repositoryHealth.sourceRow.apiEndpoints": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "API एंडपॉइंट्स"
+    },
+    "scribe.report.repositoryHealth.sourceRow.cicd": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "CI/CD"
+    },
+    "scribe.report.repositoryHealth.sourceRow.databaseModel": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "डेटाबेस मॉडल"
+    },
+    "scribe.report.repositoryHealth.sourceRow.frameworks": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "फ्रेमवर्क्स"
+    },
+    "scribe.report.repositoryHealth.sourceRow.languages": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "भाषाएं"
+    },
+    "scribe.report.repositoryHealth.sourceRow.otherRuntimeSurfaces": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "अन्य रनटाइम सरफेस"
+    },
+    "scribe.report.repositoryHealth.sourceRow.packagesAndBuild": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "पैकेज और बिल्ड"
+    },
+    "scribe.report.repositoryHealth.sourceRow.resourceDetections": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "रिसोर्स डिटेक्शन"
+    },
+    "scribe.report.repositoryHealth.sourceRow.sondePerformance": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Sonde प्रदर्शन"
+    },
+    "scribe.report.repositoryHealth.sourceRow.source": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "स्रोत"
+    },
     "scribe.report.repositoryHealth.sourceSnippet.summary": {
       "fallback": false,
       "reviewed": true,
@@ -757,21 +982,6 @@ window.__SCRIBE_LOCALES__["hi-IN"] = {
       "fallback": false,
       "reviewed": true,
       "text": "रिपॉजिटरी हेल्थ सोर्स डेटा जो {sourceFileCount, number} सोर्स फ़ाइलें, {languageCount, number} भाषाएँ, {packageManifestCount, number} पैकेज मैनिफेस्ट, {buildConfigCount, number} बिल्ड कॉन्फ़िगरेशन, {frameworkDetectionCount, number} रिसोर्स डिटेक्शन और {databaseSchemaCount, number} डेटाबेस स्कीमा आर्टिफैक्ट्स दिखाता है।"
-    },
-    "scribe.report.repositoryHealth.visualization.finding.controlFlow.alt": {
-      "fallback": false,
-      "reviewed": true,
-      "text": "{sourcePath} में {subject} के लिए नियंत्रण-प्रवाह ग्राफ {startLine} से {endLine} लाइन तक।"
-    },
-    "scribe.report.repositoryHealth.visualization.finding.controlFlow.title": {
-      "fallback": false,
-      "reviewed": true,
-      "text": "{subject} के लिए नियंत्रण-प्रवाह ग्राफ"
-    },
-    "scribe.report.repositoryHealth.visualization.finding.description": {
-      "fallback": false,
-      "reviewed": true,
-      "text": "रेखाचित्र {sourcePath} पंक्तियों {startLine} से {endLine} से उत्पन्न किया जाता है और खोज के लिए स्रोत-समर्थित नियंत्रण-प्रवाह या स्कीमा सबूत को उजागर करता है।"
     },
     "scribe.report.repositoryHealth.visualization.longDescription": {
       "fallback": false,
@@ -823,10 +1033,15 @@ window.__SCRIBE_LOCALES__["hi-IN"] = {
       "reviewed": true,
       "text": "स्रोत"
     },
-    "scribe.report.term.primary": {
+    "scribe.report.term.repository-health.alias": {
       "fallback": false,
       "reviewed": true,
-      "text": "रिपॉजिटरी स्वास्थ्य"
+      "text": "हेल्थ रिपोर्ट"
+    },
+    "scribe.report.term.repository-health.primary": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "रिपॉजिटरी हेल्थ"
     },
     "scribe.report.theme.daylight": {
       "fallback": false,
@@ -867,6 +1082,11 @@ window.__SCRIBE_LOCALES__["hi-IN"] = {
       "fallback": false,
       "reviewed": true,
       "text": "इस फाइंडिंग के लिए कोई विज़ुअलाइज़ेशन आर्टिफैक्ट जेनरेट नहीं किया गया था।"
+    },
+    "scribe.report.visualization.visualization-repository-health.projection": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "भंडार स्वास्थ्य स्रोत डाटा"
     },
     "settings.theme.daylight": {
       "fallback": false,

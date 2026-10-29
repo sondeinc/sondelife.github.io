@@ -3,6 +3,39 @@ window.__SCRIBE_ANCHORS__ = [
     "anchorId": "section-overview",
     "indexTermIds": [],
     "label": {
+      "catalogDependency": {
+        "explicitLocales": [],
+        "lookupLocales": [
+          "en-US",
+          "en-GB",
+          "en-CA",
+          "fr-CA",
+          "en-IN",
+          "cy-GB",
+          "gd-GB",
+          "ga-GB",
+          "es-US",
+          "es-MX",
+          "de-DE",
+          "fr-FR",
+          "es-ES",
+          "it-IT",
+          "nl-NL",
+          "pl-PL",
+          "pt-PT",
+          "pt-BR",
+          "ro-RO",
+          "sv-SE",
+          "ko-KR",
+          "zh-CN",
+          "ja-JP",
+          "hi-IN"
+        ],
+        "reportFallbacks": {
+          "ja-JP": "概要"
+        },
+        "sourceLocale": "en-US"
+      },
       "defaultLocale": "en-US",
       "defaultText": "Overview",
       "icuArgs": {},
@@ -144,6 +177,39 @@ window.__SCRIBE_ANCHORS__ = [
       "wcag-alt-text"
     ],
     "label": {
+      "catalogDependency": {
+        "explicitLocales": [],
+        "lookupLocales": [
+          "en-US",
+          "en-GB",
+          "en-CA",
+          "fr-CA",
+          "en-IN",
+          "cy-GB",
+          "gd-GB",
+          "ga-GB",
+          "es-US",
+          "es-MX",
+          "de-DE",
+          "fr-FR",
+          "es-ES",
+          "it-IT",
+          "nl-NL",
+          "pl-PL",
+          "pt-PT",
+          "pt-BR",
+          "ro-RO",
+          "sv-SE",
+          "ko-KR",
+          "zh-CN",
+          "ja-JP",
+          "hi-IN"
+        ],
+        "reportFallbacks": {
+          "ja-JP": "SwiftUI 画像にアクセシブル名がありません"
+        },
+        "sourceLocale": "en-US"
+      },
       "defaultLocale": "en-US",
       "defaultText": "SwiftUI image is missing an accessible name",
       "icuArgs": {},
@@ -280,6 +346,39 @@ window.__SCRIBE_ANCHORS__ = [
     "parentAnchorId": "section-overview",
     "role": "finding",
     "shareSummary": {
+      "catalogDependency": {
+        "explicitLocales": [],
+        "lookupLocales": [
+          "en-US",
+          "en-GB",
+          "en-CA",
+          "fr-CA",
+          "en-IN",
+          "cy-GB",
+          "gd-GB",
+          "ga-GB",
+          "es-US",
+          "es-MX",
+          "de-DE",
+          "fr-FR",
+          "es-ES",
+          "it-IT",
+          "nl-NL",
+          "pl-PL",
+          "pt-PT",
+          "pt-BR",
+          "ro-RO",
+          "sv-SE",
+          "ko-KR",
+          "zh-CN",
+          "ja-JP",
+          "hi-IN"
+        ],
+        "reportFallbacks": {
+          "ja-JP": "cockpit-mobile プロフィールアラートフィクスチャの SwiftUI Image は意味のあるコンテンツとして公開されていますが、accessibilityLabel がありません。"
+        },
+        "sourceLocale": "en-US"
+      },
       "defaultLocale": "en-US",
       "defaultText": "The SwiftUI Image in the cockpit-mobile profile alert fixture is exposed as meaningful content without an accessibilityLabel.",
       "icuArgs": {},
@@ -410,6 +509,39 @@ window.__SCRIBE_ANCHORS__ = [
       }
     },
     "shareTitle": {
+      "catalogDependency": {
+        "explicitLocales": [],
+        "lookupLocales": [
+          "en-US",
+          "en-GB",
+          "en-CA",
+          "fr-CA",
+          "en-IN",
+          "cy-GB",
+          "gd-GB",
+          "ga-GB",
+          "es-US",
+          "es-MX",
+          "de-DE",
+          "fr-FR",
+          "es-ES",
+          "it-IT",
+          "nl-NL",
+          "pl-PL",
+          "pt-PT",
+          "pt-BR",
+          "ro-RO",
+          "sv-SE",
+          "ko-KR",
+          "zh-CN",
+          "ja-JP",
+          "hi-IN"
+        ],
+        "reportFallbacks": {
+          "ja-JP": "SwiftUI 画像にアクセシブル名がありません"
+        },
+        "sourceLocale": "en-US"
+      },
       "defaultLocale": "en-US",
       "defaultText": "SwiftUI image is missing an accessible name",
       "icuArgs": {},
@@ -546,6 +678,39 @@ window.__SCRIBE_ANCHORS__ = [
       "wcag-alt-text"
     ],
     "label": {
+      "catalogDependency": {
+        "explicitLocales": [],
+        "lookupLocales": [
+          "en-US",
+          "en-GB",
+          "en-CA",
+          "fr-CA",
+          "en-IN",
+          "cy-GB",
+          "gd-GB",
+          "ga-GB",
+          "es-US",
+          "es-MX",
+          "de-DE",
+          "fr-FR",
+          "es-ES",
+          "it-IT",
+          "nl-NL",
+          "pl-PL",
+          "pt-PT",
+          "pt-BR",
+          "ro-RO",
+          "sv-SE",
+          "ko-KR",
+          "zh-CN",
+          "ja-JP",
+          "hi-IN"
+        ],
+        "reportFallbacks": {
+          "ja-JP": "SwiftUI 画像のソース証拠"
+        },
+        "sourceLocale": "en-US"
+      },
       "defaultLocale": "en-US",
       "defaultText": "SwiftUI image source evidence",
       "icuArgs": {},
@@ -683,6 +848,39 @@ window.__SCRIBE_ANCHORS__ = [
     "parentAnchorId": "finding-missing-alt",
     "role": "source-snippet",
     "shareSummary": {
+      "catalogDependency": {
+        "explicitLocales": [],
+        "lookupLocales": [
+          "en-US",
+          "en-GB",
+          "en-CA",
+          "fr-CA",
+          "en-IN",
+          "cy-GB",
+          "gd-GB",
+          "ga-GB",
+          "es-US",
+          "es-MX",
+          "de-DE",
+          "fr-FR",
+          "es-ES",
+          "it-IT",
+          "nl-NL",
+          "pl-PL",
+          "pt-PT",
+          "pt-BR",
+          "ro-RO",
+          "sv-SE",
+          "ko-KR",
+          "zh-CN",
+          "ja-JP",
+          "hi-IN"
+        ],
+        "reportFallbacks": {
+          "ja-JP": "Image ビューは accessibilityLabel なしでプロフィールアラート行に描画されています。"
+        },
+        "sourceLocale": "en-US"
+      },
       "defaultLocale": "en-US",
       "defaultText": "The Image view is rendered in the profile alert row without an accessibilityLabel.",
       "icuArgs": {},
@@ -813,6 +1011,39 @@ window.__SCRIBE_ANCHORS__ = [
       }
     },
     "shareTitle": {
+      "catalogDependency": {
+        "explicitLocales": [],
+        "lookupLocales": [
+          "en-US",
+          "en-GB",
+          "en-CA",
+          "fr-CA",
+          "en-IN",
+          "cy-GB",
+          "gd-GB",
+          "ga-GB",
+          "es-US",
+          "es-MX",
+          "de-DE",
+          "fr-FR",
+          "es-ES",
+          "it-IT",
+          "nl-NL",
+          "pl-PL",
+          "pt-PT",
+          "pt-BR",
+          "ro-RO",
+          "sv-SE",
+          "ko-KR",
+          "zh-CN",
+          "ja-JP",
+          "hi-IN"
+        ],
+        "reportFallbacks": {
+          "ja-JP": "SwiftUI 画像のソース証拠"
+        },
+        "sourceLocale": "en-US"
+      },
       "defaultLocale": "en-US",
       "defaultText": "SwiftUI image source evidence",
       "icuArgs": {},
@@ -949,6 +1180,37 @@ window.__SCRIBE_ANCHORS__ = [
       "wcag-alt-text"
     ],
     "label": {
+      "catalogDependency": {
+        "explicitLocales": [],
+        "lookupLocales": [
+          "en-US",
+          "en-GB",
+          "en-CA",
+          "fr-CA",
+          "en-IN",
+          "cy-GB",
+          "gd-GB",
+          "ga-GB",
+          "es-US",
+          "es-MX",
+          "de-DE",
+          "fr-FR",
+          "es-ES",
+          "it-IT",
+          "nl-NL",
+          "pl-PL",
+          "pt-PT",
+          "pt-BR",
+          "ro-RO",
+          "sv-SE",
+          "ko-KR",
+          "zh-CN",
+          "ja-JP",
+          "hi-IN"
+        ],
+        "reportFallbacks": {},
+        "sourceLocale": "en-US"
+      },
       "defaultLocale": "en-US",
       "defaultText": "Fix plan",
       "icuArgs": {},
@@ -1086,6 +1348,37 @@ window.__SCRIBE_ANCHORS__ = [
     "parentAnchorId": "finding-missing-alt",
     "role": "fix-plan",
     "shareSummary": {
+      "catalogDependency": {
+        "explicitLocales": [],
+        "lookupLocales": [
+          "en-US",
+          "en-GB",
+          "en-CA",
+          "fr-CA",
+          "en-IN",
+          "cy-GB",
+          "gd-GB",
+          "ga-GB",
+          "es-US",
+          "es-MX",
+          "de-DE",
+          "fr-FR",
+          "es-ES",
+          "it-IT",
+          "nl-NL",
+          "pl-PL",
+          "pt-PT",
+          "pt-BR",
+          "ro-RO",
+          "sv-SE",
+          "ko-KR",
+          "zh-CN",
+          "ja-JP",
+          "hi-IN"
+        ],
+        "reportFallbacks": {},
+        "sourceLocale": "en-US"
+      },
       "defaultLocale": "en-US",
       "defaultText": "Live, per-finding fix plans generate automatically when Sonde analyzes your repository. This curated showcase demonstrates the report; see automated remediation in action on a live example.",
       "icuArgs": {},
@@ -1216,6 +1509,37 @@ window.__SCRIBE_ANCHORS__ = [
       }
     },
     "shareTitle": {
+      "catalogDependency": {
+        "explicitLocales": [],
+        "lookupLocales": [
+          "en-US",
+          "en-GB",
+          "en-CA",
+          "fr-CA",
+          "en-IN",
+          "cy-GB",
+          "gd-GB",
+          "ga-GB",
+          "es-US",
+          "es-MX",
+          "de-DE",
+          "fr-FR",
+          "es-ES",
+          "it-IT",
+          "nl-NL",
+          "pl-PL",
+          "pt-PT",
+          "pt-BR",
+          "ro-RO",
+          "sv-SE",
+          "ko-KR",
+          "zh-CN",
+          "ja-JP",
+          "hi-IN"
+        ],
+        "reportFallbacks": {},
+        "sourceLocale": "en-US"
+      },
       "defaultLocale": "en-US",
       "defaultText": "Fix plan",
       "icuArgs": {},

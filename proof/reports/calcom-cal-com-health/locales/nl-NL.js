@@ -1,8 +1,13 @@
 window.__SCRIBE_LOCALES__ = window.__SCRIBE_LOCALES__ || {};
 window.__SCRIBE_LOCALES__["nl-NL"] = {
-  "fallbackCount": 6,
+  "fallbackCount": 13,
   "locale": "nl-NL",
   "messages": {
+    "scribe.leaderboard.language": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Taal"
+    },
     "scribe.report.action.backToFinding": {
       "fallback": false,
       "reviewed": true,
@@ -27,6 +32,11 @@ window.__SCRIBE_LOCALES__["nl-NL"] = {
       "fallback": false,
       "reviewed": true,
       "text": "Snippet samenvouwen"
+    },
+    "scribe.report.action.completeFixPlan": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Voltooi herstelplan"
     },
     "scribe.report.action.copyDiagramLink": {
       "fallback": false,
@@ -138,6 +148,36 @@ window.__SCRIBE_LOCALES__["nl-NL"] = {
       "reviewed": true,
       "text": "Bron van diagram bekijken"
     },
+    "scribe.report.actionPriorities.affectedLocations": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "{count, plural, one {# getroffen locatie} other {# getroffen locaties}}"
+    },
+    "scribe.report.actionPriorities.nextAction": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Volgende actie"
+    },
+    "scribe.report.actionPriorities.originalEvidence": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Bekijk origineel bewijs"
+    },
+    "scribe.report.actionPriorities.summary": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Deze prioriteiten zijn een combinatie van impact, bereik en beschikbaar bewijs. Begin bovenaan en open vervolgens de getroffen locaties voor technische details."
+    },
+    "scribe.report.actionPriorities.title": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Wat eerst op te lossen"
+    },
+    "scribe.report.actionPriorities.why": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Waarom dit belangrijk is"
+    },
     "scribe.report.asset.export.markdown": {
       "fallback": false,
       "reviewed": true,
@@ -187,6 +227,26 @@ window.__SCRIBE_LOCALES__["nl-NL"] = {
       "fallback": false,
       "reviewed": true,
       "text": "Het Ultraviolet thema"
+    },
+    "scribe.report.autofixFilter.fullExplanation": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Volledige uitleg"
+    },
+    "scribe.report.autofixFilter.help": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Aantallen weerspiegelen de huidige zoekopdracht en filters. Een voorbeeld toont een gegenereerde wijziging. Dit betekent niet dat de wijziging is toegepast of geverifieerd."
+    },
+    "scribe.report.autofixFilter.label": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Autofix-resultaten"
+    },
+    "scribe.report.autofixFilter.preview": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Autofix-voorbeelden"
     },
     "scribe.report.brand": {
       "fallback": false,
@@ -258,10 +318,20 @@ window.__SCRIBE_LOCALES__["nl-NL"] = {
       "reviewed": true,
       "text": "ORM- & databasecapaciteit"
     },
+    "scribe.report.complianceEvidence.criterion": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "{criterion}"
+    },
     "scribe.report.complianceExample.source.summary": {
       "fallback": false,
       "reviewed": true,
       "text": "{sourcePath} L{startLine}-L{endLine}"
+    },
+    "scribe.report.context.title": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Meer informatie"
     },
     "scribe.report.control.allClassifications": {
       "fallback": false,
@@ -303,6 +373,16 @@ window.__SCRIBE_LOCALES__["nl-NL"] = {
       "reviewed": true,
       "text": "Inhoud"
     },
+    "scribe.report.control.emptyPlan": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Er is geen gestructureerde inhoud van het plan beschikbaar."
+    },
+    "scribe.report.control.evictedPlan": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Planinhoud is vrijgegeven. Open het plan opnieuw om het opnieuw te laden."
+    },
     "scribe.report.control.expandContents": {
       "fallback": false,
       "reviewed": true,
@@ -318,10 +398,10 @@ window.__SCRIBE_LOCALES__["nl-NL"] = {
       "reviewed": true,
       "text": "Eerste"
     },
-    "scribe.report.control.language": {
+    "scribe.report.control.guidance": {
       "fallback": false,
       "reviewed": true,
-      "text": "Taal"
+      "text": "Richtlijnen"
     },
     "scribe.report.control.languageSearch": {
       "fallback": false,
@@ -332,6 +412,11 @@ window.__SCRIBE_LOCALES__["nl-NL"] = {
       "fallback": false,
       "reviewed": true,
       "text": "Laatste"
+    },
+    "scribe.report.control.loadingPlan": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Herstelplan laden…"
     },
     "scribe.report.control.locale": {
       "fallback": false,
@@ -348,6 +433,11 @@ window.__SCRIBE_LOCALES__["nl-NL"] = {
       "reviewed": true,
       "text": "Volgende"
     },
+    "scribe.report.control.outsideResults": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Buiten de huidige resultaten"
+    },
     "scribe.report.control.pageSize": {
       "fallback": false,
       "reviewed": true,
@@ -357,6 +447,11 @@ window.__SCRIBE_LOCALES__["nl-NL"] = {
       "fallback": false,
       "reviewed": true,
       "text": "Pagina"
+    },
+    "scribe.report.control.pinContents": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Navigatie vastzetten"
     },
     "scribe.report.control.previousPage": {
       "fallback": false,
@@ -368,6 +463,11 @@ window.__SCRIBE_LOCALES__["nl-NL"] = {
       "reviewed": true,
       "text": "De lezerweergave"
     },
+    "scribe.report.control.referenceMaterial": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Referentiemateriaal"
+    },
     "scribe.report.control.remediation": {
       "fallback": false,
       "reviewed": true,
@@ -377,6 +477,16 @@ window.__SCRIBE_LOCALES__["nl-NL"] = {
       "fallback": false,
       "reviewed": true,
       "text": "Resultaten"
+    },
+    "scribe.report.control.retryPlan": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Plan opnieuw laden"
+    },
+    "scribe.report.control.returnToResults": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Terug naar resultaten"
     },
     "scribe.report.control.search": {
       "fallback": false,
@@ -388,10 +498,20 @@ window.__SCRIBE_LOCALES__["nl-NL"] = {
       "reviewed": true,
       "text": "Ernstigheid"
     },
+    "scribe.report.control.targetUnavailable": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Dit rapportdoel is niet beschikbaar"
+    },
     "scribe.report.control.theme": {
       "fallback": false,
       "reviewed": true,
       "text": "Thema"
+    },
+    "scribe.report.control.unavailablePlan": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Het plan kon niet worden geladen. Open het volledige plan of probeer het opnieuw."
     },
     "scribe.report.facet.status.absent": {
       "fallback": false,
@@ -463,6 +583,66 @@ window.__SCRIBE_LOCALES__["nl-NL"] = {
       "reviewed": true,
       "text": "Automatisch herstellen"
     },
+    "scribe.report.fixPlan.component.acceptanceCriteria": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Acceptatiecriteria"
+    },
+    "scribe.report.fixPlan.component.beforeAfter": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Voor / na (voorbeeld automatische correctie)"
+    },
+    "scribe.report.fixPlan.component.closeFullScreen": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Sluiten"
+    },
+    "scribe.report.fixPlan.component.fixGroups": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Herstelgroepen"
+    },
+    "scribe.report.fixPlan.component.fixed": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Hersteld"
+    },
+    "scribe.report.fixPlan.component.fullScreen": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Volledig scherm diff"
+    },
+    "scribe.report.fixPlan.component.manualSteps": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Handmatige herstelstappen"
+    },
+    "scribe.report.fixPlan.component.original": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Origineel"
+    },
+    "scribe.report.fixPlan.component.source": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Bron"
+    },
+    "scribe.report.fixPlan.component.splitView": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Gesplitst"
+    },
+    "scribe.report.fixPlan.component.unifiedView": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Gecombineerd"
+    },
+    "scribe.report.fixPlan.component.verify": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Verifiëren"
+    },
     "scribe.report.fixPlan.pageTitle": {
       "fallback": false,
       "reviewed": true,
@@ -477,6 +657,61 @@ window.__SCRIBE_LOCALES__["nl-NL"] = {
       "fallback": false,
       "reviewed": true,
       "text": "Begeleiding voor herstel van de bevindingen in dit rapport."
+    },
+    "scribe.report.metric.displayedScale": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Weergaveschaal"
+    },
+    "scribe.report.metric.explanation": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Elke rij toont zijn eigen geordende referentiebanden en gemeten waarde. Het label van de metriek geeft aan welke richting beter is."
+    },
+    "scribe.report.metric.higherIsBetter": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Hoger is beter"
+    },
+    "scribe.report.metric.lowerIsBetter": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Lager is beter"
+    },
+    "scribe.report.metric.measured": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "gemeten"
+    },
+    "scribe.report.metric.measuredResults": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Gemeten resultaten"
+    },
+    "scribe.report.metric.referenceRanges": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Referentiebereiken"
+    },
+    "scribe.report.metric.severity.critical": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Kritiek"
+    },
+    "scribe.report.metric.severity.good": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Goed"
+    },
+    "scribe.report.metric.severity.high": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Hoog"
+    },
+    "scribe.report.metric.severity.moderate": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Gemiddeld"
     },
     "scribe.report.mode.auto": {
       "fallback": false,
@@ -573,26 +808,6 @@ window.__SCRIBE_LOCALES__["nl-NL"] = {
       "reviewed": true,
       "text": "Vorm van opslagplaats"
     },
-    "scribe.report.repositoryHealth.finding.analysisIncomplete.criterion": {
-      "fallback": false,
-      "reviewed": true,
-      "text": "Voor opslagplaatsstatusscans moeten alle geselecteerde probes en brondetectors schoon worden voltooid."
-    },
-    "scribe.report.repositoryHealth.finding.analysisIncomplete.fix": {
-      "fallback": false,
-      "reviewed": true,
-      "text": "Repareer mislukte sondes voordat u resultaten publiceert die gericht zijn op de klant; waarschuwingen moeten de detector en het uitzonderingsbericht identificeren."
-    },
-    "scribe.report.repositoryHealth.finding.analysisIncomplete.summary": {
-      "fallback": false,
-      "reviewed": true,
-      "text": "{failedProbeCount} sonde(s) is(zijn) mislukt en {detectorWarningCount} detectorwaarschuwing(en) zijn opgenomen."
-    },
-    "scribe.report.repositoryHealth.finding.analysisIncomplete.title": {
-      "fallback": false,
-      "reviewed": true,
-      "text": "De analyse van de opslagplaatsstatus had een onvolledige sondedekking"
-    },
     "scribe.report.repositoryHealth.finding.complexity.criterion": {
       "fallback": false,
       "reviewed": true,
@@ -601,7 +816,7 @@ window.__SCRIBE_LOCALES__["nl-NL"] = {
     "scribe.report.repositoryHealth.finding.complexity.fix": {
       "fallback": false,
       "reviewed": true,
-      "text": "Splits de hotspot in kleinere beslissingseenheden, behoud het huidige gedrag met gerichte tests en voer het statusrapport opnieuw uit voordat u automatische opschoning toepast."
+      "text": "Splits {symbol} in kleinere beslissingseenheden, behoud het huidige gedrag met gerichte tests en voer het statusrapport opnieuw uit voordat u automatische opschoning toepast."
     },
     "scribe.report.repositoryHealth.finding.complexity.summary": {
       "fallback": false,
@@ -622,11 +837,6 @@ window.__SCRIBE_LOCALES__["nl-NL"] = {
       "fallback": false,
       "reviewed": true,
       "text": "Samenvatting van de gezondheid van de openbare opslagplaats met bewijs van dekking dat door bronnen wordt ondersteund."
-    },
-    "scribe.report.repositoryHealth.finding.raw.criterion": {
-      "fallback": false,
-      "reviewed": true,
-      "text": "{criterion}"
     },
     "scribe.report.repositoryHealth.finding.raw.fix": {
       "fallback": false,
@@ -678,41 +888,6 @@ window.__SCRIBE_LOCALES__["nl-NL"] = {
       "reviewed": true,
       "text": "De opslagplaatsstatusscan heeft herbruikbaar bewijsmateriaal dat door de bron wordt ondersteund"
     },
-    "scribe.report.repositoryHealth.fixPlan.codeHealth.step.extract": {
-      "fallback": false,
-      "reviewed": true,
-      "text": "Refactor het geciteerde bereik in aflopende risicovolgorde: splits de clusters met de hoogste complexiteit in benoemde helpers of smallere beslissingseenheden met behoud van gedrag."
-    },
-    "scribe.report.repositoryHealth.fixPlan.codeHealth.step.inspect": {
-      "fallback": false,
-      "reviewed": true,
-      "text": "Inspecteer {sourcePath}-regels van {startLine} tot en met {endLine} en geef een lijst weer van de vertakkings-, lus-, vroegtijdige terugkeer- en uitzonderingspaden die de gemeten complexiteit veroorzaken."
-    },
-    "scribe.report.repositoryHealth.fixPlan.codeHealth.step.validate": {
-      "fallback": false,
-      "reviewed": true,
-      "text": "Voeg of update gerichte tests voor de gewijzigde branches in de regels {startLine} tot en met {endLine}, voer de dichtstbijzijnde pakketcontroles uit, en genereer vervolgens het statusrapport van de repository opnieuw."
-    },
-    "scribe.report.repositoryHealth.fixPlan.generic.step.inspect": {
-      "fallback": false,
-      "reviewed": true,
-      "text": "Controleer het geciteerde bronbereik in {sourcePath} regels {startLine} tot en met {endLine}."
-    },
-    "scribe.report.repositoryHealth.fixPlan.generic.step.resolve": {
-      "fallback": false,
-      "reviewed": true,
-      "text": "Pas de remediëring toe met de kleinste bronwijziging die de bevindingen oplost."
-    },
-    "scribe.report.repositoryHealth.fixPlan.generic.step.validate": {
-      "fallback": false,
-      "reviewed": true,
-      "text": "Voer het statusrapport van de opslagplaats en de dichtstbijzijnde tests op pakketniveau opnieuw uit voordat u de oplossing publiceert."
-    },
-    "scribe.report.repositoryHealth.fixPlan.scope": {
-      "fallback": false,
-      "reviewed": true,
-      "text": "Bereik van de doelbron: {sourcePath} lijnen {startLine} tot en met {endLine}."
-    },
     "scribe.report.repositoryHealth.overview.body": {
       "fallback": false,
       "reviewed": true,
@@ -743,6 +918,56 @@ window.__SCRIBE_LOCALES__["nl-NL"] = {
       "reviewed": true,
       "text": "Sonde Score"
     },
+    "scribe.report.repositoryHealth.sourceRow.apiEndpoints": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "API-eindpunten"
+    },
+    "scribe.report.repositoryHealth.sourceRow.cicd": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "CI/CD"
+    },
+    "scribe.report.repositoryHealth.sourceRow.databaseModel": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Databasemodel"
+    },
+    "scribe.report.repositoryHealth.sourceRow.frameworks": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Frameworks"
+    },
+    "scribe.report.repositoryHealth.sourceRow.languages": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Talen"
+    },
+    "scribe.report.repositoryHealth.sourceRow.otherRuntimeSurfaces": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Andere runtime-oppervlakken"
+    },
+    "scribe.report.repositoryHealth.sourceRow.packagesAndBuild": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Pakketten en build"
+    },
+    "scribe.report.repositoryHealth.sourceRow.resourceDetections": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Resource-detecties"
+    },
+    "scribe.report.repositoryHealth.sourceRow.sondePerformance": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Sonde Performance"
+    },
+    "scribe.report.repositoryHealth.sourceRow.source": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Bron"
+    },
     "scribe.report.repositoryHealth.sourceSnippet.summary": {
       "fallback": false,
       "reviewed": true,
@@ -757,21 +982,6 @@ window.__SCRIBE_LOCALES__["nl-NL"] = {
       "fallback": false,
       "reviewed": true,
       "text": "Brongegevens voor de gezondheid van de repository die {sourceFileCount, number} bronbestanden, {languageCount, number} talen, {packageManifestCount, number} pakketmanifesten, {buildConfigCount, number} buildconfiguraties, {frameworkDetectionCount, number} resource-detecties en {databaseSchemaCount, number} database-schema-artefacten tonen."
-    },
-    "scribe.report.repositoryHealth.visualization.finding.controlFlow.alt": {
-      "fallback": false,
-      "reviewed": true,
-      "text": "Control-flow grafiek voor {subject} in {sourcePath} regels {startLine} tot en met {endLine}."
-    },
-    "scribe.report.repositoryHealth.visualization.finding.controlFlow.title": {
-      "fallback": false,
-      "reviewed": true,
-      "text": "Control-flow-grafiek voor {subject}"
-    },
-    "scribe.report.repositoryHealth.visualization.finding.description": {
-      "fallback": false,
-      "reviewed": true,
-      "text": "Het diagram wordt gegenereerd van {sourcePath}-regels {startLine} tot en met {endLine} en benadrukt het door de bron ondersteunde controlestroom- of schemabewijs voor de bevindingen."
     },
     "scribe.report.repositoryHealth.visualization.longDescription": {
       "fallback": false,
@@ -823,10 +1033,15 @@ window.__SCRIBE_LOCALES__["nl-NL"] = {
       "reviewed": true,
       "text": "Bron"
     },
-    "scribe.report.term.primary": {
+    "scribe.report.term.repository-health.alias": {
       "fallback": false,
       "reviewed": true,
-      "text": "Repository-gezondheid"
+      "text": "Gezondheidsrapport"
+    },
+    "scribe.report.term.repository-health.primary": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Gezondheid van de repository"
     },
     "scribe.report.theme.daylight": {
       "fallback": false,
@@ -867,6 +1082,11 @@ window.__SCRIBE_LOCALES__["nl-NL"] = {
       "fallback": false,
       "reviewed": true,
       "text": "Er is geen visualisatie-artefact gegenereerd voor deze bevinding."
+    },
+    "scribe.report.visualization.visualization-repository-health.projection": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Brongegevens voor opslagplaatsstatus"
     },
     "settings.theme.daylight": {
       "fallback": false,

@@ -1,0 +1,690 @@
+<!DOCTYPE html>
+<html lang="en-US" dir="ltr" data-theme="auto" data-mode="auto" data-sonde-theme="ultraviolet">
+<head>
+  <base data-sonde-hosted-report-base href="/proof/reports/mobile-accessibility-scan/exports/report/">
+  <script>(function(){if(window.location.protocol==='file:'){var base=document.querySelector('base[data-sonde-hosted-report-base]');if(base)base.remove();}})();</script>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="generator" content="sonde-scribe">
+  <meta name="sonde-scribe-package-manifest" content="../../package.manifest.json">
+  <title>Markdown report - Mobile Accessibility Scan</title>
+  <link rel="icon" href="../../favicon.ico" sizes="32x32">
+  <link rel="icon" type="image/svg+xml" href="../../favicon.svg">
+  <link rel="apple-touch-icon" href="../../apple-touch-icon.png">
+  <link rel="stylesheet" data-scribe-theme-stylesheet href="../../assets/immutable/theme-ultraviolet.e8d1e286a433a1f6.css">
+  <script src="../../boot/file-direct.js" defer></script>
+  <script src="../../data/manifest.js" defer></script>
+  <script src="../../data/toc.js" defer></script>
+  <script src="../../data/anchors.js" defer></script>
+  <script src="../../data/sitemap.js" defer></script>
+  <script src="../../data/findings.js" defer></script>
+  <script src="../../data/share-actions.js" defer></script>
+  <script src="../../data/feedback-actions.js" defer></script>
+  <script src="../../data/export-actions.js" defer></script>
+  <script src="../../data/reader-views.js" defer></script>
+  <script src="../../data/visualizations.js" defer></script>
+  <script src="../../data/plan-slices.js" defer></script>
+  <script src="../../data/report-export-input.js" defer></script>
+  <script src="../../data/oscal-input.js" defer></script>
+  <script src="../../assets/immutable/search-dialog-bundle.b668c77a9575fe79.js" defer></script>
+  <script src="../../locales/en-US.js" defer></script>
+  <script src="../../locales/en-GB.js" defer></script>
+  <script src="../../locales/en-CA.js" defer></script>
+  <script src="../../locales/fr-CA.js" defer></script>
+  <script src="../../locales/en-IN.js" defer></script>
+  <script src="../../locales/cy-GB.js" defer></script>
+  <script src="../../locales/gd-GB.js" defer></script>
+  <script src="../../locales/ga-GB.js" defer></script>
+  <script src="../../locales/es-US.js" defer></script>
+  <script src="../../locales/es-MX.js" defer></script>
+  <script src="../../locales/de-DE.js" defer></script>
+  <script src="../../locales/fr-FR.js" defer></script>
+  <script src="../../locales/es-ES.js" defer></script>
+  <script src="../../locales/it-IT.js" defer></script>
+  <script src="../../locales/nl-NL.js" defer></script>
+  <script src="../../locales/pl-PL.js" defer></script>
+  <script src="../../locales/pt-PT.js" defer></script>
+  <script src="../../locales/pt-BR.js" defer></script>
+  <script src="../../locales/ro-RO.js" defer></script>
+  <script src="../../locales/sv-SE.js" defer></script>
+  <script src="../../locales/ko-KR.js" defer></script>
+  <script src="../../locales/zh-CN.js" defer></script>
+  <script src="../../locales/ja-JP.js" defer></script>
+  <script src="../../locales/hi-IN.js" defer></script>
+  <script src="../../assets/immutable/navigation-rail.383c60fe9d907824.js" defer></script>
+</head>
+<body class="scribe-report scribe-markdown-viewer" data-reader-view="developer">
+  <div class="sonde-container">
+  <header class="sonde-header">
+    <a class="skip-link" href="#main-content">Skip to main content</a>
+    <div class="sonde-responsive-toolbar">
+      <svg class="sonde-logo" viewBox="0 0 512 512" width="64" height="64" aria-hidden="true"><defs><radialGradient id="scribe-report-mark-inline-sun" cx="50%" cy="50%" r="50%"><stop offset="0%" stop-color="var(--sonde-daylight-mark-sun-stop-0)"/><stop offset="60%" stop-color="var(--sonde-daylight-mark-sun-stop-1)"/><stop offset="100%" stop-color="var(--sonde-daylight-mark-sun-stop-2)"/></radialGradient><clipPath id="scribe-report-mark-inline-disc"><circle cx="256" cy="256" r="240"/></clipPath></defs><g style="display:var(--sonde-daylight-mark-solid-display)"><circle cx="256" cy="256" r="240" fill="url(#scribe-report-mark-inline-sun)"/><g clip-path="url(#scribe-report-mark-inline-disc)"><g fill="var(--sonde-daylight-mark-crater)" stroke="var(--sonde-daylight-mark-crater)"><g opacity="0.7"><path d="M40,240 C60,110 170,40 250,90 C320,130 330,210 260,280 C200,340 50,340 40,240 Z" opacity="0.6"/><path d="M290,130 C360,60 460,110 470,190 C480,270 410,350 330,320 C260,290 230,190 290,130 Z" opacity="0.7"/><path d="M390,280 C470,250 510,300 480,380 C450,440 380,410 390,280 Z" opacity="0.5"/><path d="M130,350 C180,290 260,350 230,430 C200,510 60,450 130,350 Z" opacity="0.5"/><circle cx="230" cy="430" r="18" fill="transparent" stroke-width="4" opacity="0.8"/><circle cx="170" cy="190" r="12" fill="transparent" stroke-width="3" opacity="0.7"/><circle cx="90" cy="230" r="8" opacity="0.8"/></g></g></g><g clip-path="url(#scribe-report-mark-inline-disc)"><g transform="translate(250,240) rotate(-40)" fill="var(--sonde-daylight-mark-probe)" stroke="var(--sonde-daylight-mark-probe)"><line x1="-32" y1="-8" x2="-160" y2="-40" stroke-width="6" stroke-linecap="round"/><circle cx="-160" cy="-40" r="10"/><line x1="-32" y1="16" x2="-125" y2="62" stroke-width="8" stroke-linecap="round"/><rect x="-141" y="38" width="32" height="60" rx="4" transform="rotate(20,-125,62)"/><line x1="-16" y1="-40" x2="-46" y2="-92" stroke-width="7" stroke-linecap="round"/><rect x="-70" y="-108" width="48" height="28" rx="4"/><circle cx="-56" cy="-98" r="8"/><circle cx="-36" cy="-98" r="6"/><path d="M48,-108 Q128,-78 128,0 Q128,78 48,108" stroke-width="5" stroke-linejoin="round"/><line x1="58" y1="-50" x2="108" y2="0" stroke-width="5"/><line x1="58" y1="50" x2="108" y2="0" stroke-width="5"/><line x1="48" y1="0" x2="108" y2="0" stroke-width="5"/><circle cx="110" cy="0" r="14"/><polygon points="-16,-40 48,-40 62,-24 62,24 48,40 -16,40 -30,24 -30,-24"/></g></g></g><g style="display:var(--sonde-daylight-mark-line-display)"><circle cx="256" cy="256" r="232" fill="none" stroke="var(--sonde-daylight-hc-mark-earth-blue)" stroke-width="28"/><defs><clipPath id="scribe-report-mark-inline-hc-clip"><circle cx="256" cy="256" r="214"/></clipPath></defs><g clip-path="url(#scribe-report-mark-inline-hc-clip)"><g transform="translate(276,228) scale(1.3) rotate(-40)" fill="none" stroke-linecap="round" stroke-linejoin="round"><line x1="-32" y1="-8" x2="-165" y2="-42" stroke="var(--sonde-daylight-hc-mark-metal)" stroke-width="8"/><circle cx="-80" cy="-20" r="3" stroke="var(--sonde-daylight-hc-mark-metal)" stroke-width="3"/><circle cx="-125" cy="-32" r="2.5" stroke="var(--sonde-daylight-hc-mark-metal)" stroke-width="3"/><circle cx="-165" cy="-42" r="8" stroke="var(--sonde-daylight-hc-mark-metal)" stroke-width="4"/><circle cx="-165" cy="-42" r="4" stroke="var(--sonde-daylight-hc-mark-metal)" stroke-width="2"/><line x1="-165" y1="-48" x2="-165" y2="-36" stroke="var(--sonde-daylight-hc-mark-metal)" stroke-width="2"/><line x1="-171" y1="-42" x2="-159" y2="-42" stroke="var(--sonde-daylight-hc-mark-metal)" stroke-width="2"/><line x1="-32" y1="16" x2="-130" y2="64" stroke="var(--sonde-daylight-hc-mark-metal)" stroke-width="12"/><circle cx="-80" cy="40" r="4" stroke="var(--sonde-daylight-hc-mark-metal)" stroke-width="4"/><g transform="translate(-130,64) rotate(20)"><rect x="-16" y="-32" width="32" height="64" rx="4" stroke="var(--sonde-daylight-hc-mark-rtg-brown)" stroke-width="6"/><line x1="-16" y1="-22" x2="16" y2="-22" stroke="var(--sonde-daylight-hc-mark-rtg-brown)" stroke-width="4"/><line x1="-16" y1="-12" x2="16" y2="-12" stroke="var(--sonde-daylight-hc-mark-rtg-brown)" stroke-width="4"/><line x1="-16" y1="-2" x2="16" y2="-2" stroke="var(--sonde-daylight-hc-mark-rtg-brown)" stroke-width="4"/><line x1="-16" y1="8" x2="16" y2="8" stroke="var(--sonde-daylight-hc-mark-rtg-brown)" stroke-width="4"/><line x1="-16" y1="18" x2="16" y2="18" stroke="var(--sonde-daylight-hc-mark-rtg-brown)" stroke-width="4"/><line x1="-16" y1="28" x2="16" y2="28" stroke="var(--sonde-daylight-hc-mark-rtg-brown)" stroke-width="4"/><rect x="-18" y="-34" width="36" height="4" rx="2" stroke="var(--sonde-daylight-hc-mark-rtg-brown)" stroke-width="3"/><rect x="-18" y="30" width="36" height="4" rx="2" stroke="var(--sonde-daylight-hc-mark-rtg-brown)" stroke-width="3"/></g><line x1="-16" y1="-40" x2="-48" y2="-96" stroke="var(--sonde-daylight-hc-mark-metal)" stroke-width="10"/><circle cx="-30" cy="-64" r="4" stroke="var(--sonde-daylight-hc-mark-metal)" stroke-width="4"/><g transform="translate(-48,-96)"><rect x="-24" y="-16" width="48" height="28" rx="4" stroke="var(--sonde-daylight-hc-mark-metal)" stroke-width="6"/><line x1="-20" y1="-8" x2="20" y2="-8" stroke="var(--sonde-daylight-hc-mark-metal)" stroke-width="2"/><line x1="-20" y1="0" x2="20" y2="0" stroke="var(--sonde-daylight-hc-mark-metal)" stroke-width="2"/><circle cx="-10" cy="-4" r="8" stroke="var(--sonde-daylight-hc-mark-metal)" stroke-width="5"/><circle cx="-10" cy="-4" r="4" stroke="var(--sonde-daylight-hc-mark-metal)" stroke-width="2"/><circle cx="10" cy="-4" r="6" stroke="var(--sonde-daylight-hc-mark-metal)" stroke-width="4"/><circle cx="10" cy="-4" r="3" stroke="var(--sonde-daylight-hc-mark-metal)" stroke-width="2"/><rect x="-4" y="4" width="8" height="6" rx="1.5" stroke="var(--sonde-daylight-hc-mark-metal)" stroke-width="3"/></g><path d="M48,-112 Q130,-80 130,0 Q130,80 48,112" stroke="var(--sonde-daylight-hc-mark-earth-blue)" stroke-width="8"/><path d="M56,-96 Q118,-68 118,0 Q118,68 56,96" stroke="var(--sonde-daylight-hc-mark-earth-blue)" stroke-width="2"/><path d="M64,-80 Q106,-56 106,0 Q106,56 64,80" stroke="var(--sonde-daylight-hc-mark-earth-blue)" stroke-width="2"/><path d="M72,-60 Q94,-40 94,0 Q94,40 72,60" stroke="var(--sonde-daylight-hc-mark-earth-blue)" stroke-width="2"/><line x1="60" y1="-52" x2="110" y2="0" stroke="var(--sonde-daylight-hc-mark-earth-blue)" stroke-width="8"/><line x1="60" y1="52" x2="110" y2="0" stroke="var(--sonde-daylight-hc-mark-earth-blue)" stroke-width="8"/><line x1="48" y1="0" x2="110" y2="0" stroke="var(--sonde-daylight-hc-mark-earth-blue)" stroke-width="8"/><circle cx="112" cy="0" r="14" stroke="var(--sonde-daylight-hc-mark-earth-blue)" stroke-width="6"/><circle cx="112" cy="0" r="8" stroke="var(--sonde-daylight-hc-mark-earth-blue)" stroke-width="3"/><polygon points="-16,-40 48,-40 64,-24 64,24 48,40 -16,40 -32,24 -32,-24" stroke="var(--sonde-daylight-hc-mark-bus-gold)" stroke-width="8"/><line x1="0" y1="-40" x2="0" y2="40" stroke="var(--sonde-daylight-hc-mark-bus-gold)" stroke-width="4"/><line x1="24" y1="-40" x2="24" y2="40" stroke="var(--sonde-daylight-hc-mark-bus-gold)" stroke-width="4"/><line x1="-16" y1="-20" x2="48" y2="-20" stroke="var(--sonde-daylight-hc-mark-bus-gold)" stroke-width="3"/><line x1="-16" y1="0" x2="48" y2="0" stroke="var(--sonde-daylight-hc-mark-bus-gold)" stroke-width="3"/><line x1="-16" y1="20" x2="48" y2="20" stroke="var(--sonde-daylight-hc-mark-bus-gold)" stroke-width="3"/><rect x="4" y="-16" width="16" height="12" rx="1.5" stroke="var(--sonde-daylight-hc-mark-bus-gold)" stroke-width="3"/><rect x="28" y="-16" width="16" height="12" rx="1.5" stroke="var(--sonde-daylight-hc-mark-bus-gold)" stroke-width="3"/><rect x="4" y="4" width="16" height="12" rx="1.5" stroke="var(--sonde-daylight-hc-mark-bus-gold)" stroke-width="3"/><rect x="28" y="4" width="16" height="12" rx="1.5" stroke="var(--sonde-daylight-hc-mark-bus-gold)" stroke-width="3"/><rect x="-36" y="-12" width="8" height="24" rx="2" stroke="var(--sonde-daylight-hc-mark-metal)" stroke-width="4"/><path d="M-44,-8 L-52,-14 L-52,14 L-44,8 Z" stroke="var(--sonde-daylight-hc-mark-metal)" stroke-width="4"/><g transform="translate(-8,0)" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M-52,-14 Q-86,-20 -112,-8 Q-120,0 -112,8 Q-86,20 -52,14" stroke="var(--sonde-daylight-hc-mark-flame-deep)" stroke-width="6"/><path d="M-52,-10 Q-78,-14 -96,-5 Q-102,0 -96,5 Q-78,14 -52,10" stroke="var(--sonde-daylight-hc-mark-flame-mid)" stroke-width="5"/><path d="M-52,-6 Q-68,-8 -78,-2 Q-82,0 -78,2 Q-68,8 -52,6" stroke="var(--sonde-daylight-hc-mark-flame-hot)" stroke-width="4"/></g><line x1="16" y1="-40" x2="24" y2="-56" stroke="var(--sonde-daylight-hc-mark-metal)" stroke-width="5"/><circle cx="24" cy="-56" r="3" stroke="var(--sonde-daylight-hc-mark-metal)" stroke-width="3"/></g></g></g></svg>
+      <div>
+        <p class="meta"><span data-scribe-msgid="scribe.report.brand">Sonde Scribe</span> alpha</p>
+        <p class="meta"><a href="../../index.html">Back to report</a></p>
+        <h1>Markdown report</h1>
+        <p class="scribe-standalone-report-context" data-scribe-msgid="scribe.report.title">Mobile Accessibility Scan</p>
+      </div>
+    </div>
+  </header>
+  <main id="main-content" class="sonde-data-width" data-presentation-active="true">
+    <figure class="source-snippet scribe-markdown-source" data-source-path="exports/report.md" data-source-line="1" data-start-line="1" data-end-line="1" data-scribe-source-fullscreen-label="Full screen Markdown" data-scribe-source-close-fullscreen-label="Close full screen Markdown">
+      <figcaption>
+        <span class="scribe-source-caption-main"><span class="scribe-source-caption-text">report.md</span></span>
+      </figcaption>
+      <div id="scribe-markdown-report-source" class="scribe-source-code-region" data-scribe-source-code-region>
+        <div class="scribe-markdown-viewer-toolbar">
+          <div class="sonde-markdown-view-tabs scribe-markdown-tabs" aria-label="Markdown view" data-scribe-markdown-tablist>
+  <a id="scribe-markdown-preview-tab" class="finding-link-btn scribe-source-action scribe-source-action--icon sonde-markdown-view-tab scribe-markdown-tab" href="#scribe-markdown-preview-panel" aria-controls="scribe-markdown-preview-panel" aria-label="Preview" title="Preview" data-scribe-tooltip data-tooltip="Preview" data-scribe-markdown-tab="preview" data-scribe-markdown-selected="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false" data-sonde-icon="material:Visibility" data-sonde-icon-provider="material"><g><path d="M12 4C7 4 2.73 7.11 1 11.5 2.73 15.89 7 19 12 19s9.27-3.11 11-7.5C21.27 7.11 17 4 12 4m0 12.5c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5m0-8c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3"></path></g></svg></a>
+  <a id="scribe-markdown-source-tab" class="finding-link-btn scribe-source-action scribe-source-action--icon sonde-markdown-view-tab scribe-markdown-tab" href="#scribe-markdown-source-panel" aria-controls="scribe-markdown-source-panel" aria-label="Source" title="Source" data-scribe-tooltip data-tooltip="Source" data-scribe-markdown-tab="source" data-scribe-markdown-selected="false"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false" data-sonde-icon="material:Code" data-sonde-icon-provider="material"><g><path d="M8.7 15.9 4.8 12l3.9-3.9c.39-.39.39-1.01 0-1.4a.984.984 0 0 0-1.4 0l-4.59 4.59c-.39.39-.39 1.02 0 1.41l4.59 4.6c.39.39 1.01.39 1.4 0s.39-1.01 0-1.4m6.6 0 3.9-3.9-3.9-3.9a.984.984 0 0 1 0-1.4c.39-.39 1.01-.39 1.4 0l4.59 4.59c.39.39.39 1.02 0 1.41l-4.59 4.6c-.39.39-1.01.39-1.4 0a.984.984 0 0 1 0-1.4"></path></g></svg></a>
+</div>
+          <span class="scribe-source-actions scribe-source-frame-actions">
+            <button class="finding-link-btn scribe-source-action scribe-source-action--icon scribe-code-copy" type="button" data-scribe-markdown-copy aria-label="Copy code" title="Copy code" hidden><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false"><path d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1Zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2Zm0 16H8V7h11v14Z"/></svg></button>
+            <a class="finding-link-btn scribe-source-action scribe-source-action--icon" href="../report.md" download aria-label="Download Markdown file" title="Download Markdown file"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false"><path d="M19 9h-4V3H9v6H5l7 7 7-7ZM5 18v2h14v-2H5Z"/></svg></a>
+            <button class="finding-link-btn scribe-source-action scribe-source-action--icon" type="button" data-scribe-source-fullscreen aria-haspopup="dialog" aria-controls="scribe-markdown-report-source" title="Full screen Markdown" aria-label="Full screen Markdown" hidden><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false" data-sonde-icon="material:OpenInFull" data-sonde-icon-provider="material"><g><path d="M21 8.59V4c0-.55-.45-1-1-1h-4.59c-.89 0-1.34 1.08-.71 1.71l1.59 1.59-10 10-1.59-1.59c-.62-.63-1.7-.19-1.7.7V20c0 .55.45 1 1 1h4.59c.89 0 1.34-1.08.71-1.71L7.71 17.7l10-10 1.59 1.59c.62.63 1.7.19 1.7-.7"></path></g></svg></button>
+          </span>
+        </div>
+        <div id="scribe-markdown-preview-panel" class="scribe-markdown-preview sonde-markdown-content" aria-labelledby="scribe-markdown-preview-tab" data-scribe-markdown-panel="preview"><h1>Mobile Accessibility Scan</h1>
+<p>Sonde Scribe alpha</p>
+<p>Scope: Cockpit Mobile accessibility fixture
+Runtime: file-direct
+Report type: mobile-accessibility-scan
+Export source: exports/report.md</p>
+<span id="section-overview" class="sonde-markdown-anchor" aria-hidden="true"></span>
+<h2>Overview</h2>
+<p>This file-direct report loads runtime data from relative assets, preserves anchors without a server, and uses evidence from the cockpit-mobile accessibility fixture.</p>
+<p><strong>Accessibility issue:</strong> WCAG 1.1.1: the SwiftUI Image is meaningful content, but the fixture exposes it without an accessibilityLabel.</p>
+<ul>
+<li><strong>Discovery summary:</strong> 10 public findings, 5 source languages, 0 private artifacts exposed.</li>
+<li><strong>Sonde Score:</strong> <strong>860</strong> / 1000</li>
+<li><strong>Compliance matrix:</strong> WCAG, HIG, Material Design, source trace, and brand-consistency findings are represented.</li>
+</ul>
+<span id="finding-missing-alt" class="sonde-markdown-anchor" aria-hidden="true"></span>
+<h2>SwiftUI image is missing an accessible name</h2>
+<p>Severity: High
+Classification: Accessibility
+Language: Swift
+Framework: SwiftUI — iOS runtime</p>
+<p>The SwiftUI Image renders as meaningful content in the profile alert row but exposes no accessibilityLabel — VoiceOver announces nothing and the UIKit transform inherits the gap.</p>
+<p><strong>Criterion:</strong> WCAG 1.1.1 Non-text Content</p>
+<p><strong>Recommended next step:</strong> Add a product-specific .accessibilityLabel(...) modifier or mark the Image decorative with .accessibilityHidden(true) before the UIKit transform runs.</p>
+<span id="source-swiftui-missing-image-label" class="sonde-markdown-anchor" aria-hidden="true"></span>
+<h3>SwiftUI — iOS runtime source evidence</h3>
+<p>packages/cockpit-mobile/src/commonMain/resources/mobileA11yFixtures/swiftUiMissingImageLabel.swift L4-L12</p>
+<p>Source: packages/cockpit-mobile/src/commonMain/resources/mobileA11yFixtures/swiftUiMissingImageLabel.swift L4-L12</p>
+<pre tabindex="0"><code class="language-swift">struct SondeSiriusSwiftUIImageMissingLabel: View {
+  var body: some View {
+    HStack {
+      Image(systemName: &quot;person.crop.circle.badge.exclamationmark&quot;)
+        .font(.title2)
+      Text(&quot;Profile alert&quot;)
+    }
+  }
+}
+</code></pre>
+<span id="finding-1-runtime-scan-found-symbolic-accessible-name" class="sonde-markdown-anchor" aria-hidden="true"></span>
+<h2>Runtime scan found symbolic accessible name</h2>
+<p>Severity: High
+Classification: Accessibility
+Language: Kotlin
+Framework: Compose Multiplatform — Android runtime</p>
+<p>The local runtime accessibility tree exposes the cockpit-mobile seed icon action as a symbolic name instead of a durable accessible name.</p>
+<p><strong>Criterion:</strong> WCAG 4.1.2 Name, Role, Value</p>
+<p><strong>Recommended next step:</strong> Add a descriptive Compose semantics contentDescription or replace the icon-only action with a labelled control, then rerun the local runtime handoff.</p>
+<span id="source-1-runtime-scan-found-symbolic-accessible-name" class="sonde-markdown-anchor" aria-hidden="true"></span>
+<h3>Compose Multiplatform — Android runtime source evidence</h3>
+<p>packages/cockpit-mobile/src/commonMain/resources/mobileA11yFixtures/composeSymbolicAction.kt L15-L23</p>
+<p>Source: packages/cockpit-mobile/src/commonMain/resources/mobileA11yFixtures/composeSymbolicAction.kt L15-L23</p>
+<pre tabindex="0"><code class="language-kotlin">@Composable
+fun ComposeSymbolicActionFixture() {
+  IconButton(
+    onClick = {},
+    modifier = Modifier.testTag(SondeMobileTestTags.StaticSiriusFixtureAction),
+  ) {
+    Text(&quot;!&quot;)
+  }
+}
+</code></pre>
+<span id="finding-2-runtime-scan-found-symbolic-accessible-name" class="sonde-markdown-anchor" aria-hidden="true"></span>
+<h2>Runtime scan found symbolic accessible name</h2>
+<p>Severity: High
+Classification: Accessibility
+Language: Kotlin
+Framework: Compose Multiplatform — iOS runtime</p>
+<p>The local runtime accessibility tree exposes the cockpit-mobile seed icon action as a symbolic name instead of a durable accessible name.</p>
+<p><strong>Criterion:</strong> WCAG 4.1.2 Name, Role, Value</p>
+<p><strong>Recommended next step:</strong> Add a descriptive Compose semantics contentDescription or replace the icon-only action with a labelled control, then rerun the local runtime handoff.</p>
+<span id="source-2-runtime-scan-found-symbolic-accessible-name" class="sonde-markdown-anchor" aria-hidden="true"></span>
+<h3>Compose Multiplatform — iOS runtime source evidence</h3>
+<p>packages/cockpit-mobile/src/commonMain/resources/mobileA11yFixtures/composeSymbolicAction.kt L15-L23</p>
+<p>Source: packages/cockpit-mobile/src/commonMain/resources/mobileA11yFixtures/composeSymbolicAction.kt L15-L23</p>
+<pre tabindex="0"><code class="language-kotlin">@Composable
+fun ComposeSymbolicActionFixture() {
+  IconButton(
+    onClick = {},
+    modifier = Modifier.testTag(SondeMobileTestTags.StaticSiriusFixtureAction),
+  ) {
+    Text(&quot;!&quot;)
+  }
+}
+</code></pre>
+<span id="finding-4-filter-control-target-is-below-android-minimum" class="sonde-markdown-anchor" aria-hidden="true"></span>
+<h2>Filter control target is below Android minimum</h2>
+<p>Severity: Critical
+Classification: Accessibility
+Language: Kotlin
+Framework: Compose Multiplatform — Android Material Design (target size)</p>
+<p>The real cockpit-mobile Findings screen renders compact 32dp filter controls below Android&#39;s 48dp minimum target size — touch users with motor impairments can miss the control entirely.</p>
+<p><strong>Criterion:</strong> WCAG 2.5.5 Target Size</p>
+<p><strong>Recommended next step:</strong> Increase the filter control hit area to at least 48dp while preserving the grouped findings density.</p>
+<span id="source-4-filter-control-target-is-below-android-minimum" class="sonde-markdown-anchor" aria-hidden="true"></span>
+<h3>Compose Multiplatform — Android Material Design (target size) source evidence</h3>
+<p>packages/cockpit-mobile/src/commonMain/kotlin/sonde/mobile/ui/SondeMobileApp.kt L651-L665</p>
+<p>Source: packages/cockpit-mobile/src/commonMain/kotlin/sonde/mobile/ui/SondeMobileApp.kt L651-L665</p>
+<pre tabindex="0"><code class="language-kotlin">@Composable
+private fun CompactFilterChip(
+  selected: Boolean,
+  onClick: () -&gt; Unit,
+  label: String,
+  modifier: Modifier = Modifier,
+) {
+  Surface(
+    modifier = modifier
+      .height(SondeMobileTokens.spacingMd * 2)
+      .clickable { onClick() }
+      .semantics {
+        role = Role.Button
+        contentDescription = label
+      },
+</code></pre>
+<span id="finding-5-finding-group-heading-can-truncate-under-ios-dynamic-type" class="sonde-markdown-anchor" aria-hidden="true"></span>
+<h2>Finding group heading can truncate under iOS Dynamic Type</h2>
+<p>Severity: Medium
+Classification: Accessibility
+Language: Kotlin
+Framework: Compose Multiplatform — iOS HIG (Dynamic Type)</p>
+<p>Under the iOS runtime text scale used by the simulator, the Findings group heading truncates before its full label fits — readers using larger text lose the section context.</p>
+<p><strong>Criterion:</strong> WCAG 1.4.4 Resize Text</p>
+<p><strong>Recommended next step:</strong> Keep heading text wrapping and spacing token-driven so the heading reflows instead of truncating.</p>
+<span id="source-5-finding-group-heading-can-truncate-under-ios-dynamic-type" class="sonde-markdown-anchor" aria-hidden="true"></span>
+<h3>Compose Multiplatform — iOS HIG (Dynamic Type) source evidence</h3>
+<p>packages/cockpit-mobile/src/commonMain/kotlin/sonde/mobile/ui/SondeMobileApp.kt L533-L541</p>
+<p>Source: packages/cockpit-mobile/src/commonMain/kotlin/sonde/mobile/ui/SondeMobileApp.kt L533-L541</p>
+<pre tabindex="0"><code class="language-kotlin">    groups.forEach { group -&gt;
+      item {
+        Text(
+          &quot;${severityGlyph(group.severity)} ${group.severity.name} findings requiring mobile cockpit review&quot;,
+          modifier = Modifier.testTag(&quot;${SondeMobileTestTags.FindingSeverityGroupPrefix}${group.severity.name}&quot;),
+          style = MaterialTheme.typography.titleMedium,
+          maxLines = 1,
+          overflow = TextOverflow.Ellipsis,
+        )
+</code></pre>
+<span id="finding-6-mobile-brand-consistency-gap-color-drift" class="sonde-markdown-anchor" aria-hidden="true"></span>
+<h2>Mobile brand consistency gap (color drift)</h2>
+<p>Severity: Medium
+Classification: Brand consistency
+Language: Kotlin
+Framework: Compose Multiplatform — Material Design brand parity (color drift)</p>
+<p>The Android render of the summary action accent shipped a different color than the brand reference. Cross-platform brand drift is invisible to single-platform audits but obvious when both renders are compared side-by-side.</p>
+<p><strong>Criterion:</strong> Mobile Brand Consistency: color</p>
+<p><strong>Recommended next step:</strong> Align the rendered Android color to the brand token defined in the design system.</p>
+<span id="source-6-mobile-brand-consistency-gap-color-drift" class="sonde-markdown-anchor" aria-hidden="true"></span>
+<h3>Compose Multiplatform — Material Design brand parity (color drift) source evidence</h3>
+<p>packages/cockpit-mobile/src/commonMain/resources/mobileA11yFixtures/composeSymbolicAction.kt L15-L23</p>
+<p>Source: packages/cockpit-mobile/src/commonMain/resources/mobileA11yFixtures/composeSymbolicAction.kt L15-L23</p>
+<pre tabindex="0"><code class="language-kotlin">@Composable
+fun ComposeSymbolicActionFixture() {
+  IconButton(
+    onClick = {},
+    modifier = Modifier.testTag(SondeMobileTestTags.StaticSiriusFixtureAction),
+  ) {
+    Text(&quot;!&quot;)
+  }
+}
+</code></pre>
+<span id="finding-7-objective-c-uikit-image-is-missing-an-accessible-name" class="sonde-markdown-anchor" aria-hidden="true"></span>
+<h2>Objective-C UIKit image is missing an accessible name</h2>
+<p>Severity: High
+Classification: Accessibility
+Language: objectivec
+Framework: UIKit (Objective-C) — iOS runtime</p>
+<p>The UIImageView is explicitly marked as an accessibility element with the image trait but carries no accessibilityLabel, so the SwiftUI Image transform inherits an unlabelled meaningful image.</p>
+<p><strong>Criterion:</strong> WCAG 1.1.1 Non-text Content</p>
+<p><strong>Recommended next step:</strong> Set avatarImageView.accessibilityLabel to a product-specific string in UIKit before the SwiftUI transform runs.</p>
+<span id="source-7-objective-c-uikit-image-is-missing-an-accessible-name" class="sonde-markdown-anchor" aria-hidden="true"></span>
+<h3>UIKit (Objective-C) — iOS runtime source evidence</h3>
+<p>packages/cockpit-mobile/src/commonMain/resources/mobileA11yFixtures/uikitMissingImageLabel.m L9-L15</p>
+<p>Source: packages/cockpit-mobile/src/commonMain/resources/mobileA11yFixtures/uikitMissingImageLabel.m L9-L15</p>
+<pre tabindex="0"><code class="language-objectivec">- (void)configureDecorativeLookingAvatar {
+  UIImageView *avatarImageView = [[UIImageView alloc] init];
+  avatarImageView.isAccessibilityElement = YES;
+  avatarImageView.accessibilityTraits = UIAccessibilityTraitImage;
+  [avatarImageView.widthAnchor constraintEqualToConstant:44].active = YES;
+  [avatarImageView.heightAnchor constraintEqualToConstant:44].active = YES;
+}
+</code></pre>
+<span id="finding-8-hardcoded-english-accessibility-label" class="sonde-markdown-anchor" aria-hidden="true"></span>
+<h2>Hardcoded English accessibility label</h2>
+<p>Severity: Medium
+Classification: Source trace
+Language: TypeScript
+Framework: React Native — source trace</p>
+<p>The <code>&lt;Text&gt;</code> element ships with a hardcoded English <code>accessibilityLabel</code>. Non-English users will hear the literal English string regardless of their locale.</p>
+<p><strong>Criterion:</strong> Sonde Source Trace Availability</p>
+<p><strong>Recommended next step:</strong> Replace the hardcoded <code>accessibilityLabel</code> with a localized string lookup before the screen reaches non-English users.</p>
+<span id="source-8-hardcoded-english-accessibility-label" class="sonde-markdown-anchor" aria-hidden="true"></span>
+<h3>React Native — source trace source evidence</h3>
+<p>packages/cockpit-mobile/src/commonMain/resources/mobileA11yFixtures/reactNativeProfileStatus.tsx L2-L6</p>
+<p>Source: packages/cockpit-mobile/src/commonMain/resources/mobileA11yFixtures/reactNativeProfileStatus.tsx L2-L6</p>
+<pre tabindex="0"><code class="language-typescript">import { Text } from 'react-native';
+
+export function ReactNativeProfileStatus() {
+  return &lt;Text accessibilityLabel=&quot;Profile status&quot; testID=&quot;profile.status&quot; /&gt;;
+}
+</code></pre>
+<span id="finding-9-image-element-is-missing-the-alt-attribute" class="sonde-markdown-anchor" aria-hidden="true"></span>
+<h2>Image element is missing the alt attribute</h2>
+<p>Severity: High
+Classification: Accessibility
+Language: TypeScript
+Framework: React / TSX — WCAG static probe</p>
+<p>The bare <code>&lt;img&gt;</code> element exposes no alt attribute, so assistive technologies announce the file path or nothing at all.</p>
+<p><strong>Criterion:</strong> WCAG 1.1.1 Non-text Content (Level A)</p>
+<p><strong>Recommended next step:</strong> Add <code>alt=&quot;description&quot;</code> for informative images, or <code>alt=&quot;&quot;</code> for decorative images.</p>
+<span id="source-9-image-element-is-missing-the-alt-attribute" class="sonde-markdown-anchor" aria-hidden="true"></span>
+<h3>React / TSX — WCAG static probe source evidence</h3>
+<p>packages/cockpit/e2e/fixtures/src-compliance/badAccessibility.tsx L11-L13</p>
+<p>Source: packages/cockpit/e2e/fixtures/src-compliance/badAccessibility.tsx L11-L13</p>
+<pre tabindex="0"><code class="language-typescript">export function BadImage(): ReactElement {
+  return &lt;img src=&quot;/logo.png&quot; /&gt;;
+}
+</code></pre>
+<span id="finding-10-element-has-positive-tabindex-focus-order" class="sonde-markdown-anchor" aria-hidden="true"></span>
+<h2>Element has positive tabindex (focus order)</h2>
+<p>Severity: High
+Classification: Accessibility
+Language: HTML
+Framework: HTML — WCAG mechanical probe</p>
+<p>The <code>&lt;button tabindex=&quot;3&quot;&gt;</code> creates an unpredictable focus order — positive tabindex values jump out of natural DOM order and disorient keyboard users.</p>
+<p><strong>Criterion:</strong> WCAG 2.4.3 Focus Order (Level A)</p>
+<p><strong>Recommended next step:</strong> Use <code>tabindex=&quot;0&quot;</code> to add to natural tab order, or <code>tabindex=&quot;-1&quot;</code> for programmatic focus only. Rearrange DOM order to achieve the desired tab sequence.</p>
+<span id="source-10-element-has-positive-tabindex-focus-order" class="sonde-markdown-anchor" aria-hidden="true"></span>
+<h3>HTML — WCAG mechanical probe source evidence</h3>
+<p>packages/fix-apply/e2e/fixtures/wcagMechanicalHtml/index.html L13-L16</p>
+<p>Source: packages/fix-apply/e2e/fixtures/wcagMechanicalHtml/index.html L13-L16</p>
+<pre tabindex="0"><code class="language-html">  &lt;/header&gt;
+  &lt;img src=&quot;logo.png&quot;&gt;
+  &lt;button tabindex=&quot;3&quot;&gt;Submit&lt;/button&gt;
+&lt;/body&gt;
+</code></pre>
+<span id="fix-plan-missing-alt" class="sonde-markdown-anchor" aria-hidden="true"></span>
+<h2>Fix plan</h2>
+<p>Live, per-finding fix plans generate automatically when Sonde analyzes your repository. This curated showcase demonstrates the report; see automated remediation in action on a live example.</p>
+<p>Fix plan link: Fix plan</p>
+<p>Public export note: this Markdown file is derived from authorized public report data. Private receipt data and gated fix-plan prose are excluded.</p>
+</div>
+        <div id="scribe-markdown-source-panel" aria-labelledby="scribe-markdown-source-tab" data-scribe-markdown-panel="source"><pre class="sl-code-block" tabindex="0" role="region" aria-label="Markdown report: report.md" data-language="markdown" data-start-line="1"><code><span class="sonde-syntax-line" data-line="1"><span class="sonde-syntax-punctuation">#</span><span class="sonde-syntax-default"> </span><span class="sonde-syntax-type">Mobile</span><span class="sonde-syntax-default"> </span><span class="sonde-syntax-type">Accessibility</span><span class="sonde-syntax-default"> </span><span class="sonde-syntax-type">Scan</span></span>
+<span class="sonde-syntax-line" data-line="2"> </span>
+<span class="sonde-syntax-line" data-line="3"><span class="sonde-syntax-type">Sonde</span><span class="sonde-syntax-default"> </span><span class="sonde-syntax-type">Scribe</span><span class="sonde-syntax-default"> alpha</span></span>
+<span class="sonde-syntax-line" data-line="4"> </span>
+<span class="sonde-syntax-line" data-line="5"><span class="sonde-syntax-type">Scope</span><span class="sonde-syntax-punctuation">:</span><span class="sonde-syntax-default"> </span><span class="sonde-syntax-type">Cockpit</span><span class="sonde-syntax-default"> </span><span class="sonde-syntax-type">Mobile</span><span class="sonde-syntax-default"> accessibility fixture</span></span>
+<span class="sonde-syntax-line" data-line="6"><span class="sonde-syntax-type">Runtime</span><span class="sonde-syntax-punctuation">:</span><span class="sonde-syntax-default"> file-direct</span></span>
+<span class="sonde-syntax-line" data-line="7"><span class="sonde-syntax-type">Report</span><span class="sonde-syntax-default"> </span><span class="sonde-syntax-keyword">type</span><span class="sonde-syntax-punctuation">:</span><span class="sonde-syntax-default"> mobile-accessibility-scan</span></span>
+<span class="sonde-syntax-line" data-line="8"><span class="sonde-syntax-type">Export</span><span class="sonde-syntax-default"> source</span><span class="sonde-syntax-punctuation">:</span><span class="sonde-syntax-default"> exports/report</span><span class="sonde-syntax-punctuation">.</span><span class="sonde-syntax-default">md</span></span>
+<span class="sonde-syntax-line" data-line="9"> </span>
+<span class="sonde-syntax-line" data-line="10"><span class="sonde-syntax-punctuation">&lt;</span><span class="sonde-syntax-default">a id</span><span class="sonde-syntax-punctuation">=</span><span class="sonde-syntax-string">&quot;section-overview&quot;</span><span class="sonde-syntax-punctuation">&gt;&lt;</span><span class="sonde-syntax-default">/a</span><span class="sonde-syntax-punctuation">&gt;</span></span>
+<span class="sonde-syntax-line" data-line="11"><span class="sonde-syntax-punctuation">##</span><span class="sonde-syntax-default"> </span><span class="sonde-syntax-type">Overview</span></span>
+<span class="sonde-syntax-line" data-line="12"> </span>
+<span class="sonde-syntax-line" data-line="13"><span class="sonde-syntax-type">This</span><span class="sonde-syntax-default"> file-direct report loads runtime data </span><span class="sonde-syntax-keyword">from</span><span class="sonde-syntax-default"> relative assets</span><span class="sonde-syntax-punctuation">,</span><span class="sonde-syntax-default"> preserves anchors without a server</span><span class="sonde-syntax-punctuation">,</span><span class="sonde-syntax-default"> and uses evidence </span><span class="sonde-syntax-keyword">from</span><span class="sonde-syntax-default"> the cockpit-mobile accessibility fixture</span><span class="sonde-syntax-punctuation">.</span></span>
+<span class="sonde-syntax-line" data-line="14"> </span>
+<span class="sonde-syntax-line" data-line="15"><span class="sonde-syntax-default">**</span><span class="sonde-syntax-type">Accessibility</span><span class="sonde-syntax-default"> issue</span><span class="sonde-syntax-punctuation">:</span><span class="sonde-syntax-default">** </span><span class="sonde-syntax-type">WCAG</span><span class="sonde-syntax-default"> </span><span class="sonde-syntax-number">1.1</span><span class="sonde-syntax-punctuation">.</span><span class="sonde-syntax-number">1</span><span class="sonde-syntax-punctuation">:</span><span class="sonde-syntax-default"> the </span><span class="sonde-syntax-type">SwiftUI</span><span class="sonde-syntax-default"> </span><span class="sonde-syntax-type">Image</span><span class="sonde-syntax-default"> </span><span class="sonde-syntax-keyword">is</span><span class="sonde-syntax-default"> meaningful content</span><span class="sonde-syntax-punctuation">,</span><span class="sonde-syntax-default"> but the fixture exposes it without an accessibilityLabel</span><span class="sonde-syntax-punctuation">.</span></span>
+<span class="sonde-syntax-line" data-line="16"> </span>
+<span class="sonde-syntax-line" data-line="17"><span class="sonde-syntax-default">- **</span><span class="sonde-syntax-type">Discovery</span><span class="sonde-syntax-default"> summary</span><span class="sonde-syntax-punctuation">:</span><span class="sonde-syntax-default">** </span><span class="sonde-syntax-number">10</span><span class="sonde-syntax-default"> public findings</span><span class="sonde-syntax-punctuation">,</span><span class="sonde-syntax-default"> </span><span class="sonde-syntax-number">5</span><span class="sonde-syntax-default"> source languages</span><span class="sonde-syntax-punctuation">,</span><span class="sonde-syntax-default"> </span><span class="sonde-syntax-number">0</span><span class="sonde-syntax-default"> private artifacts exposed</span><span class="sonde-syntax-punctuation">.</span></span>
+<span class="sonde-syntax-line" data-line="18"><span class="sonde-syntax-default">- **</span><span class="sonde-syntax-type">Sonde</span><span class="sonde-syntax-default"> </span><span class="sonde-syntax-type">Score</span><span class="sonde-syntax-punctuation">:</span><span class="sonde-syntax-default">** **</span><span class="sonde-syntax-number">860</span><span class="sonde-syntax-default">** / </span><span class="sonde-syntax-number">1000</span></span>
+<span class="sonde-syntax-line" data-line="19"><span class="sonde-syntax-default">- **</span><span class="sonde-syntax-type">Compliance</span><span class="sonde-syntax-default"> matrix</span><span class="sonde-syntax-punctuation">:</span><span class="sonde-syntax-default">** </span><span class="sonde-syntax-type">WCAG</span><span class="sonde-syntax-punctuation">,</span><span class="sonde-syntax-default"> </span><span class="sonde-syntax-type">HIG</span><span class="sonde-syntax-punctuation">,</span><span class="sonde-syntax-default"> </span><span class="sonde-syntax-type">Material</span><span class="sonde-syntax-default"> </span><span class="sonde-syntax-type">Design</span><span class="sonde-syntax-punctuation">,</span><span class="sonde-syntax-default"> source trace</span><span class="sonde-syntax-punctuation">,</span><span class="sonde-syntax-default"> and brand-consistency findings are represented</span><span class="sonde-syntax-punctuation">.</span></span>
+<span class="sonde-syntax-line" data-line="20"> </span>
+<span class="sonde-syntax-line" data-line="21"><span class="sonde-syntax-punctuation">&lt;</span><span class="sonde-syntax-default">a id</span><span class="sonde-syntax-punctuation">=</span><span class="sonde-syntax-string">&quot;finding-missing-alt&quot;</span><span class="sonde-syntax-punctuation">&gt;&lt;</span><span class="sonde-syntax-default">/a</span><span class="sonde-syntax-punctuation">&gt;</span></span>
+<span class="sonde-syntax-line" data-line="22"><span class="sonde-syntax-punctuation">##</span><span class="sonde-syntax-default"> </span><span class="sonde-syntax-type">SwiftUI</span><span class="sonde-syntax-default"> image </span><span class="sonde-syntax-keyword">is</span><span class="sonde-syntax-default"> missing an accessible name</span></span>
+<span class="sonde-syntax-line" data-line="23"> </span>
+<span class="sonde-syntax-line" data-line="24"><span class="sonde-syntax-type">Severity</span><span class="sonde-syntax-punctuation">:</span><span class="sonde-syntax-default"> </span><span class="sonde-syntax-type">High</span></span>
+<span class="sonde-syntax-line" data-line="25"><span class="sonde-syntax-type">Classification</span><span class="sonde-syntax-punctuation">:</span><span class="sonde-syntax-default"> </span><span class="sonde-syntax-type">Accessibility</span></span>
+<span class="sonde-syntax-line" data-line="26"><span class="sonde-syntax-type">Language</span><span class="sonde-syntax-punctuation">:</span><span class="sonde-syntax-default"> </span><span class="sonde-syntax-type">Swift</span></span>
+<span class="sonde-syntax-line" data-line="27"><span class="sonde-syntax-type">Framework</span><span class="sonde-syntax-punctuation">:</span><span class="sonde-syntax-default"> </span><span class="sonde-syntax-type">SwiftUI</span><span class="sonde-syntax-default"> — iOS runtime</span></span>
+<span class="sonde-syntax-line" data-line="28"> </span>
+<span class="sonde-syntax-line" data-line="29"><span class="sonde-syntax-type">The</span><span class="sonde-syntax-default"> </span><span class="sonde-syntax-type">SwiftUI</span><span class="sonde-syntax-default"> </span><span class="sonde-syntax-type">Image</span><span class="sonde-syntax-default"> renders </span><span class="sonde-syntax-keyword">as</span><span class="sonde-syntax-default"> meaningful content </span><span class="sonde-syntax-keyword">in</span><span class="sonde-syntax-default"> the profile alert row but exposes no accessibilityLabel — </span><span class="sonde-syntax-type">VoiceOver</span><span class="sonde-syntax-default"> announces nothing and the </span><span class="sonde-syntax-type">UIKit</span><span class="sonde-syntax-default"> transform inherits the gap</span><span class="sonde-syntax-punctuation">.</span></span>
+<span class="sonde-syntax-line" data-line="30"> </span>
+<span class="sonde-syntax-line" data-line="31"><span class="sonde-syntax-default">**</span><span class="sonde-syntax-type">Criterion</span><span class="sonde-syntax-punctuation">:</span><span class="sonde-syntax-default">** </span><span class="sonde-syntax-type">WCAG</span><span class="sonde-syntax-default"> </span><span class="sonde-syntax-number">1.1</span><span class="sonde-syntax-punctuation">.</span><span class="sonde-syntax-number">1</span><span class="sonde-syntax-default"> </span><span class="sonde-syntax-type">Non</span><span class="sonde-syntax-default">-text </span><span class="sonde-syntax-type">Content</span></span>
+<span class="sonde-syntax-line" data-line="32"> </span>
+<span class="sonde-syntax-line" data-line="33"><span class="sonde-syntax-default">**</span><span class="sonde-syntax-type">Recommended</span><span class="sonde-syntax-default"> next step</span><span class="sonde-syntax-punctuation">:</span><span class="sonde-syntax-default">** </span><span class="sonde-syntax-type">Add</span><span class="sonde-syntax-default"> a product-specific </span><span class="sonde-syntax-punctuation">.</span><span class="sonde-syntax-default">accessibilityLabel</span><span class="sonde-syntax-punctuation">(...)</span><span class="sonde-syntax-default"> modifier or mark the </span><span class="sonde-syntax-type">Image</span><span class="sonde-syntax-default"> decorative with </span><span class="sonde-syntax-punctuation">.</span><span class="sonde-syntax-default">accessibilityHidden</span><span class="sonde-syntax-punctuation">(</span><span class="sonde-syntax-keyword">true</span><span class="sonde-syntax-punctuation">)</span><span class="sonde-syntax-default"> before the </span><span class="sonde-syntax-type">UIKit</span><span class="sonde-syntax-default"> transform runs</span><span class="sonde-syntax-punctuation">.</span></span>
+<span class="sonde-syntax-line" data-line="34"> </span>
+<span class="sonde-syntax-line" data-line="35"> </span>
+<span class="sonde-syntax-line" data-line="36"><span class="sonde-syntax-punctuation">&lt;</span><span class="sonde-syntax-default">a id</span><span class="sonde-syntax-punctuation">=</span><span class="sonde-syntax-string">&quot;source-swiftui-missing-image-label&quot;</span><span class="sonde-syntax-punctuation">&gt;&lt;</span><span class="sonde-syntax-default">/a</span><span class="sonde-syntax-punctuation">&gt;</span></span>
+<span class="sonde-syntax-line" data-line="37"><span class="sonde-syntax-punctuation">###</span><span class="sonde-syntax-default"> </span><span class="sonde-syntax-type">SwiftUI</span><span class="sonde-syntax-default"> — iOS runtime source evidence</span></span>
+<span class="sonde-syntax-line" data-line="38"> </span>
+<span class="sonde-syntax-line" data-line="39"><span class="sonde-syntax-default">packages/cockpit-mobile/src/commonMain/resources/mobileA11yFixtures/swiftUiMissingImageLabel</span><span class="sonde-syntax-punctuation">.</span><span class="sonde-syntax-default">swift </span><span class="sonde-syntax-type">L4</span><span class="sonde-syntax-default">-</span><span class="sonde-syntax-type">L12</span></span>
+<span class="sonde-syntax-line" data-line="40"> </span>
+<span class="sonde-syntax-line" data-line="41"><span class="sonde-syntax-type">Source</span><span class="sonde-syntax-punctuation">:</span><span class="sonde-syntax-default"> packages/cockpit-mobile/src/commonMain/resources/mobileA11yFixtures/swiftUiMissingImageLabel</span><span class="sonde-syntax-punctuation">.</span><span class="sonde-syntax-default">swift </span><span class="sonde-syntax-type">L4</span><span class="sonde-syntax-default">-</span><span class="sonde-syntax-type">L12</span></span>
+<span class="sonde-syntax-line" data-line="42"> </span>
+<span class="sonde-syntax-line" data-line="43"><span class="sonde-syntax-string">```swift</span></span>
+<span class="sonde-syntax-line" data-line="44"><span class="sonde-syntax-default">struct </span><span class="sonde-syntax-type">SondeSiriusSwiftUIImageMissingLabel</span><span class="sonde-syntax-punctuation">:</span><span class="sonde-syntax-default"> </span><span class="sonde-syntax-type">View</span><span class="sonde-syntax-default"> </span><span class="sonde-syntax-punctuation">{</span></span>
+<span class="sonde-syntax-line" data-line="45"><span class="sonde-syntax-default">  </span><span class="sonde-syntax-keyword">var</span><span class="sonde-syntax-default"> body</span><span class="sonde-syntax-punctuation">:</span><span class="sonde-syntax-default"> some </span><span class="sonde-syntax-type">View</span><span class="sonde-syntax-default"> </span><span class="sonde-syntax-punctuation">{</span></span>
+<span class="sonde-syntax-line" data-line="46"><span class="sonde-syntax-default">    </span><span class="sonde-syntax-type">HStack</span><span class="sonde-syntax-default"> </span><span class="sonde-syntax-punctuation">{</span></span>
+<span class="sonde-syntax-line" data-line="47"><span class="sonde-syntax-default">      </span><span class="sonde-syntax-type">Image</span><span class="sonde-syntax-punctuation">(</span><span class="sonde-syntax-default">systemName</span><span class="sonde-syntax-punctuation">:</span><span class="sonde-syntax-default"> </span><span class="sonde-syntax-string">&quot;person.crop.circle.badge.exclamationmark&quot;</span><span class="sonde-syntax-punctuation">)</span></span>
+<span class="sonde-syntax-line" data-line="48"><span class="sonde-syntax-default">        </span><span class="sonde-syntax-punctuation">.</span><span class="sonde-syntax-default">font</span><span class="sonde-syntax-punctuation">(.</span><span class="sonde-syntax-default">title2</span><span class="sonde-syntax-punctuation">)</span></span>
+<span class="sonde-syntax-line" data-line="49"><span class="sonde-syntax-default">      </span><span class="sonde-syntax-type">Text</span><span class="sonde-syntax-punctuation">(</span><span class="sonde-syntax-string">&quot;Profile alert&quot;</span><span class="sonde-syntax-punctuation">)</span></span>
+<span class="sonde-syntax-line" data-line="50"><span class="sonde-syntax-default">    </span><span class="sonde-syntax-punctuation">}</span></span>
+<span class="sonde-syntax-line" data-line="51"><span class="sonde-syntax-default">  </span><span class="sonde-syntax-punctuation">}</span></span>
+<span class="sonde-syntax-line" data-line="52"><span class="sonde-syntax-punctuation">}</span></span>
+<span class="sonde-syntax-line" data-line="53"><span class="sonde-syntax-string">```</span></span>
+<span class="sonde-syntax-line" data-line="54"> </span>
+<span class="sonde-syntax-line" data-line="55"><span class="sonde-syntax-punctuation">&lt;</span><span class="sonde-syntax-default">a id</span><span class="sonde-syntax-punctuation">=</span><span class="sonde-syntax-string">&quot;finding-1-runtime-scan-found-symbolic-accessible-name&quot;</span><span class="sonde-syntax-punctuation">&gt;&lt;</span><span class="sonde-syntax-default">/a</span><span class="sonde-syntax-punctuation">&gt;</span></span>
+<span class="sonde-syntax-line" data-line="56"><span class="sonde-syntax-punctuation">##</span><span class="sonde-syntax-default"> </span><span class="sonde-syntax-type">Runtime</span><span class="sonde-syntax-default"> scan found symbolic accessible name</span></span>
+<span class="sonde-syntax-line" data-line="57"> </span>
+<span class="sonde-syntax-line" data-line="58"><span class="sonde-syntax-type">Severity</span><span class="sonde-syntax-punctuation">:</span><span class="sonde-syntax-default"> </span><span class="sonde-syntax-type">High</span></span>
+<span class="sonde-syntax-line" data-line="59"><span class="sonde-syntax-type">Classification</span><span class="sonde-syntax-punctuation">:</span><span class="sonde-syntax-default"> </span><span class="sonde-syntax-type">Accessibility</span></span>
+<span class="sonde-syntax-line" data-line="60"><span class="sonde-syntax-type">Language</span><span class="sonde-syntax-punctuation">:</span><span class="sonde-syntax-default"> </span><span class="sonde-syntax-type">Kotlin</span></span>
+<span class="sonde-syntax-line" data-line="61"><span class="sonde-syntax-type">Framework</span><span class="sonde-syntax-punctuation">:</span><span class="sonde-syntax-default"> </span><span class="sonde-syntax-type">Compose</span><span class="sonde-syntax-default"> </span><span class="sonde-syntax-type">Multiplatform</span><span class="sonde-syntax-default"> — </span><span class="sonde-syntax-type">Android</span><span class="sonde-syntax-default"> runtime</span></span>
+<span class="sonde-syntax-line" data-line="62"> </span>
+<span class="sonde-syntax-line" data-line="63"><span class="sonde-syntax-type">The</span><span class="sonde-syntax-default"> local runtime accessibility tree exposes the cockpit-mobile seed icon action </span><span class="sonde-syntax-keyword">as</span><span class="sonde-syntax-default"> a symbolic name instead </span><span class="sonde-syntax-keyword">of</span><span class="sonde-syntax-default"> a durable accessible name</span><span class="sonde-syntax-punctuation">.</span></span>
+<span class="sonde-syntax-line" data-line="64"> </span>
+<span class="sonde-syntax-line" data-line="65"><span class="sonde-syntax-default">**</span><span class="sonde-syntax-type">Criterion</span><span class="sonde-syntax-punctuation">:</span><span class="sonde-syntax-default">** </span><span class="sonde-syntax-type">WCAG</span><span class="sonde-syntax-default"> </span><span class="sonde-syntax-number">4.1</span><span class="sonde-syntax-punctuation">.</span><span class="sonde-syntax-number">2</span><span class="sonde-syntax-default"> </span><span class="sonde-syntax-type">Name</span><span class="sonde-syntax-punctuation">,</span><span class="sonde-syntax-default"> </span><span class="sonde-syntax-type">Role</span><span class="sonde-syntax-punctuation">,</span><span class="sonde-syntax-default"> </span><span class="sonde-syntax-type">Value</span></span>
+<span class="sonde-syntax-line" data-line="66"> </span>
+<span class="sonde-syntax-line" data-line="67"><span class="sonde-syntax-default">**</span><span class="sonde-syntax-type">Recommended</span><span class="sonde-syntax-default"> next step</span><span class="sonde-syntax-punctuation">:</span><span class="sonde-syntax-default">** </span><span class="sonde-syntax-type">Add</span><span class="sonde-syntax-default"> a descriptive </span><span class="sonde-syntax-type">Compose</span><span class="sonde-syntax-default"> semantics contentDescription or replace the icon-only action with a labelled control</span><span class="sonde-syntax-punctuation">,</span><span class="sonde-syntax-default"> then rerun the local runtime handoff</span><span class="sonde-syntax-punctuation">.</span></span>
+<span class="sonde-syntax-line" data-line="68"> </span>
+<span class="sonde-syntax-line" data-line="69"> </span>
+<span class="sonde-syntax-line" data-line="70"><span class="sonde-syntax-punctuation">&lt;</span><span class="sonde-syntax-default">a id</span><span class="sonde-syntax-punctuation">=</span><span class="sonde-syntax-string">&quot;source-1-runtime-scan-found-symbolic-accessible-name&quot;</span><span class="sonde-syntax-punctuation">&gt;&lt;</span><span class="sonde-syntax-default">/a</span><span class="sonde-syntax-punctuation">&gt;</span></span>
+<span class="sonde-syntax-line" data-line="71"><span class="sonde-syntax-punctuation">###</span><span class="sonde-syntax-default"> </span><span class="sonde-syntax-type">Compose</span><span class="sonde-syntax-default"> </span><span class="sonde-syntax-type">Multiplatform</span><span class="sonde-syntax-default"> — </span><span class="sonde-syntax-type">Android</span><span class="sonde-syntax-default"> runtime source evidence</span></span>
+<span class="sonde-syntax-line" data-line="72"> </span>
+<span class="sonde-syntax-line" data-line="73"><span class="sonde-syntax-default">packages/cockpit-mobile/src/commonMain/resources/mobileA11yFixtures/composeSymbolicAction</span><span class="sonde-syntax-punctuation">.</span><span class="sonde-syntax-default">kt </span><span class="sonde-syntax-type">L15</span><span class="sonde-syntax-default">-</span><span class="sonde-syntax-type">L23</span></span>
+<span class="sonde-syntax-line" data-line="74"> </span>
+<span class="sonde-syntax-line" data-line="75"><span class="sonde-syntax-type">Source</span><span class="sonde-syntax-punctuation">:</span><span class="sonde-syntax-default"> packages/cockpit-mobile/src/commonMain/resources/mobileA11yFixtures/composeSymbolicAction</span><span class="sonde-syntax-punctuation">.</span><span class="sonde-syntax-default">kt </span><span class="sonde-syntax-type">L15</span><span class="sonde-syntax-default">-</span><span class="sonde-syntax-type">L23</span></span>
+<span class="sonde-syntax-line" data-line="76"> </span>
+<span class="sonde-syntax-line" data-line="77"><span class="sonde-syntax-string">```kotlin</span></span>
+<span class="sonde-syntax-line" data-line="78"><span class="sonde-syntax-punctuation">@</span><span class="sonde-syntax-type">Composable</span></span>
+<span class="sonde-syntax-line" data-line="79"><span class="sonde-syntax-default">fun </span><span class="sonde-syntax-type">ComposeSymbolicActionFixture</span><span class="sonde-syntax-punctuation">()</span><span class="sonde-syntax-default"> </span><span class="sonde-syntax-punctuation">{</span></span>
+<span class="sonde-syntax-line" data-line="80"><span class="sonde-syntax-default">  </span><span class="sonde-syntax-type">IconButton</span><span class="sonde-syntax-punctuation">(</span></span>
+<span class="sonde-syntax-line" data-line="81"><span class="sonde-syntax-default">    onClick </span><span class="sonde-syntax-punctuation">=</span><span class="sonde-syntax-default"> </span><span class="sonde-syntax-punctuation">{},</span></span>
+<span class="sonde-syntax-line" data-line="82"><span class="sonde-syntax-default">    modifier </span><span class="sonde-syntax-punctuation">=</span><span class="sonde-syntax-default"> </span><span class="sonde-syntax-type">Modifier</span><span class="sonde-syntax-punctuation">.</span><span class="sonde-syntax-default">testTag</span><span class="sonde-syntax-punctuation">(</span><span class="sonde-syntax-type">SondeMobileTestTags</span><span class="sonde-syntax-punctuation">.</span><span class="sonde-syntax-type">StaticSiriusFixtureAction</span><span class="sonde-syntax-punctuation">),</span></span>
+<span class="sonde-syntax-line" data-line="83"><span class="sonde-syntax-default">  </span><span class="sonde-syntax-punctuation">)</span><span class="sonde-syntax-default"> </span><span class="sonde-syntax-punctuation">{</span></span>
+<span class="sonde-syntax-line" data-line="84"><span class="sonde-syntax-default">    </span><span class="sonde-syntax-type">Text</span><span class="sonde-syntax-punctuation">(</span><span class="sonde-syntax-string">&quot;!&quot;</span><span class="sonde-syntax-punctuation">)</span></span>
+<span class="sonde-syntax-line" data-line="85"><span class="sonde-syntax-default">  </span><span class="sonde-syntax-punctuation">}</span></span>
+<span class="sonde-syntax-line" data-line="86"><span class="sonde-syntax-punctuation">}</span></span>
+<span class="sonde-syntax-line" data-line="87"><span class="sonde-syntax-string">```</span></span>
+<span class="sonde-syntax-line" data-line="88"> </span>
+<span class="sonde-syntax-line" data-line="89"><span class="sonde-syntax-punctuation">&lt;</span><span class="sonde-syntax-default">a id</span><span class="sonde-syntax-punctuation">=</span><span class="sonde-syntax-string">&quot;finding-2-runtime-scan-found-symbolic-accessible-name&quot;</span><span class="sonde-syntax-punctuation">&gt;&lt;</span><span class="sonde-syntax-default">/a</span><span class="sonde-syntax-punctuation">&gt;</span></span>
+<span class="sonde-syntax-line" data-line="90"><span class="sonde-syntax-punctuation">##</span><span class="sonde-syntax-default"> </span><span class="sonde-syntax-type">Runtime</span><span class="sonde-syntax-default"> scan found symbolic accessible name</span></span>
+<span class="sonde-syntax-line" data-line="91"> </span>
+<span class="sonde-syntax-line" data-line="92"><span class="sonde-syntax-type">Severity</span><span class="sonde-syntax-punctuation">:</span><span class="sonde-syntax-default"> </span><span class="sonde-syntax-type">High</span></span>
+<span class="sonde-syntax-line" data-line="93"><span class="sonde-syntax-type">Classification</span><span class="sonde-syntax-punctuation">:</span><span class="sonde-syntax-default"> </span><span class="sonde-syntax-type">Accessibility</span></span>
+<span class="sonde-syntax-line" data-line="94"><span class="sonde-syntax-type">Language</span><span class="sonde-syntax-punctuation">:</span><span class="sonde-syntax-default"> </span><span class="sonde-syntax-type">Kotlin</span></span>
+<span class="sonde-syntax-line" data-line="95"><span class="sonde-syntax-type">Framework</span><span class="sonde-syntax-punctuation">:</span><span class="sonde-syntax-default"> </span><span class="sonde-syntax-type">Compose</span><span class="sonde-syntax-default"> </span><span class="sonde-syntax-type">Multiplatform</span><span class="sonde-syntax-default"> — iOS runtime</span></span>
+<span class="sonde-syntax-line" data-line="96"> </span>
+<span class="sonde-syntax-line" data-line="97"><span class="sonde-syntax-type">The</span><span class="sonde-syntax-default"> local runtime accessibility tree exposes the cockpit-mobile seed icon action </span><span class="sonde-syntax-keyword">as</span><span class="sonde-syntax-default"> a symbolic name instead </span><span class="sonde-syntax-keyword">of</span><span class="sonde-syntax-default"> a durable accessible name</span><span class="sonde-syntax-punctuation">.</span></span>
+<span class="sonde-syntax-line" data-line="98"> </span>
+<span class="sonde-syntax-line" data-line="99"><span class="sonde-syntax-default">**</span><span class="sonde-syntax-type">Criterion</span><span class="sonde-syntax-punctuation">:</span><span class="sonde-syntax-default">** </span><span class="sonde-syntax-type">WCAG</span><span class="sonde-syntax-default"> </span><span class="sonde-syntax-number">4.1</span><span class="sonde-syntax-punctuation">.</span><span class="sonde-syntax-number">2</span><span class="sonde-syntax-default"> </span><span class="sonde-syntax-type">Name</span><span class="sonde-syntax-punctuation">,</span><span class="sonde-syntax-default"> </span><span class="sonde-syntax-type">Role</span><span class="sonde-syntax-punctuation">,</span><span class="sonde-syntax-default"> </span><span class="sonde-syntax-type">Value</span></span>
+<span class="sonde-syntax-line" data-line="100"> </span>
+<span class="sonde-syntax-line" data-line="101"><span class="sonde-syntax-default">**</span><span class="sonde-syntax-type">Recommended</span><span class="sonde-syntax-default"> next step</span><span class="sonde-syntax-punctuation">:</span><span class="sonde-syntax-default">** </span><span class="sonde-syntax-type">Add</span><span class="sonde-syntax-default"> a descriptive </span><span class="sonde-syntax-type">Compose</span><span class="sonde-syntax-default"> semantics contentDescription or replace the icon-only action with a labelled control</span><span class="sonde-syntax-punctuation">,</span><span class="sonde-syntax-default"> then rerun the local runtime handoff</span><span class="sonde-syntax-punctuation">.</span></span>
+<span class="sonde-syntax-line" data-line="102"> </span>
+<span class="sonde-syntax-line" data-line="103"> </span>
+<span class="sonde-syntax-line" data-line="104"><span class="sonde-syntax-punctuation">&lt;</span><span class="sonde-syntax-default">a id</span><span class="sonde-syntax-punctuation">=</span><span class="sonde-syntax-string">&quot;source-2-runtime-scan-found-symbolic-accessible-name&quot;</span><span class="sonde-syntax-punctuation">&gt;&lt;</span><span class="sonde-syntax-default">/a</span><span class="sonde-syntax-punctuation">&gt;</span></span>
+<span class="sonde-syntax-line" data-line="105"><span class="sonde-syntax-punctuation">###</span><span class="sonde-syntax-default"> </span><span class="sonde-syntax-type">Compose</span><span class="sonde-syntax-default"> </span><span class="sonde-syntax-type">Multiplatform</span><span class="sonde-syntax-default"> — iOS runtime source evidence</span></span>
+<span class="sonde-syntax-line" data-line="106"> </span>
+<span class="sonde-syntax-line" data-line="107"><span class="sonde-syntax-default">packages/cockpit-mobile/src/commonMain/resources/mobileA11yFixtures/composeSymbolicAction</span><span class="sonde-syntax-punctuation">.</span><span class="sonde-syntax-default">kt </span><span class="sonde-syntax-type">L15</span><span class="sonde-syntax-default">-</span><span class="sonde-syntax-type">L23</span></span>
+<span class="sonde-syntax-line" data-line="108"> </span>
+<span class="sonde-syntax-line" data-line="109"><span class="sonde-syntax-type">Source</span><span class="sonde-syntax-punctuation">:</span><span class="sonde-syntax-default"> packages/cockpit-mobile/src/commonMain/resources/mobileA11yFixtures/composeSymbolicAction</span><span class="sonde-syntax-punctuation">.</span><span class="sonde-syntax-default">kt </span><span class="sonde-syntax-type">L15</span><span class="sonde-syntax-default">-</span><span class="sonde-syntax-type">L23</span></span>
+<span class="sonde-syntax-line" data-line="110"> </span>
+<span class="sonde-syntax-line" data-line="111"><span class="sonde-syntax-string">```kotlin</span></span>
+<span class="sonde-syntax-line" data-line="112"><span class="sonde-syntax-punctuation">@</span><span class="sonde-syntax-type">Composable</span></span>
+<span class="sonde-syntax-line" data-line="113"><span class="sonde-syntax-default">fun </span><span class="sonde-syntax-type">ComposeSymbolicActionFixture</span><span class="sonde-syntax-punctuation">()</span><span class="sonde-syntax-default"> </span><span class="sonde-syntax-punctuation">{</span></span>
+<span class="sonde-syntax-line" data-line="114"><span class="sonde-syntax-default">  </span><span class="sonde-syntax-type">IconButton</span><span class="sonde-syntax-punctuation">(</span></span>
+<span class="sonde-syntax-line" data-line="115"><span class="sonde-syntax-default">    onClick </span><span class="sonde-syntax-punctuation">=</span><span class="sonde-syntax-default"> </span><span class="sonde-syntax-punctuation">{},</span></span>
+<span class="sonde-syntax-line" data-line="116"><span class="sonde-syntax-default">    modifier </span><span class="sonde-syntax-punctuation">=</span><span class="sonde-syntax-default"> </span><span class="sonde-syntax-type">Modifier</span><span class="sonde-syntax-punctuation">.</span><span class="sonde-syntax-default">testTag</span><span class="sonde-syntax-punctuation">(</span><span class="sonde-syntax-type">SondeMobileTestTags</span><span class="sonde-syntax-punctuation">.</span><span class="sonde-syntax-type">StaticSiriusFixtureAction</span><span class="sonde-syntax-punctuation">),</span></span>
+<span class="sonde-syntax-line" data-line="117"><span class="sonde-syntax-default">  </span><span class="sonde-syntax-punctuation">)</span><span class="sonde-syntax-default"> </span><span class="sonde-syntax-punctuation">{</span></span>
+<span class="sonde-syntax-line" data-line="118"><span class="sonde-syntax-default">    </span><span class="sonde-syntax-type">Text</span><span class="sonde-syntax-punctuation">(</span><span class="sonde-syntax-string">&quot;!&quot;</span><span class="sonde-syntax-punctuation">)</span></span>
+<span class="sonde-syntax-line" data-line="119"><span class="sonde-syntax-default">  </span><span class="sonde-syntax-punctuation">}</span></span>
+<span class="sonde-syntax-line" data-line="120"><span class="sonde-syntax-punctuation">}</span></span>
+<span class="sonde-syntax-line" data-line="121"><span class="sonde-syntax-string">```</span></span>
+<span class="sonde-syntax-line" data-line="122"> </span>
+<span class="sonde-syntax-line" data-line="123"><span class="sonde-syntax-punctuation">&lt;</span><span class="sonde-syntax-default">a id</span><span class="sonde-syntax-punctuation">=</span><span class="sonde-syntax-string">&quot;finding-4-filter-control-target-is-below-android-minimum&quot;</span><span class="sonde-syntax-punctuation">&gt;&lt;</span><span class="sonde-syntax-default">/a</span><span class="sonde-syntax-punctuation">&gt;</span></span>
+<span class="sonde-syntax-line" data-line="124"><span class="sonde-syntax-punctuation">##</span><span class="sonde-syntax-default"> </span><span class="sonde-syntax-type">Filter</span><span class="sonde-syntax-default"> control target </span><span class="sonde-syntax-keyword">is</span><span class="sonde-syntax-default"> below </span><span class="sonde-syntax-type">Android</span><span class="sonde-syntax-default"> minimum</span></span>
+<span class="sonde-syntax-line" data-line="125"> </span>
+<span class="sonde-syntax-line" data-line="126"><span class="sonde-syntax-type">Severity</span><span class="sonde-syntax-punctuation">:</span><span class="sonde-syntax-default"> </span><span class="sonde-syntax-type">Critical</span></span>
+<span class="sonde-syntax-line" data-line="127"><span class="sonde-syntax-type">Classification</span><span class="sonde-syntax-punctuation">:</span><span class="sonde-syntax-default"> </span><span class="sonde-syntax-type">Accessibility</span></span>
+<span class="sonde-syntax-line" data-line="128"><span class="sonde-syntax-type">Language</span><span class="sonde-syntax-punctuation">:</span><span class="sonde-syntax-default"> </span><span class="sonde-syntax-type">Kotlin</span></span>
+<span class="sonde-syntax-line" data-line="129"><span class="sonde-syntax-type">Framework</span><span class="sonde-syntax-punctuation">:</span><span class="sonde-syntax-default"> </span><span class="sonde-syntax-type">Compose</span><span class="sonde-syntax-default"> </span><span class="sonde-syntax-type">Multiplatform</span><span class="sonde-syntax-default"> — </span><span class="sonde-syntax-type">Android</span><span class="sonde-syntax-default"> </span><span class="sonde-syntax-type">Material</span><span class="sonde-syntax-default"> </span><span class="sonde-syntax-type">Design</span><span class="sonde-syntax-default"> </span><span class="sonde-syntax-punctuation">(</span><span class="sonde-syntax-default">target size</span><span class="sonde-syntax-punctuation">)</span></span>
+<span class="sonde-syntax-line" data-line="130"> </span>
+<span class="sonde-syntax-line" data-line="131"><span class="sonde-syntax-type">The</span><span class="sonde-syntax-default"> real cockpit-mobile </span><span class="sonde-syntax-type">Findings</span><span class="sonde-syntax-default"> screen renders compact 32dp filter controls below </span><span class="sonde-syntax-type">Android</span><span class="sonde-syntax-string">&#39;s 48dp minimum target size — touch users with motor impairments can miss the control entirely.</span></span>
+<span class="sonde-syntax-line" data-line="132"> </span>
+<span class="sonde-syntax-line" data-line="133"><span class="sonde-syntax-default">**</span><span class="sonde-syntax-type">Criterion</span><span class="sonde-syntax-punctuation">:</span><span class="sonde-syntax-default">** </span><span class="sonde-syntax-type">WCAG</span><span class="sonde-syntax-default"> </span><span class="sonde-syntax-number">2.5</span><span class="sonde-syntax-punctuation">.</span><span class="sonde-syntax-number">5</span><span class="sonde-syntax-default"> </span><span class="sonde-syntax-type">Target</span><span class="sonde-syntax-default"> </span><span class="sonde-syntax-type">Size</span></span>
+<span class="sonde-syntax-line" data-line="134"> </span>
+<span class="sonde-syntax-line" data-line="135"><span class="sonde-syntax-default">**</span><span class="sonde-syntax-type">Recommended</span><span class="sonde-syntax-default"> next step</span><span class="sonde-syntax-punctuation">:</span><span class="sonde-syntax-default">** </span><span class="sonde-syntax-type">Increase</span><span class="sonde-syntax-default"> the filter control hit area to at least 48dp </span><span class="sonde-syntax-keyword">while</span><span class="sonde-syntax-default"> preserving the grouped findings density</span><span class="sonde-syntax-punctuation">.</span></span>
+<span class="sonde-syntax-line" data-line="136"> </span>
+<span class="sonde-syntax-line" data-line="137"> </span>
+<span class="sonde-syntax-line" data-line="138"><span class="sonde-syntax-punctuation">&lt;</span><span class="sonde-syntax-default">a id</span><span class="sonde-syntax-punctuation">=</span><span class="sonde-syntax-string">&quot;source-4-filter-control-target-is-below-android-minimum&quot;</span><span class="sonde-syntax-punctuation">&gt;&lt;</span><span class="sonde-syntax-default">/a</span><span class="sonde-syntax-punctuation">&gt;</span></span>
+<span class="sonde-syntax-line" data-line="139"><span class="sonde-syntax-punctuation">###</span><span class="sonde-syntax-default"> </span><span class="sonde-syntax-type">Compose</span><span class="sonde-syntax-default"> </span><span class="sonde-syntax-type">Multiplatform</span><span class="sonde-syntax-default"> — </span><span class="sonde-syntax-type">Android</span><span class="sonde-syntax-default"> </span><span class="sonde-syntax-type">Material</span><span class="sonde-syntax-default"> </span><span class="sonde-syntax-type">Design</span><span class="sonde-syntax-default"> </span><span class="sonde-syntax-punctuation">(</span><span class="sonde-syntax-default">target size</span><span class="sonde-syntax-punctuation">)</span><span class="sonde-syntax-default"> source evidence</span></span>
+<span class="sonde-syntax-line" data-line="140"> </span>
+<span class="sonde-syntax-line" data-line="141"><span class="sonde-syntax-default">packages/cockpit-mobile/src/commonMain/kotlin/sonde/mobile/ui/</span><span class="sonde-syntax-type">SondeMobileApp</span><span class="sonde-syntax-punctuation">.</span><span class="sonde-syntax-default">kt </span><span class="sonde-syntax-type">L651</span><span class="sonde-syntax-default">-</span><span class="sonde-syntax-type">L665</span></span>
+<span class="sonde-syntax-line" data-line="142"> </span>
+<span class="sonde-syntax-line" data-line="143"><span class="sonde-syntax-type">Source</span><span class="sonde-syntax-punctuation">:</span><span class="sonde-syntax-default"> packages/cockpit-mobile/src/commonMain/kotlin/sonde/mobile/ui/</span><span class="sonde-syntax-type">SondeMobileApp</span><span class="sonde-syntax-punctuation">.</span><span class="sonde-syntax-default">kt </span><span class="sonde-syntax-type">L651</span><span class="sonde-syntax-default">-</span><span class="sonde-syntax-type">L665</span></span>
+<span class="sonde-syntax-line" data-line="144"> </span>
+<span class="sonde-syntax-line" data-line="145"><span class="sonde-syntax-string">```kotlin</span></span>
+<span class="sonde-syntax-line" data-line="146"><span class="sonde-syntax-punctuation">@</span><span class="sonde-syntax-type">Composable</span></span>
+<span class="sonde-syntax-line" data-line="147"><span class="sonde-syntax-default">private fun </span><span class="sonde-syntax-type">CompactFilterChip</span><span class="sonde-syntax-punctuation">(</span></span>
+<span class="sonde-syntax-line" data-line="148"><span class="sonde-syntax-default">  selected</span><span class="sonde-syntax-punctuation">:</span><span class="sonde-syntax-default"> </span><span class="sonde-syntax-type">Boolean</span><span class="sonde-syntax-punctuation">,</span></span>
+<span class="sonde-syntax-line" data-line="149"><span class="sonde-syntax-default">  onClick</span><span class="sonde-syntax-punctuation">:</span><span class="sonde-syntax-default"> </span><span class="sonde-syntax-punctuation">()</span><span class="sonde-syntax-default"> -</span><span class="sonde-syntax-punctuation">&gt;</span><span class="sonde-syntax-default"> </span><span class="sonde-syntax-type">Unit</span><span class="sonde-syntax-punctuation">,</span></span>
+<span class="sonde-syntax-line" data-line="150"><span class="sonde-syntax-default">  label</span><span class="sonde-syntax-punctuation">:</span><span class="sonde-syntax-default"> </span><span class="sonde-syntax-type">String</span><span class="sonde-syntax-punctuation">,</span></span>
+<span class="sonde-syntax-line" data-line="151"><span class="sonde-syntax-default">  modifier</span><span class="sonde-syntax-punctuation">:</span><span class="sonde-syntax-default"> </span><span class="sonde-syntax-type">Modifier</span><span class="sonde-syntax-default"> </span><span class="sonde-syntax-punctuation">=</span><span class="sonde-syntax-default"> </span><span class="sonde-syntax-type">Modifier</span><span class="sonde-syntax-punctuation">,</span></span>
+<span class="sonde-syntax-line" data-line="152"><span class="sonde-syntax-punctuation">)</span><span class="sonde-syntax-default"> </span><span class="sonde-syntax-punctuation">{</span></span>
+<span class="sonde-syntax-line" data-line="153"><span class="sonde-syntax-default">  </span><span class="sonde-syntax-type">Surface</span><span class="sonde-syntax-punctuation">(</span></span>
+<span class="sonde-syntax-line" data-line="154"><span class="sonde-syntax-default">    modifier </span><span class="sonde-syntax-punctuation">=</span><span class="sonde-syntax-default"> modifier</span></span>
+<span class="sonde-syntax-line" data-line="155"><span class="sonde-syntax-default">      </span><span class="sonde-syntax-punctuation">.</span><span class="sonde-syntax-default">height</span><span class="sonde-syntax-punctuation">(</span><span class="sonde-syntax-type">SondeMobileTokens</span><span class="sonde-syntax-punctuation">.</span><span class="sonde-syntax-default">spacingMd * </span><span class="sonde-syntax-number">2</span><span class="sonde-syntax-punctuation">)</span></span>
+<span class="sonde-syntax-line" data-line="156"><span class="sonde-syntax-default">      </span><span class="sonde-syntax-punctuation">.</span><span class="sonde-syntax-default">clickable </span><span class="sonde-syntax-punctuation">{</span><span class="sonde-syntax-default"> onClick</span><span class="sonde-syntax-punctuation">()</span><span class="sonde-syntax-default"> </span><span class="sonde-syntax-punctuation">}</span></span>
+<span class="sonde-syntax-line" data-line="157"><span class="sonde-syntax-default">      </span><span class="sonde-syntax-punctuation">.</span><span class="sonde-syntax-default">semantics </span><span class="sonde-syntax-punctuation">{</span></span>
+<span class="sonde-syntax-line" data-line="158"><span class="sonde-syntax-default">        role </span><span class="sonde-syntax-punctuation">=</span><span class="sonde-syntax-default"> </span><span class="sonde-syntax-type">Role</span><span class="sonde-syntax-punctuation">.</span><span class="sonde-syntax-type">Button</span></span>
+<span class="sonde-syntax-line" data-line="159"><span class="sonde-syntax-default">        contentDescription </span><span class="sonde-syntax-punctuation">=</span><span class="sonde-syntax-default"> label</span></span>
+<span class="sonde-syntax-line" data-line="160"><span class="sonde-syntax-default">      </span><span class="sonde-syntax-punctuation">},</span></span>
+<span class="sonde-syntax-line" data-line="161"><span class="sonde-syntax-string">```</span></span>
+<span class="sonde-syntax-line" data-line="162"> </span>
+<span class="sonde-syntax-line" data-line="163"><span class="sonde-syntax-punctuation">&lt;</span><span class="sonde-syntax-default">a id</span><span class="sonde-syntax-punctuation">=</span><span class="sonde-syntax-string">&quot;finding-5-finding-group-heading-can-truncate-under-ios-dynamic-type&quot;</span><span class="sonde-syntax-punctuation">&gt;&lt;</span><span class="sonde-syntax-default">/a</span><span class="sonde-syntax-punctuation">&gt;</span></span>
+<span class="sonde-syntax-line" data-line="164"><span class="sonde-syntax-punctuation">##</span><span class="sonde-syntax-default"> </span><span class="sonde-syntax-type">Finding</span><span class="sonde-syntax-default"> group heading can truncate under iOS </span><span class="sonde-syntax-type">Dynamic</span><span class="sonde-syntax-default"> </span><span class="sonde-syntax-type">Type</span></span>
+<span class="sonde-syntax-line" data-line="165"> </span>
+<span class="sonde-syntax-line" data-line="166"><span class="sonde-syntax-type">Severity</span><span class="sonde-syntax-punctuation">:</span><span class="sonde-syntax-default"> </span><span class="sonde-syntax-type">Medium</span></span>
+<span class="sonde-syntax-line" data-line="167"><span class="sonde-syntax-type">Classification</span><span class="sonde-syntax-punctuation">:</span><span class="sonde-syntax-default"> </span><span class="sonde-syntax-type">Accessibility</span></span>
+<span class="sonde-syntax-line" data-line="168"><span class="sonde-syntax-type">Language</span><span class="sonde-syntax-punctuation">:</span><span class="sonde-syntax-default"> </span><span class="sonde-syntax-type">Kotlin</span></span>
+<span class="sonde-syntax-line" data-line="169"><span class="sonde-syntax-type">Framework</span><span class="sonde-syntax-punctuation">:</span><span class="sonde-syntax-default"> </span><span class="sonde-syntax-type">Compose</span><span class="sonde-syntax-default"> </span><span class="sonde-syntax-type">Multiplatform</span><span class="sonde-syntax-default"> — iOS </span><span class="sonde-syntax-type">HIG</span><span class="sonde-syntax-default"> </span><span class="sonde-syntax-punctuation">(</span><span class="sonde-syntax-type">Dynamic</span><span class="sonde-syntax-default"> </span><span class="sonde-syntax-type">Type</span><span class="sonde-syntax-punctuation">)</span></span>
+<span class="sonde-syntax-line" data-line="170"> </span>
+<span class="sonde-syntax-line" data-line="171"><span class="sonde-syntax-type">Under</span><span class="sonde-syntax-default"> the iOS runtime text scale used by the simulator</span><span class="sonde-syntax-punctuation">,</span><span class="sonde-syntax-default"> the </span><span class="sonde-syntax-type">Findings</span><span class="sonde-syntax-default"> group heading truncates before its full label fits — readers using larger text lose the section context</span><span class="sonde-syntax-punctuation">.</span></span>
+<span class="sonde-syntax-line" data-line="172"> </span>
+<span class="sonde-syntax-line" data-line="173"><span class="sonde-syntax-default">**</span><span class="sonde-syntax-type">Criterion</span><span class="sonde-syntax-punctuation">:</span><span class="sonde-syntax-default">** </span><span class="sonde-syntax-type">WCAG</span><span class="sonde-syntax-default"> </span><span class="sonde-syntax-number">1.4</span><span class="sonde-syntax-punctuation">.</span><span class="sonde-syntax-number">4</span><span class="sonde-syntax-default"> </span><span class="sonde-syntax-type">Resize</span><span class="sonde-syntax-default"> </span><span class="sonde-syntax-type">Text</span></span>
+<span class="sonde-syntax-line" data-line="174"> </span>
+<span class="sonde-syntax-line" data-line="175"><span class="sonde-syntax-default">**</span><span class="sonde-syntax-type">Recommended</span><span class="sonde-syntax-default"> next step</span><span class="sonde-syntax-punctuation">:</span><span class="sonde-syntax-default">** </span><span class="sonde-syntax-type">Keep</span><span class="sonde-syntax-default"> heading text wrapping and spacing token-driven so the heading reflows instead </span><span class="sonde-syntax-keyword">of</span><span class="sonde-syntax-default"> truncating</span><span class="sonde-syntax-punctuation">.</span></span>
+<span class="sonde-syntax-line" data-line="176"> </span>
+<span class="sonde-syntax-line" data-line="177"> </span>
+<span class="sonde-syntax-line" data-line="178"><span class="sonde-syntax-punctuation">&lt;</span><span class="sonde-syntax-default">a id</span><span class="sonde-syntax-punctuation">=</span><span class="sonde-syntax-string">&quot;source-5-finding-group-heading-can-truncate-under-ios-dynamic-type&quot;</span><span class="sonde-syntax-punctuation">&gt;&lt;</span><span class="sonde-syntax-default">/a</span><span class="sonde-syntax-punctuation">&gt;</span></span>
+<span class="sonde-syntax-line" data-line="179"><span class="sonde-syntax-punctuation">###</span><span class="sonde-syntax-default"> </span><span class="sonde-syntax-type">Compose</span><span class="sonde-syntax-default"> </span><span class="sonde-syntax-type">Multiplatform</span><span class="sonde-syntax-default"> — iOS </span><span class="sonde-syntax-type">HIG</span><span class="sonde-syntax-default"> </span><span class="sonde-syntax-punctuation">(</span><span class="sonde-syntax-type">Dynamic</span><span class="sonde-syntax-default"> </span><span class="sonde-syntax-type">Type</span><span class="sonde-syntax-punctuation">)</span><span class="sonde-syntax-default"> source evidence</span></span>
+<span class="sonde-syntax-line" data-line="180"> </span>
+<span class="sonde-syntax-line" data-line="181"><span class="sonde-syntax-default">packages/cockpit-mobile/src/commonMain/kotlin/sonde/mobile/ui/</span><span class="sonde-syntax-type">SondeMobileApp</span><span class="sonde-syntax-punctuation">.</span><span class="sonde-syntax-default">kt </span><span class="sonde-syntax-type">L533</span><span class="sonde-syntax-default">-</span><span class="sonde-syntax-type">L541</span></span>
+<span class="sonde-syntax-line" data-line="182"> </span>
+<span class="sonde-syntax-line" data-line="183"><span class="sonde-syntax-type">Source</span><span class="sonde-syntax-punctuation">:</span><span class="sonde-syntax-default"> packages/cockpit-mobile/src/commonMain/kotlin/sonde/mobile/ui/</span><span class="sonde-syntax-type">SondeMobileApp</span><span class="sonde-syntax-punctuation">.</span><span class="sonde-syntax-default">kt </span><span class="sonde-syntax-type">L533</span><span class="sonde-syntax-default">-</span><span class="sonde-syntax-type">L541</span></span>
+<span class="sonde-syntax-line" data-line="184"> </span>
+<span class="sonde-syntax-line" data-line="185"><span class="sonde-syntax-string">```kotlin</span></span>
+<span class="sonde-syntax-line" data-line="186"><span class="sonde-syntax-default">    groups</span><span class="sonde-syntax-punctuation">.</span><span class="sonde-syntax-default">forEach </span><span class="sonde-syntax-punctuation">{</span><span class="sonde-syntax-default"> group -</span><span class="sonde-syntax-punctuation">&gt;</span></span>
+<span class="sonde-syntax-line" data-line="187"><span class="sonde-syntax-default">      item </span><span class="sonde-syntax-punctuation">{</span></span>
+<span class="sonde-syntax-line" data-line="188"><span class="sonde-syntax-default">        </span><span class="sonde-syntax-type">Text</span><span class="sonde-syntax-punctuation">(</span></span>
+<span class="sonde-syntax-line" data-line="189"><span class="sonde-syntax-default">          </span><span class="sonde-syntax-string">&quot;${severityGlyph(group.severity)} ${group.severity.name} findings requiring mobile cockpit review&quot;</span><span class="sonde-syntax-punctuation">,</span></span>
+<span class="sonde-syntax-line" data-line="190"><span class="sonde-syntax-default">          modifier </span><span class="sonde-syntax-punctuation">=</span><span class="sonde-syntax-default"> </span><span class="sonde-syntax-type">Modifier</span><span class="sonde-syntax-punctuation">.</span><span class="sonde-syntax-default">testTag</span><span class="sonde-syntax-punctuation">(</span><span class="sonde-syntax-string">&quot;${SondeMobileTestTags.FindingSeverityGroupPrefix}${group.severity.name}&quot;</span><span class="sonde-syntax-punctuation">),</span></span>
+<span class="sonde-syntax-line" data-line="191"><span class="sonde-syntax-default">          style </span><span class="sonde-syntax-punctuation">=</span><span class="sonde-syntax-default"> </span><span class="sonde-syntax-type">MaterialTheme</span><span class="sonde-syntax-punctuation">.</span><span class="sonde-syntax-default">typography</span><span class="sonde-syntax-punctuation">.</span><span class="sonde-syntax-default">titleMedium</span><span class="sonde-syntax-punctuation">,</span></span>
+<span class="sonde-syntax-line" data-line="192"><span class="sonde-syntax-default">          maxLines </span><span class="sonde-syntax-punctuation">=</span><span class="sonde-syntax-default"> </span><span class="sonde-syntax-number">1</span><span class="sonde-syntax-punctuation">,</span></span>
+<span class="sonde-syntax-line" data-line="193"><span class="sonde-syntax-default">          overflow </span><span class="sonde-syntax-punctuation">=</span><span class="sonde-syntax-default"> </span><span class="sonde-syntax-type">TextOverflow</span><span class="sonde-syntax-punctuation">.</span><span class="sonde-syntax-type">Ellipsis</span><span class="sonde-syntax-punctuation">,</span></span>
+<span class="sonde-syntax-line" data-line="194"><span class="sonde-syntax-default">        </span><span class="sonde-syntax-punctuation">)</span></span>
+<span class="sonde-syntax-line" data-line="195"><span class="sonde-syntax-string">```</span></span>
+<span class="sonde-syntax-line" data-line="196"> </span>
+<span class="sonde-syntax-line" data-line="197"><span class="sonde-syntax-punctuation">&lt;</span><span class="sonde-syntax-default">a id</span><span class="sonde-syntax-punctuation">=</span><span class="sonde-syntax-string">&quot;finding-6-mobile-brand-consistency-gap-color-drift&quot;</span><span class="sonde-syntax-punctuation">&gt;&lt;</span><span class="sonde-syntax-default">/a</span><span class="sonde-syntax-punctuation">&gt;</span></span>
+<span class="sonde-syntax-line" data-line="198"><span class="sonde-syntax-punctuation">##</span><span class="sonde-syntax-default"> </span><span class="sonde-syntax-type">Mobile</span><span class="sonde-syntax-default"> brand consistency gap </span><span class="sonde-syntax-punctuation">(</span><span class="sonde-syntax-default">color drift</span><span class="sonde-syntax-punctuation">)</span></span>
+<span class="sonde-syntax-line" data-line="199"> </span>
+<span class="sonde-syntax-line" data-line="200"><span class="sonde-syntax-type">Severity</span><span class="sonde-syntax-punctuation">:</span><span class="sonde-syntax-default"> </span><span class="sonde-syntax-type">Medium</span></span>
+<span class="sonde-syntax-line" data-line="201"><span class="sonde-syntax-type">Classification</span><span class="sonde-syntax-punctuation">:</span><span class="sonde-syntax-default"> </span><span class="sonde-syntax-type">Brand</span><span class="sonde-syntax-default"> consistency</span></span>
+<span class="sonde-syntax-line" data-line="202"><span class="sonde-syntax-type">Language</span><span class="sonde-syntax-punctuation">:</span><span class="sonde-syntax-default"> </span><span class="sonde-syntax-type">Kotlin</span></span>
+<span class="sonde-syntax-line" data-line="203"><span class="sonde-syntax-type">Framework</span><span class="sonde-syntax-punctuation">:</span><span class="sonde-syntax-default"> </span><span class="sonde-syntax-type">Compose</span><span class="sonde-syntax-default"> </span><span class="sonde-syntax-type">Multiplatform</span><span class="sonde-syntax-default"> — </span><span class="sonde-syntax-type">Material</span><span class="sonde-syntax-default"> </span><span class="sonde-syntax-type">Design</span><span class="sonde-syntax-default"> brand parity </span><span class="sonde-syntax-punctuation">(</span><span class="sonde-syntax-default">color drift</span><span class="sonde-syntax-punctuation">)</span></span>
+<span class="sonde-syntax-line" data-line="204"> </span>
+<span class="sonde-syntax-line" data-line="205"><span class="sonde-syntax-type">The</span><span class="sonde-syntax-default"> </span><span class="sonde-syntax-type">Android</span><span class="sonde-syntax-default"> render </span><span class="sonde-syntax-keyword">of</span><span class="sonde-syntax-default"> the summary action accent shipped a different color than the brand reference</span><span class="sonde-syntax-punctuation">.</span><span class="sonde-syntax-default"> </span><span class="sonde-syntax-type">Cross</span><span class="sonde-syntax-default">-platform brand drift </span><span class="sonde-syntax-keyword">is</span><span class="sonde-syntax-default"> invisible to single-platform audits but obvious when both renders are compared side-by-side</span><span class="sonde-syntax-punctuation">.</span></span>
+<span class="sonde-syntax-line" data-line="206"> </span>
+<span class="sonde-syntax-line" data-line="207"><span class="sonde-syntax-default">**</span><span class="sonde-syntax-type">Criterion</span><span class="sonde-syntax-punctuation">:</span><span class="sonde-syntax-default">** </span><span class="sonde-syntax-type">Mobile</span><span class="sonde-syntax-default"> </span><span class="sonde-syntax-type">Brand</span><span class="sonde-syntax-default"> </span><span class="sonde-syntax-type">Consistency</span><span class="sonde-syntax-punctuation">:</span><span class="sonde-syntax-default"> color</span></span>
+<span class="sonde-syntax-line" data-line="208"> </span>
+<span class="sonde-syntax-line" data-line="209"><span class="sonde-syntax-default">**</span><span class="sonde-syntax-type">Recommended</span><span class="sonde-syntax-default"> next step</span><span class="sonde-syntax-punctuation">:</span><span class="sonde-syntax-default">** </span><span class="sonde-syntax-type">Align</span><span class="sonde-syntax-default"> the rendered </span><span class="sonde-syntax-type">Android</span><span class="sonde-syntax-default"> color to the brand token defined </span><span class="sonde-syntax-keyword">in</span><span class="sonde-syntax-default"> the design system</span><span class="sonde-syntax-punctuation">.</span></span>
+<span class="sonde-syntax-line" data-line="210"> </span>
+<span class="sonde-syntax-line" data-line="211"> </span>
+<span class="sonde-syntax-line" data-line="212"><span class="sonde-syntax-punctuation">&lt;</span><span class="sonde-syntax-default">a id</span><span class="sonde-syntax-punctuation">=</span><span class="sonde-syntax-string">&quot;source-6-mobile-brand-consistency-gap-color-drift&quot;</span><span class="sonde-syntax-punctuation">&gt;&lt;</span><span class="sonde-syntax-default">/a</span><span class="sonde-syntax-punctuation">&gt;</span></span>
+<span class="sonde-syntax-line" data-line="213"><span class="sonde-syntax-punctuation">###</span><span class="sonde-syntax-default"> </span><span class="sonde-syntax-type">Compose</span><span class="sonde-syntax-default"> </span><span class="sonde-syntax-type">Multiplatform</span><span class="sonde-syntax-default"> — </span><span class="sonde-syntax-type">Material</span><span class="sonde-syntax-default"> </span><span class="sonde-syntax-type">Design</span><span class="sonde-syntax-default"> brand parity </span><span class="sonde-syntax-punctuation">(</span><span class="sonde-syntax-default">color drift</span><span class="sonde-syntax-punctuation">)</span><span class="sonde-syntax-default"> source evidence</span></span>
+<span class="sonde-syntax-line" data-line="214"> </span>
+<span class="sonde-syntax-line" data-line="215"><span class="sonde-syntax-default">packages/cockpit-mobile/src/commonMain/resources/mobileA11yFixtures/composeSymbolicAction</span><span class="sonde-syntax-punctuation">.</span><span class="sonde-syntax-default">kt </span><span class="sonde-syntax-type">L15</span><span class="sonde-syntax-default">-</span><span class="sonde-syntax-type">L23</span></span>
+<span class="sonde-syntax-line" data-line="216"> </span>
+<span class="sonde-syntax-line" data-line="217"><span class="sonde-syntax-type">Source</span><span class="sonde-syntax-punctuation">:</span><span class="sonde-syntax-default"> packages/cockpit-mobile/src/commonMain/resources/mobileA11yFixtures/composeSymbolicAction</span><span class="sonde-syntax-punctuation">.</span><span class="sonde-syntax-default">kt </span><span class="sonde-syntax-type">L15</span><span class="sonde-syntax-default">-</span><span class="sonde-syntax-type">L23</span></span>
+<span class="sonde-syntax-line" data-line="218"> </span>
+<span class="sonde-syntax-line" data-line="219"><span class="sonde-syntax-string">```kotlin</span></span>
+<span class="sonde-syntax-line" data-line="220"><span class="sonde-syntax-punctuation">@</span><span class="sonde-syntax-type">Composable</span></span>
+<span class="sonde-syntax-line" data-line="221"><span class="sonde-syntax-default">fun </span><span class="sonde-syntax-type">ComposeSymbolicActionFixture</span><span class="sonde-syntax-punctuation">()</span><span class="sonde-syntax-default"> </span><span class="sonde-syntax-punctuation">{</span></span>
+<span class="sonde-syntax-line" data-line="222"><span class="sonde-syntax-default">  </span><span class="sonde-syntax-type">IconButton</span><span class="sonde-syntax-punctuation">(</span></span>
+<span class="sonde-syntax-line" data-line="223"><span class="sonde-syntax-default">    onClick </span><span class="sonde-syntax-punctuation">=</span><span class="sonde-syntax-default"> </span><span class="sonde-syntax-punctuation">{},</span></span>
+<span class="sonde-syntax-line" data-line="224"><span class="sonde-syntax-default">    modifier </span><span class="sonde-syntax-punctuation">=</span><span class="sonde-syntax-default"> </span><span class="sonde-syntax-type">Modifier</span><span class="sonde-syntax-punctuation">.</span><span class="sonde-syntax-default">testTag</span><span class="sonde-syntax-punctuation">(</span><span class="sonde-syntax-type">SondeMobileTestTags</span><span class="sonde-syntax-punctuation">.</span><span class="sonde-syntax-type">StaticSiriusFixtureAction</span><span class="sonde-syntax-punctuation">),</span></span>
+<span class="sonde-syntax-line" data-line="225"><span class="sonde-syntax-default">  </span><span class="sonde-syntax-punctuation">)</span><span class="sonde-syntax-default"> </span><span class="sonde-syntax-punctuation">{</span></span>
+<span class="sonde-syntax-line" data-line="226"><span class="sonde-syntax-default">    </span><span class="sonde-syntax-type">Text</span><span class="sonde-syntax-punctuation">(</span><span class="sonde-syntax-string">&quot;!&quot;</span><span class="sonde-syntax-punctuation">)</span></span>
+<span class="sonde-syntax-line" data-line="227"><span class="sonde-syntax-default">  </span><span class="sonde-syntax-punctuation">}</span></span>
+<span class="sonde-syntax-line" data-line="228"><span class="sonde-syntax-punctuation">}</span></span>
+<span class="sonde-syntax-line" data-line="229"><span class="sonde-syntax-string">```</span></span>
+<span class="sonde-syntax-line" data-line="230"> </span>
+<span class="sonde-syntax-line" data-line="231"><span class="sonde-syntax-punctuation">&lt;</span><span class="sonde-syntax-default">a id</span><span class="sonde-syntax-punctuation">=</span><span class="sonde-syntax-string">&quot;finding-7-objective-c-uikit-image-is-missing-an-accessible-name&quot;</span><span class="sonde-syntax-punctuation">&gt;&lt;</span><span class="sonde-syntax-default">/a</span><span class="sonde-syntax-punctuation">&gt;</span></span>
+<span class="sonde-syntax-line" data-line="232"><span class="sonde-syntax-punctuation">##</span><span class="sonde-syntax-default"> </span><span class="sonde-syntax-type">Objective</span><span class="sonde-syntax-default">-</span><span class="sonde-syntax-type">C</span><span class="sonde-syntax-default"> </span><span class="sonde-syntax-type">UIKit</span><span class="sonde-syntax-default"> image </span><span class="sonde-syntax-keyword">is</span><span class="sonde-syntax-default"> missing an accessible name</span></span>
+<span class="sonde-syntax-line" data-line="233"> </span>
+<span class="sonde-syntax-line" data-line="234"><span class="sonde-syntax-type">Severity</span><span class="sonde-syntax-punctuation">:</span><span class="sonde-syntax-default"> </span><span class="sonde-syntax-type">High</span></span>
+<span class="sonde-syntax-line" data-line="235"><span class="sonde-syntax-type">Classification</span><span class="sonde-syntax-punctuation">:</span><span class="sonde-syntax-default"> </span><span class="sonde-syntax-type">Accessibility</span></span>
+<span class="sonde-syntax-line" data-line="236"><span class="sonde-syntax-type">Language</span><span class="sonde-syntax-punctuation">:</span><span class="sonde-syntax-default"> objectivec</span></span>
+<span class="sonde-syntax-line" data-line="237"><span class="sonde-syntax-type">Framework</span><span class="sonde-syntax-punctuation">:</span><span class="sonde-syntax-default"> </span><span class="sonde-syntax-type">UIKit</span><span class="sonde-syntax-default"> </span><span class="sonde-syntax-punctuation">(</span><span class="sonde-syntax-type">Objective</span><span class="sonde-syntax-default">-</span><span class="sonde-syntax-type">C</span><span class="sonde-syntax-punctuation">)</span><span class="sonde-syntax-default"> — iOS runtime</span></span>
+<span class="sonde-syntax-line" data-line="238"> </span>
+<span class="sonde-syntax-line" data-line="239"><span class="sonde-syntax-type">The</span><span class="sonde-syntax-default"> </span><span class="sonde-syntax-type">UIImageView</span><span class="sonde-syntax-default"> </span><span class="sonde-syntax-keyword">is</span><span class="sonde-syntax-default"> explicitly marked </span><span class="sonde-syntax-keyword">as</span><span class="sonde-syntax-default"> an accessibility element with the image trait but carries no accessibilityLabel</span><span class="sonde-syntax-punctuation">,</span><span class="sonde-syntax-default"> so the </span><span class="sonde-syntax-type">SwiftUI</span><span class="sonde-syntax-default"> </span><span class="sonde-syntax-type">Image</span><span class="sonde-syntax-default"> transform inherits an unlabelled meaningful image</span><span class="sonde-syntax-punctuation">.</span></span>
+<span class="sonde-syntax-line" data-line="240"> </span>
+<span class="sonde-syntax-line" data-line="241"><span class="sonde-syntax-default">**</span><span class="sonde-syntax-type">Criterion</span><span class="sonde-syntax-punctuation">:</span><span class="sonde-syntax-default">** </span><span class="sonde-syntax-type">WCAG</span><span class="sonde-syntax-default"> </span><span class="sonde-syntax-number">1.1</span><span class="sonde-syntax-punctuation">.</span><span class="sonde-syntax-number">1</span><span class="sonde-syntax-default"> </span><span class="sonde-syntax-type">Non</span><span class="sonde-syntax-default">-text </span><span class="sonde-syntax-type">Content</span></span>
+<span class="sonde-syntax-line" data-line="242"> </span>
+<span class="sonde-syntax-line" data-line="243"><span class="sonde-syntax-default">**</span><span class="sonde-syntax-type">Recommended</span><span class="sonde-syntax-default"> next step</span><span class="sonde-syntax-punctuation">:</span><span class="sonde-syntax-default">** </span><span class="sonde-syntax-type">Set</span><span class="sonde-syntax-default"> avatarImageView</span><span class="sonde-syntax-punctuation">.</span><span class="sonde-syntax-default">accessibilityLabel to a product-specific string </span><span class="sonde-syntax-keyword">in</span><span class="sonde-syntax-default"> </span><span class="sonde-syntax-type">UIKit</span><span class="sonde-syntax-default"> before the </span><span class="sonde-syntax-type">SwiftUI</span><span class="sonde-syntax-default"> transform runs</span><span class="sonde-syntax-punctuation">.</span></span>
+<span class="sonde-syntax-line" data-line="244"> </span>
+<span class="sonde-syntax-line" data-line="245"> </span>
+<span class="sonde-syntax-line" data-line="246"><span class="sonde-syntax-punctuation">&lt;</span><span class="sonde-syntax-default">a id</span><span class="sonde-syntax-punctuation">=</span><span class="sonde-syntax-string">&quot;source-7-objective-c-uikit-image-is-missing-an-accessible-name&quot;</span><span class="sonde-syntax-punctuation">&gt;&lt;</span><span class="sonde-syntax-default">/a</span><span class="sonde-syntax-punctuation">&gt;</span></span>
+<span class="sonde-syntax-line" data-line="247"><span class="sonde-syntax-punctuation">###</span><span class="sonde-syntax-default"> </span><span class="sonde-syntax-type">UIKit</span><span class="sonde-syntax-default"> </span><span class="sonde-syntax-punctuation">(</span><span class="sonde-syntax-type">Objective</span><span class="sonde-syntax-default">-</span><span class="sonde-syntax-type">C</span><span class="sonde-syntax-punctuation">)</span><span class="sonde-syntax-default"> — iOS runtime source evidence</span></span>
+<span class="sonde-syntax-line" data-line="248"> </span>
+<span class="sonde-syntax-line" data-line="249"><span class="sonde-syntax-default">packages/cockpit-mobile/src/commonMain/resources/mobileA11yFixtures/uikitMissingImageLabel</span><span class="sonde-syntax-punctuation">.</span><span class="sonde-syntax-default">m </span><span class="sonde-syntax-type">L9</span><span class="sonde-syntax-default">-</span><span class="sonde-syntax-type">L15</span></span>
+<span class="sonde-syntax-line" data-line="250"> </span>
+<span class="sonde-syntax-line" data-line="251"><span class="sonde-syntax-type">Source</span><span class="sonde-syntax-punctuation">:</span><span class="sonde-syntax-default"> packages/cockpit-mobile/src/commonMain/resources/mobileA11yFixtures/uikitMissingImageLabel</span><span class="sonde-syntax-punctuation">.</span><span class="sonde-syntax-default">m </span><span class="sonde-syntax-type">L9</span><span class="sonde-syntax-default">-</span><span class="sonde-syntax-type">L15</span></span>
+<span class="sonde-syntax-line" data-line="252"> </span>
+<span class="sonde-syntax-line" data-line="253"><span class="sonde-syntax-string">```objectivec</span></span>
+<span class="sonde-syntax-line" data-line="254"><span class="sonde-syntax-default">- </span><span class="sonde-syntax-punctuation">(</span><span class="sonde-syntax-keyword">void</span><span class="sonde-syntax-punctuation">)</span><span class="sonde-syntax-default">configureDecorativeLookingAvatar </span><span class="sonde-syntax-punctuation">{</span></span>
+<span class="sonde-syntax-line" data-line="255"><span class="sonde-syntax-default">  </span><span class="sonde-syntax-type">UIImageView</span><span class="sonde-syntax-default"> *avatarImageView </span><span class="sonde-syntax-punctuation">=</span><span class="sonde-syntax-default"> </span><span class="sonde-syntax-punctuation">[[</span><span class="sonde-syntax-type">UIImageView</span><span class="sonde-syntax-default"> alloc</span><span class="sonde-syntax-punctuation">]</span><span class="sonde-syntax-default"> init</span><span class="sonde-syntax-punctuation">];</span></span>
+<span class="sonde-syntax-line" data-line="256"><span class="sonde-syntax-default">  avatarImageView</span><span class="sonde-syntax-punctuation">.</span><span class="sonde-syntax-default">isAccessibilityElement </span><span class="sonde-syntax-punctuation">=</span><span class="sonde-syntax-default"> </span><span class="sonde-syntax-type">YES</span><span class="sonde-syntax-punctuation">;</span></span>
+<span class="sonde-syntax-line" data-line="257"><span class="sonde-syntax-default">  avatarImageView</span><span class="sonde-syntax-punctuation">.</span><span class="sonde-syntax-default">accessibilityTraits </span><span class="sonde-syntax-punctuation">=</span><span class="sonde-syntax-default"> </span><span class="sonde-syntax-type">UIAccessibilityTraitImage</span><span class="sonde-syntax-punctuation">;</span></span>
+<span class="sonde-syntax-line" data-line="258"><span class="sonde-syntax-default">  </span><span class="sonde-syntax-punctuation">[</span><span class="sonde-syntax-default">avatarImageView</span><span class="sonde-syntax-punctuation">.</span><span class="sonde-syntax-default">widthAnchor constraintEqualToConstant</span><span class="sonde-syntax-punctuation">:</span><span class="sonde-syntax-number">44</span><span class="sonde-syntax-punctuation">].</span><span class="sonde-syntax-default">active </span><span class="sonde-syntax-punctuation">=</span><span class="sonde-syntax-default"> </span><span class="sonde-syntax-type">YES</span><span class="sonde-syntax-punctuation">;</span></span>
+<span class="sonde-syntax-line" data-line="259"><span class="sonde-syntax-default">  </span><span class="sonde-syntax-punctuation">[</span><span class="sonde-syntax-default">avatarImageView</span><span class="sonde-syntax-punctuation">.</span><span class="sonde-syntax-default">heightAnchor constraintEqualToConstant</span><span class="sonde-syntax-punctuation">:</span><span class="sonde-syntax-number">44</span><span class="sonde-syntax-punctuation">].</span><span class="sonde-syntax-default">active </span><span class="sonde-syntax-punctuation">=</span><span class="sonde-syntax-default"> </span><span class="sonde-syntax-type">YES</span><span class="sonde-syntax-punctuation">;</span></span>
+<span class="sonde-syntax-line" data-line="260"><span class="sonde-syntax-punctuation">}</span></span>
+<span class="sonde-syntax-line" data-line="261"><span class="sonde-syntax-string">```</span></span>
+<span class="sonde-syntax-line" data-line="262"> </span>
+<span class="sonde-syntax-line" data-line="263"><span class="sonde-syntax-punctuation">&lt;</span><span class="sonde-syntax-default">a id</span><span class="sonde-syntax-punctuation">=</span><span class="sonde-syntax-string">&quot;finding-8-hardcoded-english-accessibility-label&quot;</span><span class="sonde-syntax-punctuation">&gt;&lt;</span><span class="sonde-syntax-default">/a</span><span class="sonde-syntax-punctuation">&gt;</span></span>
+<span class="sonde-syntax-line" data-line="264"><span class="sonde-syntax-punctuation">##</span><span class="sonde-syntax-default"> </span><span class="sonde-syntax-type">Hardcoded</span><span class="sonde-syntax-default"> </span><span class="sonde-syntax-type">English</span><span class="sonde-syntax-default"> accessibility label</span></span>
+<span class="sonde-syntax-line" data-line="265"> </span>
+<span class="sonde-syntax-line" data-line="266"><span class="sonde-syntax-type">Severity</span><span class="sonde-syntax-punctuation">:</span><span class="sonde-syntax-default"> </span><span class="sonde-syntax-type">Medium</span></span>
+<span class="sonde-syntax-line" data-line="267"><span class="sonde-syntax-type">Classification</span><span class="sonde-syntax-punctuation">:</span><span class="sonde-syntax-default"> </span><span class="sonde-syntax-type">Source</span><span class="sonde-syntax-default"> trace</span></span>
+<span class="sonde-syntax-line" data-line="268"><span class="sonde-syntax-type">Language</span><span class="sonde-syntax-punctuation">:</span><span class="sonde-syntax-default"> </span><span class="sonde-syntax-type">TypeScript</span></span>
+<span class="sonde-syntax-line" data-line="269"><span class="sonde-syntax-type">Framework</span><span class="sonde-syntax-punctuation">:</span><span class="sonde-syntax-default"> </span><span class="sonde-syntax-type">React</span><span class="sonde-syntax-default"> </span><span class="sonde-syntax-type">Native</span><span class="sonde-syntax-default"> — source trace</span></span>
+<span class="sonde-syntax-line" data-line="270"> </span>
+<span class="sonde-syntax-line" data-line="271"><span class="sonde-syntax-type">The</span><span class="sonde-syntax-default"> </span><span class="sonde-syntax-string">`&lt;Text&gt;`</span><span class="sonde-syntax-default"> element ships with a hardcoded </span><span class="sonde-syntax-type">English</span><span class="sonde-syntax-default"> </span><span class="sonde-syntax-string">`accessibilityLabel`</span><span class="sonde-syntax-punctuation">.</span><span class="sonde-syntax-default"> </span><span class="sonde-syntax-type">Non</span><span class="sonde-syntax-default">-</span><span class="sonde-syntax-type">English</span><span class="sonde-syntax-default"> users will hear the literal </span><span class="sonde-syntax-type">English</span><span class="sonde-syntax-default"> string regardless </span><span class="sonde-syntax-keyword">of</span><span class="sonde-syntax-default"> their locale</span><span class="sonde-syntax-punctuation">.</span></span>
+<span class="sonde-syntax-line" data-line="272"> </span>
+<span class="sonde-syntax-line" data-line="273"><span class="sonde-syntax-default">**</span><span class="sonde-syntax-type">Criterion</span><span class="sonde-syntax-punctuation">:</span><span class="sonde-syntax-default">** </span><span class="sonde-syntax-type">Sonde</span><span class="sonde-syntax-default"> </span><span class="sonde-syntax-type">Source</span><span class="sonde-syntax-default"> </span><span class="sonde-syntax-type">Trace</span><span class="sonde-syntax-default"> </span><span class="sonde-syntax-type">Availability</span></span>
+<span class="sonde-syntax-line" data-line="274"> </span>
+<span class="sonde-syntax-line" data-line="275"><span class="sonde-syntax-default">**</span><span class="sonde-syntax-type">Recommended</span><span class="sonde-syntax-default"> next step</span><span class="sonde-syntax-punctuation">:</span><span class="sonde-syntax-default">** </span><span class="sonde-syntax-type">Replace</span><span class="sonde-syntax-default"> the hardcoded </span><span class="sonde-syntax-string">`accessibilityLabel`</span><span class="sonde-syntax-default"> with a localized string lookup before the screen reaches non-</span><span class="sonde-syntax-type">English</span><span class="sonde-syntax-default"> users</span><span class="sonde-syntax-punctuation">.</span></span>
+<span class="sonde-syntax-line" data-line="276"> </span>
+<span class="sonde-syntax-line" data-line="277"> </span>
+<span class="sonde-syntax-line" data-line="278"><span class="sonde-syntax-punctuation">&lt;</span><span class="sonde-syntax-default">a id</span><span class="sonde-syntax-punctuation">=</span><span class="sonde-syntax-string">&quot;source-8-hardcoded-english-accessibility-label&quot;</span><span class="sonde-syntax-punctuation">&gt;&lt;</span><span class="sonde-syntax-default">/a</span><span class="sonde-syntax-punctuation">&gt;</span></span>
+<span class="sonde-syntax-line" data-line="279"><span class="sonde-syntax-punctuation">###</span><span class="sonde-syntax-default"> </span><span class="sonde-syntax-type">React</span><span class="sonde-syntax-default"> </span><span class="sonde-syntax-type">Native</span><span class="sonde-syntax-default"> — source trace source evidence</span></span>
+<span class="sonde-syntax-line" data-line="280"> </span>
+<span class="sonde-syntax-line" data-line="281"><span class="sonde-syntax-default">packages/cockpit-mobile/src/commonMain/resources/mobileA11yFixtures/reactNativeProfileStatus</span><span class="sonde-syntax-punctuation">.</span><span class="sonde-syntax-default">tsx </span><span class="sonde-syntax-type">L2</span><span class="sonde-syntax-default">-</span><span class="sonde-syntax-type">L6</span></span>
+<span class="sonde-syntax-line" data-line="282"> </span>
+<span class="sonde-syntax-line" data-line="283"><span class="sonde-syntax-type">Source</span><span class="sonde-syntax-punctuation">:</span><span class="sonde-syntax-default"> packages/cockpit-mobile/src/commonMain/resources/mobileA11yFixtures/reactNativeProfileStatus</span><span class="sonde-syntax-punctuation">.</span><span class="sonde-syntax-default">tsx </span><span class="sonde-syntax-type">L2</span><span class="sonde-syntax-default">-</span><span class="sonde-syntax-type">L6</span></span>
+<span class="sonde-syntax-line" data-line="284"> </span>
+<span class="sonde-syntax-line" data-line="285"><span class="sonde-syntax-string">```typescript</span></span>
+<span class="sonde-syntax-line" data-line="286"><span class="sonde-syntax-keyword">import</span><span class="sonde-syntax-default"> </span><span class="sonde-syntax-punctuation">{</span><span class="sonde-syntax-default"> </span><span class="sonde-syntax-type">Text</span><span class="sonde-syntax-default"> </span><span class="sonde-syntax-punctuation">}</span><span class="sonde-syntax-default"> </span><span class="sonde-syntax-keyword">from</span><span class="sonde-syntax-default"> </span><span class="sonde-syntax-string">&#39;react-native&#39;</span><span class="sonde-syntax-punctuation">;</span></span>
+<span class="sonde-syntax-line" data-line="287"> </span>
+<span class="sonde-syntax-line" data-line="288"><span class="sonde-syntax-keyword">export</span><span class="sonde-syntax-default"> </span><span class="sonde-syntax-keyword">function</span><span class="sonde-syntax-default"> </span><span class="sonde-syntax-type">ReactNativeProfileStatus</span><span class="sonde-syntax-punctuation">()</span><span class="sonde-syntax-default"> </span><span class="sonde-syntax-punctuation">{</span></span>
+<span class="sonde-syntax-line" data-line="289"><span class="sonde-syntax-default">  </span><span class="sonde-syntax-keyword">return</span><span class="sonde-syntax-default"> </span><span class="sonde-syntax-punctuation">&lt;</span><span class="sonde-syntax-type">Text</span><span class="sonde-syntax-default"> accessibilityLabel</span><span class="sonde-syntax-punctuation">=</span><span class="sonde-syntax-string">&quot;Profile status&quot;</span><span class="sonde-syntax-default"> testID</span><span class="sonde-syntax-punctuation">=</span><span class="sonde-syntax-string">&quot;profile.status&quot;</span><span class="sonde-syntax-default"> /</span><span class="sonde-syntax-punctuation">&gt;;</span></span>
+<span class="sonde-syntax-line" data-line="290"><span class="sonde-syntax-punctuation">}</span></span>
+<span class="sonde-syntax-line" data-line="291"><span class="sonde-syntax-string">```</span></span>
+<span class="sonde-syntax-line" data-line="292"> </span>
+<span class="sonde-syntax-line" data-line="293"><span class="sonde-syntax-punctuation">&lt;</span><span class="sonde-syntax-default">a id</span><span class="sonde-syntax-punctuation">=</span><span class="sonde-syntax-string">&quot;finding-9-image-element-is-missing-the-alt-attribute&quot;</span><span class="sonde-syntax-punctuation">&gt;&lt;</span><span class="sonde-syntax-default">/a</span><span class="sonde-syntax-punctuation">&gt;</span></span>
+<span class="sonde-syntax-line" data-line="294"><span class="sonde-syntax-punctuation">##</span><span class="sonde-syntax-default"> </span><span class="sonde-syntax-type">Image</span><span class="sonde-syntax-default"> element </span><span class="sonde-syntax-keyword">is</span><span class="sonde-syntax-default"> missing the alt attribute</span></span>
+<span class="sonde-syntax-line" data-line="295"> </span>
+<span class="sonde-syntax-line" data-line="296"><span class="sonde-syntax-type">Severity</span><span class="sonde-syntax-punctuation">:</span><span class="sonde-syntax-default"> </span><span class="sonde-syntax-type">High</span></span>
+<span class="sonde-syntax-line" data-line="297"><span class="sonde-syntax-type">Classification</span><span class="sonde-syntax-punctuation">:</span><span class="sonde-syntax-default"> </span><span class="sonde-syntax-type">Accessibility</span></span>
+<span class="sonde-syntax-line" data-line="298"><span class="sonde-syntax-type">Language</span><span class="sonde-syntax-punctuation">:</span><span class="sonde-syntax-default"> </span><span class="sonde-syntax-type">TypeScript</span></span>
+<span class="sonde-syntax-line" data-line="299"><span class="sonde-syntax-type">Framework</span><span class="sonde-syntax-punctuation">:</span><span class="sonde-syntax-default"> </span><span class="sonde-syntax-type">React</span><span class="sonde-syntax-default"> / </span><span class="sonde-syntax-type">TSX</span><span class="sonde-syntax-default"> — </span><span class="sonde-syntax-type">WCAG</span><span class="sonde-syntax-default"> static probe</span></span>
+<span class="sonde-syntax-line" data-line="300"> </span>
+<span class="sonde-syntax-line" data-line="301"><span class="sonde-syntax-type">The</span><span class="sonde-syntax-default"> bare </span><span class="sonde-syntax-string">`&lt;img&gt;`</span><span class="sonde-syntax-default"> element exposes no alt attribute</span><span class="sonde-syntax-punctuation">,</span><span class="sonde-syntax-default"> so assistive technologies announce the file path or nothing at all</span><span class="sonde-syntax-punctuation">.</span></span>
+<span class="sonde-syntax-line" data-line="302"> </span>
+<span class="sonde-syntax-line" data-line="303"><span class="sonde-syntax-default">**</span><span class="sonde-syntax-type">Criterion</span><span class="sonde-syntax-punctuation">:</span><span class="sonde-syntax-default">** </span><span class="sonde-syntax-type">WCAG</span><span class="sonde-syntax-default"> </span><span class="sonde-syntax-number">1.1</span><span class="sonde-syntax-punctuation">.</span><span class="sonde-syntax-number">1</span><span class="sonde-syntax-default"> </span><span class="sonde-syntax-type">Non</span><span class="sonde-syntax-default">-text </span><span class="sonde-syntax-type">Content</span><span class="sonde-syntax-default"> </span><span class="sonde-syntax-punctuation">(</span><span class="sonde-syntax-type">Level</span><span class="sonde-syntax-default"> </span><span class="sonde-syntax-type">A</span><span class="sonde-syntax-punctuation">)</span></span>
+<span class="sonde-syntax-line" data-line="304"> </span>
+<span class="sonde-syntax-line" data-line="305"><span class="sonde-syntax-default">**</span><span class="sonde-syntax-type">Recommended</span><span class="sonde-syntax-default"> next step</span><span class="sonde-syntax-punctuation">:</span><span class="sonde-syntax-default">** </span><span class="sonde-syntax-type">Add</span><span class="sonde-syntax-default"> </span><span class="sonde-syntax-string">`alt=&quot;description&quot;`</span><span class="sonde-syntax-default"> </span><span class="sonde-syntax-keyword">for</span><span class="sonde-syntax-default"> informative images</span><span class="sonde-syntax-punctuation">,</span><span class="sonde-syntax-default"> or </span><span class="sonde-syntax-string">`alt=&quot;&quot;`</span><span class="sonde-syntax-default"> </span><span class="sonde-syntax-keyword">for</span><span class="sonde-syntax-default"> decorative images</span><span class="sonde-syntax-punctuation">.</span></span>
+<span class="sonde-syntax-line" data-line="306"> </span>
+<span class="sonde-syntax-line" data-line="307"> </span>
+<span class="sonde-syntax-line" data-line="308"><span class="sonde-syntax-punctuation">&lt;</span><span class="sonde-syntax-default">a id</span><span class="sonde-syntax-punctuation">=</span><span class="sonde-syntax-string">&quot;source-9-image-element-is-missing-the-alt-attribute&quot;</span><span class="sonde-syntax-punctuation">&gt;&lt;</span><span class="sonde-syntax-default">/a</span><span class="sonde-syntax-punctuation">&gt;</span></span>
+<span class="sonde-syntax-line" data-line="309"><span class="sonde-syntax-punctuation">###</span><span class="sonde-syntax-default"> </span><span class="sonde-syntax-type">React</span><span class="sonde-syntax-default"> / </span><span class="sonde-syntax-type">TSX</span><span class="sonde-syntax-default"> — </span><span class="sonde-syntax-type">WCAG</span><span class="sonde-syntax-default"> static probe source evidence</span></span>
+<span class="sonde-syntax-line" data-line="310"> </span>
+<span class="sonde-syntax-line" data-line="311"><span class="sonde-syntax-default">packages/cockpit/e2e/fixtures/src-compliance/badAccessibility</span><span class="sonde-syntax-punctuation">.</span><span class="sonde-syntax-default">tsx </span><span class="sonde-syntax-type">L11</span><span class="sonde-syntax-default">-</span><span class="sonde-syntax-type">L13</span></span>
+<span class="sonde-syntax-line" data-line="312"> </span>
+<span class="sonde-syntax-line" data-line="313"><span class="sonde-syntax-type">Source</span><span class="sonde-syntax-punctuation">:</span><span class="sonde-syntax-default"> packages/cockpit/e2e/fixtures/src-compliance/badAccessibility</span><span class="sonde-syntax-punctuation">.</span><span class="sonde-syntax-default">tsx </span><span class="sonde-syntax-type">L11</span><span class="sonde-syntax-default">-</span><span class="sonde-syntax-type">L13</span></span>
+<span class="sonde-syntax-line" data-line="314"> </span>
+<span class="sonde-syntax-line" data-line="315"><span class="sonde-syntax-string">```typescript</span></span>
+<span class="sonde-syntax-line" data-line="316"><span class="sonde-syntax-keyword">export</span><span class="sonde-syntax-default"> </span><span class="sonde-syntax-keyword">function</span><span class="sonde-syntax-default"> </span><span class="sonde-syntax-type">BadImage</span><span class="sonde-syntax-punctuation">():</span><span class="sonde-syntax-default"> </span><span class="sonde-syntax-type">ReactElement</span><span class="sonde-syntax-default"> </span><span class="sonde-syntax-punctuation">{</span></span>
+<span class="sonde-syntax-line" data-line="317"><span class="sonde-syntax-default">  </span><span class="sonde-syntax-keyword">return</span><span class="sonde-syntax-default"> </span><span class="sonde-syntax-punctuation">&lt;</span><span class="sonde-syntax-default">img src</span><span class="sonde-syntax-punctuation">=</span><span class="sonde-syntax-string">&quot;/logo.png&quot;</span><span class="sonde-syntax-default"> /</span><span class="sonde-syntax-punctuation">&gt;;</span></span>
+<span class="sonde-syntax-line" data-line="318"><span class="sonde-syntax-punctuation">}</span></span>
+<span class="sonde-syntax-line" data-line="319"><span class="sonde-syntax-string">```</span></span>
+<span class="sonde-syntax-line" data-line="320"> </span>
+<span class="sonde-syntax-line" data-line="321"><span class="sonde-syntax-punctuation">&lt;</span><span class="sonde-syntax-default">a id</span><span class="sonde-syntax-punctuation">=</span><span class="sonde-syntax-string">&quot;finding-10-element-has-positive-tabindex-focus-order&quot;</span><span class="sonde-syntax-punctuation">&gt;&lt;</span><span class="sonde-syntax-default">/a</span><span class="sonde-syntax-punctuation">&gt;</span></span>
+<span class="sonde-syntax-line" data-line="322"><span class="sonde-syntax-punctuation">##</span><span class="sonde-syntax-default"> </span><span class="sonde-syntax-type">Element</span><span class="sonde-syntax-default"> has positive tabindex </span><span class="sonde-syntax-punctuation">(</span><span class="sonde-syntax-default">focus order</span><span class="sonde-syntax-punctuation">)</span></span>
+<span class="sonde-syntax-line" data-line="323"> </span>
+<span class="sonde-syntax-line" data-line="324"><span class="sonde-syntax-type">Severity</span><span class="sonde-syntax-punctuation">:</span><span class="sonde-syntax-default"> </span><span class="sonde-syntax-type">High</span></span>
+<span class="sonde-syntax-line" data-line="325"><span class="sonde-syntax-type">Classification</span><span class="sonde-syntax-punctuation">:</span><span class="sonde-syntax-default"> </span><span class="sonde-syntax-type">Accessibility</span></span>
+<span class="sonde-syntax-line" data-line="326"><span class="sonde-syntax-type">Language</span><span class="sonde-syntax-punctuation">:</span><span class="sonde-syntax-default"> </span><span class="sonde-syntax-type">HTML</span></span>
+<span class="sonde-syntax-line" data-line="327"><span class="sonde-syntax-type">Framework</span><span class="sonde-syntax-punctuation">:</span><span class="sonde-syntax-default"> </span><span class="sonde-syntax-type">HTML</span><span class="sonde-syntax-default"> — </span><span class="sonde-syntax-type">WCAG</span><span class="sonde-syntax-default"> mechanical probe</span></span>
+<span class="sonde-syntax-line" data-line="328"> </span>
+<span class="sonde-syntax-line" data-line="329"><span class="sonde-syntax-type">The</span><span class="sonde-syntax-default"> </span><span class="sonde-syntax-string">`&lt;button tabindex=&quot;3&quot;&gt;`</span><span class="sonde-syntax-default"> creates an unpredictable focus order — positive tabindex values jump out </span><span class="sonde-syntax-keyword">of</span><span class="sonde-syntax-default"> natural </span><span class="sonde-syntax-type">DOM</span><span class="sonde-syntax-default"> order and disorient keyboard users</span><span class="sonde-syntax-punctuation">.</span></span>
+<span class="sonde-syntax-line" data-line="330"> </span>
+<span class="sonde-syntax-line" data-line="331"><span class="sonde-syntax-default">**</span><span class="sonde-syntax-type">Criterion</span><span class="sonde-syntax-punctuation">:</span><span class="sonde-syntax-default">** </span><span class="sonde-syntax-type">WCAG</span><span class="sonde-syntax-default"> </span><span class="sonde-syntax-number">2.4</span><span class="sonde-syntax-punctuation">.</span><span class="sonde-syntax-number">3</span><span class="sonde-syntax-default"> </span><span class="sonde-syntax-type">Focus</span><span class="sonde-syntax-default"> </span><span class="sonde-syntax-type">Order</span><span class="sonde-syntax-default"> </span><span class="sonde-syntax-punctuation">(</span><span class="sonde-syntax-type">Level</span><span class="sonde-syntax-default"> </span><span class="sonde-syntax-type">A</span><span class="sonde-syntax-punctuation">)</span></span>
+<span class="sonde-syntax-line" data-line="332"> </span>
+<span class="sonde-syntax-line" data-line="333"><span class="sonde-syntax-default">**</span><span class="sonde-syntax-type">Recommended</span><span class="sonde-syntax-default"> next step</span><span class="sonde-syntax-punctuation">:</span><span class="sonde-syntax-default">** </span><span class="sonde-syntax-type">Use</span><span class="sonde-syntax-default"> </span><span class="sonde-syntax-string">`tabindex=&quot;0&quot;`</span><span class="sonde-syntax-default"> to add to natural tab order</span><span class="sonde-syntax-punctuation">,</span><span class="sonde-syntax-default"> or </span><span class="sonde-syntax-string">`tabindex=&quot;-1&quot;`</span><span class="sonde-syntax-default"> </span><span class="sonde-syntax-keyword">for</span><span class="sonde-syntax-default"> programmatic focus only</span><span class="sonde-syntax-punctuation">.</span><span class="sonde-syntax-default"> </span><span class="sonde-syntax-type">Rearrange</span><span class="sonde-syntax-default"> </span><span class="sonde-syntax-type">DOM</span><span class="sonde-syntax-default"> order to achieve the desired tab sequence</span><span class="sonde-syntax-punctuation">.</span></span>
+<span class="sonde-syntax-line" data-line="334"> </span>
+<span class="sonde-syntax-line" data-line="335"> </span>
+<span class="sonde-syntax-line" data-line="336"><span class="sonde-syntax-punctuation">&lt;</span><span class="sonde-syntax-default">a id</span><span class="sonde-syntax-punctuation">=</span><span class="sonde-syntax-string">&quot;source-10-element-has-positive-tabindex-focus-order&quot;</span><span class="sonde-syntax-punctuation">&gt;&lt;</span><span class="sonde-syntax-default">/a</span><span class="sonde-syntax-punctuation">&gt;</span></span>
+<span class="sonde-syntax-line" data-line="337"><span class="sonde-syntax-punctuation">###</span><span class="sonde-syntax-default"> </span><span class="sonde-syntax-type">HTML</span><span class="sonde-syntax-default"> — </span><span class="sonde-syntax-type">WCAG</span><span class="sonde-syntax-default"> mechanical probe source evidence</span></span>
+<span class="sonde-syntax-line" data-line="338"> </span>
+<span class="sonde-syntax-line" data-line="339"><span class="sonde-syntax-default">packages/fix-apply/e2e/fixtures/wcagMechanicalHtml/index</span><span class="sonde-syntax-punctuation">.</span><span class="sonde-syntax-default">html </span><span class="sonde-syntax-type">L13</span><span class="sonde-syntax-default">-</span><span class="sonde-syntax-type">L16</span></span>
+<span class="sonde-syntax-line" data-line="340"> </span>
+<span class="sonde-syntax-line" data-line="341"><span class="sonde-syntax-type">Source</span><span class="sonde-syntax-punctuation">:</span><span class="sonde-syntax-default"> packages/fix-apply/e2e/fixtures/wcagMechanicalHtml/index</span><span class="sonde-syntax-punctuation">.</span><span class="sonde-syntax-default">html </span><span class="sonde-syntax-type">L13</span><span class="sonde-syntax-default">-</span><span class="sonde-syntax-type">L16</span></span>
+<span class="sonde-syntax-line" data-line="342"> </span>
+<span class="sonde-syntax-line" data-line="343"><span class="sonde-syntax-string">```html</span></span>
+<span class="sonde-syntax-line" data-line="344"><span class="sonde-syntax-default">  </span><span class="sonde-syntax-punctuation">&lt;</span><span class="sonde-syntax-default">/header</span><span class="sonde-syntax-punctuation">&gt;</span></span>
+<span class="sonde-syntax-line" data-line="345"><span class="sonde-syntax-default">  </span><span class="sonde-syntax-punctuation">&lt;</span><span class="sonde-syntax-default">img src</span><span class="sonde-syntax-punctuation">=</span><span class="sonde-syntax-string">&quot;logo.png&quot;</span><span class="sonde-syntax-punctuation">&gt;</span></span>
+<span class="sonde-syntax-line" data-line="346"><span class="sonde-syntax-default">  </span><span class="sonde-syntax-punctuation">&lt;</span><span class="sonde-syntax-default">button tabindex</span><span class="sonde-syntax-punctuation">=</span><span class="sonde-syntax-string">&quot;3&quot;</span><span class="sonde-syntax-punctuation">&gt;</span><span class="sonde-syntax-type">Submit</span><span class="sonde-syntax-punctuation">&lt;</span><span class="sonde-syntax-default">/button</span><span class="sonde-syntax-punctuation">&gt;</span></span>
+<span class="sonde-syntax-line" data-line="347"><span class="sonde-syntax-punctuation">&lt;</span><span class="sonde-syntax-default">/body</span><span class="sonde-syntax-punctuation">&gt;</span></span>
+<span class="sonde-syntax-line" data-line="348"><span class="sonde-syntax-string">```</span></span>
+<span class="sonde-syntax-line" data-line="349"> </span>
+<span class="sonde-syntax-line" data-line="350"><span class="sonde-syntax-punctuation">&lt;</span><span class="sonde-syntax-default">a id</span><span class="sonde-syntax-punctuation">=</span><span class="sonde-syntax-string">&quot;fix-plan-missing-alt&quot;</span><span class="sonde-syntax-punctuation">&gt;&lt;</span><span class="sonde-syntax-default">/a</span><span class="sonde-syntax-punctuation">&gt;</span></span>
+<span class="sonde-syntax-line" data-line="351"><span class="sonde-syntax-punctuation">##</span><span class="sonde-syntax-default"> </span><span class="sonde-syntax-type">Fix</span><span class="sonde-syntax-default"> plan</span></span>
+<span class="sonde-syntax-line" data-line="352"> </span>
+<span class="sonde-syntax-line" data-line="353"><span class="sonde-syntax-type">Live</span><span class="sonde-syntax-punctuation">,</span><span class="sonde-syntax-default"> per-finding fix plans generate automatically when </span><span class="sonde-syntax-type">Sonde</span><span class="sonde-syntax-default"> analyzes your repository</span><span class="sonde-syntax-punctuation">.</span><span class="sonde-syntax-default"> </span><span class="sonde-syntax-type">This</span><span class="sonde-syntax-default"> curated showcase demonstrates the report</span><span class="sonde-syntax-punctuation">;</span><span class="sonde-syntax-default"> see automated remediation </span><span class="sonde-syntax-keyword">in</span><span class="sonde-syntax-default"> action on a live example</span><span class="sonde-syntax-punctuation">.</span></span>
+<span class="sonde-syntax-line" data-line="354"> </span>
+<span class="sonde-syntax-line" data-line="355"><span class="sonde-syntax-type">Fix</span><span class="sonde-syntax-default"> plan link</span><span class="sonde-syntax-punctuation">:</span><span class="sonde-syntax-default"> </span><span class="sonde-syntax-punctuation">[</span><span class="sonde-syntax-type">Fix</span><span class="sonde-syntax-default"> plan</span><span class="sonde-syntax-punctuation">](..</span><span class="sonde-syntax-default">/fix-plans/finding-missing-alt/index</span><span class="sonde-syntax-punctuation">.</span><span class="sonde-syntax-default">html</span><span class="sonde-syntax-punctuation">#</span><span class="sonde-syntax-default">fix-plan-missing-alt</span><span class="sonde-syntax-punctuation">)</span></span>
+<span class="sonde-syntax-line" data-line="356"> </span>
+<span class="sonde-syntax-line" data-line="357"><span class="sonde-syntax-type">Public</span><span class="sonde-syntax-default"> </span><span class="sonde-syntax-keyword">export</span><span class="sonde-syntax-default"> note</span><span class="sonde-syntax-punctuation">:</span><span class="sonde-syntax-default"> this </span><span class="sonde-syntax-type">Markdown</span><span class="sonde-syntax-default"> file </span><span class="sonde-syntax-keyword">is</span><span class="sonde-syntax-default"> derived </span><span class="sonde-syntax-keyword">from</span><span class="sonde-syntax-default"> authorized public report data</span><span class="sonde-syntax-punctuation">.</span><span class="sonde-syntax-default"> </span><span class="sonde-syntax-type">Private</span><span class="sonde-syntax-default"> receipt data and gated fix-plan prose are excluded</span><span class="sonde-syntax-punctuation">.</span></span>
+<span class="sonde-syntax-line" data-line="358"> </span></code></pre></div>
+      </div>
+    </figure>
+  </main>
+  </div>
+</body>
+</html>

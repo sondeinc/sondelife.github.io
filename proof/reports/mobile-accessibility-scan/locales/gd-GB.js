@@ -1,8 +1,13 @@
 window.__SCRIBE_LOCALES__ = window.__SCRIBE_LOCALES__ || {};
 window.__SCRIBE_LOCALES__["gd-GB"] = {
-  "fallbackCount": 94,
+  "fallbackCount": 120,
   "locale": "gd-GB",
   "messages": {
+    "scribe.leaderboard.language": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Cànan"
+    },
     "scribe.report.action.backToFinding": {
       "fallback": false,
       "reviewed": true,
@@ -141,7 +146,7 @@ window.__SCRIBE_LOCALES__["gd-GB"] = {
     "scribe.report.asset.overviewScreenshot.caption": {
       "fallback": false,
       "reviewed": true,
-      "text": "Chaidh lethbhreac a dhèanamh dheth bhon aon riochdaire fianais annotated a chaidh a chleachdadh air duilleag poblach sonde.life compliance."
+      "text": "Chaidh lethbhreac a dhèanamh dheth bhon aon riochdaire fianais annotated a chaidh a chleachdadh air duilleag poblach sonde.tech compliance."
     },
     "scribe.report.asset.theme.daylight": {
       "fallback": false,
@@ -303,11 +308,6 @@ window.__SCRIBE_LOCALES__["gd-GB"] = {
       "reviewed": true,
       "text": "An toiseach"
     },
-    "scribe.report.control.language": {
-      "fallback": false,
-      "reviewed": true,
-      "text": "Cànan"
-    },
     "scribe.report.control.languageSearch": {
       "fallback": false,
       "reviewed": true,
@@ -438,6 +438,11 @@ window.__SCRIBE_LOCALES__["gd-GB"] = {
       "reviewed": true,
       "text": "Lorg an tùis"
     },
+    "scribe.report.finding.autofix.title": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Autofix"
+    },
     "scribe.report.finding.missingAlt.summary": {
       "fallback": false,
       "reviewed": true,
@@ -458,6 +463,51 @@ window.__SCRIBE_LOCALES__["gd-GB"] = {
       "reviewed": true,
       "text": "Sgrùdadh poblach air lorg gun stuth ceartachaidh gated."
     },
+    "scribe.report.fixPlan.component.beforeAfter": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Roimhe / às dèidh (ro-shealladh fèin-cheartachaidh)"
+    },
+    "scribe.report.fixPlan.component.closeFullScreen": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Dùin"
+    },
+    "scribe.report.fixPlan.component.fixGroups": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Buidhnean ceartachaidh"
+    },
+    "scribe.report.fixPlan.component.fixed": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Fixed"
+    },
+    "scribe.report.fixPlan.component.original": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Original"
+    },
+    "scribe.report.fixPlan.component.source": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Tùs"
+    },
+    "scribe.report.fixPlan.component.splitView": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Split"
+    },
+    "scribe.report.fixPlan.component.unifiedView": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Unified"
+    },
+    "scribe.report.fixPlan.component.verify": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Dearbhaich"
+    },
     "scribe.report.fixPlan.pageTitle": {
       "fallback": false,
       "reviewed": true,
@@ -472,6 +522,26 @@ window.__SCRIBE_LOCALES__["gd-GB"] = {
       "fallback": false,
       "reviewed": true,
       "text": "Bidh planaichean ceartachaidh beò, gach lorg fa leth, gan gineadh gu fèin-obrachail nuair a nì Sonde anailis air an stòr agad. Tha an taisbeanadh làimh-thaghte seo a' sealltainn na h-aithisge; faic ceartachadh fèin-obrachail an gnìomh air eisimpleir bheò."
+    },
+    "scribe.report.metric.severity.critical": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Èiginneach"
+    },
+    "scribe.report.metric.severity.good": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Math"
+    },
+    "scribe.report.metric.severity.high": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Àrd"
+    },
+    "scribe.report.metric.severity.moderate": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Meadhanach"
     },
     "scribe.report.mobileAccessibilityScan.metric.complianceMatrix.body": {
       "fallback": false,
@@ -588,27 +658,7 @@ window.__SCRIBE_LOCALES__["gd-GB"] = {
       "reviewed": true,
       "text": "Sealladh farsaing"
     },
-    "scribe.report.repositoryHealth.fixPlan.generic.step.inspect": {
-      "fallback": false,
-      "reviewed": true,
-      "text": "Dearbhaich an raon-thòrsa a tha air a shònrachadh anns na loidhne {sourcePath} {startLine} tro {endLine}."
-    },
-    "scribe.report.repositoryHealth.fixPlan.generic.step.resolve": {
-      "fallback": false,
-      "reviewed": true,
-      "text": "Cuir an leigheas an gnìomh le bhith a' cleachdadh an t-atharrachadh stòr as lugha a shocraicheas an lorg."
-    },
-    "scribe.report.repositoryHealth.fixPlan.generic.step.validate": {
-      "fallback": false,
-      "reviewed": true,
-      "text": "Ath-ruith aithris slàinte an stòrais is na deuchainnean aig ìre pacaid as fhaisge air an àite mus foillsich thu an rèiteachadh."
-    },
-    "scribe.report.repositoryHealth.fixPlan.scope": {
-      "fallback": false,
-      "reviewed": true,
-      "text": "Raon-tìre an t-srutha-uidhe: {sourcePath} lines {startLine} through {endLine}."
-    },
-    "scribe.report.sondeScore.title": {
+    "scribe.report.repositoryHealth.sondeScore.title": {
       "fallback": false,
       "reviewed": true,
       "text": "Sonde Score"

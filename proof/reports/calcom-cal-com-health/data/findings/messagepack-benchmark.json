@@ -1,0 +1,19 @@
+{
+  "chunkCount": 9,
+  "decision": {
+    "reason": "MessagePack was not selected for the browser runtime because file-direct reports need script-tag boot without a binary decoder, while static-server JSON keeps the server profile inspectable and cacheable.",
+    "rollbackProvider": "script-tag-js",
+    "selectedProvider": "script-tag-js",
+    "staticServerCandidate": "static-server-json"
+  },
+  "findingCount": 101,
+  "measuredBytes": {
+    "jsonIndex": 109242,
+    "scriptTagIndex": 109260,
+    "scriptTagJs": 380220,
+    "staticServerJson": 379464
+  },
+  "schemaVersion": "scribe-finding-messagepack-benchmark/v1",
+  "selected": false,
+  "status": "measured-not-selected"
+}

@@ -12,6 +12,41 @@ window.__SCRIBE_EXPORT_ACTIONS__ = [
     "href": "exports/report.md",
     "includesPrivateReceipt": false,
     "label": {
+      "catalogDependency": {
+        "explicitLocales": [
+          "es-US"
+        ],
+        "lookupLocales": [
+          "en-US",
+          "en-GB",
+          "en-CA",
+          "fr-CA",
+          "en-IN",
+          "cy-GB",
+          "gd-GB",
+          "ga-GB",
+          "es-US",
+          "es-MX",
+          "de-DE",
+          "fr-FR",
+          "es-ES",
+          "it-IT",
+          "nl-NL",
+          "pl-PL",
+          "pt-PT",
+          "pt-BR",
+          "ro-RO",
+          "sv-SE",
+          "ko-KR",
+          "zh-CN",
+          "ja-JP",
+          "hi-IN"
+        ],
+        "reportFallbacks": {
+          "ja-JP": "Markdown レポートをダウンロード"
+        },
+        "sourceLocale": "en-US"
+      },
       "defaultLocale": "en-US",
       "defaultText": "Download Markdown report",
       "icuArgs": {},

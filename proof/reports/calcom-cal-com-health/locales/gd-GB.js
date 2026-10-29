@@ -1,8 +1,13 @@
 window.__SCRIBE_LOCALES__ = window.__SCRIBE_LOCALES__ || {};
 window.__SCRIBE_LOCALES__["gd-GB"] = {
-  "fallbackCount": 14,
+  "fallbackCount": 63,
   "locale": "gd-GB",
   "messages": {
+    "scribe.leaderboard.language": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Cànan"
+    },
     "scribe.report.action.backToFinding": {
       "fallback": false,
       "reviewed": true,
@@ -223,6 +228,11 @@ window.__SCRIBE_LOCALES__["gd-GB"] = {
       "reviewed": true,
       "text": "Comasan ORM agus stòr-dàta"
     },
+    "scribe.report.complianceEvidence.criterion": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "{criterion}"
+    },
     "scribe.report.complianceExample.source.summary": {
       "fallback": false,
       "reviewed": true,
@@ -282,11 +292,6 @@ window.__SCRIBE_LOCALES__["gd-GB"] = {
       "fallback": false,
       "reviewed": true,
       "text": "An toiseach"
-    },
-    "scribe.report.control.language": {
-      "fallback": false,
-      "reviewed": true,
-      "text": "Cànan"
     },
     "scribe.report.control.languageSearch": {
       "fallback": false,
@@ -428,6 +433,51 @@ window.__SCRIBE_LOCALES__["gd-GB"] = {
       "reviewed": true,
       "text": "Autofix"
     },
+    "scribe.report.fixPlan.component.beforeAfter": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Roimhe / às dèidh (ro-shealladh fèin-cheartachaidh)"
+    },
+    "scribe.report.fixPlan.component.closeFullScreen": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Dùin"
+    },
+    "scribe.report.fixPlan.component.fixGroups": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Buidhnean ceartachaidh"
+    },
+    "scribe.report.fixPlan.component.fixed": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Fixed"
+    },
+    "scribe.report.fixPlan.component.original": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Original"
+    },
+    "scribe.report.fixPlan.component.source": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Tùs"
+    },
+    "scribe.report.fixPlan.component.splitView": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Split"
+    },
+    "scribe.report.fixPlan.component.unifiedView": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Unified"
+    },
+    "scribe.report.fixPlan.component.verify": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Dearbhaich"
+    },
     "scribe.report.fixPlan.pageTitle": {
       "fallback": false,
       "reviewed": true,
@@ -442,6 +492,26 @@ window.__SCRIBE_LOCALES__["gd-GB"] = {
       "fallback": false,
       "reviewed": true,
       "text": "Stiùireadh ceartachaidh airson nan lorgan san aithisg seo."
+    },
+    "scribe.report.metric.severity.critical": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Èiginneach"
+    },
+    "scribe.report.metric.severity.good": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Math"
+    },
+    "scribe.report.metric.severity.high": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Àrd"
+    },
+    "scribe.report.metric.severity.moderate": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Meadhanach"
     },
     "scribe.report.mode.auto": {
       "fallback": false,
@@ -538,26 +608,6 @@ window.__SCRIBE_LOCALES__["gd-GB"] = {
       "reviewed": true,
       "text": "Cruth an stòrais"
     },
-    "scribe.report.repositoryHealth.finding.analysisIncomplete.criterion": {
-      "fallback": false,
-      "reviewed": true,
-      "text": "Feumaidh scanadh slàinte an stòrais na h-uile probe a thagh thu agus lorgairean acadamaidh a chrìochnachadh gu glan."
-    },
-    "scribe.report.repositoryHealth.finding.analysisIncomplete.fix": {
-      "fallback": false,
-      "reviewed": true,
-      "text": "Deasaich na pròbaigean a dh'fhàillig mus foillsich thu na toraidhean don chliant; bu chòir rabhadh a bhith ann a dh'aithnicheas an lorgaire agus an teachdaireachd eas-bhuannachd."
-    },
-    "scribe.report.repositoryHealth.finding.analysisIncomplete.summary": {
-      "fallback": false,
-      "reviewed": true,
-      "text": "Dh'fhàillig an t-snàthainn {failedProbeCount} agus chaidh rabhadh an t-snàthainn {detectorWarningCount} a chlàradh."
-    },
-    "scribe.report.repositoryHealth.finding.analysisIncomplete.title": {
-      "fallback": false,
-      "reviewed": true,
-      "text": "Cha robh anailis air slàinte an tasglann coileanta"
-    },
     "scribe.report.repositoryHealth.finding.complexity.criterion": {
       "fallback": false,
       "reviewed": true,
@@ -587,11 +637,6 @@ window.__SCRIBE_LOCALES__["gd-GB"] = {
       "fallback": false,
       "reviewed": true,
       "text": "Sgrùdadh air slàinte an stòrais phoilitigeach le fianais air a' chòmhdach a tha air a dhearbhadh le stòras."
-    },
-    "scribe.report.repositoryHealth.finding.raw.criterion": {
-      "fallback": false,
-      "reviewed": true,
-      "text": "{criterion}"
     },
     "scribe.report.repositoryHealth.finding.raw.fix": {
       "fallback": false,
@@ -643,41 +688,6 @@ window.__SCRIBE_LOCALES__["gd-GB"] = {
       "reviewed": true,
       "text": "Tha fianais a tha air a dhearbhadh le stòras aig scan slàinte an stòrais"
     },
-    "scribe.report.repositoryHealth.fixPlan.codeHealth.step.extract": {
-      "fallback": false,
-      "reviewed": true,
-      "text": "Ath-fhàgail an raon a chaidh ainmeachadh ann an òrdugh cunnairt a' dol sìos: sgaradh na cnuimhean deasachaidh as duilghe ann an cuidichidhean ainmichte no aonadan deasachaidh nas giorra fhad's a bhios an giùlan air a shàbhaladh."
-    },
-    "scribe.report.repositoryHealth.fixPlan.codeHealth.step.inspect": {
-      "fallback": false,
-      "reviewed": true,
-      "text": "Dèan sgrùdadh air loidhnean {sourcePath} bho {startLine} gu {endLine} agus cuir liosta dhen bhratach, den lùbadh, den fhilleadh luath, agus de na slighean eas-bhuannachd a bhios a' ruith an duilgheadas a chaidh a thomhas."
-    },
-    "scribe.report.repositoryHealth.fixPlan.codeHealth.step.validate": {
-      "fallback": false,
-      "reviewed": true,
-      "text": "Cuir ri no ùrachadh air deuchainnean air an do dh'atharraich na craobhan air na loidhnean {startLine} gu {endLine}, ruith na seicean pacaid as fhaisge, an uair sin ath-chruthaich aithris slàinte an stòrais."
-    },
-    "scribe.report.repositoryHealth.fixPlan.generic.step.inspect": {
-      "fallback": false,
-      "reviewed": true,
-      "text": "Dearbhaich an raon-thòrsa a tha air a shònrachadh anns na loidhne {sourcePath} {startLine} tro {endLine}."
-    },
-    "scribe.report.repositoryHealth.fixPlan.generic.step.resolve": {
-      "fallback": false,
-      "reviewed": true,
-      "text": "Cuir an leigheas an gnìomh le bhith a' cleachdadh an t-atharrachadh stòr as lugha a shocraicheas an lorg."
-    },
-    "scribe.report.repositoryHealth.fixPlan.generic.step.validate": {
-      "fallback": false,
-      "reviewed": true,
-      "text": "Ath-ruith aithris slàinte an stòrais is na deuchainnean aig ìre pacaid as fhaisge air an àite mus foillsich thu an rèiteachadh."
-    },
-    "scribe.report.repositoryHealth.fixPlan.scope": {
-      "fallback": false,
-      "reviewed": true,
-      "text": "Raon-tìre an t-srutha-uidhe: {sourcePath} lines {startLine} through {endLine}."
-    },
     "scribe.report.repositoryHealth.overview.body": {
       "fallback": false,
       "reviewed": true,
@@ -708,6 +718,21 @@ window.__SCRIBE_LOCALES__["gd-GB"] = {
       "reviewed": true,
       "text": "Sonde Score"
     },
+    "scribe.report.repositoryHealth.sourceRow.frameworks": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Frèaman-obrach"
+    },
+    "scribe.report.repositoryHealth.sourceRow.languages": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Cànanan"
+    },
+    "scribe.report.repositoryHealth.sourceRow.source": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Tùs"
+    },
     "scribe.report.repositoryHealth.sourceSnippet.summary": {
       "fallback": false,
       "reviewed": true,
@@ -722,21 +747,6 @@ window.__SCRIBE_LOCALES__["gd-GB"] = {
       "fallback": false,
       "reviewed": true,
       "text": "Dàta bun-sgoile slàinte an ionad-tasgaidh a' sealltainn {sourceFileCount, number} faidhlichean bun-sgoile, {languageCount, number} cànanan, {packageManifestCount, number} manifestos pacaid, {buildConfigCount, number} rèiteachadh-togail, {frameworkDetectionCount, number} lorgairean goireasan, agus {databaseSchemaCount, number} artifacts sgeama stòr-dàta."
-    },
-    "scribe.report.repositoryHealth.visualization.finding.controlFlow.alt": {
-      "fallback": false,
-      "reviewed": true,
-      "text": "Griog-fhlùraichean smachd airson {subject} ann an {sourcePath} loidhne {startLine} tro {endLine}."
-    },
-    "scribe.report.repositoryHealth.visualization.finding.controlFlow.title": {
-      "fallback": false,
-      "reviewed": true,
-      "text": "Graf sruth-smachd airson {subject}"
-    },
-    "scribe.report.repositoryHealth.visualization.finding.description": {
-      "fallback": false,
-      "reviewed": true,
-      "text": "Thèid an dealbh a ghineadh o {sourcePath} loidhnean {startLine} tro {endLine} agus soillsichidh e an t-ionad-cuideachaidh air an t-sruth-riaghlaidh no fianais sgeama airson an lorg."
     },
     "scribe.report.repositoryHealth.visualization.longDescription": {
       "fallback": false,
@@ -788,7 +798,7 @@ window.__SCRIBE_LOCALES__["gd-GB"] = {
       "reviewed": true,
       "text": "Bun-stèidh"
     },
-    "scribe.report.term.primary": {
+    "scribe.report.term.repository-health.primary": {
       "fallback": false,
       "reviewed": true,
       "text": "Sàbhailteachd an ionad-tasgaidh"

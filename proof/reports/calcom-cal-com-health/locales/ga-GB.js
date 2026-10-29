@@ -1,8 +1,13 @@
 window.__SCRIBE_LOCALES__ = window.__SCRIBE_LOCALES__ || {};
 window.__SCRIBE_LOCALES__["ga-GB"] = {
-  "fallbackCount": 14,
+  "fallbackCount": 64,
   "locale": "ga-GB",
   "messages": {
+    "scribe.leaderboard.language": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Teanga"
+    },
     "scribe.report.action.backToFinding": {
       "fallback": false,
       "reviewed": true,
@@ -223,6 +228,11 @@ window.__SCRIBE_LOCALES__["ga-GB"] = {
       "reviewed": true,
       "text": "ORM & cumas bunachar sonraí"
     },
+    "scribe.report.complianceEvidence.criterion": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "{criterion}"
+    },
     "scribe.report.complianceExample.source.summary": {
       "fallback": false,
       "reviewed": true,
@@ -282,11 +292,6 @@ window.__SCRIBE_LOCALES__["ga-GB"] = {
       "fallback": false,
       "reviewed": true,
       "text": "An Chéad"
-    },
-    "scribe.report.control.language": {
-      "fallback": false,
-      "reviewed": true,
-      "text": "Teanga"
     },
     "scribe.report.control.languageSearch": {
       "fallback": false,
@@ -428,6 +433,51 @@ window.__SCRIBE_LOCALES__["ga-GB"] = {
       "reviewed": true,
       "text": "Autofix"
     },
+    "scribe.report.fixPlan.component.beforeAfter": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Roimh / tar éis (réamhamharc deisithe uathoibríoch)"
+    },
+    "scribe.report.fixPlan.component.closeFullScreen": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Dún"
+    },
+    "scribe.report.fixPlan.component.fixGroups": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Grúpaí deisithe"
+    },
+    "scribe.report.fixPlan.component.fixed": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Fixed"
+    },
+    "scribe.report.fixPlan.component.original": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Original"
+    },
+    "scribe.report.fixPlan.component.source": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Foinse"
+    },
+    "scribe.report.fixPlan.component.splitView": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Split"
+    },
+    "scribe.report.fixPlan.component.unifiedView": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Unified"
+    },
+    "scribe.report.fixPlan.component.verify": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Fíoraigh"
+    },
     "scribe.report.fixPlan.pageTitle": {
       "fallback": false,
       "reviewed": true,
@@ -442,6 +492,26 @@ window.__SCRIBE_LOCALES__["ga-GB"] = {
       "fallback": false,
       "reviewed": true,
       "text": "Treoir leighis do na torthaí sa tuairisc seo."
+    },
+    "scribe.report.metric.severity.critical": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Criticiúil"
+    },
+    "scribe.report.metric.severity.good": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Maith"
+    },
+    "scribe.report.metric.severity.high": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Ard"
+    },
+    "scribe.report.metric.severity.moderate": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Measartha"
     },
     "scribe.report.mode.auto": {
       "fallback": false,
@@ -538,26 +608,6 @@ window.__SCRIBE_LOCALES__["ga-GB"] = {
       "reviewed": true,
       "text": "Cruth stórthaStencils"
     },
-    "scribe.report.repositoryHealth.finding.analysisIncomplete.criterion": {
-      "fallback": false,
-      "reviewed": true,
-      "text": "Éilíonn scanadh sláinte stórála go léir probes roghnaithe agus brathadóirí acmhainní a chomhlánú go glan."
-    },
-    "scribe.report.repositoryHealth.finding.analysisIncomplete.fix": {
-      "fallback": false,
-      "reviewed": true,
-      "text": "Socraigh probes theip roimh fhoilsiú torthaí do chustaiméirí-ag tabhairt aghaidhe; ba chóir rabhaidh a aithint an brathadóir agus teachtaireacht eisceacht."
-    },
-    "scribe.report.repositoryHealth.finding.analysisIncomplete.summary": {
-      "fallback": false,
-      "reviewed": true,
-      "text": "Theip ar {failedProbeCount} probe( s) agus taifeadadh rabhadh( a) brathadóra {detectorWarningCount}."
-    },
-    "scribe.report.repositoryHealth.finding.analysisIncomplete.title": {
-      "fallback": false,
-      "reviewed": true,
-      "text": "Bhí clúdach probe neamhiomlán ag anailís shláinte stórtha"
-    },
     "scribe.report.repositoryHealth.finding.complexity.criterion": {
       "fallback": false,
       "reviewed": true,
@@ -587,11 +637,6 @@ window.__SCRIBE_LOCALES__["ga-GB"] = {
       "fallback": false,
       "reviewed": true,
       "text": "Achoimre ar shláinte stór poiblí le fianaise ar chumhdach atá tacaíochta ag foinse."
-    },
-    "scribe.report.repositoryHealth.finding.raw.criterion": {
-      "fallback": false,
-      "reviewed": true,
-      "text": "{criterion}"
     },
     "scribe.report.repositoryHealth.finding.raw.fix": {
       "fallback": false,
@@ -643,41 +688,6 @@ window.__SCRIBE_LOCALES__["ga-GB"] = {
       "reviewed": true,
       "text": "Tá scanadh sláinte stórtha le fianaise ath-inúsáidte foinse-tacaithe"
     },
-    "scribe.report.repositoryHealth.fixPlan.codeHealth.step.extract": {
-      "fallback": false,
-      "reviewed": true,
-      "text": "Athdhéan an raon luaite in ord riosca íslitheach: na braislí cinntí is casta a roinnt ina gcabhair ainmnithe nó in aonaid chinnidh níos cúinge agus iompar á chaomhnú."
-    },
-    "scribe.report.repositoryHealth.fixPlan.codeHealth.step.inspect": {
-      "fallback": false,
-      "reviewed": true,
-      "text": "Iniúchadh {sourcePath} línte {startLine} trí {endLine} agus liosta de na brainse, lúb, luath-tuairisceán, agus cosáin eisceacht a thiomáint ar an chastacht a thomhas."
-    },
-    "scribe.report.repositoryHealth.fixPlan.codeHealth.step.validate": {
-      "fallback": false,
-      "reviewed": true,
-      "text": "Cuir tástálacha dírithe leis nó nuashonraigh iad do na brainsí athraithe i línte {startLine} trí {endLine}, rith na seiceálacha pacáiste is gaire, agus ansin athghiniúint an tuarascáil sláinte stórtha."
-    },
-    "scribe.report.repositoryHealth.fixPlan.generic.step.inspect": {
-      "fallback": false,
-      "reviewed": true,
-      "text": "Fíoraigh an raon foinse luaite i línte {sourcePath} {startLine} trí {endLine}."
-    },
-    "scribe.report.repositoryHealth.fixPlan.generic.step.resolve": {
-      "fallback": false,
-      "reviewed": true,
-      "text": "Cuir an leigheas ag baint úsáide as an t-athrú foinse is lú a réitíonn an toradh."
-    },
-    "scribe.report.repositoryHealth.fixPlan.generic.step.validate": {
-      "fallback": false,
-      "reviewed": true,
-      "text": "Ath-rith an tuarascáil sláinte stórtha agus na tástálacha pacáiste-leibhéal is gaire sula bhfoilsítear an socrú."
-    },
-    "scribe.report.repositoryHealth.fixPlan.scope": {
-      "fallback": false,
-      "reviewed": true,
-      "text": "Raon foinse sprice: línte {sourcePath} ó {startLine} go dtí {endLine}."
-    },
     "scribe.report.repositoryHealth.overview.body": {
       "fallback": false,
       "reviewed": true,
@@ -708,6 +718,16 @@ window.__SCRIBE_LOCALES__["ga-GB"] = {
       "reviewed": true,
       "text": "Sonde Score"
     },
+    "scribe.report.repositoryHealth.sourceRow.frameworks": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Creataí"
+    },
+    "scribe.report.repositoryHealth.sourceRow.languages": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Teangacha"
+    },
     "scribe.report.repositoryHealth.sourceSnippet.summary": {
       "fallback": false,
       "reviewed": true,
@@ -722,21 +742,6 @@ window.__SCRIBE_LOCALES__["ga-GB"] = {
       "fallback": false,
       "reviewed": true,
       "text": "Sonraí foinseacha sláinte stórtha a thaispeánann {sourceFileCount, number} comhad foinseach, {languageCount, number} teanga, {packageManifestCount, number} fógra pacáiste, {buildConfigCount, number} cumraíocht tógála, {frameworkDetectionCount, number} aimsiú acmhainne, agus {databaseSchemaCount, number} déantáin scéime bunachair sonraí."
-    },
-    "scribe.report.repositoryHealth.visualization.finding.controlFlow.alt": {
-      "fallback": false,
-      "reviewed": true,
-      "text": "Graf sreafa rialaithe le haghaidh {subject} i línte {sourcePath} {startLine} trí {endLine}."
-    },
-    "scribe.report.repositoryHealth.visualization.finding.controlFlow.title": {
-      "fallback": false,
-      "reviewed": true,
-      "text": "Graf sreafa rialaithe le haghaidh {subject}"
-    },
-    "scribe.report.repositoryHealth.visualization.finding.description": {
-      "fallback": false,
-      "reviewed": true,
-      "text": "Gintear an léaráid ó línte {sourcePath} {startLine} trí {endLine} agus cuireann sí béim ar fhaisnéis faoi rialú sreafa nó faoi scéimre atá tacaíochtaithe ag foinse don fhionnachtain."
     },
     "scribe.report.repositoryHealth.visualization.longDescription": {
       "fallback": false,
@@ -788,7 +793,7 @@ window.__SCRIBE_LOCALES__["ga-GB"] = {
       "reviewed": true,
       "text": "Foinse"
     },
-    "scribe.report.term.primary": {
+    "scribe.report.term.repository-health.primary": {
       "fallback": false,
       "reviewed": true,
       "text": "Sláinte an stórtha"

@@ -4,7 +4,7 @@
 
 ## Resumen
 
-11/103 controles cumplidos — Cobertura 10.7%.
+6/103 controles cumplidos — Cobertura 5.8%.
 
 ## Familias de controles
 
@@ -12,24 +12,24 @@
 
 | Control | Estado | Atestiguación | Justificación |
 |---|---|---|---|
-| `AC-3` | No cumplido | access-enforcement |  |
-| `AC-3.7` | No cumplido | access-enforcement |  |
-| `AC-3.8` | No cumplido | access-enforcement | Runtime revocation and route-level deny evidence require customer tenancy context. |
-| `AC-3.13` | No cumplido | access-enforcement |  |
+| `AC-3` | Cumplido | access-enforcement |  |
+| `AC-3.7` | Cumplido | access-enforcement |  |
+| `AC-3.8` | Cumplido | access-enforcement | Runtime revocation and route-level deny evidence require customer tenancy context. |
+| `AC-3.13` | Cumplido | access-enforcement |  |
 | `AC-4` | Requiere contexto del cliente | — | Information-flow enforcement needs parseable allowlist or boundary enforcement evidence. |
-| `AC-6` | Cumplido | least-privilege |  |
-| `AC-6.1` | Cumplido | least-privilege | Authorized access-to-security-functions review needs role inventory and operator policy. |
-| `AC-6.2` | Cumplido | least-privilege | Non-privileged account use needs identity-provider and break-glass procedure evidence. |
-| `AC-6.5` | Cumplido | least-privilege | Privileged group membership is customer environment state, not source-only evidence. |
+| `AC-6` | No cumplido | least-privilege |  |
+| `AC-6.1` | No cumplido | least-privilege | Authorized access-to-security-functions review needs role inventory and operator policy. |
+| `AC-6.2` | No cumplido | least-privilege | Non-privileged account use needs identity-provider and break-glass procedure evidence. |
+| `AC-6.5` | No cumplido | least-privilege | Privileged group membership is customer environment state, not source-only evidence. |
 | `AC-6.8` | Requiere contexto del cliente | — | Privileged command auditing requires source audit instrumentation plus runtime command-policy evidence; source-only audit events do not prove privileged command analysis. |
-| `AC-6.9` | Cumplido | least-privilege | Requires audit witness on privileged-function call sites plus least-privilege evidence. |
-| `AC-6.10` | Cumplido | least-privilege |  |
-| `AC-7` | No cumplido | access-enforcement |  |
-| `AC-11` | Cumplido | session-management | Session-timeout values live in deployment config; source-pattern coverage is partial. |
-| `AC-12` | Cumplido | session-management |  |
-| `AC-17` | Brecha | transmission-encryption |  |
-| `AC-17.2` | Brecha | transmission-encryption |  |
-| `AC-17.8` | Brecha | transmission-encryption |  |
+| `AC-6.9` | No cumplido | least-privilege | Requires audit witness on privileged-function call sites plus least-privilege evidence. |
+| `AC-6.10` | No cumplido | least-privilege |  |
+| `AC-7` | Cumplido | access-enforcement |  |
+| `AC-11` | No cumplido | session-management | Session-timeout values live in deployment config; source-pattern coverage is partial. |
+| `AC-12` | No cumplido | session-management |  |
+| `AC-17` | No cumplido | transmission-encryption |  |
+| `AC-17.2` | No cumplido | transmission-encryption |  |
+| `AC-17.8` | No cumplido | transmission-encryption |  |
 | `AC-18` | Requiere contexto del cliente | — | Wireless access restrictions require deployment and device-management evidence. |
 
 ### AU — Audit and Accountability {#oscal-family-au}
@@ -56,8 +56,8 @@
 | `CM-2` | Requiere contexto del cliente | — | Baseline configuration derives from declarative GitOps reconciliation (e.g. a Flux Kustomization pruning a committed source baseline) or otherwise needs committed manifests plus operator-approved baseline policy. |
 | `CM-3` | Requiere contexto del cliente | — | Configuration change control needs VCS and approval workflow evidence. |
 | `CM-4` | Requiere contexto del cliente | — | Impact analysis derives from blast-radius probe rather than a single validation. |
-| `CM-5` | Cumplido | least-privilege | Access restrictions for change need repository permissions and deployment policy evidence. |
-| `CM-6` | No cumplido | configuration-defaults-safety |  |
+| `CM-5` | No cumplido | least-privilege | Access restrictions for change need repository permissions and deployment policy evidence. |
+| `CM-6` | Parcialmente cumplido | configuration-defaults-safety |  |
 | `CM-6.1` | Requiere contexto del cliente | — | Automated configuration enforcement counts only a Kubernetes Namespace whose metadata.labels set pod-security.kubernetes.io/enforce to an enforcing Pod Security Admission level (restricted or baseline); audit/warn-only labels, the privileged no-op level, and Helm values without a Namespace kind remain customer deployment evidence. |
 | `CM-7` | No cumplido | least-functionality |  |
 | `CM-7.1` | Requiere contexto del cliente | — | Periodic review of allowed functions requires operator review cadence evidence. |
@@ -73,8 +73,8 @@
 | Control | Estado | Atestiguación | Justificación |
 |---|---|---|---|
 | `IA-2` | No cumplido | auth-required |  |
-| `IA-2.1` | Parcialmente cumplido | mfa-required | Multifactor authentication for privileged accounts requires IdP configuration evidence. |
-| `IA-2.2` | Parcialmente cumplido | mfa-required | Multifactor authentication for non-privileged accounts requires IdP configuration evidence. |
+| `IA-2.1` | No cumplido | mfa-required | Multifactor authentication for privileged accounts requires IdP configuration evidence. |
+| `IA-2.2` | No cumplido | mfa-required | Multifactor authentication for non-privileged accounts requires IdP configuration evidence. |
 | `IA-2.6` | No cumplido | auth-required | Network access to privileged accounts requires runtime access-policy evidence. |
 | `IA-2.8` | No cumplido | auth-required | Replay-resistant authentication needs protocol and IdP configuration evidence. |
 | `IA-5` | No cumplido | credential-storage-safety |  |
@@ -97,13 +97,13 @@
 | `SC-4` | Requiere contexto del cliente | — | Information in shared system resources requires runtime isolation evidence. |
 | `SC-5` | Requiere contexto del cliente | — | Denial-of-service protection requires perimeter and capacity evidence. |
 | `SC-7` | Requiere contexto del cliente | — | Boundary protection requires network architecture and ingress policy evidence. |
-| `SC-8` | Brecha | transmission-encryption |  |
-| `SC-8.1` | Brecha | transmission-encryption |  |
+| `SC-8` | No cumplido | transmission-encryption |  |
+| `SC-8.1` | No cumplido | transmission-encryption |  |
 | `SC-12` | Requiere contexto del cliente | — | Cryptographic key establishment needs key-management lifecycle evidence. |
-| `SC-13` | Brecha | cryptographic-strength |  |
+| `SC-13` | No cumplido | cryptographic-strength |  |
 | `SC-13.1` | Requiere contexto del cliente | — | FIPS-validated cryptography needs module inventory and validation evidence. |
 | `SC-17` | Requiere contexto del cliente | — | Public key infrastructure certificates count only declarative cert-manager source of truth: a Certificate resource with an issuerRef, a managed secretName, and a subject identity (commonName/dnsNames/uris/ipAddresses), or an Issuer/ClusterIssuer with a configured backend (selfSigned/ca/acme/vault/venafi). Trust-anchor approval, CA accreditation, and approved-service-provider facts remain customer/policy evidence. |
-| `SC-23` | Cumplido | session-management |  |
+| `SC-23` | No cumplido | session-management |  |
 | `SC-28` | No cumplido | data-at-rest-encryption |  |
 | `SC-28.1` | No cumplido | data-at-rest-encryption |  |
 | `SC-39` | Requiere contexto del cliente | — | Process isolation counts only fully hardened workload securityContext source evidence (runAsNonRoot, allowPrivilegeEscalation:false, readOnlyRootFilesystem, dropped ALL capabilities, and a seccomp profile); broader runtime-sandbox posture remains customer deployment evidence. |

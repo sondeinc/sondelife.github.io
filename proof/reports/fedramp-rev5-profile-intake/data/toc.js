@@ -11,6 +11,41 @@ window.__SCRIBE_TOC__ = [
             "pagePath": "findings/finding-oscal-profile-intake/index.html",
             "role": "source-snippet",
             "title": {
+              "catalogDependency": {
+                "explicitLocales": [
+                  "es-US"
+                ],
+                "lookupLocales": [
+                  "en-US",
+                  "en-GB",
+                  "en-CA",
+                  "fr-CA",
+                  "en-IN",
+                  "cy-GB",
+                  "gd-GB",
+                  "ga-GB",
+                  "es-US",
+                  "es-MX",
+                  "de-DE",
+                  "fr-FR",
+                  "es-ES",
+                  "it-IT",
+                  "nl-NL",
+                  "pl-PL",
+                  "pt-PT",
+                  "pt-BR",
+                  "ro-RO",
+                  "sv-SE",
+                  "ko-KR",
+                  "zh-CN",
+                  "ja-JP",
+                  "hi-IN"
+                ],
+                "reportFallbacks": {
+                  "ja-JP": "OSCAL 取り込み解釈"
+                },
+                "sourceLocale": "en-US"
+              },
               "defaultLocale": "en-US",
               "defaultText": "OSCAL intake interpretation",
               "icuArgs": {},
@@ -37,6 +72,41 @@ window.__SCRIBE_TOC__ = [
             "pagePath": "findings/finding-oscal-profile-intake/index.html",
             "role": "diagram",
             "title": {
+              "catalogDependency": {
+                "explicitLocales": [
+                  "es-US"
+                ],
+                "lookupLocales": [
+                  "en-US",
+                  "en-GB",
+                  "en-CA",
+                  "fr-CA",
+                  "en-IN",
+                  "cy-GB",
+                  "gd-GB",
+                  "ga-GB",
+                  "es-US",
+                  "es-MX",
+                  "de-DE",
+                  "fr-FR",
+                  "es-ES",
+                  "it-IT",
+                  "nl-NL",
+                  "pl-PL",
+                  "pt-PT",
+                  "pt-BR",
+                  "ro-RO",
+                  "sv-SE",
+                  "ko-KR",
+                  "zh-CN",
+                  "ja-JP",
+                  "hi-IN"
+                ],
+                "reportFallbacks": {
+                  "ja-JP": "OSCAL 取り込み概要"
+                },
+                "sourceLocale": "en-US"
+              },
               "defaultLocale": "en-US",
               "defaultText": "OSCAL intake summary",
               "icuArgs": {},
@@ -63,6 +133,37 @@ window.__SCRIBE_TOC__ = [
             "pagePath": "fix-plans/finding-oscal-profile-intake/index.html",
             "role": "fix-plan",
             "title": {
+              "catalogDependency": {
+                "explicitLocales": [],
+                "lookupLocales": [
+                  "en-US",
+                  "en-GB",
+                  "en-CA",
+                  "fr-CA",
+                  "en-IN",
+                  "cy-GB",
+                  "gd-GB",
+                  "ga-GB",
+                  "es-US",
+                  "es-MX",
+                  "de-DE",
+                  "fr-FR",
+                  "es-ES",
+                  "it-IT",
+                  "nl-NL",
+                  "pl-PL",
+                  "pt-PT",
+                  "pt-BR",
+                  "ro-RO",
+                  "sv-SE",
+                  "ko-KR",
+                  "zh-CN",
+                  "ja-JP",
+                  "hi-IN"
+                ],
+                "reportFallbacks": {},
+                "sourceLocale": "en-US"
+              },
               "defaultLocale": "en-US",
               "defaultText": "Fix plan",
               "icuArgs": {},
@@ -87,6 +188,41 @@ window.__SCRIBE_TOC__ = [
         "pagePath": "findings/finding-oscal-profile-intake/index.html",
         "role": "finding",
         "title": {
+          "catalogDependency": {
+            "explicitLocales": [
+              "es-US"
+            ],
+            "lookupLocales": [
+              "en-US",
+              "en-GB",
+              "en-CA",
+              "fr-CA",
+              "en-IN",
+              "cy-GB",
+              "gd-GB",
+              "ga-GB",
+              "es-US",
+              "es-MX",
+              "de-DE",
+              "fr-FR",
+              "es-ES",
+              "it-IT",
+              "nl-NL",
+              "pl-PL",
+              "pt-PT",
+              "pt-BR",
+              "ro-RO",
+              "sv-SE",
+              "ko-KR",
+              "zh-CN",
+              "ja-JP",
+              "hi-IN"
+            ],
+            "reportFallbacks": {
+              "ja-JP": "OSCAL Catalog/Profile 取り込みは由来情報に紐づきます"
+            },
+            "sourceLocale": "en-US"
+          },
           "defaultLocale": "en-US",
           "defaultText": "OSCAL Catalog/Profile intake is provenance-bound",
           "icuArgs": {},
@@ -111,6 +247,39 @@ window.__SCRIBE_TOC__ = [
     "pagePath": "index.html",
     "role": "section",
     "title": {
+      "catalogDependency": {
+        "explicitLocales": [],
+        "lookupLocales": [
+          "en-US",
+          "en-GB",
+          "en-CA",
+          "fr-CA",
+          "en-IN",
+          "cy-GB",
+          "gd-GB",
+          "ga-GB",
+          "es-US",
+          "es-MX",
+          "de-DE",
+          "fr-FR",
+          "es-ES",
+          "it-IT",
+          "nl-NL",
+          "pl-PL",
+          "pt-PT",
+          "pt-BR",
+          "ro-RO",
+          "sv-SE",
+          "ko-KR",
+          "zh-CN",
+          "ja-JP",
+          "hi-IN"
+        ],
+        "reportFallbacks": {
+          "ja-JP": "概要"
+        },
+        "sourceLocale": "en-US"
+      },
       "defaultLocale": "en-US",
       "defaultText": "Overview",
       "icuArgs": {},

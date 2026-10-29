@@ -1,5 +1,38 @@
 window.__SCRIBE_MANIFEST__ = {
   "analysisScopeLabel": {
+    "catalogDependency": {
+      "explicitLocales": [],
+      "lookupLocales": [
+        "en-US",
+        "en-GB",
+        "en-CA",
+        "fr-CA",
+        "en-IN",
+        "cy-GB",
+        "gd-GB",
+        "ga-GB",
+        "es-US",
+        "es-MX",
+        "de-DE",
+        "fr-FR",
+        "es-ES",
+        "it-IT",
+        "nl-NL",
+        "pl-PL",
+        "pt-PT",
+        "pt-BR",
+        "ro-RO",
+        "sv-SE",
+        "ko-KR",
+        "zh-CN",
+        "ja-JP",
+        "hi-IN"
+      ],
+      "reportFallbacks": {
+        "ja-JP": "フィクスチャアプリケーション"
+      },
+      "sourceLocale": "en-US"
+    },
     "defaultLocale": "en-US",
     "defaultText": "Cockpit Mobile accessibility fixture",
     "icuArgs": {},
@@ -11,11 +44,6 @@ window.__SCRIBE_MANIFEST__ = {
         "fallback": false,
         "reviewed": true,
         "text": "Cockpit Mobile accessibility fixture"
-      },
-      "es-MX": {
-        "fallback": false,
-        "reviewed": true,
-        "text": "Corpus requests (Python) para evidencia LFPDPPP de México"
       },
       "ja-JP": {
         "fallback": false,
@@ -29,6 +57,39 @@ window.__SCRIBE_MANIFEST__ = {
       "anchorId": "section-overview",
       "indexTermIds": [],
       "label": {
+        "catalogDependency": {
+          "explicitLocales": [],
+          "lookupLocales": [
+            "en-US",
+            "en-GB",
+            "en-CA",
+            "fr-CA",
+            "en-IN",
+            "cy-GB",
+            "gd-GB",
+            "ga-GB",
+            "es-US",
+            "es-MX",
+            "de-DE",
+            "fr-FR",
+            "es-ES",
+            "it-IT",
+            "nl-NL",
+            "pl-PL",
+            "pt-PT",
+            "pt-BR",
+            "ro-RO",
+            "sv-SE",
+            "ko-KR",
+            "zh-CN",
+            "ja-JP",
+            "hi-IN"
+          ],
+          "reportFallbacks": {
+            "ja-JP": "概要"
+          },
+          "sourceLocale": "en-US"
+        },
         "defaultLocale": "en-US",
         "defaultText": "Overview",
         "icuArgs": {},
@@ -170,6 +231,39 @@ window.__SCRIBE_MANIFEST__ = {
         "wcag-alt-text"
       ],
       "label": {
+        "catalogDependency": {
+          "explicitLocales": [],
+          "lookupLocales": [
+            "en-US",
+            "en-GB",
+            "en-CA",
+            "fr-CA",
+            "en-IN",
+            "cy-GB",
+            "gd-GB",
+            "ga-GB",
+            "es-US",
+            "es-MX",
+            "de-DE",
+            "fr-FR",
+            "es-ES",
+            "it-IT",
+            "nl-NL",
+            "pl-PL",
+            "pt-PT",
+            "pt-BR",
+            "ro-RO",
+            "sv-SE",
+            "ko-KR",
+            "zh-CN",
+            "ja-JP",
+            "hi-IN"
+          ],
+          "reportFallbacks": {
+            "ja-JP": "SwiftUI 画像にアクセシブル名がありません"
+          },
+          "sourceLocale": "en-US"
+        },
         "defaultLocale": "en-US",
         "defaultText": "SwiftUI image is missing an accessible name",
         "icuArgs": {},
@@ -306,6 +400,39 @@ window.__SCRIBE_MANIFEST__ = {
       "parentAnchorId": "section-overview",
       "role": "finding",
       "shareSummary": {
+        "catalogDependency": {
+          "explicitLocales": [],
+          "lookupLocales": [
+            "en-US",
+            "en-GB",
+            "en-CA",
+            "fr-CA",
+            "en-IN",
+            "cy-GB",
+            "gd-GB",
+            "ga-GB",
+            "es-US",
+            "es-MX",
+            "de-DE",
+            "fr-FR",
+            "es-ES",
+            "it-IT",
+            "nl-NL",
+            "pl-PL",
+            "pt-PT",
+            "pt-BR",
+            "ro-RO",
+            "sv-SE",
+            "ko-KR",
+            "zh-CN",
+            "ja-JP",
+            "hi-IN"
+          ],
+          "reportFallbacks": {
+            "ja-JP": "cockpit-mobile プロフィールアラートフィクスチャの SwiftUI Image は意味のあるコンテンツとして公開されていますが、accessibilityLabel がありません。"
+          },
+          "sourceLocale": "en-US"
+        },
         "defaultLocale": "en-US",
         "defaultText": "The SwiftUI Image in the cockpit-mobile profile alert fixture is exposed as meaningful content without an accessibilityLabel.",
         "icuArgs": {},
@@ -436,6 +563,39 @@ window.__SCRIBE_MANIFEST__ = {
         }
       },
       "shareTitle": {
+        "catalogDependency": {
+          "explicitLocales": [],
+          "lookupLocales": [
+            "en-US",
+            "en-GB",
+            "en-CA",
+            "fr-CA",
+            "en-IN",
+            "cy-GB",
+            "gd-GB",
+            "ga-GB",
+            "es-US",
+            "es-MX",
+            "de-DE",
+            "fr-FR",
+            "es-ES",
+            "it-IT",
+            "nl-NL",
+            "pl-PL",
+            "pt-PT",
+            "pt-BR",
+            "ro-RO",
+            "sv-SE",
+            "ko-KR",
+            "zh-CN",
+            "ja-JP",
+            "hi-IN"
+          ],
+          "reportFallbacks": {
+            "ja-JP": "SwiftUI 画像にアクセシブル名がありません"
+          },
+          "sourceLocale": "en-US"
+        },
         "defaultLocale": "en-US",
         "defaultText": "SwiftUI image is missing an accessible name",
         "icuArgs": {},
@@ -572,6 +732,39 @@ window.__SCRIBE_MANIFEST__ = {
         "wcag-alt-text"
       ],
       "label": {
+        "catalogDependency": {
+          "explicitLocales": [],
+          "lookupLocales": [
+            "en-US",
+            "en-GB",
+            "en-CA",
+            "fr-CA",
+            "en-IN",
+            "cy-GB",
+            "gd-GB",
+            "ga-GB",
+            "es-US",
+            "es-MX",
+            "de-DE",
+            "fr-FR",
+            "es-ES",
+            "it-IT",
+            "nl-NL",
+            "pl-PL",
+            "pt-PT",
+            "pt-BR",
+            "ro-RO",
+            "sv-SE",
+            "ko-KR",
+            "zh-CN",
+            "ja-JP",
+            "hi-IN"
+          ],
+          "reportFallbacks": {
+            "ja-JP": "SwiftUI 画像のソース証拠"
+          },
+          "sourceLocale": "en-US"
+        },
         "defaultLocale": "en-US",
         "defaultText": "SwiftUI image source evidence",
         "icuArgs": {},
@@ -709,6 +902,39 @@ window.__SCRIBE_MANIFEST__ = {
       "parentAnchorId": "finding-missing-alt",
       "role": "source-snippet",
       "shareSummary": {
+        "catalogDependency": {
+          "explicitLocales": [],
+          "lookupLocales": [
+            "en-US",
+            "en-GB",
+            "en-CA",
+            "fr-CA",
+            "en-IN",
+            "cy-GB",
+            "gd-GB",
+            "ga-GB",
+            "es-US",
+            "es-MX",
+            "de-DE",
+            "fr-FR",
+            "es-ES",
+            "it-IT",
+            "nl-NL",
+            "pl-PL",
+            "pt-PT",
+            "pt-BR",
+            "ro-RO",
+            "sv-SE",
+            "ko-KR",
+            "zh-CN",
+            "ja-JP",
+            "hi-IN"
+          ],
+          "reportFallbacks": {
+            "ja-JP": "Image ビューは accessibilityLabel なしでプロフィールアラート行に描画されています。"
+          },
+          "sourceLocale": "en-US"
+        },
         "defaultLocale": "en-US",
         "defaultText": "The Image view is rendered in the profile alert row without an accessibilityLabel.",
         "icuArgs": {},
@@ -839,6 +1065,39 @@ window.__SCRIBE_MANIFEST__ = {
         }
       },
       "shareTitle": {
+        "catalogDependency": {
+          "explicitLocales": [],
+          "lookupLocales": [
+            "en-US",
+            "en-GB",
+            "en-CA",
+            "fr-CA",
+            "en-IN",
+            "cy-GB",
+            "gd-GB",
+            "ga-GB",
+            "es-US",
+            "es-MX",
+            "de-DE",
+            "fr-FR",
+            "es-ES",
+            "it-IT",
+            "nl-NL",
+            "pl-PL",
+            "pt-PT",
+            "pt-BR",
+            "ro-RO",
+            "sv-SE",
+            "ko-KR",
+            "zh-CN",
+            "ja-JP",
+            "hi-IN"
+          ],
+          "reportFallbacks": {
+            "ja-JP": "SwiftUI 画像のソース証拠"
+          },
+          "sourceLocale": "en-US"
+        },
         "defaultLocale": "en-US",
         "defaultText": "SwiftUI image source evidence",
         "icuArgs": {},
@@ -975,6 +1234,37 @@ window.__SCRIBE_MANIFEST__ = {
         "wcag-alt-text"
       ],
       "label": {
+        "catalogDependency": {
+          "explicitLocales": [],
+          "lookupLocales": [
+            "en-US",
+            "en-GB",
+            "en-CA",
+            "fr-CA",
+            "en-IN",
+            "cy-GB",
+            "gd-GB",
+            "ga-GB",
+            "es-US",
+            "es-MX",
+            "de-DE",
+            "fr-FR",
+            "es-ES",
+            "it-IT",
+            "nl-NL",
+            "pl-PL",
+            "pt-PT",
+            "pt-BR",
+            "ro-RO",
+            "sv-SE",
+            "ko-KR",
+            "zh-CN",
+            "ja-JP",
+            "hi-IN"
+          ],
+          "reportFallbacks": {},
+          "sourceLocale": "en-US"
+        },
         "defaultLocale": "en-US",
         "defaultText": "Fix plan",
         "icuArgs": {},
@@ -1112,6 +1402,37 @@ window.__SCRIBE_MANIFEST__ = {
       "parentAnchorId": "finding-missing-alt",
       "role": "fix-plan",
       "shareSummary": {
+        "catalogDependency": {
+          "explicitLocales": [],
+          "lookupLocales": [
+            "en-US",
+            "en-GB",
+            "en-CA",
+            "fr-CA",
+            "en-IN",
+            "cy-GB",
+            "gd-GB",
+            "ga-GB",
+            "es-US",
+            "es-MX",
+            "de-DE",
+            "fr-FR",
+            "es-ES",
+            "it-IT",
+            "nl-NL",
+            "pl-PL",
+            "pt-PT",
+            "pt-BR",
+            "ro-RO",
+            "sv-SE",
+            "ko-KR",
+            "zh-CN",
+            "ja-JP",
+            "hi-IN"
+          ],
+          "reportFallbacks": {},
+          "sourceLocale": "en-US"
+        },
         "defaultLocale": "en-US",
         "defaultText": "Live, per-finding fix plans generate automatically when Sonde analyzes your repository. This curated showcase demonstrates the report; see automated remediation in action on a live example.",
         "icuArgs": {},
@@ -1242,6 +1563,37 @@ window.__SCRIBE_MANIFEST__ = {
         }
       },
       "shareTitle": {
+        "catalogDependency": {
+          "explicitLocales": [],
+          "lookupLocales": [
+            "en-US",
+            "en-GB",
+            "en-CA",
+            "fr-CA",
+            "en-IN",
+            "cy-GB",
+            "gd-GB",
+            "ga-GB",
+            "es-US",
+            "es-MX",
+            "de-DE",
+            "fr-FR",
+            "es-ES",
+            "it-IT",
+            "nl-NL",
+            "pl-PL",
+            "pt-PT",
+            "pt-BR",
+            "ro-RO",
+            "sv-SE",
+            "ko-KR",
+            "zh-CN",
+            "ja-JP",
+            "hi-IN"
+          ],
+          "reportFallbacks": {},
+          "sourceLocale": "en-US"
+        },
         "defaultLocale": "en-US",
         "defaultText": "Fix plan",
         "icuArgs": {},
@@ -1376,6 +1728,39 @@ window.__SCRIBE_MANIFEST__ = {
   "assets": [
     {
       "altText": {
+        "catalogDependency": {
+          "explicitLocales": [
+            "es-US"
+          ],
+          "lookupLocales": [
+            "en-US",
+            "en-GB",
+            "en-CA",
+            "fr-CA",
+            "en-IN",
+            "cy-GB",
+            "gd-GB",
+            "ga-GB",
+            "es-US",
+            "es-MX",
+            "de-DE",
+            "fr-FR",
+            "es-ES",
+            "it-IT",
+            "nl-NL",
+            "pl-PL",
+            "pt-PT",
+            "pt-BR",
+            "ro-RO",
+            "sv-SE",
+            "ko-KR",
+            "zh-CN",
+            "ja-JP",
+            "hi-IN"
+          ],
+          "reportFallbacks": {},
+          "sourceLocale": "en-US"
+        },
         "defaultLocale": "en-US",
         "defaultText": "Sonde Scribe {version} compliance report mark",
         "icuArgs": {
@@ -1508,9 +1893,42 @@ window.__SCRIBE_MANIFEST__ = {
         }
       },
       "assetId": "report-mark",
-      "defaultPath": "assets/brand/report-mark.svg",
+      "defaultPath": "assets/immutable/report-mark.8de0f91487c32afd.svg",
       "kind": "icon",
       "label": {
+        "catalogDependency": {
+          "explicitLocales": [
+            "es-US"
+          ],
+          "lookupLocales": [
+            "en-US",
+            "en-GB",
+            "en-CA",
+            "fr-CA",
+            "en-IN",
+            "cy-GB",
+            "gd-GB",
+            "ga-GB",
+            "es-US",
+            "es-MX",
+            "de-DE",
+            "fr-FR",
+            "es-ES",
+            "it-IT",
+            "nl-NL",
+            "pl-PL",
+            "pt-PT",
+            "pt-BR",
+            "ro-RO",
+            "sv-SE",
+            "ko-KR",
+            "zh-CN",
+            "ja-JP",
+            "hi-IN"
+          ],
+          "reportFallbacks": {},
+          "sourceLocale": "en-US"
+        },
         "defaultLocale": "en-US",
         "defaultText": "Scribe {version} report mark",
         "icuArgs": {
@@ -1649,6 +2067,39 @@ window.__SCRIBE_MANIFEST__ = {
       "defaultPath": "exports/report.md",
       "kind": "export",
       "label": {
+        "catalogDependency": {
+          "explicitLocales": [
+            "es-US"
+          ],
+          "lookupLocales": [
+            "en-US",
+            "en-GB",
+            "en-CA",
+            "fr-CA",
+            "en-IN",
+            "cy-GB",
+            "gd-GB",
+            "ga-GB",
+            "es-US",
+            "es-MX",
+            "de-DE",
+            "fr-FR",
+            "es-ES",
+            "it-IT",
+            "nl-NL",
+            "pl-PL",
+            "pt-PT",
+            "pt-BR",
+            "ro-RO",
+            "sv-SE",
+            "ko-KR",
+            "zh-CN",
+            "ja-JP",
+            "hi-IN"
+          ],
+          "reportFallbacks": {},
+          "sourceLocale": "en-US"
+        },
         "defaultLocale": "en-US",
         "defaultText": "Markdown export",
         "icuArgs": {},
@@ -1785,6 +2236,37 @@ window.__SCRIBE_MANIFEST__ = {
       "defaultPath": "data/report-export-input.js",
       "kind": "export",
       "label": {
+        "catalogDependency": {
+          "explicitLocales": [],
+          "lookupLocales": [
+            "en-US",
+            "en-GB",
+            "en-CA",
+            "fr-CA",
+            "en-IN",
+            "cy-GB",
+            "gd-GB",
+            "ga-GB",
+            "es-US",
+            "es-MX",
+            "de-DE",
+            "fr-FR",
+            "es-ES",
+            "it-IT",
+            "nl-NL",
+            "pl-PL",
+            "pt-PT",
+            "pt-BR",
+            "ro-RO",
+            "sv-SE",
+            "ko-KR",
+            "zh-CN",
+            "ja-JP",
+            "hi-IN"
+          ],
+          "reportFallbacks": {},
+          "sourceLocale": "en-US"
+        },
         "defaultLocale": "en-US",
         "defaultText": "VPAT and OpenACR on-demand export data",
         "icuArgs": {},
@@ -1921,6 +2403,37 @@ window.__SCRIBE_MANIFEST__ = {
       "defaultPath": "data/oscal-input.js",
       "kind": "export",
       "label": {
+        "catalogDependency": {
+          "explicitLocales": [],
+          "lookupLocales": [
+            "en-US",
+            "en-GB",
+            "en-CA",
+            "fr-CA",
+            "en-IN",
+            "cy-GB",
+            "gd-GB",
+            "ga-GB",
+            "es-US",
+            "es-MX",
+            "de-DE",
+            "fr-FR",
+            "es-ES",
+            "it-IT",
+            "nl-NL",
+            "pl-PL",
+            "pt-PT",
+            "pt-BR",
+            "ro-RO",
+            "sv-SE",
+            "ko-KR",
+            "zh-CN",
+            "ja-JP",
+            "hi-IN"
+          ],
+          "reportFallbacks": {},
+          "sourceLocale": "en-US"
+        },
         "defaultLocale": "en-US",
         "defaultText": "OSCAL on-demand export data",
         "icuArgs": {},
@@ -2054,6 +2567,37 @@ window.__SCRIBE_MANIFEST__ = {
     },
     {
       "altText": {
+        "catalogDependency": {
+          "explicitLocales": [],
+          "lookupLocales": [
+            "en-US",
+            "en-GB",
+            "en-CA",
+            "fr-CA",
+            "en-IN",
+            "cy-GB",
+            "gd-GB",
+            "ga-GB",
+            "es-US",
+            "es-MX",
+            "de-DE",
+            "fr-FR",
+            "es-ES",
+            "it-IT",
+            "nl-NL",
+            "pl-PL",
+            "pt-PT",
+            "pt-BR",
+            "ro-RO",
+            "sv-SE",
+            "ko-KR",
+            "zh-CN",
+            "ja-JP",
+            "hi-IN"
+          ],
+          "reportFallbacks": {},
+          "sourceLocale": "en-US"
+        },
         "defaultLocale": "en-US",
         "defaultText": "Annotated runtime evidence emitted by Sonde Scribe. The left panel shows the real Android Sonde Cockpit Mobile Summary screen for John K. with a dashed bounded region around the symbolic profile alert action. The right panel zooms into the exclamation-mark button captured from the Pixel 8 emulator.",
         "icuArgs": {},
@@ -2072,6 +2616,37 @@ window.__SCRIBE_MANIFEST__ = {
       "defaultPath": "assets/findings/cockpit-mobile-runtime-symbolic-icon-name-android.png",
       "kind": "screenshot",
       "label": {
+        "catalogDependency": {
+          "explicitLocales": [],
+          "lookupLocales": [
+            "en-US",
+            "en-GB",
+            "en-CA",
+            "fr-CA",
+            "en-IN",
+            "cy-GB",
+            "gd-GB",
+            "ga-GB",
+            "es-US",
+            "es-MX",
+            "de-DE",
+            "fr-FR",
+            "es-ES",
+            "it-IT",
+            "nl-NL",
+            "pl-PL",
+            "pt-PT",
+            "pt-BR",
+            "ro-RO",
+            "sv-SE",
+            "ko-KR",
+            "zh-CN",
+            "ja-JP",
+            "hi-IN"
+          ],
+          "reportFallbacks": {},
+          "sourceLocale": "en-US"
+        },
         "defaultLocale": "en-US",
         "defaultText": "Runtime scan found symbolic accessible name",
         "icuArgs": {},
@@ -2088,6 +2663,37 @@ window.__SCRIBE_MANIFEST__ = {
       },
       "localePaths": {},
       "longDescription": {
+        "catalogDependency": {
+          "explicitLocales": [],
+          "lookupLocales": [
+            "en-US",
+            "en-GB",
+            "en-CA",
+            "fr-CA",
+            "en-IN",
+            "cy-GB",
+            "gd-GB",
+            "ga-GB",
+            "es-US",
+            "es-MX",
+            "de-DE",
+            "fr-FR",
+            "es-ES",
+            "it-IT",
+            "nl-NL",
+            "pl-PL",
+            "pt-PT",
+            "pt-BR",
+            "ro-RO",
+            "sv-SE",
+            "ko-KR",
+            "zh-CN",
+            "ja-JP",
+            "hi-IN"
+          ],
+          "reportFallbacks": {},
+          "sourceLocale": "en-US"
+        },
         "defaultLocale": "en-US",
         "defaultText": "Captured by the local runtime handoff (source-of-record label: `appium-uiautomator2 Pixel 8`).",
         "icuArgs": {},
@@ -2105,6 +2711,37 @@ window.__SCRIBE_MANIFEST__ = {
     },
     {
       "altText": {
+        "catalogDependency": {
+          "explicitLocales": [],
+          "lookupLocales": [
+            "en-US",
+            "en-GB",
+            "en-CA",
+            "fr-CA",
+            "en-IN",
+            "cy-GB",
+            "gd-GB",
+            "ga-GB",
+            "es-US",
+            "es-MX",
+            "de-DE",
+            "fr-FR",
+            "es-ES",
+            "it-IT",
+            "nl-NL",
+            "pl-PL",
+            "pt-PT",
+            "pt-BR",
+            "ro-RO",
+            "sv-SE",
+            "ko-KR",
+            "zh-CN",
+            "ja-JP",
+            "hi-IN"
+          ],
+          "reportFallbacks": {},
+          "sourceLocale": "en-US"
+        },
         "defaultLocale": "en-US",
         "defaultText": "Annotated runtime evidence emitted by Sonde Scribe. The left panel shows the real iOS Sonde Cockpit Mobile Summary screen for John K. with a dashed bounded region around the symbolic profile alert action. The right panel zooms into the exclamation-mark button captured from the iPhone 17 Pro simulator.",
         "icuArgs": {},
@@ -2123,6 +2760,37 @@ window.__SCRIBE_MANIFEST__ = {
       "defaultPath": "assets/findings/cockpit-mobile-runtime-symbolic-icon-name-ios.png",
       "kind": "screenshot",
       "label": {
+        "catalogDependency": {
+          "explicitLocales": [],
+          "lookupLocales": [
+            "en-US",
+            "en-GB",
+            "en-CA",
+            "fr-CA",
+            "en-IN",
+            "cy-GB",
+            "gd-GB",
+            "ga-GB",
+            "es-US",
+            "es-MX",
+            "de-DE",
+            "fr-FR",
+            "es-ES",
+            "it-IT",
+            "nl-NL",
+            "pl-PL",
+            "pt-PT",
+            "pt-BR",
+            "ro-RO",
+            "sv-SE",
+            "ko-KR",
+            "zh-CN",
+            "ja-JP",
+            "hi-IN"
+          ],
+          "reportFallbacks": {},
+          "sourceLocale": "en-US"
+        },
         "defaultLocale": "en-US",
         "defaultText": "Runtime scan found symbolic accessible name",
         "icuArgs": {},
@@ -2139,6 +2807,37 @@ window.__SCRIBE_MANIFEST__ = {
       },
       "localePaths": {},
       "longDescription": {
+        "catalogDependency": {
+          "explicitLocales": [],
+          "lookupLocales": [
+            "en-US",
+            "en-GB",
+            "en-CA",
+            "fr-CA",
+            "en-IN",
+            "cy-GB",
+            "gd-GB",
+            "ga-GB",
+            "es-US",
+            "es-MX",
+            "de-DE",
+            "fr-FR",
+            "es-ES",
+            "it-IT",
+            "nl-NL",
+            "pl-PL",
+            "pt-PT",
+            "pt-BR",
+            "ro-RO",
+            "sv-SE",
+            "ko-KR",
+            "zh-CN",
+            "ja-JP",
+            "hi-IN"
+          ],
+          "reportFallbacks": {},
+          "sourceLocale": "en-US"
+        },
         "defaultLocale": "en-US",
         "defaultText": "Captured by the local runtime handoff (source-of-record label: `appium-xcuitest iPhone 17 Pro`).",
         "icuArgs": {},
@@ -2156,6 +2855,37 @@ window.__SCRIBE_MANIFEST__ = {
     },
     {
       "altText": {
+        "catalogDependency": {
+          "explicitLocales": [],
+          "lookupLocales": [
+            "en-US",
+            "en-GB",
+            "en-CA",
+            "fr-CA",
+            "en-IN",
+            "cy-GB",
+            "gd-GB",
+            "ga-GB",
+            "es-US",
+            "es-MX",
+            "de-DE",
+            "fr-FR",
+            "es-ES",
+            "it-IT",
+            "nl-NL",
+            "pl-PL",
+            "pt-PT",
+            "pt-BR",
+            "ro-RO",
+            "sv-SE",
+            "ko-KR",
+            "zh-CN",
+            "ja-JP",
+            "hi-IN"
+          ],
+          "reportFallbacks": {},
+          "sourceLocale": "en-US"
+        },
         "defaultLocale": "en-US",
         "defaultText": "Annotated runtime evidence emitted by Sonde Scribe. The cockpit-mobile profile alert screen captured on iOS Simulator with a dashed bounded region around the unlabelled SwiftUI Image. A callout arrow points at the 96-by-96-pixel element at coordinates 956, 672. Header lines read: cockpit-mobile-swiftui-image-missing-label; swiftUiMissingImageLabel.swift:7; ios WCAG 1.1.1 Non-text Content bounds 956,672 96x96.",
         "icuArgs": {},
@@ -2174,6 +2904,37 @@ window.__SCRIBE_MANIFEST__ = {
       "defaultPath": "assets/findings/cockpit-mobile-swiftui-image-missing-label.png",
       "kind": "screenshot",
       "label": {
+        "catalogDependency": {
+          "explicitLocales": [],
+          "lookupLocales": [
+            "en-US",
+            "en-GB",
+            "en-CA",
+            "fr-CA",
+            "en-IN",
+            "cy-GB",
+            "gd-GB",
+            "ga-GB",
+            "es-US",
+            "es-MX",
+            "de-DE",
+            "fr-FR",
+            "es-ES",
+            "it-IT",
+            "nl-NL",
+            "pl-PL",
+            "pt-PT",
+            "pt-BR",
+            "ro-RO",
+            "sv-SE",
+            "ko-KR",
+            "zh-CN",
+            "ja-JP",
+            "hi-IN"
+          ],
+          "reportFallbacks": {},
+          "sourceLocale": "en-US"
+        },
         "defaultLocale": "en-US",
         "defaultText": "SwiftUI image is missing an accessible name",
         "icuArgs": {},
@@ -2190,6 +2951,37 @@ window.__SCRIBE_MANIFEST__ = {
       },
       "localePaths": {},
       "longDescription": {
+        "catalogDependency": {
+          "explicitLocales": [],
+          "lookupLocales": [
+            "en-US",
+            "en-GB",
+            "en-CA",
+            "fr-CA",
+            "en-IN",
+            "cy-GB",
+            "gd-GB",
+            "ga-GB",
+            "es-US",
+            "es-MX",
+            "de-DE",
+            "fr-FR",
+            "es-ES",
+            "it-IT",
+            "nl-NL",
+            "pl-PL",
+            "pt-PT",
+            "pt-BR",
+            "ro-RO",
+            "sv-SE",
+            "ko-KR",
+            "zh-CN",
+            "ja-JP",
+            "hi-IN"
+          ],
+          "reportFallbacks": {},
+          "sourceLocale": "en-US"
+        },
         "defaultLocale": "en-US",
         "defaultText": "Captured by the SwiftUI fixture replay on iPhone 17 Pro through the same UIKit↔SwiftUI cross-platform mobile a11y probe Sonde ships.",
         "icuArgs": {},
@@ -2207,6 +2999,37 @@ window.__SCRIBE_MANIFEST__ = {
     },
     {
       "altText": {
+        "catalogDependency": {
+          "explicitLocales": [],
+          "lookupLocales": [
+            "en-US",
+            "en-GB",
+            "en-CA",
+            "fr-CA",
+            "en-IN",
+            "cy-GB",
+            "gd-GB",
+            "ga-GB",
+            "es-US",
+            "es-MX",
+            "de-DE",
+            "fr-FR",
+            "es-ES",
+            "it-IT",
+            "nl-NL",
+            "pl-PL",
+            "pt-PT",
+            "pt-BR",
+            "ro-RO",
+            "sv-SE",
+            "ko-KR",
+            "zh-CN",
+            "ja-JP",
+            "hi-IN"
+          ],
+          "reportFallbacks": {},
+          "sourceLocale": "en-US"
+        },
         "defaultLocale": "en-US",
         "defaultText": "Annotated runtime evidence emitted by Sonde Scribe. The left panel shows the real Android Findings screen with compact severity and platform filter controls above the finding list. The right panel zooms into the Critical filter target captured on the Pixel 8 emulator.",
         "icuArgs": {},
@@ -2225,6 +3048,37 @@ window.__SCRIBE_MANIFEST__ = {
       "defaultPath": "assets/findings/cockpit-mobile-android-critical-filter-target.png",
       "kind": "screenshot",
       "label": {
+        "catalogDependency": {
+          "explicitLocales": [],
+          "lookupLocales": [
+            "en-US",
+            "en-GB",
+            "en-CA",
+            "fr-CA",
+            "en-IN",
+            "cy-GB",
+            "gd-GB",
+            "ga-GB",
+            "es-US",
+            "es-MX",
+            "de-DE",
+            "fr-FR",
+            "es-ES",
+            "it-IT",
+            "nl-NL",
+            "pl-PL",
+            "pt-PT",
+            "pt-BR",
+            "ro-RO",
+            "sv-SE",
+            "ko-KR",
+            "zh-CN",
+            "ja-JP",
+            "hi-IN"
+          ],
+          "reportFallbacks": {},
+          "sourceLocale": "en-US"
+        },
         "defaultLocale": "en-US",
         "defaultText": "Filter control target is below Android minimum",
         "icuArgs": {},
@@ -2241,6 +3095,37 @@ window.__SCRIBE_MANIFEST__ = {
       },
       "localePaths": {},
       "longDescription": {
+        "catalogDependency": {
+          "explicitLocales": [],
+          "lookupLocales": [
+            "en-US",
+            "en-GB",
+            "en-CA",
+            "fr-CA",
+            "en-IN",
+            "cy-GB",
+            "gd-GB",
+            "ga-GB",
+            "es-US",
+            "es-MX",
+            "de-DE",
+            "fr-FR",
+            "es-ES",
+            "it-IT",
+            "nl-NL",
+            "pl-PL",
+            "pt-PT",
+            "pt-BR",
+            "ro-RO",
+            "sv-SE",
+            "ko-KR",
+            "zh-CN",
+            "ja-JP",
+            "hi-IN"
+          ],
+          "reportFallbacks": {},
+          "sourceLocale": "en-US"
+        },
         "defaultLocale": "en-US",
         "defaultText": "Captured by the local runtime handoff (source-of-record label: `appium-uiautomator2 Pixel 8`).",
         "icuArgs": {},
@@ -2258,6 +3143,37 @@ window.__SCRIBE_MANIFEST__ = {
     },
     {
       "altText": {
+        "catalogDependency": {
+          "explicitLocales": [],
+          "lookupLocales": [
+            "en-US",
+            "en-GB",
+            "en-CA",
+            "fr-CA",
+            "en-IN",
+            "cy-GB",
+            "gd-GB",
+            "ga-GB",
+            "es-US",
+            "es-MX",
+            "de-DE",
+            "fr-FR",
+            "es-ES",
+            "it-IT",
+            "nl-NL",
+            "pl-PL",
+            "pt-PT",
+            "pt-BR",
+            "ro-RO",
+            "sv-SE",
+            "ko-KR",
+            "zh-CN",
+            "ja-JP",
+            "hi-IN"
+          ],
+          "reportFallbacks": {},
+          "sourceLocale": "en-US"
+        },
         "defaultLocale": "en-US",
         "defaultText": "Annotated runtime evidence emitted by Sonde Scribe. The left panel shows the real iOS Findings screen with large text and a truncated critical-finding group heading. The right panel zooms into the clipped heading captured on the iPhone 17 Pro simulator.",
         "icuArgs": {},
@@ -2276,6 +3192,37 @@ window.__SCRIBE_MANIFEST__ = {
       "defaultPath": "assets/findings/cockpit-mobile-ios-medium-dynamic-type.png",
       "kind": "screenshot",
       "label": {
+        "catalogDependency": {
+          "explicitLocales": [],
+          "lookupLocales": [
+            "en-US",
+            "en-GB",
+            "en-CA",
+            "fr-CA",
+            "en-IN",
+            "cy-GB",
+            "gd-GB",
+            "ga-GB",
+            "es-US",
+            "es-MX",
+            "de-DE",
+            "fr-FR",
+            "es-ES",
+            "it-IT",
+            "nl-NL",
+            "pl-PL",
+            "pt-PT",
+            "pt-BR",
+            "ro-RO",
+            "sv-SE",
+            "ko-KR",
+            "zh-CN",
+            "ja-JP",
+            "hi-IN"
+          ],
+          "reportFallbacks": {},
+          "sourceLocale": "en-US"
+        },
         "defaultLocale": "en-US",
         "defaultText": "Finding group heading can truncate under iOS Dynamic Type",
         "icuArgs": {},
@@ -2292,6 +3239,37 @@ window.__SCRIBE_MANIFEST__ = {
       },
       "localePaths": {},
       "longDescription": {
+        "catalogDependency": {
+          "explicitLocales": [],
+          "lookupLocales": [
+            "en-US",
+            "en-GB",
+            "en-CA",
+            "fr-CA",
+            "en-IN",
+            "cy-GB",
+            "gd-GB",
+            "ga-GB",
+            "es-US",
+            "es-MX",
+            "de-DE",
+            "fr-FR",
+            "es-ES",
+            "it-IT",
+            "nl-NL",
+            "pl-PL",
+            "pt-PT",
+            "pt-BR",
+            "ro-RO",
+            "sv-SE",
+            "ko-KR",
+            "zh-CN",
+            "ja-JP",
+            "hi-IN"
+          ],
+          "reportFallbacks": {},
+          "sourceLocale": "en-US"
+        },
         "defaultLocale": "en-US",
         "defaultText": "Captured by the local runtime handoff (source-of-record label: `appium-xcuitest iPhone 17 Pro`).",
         "icuArgs": {},
@@ -2309,6 +3287,37 @@ window.__SCRIBE_MANIFEST__ = {
     },
     {
       "altText": {
+        "catalogDependency": {
+          "explicitLocales": [],
+          "lookupLocales": [
+            "en-US",
+            "en-GB",
+            "en-CA",
+            "fr-CA",
+            "en-IN",
+            "cy-GB",
+            "gd-GB",
+            "ga-GB",
+            "es-US",
+            "es-MX",
+            "de-DE",
+            "fr-FR",
+            "es-ES",
+            "it-IT",
+            "nl-NL",
+            "pl-PL",
+            "pt-PT",
+            "pt-BR",
+            "ro-RO",
+            "sv-SE",
+            "ko-KR",
+            "zh-CN",
+            "ja-JP",
+            "hi-IN"
+          ],
+          "reportFallbacks": {},
+          "sourceLocale": "en-US"
+        },
         "defaultLocale": "en-US",
         "defaultText": "Annotated runtime evidence emitted by Sonde Scribe. The left panel shows side-by-side real Android and iOS Sonde Cockpit Mobile Summary screens for John K. The right panel zooms into the paired profile alert actions interpreted through the brand-consistency color drift lens.",
         "icuArgs": {},
@@ -2327,6 +3336,37 @@ window.__SCRIBE_MANIFEST__ = {
       "defaultPath": "assets/findings/cockpit-mobile-android-brand-color-drift.png",
       "kind": "screenshot",
       "label": {
+        "catalogDependency": {
+          "explicitLocales": [],
+          "lookupLocales": [
+            "en-US",
+            "en-GB",
+            "en-CA",
+            "fr-CA",
+            "en-IN",
+            "cy-GB",
+            "gd-GB",
+            "ga-GB",
+            "es-US",
+            "es-MX",
+            "de-DE",
+            "fr-FR",
+            "es-ES",
+            "it-IT",
+            "nl-NL",
+            "pl-PL",
+            "pt-PT",
+            "pt-BR",
+            "ro-RO",
+            "sv-SE",
+            "ko-KR",
+            "zh-CN",
+            "ja-JP",
+            "hi-IN"
+          ],
+          "reportFallbacks": {},
+          "sourceLocale": "en-US"
+        },
         "defaultLocale": "en-US",
         "defaultText": "Mobile brand consistency gap (color drift)",
         "icuArgs": {},
@@ -2343,6 +3383,37 @@ window.__SCRIBE_MANIFEST__ = {
       },
       "localePaths": {},
       "longDescription": {
+        "catalogDependency": {
+          "explicitLocales": [],
+          "lookupLocales": [
+            "en-US",
+            "en-GB",
+            "en-CA",
+            "fr-CA",
+            "en-IN",
+            "cy-GB",
+            "gd-GB",
+            "ga-GB",
+            "es-US",
+            "es-MX",
+            "de-DE",
+            "fr-FR",
+            "es-ES",
+            "it-IT",
+            "nl-NL",
+            "pl-PL",
+            "pt-PT",
+            "pt-BR",
+            "ro-RO",
+            "sv-SE",
+            "ko-KR",
+            "zh-CN",
+            "ja-JP",
+            "hi-IN"
+          ],
+          "reportFallbacks": {},
+          "sourceLocale": "en-US"
+        },
         "defaultLocale": "en-US",
         "defaultText": "Brand-consistency evidence captured from the same cockpit-mobile runtime scan as the Android symbolic-icon finding above — same source line, different lens.",
         "icuArgs": {},
@@ -2360,6 +3431,37 @@ window.__SCRIBE_MANIFEST__ = {
     },
     {
       "altText": {
+        "catalogDependency": {
+          "explicitLocales": [],
+          "lookupLocales": [
+            "en-US",
+            "en-GB",
+            "en-CA",
+            "fr-CA",
+            "en-IN",
+            "cy-GB",
+            "gd-GB",
+            "ga-GB",
+            "es-US",
+            "es-MX",
+            "de-DE",
+            "fr-FR",
+            "es-ES",
+            "it-IT",
+            "nl-NL",
+            "pl-PL",
+            "pt-PT",
+            "pt-BR",
+            "ro-RO",
+            "sv-SE",
+            "ko-KR",
+            "zh-CN",
+            "ja-JP",
+            "hi-IN"
+          ],
+          "reportFallbacks": {},
+          "sourceLocale": "en-US"
+        },
         "defaultLocale": "en-US",
         "defaultText": "Annotated runtime evidence emitted by Sonde Scribe. The cockpit-mobile a11y-fixture screen captured on iOS Simulator with a dashed bounded region around the unlabelled UIImageView. A callout arrow points at the 132-by-132-pixel element at coordinates 612, 702. Header lines read: cockpit-mobile-objc-uikit-image-missing-label; uikitMissingImageLabel.m:10; ios WCAG 1.1.1 Non-text Content bounds 612,702 132x132.",
         "icuArgs": {},
@@ -2378,6 +3480,37 @@ window.__SCRIBE_MANIFEST__ = {
       "defaultPath": "assets/findings/cockpit-mobile-objc-uikit-image-missing-label.png",
       "kind": "screenshot",
       "label": {
+        "catalogDependency": {
+          "explicitLocales": [],
+          "lookupLocales": [
+            "en-US",
+            "en-GB",
+            "en-CA",
+            "fr-CA",
+            "en-IN",
+            "cy-GB",
+            "gd-GB",
+            "ga-GB",
+            "es-US",
+            "es-MX",
+            "de-DE",
+            "fr-FR",
+            "es-ES",
+            "it-IT",
+            "nl-NL",
+            "pl-PL",
+            "pt-PT",
+            "pt-BR",
+            "ro-RO",
+            "sv-SE",
+            "ko-KR",
+            "zh-CN",
+            "ja-JP",
+            "hi-IN"
+          ],
+          "reportFallbacks": {},
+          "sourceLocale": "en-US"
+        },
         "defaultLocale": "en-US",
         "defaultText": "Objective-C UIKit image is missing an accessible name",
         "icuArgs": {},
@@ -2394,6 +3527,37 @@ window.__SCRIBE_MANIFEST__ = {
       },
       "localePaths": {},
       "longDescription": {
+        "catalogDependency": {
+          "explicitLocales": [],
+          "lookupLocales": [
+            "en-US",
+            "en-GB",
+            "en-CA",
+            "fr-CA",
+            "en-IN",
+            "cy-GB",
+            "gd-GB",
+            "ga-GB",
+            "es-US",
+            "es-MX",
+            "de-DE",
+            "fr-FR",
+            "es-ES",
+            "it-IT",
+            "nl-NL",
+            "pl-PL",
+            "pt-PT",
+            "pt-BR",
+            "ro-RO",
+            "sv-SE",
+            "ko-KR",
+            "zh-CN",
+            "ja-JP",
+            "hi-IN"
+          ],
+          "reportFallbacks": {},
+          "sourceLocale": "en-US"
+        },
         "defaultLocale": "en-US",
         "defaultText": "Captured by the UIKit fixture replay on iPhone 17 Pro through the same cross-platform mobile a11y probe Sonde ships, lensed in the Objective-C → SwiftUI direction.",
         "icuArgs": {},
@@ -2411,9 +3575,40 @@ window.__SCRIBE_MANIFEST__ = {
     },
     {
       "assetId": "theme-daylight",
-      "defaultPath": "assets/themes/daylight.css",
+      "defaultPath": "assets/immutable/theme-daylight.ffce2abf0c8dffe5.css",
       "kind": "theme",
       "label": {
+        "catalogDependency": {
+          "explicitLocales": [],
+          "lookupLocales": [
+            "en-US",
+            "en-GB",
+            "en-CA",
+            "fr-CA",
+            "en-IN",
+            "cy-GB",
+            "gd-GB",
+            "ga-GB",
+            "es-US",
+            "es-MX",
+            "de-DE",
+            "fr-FR",
+            "es-ES",
+            "it-IT",
+            "nl-NL",
+            "pl-PL",
+            "pt-PT",
+            "pt-BR",
+            "ro-RO",
+            "sv-SE",
+            "ko-KR",
+            "zh-CN",
+            "ja-JP",
+            "hi-IN"
+          ],
+          "reportFallbacks": {},
+          "sourceLocale": "en-US"
+        },
         "defaultLocale": "en-US",
         "defaultText": "Daylight theme",
         "icuArgs": {},
@@ -2547,9 +3742,40 @@ window.__SCRIBE_MANIFEST__ = {
     },
     {
       "assetId": "theme-ultraviolet",
-      "defaultPath": "assets/themes/ultraviolet.css",
+      "defaultPath": "assets/immutable/theme-ultraviolet.e8d1e286a433a1f6.css",
       "kind": "theme",
       "label": {
+        "catalogDependency": {
+          "explicitLocales": [],
+          "lookupLocales": [
+            "en-US",
+            "en-GB",
+            "en-CA",
+            "fr-CA",
+            "en-IN",
+            "cy-GB",
+            "gd-GB",
+            "ga-GB",
+            "es-US",
+            "es-MX",
+            "de-DE",
+            "fr-FR",
+            "es-ES",
+            "it-IT",
+            "nl-NL",
+            "pl-PL",
+            "pt-PT",
+            "pt-BR",
+            "ro-RO",
+            "sv-SE",
+            "ko-KR",
+            "zh-CN",
+            "ja-JP",
+            "hi-IN"
+          ],
+          "reportFallbacks": {},
+          "sourceLocale": "en-US"
+        },
         "defaultLocale": "en-US",
         "defaultText": "Ultraviolet theme",
         "icuArgs": {},
@@ -2683,9 +3909,40 @@ window.__SCRIBE_MANIFEST__ = {
     },
     {
       "assetId": "theme-infrared",
-      "defaultPath": "assets/themes/infrared.css",
+      "defaultPath": "assets/immutable/theme-infrared.caf6e90430229b41.css",
       "kind": "theme",
       "label": {
+        "catalogDependency": {
+          "explicitLocales": [],
+          "lookupLocales": [
+            "en-US",
+            "en-GB",
+            "en-CA",
+            "fr-CA",
+            "en-IN",
+            "cy-GB",
+            "gd-GB",
+            "ga-GB",
+            "es-US",
+            "es-MX",
+            "de-DE",
+            "fr-FR",
+            "es-ES",
+            "it-IT",
+            "nl-NL",
+            "pl-PL",
+            "pt-PT",
+            "pt-BR",
+            "ro-RO",
+            "sv-SE",
+            "ko-KR",
+            "zh-CN",
+            "ja-JP",
+            "hi-IN"
+          ],
+          "reportFallbacks": {},
+          "sourceLocale": "en-US"
+        },
         "defaultLocale": "en-US",
         "defaultText": "Infrared theme",
         "icuArgs": {},
@@ -2819,9 +4076,40 @@ window.__SCRIBE_MANIFEST__ = {
     },
     {
       "assetId": "theme-high-contrast",
-      "defaultPath": "assets/themes/high-contrast.css",
+      "defaultPath": "assets/immutable/theme-high-contrast.32d22d1a3f404d86.css",
       "kind": "theme",
       "label": {
+        "catalogDependency": {
+          "explicitLocales": [],
+          "lookupLocales": [
+            "en-US",
+            "en-GB",
+            "en-CA",
+            "fr-CA",
+            "en-IN",
+            "cy-GB",
+            "gd-GB",
+            "ga-GB",
+            "es-US",
+            "es-MX",
+            "de-DE",
+            "fr-FR",
+            "es-ES",
+            "it-IT",
+            "nl-NL",
+            "pl-PL",
+            "pt-PT",
+            "pt-BR",
+            "ro-RO",
+            "sv-SE",
+            "ko-KR",
+            "zh-CN",
+            "ja-JP",
+            "hi-IN"
+          ],
+          "reportFallbacks": {},
+          "sourceLocale": "en-US"
+        },
         "defaultLocale": "en-US",
         "defaultText": "High Contrast theme",
         "icuArgs": {},
@@ -2968,6 +4256,41 @@ window.__SCRIBE_MANIFEST__ = {
       "href": "exports/report.md",
       "includesPrivateReceipt": false,
       "label": {
+        "catalogDependency": {
+          "explicitLocales": [
+            "es-US"
+          ],
+          "lookupLocales": [
+            "en-US",
+            "en-GB",
+            "en-CA",
+            "fr-CA",
+            "en-IN",
+            "cy-GB",
+            "gd-GB",
+            "ga-GB",
+            "es-US",
+            "es-MX",
+            "de-DE",
+            "fr-FR",
+            "es-ES",
+            "it-IT",
+            "nl-NL",
+            "pl-PL",
+            "pt-PT",
+            "pt-BR",
+            "ro-RO",
+            "sv-SE",
+            "ko-KR",
+            "zh-CN",
+            "ja-JP",
+            "hi-IN"
+          ],
+          "reportFallbacks": {
+            "ja-JP": "Markdown レポートをダウンロード"
+          },
+          "sourceLocale": "en-US"
+        },
         "defaultLocale": "en-US",
         "defaultText": "Download Markdown report",
         "icuArgs": {},
@@ -3113,6 +4436,40 @@ window.__SCRIBE_MANIFEST__ = {
         {
           "id": "critical",
           "label": {
+            "catalogDependency": {
+              "explicitLocales": [
+                "es-US",
+                "ja-JP"
+              ],
+              "lookupLocales": [
+                "en-US",
+                "en-GB",
+                "en-CA",
+                "fr-CA",
+                "en-IN",
+                "cy-GB",
+                "gd-GB",
+                "ga-GB",
+                "es-US",
+                "es-MX",
+                "de-DE",
+                "fr-FR",
+                "es-ES",
+                "it-IT",
+                "nl-NL",
+                "pl-PL",
+                "pt-PT",
+                "pt-BR",
+                "ro-RO",
+                "sv-SE",
+                "ko-KR",
+                "zh-CN",
+                "ja-JP",
+                "hi-IN"
+              ],
+              "reportFallbacks": {},
+              "sourceLocale": "en-US"
+            },
             "defaultLocale": "en-US",
             "defaultText": "Critical",
             "icuArgs": {},
@@ -3247,6 +4604,41 @@ window.__SCRIBE_MANIFEST__ = {
         {
           "id": "high",
           "label": {
+            "catalogDependency": {
+              "explicitLocales": [
+                "es-US"
+              ],
+              "lookupLocales": [
+                "en-US",
+                "en-GB",
+                "en-CA",
+                "fr-CA",
+                "en-IN",
+                "cy-GB",
+                "gd-GB",
+                "ga-GB",
+                "es-US",
+                "es-MX",
+                "de-DE",
+                "fr-FR",
+                "es-ES",
+                "it-IT",
+                "nl-NL",
+                "pl-PL",
+                "pt-PT",
+                "pt-BR",
+                "ro-RO",
+                "sv-SE",
+                "ko-KR",
+                "zh-CN",
+                "ja-JP",
+                "hi-IN"
+              ],
+              "reportFallbacks": {
+                "ja-JP": "高"
+              },
+              "sourceLocale": "en-US"
+            },
             "defaultLocale": "en-US",
             "defaultText": "High",
             "icuArgs": {},
@@ -3381,6 +4773,41 @@ window.__SCRIBE_MANIFEST__ = {
         {
           "id": "medium",
           "label": {
+            "catalogDependency": {
+              "explicitLocales": [
+                "es-US"
+              ],
+              "lookupLocales": [
+                "en-US",
+                "en-GB",
+                "en-CA",
+                "fr-CA",
+                "en-IN",
+                "cy-GB",
+                "gd-GB",
+                "ga-GB",
+                "es-US",
+                "es-MX",
+                "de-DE",
+                "fr-FR",
+                "es-ES",
+                "it-IT",
+                "nl-NL",
+                "pl-PL",
+                "pt-PT",
+                "pt-BR",
+                "ro-RO",
+                "sv-SE",
+                "ko-KR",
+                "zh-CN",
+                "ja-JP",
+                "hi-IN"
+              ],
+              "reportFallbacks": {
+                "ja-JP": "中"
+              },
+              "sourceLocale": "en-US"
+            },
             "defaultLocale": "en-US",
             "defaultText": "Medium",
             "icuArgs": {},
@@ -3527,6 +4954,40 @@ window.__SCRIBE_MANIFEST__ = {
         {
           "id": "present",
           "label": {
+            "catalogDependency": {
+              "explicitLocales": [
+                "es-US",
+                "ja-JP"
+              ],
+              "lookupLocales": [
+                "en-US",
+                "en-GB",
+                "en-CA",
+                "fr-CA",
+                "en-IN",
+                "cy-GB",
+                "gd-GB",
+                "ga-GB",
+                "es-US",
+                "es-MX",
+                "de-DE",
+                "fr-FR",
+                "es-ES",
+                "it-IT",
+                "nl-NL",
+                "pl-PL",
+                "pt-PT",
+                "pt-BR",
+                "ro-RO",
+                "sv-SE",
+                "ko-KR",
+                "zh-CN",
+                "ja-JP",
+                "hi-IN"
+              ],
+              "reportFallbacks": {},
+              "sourceLocale": "en-US"
+            },
             "defaultLocale": "en-US",
             "defaultText": "Present",
             "icuArgs": {},
@@ -3661,6 +5122,41 @@ window.__SCRIBE_MANIFEST__ = {
         {
           "id": "partial",
           "label": {
+            "catalogDependency": {
+              "explicitLocales": [
+                "es-US"
+              ],
+              "lookupLocales": [
+                "en-US",
+                "en-GB",
+                "en-CA",
+                "fr-CA",
+                "en-IN",
+                "cy-GB",
+                "gd-GB",
+                "ga-GB",
+                "es-US",
+                "es-MX",
+                "de-DE",
+                "fr-FR",
+                "es-ES",
+                "it-IT",
+                "nl-NL",
+                "pl-PL",
+                "pt-PT",
+                "pt-BR",
+                "ro-RO",
+                "sv-SE",
+                "ko-KR",
+                "zh-CN",
+                "ja-JP",
+                "hi-IN"
+              ],
+              "reportFallbacks": {
+                "ja-JP": "部分的"
+              },
+              "sourceLocale": "en-US"
+            },
             "defaultLocale": "en-US",
             "defaultText": "Partial",
             "icuArgs": {},
@@ -3795,6 +5291,41 @@ window.__SCRIBE_MANIFEST__ = {
         {
           "id": "gap",
           "label": {
+            "catalogDependency": {
+              "explicitLocales": [
+                "es-US"
+              ],
+              "lookupLocales": [
+                "en-US",
+                "en-GB",
+                "en-CA",
+                "fr-CA",
+                "en-IN",
+                "cy-GB",
+                "gd-GB",
+                "ga-GB",
+                "es-US",
+                "es-MX",
+                "de-DE",
+                "fr-FR",
+                "es-ES",
+                "it-IT",
+                "nl-NL",
+                "pl-PL",
+                "pt-PT",
+                "pt-BR",
+                "ro-RO",
+                "sv-SE",
+                "ko-KR",
+                "zh-CN",
+                "ja-JP",
+                "hi-IN"
+              ],
+              "reportFallbacks": {
+                "ja-JP": "不足"
+              },
+              "sourceLocale": "en-US"
+            },
             "defaultLocale": "en-US",
             "defaultText": "Gap",
             "icuArgs": {},
@@ -3929,6 +5460,41 @@ window.__SCRIBE_MANIFEST__ = {
         {
           "id": "requires-customer-context",
           "label": {
+            "catalogDependency": {
+              "explicitLocales": [
+                "es-US"
+              ],
+              "lookupLocales": [
+                "en-US",
+                "en-GB",
+                "en-CA",
+                "fr-CA",
+                "en-IN",
+                "cy-GB",
+                "gd-GB",
+                "ga-GB",
+                "es-US",
+                "es-MX",
+                "de-DE",
+                "fr-FR",
+                "es-ES",
+                "it-IT",
+                "nl-NL",
+                "pl-PL",
+                "pt-PT",
+                "pt-BR",
+                "ro-RO",
+                "sv-SE",
+                "ko-KR",
+                "zh-CN",
+                "ja-JP",
+                "hi-IN"
+              ],
+              "reportFallbacks": {
+                "ja-JP": "顧客コンテキストが必要"
+              },
+              "sourceLocale": "en-US"
+            },
             "defaultLocale": "en-US",
             "defaultText": "Needs customer context",
             "icuArgs": {},
@@ -4063,6 +5629,41 @@ window.__SCRIBE_MANIFEST__ = {
         {
           "id": "absent",
           "label": {
+            "catalogDependency": {
+              "explicitLocales": [
+                "es-US"
+              ],
+              "lookupLocales": [
+                "en-US",
+                "en-GB",
+                "en-CA",
+                "fr-CA",
+                "en-IN",
+                "cy-GB",
+                "gd-GB",
+                "ga-GB",
+                "es-US",
+                "es-MX",
+                "de-DE",
+                "fr-FR",
+                "es-ES",
+                "it-IT",
+                "nl-NL",
+                "pl-PL",
+                "pt-PT",
+                "pt-BR",
+                "ro-RO",
+                "sv-SE",
+                "ko-KR",
+                "zh-CN",
+                "ja-JP",
+                "hi-IN"
+              ],
+              "reportFallbacks": {
+                "ja-JP": "非対応"
+              },
+              "sourceLocale": "en-US"
+            },
             "defaultLocale": "en-US",
             "defaultText": "Absent",
             "icuArgs": {},
@@ -4203,6 +5804,41 @@ window.__SCRIBE_MANIFEST__ = {
         {
           "id": "accessibility",
           "label": {
+            "catalogDependency": {
+              "explicitLocales": [
+                "es-US"
+              ],
+              "lookupLocales": [
+                "en-US",
+                "en-GB",
+                "en-CA",
+                "fr-CA",
+                "en-IN",
+                "cy-GB",
+                "gd-GB",
+                "ga-GB",
+                "es-US",
+                "es-MX",
+                "de-DE",
+                "fr-FR",
+                "es-ES",
+                "it-IT",
+                "nl-NL",
+                "pl-PL",
+                "pt-PT",
+                "pt-BR",
+                "ro-RO",
+                "sv-SE",
+                "ko-KR",
+                "zh-CN",
+                "ja-JP",
+                "hi-IN"
+              ],
+              "reportFallbacks": {
+                "ja-JP": "アクセシビリティ"
+              },
+              "sourceLocale": "en-US"
+            },
             "defaultLocale": "en-US",
             "defaultText": "Accessibility",
             "icuArgs": {},
@@ -4336,6 +5972,41 @@ window.__SCRIBE_MANIFEST__ = {
         {
           "id": "brand-consistency",
           "label": {
+            "catalogDependency": {
+              "explicitLocales": [
+                "es-US"
+              ],
+              "lookupLocales": [
+                "en-US",
+                "en-GB",
+                "en-CA",
+                "fr-CA",
+                "en-IN",
+                "cy-GB",
+                "gd-GB",
+                "ga-GB",
+                "es-US",
+                "es-MX",
+                "de-DE",
+                "fr-FR",
+                "es-ES",
+                "it-IT",
+                "nl-NL",
+                "pl-PL",
+                "pt-PT",
+                "pt-BR",
+                "ro-RO",
+                "sv-SE",
+                "ko-KR",
+                "zh-CN",
+                "ja-JP",
+                "hi-IN"
+              ],
+              "reportFallbacks": {
+                "ja-JP": "ブランド一貫性"
+              },
+              "sourceLocale": "en-US"
+            },
             "defaultLocale": "en-US",
             "defaultText": "Brand consistency",
             "icuArgs": {},
@@ -4469,6 +6140,41 @@ window.__SCRIBE_MANIFEST__ = {
         {
           "id": "source-trace",
           "label": {
+            "catalogDependency": {
+              "explicitLocales": [
+                "es-US"
+              ],
+              "lookupLocales": [
+                "en-US",
+                "en-GB",
+                "en-CA",
+                "fr-CA",
+                "en-IN",
+                "cy-GB",
+                "gd-GB",
+                "ga-GB",
+                "es-US",
+                "es-MX",
+                "de-DE",
+                "fr-FR",
+                "es-ES",
+                "it-IT",
+                "nl-NL",
+                "pl-PL",
+                "pt-PT",
+                "pt-BR",
+                "ro-RO",
+                "sv-SE",
+                "ko-KR",
+                "zh-CN",
+                "ja-JP",
+                "hi-IN"
+              ],
+              "reportFallbacks": {
+                "ja-JP": "ソーストレース"
+              },
+              "sourceLocale": "en-US"
+            },
             "defaultLocale": "en-US",
             "defaultText": "Source trace",
             "icuArgs": {},
@@ -4607,6 +6313,41 @@ window.__SCRIBE_MANIFEST__ = {
       "actionId": "feedback-missing-alt",
       "anchorId": "finding-missing-alt",
       "label": {
+        "catalogDependency": {
+          "explicitLocales": [
+            "es-US"
+          ],
+          "lookupLocales": [
+            "en-US",
+            "en-GB",
+            "en-CA",
+            "fr-CA",
+            "en-IN",
+            "cy-GB",
+            "gd-GB",
+            "ga-GB",
+            "es-US",
+            "es-MX",
+            "de-DE",
+            "fr-FR",
+            "es-ES",
+            "it-IT",
+            "nl-NL",
+            "pl-PL",
+            "pt-PT",
+            "pt-BR",
+            "ro-RO",
+            "sv-SE",
+            "ko-KR",
+            "zh-CN",
+            "ja-JP",
+            "hi-IN"
+          ],
+          "reportFallbacks": {
+            "ja-JP": "フィードバックを送信"
+          },
+          "sourceLocale": "en-US"
+        },
         "defaultLocale": "en-US",
         "defaultText": "Send feedback",
         "icuArgs": {},
@@ -4796,6 +6537,7 @@ window.__SCRIBE_MANIFEST__ = {
         }
       ],
       "classification": "accessibility",
+      "contextLinks": [],
       "controlIds": [
         "wcag-1-1-1-non-text-content"
       ],
@@ -4805,12 +6547,98 @@ window.__SCRIBE_MANIFEST__ = {
         "swiftui-ios-runtime"
       ],
       "language": "swift",
+      "recommendation": {
+        "catalogDependency": {
+          "explicitLocales": [],
+          "lookupLocales": [
+            "en-US",
+            "en-GB",
+            "en-CA",
+            "fr-CA",
+            "en-IN",
+            "cy-GB",
+            "gd-GB",
+            "ga-GB",
+            "es-US",
+            "es-MX",
+            "de-DE",
+            "fr-FR",
+            "es-ES",
+            "it-IT",
+            "nl-NL",
+            "pl-PL",
+            "pt-PT",
+            "pt-BR",
+            "ro-RO",
+            "sv-SE",
+            "ko-KR",
+            "zh-CN",
+            "ja-JP",
+            "hi-IN"
+          ],
+          "reportFallbacks": {
+            "ja-JP": "UIKit 変換が実行される前に、製品固有の .accessibilityLabel(...) 修飾子を追加するか、装飾画像として .accessibilityHidden(true) を設定します。"
+          },
+          "sourceLocale": "en-US"
+        },
+        "defaultLocale": "en-US",
+        "defaultText": "Add a product-specific .accessibilityLabel(...) modifier or mark the Image decorative with .accessibilityHidden(true) before the UIKit transform runs.",
+        "icuArgs": {},
+        "msgid": "scribe.report.complianceExample.2.finding.fix",
+        "provenance": "template",
+        "reviewState": "reviewed",
+        "values": {
+          "en-US": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Add a product-specific .accessibilityLabel(...) modifier or mark the Image decorative with .accessibilityHidden(true) before the UIKit transform runs."
+          },
+          "ja-JP": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "UIKit 変換が実行される前に、製品固有の .accessibilityLabel(...) 修飾子を追加するか、装飾画像として .accessibilityHidden(true) を設定します。"
+          }
+        }
+      },
       "severity": "high",
       "shareActionId": "share-missing-alt",
       "sourceSnippetIds": [
         "source-swiftui-missing-image-label"
       ],
       "summary": {
+        "catalogDependency": {
+          "explicitLocales": [],
+          "lookupLocales": [
+            "en-US",
+            "en-GB",
+            "en-CA",
+            "fr-CA",
+            "en-IN",
+            "cy-GB",
+            "gd-GB",
+            "ga-GB",
+            "es-US",
+            "es-MX",
+            "de-DE",
+            "fr-FR",
+            "es-ES",
+            "it-IT",
+            "nl-NL",
+            "pl-PL",
+            "pt-PT",
+            "pt-BR",
+            "ro-RO",
+            "sv-SE",
+            "ko-KR",
+            "zh-CN",
+            "ja-JP",
+            "hi-IN"
+          ],
+          "reportFallbacks": {
+            "ja-JP": "SwiftUI の Image はプロフィールアラート行で意味のあるコンテンツとして描画されますが、accessibilityLabel を公開していません。VoiceOver は何も読み上げず、UIKit 変換もその欠落を引き継ぎます。"
+          },
+          "sourceLocale": "en-US"
+        },
         "defaultLocale": "en-US",
         "defaultText": "The SwiftUI Image renders as meaningful content in the profile alert row but exposes no accessibilityLabel — VoiceOver announces nothing and the UIKit transform inherits the gap.",
         "icuArgs": {},
@@ -4831,6 +6659,39 @@ window.__SCRIBE_MANIFEST__ = {
         }
       },
       "title": {
+        "catalogDependency": {
+          "explicitLocales": [],
+          "lookupLocales": [
+            "en-US",
+            "en-GB",
+            "en-CA",
+            "fr-CA",
+            "en-IN",
+            "cy-GB",
+            "gd-GB",
+            "ga-GB",
+            "es-US",
+            "es-MX",
+            "de-DE",
+            "fr-FR",
+            "es-ES",
+            "it-IT",
+            "nl-NL",
+            "pl-PL",
+            "pt-PT",
+            "pt-BR",
+            "ro-RO",
+            "sv-SE",
+            "ko-KR",
+            "zh-CN",
+            "ja-JP",
+            "hi-IN"
+          ],
+          "reportFallbacks": {
+            "ja-JP": "SwiftUI 画像にアクセシブル名がありません"
+          },
+          "sourceLocale": "en-US"
+        },
         "defaultLocale": "en-US",
         "defaultText": "SwiftUI image is missing an accessible name",
         "icuArgs": {},
@@ -4872,6 +6733,7 @@ window.__SCRIBE_MANIFEST__ = {
         }
       ],
       "classification": "accessibility",
+      "contextLinks": [],
       "controlIds": [
         "wcag-4-1-2-name-role-value"
       ],
@@ -4881,12 +6743,198 @@ window.__SCRIBE_MANIFEST__ = {
         "compose-multiplatform-android-runtime"
       ],
       "language": "kotlin",
+      "recommendation": {
+        "catalogDependency": {
+          "explicitLocales": [],
+          "lookupLocales": [
+            "en-US",
+            "en-GB",
+            "en-CA",
+            "fr-CA",
+            "en-IN",
+            "cy-GB",
+            "gd-GB",
+            "ga-GB",
+            "es-US",
+            "es-MX",
+            "de-DE",
+            "fr-FR",
+            "es-ES",
+            "it-IT",
+            "nl-NL",
+            "pl-PL",
+            "pt-PT",
+            "pt-BR",
+            "ro-RO",
+            "sv-SE",
+            "ko-KR",
+            "zh-CN",
+            "ja-JP",
+            "hi-IN"
+          ],
+          "reportFallbacks": {
+            "ja-JP": "説明的な Compose semantics の contentDescription を追加するか、アイコンのみの操作をラベル付きコントロールに置き換えてから、ローカル実行時ハンドオフを再実行します。"
+          },
+          "sourceLocale": "en-US"
+        },
+        "defaultLocale": "en-US",
+        "defaultText": "Add a descriptive Compose semantics contentDescription or replace the icon-only action with a labelled control, then rerun the local runtime handoff.",
+        "icuArgs": {},
+        "msgid": "scribe.report.complianceExample.0.finding.fix",
+        "provenance": "template",
+        "reviewState": "reviewed",
+        "values": {
+          "cy-GB": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Ychwanegu addasydd.accessibilityLabel(...) penodol i'r cynnyrch neu farcio'r Delwedd addurnedig gyda.accessibilityHidden(true)."
+          },
+          "de-DE": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Fügen Sie einen produktspezifischen .accessibilityLabel(...) Modifier hinzu oder markieren Sie das Image als dekorativ mit .accessibilityHidden(true)."
+          },
+          "en-CA": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Add a product-specific .accessibilityLabel(...) modifier or mark the Image decorative with .accessibilityHidden(true)."
+          },
+          "en-GB": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Add a product-specific .accessibilityLabel(...) modifier or mark the Image decorative with .accessibilityHidden(true)."
+          },
+          "en-IN": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Add a product-specific .accessibilityLabel(...) modifier or mark the Image decorative with .accessibilityHidden(true)."
+          },
+          "en-US": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Add a descriptive Compose semantics contentDescription or replace the icon-only action with a labelled control, then rerun the local runtime handoff."
+          },
+          "es-ES": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Añade un modificador .accessibilityLabel(...) específico del producto o marca la imagen como decorativa con .accessibilityHidden(true)."
+          },
+          "es-MX": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Agregue un modificador .accessibilityLabel(...) específico del producto o marque la imagen como decorativa con .accessibilityHidden(true)."
+          },
+          "es-US": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Agregue un modificador .accessibilityLabel(...) específico del producto o marque la imagen como decorativa con .accessibilityHidden(true)."
+          },
+          "fr-CA": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Ajoutez un modificateur .accessibilityLabel(...) spécifique au produit ou marquez l'image comme décorative avec .accessibilityHidden(true)."
+          },
+          "fr-FR": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Ajoutez un modificateur .accessibilityLabel(...) spécifique au produit ou marquez l'image comme décorative avec .accessibilityHidden(true)."
+          },
+          "hi-IN": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "एक उत्पाद-विशिष्ट .accessibilityLabel(...) मॉडिफायर जोड़ें या Image को .accessibilityHidden(true) के साथ सजावटी (decorative) के रूप में चिह्नित करें।"
+          },
+          "it-IT": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Aggiungi un modificatore .accessibilityLabel(...) specifico per il prodotto oppure contrassegna l'immagine come decorativa con .accessibilityHidden(true)."
+          },
+          "ja-JP": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "製品固有の .accessibilityLabel(...) モディファイアを追加するか、.accessibilityHidden(true) で Image を装飾用としてマークしてください。"
+          },
+          "ko-KR": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "제품별 .accessibilityLabel(...) 수정자를 추가하거나 .accessibilityHidden(true)로 Image를 장식용 이미지로 표시하세요."
+          },
+          "nl-NL": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Voeg een productspecifieke .accessibilityLabel(...) modifier toe of markeer de Image als decoratief met .accessibilityHidden(true)."
+          },
+          "pl-PL": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Dodaj modyfikator .accessibilityLabel(...) specyficzny dla produktu lub oznacz obraz jako dekoracyjny za pomocą .accessibilityHidden(true)."
+          },
+          "pt-BR": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Adicione um modificador .accessibilityLabel(...) específico do produto ou marque a Imagem como decorativa com .accessibilityHidden(true)."
+          },
+          "pt-PT": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Adicione um modificador .accessibilityLabel(...) específico do produto ou marque a Imagem como decorativa com .accessibilityHidden(true)."
+          },
+          "ro-RO": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Adăugați un modificator .accessibilityLabel(...) specific produsului sau marcați imaginea ca fiind decorativă cu .accessibilityHidden(true)."
+          },
+          "sv-SE": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Lägg till en produktspecifik .accessibilityLabel(...) modifier eller markera bilden som dekorativ med .accessibilityHidden(true)."
+          },
+          "zh-CN": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "添加一个特定于产品的 .accessibilityLabel(...) 修饰符，或将图像标记为装饰性并使用 .accessibilityHidden(true)。"
+          }
+        }
+      },
       "severity": "high",
       "shareActionId": "share-missing-alt",
       "sourceSnippetIds": [
         "source-1-runtime-scan-found-symbolic-accessible-name"
       ],
       "summary": {
+        "catalogDependency": {
+          "explicitLocales": [],
+          "lookupLocales": [
+            "en-US",
+            "en-GB",
+            "en-CA",
+            "fr-CA",
+            "en-IN",
+            "cy-GB",
+            "gd-GB",
+            "ga-GB",
+            "es-US",
+            "es-MX",
+            "de-DE",
+            "fr-FR",
+            "es-ES",
+            "it-IT",
+            "nl-NL",
+            "pl-PL",
+            "pt-PT",
+            "pt-BR",
+            "ro-RO",
+            "sv-SE",
+            "ko-KR",
+            "zh-CN",
+            "ja-JP",
+            "hi-IN"
+          ],
+          "reportFallbacks": {
+            "ja-JP": "ローカル実行時のアクセシビリティツリーでは、cockpit-mobile のシードアイコン操作が、耐久性のあるアクセシブル名ではなく記号名として公開されています。"
+          },
+          "sourceLocale": "en-US"
+        },
         "defaultLocale": "en-US",
         "defaultText": "The local runtime accessibility tree exposes the cockpit-mobile seed icon action as a symbolic name instead of a durable accessible name.",
         "icuArgs": {},
@@ -4894,19 +6942,152 @@ window.__SCRIBE_MANIFEST__ = {
         "provenance": "template",
         "reviewState": "reviewed",
         "values": {
+          "cy-GB": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Mae'r Delwedd SwiftUI yn llenwi'r rhes rhybudd proffil â chynnwys perthnasol ond nid yw'n datgelu label hygyrchedd."
+          },
+          "de-DE": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Das SwiftUI-Image wird in der Profil-Alert-Zeile als bedeutungsvoller Inhalt gerendert, verfügt jedoch über kein accessibilityLabel."
+          },
+          "en-CA": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "The SwiftUI Image renders as meaningful content in the profile alert row but exposes no accessibilityLabel."
+          },
+          "en-GB": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "The SwiftUI Image renders as meaningful content in the profile alert row but exposes no accessibilityLabel."
+          },
+          "en-IN": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "The SwiftUI Image renders as meaningful content in the profile alert row but exposes no accessibilityLabel."
+          },
           "en-US": {
             "fallback": false,
             "reviewed": true,
             "text": "The local runtime accessibility tree exposes the cockpit-mobile seed icon action as a symbolic name instead of a durable accessible name."
           },
+          "es-ES": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "La imagen de SwiftUI se renderiza como contenido significativo en la fila de alerta del perfil, pero no expone ningún accessibilityLabel."
+          },
+          "es-MX": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "La imagen de SwiftUI se renderiza como contenido significativo en la fila de alerta del perfil, pero no expone ningún accessibilityLabel."
+          },
+          "es-US": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "La imagen de SwiftUI se renderiza como contenido significativo en la fila de alerta del perfil, pero no expone ningún accessibilityLabel."
+          },
+          "fr-CA": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "L'image SwiftUI s'affiche comme un contenu significatif dans la ligne d'alerte du profil, mais ne présente aucun accessibilityLabel."
+          },
+          "fr-FR": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "L'Image SwiftUI est rendue comme un contenu significatif dans la ligne d'alerte du profil, mais n'expose aucun accessibilityLabel."
+          },
+          "hi-IN": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "SwiftUI Image प्रोफ़ाइल अलर्ट रो में सार्थक सामग्री के रूप में रेंडर होता है लेकिन कोई accessibilityLabel प्रदर्शित नहीं करता है।"
+          },
+          "it-IT": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "L'immagine SwiftUI viene renderizzata come contenuto significativo nella riga dell'avviso del profilo, ma non espone alcun accessibilityLabel."
+          },
           "ja-JP": {
             "fallback": false,
             "reviewed": true,
-            "text": "ローカル実行時のアクセシビリティツリーでは、cockpit-mobile のシードアイコン操作が、耐久性のあるアクセシブル名ではなく記号名として公開されています。"
+            "text": "SwiftUI の Image はプロファイルの警告行で意味のあるコンテンツとしてレンダリングされますが、accessibilityLabel が設定されていません。"
+          },
+          "ko-KR": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "SwiftUI의 Image는 프로필 알림 행에서 의미 있는 콘텐츠로 렌더링되지만 accessibilityLabel이 노출되지 않습니다."
+          },
+          "nl-NL": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "De SwiftUI Image wordt weergegeven als betekenisvolle inhoud in de rij van het profielalert, maar bevat geen accessibilityLabel."
+          },
+          "pl-PL": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Obraz SwiftUI jest renderowany jako istotna treść w wierszu alertu profilu, ale nie posiada przypisanej etykiety accessibilityLabel."
+          },
+          "pt-BR": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "A Image do SwiftUI é renderizada como conteúdo significativo na linha de alerta do perfil, mas não expõe nenhum accessibilityLabel."
+          },
+          "pt-PT": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "A Image do SwiftUI é renderizada como conteúdo significativo na linha de alerta do perfil, mas não apresenta nenhum accessibilityLabel."
+          },
+          "ro-RO": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Imaginea SwiftUI este redată ca un conținut semnificativ în rândul alertelor de profil, dar nu expune niciun accessibilityLabel."
+          },
+          "sv-SE": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "SwiftUI Image renderas som meningsfullt innehåll i raden för profilvarningen men saknar en accessibilityLabel."
+          },
+          "zh-CN": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "SwiftUI Image 在个人资料警报行中呈现为有意义的内容，但未提供 accessibilityLabel。"
           }
         }
       },
       "title": {
+        "catalogDependency": {
+          "explicitLocales": [],
+          "lookupLocales": [
+            "en-US",
+            "en-GB",
+            "en-CA",
+            "fr-CA",
+            "en-IN",
+            "cy-GB",
+            "gd-GB",
+            "ga-GB",
+            "es-US",
+            "es-MX",
+            "de-DE",
+            "fr-FR",
+            "es-ES",
+            "it-IT",
+            "nl-NL",
+            "pl-PL",
+            "pt-PT",
+            "pt-BR",
+            "ro-RO",
+            "sv-SE",
+            "ko-KR",
+            "zh-CN",
+            "ja-JP",
+            "hi-IN"
+          ],
+          "reportFallbacks": {
+            "ja-JP": "実行時スキャンが記号だけのアクセシブル名を検出"
+          },
+          "sourceLocale": "en-US"
+        },
         "defaultLocale": "en-US",
         "defaultText": "Runtime scan found symbolic accessible name",
         "icuArgs": {},
@@ -4914,15 +7095,115 @@ window.__SCRIBE_MANIFEST__ = {
         "provenance": "template",
         "reviewState": "reviewed",
         "values": {
+          "cy-GB": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Mae'r ddelwedd SwiftUI yn colli enw hygyrchol"
+          },
+          "de-DE": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "SwiftUI-Image hat keinen zugänglichen Namen"
+          },
+          "en-CA": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "SwiftUI image is missing an accessible name"
+          },
+          "en-GB": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "SwiftUI image is missing an accessible name"
+          },
+          "en-IN": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "SwiftUI image is missing an accessible name"
+          },
           "en-US": {
             "fallback": false,
             "reviewed": true,
             "text": "Runtime scan found symbolic accessible name"
           },
+          "es-ES": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "A la imagen de SwiftUI le falta un nombre accesible"
+          },
+          "es-MX": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "A la imagen de SwiftUI le falta un nombre accesible"
+          },
+          "es-US": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "A la imagen de SwiftUI le falta un nombre accesible"
+          },
+          "fr-CA": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "L'image SwiftUI n'a pas de nom accessible"
+          },
+          "fr-FR": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "L'image SwiftUI ne possède pas de nom accessible"
+          },
+          "hi-IN": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "स्विफ्टUI छवि में पहुँच योग्य नाम नहीं है"
+          },
+          "it-IT": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "L'immagine SwiftUI non ha un nome accessibile"
+          },
           "ja-JP": {
             "fallback": false,
             "reviewed": true,
             "text": "SwiftUI 画像にアクセシブル名がありません"
+          },
+          "ko-KR": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "SwiftUI 이미지에 접근 가능한 이름이 누락되었습니다"
+          },
+          "nl-NL": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "SwiftUI-afbeelding mist een toegankelijke naam"
+          },
+          "pl-PL": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Obrazowi SwiftUI brakuje dostępnej nazwy"
+          },
+          "pt-BR": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "A imagem do SwiftUI está sem um nome acessível"
+          },
+          "pt-PT": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "A imagem do SwiftUI não tem um nome acessível"
+          },
+          "ro-RO": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Imagini SwiftUI fără nume accesibil"
+          },
+          "sv-SE": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "SwiftUI-bild saknar ett tillgängligt namn"
+          },
+          "zh-CN": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "SwiftUI 图像缺少可访问名称"
           }
         }
       }
@@ -4948,6 +7229,7 @@ window.__SCRIBE_MANIFEST__ = {
         }
       ],
       "classification": "accessibility",
+      "contextLinks": [],
       "controlIds": [
         "wcag-4-1-2-name-role-value"
       ],
@@ -4957,12 +7239,98 @@ window.__SCRIBE_MANIFEST__ = {
         "compose-multiplatform-ios-runtime"
       ],
       "language": "kotlin",
+      "recommendation": {
+        "catalogDependency": {
+          "explicitLocales": [],
+          "lookupLocales": [
+            "en-US",
+            "en-GB",
+            "en-CA",
+            "fr-CA",
+            "en-IN",
+            "cy-GB",
+            "gd-GB",
+            "ga-GB",
+            "es-US",
+            "es-MX",
+            "de-DE",
+            "fr-FR",
+            "es-ES",
+            "it-IT",
+            "nl-NL",
+            "pl-PL",
+            "pt-PT",
+            "pt-BR",
+            "ro-RO",
+            "sv-SE",
+            "ko-KR",
+            "zh-CN",
+            "ja-JP",
+            "hi-IN"
+          ],
+          "reportFallbacks": {
+            "ja-JP": "説明的な Compose semantics の contentDescription を追加するか、アイコンのみの操作をラベル付きコントロールに置き換えてから、ローカル実行時ハンドオフを再実行します。"
+          },
+          "sourceLocale": "en-US"
+        },
+        "defaultLocale": "en-US",
+        "defaultText": "Add a descriptive Compose semantics contentDescription or replace the icon-only action with a labelled control, then rerun the local runtime handoff.",
+        "icuArgs": {},
+        "msgid": "scribe.report.complianceExample.1.finding.fix",
+        "provenance": "template",
+        "reviewState": "reviewed",
+        "values": {
+          "en-US": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Add a descriptive Compose semantics contentDescription or replace the icon-only action with a labelled control, then rerun the local runtime handoff."
+          },
+          "ja-JP": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "説明的な Compose semantics の contentDescription を追加するか、アイコンのみの操作をラベル付きコントロールに置き換えてから、ローカル実行時ハンドオフを再実行します。"
+          }
+        }
+      },
       "severity": "high",
       "shareActionId": "share-missing-alt",
       "sourceSnippetIds": [
         "source-2-runtime-scan-found-symbolic-accessible-name"
       ],
       "summary": {
+        "catalogDependency": {
+          "explicitLocales": [],
+          "lookupLocales": [
+            "en-US",
+            "en-GB",
+            "en-CA",
+            "fr-CA",
+            "en-IN",
+            "cy-GB",
+            "gd-GB",
+            "ga-GB",
+            "es-US",
+            "es-MX",
+            "de-DE",
+            "fr-FR",
+            "es-ES",
+            "it-IT",
+            "nl-NL",
+            "pl-PL",
+            "pt-PT",
+            "pt-BR",
+            "ro-RO",
+            "sv-SE",
+            "ko-KR",
+            "zh-CN",
+            "ja-JP",
+            "hi-IN"
+          ],
+          "reportFallbacks": {
+            "ja-JP": "ローカル実行時のアクセシビリティツリーでは、cockpit-mobile のシードアイコン操作が、耐久性のあるアクセシブル名ではなく記号名として公開されています。"
+          },
+          "sourceLocale": "en-US"
+        },
         "defaultLocale": "en-US",
         "defaultText": "The local runtime accessibility tree exposes the cockpit-mobile seed icon action as a symbolic name instead of a durable accessible name.",
         "icuArgs": {},
@@ -4983,6 +7351,39 @@ window.__SCRIBE_MANIFEST__ = {
         }
       },
       "title": {
+        "catalogDependency": {
+          "explicitLocales": [],
+          "lookupLocales": [
+            "en-US",
+            "en-GB",
+            "en-CA",
+            "fr-CA",
+            "en-IN",
+            "cy-GB",
+            "gd-GB",
+            "ga-GB",
+            "es-US",
+            "es-MX",
+            "de-DE",
+            "fr-FR",
+            "es-ES",
+            "it-IT",
+            "nl-NL",
+            "pl-PL",
+            "pt-PT",
+            "pt-BR",
+            "ro-RO",
+            "sv-SE",
+            "ko-KR",
+            "zh-CN",
+            "ja-JP",
+            "hi-IN"
+          ],
+          "reportFallbacks": {
+            "ja-JP": "実行時スキャンが記号だけのアクセシブル名を検出"
+          },
+          "sourceLocale": "en-US"
+        },
         "defaultLocale": "en-US",
         "defaultText": "Runtime scan found symbolic accessible name",
         "icuArgs": {},
@@ -5024,6 +7425,7 @@ window.__SCRIBE_MANIFEST__ = {
         }
       ],
       "classification": "accessibility",
+      "contextLinks": [],
       "controlIds": [
         "wcag-2-5-5-target-size"
       ],
@@ -5033,12 +7435,98 @@ window.__SCRIBE_MANIFEST__ = {
         "compose-multiplatform-android-material-design-target-size"
       ],
       "language": "kotlin",
+      "recommendation": {
+        "catalogDependency": {
+          "explicitLocales": [],
+          "lookupLocales": [
+            "en-US",
+            "en-GB",
+            "en-CA",
+            "fr-CA",
+            "en-IN",
+            "cy-GB",
+            "gd-GB",
+            "ga-GB",
+            "es-US",
+            "es-MX",
+            "de-DE",
+            "fr-FR",
+            "es-ES",
+            "it-IT",
+            "nl-NL",
+            "pl-PL",
+            "pt-PT",
+            "pt-BR",
+            "ro-RO",
+            "sv-SE",
+            "ko-KR",
+            "zh-CN",
+            "ja-JP",
+            "hi-IN"
+          ],
+          "reportFallbacks": {
+            "ja-JP": "グループ化された検出事項の密度を保ちながら、フィルターコントロールのヒット領域を少なくとも 48dp に広げます。"
+          },
+          "sourceLocale": "en-US"
+        },
+        "defaultLocale": "en-US",
+        "defaultText": "Increase the filter control hit area to at least 48dp while preserving the grouped findings density.",
+        "icuArgs": {},
+        "msgid": "scribe.report.complianceExample.3.finding.fix",
+        "provenance": "template",
+        "reviewState": "reviewed",
+        "values": {
+          "en-US": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Increase the filter control hit area to at least 48dp while preserving the grouped findings density."
+          },
+          "ja-JP": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "グループ化された検出事項の密度を保ちながら、フィルターコントロールのヒット領域を少なくとも 48dp に広げます。"
+          }
+        }
+      },
       "severity": "critical",
       "shareActionId": "share-missing-alt",
       "sourceSnippetIds": [
         "source-4-filter-control-target-is-below-android-minimum"
       ],
       "summary": {
+        "catalogDependency": {
+          "explicitLocales": [],
+          "lookupLocales": [
+            "en-US",
+            "en-GB",
+            "en-CA",
+            "fr-CA",
+            "en-IN",
+            "cy-GB",
+            "gd-GB",
+            "ga-GB",
+            "es-US",
+            "es-MX",
+            "de-DE",
+            "fr-FR",
+            "es-ES",
+            "it-IT",
+            "nl-NL",
+            "pl-PL",
+            "pt-PT",
+            "pt-BR",
+            "ro-RO",
+            "sv-SE",
+            "ko-KR",
+            "zh-CN",
+            "ja-JP",
+            "hi-IN"
+          ],
+          "reportFallbacks": {
+            "ja-JP": "実際の cockpit-mobile Findings 画面では、コンパクトな 32dp のフィルターコントロールが Android の最小ターゲットサイズ 48dp を下回って描画されます。運動機能に制約があるタッチ利用者は、このコントロールを押し損ねる可能性があります。"
+          },
+          "sourceLocale": "en-US"
+        },
         "defaultLocale": "en-US",
         "defaultText": "The real cockpit-mobile Findings screen renders compact 32dp filter controls below Android's 48dp minimum target size — touch users with motor impairments can miss the control entirely.",
         "icuArgs": {},
@@ -5059,6 +7547,39 @@ window.__SCRIBE_MANIFEST__ = {
         }
       },
       "title": {
+        "catalogDependency": {
+          "explicitLocales": [],
+          "lookupLocales": [
+            "en-US",
+            "en-GB",
+            "en-CA",
+            "fr-CA",
+            "en-IN",
+            "cy-GB",
+            "gd-GB",
+            "ga-GB",
+            "es-US",
+            "es-MX",
+            "de-DE",
+            "fr-FR",
+            "es-ES",
+            "it-IT",
+            "nl-NL",
+            "pl-PL",
+            "pt-PT",
+            "pt-BR",
+            "ro-RO",
+            "sv-SE",
+            "ko-KR",
+            "zh-CN",
+            "ja-JP",
+            "hi-IN"
+          ],
+          "reportFallbacks": {
+            "ja-JP": "フィルターコントロールのターゲットが Android の最小値を下回っています"
+          },
+          "sourceLocale": "en-US"
+        },
         "defaultLocale": "en-US",
         "defaultText": "Filter control target is below Android minimum",
         "icuArgs": {},
@@ -5100,6 +7621,7 @@ window.__SCRIBE_MANIFEST__ = {
         }
       ],
       "classification": "accessibility",
+      "contextLinks": [],
       "controlIds": [
         "wcag-1-4-4-resize-text"
       ],
@@ -5109,12 +7631,98 @@ window.__SCRIBE_MANIFEST__ = {
         "compose-multiplatform-ios-hig-dynamic-type"
       ],
       "language": "kotlin",
+      "recommendation": {
+        "catalogDependency": {
+          "explicitLocales": [],
+          "lookupLocales": [
+            "en-US",
+            "en-GB",
+            "en-CA",
+            "fr-CA",
+            "en-IN",
+            "cy-GB",
+            "gd-GB",
+            "ga-GB",
+            "es-US",
+            "es-MX",
+            "de-DE",
+            "fr-FR",
+            "es-ES",
+            "it-IT",
+            "nl-NL",
+            "pl-PL",
+            "pt-PT",
+            "pt-BR",
+            "ro-RO",
+            "sv-SE",
+            "ko-KR",
+            "zh-CN",
+            "ja-JP",
+            "hi-IN"
+          ],
+          "reportFallbacks": {
+            "ja-JP": "見出しが切り詰められるのではなくリフローするように、見出しテキストの折り返しと間隔をトークン駆動のまま保ちます。"
+          },
+          "sourceLocale": "en-US"
+        },
+        "defaultLocale": "en-US",
+        "defaultText": "Keep heading text wrapping and spacing token-driven so the heading reflows instead of truncating.",
+        "icuArgs": {},
+        "msgid": "scribe.report.complianceExample.4.finding.fix",
+        "provenance": "template",
+        "reviewState": "reviewed",
+        "values": {
+          "en-US": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Keep heading text wrapping and spacing token-driven so the heading reflows instead of truncating."
+          },
+          "ja-JP": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "見出しが切り詰められるのではなくリフローするように、見出しテキストの折り返しと間隔をトークン駆動のまま保ちます。"
+          }
+        }
+      },
       "severity": "medium",
       "shareActionId": "share-missing-alt",
       "sourceSnippetIds": [
         "source-5-finding-group-heading-can-truncate-under-ios-dynamic-type"
       ],
       "summary": {
+        "catalogDependency": {
+          "explicitLocales": [],
+          "lookupLocales": [
+            "en-US",
+            "en-GB",
+            "en-CA",
+            "fr-CA",
+            "en-IN",
+            "cy-GB",
+            "gd-GB",
+            "ga-GB",
+            "es-US",
+            "es-MX",
+            "de-DE",
+            "fr-FR",
+            "es-ES",
+            "it-IT",
+            "nl-NL",
+            "pl-PL",
+            "pt-PT",
+            "pt-BR",
+            "ro-RO",
+            "sv-SE",
+            "ko-KR",
+            "zh-CN",
+            "ja-JP",
+            "hi-IN"
+          ],
+          "reportFallbacks": {
+            "ja-JP": "シミュレータで使用した iOS 実行時テキストスケールでは、Findings グループ見出しが完全なラベルを表示する前に切り詰められます。大きなテキストを使用する読者はセクションの文脈を失います。"
+          },
+          "sourceLocale": "en-US"
+        },
         "defaultLocale": "en-US",
         "defaultText": "Under the iOS runtime text scale used by the simulator, the Findings group heading truncates before its full label fits — readers using larger text lose the section context.",
         "icuArgs": {},
@@ -5135,6 +7743,39 @@ window.__SCRIBE_MANIFEST__ = {
         }
       },
       "title": {
+        "catalogDependency": {
+          "explicitLocales": [],
+          "lookupLocales": [
+            "en-US",
+            "en-GB",
+            "en-CA",
+            "fr-CA",
+            "en-IN",
+            "cy-GB",
+            "gd-GB",
+            "ga-GB",
+            "es-US",
+            "es-MX",
+            "de-DE",
+            "fr-FR",
+            "es-ES",
+            "it-IT",
+            "nl-NL",
+            "pl-PL",
+            "pt-PT",
+            "pt-BR",
+            "ro-RO",
+            "sv-SE",
+            "ko-KR",
+            "zh-CN",
+            "ja-JP",
+            "hi-IN"
+          ],
+          "reportFallbacks": {
+            "ja-JP": "iOS Dynamic Type で検出グループ見出しが途中で切れる可能性があります"
+          },
+          "sourceLocale": "en-US"
+        },
         "defaultLocale": "en-US",
         "defaultText": "Finding group heading can truncate under iOS Dynamic Type",
         "icuArgs": {},
@@ -5176,6 +7817,7 @@ window.__SCRIBE_MANIFEST__ = {
         }
       ],
       "classification": "brand-consistency",
+      "contextLinks": [],
       "controlIds": [
         "mobile-brand-consistency-color"
       ],
@@ -5185,12 +7827,98 @@ window.__SCRIBE_MANIFEST__ = {
         "compose-multiplatform-material-design-brand-parity-color-drift"
       ],
       "language": "kotlin",
+      "recommendation": {
+        "catalogDependency": {
+          "explicitLocales": [],
+          "lookupLocales": [
+            "en-US",
+            "en-GB",
+            "en-CA",
+            "fr-CA",
+            "en-IN",
+            "cy-GB",
+            "gd-GB",
+            "ga-GB",
+            "es-US",
+            "es-MX",
+            "de-DE",
+            "fr-FR",
+            "es-ES",
+            "it-IT",
+            "nl-NL",
+            "pl-PL",
+            "pt-PT",
+            "pt-BR",
+            "ro-RO",
+            "sv-SE",
+            "ko-KR",
+            "zh-CN",
+            "ja-JP",
+            "hi-IN"
+          ],
+          "reportFallbacks": {
+            "ja-JP": "描画される Android の色を、デザインシステムで定義されたブランドトークンに合わせます。"
+          },
+          "sourceLocale": "en-US"
+        },
+        "defaultLocale": "en-US",
+        "defaultText": "Align the rendered Android color to the brand token defined in the design system.",
+        "icuArgs": {},
+        "msgid": "scribe.report.complianceExample.5.finding.fix",
+        "provenance": "template",
+        "reviewState": "reviewed",
+        "values": {
+          "en-US": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Align the rendered Android color to the brand token defined in the design system."
+          },
+          "ja-JP": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "描画される Android の色を、デザインシステムで定義されたブランドトークンに合わせます。"
+          }
+        }
+      },
       "severity": "medium",
       "shareActionId": "share-missing-alt",
       "sourceSnippetIds": [
         "source-6-mobile-brand-consistency-gap-color-drift"
       ],
       "summary": {
+        "catalogDependency": {
+          "explicitLocales": [],
+          "lookupLocales": [
+            "en-US",
+            "en-GB",
+            "en-CA",
+            "fr-CA",
+            "en-IN",
+            "cy-GB",
+            "gd-GB",
+            "ga-GB",
+            "es-US",
+            "es-MX",
+            "de-DE",
+            "fr-FR",
+            "es-ES",
+            "it-IT",
+            "nl-NL",
+            "pl-PL",
+            "pt-PT",
+            "pt-BR",
+            "ro-RO",
+            "sv-SE",
+            "ko-KR",
+            "zh-CN",
+            "ja-JP",
+            "hi-IN"
+          ],
+          "reportFallbacks": {
+            "ja-JP": "Android で描画されたサマリーアクションのアクセント色が、ブランド基準とは異なる色で出荷されていました。クロスプラットフォームのブランドずれは単一プラットフォーム監査では見えませんが、両方の描画を横並びで比較すると明確です。"
+          },
+          "sourceLocale": "en-US"
+        },
         "defaultLocale": "en-US",
         "defaultText": "The Android render of the summary action accent shipped a different color than the brand reference. Cross-platform brand drift is invisible to single-platform audits but obvious when both renders are compared side-by-side.",
         "icuArgs": {},
@@ -5211,6 +7939,39 @@ window.__SCRIBE_MANIFEST__ = {
         }
       },
       "title": {
+        "catalogDependency": {
+          "explicitLocales": [],
+          "lookupLocales": [
+            "en-US",
+            "en-GB",
+            "en-CA",
+            "fr-CA",
+            "en-IN",
+            "cy-GB",
+            "gd-GB",
+            "ga-GB",
+            "es-US",
+            "es-MX",
+            "de-DE",
+            "fr-FR",
+            "es-ES",
+            "it-IT",
+            "nl-NL",
+            "pl-PL",
+            "pt-PT",
+            "pt-BR",
+            "ro-RO",
+            "sv-SE",
+            "ko-KR",
+            "zh-CN",
+            "ja-JP",
+            "hi-IN"
+          ],
+          "reportFallbacks": {
+            "ja-JP": "モバイルのブランド一貫性ギャップ（色のずれ）"
+          },
+          "sourceLocale": "en-US"
+        },
         "defaultLocale": "en-US",
         "defaultText": "Mobile brand consistency gap (color drift)",
         "icuArgs": {},
@@ -5252,6 +8013,7 @@ window.__SCRIBE_MANIFEST__ = {
         }
       ],
       "classification": "accessibility",
+      "contextLinks": [],
       "controlIds": [
         "wcag-1-1-1-non-text-content"
       ],
@@ -5261,12 +8023,98 @@ window.__SCRIBE_MANIFEST__ = {
         "uikit-objective-c-ios-runtime"
       ],
       "language": "objectivec",
+      "recommendation": {
+        "catalogDependency": {
+          "explicitLocales": [],
+          "lookupLocales": [
+            "en-US",
+            "en-GB",
+            "en-CA",
+            "fr-CA",
+            "en-IN",
+            "cy-GB",
+            "gd-GB",
+            "ga-GB",
+            "es-US",
+            "es-MX",
+            "de-DE",
+            "fr-FR",
+            "es-ES",
+            "it-IT",
+            "nl-NL",
+            "pl-PL",
+            "pt-PT",
+            "pt-BR",
+            "ro-RO",
+            "sv-SE",
+            "ko-KR",
+            "zh-CN",
+            "ja-JP",
+            "hi-IN"
+          ],
+          "reportFallbacks": {
+            "ja-JP": "SwiftUI 変換が実行される前に、UIKit 側で avatarImageView.accessibilityLabel に製品固有の文字列を設定します。"
+          },
+          "sourceLocale": "en-US"
+        },
+        "defaultLocale": "en-US",
+        "defaultText": "Set avatarImageView.accessibilityLabel to a product-specific string in UIKit before the SwiftUI transform runs.",
+        "icuArgs": {},
+        "msgid": "scribe.report.complianceExample.6.finding.fix",
+        "provenance": "template",
+        "reviewState": "reviewed",
+        "values": {
+          "en-US": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Set avatarImageView.accessibilityLabel to a product-specific string in UIKit before the SwiftUI transform runs."
+          },
+          "ja-JP": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "SwiftUI 変換が実行される前に、UIKit 側で avatarImageView.accessibilityLabel に製品固有の文字列を設定します。"
+          }
+        }
+      },
       "severity": "high",
       "shareActionId": "share-missing-alt",
       "sourceSnippetIds": [
         "source-7-objective-c-uikit-image-is-missing-an-accessible-name"
       ],
       "summary": {
+        "catalogDependency": {
+          "explicitLocales": [],
+          "lookupLocales": [
+            "en-US",
+            "en-GB",
+            "en-CA",
+            "fr-CA",
+            "en-IN",
+            "cy-GB",
+            "gd-GB",
+            "ga-GB",
+            "es-US",
+            "es-MX",
+            "de-DE",
+            "fr-FR",
+            "es-ES",
+            "it-IT",
+            "nl-NL",
+            "pl-PL",
+            "pt-PT",
+            "pt-BR",
+            "ro-RO",
+            "sv-SE",
+            "ko-KR",
+            "zh-CN",
+            "ja-JP",
+            "hi-IN"
+          ],
+          "reportFallbacks": {
+            "ja-JP": "UIImageView は画像トレイトを持つアクセシビリティ要素として明示的にマークされていますが、accessibilityLabel がありません。そのため、SwiftUI Image 変換はラベルのない意味のある画像を引き継ぎます。"
+          },
+          "sourceLocale": "en-US"
+        },
         "defaultLocale": "en-US",
         "defaultText": "The UIImageView is explicitly marked as an accessibility element with the image trait but carries no accessibilityLabel, so the SwiftUI Image transform inherits an unlabelled meaningful image.",
         "icuArgs": {},
@@ -5287,6 +8135,39 @@ window.__SCRIBE_MANIFEST__ = {
         }
       },
       "title": {
+        "catalogDependency": {
+          "explicitLocales": [],
+          "lookupLocales": [
+            "en-US",
+            "en-GB",
+            "en-CA",
+            "fr-CA",
+            "en-IN",
+            "cy-GB",
+            "gd-GB",
+            "ga-GB",
+            "es-US",
+            "es-MX",
+            "de-DE",
+            "fr-FR",
+            "es-ES",
+            "it-IT",
+            "nl-NL",
+            "pl-PL",
+            "pt-PT",
+            "pt-BR",
+            "ro-RO",
+            "sv-SE",
+            "ko-KR",
+            "zh-CN",
+            "ja-JP",
+            "hi-IN"
+          ],
+          "reportFallbacks": {
+            "ja-JP": "Objective-C UIKit 画像にアクセシブル名がありません"
+          },
+          "sourceLocale": "en-US"
+        },
         "defaultLocale": "en-US",
         "defaultText": "Objective-C UIKit image is missing an accessible name",
         "icuArgs": {},
@@ -5328,6 +8209,7 @@ window.__SCRIBE_MANIFEST__ = {
         }
       ],
       "classification": "source-trace",
+      "contextLinks": [],
       "controlIds": [
         "sonde-source-trace-availability"
       ],
@@ -5337,12 +8219,98 @@ window.__SCRIBE_MANIFEST__ = {
         "react-native-source-trace"
       ],
       "language": "typescript",
+      "recommendation": {
+        "catalogDependency": {
+          "explicitLocales": [],
+          "lookupLocales": [
+            "en-US",
+            "en-GB",
+            "en-CA",
+            "fr-CA",
+            "en-IN",
+            "cy-GB",
+            "gd-GB",
+            "ga-GB",
+            "es-US",
+            "es-MX",
+            "de-DE",
+            "fr-FR",
+            "es-ES",
+            "it-IT",
+            "nl-NL",
+            "pl-PL",
+            "pt-PT",
+            "pt-BR",
+            "ro-RO",
+            "sv-SE",
+            "ko-KR",
+            "zh-CN",
+            "ja-JP",
+            "hi-IN"
+          ],
+          "reportFallbacks": {
+            "ja-JP": "画面が英語以外の利用者に届く前に、ハードコードされた `accessibilityLabel` をローカライズ済み文字列の参照に置き換えます。"
+          },
+          "sourceLocale": "en-US"
+        },
+        "defaultLocale": "en-US",
+        "defaultText": "Replace the hardcoded `accessibilityLabel` with a localized string lookup before the screen reaches non-English users.",
+        "icuArgs": {},
+        "msgid": "scribe.report.complianceExample.7.finding.fix",
+        "provenance": "template",
+        "reviewState": "reviewed",
+        "values": {
+          "en-US": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Replace the hardcoded `accessibilityLabel` with a localized string lookup before the screen reaches non-English users."
+          },
+          "ja-JP": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "画面が英語以外の利用者に届く前に、ハードコードされた `accessibilityLabel` をローカライズ済み文字列の参照に置き換えます。"
+          }
+        }
+      },
       "severity": "medium",
       "shareActionId": "share-missing-alt",
       "sourceSnippetIds": [
         "source-8-hardcoded-english-accessibility-label"
       ],
       "summary": {
+        "catalogDependency": {
+          "explicitLocales": [],
+          "lookupLocales": [
+            "en-US",
+            "en-GB",
+            "en-CA",
+            "fr-CA",
+            "en-IN",
+            "cy-GB",
+            "gd-GB",
+            "ga-GB",
+            "es-US",
+            "es-MX",
+            "de-DE",
+            "fr-FR",
+            "es-ES",
+            "it-IT",
+            "nl-NL",
+            "pl-PL",
+            "pt-PT",
+            "pt-BR",
+            "ro-RO",
+            "sv-SE",
+            "ko-KR",
+            "zh-CN",
+            "ja-JP",
+            "hi-IN"
+          ],
+          "reportFallbacks": {
+            "ja-JP": "`<Text>` 要素は英語の `accessibilityLabel` をハードコードしたまま出荷されます。英語以外の利用者は、ロケールに関係なく英語の文字列をそのまま聞くことになります。"
+          },
+          "sourceLocale": "en-US"
+        },
         "defaultLocale": "en-US",
         "defaultText": "The `<Text>` element ships with a hardcoded English `accessibilityLabel`. Non-English users will hear the literal English string regardless of their locale.",
         "icuArgs": {},
@@ -5363,6 +8331,39 @@ window.__SCRIBE_MANIFEST__ = {
         }
       },
       "title": {
+        "catalogDependency": {
+          "explicitLocales": [],
+          "lookupLocales": [
+            "en-US",
+            "en-GB",
+            "en-CA",
+            "fr-CA",
+            "en-IN",
+            "cy-GB",
+            "gd-GB",
+            "ga-GB",
+            "es-US",
+            "es-MX",
+            "de-DE",
+            "fr-FR",
+            "es-ES",
+            "it-IT",
+            "nl-NL",
+            "pl-PL",
+            "pt-PT",
+            "pt-BR",
+            "ro-RO",
+            "sv-SE",
+            "ko-KR",
+            "zh-CN",
+            "ja-JP",
+            "hi-IN"
+          ],
+          "reportFallbacks": {
+            "ja-JP": "英語のアクセシビリティラベルがハードコードされています"
+          },
+          "sourceLocale": "en-US"
+        },
         "defaultLocale": "en-US",
         "defaultText": "Hardcoded English accessibility label",
         "icuArgs": {},
@@ -5404,6 +8405,7 @@ window.__SCRIBE_MANIFEST__ = {
         }
       ],
       "classification": "accessibility",
+      "contextLinks": [],
       "controlIds": [
         "wcag-1-1-1-non-text-content-level-a"
       ],
@@ -5413,12 +8415,98 @@ window.__SCRIBE_MANIFEST__ = {
         "react-tsx-wcag-static-probe"
       ],
       "language": "typescript",
+      "recommendation": {
+        "catalogDependency": {
+          "explicitLocales": [],
+          "lookupLocales": [
+            "en-US",
+            "en-GB",
+            "en-CA",
+            "fr-CA",
+            "en-IN",
+            "cy-GB",
+            "gd-GB",
+            "ga-GB",
+            "es-US",
+            "es-MX",
+            "de-DE",
+            "fr-FR",
+            "es-ES",
+            "it-IT",
+            "nl-NL",
+            "pl-PL",
+            "pt-PT",
+            "pt-BR",
+            "ro-RO",
+            "sv-SE",
+            "ko-KR",
+            "zh-CN",
+            "ja-JP",
+            "hi-IN"
+          ],
+          "reportFallbacks": {
+            "ja-JP": "情報を伝える画像には `alt=\"説明\"` を追加し、装飾画像には `alt=\"\"` を追加します。"
+          },
+          "sourceLocale": "en-US"
+        },
+        "defaultLocale": "en-US",
+        "defaultText": "Add `alt=\"description\"` for informative images, or `alt=\"\"` for decorative images.",
+        "icuArgs": {},
+        "msgid": "scribe.report.complianceExample.8.finding.fix",
+        "provenance": "template",
+        "reviewState": "reviewed",
+        "values": {
+          "en-US": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Add `alt=\"description\"` for informative images, or `alt=\"\"` for decorative images."
+          },
+          "ja-JP": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "情報を伝える画像には `alt=\"説明\"` を追加し、装飾画像には `alt=\"\"` を追加します。"
+          }
+        }
+      },
       "severity": "high",
       "shareActionId": "share-missing-alt",
       "sourceSnippetIds": [
         "source-9-image-element-is-missing-the-alt-attribute"
       ],
       "summary": {
+        "catalogDependency": {
+          "explicitLocales": [],
+          "lookupLocales": [
+            "en-US",
+            "en-GB",
+            "en-CA",
+            "fr-CA",
+            "en-IN",
+            "cy-GB",
+            "gd-GB",
+            "ga-GB",
+            "es-US",
+            "es-MX",
+            "de-DE",
+            "fr-FR",
+            "es-ES",
+            "it-IT",
+            "nl-NL",
+            "pl-PL",
+            "pt-PT",
+            "pt-BR",
+            "ro-RO",
+            "sv-SE",
+            "ko-KR",
+            "zh-CN",
+            "ja-JP",
+            "hi-IN"
+          ],
+          "reportFallbacks": {
+            "ja-JP": "素の `<img>` 要素は alt 属性を公開しないため、支援技術はファイルパスを読み上げるか、何も読み上げません。"
+          },
+          "sourceLocale": "en-US"
+        },
         "defaultLocale": "en-US",
         "defaultText": "The bare `<img>` element exposes no alt attribute, so assistive technologies announce the file path or nothing at all.",
         "icuArgs": {},
@@ -5439,6 +8527,39 @@ window.__SCRIBE_MANIFEST__ = {
         }
       },
       "title": {
+        "catalogDependency": {
+          "explicitLocales": [],
+          "lookupLocales": [
+            "en-US",
+            "en-GB",
+            "en-CA",
+            "fr-CA",
+            "en-IN",
+            "cy-GB",
+            "gd-GB",
+            "ga-GB",
+            "es-US",
+            "es-MX",
+            "de-DE",
+            "fr-FR",
+            "es-ES",
+            "it-IT",
+            "nl-NL",
+            "pl-PL",
+            "pt-PT",
+            "pt-BR",
+            "ro-RO",
+            "sv-SE",
+            "ko-KR",
+            "zh-CN",
+            "ja-JP",
+            "hi-IN"
+          ],
+          "reportFallbacks": {
+            "ja-JP": "画像要素に alt 属性がありません"
+          },
+          "sourceLocale": "en-US"
+        },
         "defaultLocale": "en-US",
         "defaultText": "Image element is missing the alt attribute",
         "icuArgs": {},
@@ -5480,6 +8601,7 @@ window.__SCRIBE_MANIFEST__ = {
         }
       ],
       "classification": "accessibility",
+      "contextLinks": [],
       "controlIds": [
         "wcag-2-4-3-focus-order-level-a"
       ],
@@ -5489,12 +8611,98 @@ window.__SCRIBE_MANIFEST__ = {
         "html-wcag-mechanical-probe"
       ],
       "language": "html",
+      "recommendation": {
+        "catalogDependency": {
+          "explicitLocales": [],
+          "lookupLocales": [
+            "en-US",
+            "en-GB",
+            "en-CA",
+            "fr-CA",
+            "en-IN",
+            "cy-GB",
+            "gd-GB",
+            "ga-GB",
+            "es-US",
+            "es-MX",
+            "de-DE",
+            "fr-FR",
+            "es-ES",
+            "it-IT",
+            "nl-NL",
+            "pl-PL",
+            "pt-PT",
+            "pt-BR",
+            "ro-RO",
+            "sv-SE",
+            "ko-KR",
+            "zh-CN",
+            "ja-JP",
+            "hi-IN"
+          ],
+          "reportFallbacks": {
+            "ja-JP": "自然なタブ順序に加える場合は `tabindex=\"0\"` を使用し、プログラムによるフォーカス専用には `tabindex=\"-1\"` を使用します。望ましいタブ順序になるよう DOM 順序を並べ替えます。"
+          },
+          "sourceLocale": "en-US"
+        },
+        "defaultLocale": "en-US",
+        "defaultText": "Use `tabindex=\"0\"` to add to natural tab order, or `tabindex=\"-1\"` for programmatic focus only. Rearrange DOM order to achieve the desired tab sequence.",
+        "icuArgs": {},
+        "msgid": "scribe.report.complianceExample.9.finding.fix",
+        "provenance": "template",
+        "reviewState": "reviewed",
+        "values": {
+          "en-US": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Use `tabindex=\"0\"` to add to natural tab order, or `tabindex=\"-1\"` for programmatic focus only. Rearrange DOM order to achieve the desired tab sequence."
+          },
+          "ja-JP": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "自然なタブ順序に加える場合は `tabindex=\"0\"` を使用し、プログラムによるフォーカス専用には `tabindex=\"-1\"` を使用します。望ましいタブ順序になるよう DOM 順序を並べ替えます。"
+          }
+        }
+      },
       "severity": "high",
       "shareActionId": "share-missing-alt",
       "sourceSnippetIds": [
         "source-10-element-has-positive-tabindex-focus-order"
       ],
       "summary": {
+        "catalogDependency": {
+          "explicitLocales": [],
+          "lookupLocales": [
+            "en-US",
+            "en-GB",
+            "en-CA",
+            "fr-CA",
+            "en-IN",
+            "cy-GB",
+            "gd-GB",
+            "ga-GB",
+            "es-US",
+            "es-MX",
+            "de-DE",
+            "fr-FR",
+            "es-ES",
+            "it-IT",
+            "nl-NL",
+            "pl-PL",
+            "pt-PT",
+            "pt-BR",
+            "ro-RO",
+            "sv-SE",
+            "ko-KR",
+            "zh-CN",
+            "ja-JP",
+            "hi-IN"
+          ],
+          "reportFallbacks": {
+            "ja-JP": "`<button tabindex=\"3\">` は予測できないフォーカス順序を作ります。正の tabindex 値は自然な DOM 順序から飛び出し、キーボード利用者を混乱させます。"
+          },
+          "sourceLocale": "en-US"
+        },
         "defaultLocale": "en-US",
         "defaultText": "The `<button tabindex=\"3\">` creates an unpredictable focus order — positive tabindex values jump out of natural DOM order and disorient keyboard users.",
         "icuArgs": {},
@@ -5515,6 +8723,39 @@ window.__SCRIBE_MANIFEST__ = {
         }
       },
       "title": {
+        "catalogDependency": {
+          "explicitLocales": [],
+          "lookupLocales": [
+            "en-US",
+            "en-GB",
+            "en-CA",
+            "fr-CA",
+            "en-IN",
+            "cy-GB",
+            "gd-GB",
+            "ga-GB",
+            "es-US",
+            "es-MX",
+            "de-DE",
+            "fr-FR",
+            "es-ES",
+            "it-IT",
+            "nl-NL",
+            "pl-PL",
+            "pt-PT",
+            "pt-BR",
+            "ro-RO",
+            "sv-SE",
+            "ko-KR",
+            "zh-CN",
+            "ja-JP",
+            "hi-IN"
+          ],
+          "reportFallbacks": {
+            "ja-JP": "要素に正の tabindex があります（フォーカス順序）"
+          },
+          "sourceLocale": "en-US"
+        },
         "defaultLocale": "en-US",
         "defaultText": "Element has positive tabindex (focus order)",
         "icuArgs": {},
@@ -5542,6 +8783,37 @@ window.__SCRIBE_MANIFEST__ = {
       "href": "fix-plans/finding-missing-alt/index.html",
       "licenseState": "visible",
       "title": {
+        "catalogDependency": {
+          "explicitLocales": [],
+          "lookupLocales": [
+            "en-US",
+            "en-GB",
+            "en-CA",
+            "fr-CA",
+            "en-IN",
+            "cy-GB",
+            "gd-GB",
+            "ga-GB",
+            "es-US",
+            "es-MX",
+            "de-DE",
+            "fr-FR",
+            "es-ES",
+            "it-IT",
+            "nl-NL",
+            "pl-PL",
+            "pt-PT",
+            "pt-BR",
+            "ro-RO",
+            "sv-SE",
+            "ko-KR",
+            "zh-CN",
+            "ja-JP",
+            "hi-IN"
+          ],
+          "reportFallbacks": {},
+          "sourceLocale": "en-US"
+        },
         "defaultLocale": "en-US",
         "defaultText": "Fix plan",
         "icuArgs": {},
@@ -5677,6 +8949,37 @@ window.__SCRIBE_MANIFEST__ = {
     {
       "aliases": [
         {
+          "catalogDependency": {
+            "explicitLocales": [],
+            "lookupLocales": [
+              "en-US",
+              "en-GB",
+              "en-CA",
+              "fr-CA",
+              "en-IN",
+              "cy-GB",
+              "gd-GB",
+              "ga-GB",
+              "es-US",
+              "es-MX",
+              "de-DE",
+              "fr-FR",
+              "es-ES",
+              "it-IT",
+              "nl-NL",
+              "pl-PL",
+              "pt-PT",
+              "pt-BR",
+              "ro-RO",
+              "sv-SE",
+              "ko-KR",
+              "zh-CN",
+              "ja-JP",
+              "hi-IN"
+            ],
+            "reportFallbacks": {},
+            "sourceLocale": "en-US"
+          },
           "defaultLocale": "en-US",
           "defaultText": "Text alternative",
           "icuArgs": {},
@@ -5684,15 +8987,151 @@ window.__SCRIBE_MANIFEST__ = {
           "provenance": "template",
           "reviewState": "reviewed",
           "values": {
+            "cy-GB": {
+              "fallback": false,
+              "reviewed": true,
+              "text": "Testun dewisol"
+            },
+            "de-DE": {
+              "fallback": false,
+              "reviewed": true,
+              "text": "Textalternative"
+            },
+            "en-CA": {
+              "fallback": false,
+              "reviewed": true,
+              "text": "Text alternative"
+            },
+            "en-GB": {
+              "fallback": false,
+              "reviewed": true,
+              "text": "Text alternative"
+            },
+            "en-IN": {
+              "fallback": false,
+              "reviewed": true,
+              "text": "Text alternative"
+            },
             "en-US": {
               "fallback": false,
               "reviewed": true,
               "text": "Text alternative"
+            },
+            "es-ES": {
+              "fallback": false,
+              "reviewed": true,
+              "text": "Alternativa de texto"
+            },
+            "es-MX": {
+              "fallback": false,
+              "reviewed": true,
+              "text": "Alternativa de texto"
+            },
+            "es-US": {
+              "fallback": false,
+              "reviewed": true,
+              "text": "Alternativa de texto"
+            },
+            "fr-CA": {
+              "fallback": false,
+              "reviewed": true,
+              "text": "Alternative textuelle"
+            },
+            "fr-FR": {
+              "fallback": false,
+              "reviewed": true,
+              "text": "Alternative textuelle"
+            },
+            "hi-IN": {
+              "fallback": false,
+              "reviewed": true,
+              "text": "टेक्स्ट विकल्प"
+            },
+            "it-IT": {
+              "fallback": false,
+              "reviewed": true,
+              "text": "Alternativa testuale"
+            },
+            "ja-JP": {
+              "fallback": false,
+              "reviewed": true,
+              "text": "テキスト代替物"
+            },
+            "ko-KR": {
+              "fallback": false,
+              "reviewed": true,
+              "text": "텍스트 대체물"
+            },
+            "nl-NL": {
+              "fallback": false,
+              "reviewed": true,
+              "text": "Tekstalternatief"
+            },
+            "pl-PL": {
+              "fallback": false,
+              "reviewed": true,
+              "text": "Alternatywa tekstowa"
+            },
+            "pt-BR": {
+              "fallback": false,
+              "reviewed": true,
+              "text": "Alternativa de texto"
+            },
+            "pt-PT": {
+              "fallback": false,
+              "reviewed": true,
+              "text": "Alternativa de texto"
+            },
+            "ro-RO": {
+              "fallback": false,
+              "reviewed": true,
+              "text": "Alternativă text"
+            },
+            "sv-SE": {
+              "fallback": false,
+              "reviewed": true,
+              "text": "Textalternativ"
+            },
+            "zh-CN": {
+              "fallback": false,
+              "reviewed": true,
+              "text": "文本替代方案"
             }
           }
         }
       ],
       "label": {
+        "catalogDependency": {
+          "explicitLocales": [],
+          "lookupLocales": [
+            "en-US",
+            "en-GB",
+            "en-CA",
+            "fr-CA",
+            "en-IN",
+            "cy-GB",
+            "gd-GB",
+            "ga-GB",
+            "es-US",
+            "es-MX",
+            "de-DE",
+            "fr-FR",
+            "es-ES",
+            "it-IT",
+            "nl-NL",
+            "pl-PL",
+            "pt-PT",
+            "pt-BR",
+            "ro-RO",
+            "sv-SE",
+            "ko-KR",
+            "zh-CN",
+            "ja-JP",
+            "hi-IN"
+          ],
+          "reportFallbacks": {},
+          "sourceLocale": "en-US"
+        },
         "defaultLocale": "en-US",
         "defaultText": "Alt text",
         "icuArgs": {},
@@ -5700,10 +9139,115 @@ window.__SCRIBE_MANIFEST__ = {
         "provenance": "template",
         "reviewState": "reviewed",
         "values": {
+          "cy-GB": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Testun Alt"
+          },
+          "de-DE": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Alternativtext"
+          },
+          "en-CA": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Alt text"
+          },
+          "en-GB": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Alt text"
+          },
+          "en-IN": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Alt text"
+          },
           "en-US": {
             "fallback": false,
             "reviewed": true,
             "text": "Alt text"
+          },
+          "es-ES": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Texto alternativo"
+          },
+          "es-MX": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Texto alternativo"
+          },
+          "es-US": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Texto alternativo"
+          },
+          "fr-CA": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Texte alternatif"
+          },
+          "fr-FR": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Texte alternatif"
+          },
+          "hi-IN": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "ऑल्ट टेक्स्ट"
+          },
+          "it-IT": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Testo alternativo"
+          },
+          "ja-JP": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "代替テキスト"
+          },
+          "ko-KR": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "대체 텍스트"
+          },
+          "nl-NL": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Alt-tekst"
+          },
+          "pl-PL": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Tekst alternatywny"
+          },
+          "pt-BR": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Texto alternativo"
+          },
+          "pt-PT": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Texto alternativo"
+          },
+          "ro-RO": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Text alternativ"
+          },
+          "sv-SE": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "Alternativ text"
+          },
+          "zh-CN": {
+            "fallback": false,
+            "reviewed": true,
+            "text": "替代文本"
           }
         }
       },
@@ -5735,7 +9279,7 @@ window.__SCRIBE_MANIFEST__ = {
         "coverage": {
           "complete": true,
           "fallbackCount": 0,
-          "messageCount": 131
+          "messageCount": 201
         },
         "dir": "ltr",
         "lang": "en-US",
@@ -5745,8 +9289,8 @@ window.__SCRIBE_MANIFEST__ = {
       {
         "coverage": {
           "complete": false,
-          "fallbackCount": 24,
-          "messageCount": 131
+          "fallbackCount": 20,
+          "messageCount": 201
         },
         "dir": "ltr",
         "lang": "en-GB",
@@ -5756,8 +9300,8 @@ window.__SCRIBE_MANIFEST__ = {
       {
         "coverage": {
           "complete": false,
-          "fallbackCount": 24,
-          "messageCount": 131
+          "fallbackCount": 20,
+          "messageCount": 201
         },
         "dir": "ltr",
         "lang": "en-CA",
@@ -5767,8 +9311,8 @@ window.__SCRIBE_MANIFEST__ = {
       {
         "coverage": {
           "complete": false,
-          "fallbackCount": 24,
-          "messageCount": 131
+          "fallbackCount": 20,
+          "messageCount": 201
         },
         "dir": "ltr",
         "lang": "fr-CA",
@@ -5778,8 +9322,8 @@ window.__SCRIBE_MANIFEST__ = {
       {
         "coverage": {
           "complete": false,
-          "fallbackCount": 24,
-          "messageCount": 131
+          "fallbackCount": 20,
+          "messageCount": 201
         },
         "dir": "ltr",
         "lang": "en-IN",
@@ -5789,8 +9333,8 @@ window.__SCRIBE_MANIFEST__ = {
       {
         "coverage": {
           "complete": false,
-          "fallbackCount": 24,
-          "messageCount": 131
+          "fallbackCount": 20,
+          "messageCount": 201
         },
         "dir": "ltr",
         "lang": "cy-GB",
@@ -5800,8 +9344,8 @@ window.__SCRIBE_MANIFEST__ = {
       {
         "coverage": {
           "complete": false,
-          "fallbackCount": 32,
-          "messageCount": 131
+          "fallbackCount": 58,
+          "messageCount": 201
         },
         "dir": "ltr",
         "lang": "gd-GB",
@@ -5811,8 +9355,8 @@ window.__SCRIBE_MANIFEST__ = {
       {
         "coverage": {
           "complete": false,
-          "fallbackCount": 32,
-          "messageCount": 131
+          "fallbackCount": 58,
+          "messageCount": 201
         },
         "dir": "ltr",
         "lang": "ga-GB",
@@ -5822,8 +9366,8 @@ window.__SCRIBE_MANIFEST__ = {
       {
         "coverage": {
           "complete": false,
-          "fallbackCount": 24,
-          "messageCount": 131
+          "fallbackCount": 20,
+          "messageCount": 201
         },
         "dir": "ltr",
         "lang": "es-US",
@@ -5833,8 +9377,8 @@ window.__SCRIBE_MANIFEST__ = {
       {
         "coverage": {
           "complete": false,
-          "fallbackCount": 23,
-          "messageCount": 131
+          "fallbackCount": 20,
+          "messageCount": 201
         },
         "dir": "ltr",
         "lang": "es-MX",
@@ -5844,8 +9388,8 @@ window.__SCRIBE_MANIFEST__ = {
       {
         "coverage": {
           "complete": false,
-          "fallbackCount": 24,
-          "messageCount": 131
+          "fallbackCount": 20,
+          "messageCount": 201
         },
         "dir": "ltr",
         "lang": "de-DE",
@@ -5855,8 +9399,8 @@ window.__SCRIBE_MANIFEST__ = {
       {
         "coverage": {
           "complete": false,
-          "fallbackCount": 24,
-          "messageCount": 131
+          "fallbackCount": 20,
+          "messageCount": 201
         },
         "dir": "ltr",
         "lang": "fr-FR",
@@ -5866,8 +9410,8 @@ window.__SCRIBE_MANIFEST__ = {
       {
         "coverage": {
           "complete": false,
-          "fallbackCount": 24,
-          "messageCount": 131
+          "fallbackCount": 20,
+          "messageCount": 201
         },
         "dir": "ltr",
         "lang": "es-ES",
@@ -5877,8 +9421,8 @@ window.__SCRIBE_MANIFEST__ = {
       {
         "coverage": {
           "complete": false,
-          "fallbackCount": 24,
-          "messageCount": 131
+          "fallbackCount": 20,
+          "messageCount": 201
         },
         "dir": "ltr",
         "lang": "it-IT",
@@ -5888,8 +9432,8 @@ window.__SCRIBE_MANIFEST__ = {
       {
         "coverage": {
           "complete": false,
-          "fallbackCount": 24,
-          "messageCount": 131
+          "fallbackCount": 20,
+          "messageCount": 201
         },
         "dir": "ltr",
         "lang": "nl-NL",
@@ -5899,8 +9443,8 @@ window.__SCRIBE_MANIFEST__ = {
       {
         "coverage": {
           "complete": false,
-          "fallbackCount": 24,
-          "messageCount": 131
+          "fallbackCount": 20,
+          "messageCount": 201
         },
         "dir": "ltr",
         "lang": "pl-PL",
@@ -5910,8 +9454,8 @@ window.__SCRIBE_MANIFEST__ = {
       {
         "coverage": {
           "complete": false,
-          "fallbackCount": 24,
-          "messageCount": 131
+          "fallbackCount": 20,
+          "messageCount": 201
         },
         "dir": "ltr",
         "lang": "pt-PT",
@@ -5921,8 +9465,8 @@ window.__SCRIBE_MANIFEST__ = {
       {
         "coverage": {
           "complete": false,
-          "fallbackCount": 24,
-          "messageCount": 131
+          "fallbackCount": 20,
+          "messageCount": 201
         },
         "dir": "ltr",
         "lang": "pt-BR",
@@ -5932,8 +9476,8 @@ window.__SCRIBE_MANIFEST__ = {
       {
         "coverage": {
           "complete": false,
-          "fallbackCount": 24,
-          "messageCount": 131
+          "fallbackCount": 20,
+          "messageCount": 201
         },
         "dir": "ltr",
         "lang": "ro-RO",
@@ -5943,8 +9487,8 @@ window.__SCRIBE_MANIFEST__ = {
       {
         "coverage": {
           "complete": false,
-          "fallbackCount": 24,
-          "messageCount": 131
+          "fallbackCount": 20,
+          "messageCount": 201
         },
         "dir": "ltr",
         "lang": "sv-SE",
@@ -5954,8 +9498,8 @@ window.__SCRIBE_MANIFEST__ = {
       {
         "coverage": {
           "complete": false,
-          "fallbackCount": 24,
-          "messageCount": 131
+          "fallbackCount": 20,
+          "messageCount": 201
         },
         "dir": "ltr",
         "lang": "ko-KR",
@@ -5965,8 +9509,8 @@ window.__SCRIBE_MANIFEST__ = {
       {
         "coverage": {
           "complete": false,
-          "fallbackCount": 24,
-          "messageCount": 131
+          "fallbackCount": 20,
+          "messageCount": 201
         },
         "dir": "ltr",
         "lang": "zh-CN",
@@ -5975,9 +9519,9 @@ window.__SCRIBE_MANIFEST__ = {
       },
       {
         "coverage": {
-          "complete": false,
-          "fallbackCount": 2,
-          "messageCount": 131
+          "complete": true,
+          "fallbackCount": 0,
+          "messageCount": 201
         },
         "dir": "ltr",
         "lang": "ja-JP",
@@ -5987,8 +9531,8 @@ window.__SCRIBE_MANIFEST__ = {
       {
         "coverage": {
           "complete": false,
-          "fallbackCount": 24,
-          "messageCount": 131
+          "fallbackCount": 20,
+          "messageCount": 201
         },
         "dir": "ltr",
         "lang": "hi-IN",
@@ -6011,6 +9555,41 @@ window.__SCRIBE_MANIFEST__ = {
       "inputPath": "data/report-export-input.js",
       "kind": "vpat-html",
       "label": {
+        "catalogDependency": {
+          "explicitLocales": [
+            "es-US"
+          ],
+          "lookupLocales": [
+            "en-US",
+            "en-GB",
+            "en-CA",
+            "fr-CA",
+            "en-IN",
+            "cy-GB",
+            "gd-GB",
+            "ga-GB",
+            "es-US",
+            "es-MX",
+            "de-DE",
+            "fr-FR",
+            "es-ES",
+            "it-IT",
+            "nl-NL",
+            "pl-PL",
+            "pt-PT",
+            "pt-BR",
+            "ro-RO",
+            "sv-SE",
+            "ko-KR",
+            "zh-CN",
+            "ja-JP",
+            "hi-IN"
+          ],
+          "reportFallbacks": {
+            "ja-JP": "VPATを開く"
+          },
+          "sourceLocale": "en-US"
+        },
         "defaultLocale": "en-US",
         "defaultText": "Open VPAT",
         "icuArgs": {},
@@ -6154,6 +9733,41 @@ window.__SCRIBE_MANIFEST__ = {
       "inputPath": "data/report-export-input.js",
       "kind": "openacr-yaml",
       "label": {
+        "catalogDependency": {
+          "explicitLocales": [
+            "es-US"
+          ],
+          "lookupLocales": [
+            "en-US",
+            "en-GB",
+            "en-CA",
+            "fr-CA",
+            "en-IN",
+            "cy-GB",
+            "gd-GB",
+            "ga-GB",
+            "es-US",
+            "es-MX",
+            "de-DE",
+            "fr-FR",
+            "es-ES",
+            "it-IT",
+            "nl-NL",
+            "pl-PL",
+            "pt-PT",
+            "pt-BR",
+            "ro-RO",
+            "sv-SE",
+            "ko-KR",
+            "zh-CN",
+            "ja-JP",
+            "hi-IN"
+          ],
+          "reportFallbacks": {
+            "ja-JP": "OpenACRをダウンロード"
+          },
+          "sourceLocale": "en-US"
+        },
         "defaultLocale": "en-US",
         "defaultText": "Download OpenACR",
         "icuArgs": {},
@@ -6314,6 +9928,41 @@ window.__SCRIBE_MANIFEST__ = {
       "density": "full",
       "hiddenAnchorIds": [],
       "label": {
+        "catalogDependency": {
+          "explicitLocales": [
+            "es-US"
+          ],
+          "lookupLocales": [
+            "en-US",
+            "en-GB",
+            "en-CA",
+            "fr-CA",
+            "en-IN",
+            "cy-GB",
+            "gd-GB",
+            "ga-GB",
+            "es-US",
+            "es-MX",
+            "de-DE",
+            "fr-FR",
+            "es-ES",
+            "it-IT",
+            "nl-NL",
+            "pl-PL",
+            "pt-PT",
+            "pt-BR",
+            "ro-RO",
+            "sv-SE",
+            "ko-KR",
+            "zh-CN",
+            "ja-JP",
+            "hi-IN"
+          ],
+          "reportFallbacks": {
+            "ja-JP": "開発者"
+          },
+          "sourceLocale": "en-US"
+        },
         "defaultLocale": "en-US",
         "defaultText": "Developer",
         "icuArgs": {},
@@ -6480,6 +10129,41 @@ window.__SCRIBE_MANIFEST__ = {
         "source-10-element-has-positive-tabindex-focus-order"
       ],
       "label": {
+        "catalogDependency": {
+          "explicitLocales": [
+            "es-US"
+          ],
+          "lookupLocales": [
+            "en-US",
+            "en-GB",
+            "en-CA",
+            "fr-CA",
+            "en-IN",
+            "cy-GB",
+            "gd-GB",
+            "ga-GB",
+            "es-US",
+            "es-MX",
+            "de-DE",
+            "fr-FR",
+            "es-ES",
+            "it-IT",
+            "nl-NL",
+            "pl-PL",
+            "pt-PT",
+            "pt-BR",
+            "ro-RO",
+            "sv-SE",
+            "ko-KR",
+            "zh-CN",
+            "ja-JP",
+            "hi-IN"
+          ],
+          "reportFallbacks": {
+            "ja-JP": "エグゼクティブ"
+          },
+          "sourceLocale": "en-US"
+        },
         "defaultLocale": "en-US",
         "defaultText": "Executive",
         "icuArgs": {},
@@ -6626,6 +10310,41 @@ window.__SCRIBE_MANIFEST__ = {
       "density": "normal",
       "hiddenAnchorIds": [],
       "label": {
+        "catalogDependency": {
+          "explicitLocales": [
+            "es-US"
+          ],
+          "lookupLocales": [
+            "en-US",
+            "en-GB",
+            "en-CA",
+            "fr-CA",
+            "en-IN",
+            "cy-GB",
+            "gd-GB",
+            "ga-GB",
+            "es-US",
+            "es-MX",
+            "de-DE",
+            "fr-FR",
+            "es-ES",
+            "it-IT",
+            "nl-NL",
+            "pl-PL",
+            "pt-PT",
+            "pt-BR",
+            "ro-RO",
+            "sv-SE",
+            "ko-KR",
+            "zh-CN",
+            "ja-JP",
+            "hi-IN"
+          ],
+          "reportFallbacks": {
+            "ja-JP": "監査担当"
+          },
+          "sourceLocale": "en-US"
+        },
         "defaultLocale": "en-US",
         "defaultText": "Auditor",
         "icuArgs": {},
@@ -6766,7 +10485,7 @@ window.__SCRIBE_MANIFEST__ = {
   "reportFamily": "compliance",
   "reportId": "scribe-mobile-accessibility-scan",
   "reportProfile": {
-    "catalogHash": "-1dci7n",
+    "catalogHash": "6p0i5t",
     "profileId": "readiness",
     "rendererBinding": "mobile-accessibility-scan",
     "reportFamilyId": "accessibility",
@@ -6780,122 +10499,122 @@ window.__SCRIBE_MANIFEST__ = {
     {
       "locale": "en-US",
       "path": "data/search-index.en-US.js",
-      "tokenCount": 326
+      "tokenCount": 328
     },
     {
       "locale": "en-GB",
       "path": "data/search-index.en-GB.js",
-      "tokenCount": 326
+      "tokenCount": 328
     },
     {
       "locale": "en-CA",
       "path": "data/search-index.en-CA.js",
-      "tokenCount": 326
+      "tokenCount": 328
     },
     {
       "locale": "fr-CA",
       "path": "data/search-index.fr-CA.js",
-      "tokenCount": 350
+      "tokenCount": 373
     },
     {
       "locale": "en-IN",
       "path": "data/search-index.en-IN.js",
-      "tokenCount": 326
+      "tokenCount": 328
     },
     {
       "locale": "cy-GB",
       "path": "data/search-index.cy-GB.js",
-      "tokenCount": 347
+      "tokenCount": 379
     },
     {
       "locale": "gd-GB",
       "path": "data/search-index.gd-GB.js",
-      "tokenCount": 351
+      "tokenCount": 353
     },
     {
       "locale": "ga-GB",
       "path": "data/search-index.ga-GB.js",
-      "tokenCount": 350
+      "tokenCount": 352
     },
     {
       "locale": "es-US",
       "path": "data/search-index.es-US.js",
-      "tokenCount": 353
+      "tokenCount": 379
     },
     {
       "locale": "es-MX",
       "path": "data/search-index.es-MX.js",
-      "tokenCount": 353
+      "tokenCount": 379
     },
     {
       "locale": "de-DE",
       "path": "data/search-index.de-DE.js",
-      "tokenCount": 345
+      "tokenCount": 376
     },
     {
       "locale": "fr-FR",
       "path": "data/search-index.fr-FR.js",
-      "tokenCount": 347
+      "tokenCount": 373
     },
     {
       "locale": "es-ES",
       "path": "data/search-index.es-ES.js",
-      "tokenCount": 353
+      "tokenCount": 379
     },
     {
       "locale": "it-IT",
       "path": "data/search-index.it-IT.js",
-      "tokenCount": 345
+      "tokenCount": 373
     },
     {
       "locale": "nl-NL",
       "path": "data/search-index.nl-NL.js",
-      "tokenCount": 343
+      "tokenCount": 367
     },
     {
       "locale": "pl-PL",
       "path": "data/search-index.pl-PL.js",
-      "tokenCount": 350
+      "tokenCount": 380
     },
     {
       "locale": "pt-PT",
       "path": "data/search-index.pt-PT.js",
-      "tokenCount": 343
+      "tokenCount": 370
     },
     {
       "locale": "pt-BR",
       "path": "data/search-index.pt-BR.js",
-      "tokenCount": 342
+      "tokenCount": 369
     },
     {
       "locale": "ro-RO",
       "path": "data/search-index.ro-RO.js",
-      "tokenCount": 350
+      "tokenCount": 376
     },
     {
       "locale": "sv-SE",
       "path": "data/search-index.sv-SE.js",
-      "tokenCount": 340
+      "tokenCount": 364
     },
     {
       "locale": "ko-KR",
       "path": "data/search-index.ko-KR.js",
-      "tokenCount": 304
+      "tokenCount": 306
     },
     {
       "locale": "zh-CN",
       "path": "data/search-index.zh-CN.js",
-      "tokenCount": 304
+      "tokenCount": 306
     },
     {
       "locale": "ja-JP",
       "path": "data/search-index.ja-JP.js",
-      "tokenCount": 72
+      "tokenCount": 74
     },
     {
       "locale": "hi-IN",
       "path": "data/search-index.hi-IN.js",
-      "tokenCount": 305
+      "tokenCount": 307
     }
   ],
   "shareActions": [
@@ -6905,6 +10624,41 @@ window.__SCRIBE_MANIFEST__ = {
       "hash": "finding-missing-alt",
       "href": "findings/finding-missing-alt/index.html#finding-missing-alt",
       "label": {
+        "catalogDependency": {
+          "explicitLocales": [
+            "es-US"
+          ],
+          "lookupLocales": [
+            "en-US",
+            "en-GB",
+            "en-CA",
+            "fr-CA",
+            "en-IN",
+            "cy-GB",
+            "gd-GB",
+            "ga-GB",
+            "es-US",
+            "es-MX",
+            "de-DE",
+            "fr-FR",
+            "es-ES",
+            "it-IT",
+            "nl-NL",
+            "pl-PL",
+            "pt-PT",
+            "pt-BR",
+            "ro-RO",
+            "sv-SE",
+            "ko-KR",
+            "zh-CN",
+            "ja-JP",
+            "hi-IN"
+          ],
+          "reportFallbacks": {
+            "ja-JP": "検出結果を共有"
+          },
+          "sourceLocale": "en-US"
+        },
         "defaultLocale": "en-US",
         "defaultText": "Share finding",
         "icuArgs": {},
@@ -7035,6 +10789,39 @@ window.__SCRIBE_MANIFEST__ = {
         }
       },
       "summary": {
+        "catalogDependency": {
+          "explicitLocales": [],
+          "lookupLocales": [
+            "en-US",
+            "en-GB",
+            "en-CA",
+            "fr-CA",
+            "en-IN",
+            "cy-GB",
+            "gd-GB",
+            "ga-GB",
+            "es-US",
+            "es-MX",
+            "de-DE",
+            "fr-FR",
+            "es-ES",
+            "it-IT",
+            "nl-NL",
+            "pl-PL",
+            "pt-PT",
+            "pt-BR",
+            "ro-RO",
+            "sv-SE",
+            "ko-KR",
+            "zh-CN",
+            "ja-JP",
+            "hi-IN"
+          ],
+          "reportFallbacks": {
+            "ja-JP": "cockpit-mobile プロフィールアラートフィクスチャの SwiftUI Image は意味のあるコンテンツとして公開されていますが、accessibilityLabel がありません。"
+          },
+          "sourceLocale": "en-US"
+        },
         "defaultLocale": "en-US",
         "defaultText": "The SwiftUI Image in the cockpit-mobile profile alert fixture is exposed as meaningful content without an accessibilityLabel.",
         "icuArgs": {},
@@ -7165,6 +10952,39 @@ window.__SCRIBE_MANIFEST__ = {
         }
       },
       "title": {
+        "catalogDependency": {
+          "explicitLocales": [],
+          "lookupLocales": [
+            "en-US",
+            "en-GB",
+            "en-CA",
+            "fr-CA",
+            "en-IN",
+            "cy-GB",
+            "gd-GB",
+            "ga-GB",
+            "es-US",
+            "es-MX",
+            "de-DE",
+            "fr-FR",
+            "es-ES",
+            "it-IT",
+            "nl-NL",
+            "pl-PL",
+            "pt-PT",
+            "pt-BR",
+            "ro-RO",
+            "sv-SE",
+            "ko-KR",
+            "zh-CN",
+            "ja-JP",
+            "hi-IN"
+          ],
+          "reportFallbacks": {
+            "ja-JP": "SwiftUI 画像にアクセシブル名がありません"
+          },
+          "sourceLocale": "en-US"
+        },
         "defaultLocale": "en-US",
         "defaultText": "SwiftUI image is missing an accessible name",
         "icuArgs": {},
@@ -7351,13 +11171,50 @@ window.__SCRIBE_MANIFEST__ = {
     ],
     "xmlPath": "sitemap.xml"
   },
-  "sourcesAttribution": [],
   "sourceSnippets": [
     {
       "anchorId": "source-swiftui-missing-image-label",
-      "code": "struct SondeDogfoodSwiftUIImageMissingLabel: View {\n  var body: some View {\n    HStack {\n      Image(systemName: \"person.crop.circle.badge.exclamationmark\")\n        .font(.title2)\n      Text(\"Profile alert\")\n    }\n  }\n}",
+      "body": {
+        "code": "struct SondeSiriusSwiftUIImageMissingLabel: View {\n  var body: some View {\n    HStack {\n      Image(systemName: \"person.crop.circle.badge.exclamationmark\")\n        .font(.title2)\n      Text(\"Profile alert\")\n    }\n  }\n}",
+        "kind": "snippet"
+      },
       "endLine": 12,
       "label": {
+        "catalogDependency": {
+          "explicitLocales": [
+            "es-US"
+          ],
+          "lookupLocales": [
+            "en-US",
+            "en-GB",
+            "en-CA",
+            "fr-CA",
+            "en-IN",
+            "cy-GB",
+            "gd-GB",
+            "ga-GB",
+            "es-US",
+            "es-MX",
+            "de-DE",
+            "fr-FR",
+            "es-ES",
+            "it-IT",
+            "nl-NL",
+            "pl-PL",
+            "pt-PT",
+            "pt-BR",
+            "ro-RO",
+            "sv-SE",
+            "ko-KR",
+            "zh-CN",
+            "ja-JP",
+            "hi-IN"
+          ],
+          "reportFallbacks": {
+            "ja-JP": "{framework} のソース証拠"
+          },
+          "sourceLocale": "en-US"
+        },
         "defaultLocale": "en-US",
         "defaultText": "{framework} source evidence",
         "icuArgs": {
@@ -7495,13 +11352,51 @@ window.__SCRIBE_MANIFEST__ = {
       "sourcePath": "packages/cockpit-mobile/src/commonMain/resources/mobileA11yFixtures/swiftUiMissingImageLabel.swift",
       "startLine": 4,
       "vcsPermalink": "https://github.com/sondeinc/sonde/blob/main/packages/cockpit-mobile/src/commonMain/resources/mobileA11yFixtures/swiftUiMissingImageLabel.swift#L4-L12",
-      "verifiedSourceHash": "sha256:c9bf5b764bac6ed0f6544f7ce02068714ead944981a12f1ad82ac5dccbc6709a"
+      "verifiedSourceHash": "sha256:a3f99270d2779d1dbea83fe5036afe98045de66034482f4c29fbc0245984ec13"
     },
     {
       "anchorId": "source-1-runtime-scan-found-symbolic-accessible-name",
-      "code": "@Composable\nprivate fun StaticDogfoodSeedAction() {\n  IconButton(\n    onClick = {},\n    modifier = Modifier.testTag(SondeMobileTestTags.StaticDogfoodSeedAction),\n  ) {\n    // Intentional Phase 9 M2 dogfood seed: symbolic text is not a durable accessible name.\n    Text(\"!\")\n  }\n}",
-      "endLine": 499,
+      "body": {
+        "code": "@Composable\nfun ComposeSymbolicActionFixture() {\n  IconButton(\n    onClick = {},\n    modifier = Modifier.testTag(SondeMobileTestTags.StaticSiriusFixtureAction),\n  ) {\n    Text(\"!\")\n  }\n}",
+        "kind": "snippet"
+      },
+      "endLine": 23,
       "label": {
+        "catalogDependency": {
+          "explicitLocales": [
+            "es-US"
+          ],
+          "lookupLocales": [
+            "en-US",
+            "en-GB",
+            "en-CA",
+            "fr-CA",
+            "en-IN",
+            "cy-GB",
+            "gd-GB",
+            "ga-GB",
+            "es-US",
+            "es-MX",
+            "de-DE",
+            "fr-FR",
+            "es-ES",
+            "it-IT",
+            "nl-NL",
+            "pl-PL",
+            "pt-PT",
+            "pt-BR",
+            "ro-RO",
+            "sv-SE",
+            "ko-KR",
+            "zh-CN",
+            "ja-JP",
+            "hi-IN"
+          ],
+          "reportFallbacks": {
+            "ja-JP": "{framework} のソース証拠"
+          },
+          "sourceLocale": "en-US"
+        },
         "defaultLocale": "en-US",
         "defaultText": "{framework} source evidence",
         "icuArgs": {
@@ -7636,16 +11531,54 @@ window.__SCRIBE_MANIFEST__ = {
       "language": "kotlin",
       "pagePath": "findings/finding-missing-alt/index.html",
       "snippetId": "source-1-runtime-scan-found-symbolic-accessible-name",
-      "sourcePath": "packages/cockpit-mobile/src/commonMain/kotlin/sonde/mobile/ui/SondeMobileApp.kt",
-      "startLine": 490,
-      "vcsPermalink": "https://github.com/sondeinc/sonde/blob/main/packages/cockpit-mobile/src/commonMain/kotlin/sonde/mobile/ui/SondeMobileApp.kt#L490-L499",
-      "verifiedSourceHash": "sha256:d3f809d30d075c1a84f3bd7f296c4a0351a34b64bb0e2a107a9395bbdd2ca3a5"
+      "sourcePath": "packages/cockpit-mobile/src/commonMain/resources/mobileA11yFixtures/composeSymbolicAction.kt",
+      "startLine": 15,
+      "vcsPermalink": "https://github.com/sondeinc/sonde/blob/main/packages/cockpit-mobile/src/commonMain/resources/mobileA11yFixtures/composeSymbolicAction.kt#L15-L23",
+      "verifiedSourceHash": "sha256:141ea721efb91ebc9645932dc78908cd573dd114fbfde4b3df86d32aad5a8994"
     },
     {
       "anchorId": "source-2-runtime-scan-found-symbolic-accessible-name",
-      "code": "@Composable\nprivate fun StaticDogfoodSeedAction() {\n  IconButton(\n    onClick = {},\n    modifier = Modifier.testTag(SondeMobileTestTags.StaticDogfoodSeedAction),\n  ) {\n    // Intentional Phase 9 M2 dogfood seed: symbolic text is not a durable accessible name.\n    Text(\"!\")\n  }\n}",
-      "endLine": 499,
+      "body": {
+        "code": "@Composable\nfun ComposeSymbolicActionFixture() {\n  IconButton(\n    onClick = {},\n    modifier = Modifier.testTag(SondeMobileTestTags.StaticSiriusFixtureAction),\n  ) {\n    Text(\"!\")\n  }\n}",
+        "kind": "snippet"
+      },
+      "endLine": 23,
       "label": {
+        "catalogDependency": {
+          "explicitLocales": [
+            "es-US"
+          ],
+          "lookupLocales": [
+            "en-US",
+            "en-GB",
+            "en-CA",
+            "fr-CA",
+            "en-IN",
+            "cy-GB",
+            "gd-GB",
+            "ga-GB",
+            "es-US",
+            "es-MX",
+            "de-DE",
+            "fr-FR",
+            "es-ES",
+            "it-IT",
+            "nl-NL",
+            "pl-PL",
+            "pt-PT",
+            "pt-BR",
+            "ro-RO",
+            "sv-SE",
+            "ko-KR",
+            "zh-CN",
+            "ja-JP",
+            "hi-IN"
+          ],
+          "reportFallbacks": {
+            "ja-JP": "{framework} のソース証拠"
+          },
+          "sourceLocale": "en-US"
+        },
         "defaultLocale": "en-US",
         "defaultText": "{framework} source evidence",
         "icuArgs": {
@@ -7780,16 +11713,54 @@ window.__SCRIBE_MANIFEST__ = {
       "language": "kotlin",
       "pagePath": "findings/finding-missing-alt/index.html",
       "snippetId": "source-2-runtime-scan-found-symbolic-accessible-name",
-      "sourcePath": "packages/cockpit-mobile/src/commonMain/kotlin/sonde/mobile/ui/SondeMobileApp.kt",
-      "startLine": 490,
-      "vcsPermalink": "https://github.com/sondeinc/sonde/blob/main/packages/cockpit-mobile/src/commonMain/kotlin/sonde/mobile/ui/SondeMobileApp.kt#L490-L499",
-      "verifiedSourceHash": "sha256:d3f809d30d075c1a84f3bd7f296c4a0351a34b64bb0e2a107a9395bbdd2ca3a5"
+      "sourcePath": "packages/cockpit-mobile/src/commonMain/resources/mobileA11yFixtures/composeSymbolicAction.kt",
+      "startLine": 15,
+      "vcsPermalink": "https://github.com/sondeinc/sonde/blob/main/packages/cockpit-mobile/src/commonMain/resources/mobileA11yFixtures/composeSymbolicAction.kt#L15-L23",
+      "verifiedSourceHash": "sha256:141ea721efb91ebc9645932dc78908cd573dd114fbfde4b3df86d32aad5a8994"
     },
     {
       "anchorId": "source-4-filter-control-target-is-below-android-minimum",
-      "code": "@Composable\nprivate fun CompactFilterChip(\n  selected: Boolean,\n  onClick: () -> Unit,\n  label: String,\n  modifier: Modifier = Modifier,\n) {\n  Surface(\n    modifier = modifier\n      .height(SondeMobileTokens.spacingMd * 2)\n      .clickable { onClick() }\n      .semantics {\n        role = Role.Button\n        contentDescription = label\n      },",
-      "endLine": 662,
+      "body": {
+        "code": "@Composable\nprivate fun CompactFilterChip(\n  selected: Boolean,\n  onClick: () -> Unit,\n  label: String,\n  modifier: Modifier = Modifier,\n) {\n  Surface(\n    modifier = modifier\n      .height(SondeMobileTokens.spacingMd * 2)\n      .clickable { onClick() }\n      .semantics {\n        role = Role.Button\n        contentDescription = label\n      },",
+        "kind": "snippet"
+      },
+      "endLine": 665,
       "label": {
+        "catalogDependency": {
+          "explicitLocales": [
+            "es-US"
+          ],
+          "lookupLocales": [
+            "en-US",
+            "en-GB",
+            "en-CA",
+            "fr-CA",
+            "en-IN",
+            "cy-GB",
+            "gd-GB",
+            "ga-GB",
+            "es-US",
+            "es-MX",
+            "de-DE",
+            "fr-FR",
+            "es-ES",
+            "it-IT",
+            "nl-NL",
+            "pl-PL",
+            "pt-PT",
+            "pt-BR",
+            "ro-RO",
+            "sv-SE",
+            "ko-KR",
+            "zh-CN",
+            "ja-JP",
+            "hi-IN"
+          ],
+          "reportFallbacks": {
+            "ja-JP": "{framework} のソース証拠"
+          },
+          "sourceLocale": "en-US"
+        },
         "defaultLocale": "en-US",
         "defaultText": "{framework} source evidence",
         "icuArgs": {
@@ -7925,15 +11896,53 @@ window.__SCRIBE_MANIFEST__ = {
       "pagePath": "findings/finding-missing-alt/index.html",
       "snippetId": "source-4-filter-control-target-is-below-android-minimum",
       "sourcePath": "packages/cockpit-mobile/src/commonMain/kotlin/sonde/mobile/ui/SondeMobileApp.kt",
-      "startLine": 648,
-      "vcsPermalink": "https://github.com/sondeinc/sonde/blob/main/packages/cockpit-mobile/src/commonMain/kotlin/sonde/mobile/ui/SondeMobileApp.kt#L648-L662",
+      "startLine": 651,
+      "vcsPermalink": "https://github.com/sondeinc/sonde/blob/main/packages/cockpit-mobile/src/commonMain/kotlin/sonde/mobile/ui/SondeMobileApp.kt#L651-L665",
       "verifiedSourceHash": "sha256:2dfe92109623bdf10498f88031f30bc0e3eba73be7eef54c479f78266fddac5e"
     },
     {
       "anchorId": "source-5-finding-group-heading-can-truncate-under-ios-dynamic-type",
-      "code": "    groups.forEach { group ->\n      item {\n        Text(\n          \"${severityGlyph(group.severity)} ${group.severity.name} findings requiring mobile cockpit review\",\n          modifier = Modifier.testTag(\"${SondeMobileTestTags.FindingSeverityGroupPrefix}${group.severity.name}\"),\n          style = MaterialTheme.typography.titleMedium,\n          maxLines = 1,\n          overflow = TextOverflow.Ellipsis,\n        )",
-      "endLine": 538,
+      "body": {
+        "code": "    groups.forEach { group ->\n      item {\n        Text(\n          \"${severityGlyph(group.severity)} ${group.severity.name} findings requiring mobile cockpit review\",\n          modifier = Modifier.testTag(\"${SondeMobileTestTags.FindingSeverityGroupPrefix}${group.severity.name}\"),\n          style = MaterialTheme.typography.titleMedium,\n          maxLines = 1,\n          overflow = TextOverflow.Ellipsis,\n        )",
+        "kind": "snippet"
+      },
+      "endLine": 541,
       "label": {
+        "catalogDependency": {
+          "explicitLocales": [
+            "es-US"
+          ],
+          "lookupLocales": [
+            "en-US",
+            "en-GB",
+            "en-CA",
+            "fr-CA",
+            "en-IN",
+            "cy-GB",
+            "gd-GB",
+            "ga-GB",
+            "es-US",
+            "es-MX",
+            "de-DE",
+            "fr-FR",
+            "es-ES",
+            "it-IT",
+            "nl-NL",
+            "pl-PL",
+            "pt-PT",
+            "pt-BR",
+            "ro-RO",
+            "sv-SE",
+            "ko-KR",
+            "zh-CN",
+            "ja-JP",
+            "hi-IN"
+          ],
+          "reportFallbacks": {
+            "ja-JP": "{framework} のソース証拠"
+          },
+          "sourceLocale": "en-US"
+        },
         "defaultLocale": "en-US",
         "defaultText": "{framework} source evidence",
         "icuArgs": {
@@ -8069,15 +12078,53 @@ window.__SCRIBE_MANIFEST__ = {
       "pagePath": "findings/finding-missing-alt/index.html",
       "snippetId": "source-5-finding-group-heading-can-truncate-under-ios-dynamic-type",
       "sourcePath": "packages/cockpit-mobile/src/commonMain/kotlin/sonde/mobile/ui/SondeMobileApp.kt",
-      "startLine": 530,
-      "vcsPermalink": "https://github.com/sondeinc/sonde/blob/main/packages/cockpit-mobile/src/commonMain/kotlin/sonde/mobile/ui/SondeMobileApp.kt#L530-L538",
+      "startLine": 533,
+      "vcsPermalink": "https://github.com/sondeinc/sonde/blob/main/packages/cockpit-mobile/src/commonMain/kotlin/sonde/mobile/ui/SondeMobileApp.kt#L533-L541",
       "verifiedSourceHash": "sha256:b69ec7eb5ef911f09a3ab4c236b63002ade800ebf17be1e9ff132092d400b71f"
     },
     {
       "anchorId": "source-6-mobile-brand-consistency-gap-color-drift",
-      "code": "@Composable\nprivate fun StaticDogfoodSeedAction() {\n  IconButton(\n    onClick = {},\n    modifier = Modifier.testTag(SondeMobileTestTags.StaticDogfoodSeedAction),\n  ) {\n    // Intentional Phase 9 M2 dogfood seed: symbolic text is not a durable accessible name.\n    Text(\"!\")\n  }\n}",
-      "endLine": 499,
+      "body": {
+        "code": "@Composable\nfun ComposeSymbolicActionFixture() {\n  IconButton(\n    onClick = {},\n    modifier = Modifier.testTag(SondeMobileTestTags.StaticSiriusFixtureAction),\n  ) {\n    Text(\"!\")\n  }\n}",
+        "kind": "snippet"
+      },
+      "endLine": 23,
       "label": {
+        "catalogDependency": {
+          "explicitLocales": [
+            "es-US"
+          ],
+          "lookupLocales": [
+            "en-US",
+            "en-GB",
+            "en-CA",
+            "fr-CA",
+            "en-IN",
+            "cy-GB",
+            "gd-GB",
+            "ga-GB",
+            "es-US",
+            "es-MX",
+            "de-DE",
+            "fr-FR",
+            "es-ES",
+            "it-IT",
+            "nl-NL",
+            "pl-PL",
+            "pt-PT",
+            "pt-BR",
+            "ro-RO",
+            "sv-SE",
+            "ko-KR",
+            "zh-CN",
+            "ja-JP",
+            "hi-IN"
+          ],
+          "reportFallbacks": {
+            "ja-JP": "{framework} のソース証拠"
+          },
+          "sourceLocale": "en-US"
+        },
         "defaultLocale": "en-US",
         "defaultText": "{framework} source evidence",
         "icuArgs": {
@@ -8212,16 +12259,54 @@ window.__SCRIBE_MANIFEST__ = {
       "language": "kotlin",
       "pagePath": "findings/finding-missing-alt/index.html",
       "snippetId": "source-6-mobile-brand-consistency-gap-color-drift",
-      "sourcePath": "packages/cockpit-mobile/src/commonMain/kotlin/sonde/mobile/ui/SondeMobileApp.kt",
-      "startLine": 490,
-      "vcsPermalink": "https://github.com/sondeinc/sonde/blob/main/packages/cockpit-mobile/src/commonMain/kotlin/sonde/mobile/ui/SondeMobileApp.kt#L490-L499",
-      "verifiedSourceHash": "sha256:d3f809d30d075c1a84f3bd7f296c4a0351a34b64bb0e2a107a9395bbdd2ca3a5"
+      "sourcePath": "packages/cockpit-mobile/src/commonMain/resources/mobileA11yFixtures/composeSymbolicAction.kt",
+      "startLine": 15,
+      "vcsPermalink": "https://github.com/sondeinc/sonde/blob/main/packages/cockpit-mobile/src/commonMain/resources/mobileA11yFixtures/composeSymbolicAction.kt#L15-L23",
+      "verifiedSourceHash": "sha256:141ea721efb91ebc9645932dc78908cd573dd114fbfde4b3df86d32aad5a8994"
     },
     {
       "anchorId": "source-7-objective-c-uikit-image-is-missing-an-accessible-name",
-      "code": "- (void)configureDecorativeLookingAvatar {\n  UIImageView *avatarImageView = [[UIImageView alloc] init];\n  avatarImageView.isAccessibilityElement = YES;\n  avatarImageView.accessibilityTraits = UIAccessibilityTraitImage;\n  [avatarImageView.widthAnchor constraintEqualToConstant:44].active = YES;\n  [avatarImageView.heightAnchor constraintEqualToConstant:44].active = YES;\n}",
+      "body": {
+        "code": "- (void)configureDecorativeLookingAvatar {\n  UIImageView *avatarImageView = [[UIImageView alloc] init];\n  avatarImageView.isAccessibilityElement = YES;\n  avatarImageView.accessibilityTraits = UIAccessibilityTraitImage;\n  [avatarImageView.widthAnchor constraintEqualToConstant:44].active = YES;\n  [avatarImageView.heightAnchor constraintEqualToConstant:44].active = YES;\n}",
+        "kind": "snippet"
+      },
       "endLine": 15,
       "label": {
+        "catalogDependency": {
+          "explicitLocales": [
+            "es-US"
+          ],
+          "lookupLocales": [
+            "en-US",
+            "en-GB",
+            "en-CA",
+            "fr-CA",
+            "en-IN",
+            "cy-GB",
+            "gd-GB",
+            "ga-GB",
+            "es-US",
+            "es-MX",
+            "de-DE",
+            "fr-FR",
+            "es-ES",
+            "it-IT",
+            "nl-NL",
+            "pl-PL",
+            "pt-PT",
+            "pt-BR",
+            "ro-RO",
+            "sv-SE",
+            "ko-KR",
+            "zh-CN",
+            "ja-JP",
+            "hi-IN"
+          ],
+          "reportFallbacks": {
+            "ja-JP": "{framework} のソース証拠"
+          },
+          "sourceLocale": "en-US"
+        },
         "defaultLocale": "en-US",
         "defaultText": "{framework} source evidence",
         "icuArgs": {
@@ -8363,9 +12448,47 @@ window.__SCRIBE_MANIFEST__ = {
     },
     {
       "anchorId": "source-8-hardcoded-english-accessibility-label",
-      "code": "import { Text } from 'react-native';\n\nexport function ReactNativeProfileStatus() {\n  return <Text accessibilityLabel=\"Profile status\" testID=\"profile.status\" />;\n}",
+      "body": {
+        "code": "import { Text } from 'react-native';\n\nexport function ReactNativeProfileStatus() {\n  return <Text accessibilityLabel=\"Profile status\" testID=\"profile.status\" />;\n}",
+        "kind": "snippet"
+      },
       "endLine": 6,
       "label": {
+        "catalogDependency": {
+          "explicitLocales": [
+            "es-US"
+          ],
+          "lookupLocales": [
+            "en-US",
+            "en-GB",
+            "en-CA",
+            "fr-CA",
+            "en-IN",
+            "cy-GB",
+            "gd-GB",
+            "ga-GB",
+            "es-US",
+            "es-MX",
+            "de-DE",
+            "fr-FR",
+            "es-ES",
+            "it-IT",
+            "nl-NL",
+            "pl-PL",
+            "pt-PT",
+            "pt-BR",
+            "ro-RO",
+            "sv-SE",
+            "ko-KR",
+            "zh-CN",
+            "ja-JP",
+            "hi-IN"
+          ],
+          "reportFallbacks": {
+            "ja-JP": "{framework} のソース証拠"
+          },
+          "sourceLocale": "en-US"
+        },
         "defaultLocale": "en-US",
         "defaultText": "{framework} source evidence",
         "icuArgs": {
@@ -8507,9 +12630,47 @@ window.__SCRIBE_MANIFEST__ = {
     },
     {
       "anchorId": "source-9-image-element-is-missing-the-alt-attribute",
-      "code": "export function BadImage(): ReactElement {\n  return <img src=\"/logo.png\" />;\n}",
+      "body": {
+        "code": "export function BadImage(): ReactElement {\n  return <img src=\"/logo.png\" />;\n}",
+        "kind": "snippet"
+      },
       "endLine": 13,
       "label": {
+        "catalogDependency": {
+          "explicitLocales": [
+            "es-US"
+          ],
+          "lookupLocales": [
+            "en-US",
+            "en-GB",
+            "en-CA",
+            "fr-CA",
+            "en-IN",
+            "cy-GB",
+            "gd-GB",
+            "ga-GB",
+            "es-US",
+            "es-MX",
+            "de-DE",
+            "fr-FR",
+            "es-ES",
+            "it-IT",
+            "nl-NL",
+            "pl-PL",
+            "pt-PT",
+            "pt-BR",
+            "ro-RO",
+            "sv-SE",
+            "ko-KR",
+            "zh-CN",
+            "ja-JP",
+            "hi-IN"
+          ],
+          "reportFallbacks": {
+            "ja-JP": "{framework} のソース証拠"
+          },
+          "sourceLocale": "en-US"
+        },
         "defaultLocale": "en-US",
         "defaultText": "{framework} source evidence",
         "icuArgs": {
@@ -8651,9 +12812,47 @@ window.__SCRIBE_MANIFEST__ = {
     },
     {
       "anchorId": "source-10-element-has-positive-tabindex-focus-order",
-      "code": "  </nav>\n  <img src=\"logo.png\">\n  <button tabindex=\"3\">Submit</button>\n</body>",
-      "endLine": 14,
+      "body": {
+        "code": "  </header>\n  <img src=\"logo.png\">\n  <button tabindex=\"3\">Submit</button>\n</body>",
+        "kind": "snippet"
+      },
+      "endLine": 16,
       "label": {
+        "catalogDependency": {
+          "explicitLocales": [
+            "es-US"
+          ],
+          "lookupLocales": [
+            "en-US",
+            "en-GB",
+            "en-CA",
+            "fr-CA",
+            "en-IN",
+            "cy-GB",
+            "gd-GB",
+            "ga-GB",
+            "es-US",
+            "es-MX",
+            "de-DE",
+            "fr-FR",
+            "es-ES",
+            "it-IT",
+            "nl-NL",
+            "pl-PL",
+            "pt-PT",
+            "pt-BR",
+            "ro-RO",
+            "sv-SE",
+            "ko-KR",
+            "zh-CN",
+            "ja-JP",
+            "hi-IN"
+          ],
+          "reportFallbacks": {
+            "ja-JP": "{framework} のソース証拠"
+          },
+          "sourceLocale": "en-US"
+        },
         "defaultLocale": "en-US",
         "defaultText": "{framework} source evidence",
         "icuArgs": {
@@ -8789,15 +12988,51 @@ window.__SCRIBE_MANIFEST__ = {
       "pagePath": "findings/finding-missing-alt/index.html",
       "snippetId": "source-10-element-has-positive-tabindex-focus-order",
       "sourcePath": "packages/fix-apply/e2e/fixtures/wcagMechanicalHtml/index.html",
-      "startLine": 11,
-      "vcsPermalink": "https://github.com/sondeinc/sonde/blob/main/packages/fix-apply/e2e/fixtures/wcagMechanicalHtml/index.html#L11-L14",
-      "verifiedSourceHash": "sha256:96912e2abb10165a8ac346290099fd37910a96ef992de7d77ec5f57176e94bd7"
+      "startLine": 13,
+      "vcsPermalink": "https://github.com/sondeinc/sonde/blob/main/packages/fix-apply/e2e/fixtures/wcagMechanicalHtml/index.html#L13-L16",
+      "verifiedSourceHash": "sha256:cfc8e11508047d3a71d788146fa27823765ab9987463017828a23f76032dfbce"
     }
   ],
+  "sourcesAttribution": [],
   "theme": {
     "availableModes": [
       {
         "label": {
+          "catalogDependency": {
+            "explicitLocales": [
+              "es-US"
+            ],
+            "lookupLocales": [
+              "en-US",
+              "en-GB",
+              "en-CA",
+              "fr-CA",
+              "en-IN",
+              "cy-GB",
+              "gd-GB",
+              "ga-GB",
+              "es-US",
+              "es-MX",
+              "de-DE",
+              "fr-FR",
+              "es-ES",
+              "it-IT",
+              "nl-NL",
+              "pl-PL",
+              "pt-PT",
+              "pt-BR",
+              "ro-RO",
+              "sv-SE",
+              "ko-KR",
+              "zh-CN",
+              "ja-JP",
+              "hi-IN"
+            ],
+            "reportFallbacks": {
+              "ja-JP": "自動"
+            },
+            "sourceLocale": "en-US"
+          },
           "defaultLocale": "en-US",
           "defaultText": "Auto",
           "icuArgs": {},
@@ -8931,6 +13166,41 @@ window.__SCRIBE_MANIFEST__ = {
       },
       {
         "label": {
+          "catalogDependency": {
+            "explicitLocales": [
+              "es-US"
+            ],
+            "lookupLocales": [
+              "en-US",
+              "en-GB",
+              "en-CA",
+              "fr-CA",
+              "en-IN",
+              "cy-GB",
+              "gd-GB",
+              "ga-GB",
+              "es-US",
+              "es-MX",
+              "de-DE",
+              "fr-FR",
+              "es-ES",
+              "it-IT",
+              "nl-NL",
+              "pl-PL",
+              "pt-PT",
+              "pt-BR",
+              "ro-RO",
+              "sv-SE",
+              "ko-KR",
+              "zh-CN",
+              "ja-JP",
+              "hi-IN"
+            ],
+            "reportFallbacks": {
+              "ja-JP": "ライト"
+            },
+            "sourceLocale": "en-US"
+          },
           "defaultLocale": "en-US",
           "defaultText": "Light",
           "icuArgs": {},
@@ -9064,6 +13334,41 @@ window.__SCRIBE_MANIFEST__ = {
       },
       {
         "label": {
+          "catalogDependency": {
+            "explicitLocales": [
+              "es-US"
+            ],
+            "lookupLocales": [
+              "en-US",
+              "en-GB",
+              "en-CA",
+              "fr-CA",
+              "en-IN",
+              "cy-GB",
+              "gd-GB",
+              "ga-GB",
+              "es-US",
+              "es-MX",
+              "de-DE",
+              "fr-FR",
+              "es-ES",
+              "it-IT",
+              "nl-NL",
+              "pl-PL",
+              "pt-PT",
+              "pt-BR",
+              "ro-RO",
+              "sv-SE",
+              "ko-KR",
+              "zh-CN",
+              "ja-JP",
+              "hi-IN"
+            ],
+            "reportFallbacks": {
+              "ja-JP": "ダーク"
+            },
+            "sourceLocale": "en-US"
+          },
           "defaultLocale": "en-US",
           "defaultText": "Dark",
           "icuArgs": {},
@@ -9198,8 +13503,39 @@ window.__SCRIBE_MANIFEST__ = {
     ],
     "availableThemes": [
       {
-        "cssPath": "assets/themes/daylight.css",
+        "cssPath": "assets/immutable/theme-daylight.ffce2abf0c8dffe5.css",
         "label": {
+          "catalogDependency": {
+            "explicitLocales": [],
+            "lookupLocales": [
+              "en-US",
+              "en-GB",
+              "en-CA",
+              "fr-CA",
+              "en-IN",
+              "cy-GB",
+              "gd-GB",
+              "ga-GB",
+              "es-US",
+              "es-MX",
+              "de-DE",
+              "fr-FR",
+              "es-ES",
+              "it-IT",
+              "nl-NL",
+              "pl-PL",
+              "pt-PT",
+              "pt-BR",
+              "ro-RO",
+              "sv-SE",
+              "ko-KR",
+              "zh-CN",
+              "ja-JP",
+              "hi-IN"
+            ],
+            "reportFallbacks": {},
+            "sourceLocale": "en-US"
+          },
           "defaultLocale": "en-US",
           "defaultText": "Daylight",
           "icuArgs": {},
@@ -9332,8 +13668,39 @@ window.__SCRIBE_MANIFEST__ = {
         "themeId": "daylight"
       },
       {
-        "cssPath": "assets/themes/ultraviolet.css",
+        "cssPath": "assets/immutable/theme-ultraviolet.e8d1e286a433a1f6.css",
         "label": {
+          "catalogDependency": {
+            "explicitLocales": [],
+            "lookupLocales": [
+              "en-US",
+              "en-GB",
+              "en-CA",
+              "fr-CA",
+              "en-IN",
+              "cy-GB",
+              "gd-GB",
+              "ga-GB",
+              "es-US",
+              "es-MX",
+              "de-DE",
+              "fr-FR",
+              "es-ES",
+              "it-IT",
+              "nl-NL",
+              "pl-PL",
+              "pt-PT",
+              "pt-BR",
+              "ro-RO",
+              "sv-SE",
+              "ko-KR",
+              "zh-CN",
+              "ja-JP",
+              "hi-IN"
+            ],
+            "reportFallbacks": {},
+            "sourceLocale": "en-US"
+          },
           "defaultLocale": "en-US",
           "defaultText": "Ultraviolet",
           "icuArgs": {},
@@ -9466,8 +13833,39 @@ window.__SCRIBE_MANIFEST__ = {
         "themeId": "ultraviolet"
       },
       {
-        "cssPath": "assets/themes/infrared.css",
+        "cssPath": "assets/immutable/theme-infrared.caf6e90430229b41.css",
         "label": {
+          "catalogDependency": {
+            "explicitLocales": [],
+            "lookupLocales": [
+              "en-US",
+              "en-GB",
+              "en-CA",
+              "fr-CA",
+              "en-IN",
+              "cy-GB",
+              "gd-GB",
+              "ga-GB",
+              "es-US",
+              "es-MX",
+              "de-DE",
+              "fr-FR",
+              "es-ES",
+              "it-IT",
+              "nl-NL",
+              "pl-PL",
+              "pt-PT",
+              "pt-BR",
+              "ro-RO",
+              "sv-SE",
+              "ko-KR",
+              "zh-CN",
+              "ja-JP",
+              "hi-IN"
+            ],
+            "reportFallbacks": {},
+            "sourceLocale": "en-US"
+          },
           "defaultLocale": "en-US",
           "defaultText": "Infrared",
           "icuArgs": {},
@@ -9600,8 +13998,39 @@ window.__SCRIBE_MANIFEST__ = {
         "themeId": "infrared"
       },
       {
-        "cssPath": "assets/themes/high-contrast.css",
+        "cssPath": "assets/immutable/theme-high-contrast.32d22d1a3f404d86.css",
         "label": {
+          "catalogDependency": {
+            "explicitLocales": [],
+            "lookupLocales": [
+              "en-US",
+              "en-GB",
+              "en-CA",
+              "fr-CA",
+              "en-IN",
+              "cy-GB",
+              "gd-GB",
+              "ga-GB",
+              "es-US",
+              "es-MX",
+              "de-DE",
+              "fr-FR",
+              "es-ES",
+              "it-IT",
+              "nl-NL",
+              "pl-PL",
+              "pt-PT",
+              "pt-BR",
+              "ro-RO",
+              "sv-SE",
+              "ko-KR",
+              "zh-CN",
+              "ja-JP",
+              "hi-IN"
+            ],
+            "reportFallbacks": {},
+            "sourceLocale": "en-US"
+          },
           "defaultLocale": "en-US",
           "defaultText": "High Contrast",
           "icuArgs": {},
@@ -9739,6 +14168,39 @@ window.__SCRIBE_MANIFEST__ = {
     "density": "normal"
   },
   "title": {
+    "catalogDependency": {
+      "explicitLocales": [],
+      "lookupLocales": [
+        "en-US",
+        "en-GB",
+        "en-CA",
+        "fr-CA",
+        "en-IN",
+        "cy-GB",
+        "gd-GB",
+        "ga-GB",
+        "es-US",
+        "es-MX",
+        "de-DE",
+        "fr-FR",
+        "es-ES",
+        "it-IT",
+        "nl-NL",
+        "pl-PL",
+        "pt-PT",
+        "pt-BR",
+        "ro-RO",
+        "sv-SE",
+        "ko-KR",
+        "zh-CN",
+        "ja-JP",
+        "hi-IN"
+      ],
+      "reportFallbacks": {
+        "ja-JP": "モバイルアクセシビリティスキャン"
+      },
+      "sourceLocale": "en-US"
+    },
     "defaultLocale": "en-US",
     "defaultText": "Mobile Accessibility Scan",
     "icuArgs": {},
@@ -9771,6 +14233,39 @@ window.__SCRIBE_MANIFEST__ = {
               "pagePath": "findings/finding-missing-alt/index.html",
               "role": "source-snippet",
               "title": {
+                "catalogDependency": {
+                  "explicitLocales": [],
+                  "lookupLocales": [
+                    "en-US",
+                    "en-GB",
+                    "en-CA",
+                    "fr-CA",
+                    "en-IN",
+                    "cy-GB",
+                    "gd-GB",
+                    "ga-GB",
+                    "es-US",
+                    "es-MX",
+                    "de-DE",
+                    "fr-FR",
+                    "es-ES",
+                    "it-IT",
+                    "nl-NL",
+                    "pl-PL",
+                    "pt-PT",
+                    "pt-BR",
+                    "ro-RO",
+                    "sv-SE",
+                    "ko-KR",
+                    "zh-CN",
+                    "ja-JP",
+                    "hi-IN"
+                  ],
+                  "reportFallbacks": {
+                    "ja-JP": "SwiftUI 画像のソース証拠"
+                  },
+                  "sourceLocale": "en-US"
+                },
                 "defaultLocale": "en-US",
                 "defaultText": "SwiftUI image source evidence",
                 "icuArgs": {},
@@ -9907,6 +14402,37 @@ window.__SCRIBE_MANIFEST__ = {
               "pagePath": "fix-plans/finding-missing-alt/index.html",
               "role": "fix-plan",
               "title": {
+                "catalogDependency": {
+                  "explicitLocales": [],
+                  "lookupLocales": [
+                    "en-US",
+                    "en-GB",
+                    "en-CA",
+                    "fr-CA",
+                    "en-IN",
+                    "cy-GB",
+                    "gd-GB",
+                    "ga-GB",
+                    "es-US",
+                    "es-MX",
+                    "de-DE",
+                    "fr-FR",
+                    "es-ES",
+                    "it-IT",
+                    "nl-NL",
+                    "pl-PL",
+                    "pt-PT",
+                    "pt-BR",
+                    "ro-RO",
+                    "sv-SE",
+                    "ko-KR",
+                    "zh-CN",
+                    "ja-JP",
+                    "hi-IN"
+                  ],
+                  "reportFallbacks": {},
+                  "sourceLocale": "en-US"
+                },
                 "defaultLocale": "en-US",
                 "defaultText": "Fix plan",
                 "icuArgs": {},
@@ -10041,6 +14567,39 @@ window.__SCRIBE_MANIFEST__ = {
           "pagePath": "findings/finding-missing-alt/index.html",
           "role": "finding",
           "title": {
+            "catalogDependency": {
+              "explicitLocales": [],
+              "lookupLocales": [
+                "en-US",
+                "en-GB",
+                "en-CA",
+                "fr-CA",
+                "en-IN",
+                "cy-GB",
+                "gd-GB",
+                "ga-GB",
+                "es-US",
+                "es-MX",
+                "de-DE",
+                "fr-FR",
+                "es-ES",
+                "it-IT",
+                "nl-NL",
+                "pl-PL",
+                "pt-PT",
+                "pt-BR",
+                "ro-RO",
+                "sv-SE",
+                "ko-KR",
+                "zh-CN",
+                "ja-JP",
+                "hi-IN"
+              ],
+              "reportFallbacks": {
+                "ja-JP": "SwiftUI 画像にアクセシブル名がありません"
+              },
+              "sourceLocale": "en-US"
+            },
             "defaultLocale": "en-US",
             "defaultText": "SwiftUI image is missing an accessible name",
             "icuArgs": {},
@@ -10175,6 +14734,39 @@ window.__SCRIBE_MANIFEST__ = {
       "pagePath": "index.html",
       "role": "section",
       "title": {
+        "catalogDependency": {
+          "explicitLocales": [],
+          "lookupLocales": [
+            "en-US",
+            "en-GB",
+            "en-CA",
+            "fr-CA",
+            "en-IN",
+            "cy-GB",
+            "gd-GB",
+            "ga-GB",
+            "es-US",
+            "es-MX",
+            "de-DE",
+            "fr-FR",
+            "es-ES",
+            "it-IT",
+            "nl-NL",
+            "pl-PL",
+            "pt-PT",
+            "pt-BR",
+            "ro-RO",
+            "sv-SE",
+            "ko-KR",
+            "zh-CN",
+            "ja-JP",
+            "hi-IN"
+          ],
+          "reportFallbacks": {
+            "ja-JP": "概要"
+          },
+          "sourceLocale": "en-US"
+        },
         "defaultLocale": "en-US",
         "defaultText": "Overview",
         "icuArgs": {},
