@@ -12,9 +12,9 @@ Export source: exports/report.md
 
 This health report is generated from the analyzed checkout and reusable Scribe report artifacts, with public static assets separated from private generation receipts.
 
-**Health observation:** calcom/cal.com scores 682/1000 (D) for repository health across analysis completeness, repository coverage, architecture evidence, and code health. It includes 6,335 source files, 120 package manifests, 210 build configs, 7 resource detections, and 604 database schema artifacts.
+**Health observation:** calcom/cal.com scores 682/1000 (D) for repository health across analysis completeness, repository coverage, architecture evidence, and code health. It includes 6,336 source files, 120 package manifests, 210 build configs, 7 resource detections, and 604 database schema artifacts.
 
-- **Repository shape:** 6335 source files across 7 languages.
+- **Repository shape:** 6336 source files across 7 languages.
 - **Sonde Score:** **682** / 1000 (D)
 - **Evidence coverage:** 120 package manifests, 210 build configs, and 604 database schema artifacts.
 
@@ -28,7 +28,7 @@ Source: finding-repository-health
 Mermaid: unavailable
 SVG: unavailable
 
-- **Source:** Files: 6335 · LOC: 260522 · Classes: 1255 · Types: 2436 · Interfaces: 768
+- **Source:** Files: 6336 · LOC: 260591 · Classes: 1286 · Types: 2436 · Interfaces: 768
 - **Languages:** 7 · apex, css, javascript, php, prisma, sql, typescript
 - **Frameworks:** 9 · NestJS, Next.js, React, Prisma ORM, tRPC API, EventEmitter (Node.js), Express/Fastify/Hono API Endpoints, process.env (Node.js), TypeORM
 - **Packages and build:** Package manifests: 120 · Build configs: 210
@@ -37,7 +37,7 @@ SVG: unavailable
 - **Database model:** Schema artifacts: 604 · Entities: 101 · Fields: 1042 · Relationships: 409
 - **API endpoints:** 255 · tRPC (199), REST/HTTP (56)
 - **Other runtime surfaces:** Message channels: 28 · Config keys: 822
-- **Sonde Performance:** Analysis: 6335 files · Payload: 89.8 MB
+- **Sonde Performance:** Analysis: 6336 files · Payload: 91.2 MB
 
 <a id="finding-repository-health-complexity-handler-1ba4f96898"></a>
 ## Critical complexity in handler
@@ -476,6 +476,127 @@ async function mainCreateApp() {
       app.isTemplate
     );
   }
+}
+```
+
+<a id="finding-repository-health-complexity-handler-ade03c41a4"></a>
+## Critical complexity in handler
+
+Severity: Critical
+Classification: Code health
+Language: TypeScript
+Framework: Code health
+
+apps/web/app/api/auth/signup/handlers/selfHostedHandler.ts:24 has cyclomatic complexity 29, cognitive complexity 64, and maintainability 21.64.
+
+**Criterion:** Repository health complexity policy: warn above cyclomatic 10, cognitive 15, or below maintainability 60.
+
+**Recommended next step:** Split handler into smaller decision units, preserve its current behavior with focused tests, and rerun the health report before applying automated cleanup.
+
+[selfHostedHandler.ts: handler](#plan-group-f487a164f167a2c08d6b9666229511bd16972ca4a4a44f977a764c3d956e230f)
+
+<a id="source-repository-health-complexity-handler-ade03c41a4"></a>
+### Autofix
+
+apps/web/app/api/auth/signup/handlers/selfHostedHandler.ts L22-L209
+
+Source: apps/web/app/api/auth/signup/handlers/selfHostedHandler.ts L170-L209
+
+#### Original
+
+```typescript
+    });
+  } else {
+    const isUsernameAvailable = !(await isUsernameReservedDueToMigration(correctedUsername));
+    if (!isUsernameAvailable) {
+      return NextResponse.json({ message: "A user exists with that username" }, { status: 409 });
+    }
+    try {
+      await prisma.user.create({
+        data: {
+          username: correctedUsername,
+          email: userEmail,
+          password: { create: { hash: hashedPassword } },
+          identityProvider: IdentityProvider.CAL,
+        },
+        select: { id: true },
+      });
+    } catch (error) {
+      // Fallback for race conditions where user was created between our check and create
+      if (isPrismaError(error) && error.code === "P2002") {
+        const target = String(error.meta?.target ?? "");
+        if (target.includes("email") || target.includes("username")) {
+          return NextResponse.json({ message: SIGNUP_ERROR_CODES.USER_ALREADY_EXISTS }, { status: 409 });
+        }
+      }
+      throw error;
+    }
+
+    if (process.env.AVATARAPI_USERNAME && process.env.AVATARAPI_PASSWORD) {
+      await prefillAvatar({ email: userEmail });
+    }
+
+    await sendEmailVerification({
+      email: userEmail,
+      username: correctedUsername,
+      language,
+    });
+  }
+
+  return NextResponse.json({ message: "Created user" }, { status: 201 });
+}
+```
+
+#### Fixed
+
+```typescript
+    });
+  } else {
+    const isUsernameAvailable = !(await isUsernameReservedDueToMigration(correctedUsername));
+    const handlerJsonResult = handlerJson(isUsernameAvailable);
+    if (handlerJsonResult !== null) {
+      return handlerJsonResult.value;
+    }
+    try {
+      await prisma.user.create({
+        data: {
+          username: correctedUsername,
+          email: userEmail,
+          password: { create: { hash: hashedPassword } },
+          identityProvider: IdentityProvider.CAL,
+        },
+        select: { id: true },
+      });
+    } catch (error) {
+      // Fallback for race conditions where user was created between our check and create
+      if (isPrismaError(error) && error.code === "P2002") {
+        const target = String(error.meta?.target ?? "");
+        if (target.includes("email") || target.includes("username")) {
+          return NextResponse.json({ message: SIGNUP_ERROR_CODES.USER_ALREADY_EXISTS }, { status: 409 });
+        }
+      }
+      throw error;
+    }
+
+    if (process.env.AVATARAPI_USERNAME && process.env.AVATARAPI_PASSWORD) {
+      await prefillAvatar({ email: userEmail });
+    }
+
+    await sendEmailVerification({
+      email: userEmail,
+      username: correctedUsername,
+      language,
+    });
+  }
+
+  return NextResponse.json({ message: "Created user" }, { status: 201 });
+}
+
+function handlerJson(isUsernameAvailable: boolean) {
+  if (!isUsernameAvailable) {
+    return { value: NextResponse.json({ message: "A user exists with that username" }, { status: 409 }) };
+  }
+  return null;
 }
 ```
 
@@ -4058,6 +4179,321 @@ async function mainUser(user, newEmail) {
 }
 ```
 
+<a id="finding-repository-health-complexity-posthandler-aa1f68f1f7"></a>
+## Critical complexity in postHandler
+
+Severity: Critical
+Classification: Code health
+Language: TypeScript
+Framework: Code health
+
+apps/web/app/api/cron/bookingReminder/route.ts:16 has cyclomatic complexity 12, cognitive complexity 16, and maintainability 27.44.
+
+**Criterion:** Repository health complexity policy: warn above cyclomatic 10, cognitive 15, or below maintainability 60.
+
+**Recommended next step:** Split postHandler into smaller decision units, preserve its current behavior with focused tests, and rerun the health report before applying automated cleanup.
+
+[route.ts: postHandler](#plan-group-ccb099dee6ee47a36324c5bca9747d69e2dce8a2c00f59cb91dc6dff264d7813)
+
+<a id="source-repository-health-complexity-posthandler-aa1f68f1f7"></a>
+### Autofix
+
+apps/web/app/api/cron/bookingReminder/route.ts L14-L158
+
+Source: apps/web/app/api/cron/bookingReminder/route.ts L23-L160
+
+#### Original
+
+```typescript
+  const reminderIntervalMinutes = [48 * 60, 24 * 60, 3 * 60];
+  let notificationsSent = 0;
+
+  for (const interval of reminderIntervalMinutes) {
+    const bookings = await prisma.booking.findMany({
+      where: {
+        status: BookingStatus.PENDING,
+        createdAt: {
+          lte: dayjs().add(-interval, "minutes").toDate(),
+        },
+        // Only send reminders if the event hasn't finished
+        endTime: { gte: new Date() },
+        OR: [
+          // no payment required
+          {
+            payment: { none: {} },
+          },
+          // paid but awaiting approval
+          {
+            payment: { some: {} },
+            paid: true,
+          },
+        ],
+      },
+      select: {
+        ...bookingMinimalSelect,
+        location: true,
+        user: {
+          select: {
+            id: true,
+            email: true,
+            name: true,
+            username: true,
+            locale: true,
+            timeZone: true,
+            destinationCalendar: true,
+            isPlatformManaged: true,
+            platformOAuthClients: { select: { id: true, areEmailsEnabled: true } },
+          },
+        },
+        eventType: {
+          select: {
+            recurringEvent: true,
+            bookingFields: true,
+            metadata: true,
+          },
+        },
+        responses: true,
+        uid: true,
+        destinationCalendar: true,
+      },
+    });
+
+    const bookingsToRemind = bookings.filter(
+      (booking) =>
+        !booking.user ||
+        !booking.user.isPlatformManaged ||
+        (booking.user.isPlatformManaged && Boolean(booking.user.platformOAuthClients?.[0]?.areEmailsEnabled))
+    );
+
+    const reminders = await prisma.reminderMail.findMany({
+      where: {
+        reminderType: ReminderType.PENDING_BOOKING_CONFIRMATION,
+        referenceId: {
+          in: bookingsToRemind.map((b) => b.id),
+        },
+        elapsedMinutes: {
+          gte: interval,
+        },
+      },
+    });
+
+    for (const booking of bookingsToRemind.filter((b) => !reminders.some((r) => r.referenceId == b.id))) {
+      const { user } = booking;
+      const name = user?.name || user?.username;
+      if (!user || !name || !user.timeZone) {
+        console.error(`Booking ${booking.id} is missing required properties for booking reminder`, { user });
+        continue;
+      }
+
+      const tOrganizer = await getTranslation(user.locale ?? "en", "common");
+
+      const attendeesListPromises = booking.attendees.map(async (attendee) => {
+        return {
+          name: attendee.name,
+          email: attendee.email,
+          timeZone: attendee.timeZone,
+          language: {
+            translate: await getTranslation(attendee.locale ?? "en", "common"),
+            locale: attendee.locale ?? "en",
+          },
+        };
+      });
+
+      const attendeesList = await Promise.all(attendeesListPromises);
+      const selectedDestinationCalendar = booking.destinationCalendar || user.destinationCalendar;
+      const evt: CalendarEvent = {
+        type: booking.title,
+        title: booking.title,
+        description: booking.description || undefined,
+        customInputs: isPrismaObjOrUndefined(booking.customInputs),
+        ...getCalEventResponses({
+          bookingFields: booking.eventType?.bookingFields ?? null,
+          booking,
+        }),
+        location: booking.location ?? "",
+        startTime: booking.startTime.toISOString(),
+        endTime: booking.endTime.toISOString(),
+        organizer: {
+          id: user.id,
+          email: booking?.userPrimaryEmail ?? user.email,
+          name,
+          timeZone: user.timeZone,
+          language: { translate: tOrganizer, locale: user.locale ?? "en" },
+        },
+        attendees: attendeesList,
+        uid: booking.uid,
+        recurringEvent: parseRecurringEvent(booking.eventType?.recurringEvent),
+        destinationCalendar: selectedDestinationCalendar ? [selectedDestinationCalendar] : [],
+      };
+
+      await sendOrganizerRequestReminderEmail(evt, booking?.eventType?.metadata as EventTypeMetadata);
+
+      await prisma.reminderMail.create({
+        data: {
+          referenceId: booking.id,
+          reminderType: ReminderType.PENDING_BOOKING_CONFIRMATION,
+          elapsedMinutes: interval,
+        },
+      });
+      notificationsSent++;
+    }
+  }
+
+  return NextResponse.json({ notificationsSent });
+}
+
+export const POST = defaultResponderForAppDir(postHandler);
+```
+
+#### Fixed
+
+```typescript
+  const reminderIntervalMinutes = [48 * 60, 24 * 60, 3 * 60];
+  let notificationsSent = 0;
+
+  notificationsSent = await postHandlerNotificationsSent(reminderIntervalMinutes, notificationsSent);
+
+  return NextResponse.json({ notificationsSent });
+}
+
+export const POST = defaultResponderForAppDir(postHandler);
+
+async function postHandlerNotificationsSent(reminderIntervalMinutes: number[], notificationsSent: number): Promise<number> {
+
+  for (const interval of reminderIntervalMinutes) {
+    const bookings = await prisma.booking.findMany({
+      where: {
+        status: BookingStatus.PENDING,
+        createdAt: {
+          lte: dayjs().add(-interval, "minutes").toDate(),
+        },
+        // Only send reminders if the event hasn't finished
+        endTime: { gte: new Date() },
+        OR: [
+          // no payment required
+          {
+            payment: { none: {} },
+          },
+          // paid but awaiting approval
+          {
+            payment: { some: {} },
+            paid: true,
+          },
+        ],
+      },
+      select: {
+        ...bookingMinimalSelect,
+        location: true,
+        user: {
+          select: {
+            id: true,
+            email: true,
+            name: true,
+            username: true,
+            locale: true,
+            timeZone: true,
+            destinationCalendar: true,
+            isPlatformManaged: true,
+            platformOAuthClients: { select: { id: true, areEmailsEnabled: true } },
+          },
+        },
+        eventType: {
+          select: {
+            recurringEvent: true,
+            bookingFields: true,
+            metadata: true,
+          },
+        },
+        responses: true,
+        uid: true,
+        destinationCalendar: true,
+      },
+    });
+
+    const bookingsToRemind = bookings.filter(
+      (booking) =>
+        !booking.user ||
+        !booking.user.isPlatformManaged ||
+        (booking.user.isPlatformManaged && Boolean(booking.user.platformOAuthClients?.[0]?.areEmailsEnabled))
+    );
+
+    const reminders = await prisma.reminderMail.findMany({
+      where: {
+        reminderType: ReminderType.PENDING_BOOKING_CONFIRMATION,
+        referenceId: {
+          in: bookingsToRemind.map((b) => b.id),
+        },
+        elapsedMinutes: {
+          gte: interval,
+        },
+      },
+    });
+
+    for (const booking of bookingsToRemind.filter((b) => !reminders.some((r) => r.referenceId == b.id))) {
+      const { user } = booking;
+      const name = user?.name || user?.username;
+      if (!user || !name || !user.timeZone) {
+        console.error(`Booking ${booking.id} is missing required properties for booking reminder`, { user });
+        continue;
+      }
+
+      const tOrganizer = await getTranslation(user.locale ?? "en", "common");
+
+      const attendeesListPromises = booking.attendees.map(async (attendee) => {
+        return {
+          name: attendee.name,
+          email: attendee.email,
+          timeZone: attendee.timeZone,
+          language: {
+            translate: await getTranslation(attendee.locale ?? "en", "common"),
+            locale: attendee.locale ?? "en",
+          },
+        };
+      });
+
+      const attendeesList = await Promise.all(attendeesListPromises);
+      const selectedDestinationCalendar = booking.destinationCalendar || user.destinationCalendar;
+      const evt: CalendarEvent = {
+        type: booking.title,
+        title: booking.title,
+        description: booking.description || undefined,
+        customInputs: isPrismaObjOrUndefined(booking.customInputs),
+        ...getCalEventResponses({
+          bookingFields: booking.eventType?.bookingFields ?? null,
+          booking,
+        }),
+        location: booking.location ?? "",
+        startTime: booking.startTime.toISOString(),
+        endTime: booking.endTime.toISOString(),
+        organizer: {
+          id: user.id,
+          email: booking?.userPrimaryEmail ?? user.email,
+          name,
+          timeZone: user.timeZone,
+          language: { translate: tOrganizer, locale: user.locale ?? "en" },
+        },
+        attendees: attendeesList,
+        uid: booking.uid,
+        recurringEvent: parseRecurringEvent(booking.eventType?.recurringEvent),
+        destinationCalendar: selectedDestinationCalendar ? [selectedDestinationCalendar] : [],
+      };
+
+      await sendOrganizerRequestReminderEmail(evt, booking?.eventType?.metadata as EventTypeMetadata);
+
+      await prisma.reminderMail.create({
+        data: {
+          referenceId: booking.id,
+          reminderType: ReminderType.PENDING_BOOKING_CONFIRMATION,
+          elapsedMinutes: interval,
+        },
+      });
+      notificationsSent++;
+    }
+  }
+  return notificationsSent;
+}
+```
+
 <a id="finding-repository-health-complexity-findqualifiedhostswithdelegationcredentials-5cee6a9688"></a>
 ## Critical complexity in findQualifiedHostsWithDelegationCredentials
 
@@ -4359,7 +4795,7 @@ packages/features/bookings/lib/service/RegularBookingService.ts:486 has cyclomat
 
 **Recommended next step:** Split handler into smaller decision units, preserve its current behavior with focused tests, and rerun the health report before applying automated cleanup.
 
-[RegularBookingService.ts: handler](#plan-group-0ab274a4d3ae70d762138d959a8c52a2eca5c2f6477c5b88d21eec1d054dbcb2)
+[RegularBookingService.ts: handler](#plan-group-0e84a406b2e16b21889092cf25f6ec564cffe84ae4ce5460c9f0fe7d2315bd68)
 [Consolidate exact clones: createBooking, rescheduleBooking](#plan-group-4348a40f046443444007f3a06bfdaa7313829f5725c764eb76122f9353b9e9c1)
 
 <a id="source-repository-health-complexity-handler-71962a93c2"></a>
@@ -13630,7 +14066,7 @@ apps/web/modules/bookings/views/bookings-single-view.getServerSideProps.tsx:39 h
 
 **Recommended next step:** Split getServerSideProps into smaller decision units, preserve its current behavior with focused tests, and rerun the health report before applying automated cleanup.
 
-[bookings-single-view.getServerSideProps.tsx: getServerSideProps](#plan-group-c3c1e95b57b606d74a9993392a34f2164c6f120d9a098d12a706378570048295)
+[bookings-single-view.getServerSideProps.tsx: getServerSideProps](#plan-group-4dee6d8f5580abadf581cdc84622760c906a9f69f6107735d9a554683f0ac09b)
 
 <a id="source-repository-health-complexity-getserversideprops-ec6d74fdbf"></a>
 ### Source evidence
@@ -16659,2169 +17095,6 @@ Source: packages/app-store/salesforce/lib/graphql/SalesforceGraphQLClient.ts L63
   }
 ```
 
-<a id="finding-repository-health-complexity-eventadvancedtab-39f223b582"></a>
-## Critical complexity in EventAdvancedTab
-
-Severity: Critical
-Classification: Code health
-Language: TypeScript
-Framework: Code health
-
-apps/web/modules/event-types/components/tabs/advanced/EventAdvancedTab.tsx:404 has cyclomatic complexity 31, cognitive complexity 30, and maintainability 2.02.
-
-**Criterion:** Repository health complexity policy: warn above cyclomatic 10, cognitive 15, or below maintainability 60.
-
-**Recommended next step:** Split EventAdvancedTab into smaller decision units, preserve its current behavior with focused tests, and rerun the health report before applying automated cleanup.
-
-[EventAdvancedTab.tsx: EventAdvancedTab](#plan-group-8b38a5c264b94f30a9d36dfe5c06dadf40fa51cf8802f131a8a16369fc1037f5)
-
-<a id="source-repository-health-complexity-eventadvancedtab-39f223b582"></a>
-### Source evidence
-
-apps/web/modules/event-types/components/tabs/advanced/EventAdvancedTab.tsx L402-L1526
-
-Source: apps/web/modules/event-types/components/tabs/advanced/EventAdvancedTab.tsx L402-L1526
-
-```typescript
-};
-
-export const EventAdvancedTab = ({
-  eventType,
-  team,
-  calendarsQuery,
-  user,
-  isUserLoading,
-  showToast,
-  showBookerLayoutSelector,
-  customClassNames,
-  verifiedEmails,
-  orgId,
-  localeOptions,
-}: EventAdvancedTabProps) => {
-  const isPlatform = useIsPlatform();
-  const platformContext = useAtomsContext();
-  const formMethods = useFormContext<FormValues>();
-  const { t } = useLocale();
-  const [showEventNameTip, setShowEventNameTip] = useState(false);
-  const [darkModeError, setDarkModeError] = useState(false);
-  const [lightModeError, setLightModeError] = useState(false);
-  const [multiplePrivateLinksVisible, setMultiplePrivateLinksVisible] = useState(
-    !!formMethods.getValues("multiplePrivateLinks") &&
-      formMethods.getValues("multiplePrivateLinks")?.length !== 0
-  );
-  const watchedInterfaceLanguage = formMethods.watch("interfaceLanguage");
-  const [interfaceLanguageVisible, setInterfaceLanguageVisible] = useState(
-    watchedInterfaceLanguage !== null && watchedInterfaceLanguage !== undefined
-  );
-
-  useEffect(() => {
-    setInterfaceLanguageVisible(watchedInterfaceLanguage !== null && watchedInterfaceLanguage !== undefined);
-  }, [watchedInterfaceLanguage]);
-  const [redirectUrlVisible, setRedirectUrlVisible] = useState(!!formMethods.getValues("successRedirectUrl"));
-
-  const bookingFields: Prisma.JsonObject = {};
-  const selectedThemeIsDark =
-    user?.theme === "dark" ||
-    (!user?.theme && typeof document !== "undefined" && document.documentElement.classList.contains("dark"));
-  formMethods.getValues().bookingFields.forEach(({ name }) => {
-    bookingFields[name] = `${name} input`;
-  });
-
-  const nameBookingField = formMethods.getValues().bookingFields.find((field) => field.name === "name");
-  const isSplit = (nameBookingField && nameBookingField.variant === "firstAndLastName") ?? false;
-
-  const eventNameObject: EventNameObjectType = {
-    attendeeName: t("scheduler"),
-    eventType: formMethods.getValues("title"),
-    eventName: formMethods.getValues("eventName"),
-    host: formMethods.getValues("users")[0]?.name || "Nameless",
-    bookingFields: bookingFields,
-    eventDuration: formMethods.getValues("length"),
-    t,
-  };
-
-  const [requiresConfirmation, setRequiresConfirmation] = useState(
-    formMethods.getValues("requiresConfirmation")
-  );
-  const seatsEnabled = formMethods.watch("seatsPerTimeSlotEnabled");
-  const multiLocation = (formMethods.getValues("locations") || []).length > 1;
-  const noShowFeeEnabled =
-    formMethods.getValues("metadata")?.apps?.stripe?.enabled === true &&
-    formMethods.getValues("metadata")?.apps?.stripe?.paymentOption === "HOLD";
-
-  const isRecurringEvent = !!formMethods.getValues("recurringEvent");
-  const interfaceLanguageOptions =
-    localeOptions && localeOptions.length > 0
-      ? [{ label: t("visitors_browser_language"), value: "" }, ...localeOptions]
-      : [];
-
-  const isRoundRobinEventType =
-    eventType.schedulingType && eventType.schedulingType === SchedulingType.ROUND_ROBIN;
-
-  const toggleGuests = (enabled: boolean) => {
-    const bookingFields = formMethods.getValues("bookingFields");
-    formMethods.setValue(
-      "bookingFields",
-      bookingFields.map((field) => {
-        if (field.name === "guests") {
-          return {
-            ...field,
-            hidden: !enabled,
-            editable: (!enabled ? "system-but-hidden" : "system-but-optional") as z.infer<
-              typeof EditableSchema
-            >,
-          };
-        }
-        return field;
-      }),
-      { shouldDirty: true }
-    );
-  };
-
-  const isManagedEventType = false;
-  const isChildrenManagedEventType = false;
-  const shouldLockDisableProps = (_field: string) => ({
-    disabled: false,
-    LockedIcon: false as const,
-    isLocked: false,
-  });
-  const shouldLockIndicator = (_field: string): Record<string, never> => ({});
-  const eventNamePlaceholder = getEventName({
-    ...eventNameObject,
-    eventName: formMethods.watch("eventName"),
-  });
-
-  const successRedirectUrlLocked = shouldLockDisableProps("successRedirectUrl");
-  const seatsLocked = shouldLockDisableProps("seatsPerTimeSlotEnabled");
-  const requiresBookerEmailVerificationProps = shouldLockDisableProps("requiresBookerEmailVerification");
-  const sendCalVideoTranscriptionEmailsProps = shouldLockDisableProps("canSendCalVideoTranscriptionEmails");
-  const hideCalendarNotesLocked = shouldLockDisableProps("hideCalendarNotes");
-  const hideCalendarEventDetailsLocked = shouldLockDisableProps("hideCalendarEventDetails");
-  const eventTypeColorLocked = shouldLockDisableProps("eventTypeColor");
-  const lockTimeZoneToggleOnBookingPageLocked = shouldLockDisableProps("lockTimeZoneToggleOnBookingPage");
-  const multiplePrivateLinksLocked = shouldLockDisableProps("multiplePrivateLinks");
-  const reschedulingPastBookingsLocked = shouldLockDisableProps("allowReschedulingPastBookings");
-  const hideOrganizerEmailLocked = shouldLockDisableProps("hideOrganizerEmail");
-  const customReplyToEmailLocked = shouldLockDisableProps("customReplyToEmail");
-
-  const disableCancellingLocked = shouldLockDisableProps("disableCancelling");
-  const allowReschedulingCancelledBookingsLocked = shouldLockDisableProps(
-    "allowReschedulingCancelledBookings"
-  );
-
-  const { isLocked: _isLocked, ...eventNameLocked } = shouldLockDisableProps("eventName");
-
-  if (isManagedEventType) {
-    multiplePrivateLinksLocked.disabled = true;
-  }
-
-  const [disableRescheduling, setDisableRescheduling] = useState(eventType.disableRescheduling || false);
-
-  const [allowReschedulingCancelledBookings, setallowReschedulingCancelledBookings] = useState(
-    eventType.allowReschedulingCancelledBookings ?? false
-  );
-
-  const showOptimizedSlotsLocked = shouldLockDisableProps("showOptimizedSlots");
-
-  const closeEventNameTip = () => setShowEventNameTip(false);
-
-  const [isEventTypeColorChecked, setIsEventTypeColorChecked] = useState(!!eventType.eventTypeColor);
-
-  const customReplyToEmail = formMethods.watch("customReplyToEmail");
-
-  const [eventTypeColorState, setEventTypeColorState] = useState(
-    eventType.eventTypeColor || {
-      lightEventTypeColor: DEFAULT_LIGHT_BRAND_COLOR,
-      darkEventTypeColor: DEFAULT_DARK_BRAND_COLOR,
-    }
-  );
-
-  const userTimeZone = extractHostTimezone({
-    userId: eventType.userId,
-    teamId: eventType.teamId,
-    hosts: eventType.hosts,
-    owner: eventType.owner,
-    team: eventType.team,
-  });
-
-  let verifiedSecondaryEmails = [
-    {
-      label: user?.email || "",
-      value: -1,
-    },
-    ...(user?.secondaryEmails || [])
-      .filter((secondaryEmail) => !!secondaryEmail.emailVerified)
-      .map((secondaryEmail) => ({ label: secondaryEmail.email, value: secondaryEmail.id })),
-  ];
-
-  const removePlatformClientIdFromEmail = (email: string, clientId: string) =>
-    email.replace(`+${clientId}`, "");
-
-  let userEmail = user?.email || "";
-
-  if (isPlatform && platformContext.clientId) {
-    verifiedSecondaryEmails = verifiedSecondaryEmails.map((email) => ({
-      ...email,
-      label: removePlatformClientIdFromEmail(email.label, platformContext.clientId),
-    }));
-    userEmail = removePlatformClientIdFromEmail(userEmail, platformContext.clientId);
-  }
-
-  const metadata = formMethods.watch("metadata");
-  const paymentAppData = useMemo(() => {
-    const _eventType = {
-      price: 0,
-      currency: "",
-      metadata,
-    };
-    return getPaymentAppData(_eventType);
-  }, [metadata]);
-
-  const isPaidEvent = useMemo(
-    () => !Number.isNaN(paymentAppData.price) && paymentAppData.price > 0,
-    [paymentAppData]
-  );
-
-  const TimezoneSelect = useMemo(() => {
-    return isPlatform ? PlatformTimzoneSelect : WebTimezoneSelect;
-  }, [isPlatform]);
-
-  return (
-    <div className="stack-y-4 flex flex-col">
-      <calendarComponents.CalendarSettings
-        verifiedSecondaryEmails={verifiedSecondaryEmails}
-        userEmail={userEmail}
-        calendarsQuery={calendarsQuery}
-        isTeamEventType={!!team}
-        isChildrenManagedEventType={isChildrenManagedEventType}
-        customClassNames={customClassNames}
-        eventNameLocked={eventNameLocked}
-        eventNamePlaceholder={eventNamePlaceholder}
-        setShowEventNameTip={setShowEventNameTip}
-        showToast={showToast}
-        eventType={eventType}
-      />
-      {showBookerLayoutSelector && (
-        <BookerLayoutSelector
-          fallbackToUserSettings
-          isDark={selectedThemeIsDark}
-          isOuterBorder={true}
-          user={user}
-          isUserLoading={isUserLoading}
-        />
-      )}
-
-      <div className="rounded-lg border border-subtle bg-cal-muted p-1">
-        <div className="p-5">
-          <div className="font-semibold text-default text-sm leading-none ltr:mr-1 rtl:ml-1">
-            {t("booking_questions_title")}
-          </div>
-          <p className="wrap-break-word mt-1 max-w-[280px] text-sm text-subtle sm:max-w-[500px]">
-            <LearnMoreLink
-              t={t}
-              i18nKey="booking_questions_description"
-              href="https://cal.com/help/event-types/booking-questions"
-            />
-          </p>
-        </div>
-        <div className="rounded-lg border border-subtle bg-default p-5">
-          <FormBuilder
-            showPhoneAndEmailToggle
-            title={t("confirmation")}
-            description={t("what_booker_should_provide")}
-            addFieldLabel={t("add_a_booking_question")}
-            formProp="bookingFields"
-            {...shouldLockDisableProps("bookingFields")}
-            dataStore={{
-              options: {
-                locations: {
-                  // FormBuilder doesn't handle plural for non-english languages. So, use english(Location) only. This is similar to 'Workflow'
-                  source: { label: "Location" },
-                  value: getLocationsOptionsForSelect(formMethods.getValues("locations") ?? [], t),
-                },
-              },
-            }}
-            shouldConsiderRequired={(field: BookingField) => {
-              // Location field has a default value at backend so API can send no location but we don't allow it in UI and thus we want to show it as required to user
-              return field.name === "location" ? true : field.required;
-            }}
-            showPriceField={isPaidEvent}
-            paymentCurrency={paymentAppData?.currency || "usd"}
-          />
-        </div>
-      </div>
-      {!isPlatform && (
-        <Controller
-          name="requiresCancellationReason"
-          render={({ field: { value, onChange } }) => {
-            const cancellationReasonOptions = [
-              { value: CancellationReasonRequirement.MANDATORY_BOTH, label: t("mandatory_for_both") },
-              {
-                value: CancellationReasonRequirement.MANDATORY_HOST_ONLY,
-                label: t("mandatory_for_host_only"),
-              },
-              {
-                value: CancellationReasonRequirement.MANDATORY_ATTENDEE_ONLY,
-                label: t("mandatory_for_attendee_only"),
-              },
-              { value: CancellationReasonRequirement.OPTIONAL_BOTH, label: t("optional_for_both") },
-            ];
-            return (
-              <div className="border-subtle rounded-lg border px-4 py-6 sm:px-6">
-                <div className="flex items-center justify-between">
-                  <div>
-                    <p className="text-default text-sm font-semibold">{t("require_cancellation_reason")}</p>
-                    <p className="text-default text-sm">{t("require_cancellation_reason_description")}</p>
-                  </div>
-                  <Select
-                    value={cancellationReasonOptions.find(
-                      (opt) => opt.value === (value || CancellationReasonRequirement.MANDATORY_HOST_ONLY)
-                    )}
-                    options={cancellationReasonOptions}
-                    onChange={(selected) => onChange(selected?.value)}
-                    className="w-52"
-                  />
-                </div>
-              </div>
-            );
-          }}
-        />
-      )}
-      <RequiresConfirmationController
-        eventType={eventType}
-        seatsEnabled={seatsEnabled}
-        metadata={formMethods.getValues("metadata")}
-        requiresConfirmation={requiresConfirmation}
-        requiresConfirmationWillBlockSlot={formMethods.getValues("requiresConfirmationWillBlockSlot")}
-        onRequiresConfirmation={setRequiresConfirmation}
-        customClassNames={customClassNames?.requiresConfirmation}
-      />
-
-      {!isPlatform && (
-        <>
-          <Controller
-            name="disabledCancelling"
-            render={({ field: { onChange, value } }) => (
-              <SettingsToggle
-                labelClassName="text-sm"
-                toggleSwitchAtTheEnd={true}
-                switchContainerClassName="border-subtle rounded-lg border py-6 px-4 sm:px-6"
-                title={t("disable_cancelling")}
-                data-testid="disable-cancelling-toggle"
-                {...disableCancellingLocked}
-                description={
-                  <LearnMoreLink
-                    t={t}
-                    i18nKey="description_disable_cancelling"
-                    href="https://cal.com/help/event-types/disable-canceling-rescheduling#disable-cancelling"
-                  />
-                }
-                checked={value}
-                onCheckedChange={(val) => {
-                  onChange(val);
-                }}
-              />
-            )}
-          />
-
-          <DisableReschedulingController
-            eventType={eventType}
-            disableRescheduling={disableRescheduling}
-            onDisableRescheduling={setDisableRescheduling}
-            customClassNames={customClassNames?.disableRescheduling}
-          />
-        </>
-      )}
-
-      <Controller
-        name="canSendCalVideoTranscriptionEmails"
-        render={({ field: { value, onChange } }) => (
-          <SettingsToggle
-            labelClassName={classNames(
-              "text-sm",
-              customClassNames?.canSendCalVideoTranscriptionEmails?.label
-            )}
-            toggleSwitchAtTheEnd={true}
-            switchContainerClassName={classNames(
-              "border-subtle rounded-lg border py-6 px-4 sm:px-6",
-              customClassNames?.canSendCalVideoTranscriptionEmails?.container
-            )}
-            title={t("send_cal_video_transcription_emails")}
-            data-testid="send-cal-video-transcription-emails"
-            {...sendCalVideoTranscriptionEmailsProps}
-            description={t("description_send_cal_video_transcription_emails")}
-            descriptionClassName={customClassNames?.canSendCalVideoTranscriptionEmails?.description}
-            checked={value}
-            onCheckedChange={(e) => onChange(e)}
-          />
-        )}
-      />
-      {!isPlatform && (
-        <Controller
-          name="autoTranslateDescriptionEnabled"
-          render={({ field: { value, onChange } }) => (
-            <SettingsToggle
-              labelClassName="text-sm"
-              title={t("translate_description_button")}
-              checked={value}
-              onCheckedChange={(e) => onChange(e)}
-              disabled={!orgId}
-              tooltip={!orgId ? t("orgs_upgrade_to_enable_feature") : undefined}
-              data-testid="ai_translation_toggle"
-              toggleSwitchAtTheEnd={true}
-              switchContainerClassName="border-subtle rounded-lg border py-6 px-4 sm:px-6"
-              description={t("translate_description_button_description")}
-            />
-          )}
-        />
-      )}
-      {!isPlatform && (
-        <Controller
-          name="interfaceLanguage"
-          control={formMethods.control}
-          defaultValue={eventType.interfaceLanguage ?? null}
-          render={({ field: { value, onChange } }) => (
-            <SettingsToggle
-              labelClassName="text-sm"
-              toggleSwitchAtTheEnd={true}
-              switchContainerClassName={classNames(
-                "border-subtle rounded-lg border py-6 px-4 sm:px-6",
-                interfaceLanguageVisible && "rounded-b-none"
-              )}
-              childrenClassName="lg:ml-0"
-              data-testid="event-interface-language-toggle"
-              title={t("interface_language")}
-              description={t("interface_language_description")}
-              checked={interfaceLanguageVisible}
-              {...shouldLockIndicator("interfaceLanguage")}
-              onCheckedChange={(e) => {
-                setInterfaceLanguageVisible(e);
-                if (!e) {
-                  // disables the setting
-                  formMethods.setValue("interfaceLanguage", null, { shouldDirty: true });
-                } else {
-                  // "" is default value which means visitors browser language
-                  formMethods.setValue("interfaceLanguage", "", { shouldDirty: true });
-                }
-              }}>
-              <div className="rounded-b-lg border border-subtle border-t-0 p-6">
-                <Select<{ label: string; value: string }>
-                  data-testid="event-interface-language"
-                  className="capitalize"
-                  options={interfaceLanguageOptions}
-                  onChange={(option) => {
-                    onChange(option?.value);
-                  }}
-                  value={interfaceLanguageOptions.find((option) => option.value === value) || undefined}
-                />
-              </div>
-            </SettingsToggle>
-          )}
-        />
-      )}
-      <Controller
-        name="requiresBookerEmailVerification"
-        render={({ field: { value, onChange } }) => (
-          <SettingsToggle
-            labelClassName={classNames("text-sm", customClassNames?.bookerEmailVerification?.label)}
-            toggleSwitchAtTheEnd={true}
-            switchContainerClassName={classNames(
-              "border-subtle rounded-lg border py-6 px-4 sm:px-6",
-              customClassNames?.bookerEmailVerification?.container
-            )}
-            title={t("requires_booker_email_verification")}
-            data-testid="requires-booker-email-verification"
-            {...requiresBookerEmailVerificationProps}
-            description={t("description_requires_booker_email_verification")}
-            descriptionClassName={customClassNames?.bookerEmailVerification?.description}
-            checked={value}
-            onCheckedChange={(e) => onChange(e)}
-          />
-        )}
-      />
-      <Controller
-        name="hideCalendarNotes"
-        render={({ field: { value, onChange } }) => (
-          <SettingsToggle
-            labelClassName={classNames("text-sm", customClassNames?.calendarNotes?.label)}
-            toggleSwitchAtTheEnd={true}
-            switchContainerClassName={classNames(
-              "border-subtle rounded-lg border py-6 px-4 sm:px-6",
-              customClassNames?.calendarNotes?.container
-            )}
-            descriptionClassName={customClassNames?.calendarNotes?.description}
-            data-testid="disable-notes"
-            title={t("disable_notes")}
-            {...hideCalendarNotesLocked}
-            description={
-              <LearnMoreLink
-                t={t}
-                i18nKey="disable_notes_description"
-                href="https://cal.com/help/event-types/hide-notes"
-              />
-            }
-            checked={value}
-            onCheckedChange={(e) => onChange(e)}
-          />
-        )}
-      />
-      <Controller
-        name="hideCalendarEventDetails"
-        render={({ field: { value, onChange } }) => (
-          <SettingsToggle
-            labelClassName={classNames("text-sm", customClassNames?.eventDetailsVisibility?.label)}
-            toggleSwitchAtTheEnd={true}
-            switchContainerClassName={classNames(
-              "border-subtle rounded-lg border py-6 px-4 sm:px-6",
-              customClassNames?.eventDetailsVisibility?.container
-            )}
-            descriptionClassName={customClassNames?.eventDetailsVisibility?.description}
-            title={t("hide_calendar_event_details")}
-            {...hideCalendarEventDetailsLocked}
-            description={t("description_hide_calendar_event_details")}
-            checked={value}
-            onCheckedChange={(e) => onChange(e)}
-          />
-        )}
-      />
-      <Controller
-        name="successRedirectUrl"
-        render={({ field: { value, onChange } }) => (
-          <>
-            <SettingsToggle
-              labelClassName={classNames("text-sm", customClassNames?.bookingRedirect?.label)}
-              toggleSwitchAtTheEnd={true}
-              switchContainerClassName={classNames(
-                "border-subtle rounded-lg border py-6 px-4 sm:px-6",
-                redirectUrlVisible && "rounded-b-none",
-                customClassNames?.bookingRedirect?.container
-              )}
-              childrenClassName={classNames("lg:ml-0", customClassNames?.bookingRedirect?.children)}
-              descriptionClassName={customClassNames?.bookingRedirect?.description}
-              title={t("redirect_success_booking")}
-              data-testid="redirect-success-booking"
-              {...successRedirectUrlLocked}
-              description={t("redirect_url_description")}
-              checked={redirectUrlVisible}
-              onCheckedChange={(e) => {
-                setRedirectUrlVisible(e);
-                onChange(e ? value : "");
-              }}>
-              <div
-                className={classNames(
-                  "rounded-b-lg border border-subtle border-t-0 p-6",
-                  customClassNames?.bookingRedirect?.redirectUrlInput?.container
-                )}>
-                <TextField
-                  className={classNames("w-full", customClassNames?.bookingRedirect?.redirectUrlInput?.input)}
-                  label={t("redirect_success_booking")}
-                  labelClassName={customClassNames?.bookingRedirect?.redirectUrlInput?.label}
-                  labelSrOnly
-                  disabled={successRedirectUrlLocked.disabled}
-                  placeholder={t("external_redirect_url")}
-                  data-testid="external-redirect-url"
-                  required={redirectUrlVisible}
-                  type="text"
-                  {...formMethods.register("successRedirectUrl")}
-                />
-
-                <div
-                  className={classNames(
-                    "mt-4",
-                    customClassNames?.bookingRedirect?.forwardParamsCheckbox?.container
-                  )}>
-                  <Controller
-                    name="forwardParamsSuccessRedirect"
-                    render={({ field: { value, onChange } }) => (
-                      <CheckboxField
-                        description={t("forward_params_redirect")}
-                        disabled={successRedirectUrlLocked.disabled}
-                        className={customClassNames?.bookingRedirect?.forwardParamsCheckbox?.checkbox}
-                        descriptionClassName={
-                          customClassNames?.bookingRedirect?.forwardParamsCheckbox?.description
-                        }
-                        onChange={(e) => onChange(e)}
-                        checked={value}
-                      />
-                    )}
-                  />
-                </div>
-                <div
-                  className={classNames(
-                    "p-1 text-orange-600 text-sm",
-                    formMethods.getValues("successRedirectUrl") ? "block" : "hidden",
-                    customClassNames?.bookingRedirect?.error
-                  )}
-                  data-testid="redirect-url-warning">
-                  {t("redirect_url_warning")}
-                </div>
-              </div>
-            </SettingsToggle>
-          </>
-        )}
-      />
-      {!isPlatform && (
-        <Controller
-          name="multiplePrivateLinks"
-          render={() => {
-            return (
-              <SettingsToggle
-                labelClassName="text-sm"
-                toggleSwitchAtTheEnd={true}
-                switchContainerClassName={classNames(
-                  "border-subtle rounded-lg border py-6 px-4 sm:px-6",
-                  multiplePrivateLinksVisible && "rounded-b-none"
-                )}
-                childrenClassName="lg:ml-0"
-                data-testid="multiplePrivateLinksCheck"
-                title={t("multiple_private_links_title")}
-                {...multiplePrivateLinksLocked}
-                description={
-                  <LearnMoreLink
-                    t={t}
-                    i18nKey="multiple_private_links_description"
-                    href="https://cal.com/help/event-types/private-links"
-                  />
-                }
-                tooltip={isManagedEventType ? t("managed_event_field_parent_control_disabled") : ""}
-                checked={multiplePrivateLinksVisible}
-                onCheckedChange={(e) => {
-                  if (!e) {
-                    formMethods.setValue("multiplePrivateLinks", [], { shouldDirty: true });
-                  } else {
-                    formMethods.setValue(
-                      "multiplePrivateLinks",
-                      [generateHashedLink(formMethods.getValues("users")[0]?.id ?? team?.id)],
-                      { shouldDirty: true }
-                    );
-                  }
-                  setMultiplePrivateLinksVisible(e);
-                }}>
-                {!isManagedEventType && (
-                  <div className="rounded-b-lg border border-subtle border-t-0 p-6">
-                    <MultiplePrivateLinksController
-                      team={team}
-                      bookerUrl={eventType.bookerUrl}
-                      setMultiplePrivateLinksVisible={setMultiplePrivateLinksVisible}
-                      userTimeZone={userTimeZone}
-                    />
-                  </div>
-                )}
-              </SettingsToggle>
-            );
-          }}
-        />
-      )}
-      <Controller
-        name="seatsPerTimeSlotEnabled"
-        render={({ field: { value, onChange } }) => (
-          <>
-            <SettingsToggle
-              labelClassName={classNames("text-sm", customClassNames?.seatsOptions?.label)}
-              toggleSwitchAtTheEnd={true}
-              switchContainerClassName={classNames(
-                "border-subtle rounded-lg border py-6 px-4 sm:px-6",
-                value && "rounded-b-none",
-                customClassNames?.seatsOptions?.container
-              )}
-              childrenClassName={classNames("lg:ml-0", customClassNames?.seatsOptions?.children)}
-              descriptionClassName={customClassNames?.seatsOptions?.description}
-              data-testid="offer-seats-toggle"
-              title={t("offer_seats")}
-              {...seatsLocked}
-              description={
-                <LearnMoreLink
-                  t={t}
-                  i18nKey="offer_seats_description"
-                  href="https://cal.com/help/event-types/offer-seats"
-                />
-              }
-              checked={value}
-              disabled={noShowFeeEnabled || multiLocation || (!seatsEnabled && isRecurringEvent)}
-              tooltip={
-                multiLocation
-                  ? t("multilocation_doesnt_support_seats")
-                  : noShowFeeEnabled
-                    ? t("no_show_fee_doesnt_support_seats")
-                    : isRecurringEvent
-                      ? t("recurring_event_doesnt_support_seats")
-                      : undefined
-              }
-              onCheckedChange={(e) => {
-                // Enabling seats will disable guests and requiring confirmation until fully supported
-                if (e) {
-                  toggleGuests(false);
-                  formMethods.setValue("requiresConfirmation", false, { shouldDirty: true });
-                  setRequiresConfirmation(false);
-                  formMethods.setValue("metadata.multipleDuration", undefined, { shouldDirty: true });
-                  formMethods.setValue("seatsPerTimeSlot", eventType.seatsPerTimeSlot ?? 2, {
-                    shouldDirty: true,
-                  });
-                } else {
-                  formMethods.setValue("seatsPerTimeSlot", null);
-                  toggleGuests(true);
-                }
-                onChange(e);
-              }}>
-              <div className="rounded-b-lg border border-subtle border-t-0 p-6">
-                <Controller
-                  name="seatsPerTimeSlot"
-                  render={({ field: { value, onChange } }) => (
-                    <div>
-                      <TextField
-                        required
-                        name="seatsPerTimeSlot"
-                        labelSrOnly
-                        label={t("number_of_seats")}
-                        type="number"
-                        disabled={seatsLocked.disabled}
-                        //For old events if value > MAX_SEATS_PER_TIME_SLOT
-                        value={value > MAX_SEATS_PER_TIME_SLOT ? MAX_SEATS_PER_TIME_SLOT : (value ?? 1)}
-                        step={1}
-                        placeholder="1"
-                        min={1}
-                        max={MAX_SEATS_PER_TIME_SLOT}
-                        containerClassName={classNames(
-                          "max-w-80",
-                          customClassNames?.seatsOptions?.seatsInput.container
-                        )}
-                        addOnClassname={customClassNames?.seatsOptions?.seatsInput.addOn}
-                        className={customClassNames?.seatsOptions?.seatsInput?.input}
-                        labelClassName={customClassNames?.seatsOptions?.seatsInput?.label}
-                        addOnSuffix={t("seats")}
-                        onChange={(e) => {
-                          const enteredValue = parseInt(e.target.value, 10);
-                          onChange(Math.min(enteredValue, MAX_SEATS_PER_TIME_SLOT));
-                        }}
-                        data-testid="seats-per-time-slot"
-                      />
-                      <div
-                        className={classNames(
-                          "mt-4",
-                          customClassNames?.seatsOptions?.showAttendeesCheckbox?.container
-                        )}>
-                        <Controller
-                          name="seatsShowAttendees"
-                          render={({ field: { value, onChange } }) => (
-                            <CheckboxField
-                              data-testid="show-attendees"
-                              description={t("show_attendees")}
-                              className={customClassNames?.seatsOptions?.showAttendeesCheckbox?.checkbox}
-                              descriptionClassName={
-                                customClassNames?.seatsOptions?.showAttendeesCheckbox?.description
-                              }
-                              disabled={seatsLocked.disabled}
-                              onChange={(e) => onChange(e)}
-                              checked={value}
-                            />
-                          )}
-                        />
-                      </div>
-                      <div
-                        className={classNames(
-                          "mt-2",
-                          customClassNames?.seatsOptions?.showAvalableSeatCountCheckbox?.container
-                        )}>
-                        <Controller
-                          name="seatsShowAvailabilityCount"
-                          render={({ field: { value, onChange } }) => (
-                            <CheckboxField
-                              description={t("show_available_seats_count")}
-                              disabled={seatsLocked.disabled}
-                              onChange={(e) => onChange(e)}
-                              checked={value}
-                              className={
-                                customClassNames?.seatsOptions?.showAvalableSeatCountCheckbox?.checkbox
-                              }
-                              descriptionClassName={
-                                customClassNames?.seatsOptions?.showAvalableSeatCountCheckbox?.description
-                              }
-                            />
-                          )}
-                        />
-                      </div>
-                    </div>
-                  )}
-                />
-              </div>
-            </SettingsToggle>
-            {noShowFeeEnabled && <Alert severity="warning" title={t("seats_and_no_show_fee_error")} />}
-          </>
-        )}
-      />
-      <Controller
-        name="hideOrganizerEmail"
-        render={({ field: { value, onChange } }) => (
-          <SettingsToggle
-            labelClassName={classNames("text-sm", customClassNames?.hideOrganizerEmail?.label)}
-            toggleSwitchAtTheEnd={true}
-            switchContainerClassName={classNames(
-              "border-subtle rounded-lg border py-6 px-4 sm:px-6",
-              customClassNames?.hideOrganizerEmail?.container
-            )}
-            title={t("hide_organizer_email")}
-            {...hideOrganizerEmailLocked}
-            description={
-              <LearnMoreLink
-                t={t}
-                i18nKey="hide_organizer_email_description"
-                href="https://cal.com/help/event-types/hideorganizersemail#hide-organizers-email"
-              />
-            }
-            descriptionClassName={customClassNames?.hideOrganizerEmail?.description}
-            checked={value}
-            onCheckedChange={(e) => onChange(e)}
-            data-testid="hide-organizer-email"
-          />
-        )}
-      />
-      <Controller
-        name="lockTimeZoneToggleOnBookingPage"
-        render={({ field: { value, onChange } }) => {
-          // Calculate if we should show the selector based on current form state & handle backward compatibility
-          const currentLockedTimeZone = formMethods.getValues("lockedTimeZone");
-          const showSelector =
-            value &&
-            (!(eventType.lockTimeZoneToggleOnBookingPage && !eventType.lockedTimeZone) ||
-              !!currentLockedTimeZone);
-
-          return (
-            <SettingsToggle
-              labelClassName={classNames("text-sm", customClassNames?.timezoneLock?.label)}
-              descriptionClassName={customClassNames?.timezoneLock?.description}
-              toggleSwitchAtTheEnd={true}
-              switchContainerClassName={classNames(
-                "border-subtle rounded-lg border py-6 px-4 sm:px-6",
-                customClassNames?.timezoneLock?.container,
-                showSelector && "rounded-b-none"
-              )}
-              title={t("lock_timezone_toggle_on_booking_page")}
-              {...lockTimeZoneToggleOnBookingPageLocked}
-              description={
-                <LearnMoreLink
-                  t={t}
-                  i18nKey="description_lock_timezone_toggle_on_booking_page"
-                  href="https://cal.com/help/event-types/timezone-lock"
-                />
-              }
-              checked={value}
-              onCheckedChange={(e) => {
-                onChange(e);
-                const lockedTimeZone = e ? (eventType.lockedTimeZone ?? "Europe/London") : null;
-                formMethods.setValue("lockedTimeZone", lockedTimeZone, { shouldDirty: true });
-              }}
-              data-testid="lock-timezone-toggle"
-              childrenClassName="lg:ml-0">
-              {showSelector && (
-                <div className="flex flex-col gap-6 rounded-b-lg border border-subtle border-t-0 p-6">
-                  <div>
-                    <Controller
-                      name="lockedTimeZone"
-                      control={formMethods.control}
-                      render={({ field: { value } }) => (
-                        <>
-                          <Label className="mb-2 block font-medium text-default text-sm">
-                            {t("timezone")}
-                          </Label>
-                          <TimezoneSelect
-                            id="lockedTimeZone"
-                            value={value ?? "Europe/London"}
-                            onChange={(event) => {
-                              if (event)
-                                formMethods.setValue("lockedTimeZone", event.value, { shouldDirty: true });
-                            }}
-                          />
-                        </>
-                      )}
-                    />
-                  </div>
-                </div>
-              )}
-            </SettingsToggle>
-          );
-        }}
-      />
-      <Controller
-        name="allowReschedulingPastBookings"
-        render={({ field: { value, onChange } }) => (
-          <SettingsToggle
-            labelClassName={classNames("text-sm")}
-            toggleSwitchAtTheEnd={true}
-            switchContainerClassName={classNames("border-subtle rounded-lg border py-6 px-4 sm:px-6")}
-            title={t("allow_rescheduling_past_events")}
-            {...reschedulingPastBookingsLocked}
-            description={
-              <LearnMoreLink
-                t={t}
-                i18nKey="allow_rescheduling_past_events_description"
-                href="https://cal.com/help/event-types/allow-rescheduling"
-              />
-            }
-            checked={value}
-            onCheckedChange={(e) => onChange(e)}
-          />
-        )}
-      />
-
-      <Controller
-        name="allowReschedulingCancelledBookings"
-        render={({ field: { onChange } }) => (
-          <SettingsToggle
-            labelClassName="text-sm"
-            toggleSwitchAtTheEnd={true}
-            switchContainerClassName="border-subtle rounded-lg border py-6 px-4 sm:px-6"
-            title={t("allow_rescheduling_cancelled_bookings")}
-            data-testid="allow-rescheduling-cancelled-bookings-toggle"
-            {...allowReschedulingCancelledBookingsLocked}
-            description={t("description_allow_rescheduling_cancelled_bookings")}
-            checked={allowReschedulingCancelledBookings}
-            onCheckedChange={(val) => {
-              setallowReschedulingCancelledBookings(val);
-              onChange(val);
-            }}
-          />
-        )}
-      />
-      <Controller
-        name="customReplyToEmail"
-        render={({ field: { value, onChange } }) => (
-          <>
-            <SettingsToggle
-              labelClassName={classNames("text-sm", customClassNames?.customReplyToEmail?.label)}
-              toggleSwitchAtTheEnd={true}
-              switchContainerClassName={classNames(
-                "border-subtle rounded-lg border py-6 px-4 sm:px-6",
-                !!value && "rounded-b-none",
-                customClassNames?.customReplyToEmail?.container
-              )}
-              descriptionClassName={customClassNames?.customReplyToEmail?.description}
-              childrenClassName={classNames("lg:ml-0", customClassNames?.customReplyToEmail?.children)}
-              title={t("custom_reply_to_email_title")}
-              {...customReplyToEmailLocked}
-              data-testid="custom-reply-to-email"
-              description={t("custom_reply_to_email_description")}
-              checked={!!customReplyToEmail}
-              onCheckedChange={(e) => {
-                onChange(
-                  e ? customReplyToEmail || eventType.customReplyToEmail || verifiedEmails?.[0] || null : null
-                );
-              }}>
-              {isPlatform && (
-                <AddVerifiedEmail username={eventType.users[0]?.name || "there"} showToast={showToast} />
-              )}
-              <div className="rounded-b-lg border border-subtle border-t-0 p-6">
-                <SelectField
-                  className="w-full"
-                  label={t("custom_reply_to_email_title")}
-                  required={!!customReplyToEmail}
-                  placeholder={t("select_verified_email")}
-                  data-testid="custom-reply-to-email-input"
-                  value={value ? { label: value, value } : undefined}
-                  onChange={(option) => onChange(option?.value || null)}
-                  options={verifiedEmails?.map((email) => ({ label: email, value: email })) || []}
-                />
-              </div>
-            </SettingsToggle>
-          </>
-        )}
-      />
-      <Controller
-        name="eventTypeColor"
-        render={() => (
-          <SettingsToggle
-            labelClassName={classNames("text-sm", customClassNames?.eventTypeColors?.label)}
-            toggleSwitchAtTheEnd={true}
-            switchContainerClassName={classNames(
-              "border-subtle rounded-lg border py-6 px-4 sm:px-6",
-              isEventTypeColorChecked && "rounded-b-none",
-              customClassNames?.eventTypeColors?.container
-            )}
-            title={t("event_type_color")}
-            {...eventTypeColorLocked}
-            description={t("event_type_color_description")}
-            descriptionClassName={customClassNames?.eventTypeColors?.description}
-            checked={isEventTypeColorChecked}
-            onCheckedChange={(e) => {
-              const value = e ? eventTypeColorState : null;
-              formMethods.setValue("eventTypeColor", value, {
-                shouldDirty: true,
-              });
-              setIsEventTypeColorChecked(e);
-            }}
-            childrenClassName={classNames("lg:ml-0", customClassNames?.eventTypeColors?.children)}>
-            <div className="flex flex-col gap-6 rounded-b-lg border border-subtle border-t-0 p-6">
-              <div>
-                <p className="mb-2 block font-medium text-default text-sm">{t("light_event_type_color")}</p>
-                <ColorPicker
-                  defaultValue={eventTypeColorState.lightEventTypeColor}
-                  onChange={(value) => {
-                    const newVal = {
-                      ...eventTypeColorState,
-                      lightEventTypeColor: value,
-                    };
-                    formMethods.setValue("eventTypeColor", newVal, { shouldDirty: true });
-                    setEventTypeColorState(newVal);
-                    if (checkWCAGContrastColor("#ffffff", value)) {
-                      setLightModeError(false);
-                    } else {
-                      setLightModeError(true);
-                    }
-                  }}
-                />
-                {lightModeError ? (
-                  <div className="mt-4">
-                    <Alert
-                      severity="warning"
-                      className={customClassNames?.eventTypeColors?.warningText}
-                      message={t("event_type_color_light_theme_contrast_error")}
-                    />
-                  </div>
-                ) : null}
-              </div>
-
-              <div className="mt-6 sm:mt-0">
-                <p className="mb-2 block font-medium text-default text-sm">{t("dark_event_type_color")}</p>
-                <ColorPicker
-                  defaultValue={eventTypeColorState.darkEventTypeColor}
-                  onChange={(value) => {
-                    const newVal = {
-                      ...eventTypeColorState,
-                      darkEventTypeColor: value,
-                    };
-                    formMethods.setValue("eventTypeColor", newVal, { shouldDirty: true });
-                    setEventTypeColorState(newVal);
-                    if (checkWCAGContrastColor("#101010", value)) {
-                      setDarkModeError(false);
-                    } else {
-                      setDarkModeError(true);
-                    }
-                  }}
-                />
-                {darkModeError ? (
-                  <div className="mt-4">
-                    <Alert
-                      severity="warning"
-                      className={customClassNames?.eventTypeColors?.warningText}
-                      message={t("event_type_color_dark_theme_contrast_error")}
-                    />
-                  </div>
-                ) : null}
-              </div>
-            </div>
-          </SettingsToggle>
-        )}
-      />
-      <Controller
-        name="showOptimizedSlots"
-        render={({ field: { onChange, value } }) => {
-          const isChecked = value;
-          return (
-            <SettingsToggle
-              toggleSwitchAtTheEnd={true}
-              labelClassName="text-sm"
-              title={t("show_optimized_slots")}
-              description={
-                <LearnMoreLink
-                  t={t}
-                  i18nKey="show_optimized_slots_description"
-                  href="https://cal.com/help/event-types/optimized-slots#optimized-slots"
-                />
-              }
-              checked={isChecked}
-              {...showOptimizedSlotsLocked}
-              onCheckedChange={(active) => {
-                onChange(active ?? false);
-              }}
-              switchContainerClassName={classNames(
-                "border-subtle rounded-lg border py-6 px-4 sm:px-6",
-                isChecked && "rounded-b-none"
-              )}
-            />
-          );
-        }}
-      />
-      {isRoundRobinEventType && (
-        <Controller
-          name="rescheduleWithSameRoundRobinHost"
-          render={({ field: { value, onChange } }) => (
-            <SettingsToggle
-              labelClassName={classNames("text-sm", customClassNames?.roundRobinReschedule?.label)}
-              toggleSwitchAtTheEnd={true}
-              switchContainerClassName={classNames(
-                "border-subtle rounded-lg border py-6 px-4 sm:px-6",
-                customClassNames?.roundRobinReschedule?.container
-              )}
-              title={t("reschedule_with_same_round_robin_host_title")}
-              description={t("reschedule_with_same_round_robin_host_description")}
-              descriptionClassName={customClassNames?.roundRobinReschedule?.description}
-              checked={value}
-              onCheckedChange={(e) => onChange(e)}
-            />
-          )}
-        />
-      )}
-
-      {team?.parentId && (
-        <>
-          <Controller
-            name="metadata.disableStandardEmails.all.attendee"
-            render={({ field: { value, onChange } }) => {
-              return (
-                <DisableAllEmailsSetting
-                  checked={value}
-                  onCheckedChange={onChange}
-                  recipient="attendees"
-                  customClassNames={customClassNames?.emailNotifications}
-                  t={t}
-                />
-              );
-            }}
-          />
-          <Controller
-            name="metadata.disableStandardEmails.all.host"
-            defaultValue={!!formMethods.getValues("seatsPerTimeSlot")}
-            render={({ field: { value, onChange } }) => (
-              <>
-                <DisableAllEmailsSetting
-                  checked={value}
-                  onCheckedChange={onChange}
-                  recipient="hosts"
-                  customClassNames={customClassNames?.emailNotifications}
-                  t={t}
-                />
-              </>
-            )}
-          />
-        </>
-      )}
-      {showEventNameTip && (
-        <CustomEventTypeModal
-          close={closeEventNameTip}
-          setValue={(val: string) => formMethods.setValue("eventName", val, { shouldDirty: true })}
-          defaultValue={formMethods.getValues("eventName")}
-          placeHolder={eventNamePlaceholder}
-          isNameFieldSplit={isSplit}
-          event={eventNameObject}
-          customClassNames={customClassNames?.customEventTypeModal}
-        />
-      )}
-    </div>
-  );
-};
-```
-
-<a id="finding-repository-health-complexity-handler-ade03c41a4"></a>
-## Critical complexity in handler
-
-Severity: Critical
-Classification: Code health
-Language: TypeScript
-Framework: Code health
-
-apps/web/app/api/auth/signup/handlers/selfHostedHandler.ts:24 has cyclomatic complexity 29, cognitive complexity 64, and maintainability 21.64.
-
-**Criterion:** Repository health complexity policy: warn above cyclomatic 10, cognitive 15, or below maintainability 60.
-
-**Recommended next step:** Split handler into smaller decision units, preserve its current behavior with focused tests, and rerun the health report before applying automated cleanup.
-
-[selfHostedHandler.ts: handler](#plan-group-f487a164f167a2c08d6b9666229511bd16972ca4a4a44f977a764c3d956e230f)
-
-<a id="source-repository-health-complexity-handler-ade03c41a4"></a>
-### Source evidence
-
-apps/web/app/api/auth/signup/handlers/selfHostedHandler.ts L22-L209
-
-Source: apps/web/app/api/auth/signup/handlers/selfHostedHandler.ts L22-L209
-
-```typescript
-import { NextResponse } from "next/server";
-
-export default async function handler(body: Record<string, string>) {
-  const { email, password, language, token } = signupSchema.parse(body);
-
-  const username = slugify(body.username);
-  const userEmail = email.toLowerCase();
-
-  if (!username) {
-    return NextResponse.json({ message: "Invalid username" }, { status: 422 });
-  }
-
-  let foundToken: { id: number; teamId: number | null; expires: Date } | null = null;
-  let correctedUsername = username;
-  if (token) {
-    foundToken = await findTokenByToken({ token });
-    throwIfTokenExpired(foundToken?.expires);
-    correctedUsername = await validateAndGetCorrectedUsernameForTeam({
-      username,
-      email: userEmail,
-      teamId: foundToken?.teamId,
-      isSignup: true,
-    });
-
-    if (foundToken?.teamId) {
-      const existingUser = await prisma.user.findUnique({
-        where: { email: userEmail },
-        select: { invitedTo: true },
-      });
-      if (existingUser && existingUser.invitedTo !== foundToken.teamId) {
-        return NextResponse.json({ message: SIGNUP_ERROR_CODES.USER_ALREADY_EXISTS }, { status: 409 });
-      }
-    }
-  } else {
-    const userValidation = await validateAndGetCorrectedUsernameAndEmail({
-      username,
-      email: userEmail,
-      isSignup: true,
-    });
-    if (!userValidation.isValid) {
-      logger.error("User validation failed", { userValidation });
-      return NextResponse.json({ message: "Username or email is already taken" }, { status: 409 });
-    }
-    if (!userValidation.username) {
-      return NextResponse.json({ message: "Invalid username" }, { status: 422 });
-    }
-    correctedUsername = userValidation.username;
-  }
-
-  const hashedPassword = await hashPassword(password);
-
-  if (foundToken?.teamId) {
-    const team = await prisma.team.findUnique({
-      where: {
-        id: foundToken.teamId,
-      },
-      include: {
-        parent: {
-          select: {
-            id: true,
-            slug: true,
-            organizationSettings: true,
-          },
-        },
-        organizationSettings: true,
-      },
-    });
-
-    if (team) {
-      const isInviteForATeamInOrganization = !!team.parent;
-      const isCheckingUsernameInGlobalNamespace = !team.isOrganization && !isInviteForATeamInOrganization;
-
-      if (isCheckingUsernameInGlobalNamespace) {
-        const isUsernameAvailable = !(await isUsernameReservedDueToMigration(correctedUsername));
-        if (!isUsernameAvailable) {
-          return NextResponse.json({ message: "A user exists with that username" }, { status: 409 });
-        }
-      }
-
-      const organizationId = team.isOrganization ? team.id : (team.parent?.id ?? null);
-
-      const existingUserByUsername = await prisma.user.findFirst({
-        where: {
-          username: correctedUsername,
-          organizationId,
-          NOT: { email: userEmail },
-        },
-        select: { id: true },
-      });
-      if (existingUserByUsername) {
-        return NextResponse.json({ message: SIGNUP_ERROR_CODES.USER_ALREADY_EXISTS }, { status: 409 });
-      }
-
-      let user: { id: number };
-      try {
-        user = await prisma.user.upsert({
-          where: { email: userEmail },
-          update: {
-            username: correctedUsername,
-            emailVerified: new Date(Date.now()),
-            identityProvider: IdentityProvider.CAL,
-            password: {
-              upsert: {
-                create: { hash: hashedPassword },
-                update: { hash: hashedPassword },
-              },
-            },
-            organizationId,
-          },
-          create: {
-            username: correctedUsername,
-            email: userEmail,
-            emailVerified: new Date(Date.now()),
-            identityProvider: IdentityProvider.CAL,
-            password: { create: { hash: hashedPassword } },
-            organizationId,
-          },
-          select: { id: true },
-        });
-      } catch (error) {
-        if (isPrismaError(error) && error.code === "P2002") {
-          const target = String(error.meta?.target ?? "");
-          if (target.includes("email") || target.includes("username")) {
-            return NextResponse.json({ message: SIGNUP_ERROR_CODES.USER_ALREADY_EXISTS }, { status: 409 });
-          }
-        }
-        throw error;
-      }
-
-      await createOrUpdateMemberships({
-        user,
-        team,
-      });
-
-      // Accept any child team invites for orgs.
-      if (team.parent) {
-        await joinAnyChildTeamOnOrgInvite({
-          userId: user.id,
-          org: team.parent,
-        });
-      }
-    }
-
-    // Cleanup token after use
-    await prisma.verificationToken.delete({
-      where: {
-        id: foundToken.id,
-      },
-    });
-  } else {
-    const isUsernameAvailable = !(await isUsernameReservedDueToMigration(correctedUsername));
-    if (!isUsernameAvailable) {
-      return NextResponse.json({ message: "A user exists with that username" }, { status: 409 });
-    }
-    try {
-      await prisma.user.create({
-        data: {
-          username: correctedUsername,
-          email: userEmail,
-          password: { create: { hash: hashedPassword } },
-          identityProvider: IdentityProvider.CAL,
-        },
-        select: { id: true },
-      });
-    } catch (error) {
-      // Fallback for race conditions where user was created between our check and create
-      if (isPrismaError(error) && error.code === "P2002") {
-        const target = String(error.meta?.target ?? "");
-        if (target.includes("email") || target.includes("username")) {
-          return NextResponse.json({ message: SIGNUP_ERROR_CODES.USER_ALREADY_EXISTS }, { status: 409 });
-        }
-      }
-      throw error;
-    }
-
-    if (process.env.AVATARAPI_USERNAME && process.env.AVATARAPI_PASSWORD) {
-      await prefillAvatar({ email: userEmail });
-    }
-
-    await sendEmailVerification({
-      email: userEmail,
-      username: correctedUsername,
-      language,
-    });
-  }
-
-  return NextResponse.json({ message: "Created user" }, { status: 201 });
-}
-```
-
-<a id="finding-repository-health-complexity-eventmeta-3da7ba22a7"></a>
-## Critical complexity in EventMeta
-
-Severity: Critical
-Classification: Code health
-Language: TypeScript
-Framework: Code health
-
-apps/web/modules/bookings/components/EventMeta.tsx:46 has cyclomatic complexity 29, cognitive complexity 31, and maintainability 19.29.
-
-**Criterion:** Repository health complexity policy: warn above cyclomatic 10, cognitive 15, or below maintainability 60.
-
-**Recommended next step:** Split EventMeta into smaller decision units, preserve its current behavior with focused tests, and rerun the health report before applying automated cleanup.
-
-[EventMeta.tsx: EventMeta](#plan-group-40df06b8befa577621a4d2055f1dac9b310d37462e0f6c45654536633eafde69)
-
-<a id="source-repository-health-complexity-eventmeta-3da7ba22a7"></a>
-### Source evidence
-
-apps/web/modules/bookings/components/EventMeta.tsx L44-L279
-
-Source: apps/web/modules/bookings/components/EventMeta.tsx L44-L279
-
-```typescript
-};
-
-export const EventMeta = ({
-  event,
-  isPending,
-  isPlatform = true,
-  isPrivateLink,
-  classNames,
-  locale,
-  timeZones,
-  children,
-  selectedTimeslot,
-  roundRobinHideOrgAndTeam,
-  hideOrgTeamAvatar,
-  hideEventTypeDetails = false,
-}: {
-  event?: Pick<
-    BookerEvent,
-    | "lockTimeZoneToggleOnBookingPage"
-    | "lockedTimeZone"
-    | "schedule"
-    | "seatsPerTimeSlot"
-    | "subsetOfUsers"
-    | "length"
-    | "schedulingType"
-    | "profile"
-    | "entity"
-    | "description"
-    | "title"
-    | "metadata"
-    | "locations"
-    | "currency"
-    | "requiresConfirmation"
-    | "recurringEvent"
-    | "price"
-    | "isDynamic"
-    | "fieldTranslations"
-    | "autoTranslateDescriptionEnabled"
-    | "enablePerHostLocations"
-  > | null;
-  isPending: boolean;
-  isPrivateLink: boolean;
-  isPlatform?: boolean;
-  classNames?: {
-    eventMetaContainer?: string;
-    eventMetaTitle?: string;
-    eventMetaTimezoneSelect?: string;
-    eventMetaChildren?: string;
-  };
-  locale?: string | null;
-  timeZones?: Timezone[];
-  children?: React.ReactNode;
-  selectedTimeslot: string | null;
-  roundRobinHideOrgAndTeam?: boolean;
-  hideOrgTeamAvatar?: boolean;
-  hideEventTypeDetails?: boolean;
-}) => {
-  const { timeFormat, timezone } = useBookerTime();
-  const [setTimezone] = useTimePreferences((state) => [state.setTimezone]);
-  const [setBookerStoreTimezone] = useBookerStoreContext((state) => [state.setTimezone], shallow);
-  const selectedDuration = useBookerStoreContext((state) => state.selectedDuration);
-  const bookerState = useBookerStoreContext((state) => state.state);
-  const bookingData = useBookerStoreContext((state) => state.bookingData);
-  const rescheduleUid = useBookerStoreContext((state) => state.rescheduleUid);
-  const [seatedEventData, setSeatedEventData] = useBookerStoreContext(
-    (state) => [state.seatedEventData, state.setSeatedEventData],
-    shallow
-  );
-  const { i18n, t } = useLocale();
-  const [TimezoneSelect] = useMemo(
-    () => (isPlatform ? [PlatformTimezoneSelect] : [WebTimezoneSelect]),
-    [isPlatform]
-  );
-
-  useEffect(() => {
-    //In case the event has lockTimeZone enabled ,set the timezone to event's locked timezone
-    if (event?.lockTimeZoneToggleOnBookingPage) {
-      const timezone = event.lockedTimeZone || event.schedule?.timeZone;
-      if (timezone) {
-        setTimezone(timezone);
-      }
-    }
-  }, [event, setTimezone]);
-
-  if (hideEventTypeDetails) {
-    return null;
-  }
-  // If we didn't pick a time slot yet, we load bookingData via SSR so bookingData should be set
-  // Otherwise we load seatedEventData from useBookerStore
-  const bookingSeatAttendeesQty = seatedEventData?.attendees || bookingData?.attendees.length;
-  const eventTotalSeats = seatedEventData?.seatsPerTimeSlot || event?.seatsPerTimeSlot;
-
-  const isHalfFull =
-    bookingSeatAttendeesQty && eventTotalSeats && bookingSeatAttendeesQty / eventTotalSeats >= 0.5;
-  const isNearlyFull =
-    bookingSeatAttendeesQty && eventTotalSeats && bookingSeatAttendeesQty / eventTotalSeats >= 0.83;
-
-  const colorClass = isNearlyFull
-    ? "text-rose-600"
-    : isHalfFull
-      ? "text-yellow-500"
-      : "text-bookinghighlight";
-  const userLocale = locale ?? navigator.language;
-  const translatedDescription = getTranslatedField(
-    event?.fieldTranslations ?? [],
-    EventTypeAutoTranslatedField.DESCRIPTION,
-    userLocale
-  );
-  const translatedTitle = getTranslatedField(
-    event?.fieldTranslations ?? [],
-    EventTypeAutoTranslatedField.TITLE,
-    userLocale
-  );
-
-  return (
-    <div className={`${classNames?.eventMetaContainer || ""} relative z-10 p-6`} data-testid="event-meta">
-      {isPending && (
-        <m.div {...fadeInUp} initial="visible" layout>
-          <EventMetaSkeleton />
-        </m.div>
-      )}
-      {!isPending && !!event && (
-        <m.div {...fadeInUp} layout transition={{ ...fadeInUp.transition, delay: 0.3 }}>
-          <EventMembers
-            schedulingType={event.schedulingType}
-            users={event.subsetOfUsers}
-            profile={event.profile}
-            entity={event.entity}
-            isPrivateLink={isPrivateLink}
-            roundRobinHideOrgAndTeam={roundRobinHideOrgAndTeam}
-            hideOrgTeamAvatar={hideOrgTeamAvatar}
-          />
-          <EventTitle className={`${classNames?.eventMetaTitle} my-2`}>
-            {translatedTitle ?? event?.title}
-          </EventTitle>
-          {(event.description || translatedDescription) && (
-            <EventMetaBlock data-testid="event-meta-description" contentClassName="mb-8">
-              <ScrollableWithGradients
-                className="wrap-break-word scroll-bar max-h-[180px] max-w-full overflow-y-auto pr-4"
-                ariaLabel={t("description")}>
-                {/* biome-ignore lint/security/noDangerouslySetInnerHtml: Content is sanitized via markdownToSafeHTMLClient */}
-                <div
-                  dangerouslySetInnerHTML={{
-                    __html: markdownToSafeHTMLClient(translatedDescription ?? event.description),
-                  }}
-                />
-              </ScrollableWithGradients>
-            </EventMetaBlock>
-          )}
-          <div className="stack-y-4 font-medium rtl:-mr-2">
-            {rescheduleUid && bookingData && (
-              <EventMetaBlock icon="calendar">
-                {t("former_time")}
-                <br />
-                <span className="line-through" data-testid="former_time_p">
-                  <FromToTime
-                    date={bookingData.startTime.toString()}
-                    duration={null}
-                    timeFormat={timeFormat}
-                    timeZone={timezone}
-                    language={i18n.language}
-                  />
-                </span>
-              </EventMetaBlock>
-            )}
-            {selectedTimeslot && (
-              <EventMetaBlock icon="calendar">
-                <FromToTime
-                  date={selectedTimeslot}
-                  duration={selectedDuration || event.length}
-                  timeFormat={timeFormat}
-                  timeZone={timezone}
-                  language={i18n.language}
-                />
-              </EventMetaBlock>
-            )}
-            <EventDetails event={event} />
-            <EventMetaBlock
-              className="cursor-pointer [&_.current-timezone:before]:focus-within:opacity-100 [&_.current-timezone:before]:hover:opacity-100"
-              contentClassName="relative max-w-[90%]"
-              icon="globe">
-              {bookerState === "booking" ? (
-                <>{timezone}</>
-              ) : (
-                <span
-                  className={`current-timezone before:bg-subtle min-w-32 -mt-[2px] flex h-6 max-w-full items-center justify-start before:absolute before:inset-0 before:bottom-[-3px] before:left-[-30px] before:top-[-3px] before:w-[calc(100%+35px)] before:rounded-md before:py-3 before:opacity-0 before:transition-opacity ${
-                    event.lockTimeZoneToggleOnBookingPage ? "cursor-not-allowed" : ""
-                  }`}
-                  data-testid="event-meta-current-timezone">
-                  <TimezoneSelect
-                    timeZones={timeZones}
-                    menuPosition="absolute"
-                    timezoneSelectCustomClassname={classNames?.eventMetaTimezoneSelect}
-                    classNames={{
-                      control: () =>
-                        "min-h-0! p-0 w-full border-0 bg-transparent focus-within:ring-0 shadow-none!",
-                      menu: () => "w-64! max-w-[90vw] mb-1 ",
-                      singleValue: () => "text-text py-1",
-                      indicatorsContainer: () => "ml-auto",
-                      container: () => "max-w-full",
-                    }}
-                    value={
-                      event.lockTimeZoneToggleOnBookingPage
-                        ? event.lockedTimeZone || CURRENT_TIMEZONE
-                        : timezone
-                    }
-                    onChange={({ value }) => {
-                      setTimezone(value);
-                      setBookerStoreTimezone(value);
-                    }}
-                    isDisabled={event.lockTimeZoneToggleOnBookingPage}
-                  />
-                </span>
-              )}
-            </EventMetaBlock>
-            {bookerState === "booking" && eventTotalSeats && bookingSeatAttendeesQty ? (
-              <EventMetaBlock icon="user" className={`${colorClass}`}>
-                <div className="text-bookinghighlight flex items-start text-sm">
-                  <p>
-                    <SeatsAvailabilityText
-                      showExact={!!seatedEventData.showAvailableSeatsCount}
-                      totalSeats={eventTotalSeats}
-                      bookedSeats={bookingSeatAttendeesQty || 0}
-                      variant="fraction"
-                    />
-                  </p>
-                </div>
-              </EventMetaBlock>
-            ) : null}
-          </div>
-          {children && <div className={classNames?.eventMetaChildren}>{children}</div>}
-        </m.div>
-      )}
-    </div>
-  );
-};
-```
-
-<a id="finding-repository-health-complexity-getbaseproperties-7b639d0787"></a>
-## Critical complexity in getBaseProperties
-
-Severity: Critical
-Classification: Code health
-Language: TypeScript
-Framework: Code health
-
-apps/api/v2/src/platform/event-types/event-types_2024_06_14/transformers/api-to-internal/booking-fields.ts:53 has cyclomatic complexity 28, cognitive complexity 37, and maintainability 20.86.
-
-**Criterion:** Repository health complexity policy: warn above cyclomatic 10, cognitive 15, or below maintainability 60.
-
-**Recommended next step:** Split getBaseProperties into smaller decision units, preserve its current behavior with focused tests, and rerun the health report before applying automated cleanup.
-
-[booking-fields.ts: getBaseProperties](#plan-group-507de4a86846cabccea305ff23833e11d66a9395f389d200ca19c2432449b2f0)
-
-<a id="source-repository-health-complexity-getbaseproperties-7b639d0787"></a>
-### Source evidence
-
-apps/api/v2/src/platform/event-types/event-types_2024_06_14/transformers/api-to-internal/booking-fields.ts L51-L255
-
-Source: apps/api/v2/src/platform/event-types/event-types_2024_06_14/transformers/api-to-internal/booking-fields.ts L51-L255
-
-```typescript
-}
-
-function getBaseProperties(field: InputBookingField): CustomField | SystemField {
-  if (fieldIsSelect(field)) {
-    return {
-      name: field.slug,
-      type: field.type,
-      label: field.label,
-      sources: [
-        {
-          id: "user",
-          type: "user",
-          label: "User",
-          fieldRequired: true,
-        },
-      ],
-      editable: "user",
-      required: field.required,
-      disableOnPrefill: !!field.disableOnPrefill,
-      hidden: "hidden" in field ? field.hidden : false,
-    };
-  }
-
-  if (fieldIsDefaultSystemLocation(field)) {
-    return {
-      ...systemBeforeFieldLocation,
-      label: field.label,
-    };
-  }
-
-  if (fieldIsDefaultAttendeePhone(field)) {
-    return {
-      ...systemBeforeFieldPhone,
-      required: field.required,
-      hidden: field.hidden,
-      label: field.label,
-      placeholder: field.placeholder,
-      disableOnPrefill: !!field.disableOnPrefill,
-    };
-  }
-
-  if (fieldIsCustomSystemName(field)) {
-    const systemName = structuredClone(systemBeforeFieldName);
-    if (systemName.variantsConfig?.variants?.fullName?.fields?.[0]) {
-      systemName.variantsConfig.variants.fullName.fields[0].label = field.label;
-    }
-
-    if (systemName.variantsConfig?.variants?.fullName?.fields?.[0]) {
-      systemName.variantsConfig.variants.fullName.fields[0].placeholder = field.placeholder;
-    }
-    // note(Lauris): we attach top level label and placeholder for easier access when converting database event type
-    // to v2 response event type even though form builder uses label and placeholder from variantsConfig.
-    systemName.label = field.label;
-    systemName.placeholder = field.placeholder;
-
-    return {
-      ...systemName,
-      disableOnPrefill: !!field.disableOnPrefill,
-    };
-  }
-
-  if (fieldIsCustomSystemNameSplit(field)) {
-    const systemNameSplit = structuredClone(systemBeforeFieldNameSplit);
-
-    const firstNameField = systemNameSplit.variantsConfig?.variants?.firstAndLastName?.fields?.find(
-      (field) => field.name === "firstName"
-    );
-    const lastNameField = systemNameSplit.variantsConfig?.variants?.firstAndLastName?.fields?.find(
-      (field) => field.name === "lastName"
-    );
-
-    if (firstNameField) {
-      firstNameField.label = field.firstNameLabel || "";
-      firstNameField.placeholder = field.firstNamePlaceholder || "";
-    }
-
-    if (lastNameField) {
-      lastNameField.label = field.lastNameLabel || "";
-      lastNameField.placeholder = field.lastNamePlaceholder || "";
-      lastNameField.required = !!field.lastNameRequired;
-    }
-
-    return {
-      ...systemNameSplit,
-      disableOnPrefill: !!field.disableOnPrefill,
-    };
-  }
-
-  if (fieldIsCustomSystemEmail(field)) {
-    return {
-      ...systemBeforeFieldEmail,
-      label: field.label,
-      placeholder: field.placeholder,
-      disableOnPrefill: !!field.disableOnPrefill,
-      required: field.required,
-      hidden: !!field.hidden,
-    };
-  }
-
-  if (fieldIsCustomSystemRescheduleReason(field)) {
-    return {
-      ...systemAfterFieldRescheduleReason,
-      required: !!field.required,
-      hidden: !!field.hidden,
-      label: field.label,
-      placeholder: "placeholder" in field ? field.placeholder : undefined,
-      disableOnPrefill: !!field.disableOnPrefill,
-    };
-  }
-
-  if (fieldIsCustomSystemTitle(field)) {
-    return {
-      ...systemAfterFieldTitle,
-      required: !!field.required,
-      hidden: !!field.hidden,
-      label: field.label,
-      placeholder: "placeholder" in field ? field.placeholder : undefined,
-      disableOnPrefill: !!field.disableOnPrefill,
-    };
-  }
-
-  if (fieldIsCustomSystemNotes(field)) {
-    return {
-      ...systemAfterFieldNotes,
-      required: !!field.required,
-      hidden: !!field.hidden,
-      label: field.label,
-      placeholder: "placeholder" in field ? field.placeholder : undefined,
-      disableOnPrefill: !!field.disableOnPrefill,
-    };
-  }
-
-  if (fieldIsCustomSystemGuests(field)) {
-    return {
-      ...systemAfterFieldGuests,
-      required: !!field.required,
-      hidden: !!field.hidden,
-      label: field.label,
-      placeholder: "placeholder" in field ? field.placeholder : undefined,
-      disableOnPrefill: !!field.disableOnPrefill,
-    };
-  }
-
-  if (field.type === "boolean") {
-    return {
-      name: field.slug,
-      type: field.type,
-      label: field.label,
-      labelAsSafeHtml: `<p>${field.label}</p>\n`,
-      sources: [
-        {
-          id: "user",
-          type: "user",
-          label: "User",
-          fieldRequired: true,
-        },
-      ],
-      editable: "user",
-      required: !!field.required,
-      disableOnPrefill: !!field.disableOnPrefill,
-      hidden: !!field.hidden,
-    };
-  }
-
-  if (field.type === "url") {
-    return {
-      name: field.slug,
-      type: field.type,
-      label: field.label,
-      placeholder: "placeholder" in field ? field.placeholder : "",
-      labelAsSafeHtml: `<p>${field.label}</p>\n`,
-      sources: [
-        {
-          id: "user",
-          type: "user",
-          label: "User",
-          fieldRequired: true,
-        },
-      ],
-      editable: "user",
-      required: !!field.required,
-      disableOnPrefill: !!field.disableOnPrefill,
-      hidden: !!field.hidden,
-    };
-  }
-
-  return {
-    name: field.slug,
-    type: field.type,
-    label: "label" in field ? field.label : "",
-    sources: [
-      {
-        id: "user",
-        type: "user",
-        label: "User",
-        fieldRequired: true,
-      },
-    ],
-    editable: "user",
-    required: !!field.required,
-    placeholder: field.placeholder,
-    disableOnPrefill: !!field.disableOnPrefill,
-    hidden: !!field.hidden,
-  };
-}
-```
-
-<a id="finding-repository-health-complexity-useschedule-2fa8338b3a"></a>
-## Critical complexity in useSchedule
-
-Severity: Critical
-Classification: Code health
-Language: TypeScript
-Framework: Code health
-
-apps/web/modules/schedules/hooks/useSchedule.ts:51 has cyclomatic complexity 28, cognitive complexity 28, and maintainability 26.17.
-
-**Criterion:** Repository health complexity policy: warn above cyclomatic 10, cognitive 15, or below maintainability 60.
-
-**Recommended next step:** Split useSchedule into smaller decision units, preserve its current behavior with focused tests, and rerun the health report before applying automated cleanup.
-
-[useSchedule.ts: useSchedule](#plan-group-39947fcdd750f3c276267a770ce403a32973f1e45993078c7e8bc4af08235bc8)
-
-<a id="source-repository-health-complexity-useschedule-2fa8338b3a"></a>
-### Source evidence
-
-apps/web/modules/schedules/hooks/useSchedule.ts L49-L195
-
-Source: apps/web/modules/schedules/hooks/useSchedule.ts L49-L195
-
-```typescript
-};
-
-export const useSchedule = ({
-  month,
-  timezone,
-  username,
-  eventSlug,
-  eventId,
-  selectedDate,
-  duration,
-  dayCount,
-  rescheduleUid,
-  isTeamEvent,
-  orgSlug,
-  teamMemberEmail,
-  useApiV2 = false,
-  enabled: enabledProp = true,
-  bookerLayout,
-}: UseScheduleWithCacheArgs) => {
-  const bookerState = useBookerStore((state) => state.state);
-
-  const [startTime, endTime] = useTimesForSchedule({
-    month,
-    dayCount,
-    selectedDate,
-    bookerLayout,
-  });
-  const searchParams = useSearchParams();
-  const routedTeamMemberIds = searchParams
-    ? getRoutedTeamMemberIdsFromSearchParams(new URLSearchParams(searchParams.toString()))
-    : null;
-  const skipContactOwner = searchParams ? searchParams.get("cal.skipContactOwner") === "true" : false;
-  const utils = trpc.useUtils();
-  const queuedFormResponseId = searchParams?.get("cal.queuedFormResponseId");
-  const email = searchParams?.get("email");
-  // We allow skipping the schedule fetch as a requirement for prerendering in iframe through embed as when the pre-rendered iframe is connected, then we would fetch the availability, which would be upto-date
-  // Also, a reuse through Headless Router could completely change the availability as different team members are selected and thus it is unnecessary to fetch the schedule
-  const skipGetSchedule = searchParams?.get("cal.skipSlotsFetch") === "true";
-  const embedConnectVersion = searchParams?.get("cal.embed.connectVersion") || "0";
-  const input = {
-    isTeamEvent,
-    usernameList: getUsernameList(username ?? ""),
-    // Prioritize slug over id, since slug is the first value we get available.
-    // If we have a slug, we don't need to fetch the id.
-    // TODO: are queries using eventTypeId faster? Even tho we lost time fetching the id with the slug.
-    ...(eventSlug ? { eventTypeSlug: eventSlug } : { eventTypeId: eventId ?? 0 }),
-    // @TODO: Old code fetched 2 days ago if we were fetching the current month.
-    // Do we want / need to keep that behavior?
-    startTime,
-    // if `prefetchNextMonth` is true, two months are fetched at once.
-    endTime,
-    // We use a placeholder value that is there to keep TS happy, but still invalid to tell us that it shouldn't actually be passed in request(and wouldn't because enabled is false if timezone is nullish)
-    // TODO: Better approach here is to use `skipToken` from react-query which requires an upgrade of react-query
-    timeZone: timezone ?? "PLACEHOLDER_TIMEZONE",
-    duration: duration ? `${duration}` : undefined,
-    rescheduleUid,
-    orgSlug,
-    teamMemberEmail,
-    routedTeamMemberIds,
-    skipContactOwner,
-    ...(queuedFormResponseId ? { queuedFormResponseId } : {}),
-    email,
-    // Ensures that connectVersion causes a refresh of the data
-    ...(embedConnectVersion ? { embedConnectVersion } : {}),
-    _isDryRun: searchParams ? isBookingDryRun(searchParams) : false,
-  };
-
-  const options = {
-    trpc: {
-      context: {
-        skipBatch: true,
-      },
-    },
-    // It allows people who might not have the tab in focus earlier, to get latest available slots
-    // It might not work correctly in iframes, so we have refetchInterval to take care of that.
-    // But where it works, it should give user latest availability even if they come back to tab before refetchInterval.
-    refetchOnWindowFocus: true,
-    // It allows long sitting users to get latest available slots
-    refetchInterval: PUBLIC_QUERY_AVAILABLE_SLOTS_INTERVAL_SECONDS * 1000,
-    enabled:
-      !skipGetSchedule &&
-      Boolean(username) &&
-      Boolean(month) &&
-      Boolean(timezone) &&
-      // Should only wait for one or the other, not both.
-      (Boolean(eventSlug) || Boolean(eventId) || eventId === 0) &&
-      enabledProp,
-  };
-
-  const isCallingApiV2Slots = useApiV2 && Boolean(isTeamEvent) && options.enabled;
-
-  // API V2 query for team events
-  const teamScheduleV2 = useApiV2AvailableSlots({
-    ...input,
-    enabled: isCallingApiV2Slots,
-    duration: input.duration ? Number(input.duration) : undefined,
-    routedTeamMemberIds: input.routedTeamMemberIds ?? undefined,
-    teamMemberEmail: input.teamMemberEmail ?? undefined,
-    eventTypeId: eventId ?? undefined,
-  });
-
-  const schedule = trpc.viewer.slots.getSchedule.useQuery(input, {
-    ...options,
-    // Only enable if we're not using API V2
-    enabled: options.enabled && !isCallingApiV2Slots,
-  });
-
-  if (isCallingApiV2Slots && !teamScheduleV2.failureReason) {
-    updateEmbedBookerState({
-      bookerState,
-      slotsQuery: teamScheduleV2,
-    });
-
-    if (teamScheduleV2.isSuccess && eventId && eventSlug) {
-      sdkActionManager?.fire("availabilityLoaded", getAvailabilityLoadedEventPayload({ eventId, eventSlug }));
-    }
-
-    return {
-      ...teamScheduleV2,
-      /**
-       * Invalidates the request and resends it regardless of any other configuration including staleTime
-       */
-      invalidate: () => {
-        return teamScheduleV2.refetch();
-      },
-    };
-  }
-
-  updateEmbedBookerState({
-    bookerState,
-    slotsQuery: schedule,
-  });
-
-  if (schedule.isSuccess && eventId && eventSlug) {
-    sdkActionManager?.fire("availabilityLoaded", getAvailabilityLoadedEventPayload({ eventId, eventSlug }));
-  }
-
-  return {
-    ...schedule,
-    /**
-     * Invalidates the request and resends it regardless of any other configuration including staleTime
-     */
-    invalidate: () => {
-      return utils.viewer.slots.getSchedule.invalidate(input);
-    },
-  };
-};
-```
-
-<a id="finding-repository-health-complexity-event-dd37a2798d"></a>
-## Critical complexity in Event
-
-Severity: Critical
-Classification: Code health
-Language: TypeScript
-Framework: Code health
-
-apps/web/modules/calendars/weeklyview/components/event/Event.tsx:60 has cyclomatic complexity 28, cognitive complexity 28, and maintainability 28.07.
-
-**Criterion:** Repository health complexity policy: warn above cyclomatic 10, cognitive 15, or below maintainability 60.
-
-**Recommended next step:** Split Event into smaller decision units, preserve its current behavior with focused tests, and rerun the health report before applying automated cleanup.
-
-[Event.tsx: Event](#plan-group-702691bc8499b9f0d52b81b5333017a18f2b125016ce53ad2e8e248f7ae43007)
-
-<a id="source-repository-health-complexity-event-dd37a2798d"></a>
-### Source evidence
-
-apps/web/modules/calendars/weeklyview/components/event/Event.tsx L58-L163
-
-Source: apps/web/modules/calendars/weeklyview/components/event/Event.tsx L58-L163
-
-```typescript
-};
-
-export function Event({
-  event,
-  currentlySelectedEventId,
-  eventDuration,
-  disabled,
-  onEventClick,
-  isHovered = false,
-}: EventProps) {
-  const selected = currentlySelectedEventId === event.id;
-  const { options } = event;
-
-  // Use custom color if provided, otherwise derive from status
-  const colorClass = !options?.color ? getStatusColorClass(options?.status) : undefined;
-
-  const Component = onEventClick ? "button" : "div";
-
-  const dayOfWeek = dayjs(event.start).day();
-  const tooltipSide = dayOfWeek >= 1 && dayOfWeek <= 4 ? "right" : "left";
-
-  const tooltipContent = (
-    <div className="flex min-w-[200px] max-w-[300px] flex-col gap-1 py-1">
-      <div className="flex items-start gap-2">
-        {(options?.color || colorClass) && (
-          <div
-            className={classNames("mt-1 h-3 w-1 shrink-0 rounded-sm", colorClass)}
-            style={options?.color ? { backgroundColor: options.color } : undefined}></div>
-        )}
-        <div className="flex-1">
-          <div className="font-semibold leading-tight">{event.title}</div>
-          {!event.options?.hideTime && (
-            <div className="text-inverted-muted mt-1 text-xs">
-              {dayjs(event.start).format("HH:mm")} - {dayjs(event.end).format("HH:mm")}
-            </div>
-          )}
-          {event.description && (
-            <div className="text-inverted-muted mt-1 text-xs leading-snug">{event.description}</div>
-          )}
-          {options?.status && options.status !== "ACCEPTED" && (
-            <div className="text-inverted-muted mt-1 text-xs capitalize">
-              {options.status.toLowerCase().replace("_", " ")}
-            </div>
-          )}
-        </div>
-      </div>
-    </div>
-  );
-
-  const displayType = eventDuration < 40 ? "single-line" : eventDuration < 45 ? "multi-line" : "full";
-
-  return (
-    <Tooltip content={tooltipContent} className="max-w-none" side={tooltipSide}>
-      <Component
-        data-booking-calendar-event="true"
-        onClick={() => onEventClick?.(event)}
-        {...(options?.bookingUid ? { "data-booking-uid": options.bookingUid } : {})}
-        className={classNames(
-          eventClasses({
-            status: options?.status,
-            disabled,
-            selected,
-            borderOnly: options?.borderOnly ?? false,
-          }),
-          options?.className,
-          (isHovered || selected) && "ring-brand-default shadow-lg ring-2 ring-offset-0"
-        )}
-        style={{
-          transition: "all 100ms ease-out",
-        }}>
-        {(options?.color || colorClass) && (
-          <div
-            className={classNames("-ml-1.5 mr-1.5 h-full w-[3px] shrink-0", colorClass)}
-            style={options?.color ? { backgroundColor: options.color } : undefined}></div>
-        )}
-        <div className={classNames("flex w-full", displayType !== "single-line" && "flex-col py-1")}>
-          {displayType === "single-line" && (
-            <div
-              className={classNames(
-                "flex w-full shrink-0 gap-2 overflow-hidden text-ellipsis whitespace-nowrap text-left leading-4",
-                "items-center"
-              )}>
-              <span>{event.title}</span>
-              {!event.options?.hideTime && (
-                <p className="text-subtle mt-1 w-full whitespace-nowrap text-left text-[10px] leading-none">
-                  {dayjs(event.start).format("HH:mm")} - {dayjs(event.end).format("HH:mm")}
-                </p>
-              )}
-            </div>
-          )}
-          {displayType !== "single-line" && (
-            <p className={classNames("shrink-0 whitespace-nowrap text-left leading-4")}>{event.title}</p>
-          )}
-          {displayType !== "single-line" && !event.options?.hideTime && (
-            <p className="text-subtle mt-1 whitespace-nowrap text-left text-[10px] leading-none">
-              {dayjs(event.start).format("HH:mm")} - {dayjs(event.end).format("HH:mm")}
-            </p>
-          )}
-          {displayType === "full" && event.description && (
-            <p className="text-subtle mt-1 text-left text-[10px] leading-none">{event.description}</p>
-          )}
-        </div>
-      </Component>
-    </Tooltip>
-  );
-}
-```
-
 <a id="finding-repository-health-accessibility-wcag-4-1-2-name-role-value-1cb0f406ad"></a>
 ## Accessibility issue: wcag-4.1.2-name-role-value
 
@@ -18934,9 +17207,9 @@ apps/web/components/booking/actions/BookingActionsDropdown.tsx:653 — <Dropdown
 
 **Recommended next step:** Add an appropriate role attribute (e.g., role="button", role="link", role="tab").
 
-[BookingActionsDropdown.tsx (3 functions)](#plan-group-85f41301ad7d79bbeaf26d0d4610b271fe8cd7693c57b7ff2b38c9c7ad86bbb6)
-[BookingActionsDropdown.tsx: NoShowAttendeesDialog](#plan-group-bf451ce328b2a2ddf82c0510d7cf597ef9615677b881e4615facd82626bb06bc)
-[BookingActionsDropdown.tsx: SC 1.1.1, SC 2.1.1, SC 4.1.2 +2 more](#plan-group-67bc7d7e1f6e0119e70439c7c1be02207f9d5d68a720dc9c55590b558d529f89)
+[BookingActionsDropdown.tsx (3 functions)](#plan-group-7e5874efabfc9fd57aec402bacbe4ab47abf5c449d095eed0ee68d391950e879)
+[BookingActionsDropdown.tsx: NoShowAttendeesDialog](#plan-group-27abcd9dffaee964ae21ac06e3b4dac786984bfc1e88f4087c26da20976d6200)
+[BookingActionsDropdown.tsx: SC 1.1.1, SC 2.1.1, SC 4.1.2 +2 more](#plan-group-f09e33ae8f7c368b3844657968adf85bfc2dee5712132c576940f44873fc1ca3)
 
 <a id="source-repository-health-accessibility-wcag-4-1-2-name-role-value-f845552ae8"></a>
 ### Autofix
@@ -20144,8 +18417,8 @@ apps/web/modules/users/components/UserTable/PlatformManagedUsersTable.tsx:163 �
 
 **Recommended next step:** Add an appropriate role attribute (e.g., role="button", role="link", role="tab").
 
-[PlatformManagedUsersTable.tsx (2 functions)](#plan-group-1a0e6f2e69fabf680b929ddd2d3025d6b138548392d7f88281fbe8d645b4a757)
-[PlatformManagedUsersTable.tsx: SC 2.1.1, SC 4.1.2, i18n/hardcoded-string +1 more](#plan-group-319c1d87395da4cfff055bd58b92a25ae8c298384faf4fb3d1daf0af5a165afc)
+[PlatformManagedUsersTable.tsx (2 functions)](#plan-group-0db183dd317b3c45e7bf5cebc5bd50c1e1df6448c948f9b44c6f5858904d50bf)
+[PlatformManagedUsersTable.tsx: SC 2.1.1, SC 4.1.2, i18n/hardcoded-string +1 more](#plan-group-bfd59edc99c7ef486024b9152691d72a74d55ddcdc88b9f2303f729a68c097a2)
 
 <a id="source-repository-health-accessibility-wcag-4-1-2-name-role-value-adb7e3dd02"></a>
 ### Autofix
@@ -20192,8 +18465,8 @@ apps/web/modules/users/components/UserTable/UserListTable.tsx:368 — <Badge> is
 
 **Recommended next step:** Add an appropriate role attribute (e.g., role="button", role="link", role="tab").
 
-[UserListTable.tsx (4 functions)](#plan-group-41daa2a8afad414189c111292b273fe255a4e7dbb329447dc3e74c0237059438)
-[UserListTable.tsx: SC 2.1.1, SC 4.1.2, i18n/hardcoded-string +2 more](#plan-group-fda67e9ec0749847a702ec718a2d631741f26c5dac4122fa24d2541782ccb7af)
+[UserListTable.tsx (4 functions)](#plan-group-62050cc0d00722a59b3d9d6b2962945bda12638690eaa6a4d2fa8b00eafb7de2)
+[UserListTable.tsx: SC 2.1.1, SC 4.1.2, i18n/hardcoded-string +2 more](#plan-group-91ec220d3d4a189079d2573597f1ed859321c869a43903c9a309a8a285d62315)
 
 <a id="source-repository-health-accessibility-wcag-4-1-2-name-role-value-1789894afb"></a>
 ### Autofix
@@ -20240,8 +18513,8 @@ apps/web/modules/users/components/UserTable/UserListTable.tsx:754 — <DataTable
 
 **Recommended next step:** Add an appropriate role attribute (e.g., role="button", role="link", role="tab").
 
-[UserListTable.tsx (4 functions)](#plan-group-41daa2a8afad414189c111292b273fe255a4e7dbb329447dc3e74c0237059438)
-[UserListTable.tsx: SC 2.1.1, SC 4.1.2, i18n/hardcoded-string +2 more](#plan-group-fda67e9ec0749847a702ec718a2d631741f26c5dac4122fa24d2541782ccb7af)
+[UserListTable.tsx (4 functions)](#plan-group-62050cc0d00722a59b3d9d6b2962945bda12638690eaa6a4d2fa8b00eafb7de2)
+[UserListTable.tsx: SC 2.1.1, SC 4.1.2, i18n/hardcoded-string +2 more](#plan-group-91ec220d3d4a189079d2573597f1ed859321c869a43903c9a309a8a285d62315)
 
 <a id="source-repository-health-accessibility-wcag-4-1-2-name-role-value-5328c2061a"></a>
 ### Autofix
@@ -21412,6 +19685,871 @@ async function detectContentTypeMetadata(buffer: Buffer): Promise<{ value: strin
 }
 ```
 
+<a id="finding-repository-health-complexity-attendee-c6d2fdf809"></a>
+## High complexity in Attendee
+
+Severity: Warning
+Classification: Code health
+Language: TypeScript
+Framework: Code health
+
+apps/web/components/booking/BookingListItem.tsx:752 has cyclomatic complexity 15, cognitive complexity 14, and maintainability 31.44.
+
+**Criterion:** Repository health complexity policy: warn above cyclomatic 10, cognitive 15, or below maintainability 60.
+
+**Recommended next step:** Split Attendee into smaller decision units, preserve its current behavior with focused tests, and rerun the health report before applying automated cleanup.
+
+[BookingListItem.tsx: Attendee](#plan-group-a3bb8d05b594a7f7b1a94309635e93b6bd5960e472befb77aa849611dc3005e7)
+
+<a id="source-repository-health-complexity-attendee-c6d2fdf809"></a>
+### Autofix
+
+apps/web/components/booking/BookingListItem.tsx L750-L858
+
+Source: apps/web/components/booking/BookingListItem.tsx L757-L1157
+
+#### Original
+
+```typescript
+      eventTypeHosts?: Array<{ user: { email: string } | null }> | null;
+    }
+) => {
+  const {
+    email,
+    name,
+    bookingUid,
+    isBookingInPast,
+    noShow,
+    phoneNumber,
+    user,
+    hideOrganizerEmail,
+    organizerEmail,
+    eventTypeHosts,
+  } = attendeeProps;
+  const { t } = useLocale();
+
+  const utils = trpc.useUtils();
+  const [openDropdown, setOpenDropdown] = useState(false);
+  const { copyToClipboard, isCopied } = useCopy();
+
+  const noShowMutation = trpc.viewer.loggedInViewerRouter.markNoShow.useMutation({
+    onSuccess: async (data) => {
+      showToast(data.message, "success");
+      await utils.viewer.bookings.invalidate();
+    },
+    onError: (err) => {
+      showToast(err.message, "error");
+    },
+  });
+
+  const displayName = user?.name || name || user?.email || email;
+
+  const isTeamMemberOrHost =
+    email === organizerEmail || eventTypeHosts?.some((host) => host.user?.email === email);
+  const shouldHideEmail = hideOrganizerEmail && isTeamMemberOrHost;
+
+  return (
+    <Dropdown open={openDropdown} onOpenChange={setOpenDropdown}>
+      <DropdownMenuTrigger asChild>
+        <button
+          data-testid="guest"
+          onClick={(e) => e.stopPropagation()}
+          className="radix-state-open:text-blue-500 transition hover:text-blue-500">
+          {noShow ? (
+            <>
+              {displayName} <Icon name="eye-off" className="inline h-4" />
+            </>
+          ) : (
+            <>{displayName}</>
+          )}
+        </button>
+      </DropdownMenuTrigger>
+      <DropdownMenuPortal>
+        <DropdownMenuContent>
+          {!isSmsCalEmail(email) && !shouldHideEmail && (
+            <DropdownMenuItem className="focus:outline-none">
+              <DropdownItem
+                StartIcon="mail"
+                href={`mailto:${email}`}
+                onClick={(e) => {
+                  setOpenDropdown(false);
+                  e.stopPropagation();
+                }}>
+                <a href={`mailto:${email}`}>{t("email")}</a>
+              </DropdownItem>
+            </DropdownMenuItem>
+          )}
+
+          <DropdownMenuItem className="focus:outline-none">
+            <DropdownItem
+              StartIcon={isCopied ? "clipboard-check" : "clipboard"}
+              onClick={(e) => {
+                e.preventDefault();
+                const isEmailCopied = isSmsCalEmail(email);
+                copyToClipboard(isEmailCopied ? email : (phoneNumber ?? ""));
+                setOpenDropdown(false);
+                showToast(isEmailCopied ? t("email_copied") : t("phone_number_copied"), "success");
+              }}>
+              {!isCopied ? t("copy") : t("copied")}
+            </DropdownItem>
+          </DropdownMenuItem>
+
+          {isBookingInPast && (
+            <DropdownMenuItem className="focus:outline-none">
+              <DropdownItem
+                data-testid={noShow ? "unmark-no-show" : "mark-no-show"}
+                onClick={(e) => {
+                  e.preventDefault();
+                  setOpenDropdown(false);
+                  noShowMutation.mutate({ bookingUid, attendees: [{ noShow: !noShow, email }] });
+                }}
+                StartIcon={noShow ? "eye" : "eye-off"}>
+                {noShow ? t("unmark_as_no_show") : t("mark_as_no_show")}
+              </DropdownItem>
+            </DropdownMenuItem>
+          )}
+        </DropdownMenuContent>
+      </DropdownMenuPortal>
+    </Dropdown>
+  );
+};
+
+type GroupedAttendeeProps = {
+  attendees: BookingAttendee[];
+  bookingUid: string;
+};
+
+const GroupedAttendees = (groupedAttendeeProps: GroupedAttendeeProps) => {
+  const { bookingUid, attendees } = groupedAttendeeProps;
+  const { t } = useLocale();
+  const utils = trpc.useUtils();
+  const noShowMutation = trpc.viewer.loggedInViewerRouter.markNoShow.useMutation({
+    onSuccess: async (data) => {
+      showToast(t(data.message), "success");
+      await utils.viewer.bookings.invalidate();
+    },
+    onError: (err) => {
+      showToast(err.message, "error");
+    },
+  });
+
+  type FormValues = {
+    attendees: Array<{ id: number; email: string; noShow: boolean }>;
+  };
+
+  const { control, handleSubmit } = useForm<FormValues>({
+    defaultValues: {
+      attendees: attendees.map((a) => ({ id: a.id, email: a.email, noShow: a.noShow || false })),
+    },
+    mode: "onBlur",
+  });
+
+  const { fields } = useFieldArray({
+    control,
+    name: "attendees",
+  });
+
+  const onSubmit = (data: FormValues) => {
+    const filteredData = data.attendees.slice(1).map((attendee) => ({
+      email: attendee.email,
+      noShow: attendee.noShow,
+    }));
+    noShowMutation.mutate({ bookingUid, attendees: filteredData });
+    setOpenDropdown(false);
+  };
+
+  const [openDropdown, setOpenDropdown] = useState(false);
+
+  return (
+    <Dropdown open={openDropdown} onOpenChange={setOpenDropdown}>
+      <DropdownMenuTrigger asChild>
+        <button
+          data-testid="more-guests"
+          onClick={(e) => e.stopPropagation()}
+          className="radix-state-open:text-blue-500 transition hover:text-blue-500 focus:outline-none">
+          {t("plus_more", { count: attendees.length - 1 })}
+        </button>
+      </DropdownMenuTrigger>
+      <DropdownMenuContent className="min-w-[300px]">
+        <DropdownMenuLabel className="text-xs font-medium uppercase">
+          {t("mark_as_no_show_title")}
+        </DropdownMenuLabel>
+        <form onSubmit={handleSubmit(onSubmit)}>
+          {fields.slice(1).map((field, index) => {
+            const attendee = attendees[index + 1];
+            const displayName =
+              attendee.user?.name || attendee.name || attendee.user?.email || attendee.email;
+            const hasName = attendee.name || attendee.user?.name;
+
+            return (
+              <Controller
+                key={field.id}
+                name={`attendees.${index + 1}.noShow`}
+                control={control}
+                render={({ field: { onChange, value } }) => (
+                  <DropdownMenuCheckboxItem
+                    checked={value || false}
+                    onCheckedChange={onChange}
+                    className="focus:outline-none"
+                    onClick={(e) => {
+                      e.preventDefault();
+                      onChange(!value);
+                    }}>
+                    <div className={`w-full ${value ? "line-through" : ""}`}>
+                      {hasName ? (
+                        <>
+                          <div>{displayName}</div>
+                          <div className="text-subtle text-xs">{field.email}</div>
+                        </>
+                      ) : (
+                        <div>{field.email}</div>
+                      )}
+                    </div>
+                  </DropdownMenuCheckboxItem>
+                )}
+              />
+            );
+          })}
+          <DropdownMenuSeparator />
+          <div className="flex justify-end p-2">
+            <Button
+              data-testid="update-no-show"
+              color="secondary"
+              onClick={(e) => {
+                e.preventDefault();
+                handleSubmit(onSubmit)();
+              }}>
+              {t("mark_as_no_show_title")}
+            </Button>
+          </div>
+        </form>
+      </DropdownMenuContent>
+    </Dropdown>
+  );
+};
+
+const GroupedGuests = ({ guests }: { guests: BookingAttendee[] }) => {
+  const [openDropdown, setOpenDropdown] = useState(false);
+  const { t } = useLocale();
+  const { copyToClipboard, isCopied } = useCopy();
+  const [selectedEmail, setSelectedEmail] = useState("");
+
+  return (
+    <Dropdown
+      open={openDropdown}
+      onOpenChange={(value) => {
+        setOpenDropdown(value);
+        setSelectedEmail("");
+      }}>
+      <DropdownMenuTrigger asChild>
+        <button
+          onClick={(e) => e.stopPropagation()}
+          className="radix-state-open:text-blue-500 transition hover:text-blue-500 focus:outline-none">
+          {t("plus_more", { count: guests.length - 1 })}
+        </button>
+      </DropdownMenuTrigger>
+      <DropdownMenuContent className="min-w-[300px]">
+        <DropdownMenuLabel className="text-xs font-medium uppercase">{t("guests")}</DropdownMenuLabel>
+        {guests.slice(1).map((guest) => {
+          const displayName = guest.user?.name || guest.name || guest.user?.email || guest.email;
+          const hasName = guest.name || guest.user?.name;
+
+          return (
+            <DropdownMenuItem key={guest.id}>
+              <DropdownItem
+                className="pr-6 focus:outline-none"
+                StartIcon={selectedEmail === guest.email ? "circle-check" : undefined}
+                onClick={(e) => {
+                  e.preventDefault();
+                  setSelectedEmail(guest.email);
+                }}>
+                <div className={`${selectedEmail !== guest.email ? "pl-6" : ""}`}>
+                  {hasName ? (
+                    <>
+                      <div>{displayName}</div>
+                      <div className="text-subtle text-xs">{guest.email}</div>
+                    </>
+                  ) : (
+                    <div>{guest.email}</div>
+                  )}
+                </div>
+              </DropdownItem>
+            </DropdownMenuItem>
+          );
+        })}
+        <DropdownMenuSeparator />
+        <div className="flex justify-end gap-2 p-2">
+          <Link href={`mailto:${selectedEmail}`}>
+            <Button
+              color="secondary"
+              disabled={selectedEmail.length === 0}
+              onClick={(e) => {
+                setOpenDropdown(false);
+                e.stopPropagation();
+              }}>
+              {t("email")}
+            </Button>
+          </Link>
+          <Button
+            color="secondary"
+            disabled={selectedEmail.length === 0}
+            onClick={(e) => {
+              e.preventDefault();
+              copyToClipboard(selectedEmail);
+              showToast(t("email_copied"), "success");
+            }}>
+            {!isCopied ? t("copy") : t("copied")}
+          </Button>
+        </div>
+      </DropdownMenuContent>
+    </Dropdown>
+  );
+};
+
+const DisplayAttendees = ({
+  attendees,
+  user,
+  currentEmail,
+  bookingUid,
+  isBookingInPast,
+  hideOrganizerEmail,
+  organizerEmail,
+  eventTypeHosts,
+}: {
+  attendees: BookingAttendee[];
+  user: UserProps | null;
+  currentEmail?: string | null;
+  bookingUid: string;
+  isBookingInPast: boolean;
+  hideOrganizerEmail?: boolean;
+  organizerEmail?: string | null;
+  eventTypeHosts?: Array<{ user: { email: string } | null }> | null;
+}) => {
+  const { t } = useLocale();
+  attendees.sort((a, b) => a.id - b.id);
+
+  return (
+    <div className="text-emphasis text-sm" onClick={(e) => e.stopPropagation()}>
+      {user && (
+        <FirstAttendee user={user} currentEmail={currentEmail} hideOrganizerEmail={hideOrganizerEmail} />
+      )}
+      {attendees.length > 1 ? <span>,&nbsp;</span> : <span>&nbsp;{t("and")}&nbsp;</span>}
+      <Attendee
+        {...attendees[0]}
+        bookingUid={bookingUid}
+        isBookingInPast={isBookingInPast}
+        hideOrganizerEmail={hideOrganizerEmail}
+        organizerEmail={organizerEmail}
+        eventTypeHosts={eventTypeHosts}
+      />
+      {attendees.length > 1 && (
+        <>
+          <div className="text-emphasis inline-block text-sm">&nbsp;{t("and")}&nbsp;</div>
+          {attendees.length > 2 ? (
+            <Tooltip
+              content={attendees.slice(1).map((attendee) => (
+                <p key={attendee.email}>
+                  <Attendee
+                    {...attendee}
+                    bookingUid={bookingUid}
+                    isBookingInPast={isBookingInPast}
+                    hideOrganizerEmail={hideOrganizerEmail}
+                    organizerEmail={organizerEmail}
+                    eventTypeHosts={eventTypeHosts}
+                  />
+                </p>
+              ))}>
+              {isBookingInPast ? (
+                <GroupedAttendees attendees={attendees} bookingUid={bookingUid} />
+              ) : (
+                <GroupedGuests guests={attendees} />
+              )}
+            </Tooltip>
+          ) : (
+            <Attendee
+              {...attendees[1]}
+              bookingUid={bookingUid}
+              isBookingInPast={isBookingInPast}
+              hideOrganizerEmail={hideOrganizerEmail}
+              organizerEmail={organizerEmail}
+              eventTypeHosts={eventTypeHosts}
+            />
+          )}
+        </>
+      )}
+    </div>
+  );
+};
+
+const AssignmentReasonTooltip = ({
+  assignmentReason,
+  onClick,
+}: {
+  assignmentReason: Pick<AssignmentReason, "reasonEnum" | "reasonString">;
+  onClick?: () => void;
+}) => {
+  const { t } = useLocale();
+  const badgeTitle = assignmentReasonBadgeTitleMap(assignmentReason.reasonEnum);
+  return (
+    <Tooltip content={<p>{assignmentReason.reasonString}</p>}>
+      <Badge
+        className={classNames("ltr:mr-2 rtl:ml-2", onClick && "cursor-pointer hover:opacity-80")}
+        variant="gray"
+        onClick={onClick}>
+        {t(badgeTitle)}
+      </Badge>
+    </Tooltip>
+  );
+};
+
+// Wrap BookingListItem with BookingActionsStoreProvider to provide isolated store for each booking
+const BookingListItemWithProvider = (props: BookingItemProps) => {
+  return (
+    <BookingActionsStoreProvider>
+      <BookingListItem {...props} />
+    </BookingActionsStoreProvider>
+  );
+};
+
+export default BookingListItemWithProvider;
+```
+
+#### Fixed
+
+```typescript
+      eventTypeHosts?: Array<{ user: { email: string } | null }> | null;
+    }
+) => {
+  const AttendeeExtractedResult = AttendeeExtracted(attendeeProps);
+  const email = AttendeeExtractedResult.email;
+  const name = AttendeeExtractedResult.name;
+  const bookingUid = AttendeeExtractedResult.bookingUid;
+  const isBookingInPast = AttendeeExtractedResult.isBookingInPast;
+  const noShow = AttendeeExtractedResult.noShow;
+  const phoneNumber = AttendeeExtractedResult.phoneNumber;
+  const user = AttendeeExtractedResult.user;
+  const hideOrganizerEmail = AttendeeExtractedResult.hideOrganizerEmail;
+  const organizerEmail = AttendeeExtractedResult.organizerEmail;
+  const eventTypeHosts = AttendeeExtractedResult.eventTypeHosts;
+  const { t } = useLocale();
+
+  const utils = trpc.useUtils();
+  const [openDropdown, setOpenDropdown] = useState(false);
+  const { copyToClipboard, isCopied } = useCopy();
+
+  const noShowMutation = trpc.viewer.loggedInViewerRouter.markNoShow.useMutation({
+    onSuccess: async (data) => {
+      showToast(data.message, "success");
+      await utils.viewer.bookings.invalidate();
+    },
+    onError: (err) => {
+      showToast(err.message, "error");
+    },
+  });
+
+  const displayName = user?.name || name || user?.email || email;
+
+  const isTeamMemberOrHost =
+    email === organizerEmail || eventTypeHosts?.some((host) => host.user?.email === email);
+  const shouldHideEmail = hideOrganizerEmail && isTeamMemberOrHost;
+
+  return (
+    <Dropdown open={openDropdown} onOpenChange={setOpenDropdown}>
+      <DropdownMenuTrigger asChild>
+        <button
+          data-testid="guest"
+          onClick={(e) => e.stopPropagation()}
+          className="radix-state-open:text-blue-500 transition hover:text-blue-500">
+          {noShow ? (
+            <>
+              {displayName} <Icon name="eye-off" className="inline h-4" />
+            </>
+          ) : (
+            <>{displayName}</>
+          )}
+        </button>
+      </DropdownMenuTrigger>
+      <DropdownMenuPortal>
+        <DropdownMenuContent>
+          {!isSmsCalEmail(email) && !shouldHideEmail && (
+            <DropdownMenuItem className="focus:outline-none">
+              <DropdownItem
+                StartIcon="mail"
+                href={`mailto:${email}`}
+                onClick={(e) => {
+                  setOpenDropdown(false);
+                  e.stopPropagation();
+                }}>
+                <a href={`mailto:${email}`}>{t("email")}</a>
+              </DropdownItem>
+            </DropdownMenuItem>
+          )}
+
+          <DropdownMenuItem className="focus:outline-none">
+            <DropdownItem
+              StartIcon={isCopied ? "clipboard-check" : "clipboard"}
+              onClick={(e) => {
+                e.preventDefault();
+                const isEmailCopied = isSmsCalEmail(email);
+                copyToClipboard(isEmailCopied ? email : (phoneNumber ?? ""));
+                setOpenDropdown(false);
+                showToast(isEmailCopied ? t("email_copied") : t("phone_number_copied"), "success");
+              }}>
+              {!isCopied ? t("copy") : t("copied")}
+            </DropdownItem>
+          </DropdownMenuItem>
+
+          {isBookingInPast && (
+            <DropdownMenuItem className="focus:outline-none">
+              <DropdownItem
+                data-testid={noShow ? "unmark-no-show" : "mark-no-show"}
+                onClick={(e) => {
+                  e.preventDefault();
+                  setOpenDropdown(false);
+                  noShowMutation.mutate({ bookingUid, attendees: [{ noShow: !noShow, email }] });
+                }}
+                StartIcon={noShow ? "eye" : "eye-off"}>
+                {noShow ? t("unmark_as_no_show") : t("mark_as_no_show")}
+              </DropdownItem>
+            </DropdownMenuItem>
+          )}
+        </DropdownMenuContent>
+      </DropdownMenuPortal>
+    </Dropdown>
+  );
+};
+
+type GroupedAttendeeProps = {
+  attendees: BookingAttendee[];
+  bookingUid: string;
+};
+
+const GroupedAttendees = (groupedAttendeeProps: GroupedAttendeeProps) => {
+  const { bookingUid, attendees } = groupedAttendeeProps;
+  const { t } = useLocale();
+  const utils = trpc.useUtils();
+  const noShowMutation = trpc.viewer.loggedInViewerRouter.markNoShow.useMutation({
+    onSuccess: async (data) => {
+      showToast(t(data.message), "success");
+      await utils.viewer.bookings.invalidate();
+    },
+    onError: (err) => {
+      showToast(err.message, "error");
+    },
+  });
+
+  type FormValues = {
+    attendees: Array<{ id: number; email: string; noShow: boolean }>;
+  };
+
+  const { control, handleSubmit } = useForm<FormValues>({
+    defaultValues: {
+      attendees: attendees.map((a) => ({ id: a.id, email: a.email, noShow: a.noShow || false })),
+    },
+    mode: "onBlur",
+  });
+
+  const { fields } = useFieldArray({
+    control,
+    name: "attendees",
+  });
+
+  const onSubmit = (data: FormValues) => {
+    const filteredData = data.attendees.slice(1).map((attendee) => ({
+      email: attendee.email,
+      noShow: attendee.noShow,
+    }));
+    noShowMutation.mutate({ bookingUid, attendees: filteredData });
+    setOpenDropdown(false);
+  };
+
+  const [openDropdown, setOpenDropdown] = useState(false);
+
+  return (
+    <Dropdown open={openDropdown} onOpenChange={setOpenDropdown}>
+      <DropdownMenuTrigger asChild>
+        <button
+          data-testid="more-guests"
+          onClick={(e) => e.stopPropagation()}
+          className="radix-state-open:text-blue-500 transition hover:text-blue-500 focus:outline-none">
+          {t("plus_more", { count: attendees.length - 1 })}
+        </button>
+      </DropdownMenuTrigger>
+      <DropdownMenuContent className="min-w-[300px]">
+        <DropdownMenuLabel className="text-xs font-medium uppercase">
+          {t("mark_as_no_show_title")}
+        </DropdownMenuLabel>
+        <form onSubmit={handleSubmit(onSubmit)}>
+          {fields.slice(1).map((field, index) => {
+            const attendee = attendees[index + 1];
+            const displayName =
+              attendee.user?.name || attendee.name || attendee.user?.email || attendee.email;
+            const hasName = attendee.name || attendee.user?.name;
+
+            return (
+              <Controller
+                key={field.id}
+                name={`attendees.${index + 1}.noShow`}
+                control={control}
+                render={({ field: { onChange, value } }) => (
+                  <DropdownMenuCheckboxItem
+                    checked={value || false}
+                    onCheckedChange={onChange}
+                    className="focus:outline-none"
+                    onClick={(e) => {
+                      e.preventDefault();
+                      onChange(!value);
+                    }}>
+                    <div className={`w-full ${value ? "line-through" : ""}`}>
+                      {hasName ? (
+                        <>
+                          <div>{displayName}</div>
+                          <div className="text-subtle text-xs">{field.email}</div>
+                        </>
+                      ) : (
+                        <div>{field.email}</div>
+                      )}
+                    </div>
+                  </DropdownMenuCheckboxItem>
+                )}
+              />
+            );
+          })}
+          <DropdownMenuSeparator />
+          <div className="flex justify-end p-2">
+            <Button
+              data-testid="update-no-show"
+              color="secondary"
+              onClick={(e) => {
+                e.preventDefault();
+                handleSubmit(onSubmit)();
+              }}>
+              {t("mark_as_no_show_title")}
+            </Button>
+          </div>
+        </form>
+      </DropdownMenuContent>
+    </Dropdown>
+  );
+};
+
+const GroupedGuests = ({ guests }: { guests: BookingAttendee[] }) => {
+  const [openDropdown, setOpenDropdown] = useState(false);
+  const { t } = useLocale();
+  const { copyToClipboard, isCopied } = useCopy();
+  const [selectedEmail, setSelectedEmail] = useState("");
+
+  return (
+    <Dropdown
+      open={openDropdown}
+      onOpenChange={(value) => {
+        setOpenDropdown(value);
+        setSelectedEmail("");
+      }}>
+      <DropdownMenuTrigger asChild>
+        <button
+          onClick={(e) => e.stopPropagation()}
+          className="radix-state-open:text-blue-500 transition hover:text-blue-500 focus:outline-none">
+          {t("plus_more", { count: guests.length - 1 })}
+        </button>
+      </DropdownMenuTrigger>
+      <DropdownMenuContent className="min-w-[300px]">
+        <DropdownMenuLabel className="text-xs font-medium uppercase">{t("guests")}</DropdownMenuLabel>
+        {guests.slice(1).map((guest) => {
+          const displayName = guest.user?.name || guest.name || guest.user?.email || guest.email;
+          const hasName = guest.name || guest.user?.name;
+
+          return (
+            <DropdownMenuItem key={guest.id}>
+              <DropdownItem
+                className="pr-6 focus:outline-none"
+                StartIcon={selectedEmail === guest.email ? "circle-check" : undefined}
+                onClick={(e) => {
+                  e.preventDefault();
+                  setSelectedEmail(guest.email);
+                }}>
+                <div className={`${selectedEmail !== guest.email ? "pl-6" : ""}`}>
+                  {hasName ? (
+                    <>
+                      <div>{displayName}</div>
+                      <div className="text-subtle text-xs">{guest.email}</div>
+                    </>
+                  ) : (
+                    <div>{guest.email}</div>
+                  )}
+                </div>
+              </DropdownItem>
+            </DropdownMenuItem>
+          );
+        })}
+        <DropdownMenuSeparator />
+        <div className="flex justify-end gap-2 p-2">
+          <Link href={`mailto:${selectedEmail}`}>
+            <Button
+              color="secondary"
+              disabled={selectedEmail.length === 0}
+              onClick={(e) => {
+                setOpenDropdown(false);
+                e.stopPropagation();
+              }}>
+              {t("email")}
+            </Button>
+          </Link>
+          <Button
+            color="secondary"
+            disabled={selectedEmail.length === 0}
+            onClick={(e) => {
+              e.preventDefault();
+              copyToClipboard(selectedEmail);
+              showToast(t("email_copied"), "success");
+            }}>
+            {!isCopied ? t("copy") : t("copied")}
+          </Button>
+        </div>
+      </DropdownMenuContent>
+    </Dropdown>
+  );
+};
+
+const DisplayAttendees = ({
+  attendees,
+  user,
+  currentEmail,
+  bookingUid,
+  isBookingInPast,
+  hideOrganizerEmail,
+  organizerEmail,
+  eventTypeHosts,
+}: {
+  attendees: BookingAttendee[];
+  user: UserProps | null;
+  currentEmail?: string | null;
+  bookingUid: string;
+  isBookingInPast: boolean;
+  hideOrganizerEmail?: boolean;
+  organizerEmail?: string | null;
+  eventTypeHosts?: Array<{ user: { email: string } | null }> | null;
+}) => {
+  const { t } = useLocale();
+  attendees.sort((a, b) => a.id - b.id);
+
+  return (
+    <div className="text-emphasis text-sm" onClick={(e) => e.stopPropagation()}>
+      {user && (
+        <FirstAttendee user={user} currentEmail={currentEmail} hideOrganizerEmail={hideOrganizerEmail} />
+      )}
+      {attendees.length > 1 ? <span>,&nbsp;</span> : <span>&nbsp;{t("and")}&nbsp;</span>}
+      <Attendee
+        {...attendees[0]}
+        bookingUid={bookingUid}
+        isBookingInPast={isBookingInPast}
+        hideOrganizerEmail={hideOrganizerEmail}
+        organizerEmail={organizerEmail}
+        eventTypeHosts={eventTypeHosts}
+      />
+      {attendees.length > 1 && (
+        <>
+          <div className="text-emphasis inline-block text-sm">&nbsp;{t("and")}&nbsp;</div>
+          {attendees.length > 2 ? (
+            <Tooltip
+              content={attendees.slice(1).map((attendee) => (
+                <p key={attendee.email}>
+                  <Attendee
+                    {...attendee}
+                    bookingUid={bookingUid}
+                    isBookingInPast={isBookingInPast}
+                    hideOrganizerEmail={hideOrganizerEmail}
+                    organizerEmail={organizerEmail}
+                    eventTypeHosts={eventTypeHosts}
+                  />
+                </p>
+              ))}>
+              {isBookingInPast ? (
+                <GroupedAttendees attendees={attendees} bookingUid={bookingUid} />
+              ) : (
+                <GroupedGuests guests={attendees} />
+              )}
+            </Tooltip>
+          ) : (
+            <Attendee
+              {...attendees[1]}
+              bookingUid={bookingUid}
+              isBookingInPast={isBookingInPast}
+              hideOrganizerEmail={hideOrganizerEmail}
+              organizerEmail={organizerEmail}
+              eventTypeHosts={eventTypeHosts}
+            />
+          )}
+        </>
+      )}
+    </div>
+  );
+};
+
+const AssignmentReasonTooltip = ({
+  assignmentReason,
+  onClick,
+}: {
+  assignmentReason: Pick<AssignmentReason, "reasonEnum" | "reasonString">;
+  onClick?: () => void;
+}) => {
+  const { t } = useLocale();
+  const badgeTitle = assignmentReasonBadgeTitleMap(assignmentReason.reasonEnum);
+  return (
+    <Tooltip content={<p>{assignmentReason.reasonString}</p>}>
+      <Badge
+        className={classNames("ltr:mr-2 rtl:ml-2", onClick && "cursor-pointer hover:opacity-80")}
+        variant="gray"
+        onClick={onClick}>
+        {t(badgeTitle)}
+      </Badge>
+    </Tooltip>
+  );
+};
+
+// Wrap BookingListItem with BookingActionsStoreProvider to provide isolated store for each booking
+const BookingListItemWithProvider = (props: BookingItemProps) => {
+  return (
+    <BookingActionsStoreProvider>
+      <BookingListItem {...props} />
+    </BookingActionsStoreProvider>
+  );
+};
+
+export default BookingListItemWithProvider;
+
+function AttendeeExtracted(attendeeProps: (BookingAttendee) & (NoShowProps) & ({
+  hideOrganizerEmail?: boolean;
+  organizerEmail?: string | null;
+  eventTypeHosts?: Array<{ user: { email: string } | null }> | null;
+})) {
+  const {
+    email,
+    name,
+    bookingUid,
+    isBookingInPast,
+    noShow,
+    phoneNumber,
+    user,
+    hideOrganizerEmail,
+    organizerEmail,
+    eventTypeHosts,
+  } = attendeeProps;
+  return {
+    email,
+    name,
+    bookingUid,
+    isBookingInPast,
+    noShow,
+    phoneNumber,
+    user,
+    hideOrganizerEmail,
+    organizerEmail,
+    eventTypeHosts,
+  };
+}
+```
+
 <a id="finding-repository-health-complexity-getandupdatenormalizedvalues-fac5c01648"></a>
 ## High complexity in getAndUpdateNormalizedValues
 
@@ -22521,6 +21659,404 @@ async function handlerFindFirst(obj: WebhookReturn) {
 }
 ```
 
+<a id="finding-repository-health-complexity-cleanuptestdata-b5d56d443d"></a>
+## High complexity in cleanupTestData
+
+Severity: Warning
+Classification: Code health
+Language: TypeScript
+Framework: Code health
+
+packages/features/booking-audit/lib/service/__tests__/integration-utils.ts:118 has cyclomatic complexity 12, cognitive complexity 12, and maintainability 38.15.
+
+**Criterion:** Repository health complexity policy: warn above cyclomatic 10, cognitive 15, or below maintainability 60.
+
+**Recommended next step:** Split cleanupTestData into smaller decision units, preserve its current behavior with focused tests, and rerun the health report before applying automated cleanup.
+
+[integration-utils.ts: cleanupTestData](#plan-group-66a335b51eeeda10f6a50be00b367ec3dd94e1afe0ecae1e870636d94a76e3cf)
+
+<a id="source-repository-health-complexity-cleanuptestdata-b5d56d443d"></a>
+### Autofix
+
+packages/features/booking-audit/lib/service/__tests__/integration-utils.ts L116-L184
+
+Source: packages/features/booking-audit/lib/service/__tests__/integration-utils.ts L159-L184
+
+#### Original
+
+```typescript
+    });
+  }
+
+  if (testData.organizationId) {
+    if (testData.featureSlug) {
+      await prisma.teamFeatures.deleteMany({
+        where: {
+          teamId: testData.organizationId,
+          featureId: testData.featureSlug,
+        },
+      });
+    }
+    await prisma.membership.deleteMany({
+      where: { teamId: testData.organizationId },
+    });
+    await prisma.team.deleteMany({
+      where: { id: testData.organizationId },
+    });
+  }
+
+  if (testData.userIds?.length) {
+    await prisma.user.deleteMany({
+      where: { id: { in: testData.userIds } },
+    });
+  }
+};
+```
+
+#### Fixed
+
+```typescript
+    });
+  }
+
+  await cleanupTestDataDeleteMany(testData);
+
+  if (testData.userIds?.length) {
+    await prisma.user.deleteMany({
+      where: { id: { in: testData.userIds } },
+    });
+  }
+};
+
+async function cleanupTestDataDeleteMany(testData: {
+  bookingUid?: string;
+  userUuids?: string[];
+  attendeeEmails?: string[];
+  eventTypeId?: number;
+  organizationId?: number;
+  userIds?: number[];
+  featureSlug?: string;
+}) {
+
+  if (testData.organizationId) {
+    if (testData.featureSlug) {
+      await prisma.teamFeatures.deleteMany({
+        where: {
+          teamId: testData.organizationId,
+          featureId: testData.featureSlug,
+        },
+      });
+    }
+    await prisma.membership.deleteMany({
+      where: { teamId: testData.organizationId },
+    });
+    await prisma.team.deleteMany({
+      where: { id: testData.organizationId },
+    });
+  }
+}
+```
+
+<a id="finding-repository-health-complexity-handlebookingerror-0b4887c534"></a>
+## High complexity in handleBookingError
+
+Severity: Warning
+Classification: Code health
+Language: TypeScript
+Framework: Code health
+
+apps/api/v2/src/platform/bookings/2024-08-13/services/errors.service.ts:34 has cyclomatic complexity 11, cognitive complexity 52, and maintainability 45.8.
+
+**Criterion:** Repository health complexity policy: warn above cyclomatic 10, cognitive 15, or below maintainability 60.
+
+**Recommended next step:** Split handleBookingError into smaller decision units, preserve its current behavior with focused tests, and rerun the health report before applying automated cleanup.
+
+[errors.service.ts: handleBookingError](#plan-group-51fd5b9472c83d5a96d1f27f331c2b5b46ca613cf36bff732f02dab890a8d21c)
+
+<a id="source-repository-health-complexity-handlebookingerror-0b4887c534"></a>
+### Autofix
+
+apps/api/v2/src/platform/bookings/2024-08-13/services/errors.service.ts L32-L67
+
+Source: apps/api/v2/src/platform/bookings/2024-08-13/services/errors.service.ts L48-L68
+
+#### Original
+
+```typescript
+        throw new BadRequestException("Attempting to book a meeting in the past.");
+      } else if (error.message === "hosts_unavailable_for_booking") {
+        throw new BadRequestException(hostsUnavaile);
+      } else if (error.message === "booker_limit_exceeded_error") {
+        throw new BadRequestException(
+          "Attendee with this email can't book because the maximum number of active bookings has been reached."
+        );
+      } else if (error.message === "booker_limit_exceeded_error_reschedule") {
+        const errorData =
+          "data" in error ? (error.data as { rescheduleUid: string }) : { rescheduleUid: undefined };
+        let message =
+          "Attendee with this email can't book because the maximum number of active bookings has been reached.";
+        if (errorData?.rescheduleUid) {
+          message += ` You can reschedule your existing booking (${errorData.rescheduleUid}) to a new timeslot instead.`;
+        }
+        throw new BadRequestException(message);
+      }
+    }
+    throw error;
+  }
+}
+```
+
+#### Fixed
+
+```typescript
+        throw new BadRequestException("Attempting to book a meeting in the past.");
+      } else if (error.message === "hosts_unavailable_for_booking") {
+        throw new BadRequestException(hostsUnavaile);
+      } else {
+        this.handleBookingErrorExtracted(error);
+      }
+    }
+    throw error;
+  }
+
+  private handleBookingErrorExtracted(error: Error) {
+    if (error.message === "booker_limit_exceeded_error") {
+      throw new BadRequestException(
+        "Attendee with this email can't book because the maximum number of active bookings has been reached."
+      );
+    } else if (error.message === "booker_limit_exceeded_error_reschedule") {
+      const errorData =
+        "data" in error ? (error.data as { rescheduleUid: string }) : { rescheduleUid: undefined };
+      let message =
+        "Attendee with this email can't book because the maximum number of active bookings has been reached.";
+      if (errorData?.rescheduleUid) {
+        message += ` You can reschedule your existing booking (${errorData.rescheduleUid}) to a new timeslot instead.`;
+      }
+      throw new BadRequestException(message);
+    }
+  }
+}
+```
+
+<a id="finding-repository-health-complexity-applistcard-73123ee301"></a>
+## High complexity in AppListCard
+
+Severity: Warning
+Classification: Code health
+Language: TypeScript
+Framework: Code health
+
+packages/ui/components/app-list-card/AppListCard.tsx:43 has cyclomatic complexity 11, cognitive complexity 10, and maintainability 35.1.
+
+**Criterion:** Repository health complexity policy: warn above cyclomatic 10, cognitive 15, or below maintainability 60.
+
+**Recommended next step:** Split AppListCard into smaller decision units, preserve its current behavior with focused tests, and rerun the health report before applying automated cleanup.
+
+[AppListCard.tsx: AppListCard](#plan-group-6d9e51d3f94e6dc1a28e889de3e19116f1d7ae71c2c2690cf9fb878db8a4a2d9)
+
+<a id="source-repository-health-complexity-applistcard-73123ee301"></a>
+### Autofix
+
+packages/ui/components/app-list-card/AppListCard.tsx L41-L119
+
+Source: packages/ui/components/app-list-card/AppListCard.tsx L42-L119
+
+#### Original
+
+```typescript
+
+export const AppListCard = (props: AppListCardProps & { highlight?: boolean }) => {
+  const { t } = useLocale();
+  const {
+    logo,
+    title,
+    description,
+    actions,
+    isDefault,
+    isTemplate,
+    invalidCredential,
+    children,
+    credentialOwner,
+    className,
+    classNameObject,
+    highlight,
+  } = props;
+
+  return (
+    <div
+      className={classNames(
+        highlight && "dark:bg-cal-muted bg-yellow-100",
+        className || classNameObject?.container
+      )}>
+      <div className="flex items-start gap-x-3 px-4 py-4 sm:px-6">
+        {logo ? (
+          <img
+            className={classNames(logo.includes("-dark") && "dark:invert", "h-10 w-10 shrink-0")}
+            src={logo}
+            alt={`${title} logo`}
+          />
+        ) : null}
+        <div className="flex min-w-0 grow flex-col gap-y-1">
+          <div className="flex items-center gap-x-2">
+            <h3
+              className={classNames("text-emphasis truncate text-sm font-semibold", classNameObject?.title)}>
+              {title}
+            </h3>
+            <div className="flex shrink-0 items-center gap-x-2">
+              {isDefault && <Badge variant="green">{t("default")}</Badge>}
+              {isTemplate && <Badge variant="red">Template</Badge>}
+            </div>
+          </div>
+          <ListItemText
+            component="p"
+            className={classNames("whitespace-normal wrap-break-word", classNameObject?.description)}>
+            {description}
+          </ListItemText>
+          {invalidCredential && (
+            <div className="flex gap-x-2 pt-2">
+              <CircleAlertIcon className="h-8 w-8 shrink-0 text-red-500 sm:h-4 sm:w-4" />
+              <ListItemText component="p" className="whitespace-pre-wrap wrap-break-word text-red-500">
+                {t("invalid_credential", { appName: title })}
+              </ListItemText>
+            </div>
+          )}
+        </div>
+        {credentialOwner && (
+          <div className="shrink-0">
+            <Badge variant="gray">
+              <div className="flex items-center">
+                <Avatar
+                  className="mr-2"
+                  alt={credentialOwner.name || "Nameless"}
+                  size="xs"
+                  imageSrc={getPlaceholderAvatar(credentialOwner.avatar, credentialOwner?.name as string)}
+                />
+                {credentialOwner.name}
+              </div>
+            </Badge>
+          </div>
+        )}
+        {actions && <div className="shrink-0">{actions}</div>}
+      </div>
+      <div className="w-full">{children}</div>
+    </div>
+  );
+};
+```
+
+#### Fixed
+
+```typescript
+
+export const AppListCard = (props: AppListCardProps & { highlight?: boolean }) => {
+  const { t } = useLocale();
+  const AppListCardExtractedResult = AppListCardExtracted(props);
+  const logo = AppListCardExtractedResult.logo;
+  const title = AppListCardExtractedResult.title;
+  const description = AppListCardExtractedResult.description;
+  const actions = AppListCardExtractedResult.actions;
+  const isDefault = AppListCardExtractedResult.isDefault;
+  const isTemplate = AppListCardExtractedResult.isTemplate;
+  const invalidCredential = AppListCardExtractedResult.invalidCredential;
+  const children = AppListCardExtractedResult.children;
+  const credentialOwner = AppListCardExtractedResult.credentialOwner;
+  const className = AppListCardExtractedResult.className;
+  const classNameObject = AppListCardExtractedResult.classNameObject;
+  const highlight = AppListCardExtractedResult.highlight;
+
+  return (
+    <div
+      className={classNames(
+        highlight && "dark:bg-cal-muted bg-yellow-100",
+        className || classNameObject?.container
+      )}>
+      <div className="flex items-start gap-x-3 px-4 py-4 sm:px-6">
+        {logo ? (
+          <img
+            className={classNames(logo.includes("-dark") && "dark:invert", "h-10 w-10 shrink-0")}
+            src={logo}
+            alt={`${title} logo`}
+          />
+        ) : null}
+        <div className="flex min-w-0 grow flex-col gap-y-1">
+          <div className="flex items-center gap-x-2">
+            <h3
+              className={classNames("text-emphasis truncate text-sm font-semibold", classNameObject?.title)}>
+              {title}
+            </h3>
+            <div className="flex shrink-0 items-center gap-x-2">
+              {isDefault && <Badge variant="green">{t("default")}</Badge>}
+              {isTemplate && <Badge variant="red">Template</Badge>}
+            </div>
+          </div>
+          <ListItemText
+            component="p"
+            className={classNames("whitespace-normal wrap-break-word", classNameObject?.description)}>
+            {description}
+          </ListItemText>
+          {invalidCredential && (
+            <div className="flex gap-x-2 pt-2">
+              <CircleAlertIcon className="h-8 w-8 shrink-0 text-red-500 sm:h-4 sm:w-4" />
+              <ListItemText component="p" className="whitespace-pre-wrap wrap-break-word text-red-500">
+                {t("invalid_credential", { appName: title })}
+              </ListItemText>
+            </div>
+          )}
+        </div>
+        {credentialOwner && (
+          <div className="shrink-0">
+            <Badge variant="gray">
+              <div className="flex items-center">
+                <Avatar
+                  className="mr-2"
+                  alt={credentialOwner.name || "Nameless"}
+                  size="xs"
+                  imageSrc={getPlaceholderAvatar(credentialOwner.avatar, credentialOwner?.name as string)}
+                />
+                {credentialOwner.name}
+              </div>
+            </Badge>
+          </div>
+        )}
+        {actions && <div className="shrink-0">{actions}</div>}
+      </div>
+      <div className="w-full">{children}</div>
+    </div>
+  );
+};
+
+function AppListCardExtracted(props: (AppListCardProps) & ({ highlight?: boolean })) {
+  const {
+    logo,
+    title,
+    description,
+    actions,
+    isDefault,
+    isTemplate,
+    invalidCredential,
+    children,
+    credentialOwner,
+    className,
+    classNameObject,
+    highlight,
+  } = props;
+  return {
+    logo,
+    title,
+    description,
+    actions,
+    isDefault,
+    isTemplate,
+    invalidCredential,
+    children,
+    credentialOwner,
+    className,
+    classNameObject,
+    highlight,
+  };
+}
+```
+
 <a id="finding-repository-health-complexity-attributechangedcallback-8f37fbc850"></a>
 ## High complexity in attributeChangedCallback
 
@@ -22687,7 +22223,7 @@ packages/features/webhooks/lib/scheduleTrigger.ts:597 has cyclomatic complexity 
 
 **Recommended next step:** Split cancelNoShowTasksForBooking into smaller decision units, preserve its current behavior with focused tests, and rerun the health report before applying automated cleanup.
 
-[scheduleTrigger.ts: cancelNoShowTasksForBooking](#plan-group-7a7bedc0c34af44786fa9170b1caeca704b6e14a8c6ce3143c9d6e2f8db9abec)
+[scheduleTrigger.ts: cancelNoShowTasksForBooking](#plan-group-90132f6c3e12cc11008bccfe48d3e733b2577c04016990fda325d92e1b9cd257)
 
 <a id="source-repository-health-complexity-cancelnoshowtasksforbooking-864f8391e3"></a>
 ### Autofix
@@ -22850,7 +22386,7 @@ Classification: Analysis completeness
 Language: prisma
 Framework: Analysis completeness
 
-This capability showcase surfaces the highest-ranked findings up to a 100-finding cap — showing 100 of 9,941 total findings. Sampled categories: accessibility (50 of 2,457) and complexity (50 of 370).
+This capability showcase surfaces the highest-ranked findings up to a 100-finding cap — showing 100 of 8,447 total findings. Sampled categories: accessibility (50 of 913) and complexity (50 of 370).
 
 **Criterion:** Showcase reports cap generated finding entries at a configurable maximum to stay a usable, committable artifact while reporting the true total.
 
@@ -22916,23 +22452,22 @@ How difficult the code is to understand, accounting for nesting and control flow
 | Findings using this explanation |
 | --- |
 | [Critical complexity in AppForm](<#finding-repository-health-complexity-appform-a64b53e339>) |
+| [High complexity in AppListCard](<#finding-repository-health-complexity-applistcard-73123ee301>) |
+| [High complexity in Attendee](<#finding-repository-health-complexity-attendee-c6d2fdf809>) |
 | [High complexity in attributeChangedCallback](<#finding-repository-health-complexity-attributechangedcallback-8f37fbc850>) |
 | [Critical complexity in authenticate](<#finding-repository-health-complexity-authenticate-5818168e65>) |
 | [Critical complexity in BaseScheduledEmail](<#finding-repository-health-complexity-basescheduledemail-0d1d86e884>) |
 | [Critical complexity in BookerComponent](<#finding-repository-health-complexity-bookercomponent-b76dc6cf35>) |
 | [Critical complexity in BookingListItem](<#finding-repository-health-complexity-bookinglistitem-3fce542919>) |
 | [High complexity in cancelNoShowTasksForBooking](<#finding-repository-health-complexity-cancelnoshowtasksforbooking-864f8391e3>) |
+| [High complexity in cleanupTestData](<#finding-repository-health-complexity-cleanuptestdata-b5d56d443d>) |
 | [Critical complexity in confirmHandler](<#finding-repository-health-complexity-confirmhandler-d3aa7f3499>) |
 | [Critical complexity in createContacts](<#finding-repository-health-complexity-createcontacts-73917edde3>) |
 | [High complexity in detectContentType](<#finding-repository-health-complexity-detectcontenttype-83acfa1fbf>) |
-| [Critical complexity in Event](<#finding-repository-health-complexity-event-dd37a2798d>) |
-| [Critical complexity in EventAdvancedTab](<#finding-repository-health-complexity-eventadvancedtab-39f223b582>) |
-| [Critical complexity in EventMeta](<#finding-repository-health-complexity-eventmeta-3da7ba22a7>) |
 | [Critical complexity in findQualifiedHostsWithDelegationCredentials](<#finding-repository-health-complexity-findqualifiedhostswithdelegationcredentials-5cee6a9688>) |
 | [Critical complexity in GetAccountRecordsForRRSkip](<#finding-repository-health-complexity-getaccountrecordsforrrskip-33a849c917>) |
 | [High complexity in getAndUpdateNormalizedValues](<#finding-repository-health-complexity-getandupdatenormalizedvalues-fac5c01648>) |
 | [Critical complexity in \_getAvailableSlots](<#finding-repository-health-complexity-getavailableslots-e9ed2bbf76>) |
-| [Critical complexity in getBaseProperties](<#finding-repository-health-complexity-getbaseproperties-7b639d0787>) |
 | [High complexity in getBooking](<#finding-repository-health-complexity-getbooking-fd763cf2c0>) |
 | [Critical complexity in \_getBusyTimesFromLimitsForUsers](<#finding-repository-health-complexity-getbusytimesfromlimitsforusers-b7026298ec>) |
 | [Critical complexity in getContacts](<#finding-repository-health-complexity-getcontacts-7ec53dee4e>) |
@@ -22942,6 +22477,7 @@ How difficult the code is to understand, accounting for nesting and control flow
 | [Critical complexity in getServerSideProps](<#finding-repository-health-complexity-getserversideprops-333e63c11d>) |
 | [Critical complexity in getServerSideProps](<#finding-repository-health-complexity-getserversideprops-ec6d74fdbf>) |
 | [Critical complexity in \_getUserAvailability](<#finding-repository-health-complexity-getuseravailability-d530f4f306>) |
+| [High complexity in handleBookingError](<#finding-repository-health-complexity-handlebookingerror-0b4887c534>) |
 | [Critical complexity in handler](<#finding-repository-health-complexity-handler-1ba4f96898>) |
 | [Critical complexity in handler](<#finding-repository-health-complexity-handler-71962a93c2>) |
 | [Critical complexity in handler](<#finding-repository-health-complexity-handler-9f768f63ad>) |
@@ -22956,6 +22492,7 @@ How difficult the code is to understand, accounting for nesting and control flow
 | [Critical complexity in NavigationItem](<#finding-repository-health-complexity-navigationitem-a3b43f990e>) |
 | [Critical complexity in OnboardingInviteBrowserView](<#finding-repository-health-complexity-onboardinginvitebrowserview-3eb0f5c130>) |
 | [Critical complexity in outOfOfficeCreateOrUpdate](<#finding-repository-health-complexity-outofofficecreateorupdate-dd914981dd>) |
+| [Critical complexity in postHandler](<#finding-repository-health-complexity-posthandler-aa1f68f1f7>) |
 | [Critical complexity in setSMSLockState](<#finding-repository-health-complexity-setsmslockstate-f5f5353512>) |
 | [Critical complexity in Signup](<#finding-repository-health-complexity-signup-88b2eb2372>) |
 | [Critical complexity in SlotItem](<#finding-repository-health-complexity-slotitem-2f9e8a6638>) |
@@ -22963,7 +22500,6 @@ How difficult the code is to understand, accounting for nesting and control flow
 | [Critical complexity in superRefineField](<#finding-repository-health-complexity-superrefinefield-c306150f34>) |
 | [Critical complexity in updateHandler](<#finding-repository-health-complexity-updatehandler-20aac050fc>) |
 | [Critical complexity in updateProfileHandler](<#finding-repository-health-complexity-updateprofilehandler-81fae14f6c>) |
-| [Critical complexity in useSchedule](<#finding-repository-health-complexity-useschedule-2fa8338b3a>) |
 | [Critical complexity in validate](<#finding-repository-health-complexity-validate-33e64b8b32>) |
 
 ---
@@ -22984,23 +22520,22 @@ Repository health complexity policy: warn above cyclomatic 10, cognitive 15, or 
 | Findings using this explanation |
 | --- |
 | [Critical complexity in AppForm](<#finding-repository-health-complexity-appform-a64b53e339>) |
+| [High complexity in AppListCard](<#finding-repository-health-complexity-applistcard-73123ee301>) |
+| [High complexity in Attendee](<#finding-repository-health-complexity-attendee-c6d2fdf809>) |
 | [High complexity in attributeChangedCallback](<#finding-repository-health-complexity-attributechangedcallback-8f37fbc850>) |
 | [Critical complexity in authenticate](<#finding-repository-health-complexity-authenticate-5818168e65>) |
 | [Critical complexity in BaseScheduledEmail](<#finding-repository-health-complexity-basescheduledemail-0d1d86e884>) |
 | [Critical complexity in BookerComponent](<#finding-repository-health-complexity-bookercomponent-b76dc6cf35>) |
 | [Critical complexity in BookingListItem](<#finding-repository-health-complexity-bookinglistitem-3fce542919>) |
 | [High complexity in cancelNoShowTasksForBooking](<#finding-repository-health-complexity-cancelnoshowtasksforbooking-864f8391e3>) |
+| [High complexity in cleanupTestData](<#finding-repository-health-complexity-cleanuptestdata-b5d56d443d>) |
 | [Critical complexity in confirmHandler](<#finding-repository-health-complexity-confirmhandler-d3aa7f3499>) |
 | [Critical complexity in createContacts](<#finding-repository-health-complexity-createcontacts-73917edde3>) |
 | [High complexity in detectContentType](<#finding-repository-health-complexity-detectcontenttype-83acfa1fbf>) |
-| [Critical complexity in Event](<#finding-repository-health-complexity-event-dd37a2798d>) |
-| [Critical complexity in EventAdvancedTab](<#finding-repository-health-complexity-eventadvancedtab-39f223b582>) |
-| [Critical complexity in EventMeta](<#finding-repository-health-complexity-eventmeta-3da7ba22a7>) |
 | [Critical complexity in findQualifiedHostsWithDelegationCredentials](<#finding-repository-health-complexity-findqualifiedhostswithdelegationcredentials-5cee6a9688>) |
 | [Critical complexity in GetAccountRecordsForRRSkip](<#finding-repository-health-complexity-getaccountrecordsforrrskip-33a849c917>) |
 | [High complexity in getAndUpdateNormalizedValues](<#finding-repository-health-complexity-getandupdatenormalizedvalues-fac5c01648>) |
 | [Critical complexity in \_getAvailableSlots](<#finding-repository-health-complexity-getavailableslots-e9ed2bbf76>) |
-| [Critical complexity in getBaseProperties](<#finding-repository-health-complexity-getbaseproperties-7b639d0787>) |
 | [High complexity in getBooking](<#finding-repository-health-complexity-getbooking-fd763cf2c0>) |
 | [Critical complexity in \_getBusyTimesFromLimitsForUsers](<#finding-repository-health-complexity-getbusytimesfromlimitsforusers-b7026298ec>) |
 | [Critical complexity in getContacts](<#finding-repository-health-complexity-getcontacts-7ec53dee4e>) |
@@ -23010,6 +22545,7 @@ Repository health complexity policy: warn above cyclomatic 10, cognitive 15, or 
 | [Critical complexity in getServerSideProps](<#finding-repository-health-complexity-getserversideprops-333e63c11d>) |
 | [Critical complexity in getServerSideProps](<#finding-repository-health-complexity-getserversideprops-ec6d74fdbf>) |
 | [Critical complexity in \_getUserAvailability](<#finding-repository-health-complexity-getuseravailability-d530f4f306>) |
+| [High complexity in handleBookingError](<#finding-repository-health-complexity-handlebookingerror-0b4887c534>) |
 | [Critical complexity in handler](<#finding-repository-health-complexity-handler-1ba4f96898>) |
 | [Critical complexity in handler](<#finding-repository-health-complexity-handler-71962a93c2>) |
 | [Critical complexity in handler](<#finding-repository-health-complexity-handler-9f768f63ad>) |
@@ -23024,6 +22560,7 @@ Repository health complexity policy: warn above cyclomatic 10, cognitive 15, or 
 | [Critical complexity in NavigationItem](<#finding-repository-health-complexity-navigationitem-a3b43f990e>) |
 | [Critical complexity in OnboardingInviteBrowserView](<#finding-repository-health-complexity-onboardinginvitebrowserview-3eb0f5c130>) |
 | [Critical complexity in outOfOfficeCreateOrUpdate](<#finding-repository-health-complexity-outofofficecreateorupdate-dd914981dd>) |
+| [Critical complexity in postHandler](<#finding-repository-health-complexity-posthandler-aa1f68f1f7>) |
 | [Critical complexity in setSMSLockState](<#finding-repository-health-complexity-setsmslockstate-f5f5353512>) |
 | [Critical complexity in Signup](<#finding-repository-health-complexity-signup-88b2eb2372>) |
 | [Critical complexity in SlotItem](<#finding-repository-health-complexity-slotitem-2f9e8a6638>) |
@@ -23031,7 +22568,6 @@ Repository health complexity policy: warn above cyclomatic 10, cognitive 15, or 
 | [Critical complexity in superRefineField](<#finding-repository-health-complexity-superrefinefield-c306150f34>) |
 | [Critical complexity in updateHandler](<#finding-repository-health-complexity-updatehandler-20aac050fc>) |
 | [Critical complexity in updateProfileHandler](<#finding-repository-health-complexity-updateprofilehandler-81fae14f6c>) |
-| [Critical complexity in useSchedule](<#finding-repository-health-complexity-useschedule-2fa8338b3a>) |
 | [Critical complexity in validate](<#finding-repository-health-complexity-validate-33e64b8b32>) |
 
 ---
@@ -23064,23 +22600,22 @@ Number of linearly independent paths through the code. Lower is simpler.
 | Findings using this explanation |
 | --- |
 | [Critical complexity in AppForm](<#finding-repository-health-complexity-appform-a64b53e339>) |
+| [High complexity in AppListCard](<#finding-repository-health-complexity-applistcard-73123ee301>) |
+| [High complexity in Attendee](<#finding-repository-health-complexity-attendee-c6d2fdf809>) |
 | [High complexity in attributeChangedCallback](<#finding-repository-health-complexity-attributechangedcallback-8f37fbc850>) |
 | [Critical complexity in authenticate](<#finding-repository-health-complexity-authenticate-5818168e65>) |
 | [Critical complexity in BaseScheduledEmail](<#finding-repository-health-complexity-basescheduledemail-0d1d86e884>) |
 | [Critical complexity in BookerComponent](<#finding-repository-health-complexity-bookercomponent-b76dc6cf35>) |
 | [Critical complexity in BookingListItem](<#finding-repository-health-complexity-bookinglistitem-3fce542919>) |
 | [High complexity in cancelNoShowTasksForBooking](<#finding-repository-health-complexity-cancelnoshowtasksforbooking-864f8391e3>) |
+| [High complexity in cleanupTestData](<#finding-repository-health-complexity-cleanuptestdata-b5d56d443d>) |
 | [Critical complexity in confirmHandler](<#finding-repository-health-complexity-confirmhandler-d3aa7f3499>) |
 | [Critical complexity in createContacts](<#finding-repository-health-complexity-createcontacts-73917edde3>) |
 | [High complexity in detectContentType](<#finding-repository-health-complexity-detectcontenttype-83acfa1fbf>) |
-| [Critical complexity in Event](<#finding-repository-health-complexity-event-dd37a2798d>) |
-| [Critical complexity in EventAdvancedTab](<#finding-repository-health-complexity-eventadvancedtab-39f223b582>) |
-| [Critical complexity in EventMeta](<#finding-repository-health-complexity-eventmeta-3da7ba22a7>) |
 | [Critical complexity in findQualifiedHostsWithDelegationCredentials](<#finding-repository-health-complexity-findqualifiedhostswithdelegationcredentials-5cee6a9688>) |
 | [Critical complexity in GetAccountRecordsForRRSkip](<#finding-repository-health-complexity-getaccountrecordsforrrskip-33a849c917>) |
 | [High complexity in getAndUpdateNormalizedValues](<#finding-repository-health-complexity-getandupdatenormalizedvalues-fac5c01648>) |
 | [Critical complexity in \_getAvailableSlots](<#finding-repository-health-complexity-getavailableslots-e9ed2bbf76>) |
-| [Critical complexity in getBaseProperties](<#finding-repository-health-complexity-getbaseproperties-7b639d0787>) |
 | [High complexity in getBooking](<#finding-repository-health-complexity-getbooking-fd763cf2c0>) |
 | [Critical complexity in \_getBusyTimesFromLimitsForUsers](<#finding-repository-health-complexity-getbusytimesfromlimitsforusers-b7026298ec>) |
 | [Critical complexity in getContacts](<#finding-repository-health-complexity-getcontacts-7ec53dee4e>) |
@@ -23090,6 +22625,7 @@ Number of linearly independent paths through the code. Lower is simpler.
 | [Critical complexity in getServerSideProps](<#finding-repository-health-complexity-getserversideprops-333e63c11d>) |
 | [Critical complexity in getServerSideProps](<#finding-repository-health-complexity-getserversideprops-ec6d74fdbf>) |
 | [Critical complexity in \_getUserAvailability](<#finding-repository-health-complexity-getuseravailability-d530f4f306>) |
+| [High complexity in handleBookingError](<#finding-repository-health-complexity-handlebookingerror-0b4887c534>) |
 | [Critical complexity in handler](<#finding-repository-health-complexity-handler-1ba4f96898>) |
 | [Critical complexity in handler](<#finding-repository-health-complexity-handler-71962a93c2>) |
 | [Critical complexity in handler](<#finding-repository-health-complexity-handler-9f768f63ad>) |
@@ -23104,6 +22640,7 @@ Number of linearly independent paths through the code. Lower is simpler.
 | [Critical complexity in NavigationItem](<#finding-repository-health-complexity-navigationitem-a3b43f990e>) |
 | [Critical complexity in OnboardingInviteBrowserView](<#finding-repository-health-complexity-onboardinginvitebrowserview-3eb0f5c130>) |
 | [Critical complexity in outOfOfficeCreateOrUpdate](<#finding-repository-health-complexity-outofofficecreateorupdate-dd914981dd>) |
+| [Critical complexity in postHandler](<#finding-repository-health-complexity-posthandler-aa1f68f1f7>) |
 | [Critical complexity in setSMSLockState](<#finding-repository-health-complexity-setsmslockstate-f5f5353512>) |
 | [Critical complexity in Signup](<#finding-repository-health-complexity-signup-88b2eb2372>) |
 | [Critical complexity in SlotItem](<#finding-repository-health-complexity-slotitem-2f9e8a6638>) |
@@ -23111,7 +22648,6 @@ Number of linearly independent paths through the code. Lower is simpler.
 | [Critical complexity in superRefineField](<#finding-repository-health-complexity-superrefinefield-c306150f34>) |
 | [Critical complexity in updateHandler](<#finding-repository-health-complexity-updatehandler-20aac050fc>) |
 | [Critical complexity in updateProfileHandler](<#finding-repository-health-complexity-updateprofilehandler-81fae14f6c>) |
-| [Critical complexity in useSchedule](<#finding-repository-health-complexity-useschedule-2fa8338b3a>) |
 | [Critical complexity in validate](<#finding-repository-health-complexity-validate-33e64b8b32>) |
 
 ---
@@ -23132,23 +22668,22 @@ Repository health complexity policy: warn above cyclomatic 10, cognitive 15, or 
 | Findings using this explanation |
 | --- |
 | [Critical complexity in AppForm](<#finding-repository-health-complexity-appform-a64b53e339>) |
+| [High complexity in AppListCard](<#finding-repository-health-complexity-applistcard-73123ee301>) |
+| [High complexity in Attendee](<#finding-repository-health-complexity-attendee-c6d2fdf809>) |
 | [High complexity in attributeChangedCallback](<#finding-repository-health-complexity-attributechangedcallback-8f37fbc850>) |
 | [Critical complexity in authenticate](<#finding-repository-health-complexity-authenticate-5818168e65>) |
 | [Critical complexity in BaseScheduledEmail](<#finding-repository-health-complexity-basescheduledemail-0d1d86e884>) |
 | [Critical complexity in BookerComponent](<#finding-repository-health-complexity-bookercomponent-b76dc6cf35>) |
 | [Critical complexity in BookingListItem](<#finding-repository-health-complexity-bookinglistitem-3fce542919>) |
 | [High complexity in cancelNoShowTasksForBooking](<#finding-repository-health-complexity-cancelnoshowtasksforbooking-864f8391e3>) |
+| [High complexity in cleanupTestData](<#finding-repository-health-complexity-cleanuptestdata-b5d56d443d>) |
 | [Critical complexity in confirmHandler](<#finding-repository-health-complexity-confirmhandler-d3aa7f3499>) |
 | [Critical complexity in createContacts](<#finding-repository-health-complexity-createcontacts-73917edde3>) |
 | [High complexity in detectContentType](<#finding-repository-health-complexity-detectcontenttype-83acfa1fbf>) |
-| [Critical complexity in Event](<#finding-repository-health-complexity-event-dd37a2798d>) |
-| [Critical complexity in EventAdvancedTab](<#finding-repository-health-complexity-eventadvancedtab-39f223b582>) |
-| [Critical complexity in EventMeta](<#finding-repository-health-complexity-eventmeta-3da7ba22a7>) |
 | [Critical complexity in findQualifiedHostsWithDelegationCredentials](<#finding-repository-health-complexity-findqualifiedhostswithdelegationcredentials-5cee6a9688>) |
 | [Critical complexity in GetAccountRecordsForRRSkip](<#finding-repository-health-complexity-getaccountrecordsforrrskip-33a849c917>) |
 | [High complexity in getAndUpdateNormalizedValues](<#finding-repository-health-complexity-getandupdatenormalizedvalues-fac5c01648>) |
 | [Critical complexity in \_getAvailableSlots](<#finding-repository-health-complexity-getavailableslots-e9ed2bbf76>) |
-| [Critical complexity in getBaseProperties](<#finding-repository-health-complexity-getbaseproperties-7b639d0787>) |
 | [High complexity in getBooking](<#finding-repository-health-complexity-getbooking-fd763cf2c0>) |
 | [Critical complexity in \_getBusyTimesFromLimitsForUsers](<#finding-repository-health-complexity-getbusytimesfromlimitsforusers-b7026298ec>) |
 | [Critical complexity in getContacts](<#finding-repository-health-complexity-getcontacts-7ec53dee4e>) |
@@ -23158,6 +22693,7 @@ Repository health complexity policy: warn above cyclomatic 10, cognitive 15, or 
 | [Critical complexity in getServerSideProps](<#finding-repository-health-complexity-getserversideprops-333e63c11d>) |
 | [Critical complexity in getServerSideProps](<#finding-repository-health-complexity-getserversideprops-ec6d74fdbf>) |
 | [Critical complexity in \_getUserAvailability](<#finding-repository-health-complexity-getuseravailability-d530f4f306>) |
+| [High complexity in handleBookingError](<#finding-repository-health-complexity-handlebookingerror-0b4887c534>) |
 | [Critical complexity in handler](<#finding-repository-health-complexity-handler-1ba4f96898>) |
 | [Critical complexity in handler](<#finding-repository-health-complexity-handler-71962a93c2>) |
 | [Critical complexity in handler](<#finding-repository-health-complexity-handler-9f768f63ad>) |
@@ -23172,6 +22708,7 @@ Repository health complexity policy: warn above cyclomatic 10, cognitive 15, or 
 | [Critical complexity in NavigationItem](<#finding-repository-health-complexity-navigationitem-a3b43f990e>) |
 | [Critical complexity in OnboardingInviteBrowserView](<#finding-repository-health-complexity-onboardinginvitebrowserview-3eb0f5c130>) |
 | [Critical complexity in outOfOfficeCreateOrUpdate](<#finding-repository-health-complexity-outofofficecreateorupdate-dd914981dd>) |
+| [Critical complexity in postHandler](<#finding-repository-health-complexity-posthandler-aa1f68f1f7>) |
 | [Critical complexity in setSMSLockState](<#finding-repository-health-complexity-setsmslockstate-f5f5353512>) |
 | [Critical complexity in Signup](<#finding-repository-health-complexity-signup-88b2eb2372>) |
 | [Critical complexity in SlotItem](<#finding-repository-health-complexity-slotitem-2f9e8a6638>) |
@@ -23179,7 +22716,6 @@ Repository health complexity policy: warn above cyclomatic 10, cognitive 15, or 
 | [Critical complexity in superRefineField](<#finding-repository-health-complexity-superrefinefield-c306150f34>) |
 | [Critical complexity in updateHandler](<#finding-repository-health-complexity-updatehandler-20aac050fc>) |
 | [Critical complexity in updateProfileHandler](<#finding-repository-health-complexity-updateprofilehandler-81fae14f6c>) |
-| [Critical complexity in useSchedule](<#finding-repository-health-complexity-useschedule-2fa8338b3a>) |
 | [Critical complexity in validate](<#finding-repository-health-complexity-validate-33e64b8b32>) |
 
 ---
@@ -23212,23 +22748,22 @@ Information content of the code based on operator/operand counts. Lower means mo
 | Findings using this explanation |
 | --- |
 | [Critical complexity in AppForm](<#finding-repository-health-complexity-appform-a64b53e339>) |
+| [High complexity in AppListCard](<#finding-repository-health-complexity-applistcard-73123ee301>) |
+| [High complexity in Attendee](<#finding-repository-health-complexity-attendee-c6d2fdf809>) |
 | [High complexity in attributeChangedCallback](<#finding-repository-health-complexity-attributechangedcallback-8f37fbc850>) |
 | [Critical complexity in authenticate](<#finding-repository-health-complexity-authenticate-5818168e65>) |
 | [Critical complexity in BaseScheduledEmail](<#finding-repository-health-complexity-basescheduledemail-0d1d86e884>) |
 | [Critical complexity in BookerComponent](<#finding-repository-health-complexity-bookercomponent-b76dc6cf35>) |
 | [Critical complexity in BookingListItem](<#finding-repository-health-complexity-bookinglistitem-3fce542919>) |
 | [High complexity in cancelNoShowTasksForBooking](<#finding-repository-health-complexity-cancelnoshowtasksforbooking-864f8391e3>) |
+| [High complexity in cleanupTestData](<#finding-repository-health-complexity-cleanuptestdata-b5d56d443d>) |
 | [Critical complexity in confirmHandler](<#finding-repository-health-complexity-confirmhandler-d3aa7f3499>) |
 | [Critical complexity in createContacts](<#finding-repository-health-complexity-createcontacts-73917edde3>) |
 | [High complexity in detectContentType](<#finding-repository-health-complexity-detectcontenttype-83acfa1fbf>) |
-| [Critical complexity in Event](<#finding-repository-health-complexity-event-dd37a2798d>) |
-| [Critical complexity in EventAdvancedTab](<#finding-repository-health-complexity-eventadvancedtab-39f223b582>) |
-| [Critical complexity in EventMeta](<#finding-repository-health-complexity-eventmeta-3da7ba22a7>) |
 | [Critical complexity in findQualifiedHostsWithDelegationCredentials](<#finding-repository-health-complexity-findqualifiedhostswithdelegationcredentials-5cee6a9688>) |
 | [Critical complexity in GetAccountRecordsForRRSkip](<#finding-repository-health-complexity-getaccountrecordsforrrskip-33a849c917>) |
 | [High complexity in getAndUpdateNormalizedValues](<#finding-repository-health-complexity-getandupdatenormalizedvalues-fac5c01648>) |
 | [Critical complexity in \_getAvailableSlots](<#finding-repository-health-complexity-getavailableslots-e9ed2bbf76>) |
-| [Critical complexity in getBaseProperties](<#finding-repository-health-complexity-getbaseproperties-7b639d0787>) |
 | [High complexity in getBooking](<#finding-repository-health-complexity-getbooking-fd763cf2c0>) |
 | [Critical complexity in \_getBusyTimesFromLimitsForUsers](<#finding-repository-health-complexity-getbusytimesfromlimitsforusers-b7026298ec>) |
 | [Critical complexity in getContacts](<#finding-repository-health-complexity-getcontacts-7ec53dee4e>) |
@@ -23238,6 +22773,7 @@ Information content of the code based on operator/operand counts. Lower means mo
 | [Critical complexity in getServerSideProps](<#finding-repository-health-complexity-getserversideprops-333e63c11d>) |
 | [Critical complexity in getServerSideProps](<#finding-repository-health-complexity-getserversideprops-ec6d74fdbf>) |
 | [Critical complexity in \_getUserAvailability](<#finding-repository-health-complexity-getuseravailability-d530f4f306>) |
+| [High complexity in handleBookingError](<#finding-repository-health-complexity-handlebookingerror-0b4887c534>) |
 | [Critical complexity in handler](<#finding-repository-health-complexity-handler-1ba4f96898>) |
 | [Critical complexity in handler](<#finding-repository-health-complexity-handler-71962a93c2>) |
 | [Critical complexity in handler](<#finding-repository-health-complexity-handler-9f768f63ad>) |
@@ -23252,6 +22788,7 @@ Information content of the code based on operator/operand counts. Lower means mo
 | [Critical complexity in NavigationItem](<#finding-repository-health-complexity-navigationitem-a3b43f990e>) |
 | [Critical complexity in OnboardingInviteBrowserView](<#finding-repository-health-complexity-onboardinginvitebrowserview-3eb0f5c130>) |
 | [Critical complexity in outOfOfficeCreateOrUpdate](<#finding-repository-health-complexity-outofofficecreateorupdate-dd914981dd>) |
+| [Critical complexity in postHandler](<#finding-repository-health-complexity-posthandler-aa1f68f1f7>) |
 | [Critical complexity in setSMSLockState](<#finding-repository-health-complexity-setsmslockstate-f5f5353512>) |
 | [Critical complexity in Signup](<#finding-repository-health-complexity-signup-88b2eb2372>) |
 | [Critical complexity in SlotItem](<#finding-repository-health-complexity-slotitem-2f9e8a6638>) |
@@ -23259,7 +22796,6 @@ Information content of the code based on operator/operand counts. Lower means mo
 | [Critical complexity in superRefineField](<#finding-repository-health-complexity-superrefinefield-c306150f34>) |
 | [Critical complexity in updateHandler](<#finding-repository-health-complexity-updatehandler-20aac050fc>) |
 | [Critical complexity in updateProfileHandler](<#finding-repository-health-complexity-updateprofilehandler-81fae14f6c>) |
-| [Critical complexity in useSchedule](<#finding-repository-health-complexity-useschedule-2fa8338b3a>) |
 | [Critical complexity in validate](<#finding-repository-health-complexity-validate-33e64b8b32>) |
 
 ---
@@ -23292,23 +22828,22 @@ Number of source lines in the function body.
 | Findings using this explanation |
 | --- |
 | [Critical complexity in AppForm](<#finding-repository-health-complexity-appform-a64b53e339>) |
+| [High complexity in AppListCard](<#finding-repository-health-complexity-applistcard-73123ee301>) |
+| [High complexity in Attendee](<#finding-repository-health-complexity-attendee-c6d2fdf809>) |
 | [High complexity in attributeChangedCallback](<#finding-repository-health-complexity-attributechangedcallback-8f37fbc850>) |
 | [Critical complexity in authenticate](<#finding-repository-health-complexity-authenticate-5818168e65>) |
 | [Critical complexity in BaseScheduledEmail](<#finding-repository-health-complexity-basescheduledemail-0d1d86e884>) |
 | [Critical complexity in BookerComponent](<#finding-repository-health-complexity-bookercomponent-b76dc6cf35>) |
 | [Critical complexity in BookingListItem](<#finding-repository-health-complexity-bookinglistitem-3fce542919>) |
 | [High complexity in cancelNoShowTasksForBooking](<#finding-repository-health-complexity-cancelnoshowtasksforbooking-864f8391e3>) |
+| [High complexity in cleanupTestData](<#finding-repository-health-complexity-cleanuptestdata-b5d56d443d>) |
 | [Critical complexity in confirmHandler](<#finding-repository-health-complexity-confirmhandler-d3aa7f3499>) |
 | [Critical complexity in createContacts](<#finding-repository-health-complexity-createcontacts-73917edde3>) |
 | [High complexity in detectContentType](<#finding-repository-health-complexity-detectcontenttype-83acfa1fbf>) |
-| [Critical complexity in Event](<#finding-repository-health-complexity-event-dd37a2798d>) |
-| [Critical complexity in EventAdvancedTab](<#finding-repository-health-complexity-eventadvancedtab-39f223b582>) |
-| [Critical complexity in EventMeta](<#finding-repository-health-complexity-eventmeta-3da7ba22a7>) |
 | [Critical complexity in findQualifiedHostsWithDelegationCredentials](<#finding-repository-health-complexity-findqualifiedhostswithdelegationcredentials-5cee6a9688>) |
 | [Critical complexity in GetAccountRecordsForRRSkip](<#finding-repository-health-complexity-getaccountrecordsforrrskip-33a849c917>) |
 | [High complexity in getAndUpdateNormalizedValues](<#finding-repository-health-complexity-getandupdatenormalizedvalues-fac5c01648>) |
 | [Critical complexity in \_getAvailableSlots](<#finding-repository-health-complexity-getavailableslots-e9ed2bbf76>) |
-| [Critical complexity in getBaseProperties](<#finding-repository-health-complexity-getbaseproperties-7b639d0787>) |
 | [High complexity in getBooking](<#finding-repository-health-complexity-getbooking-fd763cf2c0>) |
 | [Critical complexity in \_getBusyTimesFromLimitsForUsers](<#finding-repository-health-complexity-getbusytimesfromlimitsforusers-b7026298ec>) |
 | [Critical complexity in getContacts](<#finding-repository-health-complexity-getcontacts-7ec53dee4e>) |
@@ -23318,6 +22853,7 @@ Number of source lines in the function body.
 | [Critical complexity in getServerSideProps](<#finding-repository-health-complexity-getserversideprops-333e63c11d>) |
 | [Critical complexity in getServerSideProps](<#finding-repository-health-complexity-getserversideprops-ec6d74fdbf>) |
 | [Critical complexity in \_getUserAvailability](<#finding-repository-health-complexity-getuseravailability-d530f4f306>) |
+| [High complexity in handleBookingError](<#finding-repository-health-complexity-handlebookingerror-0b4887c534>) |
 | [Critical complexity in handler](<#finding-repository-health-complexity-handler-1ba4f96898>) |
 | [Critical complexity in handler](<#finding-repository-health-complexity-handler-71962a93c2>) |
 | [Critical complexity in handler](<#finding-repository-health-complexity-handler-9f768f63ad>) |
@@ -23332,6 +22868,7 @@ Number of source lines in the function body.
 | [Critical complexity in NavigationItem](<#finding-repository-health-complexity-navigationitem-a3b43f990e>) |
 | [Critical complexity in OnboardingInviteBrowserView](<#finding-repository-health-complexity-onboardinginvitebrowserview-3eb0f5c130>) |
 | [Critical complexity in outOfOfficeCreateOrUpdate](<#finding-repository-health-complexity-outofofficecreateorupdate-dd914981dd>) |
+| [Critical complexity in postHandler](<#finding-repository-health-complexity-posthandler-aa1f68f1f7>) |
 | [Critical complexity in setSMSLockState](<#finding-repository-health-complexity-setsmslockstate-f5f5353512>) |
 | [Critical complexity in Signup](<#finding-repository-health-complexity-signup-88b2eb2372>) |
 | [Critical complexity in SlotItem](<#finding-repository-health-complexity-slotitem-2f9e8a6638>) |
@@ -23339,7 +22876,6 @@ Number of source lines in the function body.
 | [Critical complexity in superRefineField](<#finding-repository-health-complexity-superrefinefield-c306150f34>) |
 | [Critical complexity in updateHandler](<#finding-repository-health-complexity-updatehandler-20aac050fc>) |
 | [Critical complexity in updateProfileHandler](<#finding-repository-health-complexity-updateprofilehandler-81fae14f6c>) |
-| [Critical complexity in useSchedule](<#finding-repository-health-complexity-useschedule-2fa8338b3a>) |
 | [Critical complexity in validate](<#finding-repository-health-complexity-validate-33e64b8b32>) |
 
 ---
@@ -23379,23 +22915,22 @@ Composite score \(0–100\) combining Halstead volume, cyclomatic complexity, an
 | Findings using this explanation |
 | --- |
 | [Critical complexity in AppForm](<#finding-repository-health-complexity-appform-a64b53e339>) |
+| [High complexity in AppListCard](<#finding-repository-health-complexity-applistcard-73123ee301>) |
+| [High complexity in Attendee](<#finding-repository-health-complexity-attendee-c6d2fdf809>) |
 | [High complexity in attributeChangedCallback](<#finding-repository-health-complexity-attributechangedcallback-8f37fbc850>) |
 | [Critical complexity in authenticate](<#finding-repository-health-complexity-authenticate-5818168e65>) |
 | [Critical complexity in BaseScheduledEmail](<#finding-repository-health-complexity-basescheduledemail-0d1d86e884>) |
 | [Critical complexity in BookerComponent](<#finding-repository-health-complexity-bookercomponent-b76dc6cf35>) |
 | [Critical complexity in BookingListItem](<#finding-repository-health-complexity-bookinglistitem-3fce542919>) |
 | [High complexity in cancelNoShowTasksForBooking](<#finding-repository-health-complexity-cancelnoshowtasksforbooking-864f8391e3>) |
+| [High complexity in cleanupTestData](<#finding-repository-health-complexity-cleanuptestdata-b5d56d443d>) |
 | [Critical complexity in confirmHandler](<#finding-repository-health-complexity-confirmhandler-d3aa7f3499>) |
 | [Critical complexity in createContacts](<#finding-repository-health-complexity-createcontacts-73917edde3>) |
 | [High complexity in detectContentType](<#finding-repository-health-complexity-detectcontenttype-83acfa1fbf>) |
-| [Critical complexity in Event](<#finding-repository-health-complexity-event-dd37a2798d>) |
-| [Critical complexity in EventAdvancedTab](<#finding-repository-health-complexity-eventadvancedtab-39f223b582>) |
-| [Critical complexity in EventMeta](<#finding-repository-health-complexity-eventmeta-3da7ba22a7>) |
 | [Critical complexity in findQualifiedHostsWithDelegationCredentials](<#finding-repository-health-complexity-findqualifiedhostswithdelegationcredentials-5cee6a9688>) |
 | [Critical complexity in GetAccountRecordsForRRSkip](<#finding-repository-health-complexity-getaccountrecordsforrrskip-33a849c917>) |
 | [High complexity in getAndUpdateNormalizedValues](<#finding-repository-health-complexity-getandupdatenormalizedvalues-fac5c01648>) |
 | [Critical complexity in \_getAvailableSlots](<#finding-repository-health-complexity-getavailableslots-e9ed2bbf76>) |
-| [Critical complexity in getBaseProperties](<#finding-repository-health-complexity-getbaseproperties-7b639d0787>) |
 | [High complexity in getBooking](<#finding-repository-health-complexity-getbooking-fd763cf2c0>) |
 | [Critical complexity in \_getBusyTimesFromLimitsForUsers](<#finding-repository-health-complexity-getbusytimesfromlimitsforusers-b7026298ec>) |
 | [Critical complexity in getContacts](<#finding-repository-health-complexity-getcontacts-7ec53dee4e>) |
@@ -23405,6 +22940,7 @@ Composite score \(0–100\) combining Halstead volume, cyclomatic complexity, an
 | [Critical complexity in getServerSideProps](<#finding-repository-health-complexity-getserversideprops-333e63c11d>) |
 | [Critical complexity in getServerSideProps](<#finding-repository-health-complexity-getserversideprops-ec6d74fdbf>) |
 | [Critical complexity in \_getUserAvailability](<#finding-repository-health-complexity-getuseravailability-d530f4f306>) |
+| [High complexity in handleBookingError](<#finding-repository-health-complexity-handlebookingerror-0b4887c534>) |
 | [Critical complexity in handler](<#finding-repository-health-complexity-handler-1ba4f96898>) |
 | [Critical complexity in handler](<#finding-repository-health-complexity-handler-71962a93c2>) |
 | [Critical complexity in handler](<#finding-repository-health-complexity-handler-9f768f63ad>) |
@@ -23419,6 +22955,7 @@ Composite score \(0–100\) combining Halstead volume, cyclomatic complexity, an
 | [Critical complexity in NavigationItem](<#finding-repository-health-complexity-navigationitem-a3b43f990e>) |
 | [Critical complexity in OnboardingInviteBrowserView](<#finding-repository-health-complexity-onboardinginvitebrowserview-3eb0f5c130>) |
 | [Critical complexity in outOfOfficeCreateOrUpdate](<#finding-repository-health-complexity-outofofficecreateorupdate-dd914981dd>) |
+| [Critical complexity in postHandler](<#finding-repository-health-complexity-posthandler-aa1f68f1f7>) |
 | [Critical complexity in setSMSLockState](<#finding-repository-health-complexity-setsmslockstate-f5f5353512>) |
 | [Critical complexity in Signup](<#finding-repository-health-complexity-signup-88b2eb2372>) |
 | [Critical complexity in SlotItem](<#finding-repository-health-complexity-slotitem-2f9e8a6638>) |
@@ -23426,7 +22963,6 @@ Composite score \(0–100\) combining Halstead volume, cyclomatic complexity, an
 | [Critical complexity in superRefineField](<#finding-repository-health-complexity-superrefinefield-c306150f34>) |
 | [Critical complexity in updateHandler](<#finding-repository-health-complexity-updatehandler-20aac050fc>) |
 | [Critical complexity in updateProfileHandler](<#finding-repository-health-complexity-updateprofilehandler-81fae14f6c>) |
-| [Critical complexity in useSchedule](<#finding-repository-health-complexity-useschedule-2fa8338b3a>) |
 | [Critical complexity in validate](<#finding-repository-health-complexity-validate-33e64b8b32>) |
 
 ---
@@ -23447,23 +22983,22 @@ Repository health complexity policy: warn above cyclomatic 10, cognitive 15, or 
 | Findings using this explanation |
 | --- |
 | [Critical complexity in AppForm](<#finding-repository-health-complexity-appform-a64b53e339>) |
+| [High complexity in AppListCard](<#finding-repository-health-complexity-applistcard-73123ee301>) |
+| [High complexity in Attendee](<#finding-repository-health-complexity-attendee-c6d2fdf809>) |
 | [High complexity in attributeChangedCallback](<#finding-repository-health-complexity-attributechangedcallback-8f37fbc850>) |
 | [Critical complexity in authenticate](<#finding-repository-health-complexity-authenticate-5818168e65>) |
 | [Critical complexity in BaseScheduledEmail](<#finding-repository-health-complexity-basescheduledemail-0d1d86e884>) |
 | [Critical complexity in BookerComponent](<#finding-repository-health-complexity-bookercomponent-b76dc6cf35>) |
 | [Critical complexity in BookingListItem](<#finding-repository-health-complexity-bookinglistitem-3fce542919>) |
 | [High complexity in cancelNoShowTasksForBooking](<#finding-repository-health-complexity-cancelnoshowtasksforbooking-864f8391e3>) |
+| [High complexity in cleanupTestData](<#finding-repository-health-complexity-cleanuptestdata-b5d56d443d>) |
 | [Critical complexity in confirmHandler](<#finding-repository-health-complexity-confirmhandler-d3aa7f3499>) |
 | [Critical complexity in createContacts](<#finding-repository-health-complexity-createcontacts-73917edde3>) |
 | [High complexity in detectContentType](<#finding-repository-health-complexity-detectcontenttype-83acfa1fbf>) |
-| [Critical complexity in Event](<#finding-repository-health-complexity-event-dd37a2798d>) |
-| [Critical complexity in EventAdvancedTab](<#finding-repository-health-complexity-eventadvancedtab-39f223b582>) |
-| [Critical complexity in EventMeta](<#finding-repository-health-complexity-eventmeta-3da7ba22a7>) |
 | [Critical complexity in findQualifiedHostsWithDelegationCredentials](<#finding-repository-health-complexity-findqualifiedhostswithdelegationcredentials-5cee6a9688>) |
 | [Critical complexity in GetAccountRecordsForRRSkip](<#finding-repository-health-complexity-getaccountrecordsforrrskip-33a849c917>) |
 | [High complexity in getAndUpdateNormalizedValues](<#finding-repository-health-complexity-getandupdatenormalizedvalues-fac5c01648>) |
 | [Critical complexity in \_getAvailableSlots](<#finding-repository-health-complexity-getavailableslots-e9ed2bbf76>) |
-| [Critical complexity in getBaseProperties](<#finding-repository-health-complexity-getbaseproperties-7b639d0787>) |
 | [High complexity in getBooking](<#finding-repository-health-complexity-getbooking-fd763cf2c0>) |
 | [Critical complexity in \_getBusyTimesFromLimitsForUsers](<#finding-repository-health-complexity-getbusytimesfromlimitsforusers-b7026298ec>) |
 | [Critical complexity in getContacts](<#finding-repository-health-complexity-getcontacts-7ec53dee4e>) |
@@ -23473,6 +23008,7 @@ Repository health complexity policy: warn above cyclomatic 10, cognitive 15, or 
 | [Critical complexity in getServerSideProps](<#finding-repository-health-complexity-getserversideprops-333e63c11d>) |
 | [Critical complexity in getServerSideProps](<#finding-repository-health-complexity-getserversideprops-ec6d74fdbf>) |
 | [Critical complexity in \_getUserAvailability](<#finding-repository-health-complexity-getuseravailability-d530f4f306>) |
+| [High complexity in handleBookingError](<#finding-repository-health-complexity-handlebookingerror-0b4887c534>) |
 | [Critical complexity in handler](<#finding-repository-health-complexity-handler-1ba4f96898>) |
 | [Critical complexity in handler](<#finding-repository-health-complexity-handler-71962a93c2>) |
 | [Critical complexity in handler](<#finding-repository-health-complexity-handler-9f768f63ad>) |
@@ -23487,6 +23023,7 @@ Repository health complexity policy: warn above cyclomatic 10, cognitive 15, or 
 | [Critical complexity in NavigationItem](<#finding-repository-health-complexity-navigationitem-a3b43f990e>) |
 | [Critical complexity in OnboardingInviteBrowserView](<#finding-repository-health-complexity-onboardinginvitebrowserview-3eb0f5c130>) |
 | [Critical complexity in outOfOfficeCreateOrUpdate](<#finding-repository-health-complexity-outofofficecreateorupdate-dd914981dd>) |
+| [Critical complexity in postHandler](<#finding-repository-health-complexity-posthandler-aa1f68f1f7>) |
 | [Critical complexity in setSMSLockState](<#finding-repository-health-complexity-setsmslockstate-f5f5353512>) |
 | [Critical complexity in Signup](<#finding-repository-health-complexity-signup-88b2eb2372>) |
 | [Critical complexity in SlotItem](<#finding-repository-health-complexity-slotitem-2f9e8a6638>) |
@@ -23494,7 +23031,6 @@ Repository health complexity policy: warn above cyclomatic 10, cognitive 15, or 
 | [Critical complexity in superRefineField](<#finding-repository-health-complexity-superrefinefield-c306150f34>) |
 | [Critical complexity in updateHandler](<#finding-repository-health-complexity-updatehandler-20aac050fc>) |
 | [Critical complexity in updateProfileHandler](<#finding-repository-health-complexity-updateprofilehandler-81fae14f6c>) |
-| [Critical complexity in useSchedule](<#finding-repository-health-complexity-useschedule-2fa8338b3a>) |
 | [Critical complexity in validate](<#finding-repository-health-complexity-validate-33e64b8b32>) |
 
 ---
@@ -24390,171 +23926,6 @@ probe_context:
 - [ ] `sonde_session(action=refresh)` confirms metrics within thresholds
 
 
-<a id="plan-group-0ab274a4d3ae70d762138d959a8c52a2eca5c2f6477c5b88d21eec1d054dbcb2"></a>
-[Critical complexity in handler](#finding-repository-health-complexity-handler-71962a93c2)
-
----
-type: fix-group
-kind: metric
-plan: fix-plan
-group: 1
-title: "RegularBookingService.ts: handler"
-priority: 1
-severity: critical
-finding_count: 1
-step: step-0
-level: 0
-blocked_by: []
-files:
-  - packages/features/bookings/lib/service/RegularBookingService.ts
-functions:
-  - name: handler
-    file: packages/features/bookings/lib/service/RegularBookingService.ts
-    line: 486
-    issues:
-      - cyclomatic:critical
-      - cognitive:critical
-      - nestingDepth:critical
-      - loc:critical
-      - maintainability:critical
-      - halsteadVolume:critical
-      - halsteadDifficulty:critical
-      - halsteadEffort:critical
-      - fanOut:critical
-      - unused-variable
-    metrics:
-      cyclomatic:
-        value: 269
-        threshold: 20
-        severity: critical
-      cognitive:
-        value: 504
-        threshold: 25
-        severity: critical
-      nestingDepth:
-        value: 8
-        threshold: 6
-        severity: critical
-      loc:
-        value: 2093
-        threshold: 100
-        severity: critical
-      maintainability:
-        value: 0
-        threshold: 40
-        severity: critical
-      halsteadVolume:
-        value: 52808.48
-        threshold: 1000
-        severity: critical
-      halsteadDifficulty:
-        value: 82.11
-        threshold: 40
-        severity: critical
-      halsteadEffort:
-        value: 4336004.78
-        threshold: 5000
-        severity: critical
-      fanOut:
-        value: 77
-        threshold: 15
-        severity: critical
-verify:
-  run: []
-  tests_to_add:
-    - target: handler
-      scenarios:
-        - exercise all major conditional branches
-        - test edge cases at boundary values
-        - test deeply nested code paths for early exit opportunities
-      risk: 0.54
-probe_context:
-  - probe: dependencies
-    findings:
-      - type: circular-dependency
-        message: "Circular: packages/app-store/_utils/getCalendar.ts → packages/features/availability/lib/detectEventTypeScheduleForUser.ts → packages/features/availability/lib/getUserAvailability.ts → packages/features/bookings/di/RegularBookingService.container.ts → packages/features/bookings/di/RegularBookingService.module.ts → packages/features/bookings/lib/EventManager.ts → packages/features/bookings/lib/conflictChecker/checkForConflicts.ts → packages/features/bookings/lib/getLuckyUser.ts → packages/features/bookings/lib/handleCancelBooking.ts → packages/features/bookings/lib/handleNewBooking/createBooking.ts → packages/features/bookings/lib/handleNewBooking/ensureAvailableUsers.ts → packages/features/bookings/lib/handleNewBooking/handleAppsStatus.ts → packages/features/bookings/lib/handleNewBooking/types.ts → packages/features/bookings/lib/handleSeats/cancel/cancelAttendeeSeat.ts → packages/features/bookings/lib/handleSeats/create/createNewSeat.ts → packages/features/bookings/lib/handleSeats/handleSeats.ts → packages/features/bookings/lib/handleSeats/lib/lastAttendeeDeleteBooking.ts → packages/features/bookings/lib/handleSeats/reschedule/attendee/attendeeRescheduleSeatedBooking.ts → packages/features/bookings/lib/handleSeats/reschedule/owner/combineTwoSeatedBookings.ts → packages/features/bookings/lib/handleSeats/reschedule/owner/moveSeatedBookingToNewTimeSlot.ts → packages/features/bookings/lib/handleSeats/reschedule/owner/ownerRescheduleSeatedBooking.ts → packages/features/bookings/lib/handleSeats/reschedule/rescheduleSeatedBooking.ts → packages/features/bookings/lib/service/RegularBookingService.ts → packages/features/busyTimes/lib/getBusyTimesFromLimits.ts → packages/features/busyTimes/services/getBusyTimes.ts → packages/features/calendar-subscription/lib/CalendarSubscriptionService.ts → packages/features/calendar-subscription/lib/sync/CalendarSyncService.ts → packages/features/calendars/lib/CalendarManager.ts → packages/features/calendars/lib/getCalendarsEvents.ts → packages/features/di/containers/BusyTimes.ts → packages/features/di/containers/GetUserAvailability.ts → packages/features/di/modules/BusyTimes.ts → packages/features/di/modules/GetUserAvailability.ts → packages/features/di/modules/LuckyUser.ts → packages/features/schedules/lib/date-ranges.ts → packages/app-store/_utils/getCalendar.ts"
-        severity: warning
-  - probe: quality
-    findings:
-      - type: god-function
-        message: handler is complex enough to decompose (cognitive=504, cyclomatic=269)
-        file: packages/features/bookings/lib/service/RegularBookingService.ts
-        line: 486
-        severity: warning
-  - probe: temporal-coupling
-    findings:
-      - type: temporal-coupling
-        message: "packages/features/bookings/lib/handleSeats/reschedule/rescheduleSeatedBooking.ts ↔ packages/features/bookings/lib/service/RegularBookingService.ts (strength: 1, co-commits: 0)"
-        severity: info
-      - type: temporal-coupling
-        message: "packages/features/bookings/lib/service/RegularBookingService.ts ↔ packages/features/busyTimes/lib/getBusyTimesFromLimits.ts (strength: 1, co-commits: 0)"
-        severity: info
-  - probe: unused-variable
-    findings:
-      - type: unused-variable
-        message: Variable '_crmRecordId' is declared but never referenced
-        file: packages/features/bookings/lib/service/RegularBookingService.ts
-        line: 789
-        column: 8
-        severity: warning
-        targetNodeKind: variable-decl
-      - type: unused-variable
-        message: Variable 'isNormalBookingOrFirstRecurringSlot' is declared but never referenced
-        file: packages/features/bookings/lib/service/RegularBookingService.ts
-        line: 655
-        column: 8
-        severity: warning
-        targetNodeKind: variable-decl
-      - type: unused-variable
-        message: Variable 'firstUser' is declared but never referenced
-        file: packages/features/bookings/lib/service/RegularBookingService.ts
-        line: 808
-        column: 8
-        severity: warning
-        targetNodeKind: variable-decl
----
-
-### Fix Group 1: RegularBookingService.ts: handler
-
-#### Fix Issues in `RegularBookingService.ts`
-
-**File:** `packages/features/bookings/lib/service/RegularBookingService.ts`
-
-##### Functions with Issues (1/1)
-
-###### `handler` (line 486)
-
-- **Cyclomatic Complexity:** 269 (critical) — This function has too many code paths. Split into an orchestrator + focused handlers.
-- **Cognitive Complexity:** 504 (critical) — Very difficult to understand. Flatten deeply nested logic, decompose into named steps with clear intent.
-- **Nesting Depth:** 8 (critical) — Deeply nested — extract inner logic into well-named helper functions to reduce indentation levels.
-- **Lines of Code:** 2093 (critical) — Break into smaller functions with single responsibilities (aim for <30 LOC each).
-- **Maintainability Index:** 0 (critical) — Composite score is very low. Address the individual metrics above first, then re-evaluate.
-- **Halstead Volume:** 52,808 (critical) — Extremely dense code. Decompose into smaller, self-documenting functions.
-- **Halstead Difficulty:** 82.1 (critical) — Very high difficulty. Simplify by extracting sub-expressions and using descriptive names.
-- **Halstead Effort:** 4,336,005 (critical) — Extremely high effort. This function needs significant decomposition.
-- **Fan-Out:** 77 (critical) — Excessive dependencies. Extract a coordinator layer or group related calls into helper modules.
-
-##### Circular Dependencies
-
-- `getCalendar.ts` → `detectEventTypeScheduleForUser.ts` → `getUserAvailability.ts` → `RegularBookingService.container.ts` → `RegularBookingService.module.ts` → `EventManager.ts` → `checkForConflicts.ts` → `getLuckyUser.ts` → `handleCancelBooking.ts` → `createBooking.ts` → `ensureAvailableUsers.ts` → `handleAppsStatus.ts` → `types.ts` → `cancelAttendeeSeat.ts` → `createNewSeat.ts` → `handleSeats.ts` → `lastAttendeeDeleteBooking.ts` → `attendeeRescheduleSeatedBooking.ts` → `combineTwoSeatedBookings.ts` → `moveSeatedBookingToNewTimeSlot.ts` → `ownerRescheduleSeatedBooking.ts` → `rescheduleSeatedBooking.ts` → `RegularBookingService.ts` → `getBusyTimesFromLimits.ts` → `getBusyTimes.ts` → `CalendarSubscriptionService.ts` → `CalendarSyncService.ts` → `CalendarManager.ts` → `getCalendarsEvents.ts` → `BusyTimes.ts` → `GetUserAvailability.ts` → `BusyTimes.ts` → `GetUserAvailability.ts` → `LuckyUser.ts` → `date-ranges.ts` → `getCalendar.ts`
-
-
-#### Acceptance Criteria
-
-- [ ] cyclomatic ≤ 10 for `handler`
-- [ ] cognitive ≤ 15 for `handler`
-- [ ] nestingDepth ≤ 4 for `handler`
-- [ ] loc ≤ 60 for `handler`
-- [ ] maintainability ≥ 60 for `handler`
-- [ ] halsteadVolume ≤ 300 for `handler`
-- [ ] halsteadDifficulty ≤ 20 for `handler`
-- [ ] halsteadEffort ≤ 2000 for `handler`
-- [ ] fanOut ≤ 10 for `handler`
-- [ ] All existing callers compile and pass tests
-- [ ] New tests added for coverage gaps (risk ≥ 0.8)
-- [ ] `sonde_session(action=refresh)` confirms metrics within thresholds
-
-
 <a id="plan-group-0d1289509632ec3bf8741a05c6e4d1905a0e8e24c95acac5c0ec2fcfdc27abb4"></a>
 [Critical complexity in Signup](#finding-repository-health-complexity-signup-88b2eb2372)
 
@@ -24659,6 +24030,286 @@ probe_context:
 - [ ] halsteadVolume ≤ 300 for `Signup`
 - [ ] halsteadEffort ≤ 2000 for `Signup`
 - [ ] fanOut ≤ 10 for `Signup`
+- [ ] All existing callers compile and pass tests
+- [ ] New tests added for coverage gaps (risk ≥ 0.8)
+- [ ] `sonde_session(action=refresh)` confirms metrics within thresholds
+
+
+<a id="plan-group-0db183dd317b3c45e7bf5cebc5bd50c1e1df6448c948f9b44c6f5858904d50bf"></a>
+[Accessibility issue: wcag-4.1.2-name-role-value](#finding-repository-health-accessibility-wcag-4-1-2-name-role-value-adb7e3dd02)
+
+---
+type: fix-group
+kind: metric
+plan: fix-plan
+group: 1
+title: PlatformManagedUsersTable.tsx (2 functions)
+priority: 1
+severity: critical
+finding_count: 2
+step: step-0
+level: 0
+blocked_by: []
+files:
+  - apps/web/modules/users/components/UserTable/PlatformManagedUsersTable.tsx
+functions:
+  - name: reducer
+    file: apps/web/modules/users/components/UserTable/PlatformManagedUsersTable.tsx
+    line: 244
+    issues:
+      - maintainability:warning
+      - halsteadVolume:warning
+      - halsteadEffort:warning
+    metrics:
+      maintainability:
+        value: 51.06
+        threshold: 40
+        severity: warning
+      halsteadVolume:
+        value: 316.62
+        threshold: 1000
+        severity: warning
+      halsteadEffort:
+        value: 2095.28
+        threshold: 5000
+        severity: warning
+  - name: UserListTableContent
+    file: apps/web/modules/users/components/UserTable/PlatformManagedUsersTable.tsx
+    line: 69
+    issues:
+      - loc:critical
+      - maintainability:critical
+      - halsteadVolume:critical
+      - halsteadEffort:critical
+    metrics:
+      loc:
+        value: 241
+        threshold: 100
+        severity: critical
+      maintainability:
+        value: 25.28
+        threshold: 40
+        severity: critical
+      halsteadVolume:
+        value: 1559.99
+        threshold: 1000
+        severity: critical
+      halsteadEffort:
+        value: 14575.59
+        threshold: 5000
+        severity: critical
+verify:
+  run: []
+  tests_to_add:
+    - target: reducer
+      scenarios:
+        - test primary behavior with representative inputs
+      risk: 0.15
+    - target: UserListTableContent
+      scenarios:
+        - test primary behavior with representative inputs
+      risk: 0.08
+probe_context:
+  - probe: clones
+    findings:
+      - type: exact-duplicate
+        message: "100% similar: reducer in apps/web/modules/users/components/UserTable/PlatformManagedUsersTable.tsx, reducer in apps/web/modules/users/components/UserTable/UserListTable.tsx"
+        severity: warning
+  - probe: quality
+    findings:
+      - type: god-function
+        message: UserListTableContent is complex enough to decompose (cognitive=2, cyclomatic=3)
+        file: apps/web/modules/users/components/UserTable/PlatformManagedUsersTable.tsx
+        line: 69
+        severity: warning
+---
+
+### Fix Group 1: PlatformManagedUsersTable.tsx (2 functions)
+
+#### Call Relationships
+
+These functions are grouped because they form a connected call chain — fixing them together
+ensures changes propagate correctly across caller/callee boundaries.
+
+- `reducer` (apps/web/modules/users/components/UserTable/PlatformManagedUsersTable.tsx:244)
+  - called by `UserListTableContent`
+- `UserListTableContent` (apps/web/modules/users/components/UserTable/PlatformManagedUsersTable.tsx:69)
+  - calls `reducer`
+
+#### Fix Issues in `PlatformManagedUsersTable.tsx`
+
+**File:** `apps/web/modules/users/components/UserTable/PlatformManagedUsersTable.tsx`
+
+##### Functions with Issues (2/2)
+
+###### `reducer` (line 244)
+
+- **Maintainability Index:** 51.1 (warning) — Composite score is below average. Address the individual metrics (complexity, volume, LOC) first.
+- **Halstead Volume:** 317 (warning) — High information density. Simplify expressions, extract named constants, reduce operator variety.
+- **Halstead Effort:** 2,095 (warning) — High mental effort required. Simplify logic and break into smaller units.
+
+###### `UserListTableContent` (line 69)
+
+- **Lines of Code:** 241 (critical) — Break into smaller functions with single responsibilities (aim for <30 LOC each).
+- **Maintainability Index:** 25.3 (critical) — Composite score is very low. Address the individual metrics above first, then re-evaluate.
+- **Halstead Volume:** 1,560 (critical) — Extremely dense code. Decompose into smaller, self-documenting functions.
+- **Halstead Effort:** 14,576 (critical) — Extremely high effort. This function needs significant decomposition.
+
+##### Near-Duplicate Code
+
+- 100% similar: `reducer` in `apps/web/modules/users/components/UserTable/PlatformManagedUsersTable.tsx`, `reducer` in `apps/web/modules/users/components/UserTable/UserListTable.tsx`. Extract shared logic.
+
+
+#### Acceptance Criteria
+
+- [ ] maintainability ≥ 60 for `reducer`
+- [ ] halsteadVolume ≤ 300 for `reducer`
+- [ ] halsteadEffort ≤ 2000 for `reducer`
+- [ ] loc ≤ 60 for `UserListTableContent`
+- [ ] maintainability ≥ 60 for `UserListTableContent`
+- [ ] halsteadVolume ≤ 300 for `UserListTableContent`
+- [ ] halsteadEffort ≤ 2000 for `UserListTableContent`
+- [ ] All existing callers compile and pass tests
+- [ ] New tests added for coverage gaps (risk ≥ 0.8)
+- [ ] `sonde_session(action=refresh)` confirms metrics within thresholds
+
+
+<a id="plan-group-0e84a406b2e16b21889092cf25f6ec564cffe84ae4ce5460c9f0fe7d2315bd68"></a>
+[Critical complexity in handler](#finding-repository-health-complexity-handler-71962a93c2)
+
+---
+type: fix-group
+kind: metric
+plan: fix-plan
+group: 1
+title: "RegularBookingService.ts: handler"
+priority: 1
+severity: critical
+finding_count: 1
+step: step-0
+level: 0
+blocked_by: []
+files:
+  - packages/features/bookings/lib/service/RegularBookingService.ts
+functions:
+  - name: handler
+    file: packages/features/bookings/lib/service/RegularBookingService.ts
+    line: 486
+    issues:
+      - cyclomatic:critical
+      - cognitive:critical
+      - nestingDepth:critical
+      - loc:critical
+      - maintainability:critical
+      - halsteadVolume:critical
+      - halsteadDifficulty:critical
+      - halsteadEffort:critical
+      - fanOut:critical
+    metrics:
+      cyclomatic:
+        value: 269
+        threshold: 20
+        severity: critical
+      cognitive:
+        value: 504
+        threshold: 25
+        severity: critical
+      nestingDepth:
+        value: 8
+        threshold: 6
+        severity: critical
+      loc:
+        value: 2093
+        threshold: 100
+        severity: critical
+      maintainability:
+        value: 0
+        threshold: 40
+        severity: critical
+      halsteadVolume:
+        value: 52808.48
+        threshold: 1000
+        severity: critical
+      halsteadDifficulty:
+        value: 82.11
+        threshold: 40
+        severity: critical
+      halsteadEffort:
+        value: 4336004.78
+        threshold: 5000
+        severity: critical
+      fanOut:
+        value: 77
+        threshold: 15
+        severity: critical
+verify:
+  run: []
+  tests_to_add:
+    - target: handler
+      scenarios:
+        - exercise all major conditional branches
+        - test edge cases at boundary values
+        - test deeply nested code paths for early exit opportunities
+      risk: 0.54
+probe_context:
+  - probe: dependencies
+    findings:
+      - type: circular-dependency
+        message: "Circular: packages/app-store/_utils/getCalendar.ts → packages/features/availability/lib/detectEventTypeScheduleForUser.ts → packages/features/availability/lib/getUserAvailability.ts → packages/features/bookings/di/RegularBookingService.container.ts → packages/features/bookings/di/RegularBookingService.module.ts → packages/features/bookings/lib/EventManager.ts → packages/features/bookings/lib/conflictChecker/checkForConflicts.ts → packages/features/bookings/lib/getLuckyUser.ts → packages/features/bookings/lib/handleCancelBooking.ts → packages/features/bookings/lib/handleNewBooking/createBooking.ts → packages/features/bookings/lib/handleNewBooking/ensureAvailableUsers.ts → packages/features/bookings/lib/handleNewBooking/handleAppsStatus.ts → packages/features/bookings/lib/handleNewBooking/types.ts → packages/features/bookings/lib/handleSeats/cancel/cancelAttendeeSeat.ts → packages/features/bookings/lib/handleSeats/create/createNewSeat.ts → packages/features/bookings/lib/handleSeats/handleSeats.ts → packages/features/bookings/lib/handleSeats/lib/lastAttendeeDeleteBooking.ts → packages/features/bookings/lib/handleSeats/reschedule/attendee/attendeeRescheduleSeatedBooking.ts → packages/features/bookings/lib/handleSeats/reschedule/owner/combineTwoSeatedBookings.ts → packages/features/bookings/lib/handleSeats/reschedule/owner/moveSeatedBookingToNewTimeSlot.ts → packages/features/bookings/lib/handleSeats/reschedule/owner/ownerRescheduleSeatedBooking.ts → packages/features/bookings/lib/handleSeats/reschedule/rescheduleSeatedBooking.ts → packages/features/bookings/lib/service/RegularBookingService.ts → packages/features/busyTimes/lib/getBusyTimesFromLimits.ts → packages/features/busyTimes/services/getBusyTimes.ts → packages/features/calendar-subscription/lib/CalendarSubscriptionService.ts → packages/features/calendar-subscription/lib/sync/CalendarSyncService.ts → packages/features/calendars/lib/CalendarManager.ts → packages/features/calendars/lib/getCalendarsEvents.ts → packages/features/di/containers/BusyTimes.ts → packages/features/di/containers/GetUserAvailability.ts → packages/features/di/modules/BusyTimes.ts → packages/features/di/modules/GetUserAvailability.ts → packages/features/di/modules/LuckyUser.ts → packages/features/schedules/lib/date-ranges.ts → packages/app-store/_utils/getCalendar.ts"
+        severity: warning
+  - probe: quality
+    findings:
+      - type: god-function
+        message: handler is complex enough to decompose (cognitive=504, cyclomatic=269)
+        file: packages/features/bookings/lib/service/RegularBookingService.ts
+        line: 486
+        severity: warning
+  - probe: temporal-coupling
+    findings:
+      - type: temporal-coupling
+        message: "packages/features/bookings/lib/handleSeats/reschedule/rescheduleSeatedBooking.ts ↔ packages/features/bookings/lib/service/RegularBookingService.ts (strength: 1, co-commits: 0)"
+        severity: info
+      - type: temporal-coupling
+        message: "packages/features/bookings/lib/service/RegularBookingService.ts ↔ packages/features/busyTimes/lib/getBusyTimesFromLimits.ts (strength: 1, co-commits: 0)"
+        severity: info
+---
+
+### Fix Group 1: RegularBookingService.ts: handler
+
+#### Fix Issues in `RegularBookingService.ts`
+
+**File:** `packages/features/bookings/lib/service/RegularBookingService.ts`
+
+##### Functions with Issues (1/1)
+
+###### `handler` (line 486)
+
+- **Cyclomatic Complexity:** 269 (critical) — This function has too many code paths. Split into an orchestrator + focused handlers.
+- **Cognitive Complexity:** 504 (critical) — Very difficult to understand. Flatten deeply nested logic, decompose into named steps with clear intent.
+- **Nesting Depth:** 8 (critical) — Deeply nested — extract inner logic into well-named helper functions to reduce indentation levels.
+- **Lines of Code:** 2093 (critical) — Break into smaller functions with single responsibilities (aim for <30 LOC each).
+- **Maintainability Index:** 0 (critical) — Composite score is very low. Address the individual metrics above first, then re-evaluate.
+- **Halstead Volume:** 52,808 (critical) — Extremely dense code. Decompose into smaller, self-documenting functions.
+- **Halstead Difficulty:** 82.1 (critical) — Very high difficulty. Simplify by extracting sub-expressions and using descriptive names.
+- **Halstead Effort:** 4,336,005 (critical) — Extremely high effort. This function needs significant decomposition.
+- **Fan-Out:** 77 (critical) — Excessive dependencies. Extract a coordinator layer or group related calls into helper modules.
+
+##### Circular Dependencies
+
+- `getCalendar.ts` → `detectEventTypeScheduleForUser.ts` → `getUserAvailability.ts` → `RegularBookingService.container.ts` → `RegularBookingService.module.ts` → `EventManager.ts` → `checkForConflicts.ts` → `getLuckyUser.ts` → `handleCancelBooking.ts` → `createBooking.ts` → `ensureAvailableUsers.ts` → `handleAppsStatus.ts` → `types.ts` → `cancelAttendeeSeat.ts` → `createNewSeat.ts` → `handleSeats.ts` → `lastAttendeeDeleteBooking.ts` → `attendeeRescheduleSeatedBooking.ts` → `combineTwoSeatedBookings.ts` → `moveSeatedBookingToNewTimeSlot.ts` → `ownerRescheduleSeatedBooking.ts` → `rescheduleSeatedBooking.ts` → `RegularBookingService.ts` → `getBusyTimesFromLimits.ts` → `getBusyTimes.ts` → `CalendarSubscriptionService.ts` → `CalendarSyncService.ts` → `CalendarManager.ts` → `getCalendarsEvents.ts` → `BusyTimes.ts` → `GetUserAvailability.ts` → `BusyTimes.ts` → `GetUserAvailability.ts` → `LuckyUser.ts` → `date-ranges.ts` → `getCalendar.ts`
+
+
+#### Acceptance Criteria
+
+- [ ] cyclomatic ≤ 10 for `handler`
+- [ ] cognitive ≤ 15 for `handler`
+- [ ] nestingDepth ≤ 4 for `handler`
+- [ ] loc ≤ 60 for `handler`
+- [ ] maintainability ≥ 60 for `handler`
+- [ ] halsteadVolume ≤ 300 for `handler`
+- [ ] halsteadDifficulty ≤ 20 for `handler`
+- [ ] halsteadEffort ≤ 2000 for `handler`
+- [ ] fanOut ≤ 10 for `handler`
 - [ ] All existing callers compile and pass tests
 - [ ] New tests added for coverage gaps (risk ≥ 0.8)
 - [ ] `sonde_session(action=refresh)` confirms metrics within thresholds
@@ -24888,169 +24539,6 @@ probe_context:
 - [ ] halsteadVolume ≤ 300 for `getBooking`
 - [ ] halsteadDifficulty ≤ 20 for `getBooking`
 - [ ] halsteadEffort ≤ 2000 for `getBooking`
-- [ ] All existing callers compile and pass tests
-- [ ] New tests added for coverage gaps (risk ≥ 0.8)
-- [ ] `sonde_session(action=refresh)` confirms metrics within thresholds
-
-
-<a id="plan-group-1a0e6f2e69fabf680b929ddd2d3025d6b138548392d7f88281fbe8d645b4a757"></a>
-[Accessibility issue: wcag-4.1.2-name-role-value](#finding-repository-health-accessibility-wcag-4-1-2-name-role-value-adb7e3dd02)
-
----
-type: fix-group
-kind: metric
-plan: fix-plan
-group: 1
-title: PlatformManagedUsersTable.tsx (2 functions)
-priority: 1
-severity: critical
-finding_count: 2
-step: step-0
-level: 0
-blocked_by: []
-files:
-  - apps/web/modules/users/components/UserTable/PlatformManagedUsersTable.tsx
-functions:
-  - name: reducer
-    file: apps/web/modules/users/components/UserTable/PlatformManagedUsersTable.tsx
-    line: 244
-    issues:
-      - maintainability:warning
-      - halsteadVolume:warning
-      - halsteadEffort:warning
-    metrics:
-      maintainability:
-        value: 51.06
-        threshold: 40
-        severity: warning
-      halsteadVolume:
-        value: 316.62
-        threshold: 1000
-        severity: warning
-      halsteadEffort:
-        value: 2095.28
-        threshold: 5000
-        severity: warning
-  - name: UserListTableContent
-    file: apps/web/modules/users/components/UserTable/PlatformManagedUsersTable.tsx
-    line: 69
-    issues:
-      - loc:critical
-      - maintainability:critical
-      - halsteadVolume:critical
-      - halsteadEffort:critical
-      - unused-variable
-    metrics:
-      loc:
-        value: 241
-        threshold: 100
-        severity: critical
-      maintainability:
-        value: 25.28
-        threshold: 40
-        severity: critical
-      halsteadVolume:
-        value: 1559.99
-        threshold: 1000
-        severity: critical
-      halsteadEffort:
-        value: 14575.59
-        threshold: 5000
-        severity: critical
-verify:
-  run: []
-  tests_to_add:
-    - target: reducer
-      scenarios:
-        - test primary behavior with representative inputs
-      risk: 0.15
-    - target: UserListTableContent
-      scenarios:
-        - test primary behavior with representative inputs
-      risk: 0.08
-probe_context:
-  - probe: clones
-    findings:
-      - type: exact-duplicate
-        message: "100% similar: reducer in apps/web/modules/users/components/UserTable/PlatformManagedUsersTable.tsx, reducer in apps/web/modules/users/components/UserTable/UserListTable.tsx"
-        severity: warning
-  - probe: quality
-    findings:
-      - type: god-function
-        message: UserListTableContent is complex enough to decompose (cognitive=2, cyclomatic=3)
-        file: apps/web/modules/users/components/UserTable/PlatformManagedUsersTable.tsx
-        line: 69
-        severity: warning
-  - probe: unused-variable
-    findings:
-      - type: unused-variable
-        message: Variable 'offset' is declared but never referenced
-        file: apps/web/modules/users/components/UserTable/PlatformManagedUsersTable.tsx
-        line: 79
-        column: 8
-        severity: warning
-        targetNodeKind: variable-decl
-      - type: unused-variable
-        message: Variable 'totalRowCount' is declared but never referenced
-        file: apps/web/modules/users/components/UserTable/PlatformManagedUsersTable.tsx
-        line: 84
-        column: 8
-        severity: warning
-        targetNodeKind: variable-decl
-      - type: unused-variable
-        message: Variable 'limit' is declared but never referenced
-        file: apps/web/modules/users/components/UserTable/PlatformManagedUsersTable.tsx
-        line: 78
-        column: 8
-        severity: warning
-        targetNodeKind: variable-decl
----
-
-### Fix Group 1: PlatformManagedUsersTable.tsx (2 functions)
-
-#### Call Relationships
-
-These functions are grouped because they form a connected call chain — fixing them together
-ensures changes propagate correctly across caller/callee boundaries.
-
-- `reducer` (apps/web/modules/users/components/UserTable/PlatformManagedUsersTable.tsx:244)
-  - called by `UserListTableContent`
-- `UserListTableContent` (apps/web/modules/users/components/UserTable/PlatformManagedUsersTable.tsx:69)
-  - calls `reducer`
-
-#### Fix Issues in `PlatformManagedUsersTable.tsx`
-
-**File:** `apps/web/modules/users/components/UserTable/PlatformManagedUsersTable.tsx`
-
-##### Functions with Issues (2/2)
-
-###### `reducer` (line 244)
-
-- **Maintainability Index:** 51.1 (warning) — Composite score is below average. Address the individual metrics (complexity, volume, LOC) first.
-- **Halstead Volume:** 317 (warning) — High information density. Simplify expressions, extract named constants, reduce operator variety.
-- **Halstead Effort:** 2,095 (warning) — High mental effort required. Simplify logic and break into smaller units.
-
-###### `UserListTableContent` (line 69)
-
-- **Lines of Code:** 241 (critical) — Break into smaller functions with single responsibilities (aim for <30 LOC each).
-- **Maintainability Index:** 25.3 (critical) — Composite score is very low. Address the individual metrics above first, then re-evaluate.
-- **Halstead Volume:** 1,560 (critical) — Extremely dense code. Decompose into smaller, self-documenting functions.
-- **Halstead Effort:** 14,576 (critical) — Extremely high effort. This function needs significant decomposition.
-
-##### Near-Duplicate Code
-
-- 100% similar: `reducer` in `apps/web/modules/users/components/UserTable/PlatformManagedUsersTable.tsx`, `reducer` in `apps/web/modules/users/components/UserTable/UserListTable.tsx`. Extract shared logic.
-
-
-#### Acceptance Criteria
-
-- [ ] maintainability ≥ 60 for `reducer`
-- [ ] halsteadVolume ≤ 300 for `reducer`
-- [ ] halsteadEffort ≤ 2000 for `reducer`
-- [ ] loc ≤ 60 for `UserListTableContent`
-- [ ] maintainability ≥ 60 for `UserListTableContent`
-- [ ] halsteadVolume ≤ 300 for `UserListTableContent`
-- [ ] halsteadEffort ≤ 2000 for `UserListTableContent`
 - [ ] All existing callers compile and pass tests
 - [ ] New tests added for coverage gaps (risk ≥ 0.8)
 - [ ] `sonde_session(action=refresh)` confirms metrics within thresholds
@@ -25454,108 +24942,6 @@ probe_context:
 - [ ] `sonde_session(action=refresh)` confirms metrics within thresholds
 
 
-<a id="plan-group-39947fcdd750f3c276267a770ce403a32973f1e45993078c7e8bc4af08235bc8"></a>
-[Critical complexity in useSchedule](#finding-repository-health-complexity-useschedule-2fa8338b3a)
-
----
-type: fix-group
-kind: metric
-plan: fix-plan
-group: 1
-title: "useSchedule.ts: useSchedule"
-priority: 1
-severity: critical
-finding_count: 1
-step: step-0
-level: 0
-blocked_by: []
-files:
-  - apps/web/modules/schedules/hooks/useSchedule.ts
-functions:
-  - name: useSchedule
-    file: apps/web/modules/schedules/hooks/useSchedule.ts
-    line: 51
-    issues:
-      - cyclomatic:critical
-      - cognitive:critical
-      - loc:critical
-      - maintainability:critical
-      - halsteadVolume:critical
-      - halsteadEffort:critical
-    metrics:
-      cyclomatic:
-        value: 28
-        threshold: 20
-        severity: critical
-      cognitive:
-        value: 28
-        threshold: 25
-        severity: critical
-      loc:
-        value: 145
-        threshold: 100
-        severity: critical
-      maintainability:
-        value: 26.17
-        threshold: 40
-        severity: critical
-      halsteadVolume:
-        value: 1876.71
-        threshold: 1000
-        severity: critical
-      halsteadEffort:
-        value: 31799.88
-        threshold: 5000
-        severity: critical
-verify:
-  run: []
-  tests_to_add:
-    - target: useSchedule
-      scenarios:
-        - exercise all major conditional branches
-        - test edge cases at boundary values
-      risk: 0.5
-probe_context:
-  - probe: quality
-    findings:
-      - type: god-function
-        message: useSchedule is complex enough to decompose (cognitive=28, cyclomatic=28)
-        file: apps/web/modules/schedules/hooks/useSchedule.ts
-        line: 51
-        severity: warning
----
-
-### Fix Group 1: useSchedule.ts: useSchedule
-
-#### Fix Issues in `useSchedule.ts`
-
-**File:** `apps/web/modules/schedules/hooks/useSchedule.ts`
-
-##### Functions with Issues (1/1)
-
-###### `useSchedule` (line 51)
-
-- **Cyclomatic Complexity:** 28 (critical) — This function has too many code paths. Split into an orchestrator + focused handlers.
-- **Cognitive Complexity:** 28 (critical) — Very difficult to understand. Flatten deeply nested logic, decompose into named steps with clear intent.
-- **Lines of Code:** 145 (critical) — Break into smaller functions with single responsibilities (aim for <30 LOC each).
-- **Maintainability Index:** 26.2 (critical) — Composite score is very low. Address the individual metrics above first, then re-evaluate.
-- **Halstead Volume:** 1,877 (critical) — Extremely dense code. Decompose into smaller, self-documenting functions.
-- **Halstead Effort:** 31,800 (critical) — Extremely high effort. This function needs significant decomposition.
-
-
-#### Acceptance Criteria
-
-- [ ] cyclomatic ≤ 10 for `useSchedule`
-- [ ] cognitive ≤ 15 for `useSchedule`
-- [ ] loc ≤ 60 for `useSchedule`
-- [ ] maintainability ≥ 60 for `useSchedule`
-- [ ] halsteadVolume ≤ 300 for `useSchedule`
-- [ ] halsteadEffort ≤ 2000 for `useSchedule`
-- [ ] All existing callers compile and pass tests
-- [ ] New tests added for coverage gaps (risk ≥ 0.8)
-- [ ] `sonde_session(action=refresh)` confirms metrics within thresholds
-
-
 <a id="plan-group-3a2d79877f482a4a93c08561758a3c2ce013f2bc77cf737600aa1eed4a83d43e"></a>
 [Critical complexity in updateProfileHandler](#finding-repository-health-complexity-updateprofilehandler-81fae14f6c)
 
@@ -25667,354 +25053,6 @@ probe_context:
 - [ ] halsteadDifficulty ≤ 20 for `updateProfileHandler`
 - [ ] halsteadEffort ≤ 2000 for `updateProfileHandler`
 - [ ] fanOut ≤ 10 for `updateProfileHandler`
-- [ ] All existing callers compile and pass tests
-- [ ] New tests added for coverage gaps (risk ≥ 0.8)
-- [ ] `sonde_session(action=refresh)` confirms metrics within thresholds
-
-
-<a id="plan-group-40df06b8befa577621a4d2055f1dac9b310d37462e0f6c45654536633eafde69"></a>
-[Critical complexity in EventMeta](#finding-repository-health-complexity-eventmeta-3da7ba22a7)
-
----
-type: fix-group
-kind: metric
-plan: fix-plan
-group: 1
-title: "EventMeta.tsx: EventMeta"
-priority: 1
-severity: critical
-finding_count: 1
-step: step-0
-level: 0
-blocked_by: []
-files:
-  - apps/web/modules/bookings/components/EventMeta.tsx
-functions:
-  - name: EventMeta
-    file: apps/web/modules/bookings/components/EventMeta.tsx
-    line: 46
-    issues:
-      - cyclomatic:critical
-      - cognitive:critical
-      - loc:critical
-      - maintainability:critical
-      - halsteadVolume:critical
-      - halsteadEffort:critical
-      - fanOut:critical
-    metrics:
-      cyclomatic:
-        value: 29
-        threshold: 20
-        severity: critical
-      cognitive:
-        value: 31
-        threshold: 25
-        severity: critical
-      loc:
-        value: 234
-        threshold: 100
-        severity: critical
-      maintainability:
-        value: 19.29
-        threshold: 40
-        severity: critical
-      halsteadVolume:
-        value: 3883.14
-        threshold: 1000
-        severity: critical
-      halsteadEffort:
-        value: 69035.13
-        threshold: 5000
-        severity: critical
-      fanOut:
-        value: 25
-        threshold: 15
-        severity: critical
-verify:
-  run: []
-  tests_to_add:
-    - target: EventMeta
-      scenarios:
-        - exercise all major conditional branches
-        - test edge cases at boundary values
-      risk: 0.52
----
-
-### Fix Group 1: EventMeta.tsx: EventMeta
-
-#### Fix Issues in `EventMeta.tsx`
-
-**File:** `apps/web/modules/bookings/components/EventMeta.tsx`
-
-##### Functions with Issues (1/1)
-
-###### `EventMeta` (line 46)
-
-- **Cyclomatic Complexity:** 29 (critical) — This function has too many code paths. Split into an orchestrator + focused handlers.
-- **Cognitive Complexity:** 31 (critical) — Very difficult to understand. Flatten deeply nested logic, decompose into named steps with clear intent.
-- **Lines of Code:** 234 (critical) — Break into smaller functions with single responsibilities (aim for <30 LOC each).
-- **Maintainability Index:** 19.3 (critical) — Composite score is very low. Address the individual metrics above first, then re-evaluate.
-- **Halstead Volume:** 3,883 (critical) — Extremely dense code. Decompose into smaller, self-documenting functions.
-- **Halstead Effort:** 69,035 (critical) — Extremely high effort. This function needs significant decomposition.
-- **Fan-Out:** 25 (critical) — Excessive dependencies. Extract a coordinator layer or group related calls into helper modules.
-
-
-#### Acceptance Criteria
-
-- [ ] cyclomatic ≤ 10 for `EventMeta`
-- [ ] cognitive ≤ 15 for `EventMeta`
-- [ ] loc ≤ 60 for `EventMeta`
-- [ ] maintainability ≥ 60 for `EventMeta`
-- [ ] halsteadVolume ≤ 300 for `EventMeta`
-- [ ] halsteadEffort ≤ 2000 for `EventMeta`
-- [ ] fanOut ≤ 10 for `EventMeta`
-- [ ] All existing callers compile and pass tests
-- [ ] New tests added for coverage gaps (risk ≥ 0.8)
-- [ ] `sonde_session(action=refresh)` confirms metrics within thresholds
-
-
-<a id="plan-group-41daa2a8afad414189c111292b273fe255a4e7dbb329447dc3e74c0237059438"></a>
-[Accessibility issue: wcag-4.1.2-name-role-value](#finding-repository-health-accessibility-wcag-4-1-2-name-role-value-1789894afb)
-[Accessibility issue: wcag-4.1.2-name-role-value](#finding-repository-health-accessibility-wcag-4-1-2-name-role-value-5328c2061a)
-
----
-type: fix-group
-kind: metric
-plan: fix-plan
-group: 1
-title: UserListTable.tsx (4 functions)
-priority: 1
-severity: critical
-finding_count: 4
-step: step-0
-level: 0
-blocked_by: []
-files:
-  - apps/web/modules/users/components/UserTable/UserListTable.tsx
-functions:
-  - name: UserListTableContent
-    file: apps/web/modules/users/components/UserTable/UserListTable.tsx
-    line: 171
-    issues:
-      - cyclomatic:warning
-      - loc:critical
-      - maintainability:critical
-      - halsteadVolume:critical
-      - halsteadEffort:critical
-      - fanOut:critical
-      - unused-variable
-    metrics:
-      cyclomatic:
-        value: 15
-        threshold: 20
-        severity: warning
-      loc:
-        value: 616
-        threshold: 100
-        severity: critical
-      maintainability:
-        value: 11.98
-        threshold: 40
-        severity: critical
-      halsteadVolume:
-        value: 3903.18
-        threshold: 1000
-        severity: critical
-      halsteadEffort:
-        value: 51895.11
-        threshold: 5000
-        severity: critical
-      fanOut:
-        value: 17
-        threshold: 15
-        severity: critical
-  - name: reducer
-    file: apps/web/modules/users/components/UserTable/UserListTable.tsx
-    line: 89
-    issues:
-      - maintainability:warning
-      - halsteadVolume:warning
-      - halsteadEffort:warning
-    metrics:
-      maintainability:
-        value: 51.06
-        threshold: 40
-        severity: warning
-      halsteadVolume:
-        value: 316.62
-        threshold: 1000
-        severity: warning
-      halsteadEffort:
-        value: 2095.28
-        threshold: 5000
-        severity: warning
-  - name: generateAttributeColumns
-    file: apps/web/modules/users/components/UserTable/UserListTable.tsx
-    line: 217
-    issues:
-      - loc:warning
-      - maintainability:warning
-    metrics:
-      loc:
-        value: 75
-        threshold: 100
-        severity: warning
-      maintainability:
-        value: 45.73
-        threshold: 40
-        severity: warning
-  - name: handleDownload
-    file: apps/web/modules/users/components/UserTable/UserListTable.tsx
-    line: 624
-    issues:
-      - maintainability:warning
-      - halsteadVolume:warning
-      - halsteadEffort:critical
-      - errorDensity:warning
-    metrics:
-      maintainability:
-        value: 41.91
-        threshold: 40
-        severity: warning
-      halsteadVolume:
-        value: 839.54
-        threshold: 1000
-        severity: warning
-      halsteadEffort:
-        value: 16340.35
-        threshold: 5000
-        severity: critical
-      errorDensity:
-        value: 0.13
-        threshold: 0.2
-        severity: warning
-verify:
-  run: []
-  tests_to_add:
-    - target: UserListTableContent
-      scenarios:
-        - test primary behavior with representative inputs
-      risk: 0.26
-    - target: reducer
-      scenarios:
-        - test primary behavior with representative inputs
-      risk: 0.15
-    - target: generateAttributeColumns
-      scenarios:
-        - test primary behavior with representative inputs
-      risk: 0.06
-    - target: handleDownload
-      scenarios:
-        - test error handling paths with invalid inputs
-        - verify error propagation to callers
-      risk: 0.18
-probe_context:
-  - probe: clones
-    findings:
-      - type: exact-duplicate
-        message: "100% similar: reducer in apps/web/modules/users/components/UserTable/UserListTable.tsx, reducer in apps/web/modules/users/components/UserTable/PlatformManagedUsersTable.tsx"
-        severity: warning
-  - probe: quality
-    findings:
-      - type: god-function
-        message: UserListTableContent is complex enough to decompose (cognitive=14, cyclomatic=15)
-        file: apps/web/modules/users/components/UserTable/UserListTable.tsx
-        line: 171
-        severity: warning
-      - type: god-function
-        message: handleDownload is complex enough to decompose (cognitive=10, cyclomatic=10)
-        file: apps/web/modules/users/components/UserTable/UserListTable.tsx
-        line: 624
-        severity: warning
-      - type: god-function
-        message: generateAttributeColumns is complex enough to decompose (cognitive=1, cyclomatic=2)
-        file: apps/web/modules/users/components/UserTable/UserListTable.tsx
-        line: 217
-        severity: warning
-  - probe: unused-variable
-    findings:
-      - type: unused-variable
-        message: Variable 'orgBranding' is declared but never referenced
-        file: apps/web/modules/users/components/UserTable/UserListTable.tsx
-        line: 179
-        column: 8
-        severity: warning
-        targetNodeKind: variable-decl
----
-
-### Fix Group 1: UserListTable.tsx (4 functions)
-
-#### Call Relationships
-
-These functions are grouped because they form a connected call chain — fixing them together
-ensures changes propagate correctly across caller/callee boundaries.
-
-- `UserListTableContent` (apps/web/modules/users/components/UserTable/UserListTable.tsx:171)
-  - calls `reducer`
-  - calls `generateAttributeColumns`
-  - calls `handleDownload`
-- `reducer` (apps/web/modules/users/components/UserTable/UserListTable.tsx:89)
-  - called by `UserListTableContent`
-- `generateAttributeColumns` (apps/web/modules/users/components/UserTable/UserListTable.tsx:217)
-  - called by `UserListTableContent`
-- `handleDownload` (apps/web/modules/users/components/UserTable/UserListTable.tsx:624)
-  - called by `UserListTableContent`
-
-#### Fix Issues in `UserListTable.tsx`
-
-**File:** `apps/web/modules/users/components/UserTable/UserListTable.tsx`
-
-##### Functions with Issues (4/4)
-
-###### `UserListTableContent` (line 171)
-
-- **Cyclomatic Complexity:** 15 (warning) — Extract conditional branches into separate functions or use a strategy/lookup pattern.
-- **Lines of Code:** 616 (critical) — Break into smaller functions with single responsibilities (aim for <30 LOC each).
-- **Maintainability Index:** 12 (critical) — Composite score is very low. Address the individual metrics above first, then re-evaluate.
-- **Halstead Volume:** 3,903 (critical) — Extremely dense code. Decompose into smaller, self-documenting functions.
-- **Halstead Effort:** 51,895 (critical) — Extremely high effort. This function needs significant decomposition.
-- **Fan-Out:** 17 (critical) — Excessive dependencies. Extract a coordinator layer or group related calls into helper modules.
-
-###### `handleDownload` (line 624)
-
-- **Maintainability Index:** 41.9 (warning) — Composite score is below average. Address the individual metrics (complexity, volume, LOC) first.
-- **Halstead Volume:** 840 (warning) — High information density. Simplify expressions, extract named constants, reduce operator variety.
-- **Halstead Effort:** 16,340 (critical) — Extremely high effort. This function needs significant decomposition.
-- **Error Density:** 13% (warning) — High ratio of error handling. Consider consolidating error handling or using a Result type.
-
-###### `reducer` (line 89)
-
-- **Maintainability Index:** 51.1 (warning) — Composite score is below average. Address the individual metrics (complexity, volume, LOC) first.
-- **Halstead Volume:** 317 (warning) — High information density. Simplify expressions, extract named constants, reduce operator variety.
-- **Halstead Effort:** 2,095 (warning) — High mental effort required. Simplify logic and break into smaller units.
-
-###### `generateAttributeColumns` (line 217)
-
-- **Lines of Code:** 75 (warning) — Consider splitting into smaller functions with clear single responsibilities.
-- **Maintainability Index:** 45.7 (warning) — Composite score is below average. Address the individual metrics (complexity, volume, LOC) first.
-
-##### Near-Duplicate Code
-
-- 100% similar: `reducer` in `apps/web/modules/users/components/UserTable/PlatformManagedUsersTable.tsx`, `reducer` in `apps/web/modules/users/components/UserTable/UserListTable.tsx`. Extract shared logic.
-
-
-#### Acceptance Criteria
-
-- [ ] cyclomatic ≤ 10 for `UserListTableContent`
-- [ ] loc ≤ 60 for `UserListTableContent`
-- [ ] maintainability ≥ 60 for `UserListTableContent`
-- [ ] halsteadVolume ≤ 300 for `UserListTableContent`
-- [ ] halsteadEffort ≤ 2000 for `UserListTableContent`
-- [ ] fanOut ≤ 10 for `UserListTableContent`
-- [ ] maintainability ≥ 60 for `reducer`
-- [ ] halsteadVolume ≤ 300 for `reducer`
-- [ ] halsteadEffort ≤ 2000 for `reducer`
-- [ ] loc ≤ 60 for `generateAttributeColumns`
-- [ ] maintainability ≥ 60 for `generateAttributeColumns`
-- [ ] maintainability ≥ 60 for `handleDownload`
-- [ ] halsteadVolume ≤ 300 for `handleDownload`
-- [ ] halsteadEffort ≤ 2000 for `handleDownload`
-- [ ] errorDensity ≤ 0.1 for `handleDownload`
 - [ ] All existing callers compile and pass tests
 - [ ] New tests added for coverage gaps (risk ≥ 0.8)
 - [ ] `sonde_session(action=refresh)` confirms metrics within thresholds
@@ -26646,15 +25684,15 @@ probe_context:
 - [ ] `sonde_session(action=refresh)` confirms metrics within thresholds
 
 
-<a id="plan-group-507de4a86846cabccea305ff23833e11d66a9395f389d200ca19c2432449b2f0"></a>
-[Critical complexity in getBaseProperties](#finding-repository-health-complexity-getbaseproperties-7b639d0787)
+<a id="plan-group-4dee6d8f5580abadf581cdc84622760c906a9f69f6107735d9a554683f0ac09b"></a>
+[Critical complexity in getServerSideProps](#finding-repository-health-complexity-getserversideprops-ec6d74fdbf)
 
 ---
 type: fix-group
 kind: metric
 plan: fix-plan
 group: 1
-title: "booking-fields.ts: getBaseProperties"
+title: "bookings-single-view.getServerSideProps.tsx: getServerSideProps"
 priority: 1
 severity: critical
 finding_count: 1
@@ -26662,11 +25700,11 @@ step: step-0
 level: 0
 blocked_by: []
 files:
-  - apps/api/v2/src/platform/event-types/event-types_2024_06_14/transformers/api-to-internal/booking-fields.ts
+  - apps/web/modules/bookings/views/bookings-single-view.getServerSideProps.tsx
 functions:
-  - name: getBaseProperties
-    file: apps/api/v2/src/platform/event-types/event-types_2024_06_14/transformers/api-to-internal/booking-fields.ts
-    line: 53
+  - name: getServerSideProps
+    file: apps/web/modules/bookings/views/bookings-single-view.getServerSideProps.tsx
+    line: 39
     issues:
       - cyclomatic:critical
       - cognitive:critical
@@ -26675,39 +25713,44 @@ functions:
       - halsteadVolume:critical
       - halsteadDifficulty:warning
       - halsteadEffort:critical
+      - fanOut:warning
     metrics:
       cyclomatic:
-        value: 28
+        value: 39
         threshold: 20
         severity: critical
       cognitive:
-        value: 37
+        value: 46
         threshold: 25
         severity: critical
       loc:
-        value: 203
+        value: 234
         threshold: 100
         severity: critical
       maintainability:
-        value: 20.86
+        value: 17.07
         threshold: 40
         severity: critical
       halsteadVolume:
-        value: 3769.82
+        value: 5165.35
         threshold: 1000
         severity: critical
       halsteadDifficulty:
-        value: 37.1
+        value: 34.93
         threshold: 40
         severity: warning
       halsteadEffort:
-        value: 139860.48
+        value: 180437.72
         threshold: 5000
         severity: critical
+      fanOut:
+        value: 13
+        threshold: 15
+        severity: warning
 verify:
   run: []
   tests_to_add:
-    - target: getBaseProperties
+    - target: getServerSideProps
       scenarios:
         - exercise all major conditional branches
         - test edge cases at boundary values
@@ -26716,40 +25759,171 @@ probe_context:
   - probe: quality
     findings:
       - type: god-function
-        message: getBaseProperties is complex enough to decompose (cognitive=37, cyclomatic=28)
-        file: apps/api/v2/src/platform/event-types/event-types_2024_06_14/transformers/api-to-internal/booking-fields.ts
-        line: 53
+        message: getServerSideProps is complex enough to decompose (cognitive=46, cyclomatic=39)
+        file: apps/web/modules/bookings/views/bookings-single-view.getServerSideProps.tsx
+        line: 39
         severity: warning
 ---
 
-### Fix Group 1: booking-fields.ts: getBaseProperties
+### Fix Group 1: bookings-single-view.getServerSideProps.tsx: getServerSideProps
 
-#### Fix Issues in `booking-fields.ts`
+#### Fix Issues in `bookings-single-view.getServerSideProps.tsx`
 
-**File:** `apps/api/v2/src/platform/event-types/event-types_2024_06_14/transformers/api-to-internal/booking-fields.ts`
+**File:** `apps/web/modules/bookings/views/bookings-single-view.getServerSideProps.tsx`
 
 ##### Functions with Issues (1/1)
 
-###### `getBaseProperties` (line 53)
+###### `getServerSideProps` (line 39)
 
-- **Cyclomatic Complexity:** 28 (critical) — This function has too many code paths. Split into an orchestrator + focused handlers.
-- **Cognitive Complexity:** 37 (critical) — Very difficult to understand. Flatten deeply nested logic, decompose into named steps with clear intent.
-- **Lines of Code:** 203 (critical) — Break into smaller functions with single responsibilities (aim for <30 LOC each).
-- **Maintainability Index:** 20.9 (critical) — Composite score is very low. Address the individual metrics above first, then re-evaluate.
-- **Halstead Volume:** 3,770 (critical) — Extremely dense code. Decompose into smaller, self-documenting functions.
-- **Halstead Difficulty:** 37.1 (warning) — Code is hard to write/understand. Reduce operator reuse, introduce descriptive variable names.
-- **Halstead Effort:** 139,860 (critical) — Extremely high effort. This function needs significant decomposition.
+- **Cyclomatic Complexity:** 39 (critical) — This function has too many code paths. Split into an orchestrator + focused handlers.
+- **Cognitive Complexity:** 46 (critical) — Very difficult to understand. Flatten deeply nested logic, decompose into named steps with clear intent.
+- **Lines of Code:** 234 (critical) — Break into smaller functions with single responsibilities (aim for <30 LOC each).
+- **Maintainability Index:** 17.1 (critical) — Composite score is very low. Address the individual metrics above first, then re-evaluate.
+- **Halstead Volume:** 5,165 (critical) — Extremely dense code. Decompose into smaller, self-documenting functions.
+- **Halstead Difficulty:** 34.9 (warning) — Code is hard to write/understand. Reduce operator reuse, introduce descriptive variable names.
+- **Halstead Effort:** 180,438 (critical) — Extremely high effort. This function needs significant decomposition.
+- **Fan-Out:** 13 (warning) — Too many outgoing calls. Consider dependency injection or a facade pattern.
 
 
 #### Acceptance Criteria
 
-- [ ] cyclomatic ≤ 10 for `getBaseProperties`
-- [ ] cognitive ≤ 15 for `getBaseProperties`
-- [ ] loc ≤ 60 for `getBaseProperties`
-- [ ] maintainability ≥ 60 for `getBaseProperties`
-- [ ] halsteadVolume ≤ 300 for `getBaseProperties`
-- [ ] halsteadDifficulty ≤ 20 for `getBaseProperties`
-- [ ] halsteadEffort ≤ 2000 for `getBaseProperties`
+- [ ] cyclomatic ≤ 10 for `getServerSideProps`
+- [ ] cognitive ≤ 15 for `getServerSideProps`
+- [ ] loc ≤ 60 for `getServerSideProps`
+- [ ] maintainability ≥ 60 for `getServerSideProps`
+- [ ] halsteadVolume ≤ 300 for `getServerSideProps`
+- [ ] halsteadDifficulty ≤ 20 for `getServerSideProps`
+- [ ] halsteadEffort ≤ 2000 for `getServerSideProps`
+- [ ] fanOut ≤ 10 for `getServerSideProps`
+- [ ] All existing callers compile and pass tests
+- [ ] New tests added for coverage gaps (risk ≥ 0.8)
+- [ ] `sonde_session(action=refresh)` confirms metrics within thresholds
+
+
+<a id="plan-group-51fd5b9472c83d5a96d1f27f331c2b5b46ca613cf36bff732f02dab890a8d21c"></a>
+[High complexity in handleBookingError](#finding-repository-health-complexity-handlebookingerror-0b4887c534)
+
+---
+type: fix-group
+kind: metric
+plan: fix-plan
+group: 1
+title: "errors.service.ts: handleBookingError"
+priority: 1
+severity: critical
+finding_count: 1
+step: step-0
+level: 0
+blocked_by: []
+files:
+  - apps/api/v2/src/platform/bookings/2024-08-13/services/errors.service.ts
+functions:
+  - name: handleBookingError
+    file: apps/api/v2/src/platform/bookings/2024-08-13/services/errors.service.ts
+    line: 34
+    issues:
+      - cyclomatic:warning
+      - cognitive:critical
+      - nestingDepth:critical
+      - maintainability:warning
+      - halsteadVolume:warning
+      - halsteadEffort:critical
+      - errorDensity:critical
+    metrics:
+      cyclomatic:
+        value: 11
+        threshold: 20
+        severity: warning
+      cognitive:
+        value: 52
+        threshold: 25
+        severity: critical
+      nestingDepth:
+        value: 8
+        threshold: 6
+        severity: critical
+      maintainability:
+        value: 45.8
+        threshold: 40
+        severity: warning
+      halsteadVolume:
+        value: 573.04
+        threshold: 1000
+        severity: warning
+      halsteadEffort:
+        value: 10744.5
+        threshold: 5000
+        severity: critical
+      errorDensity:
+        value: 0.235
+        threshold: 0.2
+        severity: critical
+verify:
+  run: []
+  tests_to_add:
+    - target: handleBookingError
+      scenarios:
+        - exercise all major conditional branches
+        - test edge cases at boundary values
+        - test deeply nested code paths for early exit opportunities
+        - test error handling paths with invalid inputs
+        - verify error propagation to callers
+      risk: 0.3
+probe_context:
+  - probe: quality
+    findings:
+      - type: god-function
+        message: handleBookingError is complex enough to decompose (cognitive=52, cyclomatic=11)
+        file: apps/api/v2/src/platform/bookings/2024-08-13/services/errors.service.ts
+        line: 34
+        severity: warning
+  - probe: cohesion
+    findings:
+      - type: low-cohesion
+        message: ErrorsBookingsService_2024_08_13 has LCOM4=2 — methods form 2 disconnected groups
+        file: apps/api/v2/src/platform/bookings/2024-08-13/services/errors.service.ts
+        line: 7
+        severity: warning
+---
+
+### Fix Group 1: errors.service.ts: handleBookingError
+
+#### Cohesion Split Recommendations
+
+##### `ErrorsBookingsService_2024_08_13` (LCOM4=2 — should split into 2 classes)
+
+**Cluster 1:** `handleEventTypeToBeBookedNotFound`
+**Cluster 2:** `handleBookingError`
+
+Methods within each cluster share field access and belong together.
+Methods in different clusters operate on independent state and should be extracted.
+
+#### Fix Issues in `errors.service.ts`
+
+**File:** `apps/api/v2/src/platform/bookings/2024-08-13/services/errors.service.ts`
+
+##### Functions with Issues (1/1)
+
+###### `handleBookingError` (line 34)
+
+- **Cyclomatic Complexity:** 11 (warning) — Extract conditional branches into separate functions or use a strategy/lookup pattern.
+- **Cognitive Complexity:** 52 (critical) — Very difficult to understand. Flatten deeply nested logic, decompose into named steps with clear intent.
+- **Nesting Depth:** 8 (critical) — Deeply nested — extract inner logic into well-named helper functions to reduce indentation levels.
+- **Maintainability Index:** 45.8 (warning) — Composite score is below average. Address the individual metrics (complexity, volume, LOC) first.
+- **Halstead Volume:** 573 (warning) — High information density. Simplify expressions, extract named constants, reduce operator variety.
+- **Halstead Effort:** 10,745 (critical) — Extremely high effort. This function needs significant decomposition.
+- **Error Density:** 24% (critical) — Error handling dominates this function. Extract error handling into a wrapper or middleware.
+
+
+#### Acceptance Criteria
+
+- [ ] cyclomatic ≤ 10 for `handleBookingError`
+- [ ] cognitive ≤ 15 for `handleBookingError`
+- [ ] nestingDepth ≤ 4 for `handleBookingError`
+- [ ] maintainability ≥ 60 for `handleBookingError`
+- [ ] halsteadVolume ≤ 300 for `handleBookingError`
+- [ ] halsteadEffort ≤ 2000 for `handleBookingError`
+- [ ] errorDensity ≤ 0.1 for `handleBookingError`
 - [ ] All existing callers compile and pass tests
 - [ ] New tests added for coverage gaps (risk ≥ 0.8)
 - [ ] `sonde_session(action=refresh)` confirms metrics within thresholds
@@ -27321,6 +26495,243 @@ Methods in different clusters operate on independent state and should be extract
 - [ ] `sonde_session(action=refresh)` confirms metrics within thresholds
 
 
+<a id="plan-group-62050cc0d00722a59b3d9d6b2962945bda12638690eaa6a4d2fa8b00eafb7de2"></a>
+[Accessibility issue: wcag-4.1.2-name-role-value](#finding-repository-health-accessibility-wcag-4-1-2-name-role-value-1789894afb)
+[Accessibility issue: wcag-4.1.2-name-role-value](#finding-repository-health-accessibility-wcag-4-1-2-name-role-value-5328c2061a)
+
+---
+type: fix-group
+kind: metric
+plan: fix-plan
+group: 1
+title: UserListTable.tsx (4 functions)
+priority: 1
+severity: critical
+finding_count: 4
+step: step-0
+level: 0
+blocked_by: []
+files:
+  - apps/web/modules/users/components/UserTable/UserListTable.tsx
+functions:
+  - name: UserListTableContent
+    file: apps/web/modules/users/components/UserTable/UserListTable.tsx
+    line: 171
+    issues:
+      - cyclomatic:warning
+      - loc:critical
+      - maintainability:critical
+      - halsteadVolume:critical
+      - halsteadEffort:critical
+      - fanOut:critical
+    metrics:
+      cyclomatic:
+        value: 15
+        threshold: 20
+        severity: warning
+      loc:
+        value: 616
+        threshold: 100
+        severity: critical
+      maintainability:
+        value: 11.98
+        threshold: 40
+        severity: critical
+      halsteadVolume:
+        value: 3903.18
+        threshold: 1000
+        severity: critical
+      halsteadEffort:
+        value: 51895.11
+        threshold: 5000
+        severity: critical
+      fanOut:
+        value: 17
+        threshold: 15
+        severity: critical
+  - name: reducer
+    file: apps/web/modules/users/components/UserTable/UserListTable.tsx
+    line: 89
+    issues:
+      - maintainability:warning
+      - halsteadVolume:warning
+      - halsteadEffort:warning
+    metrics:
+      maintainability:
+        value: 51.06
+        threshold: 40
+        severity: warning
+      halsteadVolume:
+        value: 316.62
+        threshold: 1000
+        severity: warning
+      halsteadEffort:
+        value: 2095.28
+        threshold: 5000
+        severity: warning
+  - name: generateAttributeColumns
+    file: apps/web/modules/users/components/UserTable/UserListTable.tsx
+    line: 217
+    issues:
+      - loc:warning
+      - maintainability:warning
+    metrics:
+      loc:
+        value: 75
+        threshold: 100
+        severity: warning
+      maintainability:
+        value: 45.73
+        threshold: 40
+        severity: warning
+  - name: handleDownload
+    file: apps/web/modules/users/components/UserTable/UserListTable.tsx
+    line: 624
+    issues:
+      - maintainability:warning
+      - halsteadVolume:warning
+      - halsteadEffort:critical
+      - errorDensity:warning
+    metrics:
+      maintainability:
+        value: 41.91
+        threshold: 40
+        severity: warning
+      halsteadVolume:
+        value: 839.54
+        threshold: 1000
+        severity: warning
+      halsteadEffort:
+        value: 16340.35
+        threshold: 5000
+        severity: critical
+      errorDensity:
+        value: 0.13
+        threshold: 0.2
+        severity: warning
+verify:
+  run: []
+  tests_to_add:
+    - target: UserListTableContent
+      scenarios:
+        - test primary behavior with representative inputs
+      risk: 0.26
+    - target: reducer
+      scenarios:
+        - test primary behavior with representative inputs
+      risk: 0.15
+    - target: generateAttributeColumns
+      scenarios:
+        - test primary behavior with representative inputs
+      risk: 0.06
+    - target: handleDownload
+      scenarios:
+        - test error handling paths with invalid inputs
+        - verify error propagation to callers
+      risk: 0.18
+probe_context:
+  - probe: clones
+    findings:
+      - type: exact-duplicate
+        message: "100% similar: reducer in apps/web/modules/users/components/UserTable/UserListTable.tsx, reducer in apps/web/modules/users/components/UserTable/PlatformManagedUsersTable.tsx"
+        severity: warning
+  - probe: quality
+    findings:
+      - type: god-function
+        message: UserListTableContent is complex enough to decompose (cognitive=14, cyclomatic=15)
+        file: apps/web/modules/users/components/UserTable/UserListTable.tsx
+        line: 171
+        severity: warning
+      - type: god-function
+        message: handleDownload is complex enough to decompose (cognitive=10, cyclomatic=10)
+        file: apps/web/modules/users/components/UserTable/UserListTable.tsx
+        line: 624
+        severity: warning
+      - type: god-function
+        message: generateAttributeColumns is complex enough to decompose (cognitive=1, cyclomatic=2)
+        file: apps/web/modules/users/components/UserTable/UserListTable.tsx
+        line: 217
+        severity: warning
+---
+
+### Fix Group 1: UserListTable.tsx (4 functions)
+
+#### Call Relationships
+
+These functions are grouped because they form a connected call chain — fixing them together
+ensures changes propagate correctly across caller/callee boundaries.
+
+- `UserListTableContent` (apps/web/modules/users/components/UserTable/UserListTable.tsx:171)
+  - calls `reducer`
+  - calls `generateAttributeColumns`
+  - calls `handleDownload`
+- `reducer` (apps/web/modules/users/components/UserTable/UserListTable.tsx:89)
+  - called by `UserListTableContent`
+- `generateAttributeColumns` (apps/web/modules/users/components/UserTable/UserListTable.tsx:217)
+  - called by `UserListTableContent`
+- `handleDownload` (apps/web/modules/users/components/UserTable/UserListTable.tsx:624)
+  - called by `UserListTableContent`
+
+#### Fix Issues in `UserListTable.tsx`
+
+**File:** `apps/web/modules/users/components/UserTable/UserListTable.tsx`
+
+##### Functions with Issues (4/4)
+
+###### `UserListTableContent` (line 171)
+
+- **Cyclomatic Complexity:** 15 (warning) — Extract conditional branches into separate functions or use a strategy/lookup pattern.
+- **Lines of Code:** 616 (critical) — Break into smaller functions with single responsibilities (aim for <30 LOC each).
+- **Maintainability Index:** 12 (critical) — Composite score is very low. Address the individual metrics above first, then re-evaluate.
+- **Halstead Volume:** 3,903 (critical) — Extremely dense code. Decompose into smaller, self-documenting functions.
+- **Halstead Effort:** 51,895 (critical) — Extremely high effort. This function needs significant decomposition.
+- **Fan-Out:** 17 (critical) — Excessive dependencies. Extract a coordinator layer or group related calls into helper modules.
+
+###### `handleDownload` (line 624)
+
+- **Maintainability Index:** 41.9 (warning) — Composite score is below average. Address the individual metrics (complexity, volume, LOC) first.
+- **Halstead Volume:** 840 (warning) — High information density. Simplify expressions, extract named constants, reduce operator variety.
+- **Halstead Effort:** 16,340 (critical) — Extremely high effort. This function needs significant decomposition.
+- **Error Density:** 13% (warning) — High ratio of error handling. Consider consolidating error handling or using a Result type.
+
+###### `reducer` (line 89)
+
+- **Maintainability Index:** 51.1 (warning) — Composite score is below average. Address the individual metrics (complexity, volume, LOC) first.
+- **Halstead Volume:** 317 (warning) — High information density. Simplify expressions, extract named constants, reduce operator variety.
+- **Halstead Effort:** 2,095 (warning) — High mental effort required. Simplify logic and break into smaller units.
+
+###### `generateAttributeColumns` (line 217)
+
+- **Lines of Code:** 75 (warning) — Consider splitting into smaller functions with clear single responsibilities.
+- **Maintainability Index:** 45.7 (warning) — Composite score is below average. Address the individual metrics (complexity, volume, LOC) first.
+
+##### Near-Duplicate Code
+
+- 100% similar: `reducer` in `apps/web/modules/users/components/UserTable/PlatformManagedUsersTable.tsx`, `reducer` in `apps/web/modules/users/components/UserTable/UserListTable.tsx`. Extract shared logic.
+
+
+#### Acceptance Criteria
+
+- [ ] cyclomatic ≤ 10 for `UserListTableContent`
+- [ ] loc ≤ 60 for `UserListTableContent`
+- [ ] maintainability ≥ 60 for `UserListTableContent`
+- [ ] halsteadVolume ≤ 300 for `UserListTableContent`
+- [ ] halsteadEffort ≤ 2000 for `UserListTableContent`
+- [ ] fanOut ≤ 10 for `UserListTableContent`
+- [ ] maintainability ≥ 60 for `reducer`
+- [ ] halsteadVolume ≤ 300 for `reducer`
+- [ ] halsteadEffort ≤ 2000 for `reducer`
+- [ ] loc ≤ 60 for `generateAttributeColumns`
+- [ ] maintainability ≥ 60 for `generateAttributeColumns`
+- [ ] maintainability ≥ 60 for `handleDownload`
+- [ ] halsteadVolume ≤ 300 for `handleDownload`
+- [ ] halsteadEffort ≤ 2000 for `handleDownload`
+- [ ] errorDensity ≤ 0.1 for `handleDownload`
+- [ ] All existing callers compile and pass tests
+- [ ] New tests added for coverage gaps (risk ≥ 0.8)
+- [ ] `sonde_session(action=refresh)` confirms metrics within thresholds
+
+
 <a id="plan-group-64f32a1c317eeedf6603a14b8e24f4f76fdbbe57fb5a689f661447a64658091f"></a>
 [Critical complexity in main](#finding-repository-health-complexity-main-93206e005a)
 
@@ -27548,6 +26959,100 @@ probe_context:
 - [ ] halsteadDifficulty ≤ 20 for `main`
 - [ ] halsteadEffort ≤ 2000 for `main`
 - [ ] fanOut ≤ 10 for `main`
+- [ ] All existing callers compile and pass tests
+- [ ] New tests added for coverage gaps (risk ≥ 0.8)
+- [ ] `sonde_session(action=refresh)` confirms metrics within thresholds
+
+
+<a id="plan-group-66a335b51eeeda10f6a50be00b367ec3dd94e1afe0ecae1e870636d94a76e3cf"></a>
+[High complexity in cleanupTestData](#finding-repository-health-complexity-cleanuptestdata-b5d56d443d)
+
+---
+type: fix-group
+kind: metric
+plan: fix-plan
+group: 1
+title: "integration-utils.ts: cleanupTestData"
+priority: 1
+severity: critical
+finding_count: 1
+step: step-0
+level: 0
+blocked_by: []
+files:
+  - packages/features/booking-audit/lib/service/__tests__/integration-utils.ts
+functions:
+  - name: cleanupTestData
+    file: packages/features/booking-audit/lib/service/__tests__/integration-utils.ts
+    line: 118
+    issues:
+      - cyclomatic:warning
+      - loc:warning
+      - maintainability:critical
+      - halsteadVolume:warning
+      - halsteadEffort:critical
+    metrics:
+      cyclomatic:
+        value: 12
+        threshold: 20
+        severity: warning
+      loc:
+        value: 67
+        threshold: 100
+        severity: warning
+      maintainability:
+        value: 38.15
+        threshold: 40
+        severity: critical
+      halsteadVolume:
+        value: 820.69
+        threshold: 1000
+        severity: warning
+      halsteadEffort:
+        value: 7980.46
+        threshold: 5000
+        severity: critical
+verify:
+  run: []
+  tests_to_add:
+    - target: cleanupTestData
+      scenarios:
+        - test primary behavior with representative inputs
+      risk: 0.2
+probe_context:
+  - probe: quality
+    findings:
+      - type: god-function
+        message: cleanupTestData is complex enough to decompose (cognitive=12, cyclomatic=12)
+        file: packages/features/booking-audit/lib/service/__tests__/integration-utils.ts
+        line: 118
+        severity: warning
+---
+
+### Fix Group 1: integration-utils.ts: cleanupTestData
+
+#### Fix Issues in `integration-utils.ts`
+
+**File:** `packages/features/booking-audit/lib/service/__tests__/integration-utils.ts`
+
+##### Functions with Issues (1/1)
+
+###### `cleanupTestData` (line 118)
+
+- **Cyclomatic Complexity:** 12 (warning) — Extract conditional branches into separate functions or use a strategy/lookup pattern.
+- **Lines of Code:** 67 (warning) — Consider splitting into smaller functions with clear single responsibilities.
+- **Maintainability Index:** 38.2 (critical) — Composite score is very low. Address the individual metrics above first, then re-evaluate.
+- **Halstead Volume:** 821 (warning) — High information density. Simplify expressions, extract named constants, reduce operator variety.
+- **Halstead Effort:** 7,980 (critical) — Extremely high effort. This function needs significant decomposition.
+
+
+#### Acceptance Criteria
+
+- [ ] cyclomatic ≤ 10 for `cleanupTestData`
+- [ ] loc ≤ 60 for `cleanupTestData`
+- [ ] maintainability ≥ 60 for `cleanupTestData`
+- [ ] halsteadVolume ≤ 300 for `cleanupTestData`
+- [ ] halsteadEffort ≤ 2000 for `cleanupTestData`
 - [ ] All existing callers compile and pass tests
 - [ ] New tests added for coverage gaps (risk ≥ 0.8)
 - [ ] `sonde_session(action=refresh)` confirms metrics within thresholds
@@ -27903,15 +27408,15 @@ probe_context:
 - [ ] `sonde_session(action=refresh)` confirms metrics within thresholds
 
 
-<a id="plan-group-702691bc8499b9f0d52b81b5333017a18f2b125016ce53ad2e8e248f7ae43007"></a>
-[Critical complexity in Event](#finding-repository-health-complexity-event-dd37a2798d)
+<a id="plan-group-6d9e51d3f94e6dc1a28e889de3e19116f1d7ae71c2c2690cf9fb878db8a4a2d9"></a>
+[High complexity in AppListCard](#finding-repository-health-complexity-applistcard-73123ee301)
 
 ---
 type: fix-group
 kind: metric
 plan: fix-plan
 group: 1
-title: "Event.tsx: Event"
+title: "AppListCard.tsx: AppListCard"
 priority: 1
 severity: critical
 finding_count: 1
@@ -27919,94 +27424,86 @@ step: step-0
 level: 0
 blocked_by: []
 files:
-  - apps/web/modules/calendars/weeklyview/components/event/Event.tsx
+  - packages/ui/components/app-list-card/AppListCard.tsx
 functions:
-  - name: Event
-    file: apps/web/modules/calendars/weeklyview/components/event/Event.tsx
-    line: 60
+  - name: AppListCard
+    file: packages/ui/components/app-list-card/AppListCard.tsx
+    line: 43
     issues:
-      - cyclomatic:critical
-      - cognitive:critical
-      - loc:critical
+      - cyclomatic:warning
+      - loc:warning
       - maintainability:critical
       - halsteadVolume:critical
-      - halsteadDifficulty:warning
       - halsteadEffort:critical
+      - impactRadius:warning
     metrics:
       cyclomatic:
-        value: 28
+        value: 11
         threshold: 20
-        severity: critical
-      cognitive:
-        value: 28
-        threshold: 25
-        severity: critical
+        severity: warning
       loc:
-        value: 104
+        value: 77
         threshold: 100
-        severity: critical
+        severity: warning
       maintainability:
-        value: 28.07
+        value: 35.1
         threshold: 40
         severity: critical
       halsteadVolume:
-        value: 2824.11
+        value: 1516.51
         threshold: 1000
         severity: critical
-      halsteadDifficulty:
-        value: 24.98
-        threshold: 40
-        severity: warning
       halsteadEffort:
-        value: 70550.99
+        value: 19372.15
         threshold: 5000
         severity: critical
+      impactRadius:
+        value: 17
+        threshold: 20
+        severity: warning
 verify:
   run: []
   tests_to_add:
-    - target: Event
+    - target: AppListCard
       scenarios:
-        - exercise all major conditional branches
-        - test edge cases at boundary values
-      risk: 0.48
+        - test primary behavior with representative inputs
+      risk: 0.38
 probe_context:
   - probe: quality
     findings:
       - type: god-function
-        message: Event is complex enough to decompose (cognitive=28, cyclomatic=28)
-        file: apps/web/modules/calendars/weeklyview/components/event/Event.tsx
-        line: 60
+        message: AppListCard is complex enough to decompose (cognitive=10, cyclomatic=11)
+        file: packages/ui/components/app-list-card/AppListCard.tsx
+        line: 43
         severity: warning
 ---
 
-### Fix Group 1: Event.tsx: Event
+### Fix Group 1: AppListCard.tsx: AppListCard
 
-#### Fix Issues in `Event.tsx`
+#### Fix Issues in `AppListCard.tsx`
 
-**File:** `apps/web/modules/calendars/weeklyview/components/event/Event.tsx`
+**File:** `packages/ui/components/app-list-card/AppListCard.tsx`
 
 ##### Functions with Issues (1/1)
 
-###### `Event` (line 60)
+###### `AppListCard` (line 43)
 
-- **Cyclomatic Complexity:** 28 (critical) — This function has too many code paths. Split into an orchestrator + focused handlers.
-- **Cognitive Complexity:** 28 (critical) — Very difficult to understand. Flatten deeply nested logic, decompose into named steps with clear intent.
-- **Lines of Code:** 104 (critical) — Break into smaller functions with single responsibilities (aim for <30 LOC each).
-- **Maintainability Index:** 28.1 (critical) — Composite score is very low. Address the individual metrics above first, then re-evaluate.
-- **Halstead Volume:** 2,824 (critical) — Extremely dense code. Decompose into smaller, self-documenting functions.
-- **Halstead Difficulty:** 25 (warning) — Code is hard to write/understand. Reduce operator reuse, introduce descriptive variable names.
-- **Halstead Effort:** 70,551 (critical) — Extremely high effort. This function needs significant decomposition.
+- **Cyclomatic Complexity:** 11 (warning) — Extract conditional branches into separate functions or use a strategy/lookup pattern.
+- **Lines of Code:** 77 (warning) — Consider splitting into smaller functions with clear single responsibilities.
+- **Maintainability Index:** 35.1 (critical) — Composite score is very low. Address the individual metrics above first, then re-evaluate.
+- **Halstead Volume:** 1,517 (critical) — Extremely dense code. Decompose into smaller, self-documenting functions.
+- **Halstead Effort:** 19,372 (critical) — Extremely high effort. This function needs significant decomposition.
+- **Impact Radius:** 17 (warning) — Changes to this function ripple widely. Ensure thorough testing before modification.
 
 
 #### Acceptance Criteria
 
-- [ ] cyclomatic ≤ 10 for `Event`
-- [ ] cognitive ≤ 15 for `Event`
-- [ ] loc ≤ 60 for `Event`
-- [ ] maintainability ≥ 60 for `Event`
-- [ ] halsteadVolume ≤ 300 for `Event`
-- [ ] halsteadDifficulty ≤ 20 for `Event`
-- [ ] halsteadEffort ≤ 2000 for `Event`
+- [ ] cyclomatic ≤ 10 for `AppListCard`
+- [ ] loc ≤ 60 for `AppListCard`
+- [ ] maintainability ≥ 60 for `AppListCard`
+- [ ] halsteadVolume ≤ 300 for `AppListCard`
+- [ ] halsteadEffort ≤ 2000 for `AppListCard`
+- [ ] impactRadius ≤ 10 for `AppListCard`
 - [ ] All existing callers compile and pass tests
 - [ ] New tests added for coverage gaps (risk ≥ 0.8)
 - [ ] `sonde_session(action=refresh)` confirms metrics within thresholds
@@ -28705,115 +28202,7 @@ ensures changes propagate correctly across caller/callee boundaries.
 - [ ] `sonde_session(action=refresh)` confirms metrics within thresholds
 
 
-<a id="plan-group-7a7bedc0c34af44786fa9170b1caeca704b6e14a8c6ce3143c9d6e2f8db9abec"></a>
-[High complexity in cancelNoShowTasksForBooking](#finding-repository-health-complexity-cancelnoshowtasksforbooking-864f8391e3)
-
----
-type: fix-group
-kind: metric
-plan: fix-plan
-group: 1
-title: "scheduleTrigger.ts: cancelNoShowTasksForBooking"
-priority: 1
-severity: warning
-finding_count: 1
-step: step-0
-level: 0
-blocked_by: []
-files:
-  - packages/features/webhooks/lib/scheduleTrigger.ts
-functions:
-  - name: cancelNoShowTasksForBooking
-    file: packages/features/webhooks/lib/scheduleTrigger.ts
-    line: 597
-    issues:
-      - cognitive:warning
-      - maintainability:warning
-      - halsteadVolume:warning
-      - halsteadEffort:warning
-    metrics:
-      cognitive:
-        value: 17
-        threshold: 25
-        severity: warning
-      maintainability:
-        value: 46.2
-        threshold: 40
-        severity: warning
-      halsteadVolume:
-        value: 374.44
-        threshold: 1000
-        severity: warning
-      halsteadEffort:
-        value: 2845.73
-        threshold: 5000
-        severity: warning
-verify:
-  run: []
-  existing_tests:
-    - file: apps/web/test/handlers/requestReschedule.test.ts
-      name: /home/kenpo/Repos/sonde/.sonde/corpora/repository-cache/calcom-cal-com-e97f441a563b-rev/e3b49bfe9c40c9bae661e51d6bc91251/apps/web/test/handlers/requestReschedule.test.ts
-      relevance: calls cancelNoShowTasksForBooking via requestRescheduleHandler
-  tests_to_add:
-    - target: cancelNoShowTasksForBooking
-      scenarios:
-        - verify contract stability — 5 callers depend on this function
-      risk: 0.34
-probe_context:
-  - probe: dependencies
-    findings:
-      - type: circular-dependency
-        message: "Circular: packages/app-store/zapier/api/subscriptions/listOOOEntries.ts → packages/features/webhooks/lib/scheduleTrigger.ts → packages/app-store/zapier/api/subscriptions/listOOOEntries.ts"
-        severity: warning
-  - probe: quality
-    findings:
-      - type: god-function
-        message: cancelNoShowTasksForBooking is complex enough to decompose (cognitive=17, cyclomatic=8)
-        file: packages/features/webhooks/lib/scheduleTrigger.ts
-        line: 597
-        severity: warning
-  - probe: temporal-coupling
-    findings:
-      - type: temporal-coupling
-        message: "packages/app-store/zapier/api/subscriptions/listOOOEntries.ts ↔ packages/features/webhooks/lib/scheduleTrigger.ts (strength: 1, co-commits: 0)"
-        severity: info
-      - type: temporal-coupling
-        message: "packages/features/webhooks/lib/scheduleTrigger.ts ↔ packages/app-store/zapier/api/subscriptions/listOOOEntries.ts (strength: 1, co-commits: 0)"
-        severity: info
----
-
-### Fix Group 1: scheduleTrigger.ts: cancelNoShowTasksForBooking
-
-#### Fix Issues in `scheduleTrigger.ts`
-
-**File:** `packages/features/webhooks/lib/scheduleTrigger.ts`
-
-##### Functions with Issues (1/1)
-
-###### `cancelNoShowTasksForBooking` (line 597)
-
-- **Cognitive Complexity:** 17 (warning) — Reduce nesting depth, use early returns/guard clauses, extract helper functions.
-- **Maintainability Index:** 46.2 (warning) — Composite score is below average. Address the individual metrics (complexity, volume, LOC) first.
-- **Halstead Volume:** 374 (warning) — High information density. Simplify expressions, extract named constants, reduce operator variety.
-- **Halstead Effort:** 2,846 (warning) — High mental effort required. Simplify logic and break into smaller units.
-
-##### Circular Dependencies
-
-- `listOOOEntries.ts` → `scheduleTrigger.ts` → `listOOOEntries.ts`
-
-
-#### Acceptance Criteria
-
-- [ ] cognitive ≤ 15 for `cancelNoShowTasksForBooking`
-- [ ] maintainability ≥ 60 for `cancelNoShowTasksForBooking`
-- [ ] halsteadVolume ≤ 300 for `cancelNoShowTasksForBooking`
-- [ ] halsteadEffort ≤ 2000 for `cancelNoShowTasksForBooking`
-- [ ] All existing callers compile and pass tests
-- [ ] New tests added for coverage gaps (risk ≥ 0.8)
-- [ ] `sonde_session(action=refresh)` confirms metrics within thresholds
-
-
-<a id="plan-group-85f41301ad7d79bbeaf26d0d4610b271fe8cd7693c57b7ff2b38c9c7ad86bbb6"></a>
+<a id="plan-group-7e5874efabfc9fd57aec402bacbe4ab47abf5c449d095eed0ee68d391950e879"></a>
 [Accessibility issue: wcag-4.1.2-name-role-value](#finding-repository-health-accessibility-wcag-4-1-2-name-role-value-f845552ae8)
 
 ---
@@ -28921,15 +28310,6 @@ probe_context:
         file: apps/web/components/booking/actions/BookingActionsDropdown.tsx
         line: 63
         severity: warning
-  - probe: unused-variable
-    findings:
-      - type: unused-variable
-        message: Variable 'parsedBooking' is declared but never referenced
-        file: apps/web/components/booking/actions/BookingActionsDropdown.tsx
-        line: 398
-        column: 8
-        severity: warning
-        targetNodeKind: variable-decl
 ---
 
 ### Fix Group 1: BookingActionsDropdown.tsx (3 functions)
@@ -28990,117 +28370,109 @@ ensures changes propagate correctly across caller/callee boundaries.
 - [ ] `sonde_session(action=refresh)` confirms metrics within thresholds
 
 
-<a id="plan-group-8b38a5c264b94f30a9d36dfe5c06dadf40fa51cf8802f131a8a16369fc1037f5"></a>
-[Critical complexity in EventAdvancedTab](#finding-repository-health-complexity-eventadvancedtab-39f223b582)
+<a id="plan-group-90132f6c3e12cc11008bccfe48d3e733b2577c04016990fda325d92e1b9cd257"></a>
+[High complexity in cancelNoShowTasksForBooking](#finding-repository-health-complexity-cancelnoshowtasksforbooking-864f8391e3)
 
 ---
 type: fix-group
 kind: metric
 plan: fix-plan
 group: 1
-title: "EventAdvancedTab.tsx: EventAdvancedTab"
+title: "scheduleTrigger.ts: cancelNoShowTasksForBooking"
 priority: 1
-severity: critical
+severity: warning
 finding_count: 1
 step: step-0
 level: 0
 blocked_by: []
 files:
-  - apps/web/modules/event-types/components/tabs/advanced/EventAdvancedTab.tsx
+  - packages/features/webhooks/lib/scheduleTrigger.ts
 functions:
-  - name: EventAdvancedTab
-    file: apps/web/modules/event-types/components/tabs/advanced/EventAdvancedTab.tsx
-    line: 404
+  - name: cancelNoShowTasksForBooking
+    file: packages/features/webhooks/lib/scheduleTrigger.ts
+    line: 597
     issues:
-      - cyclomatic:critical
-      - cognitive:critical
-      - loc:critical
-      - maintainability:critical
-      - halsteadVolume:critical
-      - halsteadDifficulty:warning
-      - halsteadEffort:critical
-      - fanOut:critical
+      - cognitive:warning
+      - maintainability:warning
+      - halsteadVolume:warning
+      - halsteadEffort:warning
     metrics:
-      cyclomatic:
-        value: 31
-        threshold: 20
-        severity: critical
       cognitive:
-        value: 30
+        value: 17
         threshold: 25
-        severity: critical
-      loc:
-        value: 1123
-        threshold: 100
-        severity: critical
+        severity: warning
       maintainability:
-        value: 2.02
-        threshold: 40
-        severity: critical
-      halsteadVolume:
-        value: 7837.09
-        threshold: 1000
-        severity: critical
-      halsteadDifficulty:
-        value: 23.79
+        value: 46.2
         threshold: 40
         severity: warning
+      halsteadVolume:
+        value: 374.44
+        threshold: 1000
+        severity: warning
       halsteadEffort:
-        value: 186457.44
+        value: 2845.73
         threshold: 5000
-        severity: critical
-      fanOut:
-        value: 111
-        threshold: 15
-        severity: critical
+        severity: warning
 verify:
   run: []
+  existing_tests:
+    - file: apps/web/test/handlers/requestReschedule.test.ts
+      name: apps/web/test/handlers/requestReschedule.test.ts
+      relevance: calls cancelNoShowTasksForBooking via requestRescheduleHandler
   tests_to_add:
-    - target: EventAdvancedTab
+    - target: cancelNoShowTasksForBooking
       scenarios:
-        - exercise all major conditional branches
-        - test edge cases at boundary values
-      risk: 0.52
+        - verify contract stability — 5 callers depend on this function
+      risk: 0.34
 probe_context:
+  - probe: dependencies
+    findings:
+      - type: circular-dependency
+        message: "Circular: packages/app-store/zapier/api/subscriptions/listOOOEntries.ts → packages/features/webhooks/lib/scheduleTrigger.ts → packages/app-store/zapier/api/subscriptions/listOOOEntries.ts"
+        severity: warning
   - probe: quality
     findings:
       - type: god-function
-        message: EventAdvancedTab is complex enough to decompose (cognitive=30, cyclomatic=31)
-        file: apps/web/modules/event-types/components/tabs/advanced/EventAdvancedTab.tsx
-        line: 404
+        message: cancelNoShowTasksForBooking is complex enough to decompose (cognitive=17, cyclomatic=8)
+        file: packages/features/webhooks/lib/scheduleTrigger.ts
+        line: 597
         severity: warning
+  - probe: temporal-coupling
+    findings:
+      - type: temporal-coupling
+        message: "packages/app-store/zapier/api/subscriptions/listOOOEntries.ts ↔ packages/features/webhooks/lib/scheduleTrigger.ts (strength: 1, co-commits: 0)"
+        severity: info
+      - type: temporal-coupling
+        message: "packages/features/webhooks/lib/scheduleTrigger.ts ↔ packages/app-store/zapier/api/subscriptions/listOOOEntries.ts (strength: 1, co-commits: 0)"
+        severity: info
 ---
 
-### Fix Group 1: EventAdvancedTab.tsx: EventAdvancedTab
+### Fix Group 1: scheduleTrigger.ts: cancelNoShowTasksForBooking
 
-#### Fix Issues in `EventAdvancedTab.tsx`
+#### Fix Issues in `scheduleTrigger.ts`
 
-**File:** `apps/web/modules/event-types/components/tabs/advanced/EventAdvancedTab.tsx`
+**File:** `packages/features/webhooks/lib/scheduleTrigger.ts`
 
 ##### Functions with Issues (1/1)
 
-###### `EventAdvancedTab` (line 404)
+###### `cancelNoShowTasksForBooking` (line 597)
 
-- **Cyclomatic Complexity:** 31 (critical) — This function has too many code paths. Split into an orchestrator + focused handlers.
-- **Cognitive Complexity:** 30 (critical) — Very difficult to understand. Flatten deeply nested logic, decompose into named steps with clear intent.
-- **Lines of Code:** 1123 (critical) — Break into smaller functions with single responsibilities (aim for <30 LOC each).
-- **Maintainability Index:** 2 (critical) — Composite score is very low. Address the individual metrics above first, then re-evaluate.
-- **Halstead Volume:** 7,837 (critical) — Extremely dense code. Decompose into smaller, self-documenting functions.
-- **Halstead Difficulty:** 23.8 (warning) — Code is hard to write/understand. Reduce operator reuse, introduce descriptive variable names.
-- **Halstead Effort:** 186,457 (critical) — Extremely high effort. This function needs significant decomposition.
-- **Fan-Out:** 111 (critical) — Excessive dependencies. Extract a coordinator layer or group related calls into helper modules.
+- **Cognitive Complexity:** 17 (warning) — Reduce nesting depth, use early returns/guard clauses, extract helper functions.
+- **Maintainability Index:** 46.2 (warning) — Composite score is below average. Address the individual metrics (complexity, volume, LOC) first.
+- **Halstead Volume:** 374 (warning) — High information density. Simplify expressions, extract named constants, reduce operator variety.
+- **Halstead Effort:** 2,846 (warning) — High mental effort required. Simplify logic and break into smaller units.
+
+##### Circular Dependencies
+
+- `listOOOEntries.ts` → `scheduleTrigger.ts` → `listOOOEntries.ts`
 
 
 #### Acceptance Criteria
 
-- [ ] cyclomatic ≤ 10 for `EventAdvancedTab`
-- [ ] cognitive ≤ 15 for `EventAdvancedTab`
-- [ ] loc ≤ 60 for `EventAdvancedTab`
-- [ ] maintainability ≥ 60 for `EventAdvancedTab`
-- [ ] halsteadVolume ≤ 300 for `EventAdvancedTab`
-- [ ] halsteadDifficulty ≤ 20 for `EventAdvancedTab`
-- [ ] halsteadEffort ≤ 2000 for `EventAdvancedTab`
-- [ ] fanOut ≤ 10 for `EventAdvancedTab`
+- [ ] cognitive ≤ 15 for `cancelNoShowTasksForBooking`
+- [ ] maintainability ≥ 60 for `cancelNoShowTasksForBooking`
+- [ ] halsteadVolume ≤ 300 for `cancelNoShowTasksForBooking`
+- [ ] halsteadEffort ≤ 2000 for `cancelNoShowTasksForBooking`
 - [ ] All existing callers compile and pass tests
 - [ ] New tests added for coverage gaps (risk ≥ 0.8)
 - [ ] `sonde_session(action=refresh)` confirms metrics within thresholds
@@ -42016,6 +41388,100 @@ verify:
 - [ ] `sonde_session(action=refresh)` confirms metrics within thresholds
 
 
+<a id="plan-group-a3bb8d05b594a7f7b1a94309635e93b6bd5960e472befb77aa849611dc3005e7"></a>
+[High complexity in Attendee](#finding-repository-health-complexity-attendee-c6d2fdf809)
+
+---
+type: fix-group
+kind: metric
+plan: fix-plan
+group: 1
+title: "BookingListItem.tsx: Attendee"
+priority: 1
+severity: critical
+finding_count: 1
+step: step-0
+level: 0
+blocked_by: []
+files:
+  - apps/web/components/booking/BookingListItem.tsx
+functions:
+  - name: Attendee
+    file: apps/web/components/booking/BookingListItem.tsx
+    line: 752
+    issues:
+      - cyclomatic:warning
+      - loc:critical
+      - maintainability:critical
+      - halsteadVolume:critical
+      - halsteadEffort:critical
+    metrics:
+      cyclomatic:
+        value: 15
+        threshold: 20
+        severity: warning
+      loc:
+        value: 107
+        threshold: 100
+        severity: critical
+      maintainability:
+        value: 31.44
+        threshold: 40
+        severity: critical
+      halsteadVolume:
+        value: 1517.26
+        threshold: 1000
+        severity: critical
+      halsteadEffort:
+        value: 17805.52
+        threshold: 5000
+        severity: critical
+verify:
+  run: []
+  tests_to_add:
+    - target: Attendee
+      scenarios:
+        - test primary behavior with representative inputs
+      risk: 0.31
+probe_context:
+  - probe: quality
+    findings:
+      - type: god-function
+        message: Attendee is complex enough to decompose (cognitive=14, cyclomatic=15)
+        file: apps/web/components/booking/BookingListItem.tsx
+        line: 752
+        severity: warning
+---
+
+### Fix Group 1: BookingListItem.tsx: Attendee
+
+#### Fix Issues in `BookingListItem.tsx`
+
+**File:** `apps/web/components/booking/BookingListItem.tsx`
+
+##### Functions with Issues (1/1)
+
+###### `Attendee` (line 752)
+
+- **Cyclomatic Complexity:** 15 (warning) — Extract conditional branches into separate functions or use a strategy/lookup pattern.
+- **Lines of Code:** 107 (critical) — Break into smaller functions with single responsibilities (aim for <30 LOC each).
+- **Maintainability Index:** 31.4 (critical) — Composite score is very low. Address the individual metrics above first, then re-evaluate.
+- **Halstead Volume:** 1,517 (critical) — Extremely dense code. Decompose into smaller, self-documenting functions.
+- **Halstead Effort:** 17,806 (critical) — Extremely high effort. This function needs significant decomposition.
+
+
+#### Acceptance Criteria
+
+- [ ] cyclomatic ≤ 10 for `Attendee`
+- [ ] loc ≤ 60 for `Attendee`
+- [ ] maintainability ≥ 60 for `Attendee`
+- [ ] halsteadVolume ≤ 300 for `Attendee`
+- [ ] halsteadEffort ≤ 2000 for `Attendee`
+- [ ] All existing callers compile and pass tests
+- [ ] New tests added for coverage gaps (risk ≥ 0.8)
+- [ ] `sonde_session(action=refresh)` confirms metrics within thresholds
+
+
 <a id="plan-group-a5037e616049cbed4f43cab5c9560872bb6feb4a19de9d7d89fb37c1a5215565"></a>
 [Accessibility issue: wcag-4.1.2-name-role-value](#finding-repository-health-accessibility-wcag-4-1-2-name-role-value-8a289ca780)
 
@@ -43040,138 +42506,6 @@ ensures changes propagate correctly across caller/callee boundaries.
 - [ ] `sonde_session(action=refresh)` confirms metrics within thresholds
 
 
-<a id="plan-group-c3c1e95b57b606d74a9993392a34f2164c6f120d9a098d12a706378570048295"></a>
-[Critical complexity in getServerSideProps](#finding-repository-health-complexity-getserversideprops-ec6d74fdbf)
-
----
-type: fix-group
-kind: metric
-plan: fix-plan
-group: 1
-title: "bookings-single-view.getServerSideProps.tsx: getServerSideProps"
-priority: 1
-severity: critical
-finding_count: 1
-step: step-0
-level: 0
-blocked_by: []
-files:
-  - apps/web/modules/bookings/views/bookings-single-view.getServerSideProps.tsx
-functions:
-  - name: getServerSideProps
-    file: apps/web/modules/bookings/views/bookings-single-view.getServerSideProps.tsx
-    line: 39
-    issues:
-      - cyclomatic:critical
-      - cognitive:critical
-      - loc:critical
-      - maintainability:critical
-      - halsteadVolume:critical
-      - halsteadDifficulty:warning
-      - halsteadEffort:critical
-      - fanOut:warning
-    metrics:
-      cyclomatic:
-        value: 39
-        threshold: 20
-        severity: critical
-      cognitive:
-        value: 46
-        threshold: 25
-        severity: critical
-      loc:
-        value: 234
-        threshold: 100
-        severity: critical
-      maintainability:
-        value: 17.07
-        threshold: 40
-        severity: critical
-      halsteadVolume:
-        value: 5165.35
-        threshold: 1000
-        severity: critical
-      halsteadDifficulty:
-        value: 34.93
-        threshold: 40
-        severity: warning
-      halsteadEffort:
-        value: 180437.72
-        threshold: 5000
-        severity: critical
-      fanOut:
-        value: 13
-        threshold: 15
-        severity: warning
-verify:
-  run: []
-  tests_to_add:
-    - target: getServerSideProps
-      scenarios:
-        - exercise all major conditional branches
-        - test edge cases at boundary values
-      risk: 0.47
-probe_context:
-  - probe: quality
-    findings:
-      - type: god-function
-        message: getServerSideProps is complex enough to decompose (cognitive=46, cyclomatic=39)
-        file: apps/web/modules/bookings/views/bookings-single-view.getServerSideProps.tsx
-        line: 39
-        severity: warning
-  - probe: unused-variable
-    findings:
-      - type: unused-variable
-        message: Variable 'eventTeamId' is declared but never referenced
-        file: apps/web/modules/bookings/views/bookings-single-view.getServerSideProps.tsx
-        line: 183
-        column: 8
-        severity: warning
-        targetNodeKind: variable-decl
-      - type: unused-variable
-        message: Variable 'isValidOrgDomain' is declared but never referenced
-        file: apps/web/modules/bookings/views/bookings-single-view.getServerSideProps.tsx
-        line: 216
-        column: 8
-        severity: warning
-        targetNodeKind: variable-decl
----
-
-### Fix Group 1: bookings-single-view.getServerSideProps.tsx: getServerSideProps
-
-#### Fix Issues in `bookings-single-view.getServerSideProps.tsx`
-
-**File:** `apps/web/modules/bookings/views/bookings-single-view.getServerSideProps.tsx`
-
-##### Functions with Issues (1/1)
-
-###### `getServerSideProps` (line 39)
-
-- **Cyclomatic Complexity:** 39 (critical) — This function has too many code paths. Split into an orchestrator + focused handlers.
-- **Cognitive Complexity:** 46 (critical) — Very difficult to understand. Flatten deeply nested logic, decompose into named steps with clear intent.
-- **Lines of Code:** 234 (critical) — Break into smaller functions with single responsibilities (aim for <30 LOC each).
-- **Maintainability Index:** 17.1 (critical) — Composite score is very low. Address the individual metrics above first, then re-evaluate.
-- **Halstead Volume:** 5,165 (critical) — Extremely dense code. Decompose into smaller, self-documenting functions.
-- **Halstead Difficulty:** 34.9 (warning) — Code is hard to write/understand. Reduce operator reuse, introduce descriptive variable names.
-- **Halstead Effort:** 180,438 (critical) — Extremely high effort. This function needs significant decomposition.
-- **Fan-Out:** 13 (warning) — Too many outgoing calls. Consider dependency injection or a facade pattern.
-
-
-#### Acceptance Criteria
-
-- [ ] cyclomatic ≤ 10 for `getServerSideProps`
-- [ ] cognitive ≤ 15 for `getServerSideProps`
-- [ ] loc ≤ 60 for `getServerSideProps`
-- [ ] maintainability ≥ 60 for `getServerSideProps`
-- [ ] halsteadVolume ≤ 300 for `getServerSideProps`
-- [ ] halsteadDifficulty ≤ 20 for `getServerSideProps`
-- [ ] halsteadEffort ≤ 2000 for `getServerSideProps`
-- [ ] fanOut ≤ 10 for `getServerSideProps`
-- [ ] All existing callers compile and pass tests
-- [ ] New tests added for coverage gaps (risk ≥ 0.8)
-- [ ] `sonde_session(action=refresh)` confirms metrics within thresholds
-
-
 <a id="plan-group-c7dc582f4578d0486bc54cab8aef24c35a9965f645645bfe58c5a9e47673940c"></a>
 [Critical complexity in findQualifiedHostsWithDelegationCredentials](#finding-repository-health-complexity-findqualifiedhostswithdelegationcredentials-5cee6a9688)
 
@@ -43358,6 +42692,114 @@ probe_context:
 
 - [ ] loc ≤ 60 for `useBlockedEntriesColumns`
 - [ ] maintainability ≥ 60 for `useBlockedEntriesColumns`
+- [ ] All existing callers compile and pass tests
+- [ ] New tests added for coverage gaps (risk ≥ 0.8)
+- [ ] `sonde_session(action=refresh)` confirms metrics within thresholds
+
+
+<a id="plan-group-ccb099dee6ee47a36324c5bca9747d69e2dce8a2c00f59cb91dc6dff264d7813"></a>
+[Critical complexity in postHandler](#finding-repository-health-complexity-posthandler-aa1f68f1f7)
+
+---
+type: fix-group
+kind: metric
+plan: fix-plan
+group: 1
+title: "route.ts: postHandler"
+priority: 1
+severity: critical
+finding_count: 1
+step: step-0
+level: 0
+blocked_by: []
+files:
+  - apps/web/app/api/cron/bookingReminder/route.ts
+functions:
+  - name: postHandler
+    file: apps/web/app/api/cron/bookingReminder/route.ts
+    line: 16
+    issues:
+      - cyclomatic:warning
+      - cognitive:warning
+      - loc:critical
+      - maintainability:critical
+      - halsteadVolume:critical
+      - halsteadDifficulty:warning
+      - halsteadEffort:critical
+    metrics:
+      cyclomatic:
+        value: 12
+        threshold: 20
+        severity: warning
+      cognitive:
+        value: 16
+        threshold: 25
+        severity: warning
+      loc:
+        value: 143
+        threshold: 100
+        severity: critical
+      maintainability:
+        value: 27.44
+        threshold: 40
+        severity: critical
+      halsteadVolume:
+        value: 2618.42
+        threshold: 1000
+        severity: critical
+      halsteadDifficulty:
+        value: 23.95
+        threshold: 40
+        severity: warning
+      halsteadEffort:
+        value: 62703.09
+        threshold: 5000
+        severity: critical
+verify:
+  run: []
+  tests_to_add:
+    - target: postHandler
+      scenarios:
+        - test primary behavior with representative inputs
+      risk: 0.23
+probe_context:
+  - probe: quality
+    findings:
+      - type: god-function
+        message: postHandler is complex enough to decompose (cognitive=16, cyclomatic=12)
+        file: apps/web/app/api/cron/bookingReminder/route.ts
+        line: 16
+        severity: warning
+---
+
+### Fix Group 1: route.ts: postHandler
+
+#### Fix Issues in `route.ts`
+
+**File:** `apps/web/app/api/cron/bookingReminder/route.ts`
+
+##### Functions with Issues (1/1)
+
+###### `postHandler` (line 16)
+
+- **Cyclomatic Complexity:** 12 (warning) — Extract conditional branches into separate functions or use a strategy/lookup pattern.
+- **Cognitive Complexity:** 16 (warning) — Reduce nesting depth, use early returns/guard clauses, extract helper functions.
+- **Lines of Code:** 143 (critical) — Break into smaller functions with single responsibilities (aim for <30 LOC each).
+- **Maintainability Index:** 27.4 (critical) — Composite score is very low. Address the individual metrics above first, then re-evaluate.
+- **Halstead Volume:** 2,618 (critical) — Extremely dense code. Decompose into smaller, self-documenting functions.
+- **Halstead Difficulty:** 24 (warning) — Code is hard to write/understand. Reduce operator reuse, introduce descriptive variable names.
+- **Halstead Effort:** 62,703 (critical) — Extremely high effort. This function needs significant decomposition.
+
+
+#### Acceptance Criteria
+
+- [ ] cyclomatic ≤ 10 for `postHandler`
+- [ ] cognitive ≤ 15 for `postHandler`
+- [ ] loc ≤ 60 for `postHandler`
+- [ ] maintainability ≥ 60 for `postHandler`
+- [ ] halsteadVolume ≤ 300 for `postHandler`
+- [ ] halsteadDifficulty ≤ 20 for `postHandler`
+- [ ] halsteadEffort ≤ 2000 for `postHandler`
 - [ ] All existing callers compile and pass tests
 - [ ] New tests added for coverage gaps (risk ≥ 0.8)
 - [ ] `sonde_session(action=refresh)` confirms metrics within thresholds
@@ -46056,6 +45498,94 @@ probe_context:
 - [ ] No regressions in existing tests
 
 
+<a id="plan-group-27abcd9dffaee964ae21ac06e3b4dac786984bfc1e88f4087c26da20976d6200"></a>
+[Accessibility issue: wcag-4.1.2-name-role-value](#finding-repository-health-accessibility-wcag-4-1-2-name-role-value-f845552ae8)
+
+---
+type: fix-group
+kind: metric
+plan: fix-plan
+group: 2
+title: "BookingActionsDropdown.tsx: NoShowAttendeesDialog"
+priority: 2
+severity: warning
+finding_count: 1
+step: step-1
+level: 1
+blocked_by:
+  - step-0
+files:
+  - apps/web/components/booking/actions/BookingActionsDropdown.tsx
+functions:
+  - name: NoShowAttendeesDialog
+    file: apps/web/components/booking/actions/BookingActionsDropdown.tsx
+    line: 322
+    issues:
+      - loc:warning
+      - maintainability:warning
+      - halsteadVolume:warning
+      - dead-code
+    metrics:
+      loc:
+        value: 75
+        threshold: 100
+        severity: warning
+      maintainability:
+        value: 40.63
+        threshold: 40
+        severity: warning
+      halsteadVolume:
+        value: 415.11
+        threshold: 1000
+        severity: warning
+verify:
+  run: []
+  tests_to_add:
+    - target: NoShowAttendeesDialog
+      scenarios:
+        - verify function is truly unreachable before removal
+      risk: 0.03
+probe_context:
+  - probe: dead-code
+    findings:
+      - type: unreachable-function
+        message: NoShowAttendeesDialog is unreachable function with confidence 100
+        file: apps/web/components/booking/actions/BookingActionsDropdown.tsx
+        line: 322
+        severity: warning
+---
+
+### Fix Group 2: BookingActionsDropdown.tsx: NoShowAttendeesDialog
+
+#### Fix Issues in `BookingActionsDropdown.tsx`
+
+**File:** `apps/web/components/booking/actions/BookingActionsDropdown.tsx`
+
+##### Functions with Issues (1/1)
+
+###### `NoShowAttendeesDialog` (line 322)
+
+- **Lines of Code:** 75 (warning) — Consider splitting into smaller functions with clear single responsibilities.
+- **Maintainability Index:** 40.6 (warning) — Composite score is below average. Address the individual metrics (complexity, volume, LOC) first.
+- **Halstead Volume:** 415 (warning) — High information density. Simplify expressions, extract named constants, reduce operator variety.
+- **Dead code proven.** Remove it and verify no remaining references.
+
+##### Unreachable Functions
+
+- `NoShowAttendeesDialog` (line 322) — confidence 100
+
+
+#### Acceptance Criteria
+
+- [ ] loc ≤ 60 for `NoShowAttendeesDialog`
+- [ ] maintainability ≥ 60 for `NoShowAttendeesDialog`
+- [ ] halsteadVolume ≤ 300 for `NoShowAttendeesDialog`
+- [ ] `NoShowAttendeesDialog` removed and no remaining references
+- [ ] All existing callers compile and pass tests
+- [ ] New tests added for coverage gaps (risk ≥ 0.8)
+- [ ] `sonde_session(action=refresh)` confirms metrics within thresholds
+
+
 <a id="plan-group-302e3e775424bf65b9e02dde455d02b0e81c112c40d24d5efe53c34e7b55c779"></a>
 [High complexity in attributeChangedCallback](#finding-repository-health-complexity-attributechangedcallback-8f37fbc850)
 
@@ -46100,154 +45630,6 @@ verify:
 - [ ] Each donor callsite resolves to the shared helper and existing callers compile
 - [ ] No regressions in existing tests
 - [ ] `sonde_session(action=refresh)` + clone detection reports 0 remaining clones for this group
-
-
-<a id="plan-group-319c1d87395da4cfff055bd58b92a25ae8c298384faf4fb3d1daf0af5a165afc"></a>
-[Accessibility issue: wcag-4.1.2-name-role-value](#finding-repository-health-accessibility-wcag-4-1-2-name-role-value-adb7e3dd02)
-
----
-type: fix-group
-kind: compliance
-plan: fix-plan
-group: 2
-title: "PlatformManagedUsersTable.tsx: SC 2.1.1, SC 4.1.2, i18n/hardcoded-string +1 more"
-priority: 2
-severity: critical
-finding_count: 7
-step: step-1
-level: 1
-blocked_by:
-  - step-0
-files:
-  - apps/web/modules/users/components/UserTable/PlatformManagedUsersTable.tsx
-findings:
-  - rule: wcag-2.1.1-keyboard
-    criterion: Keyboard
-    file: apps/web/modules/users/components/UserTable/PlatformManagedUsersTable.tsx
-    line: 163
-    description: <Badge> has a mouse handler but no keyboard handler. Keyboard users cannot interact with it.
-    strategy:
-      kind: review-required
-      rationale: Adding a keyboard handler requires a behavioral implementation of the mouse handler logic — a generic preventDefault stub would pass linters but break accessibility.
-    targetNodeKind: markup-element
-    targetNodeTag: Badge
-  - rule: wcag-4.1.2-name-role-value
-    criterion: Name, Role, Value
-    file: apps/web/modules/users/components/UserTable/PlatformManagedUsersTable.tsx
-    line: 163
-    description: <Badge> is interactive (has event handlers) but has no ARIA role. Assistive technology cannot determine its purpose.
-    strategy:
-      kind: set-attribute
-      attribute: role
-      value: button
-    targetNodeKind: markup-element
-    targetNodeTag: Badge
-  - rule: sonde/i18n.hardcoded-string
-    criterion: Hard-coded user-facing string
-    file: apps/web/modules/users/components/UserTable/PlatformManagedUsersTable.tsx
-    line: 196
-    description: 'Hard-coded user-facing string: "Pending" (jsx-text)'
-  - rule: sonde/i18n.hardcoded-string
-    criterion: Hard-coded user-facing string
-    file: apps/web/modules/users/components/UserTable/PlatformManagedUsersTable.tsx
-    line: 102
-    description: 'Hard-coded user-facing string: "Select all" (jsx-attr:aria-label)'
-  - rule: sonde/i18n.hardcoded-string
-    criterion: Hard-coded user-facing string
-    file: apps/web/modules/users/components/UserTable/PlatformManagedUsersTable.tsx
-    line: 109
-    description: 'Hard-coded user-facing string: "Select row" (jsx-attr:aria-label)'
-  - rule: sonde/wcag/compliance
-    criterion: wcag
-    file: apps/web/modules/users/components/UserTable/PlatformManagedUsersTable.tsx
-    line: 163
-    description: <Badge> has a mouse handler but no keyboard handler. Keyboard users cannot interact with it.
-    strategy:
-      kind: review-required
-      rationale: Adding a keyboard handler requires a behavioral implementation of the mouse handler logic — a generic preventDefault stub would pass linters but break accessibility.
-  - rule: sonde/wcag/compliance
-    criterion: wcag
-    file: apps/web/modules/users/components/UserTable/PlatformManagedUsersTable.tsx
-    line: 163
-    description: <Badge> is interactive (has event handlers) but has no ARIA role. Assistive technology cannot determine its purpose.
-    strategy:
-      kind: set-attribute
-      attribute: role
-      value: button
-verify:
-  run: []
-probe_context:
-  - probe: clones
-    findings:
-      - type: exact-duplicate
-        message: "100% similar: reducer in apps/web/modules/users/components/UserTable/PlatformManagedUsersTable.tsx, reducer in apps/web/modules/users/components/UserTable/UserListTable.tsx"
-        severity: warning
-  - probe: quality
-    findings:
-      - type: god-function
-        message: UserListTableContent is complex enough to decompose (cognitive=2, cyclomatic=3)
-        file: apps/web/modules/users/components/UserTable/PlatformManagedUsersTable.tsx
-        line: 69
-        severity: warning
-  - probe: unused-variable
-    findings:
-      - type: unused-variable
-        message: Variable 'offset' is declared but never referenced
-        file: apps/web/modules/users/components/UserTable/PlatformManagedUsersTable.tsx
-        line: 79
-        column: 8
-        severity: warning
-        targetNodeKind: variable-decl
-      - type: unused-variable
-        message: Variable 'totalRowCount' is declared but never referenced
-        file: apps/web/modules/users/components/UserTable/PlatformManagedUsersTable.tsx
-        line: 84
-        column: 8
-        severity: warning
-        targetNodeKind: variable-decl
-      - type: unused-variable
-        message: Variable 'limit' is declared but never referenced
-        file: apps/web/modules/users/components/UserTable/PlatformManagedUsersTable.tsx
-        line: 78
-        column: 8
-        severity: warning
-        targetNodeKind: variable-decl
----
-
-### Fix Group 2: PlatformManagedUsersTable.tsx: SC 2.1.1, SC 4.1.2, i18n/hardcoded-string +1 more
-
-#### Findings
-
-7 compliance findings in `apps/web/modules/users/components/UserTable/PlatformManagedUsersTable.tsx`.
-
-#### Remediation
-
-- **wcag-2.1.1-keyboard (Keyboard):** <Badge> has a mouse handler but no keyboard handler. Keyboard users cannot interact with it.
-  - Fix: Add onKeyDown or onKeyUp handler that provides equivalent keyboard interaction.
-- **wcag-4.1.2-name-role-value (Name, Role, Value):** <Badge> is interactive (has event handlers) but has no ARIA role. Assistive technology cannot determine its purpose.
-  - Fix: Add an appropriate role attribute (e.g., role="button", role="link", role="tab").
-- **sonde/i18n.hardcoded-string (Hard-coded user-facing string):** Hard-coded user-facing string: "Pending" (jsx-text)
-  - Fix: Wrap the string with the project's active i18n framework (`msg()`, `<Trans>`, `t!`, etc.).
-- **sonde/i18n.hardcoded-string (Hard-coded user-facing string):** Hard-coded user-facing string: "Select all" (jsx-attr:aria-label)
-  - Fix: Wrap the string with the project's active i18n framework (`msg()`, `<Trans>`, `t!`, etc.).
-- **sonde/i18n.hardcoded-string (Hard-coded user-facing string):** Hard-coded user-facing string: "Select row" (jsx-attr:aria-label)
-  - Fix: Wrap the string with the project's active i18n framework (`msg()`, `<Trans>`, `t!`, etc.).
-- **sonde/wcag/compliance (wcag):** <Badge> has a mouse handler but no keyboard handler. Keyboard users cannot interact with it.
-  - Fix: Apply structured probe fix strategy
-- **sonde/wcag/compliance (wcag):** <Badge> is interactive (has event handlers) but has no ARIA role. Assistive technology cannot determine its purpose.
-  - Fix: Apply structured probe fix strategy
-
-#### Acceptance Criteria
-
-- [ ] wcag-2.1.1-keyboard: <Badge> has a mouse handler but no keyboard handler. Keyboard users cannot interact with it.
-- [ ] wcag-4.1.2-name-role-value: <Badge> is interactive (has event handlers) but has no ARIA role. Assistive technology cannot determine its purpose.
-- [ ] sonde/i18n.hardcoded-string: Hard-coded user-facing string: "Pending" (jsx-text)
-- [ ] sonde/i18n.hardcoded-string: Hard-coded user-facing string: "Select all" (jsx-attr:aria-label)
-- [ ] sonde/i18n.hardcoded-string: Hard-coded user-facing string: "Select row" (jsx-attr:aria-label)
-- [ ] sonde/wcag/compliance: <Badge> has a mouse handler but no keyboard handler. Keyboard users cannot interact with it.
-- [ ] sonde/wcag/compliance: <Badge> is interactive (has event handlers) but has no ARIA role. Assistive technology cannot determine its purpose.
-- [ ] `sonde_session(action=refresh)` + compliance probe reports 0 findings for PlatformManagedUsersTable.tsx
-- [ ] No regressions in existing tests
 
 
 <a id="plan-group-3a1f2204de5730e49afc1a1dae68d4b59ffdadf84b7f7828bee2d75fe42a2bc8"></a>
@@ -47440,6 +46822,208 @@ verify:
 - [ ] No regressions in existing tests
 
 
+<a id="plan-group-91ec220d3d4a189079d2573597f1ed859321c869a43903c9a309a8a285d62315"></a>
+[Accessibility issue: wcag-4.1.2-name-role-value](#finding-repository-health-accessibility-wcag-4-1-2-name-role-value-1789894afb)
+[Accessibility issue: wcag-4.1.2-name-role-value](#finding-repository-health-accessibility-wcag-4-1-2-name-role-value-5328c2061a)
+
+---
+type: fix-group
+kind: compliance
+plan: fix-plan
+group: 2
+title: "UserListTable.tsx: SC 2.1.1, SC 4.1.2, i18n/hardcoded-string +2 more"
+priority: 2
+severity: critical
+finding_count: 13
+step: step-1
+level: 1
+blocked_by:
+  - step-0
+files:
+  - apps/web/modules/users/components/UserTable/UserListTable.tsx
+findings:
+  - rule: wcag-2.1.1-keyboard
+    criterion: Keyboard
+    file: apps/web/modules/users/components/UserTable/UserListTable.tsx
+    line: 368
+    description: <Badge> has a mouse handler but no keyboard handler. Keyboard users cannot interact with it.
+    strategy:
+      kind: review-required
+      rationale: Adding a keyboard handler requires a behavioral implementation of the mouse handler logic — a generic preventDefault stub would pass linters but break accessibility.
+    targetNodeKind: markup-element
+    targetNodeTag: Badge
+  - rule: wcag-2.1.1-keyboard
+    criterion: Keyboard
+    file: apps/web/modules/users/components/UserTable/UserListTable.tsx
+    line: 754
+    description: <DataTableToolbar.CTA> has a mouse handler but no keyboard handler. Keyboard users cannot interact with it.
+    strategy:
+      kind: review-required
+      rationale: Adding a keyboard handler requires a behavioral implementation of the mouse handler logic — a generic preventDefault stub would pass linters but break accessibility.
+    targetNodeKind: markup-element
+    targetNodeTag: DataTableToolbar.CTA
+  - rule: wcag-4.1.2-name-role-value
+    criterion: Name, Role, Value
+    file: apps/web/modules/users/components/UserTable/UserListTable.tsx
+    line: 368
+    description: <Badge> is interactive (has event handlers) but has no ARIA role. Assistive technology cannot determine its purpose.
+    strategy:
+      kind: set-attribute
+      attribute: role
+      value: button
+    targetNodeKind: markup-element
+    targetNodeTag: Badge
+  - rule: wcag-4.1.2-name-role-value
+    criterion: Name, Role, Value
+    file: apps/web/modules/users/components/UserTable/UserListTable.tsx
+    line: 754
+    description: <DataTableToolbar.CTA> is interactive (has event handlers) but has no ARIA role. Assistive technology cannot determine its purpose.
+    strategy:
+      kind: set-attribute
+      attribute: role
+      value: button
+    targetNodeKind: markup-element
+    targetNodeTag: DataTableToolbar.CTA
+  - rule: sonde/i18n.hardcoded-string
+    criterion: Hard-coded user-facing string
+    file: apps/web/modules/users/components/UserTable/UserListTable.tsx
+    line: 305
+    description: 'Hard-coded user-facing string: "Select all" (jsx-attr:aria-label)'
+  - rule: sonde/i18n.hardcoded-string
+    criterion: Hard-coded user-facing string
+    file: apps/web/modules/users/components/UserTable/UserListTable.tsx
+    line: 312
+    description: 'Hard-coded user-facing string: "Select row" (jsx-attr:aria-label)'
+  - rule: sonde/locale-awareness-ambient-format
+    criterion: Explicit locale-aware formatting
+    file: apps/web/modules/users/components/UserTable/UserListTable.tsx
+    line: 463
+    description: .toLocaleDateString() uses the ambient runtime locale. Pass an explicit BCP 47 locale or a RegionalFormatter so reports are deterministic.
+  - rule: sonde/locale-awareness-ambient-format
+    criterion: Explicit locale-aware formatting
+    file: apps/web/modules/users/components/UserTable/UserListTable.tsx
+    line: 478
+    description: .toLocaleDateString() uses the ambient runtime locale. Pass an explicit BCP 47 locale or a RegionalFormatter so reports are deterministic.
+  - rule: sonde/locale-awareness-ambient-format
+    criterion: Explicit locale-aware formatting
+    file: apps/web/modules/users/components/UserTable/UserListTable.tsx
+    line: 448
+    description: .toLocaleDateString() uses the ambient runtime locale. Pass an explicit BCP 47 locale or a RegionalFormatter so reports are deterministic.
+  - rule: sonde/wcag/compliance
+    criterion: wcag
+    file: apps/web/modules/users/components/UserTable/UserListTable.tsx
+    line: 368
+    description: <Badge> has a mouse handler but no keyboard handler. Keyboard users cannot interact with it.
+    strategy:
+      kind: review-required
+      rationale: Adding a keyboard handler requires a behavioral implementation of the mouse handler logic — a generic preventDefault stub would pass linters but break accessibility.
+  - rule: sonde/wcag/compliance
+    criterion: wcag
+    file: apps/web/modules/users/components/UserTable/UserListTable.tsx
+    line: 368
+    description: <Badge> is interactive (has event handlers) but has no ARIA role. Assistive technology cannot determine its purpose.
+    strategy:
+      kind: set-attribute
+      attribute: role
+      value: button
+  - rule: sonde/wcag/compliance
+    criterion: wcag
+    file: apps/web/modules/users/components/UserTable/UserListTable.tsx
+    line: 754
+    description: <DataTableToolbar.CTA> has a mouse handler but no keyboard handler. Keyboard users cannot interact with it.
+    strategy:
+      kind: review-required
+      rationale: Adding a keyboard handler requires a behavioral implementation of the mouse handler logic — a generic preventDefault stub would pass linters but break accessibility.
+  - rule: sonde/wcag/compliance
+    criterion: wcag
+    file: apps/web/modules/users/components/UserTable/UserListTable.tsx
+    line: 754
+    description: <DataTableToolbar.CTA> is interactive (has event handlers) but has no ARIA role. Assistive technology cannot determine its purpose.
+    strategy:
+      kind: set-attribute
+      attribute: role
+      value: button
+verify:
+  run: []
+probe_context:
+  - probe: clones
+    findings:
+      - type: exact-duplicate
+        message: "100% similar: reducer in apps/web/modules/users/components/UserTable/PlatformManagedUsersTable.tsx, reducer in apps/web/modules/users/components/UserTable/UserListTable.tsx"
+        severity: warning
+  - probe: quality
+    findings:
+      - type: god-function
+        message: UserListTableContent is complex enough to decompose (cognitive=14, cyclomatic=15)
+        file: apps/web/modules/users/components/UserTable/UserListTable.tsx
+        line: 171
+        severity: warning
+      - type: god-function
+        message: handleDownload is complex enough to decompose (cognitive=10, cyclomatic=10)
+        file: apps/web/modules/users/components/UserTable/UserListTable.tsx
+        line: 624
+        severity: warning
+      - type: god-function
+        message: generateAttributeColumns is complex enough to decompose (cognitive=1, cyclomatic=2)
+        file: apps/web/modules/users/components/UserTable/UserListTable.tsx
+        line: 217
+        severity: warning
+---
+
+### Fix Group 2: UserListTable.tsx: SC 2.1.1, SC 4.1.2, i18n/hardcoded-string +2 more
+
+#### Findings
+
+13 compliance findings in `apps/web/modules/users/components/UserTable/UserListTable.tsx`.
+
+#### Remediation
+
+- **wcag-2.1.1-keyboard (Keyboard):** <Badge> has a mouse handler but no keyboard handler. Keyboard users cannot interact with it.
+  - Fix: Add onKeyDown or onKeyUp handler that provides equivalent keyboard interaction.
+- **wcag-2.1.1-keyboard (Keyboard):** <DataTableToolbar.CTA> has a mouse handler but no keyboard handler. Keyboard users cannot interact with it.
+  - Fix: Add onKeyDown or onKeyUp handler that provides equivalent keyboard interaction.
+- **wcag-4.1.2-name-role-value (Name, Role, Value):** <Badge> is interactive (has event handlers) but has no ARIA role. Assistive technology cannot determine its purpose.
+  - Fix: Add an appropriate role attribute (e.g., role="button", role="link", role="tab").
+- **wcag-4.1.2-name-role-value (Name, Role, Value):** <DataTableToolbar.CTA> is interactive (has event handlers) but has no ARIA role. Assistive technology cannot determine its purpose.
+  - Fix: Add an appropriate role attribute (e.g., role="button", role="link", role="tab").
+- **sonde/i18n.hardcoded-string (Hard-coded user-facing string):** Hard-coded user-facing string: "Select all" (jsx-attr:aria-label)
+  - Fix: Wrap the string with the project's active i18n framework (`msg()`, `<Trans>`, `t!`, etc.).
+- **sonde/i18n.hardcoded-string (Hard-coded user-facing string):** Hard-coded user-facing string: "Select row" (jsx-attr:aria-label)
+  - Fix: Wrap the string with the project's active i18n framework (`msg()`, `<Trans>`, `t!`, etc.).
+- **sonde/locale-awareness-ambient-format (Explicit locale-aware formatting):** .toLocaleDateString() uses the ambient runtime locale. Pass an explicit BCP 47 locale or a RegionalFormatter so reports are deterministic.
+  - Fix: Pass an explicit BCP 47 locale or route formatting through RegionalFormatter.
+- **sonde/locale-awareness-ambient-format (Explicit locale-aware formatting):** .toLocaleDateString() uses the ambient runtime locale. Pass an explicit BCP 47 locale or a RegionalFormatter so reports are deterministic.
+  - Fix: Pass an explicit BCP 47 locale or route formatting through RegionalFormatter.
+- **sonde/locale-awareness-ambient-format (Explicit locale-aware formatting):** .toLocaleDateString() uses the ambient runtime locale. Pass an explicit BCP 47 locale or a RegionalFormatter so reports are deterministic.
+  - Fix: Pass an explicit BCP 47 locale or route formatting through RegionalFormatter.
+- **sonde/wcag/compliance (wcag):** <Badge> has a mouse handler but no keyboard handler. Keyboard users cannot interact with it.
+  - Fix: Apply structured probe fix strategy
+- **sonde/wcag/compliance (wcag):** <Badge> is interactive (has event handlers) but has no ARIA role. Assistive technology cannot determine its purpose.
+  - Fix: Apply structured probe fix strategy
+- **sonde/wcag/compliance (wcag):** <DataTableToolbar.CTA> has a mouse handler but no keyboard handler. Keyboard users cannot interact with it.
+  - Fix: Apply structured probe fix strategy
+- **sonde/wcag/compliance (wcag):** <DataTableToolbar.CTA> is interactive (has event handlers) but has no ARIA role. Assistive technology cannot determine its purpose.
+  - Fix: Apply structured probe fix strategy
+
+#### Acceptance Criteria
+
+- [ ] wcag-2.1.1-keyboard: <Badge> has a mouse handler but no keyboard handler. Keyboard users cannot interact with it.
+- [ ] wcag-2.1.1-keyboard: <DataTableToolbar.CTA> has a mouse handler but no keyboard handler. Keyboard users cannot interact with it.
+- [ ] wcag-4.1.2-name-role-value: <Badge> is interactive (has event handlers) but has no ARIA role. Assistive technology cannot determine its purpose.
+- [ ] wcag-4.1.2-name-role-value: <DataTableToolbar.CTA> is interactive (has event handlers) but has no ARIA role. Assistive technology cannot determine its purpose.
+- [ ] sonde/i18n.hardcoded-string: Hard-coded user-facing string: "Select all" (jsx-attr:aria-label)
+- [ ] sonde/i18n.hardcoded-string: Hard-coded user-facing string: "Select row" (jsx-attr:aria-label)
+- [ ] sonde/locale-awareness-ambient-format: .toLocaleDateString() uses the ambient runtime locale. Pass an explicit BCP 47 locale or a RegionalFormatter so reports are deterministic.
+- [ ] sonde/locale-awareness-ambient-format: .toLocaleDateString() uses the ambient runtime locale. Pass an explicit BCP 47 locale or a RegionalFormatter so reports are deterministic.
+- [ ] sonde/locale-awareness-ambient-format: .toLocaleDateString() uses the ambient runtime locale. Pass an explicit BCP 47 locale or a RegionalFormatter so reports are deterministic.
+- [ ] sonde/wcag/compliance: <Badge> has a mouse handler but no keyboard handler. Keyboard users cannot interact with it.
+- [ ] sonde/wcag/compliance: <Badge> is interactive (has event handlers) but has no ARIA role. Assistive technology cannot determine its purpose.
+- [ ] sonde/wcag/compliance: <DataTableToolbar.CTA> has a mouse handler but no keyboard handler. Keyboard users cannot interact with it.
+- [ ] sonde/wcag/compliance: <DataTableToolbar.CTA> is interactive (has event handlers) but has no ARIA role. Assistive technology cannot determine its purpose.
+- [ ] `sonde_session(action=refresh)` + compliance probe reports 0 findings for UserListTable.tsx
+- [ ] No regressions in existing tests
+
+
 <a id="plan-group-b353cdd5151afce881110b9d899a0bfe409b952b1d1846151f8a048236b23a66"></a>
 [Accessibility issue: wcag-4.1.2-name-role-value](#finding-repository-health-accessibility-wcag-4-1-2-name-role-value-6a8e4d9d1a)
 
@@ -47760,101 +47344,129 @@ verify:
 - [ ] No regressions in existing tests
 
 
-<a id="plan-group-bf451ce328b2a2ddf82c0510d7cf597ef9615677b881e4615facd82626bb06bc"></a>
-[Accessibility issue: wcag-4.1.2-name-role-value](#finding-repository-health-accessibility-wcag-4-1-2-name-role-value-f845552ae8)
+<a id="plan-group-bfd59edc99c7ef486024b9152691d72a74d55ddcdc88b9f2303f729a68c097a2"></a>
+[Accessibility issue: wcag-4.1.2-name-role-value](#finding-repository-health-accessibility-wcag-4-1-2-name-role-value-adb7e3dd02)
 
 ---
 type: fix-group
-kind: metric
+kind: compliance
 plan: fix-plan
 group: 2
-title: "BookingActionsDropdown.tsx: NoShowAttendeesDialog"
+title: "PlatformManagedUsersTable.tsx: SC 2.1.1, SC 4.1.2, i18n/hardcoded-string +1 more"
 priority: 2
-severity: warning
-finding_count: 1
+severity: critical
+finding_count: 7
 step: step-1
 level: 1
 blocked_by:
   - step-0
 files:
-  - apps/web/components/booking/actions/BookingActionsDropdown.tsx
-functions:
-  - name: NoShowAttendeesDialog
-    file: apps/web/components/booking/actions/BookingActionsDropdown.tsx
-    line: 322
-    issues:
-      - loc:warning
-      - maintainability:warning
-      - halsteadVolume:warning
-      - dead-code
-    metrics:
-      loc:
-        value: 75
-        threshold: 100
-        severity: warning
-      maintainability:
-        value: 40.63
-        threshold: 40
-        severity: warning
-      halsteadVolume:
-        value: 415.11
-        threshold: 1000
-        severity: warning
+  - apps/web/modules/users/components/UserTable/PlatformManagedUsersTable.tsx
+findings:
+  - rule: wcag-2.1.1-keyboard
+    criterion: Keyboard
+    file: apps/web/modules/users/components/UserTable/PlatformManagedUsersTable.tsx
+    line: 163
+    description: <Badge> has a mouse handler but no keyboard handler. Keyboard users cannot interact with it.
+    strategy:
+      kind: review-required
+      rationale: Adding a keyboard handler requires a behavioral implementation of the mouse handler logic — a generic preventDefault stub would pass linters but break accessibility.
+    targetNodeKind: markup-element
+    targetNodeTag: Badge
+  - rule: wcag-4.1.2-name-role-value
+    criterion: Name, Role, Value
+    file: apps/web/modules/users/components/UserTable/PlatformManagedUsersTable.tsx
+    line: 163
+    description: <Badge> is interactive (has event handlers) but has no ARIA role. Assistive technology cannot determine its purpose.
+    strategy:
+      kind: set-attribute
+      attribute: role
+      value: button
+    targetNodeKind: markup-element
+    targetNodeTag: Badge
+  - rule: sonde/i18n.hardcoded-string
+    criterion: Hard-coded user-facing string
+    file: apps/web/modules/users/components/UserTable/PlatformManagedUsersTable.tsx
+    line: 196
+    description: 'Hard-coded user-facing string: "Pending" (jsx-text)'
+  - rule: sonde/i18n.hardcoded-string
+    criterion: Hard-coded user-facing string
+    file: apps/web/modules/users/components/UserTable/PlatformManagedUsersTable.tsx
+    line: 102
+    description: 'Hard-coded user-facing string: "Select all" (jsx-attr:aria-label)'
+  - rule: sonde/i18n.hardcoded-string
+    criterion: Hard-coded user-facing string
+    file: apps/web/modules/users/components/UserTable/PlatformManagedUsersTable.tsx
+    line: 109
+    description: 'Hard-coded user-facing string: "Select row" (jsx-attr:aria-label)'
+  - rule: sonde/wcag/compliance
+    criterion: wcag
+    file: apps/web/modules/users/components/UserTable/PlatformManagedUsersTable.tsx
+    line: 163
+    description: <Badge> has a mouse handler but no keyboard handler. Keyboard users cannot interact with it.
+    strategy:
+      kind: review-required
+      rationale: Adding a keyboard handler requires a behavioral implementation of the mouse handler logic — a generic preventDefault stub would pass linters but break accessibility.
+  - rule: sonde/wcag/compliance
+    criterion: wcag
+    file: apps/web/modules/users/components/UserTable/PlatformManagedUsersTable.tsx
+    line: 163
+    description: <Badge> is interactive (has event handlers) but has no ARIA role. Assistive technology cannot determine its purpose.
+    strategy:
+      kind: set-attribute
+      attribute: role
+      value: button
 verify:
   run: []
-  tests_to_add:
-    - target: NoShowAttendeesDialog
-      scenarios:
-        - verify function is truly unreachable before removal
-      risk: 0.03
 probe_context:
-  - probe: dead-code
+  - probe: clones
     findings:
-      - type: unreachable-function
-        message: NoShowAttendeesDialog is unreachable function with confidence 100
-        file: apps/web/components/booking/actions/BookingActionsDropdown.tsx
-        line: 322
+      - type: exact-duplicate
+        message: "100% similar: reducer in apps/web/modules/users/components/UserTable/PlatformManagedUsersTable.tsx, reducer in apps/web/modules/users/components/UserTable/UserListTable.tsx"
         severity: warning
-  - probe: unused-variable
+  - probe: quality
     findings:
-      - type: unused-variable
-        message: Variable 'parsedBooking' is declared but never referenced
-        file: apps/web/components/booking/actions/BookingActionsDropdown.tsx
-        line: 398
-        column: 8
+      - type: god-function
+        message: UserListTableContent is complex enough to decompose (cognitive=2, cyclomatic=3)
+        file: apps/web/modules/users/components/UserTable/PlatformManagedUsersTable.tsx
+        line: 69
         severity: warning
-        targetNodeKind: variable-decl
 ---
 
-### Fix Group 2: BookingActionsDropdown.tsx: NoShowAttendeesDialog
+### Fix Group 2: PlatformManagedUsersTable.tsx: SC 2.1.1, SC 4.1.2, i18n/hardcoded-string +1 more
 
-#### Fix Issues in `BookingActionsDropdown.tsx`
+#### Findings
 
-**File:** `apps/web/components/booking/actions/BookingActionsDropdown.tsx`
+7 compliance findings in `apps/web/modules/users/components/UserTable/PlatformManagedUsersTable.tsx`.
 
-##### Functions with Issues (1/1)
+#### Remediation
 
-###### `NoShowAttendeesDialog` (line 322)
-
-- **Lines of Code:** 75 (warning) — Consider splitting into smaller functions with clear single responsibilities.
-- **Maintainability Index:** 40.6 (warning) — Composite score is below average. Address the individual metrics (complexity, volume, LOC) first.
-- **Halstead Volume:** 415 (warning) — High information density. Simplify expressions, extract named constants, reduce operator variety.
-- **Dead code proven.** Remove it and verify no remaining references.
-
-##### Unreachable Functions
-
-- `NoShowAttendeesDialog` (line 322) — confidence 100
-
+- **wcag-2.1.1-keyboard (Keyboard):** <Badge> has a mouse handler but no keyboard handler. Keyboard users cannot interact with it.
+  - Fix: Add onKeyDown or onKeyUp handler that provides equivalent keyboard interaction.
+- **wcag-4.1.2-name-role-value (Name, Role, Value):** <Badge> is interactive (has event handlers) but has no ARIA role. Assistive technology cannot determine its purpose.
+  - Fix: Add an appropriate role attribute (e.g., role="button", role="link", role="tab").
+- **sonde/i18n.hardcoded-string (Hard-coded user-facing string):** Hard-coded user-facing string: "Pending" (jsx-text)
+  - Fix: Wrap the string with the project's active i18n framework (`msg()`, `<Trans>`, `t!`, etc.).
+- **sonde/i18n.hardcoded-string (Hard-coded user-facing string):** Hard-coded user-facing string: "Select all" (jsx-attr:aria-label)
+  - Fix: Wrap the string with the project's active i18n framework (`msg()`, `<Trans>`, `t!`, etc.).
+- **sonde/i18n.hardcoded-string (Hard-coded user-facing string):** Hard-coded user-facing string: "Select row" (jsx-attr:aria-label)
+  - Fix: Wrap the string with the project's active i18n framework (`msg()`, `<Trans>`, `t!`, etc.).
+- **sonde/wcag/compliance (wcag):** <Badge> has a mouse handler but no keyboard handler. Keyboard users cannot interact with it.
+  - Fix: Apply structured probe fix strategy
+- **sonde/wcag/compliance (wcag):** <Badge> is interactive (has event handlers) but has no ARIA role. Assistive technology cannot determine its purpose.
+  - Fix: Apply structured probe fix strategy
 
 #### Acceptance Criteria
 
-- [ ] loc ≤ 60 for `NoShowAttendeesDialog`
-- [ ] maintainability ≥ 60 for `NoShowAttendeesDialog`
-- [ ] halsteadVolume ≤ 300 for `NoShowAttendeesDialog`
-- [ ] `NoShowAttendeesDialog` removed and no remaining references
-- [ ] All existing callers compile and pass tests
-- [ ] New tests added for coverage gaps (risk ≥ 0.8)
-- [ ] `sonde_session(action=refresh)` confirms metrics within thresholds
+- [ ] wcag-2.1.1-keyboard: <Badge> has a mouse handler but no keyboard handler. Keyboard users cannot interact with it.
+- [ ] wcag-4.1.2-name-role-value: <Badge> is interactive (has event handlers) but has no ARIA role. Assistive technology cannot determine its purpose.
+- [ ] sonde/i18n.hardcoded-string: Hard-coded user-facing string: "Pending" (jsx-text)
+- [ ] sonde/i18n.hardcoded-string: Hard-coded user-facing string: "Select all" (jsx-attr:aria-label)
+- [ ] sonde/i18n.hardcoded-string: Hard-coded user-facing string: "Select row" (jsx-attr:aria-label)
+- [ ] sonde/wcag/compliance: <Badge> has a mouse handler but no keyboard handler. Keyboard users cannot interact with it.
+- [ ] sonde/wcag/compliance: <Badge> is interactive (has event handlers) but has no ARIA role. Assistive technology cannot determine its purpose.
+- [ ] `sonde_session(action=refresh)` + compliance probe reports 0 findings for PlatformManagedUsersTable.tsx
+- [ ] No regressions in existing tests
 
 
 <a id="plan-group-c251212c8a80b4af074cff135c1ce53ab0545a112dbf3f66b446d157c70d979b"></a>
@@ -48708,391 +48320,6 @@ probe_context:
 - [ ] `sonde_session(action=refresh)` confirms metrics within thresholds
 
 
-<a id="plan-group-fda67e9ec0749847a702ec718a2d631741f26c5dac4122fa24d2541782ccb7af"></a>
-[Accessibility issue: wcag-4.1.2-name-role-value](#finding-repository-health-accessibility-wcag-4-1-2-name-role-value-1789894afb)
-[Accessibility issue: wcag-4.1.2-name-role-value](#finding-repository-health-accessibility-wcag-4-1-2-name-role-value-5328c2061a)
-
----
-type: fix-group
-kind: compliance
-plan: fix-plan
-group: 2
-title: "UserListTable.tsx: SC 2.1.1, SC 4.1.2, i18n/hardcoded-string +2 more"
-priority: 2
-severity: critical
-finding_count: 13
-step: step-1
-level: 1
-blocked_by:
-  - step-0
-files:
-  - apps/web/modules/users/components/UserTable/UserListTable.tsx
-findings:
-  - rule: wcag-2.1.1-keyboard
-    criterion: Keyboard
-    file: apps/web/modules/users/components/UserTable/UserListTable.tsx
-    line: 368
-    description: <Badge> has a mouse handler but no keyboard handler. Keyboard users cannot interact with it.
-    strategy:
-      kind: review-required
-      rationale: Adding a keyboard handler requires a behavioral implementation of the mouse handler logic — a generic preventDefault stub would pass linters but break accessibility.
-    targetNodeKind: markup-element
-    targetNodeTag: Badge
-  - rule: wcag-2.1.1-keyboard
-    criterion: Keyboard
-    file: apps/web/modules/users/components/UserTable/UserListTable.tsx
-    line: 754
-    description: <DataTableToolbar.CTA> has a mouse handler but no keyboard handler. Keyboard users cannot interact with it.
-    strategy:
-      kind: review-required
-      rationale: Adding a keyboard handler requires a behavioral implementation of the mouse handler logic — a generic preventDefault stub would pass linters but break accessibility.
-    targetNodeKind: markup-element
-    targetNodeTag: DataTableToolbar.CTA
-  - rule: wcag-4.1.2-name-role-value
-    criterion: Name, Role, Value
-    file: apps/web/modules/users/components/UserTable/UserListTable.tsx
-    line: 368
-    description: <Badge> is interactive (has event handlers) but has no ARIA role. Assistive technology cannot determine its purpose.
-    strategy:
-      kind: set-attribute
-      attribute: role
-      value: button
-    targetNodeKind: markup-element
-    targetNodeTag: Badge
-  - rule: wcag-4.1.2-name-role-value
-    criterion: Name, Role, Value
-    file: apps/web/modules/users/components/UserTable/UserListTable.tsx
-    line: 754
-    description: <DataTableToolbar.CTA> is interactive (has event handlers) but has no ARIA role. Assistive technology cannot determine its purpose.
-    strategy:
-      kind: set-attribute
-      attribute: role
-      value: button
-    targetNodeKind: markup-element
-    targetNodeTag: DataTableToolbar.CTA
-  - rule: sonde/i18n.hardcoded-string
-    criterion: Hard-coded user-facing string
-    file: apps/web/modules/users/components/UserTable/UserListTable.tsx
-    line: 305
-    description: 'Hard-coded user-facing string: "Select all" (jsx-attr:aria-label)'
-  - rule: sonde/i18n.hardcoded-string
-    criterion: Hard-coded user-facing string
-    file: apps/web/modules/users/components/UserTable/UserListTable.tsx
-    line: 312
-    description: 'Hard-coded user-facing string: "Select row" (jsx-attr:aria-label)'
-  - rule: sonde/locale-awareness-ambient-format
-    criterion: Explicit locale-aware formatting
-    file: apps/web/modules/users/components/UserTable/UserListTable.tsx
-    line: 463
-    description: .toLocaleDateString() uses the ambient runtime locale. Pass an explicit BCP 47 locale or a RegionalFormatter so reports are deterministic.
-  - rule: sonde/locale-awareness-ambient-format
-    criterion: Explicit locale-aware formatting
-    file: apps/web/modules/users/components/UserTable/UserListTable.tsx
-    line: 478
-    description: .toLocaleDateString() uses the ambient runtime locale. Pass an explicit BCP 47 locale or a RegionalFormatter so reports are deterministic.
-  - rule: sonde/locale-awareness-ambient-format
-    criterion: Explicit locale-aware formatting
-    file: apps/web/modules/users/components/UserTable/UserListTable.tsx
-    line: 448
-    description: .toLocaleDateString() uses the ambient runtime locale. Pass an explicit BCP 47 locale or a RegionalFormatter so reports are deterministic.
-  - rule: sonde/wcag/compliance
-    criterion: wcag
-    file: apps/web/modules/users/components/UserTable/UserListTable.tsx
-    line: 368
-    description: <Badge> has a mouse handler but no keyboard handler. Keyboard users cannot interact with it.
-    strategy:
-      kind: review-required
-      rationale: Adding a keyboard handler requires a behavioral implementation of the mouse handler logic — a generic preventDefault stub would pass linters but break accessibility.
-  - rule: sonde/wcag/compliance
-    criterion: wcag
-    file: apps/web/modules/users/components/UserTable/UserListTable.tsx
-    line: 368
-    description: <Badge> is interactive (has event handlers) but has no ARIA role. Assistive technology cannot determine its purpose.
-    strategy:
-      kind: set-attribute
-      attribute: role
-      value: button
-  - rule: sonde/wcag/compliance
-    criterion: wcag
-    file: apps/web/modules/users/components/UserTable/UserListTable.tsx
-    line: 754
-    description: <DataTableToolbar.CTA> has a mouse handler but no keyboard handler. Keyboard users cannot interact with it.
-    strategy:
-      kind: review-required
-      rationale: Adding a keyboard handler requires a behavioral implementation of the mouse handler logic — a generic preventDefault stub would pass linters but break accessibility.
-  - rule: sonde/wcag/compliance
-    criterion: wcag
-    file: apps/web/modules/users/components/UserTable/UserListTable.tsx
-    line: 754
-    description: <DataTableToolbar.CTA> is interactive (has event handlers) but has no ARIA role. Assistive technology cannot determine its purpose.
-    strategy:
-      kind: set-attribute
-      attribute: role
-      value: button
-verify:
-  run: []
-probe_context:
-  - probe: clones
-    findings:
-      - type: exact-duplicate
-        message: "100% similar: reducer in apps/web/modules/users/components/UserTable/PlatformManagedUsersTable.tsx, reducer in apps/web/modules/users/components/UserTable/UserListTable.tsx"
-        severity: warning
-  - probe: quality
-    findings:
-      - type: god-function
-        message: UserListTableContent is complex enough to decompose (cognitive=14, cyclomatic=15)
-        file: apps/web/modules/users/components/UserTable/UserListTable.tsx
-        line: 171
-        severity: warning
-      - type: god-function
-        message: handleDownload is complex enough to decompose (cognitive=10, cyclomatic=10)
-        file: apps/web/modules/users/components/UserTable/UserListTable.tsx
-        line: 624
-        severity: warning
-      - type: god-function
-        message: generateAttributeColumns is complex enough to decompose (cognitive=1, cyclomatic=2)
-        file: apps/web/modules/users/components/UserTable/UserListTable.tsx
-        line: 217
-        severity: warning
-  - probe: unused-variable
-    findings:
-      - type: unused-variable
-        message: Variable 'orgBranding' is declared but never referenced
-        file: apps/web/modules/users/components/UserTable/UserListTable.tsx
-        line: 179
-        column: 8
-        severity: warning
-        targetNodeKind: variable-decl
----
-
-### Fix Group 2: UserListTable.tsx: SC 2.1.1, SC 4.1.2, i18n/hardcoded-string +2 more
-
-#### Findings
-
-13 compliance findings in `apps/web/modules/users/components/UserTable/UserListTable.tsx`.
-
-#### Remediation
-
-- **wcag-2.1.1-keyboard (Keyboard):** <Badge> has a mouse handler but no keyboard handler. Keyboard users cannot interact with it.
-  - Fix: Add onKeyDown or onKeyUp handler that provides equivalent keyboard interaction.
-- **wcag-2.1.1-keyboard (Keyboard):** <DataTableToolbar.CTA> has a mouse handler but no keyboard handler. Keyboard users cannot interact with it.
-  - Fix: Add onKeyDown or onKeyUp handler that provides equivalent keyboard interaction.
-- **wcag-4.1.2-name-role-value (Name, Role, Value):** <Badge> is interactive (has event handlers) but has no ARIA role. Assistive technology cannot determine its purpose.
-  - Fix: Add an appropriate role attribute (e.g., role="button", role="link", role="tab").
-- **wcag-4.1.2-name-role-value (Name, Role, Value):** <DataTableToolbar.CTA> is interactive (has event handlers) but has no ARIA role. Assistive technology cannot determine its purpose.
-  - Fix: Add an appropriate role attribute (e.g., role="button", role="link", role="tab").
-- **sonde/i18n.hardcoded-string (Hard-coded user-facing string):** Hard-coded user-facing string: "Select all" (jsx-attr:aria-label)
-  - Fix: Wrap the string with the project's active i18n framework (`msg()`, `<Trans>`, `t!`, etc.).
-- **sonde/i18n.hardcoded-string (Hard-coded user-facing string):** Hard-coded user-facing string: "Select row" (jsx-attr:aria-label)
-  - Fix: Wrap the string with the project's active i18n framework (`msg()`, `<Trans>`, `t!`, etc.).
-- **sonde/locale-awareness-ambient-format (Explicit locale-aware formatting):** .toLocaleDateString() uses the ambient runtime locale. Pass an explicit BCP 47 locale or a RegionalFormatter so reports are deterministic.
-  - Fix: Pass an explicit BCP 47 locale or route formatting through RegionalFormatter.
-- **sonde/locale-awareness-ambient-format (Explicit locale-aware formatting):** .toLocaleDateString() uses the ambient runtime locale. Pass an explicit BCP 47 locale or a RegionalFormatter so reports are deterministic.
-  - Fix: Pass an explicit BCP 47 locale or route formatting through RegionalFormatter.
-- **sonde/locale-awareness-ambient-format (Explicit locale-aware formatting):** .toLocaleDateString() uses the ambient runtime locale. Pass an explicit BCP 47 locale or a RegionalFormatter so reports are deterministic.
-  - Fix: Pass an explicit BCP 47 locale or route formatting through RegionalFormatter.
-- **sonde/wcag/compliance (wcag):** <Badge> has a mouse handler but no keyboard handler. Keyboard users cannot interact with it.
-  - Fix: Apply structured probe fix strategy
-- **sonde/wcag/compliance (wcag):** <Badge> is interactive (has event handlers) but has no ARIA role. Assistive technology cannot determine its purpose.
-  - Fix: Apply structured probe fix strategy
-- **sonde/wcag/compliance (wcag):** <DataTableToolbar.CTA> has a mouse handler but no keyboard handler. Keyboard users cannot interact with it.
-  - Fix: Apply structured probe fix strategy
-- **sonde/wcag/compliance (wcag):** <DataTableToolbar.CTA> is interactive (has event handlers) but has no ARIA role. Assistive technology cannot determine its purpose.
-  - Fix: Apply structured probe fix strategy
-
-#### Acceptance Criteria
-
-- [ ] wcag-2.1.1-keyboard: <Badge> has a mouse handler but no keyboard handler. Keyboard users cannot interact with it.
-- [ ] wcag-2.1.1-keyboard: <DataTableToolbar.CTA> has a mouse handler but no keyboard handler. Keyboard users cannot interact with it.
-- [ ] wcag-4.1.2-name-role-value: <Badge> is interactive (has event handlers) but has no ARIA role. Assistive technology cannot determine its purpose.
-- [ ] wcag-4.1.2-name-role-value: <DataTableToolbar.CTA> is interactive (has event handlers) but has no ARIA role. Assistive technology cannot determine its purpose.
-- [ ] sonde/i18n.hardcoded-string: Hard-coded user-facing string: "Select all" (jsx-attr:aria-label)
-- [ ] sonde/i18n.hardcoded-string: Hard-coded user-facing string: "Select row" (jsx-attr:aria-label)
-- [ ] sonde/locale-awareness-ambient-format: .toLocaleDateString() uses the ambient runtime locale. Pass an explicit BCP 47 locale or a RegionalFormatter so reports are deterministic.
-- [ ] sonde/locale-awareness-ambient-format: .toLocaleDateString() uses the ambient runtime locale. Pass an explicit BCP 47 locale or a RegionalFormatter so reports are deterministic.
-- [ ] sonde/locale-awareness-ambient-format: .toLocaleDateString() uses the ambient runtime locale. Pass an explicit BCP 47 locale or a RegionalFormatter so reports are deterministic.
-- [ ] sonde/wcag/compliance: <Badge> has a mouse handler but no keyboard handler. Keyboard users cannot interact with it.
-- [ ] sonde/wcag/compliance: <Badge> is interactive (has event handlers) but has no ARIA role. Assistive technology cannot determine its purpose.
-- [ ] sonde/wcag/compliance: <DataTableToolbar.CTA> has a mouse handler but no keyboard handler. Keyboard users cannot interact with it.
-- [ ] sonde/wcag/compliance: <DataTableToolbar.CTA> is interactive (has event handlers) but has no ARIA role. Assistive technology cannot determine its purpose.
-- [ ] `sonde_session(action=refresh)` + compliance probe reports 0 findings for UserListTable.tsx
-- [ ] No regressions in existing tests
-
-
-<a id="plan-group-67bc7d7e1f6e0119e70439c7c1be02207f9d5d68a720dc9c55590b558d529f89"></a>
-[Accessibility issue: wcag-4.1.2-name-role-value](#finding-repository-health-accessibility-wcag-4-1-2-name-role-value-f845552ae8)
-
----
-type: fix-group
-kind: compliance
-plan: fix-plan
-group: 3
-title: "BookingActionsDropdown.tsx: SC 1.1.1, SC 2.1.1, SC 4.1.2 +2 more"
-priority: 3
-severity: critical
-finding_count: 9
-step: step-2
-level: 2
-blocked_by:
-  - step-0
-  - step-1
-files:
-  - apps/web/components/booking/actions/BookingActionsDropdown.tsx
-findings:
-  - rule: wcag-1.1.1-icon-label
-    criterion: Non-text Content
-    file: apps/web/components/booking/actions/BookingActionsDropdown.tsx
-    line: 545
-    description: Interactive <Button> has no accessible name (no text content, aria-label, or aria-labelledby).
-    strategy:
-      kind: review-required
-      rationale: Synthesizing an accessible name requires human context — the handler purpose, the icon meaning, and the visible label convention for this product.
-    targetNodeKind: markup-element
-    targetNodeTag: Button
-  - rule: wcag-1.1.1-icon-label
-    criterion: Non-text Content
-    file: apps/web/components/booking/actions/BookingActionsDropdown.tsx
-    line: 544
-    description: Interactive <DropdownMenuTrigger> has no accessible name (no text content, aria-label, or aria-labelledby).
-    strategy:
-      kind: review-required
-      rationale: Synthesizing an accessible name requires human context — the handler purpose, the icon meaning, and the visible label convention for this product.
-    targetNodeKind: markup-element
-    targetNodeTag: DropdownMenuTrigger
-  - rule: wcag-2.1.1-keyboard
-    criterion: Keyboard
-    file: apps/web/components/booking/actions/BookingActionsDropdown.tsx
-    line: 653
-    description: <DropdownItem> has a mouse handler but no keyboard handler. Keyboard users cannot interact with it.
-    strategy:
-      kind: review-required
-      rationale: Adding a keyboard handler requires a behavioral implementation of the mouse handler logic — a generic preventDefault stub would pass linters but break accessibility.
-    targetNodeKind: markup-element
-    targetNodeTag: DropdownItem
-  - rule: wcag-4.1.2-name-role-value
-    criterion: Name, Role, Value
-    file: apps/web/components/booking/actions/BookingActionsDropdown.tsx
-    line: 653
-    description: <DropdownItem> is interactive (has event handlers) but has no ARIA role. Assistive technology cannot determine its purpose.
-    strategy:
-      kind: set-attribute
-      attribute: role
-      value: button
-    targetNodeKind: markup-element
-    targetNodeTag: DropdownItem
-  - rule: sonde/dead-code
-    criterion: dead-code-unreachable
-    file: apps/web/components/booking/actions/BookingActionsDropdown.tsx
-    line: 322
-    description: "Function 'NoShowAttendeesDialog' has no recorded static callers and is not exported (confidence: 100; proof tier: definite)"
-    strategy:
-      kind: recipe
-      recipeId: deadCodeUnreachable
-      args:
-        name: NoShowAttendeesDialog
-  - rule: sonde/wcag/compliance
-    criterion: wcag
-    file: apps/web/components/booking/actions/BookingActionsDropdown.tsx
-    line: 545
-    description: Interactive <Button> has no accessible name (no text content, aria-label, or aria-labelledby).
-    strategy:
-      kind: review-required
-      rationale: Synthesizing an accessible name requires human context — the handler purpose, the icon meaning, and the visible label convention for this product.
-  - rule: sonde/wcag/compliance
-    criterion: wcag
-    file: apps/web/components/booking/actions/BookingActionsDropdown.tsx
-    line: 653
-    description: <DropdownItem> has a mouse handler but no keyboard handler. Keyboard users cannot interact with it.
-    strategy:
-      kind: review-required
-      rationale: Adding a keyboard handler requires a behavioral implementation of the mouse handler logic — a generic preventDefault stub would pass linters but break accessibility.
-  - rule: sonde/wcag/compliance
-    criterion: wcag
-    file: apps/web/components/booking/actions/BookingActionsDropdown.tsx
-    line: 653
-    description: <DropdownItem> is interactive (has event handlers) but has no ARIA role. Assistive technology cannot determine its purpose.
-    strategy:
-      kind: set-attribute
-      attribute: role
-      value: button
-  - rule: sonde/wcag/compliance
-    criterion: wcag
-    file: apps/web/components/booking/actions/BookingActionsDropdown.tsx
-    line: 544
-    description: Interactive <DropdownMenuTrigger> has no accessible name (no text content, aria-label, or aria-labelledby).
-    strategy:
-      kind: review-required
-      rationale: Synthesizing an accessible name requires human context — the handler purpose, the icon meaning, and the visible label convention for this product.
-verify:
-  run: []
-probe_context:
-  - probe: dead-code
-    findings:
-      - type: unreachable-function
-        message: NoShowAttendeesDialog is unreachable function with confidence 100
-        file: apps/web/components/booking/actions/BookingActionsDropdown.tsx
-        line: 322
-        severity: warning
-  - probe: quality
-    findings:
-      - type: god-function
-        message: BookingActionsDropdown is complex enough to decompose (cognitive=27, cyclomatic=28)
-        file: apps/web/components/booking/actions/BookingActionsDropdown.tsx
-        line: 63
-        severity: warning
-  - probe: unused-variable
-    findings:
-      - type: unused-variable
-        message: Variable 'parsedBooking' is declared but never referenced
-        file: apps/web/components/booking/actions/BookingActionsDropdown.tsx
-        line: 398
-        column: 8
-        severity: warning
-        targetNodeKind: variable-decl
----
-
-### Fix Group 3: BookingActionsDropdown.tsx: SC 1.1.1, SC 2.1.1, SC 4.1.2 +2 more
-
-#### Findings
-
-9 compliance findings in `apps/web/components/booking/actions/BookingActionsDropdown.tsx`.
-
-#### Remediation
-
-- **wcag-1.1.1-icon-label (Non-text Content):** Interactive <Button> has no accessible name (no text content, aria-label, or aria-labelledby).
-  - Fix: Add visible text content, aria-label, or aria-labelledby to provide an accessible name.
-- **wcag-1.1.1-icon-label (Non-text Content):** Interactive <DropdownMenuTrigger> has no accessible name (no text content, aria-label, or aria-labelledby).
-  - Fix: Add visible text content, aria-label, or aria-labelledby to provide an accessible name.
-- **wcag-2.1.1-keyboard (Keyboard):** <DropdownItem> has a mouse handler but no keyboard handler. Keyboard users cannot interact with it.
-  - Fix: Add onKeyDown or onKeyUp handler that provides equivalent keyboard interaction.
-- **wcag-4.1.2-name-role-value (Name, Role, Value):** <DropdownItem> is interactive (has event handlers) but has no ARIA role. Assistive technology cannot determine its purpose.
-  - Fix: Add an appropriate role attribute (e.g., role="button", role="link", role="tab").
-- **sonde/dead-code (dead-code-unreachable):** Function 'NoShowAttendeesDialog' has no recorded static callers and is not exported (confidence: 100; proof tier: definite)
-  - Fix: Apply structured probe fix strategy
-- **sonde/wcag/compliance (wcag):** Interactive <Button> has no accessible name (no text content, aria-label, or aria-labelledby).
-  - Fix: Apply structured probe fix strategy
-- **sonde/wcag/compliance (wcag):** <DropdownItem> has a mouse handler but no keyboard handler. Keyboard users cannot interact with it.
-  - Fix: Apply structured probe fix strategy
-- **sonde/wcag/compliance (wcag):** <DropdownItem> is interactive (has event handlers) but has no ARIA role. Assistive technology cannot determine its purpose.
-  - Fix: Apply structured probe fix strategy
-- **sonde/wcag/compliance (wcag):** Interactive <DropdownMenuTrigger> has no accessible name (no text content, aria-label, or aria-labelledby).
-  - Fix: Apply structured probe fix strategy
-
-#### Acceptance Criteria
-
-- [ ] wcag-1.1.1-icon-label: Interactive <Button> has no accessible name (no text content, aria-label, or aria-labelledby).
-- [ ] wcag-1.1.1-icon-label: Interactive <DropdownMenuTrigger> has no accessible name (no text content, aria-label, or aria-labelledby).
-- [ ] wcag-2.1.1-keyboard: <DropdownItem> has a mouse handler but no keyboard handler. Keyboard users cannot interact with it.
-- [ ] wcag-4.1.2-name-role-value: <DropdownItem> is interactive (has event handlers) but has no ARIA role. Assistive technology cannot determine its purpose.
-- [ ] sonde/dead-code: Function 'NoShowAttendeesDialog' has no recorded static callers and is not exported (confidence: 100; proof tier: definite)
-- [ ] sonde/wcag/compliance: Interactive <Button> has no accessible name (no text content, aria-label, or aria-labelledby).
-- [ ] sonde/wcag/compliance: <DropdownItem> has a mouse handler but no keyboard handler. Keyboard users cannot interact with it.
-- [ ] sonde/wcag/compliance: <DropdownItem> is interactive (has event handlers) but has no ARIA role. Assistive technology cannot determine its purpose.
-- [ ] sonde/wcag/compliance: Interactive <DropdownMenuTrigger> has no accessible name (no text content, aria-label, or aria-labelledby).
-- [ ] `sonde_session(action=refresh)` + compliance probe reports 0 findings for BookingActionsDropdown.tsx
-- [ ] No regressions in existing tests
-
-
 <a id="plan-group-72e01a054791076f9740bf0d8977dc69f711535eadad7ba71720a8aee7d46008"></a>
 [Accessibility issue: wcag-4.1.2-name-role-value](#finding-repository-health-accessibility-wcag-4-1-2-name-role-value-6b24d243e3)
 
@@ -49732,6 +48959,171 @@ probe_context:
 - [ ] sonde/wcag/compliance: <Badge> has a mouse handler but no keyboard handler. Keyboard users cannot interact with it.
 - [ ] sonde/wcag/compliance: <Badge> is interactive (has event handlers) but has no ARIA role. Assistive technology cannot determine its purpose.
 - [ ] `sonde_session(action=refresh)` + compliance probe reports 0 findings for BookingListItem.tsx
+- [ ] No regressions in existing tests
+
+
+<a id="plan-group-f09e33ae8f7c368b3844657968adf85bfc2dee5712132c576940f44873fc1ca3"></a>
+[Accessibility issue: wcag-4.1.2-name-role-value](#finding-repository-health-accessibility-wcag-4-1-2-name-role-value-f845552ae8)
+
+---
+type: fix-group
+kind: compliance
+plan: fix-plan
+group: 3
+title: "BookingActionsDropdown.tsx: SC 1.1.1, SC 2.1.1, SC 4.1.2 +2 more"
+priority: 3
+severity: critical
+finding_count: 9
+step: step-2
+level: 2
+blocked_by:
+  - step-0
+  - step-1
+files:
+  - apps/web/components/booking/actions/BookingActionsDropdown.tsx
+findings:
+  - rule: wcag-1.1.1-icon-label
+    criterion: Non-text Content
+    file: apps/web/components/booking/actions/BookingActionsDropdown.tsx
+    line: 545
+    description: Interactive <Button> has no accessible name (no text content, aria-label, or aria-labelledby).
+    strategy:
+      kind: review-required
+      rationale: Synthesizing an accessible name requires human context — the handler purpose, the icon meaning, and the visible label convention for this product.
+    targetNodeKind: markup-element
+    targetNodeTag: Button
+  - rule: wcag-1.1.1-icon-label
+    criterion: Non-text Content
+    file: apps/web/components/booking/actions/BookingActionsDropdown.tsx
+    line: 544
+    description: Interactive <DropdownMenuTrigger> has no accessible name (no text content, aria-label, or aria-labelledby).
+    strategy:
+      kind: review-required
+      rationale: Synthesizing an accessible name requires human context — the handler purpose, the icon meaning, and the visible label convention for this product.
+    targetNodeKind: markup-element
+    targetNodeTag: DropdownMenuTrigger
+  - rule: wcag-2.1.1-keyboard
+    criterion: Keyboard
+    file: apps/web/components/booking/actions/BookingActionsDropdown.tsx
+    line: 653
+    description: <DropdownItem> has a mouse handler but no keyboard handler. Keyboard users cannot interact with it.
+    strategy:
+      kind: review-required
+      rationale: Adding a keyboard handler requires a behavioral implementation of the mouse handler logic — a generic preventDefault stub would pass linters but break accessibility.
+    targetNodeKind: markup-element
+    targetNodeTag: DropdownItem
+  - rule: wcag-4.1.2-name-role-value
+    criterion: Name, Role, Value
+    file: apps/web/components/booking/actions/BookingActionsDropdown.tsx
+    line: 653
+    description: <DropdownItem> is interactive (has event handlers) but has no ARIA role. Assistive technology cannot determine its purpose.
+    strategy:
+      kind: set-attribute
+      attribute: role
+      value: button
+    targetNodeKind: markup-element
+    targetNodeTag: DropdownItem
+  - rule: sonde/dead-code
+    criterion: dead-code-unreachable
+    file: apps/web/components/booking/actions/BookingActionsDropdown.tsx
+    line: 322
+    description: "Function 'NoShowAttendeesDialog' has no recorded static callers and is not exported (confidence: 100; proof tier: definite)"
+    strategy:
+      kind: recipe
+      recipeId: deadCodeUnreachable
+      args:
+        name: NoShowAttendeesDialog
+  - rule: sonde/wcag/compliance
+    criterion: wcag
+    file: apps/web/components/booking/actions/BookingActionsDropdown.tsx
+    line: 545
+    description: Interactive <Button> has no accessible name (no text content, aria-label, or aria-labelledby).
+    strategy:
+      kind: review-required
+      rationale: Synthesizing an accessible name requires human context — the handler purpose, the icon meaning, and the visible label convention for this product.
+  - rule: sonde/wcag/compliance
+    criterion: wcag
+    file: apps/web/components/booking/actions/BookingActionsDropdown.tsx
+    line: 653
+    description: <DropdownItem> has a mouse handler but no keyboard handler. Keyboard users cannot interact with it.
+    strategy:
+      kind: review-required
+      rationale: Adding a keyboard handler requires a behavioral implementation of the mouse handler logic — a generic preventDefault stub would pass linters but break accessibility.
+  - rule: sonde/wcag/compliance
+    criterion: wcag
+    file: apps/web/components/booking/actions/BookingActionsDropdown.tsx
+    line: 653
+    description: <DropdownItem> is interactive (has event handlers) but has no ARIA role. Assistive technology cannot determine its purpose.
+    strategy:
+      kind: set-attribute
+      attribute: role
+      value: button
+  - rule: sonde/wcag/compliance
+    criterion: wcag
+    file: apps/web/components/booking/actions/BookingActionsDropdown.tsx
+    line: 544
+    description: Interactive <DropdownMenuTrigger> has no accessible name (no text content, aria-label, or aria-labelledby).
+    strategy:
+      kind: review-required
+      rationale: Synthesizing an accessible name requires human context — the handler purpose, the icon meaning, and the visible label convention for this product.
+verify:
+  run: []
+probe_context:
+  - probe: dead-code
+    findings:
+      - type: unreachable-function
+        message: NoShowAttendeesDialog is unreachable function with confidence 100
+        file: apps/web/components/booking/actions/BookingActionsDropdown.tsx
+        line: 322
+        severity: warning
+  - probe: quality
+    findings:
+      - type: god-function
+        message: BookingActionsDropdown is complex enough to decompose (cognitive=27, cyclomatic=28)
+        file: apps/web/components/booking/actions/BookingActionsDropdown.tsx
+        line: 63
+        severity: warning
+---
+
+### Fix Group 3: BookingActionsDropdown.tsx: SC 1.1.1, SC 2.1.1, SC 4.1.2 +2 more
+
+#### Findings
+
+9 compliance findings in `apps/web/components/booking/actions/BookingActionsDropdown.tsx`.
+
+#### Remediation
+
+- **wcag-1.1.1-icon-label (Non-text Content):** Interactive <Button> has no accessible name (no text content, aria-label, or aria-labelledby).
+  - Fix: Add visible text content, aria-label, or aria-labelledby to provide an accessible name.
+- **wcag-1.1.1-icon-label (Non-text Content):** Interactive <DropdownMenuTrigger> has no accessible name (no text content, aria-label, or aria-labelledby).
+  - Fix: Add visible text content, aria-label, or aria-labelledby to provide an accessible name.
+- **wcag-2.1.1-keyboard (Keyboard):** <DropdownItem> has a mouse handler but no keyboard handler. Keyboard users cannot interact with it.
+  - Fix: Add onKeyDown or onKeyUp handler that provides equivalent keyboard interaction.
+- **wcag-4.1.2-name-role-value (Name, Role, Value):** <DropdownItem> is interactive (has event handlers) but has no ARIA role. Assistive technology cannot determine its purpose.
+  - Fix: Add an appropriate role attribute (e.g., role="button", role="link", role="tab").
+- **sonde/dead-code (dead-code-unreachable):** Function 'NoShowAttendeesDialog' has no recorded static callers and is not exported (confidence: 100; proof tier: definite)
+  - Fix: Apply structured probe fix strategy
+- **sonde/wcag/compliance (wcag):** Interactive <Button> has no accessible name (no text content, aria-label, or aria-labelledby).
+  - Fix: Apply structured probe fix strategy
+- **sonde/wcag/compliance (wcag):** <DropdownItem> has a mouse handler but no keyboard handler. Keyboard users cannot interact with it.
+  - Fix: Apply structured probe fix strategy
+- **sonde/wcag/compliance (wcag):** <DropdownItem> is interactive (has event handlers) but has no ARIA role. Assistive technology cannot determine its purpose.
+  - Fix: Apply structured probe fix strategy
+- **sonde/wcag/compliance (wcag):** Interactive <DropdownMenuTrigger> has no accessible name (no text content, aria-label, or aria-labelledby).
+  - Fix: Apply structured probe fix strategy
+
+#### Acceptance Criteria
+
+- [ ] wcag-1.1.1-icon-label: Interactive <Button> has no accessible name (no text content, aria-label, or aria-labelledby).
+- [ ] wcag-1.1.1-icon-label: Interactive <DropdownMenuTrigger> has no accessible name (no text content, aria-label, or aria-labelledby).
+- [ ] wcag-2.1.1-keyboard: <DropdownItem> has a mouse handler but no keyboard handler. Keyboard users cannot interact with it.
+- [ ] wcag-4.1.2-name-role-value: <DropdownItem> is interactive (has event handlers) but has no ARIA role. Assistive technology cannot determine its purpose.
+- [ ] sonde/dead-code: Function 'NoShowAttendeesDialog' has no recorded static callers and is not exported (confidence: 100; proof tier: definite)
+- [ ] sonde/wcag/compliance: Interactive <Button> has no accessible name (no text content, aria-label, or aria-labelledby).
+- [ ] sonde/wcag/compliance: <DropdownItem> has a mouse handler but no keyboard handler. Keyboard users cannot interact with it.
+- [ ] sonde/wcag/compliance: <DropdownItem> is interactive (has event handlers) but has no ARIA role. Assistive technology cannot determine its purpose.
+- [ ] sonde/wcag/compliance: Interactive <DropdownMenuTrigger> has no accessible name (no text content, aria-label, or aria-labelledby).
+- [ ] `sonde_session(action=refresh)` + compliance probe reports 0 findings for BookingActionsDropdown.tsx
 - [ ] No regressions in existing tests
 
 

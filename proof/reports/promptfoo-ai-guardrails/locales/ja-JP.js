@@ -1,0 +1,1123 @@
+window.__SCRIBE_LOCALES__ = window.__SCRIBE_LOCALES__ || {};
+window.__SCRIBE_LOCALES__["ja-JP"] = {
+  "fallbackCount": 11,
+  "locale": "ja-JP",
+  "messages": {
+    "scribe.leaderboard.language": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "言語"
+    },
+    "scribe.report.action.backToFinding": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "検出結果に戻る"
+    },
+    "scribe.report.action.closeFullScreenDiagram": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "フルスクリーン図を閉じる"
+    },
+    "scribe.report.action.closeFullScreenSourceSnippet": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "全画面スニペットを閉じる"
+    },
+    "scribe.report.action.collapseDiagram": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "図を折りたたむ"
+    },
+    "scribe.report.action.collapseSourceSnippet": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "スニペットを折りたたむ"
+    },
+    "scribe.report.action.completeFixPlan": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "修正プランを完了する"
+    },
+    "scribe.report.action.copyDiagramLink": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "図のリンクをコピー"
+    },
+    "scribe.report.action.download": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "ダウンロード"
+    },
+    "scribe.report.action.downloadOpenAcr": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "OpenACRをダウンロード"
+    },
+    "scribe.report.action.downloadOscal": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "OSCALをダウンロード"
+    },
+    "scribe.report.action.downloadPdf": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "PDFをダウンロード"
+    },
+    "scribe.report.action.expandDiagram": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "図を展開する"
+    },
+    "scribe.report.action.expandSourceSnippet": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "スニペットを展開"
+    },
+    "scribe.report.action.exportMarkdown": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Markdown レポートをダウンロード"
+    },
+    "scribe.report.action.feedbackFinding": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "フィードバックを送信"
+    },
+    "scribe.report.action.findingPermalink": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "検出結果リンクをコピー"
+    },
+    "scribe.report.action.fullScreenDiagram": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "全画面図を表示"
+    },
+    "scribe.report.action.fullScreenSourceSnippet": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "スニペットを全画面表示"
+    },
+    "scribe.report.action.openFinding": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "検出結果の詳細を開く"
+    },
+    "scribe.report.action.openFixPlan": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "修正計画を開く"
+    },
+    "scribe.report.action.openRepository": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "リポジトリを開く"
+    },
+    "scribe.report.action.openVpat": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "VPATを開く"
+    },
+    "scribe.report.action.printReport": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "レポートを印刷"
+    },
+    "scribe.report.action.reportOverview": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "レポート概要"
+    },
+    "scribe.report.action.shareFinding": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "検出結果を共有"
+    },
+    "scribe.report.action.sourcePermalink": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "ソースのパーマリンクを開く"
+    },
+    "scribe.report.action.viewDiagram": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "図を表示"
+    },
+    "scribe.report.action.viewDiagramSource": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "図のソースを表示"
+    },
+    "scribe.report.actionPriorities.affectedLocations": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "{count, plural, one {# 件の影響を受ける場所} other {# 件の影響を受ける場所}}"
+    },
+    "scribe.report.actionPriorities.nextAction": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "次のアクション"
+    },
+    "scribe.report.actionPriorities.originalEvidence": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "元の証拠を表示"
+    },
+    "scribe.report.actionPriorities.summary": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "これらの優先順位は、影響度、到達範囲、利用可能な証拠を組み合わせたものです。上部から始め、技術的な詳細については影響を受けた場所を開いてください。"
+    },
+    "scribe.report.actionPriorities.title": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "最初に修正すべきこと"
+    },
+    "scribe.report.actionPriorities.why": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "なぜこれが重要なのか"
+    },
+    "scribe.report.aiGuardrails.finding.complexity.criterion": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "AIガードレールの複雑性ポリシー：循環的{warningCyclomatic}、認知{warningCognitive}を超え、または保守性{warningMaintainability}を下回る場合に警告。"
+    },
+    "scribe.report.aiGuardrails.finding.complexity.fix": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "{symbol} をより小さな判断単位に分割し、焦点を絞ったテストで現在の動作を保持したまま、自動クリーンアップを適用する前にガードレール分析を再実行してください。"
+    },
+    "scribe.report.aiGuardrails.finding.publicSummary": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "ソース裏付けのカバレッジ証拠を含む公開 AI ガードレールサマリー。"
+    },
+    "scribe.report.aiGuardrails.finding.runtime": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "AI ガイドレール静的解析"
+    },
+    "scribe.report.aiGuardrails.finding.summary": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "AIガードレールレポートは、構造、不要コードの表面、コードの健全性 across AI生成コードの再現可能でモデルに依存しない分析を {sourcePath} に結びつけます。"
+    },
+    "scribe.report.aiGuardrails.finding.title": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "AI ガードレール解析には再利用可能なソース裏付け証拠があります"
+    },
+    "scribe.report.aiGuardrails.overview.body": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "この AI ガイドレールレポートは、AI 作成のコードベースの決定論的な構造的解析によって生成されます — モデルが他のモデルを判断することはありません。すべての検出結果はコードに関する再現可能な事実であり、公開された静的アセットはプライベートな生成レシートから分離されています。"
+    },
+    "scribe.report.aiGuardrails.overview.issue.body": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "{repositoryLabel} は、AI生成コードの構造的整合性、不要コードの表面、およびコードの健全性にわたる決定論的ガードレール分析の下で、{score, number}/1000 ({grade}) のスコアを取得しました。Sonde は、モデルが他のモデルをレビューすることなく、{sourceFileCount, number} のソースファイルにわたって検出結果を独立して浮き彫りにしました。"
+    },
+    "scribe.report.aiGuardrails.overview.issue.label": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "ガードレール観察結果"
+    },
+    "scribe.report.aiGuardrails.overview.summary": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "決定論的AIコードガバナンス — AIレビューで見逃しがちな、AI生成コードにおける構造的分析の検出対象。"
+    },
+    "scribe.report.aiGuardrails.reference": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Sonde AI ガードレール解析"
+    },
+    "scribe.report.aiGuardrails.sourceSnippet.title": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "ソース証拠"
+    },
+    "scribe.report.aiGuardrails.visualization.alt": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "{sourceFileCount, number} のソースファイル、{languageCount, number} の言語、{packageManifestCount, number} のパッケージマニフェスト、{buildConfigCount, number} のビルド構成、および {databaseSchemaCount, number} のデータベーススキーマアーティファクトを示す AI 生成コードのガードレール入力。"
+    },
+    "scribe.report.aiGuardrails.visualization.longDescription": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "ソースデータは、AI 生成コードベース {repositoryLabel} から収集された決定論的ガードレール入力を要約しています: {languages, list}, {dataEntityCount, number} のデータエンティティ, および {apiEndpointCount, number} の API エンドポイント。"
+    },
+    "scribe.report.aiGuardrails.visualization.sourceDataTitle": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "ソースデータ"
+    },
+    "scribe.report.aiGuardrails.visualization.summary": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "この表は、レポート生成中に収集された AI ガードレール証拠から描画されます。"
+    },
+    "scribe.report.aiGuardrails.visualization.title": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "AI生成コードのガードレールソースデータ"
+    },
+    "scribe.report.asset.export.markdown": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Markdown エクスポート"
+    },
+    "scribe.report.asset.mark": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Scribe {version} レポートマーク"
+    },
+    "scribe.report.asset.mark.alt": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Sonde Scribe {version} コンプライアンスレポートマーク"
+    },
+    "scribe.report.asset.overviewScreenshot": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "注釈付き Cockpit Mobile アクセシビリティ証拠"
+    },
+    "scribe.report.asset.overviewScreenshot.alt": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Cockpit-mobile アクセシビリティフィクスチャから取得した注釈付きランタイム証拠。"
+    },
+    "scribe.report.asset.overviewScreenshot.caption": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "公開 sonde.tech コンプライアンスページで使用される同じ注釈付き証拠レンダラーからコピーしました。"
+    },
+    "scribe.report.asset.theme.daylight": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Daylight テーマ"
+    },
+    "scribe.report.asset.theme.highContrast": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "高コントラストテーマ"
+    },
+    "scribe.report.asset.theme.infrared": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "赤外線テーマ"
+    },
+    "scribe.report.asset.theme.ultraviolet": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "紫外線"
+    },
+    "scribe.report.autofixFilter.fullExplanation": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "詳細な説明"
+    },
+    "scribe.report.autofixFilter.help": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "カウントは現在の検索およびフィルターを反映しています。プレビューには生成された変更が表示されます。これは、変更が適用されたことや検証されたことを証明するものではありません。"
+    },
+    "scribe.report.autofixFilter.label": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "自動修正の結果"
+    },
+    "scribe.report.autofixFilter.preview": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "自動修正のプレビュー"
+    },
+    "scribe.report.brand": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Sonde Scribe"
+    },
+    "scribe.report.calibration.class": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "クラス"
+    },
+    "scribe.report.calibration.cleanFp": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "クリーンコーパスFP"
+    },
+    "scribe.report.calibration.cwe": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "CWE"
+    },
+    "scribe.report.calibration.disclaimer": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "外部の形式検証による正解データとの較正 — 競合ベンチマークではありません。精度重視およびカバレッジのみのティアは決して混合されません。"
+    },
+    "scribe.report.calibration.groundTruth": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "正解データ"
+    },
+    "scribe.report.calibration.heading": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "検出較正"
+    },
+    "scribe.report.calibration.precision": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "精度"
+    },
+    "scribe.report.calibration.programsEvaluated": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "評価されたプログラム数"
+    },
+    "scribe.report.calibration.recall": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "リコール"
+    },
+    "scribe.report.calibration.tier": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "ティア"
+    },
+    "scribe.report.calibration.tier.coverageOnly": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "カバレッジのみ"
+    },
+    "scribe.report.calibration.tier.precisionBearing": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "精度ベアリング"
+    },
+    "scribe.report.capabilityTiers.title": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "ORM・データベース機能"
+    },
+    "scribe.report.complianceEvidence.criterion": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "{criterion}"
+    },
+    "scribe.report.complianceExample.source.summary": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "{sourcePath} L{startLine}-L{endLine}"
+    },
+    "scribe.report.context.title": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "詳細情報"
+    },
+    "scribe.report.control.allClassifications": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "すべての分類"
+    },
+    "scribe.report.control.allLanguages": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "すべての言語"
+    },
+    "scribe.report.control.allResults": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "すべて"
+    },
+    "scribe.report.control.allSeverities": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "すべての重要度"
+    },
+    "scribe.report.control.classification": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "分類"
+    },
+    "scribe.report.control.clearFilters": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "フィルターをクリア"
+    },
+    "scribe.report.control.collapseContents": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "目次を閉じる"
+    },
+    "scribe.report.control.contents": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "目次"
+    },
+    "scribe.report.control.emptyPlan": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "構造化されたプランの内容はありません。"
+    },
+    "scribe.report.control.evictedPlan": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "プランの内容が解放されました。プランを再度開いて読み込んでください。"
+    },
+    "scribe.report.control.expandContents": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "目次を開く"
+    },
+    "scribe.report.control.findings": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "検出結果"
+    },
+    "scribe.report.control.firstPage": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "先頭"
+    },
+    "scribe.report.control.guidance": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "ガイダンス"
+    },
+    "scribe.report.control.languageSearch": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "言語を検索"
+    },
+    "scribe.report.control.lastPage": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "最後"
+    },
+    "scribe.report.control.loadingPlan": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "修正プランを読み込んでいます…"
+    },
+    "scribe.report.control.locale": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "ロケール"
+    },
+    "scribe.report.control.mode": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "モード"
+    },
+    "scribe.report.control.nextPage": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "次へ"
+    },
+    "scribe.report.control.outsideResults": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "現在の結果範囲外"
+    },
+    "scribe.report.control.pageSize": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "表示件数"
+    },
+    "scribe.report.control.pageStatus": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "ページ"
+    },
+    "scribe.report.control.pinContents": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "ナビゲーションをピン留め"
+    },
+    "scribe.report.control.previousPage": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "前へ"
+    },
+    "scribe.report.control.readerView": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "閲覧ビュー"
+    },
+    "scribe.report.control.referenceMaterial": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "参照資料"
+    },
+    "scribe.report.control.remediation": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "修復"
+    },
+    "scribe.report.control.resultCount": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "結果"
+    },
+    "scribe.report.control.retryPlan": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "プランの読み込みを再試行する"
+    },
+    "scribe.report.control.returnToResults": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "結果に戻る"
+    },
+    "scribe.report.control.search": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "このレポートを検索"
+    },
+    "scribe.report.control.severity": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "重要度"
+    },
+    "scribe.report.control.targetUnavailable": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "このレポートターゲットは利用できません"
+    },
+    "scribe.report.control.theme": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "テーマ"
+    },
+    "scribe.report.control.unavailablePlan": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "プランを読み込めませんでした。完全なプランを開くか、再試行してください。"
+    },
+    "scribe.report.facet.status.absent": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "非対応"
+    },
+    "scribe.report.facet.status.gap": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "不足"
+    },
+    "scribe.report.facet.status.partial": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "部分的"
+    },
+    "scribe.report.facet.status.present": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "対応済み"
+    },
+    "scribe.report.facet.status.requiresCustomerContext": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "顧客コンテキストが必要"
+    },
+    "scribe.report.filter.option.accessibility": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "アクセシビリティ"
+    },
+    "scribe.report.filter.option.aiGuardrails": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "AI ガードレール"
+    },
+    "scribe.report.filter.option.analysisCompleteness": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "解析完全性"
+    },
+    "scribe.report.filter.option.codeHealth": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "コード健全性"
+    },
+    "scribe.report.filter.option.critical": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "クリティカル"
+    },
+    "scribe.report.filter.option.error": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "エラー"
+    },
+    "scribe.report.filter.option.info": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "情報"
+    },
+    "scribe.report.filter.option.warning": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "警告"
+    },
+    "scribe.report.finding.autofix.title": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "自動修正"
+    },
+    "scribe.report.fixPlan.component.acceptanceCriteria": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "受入基準"
+    },
+    "scribe.report.fixPlan.component.beforeAfter": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "前後 (自動修正のプレビュー)"
+    },
+    "scribe.report.fixPlan.component.closeFullScreen": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "閉じる"
+    },
+    "scribe.report.fixPlan.component.fixGroups": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "修正グループ"
+    },
+    "scribe.report.fixPlan.component.fixed": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "修正済み"
+    },
+    "scribe.report.fixPlan.component.fullScreen": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "フルスクリーン差分表示"
+    },
+    "scribe.report.fixPlan.component.manualSteps": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "手動リメジエーション手順"
+    },
+    "scribe.report.fixPlan.component.original": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "元々"
+    },
+    "scribe.report.fixPlan.component.source": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "ソース"
+    },
+    "scribe.report.fixPlan.component.splitView": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "分割"
+    },
+    "scribe.report.fixPlan.component.unifiedView": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "統合"
+    },
+    "scribe.report.fixPlan.component.verify": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "確認"
+    },
+    "scribe.report.fixPlan.pageTitle": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "修正計画"
+    },
+    "scribe.report.fixPlan.redacted": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "修復計画の詳細は修復アーティファクトにある。"
+    },
+    "scribe.report.fixPlan.summary": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "このレポートの検出結果に対する是正ガイダンス。"
+    },
+    "scribe.report.metric.displayedScale": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "表示スケール"
+    },
+    "scribe.report.metric.explanation": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "各行には、独自の順序付けられたリファレンスバンドと測定値が表示されます。メトリックラベルには、どちらの方向がより良いかが記載されています。"
+    },
+    "scribe.report.metric.higherIsBetter": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "高いほど良い"
+    },
+    "scribe.report.metric.lowerIsBetter": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "低いほど良い"
+    },
+    "scribe.report.metric.measured": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "測定済み"
+    },
+    "scribe.report.metric.measuredResults": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "測定結果"
+    },
+    "scribe.report.metric.referenceRanges": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "基準範囲"
+    },
+    "scribe.report.metric.severity.critical": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "致命的"
+    },
+    "scribe.report.metric.severity.good": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "良好"
+    },
+    "scribe.report.metric.severity.high": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "高"
+    },
+    "scribe.report.metric.severity.moderate": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "中程度"
+    },
+    "scribe.report.mode.auto": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "自動"
+    },
+    "scribe.report.mode.dark": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "ダーク"
+    },
+    "scribe.report.mode.light": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "ライト"
+    },
+    "scribe.report.overview.stat.accessibilityFindings": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "アクセシビリティに関する検出結果"
+    },
+    "scribe.report.overview.stat.codeQualityFindings": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "コード品質に関する検出結果"
+    },
+    "scribe.report.overview.stat.complianceFindings": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "コンプライアンス関連の検出結果"
+    },
+    "scribe.report.overview.stat.evidenceScreenshots": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "証拠スクリーンショット"
+    },
+    "scribe.report.overview.stat.findingsRequiringRemediation": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "修復が必要な検出結果"
+    },
+    "scribe.report.overview.stat.privateArtifactsExposed": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "公開された非公開アーティファクト"
+    },
+    "scribe.report.overview.stat.selectedIssues": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "選択した問題"
+    },
+    "scribe.report.overview.stat.severityBreakdown": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "重要度の内訳"
+    },
+    "scribe.report.overview.stat.sourceAnchors": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "検証済みソースアンカー"
+    },
+    "scribe.report.overview.stat.sourceLanguagesCovered": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "対象ソース言語"
+    },
+    "scribe.report.overview.status.evidenceReady": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "証拠パッケージ準備済み"
+    },
+    "scribe.report.overview.status.needsRemediation": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "修復が必要"
+    },
+    "scribe.report.overview.status.privateBoundary": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "公開パッケージ境界"
+    },
+    "scribe.report.overview.title": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "概要"
+    },
+    "scribe.report.repositoryHealth.complianceMatrix.title": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "証拠覆蓋率"
+    },
+    "scribe.report.repositoryHealth.discoverySummary.title": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "リポジトリ形状"
+    },
+    "scribe.report.repositoryHealth.finding.complexity.summary": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "{sourcePath}:{line} の循環的複雑度は {cyclomatic}、認知的複雑度は {cognitive}、保守性は {maintainability} です。"
+    },
+    "scribe.report.repositoryHealth.finding.complexity.title.critical": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "{symbol} の重大な複雑性"
+    },
+    "scribe.report.repositoryHealth.finding.complexity.title.error": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "{symbol} の深刻な複雑性"
+    },
+    "scribe.report.repositoryHealth.finding.complexity.title.high": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "{symbol} の高い複雑性"
+    },
+    "scribe.report.repositoryHealth.finding.raw.fix": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "{recommendation}"
+    },
+    "scribe.report.repositoryHealth.finding.raw.summary": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "{summary}"
+    },
+    "scribe.report.repositoryHealth.finding.raw.title": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "{title}"
+    },
+    "scribe.report.repositoryHealth.finding.showcaseSampling.criterion": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Showcaseレポートでは、実用的でコミット可能な成果物を維持しつつ真の総数を報告するため、生成された検出結果のエントリ数に設定可能な最大値を上限としています。"
+    },
+    "scribe.report.repositoryHealth.finding.showcaseSampling.fix": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "完全な検出結果セットを表示するには、Sonde分析をローカルで実行するか、検出結果の上限を引き上げてください。この公開されたショーケースは包括的な監査ではなく、上位の検出結果を示しています。"
+    },
+    "scribe.report.repositoryHealth.finding.showcaseSampling.summary": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "この機能ショーケースは、{cap, number}件の検出結果上限まで上位ランクの検出結果を表示します — 合計{total, number}件中{shown, number}件が表示されています。サンプリングされたカテゴリ: {categories, list}."
+    },
+    "scribe.report.repositoryHealth.finding.showcaseSampling.title": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "ショーケースサンプリング：上位の検出結果を表示"
+    },
+    "scribe.report.repositoryHealth.sondeScore.title": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Sonde Score"
+    },
+    "scribe.report.repositoryHealth.sourceRow.apiEndpoints": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "APIエンドポイント"
+    },
+    "scribe.report.repositoryHealth.sourceRow.cicd": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "CI/CD"
+    },
+    "scribe.report.repositoryHealth.sourceRow.databaseModel": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "データベースモデル"
+    },
+    "scribe.report.repositoryHealth.sourceRow.frameworks": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "フレームワーク"
+    },
+    "scribe.report.repositoryHealth.sourceRow.languages": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "言語"
+    },
+    "scribe.report.repositoryHealth.sourceRow.otherRuntimeSurfaces": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "その他のランタイム表面"
+    },
+    "scribe.report.repositoryHealth.sourceRow.packagesAndBuild": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "パッケージとビルド"
+    },
+    "scribe.report.repositoryHealth.sourceRow.resourceDetections": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "リソース検出"
+    },
+    "scribe.report.repositoryHealth.sourceRow.sondePerformance": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Sonde パフォーマンス"
+    },
+    "scribe.report.repositoryHealth.sourceRow.source": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "ソース"
+    },
+    "scribe.report.repositoryHealth.sourceSnippet.summary": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "引用源は，チェックアウトからの具体的なスキーマ，パッケージ，ビルド，またはコード証拠に対して報告をアンカーする。"
+    },
+    "scribe.report.scope": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "リポジトリ健全性解析"
+    },
+    "scribe.report.sources.changes": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "変更内容"
+    },
+    "scribe.report.sources.citations": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "出典"
+    },
+    "scribe.report.sources.disclosure": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "開示"
+    },
+    "scribe.report.sources.heading": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "出典と帰属"
+    },
+    "scribe.report.sources.license": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "ライセンス"
+    },
+    "scribe.report.sources.source": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "ソース"
+    },
+    "scribe.report.term.ai-guardrails.alias": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "AIコードガバナンスレポート"
+    },
+    "scribe.report.term.ai-guardrails.primary": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "AIガードレール"
+    },
+    "scribe.report.theme.daylight": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Daylight"
+    },
+    "scribe.report.theme.highContrast": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "高コントラスト"
+    },
+    "scribe.report.theme.infrared": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "赤外線"
+    },
+    "scribe.report.theme.ultraviolet": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "紫外線"
+    },
+    "scribe.report.title": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Scribe AI ガードレールレポート"
+    },
+    "scribe.report.view.auditor": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "監査担当"
+    },
+    "scribe.report.view.developer": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "開発者"
+    },
+    "scribe.report.view.executive": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "エグゼクティブ"
+    },
+    "scribe.report.visualization.emptyState": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "この検出結果に対してビジュアライゼーションアーティファクトは生成されませんでした。"
+    },
+    "settings.theme.daylight": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Daylight"
+    },
+    "settings.theme.hc": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "ハイコントラスト"
+    },
+    "settings.theme.infrared": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "赤外線"
+    },
+    "settings.theme.ultraviolet": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "紫外線"
+    }
+  }
+}
+;

@@ -1,6 +1,39 @@
 window.__SCRIBE_VISUALIZATIONS__ = [
   {
     "altText": {
+      "catalogDependency": {
+        "explicitLocales": [],
+        "lookupLocales": [
+          "en-US",
+          "en-GB",
+          "en-CA",
+          "fr-CA",
+          "en-IN",
+          "cy-GB",
+          "gd-GB",
+          "ga-GB",
+          "es-US",
+          "es-MX",
+          "de-DE",
+          "fr-FR",
+          "es-ES",
+          "it-IT",
+          "nl-NL",
+          "pl-PL",
+          "pt-PT",
+          "pt-BR",
+          "ro-RO",
+          "sv-SE",
+          "ko-KR",
+          "zh-CN",
+          "ja-JP",
+          "hi-IN"
+        ],
+        "reportFallbacks": {
+          "ja-JP": "6336 個のソースファイル、7 個の言語、120 個のパッケージマニフェスト、210 個のビルド設定、7 個のリソース検出、604 個のデータベーススキーマ成果物を示すリポジトリ健全性ソースデータ。"
+        },
+        "sourceLocale": "en-US"
+      },
       "defaultLocale": "en-US",
       "defaultText": "Repository health source data showing {sourceFileCount, number} source files, {languageCount, number} languages, {packageManifestCount, number} package manifests, {buildConfigCount, number} build configs, {frameworkDetectionCount, number} resource detections, and {databaseSchemaCount, number} database schema artifacts.",
       "icuArgs": {
@@ -9,7 +42,7 @@ window.__SCRIBE_VISUALIZATIONS__ = [
         "frameworkDetectionCount": 7,
         "languageCount": 7,
         "packageManifestCount": 120,
-        "sourceFileCount": 6335
+        "sourceFileCount": 6336
       },
       "msgid": "scribe.report.repositoryHealth.visualization.alt",
       "provenance": "template",
@@ -28,6 +61,39 @@ window.__SCRIBE_VISUALIZATIONS__ = [
       "table"
     ],
     "label": {
+      "catalogDependency": {
+        "explicitLocales": [],
+        "lookupLocales": [
+          "en-US",
+          "en-GB",
+          "en-CA",
+          "fr-CA",
+          "en-IN",
+          "cy-GB",
+          "gd-GB",
+          "ga-GB",
+          "es-US",
+          "es-MX",
+          "de-DE",
+          "fr-FR",
+          "es-ES",
+          "it-IT",
+          "nl-NL",
+          "pl-PL",
+          "pt-PT",
+          "pt-BR",
+          "ro-RO",
+          "sv-SE",
+          "ko-KR",
+          "zh-CN",
+          "ja-JP",
+          "hi-IN"
+        ],
+        "reportFallbacks": {
+          "ja-JP": "ソースデータ"
+        },
+        "sourceLocale": "en-US"
+      },
       "defaultLocale": "en-US",
       "defaultText": "Source data",
       "icuArgs": {},
@@ -43,6 +109,39 @@ window.__SCRIBE_VISUALIZATIONS__ = [
       }
     },
     "longDescription": {
+      "catalogDependency": {
+        "explicitLocales": [],
+        "lookupLocales": [
+          "en-US",
+          "en-GB",
+          "en-CA",
+          "fr-CA",
+          "en-IN",
+          "cy-GB",
+          "gd-GB",
+          "ga-GB",
+          "es-US",
+          "es-MX",
+          "de-DE",
+          "fr-FR",
+          "es-ES",
+          "it-IT",
+          "nl-NL",
+          "pl-PL",
+          "pt-PT",
+          "pt-BR",
+          "ro-RO",
+          "sv-SE",
+          "ko-KR",
+          "zh-CN",
+          "ja-JP",
+          "hi-IN"
+        ],
+        "reportFallbacks": {
+          "ja-JP": "この可視化は calcom/cal.com から収集したリポジトリ健全性入力を要約します。101 個のデータエンティティ、255 個の API エンドポイント、28 個のメッセージチャネル、822 個の設定キーがあります。"
+        },
+        "sourceLocale": "en-US"
+      },
       "defaultLocale": "en-US",
       "defaultText": "The source data summarizes repository health inputs collected from {repositoryLabel}: {languages, list}, {frameworkText}, {dataEntityCount, number} data entities, {apiEndpointCount, number} API endpoints ({endpointTypeText}), {messageChannelCount, number} message channels, {configKeyCount, number} config keys, and {cicdText}.",
       "icuArgs": {
@@ -82,6 +181,37 @@ window.__SCRIBE_VISUALIZATIONS__ = [
     "projection": "treemap",
     "projectionLabel": "Source data",
     "projectionLabelText": {
+      "catalogDependency": {
+        "explicitLocales": [],
+        "lookupLocales": [
+          "en-US",
+          "en-GB",
+          "en-CA",
+          "fr-CA",
+          "en-IN",
+          "cy-GB",
+          "gd-GB",
+          "ga-GB",
+          "es-US",
+          "es-MX",
+          "de-DE",
+          "fr-FR",
+          "es-ES",
+          "it-IT",
+          "nl-NL",
+          "pl-PL",
+          "pt-PT",
+          "pt-BR",
+          "ro-RO",
+          "sv-SE",
+          "ko-KR",
+          "zh-CN",
+          "ja-JP",
+          "hi-IN"
+        ],
+        "reportFallbacks": {},
+        "sourceLocale": "en-US"
+      },
       "defaultLocale": "en-US",
       "defaultText": "Source data",
       "icuArgs": {},
@@ -106,6 +236,37 @@ window.__SCRIBE_VISUALIZATIONS__ = [
       {
         "label": "Source",
         "labelText": {
+          "catalogDependency": {
+            "explicitLocales": [],
+            "lookupLocales": [
+              "en-US",
+              "en-GB",
+              "en-CA",
+              "fr-CA",
+              "en-IN",
+              "cy-GB",
+              "gd-GB",
+              "ga-GB",
+              "es-US",
+              "es-MX",
+              "de-DE",
+              "fr-FR",
+              "es-ES",
+              "it-IT",
+              "nl-NL",
+              "pl-PL",
+              "pt-PT",
+              "pt-BR",
+              "ro-RO",
+              "sv-SE",
+              "ko-KR",
+              "zh-CN",
+              "ja-JP",
+              "hi-IN"
+            ],
+            "reportFallbacks": {},
+            "sourceLocale": "en-US"
+          },
           "defaultLocale": "en-US",
           "defaultText": "Source",
           "icuArgs": {},
@@ -120,11 +281,42 @@ window.__SCRIBE_VISUALIZATIONS__ = [
             }
           }
         },
-        "value": "Files: 6335 · LOC: 260522 · Classes: 1255 · Types: 2436 · Interfaces: 768"
+        "value": "Files: 6336 · LOC: 260591 · Classes: 1286 · Types: 2436 · Interfaces: 768"
       },
       {
         "label": "Languages",
         "labelText": {
+          "catalogDependency": {
+            "explicitLocales": [],
+            "lookupLocales": [
+              "en-US",
+              "en-GB",
+              "en-CA",
+              "fr-CA",
+              "en-IN",
+              "cy-GB",
+              "gd-GB",
+              "ga-GB",
+              "es-US",
+              "es-MX",
+              "de-DE",
+              "fr-FR",
+              "es-ES",
+              "it-IT",
+              "nl-NL",
+              "pl-PL",
+              "pt-PT",
+              "pt-BR",
+              "ro-RO",
+              "sv-SE",
+              "ko-KR",
+              "zh-CN",
+              "ja-JP",
+              "hi-IN"
+            ],
+            "reportFallbacks": {},
+            "sourceLocale": "en-US"
+          },
           "defaultLocale": "en-US",
           "defaultText": "Languages",
           "icuArgs": {},
@@ -144,6 +336,37 @@ window.__SCRIBE_VISUALIZATIONS__ = [
       {
         "label": "Frameworks",
         "labelText": {
+          "catalogDependency": {
+            "explicitLocales": [],
+            "lookupLocales": [
+              "en-US",
+              "en-GB",
+              "en-CA",
+              "fr-CA",
+              "en-IN",
+              "cy-GB",
+              "gd-GB",
+              "ga-GB",
+              "es-US",
+              "es-MX",
+              "de-DE",
+              "fr-FR",
+              "es-ES",
+              "it-IT",
+              "nl-NL",
+              "pl-PL",
+              "pt-PT",
+              "pt-BR",
+              "ro-RO",
+              "sv-SE",
+              "ko-KR",
+              "zh-CN",
+              "ja-JP",
+              "hi-IN"
+            ],
+            "reportFallbacks": {},
+            "sourceLocale": "en-US"
+          },
           "defaultLocale": "en-US",
           "defaultText": "Frameworks",
           "icuArgs": {},
@@ -163,6 +386,37 @@ window.__SCRIBE_VISUALIZATIONS__ = [
       {
         "label": "Packages and build",
         "labelText": {
+          "catalogDependency": {
+            "explicitLocales": [],
+            "lookupLocales": [
+              "en-US",
+              "en-GB",
+              "en-CA",
+              "fr-CA",
+              "en-IN",
+              "cy-GB",
+              "gd-GB",
+              "ga-GB",
+              "es-US",
+              "es-MX",
+              "de-DE",
+              "fr-FR",
+              "es-ES",
+              "it-IT",
+              "nl-NL",
+              "pl-PL",
+              "pt-PT",
+              "pt-BR",
+              "ro-RO",
+              "sv-SE",
+              "ko-KR",
+              "zh-CN",
+              "ja-JP",
+              "hi-IN"
+            ],
+            "reportFallbacks": {},
+            "sourceLocale": "en-US"
+          },
           "defaultLocale": "en-US",
           "defaultText": "Packages and build",
           "icuArgs": {},
@@ -182,6 +436,37 @@ window.__SCRIBE_VISUALIZATIONS__ = [
       {
         "label": "CI/CD",
         "labelText": {
+          "catalogDependency": {
+            "explicitLocales": [],
+            "lookupLocales": [
+              "en-US",
+              "en-GB",
+              "en-CA",
+              "fr-CA",
+              "en-IN",
+              "cy-GB",
+              "gd-GB",
+              "ga-GB",
+              "es-US",
+              "es-MX",
+              "de-DE",
+              "fr-FR",
+              "es-ES",
+              "it-IT",
+              "nl-NL",
+              "pl-PL",
+              "pt-PT",
+              "pt-BR",
+              "ro-RO",
+              "sv-SE",
+              "ko-KR",
+              "zh-CN",
+              "ja-JP",
+              "hi-IN"
+            ],
+            "reportFallbacks": {},
+            "sourceLocale": "en-US"
+          },
           "defaultLocale": "en-US",
           "defaultText": "CI/CD",
           "icuArgs": {},
@@ -201,6 +486,37 @@ window.__SCRIBE_VISUALIZATIONS__ = [
       {
         "label": "Resource detections",
         "labelText": {
+          "catalogDependency": {
+            "explicitLocales": [],
+            "lookupLocales": [
+              "en-US",
+              "en-GB",
+              "en-CA",
+              "fr-CA",
+              "en-IN",
+              "cy-GB",
+              "gd-GB",
+              "ga-GB",
+              "es-US",
+              "es-MX",
+              "de-DE",
+              "fr-FR",
+              "es-ES",
+              "it-IT",
+              "nl-NL",
+              "pl-PL",
+              "pt-PT",
+              "pt-BR",
+              "ro-RO",
+              "sv-SE",
+              "ko-KR",
+              "zh-CN",
+              "ja-JP",
+              "hi-IN"
+            ],
+            "reportFallbacks": {},
+            "sourceLocale": "en-US"
+          },
           "defaultLocale": "en-US",
           "defaultText": "Resource detections",
           "icuArgs": {},
@@ -220,6 +536,37 @@ window.__SCRIBE_VISUALIZATIONS__ = [
       {
         "label": "Database model",
         "labelText": {
+          "catalogDependency": {
+            "explicitLocales": [],
+            "lookupLocales": [
+              "en-US",
+              "en-GB",
+              "en-CA",
+              "fr-CA",
+              "en-IN",
+              "cy-GB",
+              "gd-GB",
+              "ga-GB",
+              "es-US",
+              "es-MX",
+              "de-DE",
+              "fr-FR",
+              "es-ES",
+              "it-IT",
+              "nl-NL",
+              "pl-PL",
+              "pt-PT",
+              "pt-BR",
+              "ro-RO",
+              "sv-SE",
+              "ko-KR",
+              "zh-CN",
+              "ja-JP",
+              "hi-IN"
+            ],
+            "reportFallbacks": {},
+            "sourceLocale": "en-US"
+          },
           "defaultLocale": "en-US",
           "defaultText": "Database model",
           "icuArgs": {},
@@ -239,6 +586,37 @@ window.__SCRIBE_VISUALIZATIONS__ = [
       {
         "label": "API endpoints",
         "labelText": {
+          "catalogDependency": {
+            "explicitLocales": [],
+            "lookupLocales": [
+              "en-US",
+              "en-GB",
+              "en-CA",
+              "fr-CA",
+              "en-IN",
+              "cy-GB",
+              "gd-GB",
+              "ga-GB",
+              "es-US",
+              "es-MX",
+              "de-DE",
+              "fr-FR",
+              "es-ES",
+              "it-IT",
+              "nl-NL",
+              "pl-PL",
+              "pt-PT",
+              "pt-BR",
+              "ro-RO",
+              "sv-SE",
+              "ko-KR",
+              "zh-CN",
+              "ja-JP",
+              "hi-IN"
+            ],
+            "reportFallbacks": {},
+            "sourceLocale": "en-US"
+          },
           "defaultLocale": "en-US",
           "defaultText": "API endpoints",
           "icuArgs": {},
@@ -258,6 +636,37 @@ window.__SCRIBE_VISUALIZATIONS__ = [
       {
         "label": "Other runtime surfaces",
         "labelText": {
+          "catalogDependency": {
+            "explicitLocales": [],
+            "lookupLocales": [
+              "en-US",
+              "en-GB",
+              "en-CA",
+              "fr-CA",
+              "en-IN",
+              "cy-GB",
+              "gd-GB",
+              "ga-GB",
+              "es-US",
+              "es-MX",
+              "de-DE",
+              "fr-FR",
+              "es-ES",
+              "it-IT",
+              "nl-NL",
+              "pl-PL",
+              "pt-PT",
+              "pt-BR",
+              "ro-RO",
+              "sv-SE",
+              "ko-KR",
+              "zh-CN",
+              "ja-JP",
+              "hi-IN"
+            ],
+            "reportFallbacks": {},
+            "sourceLocale": "en-US"
+          },
           "defaultLocale": "en-US",
           "defaultText": "Other runtime surfaces",
           "icuArgs": {},
@@ -277,6 +686,37 @@ window.__SCRIBE_VISUALIZATIONS__ = [
       {
         "label": "Sonde Performance",
         "labelText": {
+          "catalogDependency": {
+            "explicitLocales": [],
+            "lookupLocales": [
+              "en-US",
+              "en-GB",
+              "en-CA",
+              "fr-CA",
+              "en-IN",
+              "cy-GB",
+              "gd-GB",
+              "ga-GB",
+              "es-US",
+              "es-MX",
+              "de-DE",
+              "fr-FR",
+              "es-ES",
+              "it-IT",
+              "nl-NL",
+              "pl-PL",
+              "pt-PT",
+              "pt-BR",
+              "ro-RO",
+              "sv-SE",
+              "ko-KR",
+              "zh-CN",
+              "ja-JP",
+              "hi-IN"
+            ],
+            "reportFallbacks": {},
+            "sourceLocale": "en-US"
+          },
           "defaultLocale": "en-US",
           "defaultText": "Sonde Performance",
           "icuArgs": {},
@@ -291,7 +731,7 @@ window.__SCRIBE_VISUALIZATIONS__ = [
             }
           }
         },
-        "value": "Analysis: 6335 files · Payload: 89.8 MB"
+        "value": "Analysis: 6336 files · Payload: 91.2 MB"
       }
     ],
     "visualizationId": "visualization-repository-health"

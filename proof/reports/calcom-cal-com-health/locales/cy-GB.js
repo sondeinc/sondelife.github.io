@@ -206,7 +206,7 @@ window.__SCRIBE_LOCALES__["cy-GB"] = {
     "scribe.report.asset.overviewScreenshot.caption": {
       "fallback": false,
       "reviewed": true,
-      "text": "Copïwyd o'r un darlunwr tystiolaeth annotedig a ddefnyddir gan y dudalen cydymffurfio sonde.life gyhoeddus."
+      "text": "Copïwyd o'r un darlunwr tystiolaeth annotedig a ddefnyddir gan y dudalen cydymffurfio sonde.tech gyhoeddus."
     },
     "scribe.report.asset.theme.daylight": {
       "fallback": false,

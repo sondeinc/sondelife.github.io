@@ -206,7 +206,7 @@ window.__SCRIBE_LOCALES__["zh-CN"] = {
     "scribe.report.asset.overviewScreenshot.caption": {
       "fallback": false,
       "reviewed": true,
-      "text": "从公共 sonde.life 合规性页面中使用的相同的注释证据渲染器中复制。"
+      "text": "从公共 sonde.tech 合规性页面中使用的相同的注释证据渲染器中复制。"
     },
     "scribe.report.asset.theme.daylight": {
       "fallback": false,

@@ -136,7 +136,7 @@ window.__SCRIBE_LOCALES__["ga-GB"] = {
     "scribe.report.asset.overviewScreenshot.caption": {
       "fallback": false,
       "reviewed": true,
-      "text": "Cóipeáilte ón rindreálaí fianaise anótáilte céanna a úsáidtear ag an leathanach comhlíonta sonde.life poiblí."
+      "text": "Cóipeáilte ón rindreálaí fianaise anótáilte céanna a úsáidtear ag an leathanach comhlíonta sonde.tech poiblí."
     },
     "scribe.report.asset.theme.daylight": {
       "fallback": false,

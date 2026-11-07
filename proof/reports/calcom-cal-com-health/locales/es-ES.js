@@ -206,7 +206,7 @@ window.__SCRIBE_LOCALES__["es-ES"] = {
     "scribe.report.asset.overviewScreenshot.caption": {
       "fallback": false,
       "reviewed": true,
-      "text": "Copiado del mismo procesador de evidencia anotada utilizado por la página pública de cumplimiento de sonde.life."
+      "text": "Copiado del mismo procesador de evidencia anotada utilizado por la página pública de cumplimiento de sonde.tech."
     },
     "scribe.report.asset.theme.daylight": {
       "fallback": false,

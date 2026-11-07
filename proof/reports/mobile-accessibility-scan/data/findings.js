@@ -34,34 +34,9 @@ window.__SCRIBE_FINDINGS__ = [
       "catalogDependency": {
         "explicitLocales": [],
         "lookupLocales": [
-          "en-US",
-          "en-GB",
-          "en-CA",
-          "fr-CA",
-          "en-IN",
-          "cy-GB",
-          "gd-GB",
-          "ga-GB",
-          "es-US",
-          "es-MX",
-          "de-DE",
-          "fr-FR",
-          "es-ES",
-          "it-IT",
-          "nl-NL",
-          "pl-PL",
-          "pt-PT",
-          "pt-BR",
-          "ro-RO",
-          "sv-SE",
-          "ko-KR",
-          "zh-CN",
-          "ja-JP",
-          "hi-IN"
+          "en-US"
         ],
-        "reportFallbacks": {
-          "ja-JP": "UIKit 変換が実行される前に、製品固有の .accessibilityLabel(...) 修飾子を追加するか、装飾画像として .accessibilityHidden(true) を設定します。"
-        },
+        "reportFallbacks": {},
         "sourceLocale": "en-US"
       },
       "defaultLocale": "en-US",
@@ -87,34 +62,9 @@ window.__SCRIBE_FINDINGS__ = [
       "catalogDependency": {
         "explicitLocales": [],
         "lookupLocales": [
-          "en-US",
-          "en-GB",
-          "en-CA",
-          "fr-CA",
-          "en-IN",
-          "cy-GB",
-          "gd-GB",
-          "ga-GB",
-          "es-US",
-          "es-MX",
-          "de-DE",
-          "fr-FR",
-          "es-ES",
-          "it-IT",
-          "nl-NL",
-          "pl-PL",
-          "pt-PT",
-          "pt-BR",
-          "ro-RO",
-          "sv-SE",
-          "ko-KR",
-          "zh-CN",
-          "ja-JP",
-          "hi-IN"
+          "en-US"
         ],
-        "reportFallbacks": {
-          "ja-JP": "SwiftUI の Image はプロフィールアラート行で意味のあるコンテンツとして描画されますが、accessibilityLabel を公開していません。VoiceOver は何も読み上げず、UIKit 変換もその欠落を引き継ぎます。"
-        },
+        "reportFallbacks": {},
         "sourceLocale": "en-US"
       },
       "defaultLocale": "en-US",
@@ -135,34 +85,9 @@ window.__SCRIBE_FINDINGS__ = [
       "catalogDependency": {
         "explicitLocales": [],
         "lookupLocales": [
-          "en-US",
-          "en-GB",
-          "en-CA",
-          "fr-CA",
-          "en-IN",
-          "cy-GB",
-          "gd-GB",
-          "ga-GB",
-          "es-US",
-          "es-MX",
-          "de-DE",
-          "fr-FR",
-          "es-ES",
-          "it-IT",
-          "nl-NL",
-          "pl-PL",
-          "pt-PT",
-          "pt-BR",
-          "ro-RO",
-          "sv-SE",
-          "ko-KR",
-          "zh-CN",
-          "ja-JP",
-          "hi-IN"
+          "en-US"
         ],
-        "reportFallbacks": {
-          "ja-JP": "SwiftUI 画像にアクセシブル名がありません"
-        },
+        "reportFallbacks": {},
         "sourceLocale": "en-US"
       },
       "defaultLocale": "en-US",
@@ -215,34 +140,9 @@ window.__SCRIBE_FINDINGS__ = [
       "catalogDependency": {
         "explicitLocales": [],
         "lookupLocales": [
-          "en-US",
-          "en-GB",
-          "en-CA",
-          "fr-CA",
-          "en-IN",
-          "cy-GB",
-          "gd-GB",
-          "ga-GB",
-          "es-US",
-          "es-MX",
-          "de-DE",
-          "fr-FR",
-          "es-ES",
-          "it-IT",
-          "nl-NL",
-          "pl-PL",
-          "pt-PT",
-          "pt-BR",
-          "ro-RO",
-          "sv-SE",
-          "ko-KR",
-          "zh-CN",
-          "ja-JP",
-          "hi-IN"
+          "en-US"
         ],
-        "reportFallbacks": {
-          "ja-JP": "説明的な Compose semantics の contentDescription を追加するか、アイコンのみの操作をラベル付きコントロールに置き換えてから、ローカル実行時ハンドオフを再実行します。"
-        },
+        "reportFallbacks": {},
         "sourceLocale": "en-US"
       },
       "defaultLocale": "en-US",
@@ -268,34 +168,9 @@ window.__SCRIBE_FINDINGS__ = [
       "catalogDependency": {
         "explicitLocales": [],
         "lookupLocales": [
-          "en-US",
-          "en-GB",
-          "en-CA",
-          "fr-CA",
-          "en-IN",
-          "cy-GB",
-          "gd-GB",
-          "ga-GB",
-          "es-US",
-          "es-MX",
-          "de-DE",
-          "fr-FR",
-          "es-ES",
-          "it-IT",
-          "nl-NL",
-          "pl-PL",
-          "pt-PT",
-          "pt-BR",
-          "ro-RO",
-          "sv-SE",
-          "ko-KR",
-          "zh-CN",
-          "ja-JP",
-          "hi-IN"
+          "en-US"
         ],
-        "reportFallbacks": {
-          "ja-JP": "ローカル実行時のアクセシビリティツリーでは、cockpit-mobile のシードアイコン操作が、耐久性のあるアクセシブル名ではなく記号名として公開されています。"
-        },
+        "reportFallbacks": {},
         "sourceLocale": "en-US"
       },
       "defaultLocale": "en-US",
@@ -316,34 +191,9 @@ window.__SCRIBE_FINDINGS__ = [
       "catalogDependency": {
         "explicitLocales": [],
         "lookupLocales": [
-          "en-US",
-          "en-GB",
-          "en-CA",
-          "fr-CA",
-          "en-IN",
-          "cy-GB",
-          "gd-GB",
-          "ga-GB",
-          "es-US",
-          "es-MX",
-          "de-DE",
-          "fr-FR",
-          "es-ES",
-          "it-IT",
-          "nl-NL",
-          "pl-PL",
-          "pt-PT",
-          "pt-BR",
-          "ro-RO",
-          "sv-SE",
-          "ko-KR",
-          "zh-CN",
-          "ja-JP",
-          "hi-IN"
+          "en-US"
         ],
-        "reportFallbacks": {
-          "ja-JP": "実行時スキャンが記号だけのアクセシブル名を検出"
-        },
+        "reportFallbacks": {},
         "sourceLocale": "en-US"
       },
       "defaultLocale": "en-US",
@@ -396,34 +246,9 @@ window.__SCRIBE_FINDINGS__ = [
       "catalogDependency": {
         "explicitLocales": [],
         "lookupLocales": [
-          "en-US",
-          "en-GB",
-          "en-CA",
-          "fr-CA",
-          "en-IN",
-          "cy-GB",
-          "gd-GB",
-          "ga-GB",
-          "es-US",
-          "es-MX",
-          "de-DE",
-          "fr-FR",
-          "es-ES",
-          "it-IT",
-          "nl-NL",
-          "pl-PL",
-          "pt-PT",
-          "pt-BR",
-          "ro-RO",
-          "sv-SE",
-          "ko-KR",
-          "zh-CN",
-          "ja-JP",
-          "hi-IN"
+          "en-US"
         ],
-        "reportFallbacks": {
-          "ja-JP": "説明的な Compose semantics の contentDescription を追加するか、アイコンのみの操作をラベル付きコントロールに置き換えてから、ローカル実行時ハンドオフを再実行します。"
-        },
+        "reportFallbacks": {},
         "sourceLocale": "en-US"
       },
       "defaultLocale": "en-US",
@@ -449,34 +274,9 @@ window.__SCRIBE_FINDINGS__ = [
       "catalogDependency": {
         "explicitLocales": [],
         "lookupLocales": [
-          "en-US",
-          "en-GB",
-          "en-CA",
-          "fr-CA",
-          "en-IN",
-          "cy-GB",
-          "gd-GB",
-          "ga-GB",
-          "es-US",
-          "es-MX",
-          "de-DE",
-          "fr-FR",
-          "es-ES",
-          "it-IT",
-          "nl-NL",
-          "pl-PL",
-          "pt-PT",
-          "pt-BR",
-          "ro-RO",
-          "sv-SE",
-          "ko-KR",
-          "zh-CN",
-          "ja-JP",
-          "hi-IN"
+          "en-US"
         ],
-        "reportFallbacks": {
-          "ja-JP": "ローカル実行時のアクセシビリティツリーでは、cockpit-mobile のシードアイコン操作が、耐久性のあるアクセシブル名ではなく記号名として公開されています。"
-        },
+        "reportFallbacks": {},
         "sourceLocale": "en-US"
       },
       "defaultLocale": "en-US",
@@ -497,34 +297,9 @@ window.__SCRIBE_FINDINGS__ = [
       "catalogDependency": {
         "explicitLocales": [],
         "lookupLocales": [
-          "en-US",
-          "en-GB",
-          "en-CA",
-          "fr-CA",
-          "en-IN",
-          "cy-GB",
-          "gd-GB",
-          "ga-GB",
-          "es-US",
-          "es-MX",
-          "de-DE",
-          "fr-FR",
-          "es-ES",
-          "it-IT",
-          "nl-NL",
-          "pl-PL",
-          "pt-PT",
-          "pt-BR",
-          "ro-RO",
-          "sv-SE",
-          "ko-KR",
-          "zh-CN",
-          "ja-JP",
-          "hi-IN"
+          "en-US"
         ],
-        "reportFallbacks": {
-          "ja-JP": "実行時スキャンが記号だけのアクセシブル名を検出"
-        },
+        "reportFallbacks": {},
         "sourceLocale": "en-US"
       },
       "defaultLocale": "en-US",
@@ -577,34 +352,9 @@ window.__SCRIBE_FINDINGS__ = [
       "catalogDependency": {
         "explicitLocales": [],
         "lookupLocales": [
-          "en-US",
-          "en-GB",
-          "en-CA",
-          "fr-CA",
-          "en-IN",
-          "cy-GB",
-          "gd-GB",
-          "ga-GB",
-          "es-US",
-          "es-MX",
-          "de-DE",
-          "fr-FR",
-          "es-ES",
-          "it-IT",
-          "nl-NL",
-          "pl-PL",
-          "pt-PT",
-          "pt-BR",
-          "ro-RO",
-          "sv-SE",
-          "ko-KR",
-          "zh-CN",
-          "ja-JP",
-          "hi-IN"
+          "en-US"
         ],
-        "reportFallbacks": {
-          "ja-JP": "グループ化された検出事項の密度を保ちながら、フィルターコントロールのヒット領域を少なくとも 48dp に広げます。"
-        },
+        "reportFallbacks": {},
         "sourceLocale": "en-US"
       },
       "defaultLocale": "en-US",
@@ -630,34 +380,9 @@ window.__SCRIBE_FINDINGS__ = [
       "catalogDependency": {
         "explicitLocales": [],
         "lookupLocales": [
-          "en-US",
-          "en-GB",
-          "en-CA",
-          "fr-CA",
-          "en-IN",
-          "cy-GB",
-          "gd-GB",
-          "ga-GB",
-          "es-US",
-          "es-MX",
-          "de-DE",
-          "fr-FR",
-          "es-ES",
-          "it-IT",
-          "nl-NL",
-          "pl-PL",
-          "pt-PT",
-          "pt-BR",
-          "ro-RO",
-          "sv-SE",
-          "ko-KR",
-          "zh-CN",
-          "ja-JP",
-          "hi-IN"
+          "en-US"
         ],
-        "reportFallbacks": {
-          "ja-JP": "実際の cockpit-mobile Findings 画面では、コンパクトな 32dp のフィルターコントロールが Android の最小ターゲットサイズ 48dp を下回って描画されます。運動機能に制約があるタッチ利用者は、このコントロールを押し損ねる可能性があります。"
-        },
+        "reportFallbacks": {},
         "sourceLocale": "en-US"
       },
       "defaultLocale": "en-US",
@@ -678,34 +403,9 @@ window.__SCRIBE_FINDINGS__ = [
       "catalogDependency": {
         "explicitLocales": [],
         "lookupLocales": [
-          "en-US",
-          "en-GB",
-          "en-CA",
-          "fr-CA",
-          "en-IN",
-          "cy-GB",
-          "gd-GB",
-          "ga-GB",
-          "es-US",
-          "es-MX",
-          "de-DE",
-          "fr-FR",
-          "es-ES",
-          "it-IT",
-          "nl-NL",
-          "pl-PL",
-          "pt-PT",
-          "pt-BR",
-          "ro-RO",
-          "sv-SE",
-          "ko-KR",
-          "zh-CN",
-          "ja-JP",
-          "hi-IN"
+          "en-US"
         ],
-        "reportFallbacks": {
-          "ja-JP": "フィルターコントロールのターゲットが Android の最小値を下回っています"
-        },
+        "reportFallbacks": {},
         "sourceLocale": "en-US"
       },
       "defaultLocale": "en-US",
@@ -758,34 +458,9 @@ window.__SCRIBE_FINDINGS__ = [
       "catalogDependency": {
         "explicitLocales": [],
         "lookupLocales": [
-          "en-US",
-          "en-GB",
-          "en-CA",
-          "fr-CA",
-          "en-IN",
-          "cy-GB",
-          "gd-GB",
-          "ga-GB",
-          "es-US",
-          "es-MX",
-          "de-DE",
-          "fr-FR",
-          "es-ES",
-          "it-IT",
-          "nl-NL",
-          "pl-PL",
-          "pt-PT",
-          "pt-BR",
-          "ro-RO",
-          "sv-SE",
-          "ko-KR",
-          "zh-CN",
-          "ja-JP",
-          "hi-IN"
+          "en-US"
         ],
-        "reportFallbacks": {
-          "ja-JP": "見出しが切り詰められるのではなくリフローするように、見出しテキストの折り返しと間隔をトークン駆動のまま保ちます。"
-        },
+        "reportFallbacks": {},
         "sourceLocale": "en-US"
       },
       "defaultLocale": "en-US",
@@ -811,34 +486,9 @@ window.__SCRIBE_FINDINGS__ = [
       "catalogDependency": {
         "explicitLocales": [],
         "lookupLocales": [
-          "en-US",
-          "en-GB",
-          "en-CA",
-          "fr-CA",
-          "en-IN",
-          "cy-GB",
-          "gd-GB",
-          "ga-GB",
-          "es-US",
-          "es-MX",
-          "de-DE",
-          "fr-FR",
-          "es-ES",
-          "it-IT",
-          "nl-NL",
-          "pl-PL",
-          "pt-PT",
-          "pt-BR",
-          "ro-RO",
-          "sv-SE",
-          "ko-KR",
-          "zh-CN",
-          "ja-JP",
-          "hi-IN"
+          "en-US"
         ],
-        "reportFallbacks": {
-          "ja-JP": "シミュレータで使用した iOS 実行時テキストスケールでは、Findings グループ見出しが完全なラベルを表示する前に切り詰められます。大きなテキストを使用する読者はセクションの文脈を失います。"
-        },
+        "reportFallbacks": {},
         "sourceLocale": "en-US"
       },
       "defaultLocale": "en-US",
@@ -859,34 +509,9 @@ window.__SCRIBE_FINDINGS__ = [
       "catalogDependency": {
         "explicitLocales": [],
         "lookupLocales": [
-          "en-US",
-          "en-GB",
-          "en-CA",
-          "fr-CA",
-          "en-IN",
-          "cy-GB",
-          "gd-GB",
-          "ga-GB",
-          "es-US",
-          "es-MX",
-          "de-DE",
-          "fr-FR",
-          "es-ES",
-          "it-IT",
-          "nl-NL",
-          "pl-PL",
-          "pt-PT",
-          "pt-BR",
-          "ro-RO",
-          "sv-SE",
-          "ko-KR",
-          "zh-CN",
-          "ja-JP",
-          "hi-IN"
+          "en-US"
         ],
-        "reportFallbacks": {
-          "ja-JP": "iOS Dynamic Type で検出グループ見出しが途中で切れる可能性があります"
-        },
+        "reportFallbacks": {},
         "sourceLocale": "en-US"
       },
       "defaultLocale": "en-US",
@@ -939,34 +564,9 @@ window.__SCRIBE_FINDINGS__ = [
       "catalogDependency": {
         "explicitLocales": [],
         "lookupLocales": [
-          "en-US",
-          "en-GB",
-          "en-CA",
-          "fr-CA",
-          "en-IN",
-          "cy-GB",
-          "gd-GB",
-          "ga-GB",
-          "es-US",
-          "es-MX",
-          "de-DE",
-          "fr-FR",
-          "es-ES",
-          "it-IT",
-          "nl-NL",
-          "pl-PL",
-          "pt-PT",
-          "pt-BR",
-          "ro-RO",
-          "sv-SE",
-          "ko-KR",
-          "zh-CN",
-          "ja-JP",
-          "hi-IN"
+          "en-US"
         ],
-        "reportFallbacks": {
-          "ja-JP": "描画される Android の色を、デザインシステムで定義されたブランドトークンに合わせます。"
-        },
+        "reportFallbacks": {},
         "sourceLocale": "en-US"
       },
       "defaultLocale": "en-US",
@@ -992,34 +592,9 @@ window.__SCRIBE_FINDINGS__ = [
       "catalogDependency": {
         "explicitLocales": [],
         "lookupLocales": [
-          "en-US",
-          "en-GB",
-          "en-CA",
-          "fr-CA",
-          "en-IN",
-          "cy-GB",
-          "gd-GB",
-          "ga-GB",
-          "es-US",
-          "es-MX",
-          "de-DE",
-          "fr-FR",
-          "es-ES",
-          "it-IT",
-          "nl-NL",
-          "pl-PL",
-          "pt-PT",
-          "pt-BR",
-          "ro-RO",
-          "sv-SE",
-          "ko-KR",
-          "zh-CN",
-          "ja-JP",
-          "hi-IN"
+          "en-US"
         ],
-        "reportFallbacks": {
-          "ja-JP": "Android で描画されたサマリーアクションのアクセント色が、ブランド基準とは異なる色で出荷されていました。クロスプラットフォームのブランドずれは単一プラットフォーム監査では見えませんが、両方の描画を横並びで比較すると明確です。"
-        },
+        "reportFallbacks": {},
         "sourceLocale": "en-US"
       },
       "defaultLocale": "en-US",
@@ -1040,34 +615,9 @@ window.__SCRIBE_FINDINGS__ = [
       "catalogDependency": {
         "explicitLocales": [],
         "lookupLocales": [
-          "en-US",
-          "en-GB",
-          "en-CA",
-          "fr-CA",
-          "en-IN",
-          "cy-GB",
-          "gd-GB",
-          "ga-GB",
-          "es-US",
-          "es-MX",
-          "de-DE",
-          "fr-FR",
-          "es-ES",
-          "it-IT",
-          "nl-NL",
-          "pl-PL",
-          "pt-PT",
-          "pt-BR",
-          "ro-RO",
-          "sv-SE",
-          "ko-KR",
-          "zh-CN",
-          "ja-JP",
-          "hi-IN"
+          "en-US"
         ],
-        "reportFallbacks": {
-          "ja-JP": "モバイルのブランド一貫性ギャップ（色のずれ）"
-        },
+        "reportFallbacks": {},
         "sourceLocale": "en-US"
       },
       "defaultLocale": "en-US",
@@ -1120,34 +670,9 @@ window.__SCRIBE_FINDINGS__ = [
       "catalogDependency": {
         "explicitLocales": [],
         "lookupLocales": [
-          "en-US",
-          "en-GB",
-          "en-CA",
-          "fr-CA",
-          "en-IN",
-          "cy-GB",
-          "gd-GB",
-          "ga-GB",
-          "es-US",
-          "es-MX",
-          "de-DE",
-          "fr-FR",
-          "es-ES",
-          "it-IT",
-          "nl-NL",
-          "pl-PL",
-          "pt-PT",
-          "pt-BR",
-          "ro-RO",
-          "sv-SE",
-          "ko-KR",
-          "zh-CN",
-          "ja-JP",
-          "hi-IN"
+          "en-US"
         ],
-        "reportFallbacks": {
-          "ja-JP": "SwiftUI 変換が実行される前に、UIKit 側で avatarImageView.accessibilityLabel に製品固有の文字列を設定します。"
-        },
+        "reportFallbacks": {},
         "sourceLocale": "en-US"
       },
       "defaultLocale": "en-US",
@@ -1173,34 +698,9 @@ window.__SCRIBE_FINDINGS__ = [
       "catalogDependency": {
         "explicitLocales": [],
         "lookupLocales": [
-          "en-US",
-          "en-GB",
-          "en-CA",
-          "fr-CA",
-          "en-IN",
-          "cy-GB",
-          "gd-GB",
-          "ga-GB",
-          "es-US",
-          "es-MX",
-          "de-DE",
-          "fr-FR",
-          "es-ES",
-          "it-IT",
-          "nl-NL",
-          "pl-PL",
-          "pt-PT",
-          "pt-BR",
-          "ro-RO",
-          "sv-SE",
-          "ko-KR",
-          "zh-CN",
-          "ja-JP",
-          "hi-IN"
+          "en-US"
         ],
-        "reportFallbacks": {
-          "ja-JP": "UIImageView は画像トレイトを持つアクセシビリティ要素として明示的にマークされていますが、accessibilityLabel がありません。そのため、SwiftUI Image 変換はラベルのない意味のある画像を引き継ぎます。"
-        },
+        "reportFallbacks": {},
         "sourceLocale": "en-US"
       },
       "defaultLocale": "en-US",
@@ -1221,34 +721,9 @@ window.__SCRIBE_FINDINGS__ = [
       "catalogDependency": {
         "explicitLocales": [],
         "lookupLocales": [
-          "en-US",
-          "en-GB",
-          "en-CA",
-          "fr-CA",
-          "en-IN",
-          "cy-GB",
-          "gd-GB",
-          "ga-GB",
-          "es-US",
-          "es-MX",
-          "de-DE",
-          "fr-FR",
-          "es-ES",
-          "it-IT",
-          "nl-NL",
-          "pl-PL",
-          "pt-PT",
-          "pt-BR",
-          "ro-RO",
-          "sv-SE",
-          "ko-KR",
-          "zh-CN",
-          "ja-JP",
-          "hi-IN"
+          "en-US"
         ],
-        "reportFallbacks": {
-          "ja-JP": "Objective-C UIKit 画像にアクセシブル名がありません"
-        },
+        "reportFallbacks": {},
         "sourceLocale": "en-US"
       },
       "defaultLocale": "en-US",
@@ -1301,34 +776,9 @@ window.__SCRIBE_FINDINGS__ = [
       "catalogDependency": {
         "explicitLocales": [],
         "lookupLocales": [
-          "en-US",
-          "en-GB",
-          "en-CA",
-          "fr-CA",
-          "en-IN",
-          "cy-GB",
-          "gd-GB",
-          "ga-GB",
-          "es-US",
-          "es-MX",
-          "de-DE",
-          "fr-FR",
-          "es-ES",
-          "it-IT",
-          "nl-NL",
-          "pl-PL",
-          "pt-PT",
-          "pt-BR",
-          "ro-RO",
-          "sv-SE",
-          "ko-KR",
-          "zh-CN",
-          "ja-JP",
-          "hi-IN"
+          "en-US"
         ],
-        "reportFallbacks": {
-          "ja-JP": "画面が英語以外の利用者に届く前に、ハードコードされた `accessibilityLabel` をローカライズ済み文字列の参照に置き換えます。"
-        },
+        "reportFallbacks": {},
         "sourceLocale": "en-US"
       },
       "defaultLocale": "en-US",
@@ -1354,34 +804,9 @@ window.__SCRIBE_FINDINGS__ = [
       "catalogDependency": {
         "explicitLocales": [],
         "lookupLocales": [
-          "en-US",
-          "en-GB",
-          "en-CA",
-          "fr-CA",
-          "en-IN",
-          "cy-GB",
-          "gd-GB",
-          "ga-GB",
-          "es-US",
-          "es-MX",
-          "de-DE",
-          "fr-FR",
-          "es-ES",
-          "it-IT",
-          "nl-NL",
-          "pl-PL",
-          "pt-PT",
-          "pt-BR",
-          "ro-RO",
-          "sv-SE",
-          "ko-KR",
-          "zh-CN",
-          "ja-JP",
-          "hi-IN"
+          "en-US"
         ],
-        "reportFallbacks": {
-          "ja-JP": "`<Text>` 要素は英語の `accessibilityLabel` をハードコードしたまま出荷されます。英語以外の利用者は、ロケールに関係なく英語の文字列をそのまま聞くことになります。"
-        },
+        "reportFallbacks": {},
         "sourceLocale": "en-US"
       },
       "defaultLocale": "en-US",
@@ -1402,34 +827,9 @@ window.__SCRIBE_FINDINGS__ = [
       "catalogDependency": {
         "explicitLocales": [],
         "lookupLocales": [
-          "en-US",
-          "en-GB",
-          "en-CA",
-          "fr-CA",
-          "en-IN",
-          "cy-GB",
-          "gd-GB",
-          "ga-GB",
-          "es-US",
-          "es-MX",
-          "de-DE",
-          "fr-FR",
-          "es-ES",
-          "it-IT",
-          "nl-NL",
-          "pl-PL",
-          "pt-PT",
-          "pt-BR",
-          "ro-RO",
-          "sv-SE",
-          "ko-KR",
-          "zh-CN",
-          "ja-JP",
-          "hi-IN"
+          "en-US"
         ],
-        "reportFallbacks": {
-          "ja-JP": "英語のアクセシビリティラベルがハードコードされています"
-        },
+        "reportFallbacks": {},
         "sourceLocale": "en-US"
       },
       "defaultLocale": "en-US",
@@ -1482,34 +882,9 @@ window.__SCRIBE_FINDINGS__ = [
       "catalogDependency": {
         "explicitLocales": [],
         "lookupLocales": [
-          "en-US",
-          "en-GB",
-          "en-CA",
-          "fr-CA",
-          "en-IN",
-          "cy-GB",
-          "gd-GB",
-          "ga-GB",
-          "es-US",
-          "es-MX",
-          "de-DE",
-          "fr-FR",
-          "es-ES",
-          "it-IT",
-          "nl-NL",
-          "pl-PL",
-          "pt-PT",
-          "pt-BR",
-          "ro-RO",
-          "sv-SE",
-          "ko-KR",
-          "zh-CN",
-          "ja-JP",
-          "hi-IN"
+          "en-US"
         ],
-        "reportFallbacks": {
-          "ja-JP": "情報を伝える画像には `alt=\"説明\"` を追加し、装飾画像には `alt=\"\"` を追加します。"
-        },
+        "reportFallbacks": {},
         "sourceLocale": "en-US"
       },
       "defaultLocale": "en-US",
@@ -1535,34 +910,9 @@ window.__SCRIBE_FINDINGS__ = [
       "catalogDependency": {
         "explicitLocales": [],
         "lookupLocales": [
-          "en-US",
-          "en-GB",
-          "en-CA",
-          "fr-CA",
-          "en-IN",
-          "cy-GB",
-          "gd-GB",
-          "ga-GB",
-          "es-US",
-          "es-MX",
-          "de-DE",
-          "fr-FR",
-          "es-ES",
-          "it-IT",
-          "nl-NL",
-          "pl-PL",
-          "pt-PT",
-          "pt-BR",
-          "ro-RO",
-          "sv-SE",
-          "ko-KR",
-          "zh-CN",
-          "ja-JP",
-          "hi-IN"
+          "en-US"
         ],
-        "reportFallbacks": {
-          "ja-JP": "素の `<img>` 要素は alt 属性を公開しないため、支援技術はファイルパスを読み上げるか、何も読み上げません。"
-        },
+        "reportFallbacks": {},
         "sourceLocale": "en-US"
       },
       "defaultLocale": "en-US",
@@ -1583,34 +933,9 @@ window.__SCRIBE_FINDINGS__ = [
       "catalogDependency": {
         "explicitLocales": [],
         "lookupLocales": [
-          "en-US",
-          "en-GB",
-          "en-CA",
-          "fr-CA",
-          "en-IN",
-          "cy-GB",
-          "gd-GB",
-          "ga-GB",
-          "es-US",
-          "es-MX",
-          "de-DE",
-          "fr-FR",
-          "es-ES",
-          "it-IT",
-          "nl-NL",
-          "pl-PL",
-          "pt-PT",
-          "pt-BR",
-          "ro-RO",
-          "sv-SE",
-          "ko-KR",
-          "zh-CN",
-          "ja-JP",
-          "hi-IN"
+          "en-US"
         ],
-        "reportFallbacks": {
-          "ja-JP": "画像要素に alt 属性がありません"
-        },
+        "reportFallbacks": {},
         "sourceLocale": "en-US"
       },
       "defaultLocale": "en-US",
@@ -1663,34 +988,9 @@ window.__SCRIBE_FINDINGS__ = [
       "catalogDependency": {
         "explicitLocales": [],
         "lookupLocales": [
-          "en-US",
-          "en-GB",
-          "en-CA",
-          "fr-CA",
-          "en-IN",
-          "cy-GB",
-          "gd-GB",
-          "ga-GB",
-          "es-US",
-          "es-MX",
-          "de-DE",
-          "fr-FR",
-          "es-ES",
-          "it-IT",
-          "nl-NL",
-          "pl-PL",
-          "pt-PT",
-          "pt-BR",
-          "ro-RO",
-          "sv-SE",
-          "ko-KR",
-          "zh-CN",
-          "ja-JP",
-          "hi-IN"
+          "en-US"
         ],
-        "reportFallbacks": {
-          "ja-JP": "自然なタブ順序に加える場合は `tabindex=\"0\"` を使用し、プログラムによるフォーカス専用には `tabindex=\"-1\"` を使用します。望ましいタブ順序になるよう DOM 順序を並べ替えます。"
-        },
+        "reportFallbacks": {},
         "sourceLocale": "en-US"
       },
       "defaultLocale": "en-US",
@@ -1716,34 +1016,9 @@ window.__SCRIBE_FINDINGS__ = [
       "catalogDependency": {
         "explicitLocales": [],
         "lookupLocales": [
-          "en-US",
-          "en-GB",
-          "en-CA",
-          "fr-CA",
-          "en-IN",
-          "cy-GB",
-          "gd-GB",
-          "ga-GB",
-          "es-US",
-          "es-MX",
-          "de-DE",
-          "fr-FR",
-          "es-ES",
-          "it-IT",
-          "nl-NL",
-          "pl-PL",
-          "pt-PT",
-          "pt-BR",
-          "ro-RO",
-          "sv-SE",
-          "ko-KR",
-          "zh-CN",
-          "ja-JP",
-          "hi-IN"
+          "en-US"
         ],
-        "reportFallbacks": {
-          "ja-JP": "`<button tabindex=\"3\">` は予測できないフォーカス順序を作ります。正の tabindex 値は自然な DOM 順序から飛び出し、キーボード利用者を混乱させます。"
-        },
+        "reportFallbacks": {},
         "sourceLocale": "en-US"
       },
       "defaultLocale": "en-US",
@@ -1764,34 +1039,9 @@ window.__SCRIBE_FINDINGS__ = [
       "catalogDependency": {
         "explicitLocales": [],
         "lookupLocales": [
-          "en-US",
-          "en-GB",
-          "en-CA",
-          "fr-CA",
-          "en-IN",
-          "cy-GB",
-          "gd-GB",
-          "ga-GB",
-          "es-US",
-          "es-MX",
-          "de-DE",
-          "fr-FR",
-          "es-ES",
-          "it-IT",
-          "nl-NL",
-          "pl-PL",
-          "pt-PT",
-          "pt-BR",
-          "ro-RO",
-          "sv-SE",
-          "ko-KR",
-          "zh-CN",
-          "ja-JP",
-          "hi-IN"
+          "en-US"
         ],
-        "reportFallbacks": {
-          "ja-JP": "要素に正の tabindex があります（フォーカス順序）"
-        },
+        "reportFallbacks": {},
         "sourceLocale": "en-US"
       },
       "defaultLocale": "en-US",

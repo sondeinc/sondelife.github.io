@@ -1040,6 +1040,39 @@ window.__SCRIBE_SOURCE_SNIPPETS__ = [
     },
     "endLine": 539,
     "label": {
+      "catalogDependency": {
+        "explicitLocales": [],
+        "lookupLocales": [
+          "en-US",
+          "en-GB",
+          "en-CA",
+          "fr-CA",
+          "en-IN",
+          "cy-GB",
+          "gd-GB",
+          "ga-GB",
+          "es-US",
+          "es-MX",
+          "de-DE",
+          "fr-FR",
+          "es-ES",
+          "it-IT",
+          "nl-NL",
+          "pl-PL",
+          "pt-PT",
+          "pt-BR",
+          "ro-RO",
+          "sv-SE",
+          "ko-KR",
+          "zh-CN",
+          "ja-JP",
+          "hi-IN"
+        ],
+        "reportFallbacks": {
+          "ja-JP": "自動修正"
+        },
+        "sourceLocale": "en-US"
+      },
       "defaultLocale": "en-US",
       "defaultText": "Autofix",
       "icuArgs": {},
@@ -1395,6 +1428,39 @@ window.__SCRIBE_SOURCE_SNIPPETS__ = [
     },
     "endLine": 276,
     "label": {
+      "catalogDependency": {
+        "explicitLocales": [],
+        "lookupLocales": [
+          "en-US",
+          "en-GB",
+          "en-CA",
+          "fr-CA",
+          "en-IN",
+          "cy-GB",
+          "gd-GB",
+          "ga-GB",
+          "es-US",
+          "es-MX",
+          "de-DE",
+          "fr-FR",
+          "es-ES",
+          "it-IT",
+          "nl-NL",
+          "pl-PL",
+          "pt-PT",
+          "pt-BR",
+          "ro-RO",
+          "sv-SE",
+          "ko-KR",
+          "zh-CN",
+          "ja-JP",
+          "hi-IN"
+        ],
+        "reportFallbacks": {
+          "ja-JP": "自動修正"
+        },
+        "sourceLocale": "en-US"
+      },
       "defaultLocale": "en-US",
       "defaultText": "Autofix",
       "icuArgs": {},
@@ -1416,6 +1482,376 @@ window.__SCRIBE_SOURCE_SNIPPETS__ = [
     "startLine": 242,
     "vcsPermalink": "https://github.com/calcom/cal.com/blob/180ede28f0bddf2738933a6e60a8e80f6116d7da/scripts/seed-app-store.ts#L92-L263",
     "verifiedSourceHash": "sha256:f2acae2f18ebe5acced334f18c1f4fe69cb6723831ba278d84fcfddfa015794e"
+  },
+  {
+    "anchorId": "source-repository-health-complexity-handler-ade03c41a4",
+    "body": {
+      "diff": [
+        {
+          "content": "@@ -170,40 +170,48 @@",
+          "newLineNo": null,
+          "oldLineNo": null,
+          "type": "separator"
+        },
+        {
+          "content": "    });",
+          "newLineNo": 170,
+          "oldLineNo": 170,
+          "type": "unchanged"
+        },
+        {
+          "content": "  } else {",
+          "newLineNo": 171,
+          "oldLineNo": 171,
+          "type": "unchanged"
+        },
+        {
+          "content": "    const isUsernameAvailable = !(await isUsernameReservedDueToMigration(correctedUsername));",
+          "newLineNo": 172,
+          "oldLineNo": 172,
+          "type": "unchanged"
+        },
+        {
+          "content": "    if (!isUsernameAvailable) {",
+          "newLineNo": null,
+          "oldLineNo": 173,
+          "type": "removed"
+        },
+        {
+          "content": "      return NextResponse.json({ message: \"A user exists with that username\" }, { status: 409 });",
+          "newLineNo": null,
+          "oldLineNo": 174,
+          "type": "removed"
+        },
+        {
+          "content": "    const handlerJsonResult = handlerJson(isUsernameAvailable);",
+          "newLineNo": 173,
+          "oldLineNo": null,
+          "type": "added"
+        },
+        {
+          "content": "    if (handlerJsonResult !== null) {",
+          "newLineNo": 174,
+          "oldLineNo": null,
+          "type": "added"
+        },
+        {
+          "content": "      return handlerJsonResult.value;",
+          "newLineNo": 175,
+          "oldLineNo": null,
+          "type": "added"
+        },
+        {
+          "content": "    }",
+          "newLineNo": 176,
+          "oldLineNo": 175,
+          "type": "unchanged"
+        },
+        {
+          "content": "    try {",
+          "newLineNo": 177,
+          "oldLineNo": 176,
+          "type": "unchanged"
+        },
+        {
+          "content": "      await prisma.user.create({",
+          "newLineNo": 178,
+          "oldLineNo": 177,
+          "type": "unchanged"
+        },
+        {
+          "content": "        data: {",
+          "newLineNo": 179,
+          "oldLineNo": 178,
+          "type": "unchanged"
+        },
+        {
+          "content": "          username: correctedUsername,",
+          "newLineNo": 180,
+          "oldLineNo": 179,
+          "type": "unchanged"
+        },
+        {
+          "content": "          email: userEmail,",
+          "newLineNo": 181,
+          "oldLineNo": 180,
+          "type": "unchanged"
+        },
+        {
+          "content": "          password: { create: { hash: hashedPassword } },",
+          "newLineNo": 182,
+          "oldLineNo": 181,
+          "type": "unchanged"
+        },
+        {
+          "content": "          identityProvider: IdentityProvider.CAL,",
+          "newLineNo": 183,
+          "oldLineNo": 182,
+          "type": "unchanged"
+        },
+        {
+          "content": "        },",
+          "newLineNo": 184,
+          "oldLineNo": 183,
+          "type": "unchanged"
+        },
+        {
+          "content": "        select: { id: true },",
+          "newLineNo": 185,
+          "oldLineNo": 184,
+          "type": "unchanged"
+        },
+        {
+          "content": "      });",
+          "newLineNo": 186,
+          "oldLineNo": 185,
+          "type": "unchanged"
+        },
+        {
+          "content": "    } catch (error) {",
+          "newLineNo": 187,
+          "oldLineNo": 186,
+          "type": "unchanged"
+        },
+        {
+          "content": "      // Fallback for race conditions where user was created between our check and create",
+          "newLineNo": 188,
+          "oldLineNo": 187,
+          "type": "unchanged"
+        },
+        {
+          "content": "      if (isPrismaError(error) && error.code === \"P2002\") {",
+          "newLineNo": 189,
+          "oldLineNo": 188,
+          "type": "unchanged"
+        },
+        {
+          "content": "        const target = String(error.meta?.target ?? \"\");",
+          "newLineNo": 190,
+          "oldLineNo": 189,
+          "type": "unchanged"
+        },
+        {
+          "content": "        if (target.includes(\"email\") || target.includes(\"username\")) {",
+          "newLineNo": 191,
+          "oldLineNo": 190,
+          "type": "unchanged"
+        },
+        {
+          "content": "          return NextResponse.json({ message: SIGNUP_ERROR_CODES.USER_ALREADY_EXISTS }, { status: 409 });",
+          "newLineNo": 192,
+          "oldLineNo": 191,
+          "type": "unchanged"
+        },
+        {
+          "content": "        }",
+          "newLineNo": 193,
+          "oldLineNo": 192,
+          "type": "unchanged"
+        },
+        {
+          "content": "      }",
+          "newLineNo": 194,
+          "oldLineNo": 193,
+          "type": "unchanged"
+        },
+        {
+          "content": "      throw error;",
+          "newLineNo": 195,
+          "oldLineNo": 194,
+          "type": "unchanged"
+        },
+        {
+          "content": "    }",
+          "newLineNo": 196,
+          "oldLineNo": 195,
+          "type": "unchanged"
+        },
+        {
+          "content": "",
+          "newLineNo": 197,
+          "oldLineNo": 196,
+          "type": "unchanged"
+        },
+        {
+          "content": "    if (process.env.AVATARAPI_USERNAME && process.env.AVATARAPI_PASSWORD) {",
+          "newLineNo": 198,
+          "oldLineNo": 197,
+          "type": "unchanged"
+        },
+        {
+          "content": "      await prefillAvatar({ email: userEmail });",
+          "newLineNo": 199,
+          "oldLineNo": 198,
+          "type": "unchanged"
+        },
+        {
+          "content": "    }",
+          "newLineNo": 200,
+          "oldLineNo": 199,
+          "type": "unchanged"
+        },
+        {
+          "content": "",
+          "newLineNo": 201,
+          "oldLineNo": 200,
+          "type": "unchanged"
+        },
+        {
+          "content": "    await sendEmailVerification({",
+          "newLineNo": 202,
+          "oldLineNo": 201,
+          "type": "unchanged"
+        },
+        {
+          "content": "      email: userEmail,",
+          "newLineNo": 203,
+          "oldLineNo": 202,
+          "type": "unchanged"
+        },
+        {
+          "content": "      username: correctedUsername,",
+          "newLineNo": 204,
+          "oldLineNo": 203,
+          "type": "unchanged"
+        },
+        {
+          "content": "      language,",
+          "newLineNo": 205,
+          "oldLineNo": 204,
+          "type": "unchanged"
+        },
+        {
+          "content": "    });",
+          "newLineNo": 206,
+          "oldLineNo": 205,
+          "type": "unchanged"
+        },
+        {
+          "content": "  }",
+          "newLineNo": 207,
+          "oldLineNo": 206,
+          "type": "unchanged"
+        },
+        {
+          "content": "",
+          "newLineNo": 208,
+          "oldLineNo": 207,
+          "type": "unchanged"
+        },
+        {
+          "content": "  return NextResponse.json({ message: \"Created user\" }, { status: 201 });",
+          "newLineNo": 209,
+          "oldLineNo": 208,
+          "type": "unchanged"
+        },
+        {
+          "content": "}",
+          "newLineNo": 210,
+          "oldLineNo": 209,
+          "type": "unchanged"
+        },
+        {
+          "content": "",
+          "newLineNo": 211,
+          "oldLineNo": null,
+          "type": "added"
+        },
+        {
+          "content": "function handlerJson(isUsernameAvailable: boolean) {",
+          "newLineNo": 212,
+          "oldLineNo": null,
+          "type": "added"
+        },
+        {
+          "content": "  if (!isUsernameAvailable) {",
+          "newLineNo": 213,
+          "oldLineNo": null,
+          "type": "added"
+        },
+        {
+          "content": "    return { value: NextResponse.json({ message: \"A user exists with that username\" }, { status: 409 }) };",
+          "newLineNo": 214,
+          "oldLineNo": null,
+          "type": "added"
+        },
+        {
+          "content": "  }",
+          "newLineNo": 215,
+          "oldLineNo": null,
+          "type": "added"
+        },
+        {
+          "content": "  return null;",
+          "newLineNo": 216,
+          "oldLineNo": null,
+          "type": "added"
+        },
+        {
+          "content": "}",
+          "newLineNo": 217,
+          "oldLineNo": null,
+          "type": "added"
+        }
+      ],
+      "kind": "autofix"
+    },
+    "endLine": 209,
+    "label": {
+      "catalogDependency": {
+        "explicitLocales": [],
+        "lookupLocales": [
+          "en-US",
+          "en-GB",
+          "en-CA",
+          "fr-CA",
+          "en-IN",
+          "cy-GB",
+          "gd-GB",
+          "ga-GB",
+          "es-US",
+          "es-MX",
+          "de-DE",
+          "fr-FR",
+          "es-ES",
+          "it-IT",
+          "nl-NL",
+          "pl-PL",
+          "pt-PT",
+          "pt-BR",
+          "ro-RO",
+          "sv-SE",
+          "ko-KR",
+          "zh-CN",
+          "ja-JP",
+          "hi-IN"
+        ],
+        "reportFallbacks": {
+          "ja-JP": "自動修正"
+        },
+        "sourceLocale": "en-US"
+      },
+      "defaultLocale": "en-US",
+      "defaultText": "Autofix",
+      "icuArgs": {},
+      "msgid": "scribe.report.finding.autofix.title",
+      "provenance": "template",
+      "reviewState": "reviewed",
+      "values": {
+        "en-US": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "Autofix"
+        }
+      }
+    },
+    "language": "typescript",
+    "pagePath": "findings/finding-repository-health/index.html",
+    "snippetId": "source-repository-health-complexity-handler-ade03c41a4",
+    "sourcePath": "apps/web/app/api/auth/signup/handlers/selfHostedHandler.ts",
+    "startLine": 170,
+    "vcsPermalink": "https://github.com/calcom/cal.com/blob/180ede28f0bddf2738933a6e60a8e80f6116d7da/apps/web/app/api/auth/signup/handlers/selfHostedHandler.ts#L22-L209",
+    "verifiedSourceHash": "sha256:ccac138c593dd4c1e0b0d677703dae827a455345e0396a7e8222296f6acbe0f3"
   },
   {
     "anchorId": "source-repository-health-complexity-createcontacts-73917edde3",
@@ -8146,6 +8582,39 @@ window.__SCRIBE_SOURCE_SNIPPETS__ = [
     },
     "endLine": 1932,
     "label": {
+      "catalogDependency": {
+        "explicitLocales": [],
+        "lookupLocales": [
+          "en-US",
+          "en-GB",
+          "en-CA",
+          "fr-CA",
+          "en-IN",
+          "cy-GB",
+          "gd-GB",
+          "ga-GB",
+          "es-US",
+          "es-MX",
+          "de-DE",
+          "fr-FR",
+          "es-ES",
+          "it-IT",
+          "nl-NL",
+          "pl-PL",
+          "pt-PT",
+          "pt-BR",
+          "ro-RO",
+          "sv-SE",
+          "ko-KR",
+          "zh-CN",
+          "ja-JP",
+          "hi-IN"
+        ],
+        "reportFallbacks": {
+          "ja-JP": "自動修正"
+        },
+        "sourceLocale": "en-US"
+      },
       "defaultLocale": "en-US",
       "defaultText": "Autofix",
       "icuArgs": {},
@@ -10565,6 +11034,39 @@ window.__SCRIBE_SOURCE_SNIPPETS__ = [
     },
     "endLine": 1392,
     "label": {
+      "catalogDependency": {
+        "explicitLocales": [],
+        "lookupLocales": [
+          "en-US",
+          "en-GB",
+          "en-CA",
+          "fr-CA",
+          "en-IN",
+          "cy-GB",
+          "gd-GB",
+          "ga-GB",
+          "es-US",
+          "es-MX",
+          "de-DE",
+          "fr-FR",
+          "es-ES",
+          "it-IT",
+          "nl-NL",
+          "pl-PL",
+          "pt-PT",
+          "pt-BR",
+          "ro-RO",
+          "sv-SE",
+          "ko-KR",
+          "zh-CN",
+          "ja-JP",
+          "hi-IN"
+        ],
+        "reportFallbacks": {
+          "ja-JP": "自動修正"
+        },
+        "sourceLocale": "en-US"
+      },
       "defaultLocale": "en-US",
       "defaultText": "Autofix",
       "icuArgs": {},
@@ -11022,6 +11524,39 @@ window.__SCRIBE_SOURCE_SNIPPETS__ = [
     },
     "endLine": 1002,
     "label": {
+      "catalogDependency": {
+        "explicitLocales": [],
+        "lookupLocales": [
+          "en-US",
+          "en-GB",
+          "en-CA",
+          "fr-CA",
+          "en-IN",
+          "cy-GB",
+          "gd-GB",
+          "ga-GB",
+          "es-US",
+          "es-MX",
+          "de-DE",
+          "fr-FR",
+          "es-ES",
+          "it-IT",
+          "nl-NL",
+          "pl-PL",
+          "pt-PT",
+          "pt-BR",
+          "ro-RO",
+          "sv-SE",
+          "ko-KR",
+          "zh-CN",
+          "ja-JP",
+          "hi-IN"
+        ],
+        "reportFallbacks": {
+          "ja-JP": "自動修正"
+        },
+        "sourceLocale": "en-US"
+      },
       "defaultLocale": "en-US",
       "defaultText": "Autofix",
       "icuArgs": {},
@@ -11419,6 +11954,39 @@ window.__SCRIBE_SOURCE_SNIPPETS__ = [
     },
     "endLine": 88,
     "label": {
+      "catalogDependency": {
+        "explicitLocales": [],
+        "lookupLocales": [
+          "en-US",
+          "en-GB",
+          "en-CA",
+          "fr-CA",
+          "en-IN",
+          "cy-GB",
+          "gd-GB",
+          "ga-GB",
+          "es-US",
+          "es-MX",
+          "de-DE",
+          "fr-FR",
+          "es-ES",
+          "it-IT",
+          "nl-NL",
+          "pl-PL",
+          "pt-PT",
+          "pt-BR",
+          "ro-RO",
+          "sv-SE",
+          "ko-KR",
+          "zh-CN",
+          "ja-JP",
+          "hi-IN"
+        ],
+        "reportFallbacks": {
+          "ja-JP": "自動修正"
+        },
+        "sourceLocale": "en-US"
+      },
       "defaultLocale": "en-US",
       "defaultText": "Autofix",
       "icuArgs": {},
@@ -12368,6 +12936,39 @@ window.__SCRIBE_SOURCE_SNIPPETS__ = [
     },
     "endLine": 142,
     "label": {
+      "catalogDependency": {
+        "explicitLocales": [],
+        "lookupLocales": [
+          "en-US",
+          "en-GB",
+          "en-CA",
+          "fr-CA",
+          "en-IN",
+          "cy-GB",
+          "gd-GB",
+          "ga-GB",
+          "es-US",
+          "es-MX",
+          "de-DE",
+          "fr-FR",
+          "es-ES",
+          "it-IT",
+          "nl-NL",
+          "pl-PL",
+          "pt-PT",
+          "pt-BR",
+          "ro-RO",
+          "sv-SE",
+          "ko-KR",
+          "zh-CN",
+          "ja-JP",
+          "hi-IN"
+        ],
+        "reportFallbacks": {
+          "ja-JP": "自動修正"
+        },
+        "sourceLocale": "en-US"
+      },
       "defaultLocale": "en-US",
       "defaultText": "Autofix",
       "icuArgs": {},
@@ -12389,6 +12990,964 @@ window.__SCRIBE_SOURCE_SNIPPETS__ = [
     "startLine": 18,
     "vcsPermalink": "https://github.com/calcom/cal.com/blob/180ede28f0bddf2738933a6e60a8e80f6116d7da/scripts/prepare-local-for-delegation-credentials-testing.js#L7-L133",
     "verifiedSourceHash": "sha256:51d9a7922048e4fa93f428928c07028e5ef797aeaa65ac16e97bf618ec2a5e8c"
+  },
+  {
+    "anchorId": "source-repository-health-complexity-posthandler-aa1f68f1f7",
+    "body": {
+      "diff": [
+        {
+          "content": "@@ -23,138 +23,144 @@",
+          "newLineNo": null,
+          "oldLineNo": null,
+          "type": "separator"
+        },
+        {
+          "content": "  const reminderIntervalMinutes = [48 * 60, 24 * 60, 3 * 60];",
+          "newLineNo": 23,
+          "oldLineNo": 23,
+          "type": "unchanged"
+        },
+        {
+          "content": "  let notificationsSent = 0;",
+          "newLineNo": 24,
+          "oldLineNo": 24,
+          "type": "unchanged"
+        },
+        {
+          "content": "",
+          "newLineNo": 25,
+          "oldLineNo": 25,
+          "type": "unchanged"
+        },
+        {
+          "content": "  notificationsSent = await postHandlerNotificationsSent(reminderIntervalMinutes, notificationsSent);",
+          "newLineNo": 26,
+          "oldLineNo": null,
+          "type": "added"
+        },
+        {
+          "content": "",
+          "newLineNo": 27,
+          "oldLineNo": null,
+          "type": "added"
+        },
+        {
+          "content": "  return NextResponse.json({ notificationsSent });",
+          "newLineNo": 28,
+          "oldLineNo": null,
+          "type": "added"
+        },
+        {
+          "content": "}",
+          "newLineNo": 29,
+          "oldLineNo": null,
+          "type": "added"
+        },
+        {
+          "content": "",
+          "newLineNo": 30,
+          "oldLineNo": null,
+          "type": "added"
+        },
+        {
+          "content": "export const POST = defaultResponderForAppDir(postHandler);",
+          "newLineNo": 31,
+          "oldLineNo": null,
+          "type": "added"
+        },
+        {
+          "content": "",
+          "newLineNo": 32,
+          "oldLineNo": null,
+          "type": "added"
+        },
+        {
+          "content": "async function postHandlerNotificationsSent(reminderIntervalMinutes: number[], notificationsSent: number): Promise<number> {",
+          "newLineNo": 33,
+          "oldLineNo": null,
+          "type": "added"
+        },
+        {
+          "content": "",
+          "newLineNo": 34,
+          "oldLineNo": null,
+          "type": "added"
+        },
+        {
+          "content": "  for (const interval of reminderIntervalMinutes) {",
+          "newLineNo": 35,
+          "oldLineNo": 26,
+          "type": "unchanged"
+        },
+        {
+          "content": "    const bookings = await prisma.booking.findMany({",
+          "newLineNo": 36,
+          "oldLineNo": 27,
+          "type": "unchanged"
+        },
+        {
+          "content": "      where: {",
+          "newLineNo": 37,
+          "oldLineNo": 28,
+          "type": "unchanged"
+        },
+        {
+          "content": "        status: BookingStatus.PENDING,",
+          "newLineNo": 38,
+          "oldLineNo": 29,
+          "type": "unchanged"
+        },
+        {
+          "content": "        createdAt: {",
+          "newLineNo": 39,
+          "oldLineNo": 30,
+          "type": "unchanged"
+        },
+        {
+          "content": "          lte: dayjs().add(-interval, \"minutes\").toDate(),",
+          "newLineNo": 40,
+          "oldLineNo": 31,
+          "type": "unchanged"
+        },
+        {
+          "content": "        },",
+          "newLineNo": 41,
+          "oldLineNo": 32,
+          "type": "unchanged"
+        },
+        {
+          "content": "        // Only send reminders if the event hasn't finished",
+          "newLineNo": 42,
+          "oldLineNo": 33,
+          "type": "unchanged"
+        },
+        {
+          "content": "        endTime: { gte: new Date() },",
+          "newLineNo": 43,
+          "oldLineNo": 34,
+          "type": "unchanged"
+        },
+        {
+          "content": "        OR: [",
+          "newLineNo": 44,
+          "oldLineNo": 35,
+          "type": "unchanged"
+        },
+        {
+          "content": "          // no payment required",
+          "newLineNo": 45,
+          "oldLineNo": 36,
+          "type": "unchanged"
+        },
+        {
+          "content": "          {",
+          "newLineNo": 46,
+          "oldLineNo": 37,
+          "type": "unchanged"
+        },
+        {
+          "content": "            payment: { none: {} },",
+          "newLineNo": 47,
+          "oldLineNo": 38,
+          "type": "unchanged"
+        },
+        {
+          "content": "          },",
+          "newLineNo": 48,
+          "oldLineNo": 39,
+          "type": "unchanged"
+        },
+        {
+          "content": "          // paid but awaiting approval",
+          "newLineNo": 49,
+          "oldLineNo": 40,
+          "type": "unchanged"
+        },
+        {
+          "content": "          {",
+          "newLineNo": 50,
+          "oldLineNo": 41,
+          "type": "unchanged"
+        },
+        {
+          "content": "            payment: { some: {} },",
+          "newLineNo": 51,
+          "oldLineNo": 42,
+          "type": "unchanged"
+        },
+        {
+          "content": "            paid: true,",
+          "newLineNo": 52,
+          "oldLineNo": 43,
+          "type": "unchanged"
+        },
+        {
+          "content": "          },",
+          "newLineNo": 53,
+          "oldLineNo": 44,
+          "type": "unchanged"
+        },
+        {
+          "content": "        ],",
+          "newLineNo": 54,
+          "oldLineNo": 45,
+          "type": "unchanged"
+        },
+        {
+          "content": "      },",
+          "newLineNo": 55,
+          "oldLineNo": 46,
+          "type": "unchanged"
+        },
+        {
+          "content": "      select: {",
+          "newLineNo": 56,
+          "oldLineNo": 47,
+          "type": "unchanged"
+        },
+        {
+          "content": "        ...bookingMinimalSelect,",
+          "newLineNo": 57,
+          "oldLineNo": 48,
+          "type": "unchanged"
+        },
+        {
+          "content": "        location: true,",
+          "newLineNo": 58,
+          "oldLineNo": 49,
+          "type": "unchanged"
+        },
+        {
+          "content": "        user: {",
+          "newLineNo": 59,
+          "oldLineNo": 50,
+          "type": "unchanged"
+        },
+        {
+          "content": "          select: {",
+          "newLineNo": 60,
+          "oldLineNo": 51,
+          "type": "unchanged"
+        },
+        {
+          "content": "            id: true,",
+          "newLineNo": 61,
+          "oldLineNo": 52,
+          "type": "unchanged"
+        },
+        {
+          "content": "            email: true,",
+          "newLineNo": 62,
+          "oldLineNo": 53,
+          "type": "unchanged"
+        },
+        {
+          "content": "            name: true,",
+          "newLineNo": 63,
+          "oldLineNo": 54,
+          "type": "unchanged"
+        },
+        {
+          "content": "            username: true,",
+          "newLineNo": 64,
+          "oldLineNo": 55,
+          "type": "unchanged"
+        },
+        {
+          "content": "            locale: true,",
+          "newLineNo": 65,
+          "oldLineNo": 56,
+          "type": "unchanged"
+        },
+        {
+          "content": "            timeZone: true,",
+          "newLineNo": 66,
+          "oldLineNo": 57,
+          "type": "unchanged"
+        },
+        {
+          "content": "            destinationCalendar: true,",
+          "newLineNo": 67,
+          "oldLineNo": 58,
+          "type": "unchanged"
+        },
+        {
+          "content": "            isPlatformManaged: true,",
+          "newLineNo": 68,
+          "oldLineNo": 59,
+          "type": "unchanged"
+        },
+        {
+          "content": "            platformOAuthClients: { select: { id: true, areEmailsEnabled: true } },",
+          "newLineNo": 69,
+          "oldLineNo": 60,
+          "type": "unchanged"
+        },
+        {
+          "content": "          },",
+          "newLineNo": 70,
+          "oldLineNo": 61,
+          "type": "unchanged"
+        },
+        {
+          "content": "        },",
+          "newLineNo": 71,
+          "oldLineNo": 62,
+          "type": "unchanged"
+        },
+        {
+          "content": "        eventType: {",
+          "newLineNo": 72,
+          "oldLineNo": 63,
+          "type": "unchanged"
+        },
+        {
+          "content": "          select: {",
+          "newLineNo": 73,
+          "oldLineNo": 64,
+          "type": "unchanged"
+        },
+        {
+          "content": "            recurringEvent: true,",
+          "newLineNo": 74,
+          "oldLineNo": 65,
+          "type": "unchanged"
+        },
+        {
+          "content": "            bookingFields: true,",
+          "newLineNo": 75,
+          "oldLineNo": 66,
+          "type": "unchanged"
+        },
+        {
+          "content": "            metadata: true,",
+          "newLineNo": 76,
+          "oldLineNo": 67,
+          "type": "unchanged"
+        },
+        {
+          "content": "          },",
+          "newLineNo": 77,
+          "oldLineNo": 68,
+          "type": "unchanged"
+        },
+        {
+          "content": "        },",
+          "newLineNo": 78,
+          "oldLineNo": 69,
+          "type": "unchanged"
+        },
+        {
+          "content": "        responses: true,",
+          "newLineNo": 79,
+          "oldLineNo": 70,
+          "type": "unchanged"
+        },
+        {
+          "content": "        uid: true,",
+          "newLineNo": 80,
+          "oldLineNo": 71,
+          "type": "unchanged"
+        },
+        {
+          "content": "        destinationCalendar: true,",
+          "newLineNo": 81,
+          "oldLineNo": 72,
+          "type": "unchanged"
+        },
+        {
+          "content": "      },",
+          "newLineNo": 82,
+          "oldLineNo": 73,
+          "type": "unchanged"
+        },
+        {
+          "content": "    });",
+          "newLineNo": 83,
+          "oldLineNo": 74,
+          "type": "unchanged"
+        },
+        {
+          "content": "",
+          "newLineNo": 84,
+          "oldLineNo": 75,
+          "type": "unchanged"
+        },
+        {
+          "content": "    const bookingsToRemind = bookings.filter(",
+          "newLineNo": 85,
+          "oldLineNo": 76,
+          "type": "unchanged"
+        },
+        {
+          "content": "      (booking) =>",
+          "newLineNo": 86,
+          "oldLineNo": 77,
+          "type": "unchanged"
+        },
+        {
+          "content": "        !booking.user ||",
+          "newLineNo": 87,
+          "oldLineNo": 78,
+          "type": "unchanged"
+        },
+        {
+          "content": "        !booking.user.isPlatformManaged ||",
+          "newLineNo": 88,
+          "oldLineNo": 79,
+          "type": "unchanged"
+        },
+        {
+          "content": "        (booking.user.isPlatformManaged && Boolean(booking.user.platformOAuthClients?.[0]?.areEmailsEnabled))",
+          "newLineNo": 89,
+          "oldLineNo": 80,
+          "type": "unchanged"
+        },
+        {
+          "content": "    );",
+          "newLineNo": 90,
+          "oldLineNo": 81,
+          "type": "unchanged"
+        },
+        {
+          "content": "",
+          "newLineNo": 91,
+          "oldLineNo": 82,
+          "type": "unchanged"
+        },
+        {
+          "content": "    const reminders = await prisma.reminderMail.findMany({",
+          "newLineNo": 92,
+          "oldLineNo": 83,
+          "type": "unchanged"
+        },
+        {
+          "content": "      where: {",
+          "newLineNo": 93,
+          "oldLineNo": 84,
+          "type": "unchanged"
+        },
+        {
+          "content": "        reminderType: ReminderType.PENDING_BOOKING_CONFIRMATION,",
+          "newLineNo": 94,
+          "oldLineNo": 85,
+          "type": "unchanged"
+        },
+        {
+          "content": "        referenceId: {",
+          "newLineNo": 95,
+          "oldLineNo": 86,
+          "type": "unchanged"
+        },
+        {
+          "content": "          in: bookingsToRemind.map((b) => b.id),",
+          "newLineNo": 96,
+          "oldLineNo": 87,
+          "type": "unchanged"
+        },
+        {
+          "content": "        },",
+          "newLineNo": 97,
+          "oldLineNo": 88,
+          "type": "unchanged"
+        },
+        {
+          "content": "        elapsedMinutes: {",
+          "newLineNo": 98,
+          "oldLineNo": 89,
+          "type": "unchanged"
+        },
+        {
+          "content": "          gte: interval,",
+          "newLineNo": 99,
+          "oldLineNo": 90,
+          "type": "unchanged"
+        },
+        {
+          "content": "        },",
+          "newLineNo": 100,
+          "oldLineNo": 91,
+          "type": "unchanged"
+        },
+        {
+          "content": "      },",
+          "newLineNo": 101,
+          "oldLineNo": 92,
+          "type": "unchanged"
+        },
+        {
+          "content": "    });",
+          "newLineNo": 102,
+          "oldLineNo": 93,
+          "type": "unchanged"
+        },
+        {
+          "content": "",
+          "newLineNo": 103,
+          "oldLineNo": 94,
+          "type": "unchanged"
+        },
+        {
+          "content": "    for (const booking of bookingsToRemind.filter((b) => !reminders.some((r) => r.referenceId == b.id))) {",
+          "newLineNo": 104,
+          "oldLineNo": 95,
+          "type": "unchanged"
+        },
+        {
+          "content": "      const { user } = booking;",
+          "newLineNo": 105,
+          "oldLineNo": 96,
+          "type": "unchanged"
+        },
+        {
+          "content": "      const name = user?.name || user?.username;",
+          "newLineNo": 106,
+          "oldLineNo": 97,
+          "type": "unchanged"
+        },
+        {
+          "content": "      if (!user || !name || !user.timeZone) {",
+          "newLineNo": 107,
+          "oldLineNo": 98,
+          "type": "unchanged"
+        },
+        {
+          "content": "        console.error(`Booking ${booking.id} is missing required properties for booking reminder`, { user });",
+          "newLineNo": 108,
+          "oldLineNo": 99,
+          "type": "unchanged"
+        },
+        {
+          "content": "        continue;",
+          "newLineNo": 109,
+          "oldLineNo": 100,
+          "type": "unchanged"
+        },
+        {
+          "content": "      }",
+          "newLineNo": 110,
+          "oldLineNo": 101,
+          "type": "unchanged"
+        },
+        {
+          "content": "",
+          "newLineNo": 111,
+          "oldLineNo": 102,
+          "type": "unchanged"
+        },
+        {
+          "content": "      const tOrganizer = await getTranslation(user.locale ?? \"en\", \"common\");",
+          "newLineNo": 112,
+          "oldLineNo": 103,
+          "type": "unchanged"
+        },
+        {
+          "content": "",
+          "newLineNo": 113,
+          "oldLineNo": 104,
+          "type": "unchanged"
+        },
+        {
+          "content": "      const attendeesListPromises = booking.attendees.map(async (attendee) => {",
+          "newLineNo": 114,
+          "oldLineNo": 105,
+          "type": "unchanged"
+        },
+        {
+          "content": "        return {",
+          "newLineNo": 115,
+          "oldLineNo": 106,
+          "type": "unchanged"
+        },
+        {
+          "content": "          name: attendee.name,",
+          "newLineNo": 116,
+          "oldLineNo": 107,
+          "type": "unchanged"
+        },
+        {
+          "content": "          email: attendee.email,",
+          "newLineNo": 117,
+          "oldLineNo": 108,
+          "type": "unchanged"
+        },
+        {
+          "content": "          timeZone: attendee.timeZone,",
+          "newLineNo": 118,
+          "oldLineNo": 109,
+          "type": "unchanged"
+        },
+        {
+          "content": "          language: {",
+          "newLineNo": 119,
+          "oldLineNo": 110,
+          "type": "unchanged"
+        },
+        {
+          "content": "            translate: await getTranslation(attendee.locale ?? \"en\", \"common\"),",
+          "newLineNo": 120,
+          "oldLineNo": 111,
+          "type": "unchanged"
+        },
+        {
+          "content": "            locale: attendee.locale ?? \"en\",",
+          "newLineNo": 121,
+          "oldLineNo": 112,
+          "type": "unchanged"
+        },
+        {
+          "content": "          },",
+          "newLineNo": 122,
+          "oldLineNo": 113,
+          "type": "unchanged"
+        },
+        {
+          "content": "        };",
+          "newLineNo": 123,
+          "oldLineNo": 114,
+          "type": "unchanged"
+        },
+        {
+          "content": "      });",
+          "newLineNo": 124,
+          "oldLineNo": 115,
+          "type": "unchanged"
+        },
+        {
+          "content": "",
+          "newLineNo": 125,
+          "oldLineNo": 116,
+          "type": "unchanged"
+        },
+        {
+          "content": "      const attendeesList = await Promise.all(attendeesListPromises);",
+          "newLineNo": 126,
+          "oldLineNo": 117,
+          "type": "unchanged"
+        },
+        {
+          "content": "      const selectedDestinationCalendar = booking.destinationCalendar || user.destinationCalendar;",
+          "newLineNo": 127,
+          "oldLineNo": 118,
+          "type": "unchanged"
+        },
+        {
+          "content": "      const evt: CalendarEvent = {",
+          "newLineNo": 128,
+          "oldLineNo": 119,
+          "type": "unchanged"
+        },
+        {
+          "content": "        type: booking.title,",
+          "newLineNo": 129,
+          "oldLineNo": 120,
+          "type": "unchanged"
+        },
+        {
+          "content": "        title: booking.title,",
+          "newLineNo": 130,
+          "oldLineNo": 121,
+          "type": "unchanged"
+        },
+        {
+          "content": "        description: booking.description || undefined,",
+          "newLineNo": 131,
+          "oldLineNo": 122,
+          "type": "unchanged"
+        },
+        {
+          "content": "        customInputs: isPrismaObjOrUndefined(booking.customInputs),",
+          "newLineNo": 132,
+          "oldLineNo": 123,
+          "type": "unchanged"
+        },
+        {
+          "content": "        ...getCalEventResponses({",
+          "newLineNo": 133,
+          "oldLineNo": 124,
+          "type": "unchanged"
+        },
+        {
+          "content": "          bookingFields: booking.eventType?.bookingFields ?? null,",
+          "newLineNo": 134,
+          "oldLineNo": 125,
+          "type": "unchanged"
+        },
+        {
+          "content": "          booking,",
+          "newLineNo": 135,
+          "oldLineNo": 126,
+          "type": "unchanged"
+        },
+        {
+          "content": "        }),",
+          "newLineNo": 136,
+          "oldLineNo": 127,
+          "type": "unchanged"
+        },
+        {
+          "content": "        location: booking.location ?? \"\",",
+          "newLineNo": 137,
+          "oldLineNo": 128,
+          "type": "unchanged"
+        },
+        {
+          "content": "        startTime: booking.startTime.toISOString(),",
+          "newLineNo": 138,
+          "oldLineNo": 129,
+          "type": "unchanged"
+        },
+        {
+          "content": "        endTime: booking.endTime.toISOString(),",
+          "newLineNo": 139,
+          "oldLineNo": 130,
+          "type": "unchanged"
+        },
+        {
+          "content": "        organizer: {",
+          "newLineNo": 140,
+          "oldLineNo": 131,
+          "type": "unchanged"
+        },
+        {
+          "content": "          id: user.id,",
+          "newLineNo": 141,
+          "oldLineNo": 132,
+          "type": "unchanged"
+        },
+        {
+          "content": "          email: booking?.userPrimaryEmail ?? user.email,",
+          "newLineNo": 142,
+          "oldLineNo": 133,
+          "type": "unchanged"
+        },
+        {
+          "content": "          name,",
+          "newLineNo": 143,
+          "oldLineNo": 134,
+          "type": "unchanged"
+        },
+        {
+          "content": "          timeZone: user.timeZone,",
+          "newLineNo": 144,
+          "oldLineNo": 135,
+          "type": "unchanged"
+        },
+        {
+          "content": "          language: { translate: tOrganizer, locale: user.locale ?? \"en\" },",
+          "newLineNo": 145,
+          "oldLineNo": 136,
+          "type": "unchanged"
+        },
+        {
+          "content": "        },",
+          "newLineNo": 146,
+          "oldLineNo": 137,
+          "type": "unchanged"
+        },
+        {
+          "content": "        attendees: attendeesList,",
+          "newLineNo": 147,
+          "oldLineNo": 138,
+          "type": "unchanged"
+        },
+        {
+          "content": "        uid: booking.uid,",
+          "newLineNo": 148,
+          "oldLineNo": 139,
+          "type": "unchanged"
+        },
+        {
+          "content": "        recurringEvent: parseRecurringEvent(booking.eventType?.recurringEvent),",
+          "newLineNo": 149,
+          "oldLineNo": 140,
+          "type": "unchanged"
+        },
+        {
+          "content": "        destinationCalendar: selectedDestinationCalendar ? [selectedDestinationCalendar] : [],",
+          "newLineNo": 150,
+          "oldLineNo": 141,
+          "type": "unchanged"
+        },
+        {
+          "content": "      };",
+          "newLineNo": 151,
+          "oldLineNo": 142,
+          "type": "unchanged"
+        },
+        {
+          "content": "",
+          "newLineNo": 152,
+          "oldLineNo": 143,
+          "type": "unchanged"
+        },
+        {
+          "content": "      await sendOrganizerRequestReminderEmail(evt, booking?.eventType?.metadata as EventTypeMetadata);",
+          "newLineNo": 153,
+          "oldLineNo": 144,
+          "type": "unchanged"
+        },
+        {
+          "content": "",
+          "newLineNo": 154,
+          "oldLineNo": 145,
+          "type": "unchanged"
+        },
+        {
+          "content": "      await prisma.reminderMail.create({",
+          "newLineNo": 155,
+          "oldLineNo": 146,
+          "type": "unchanged"
+        },
+        {
+          "content": "        data: {",
+          "newLineNo": 156,
+          "oldLineNo": 147,
+          "type": "unchanged"
+        },
+        {
+          "content": "          referenceId: booking.id,",
+          "newLineNo": 157,
+          "oldLineNo": 148,
+          "type": "unchanged"
+        },
+        {
+          "content": "          reminderType: ReminderType.PENDING_BOOKING_CONFIRMATION,",
+          "newLineNo": 158,
+          "oldLineNo": 149,
+          "type": "unchanged"
+        },
+        {
+          "content": "          elapsedMinutes: interval,",
+          "newLineNo": 159,
+          "oldLineNo": 150,
+          "type": "unchanged"
+        },
+        {
+          "content": "        },",
+          "newLineNo": 160,
+          "oldLineNo": 151,
+          "type": "unchanged"
+        },
+        {
+          "content": "      });",
+          "newLineNo": 161,
+          "oldLineNo": 152,
+          "type": "unchanged"
+        },
+        {
+          "content": "      notificationsSent++;",
+          "newLineNo": 162,
+          "oldLineNo": 153,
+          "type": "unchanged"
+        },
+        {
+          "content": "    }",
+          "newLineNo": 163,
+          "oldLineNo": 154,
+          "type": "unchanged"
+        },
+        {
+          "content": "  }",
+          "newLineNo": 164,
+          "oldLineNo": 155,
+          "type": "unchanged"
+        },
+        {
+          "content": "",
+          "newLineNo": null,
+          "oldLineNo": 156,
+          "type": "removed"
+        },
+        {
+          "content": "  return NextResponse.json({ notificationsSent });",
+          "newLineNo": null,
+          "oldLineNo": 157,
+          "type": "removed"
+        },
+        {
+          "content": "  return notificationsSent;",
+          "newLineNo": 165,
+          "oldLineNo": null,
+          "type": "added"
+        },
+        {
+          "content": "}",
+          "newLineNo": 166,
+          "oldLineNo": 158,
+          "type": "unchanged"
+        },
+        {
+          "content": "",
+          "newLineNo": null,
+          "oldLineNo": 159,
+          "type": "removed"
+        },
+        {
+          "content": "export const POST = defaultResponderForAppDir(postHandler);",
+          "newLineNo": null,
+          "oldLineNo": 160,
+          "type": "removed"
+        }
+      ],
+      "kind": "autofix"
+    },
+    "endLine": 160,
+    "label": {
+      "catalogDependency": {
+        "explicitLocales": [],
+        "lookupLocales": [
+          "en-US",
+          "en-GB",
+          "en-CA",
+          "fr-CA",
+          "en-IN",
+          "cy-GB",
+          "gd-GB",
+          "ga-GB",
+          "es-US",
+          "es-MX",
+          "de-DE",
+          "fr-FR",
+          "es-ES",
+          "it-IT",
+          "nl-NL",
+          "pl-PL",
+          "pt-PT",
+          "pt-BR",
+          "ro-RO",
+          "sv-SE",
+          "ko-KR",
+          "zh-CN",
+          "ja-JP",
+          "hi-IN"
+        ],
+        "reportFallbacks": {
+          "ja-JP": "自動修正"
+        },
+        "sourceLocale": "en-US"
+      },
+      "defaultLocale": "en-US",
+      "defaultText": "Autofix",
+      "icuArgs": {},
+      "msgid": "scribe.report.finding.autofix.title",
+      "provenance": "template",
+      "reviewState": "reviewed",
+      "values": {
+        "en-US": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "Autofix"
+        }
+      }
+    },
+    "language": "typescript",
+    "pagePath": "findings/finding-repository-health/index.html",
+    "snippetId": "source-repository-health-complexity-posthandler-aa1f68f1f7",
+    "sourcePath": "apps/web/app/api/cron/bookingReminder/route.ts",
+    "startLine": 23,
+    "vcsPermalink": "https://github.com/calcom/cal.com/blob/180ede28f0bddf2738933a6e60a8e80f6116d7da/apps/web/app/api/cron/bookingReminder/route.ts#L14-L158",
+    "verifiedSourceHash": "sha256:cb63f79aec190d3b1f73c810a97206480a2c17174b858dfd0ce76ac5d0b064d8"
   },
   {
     "anchorId": "source-repository-health-complexity-findqualifiedhostswithdelegationcredentials-5cee6a9688",
@@ -12957,6 +14516,39 @@ window.__SCRIBE_SOURCE_SNIPPETS__ = [
     },
     "endLine": 86,
     "label": {
+      "catalogDependency": {
+        "explicitLocales": [],
+        "lookupLocales": [
+          "en-US",
+          "en-GB",
+          "en-CA",
+          "fr-CA",
+          "en-IN",
+          "cy-GB",
+          "gd-GB",
+          "ga-GB",
+          "es-US",
+          "es-MX",
+          "de-DE",
+          "fr-FR",
+          "es-ES",
+          "it-IT",
+          "nl-NL",
+          "pl-PL",
+          "pt-PT",
+          "pt-BR",
+          "ro-RO",
+          "sv-SE",
+          "ko-KR",
+          "zh-CN",
+          "ja-JP",
+          "hi-IN"
+        ],
+        "reportFallbacks": {
+          "ja-JP": "自動修正"
+        },
+        "sourceLocale": "en-US"
+      },
       "defaultLocale": "en-US",
       "defaultText": "Autofix",
       "icuArgs": {},
@@ -13480,6 +15072,39 @@ window.__SCRIBE_SOURCE_SNIPPETS__ = [
     },
     "endLine": 95,
     "label": {
+      "catalogDependency": {
+        "explicitLocales": [],
+        "lookupLocales": [
+          "en-US",
+          "en-GB",
+          "en-CA",
+          "fr-CA",
+          "en-IN",
+          "cy-GB",
+          "gd-GB",
+          "ga-GB",
+          "es-US",
+          "es-MX",
+          "de-DE",
+          "fr-FR",
+          "es-ES",
+          "it-IT",
+          "nl-NL",
+          "pl-PL",
+          "pt-PT",
+          "pt-BR",
+          "ro-RO",
+          "sv-SE",
+          "ko-KR",
+          "zh-CN",
+          "ja-JP",
+          "hi-IN"
+        ],
+        "reportFallbacks": {
+          "ja-JP": "自動修正"
+        },
+        "sourceLocale": "en-US"
+      },
       "defaultLocale": "en-US",
       "defaultText": "Autofix",
       "icuArgs": {},
@@ -13510,6 +15135,39 @@ window.__SCRIBE_SOURCE_SNIPPETS__ = [
     },
     "endLine": 2578,
     "label": {
+      "catalogDependency": {
+        "explicitLocales": [],
+        "lookupLocales": [
+          "en-US",
+          "en-GB",
+          "en-CA",
+          "fr-CA",
+          "en-IN",
+          "cy-GB",
+          "gd-GB",
+          "ga-GB",
+          "es-US",
+          "es-MX",
+          "de-DE",
+          "fr-FR",
+          "es-ES",
+          "it-IT",
+          "nl-NL",
+          "pl-PL",
+          "pt-PT",
+          "pt-BR",
+          "ro-RO",
+          "sv-SE",
+          "ko-KR",
+          "zh-CN",
+          "ja-JP",
+          "hi-IN"
+        ],
+        "reportFallbacks": {
+          "ja-JP": "ソース証拠"
+        },
+        "sourceLocale": "en-US"
+      },
       "defaultLocale": "en-US",
       "defaultText": "Source evidence",
       "icuArgs": {},
@@ -13540,6 +15198,39 @@ window.__SCRIBE_SOURCE_SNIPPETS__ = [
     },
     "endLine": 1164,
     "label": {
+      "catalogDependency": {
+        "explicitLocales": [],
+        "lookupLocales": [
+          "en-US",
+          "en-GB",
+          "en-CA",
+          "fr-CA",
+          "en-IN",
+          "cy-GB",
+          "gd-GB",
+          "ga-GB",
+          "es-US",
+          "es-MX",
+          "de-DE",
+          "fr-FR",
+          "es-ES",
+          "it-IT",
+          "nl-NL",
+          "pl-PL",
+          "pt-PT",
+          "pt-BR",
+          "ro-RO",
+          "sv-SE",
+          "ko-KR",
+          "zh-CN",
+          "ja-JP",
+          "hi-IN"
+        ],
+        "reportFallbacks": {
+          "ja-JP": "ソース証拠"
+        },
+        "sourceLocale": "en-US"
+      },
       "defaultLocale": "en-US",
       "defaultText": "Source evidence",
       "icuArgs": {},
@@ -13570,6 +15261,39 @@ window.__SCRIBE_SOURCE_SNIPPETS__ = [
     },
     "endLine": 781,
     "label": {
+      "catalogDependency": {
+        "explicitLocales": [],
+        "lookupLocales": [
+          "en-US",
+          "en-GB",
+          "en-CA",
+          "fr-CA",
+          "en-IN",
+          "cy-GB",
+          "gd-GB",
+          "ga-GB",
+          "es-US",
+          "es-MX",
+          "de-DE",
+          "fr-FR",
+          "es-ES",
+          "it-IT",
+          "nl-NL",
+          "pl-PL",
+          "pt-PT",
+          "pt-BR",
+          "ro-RO",
+          "sv-SE",
+          "ko-KR",
+          "zh-CN",
+          "ja-JP",
+          "hi-IN"
+        ],
+        "reportFallbacks": {
+          "ja-JP": "ソース証拠"
+        },
+        "sourceLocale": "en-US"
+      },
       "defaultLocale": "en-US",
       "defaultText": "Source evidence",
       "icuArgs": {},
@@ -13600,6 +15324,39 @@ window.__SCRIBE_SOURCE_SNIPPETS__ = [
     },
     "endLine": 629,
     "label": {
+      "catalogDependency": {
+        "explicitLocales": [],
+        "lookupLocales": [
+          "en-US",
+          "en-GB",
+          "en-CA",
+          "fr-CA",
+          "en-IN",
+          "cy-GB",
+          "gd-GB",
+          "ga-GB",
+          "es-US",
+          "es-MX",
+          "de-DE",
+          "fr-FR",
+          "es-ES",
+          "it-IT",
+          "nl-NL",
+          "pl-PL",
+          "pt-PT",
+          "pt-BR",
+          "ro-RO",
+          "sv-SE",
+          "ko-KR",
+          "zh-CN",
+          "ja-JP",
+          "hi-IN"
+        ],
+        "reportFallbacks": {
+          "ja-JP": "ソース証拠"
+        },
+        "sourceLocale": "en-US"
+      },
       "defaultLocale": "en-US",
       "defaultText": "Source evidence",
       "icuArgs": {},
@@ -13630,6 +15387,39 @@ window.__SCRIBE_SOURCE_SNIPPETS__ = [
     },
     "endLine": 291,
     "label": {
+      "catalogDependency": {
+        "explicitLocales": [],
+        "lookupLocales": [
+          "en-US",
+          "en-GB",
+          "en-CA",
+          "fr-CA",
+          "en-IN",
+          "cy-GB",
+          "gd-GB",
+          "ga-GB",
+          "es-US",
+          "es-MX",
+          "de-DE",
+          "fr-FR",
+          "es-ES",
+          "it-IT",
+          "nl-NL",
+          "pl-PL",
+          "pt-PT",
+          "pt-BR",
+          "ro-RO",
+          "sv-SE",
+          "ko-KR",
+          "zh-CN",
+          "ja-JP",
+          "hi-IN"
+        ],
+        "reportFallbacks": {
+          "ja-JP": "ソース証拠"
+        },
+        "sourceLocale": "en-US"
+      },
       "defaultLocale": "en-US",
       "defaultText": "Source evidence",
       "icuArgs": {},
@@ -13660,6 +15450,39 @@ window.__SCRIBE_SOURCE_SNIPPETS__ = [
     },
     "endLine": 1434,
     "label": {
+      "catalogDependency": {
+        "explicitLocales": [],
+        "lookupLocales": [
+          "en-US",
+          "en-GB",
+          "en-CA",
+          "fr-CA",
+          "en-IN",
+          "cy-GB",
+          "gd-GB",
+          "ga-GB",
+          "es-US",
+          "es-MX",
+          "de-DE",
+          "fr-FR",
+          "es-ES",
+          "it-IT",
+          "nl-NL",
+          "pl-PL",
+          "pt-PT",
+          "pt-BR",
+          "ro-RO",
+          "sv-SE",
+          "ko-KR",
+          "zh-CN",
+          "ja-JP",
+          "hi-IN"
+        ],
+        "reportFallbacks": {
+          "ja-JP": "ソース証拠"
+        },
+        "sourceLocale": "en-US"
+      },
       "defaultLocale": "en-US",
       "defaultText": "Source evidence",
       "icuArgs": {},
@@ -13690,6 +15513,39 @@ window.__SCRIBE_SOURCE_SNIPPETS__ = [
     },
     "endLine": 544,
     "label": {
+      "catalogDependency": {
+        "explicitLocales": [],
+        "lookupLocales": [
+          "en-US",
+          "en-GB",
+          "en-CA",
+          "fr-CA",
+          "en-IN",
+          "cy-GB",
+          "gd-GB",
+          "ga-GB",
+          "es-US",
+          "es-MX",
+          "de-DE",
+          "fr-FR",
+          "es-ES",
+          "it-IT",
+          "nl-NL",
+          "pl-PL",
+          "pt-PT",
+          "pt-BR",
+          "ro-RO",
+          "sv-SE",
+          "ko-KR",
+          "zh-CN",
+          "ja-JP",
+          "hi-IN"
+        ],
+        "reportFallbacks": {
+          "ja-JP": "ソース証拠"
+        },
+        "sourceLocale": "en-US"
+      },
       "defaultLocale": "en-US",
       "defaultText": "Source evidence",
       "icuArgs": {},
@@ -13720,6 +15576,39 @@ window.__SCRIBE_SOURCE_SNIPPETS__ = [
     },
     "endLine": 400,
     "label": {
+      "catalogDependency": {
+        "explicitLocales": [],
+        "lookupLocales": [
+          "en-US",
+          "en-GB",
+          "en-CA",
+          "fr-CA",
+          "en-IN",
+          "cy-GB",
+          "gd-GB",
+          "ga-GB",
+          "es-US",
+          "es-MX",
+          "de-DE",
+          "fr-FR",
+          "es-ES",
+          "it-IT",
+          "nl-NL",
+          "pl-PL",
+          "pt-PT",
+          "pt-BR",
+          "ro-RO",
+          "sv-SE",
+          "ko-KR",
+          "zh-CN",
+          "ja-JP",
+          "hi-IN"
+        ],
+        "reportFallbacks": {
+          "ja-JP": "ソース証拠"
+        },
+        "sourceLocale": "en-US"
+      },
       "defaultLocale": "en-US",
       "defaultText": "Source evidence",
       "icuArgs": {},
@@ -13750,6 +15639,39 @@ window.__SCRIBE_SOURCE_SNIPPETS__ = [
     },
     "endLine": 865,
     "label": {
+      "catalogDependency": {
+        "explicitLocales": [],
+        "lookupLocales": [
+          "en-US",
+          "en-GB",
+          "en-CA",
+          "fr-CA",
+          "en-IN",
+          "cy-GB",
+          "gd-GB",
+          "ga-GB",
+          "es-US",
+          "es-MX",
+          "de-DE",
+          "fr-FR",
+          "es-ES",
+          "it-IT",
+          "nl-NL",
+          "pl-PL",
+          "pt-PT",
+          "pt-BR",
+          "ro-RO",
+          "sv-SE",
+          "ko-KR",
+          "zh-CN",
+          "ja-JP",
+          "hi-IN"
+        ],
+        "reportFallbacks": {
+          "ja-JP": "ソース証拠"
+        },
+        "sourceLocale": "en-US"
+      },
       "defaultLocale": "en-US",
       "defaultText": "Source evidence",
       "icuArgs": {},
@@ -13780,6 +15702,39 @@ window.__SCRIBE_SOURCE_SNIPPETS__ = [
     },
     "endLine": 378,
     "label": {
+      "catalogDependency": {
+        "explicitLocales": [],
+        "lookupLocales": [
+          "en-US",
+          "en-GB",
+          "en-CA",
+          "fr-CA",
+          "en-IN",
+          "cy-GB",
+          "gd-GB",
+          "ga-GB",
+          "es-US",
+          "es-MX",
+          "de-DE",
+          "fr-FR",
+          "es-ES",
+          "it-IT",
+          "nl-NL",
+          "pl-PL",
+          "pt-PT",
+          "pt-BR",
+          "ro-RO",
+          "sv-SE",
+          "ko-KR",
+          "zh-CN",
+          "ja-JP",
+          "hi-IN"
+        ],
+        "reportFallbacks": {
+          "ja-JP": "ソース証拠"
+        },
+        "sourceLocale": "en-US"
+      },
       "defaultLocale": "en-US",
       "defaultText": "Source evidence",
       "icuArgs": {},
@@ -13810,6 +15765,39 @@ window.__SCRIBE_SOURCE_SNIPPETS__ = [
     },
     "endLine": 605,
     "label": {
+      "catalogDependency": {
+        "explicitLocales": [],
+        "lookupLocales": [
+          "en-US",
+          "en-GB",
+          "en-CA",
+          "fr-CA",
+          "en-IN",
+          "cy-GB",
+          "gd-GB",
+          "ga-GB",
+          "es-US",
+          "es-MX",
+          "de-DE",
+          "fr-FR",
+          "es-ES",
+          "it-IT",
+          "nl-NL",
+          "pl-PL",
+          "pt-PT",
+          "pt-BR",
+          "ro-RO",
+          "sv-SE",
+          "ko-KR",
+          "zh-CN",
+          "ja-JP",
+          "hi-IN"
+        ],
+        "reportFallbacks": {
+          "ja-JP": "ソース証拠"
+        },
+        "sourceLocale": "en-US"
+      },
       "defaultLocale": "en-US",
       "defaultText": "Source evidence",
       "icuArgs": {},
@@ -13840,6 +15828,39 @@ window.__SCRIBE_SOURCE_SNIPPETS__ = [
     },
     "endLine": 397,
     "label": {
+      "catalogDependency": {
+        "explicitLocales": [],
+        "lookupLocales": [
+          "en-US",
+          "en-GB",
+          "en-CA",
+          "fr-CA",
+          "en-IN",
+          "cy-GB",
+          "gd-GB",
+          "ga-GB",
+          "es-US",
+          "es-MX",
+          "de-DE",
+          "fr-FR",
+          "es-ES",
+          "it-IT",
+          "nl-NL",
+          "pl-PL",
+          "pt-PT",
+          "pt-BR",
+          "ro-RO",
+          "sv-SE",
+          "ko-KR",
+          "zh-CN",
+          "ja-JP",
+          "hi-IN"
+        ],
+        "reportFallbacks": {
+          "ja-JP": "ソース証拠"
+        },
+        "sourceLocale": "en-US"
+      },
       "defaultLocale": "en-US",
       "defaultText": "Source evidence",
       "icuArgs": {},
@@ -13870,6 +15891,39 @@ window.__SCRIBE_SOURCE_SNIPPETS__ = [
     },
     "endLine": 152,
     "label": {
+      "catalogDependency": {
+        "explicitLocales": [],
+        "lookupLocales": [
+          "en-US",
+          "en-GB",
+          "en-CA",
+          "fr-CA",
+          "en-IN",
+          "cy-GB",
+          "gd-GB",
+          "ga-GB",
+          "es-US",
+          "es-MX",
+          "de-DE",
+          "fr-FR",
+          "es-ES",
+          "it-IT",
+          "nl-NL",
+          "pl-PL",
+          "pt-PT",
+          "pt-BR",
+          "ro-RO",
+          "sv-SE",
+          "ko-KR",
+          "zh-CN",
+          "ja-JP",
+          "hi-IN"
+        ],
+        "reportFallbacks": {
+          "ja-JP": "ソース証拠"
+        },
+        "sourceLocale": "en-US"
+      },
       "defaultLocale": "en-US",
       "defaultText": "Source evidence",
       "icuArgs": {},
@@ -13900,6 +15954,39 @@ window.__SCRIBE_SOURCE_SNIPPETS__ = [
     },
     "endLine": 283,
     "label": {
+      "catalogDependency": {
+        "explicitLocales": [],
+        "lookupLocales": [
+          "en-US",
+          "en-GB",
+          "en-CA",
+          "fr-CA",
+          "en-IN",
+          "cy-GB",
+          "gd-GB",
+          "ga-GB",
+          "es-US",
+          "es-MX",
+          "de-DE",
+          "fr-FR",
+          "es-ES",
+          "it-IT",
+          "nl-NL",
+          "pl-PL",
+          "pt-PT",
+          "pt-BR",
+          "ro-RO",
+          "sv-SE",
+          "ko-KR",
+          "zh-CN",
+          "ja-JP",
+          "hi-IN"
+        ],
+        "reportFallbacks": {
+          "ja-JP": "ソース証拠"
+        },
+        "sourceLocale": "en-US"
+      },
       "defaultLocale": "en-US",
       "defaultText": "Source evidence",
       "icuArgs": {},
@@ -13930,6 +16017,39 @@ window.__SCRIBE_SOURCE_SNIPPETS__ = [
     },
     "endLine": 643,
     "label": {
+      "catalogDependency": {
+        "explicitLocales": [],
+        "lookupLocales": [
+          "en-US",
+          "en-GB",
+          "en-CA",
+          "fr-CA",
+          "en-IN",
+          "cy-GB",
+          "gd-GB",
+          "ga-GB",
+          "es-US",
+          "es-MX",
+          "de-DE",
+          "fr-FR",
+          "es-ES",
+          "it-IT",
+          "nl-NL",
+          "pl-PL",
+          "pt-PT",
+          "pt-BR",
+          "ro-RO",
+          "sv-SE",
+          "ko-KR",
+          "zh-CN",
+          "ja-JP",
+          "hi-IN"
+        ],
+        "reportFallbacks": {
+          "ja-JP": "ソース証拠"
+        },
+        "sourceLocale": "en-US"
+      },
       "defaultLocale": "en-US",
       "defaultText": "Source evidence",
       "icuArgs": {},
@@ -13960,6 +16080,39 @@ window.__SCRIBE_SOURCE_SNIPPETS__ = [
     },
     "endLine": 667,
     "label": {
+      "catalogDependency": {
+        "explicitLocales": [],
+        "lookupLocales": [
+          "en-US",
+          "en-GB",
+          "en-CA",
+          "fr-CA",
+          "en-IN",
+          "cy-GB",
+          "gd-GB",
+          "ga-GB",
+          "es-US",
+          "es-MX",
+          "de-DE",
+          "fr-FR",
+          "es-ES",
+          "it-IT",
+          "nl-NL",
+          "pl-PL",
+          "pt-PT",
+          "pt-BR",
+          "ro-RO",
+          "sv-SE",
+          "ko-KR",
+          "zh-CN",
+          "ja-JP",
+          "hi-IN"
+        ],
+        "reportFallbacks": {
+          "ja-JP": "ソース証拠"
+        },
+        "sourceLocale": "en-US"
+      },
       "defaultLocale": "en-US",
       "defaultText": "Source evidence",
       "icuArgs": {},
@@ -13990,6 +16143,39 @@ window.__SCRIBE_SOURCE_SNIPPETS__ = [
     },
     "endLine": 256,
     "label": {
+      "catalogDependency": {
+        "explicitLocales": [],
+        "lookupLocales": [
+          "en-US",
+          "en-GB",
+          "en-CA",
+          "fr-CA",
+          "en-IN",
+          "cy-GB",
+          "gd-GB",
+          "ga-GB",
+          "es-US",
+          "es-MX",
+          "de-DE",
+          "fr-FR",
+          "es-ES",
+          "it-IT",
+          "nl-NL",
+          "pl-PL",
+          "pt-PT",
+          "pt-BR",
+          "ro-RO",
+          "sv-SE",
+          "ko-KR",
+          "zh-CN",
+          "ja-JP",
+          "hi-IN"
+        ],
+        "reportFallbacks": {
+          "ja-JP": "ソース証拠"
+        },
+        "sourceLocale": "en-US"
+      },
       "defaultLocale": "en-US",
       "defaultText": "Source evidence",
       "icuArgs": {},
@@ -14020,6 +16206,39 @@ window.__SCRIBE_SOURCE_SNIPPETS__ = [
     },
     "endLine": 272,
     "label": {
+      "catalogDependency": {
+        "explicitLocales": [],
+        "lookupLocales": [
+          "en-US",
+          "en-GB",
+          "en-CA",
+          "fr-CA",
+          "en-IN",
+          "cy-GB",
+          "gd-GB",
+          "ga-GB",
+          "es-US",
+          "es-MX",
+          "de-DE",
+          "fr-FR",
+          "es-ES",
+          "it-IT",
+          "nl-NL",
+          "pl-PL",
+          "pt-PT",
+          "pt-BR",
+          "ro-RO",
+          "sv-SE",
+          "ko-KR",
+          "zh-CN",
+          "ja-JP",
+          "hi-IN"
+        ],
+        "reportFallbacks": {
+          "ja-JP": "ソース証拠"
+        },
+        "sourceLocale": "en-US"
+      },
       "defaultLocale": "en-US",
       "defaultText": "Source evidence",
       "icuArgs": {},
@@ -14050,6 +16269,39 @@ window.__SCRIBE_SOURCE_SNIPPETS__ = [
     },
     "endLine": 348,
     "label": {
+      "catalogDependency": {
+        "explicitLocales": [],
+        "lookupLocales": [
+          "en-US",
+          "en-GB",
+          "en-CA",
+          "fr-CA",
+          "en-IN",
+          "cy-GB",
+          "gd-GB",
+          "ga-GB",
+          "es-US",
+          "es-MX",
+          "de-DE",
+          "fr-FR",
+          "es-ES",
+          "it-IT",
+          "nl-NL",
+          "pl-PL",
+          "pt-PT",
+          "pt-BR",
+          "ro-RO",
+          "sv-SE",
+          "ko-KR",
+          "zh-CN",
+          "ja-JP",
+          "hi-IN"
+        ],
+        "reportFallbacks": {
+          "ja-JP": "ソース証拠"
+        },
+        "sourceLocale": "en-US"
+      },
       "defaultLocale": "en-US",
       "defaultText": "Source evidence",
       "icuArgs": {},
@@ -14080,6 +16332,39 @@ window.__SCRIBE_SOURCE_SNIPPETS__ = [
     },
     "endLine": 373,
     "label": {
+      "catalogDependency": {
+        "explicitLocales": [],
+        "lookupLocales": [
+          "en-US",
+          "en-GB",
+          "en-CA",
+          "fr-CA",
+          "en-IN",
+          "cy-GB",
+          "gd-GB",
+          "ga-GB",
+          "es-US",
+          "es-MX",
+          "de-DE",
+          "fr-FR",
+          "es-ES",
+          "it-IT",
+          "nl-NL",
+          "pl-PL",
+          "pt-PT",
+          "pt-BR",
+          "ro-RO",
+          "sv-SE",
+          "ko-KR",
+          "zh-CN",
+          "ja-JP",
+          "hi-IN"
+        ],
+        "reportFallbacks": {
+          "ja-JP": "ソース証拠"
+        },
+        "sourceLocale": "en-US"
+      },
       "defaultLocale": "en-US",
       "defaultText": "Source evidence",
       "icuArgs": {},
@@ -14110,6 +16395,39 @@ window.__SCRIBE_SOURCE_SNIPPETS__ = [
     },
     "endLine": 487,
     "label": {
+      "catalogDependency": {
+        "explicitLocales": [],
+        "lookupLocales": [
+          "en-US",
+          "en-GB",
+          "en-CA",
+          "fr-CA",
+          "en-IN",
+          "cy-GB",
+          "gd-GB",
+          "ga-GB",
+          "es-US",
+          "es-MX",
+          "de-DE",
+          "fr-FR",
+          "es-ES",
+          "it-IT",
+          "nl-NL",
+          "pl-PL",
+          "pt-PT",
+          "pt-BR",
+          "ro-RO",
+          "sv-SE",
+          "ko-KR",
+          "zh-CN",
+          "ja-JP",
+          "hi-IN"
+        ],
+        "reportFallbacks": {
+          "ja-JP": "ソース証拠"
+        },
+        "sourceLocale": "en-US"
+      },
       "defaultLocale": "en-US",
       "defaultText": "Source evidence",
       "icuArgs": {},
@@ -14140,6 +16458,39 @@ window.__SCRIBE_SOURCE_SNIPPETS__ = [
     },
     "endLine": 267,
     "label": {
+      "catalogDependency": {
+        "explicitLocales": [],
+        "lookupLocales": [
+          "en-US",
+          "en-GB",
+          "en-CA",
+          "fr-CA",
+          "en-IN",
+          "cy-GB",
+          "gd-GB",
+          "ga-GB",
+          "es-US",
+          "es-MX",
+          "de-DE",
+          "fr-FR",
+          "es-ES",
+          "it-IT",
+          "nl-NL",
+          "pl-PL",
+          "pt-PT",
+          "pt-BR",
+          "ro-RO",
+          "sv-SE",
+          "ko-KR",
+          "zh-CN",
+          "ja-JP",
+          "hi-IN"
+        ],
+        "reportFallbacks": {
+          "ja-JP": "ソース証拠"
+        },
+        "sourceLocale": "en-US"
+      },
       "defaultLocale": "en-US",
       "defaultText": "Source evidence",
       "icuArgs": {},
@@ -14170,6 +16521,39 @@ window.__SCRIBE_SOURCE_SNIPPETS__ = [
     },
     "endLine": 269,
     "label": {
+      "catalogDependency": {
+        "explicitLocales": [],
+        "lookupLocales": [
+          "en-US",
+          "en-GB",
+          "en-CA",
+          "fr-CA",
+          "en-IN",
+          "cy-GB",
+          "gd-GB",
+          "ga-GB",
+          "es-US",
+          "es-MX",
+          "de-DE",
+          "fr-FR",
+          "es-ES",
+          "it-IT",
+          "nl-NL",
+          "pl-PL",
+          "pt-PT",
+          "pt-BR",
+          "ro-RO",
+          "sv-SE",
+          "ko-KR",
+          "zh-CN",
+          "ja-JP",
+          "hi-IN"
+        ],
+        "reportFallbacks": {
+          "ja-JP": "ソース証拠"
+        },
+        "sourceLocale": "en-US"
+      },
       "defaultLocale": "en-US",
       "defaultText": "Source evidence",
       "icuArgs": {},
@@ -14200,6 +16584,39 @@ window.__SCRIBE_SOURCE_SNIPPETS__ = [
     },
     "endLine": 389,
     "label": {
+      "catalogDependency": {
+        "explicitLocales": [],
+        "lookupLocales": [
+          "en-US",
+          "en-GB",
+          "en-CA",
+          "fr-CA",
+          "en-IN",
+          "cy-GB",
+          "gd-GB",
+          "ga-GB",
+          "es-US",
+          "es-MX",
+          "de-DE",
+          "fr-FR",
+          "es-ES",
+          "it-IT",
+          "nl-NL",
+          "pl-PL",
+          "pt-PT",
+          "pt-BR",
+          "ro-RO",
+          "sv-SE",
+          "ko-KR",
+          "zh-CN",
+          "ja-JP",
+          "hi-IN"
+        ],
+        "reportFallbacks": {
+          "ja-JP": "ソース証拠"
+        },
+        "sourceLocale": "en-US"
+      },
       "defaultLocale": "en-US",
       "defaultText": "Source evidence",
       "icuArgs": {},
@@ -14230,6 +16647,39 @@ window.__SCRIBE_SOURCE_SNIPPETS__ = [
     },
     "endLine": 178,
     "label": {
+      "catalogDependency": {
+        "explicitLocales": [],
+        "lookupLocales": [
+          "en-US",
+          "en-GB",
+          "en-CA",
+          "fr-CA",
+          "en-IN",
+          "cy-GB",
+          "gd-GB",
+          "ga-GB",
+          "es-US",
+          "es-MX",
+          "de-DE",
+          "fr-FR",
+          "es-ES",
+          "it-IT",
+          "nl-NL",
+          "pl-PL",
+          "pt-PT",
+          "pt-BR",
+          "ro-RO",
+          "sv-SE",
+          "ko-KR",
+          "zh-CN",
+          "ja-JP",
+          "hi-IN"
+        ],
+        "reportFallbacks": {
+          "ja-JP": "ソース証拠"
+        },
+        "sourceLocale": "en-US"
+      },
       "defaultLocale": "en-US",
       "defaultText": "Source evidence",
       "icuArgs": {},
@@ -14260,6 +16710,39 @@ window.__SCRIBE_SOURCE_SNIPPETS__ = [
     },
     "endLine": 222,
     "label": {
+      "catalogDependency": {
+        "explicitLocales": [],
+        "lookupLocales": [
+          "en-US",
+          "en-GB",
+          "en-CA",
+          "fr-CA",
+          "en-IN",
+          "cy-GB",
+          "gd-GB",
+          "ga-GB",
+          "es-US",
+          "es-MX",
+          "de-DE",
+          "fr-FR",
+          "es-ES",
+          "it-IT",
+          "nl-NL",
+          "pl-PL",
+          "pt-PT",
+          "pt-BR",
+          "ro-RO",
+          "sv-SE",
+          "ko-KR",
+          "zh-CN",
+          "ja-JP",
+          "hi-IN"
+        ],
+        "reportFallbacks": {
+          "ja-JP": "ソース証拠"
+        },
+        "sourceLocale": "en-US"
+      },
       "defaultLocale": "en-US",
       "defaultText": "Source evidence",
       "icuArgs": {},
@@ -14290,6 +16773,39 @@ window.__SCRIBE_SOURCE_SNIPPETS__ = [
     },
     "endLine": 711,
     "label": {
+      "catalogDependency": {
+        "explicitLocales": [],
+        "lookupLocales": [
+          "en-US",
+          "en-GB",
+          "en-CA",
+          "fr-CA",
+          "en-IN",
+          "cy-GB",
+          "gd-GB",
+          "ga-GB",
+          "es-US",
+          "es-MX",
+          "de-DE",
+          "fr-FR",
+          "es-ES",
+          "it-IT",
+          "nl-NL",
+          "pl-PL",
+          "pt-PT",
+          "pt-BR",
+          "ro-RO",
+          "sv-SE",
+          "ko-KR",
+          "zh-CN",
+          "ja-JP",
+          "hi-IN"
+        ],
+        "reportFallbacks": {
+          "ja-JP": "ソース証拠"
+        },
+        "sourceLocale": "en-US"
+      },
       "defaultLocale": "en-US",
       "defaultText": "Source evidence",
       "icuArgs": {},
@@ -14320,6 +16836,39 @@ window.__SCRIBE_SOURCE_SNIPPETS__ = [
     },
     "endLine": 151,
     "label": {
+      "catalogDependency": {
+        "explicitLocales": [],
+        "lookupLocales": [
+          "en-US",
+          "en-GB",
+          "en-CA",
+          "fr-CA",
+          "en-IN",
+          "cy-GB",
+          "gd-GB",
+          "ga-GB",
+          "es-US",
+          "es-MX",
+          "de-DE",
+          "fr-FR",
+          "es-ES",
+          "it-IT",
+          "nl-NL",
+          "pl-PL",
+          "pt-PT",
+          "pt-BR",
+          "ro-RO",
+          "sv-SE",
+          "ko-KR",
+          "zh-CN",
+          "ja-JP",
+          "hi-IN"
+        ],
+        "reportFallbacks": {
+          "ja-JP": "ソース証拠"
+        },
+        "sourceLocale": "en-US"
+      },
       "defaultLocale": "en-US",
       "defaultText": "Source evidence",
       "icuArgs": {},
@@ -14350,6 +16899,39 @@ window.__SCRIBE_SOURCE_SNIPPETS__ = [
     },
     "endLine": 279,
     "label": {
+      "catalogDependency": {
+        "explicitLocales": [],
+        "lookupLocales": [
+          "en-US",
+          "en-GB",
+          "en-CA",
+          "fr-CA",
+          "en-IN",
+          "cy-GB",
+          "gd-GB",
+          "ga-GB",
+          "es-US",
+          "es-MX",
+          "de-DE",
+          "fr-FR",
+          "es-ES",
+          "it-IT",
+          "nl-NL",
+          "pl-PL",
+          "pt-PT",
+          "pt-BR",
+          "ro-RO",
+          "sv-SE",
+          "ko-KR",
+          "zh-CN",
+          "ja-JP",
+          "hi-IN"
+        ],
+        "reportFallbacks": {
+          "ja-JP": "ソース証拠"
+        },
+        "sourceLocale": "en-US"
+      },
       "defaultLocale": "en-US",
       "defaultText": "Source evidence",
       "icuArgs": {},
@@ -14371,186 +16953,6 @@ window.__SCRIBE_SOURCE_SNIPPETS__ = [
     "startLine": 63,
     "vcsPermalink": "https://github.com/calcom/cal.com/blob/180ede28f0bddf2738933a6e60a8e80f6116d7da/packages/app-store/salesforce/lib/graphql/SalesforceGraphQLClient.ts#L63-L279",
     "verifiedSourceHash": "sha256:ae59e003709466c5c5bb8cec258d925e22795267c9c6593512ac79f870b21058"
-  },
-  {
-    "anchorId": "source-repository-health-complexity-eventadvancedtab-39f223b582",
-    "body": {
-      "code": "};\n\nexport const EventAdvancedTab = ({\n  eventType,\n  team,\n  calendarsQuery,\n  user,\n  isUserLoading,\n  showToast,\n  showBookerLayoutSelector,\n  customClassNames,\n  verifiedEmails,\n  orgId,\n  localeOptions,\n}: EventAdvancedTabProps) => {\n  const isPlatform = useIsPlatform();\n  const platformContext = useAtomsContext();\n  const formMethods = useFormContext<FormValues>();\n  const { t } = useLocale();\n  const [showEventNameTip, setShowEventNameTip] = useState(false);\n  const [darkModeError, setDarkModeError] = useState(false);\n  const [lightModeError, setLightModeError] = useState(false);\n  const [multiplePrivateLinksVisible, setMultiplePrivateLinksVisible] = useState(\n    !!formMethods.getValues(\"multiplePrivateLinks\") &&\n      formMethods.getValues(\"multiplePrivateLinks\")?.length !== 0\n  );\n  const watchedInterfaceLanguage = formMethods.watch(\"interfaceLanguage\");\n  const [interfaceLanguageVisible, setInterfaceLanguageVisible] = useState(\n    watchedInterfaceLanguage !== null && watchedInterfaceLanguage !== undefined\n  );\n\n  useEffect(() => {\n    setInterfaceLanguageVisible(watchedInterfaceLanguage !== null && watchedInterfaceLanguage !== undefined);\n  }, [watchedInterfaceLanguage]);\n  const [redirectUrlVisible, setRedirectUrlVisible] = useState(!!formMethods.getValues(\"successRedirectUrl\"));\n\n  const bookingFields: Prisma.JsonObject = {};\n  const selectedThemeIsDark =\n    user?.theme === \"dark\" ||\n    (!user?.theme && typeof document !== \"undefined\" && document.documentElement.classList.contains(\"dark\"));\n  formMethods.getValues().bookingFields.forEach(({ name }) => {\n    bookingFields[name] = `${name} input`;\n  });\n\n  const nameBookingField = formMethods.getValues().bookingFields.find((field) => field.name === \"name\");\n  const isSplit = (nameBookingField && nameBookingField.variant === \"firstAndLastName\") ?? false;\n\n  const eventNameObject: EventNameObjectType = {\n    attendeeName: t(\"scheduler\"),\n    eventType: formMethods.getValues(\"title\"),\n    eventName: formMethods.getValues(\"eventName\"),\n    host: formMethods.getValues(\"users\")[0]?.name || \"Nameless\",\n    bookingFields: bookingFields,\n    eventDuration: formMethods.getValues(\"length\"),\n    t,\n  };\n\n  const [requiresConfirmation, setRequiresConfirmation] = useState(\n    formMethods.getValues(\"requiresConfirmation\")\n  );\n  const seatsEnabled = formMethods.watch(\"seatsPerTimeSlotEnabled\");\n  const multiLocation = (formMethods.getValues(\"locations\") || []).length > 1;\n  const noShowFeeEnabled =\n    formMethods.getValues(\"metadata\")?.apps?.stripe?.enabled === true &&\n    formMethods.getValues(\"metadata\")?.apps?.stripe?.paymentOption === \"HOLD\";\n\n  const isRecurringEvent = !!formMethods.getValues(\"recurringEvent\");\n  const interfaceLanguageOptions =\n    localeOptions && localeOptions.length > 0\n      ? [{ label: t(\"visitors_browser_language\"), value: \"\" }, ...localeOptions]\n      : [];\n\n  const isRoundRobinEventType =\n    eventType.schedulingType && eventType.schedulingType === SchedulingType.ROUND_ROBIN;\n\n  const toggleGuests = (enabled: boolean) => {\n    const bookingFields = formMethods.getValues(\"bookingFields\");\n    formMethods.setValue(\n      \"bookingFields\",\n      bookingFields.map((field) => {\n        if (field.name === \"guests\") {\n          return {\n            ...field,\n            hidden: !enabled,\n            editable: (!enabled ? \"system-but-hidden\" : \"system-but-optional\") as z.infer<\n              typeof EditableSchema\n            >,\n          };\n        }\n        return field;\n      }),\n      { shouldDirty: true }\n    );\n  };\n\n  const isManagedEventType = false;\n  const isChildrenManagedEventType = false;\n  const shouldLockDisableProps = (_field: string) => ({\n    disabled: false,\n    LockedIcon: false as const,\n    isLocked: false,\n  });\n  const shouldLockIndicator = (_field: string): Record<string, never> => ({});\n  const eventNamePlaceholder = getEventName({\n    ...eventNameObject,\n    eventName: formMethods.watch(\"eventName\"),\n  });\n\n  const successRedirectUrlLocked = shouldLockDisableProps(\"successRedirectUrl\");\n  const seatsLocked = shouldLockDisableProps(\"seatsPerTimeSlotEnabled\");\n  const requiresBookerEmailVerificationProps = shouldLockDisableProps(\"requiresBookerEmailVerification\");\n  const sendCalVideoTranscriptionEmailsProps = shouldLockDisableProps(\"canSendCalVideoTranscriptionEmails\");\n  const hideCalendarNotesLocked = shouldLockDisableProps(\"hideCalendarNotes\");\n  const hideCalendarEventDetailsLocked = shouldLockDisableProps(\"hideCalendarEventDetails\");\n  const eventTypeColorLocked = shouldLockDisableProps(\"eventTypeColor\");\n  const lockTimeZoneToggleOnBookingPageLocked = shouldLockDisableProps(\"lockTimeZoneToggleOnBookingPage\");\n  const multiplePrivateLinksLocked = shouldLockDisableProps(\"multiplePrivateLinks\");\n  const reschedulingPastBookingsLocked = shouldLockDisableProps(\"allowReschedulingPastBookings\");\n  const hideOrganizerEmailLocked = shouldLockDisableProps(\"hideOrganizerEmail\");\n  const customReplyToEmailLocked = shouldLockDisableProps(\"customReplyToEmail\");\n\n  const disableCancellingLocked = shouldLockDisableProps(\"disableCancelling\");\n  const allowReschedulingCancelledBookingsLocked = shouldLockDisableProps(\n    \"allowReschedulingCancelledBookings\"\n  );\n\n  const { isLocked: _isLocked, ...eventNameLocked } = shouldLockDisableProps(\"eventName\");\n\n  if (isManagedEventType) {\n    multiplePrivateLinksLocked.disabled = true;\n  }\n\n  const [disableRescheduling, setDisableRescheduling] = useState(eventType.disableRescheduling || false);\n\n  const [allowReschedulingCancelledBookings, setallowReschedulingCancelledBookings] = useState(\n    eventType.allowReschedulingCancelledBookings ?? false\n  );\n\n  const showOptimizedSlotsLocked = shouldLockDisableProps(\"showOptimizedSlots\");\n\n  const closeEventNameTip = () => setShowEventNameTip(false);\n\n  const [isEventTypeColorChecked, setIsEventTypeColorChecked] = useState(!!eventType.eventTypeColor);\n\n  const customReplyToEmail = formMethods.watch(\"customReplyToEmail\");\n\n  const [eventTypeColorState, setEventTypeColorState] = useState(\n    eventType.eventTypeColor || {\n      lightEventTypeColor: DEFAULT_LIGHT_BRAND_COLOR,\n      darkEventTypeColor: DEFAULT_DARK_BRAND_COLOR,\n    }\n  );\n\n  const userTimeZone = extractHostTimezone({\n    userId: eventType.userId,\n    teamId: eventType.teamId,\n    hosts: eventType.hosts,\n    owner: eventType.owner,\n    team: eventType.team,\n  });\n\n  let verifiedSecondaryEmails = [\n    {\n      label: user?.email || \"\",\n      value: -1,\n    },\n    ...(user?.secondaryEmails || [])\n      .filter((secondaryEmail) => !!secondaryEmail.emailVerified)\n      .map((secondaryEmail) => ({ label: secondaryEmail.email, value: secondaryEmail.id })),\n  ];\n\n  const removePlatformClientIdFromEmail = (email: string, clientId: string) =>\n    email.replace(`+${clientId}`, \"\");\n\n  let userEmail = user?.email || \"\";\n\n  if (isPlatform && platformContext.clientId) {\n    verifiedSecondaryEmails = verifiedSecondaryEmails.map((email) => ({\n      ...email,\n      label: removePlatformClientIdFromEmail(email.label, platformContext.clientId),\n    }));\n    userEmail = removePlatformClientIdFromEmail(userEmail, platformContext.clientId);\n  }\n\n  const metadata = formMethods.watch(\"metadata\");\n  const paymentAppData = useMemo(() => {\n    const _eventType = {\n      price: 0,\n      currency: \"\",\n      metadata,\n    };\n    return getPaymentAppData(_eventType);\n  }, [metadata]);\n\n  const isPaidEvent = useMemo(\n    () => !Number.isNaN(paymentAppData.price) && paymentAppData.price > 0,\n    [paymentAppData]\n  );\n\n  const TimezoneSelect = useMemo(() => {\n    return isPlatform ? PlatformTimzoneSelect : WebTimezoneSelect;\n  }, [isPlatform]);\n\n  return (\n    <div className=\"stack-y-4 flex flex-col\">\n      <calendarComponents.CalendarSettings\n        verifiedSecondaryEmails={verifiedSecondaryEmails}\n        userEmail={userEmail}\n        calendarsQuery={calendarsQuery}\n        isTeamEventType={!!team}\n        isChildrenManagedEventType={isChildrenManagedEventType}\n        customClassNames={customClassNames}\n        eventNameLocked={eventNameLocked}\n        eventNamePlaceholder={eventNamePlaceholder}\n        setShowEventNameTip={setShowEventNameTip}\n        showToast={showToast}\n        eventType={eventType}\n      />\n      {showBookerLayoutSelector && (\n        <BookerLayoutSelector\n          fallbackToUserSettings\n          isDark={selectedThemeIsDark}\n          isOuterBorder={true}\n          user={user}\n          isUserLoading={isUserLoading}\n        />\n      )}\n\n      <div className=\"rounded-lg border border-subtle bg-cal-muted p-1\">\n        <div className=\"p-5\">\n          <div className=\"font-semibold text-default text-sm leading-none ltr:mr-1 rtl:ml-1\">\n            {t(\"booking_questions_title\")}\n          </div>\n          <p className=\"wrap-break-word mt-1 max-w-[280px] text-sm text-subtle sm:max-w-[500px]\">\n            <LearnMoreLink\n              t={t}\n              i18nKey=\"booking_questions_description\"\n              href=\"https://cal.com/help/event-types/booking-questions\"\n            />\n          </p>\n        </div>\n        <div className=\"rounded-lg border border-subtle bg-default p-5\">\n          <FormBuilder\n            showPhoneAndEmailToggle\n            title={t(\"confirmation\")}\n            description={t(\"what_booker_should_provide\")}\n            addFieldLabel={t(\"add_a_booking_question\")}\n            formProp=\"bookingFields\"\n            {...shouldLockDisableProps(\"bookingFields\")}\n            dataStore={{\n              options: {\n                locations: {\n                  // FormBuilder doesn't handle plural for non-english languages. So, use english(Location) only. This is similar to 'Workflow'\n                  source: { label: \"Location\" },\n                  value: getLocationsOptionsForSelect(formMethods.getValues(\"locations\") ?? [], t),\n                },\n              },\n            }}\n            shouldConsiderRequired={(field: BookingField) => {\n              // Location field has a default value at backend so API can send no location but we don't allow it in UI and thus we want to show it as required to user\n              return field.name === \"location\" ? true : field.required;\n            }}\n            showPriceField={isPaidEvent}\n            paymentCurrency={paymentAppData?.currency || \"usd\"}\n          />\n        </div>\n      </div>\n      {!isPlatform && (\n        <Controller\n          name=\"requiresCancellationReason\"\n          render={({ field: { value, onChange } }) => {\n            const cancellationReasonOptions = [\n              { value: CancellationReasonRequirement.MANDATORY_BOTH, label: t(\"mandatory_for_both\") },\n              {\n                value: CancellationReasonRequirement.MANDATORY_HOST_ONLY,\n                label: t(\"mandatory_for_host_only\"),\n              },\n              {\n                value: CancellationReasonRequirement.MANDATORY_ATTENDEE_ONLY,\n                label: t(\"mandatory_for_attendee_only\"),\n              },\n              { value: CancellationReasonRequirement.OPTIONAL_BOTH, label: t(\"optional_for_both\") },\n            ];\n            return (\n              <div className=\"border-subtle rounded-lg border px-4 py-6 sm:px-6\">\n                <div className=\"flex items-center justify-between\">\n                  <div>\n                    <p className=\"text-default text-sm font-semibold\">{t(\"require_cancellation_reason\")}</p>\n                    <p className=\"text-default text-sm\">{t(\"require_cancellation_reason_description\")}</p>\n                  </div>\n                  <Select\n                    value={cancellationReasonOptions.find(\n                      (opt) => opt.value === (value || CancellationReasonRequirement.MANDATORY_HOST_ONLY)\n                    )}\n                    options={cancellationReasonOptions}\n                    onChange={(selected) => onChange(selected?.value)}\n                    className=\"w-52\"\n                  />\n                </div>\n              </div>\n            );\n          }}\n        />\n      )}\n      <RequiresConfirmationController\n        eventType={eventType}\n        seatsEnabled={seatsEnabled}\n        metadata={formMethods.getValues(\"metadata\")}\n        requiresConfirmation={requiresConfirmation}\n        requiresConfirmationWillBlockSlot={formMethods.getValues(\"requiresConfirmationWillBlockSlot\")}\n        onRequiresConfirmation={setRequiresConfirmation}\n        customClassNames={customClassNames?.requiresConfirmation}\n      />\n\n      {!isPlatform && (\n        <>\n          <Controller\n            name=\"disabledCancelling\"\n            render={({ field: { onChange, value } }) => (\n              <SettingsToggle\n                labelClassName=\"text-sm\"\n                toggleSwitchAtTheEnd={true}\n                switchContainerClassName=\"border-subtle rounded-lg border py-6 px-4 sm:px-6\"\n                title={t(\"disable_cancelling\")}\n                data-testid=\"disable-cancelling-toggle\"\n                {...disableCancellingLocked}\n                description={\n                  <LearnMoreLink\n                    t={t}\n                    i18nKey=\"description_disable_cancelling\"\n                    href=\"https://cal.com/help/event-types/disable-canceling-rescheduling#disable-cancelling\"\n                  />\n                }\n                checked={value}\n                onCheckedChange={(val) => {\n                  onChange(val);\n                }}\n              />\n            )}\n          />\n\n          <DisableReschedulingController\n            eventType={eventType}\n            disableRescheduling={disableRescheduling}\n            onDisableRescheduling={setDisableRescheduling}\n            customClassNames={customClassNames?.disableRescheduling}\n          />\n        </>\n      )}\n\n      <Controller\n        name=\"canSendCalVideoTranscriptionEmails\"\n        render={({ field: { value, onChange } }) => (\n          <SettingsToggle\n            labelClassName={classNames(\n              \"text-sm\",\n              customClassNames?.canSendCalVideoTranscriptionEmails?.label\n            )}\n            toggleSwitchAtTheEnd={true}\n            switchContainerClassName={classNames(\n              \"border-subtle rounded-lg border py-6 px-4 sm:px-6\",\n              customClassNames?.canSendCalVideoTranscriptionEmails?.container\n            )}\n            title={t(\"send_cal_video_transcription_emails\")}\n            data-testid=\"send-cal-video-transcription-emails\"\n            {...sendCalVideoTranscriptionEmailsProps}\n            description={t(\"description_send_cal_video_transcription_emails\")}\n            descriptionClassName={customClassNames?.canSendCalVideoTranscriptionEmails?.description}\n            checked={value}\n            onCheckedChange={(e) => onChange(e)}\n          />\n        )}\n      />\n      {!isPlatform && (\n        <Controller\n          name=\"autoTranslateDescriptionEnabled\"\n          render={({ field: { value, onChange } }) => (\n            <SettingsToggle\n              labelClassName=\"text-sm\"\n              title={t(\"translate_description_button\")}\n              checked={value}\n              onCheckedChange={(e) => onChange(e)}\n              disabled={!orgId}\n              tooltip={!orgId ? t(\"orgs_upgrade_to_enable_feature\") : undefined}\n              data-testid=\"ai_translation_toggle\"\n              toggleSwitchAtTheEnd={true}\n              switchContainerClassName=\"border-subtle rounded-lg border py-6 px-4 sm:px-6\"\n              description={t(\"translate_description_button_description\")}\n            />\n          )}\n        />\n      )}\n      {!isPlatform && (\n        <Controller\n          name=\"interfaceLanguage\"\n          control={formMethods.control}\n          defaultValue={eventType.interfaceLanguage ?? null}\n          render={({ field: { value, onChange } }) => (\n            <SettingsToggle\n              labelClassName=\"text-sm\"\n              toggleSwitchAtTheEnd={true}\n              switchContainerClassName={classNames(\n                \"border-subtle rounded-lg border py-6 px-4 sm:px-6\",\n                interfaceLanguageVisible && \"rounded-b-none\"\n              )}\n              childrenClassName=\"lg:ml-0\"\n              data-testid=\"event-interface-language-toggle\"\n              title={t(\"interface_language\")}\n              description={t(\"interface_language_description\")}\n              checked={interfaceLanguageVisible}\n              {...shouldLockIndicator(\"interfaceLanguage\")}\n              onCheckedChange={(e) => {\n                setInterfaceLanguageVisible(e);\n                if (!e) {\n                  // disables the setting\n                  formMethods.setValue(\"interfaceLanguage\", null, { shouldDirty: true });\n                } else {\n                  // \"\" is default value which means visitors browser language\n                  formMethods.setValue(\"interfaceLanguage\", \"\", { shouldDirty: true });\n                }\n              }}>\n              <div className=\"rounded-b-lg border border-subtle border-t-0 p-6\">\n                <Select<{ label: string; value: string }>\n                  data-testid=\"event-interface-language\"\n                  className=\"capitalize\"\n                  options={interfaceLanguageOptions}\n                  onChange={(option) => {\n                    onChange(option?.value);\n                  }}\n                  value={interfaceLanguageOptions.find((option) => option.value === value) || undefined}\n                />\n              </div>\n            </SettingsToggle>\n          )}\n        />\n      )}\n      <Controller\n        name=\"requiresBookerEmailVerification\"\n        render={({ field: { value, onChange } }) => (\n          <SettingsToggle\n            labelClassName={classNames(\"text-sm\", customClassNames?.bookerEmailVerification?.label)}\n            toggleSwitchAtTheEnd={true}\n            switchContainerClassName={classNames(\n              \"border-subtle rounded-lg border py-6 px-4 sm:px-6\",\n              customClassNames?.bookerEmailVerification?.container\n            )}\n            title={t(\"requires_booker_email_verification\")}\n            data-testid=\"requires-booker-email-verification\"\n            {...requiresBookerEmailVerificationProps}\n            description={t(\"description_requires_booker_email_verification\")}\n            descriptionClassName={customClassNames?.bookerEmailVerification?.description}\n            checked={value}\n            onCheckedChange={(e) => onChange(e)}\n          />\n        )}\n      />\n      <Controller\n        name=\"hideCalendarNotes\"\n        render={({ field: { value, onChange } }) => (\n          <SettingsToggle\n            labelClassName={classNames(\"text-sm\", customClassNames?.calendarNotes?.label)}\n            toggleSwitchAtTheEnd={true}\n            switchContainerClassName={classNames(\n              \"border-subtle rounded-lg border py-6 px-4 sm:px-6\",\n              customClassNames?.calendarNotes?.container\n            )}\n            descriptionClassName={customClassNames?.calendarNotes?.description}\n            data-testid=\"disable-notes\"\n            title={t(\"disable_notes\")}\n            {...hideCalendarNotesLocked}\n            description={\n              <LearnMoreLink\n                t={t}\n                i18nKey=\"disable_notes_description\"\n                href=\"https://cal.com/help/event-types/hide-notes\"\n              />\n            }\n            checked={value}\n            onCheckedChange={(e) => onChange(e)}\n          />\n        )}\n      />\n      <Controller\n        name=\"hideCalendarEventDetails\"\n        render={({ field: { value, onChange } }) => (\n          <SettingsToggle\n            labelClassName={classNames(\"text-sm\", customClassNames?.eventDetailsVisibility?.label)}\n            toggleSwitchAtTheEnd={true}\n            switchContainerClassName={classNames(\n              \"border-subtle rounded-lg border py-6 px-4 sm:px-6\",\n              customClassNames?.eventDetailsVisibility?.container\n            )}\n            descriptionClassName={customClassNames?.eventDetailsVisibility?.description}\n            title={t(\"hide_calendar_event_details\")}\n            {...hideCalendarEventDetailsLocked}\n            description={t(\"description_hide_calendar_event_details\")}\n            checked={value}\n            onCheckedChange={(e) => onChange(e)}\n          />\n        )}\n      />\n      <Controller\n        name=\"successRedirectUrl\"\n        render={({ field: { value, onChange } }) => (\n          <>\n            <SettingsToggle\n              labelClassName={classNames(\"text-sm\", customClassNames?.bookingRedirect?.label)}\n              toggleSwitchAtTheEnd={true}\n              switchContainerClassName={classNames(\n                \"border-subtle rounded-lg border py-6 px-4 sm:px-6\",\n                redirectUrlVisible && \"rounded-b-none\",\n                customClassNames?.bookingRedirect?.container\n              )}\n              childrenClassName={classNames(\"lg:ml-0\", customClassNames?.bookingRedirect?.children)}\n              descriptionClassName={customClassNames?.bookingRedirect?.description}\n              title={t(\"redirect_success_booking\")}\n              data-testid=\"redirect-success-booking\"\n              {...successRedirectUrlLocked}\n              description={t(\"redirect_url_description\")}\n              checked={redirectUrlVisible}\n              onCheckedChange={(e) => {\n                setRedirectUrlVisible(e);\n                onChange(e ? value : \"\");\n              }}>\n              <div\n                className={classNames(\n                  \"rounded-b-lg border border-subtle border-t-0 p-6\",\n                  customClassNames?.bookingRedirect?.redirectUrlInput?.container\n                )}>\n                <TextField\n                  className={classNames(\"w-full\", customClassNames?.bookingRedirect?.redirectUrlInput?.input)}\n                  label={t(\"redirect_success_booking\")}\n                  labelClassName={customClassNames?.bookingRedirect?.redirectUrlInput?.label}\n                  labelSrOnly\n                  disabled={successRedirectUrlLocked.disabled}\n                  placeholder={t(\"external_redirect_url\")}\n                  data-testid=\"external-redirect-url\"\n                  required={redirectUrlVisible}\n                  type=\"text\"\n                  {...formMethods.register(\"successRedirectUrl\")}\n                />\n\n                <div\n                  className={classNames(\n                    \"mt-4\",\n                    customClassNames?.bookingRedirect?.forwardParamsCheckbox?.container\n                  )}>\n                  <Controller\n                    name=\"forwardParamsSuccessRedirect\"\n                    render={({ field: { value, onChange } }) => (\n                      <CheckboxField\n                        description={t(\"forward_params_redirect\")}\n                        disabled={successRedirectUrlLocked.disabled}\n                        className={customClassNames?.bookingRedirect?.forwardParamsCheckbox?.checkbox}\n                        descriptionClassName={\n                          customClassNames?.bookingRedirect?.forwardParamsCheckbox?.description\n                        }\n                        onChange={(e) => onChange(e)}\n                        checked={value}\n                      />\n                    )}\n                  />\n                </div>\n                <div\n                  className={classNames(\n                    \"p-1 text-orange-600 text-sm\",\n                    formMethods.getValues(\"successRedirectUrl\") ? \"block\" : \"hidden\",\n                    customClassNames?.bookingRedirect?.error\n                  )}\n                  data-testid=\"redirect-url-warning\">\n                  {t(\"redirect_url_warning\")}\n                </div>\n              </div>\n            </SettingsToggle>\n          </>\n        )}\n      />\n      {!isPlatform && (\n        <Controller\n          name=\"multiplePrivateLinks\"\n          render={() => {\n            return (\n              <SettingsToggle\n                labelClassName=\"text-sm\"\n                toggleSwitchAtTheEnd={true}\n                switchContainerClassName={classNames(\n                  \"border-subtle rounded-lg border py-6 px-4 sm:px-6\",\n                  multiplePrivateLinksVisible && \"rounded-b-none\"\n                )}\n                childrenClassName=\"lg:ml-0\"\n                data-testid=\"multiplePrivateLinksCheck\"\n                title={t(\"multiple_private_links_title\")}\n                {...multiplePrivateLinksLocked}\n                description={\n                  <LearnMoreLink\n                    t={t}\n                    i18nKey=\"multiple_private_links_description\"\n                    href=\"https://cal.com/help/event-types/private-links\"\n                  />\n                }\n                tooltip={isManagedEventType ? t(\"managed_event_field_parent_control_disabled\") : \"\"}\n                checked={multiplePrivateLinksVisible}\n                onCheckedChange={(e) => {\n                  if (!e) {\n                    formMethods.setValue(\"multiplePrivateLinks\", [], { shouldDirty: true });\n                  } else {\n                    formMethods.setValue(\n                      \"multiplePrivateLinks\",\n                      [generateHashedLink(formMethods.getValues(\"users\")[0]?.id ?? team?.id)],\n                      { shouldDirty: true }\n                    );\n                  }\n                  setMultiplePrivateLinksVisible(e);\n                }}>\n                {!isManagedEventType && (\n                  <div className=\"rounded-b-lg border border-subtle border-t-0 p-6\">\n                    <MultiplePrivateLinksController\n                      team={team}\n                      bookerUrl={eventType.bookerUrl}\n                      setMultiplePrivateLinksVisible={setMultiplePrivateLinksVisible}\n                      userTimeZone={userTimeZone}\n                    />\n                  </div>\n                )}\n              </SettingsToggle>\n            );\n          }}\n        />\n      )}\n      <Controller\n        name=\"seatsPerTimeSlotEnabled\"\n        render={({ field: { value, onChange } }) => (\n          <>\n            <SettingsToggle\n              labelClassName={classNames(\"text-sm\", customClassNames?.seatsOptions?.label)}\n              toggleSwitchAtTheEnd={true}\n              switchContainerClassName={classNames(\n                \"border-subtle rounded-lg border py-6 px-4 sm:px-6\",\n                value && \"rounded-b-none\",\n                customClassNames?.seatsOptions?.container\n              )}\n              childrenClassName={classNames(\"lg:ml-0\", customClassNames?.seatsOptions?.children)}\n              descriptionClassName={customClassNames?.seatsOptions?.description}\n              data-testid=\"offer-seats-toggle\"\n              title={t(\"offer_seats\")}\n              {...seatsLocked}\n              description={\n                <LearnMoreLink\n                  t={t}\n                  i18nKey=\"offer_seats_description\"\n                  href=\"https://cal.com/help/event-types/offer-seats\"\n                />\n              }\n              checked={value}\n              disabled={noShowFeeEnabled || multiLocation || (!seatsEnabled && isRecurringEvent)}\n              tooltip={\n                multiLocation\n                  ? t(\"multilocation_doesnt_support_seats\")\n                  : noShowFeeEnabled\n                    ? t(\"no_show_fee_doesnt_support_seats\")\n                    : isRecurringEvent\n                      ? t(\"recurring_event_doesnt_support_seats\")\n                      : undefined\n              }\n              onCheckedChange={(e) => {\n                // Enabling seats will disable guests and requiring confirmation until fully supported\n                if (e) {\n                  toggleGuests(false);\n                  formMethods.setValue(\"requiresConfirmation\", false, { shouldDirty: true });\n                  setRequiresConfirmation(false);\n                  formMethods.setValue(\"metadata.multipleDuration\", undefined, { shouldDirty: true });\n                  formMethods.setValue(\"seatsPerTimeSlot\", eventType.seatsPerTimeSlot ?? 2, {\n                    shouldDirty: true,\n                  });\n                } else {\n                  formMethods.setValue(\"seatsPerTimeSlot\", null);\n                  toggleGuests(true);\n                }\n                onChange(e);\n              }}>\n              <div className=\"rounded-b-lg border border-subtle border-t-0 p-6\">\n                <Controller\n                  name=\"seatsPerTimeSlot\"\n                  render={({ field: { value, onChange } }) => (\n                    <div>\n                      <TextField\n                        required\n                        name=\"seatsPerTimeSlot\"\n                        labelSrOnly\n                        label={t(\"number_of_seats\")}\n                        type=\"number\"\n                        disabled={seatsLocked.disabled}\n                        //For old events if value > MAX_SEATS_PER_TIME_SLOT\n                        value={value > MAX_SEATS_PER_TIME_SLOT ? MAX_SEATS_PER_TIME_SLOT : (value ?? 1)}\n                        step={1}\n                        placeholder=\"1\"\n                        min={1}\n                        max={MAX_SEATS_PER_TIME_SLOT}\n                        containerClassName={classNames(\n                          \"max-w-80\",\n                          customClassNames?.seatsOptions?.seatsInput.container\n                        )}\n                        addOnClassname={customClassNames?.seatsOptions?.seatsInput.addOn}\n                        className={customClassNames?.seatsOptions?.seatsInput?.input}\n                        labelClassName={customClassNames?.seatsOptions?.seatsInput?.label}\n                        addOnSuffix={t(\"seats\")}\n                        onChange={(e) => {\n                          const enteredValue = parseInt(e.target.value, 10);\n                          onChange(Math.min(enteredValue, MAX_SEATS_PER_TIME_SLOT));\n                        }}\n                        data-testid=\"seats-per-time-slot\"\n                      />\n                      <div\n                        className={classNames(\n                          \"mt-4\",\n                          customClassNames?.seatsOptions?.showAttendeesCheckbox?.container\n                        )}>\n                        <Controller\n                          name=\"seatsShowAttendees\"\n                          render={({ field: { value, onChange } }) => (\n                            <CheckboxField\n                              data-testid=\"show-attendees\"\n                              description={t(\"show_attendees\")}\n                              className={customClassNames?.seatsOptions?.showAttendeesCheckbox?.checkbox}\n                              descriptionClassName={\n                                customClassNames?.seatsOptions?.showAttendeesCheckbox?.description\n                              }\n                              disabled={seatsLocked.disabled}\n                              onChange={(e) => onChange(e)}\n                              checked={value}\n                            />\n                          )}\n                        />\n                      </div>\n                      <div\n                        className={classNames(\n                          \"mt-2\",\n                          customClassNames?.seatsOptions?.showAvalableSeatCountCheckbox?.container\n                        )}>\n                        <Controller\n                          name=\"seatsShowAvailabilityCount\"\n                          render={({ field: { value, onChange } }) => (\n                            <CheckboxField\n                              description={t(\"show_available_seats_count\")}\n                              disabled={seatsLocked.disabled}\n                              onChange={(e) => onChange(e)}\n                              checked={value}\n                              className={\n                                customClassNames?.seatsOptions?.showAvalableSeatCountCheckbox?.checkbox\n                              }\n                              descriptionClassName={\n                                customClassNames?.seatsOptions?.showAvalableSeatCountCheckbox?.description\n                              }\n                            />\n                          )}\n                        />\n                      </div>\n                    </div>\n                  )}\n                />\n              </div>\n            </SettingsToggle>\n            {noShowFeeEnabled && <Alert severity=\"warning\" title={t(\"seats_and_no_show_fee_error\")} />}\n          </>\n        )}\n      />\n      <Controller\n        name=\"hideOrganizerEmail\"\n        render={({ field: { value, onChange } }) => (\n          <SettingsToggle\n            labelClassName={classNames(\"text-sm\", customClassNames?.hideOrganizerEmail?.label)}\n            toggleSwitchAtTheEnd={true}\n            switchContainerClassName={classNames(\n              \"border-subtle rounded-lg border py-6 px-4 sm:px-6\",\n              customClassNames?.hideOrganizerEmail?.container\n            )}\n            title={t(\"hide_organizer_email\")}\n            {...hideOrganizerEmailLocked}\n            description={\n              <LearnMoreLink\n                t={t}\n                i18nKey=\"hide_organizer_email_description\"\n                href=\"https://cal.com/help/event-types/hideorganizersemail#hide-organizers-email\"\n              />\n            }\n            descriptionClassName={customClassNames?.hideOrganizerEmail?.description}\n            checked={value}\n            onCheckedChange={(e) => onChange(e)}\n            data-testid=\"hide-organizer-email\"\n          />\n        )}\n      />\n      <Controller\n        name=\"lockTimeZoneToggleOnBookingPage\"\n        render={({ field: { value, onChange } }) => {\n          // Calculate if we should show the selector based on current form state & handle backward compatibility\n          const currentLockedTimeZone = formMethods.getValues(\"lockedTimeZone\");\n          const showSelector =\n            value &&\n            (!(eventType.lockTimeZoneToggleOnBookingPage && !eventType.lockedTimeZone) ||\n              !!currentLockedTimeZone);\n\n          return (\n            <SettingsToggle\n              labelClassName={classNames(\"text-sm\", customClassNames?.timezoneLock?.label)}\n              descriptionClassName={customClassNames?.timezoneLock?.description}\n              toggleSwitchAtTheEnd={true}\n              switchContainerClassName={classNames(\n                \"border-subtle rounded-lg border py-6 px-4 sm:px-6\",\n                customClassNames?.timezoneLock?.container,\n                showSelector && \"rounded-b-none\"\n              )}\n              title={t(\"lock_timezone_toggle_on_booking_page\")}\n              {...lockTimeZoneToggleOnBookingPageLocked}\n              description={\n                <LearnMoreLink\n                  t={t}\n                  i18nKey=\"description_lock_timezone_toggle_on_booking_page\"\n                  href=\"https://cal.com/help/event-types/timezone-lock\"\n                />\n              }\n              checked={value}\n              onCheckedChange={(e) => {\n                onChange(e);\n                const lockedTimeZone = e ? (eventType.lockedTimeZone ?? \"Europe/London\") : null;\n                formMethods.setValue(\"lockedTimeZone\", lockedTimeZone, { shouldDirty: true });\n              }}\n              data-testid=\"lock-timezone-toggle\"\n              childrenClassName=\"lg:ml-0\">\n              {showSelector && (\n                <div className=\"flex flex-col gap-6 rounded-b-lg border border-subtle border-t-0 p-6\">\n                  <div>\n                    <Controller\n                      name=\"lockedTimeZone\"\n                      control={formMethods.control}\n                      render={({ field: { value } }) => (\n                        <>\n                          <Label className=\"mb-2 block font-medium text-default text-sm\">\n                            {t(\"timezone\")}\n                          </Label>\n                          <TimezoneSelect\n                            id=\"lockedTimeZone\"\n                            value={value ?? \"Europe/London\"}\n                            onChange={(event) => {\n                              if (event)\n                                formMethods.setValue(\"lockedTimeZone\", event.value, { shouldDirty: true });\n                            }}\n                          />\n                        </>\n                      )}\n                    />\n                  </div>\n                </div>\n              )}\n            </SettingsToggle>\n          );\n        }}\n      />\n      <Controller\n        name=\"allowReschedulingPastBookings\"\n        render={({ field: { value, onChange } }) => (\n          <SettingsToggle\n            labelClassName={classNames(\"text-sm\")}\n            toggleSwitchAtTheEnd={true}\n            switchContainerClassName={classNames(\"border-subtle rounded-lg border py-6 px-4 sm:px-6\")}\n            title={t(\"allow_rescheduling_past_events\")}\n            {...reschedulingPastBookingsLocked}\n            description={\n              <LearnMoreLink\n                t={t}\n                i18nKey=\"allow_rescheduling_past_events_description\"\n                href=\"https://cal.com/help/event-types/allow-rescheduling\"\n              />\n            }\n            checked={value}\n            onCheckedChange={(e) => onChange(e)}\n          />\n        )}\n      />\n\n      <Controller\n        name=\"allowReschedulingCancelledBookings\"\n        render={({ field: { onChange } }) => (\n          <SettingsToggle\n            labelClassName=\"text-sm\"\n            toggleSwitchAtTheEnd={true}\n            switchContainerClassName=\"border-subtle rounded-lg border py-6 px-4 sm:px-6\"\n            title={t(\"allow_rescheduling_cancelled_bookings\")}\n            data-testid=\"allow-rescheduling-cancelled-bookings-toggle\"\n            {...allowReschedulingCancelledBookingsLocked}\n            description={t(\"description_allow_rescheduling_cancelled_bookings\")}\n            checked={allowReschedulingCancelledBookings}\n            onCheckedChange={(val) => {\n              setallowReschedulingCancelledBookings(val);\n              onChange(val);\n            }}\n          />\n        )}\n      />\n      <Controller\n        name=\"customReplyToEmail\"\n        render={({ field: { value, onChange } }) => (\n          <>\n            <SettingsToggle\n              labelClassName={classNames(\"text-sm\", customClassNames?.customReplyToEmail?.label)}\n              toggleSwitchAtTheEnd={true}\n              switchContainerClassName={classNames(\n                \"border-subtle rounded-lg border py-6 px-4 sm:px-6\",\n                !!value && \"rounded-b-none\",\n                customClassNames?.customReplyToEmail?.container\n              )}\n              descriptionClassName={customClassNames?.customReplyToEmail?.description}\n              childrenClassName={classNames(\"lg:ml-0\", customClassNames?.customReplyToEmail?.children)}\n              title={t(\"custom_reply_to_email_title\")}\n              {...customReplyToEmailLocked}\n              data-testid=\"custom-reply-to-email\"\n              description={t(\"custom_reply_to_email_description\")}\n              checked={!!customReplyToEmail}\n              onCheckedChange={(e) => {\n                onChange(\n                  e ? customReplyToEmail || eventType.customReplyToEmail || verifiedEmails?.[0] || null : null\n                );\n              }}>\n              {isPlatform && (\n                <AddVerifiedEmail username={eventType.users[0]?.name || \"there\"} showToast={showToast} />\n              )}\n              <div className=\"rounded-b-lg border border-subtle border-t-0 p-6\">\n                <SelectField\n                  className=\"w-full\"\n                  label={t(\"custom_reply_to_email_title\")}\n                  required={!!customReplyToEmail}\n                  placeholder={t(\"select_verified_email\")}\n                  data-testid=\"custom-reply-to-email-input\"\n                  value={value ? { label: value, value } : undefined}\n                  onChange={(option) => onChange(option?.value || null)}\n                  options={verifiedEmails?.map((email) => ({ label: email, value: email })) || []}\n                />\n              </div>\n            </SettingsToggle>\n          </>\n        )}\n      />\n      <Controller\n        name=\"eventTypeColor\"\n        render={() => (\n          <SettingsToggle\n            labelClassName={classNames(\"text-sm\", customClassNames?.eventTypeColors?.label)}\n            toggleSwitchAtTheEnd={true}\n            switchContainerClassName={classNames(\n              \"border-subtle rounded-lg border py-6 px-4 sm:px-6\",\n              isEventTypeColorChecked && \"rounded-b-none\",\n              customClassNames?.eventTypeColors?.container\n            )}\n            title={t(\"event_type_color\")}\n            {...eventTypeColorLocked}\n            description={t(\"event_type_color_description\")}\n            descriptionClassName={customClassNames?.eventTypeColors?.description}\n            checked={isEventTypeColorChecked}\n            onCheckedChange={(e) => {\n              const value = e ? eventTypeColorState : null;\n              formMethods.setValue(\"eventTypeColor\", value, {\n                shouldDirty: true,\n              });\n              setIsEventTypeColorChecked(e);\n            }}\n            childrenClassName={classNames(\"lg:ml-0\", customClassNames?.eventTypeColors?.children)}>\n            <div className=\"flex flex-col gap-6 rounded-b-lg border border-subtle border-t-0 p-6\">\n              <div>\n                <p className=\"mb-2 block font-medium text-default text-sm\">{t(\"light_event_type_color\")}</p>\n                <ColorPicker\n                  defaultValue={eventTypeColorState.lightEventTypeColor}\n                  onChange={(value) => {\n                    const newVal = {\n                      ...eventTypeColorState,\n                      lightEventTypeColor: value,\n                    };\n                    formMethods.setValue(\"eventTypeColor\", newVal, { shouldDirty: true });\n                    setEventTypeColorState(newVal);\n                    if (checkWCAGContrastColor(\"#ffffff\", value)) {\n                      setLightModeError(false);\n                    } else {\n                      setLightModeError(true);\n                    }\n                  }}\n                />\n                {lightModeError ? (\n                  <div className=\"mt-4\">\n                    <Alert\n                      severity=\"warning\"\n                      className={customClassNames?.eventTypeColors?.warningText}\n                      message={t(\"event_type_color_light_theme_contrast_error\")}\n                    />\n                  </div>\n                ) : null}\n              </div>\n\n              <div className=\"mt-6 sm:mt-0\">\n                <p className=\"mb-2 block font-medium text-default text-sm\">{t(\"dark_event_type_color\")}</p>\n                <ColorPicker\n                  defaultValue={eventTypeColorState.darkEventTypeColor}\n                  onChange={(value) => {\n                    const newVal = {\n                      ...eventTypeColorState,\n                      darkEventTypeColor: value,\n                    };\n                    formMethods.setValue(\"eventTypeColor\", newVal, { shouldDirty: true });\n                    setEventTypeColorState(newVal);\n                    if (checkWCAGContrastColor(\"#101010\", value)) {\n                      setDarkModeError(false);\n                    } else {\n                      setDarkModeError(true);\n                    }\n                  }}\n                />\n                {darkModeError ? (\n                  <div className=\"mt-4\">\n                    <Alert\n                      severity=\"warning\"\n                      className={customClassNames?.eventTypeColors?.warningText}\n                      message={t(\"event_type_color_dark_theme_contrast_error\")}\n                    />\n                  </div>\n                ) : null}\n              </div>\n            </div>\n          </SettingsToggle>\n        )}\n      />\n      <Controller\n        name=\"showOptimizedSlots\"\n        render={({ field: { onChange, value } }) => {\n          const isChecked = value;\n          return (\n            <SettingsToggle\n              toggleSwitchAtTheEnd={true}\n              labelClassName=\"text-sm\"\n              title={t(\"show_optimized_slots\")}\n              description={\n                <LearnMoreLink\n                  t={t}\n                  i18nKey=\"show_optimized_slots_description\"\n                  href=\"https://cal.com/help/event-types/optimized-slots#optimized-slots\"\n                />\n              }\n              checked={isChecked}\n              {...showOptimizedSlotsLocked}\n              onCheckedChange={(active) => {\n                onChange(active ?? false);\n              }}\n              switchContainerClassName={classNames(\n                \"border-subtle rounded-lg border py-6 px-4 sm:px-6\",\n                isChecked && \"rounded-b-none\"\n              )}\n            />\n          );\n        }}\n      />\n      {isRoundRobinEventType && (\n        <Controller\n          name=\"rescheduleWithSameRoundRobinHost\"\n          render={({ field: { value, onChange } }) => (\n            <SettingsToggle\n              labelClassName={classNames(\"text-sm\", customClassNames?.roundRobinReschedule?.label)}\n              toggleSwitchAtTheEnd={true}\n              switchContainerClassName={classNames(\n                \"border-subtle rounded-lg border py-6 px-4 sm:px-6\",\n                customClassNames?.roundRobinReschedule?.container\n              )}\n              title={t(\"reschedule_with_same_round_robin_host_title\")}\n              description={t(\"reschedule_with_same_round_robin_host_description\")}\n              descriptionClassName={customClassNames?.roundRobinReschedule?.description}\n              checked={value}\n              onCheckedChange={(e) => onChange(e)}\n            />\n          )}\n        />\n      )}\n\n      {team?.parentId && (\n        <>\n          <Controller\n            name=\"metadata.disableStandardEmails.all.attendee\"\n            render={({ field: { value, onChange } }) => {\n              return (\n                <DisableAllEmailsSetting\n                  checked={value}\n                  onCheckedChange={onChange}\n                  recipient=\"attendees\"\n                  customClassNames={customClassNames?.emailNotifications}\n                  t={t}\n                />\n              );\n            }}\n          />\n          <Controller\n            name=\"metadata.disableStandardEmails.all.host\"\n            defaultValue={!!formMethods.getValues(\"seatsPerTimeSlot\")}\n            render={({ field: { value, onChange } }) => (\n              <>\n                <DisableAllEmailsSetting\n                  checked={value}\n                  onCheckedChange={onChange}\n                  recipient=\"hosts\"\n                  customClassNames={customClassNames?.emailNotifications}\n                  t={t}\n                />\n              </>\n            )}\n          />\n        </>\n      )}\n      {showEventNameTip && (\n        <CustomEventTypeModal\n          close={closeEventNameTip}\n          setValue={(val: string) => formMethods.setValue(\"eventName\", val, { shouldDirty: true })}\n          defaultValue={formMethods.getValues(\"eventName\")}\n          placeHolder={eventNamePlaceholder}\n          isNameFieldSplit={isSplit}\n          event={eventNameObject}\n          customClassNames={customClassNames?.customEventTypeModal}\n        />\n      )}\n    </div>\n  );\n};",
-      "kind": "snippet"
-    },
-    "endLine": 1526,
-    "label": {
-      "defaultLocale": "en-US",
-      "defaultText": "Source evidence",
-      "icuArgs": {},
-      "msgid": "scribe.report.repositoryHealth.sourceSnippet.title",
-      "provenance": "template",
-      "reviewState": "reviewed",
-      "values": {
-        "en-US": {
-          "fallback": false,
-          "reviewed": true,
-          "text": "Source evidence"
-        }
-      }
-    },
-    "language": "typescript",
-    "pagePath": "findings/finding-repository-health/index.html",
-    "snippetId": "source-repository-health-complexity-eventadvancedtab-39f223b582",
-    "sourcePath": "apps/web/modules/event-types/components/tabs/advanced/EventAdvancedTab.tsx",
-    "startLine": 402,
-    "vcsPermalink": "https://github.com/calcom/cal.com/blob/180ede28f0bddf2738933a6e60a8e80f6116d7da/apps/web/modules/event-types/components/tabs/advanced/EventAdvancedTab.tsx#L402-L1526",
-    "verifiedSourceHash": "sha256:4e93469dada305fb97b2144f91812b97870ba44922b48df3545dec4e82d42934"
-  },
-  {
-    "anchorId": "source-repository-health-complexity-handler-ade03c41a4",
-    "body": {
-      "code": "import { NextResponse } from \"next/server\";\n\nexport default async function handler(body: Record<string, string>) {\n  const { email, password, language, token } = signupSchema.parse(body);\n\n  const username = slugify(body.username);\n  const userEmail = email.toLowerCase();\n\n  if (!username) {\n    return NextResponse.json({ message: \"Invalid username\" }, { status: 422 });\n  }\n\n  let foundToken: { id: number; teamId: number | null; expires: Date } | null = null;\n  let correctedUsername = username;\n  if (token) {\n    foundToken = await findTokenByToken({ token });\n    throwIfTokenExpired(foundToken?.expires);\n    correctedUsername = await validateAndGetCorrectedUsernameForTeam({\n      username,\n      email: userEmail,\n      teamId: foundToken?.teamId,\n      isSignup: true,\n    });\n\n    if (foundToken?.teamId) {\n      const existingUser = await prisma.user.findUnique({\n        where: { email: userEmail },\n        select: { invitedTo: true },\n      });\n      if (existingUser && existingUser.invitedTo !== foundToken.teamId) {\n        return NextResponse.json({ message: SIGNUP_ERROR_CODES.USER_ALREADY_EXISTS }, { status: 409 });\n      }\n    }\n  } else {\n    const userValidation = await validateAndGetCorrectedUsernameAndEmail({\n      username,\n      email: userEmail,\n      isSignup: true,\n    });\n    if (!userValidation.isValid) {\n      logger.error(\"User validation failed\", { userValidation });\n      return NextResponse.json({ message: \"Username or email is already taken\" }, { status: 409 });\n    }\n    if (!userValidation.username) {\n      return NextResponse.json({ message: \"Invalid username\" }, { status: 422 });\n    }\n    correctedUsername = userValidation.username;\n  }\n\n  const hashedPassword = await hashPassword(password);\n\n  if (foundToken?.teamId) {\n    const team = await prisma.team.findUnique({\n      where: {\n        id: foundToken.teamId,\n      },\n      include: {\n        parent: {\n          select: {\n            id: true,\n            slug: true,\n            organizationSettings: true,\n          },\n        },\n        organizationSettings: true,\n      },\n    });\n\n    if (team) {\n      const isInviteForATeamInOrganization = !!team.parent;\n      const isCheckingUsernameInGlobalNamespace = !team.isOrganization && !isInviteForATeamInOrganization;\n\n      if (isCheckingUsernameInGlobalNamespace) {\n        const isUsernameAvailable = !(await isUsernameReservedDueToMigration(correctedUsername));\n        if (!isUsernameAvailable) {\n          return NextResponse.json({ message: \"A user exists with that username\" }, { status: 409 });\n        }\n      }\n\n      const organizationId = team.isOrganization ? team.id : (team.parent?.id ?? null);\n\n      const existingUserByUsername = await prisma.user.findFirst({\n        where: {\n          username: correctedUsername,\n          organizationId,\n          NOT: { email: userEmail },\n        },\n        select: { id: true },\n      });\n      if (existingUserByUsername) {\n        return NextResponse.json({ message: SIGNUP_ERROR_CODES.USER_ALREADY_EXISTS }, { status: 409 });\n      }\n\n      let user: { id: number };\n      try {\n        user = await prisma.user.upsert({\n          where: { email: userEmail },\n          update: {\n            username: correctedUsername,\n            emailVerified: new Date(Date.now()),\n            identityProvider: IdentityProvider.CAL,\n            password: {\n              upsert: {\n                create: { hash: hashedPassword },\n                update: { hash: hashedPassword },\n              },\n            },\n            organizationId,\n          },\n          create: {\n            username: correctedUsername,\n            email: userEmail,\n            emailVerified: new Date(Date.now()),\n            identityProvider: IdentityProvider.CAL,\n            password: { create: { hash: hashedPassword } },\n            organizationId,\n          },\n          select: { id: true },\n        });\n      } catch (error) {\n        if (isPrismaError(error) && error.code === \"P2002\") {\n          const target = String(error.meta?.target ?? \"\");\n          if (target.includes(\"email\") || target.includes(\"username\")) {\n            return NextResponse.json({ message: SIGNUP_ERROR_CODES.USER_ALREADY_EXISTS }, { status: 409 });\n          }\n        }\n        throw error;\n      }\n\n      await createOrUpdateMemberships({\n        user,\n        team,\n      });\n\n      // Accept any child team invites for orgs.\n      if (team.parent) {\n        await joinAnyChildTeamOnOrgInvite({\n          userId: user.id,\n          org: team.parent,\n        });\n      }\n    }\n\n    // Cleanup token after use\n    await prisma.verificationToken.delete({\n      where: {\n        id: foundToken.id,\n      },\n    });\n  } else {\n    const isUsernameAvailable = !(await isUsernameReservedDueToMigration(correctedUsername));\n    if (!isUsernameAvailable) {\n      return NextResponse.json({ message: \"A user exists with that username\" }, { status: 409 });\n    }\n    try {\n      await prisma.user.create({\n        data: {\n          username: correctedUsername,\n          email: userEmail,\n          password: { create: { hash: hashedPassword } },\n          identityProvider: IdentityProvider.CAL,\n        },\n        select: { id: true },\n      });\n    } catch (error) {\n      // Fallback for race conditions where user was created between our check and create\n      if (isPrismaError(error) && error.code === \"P2002\") {\n        const target = String(error.meta?.target ?? \"\");\n        if (target.includes(\"email\") || target.includes(\"username\")) {\n          return NextResponse.json({ message: SIGNUP_ERROR_CODES.USER_ALREADY_EXISTS }, { status: 409 });\n        }\n      }\n      throw error;\n    }\n\n    if (process.env.AVATARAPI_USERNAME && process.env.AVATARAPI_PASSWORD) {\n      await prefillAvatar({ email: userEmail });\n    }\n\n    await sendEmailVerification({\n      email: userEmail,\n      username: correctedUsername,\n      language,\n    });\n  }\n\n  return NextResponse.json({ message: \"Created user\" }, { status: 201 });\n}",
-      "kind": "snippet"
-    },
-    "endLine": 209,
-    "label": {
-      "defaultLocale": "en-US",
-      "defaultText": "Source evidence",
-      "icuArgs": {},
-      "msgid": "scribe.report.repositoryHealth.sourceSnippet.title",
-      "provenance": "template",
-      "reviewState": "reviewed",
-      "values": {
-        "en-US": {
-          "fallback": false,
-          "reviewed": true,
-          "text": "Source evidence"
-        }
-      }
-    },
-    "language": "typescript",
-    "pagePath": "findings/finding-repository-health/index.html",
-    "snippetId": "source-repository-health-complexity-handler-ade03c41a4",
-    "sourcePath": "apps/web/app/api/auth/signup/handlers/selfHostedHandler.ts",
-    "startLine": 22,
-    "vcsPermalink": "https://github.com/calcom/cal.com/blob/180ede28f0bddf2738933a6e60a8e80f6116d7da/apps/web/app/api/auth/signup/handlers/selfHostedHandler.ts#L22-L209",
-    "verifiedSourceHash": "sha256:64411858beb10ffd3c7ed3e1602256b2601740f2c1c8621b4d3a8e4b4e7d2a18"
-  },
-  {
-    "anchorId": "source-repository-health-complexity-eventmeta-3da7ba22a7",
-    "body": {
-      "code": "};\n\nexport const EventMeta = ({\n  event,\n  isPending,\n  isPlatform = true,\n  isPrivateLink,\n  classNames,\n  locale,\n  timeZones,\n  children,\n  selectedTimeslot,\n  roundRobinHideOrgAndTeam,\n  hideOrgTeamAvatar,\n  hideEventTypeDetails = false,\n}: {\n  event?: Pick<\n    BookerEvent,\n    | \"lockTimeZoneToggleOnBookingPage\"\n    | \"lockedTimeZone\"\n    | \"schedule\"\n    | \"seatsPerTimeSlot\"\n    | \"subsetOfUsers\"\n    | \"length\"\n    | \"schedulingType\"\n    | \"profile\"\n    | \"entity\"\n    | \"description\"\n    | \"title\"\n    | \"metadata\"\n    | \"locations\"\n    | \"currency\"\n    | \"requiresConfirmation\"\n    | \"recurringEvent\"\n    | \"price\"\n    | \"isDynamic\"\n    | \"fieldTranslations\"\n    | \"autoTranslateDescriptionEnabled\"\n    | \"enablePerHostLocations\"\n  > | null;\n  isPending: boolean;\n  isPrivateLink: boolean;\n  isPlatform?: boolean;\n  classNames?: {\n    eventMetaContainer?: string;\n    eventMetaTitle?: string;\n    eventMetaTimezoneSelect?: string;\n    eventMetaChildren?: string;\n  };\n  locale?: string | null;\n  timeZones?: Timezone[];\n  children?: React.ReactNode;\n  selectedTimeslot: string | null;\n  roundRobinHideOrgAndTeam?: boolean;\n  hideOrgTeamAvatar?: boolean;\n  hideEventTypeDetails?: boolean;\n}) => {\n  const { timeFormat, timezone } = useBookerTime();\n  const [setTimezone] = useTimePreferences((state) => [state.setTimezone]);\n  const [setBookerStoreTimezone] = useBookerStoreContext((state) => [state.setTimezone], shallow);\n  const selectedDuration = useBookerStoreContext((state) => state.selectedDuration);\n  const bookerState = useBookerStoreContext((state) => state.state);\n  const bookingData = useBookerStoreContext((state) => state.bookingData);\n  const rescheduleUid = useBookerStoreContext((state) => state.rescheduleUid);\n  const [seatedEventData, setSeatedEventData] = useBookerStoreContext(\n    (state) => [state.seatedEventData, state.setSeatedEventData],\n    shallow\n  );\n  const { i18n, t } = useLocale();\n  const [TimezoneSelect] = useMemo(\n    () => (isPlatform ? [PlatformTimezoneSelect] : [WebTimezoneSelect]),\n    [isPlatform]\n  );\n\n  useEffect(() => {\n    //In case the event has lockTimeZone enabled ,set the timezone to event's locked timezone\n    if (event?.lockTimeZoneToggleOnBookingPage) {\n      const timezone = event.lockedTimeZone || event.schedule?.timeZone;\n      if (timezone) {\n        setTimezone(timezone);\n      }\n    }\n  }, [event, setTimezone]);\n\n  if (hideEventTypeDetails) {\n    return null;\n  }\n  // If we didn't pick a time slot yet, we load bookingData via SSR so bookingData should be set\n  // Otherwise we load seatedEventData from useBookerStore\n  const bookingSeatAttendeesQty = seatedEventData?.attendees || bookingData?.attendees.length;\n  const eventTotalSeats = seatedEventData?.seatsPerTimeSlot || event?.seatsPerTimeSlot;\n\n  const isHalfFull =\n    bookingSeatAttendeesQty && eventTotalSeats && bookingSeatAttendeesQty / eventTotalSeats >= 0.5;\n  const isNearlyFull =\n    bookingSeatAttendeesQty && eventTotalSeats && bookingSeatAttendeesQty / eventTotalSeats >= 0.83;\n\n  const colorClass = isNearlyFull\n    ? \"text-rose-600\"\n    : isHalfFull\n      ? \"text-yellow-500\"\n      : \"text-bookinghighlight\";\n  const userLocale = locale ?? navigator.language;\n  const translatedDescription = getTranslatedField(\n    event?.fieldTranslations ?? [],\n    EventTypeAutoTranslatedField.DESCRIPTION,\n    userLocale\n  );\n  const translatedTitle = getTranslatedField(\n    event?.fieldTranslations ?? [],\n    EventTypeAutoTranslatedField.TITLE,\n    userLocale\n  );\n\n  return (\n    <div className={`${classNames?.eventMetaContainer || \"\"} relative z-10 p-6`} data-testid=\"event-meta\">\n      {isPending && (\n        <m.div {...fadeInUp} initial=\"visible\" layout>\n          <EventMetaSkeleton />\n        </m.div>\n      )}\n      {!isPending && !!event && (\n        <m.div {...fadeInUp} layout transition={{ ...fadeInUp.transition, delay: 0.3 }}>\n          <EventMembers\n            schedulingType={event.schedulingType}\n            users={event.subsetOfUsers}\n            profile={event.profile}\n            entity={event.entity}\n            isPrivateLink={isPrivateLink}\n            roundRobinHideOrgAndTeam={roundRobinHideOrgAndTeam}\n            hideOrgTeamAvatar={hideOrgTeamAvatar}\n          />\n          <EventTitle className={`${classNames?.eventMetaTitle} my-2`}>\n            {translatedTitle ?? event?.title}\n          </EventTitle>\n          {(event.description || translatedDescription) && (\n            <EventMetaBlock data-testid=\"event-meta-description\" contentClassName=\"mb-8\">\n              <ScrollableWithGradients\n                className=\"wrap-break-word scroll-bar max-h-[180px] max-w-full overflow-y-auto pr-4\"\n                ariaLabel={t(\"description\")}>\n                {/* biome-ignore lint/security/noDangerouslySetInnerHtml: Content is sanitized via markdownToSafeHTMLClient */}\n                <div\n                  dangerouslySetInnerHTML={{\n                    __html: markdownToSafeHTMLClient(translatedDescription ?? event.description),\n                  }}\n                />\n              </ScrollableWithGradients>\n            </EventMetaBlock>\n          )}\n          <div className=\"stack-y-4 font-medium rtl:-mr-2\">\n            {rescheduleUid && bookingData && (\n              <EventMetaBlock icon=\"calendar\">\n                {t(\"former_time\")}\n                <br />\n                <span className=\"line-through\" data-testid=\"former_time_p\">\n                  <FromToTime\n                    date={bookingData.startTime.toString()}\n                    duration={null}\n                    timeFormat={timeFormat}\n                    timeZone={timezone}\n                    language={i18n.language}\n                  />\n                </span>\n              </EventMetaBlock>\n            )}\n            {selectedTimeslot && (\n              <EventMetaBlock icon=\"calendar\">\n                <FromToTime\n                  date={selectedTimeslot}\n                  duration={selectedDuration || event.length}\n                  timeFormat={timeFormat}\n                  timeZone={timezone}\n                  language={i18n.language}\n                />\n              </EventMetaBlock>\n            )}\n            <EventDetails event={event} />\n            <EventMetaBlock\n              className=\"cursor-pointer [&_.current-timezone:before]:focus-within:opacity-100 [&_.current-timezone:before]:hover:opacity-100\"\n              contentClassName=\"relative max-w-[90%]\"\n              icon=\"globe\">\n              {bookerState === \"booking\" ? (\n                <>{timezone}</>\n              ) : (\n                <span\n                  className={`current-timezone before:bg-subtle min-w-32 -mt-[2px] flex h-6 max-w-full items-center justify-start before:absolute before:inset-0 before:bottom-[-3px] before:left-[-30px] before:top-[-3px] before:w-[calc(100%+35px)] before:rounded-md before:py-3 before:opacity-0 before:transition-opacity ${\n                    event.lockTimeZoneToggleOnBookingPage ? \"cursor-not-allowed\" : \"\"\n                  }`}\n                  data-testid=\"event-meta-current-timezone\">\n                  <TimezoneSelect\n                    timeZones={timeZones}\n                    menuPosition=\"absolute\"\n                    timezoneSelectCustomClassname={classNames?.eventMetaTimezoneSelect}\n                    classNames={{\n                      control: () =>\n                        \"min-h-0! p-0 w-full border-0 bg-transparent focus-within:ring-0 shadow-none!\",\n                      menu: () => \"w-64! max-w-[90vw] mb-1 \",\n                      singleValue: () => \"text-text py-1\",\n                      indicatorsContainer: () => \"ml-auto\",\n                      container: () => \"max-w-full\",\n                    }}\n                    value={\n                      event.lockTimeZoneToggleOnBookingPage\n                        ? event.lockedTimeZone || CURRENT_TIMEZONE\n                        : timezone\n                    }\n                    onChange={({ value }) => {\n                      setTimezone(value);\n                      setBookerStoreTimezone(value);\n                    }}\n                    isDisabled={event.lockTimeZoneToggleOnBookingPage}\n                  />\n                </span>\n              )}\n            </EventMetaBlock>\n            {bookerState === \"booking\" && eventTotalSeats && bookingSeatAttendeesQty ? (\n              <EventMetaBlock icon=\"user\" className={`${colorClass}`}>\n                <div className=\"text-bookinghighlight flex items-start text-sm\">\n                  <p>\n                    <SeatsAvailabilityText\n                      showExact={!!seatedEventData.showAvailableSeatsCount}\n                      totalSeats={eventTotalSeats}\n                      bookedSeats={bookingSeatAttendeesQty || 0}\n                      variant=\"fraction\"\n                    />\n                  </p>\n                </div>\n              </EventMetaBlock>\n            ) : null}\n          </div>\n          {children && <div className={classNames?.eventMetaChildren}>{children}</div>}\n        </m.div>\n      )}\n    </div>\n  );\n};",
-      "kind": "snippet"
-    },
-    "endLine": 279,
-    "label": {
-      "defaultLocale": "en-US",
-      "defaultText": "Source evidence",
-      "icuArgs": {},
-      "msgid": "scribe.report.repositoryHealth.sourceSnippet.title",
-      "provenance": "template",
-      "reviewState": "reviewed",
-      "values": {
-        "en-US": {
-          "fallback": false,
-          "reviewed": true,
-          "text": "Source evidence"
-        }
-      }
-    },
-    "language": "typescript",
-    "pagePath": "findings/finding-repository-health/index.html",
-    "snippetId": "source-repository-health-complexity-eventmeta-3da7ba22a7",
-    "sourcePath": "apps/web/modules/bookings/components/EventMeta.tsx",
-    "startLine": 44,
-    "vcsPermalink": "https://github.com/calcom/cal.com/blob/180ede28f0bddf2738933a6e60a8e80f6116d7da/apps/web/modules/bookings/components/EventMeta.tsx#L44-L279",
-    "verifiedSourceHash": "sha256:77f1ed8ccef1f6ef8c08fcc715132b7eb90b0b2bd41901850558a8d9a272809f"
-  },
-  {
-    "anchorId": "source-repository-health-complexity-getbaseproperties-7b639d0787",
-    "body": {
-      "code": "}\n\nfunction getBaseProperties(field: InputBookingField): CustomField | SystemField {\n  if (fieldIsSelect(field)) {\n    return {\n      name: field.slug,\n      type: field.type,\n      label: field.label,\n      sources: [\n        {\n          id: \"user\",\n          type: \"user\",\n          label: \"User\",\n          fieldRequired: true,\n        },\n      ],\n      editable: \"user\",\n      required: field.required,\n      disableOnPrefill: !!field.disableOnPrefill,\n      hidden: \"hidden\" in field ? field.hidden : false,\n    };\n  }\n\n  if (fieldIsDefaultSystemLocation(field)) {\n    return {\n      ...systemBeforeFieldLocation,\n      label: field.label,\n    };\n  }\n\n  if (fieldIsDefaultAttendeePhone(field)) {\n    return {\n      ...systemBeforeFieldPhone,\n      required: field.required,\n      hidden: field.hidden,\n      label: field.label,\n      placeholder: field.placeholder,\n      disableOnPrefill: !!field.disableOnPrefill,\n    };\n  }\n\n  if (fieldIsCustomSystemName(field)) {\n    const systemName = structuredClone(systemBeforeFieldName);\n    if (systemName.variantsConfig?.variants?.fullName?.fields?.[0]) {\n      systemName.variantsConfig.variants.fullName.fields[0].label = field.label;\n    }\n\n    if (systemName.variantsConfig?.variants?.fullName?.fields?.[0]) {\n      systemName.variantsConfig.variants.fullName.fields[0].placeholder = field.placeholder;\n    }\n    // note(Lauris): we attach top level label and placeholder for easier access when converting database event type\n    // to v2 response event type even though form builder uses label and placeholder from variantsConfig.\n    systemName.label = field.label;\n    systemName.placeholder = field.placeholder;\n\n    return {\n      ...systemName,\n      disableOnPrefill: !!field.disableOnPrefill,\n    };\n  }\n\n  if (fieldIsCustomSystemNameSplit(field)) {\n    const systemNameSplit = structuredClone(systemBeforeFieldNameSplit);\n\n    const firstNameField = systemNameSplit.variantsConfig?.variants?.firstAndLastName?.fields?.find(\n      (field) => field.name === \"firstName\"\n    );\n    const lastNameField = systemNameSplit.variantsConfig?.variants?.firstAndLastName?.fields?.find(\n      (field) => field.name === \"lastName\"\n    );\n\n    if (firstNameField) {\n      firstNameField.label = field.firstNameLabel || \"\";\n      firstNameField.placeholder = field.firstNamePlaceholder || \"\";\n    }\n\n    if (lastNameField) {\n      lastNameField.label = field.lastNameLabel || \"\";\n      lastNameField.placeholder = field.lastNamePlaceholder || \"\";\n      lastNameField.required = !!field.lastNameRequired;\n    }\n\n    return {\n      ...systemNameSplit,\n      disableOnPrefill: !!field.disableOnPrefill,\n    };\n  }\n\n  if (fieldIsCustomSystemEmail(field)) {\n    return {\n      ...systemBeforeFieldEmail,\n      label: field.label,\n      placeholder: field.placeholder,\n      disableOnPrefill: !!field.disableOnPrefill,\n      required: field.required,\n      hidden: !!field.hidden,\n    };\n  }\n\n  if (fieldIsCustomSystemRescheduleReason(field)) {\n    return {\n      ...systemAfterFieldRescheduleReason,\n      required: !!field.required,\n      hidden: !!field.hidden,\n      label: field.label,\n      placeholder: \"placeholder\" in field ? field.placeholder : undefined,\n      disableOnPrefill: !!field.disableOnPrefill,\n    };\n  }\n\n  if (fieldIsCustomSystemTitle(field)) {\n    return {\n      ...systemAfterFieldTitle,\n      required: !!field.required,\n      hidden: !!field.hidden,\n      label: field.label,\n      placeholder: \"placeholder\" in field ? field.placeholder : undefined,\n      disableOnPrefill: !!field.disableOnPrefill,\n    };\n  }\n\n  if (fieldIsCustomSystemNotes(field)) {\n    return {\n      ...systemAfterFieldNotes,\n      required: !!field.required,\n      hidden: !!field.hidden,\n      label: field.label,\n      placeholder: \"placeholder\" in field ? field.placeholder : undefined,\n      disableOnPrefill: !!field.disableOnPrefill,\n    };\n  }\n\n  if (fieldIsCustomSystemGuests(field)) {\n    return {\n      ...systemAfterFieldGuests,\n      required: !!field.required,\n      hidden: !!field.hidden,\n      label: field.label,\n      placeholder: \"placeholder\" in field ? field.placeholder : undefined,\n      disableOnPrefill: !!field.disableOnPrefill,\n    };\n  }\n\n  if (field.type === \"boolean\") {\n    return {\n      name: field.slug,\n      type: field.type,\n      label: field.label,\n      labelAsSafeHtml: `<p>${field.label}</p>\\n`,\n      sources: [\n        {\n          id: \"user\",\n          type: \"user\",\n          label: \"User\",\n          fieldRequired: true,\n        },\n      ],\n      editable: \"user\",\n      required: !!field.required,\n      disableOnPrefill: !!field.disableOnPrefill,\n      hidden: !!field.hidden,\n    };\n  }\n\n  if (field.type === \"url\") {\n    return {\n      name: field.slug,\n      type: field.type,\n      label: field.label,\n      placeholder: \"placeholder\" in field ? field.placeholder : \"\",\n      labelAsSafeHtml: `<p>${field.label}</p>\\n`,\n      sources: [\n        {\n          id: \"user\",\n          type: \"user\",\n          label: \"User\",\n          fieldRequired: true,\n        },\n      ],\n      editable: \"user\",\n      required: !!field.required,\n      disableOnPrefill: !!field.disableOnPrefill,\n      hidden: !!field.hidden,\n    };\n  }\n\n  return {\n    name: field.slug,\n    type: field.type,\n    label: \"label\" in field ? field.label : \"\",\n    sources: [\n      {\n        id: \"user\",\n        type: \"user\",\n        label: \"User\",\n        fieldRequired: true,\n      },\n    ],\n    editable: \"user\",\n    required: !!field.required,\n    placeholder: field.placeholder,\n    disableOnPrefill: !!field.disableOnPrefill,\n    hidden: !!field.hidden,\n  };\n}",
-      "kind": "snippet"
-    },
-    "endLine": 255,
-    "label": {
-      "defaultLocale": "en-US",
-      "defaultText": "Source evidence",
-      "icuArgs": {},
-      "msgid": "scribe.report.repositoryHealth.sourceSnippet.title",
-      "provenance": "template",
-      "reviewState": "reviewed",
-      "values": {
-        "en-US": {
-          "fallback": false,
-          "reviewed": true,
-          "text": "Source evidence"
-        }
-      }
-    },
-    "language": "typescript",
-    "pagePath": "findings/finding-repository-health/index.html",
-    "snippetId": "source-repository-health-complexity-getbaseproperties-7b639d0787",
-    "sourcePath": "apps/api/v2/src/platform/event-types/event-types_2024_06_14/transformers/api-to-internal/booking-fields.ts",
-    "startLine": 51,
-    "vcsPermalink": "https://github.com/calcom/cal.com/blob/180ede28f0bddf2738933a6e60a8e80f6116d7da/apps/api/v2/src/platform/event-types/event-types_2024_06_14/transformers/api-to-internal/booking-fields.ts#L51-L255",
-    "verifiedSourceHash": "sha256:0b575c12c67ce7d538f293716c82e87e38005a29fa259ec1254a146879c08a40"
-  },
-  {
-    "anchorId": "source-repository-health-complexity-useschedule-2fa8338b3a",
-    "body": {
-      "code": "};\n\nexport const useSchedule = ({\n  month,\n  timezone,\n  username,\n  eventSlug,\n  eventId,\n  selectedDate,\n  duration,\n  dayCount,\n  rescheduleUid,\n  isTeamEvent,\n  orgSlug,\n  teamMemberEmail,\n  useApiV2 = false,\n  enabled: enabledProp = true,\n  bookerLayout,\n}: UseScheduleWithCacheArgs) => {\n  const bookerState = useBookerStore((state) => state.state);\n\n  const [startTime, endTime] = useTimesForSchedule({\n    month,\n    dayCount,\n    selectedDate,\n    bookerLayout,\n  });\n  const searchParams = useSearchParams();\n  const routedTeamMemberIds = searchParams\n    ? getRoutedTeamMemberIdsFromSearchParams(new URLSearchParams(searchParams.toString()))\n    : null;\n  const skipContactOwner = searchParams ? searchParams.get(\"cal.skipContactOwner\") === \"true\" : false;\n  const utils = trpc.useUtils();\n  const queuedFormResponseId = searchParams?.get(\"cal.queuedFormResponseId\");\n  const email = searchParams?.get(\"email\");\n  // We allow skipping the schedule fetch as a requirement for prerendering in iframe through embed as when the pre-rendered iframe is connected, then we would fetch the availability, which would be upto-date\n  // Also, a reuse through Headless Router could completely change the availability as different team members are selected and thus it is unnecessary to fetch the schedule\n  const skipGetSchedule = searchParams?.get(\"cal.skipSlotsFetch\") === \"true\";\n  const embedConnectVersion = searchParams?.get(\"cal.embed.connectVersion\") || \"0\";\n  const input = {\n    isTeamEvent,\n    usernameList: getUsernameList(username ?? \"\"),\n    // Prioritize slug over id, since slug is the first value we get available.\n    // If we have a slug, we don't need to fetch the id.\n    // TODO: are queries using eventTypeId faster? Even tho we lost time fetching the id with the slug.\n    ...(eventSlug ? { eventTypeSlug: eventSlug } : { eventTypeId: eventId ?? 0 }),\n    // @TODO: Old code fetched 2 days ago if we were fetching the current month.\n    // Do we want / need to keep that behavior?\n    startTime,\n    // if `prefetchNextMonth` is true, two months are fetched at once.\n    endTime,\n    // We use a placeholder value that is there to keep TS happy, but still invalid to tell us that it shouldn't actually be passed in request(and wouldn't because enabled is false if timezone is nullish)\n    // TODO: Better approach here is to use `skipToken` from react-query which requires an upgrade of react-query\n    timeZone: timezone ?? \"PLACEHOLDER_TIMEZONE\",\n    duration: duration ? `${duration}` : undefined,\n    rescheduleUid,\n    orgSlug,\n    teamMemberEmail,\n    routedTeamMemberIds,\n    skipContactOwner,\n    ...(queuedFormResponseId ? { queuedFormResponseId } : {}),\n    email,\n    // Ensures that connectVersion causes a refresh of the data\n    ...(embedConnectVersion ? { embedConnectVersion } : {}),\n    _isDryRun: searchParams ? isBookingDryRun(searchParams) : false,\n  };\n\n  const options = {\n    trpc: {\n      context: {\n        skipBatch: true,\n      },\n    },\n    // It allows people who might not have the tab in focus earlier, to get latest available slots\n    // It might not work correctly in iframes, so we have refetchInterval to take care of that.\n    // But where it works, it should give user latest availability even if they come back to tab before refetchInterval.\n    refetchOnWindowFocus: true,\n    // It allows long sitting users to get latest available slots\n    refetchInterval: PUBLIC_QUERY_AVAILABLE_SLOTS_INTERVAL_SECONDS * 1000,\n    enabled:\n      !skipGetSchedule &&\n      Boolean(username) &&\n      Boolean(month) &&\n      Boolean(timezone) &&\n      // Should only wait for one or the other, not both.\n      (Boolean(eventSlug) || Boolean(eventId) || eventId === 0) &&\n      enabledProp,\n  };\n\n  const isCallingApiV2Slots = useApiV2 && Boolean(isTeamEvent) && options.enabled;\n\n  // API V2 query for team events\n  const teamScheduleV2 = useApiV2AvailableSlots({\n    ...input,\n    enabled: isCallingApiV2Slots,\n    duration: input.duration ? Number(input.duration) : undefined,\n    routedTeamMemberIds: input.routedTeamMemberIds ?? undefined,\n    teamMemberEmail: input.teamMemberEmail ?? undefined,\n    eventTypeId: eventId ?? undefined,\n  });\n\n  const schedule = trpc.viewer.slots.getSchedule.useQuery(input, {\n    ...options,\n    // Only enable if we're not using API V2\n    enabled: options.enabled && !isCallingApiV2Slots,\n  });\n\n  if (isCallingApiV2Slots && !teamScheduleV2.failureReason) {\n    updateEmbedBookerState({\n      bookerState,\n      slotsQuery: teamScheduleV2,\n    });\n\n    if (teamScheduleV2.isSuccess && eventId && eventSlug) {\n      sdkActionManager?.fire(\"availabilityLoaded\", getAvailabilityLoadedEventPayload({ eventId, eventSlug }));\n    }\n\n    return {\n      ...teamScheduleV2,\n      /**\n       * Invalidates the request and resends it regardless of any other configuration including staleTime\n       */\n      invalidate: () => {\n        return teamScheduleV2.refetch();\n      },\n    };\n  }\n\n  updateEmbedBookerState({\n    bookerState,\n    slotsQuery: schedule,\n  });\n\n  if (schedule.isSuccess && eventId && eventSlug) {\n    sdkActionManager?.fire(\"availabilityLoaded\", getAvailabilityLoadedEventPayload({ eventId, eventSlug }));\n  }\n\n  return {\n    ...schedule,\n    /**\n     * Invalidates the request and resends it regardless of any other configuration including staleTime\n     */\n    invalidate: () => {\n      return utils.viewer.slots.getSchedule.invalidate(input);\n    },\n  };\n};",
-      "kind": "snippet"
-    },
-    "endLine": 195,
-    "label": {
-      "defaultLocale": "en-US",
-      "defaultText": "Source evidence",
-      "icuArgs": {},
-      "msgid": "scribe.report.repositoryHealth.sourceSnippet.title",
-      "provenance": "template",
-      "reviewState": "reviewed",
-      "values": {
-        "en-US": {
-          "fallback": false,
-          "reviewed": true,
-          "text": "Source evidence"
-        }
-      }
-    },
-    "language": "typescript",
-    "pagePath": "findings/finding-repository-health/index.html",
-    "snippetId": "source-repository-health-complexity-useschedule-2fa8338b3a",
-    "sourcePath": "apps/web/modules/schedules/hooks/useSchedule.ts",
-    "startLine": 49,
-    "vcsPermalink": "https://github.com/calcom/cal.com/blob/180ede28f0bddf2738933a6e60a8e80f6116d7da/apps/web/modules/schedules/hooks/useSchedule.ts#L49-L195",
-    "verifiedSourceHash": "sha256:1b9b89d63815f24e5a4bd3ea7888ffa75f85792165408a371758db59cc6bb0f3"
-  },
-  {
-    "anchorId": "source-repository-health-complexity-event-dd37a2798d",
-    "body": {
-      "code": "};\n\nexport function Event({\n  event,\n  currentlySelectedEventId,\n  eventDuration,\n  disabled,\n  onEventClick,\n  isHovered = false,\n}: EventProps) {\n  const selected = currentlySelectedEventId === event.id;\n  const { options } = event;\n\n  // Use custom color if provided, otherwise derive from status\n  const colorClass = !options?.color ? getStatusColorClass(options?.status) : undefined;\n\n  const Component = onEventClick ? \"button\" : \"div\";\n\n  const dayOfWeek = dayjs(event.start).day();\n  const tooltipSide = dayOfWeek >= 1 && dayOfWeek <= 4 ? \"right\" : \"left\";\n\n  const tooltipContent = (\n    <div className=\"flex min-w-[200px] max-w-[300px] flex-col gap-1 py-1\">\n      <div className=\"flex items-start gap-2\">\n        {(options?.color || colorClass) && (\n          <div\n            className={classNames(\"mt-1 h-3 w-1 shrink-0 rounded-sm\", colorClass)}\n            style={options?.color ? { backgroundColor: options.color } : undefined}></div>\n        )}\n        <div className=\"flex-1\">\n          <div className=\"font-semibold leading-tight\">{event.title}</div>\n          {!event.options?.hideTime && (\n            <div className=\"text-inverted-muted mt-1 text-xs\">\n              {dayjs(event.start).format(\"HH:mm\")} - {dayjs(event.end).format(\"HH:mm\")}\n            </div>\n          )}\n          {event.description && (\n            <div className=\"text-inverted-muted mt-1 text-xs leading-snug\">{event.description}</div>\n          )}\n          {options?.status && options.status !== \"ACCEPTED\" && (\n            <div className=\"text-inverted-muted mt-1 text-xs capitalize\">\n              {options.status.toLowerCase().replace(\"_\", \" \")}\n            </div>\n          )}\n        </div>\n      </div>\n    </div>\n  );\n\n  const displayType = eventDuration < 40 ? \"single-line\" : eventDuration < 45 ? \"multi-line\" : \"full\";\n\n  return (\n    <Tooltip content={tooltipContent} className=\"max-w-none\" side={tooltipSide}>\n      <Component\n        data-booking-calendar-event=\"true\"\n        onClick={() => onEventClick?.(event)}\n        {...(options?.bookingUid ? { \"data-booking-uid\": options.bookingUid } : {})}\n        className={classNames(\n          eventClasses({\n            status: options?.status,\n            disabled,\n            selected,\n            borderOnly: options?.borderOnly ?? false,\n          }),\n          options?.className,\n          (isHovered || selected) && \"ring-brand-default shadow-lg ring-2 ring-offset-0\"\n        )}\n        style={{\n          transition: \"all 100ms ease-out\",\n        }}>\n        {(options?.color || colorClass) && (\n          <div\n            className={classNames(\"-ml-1.5 mr-1.5 h-full w-[3px] shrink-0\", colorClass)}\n            style={options?.color ? { backgroundColor: options.color } : undefined}></div>\n        )}\n        <div className={classNames(\"flex w-full\", displayType !== \"single-line\" && \"flex-col py-1\")}>\n          {displayType === \"single-line\" && (\n            <div\n              className={classNames(\n                \"flex w-full shrink-0 gap-2 overflow-hidden text-ellipsis whitespace-nowrap text-left leading-4\",\n                \"items-center\"\n              )}>\n              <span>{event.title}</span>\n              {!event.options?.hideTime && (\n                <p className=\"text-subtle mt-1 w-full whitespace-nowrap text-left text-[10px] leading-none\">\n                  {dayjs(event.start).format(\"HH:mm\")} - {dayjs(event.end).format(\"HH:mm\")}\n                </p>\n              )}\n            </div>\n          )}\n          {displayType !== \"single-line\" && (\n            <p className={classNames(\"shrink-0 whitespace-nowrap text-left leading-4\")}>{event.title}</p>\n          )}\n          {displayType !== \"single-line\" && !event.options?.hideTime && (\n            <p className=\"text-subtle mt-1 whitespace-nowrap text-left text-[10px] leading-none\">\n              {dayjs(event.start).format(\"HH:mm\")} - {dayjs(event.end).format(\"HH:mm\")}\n            </p>\n          )}\n          {displayType === \"full\" && event.description && (\n            <p className=\"text-subtle mt-1 text-left text-[10px] leading-none\">{event.description}</p>\n          )}\n        </div>\n      </Component>\n    </Tooltip>\n  );\n}",
-      "kind": "snippet"
-    },
-    "endLine": 163,
-    "label": {
-      "defaultLocale": "en-US",
-      "defaultText": "Source evidence",
-      "icuArgs": {},
-      "msgid": "scribe.report.repositoryHealth.sourceSnippet.title",
-      "provenance": "template",
-      "reviewState": "reviewed",
-      "values": {
-        "en-US": {
-          "fallback": false,
-          "reviewed": true,
-          "text": "Source evidence"
-        }
-      }
-    },
-    "language": "typescript",
-    "pagePath": "findings/finding-repository-health/index.html",
-    "snippetId": "source-repository-health-complexity-event-dd37a2798d",
-    "sourcePath": "apps/web/modules/calendars/weeklyview/components/event/Event.tsx",
-    "startLine": 58,
-    "vcsPermalink": "https://github.com/calcom/cal.com/blob/180ede28f0bddf2738933a6e60a8e80f6116d7da/apps/web/modules/calendars/weeklyview/components/event/Event.tsx#L58-L163",
-    "verifiedSourceHash": "sha256:1741fd65e63cb65c0d474d6d0886a9c76ec845025de3ea769bb7e28dda8c43d8"
   },
   {
     "anchorId": "source-repository-health-accessibility-wcag-4-1-2-name-role-value-1cb0f406ad",
@@ -14621,6 +17023,39 @@ window.__SCRIBE_SOURCE_SNIPPETS__ = [
     },
     "endLine": 91,
     "label": {
+      "catalogDependency": {
+        "explicitLocales": [],
+        "lookupLocales": [
+          "en-US",
+          "en-GB",
+          "en-CA",
+          "fr-CA",
+          "en-IN",
+          "cy-GB",
+          "gd-GB",
+          "ga-GB",
+          "es-US",
+          "es-MX",
+          "de-DE",
+          "fr-FR",
+          "es-ES",
+          "it-IT",
+          "nl-NL",
+          "pl-PL",
+          "pt-PT",
+          "pt-BR",
+          "ro-RO",
+          "sv-SE",
+          "ko-KR",
+          "zh-CN",
+          "ja-JP",
+          "hi-IN"
+        ],
+        "reportFallbacks": {
+          "ja-JP": "自動修正"
+        },
+        "sourceLocale": "en-US"
+      },
       "defaultLocale": "en-US",
       "defaultText": "Autofix",
       "icuArgs": {},
@@ -14712,6 +17147,39 @@ window.__SCRIBE_SOURCE_SNIPPETS__ = [
     },
     "endLine": 116,
     "label": {
+      "catalogDependency": {
+        "explicitLocales": [],
+        "lookupLocales": [
+          "en-US",
+          "en-GB",
+          "en-CA",
+          "fr-CA",
+          "en-IN",
+          "cy-GB",
+          "gd-GB",
+          "ga-GB",
+          "es-US",
+          "es-MX",
+          "de-DE",
+          "fr-FR",
+          "es-ES",
+          "it-IT",
+          "nl-NL",
+          "pl-PL",
+          "pt-PT",
+          "pt-BR",
+          "ro-RO",
+          "sv-SE",
+          "ko-KR",
+          "zh-CN",
+          "ja-JP",
+          "hi-IN"
+        ],
+        "reportFallbacks": {
+          "ja-JP": "自動修正"
+        },
+        "sourceLocale": "en-US"
+      },
       "defaultLocale": "en-US",
       "defaultText": "Autofix",
       "icuArgs": {},
@@ -14797,6 +17265,39 @@ window.__SCRIBE_SOURCE_SNIPPETS__ = [
     },
     "endLine": 667,
     "label": {
+      "catalogDependency": {
+        "explicitLocales": [],
+        "lookupLocales": [
+          "en-US",
+          "en-GB",
+          "en-CA",
+          "fr-CA",
+          "en-IN",
+          "cy-GB",
+          "gd-GB",
+          "ga-GB",
+          "es-US",
+          "es-MX",
+          "de-DE",
+          "fr-FR",
+          "es-ES",
+          "it-IT",
+          "nl-NL",
+          "pl-PL",
+          "pt-PT",
+          "pt-BR",
+          "ro-RO",
+          "sv-SE",
+          "ko-KR",
+          "zh-CN",
+          "ja-JP",
+          "hi-IN"
+        ],
+        "reportFallbacks": {
+          "ja-JP": "自動修正"
+        },
+        "sourceLocale": "en-US"
+      },
       "defaultLocale": "en-US",
       "defaultText": "Autofix",
       "icuArgs": {},
@@ -14882,6 +17383,39 @@ window.__SCRIBE_SOURCE_SNIPPETS__ = [
     },
     "endLine": 298,
     "label": {
+      "catalogDependency": {
+        "explicitLocales": [],
+        "lookupLocales": [
+          "en-US",
+          "en-GB",
+          "en-CA",
+          "fr-CA",
+          "en-IN",
+          "cy-GB",
+          "gd-GB",
+          "ga-GB",
+          "es-US",
+          "es-MX",
+          "de-DE",
+          "fr-FR",
+          "es-ES",
+          "it-IT",
+          "nl-NL",
+          "pl-PL",
+          "pt-PT",
+          "pt-BR",
+          "ro-RO",
+          "sv-SE",
+          "ko-KR",
+          "zh-CN",
+          "ja-JP",
+          "hi-IN"
+        ],
+        "reportFallbacks": {
+          "ja-JP": "自動修正"
+        },
+        "sourceLocale": "en-US"
+      },
       "defaultLocale": "en-US",
       "defaultText": "Autofix",
       "icuArgs": {},
@@ -14967,6 +17501,39 @@ window.__SCRIBE_SOURCE_SNIPPETS__ = [
     },
     "endLine": 350,
     "label": {
+      "catalogDependency": {
+        "explicitLocales": [],
+        "lookupLocales": [
+          "en-US",
+          "en-GB",
+          "en-CA",
+          "fr-CA",
+          "en-IN",
+          "cy-GB",
+          "gd-GB",
+          "ga-GB",
+          "es-US",
+          "es-MX",
+          "de-DE",
+          "fr-FR",
+          "es-ES",
+          "it-IT",
+          "nl-NL",
+          "pl-PL",
+          "pt-PT",
+          "pt-BR",
+          "ro-RO",
+          "sv-SE",
+          "ko-KR",
+          "zh-CN",
+          "ja-JP",
+          "hi-IN"
+        ],
+        "reportFallbacks": {
+          "ja-JP": "自動修正"
+        },
+        "sourceLocale": "en-US"
+      },
       "defaultLocale": "en-US",
       "defaultText": "Autofix",
       "icuArgs": {},
@@ -15052,6 +17619,39 @@ window.__SCRIBE_SOURCE_SNIPPETS__ = [
     },
     "endLine": 838,
     "label": {
+      "catalogDependency": {
+        "explicitLocales": [],
+        "lookupLocales": [
+          "en-US",
+          "en-GB",
+          "en-CA",
+          "fr-CA",
+          "en-IN",
+          "cy-GB",
+          "gd-GB",
+          "ga-GB",
+          "es-US",
+          "es-MX",
+          "de-DE",
+          "fr-FR",
+          "es-ES",
+          "it-IT",
+          "nl-NL",
+          "pl-PL",
+          "pt-PT",
+          "pt-BR",
+          "ro-RO",
+          "sv-SE",
+          "ko-KR",
+          "zh-CN",
+          "ja-JP",
+          "hi-IN"
+        ],
+        "reportFallbacks": {
+          "ja-JP": "自動修正"
+        },
+        "sourceLocale": "en-US"
+      },
       "defaultLocale": "en-US",
       "defaultText": "Autofix",
       "icuArgs": {},
@@ -15137,6 +17737,39 @@ window.__SCRIBE_SOURCE_SNIPPETS__ = [
     },
     "endLine": 1144,
     "label": {
+      "catalogDependency": {
+        "explicitLocales": [],
+        "lookupLocales": [
+          "en-US",
+          "en-GB",
+          "en-CA",
+          "fr-CA",
+          "en-IN",
+          "cy-GB",
+          "gd-GB",
+          "ga-GB",
+          "es-US",
+          "es-MX",
+          "de-DE",
+          "fr-FR",
+          "es-ES",
+          "it-IT",
+          "nl-NL",
+          "pl-PL",
+          "pt-PT",
+          "pt-BR",
+          "ro-RO",
+          "sv-SE",
+          "ko-KR",
+          "zh-CN",
+          "ja-JP",
+          "hi-IN"
+        ],
+        "reportFallbacks": {
+          "ja-JP": "自動修正"
+        },
+        "sourceLocale": "en-US"
+      },
       "defaultLocale": "en-US",
       "defaultText": "Autofix",
       "icuArgs": {},
@@ -15222,6 +17855,39 @@ window.__SCRIBE_SOURCE_SNIPPETS__ = [
     },
     "endLine": 92,
     "label": {
+      "catalogDependency": {
+        "explicitLocales": [],
+        "lookupLocales": [
+          "en-US",
+          "en-GB",
+          "en-CA",
+          "fr-CA",
+          "en-IN",
+          "cy-GB",
+          "gd-GB",
+          "ga-GB",
+          "es-US",
+          "es-MX",
+          "de-DE",
+          "fr-FR",
+          "es-ES",
+          "it-IT",
+          "nl-NL",
+          "pl-PL",
+          "pt-PT",
+          "pt-BR",
+          "ro-RO",
+          "sv-SE",
+          "ko-KR",
+          "zh-CN",
+          "ja-JP",
+          "hi-IN"
+        ],
+        "reportFallbacks": {
+          "ja-JP": "自動修正"
+        },
+        "sourceLocale": "en-US"
+      },
       "defaultLocale": "en-US",
       "defaultText": "Autofix",
       "icuArgs": {},
@@ -15307,6 +17973,39 @@ window.__SCRIBE_SOURCE_SNIPPETS__ = [
     },
     "endLine": 116,
     "label": {
+      "catalogDependency": {
+        "explicitLocales": [],
+        "lookupLocales": [
+          "en-US",
+          "en-GB",
+          "en-CA",
+          "fr-CA",
+          "en-IN",
+          "cy-GB",
+          "gd-GB",
+          "ga-GB",
+          "es-US",
+          "es-MX",
+          "de-DE",
+          "fr-FR",
+          "es-ES",
+          "it-IT",
+          "nl-NL",
+          "pl-PL",
+          "pt-PT",
+          "pt-BR",
+          "ro-RO",
+          "sv-SE",
+          "ko-KR",
+          "zh-CN",
+          "ja-JP",
+          "hi-IN"
+        ],
+        "reportFallbacks": {
+          "ja-JP": "自動修正"
+        },
+        "sourceLocale": "en-US"
+      },
       "defaultLocale": "en-US",
       "defaultText": "Autofix",
       "icuArgs": {},
@@ -15392,6 +18091,39 @@ window.__SCRIBE_SOURCE_SNIPPETS__ = [
     },
     "endLine": 25,
     "label": {
+      "catalogDependency": {
+        "explicitLocales": [],
+        "lookupLocales": [
+          "en-US",
+          "en-GB",
+          "en-CA",
+          "fr-CA",
+          "en-IN",
+          "cy-GB",
+          "gd-GB",
+          "ga-GB",
+          "es-US",
+          "es-MX",
+          "de-DE",
+          "fr-FR",
+          "es-ES",
+          "it-IT",
+          "nl-NL",
+          "pl-PL",
+          "pt-PT",
+          "pt-BR",
+          "ro-RO",
+          "sv-SE",
+          "ko-KR",
+          "zh-CN",
+          "ja-JP",
+          "hi-IN"
+        ],
+        "reportFallbacks": {
+          "ja-JP": "自動修正"
+        },
+        "sourceLocale": "en-US"
+      },
       "defaultLocale": "en-US",
       "defaultText": "Autofix",
       "icuArgs": {},
@@ -15477,6 +18209,39 @@ window.__SCRIBE_SOURCE_SNIPPETS__ = [
     },
     "endLine": 65,
     "label": {
+      "catalogDependency": {
+        "explicitLocales": [],
+        "lookupLocales": [
+          "en-US",
+          "en-GB",
+          "en-CA",
+          "fr-CA",
+          "en-IN",
+          "cy-GB",
+          "gd-GB",
+          "ga-GB",
+          "es-US",
+          "es-MX",
+          "de-DE",
+          "fr-FR",
+          "es-ES",
+          "it-IT",
+          "nl-NL",
+          "pl-PL",
+          "pt-PT",
+          "pt-BR",
+          "ro-RO",
+          "sv-SE",
+          "ko-KR",
+          "zh-CN",
+          "ja-JP",
+          "hi-IN"
+        ],
+        "reportFallbacks": {
+          "ja-JP": "自動修正"
+        },
+        "sourceLocale": "en-US"
+      },
       "defaultLocale": "en-US",
       "defaultText": "Autofix",
       "icuArgs": {},
@@ -15568,6 +18333,39 @@ window.__SCRIBE_SOURCE_SNIPPETS__ = [
     },
     "endLine": 52,
     "label": {
+      "catalogDependency": {
+        "explicitLocales": [],
+        "lookupLocales": [
+          "en-US",
+          "en-GB",
+          "en-CA",
+          "fr-CA",
+          "en-IN",
+          "cy-GB",
+          "gd-GB",
+          "ga-GB",
+          "es-US",
+          "es-MX",
+          "de-DE",
+          "fr-FR",
+          "es-ES",
+          "it-IT",
+          "nl-NL",
+          "pl-PL",
+          "pt-PT",
+          "pt-BR",
+          "ro-RO",
+          "sv-SE",
+          "ko-KR",
+          "zh-CN",
+          "ja-JP",
+          "hi-IN"
+        ],
+        "reportFallbacks": {
+          "ja-JP": "自動修正"
+        },
+        "sourceLocale": "en-US"
+      },
       "defaultLocale": "en-US",
       "defaultText": "Autofix",
       "icuArgs": {},
@@ -15653,6 +18451,39 @@ window.__SCRIBE_SOURCE_SNIPPETS__ = [
     },
     "endLine": 330,
     "label": {
+      "catalogDependency": {
+        "explicitLocales": [],
+        "lookupLocales": [
+          "en-US",
+          "en-GB",
+          "en-CA",
+          "fr-CA",
+          "en-IN",
+          "cy-GB",
+          "gd-GB",
+          "ga-GB",
+          "es-US",
+          "es-MX",
+          "de-DE",
+          "fr-FR",
+          "es-ES",
+          "it-IT",
+          "nl-NL",
+          "pl-PL",
+          "pt-PT",
+          "pt-BR",
+          "ro-RO",
+          "sv-SE",
+          "ko-KR",
+          "zh-CN",
+          "ja-JP",
+          "hi-IN"
+        ],
+        "reportFallbacks": {
+          "ja-JP": "自動修正"
+        },
+        "sourceLocale": "en-US"
+      },
       "defaultLocale": "en-US",
       "defaultText": "Autofix",
       "icuArgs": {},
@@ -15738,6 +18569,39 @@ window.__SCRIBE_SOURCE_SNIPPETS__ = [
     },
     "endLine": 206,
     "label": {
+      "catalogDependency": {
+        "explicitLocales": [],
+        "lookupLocales": [
+          "en-US",
+          "en-GB",
+          "en-CA",
+          "fr-CA",
+          "en-IN",
+          "cy-GB",
+          "gd-GB",
+          "ga-GB",
+          "es-US",
+          "es-MX",
+          "de-DE",
+          "fr-FR",
+          "es-ES",
+          "it-IT",
+          "nl-NL",
+          "pl-PL",
+          "pt-PT",
+          "pt-BR",
+          "ro-RO",
+          "sv-SE",
+          "ko-KR",
+          "zh-CN",
+          "ja-JP",
+          "hi-IN"
+        ],
+        "reportFallbacks": {
+          "ja-JP": "自動修正"
+        },
+        "sourceLocale": "en-US"
+      },
       "defaultLocale": "en-US",
       "defaultText": "Autofix",
       "icuArgs": {},
@@ -15823,6 +18687,39 @@ window.__SCRIBE_SOURCE_SNIPPETS__ = [
     },
     "endLine": 86,
     "label": {
+      "catalogDependency": {
+        "explicitLocales": [],
+        "lookupLocales": [
+          "en-US",
+          "en-GB",
+          "en-CA",
+          "fr-CA",
+          "en-IN",
+          "cy-GB",
+          "gd-GB",
+          "ga-GB",
+          "es-US",
+          "es-MX",
+          "de-DE",
+          "fr-FR",
+          "es-ES",
+          "it-IT",
+          "nl-NL",
+          "pl-PL",
+          "pt-PT",
+          "pt-BR",
+          "ro-RO",
+          "sv-SE",
+          "ko-KR",
+          "zh-CN",
+          "ja-JP",
+          "hi-IN"
+        ],
+        "reportFallbacks": {
+          "ja-JP": "自動修正"
+        },
+        "sourceLocale": "en-US"
+      },
       "defaultLocale": "en-US",
       "defaultText": "Autofix",
       "icuArgs": {},
@@ -15908,6 +18805,39 @@ window.__SCRIBE_SOURCE_SNIPPETS__ = [
     },
     "endLine": 97,
     "label": {
+      "catalogDependency": {
+        "explicitLocales": [],
+        "lookupLocales": [
+          "en-US",
+          "en-GB",
+          "en-CA",
+          "fr-CA",
+          "en-IN",
+          "cy-GB",
+          "gd-GB",
+          "ga-GB",
+          "es-US",
+          "es-MX",
+          "de-DE",
+          "fr-FR",
+          "es-ES",
+          "it-IT",
+          "nl-NL",
+          "pl-PL",
+          "pt-PT",
+          "pt-BR",
+          "ro-RO",
+          "sv-SE",
+          "ko-KR",
+          "zh-CN",
+          "ja-JP",
+          "hi-IN"
+        ],
+        "reportFallbacks": {
+          "ja-JP": "自動修正"
+        },
+        "sourceLocale": "en-US"
+      },
       "defaultLocale": "en-US",
       "defaultText": "Autofix",
       "icuArgs": {},
@@ -15993,6 +18923,39 @@ window.__SCRIBE_SOURCE_SNIPPETS__ = [
     },
     "endLine": 262,
     "label": {
+      "catalogDependency": {
+        "explicitLocales": [],
+        "lookupLocales": [
+          "en-US",
+          "en-GB",
+          "en-CA",
+          "fr-CA",
+          "en-IN",
+          "cy-GB",
+          "gd-GB",
+          "ga-GB",
+          "es-US",
+          "es-MX",
+          "de-DE",
+          "fr-FR",
+          "es-ES",
+          "it-IT",
+          "nl-NL",
+          "pl-PL",
+          "pt-PT",
+          "pt-BR",
+          "ro-RO",
+          "sv-SE",
+          "ko-KR",
+          "zh-CN",
+          "ja-JP",
+          "hi-IN"
+        ],
+        "reportFallbacks": {
+          "ja-JP": "自動修正"
+        },
+        "sourceLocale": "en-US"
+      },
       "defaultLocale": "en-US",
       "defaultText": "Autofix",
       "icuArgs": {},
@@ -16078,6 +19041,39 @@ window.__SCRIBE_SOURCE_SNIPPETS__ = [
     },
     "endLine": 112,
     "label": {
+      "catalogDependency": {
+        "explicitLocales": [],
+        "lookupLocales": [
+          "en-US",
+          "en-GB",
+          "en-CA",
+          "fr-CA",
+          "en-IN",
+          "cy-GB",
+          "gd-GB",
+          "ga-GB",
+          "es-US",
+          "es-MX",
+          "de-DE",
+          "fr-FR",
+          "es-ES",
+          "it-IT",
+          "nl-NL",
+          "pl-PL",
+          "pt-PT",
+          "pt-BR",
+          "ro-RO",
+          "sv-SE",
+          "ko-KR",
+          "zh-CN",
+          "ja-JP",
+          "hi-IN"
+        ],
+        "reportFallbacks": {
+          "ja-JP": "自動修正"
+        },
+        "sourceLocale": "en-US"
+      },
       "defaultLocale": "en-US",
       "defaultText": "Autofix",
       "icuArgs": {},
@@ -16163,6 +19159,39 @@ window.__SCRIBE_SOURCE_SNIPPETS__ = [
     },
     "endLine": 146,
     "label": {
+      "catalogDependency": {
+        "explicitLocales": [],
+        "lookupLocales": [
+          "en-US",
+          "en-GB",
+          "en-CA",
+          "fr-CA",
+          "en-IN",
+          "cy-GB",
+          "gd-GB",
+          "ga-GB",
+          "es-US",
+          "es-MX",
+          "de-DE",
+          "fr-FR",
+          "es-ES",
+          "it-IT",
+          "nl-NL",
+          "pl-PL",
+          "pt-PT",
+          "pt-BR",
+          "ro-RO",
+          "sv-SE",
+          "ko-KR",
+          "zh-CN",
+          "ja-JP",
+          "hi-IN"
+        ],
+        "reportFallbacks": {
+          "ja-JP": "自動修正"
+        },
+        "sourceLocale": "en-US"
+      },
       "defaultLocale": "en-US",
       "defaultText": "Autofix",
       "icuArgs": {},
@@ -16248,6 +19277,39 @@ window.__SCRIBE_SOURCE_SNIPPETS__ = [
     },
     "endLine": 150,
     "label": {
+      "catalogDependency": {
+        "explicitLocales": [],
+        "lookupLocales": [
+          "en-US",
+          "en-GB",
+          "en-CA",
+          "fr-CA",
+          "en-IN",
+          "cy-GB",
+          "gd-GB",
+          "ga-GB",
+          "es-US",
+          "es-MX",
+          "de-DE",
+          "fr-FR",
+          "es-ES",
+          "it-IT",
+          "nl-NL",
+          "pl-PL",
+          "pt-PT",
+          "pt-BR",
+          "ro-RO",
+          "sv-SE",
+          "ko-KR",
+          "zh-CN",
+          "ja-JP",
+          "hi-IN"
+        ],
+        "reportFallbacks": {
+          "ja-JP": "自動修正"
+        },
+        "sourceLocale": "en-US"
+      },
       "defaultLocale": "en-US",
       "defaultText": "Autofix",
       "icuArgs": {},
@@ -16339,6 +19401,39 @@ window.__SCRIBE_SOURCE_SNIPPETS__ = [
     },
     "endLine": 604,
     "label": {
+      "catalogDependency": {
+        "explicitLocales": [],
+        "lookupLocales": [
+          "en-US",
+          "en-GB",
+          "en-CA",
+          "fr-CA",
+          "en-IN",
+          "cy-GB",
+          "gd-GB",
+          "ga-GB",
+          "es-US",
+          "es-MX",
+          "de-DE",
+          "fr-FR",
+          "es-ES",
+          "it-IT",
+          "nl-NL",
+          "pl-PL",
+          "pt-PT",
+          "pt-BR",
+          "ro-RO",
+          "sv-SE",
+          "ko-KR",
+          "zh-CN",
+          "ja-JP",
+          "hi-IN"
+        ],
+        "reportFallbacks": {
+          "ja-JP": "自動修正"
+        },
+        "sourceLocale": "en-US"
+      },
       "defaultLocale": "en-US",
       "defaultText": "Autofix",
       "icuArgs": {},
@@ -16424,6 +19519,39 @@ window.__SCRIBE_SOURCE_SNIPPETS__ = [
     },
     "endLine": 126,
     "label": {
+      "catalogDependency": {
+        "explicitLocales": [],
+        "lookupLocales": [
+          "en-US",
+          "en-GB",
+          "en-CA",
+          "fr-CA",
+          "en-IN",
+          "cy-GB",
+          "gd-GB",
+          "ga-GB",
+          "es-US",
+          "es-MX",
+          "de-DE",
+          "fr-FR",
+          "es-ES",
+          "it-IT",
+          "nl-NL",
+          "pl-PL",
+          "pt-PT",
+          "pt-BR",
+          "ro-RO",
+          "sv-SE",
+          "ko-KR",
+          "zh-CN",
+          "ja-JP",
+          "hi-IN"
+        ],
+        "reportFallbacks": {
+          "ja-JP": "自動修正"
+        },
+        "sourceLocale": "en-US"
+      },
       "defaultLocale": "en-US",
       "defaultText": "Autofix",
       "icuArgs": {},
@@ -16509,6 +19637,39 @@ window.__SCRIBE_SOURCE_SNIPPETS__ = [
     },
     "endLine": 130,
     "label": {
+      "catalogDependency": {
+        "explicitLocales": [],
+        "lookupLocales": [
+          "en-US",
+          "en-GB",
+          "en-CA",
+          "fr-CA",
+          "en-IN",
+          "cy-GB",
+          "gd-GB",
+          "ga-GB",
+          "es-US",
+          "es-MX",
+          "de-DE",
+          "fr-FR",
+          "es-ES",
+          "it-IT",
+          "nl-NL",
+          "pl-PL",
+          "pt-PT",
+          "pt-BR",
+          "ro-RO",
+          "sv-SE",
+          "ko-KR",
+          "zh-CN",
+          "ja-JP",
+          "hi-IN"
+        ],
+        "reportFallbacks": {
+          "ja-JP": "自動修正"
+        },
+        "sourceLocale": "en-US"
+      },
       "defaultLocale": "en-US",
       "defaultText": "Autofix",
       "icuArgs": {},
@@ -16594,6 +19755,39 @@ window.__SCRIBE_SOURCE_SNIPPETS__ = [
     },
     "endLine": 1484,
     "label": {
+      "catalogDependency": {
+        "explicitLocales": [],
+        "lookupLocales": [
+          "en-US",
+          "en-GB",
+          "en-CA",
+          "fr-CA",
+          "en-IN",
+          "cy-GB",
+          "gd-GB",
+          "ga-GB",
+          "es-US",
+          "es-MX",
+          "de-DE",
+          "fr-FR",
+          "es-ES",
+          "it-IT",
+          "nl-NL",
+          "pl-PL",
+          "pt-PT",
+          "pt-BR",
+          "ro-RO",
+          "sv-SE",
+          "ko-KR",
+          "zh-CN",
+          "ja-JP",
+          "hi-IN"
+        ],
+        "reportFallbacks": {
+          "ja-JP": "自動修正"
+        },
+        "sourceLocale": "en-US"
+      },
       "defaultLocale": "en-US",
       "defaultText": "Autofix",
       "icuArgs": {},
@@ -16679,6 +19873,39 @@ window.__SCRIBE_SOURCE_SNIPPETS__ = [
     },
     "endLine": 71,
     "label": {
+      "catalogDependency": {
+        "explicitLocales": [],
+        "lookupLocales": [
+          "en-US",
+          "en-GB",
+          "en-CA",
+          "fr-CA",
+          "en-IN",
+          "cy-GB",
+          "gd-GB",
+          "ga-GB",
+          "es-US",
+          "es-MX",
+          "de-DE",
+          "fr-FR",
+          "es-ES",
+          "it-IT",
+          "nl-NL",
+          "pl-PL",
+          "pt-PT",
+          "pt-BR",
+          "ro-RO",
+          "sv-SE",
+          "ko-KR",
+          "zh-CN",
+          "ja-JP",
+          "hi-IN"
+        ],
+        "reportFallbacks": {
+          "ja-JP": "自動修正"
+        },
+        "sourceLocale": "en-US"
+      },
       "defaultLocale": "en-US",
       "defaultText": "Autofix",
       "icuArgs": {},
@@ -16764,6 +19991,39 @@ window.__SCRIBE_SOURCE_SNIPPETS__ = [
     },
     "endLine": 74,
     "label": {
+      "catalogDependency": {
+        "explicitLocales": [],
+        "lookupLocales": [
+          "en-US",
+          "en-GB",
+          "en-CA",
+          "fr-CA",
+          "en-IN",
+          "cy-GB",
+          "gd-GB",
+          "ga-GB",
+          "es-US",
+          "es-MX",
+          "de-DE",
+          "fr-FR",
+          "es-ES",
+          "it-IT",
+          "nl-NL",
+          "pl-PL",
+          "pt-PT",
+          "pt-BR",
+          "ro-RO",
+          "sv-SE",
+          "ko-KR",
+          "zh-CN",
+          "ja-JP",
+          "hi-IN"
+        ],
+        "reportFallbacks": {
+          "ja-JP": "自動修正"
+        },
+        "sourceLocale": "en-US"
+      },
       "defaultLocale": "en-US",
       "defaultText": "Autofix",
       "icuArgs": {},
@@ -16855,6 +20115,39 @@ window.__SCRIBE_SOURCE_SNIPPETS__ = [
     },
     "endLine": 114,
     "label": {
+      "catalogDependency": {
+        "explicitLocales": [],
+        "lookupLocales": [
+          "en-US",
+          "en-GB",
+          "en-CA",
+          "fr-CA",
+          "en-IN",
+          "cy-GB",
+          "gd-GB",
+          "ga-GB",
+          "es-US",
+          "es-MX",
+          "de-DE",
+          "fr-FR",
+          "es-ES",
+          "it-IT",
+          "nl-NL",
+          "pl-PL",
+          "pt-PT",
+          "pt-BR",
+          "ro-RO",
+          "sv-SE",
+          "ko-KR",
+          "zh-CN",
+          "ja-JP",
+          "hi-IN"
+        ],
+        "reportFallbacks": {
+          "ja-JP": "自動修正"
+        },
+        "sourceLocale": "en-US"
+      },
       "defaultLocale": "en-US",
       "defaultText": "Autofix",
       "icuArgs": {},
@@ -16940,6 +20233,39 @@ window.__SCRIBE_SOURCE_SNIPPETS__ = [
     },
     "endLine": 171,
     "label": {
+      "catalogDependency": {
+        "explicitLocales": [],
+        "lookupLocales": [
+          "en-US",
+          "en-GB",
+          "en-CA",
+          "fr-CA",
+          "en-IN",
+          "cy-GB",
+          "gd-GB",
+          "ga-GB",
+          "es-US",
+          "es-MX",
+          "de-DE",
+          "fr-FR",
+          "es-ES",
+          "it-IT",
+          "nl-NL",
+          "pl-PL",
+          "pt-PT",
+          "pt-BR",
+          "ro-RO",
+          "sv-SE",
+          "ko-KR",
+          "zh-CN",
+          "ja-JP",
+          "hi-IN"
+        ],
+        "reportFallbacks": {
+          "ja-JP": "自動修正"
+        },
+        "sourceLocale": "en-US"
+      },
       "defaultLocale": "en-US",
       "defaultText": "Autofix",
       "icuArgs": {},
@@ -17025,6 +20351,39 @@ window.__SCRIBE_SOURCE_SNIPPETS__ = [
     },
     "endLine": 376,
     "label": {
+      "catalogDependency": {
+        "explicitLocales": [],
+        "lookupLocales": [
+          "en-US",
+          "en-GB",
+          "en-CA",
+          "fr-CA",
+          "en-IN",
+          "cy-GB",
+          "gd-GB",
+          "ga-GB",
+          "es-US",
+          "es-MX",
+          "de-DE",
+          "fr-FR",
+          "es-ES",
+          "it-IT",
+          "nl-NL",
+          "pl-PL",
+          "pt-PT",
+          "pt-BR",
+          "ro-RO",
+          "sv-SE",
+          "ko-KR",
+          "zh-CN",
+          "ja-JP",
+          "hi-IN"
+        ],
+        "reportFallbacks": {
+          "ja-JP": "自動修正"
+        },
+        "sourceLocale": "en-US"
+      },
       "defaultLocale": "en-US",
       "defaultText": "Autofix",
       "icuArgs": {},
@@ -17110,6 +20469,39 @@ window.__SCRIBE_SOURCE_SNIPPETS__ = [
     },
     "endLine": 763,
     "label": {
+      "catalogDependency": {
+        "explicitLocales": [],
+        "lookupLocales": [
+          "en-US",
+          "en-GB",
+          "en-CA",
+          "fr-CA",
+          "en-IN",
+          "cy-GB",
+          "gd-GB",
+          "ga-GB",
+          "es-US",
+          "es-MX",
+          "de-DE",
+          "fr-FR",
+          "es-ES",
+          "it-IT",
+          "nl-NL",
+          "pl-PL",
+          "pt-PT",
+          "pt-BR",
+          "ro-RO",
+          "sv-SE",
+          "ko-KR",
+          "zh-CN",
+          "ja-JP",
+          "hi-IN"
+        ],
+        "reportFallbacks": {
+          "ja-JP": "自動修正"
+        },
+        "sourceLocale": "en-US"
+      },
       "defaultLocale": "en-US",
       "defaultText": "Autofix",
       "icuArgs": {},
@@ -17195,6 +20587,39 @@ window.__SCRIBE_SOURCE_SNIPPETS__ = [
     },
     "endLine": 53,
     "label": {
+      "catalogDependency": {
+        "explicitLocales": [],
+        "lookupLocales": [
+          "en-US",
+          "en-GB",
+          "en-CA",
+          "fr-CA",
+          "en-IN",
+          "cy-GB",
+          "gd-GB",
+          "ga-GB",
+          "es-US",
+          "es-MX",
+          "de-DE",
+          "fr-FR",
+          "es-ES",
+          "it-IT",
+          "nl-NL",
+          "pl-PL",
+          "pt-PT",
+          "pt-BR",
+          "ro-RO",
+          "sv-SE",
+          "ko-KR",
+          "zh-CN",
+          "ja-JP",
+          "hi-IN"
+        ],
+        "reportFallbacks": {
+          "ja-JP": "自動修正"
+        },
+        "sourceLocale": "en-US"
+      },
       "defaultLocale": "en-US",
       "defaultText": "Autofix",
       "icuArgs": {},
@@ -17280,6 +20705,39 @@ window.__SCRIBE_SOURCE_SNIPPETS__ = [
     },
     "endLine": 64,
     "label": {
+      "catalogDependency": {
+        "explicitLocales": [],
+        "lookupLocales": [
+          "en-US",
+          "en-GB",
+          "en-CA",
+          "fr-CA",
+          "en-IN",
+          "cy-GB",
+          "gd-GB",
+          "ga-GB",
+          "es-US",
+          "es-MX",
+          "de-DE",
+          "fr-FR",
+          "es-ES",
+          "it-IT",
+          "nl-NL",
+          "pl-PL",
+          "pt-PT",
+          "pt-BR",
+          "ro-RO",
+          "sv-SE",
+          "ko-KR",
+          "zh-CN",
+          "ja-JP",
+          "hi-IN"
+        ],
+        "reportFallbacks": {
+          "ja-JP": "自動修正"
+        },
+        "sourceLocale": "en-US"
+      },
       "defaultLocale": "en-US",
       "defaultText": "Autofix",
       "icuArgs": {},
@@ -17365,6 +20823,39 @@ window.__SCRIBE_SOURCE_SNIPPETS__ = [
     },
     "endLine": 75,
     "label": {
+      "catalogDependency": {
+        "explicitLocales": [],
+        "lookupLocales": [
+          "en-US",
+          "en-GB",
+          "en-CA",
+          "fr-CA",
+          "en-IN",
+          "cy-GB",
+          "gd-GB",
+          "ga-GB",
+          "es-US",
+          "es-MX",
+          "de-DE",
+          "fr-FR",
+          "es-ES",
+          "it-IT",
+          "nl-NL",
+          "pl-PL",
+          "pt-PT",
+          "pt-BR",
+          "ro-RO",
+          "sv-SE",
+          "ko-KR",
+          "zh-CN",
+          "ja-JP",
+          "hi-IN"
+        ],
+        "reportFallbacks": {
+          "ja-JP": "自動修正"
+        },
+        "sourceLocale": "en-US"
+      },
       "defaultLocale": "en-US",
       "defaultText": "Autofix",
       "icuArgs": {},
@@ -17450,6 +20941,39 @@ window.__SCRIBE_SOURCE_SNIPPETS__ = [
     },
     "endLine": 86,
     "label": {
+      "catalogDependency": {
+        "explicitLocales": [],
+        "lookupLocales": [
+          "en-US",
+          "en-GB",
+          "en-CA",
+          "fr-CA",
+          "en-IN",
+          "cy-GB",
+          "gd-GB",
+          "ga-GB",
+          "es-US",
+          "es-MX",
+          "de-DE",
+          "fr-FR",
+          "es-ES",
+          "it-IT",
+          "nl-NL",
+          "pl-PL",
+          "pt-PT",
+          "pt-BR",
+          "ro-RO",
+          "sv-SE",
+          "ko-KR",
+          "zh-CN",
+          "ja-JP",
+          "hi-IN"
+        ],
+        "reportFallbacks": {
+          "ja-JP": "自動修正"
+        },
+        "sourceLocale": "en-US"
+      },
       "defaultLocale": "en-US",
       "defaultText": "Autofix",
       "icuArgs": {},
@@ -17535,6 +21059,39 @@ window.__SCRIBE_SOURCE_SNIPPETS__ = [
     },
     "endLine": 97,
     "label": {
+      "catalogDependency": {
+        "explicitLocales": [],
+        "lookupLocales": [
+          "en-US",
+          "en-GB",
+          "en-CA",
+          "fr-CA",
+          "en-IN",
+          "cy-GB",
+          "gd-GB",
+          "ga-GB",
+          "es-US",
+          "es-MX",
+          "de-DE",
+          "fr-FR",
+          "es-ES",
+          "it-IT",
+          "nl-NL",
+          "pl-PL",
+          "pt-PT",
+          "pt-BR",
+          "ro-RO",
+          "sv-SE",
+          "ko-KR",
+          "zh-CN",
+          "ja-JP",
+          "hi-IN"
+        ],
+        "reportFallbacks": {
+          "ja-JP": "自動修正"
+        },
+        "sourceLocale": "en-US"
+      },
       "defaultLocale": "en-US",
       "defaultText": "Autofix",
       "icuArgs": {},
@@ -17620,6 +21177,39 @@ window.__SCRIBE_SOURCE_SNIPPETS__ = [
     },
     "endLine": 108,
     "label": {
+      "catalogDependency": {
+        "explicitLocales": [],
+        "lookupLocales": [
+          "en-US",
+          "en-GB",
+          "en-CA",
+          "fr-CA",
+          "en-IN",
+          "cy-GB",
+          "gd-GB",
+          "ga-GB",
+          "es-US",
+          "es-MX",
+          "de-DE",
+          "fr-FR",
+          "es-ES",
+          "it-IT",
+          "nl-NL",
+          "pl-PL",
+          "pt-PT",
+          "pt-BR",
+          "ro-RO",
+          "sv-SE",
+          "ko-KR",
+          "zh-CN",
+          "ja-JP",
+          "hi-IN"
+        ],
+        "reportFallbacks": {
+          "ja-JP": "自動修正"
+        },
+        "sourceLocale": "en-US"
+      },
       "defaultLocale": "en-US",
       "defaultText": "Autofix",
       "icuArgs": {},
@@ -17705,6 +21295,39 @@ window.__SCRIBE_SOURCE_SNIPPETS__ = [
     },
     "endLine": 119,
     "label": {
+      "catalogDependency": {
+        "explicitLocales": [],
+        "lookupLocales": [
+          "en-US",
+          "en-GB",
+          "en-CA",
+          "fr-CA",
+          "en-IN",
+          "cy-GB",
+          "gd-GB",
+          "ga-GB",
+          "es-US",
+          "es-MX",
+          "de-DE",
+          "fr-FR",
+          "es-ES",
+          "it-IT",
+          "nl-NL",
+          "pl-PL",
+          "pt-PT",
+          "pt-BR",
+          "ro-RO",
+          "sv-SE",
+          "ko-KR",
+          "zh-CN",
+          "ja-JP",
+          "hi-IN"
+        ],
+        "reportFallbacks": {
+          "ja-JP": "自動修正"
+        },
+        "sourceLocale": "en-US"
+      },
       "defaultLocale": "en-US",
       "defaultText": "Autofix",
       "icuArgs": {},
@@ -17790,6 +21413,39 @@ window.__SCRIBE_SOURCE_SNIPPETS__ = [
     },
     "endLine": 130,
     "label": {
+      "catalogDependency": {
+        "explicitLocales": [],
+        "lookupLocales": [
+          "en-US",
+          "en-GB",
+          "en-CA",
+          "fr-CA",
+          "en-IN",
+          "cy-GB",
+          "gd-GB",
+          "ga-GB",
+          "es-US",
+          "es-MX",
+          "de-DE",
+          "fr-FR",
+          "es-ES",
+          "it-IT",
+          "nl-NL",
+          "pl-PL",
+          "pt-PT",
+          "pt-BR",
+          "ro-RO",
+          "sv-SE",
+          "ko-KR",
+          "zh-CN",
+          "ja-JP",
+          "hi-IN"
+        ],
+        "reportFallbacks": {
+          "ja-JP": "自動修正"
+        },
+        "sourceLocale": "en-US"
+      },
       "defaultLocale": "en-US",
       "defaultText": "Autofix",
       "icuArgs": {},
@@ -17875,6 +21531,39 @@ window.__SCRIBE_SOURCE_SNIPPETS__ = [
     },
     "endLine": 141,
     "label": {
+      "catalogDependency": {
+        "explicitLocales": [],
+        "lookupLocales": [
+          "en-US",
+          "en-GB",
+          "en-CA",
+          "fr-CA",
+          "en-IN",
+          "cy-GB",
+          "gd-GB",
+          "ga-GB",
+          "es-US",
+          "es-MX",
+          "de-DE",
+          "fr-FR",
+          "es-ES",
+          "it-IT",
+          "nl-NL",
+          "pl-PL",
+          "pt-PT",
+          "pt-BR",
+          "ro-RO",
+          "sv-SE",
+          "ko-KR",
+          "zh-CN",
+          "ja-JP",
+          "hi-IN"
+        ],
+        "reportFallbacks": {
+          "ja-JP": "自動修正"
+        },
+        "sourceLocale": "en-US"
+      },
       "defaultLocale": "en-US",
       "defaultText": "Autofix",
       "icuArgs": {},
@@ -17960,6 +21649,39 @@ window.__SCRIBE_SOURCE_SNIPPETS__ = [
     },
     "endLine": 152,
     "label": {
+      "catalogDependency": {
+        "explicitLocales": [],
+        "lookupLocales": [
+          "en-US",
+          "en-GB",
+          "en-CA",
+          "fr-CA",
+          "en-IN",
+          "cy-GB",
+          "gd-GB",
+          "ga-GB",
+          "es-US",
+          "es-MX",
+          "de-DE",
+          "fr-FR",
+          "es-ES",
+          "it-IT",
+          "nl-NL",
+          "pl-PL",
+          "pt-PT",
+          "pt-BR",
+          "ro-RO",
+          "sv-SE",
+          "ko-KR",
+          "zh-CN",
+          "ja-JP",
+          "hi-IN"
+        ],
+        "reportFallbacks": {
+          "ja-JP": "自動修正"
+        },
+        "sourceLocale": "en-US"
+      },
       "defaultLocale": "en-US",
       "defaultText": "Autofix",
       "icuArgs": {},
@@ -18045,6 +21767,39 @@ window.__SCRIBE_SOURCE_SNIPPETS__ = [
     },
     "endLine": 163,
     "label": {
+      "catalogDependency": {
+        "explicitLocales": [],
+        "lookupLocales": [
+          "en-US",
+          "en-GB",
+          "en-CA",
+          "fr-CA",
+          "en-IN",
+          "cy-GB",
+          "gd-GB",
+          "ga-GB",
+          "es-US",
+          "es-MX",
+          "de-DE",
+          "fr-FR",
+          "es-ES",
+          "it-IT",
+          "nl-NL",
+          "pl-PL",
+          "pt-PT",
+          "pt-BR",
+          "ro-RO",
+          "sv-SE",
+          "ko-KR",
+          "zh-CN",
+          "ja-JP",
+          "hi-IN"
+        ],
+        "reportFallbacks": {
+          "ja-JP": "自動修正"
+        },
+        "sourceLocale": "en-US"
+      },
       "defaultLocale": "en-US",
       "defaultText": "Autofix",
       "icuArgs": {},
@@ -18130,6 +21885,39 @@ window.__SCRIBE_SOURCE_SNIPPETS__ = [
     },
     "endLine": 174,
     "label": {
+      "catalogDependency": {
+        "explicitLocales": [],
+        "lookupLocales": [
+          "en-US",
+          "en-GB",
+          "en-CA",
+          "fr-CA",
+          "en-IN",
+          "cy-GB",
+          "gd-GB",
+          "ga-GB",
+          "es-US",
+          "es-MX",
+          "de-DE",
+          "fr-FR",
+          "es-ES",
+          "it-IT",
+          "nl-NL",
+          "pl-PL",
+          "pt-PT",
+          "pt-BR",
+          "ro-RO",
+          "sv-SE",
+          "ko-KR",
+          "zh-CN",
+          "ja-JP",
+          "hi-IN"
+        ],
+        "reportFallbacks": {
+          "ja-JP": "自動修正"
+        },
+        "sourceLocale": "en-US"
+      },
       "defaultLocale": "en-US",
       "defaultText": "Autofix",
       "icuArgs": {},
@@ -18215,6 +22003,39 @@ window.__SCRIBE_SOURCE_SNIPPETS__ = [
     },
     "endLine": 185,
     "label": {
+      "catalogDependency": {
+        "explicitLocales": [],
+        "lookupLocales": [
+          "en-US",
+          "en-GB",
+          "en-CA",
+          "fr-CA",
+          "en-IN",
+          "cy-GB",
+          "gd-GB",
+          "ga-GB",
+          "es-US",
+          "es-MX",
+          "de-DE",
+          "fr-FR",
+          "es-ES",
+          "it-IT",
+          "nl-NL",
+          "pl-PL",
+          "pt-PT",
+          "pt-BR",
+          "ro-RO",
+          "sv-SE",
+          "ko-KR",
+          "zh-CN",
+          "ja-JP",
+          "hi-IN"
+        ],
+        "reportFallbacks": {
+          "ja-JP": "自動修正"
+        },
+        "sourceLocale": "en-US"
+      },
       "defaultLocale": "en-US",
       "defaultText": "Autofix",
       "icuArgs": {},
@@ -18300,6 +22121,39 @@ window.__SCRIBE_SOURCE_SNIPPETS__ = [
     },
     "endLine": 196,
     "label": {
+      "catalogDependency": {
+        "explicitLocales": [],
+        "lookupLocales": [
+          "en-US",
+          "en-GB",
+          "en-CA",
+          "fr-CA",
+          "en-IN",
+          "cy-GB",
+          "gd-GB",
+          "ga-GB",
+          "es-US",
+          "es-MX",
+          "de-DE",
+          "fr-FR",
+          "es-ES",
+          "it-IT",
+          "nl-NL",
+          "pl-PL",
+          "pt-PT",
+          "pt-BR",
+          "ro-RO",
+          "sv-SE",
+          "ko-KR",
+          "zh-CN",
+          "ja-JP",
+          "hi-IN"
+        ],
+        "reportFallbacks": {
+          "ja-JP": "自動修正"
+        },
+        "sourceLocale": "en-US"
+      },
       "defaultLocale": "en-US",
       "defaultText": "Autofix",
       "icuArgs": {},
@@ -18385,6 +22239,39 @@ window.__SCRIBE_SOURCE_SNIPPETS__ = [
     },
     "endLine": 207,
     "label": {
+      "catalogDependency": {
+        "explicitLocales": [],
+        "lookupLocales": [
+          "en-US",
+          "en-GB",
+          "en-CA",
+          "fr-CA",
+          "en-IN",
+          "cy-GB",
+          "gd-GB",
+          "ga-GB",
+          "es-US",
+          "es-MX",
+          "de-DE",
+          "fr-FR",
+          "es-ES",
+          "it-IT",
+          "nl-NL",
+          "pl-PL",
+          "pt-PT",
+          "pt-BR",
+          "ro-RO",
+          "sv-SE",
+          "ko-KR",
+          "zh-CN",
+          "ja-JP",
+          "hi-IN"
+        ],
+        "reportFallbacks": {
+          "ja-JP": "自動修正"
+        },
+        "sourceLocale": "en-US"
+      },
       "defaultLocale": "en-US",
       "defaultText": "Autofix",
       "icuArgs": {},
@@ -18470,6 +22357,39 @@ window.__SCRIBE_SOURCE_SNIPPETS__ = [
     },
     "endLine": 218,
     "label": {
+      "catalogDependency": {
+        "explicitLocales": [],
+        "lookupLocales": [
+          "en-US",
+          "en-GB",
+          "en-CA",
+          "fr-CA",
+          "en-IN",
+          "cy-GB",
+          "gd-GB",
+          "ga-GB",
+          "es-US",
+          "es-MX",
+          "de-DE",
+          "fr-FR",
+          "es-ES",
+          "it-IT",
+          "nl-NL",
+          "pl-PL",
+          "pt-PT",
+          "pt-BR",
+          "ro-RO",
+          "sv-SE",
+          "ko-KR",
+          "zh-CN",
+          "ja-JP",
+          "hi-IN"
+        ],
+        "reportFallbacks": {
+          "ja-JP": "自動修正"
+        },
+        "sourceLocale": "en-US"
+      },
       "defaultLocale": "en-US",
       "defaultText": "Autofix",
       "icuArgs": {},
@@ -18555,6 +22475,39 @@ window.__SCRIBE_SOURCE_SNIPPETS__ = [
     },
     "endLine": 229,
     "label": {
+      "catalogDependency": {
+        "explicitLocales": [],
+        "lookupLocales": [
+          "en-US",
+          "en-GB",
+          "en-CA",
+          "fr-CA",
+          "en-IN",
+          "cy-GB",
+          "gd-GB",
+          "ga-GB",
+          "es-US",
+          "es-MX",
+          "de-DE",
+          "fr-FR",
+          "es-ES",
+          "it-IT",
+          "nl-NL",
+          "pl-PL",
+          "pt-PT",
+          "pt-BR",
+          "ro-RO",
+          "sv-SE",
+          "ko-KR",
+          "zh-CN",
+          "ja-JP",
+          "hi-IN"
+        ],
+        "reportFallbacks": {
+          "ja-JP": "自動修正"
+        },
+        "sourceLocale": "en-US"
+      },
       "defaultLocale": "en-US",
       "defaultText": "Autofix",
       "icuArgs": {},
@@ -18640,6 +22593,39 @@ window.__SCRIBE_SOURCE_SNIPPETS__ = [
     },
     "endLine": 240,
     "label": {
+      "catalogDependency": {
+        "explicitLocales": [],
+        "lookupLocales": [
+          "en-US",
+          "en-GB",
+          "en-CA",
+          "fr-CA",
+          "en-IN",
+          "cy-GB",
+          "gd-GB",
+          "ga-GB",
+          "es-US",
+          "es-MX",
+          "de-DE",
+          "fr-FR",
+          "es-ES",
+          "it-IT",
+          "nl-NL",
+          "pl-PL",
+          "pt-PT",
+          "pt-BR",
+          "ro-RO",
+          "sv-SE",
+          "ko-KR",
+          "zh-CN",
+          "ja-JP",
+          "hi-IN"
+        ],
+        "reportFallbacks": {
+          "ja-JP": "自動修正"
+        },
+        "sourceLocale": "en-US"
+      },
       "defaultLocale": "en-US",
       "defaultText": "Autofix",
       "icuArgs": {},
@@ -18725,6 +22711,39 @@ window.__SCRIBE_SOURCE_SNIPPETS__ = [
     },
     "endLine": 251,
     "label": {
+      "catalogDependency": {
+        "explicitLocales": [],
+        "lookupLocales": [
+          "en-US",
+          "en-GB",
+          "en-CA",
+          "fr-CA",
+          "en-IN",
+          "cy-GB",
+          "gd-GB",
+          "ga-GB",
+          "es-US",
+          "es-MX",
+          "de-DE",
+          "fr-FR",
+          "es-ES",
+          "it-IT",
+          "nl-NL",
+          "pl-PL",
+          "pt-PT",
+          "pt-BR",
+          "ro-RO",
+          "sv-SE",
+          "ko-KR",
+          "zh-CN",
+          "ja-JP",
+          "hi-IN"
+        ],
+        "reportFallbacks": {
+          "ja-JP": "自動修正"
+        },
+        "sourceLocale": "en-US"
+      },
       "defaultLocale": "en-US",
       "defaultText": "Autofix",
       "icuArgs": {},
@@ -18810,6 +22829,39 @@ window.__SCRIBE_SOURCE_SNIPPETS__ = [
     },
     "endLine": 262,
     "label": {
+      "catalogDependency": {
+        "explicitLocales": [],
+        "lookupLocales": [
+          "en-US",
+          "en-GB",
+          "en-CA",
+          "fr-CA",
+          "en-IN",
+          "cy-GB",
+          "gd-GB",
+          "ga-GB",
+          "es-US",
+          "es-MX",
+          "de-DE",
+          "fr-FR",
+          "es-ES",
+          "it-IT",
+          "nl-NL",
+          "pl-PL",
+          "pt-PT",
+          "pt-BR",
+          "ro-RO",
+          "sv-SE",
+          "ko-KR",
+          "zh-CN",
+          "ja-JP",
+          "hi-IN"
+        ],
+        "reportFallbacks": {
+          "ja-JP": "自動修正"
+        },
+        "sourceLocale": "en-US"
+      },
       "defaultLocale": "en-US",
       "defaultText": "Autofix",
       "icuArgs": {},
@@ -19495,6 +23547,39 @@ window.__SCRIBE_SOURCE_SNIPPETS__ = [
     },
     "endLine": 145,
     "label": {
+      "catalogDependency": {
+        "explicitLocales": [],
+        "lookupLocales": [
+          "en-US",
+          "en-GB",
+          "en-CA",
+          "fr-CA",
+          "en-IN",
+          "cy-GB",
+          "gd-GB",
+          "ga-GB",
+          "es-US",
+          "es-MX",
+          "de-DE",
+          "fr-FR",
+          "es-ES",
+          "it-IT",
+          "nl-NL",
+          "pl-PL",
+          "pt-PT",
+          "pt-BR",
+          "ro-RO",
+          "sv-SE",
+          "ko-KR",
+          "zh-CN",
+          "ja-JP",
+          "hi-IN"
+        ],
+        "reportFallbacks": {
+          "ja-JP": "自動修正"
+        },
+        "sourceLocale": "en-US"
+      },
       "defaultLocale": "en-US",
       "defaultText": "Autofix",
       "icuArgs": {},
@@ -19516,6 +23601,2734 @@ window.__SCRIBE_SOURCE_SNIPPETS__ = [
     "startLine": 67,
     "vcsPermalink": "https://github.com/calcom/cal.com/blob/180ede28f0bddf2738933a6e60a8e80f6116d7da/packages/lib/server/imageUtils.ts#L44-L92",
     "verifiedSourceHash": "sha256:763117ba36b8b5b5db01fb2d33c00cbf0ae3c5ab10e6c601df779d47fc5032a8"
+  },
+  {
+    "anchorId": "source-repository-health-complexity-attendee-c6d2fdf809",
+    "body": {
+      "diff": [
+        {
+          "content": "@@ -757,401 +757,431 @@",
+          "newLineNo": null,
+          "oldLineNo": null,
+          "type": "separator"
+        },
+        {
+          "content": "      eventTypeHosts?: Array<{ user: { email: string } | null }> | null;",
+          "newLineNo": 757,
+          "oldLineNo": 757,
+          "type": "unchanged"
+        },
+        {
+          "content": "    }",
+          "newLineNo": 758,
+          "oldLineNo": 758,
+          "type": "unchanged"
+        },
+        {
+          "content": ") => {",
+          "newLineNo": 759,
+          "oldLineNo": 759,
+          "type": "unchanged"
+        },
+        {
+          "content": "  const {",
+          "newLineNo": null,
+          "oldLineNo": 760,
+          "type": "removed"
+        },
+        {
+          "content": "    email,",
+          "newLineNo": null,
+          "oldLineNo": 761,
+          "type": "removed"
+        },
+        {
+          "content": "    name,",
+          "newLineNo": null,
+          "oldLineNo": 762,
+          "type": "removed"
+        },
+        {
+          "content": "    bookingUid,",
+          "newLineNo": null,
+          "oldLineNo": 763,
+          "type": "removed"
+        },
+        {
+          "content": "    isBookingInPast,",
+          "newLineNo": null,
+          "oldLineNo": 764,
+          "type": "removed"
+        },
+        {
+          "content": "    noShow,",
+          "newLineNo": null,
+          "oldLineNo": 765,
+          "type": "removed"
+        },
+        {
+          "content": "    phoneNumber,",
+          "newLineNo": null,
+          "oldLineNo": 766,
+          "type": "removed"
+        },
+        {
+          "content": "    user,",
+          "newLineNo": null,
+          "oldLineNo": 767,
+          "type": "removed"
+        },
+        {
+          "content": "    hideOrganizerEmail,",
+          "newLineNo": null,
+          "oldLineNo": 768,
+          "type": "removed"
+        },
+        {
+          "content": "    organizerEmail,",
+          "newLineNo": null,
+          "oldLineNo": 769,
+          "type": "removed"
+        },
+        {
+          "content": "    eventTypeHosts,",
+          "newLineNo": null,
+          "oldLineNo": 770,
+          "type": "removed"
+        },
+        {
+          "content": "  } = attendeeProps;",
+          "newLineNo": null,
+          "oldLineNo": 771,
+          "type": "removed"
+        },
+        {
+          "content": "  const AttendeeExtractedResult = AttendeeExtracted(attendeeProps);",
+          "newLineNo": 760,
+          "oldLineNo": null,
+          "type": "added"
+        },
+        {
+          "content": "  const email = AttendeeExtractedResult.email;",
+          "newLineNo": 761,
+          "oldLineNo": null,
+          "type": "added"
+        },
+        {
+          "content": "  const name = AttendeeExtractedResult.name;",
+          "newLineNo": 762,
+          "oldLineNo": null,
+          "type": "added"
+        },
+        {
+          "content": "  const bookingUid = AttendeeExtractedResult.bookingUid;",
+          "newLineNo": 763,
+          "oldLineNo": null,
+          "type": "added"
+        },
+        {
+          "content": "  const isBookingInPast = AttendeeExtractedResult.isBookingInPast;",
+          "newLineNo": 764,
+          "oldLineNo": null,
+          "type": "added"
+        },
+        {
+          "content": "  const noShow = AttendeeExtractedResult.noShow;",
+          "newLineNo": 765,
+          "oldLineNo": null,
+          "type": "added"
+        },
+        {
+          "content": "  const phoneNumber = AttendeeExtractedResult.phoneNumber;",
+          "newLineNo": 766,
+          "oldLineNo": null,
+          "type": "added"
+        },
+        {
+          "content": "  const user = AttendeeExtractedResult.user;",
+          "newLineNo": 767,
+          "oldLineNo": null,
+          "type": "added"
+        },
+        {
+          "content": "  const hideOrganizerEmail = AttendeeExtractedResult.hideOrganizerEmail;",
+          "newLineNo": 768,
+          "oldLineNo": null,
+          "type": "added"
+        },
+        {
+          "content": "  const organizerEmail = AttendeeExtractedResult.organizerEmail;",
+          "newLineNo": 769,
+          "oldLineNo": null,
+          "type": "added"
+        },
+        {
+          "content": "  const eventTypeHosts = AttendeeExtractedResult.eventTypeHosts;",
+          "newLineNo": 770,
+          "oldLineNo": null,
+          "type": "added"
+        },
+        {
+          "content": "  const { t } = useLocale();",
+          "newLineNo": 771,
+          "oldLineNo": 772,
+          "type": "unchanged"
+        },
+        {
+          "content": "",
+          "newLineNo": 772,
+          "oldLineNo": 773,
+          "type": "unchanged"
+        },
+        {
+          "content": "  const utils = trpc.useUtils();",
+          "newLineNo": 773,
+          "oldLineNo": 774,
+          "type": "unchanged"
+        },
+        {
+          "content": "  const [openDropdown, setOpenDropdown] = useState(false);",
+          "newLineNo": 774,
+          "oldLineNo": 775,
+          "type": "unchanged"
+        },
+        {
+          "content": "  const { copyToClipboard, isCopied } = useCopy();",
+          "newLineNo": 775,
+          "oldLineNo": 776,
+          "type": "unchanged"
+        },
+        {
+          "content": "",
+          "newLineNo": 776,
+          "oldLineNo": 777,
+          "type": "unchanged"
+        },
+        {
+          "content": "  const noShowMutation = trpc.viewer.loggedInViewerRouter.markNoShow.useMutation({",
+          "newLineNo": 777,
+          "oldLineNo": 778,
+          "type": "unchanged"
+        },
+        {
+          "content": "    onSuccess: async (data) => {",
+          "newLineNo": 778,
+          "oldLineNo": 779,
+          "type": "unchanged"
+        },
+        {
+          "content": "      showToast(data.message, \"success\");",
+          "newLineNo": 779,
+          "oldLineNo": 780,
+          "type": "unchanged"
+        },
+        {
+          "content": "      await utils.viewer.bookings.invalidate();",
+          "newLineNo": 780,
+          "oldLineNo": 781,
+          "type": "unchanged"
+        },
+        {
+          "content": "    },",
+          "newLineNo": 781,
+          "oldLineNo": 782,
+          "type": "unchanged"
+        },
+        {
+          "content": "    onError: (err) => {",
+          "newLineNo": 782,
+          "oldLineNo": 783,
+          "type": "unchanged"
+        },
+        {
+          "content": "      showToast(err.message, \"error\");",
+          "newLineNo": 783,
+          "oldLineNo": 784,
+          "type": "unchanged"
+        },
+        {
+          "content": "    },",
+          "newLineNo": 784,
+          "oldLineNo": 785,
+          "type": "unchanged"
+        },
+        {
+          "content": "  });",
+          "newLineNo": 785,
+          "oldLineNo": 786,
+          "type": "unchanged"
+        },
+        {
+          "content": "",
+          "newLineNo": 786,
+          "oldLineNo": 787,
+          "type": "unchanged"
+        },
+        {
+          "content": "  const displayName = user?.name || name || user?.email || email;",
+          "newLineNo": 787,
+          "oldLineNo": 788,
+          "type": "unchanged"
+        },
+        {
+          "content": "",
+          "newLineNo": 788,
+          "oldLineNo": 789,
+          "type": "unchanged"
+        },
+        {
+          "content": "  const isTeamMemberOrHost =",
+          "newLineNo": 789,
+          "oldLineNo": 790,
+          "type": "unchanged"
+        },
+        {
+          "content": "    email === organizerEmail || eventTypeHosts?.some((host) => host.user?.email === email);",
+          "newLineNo": 790,
+          "oldLineNo": 791,
+          "type": "unchanged"
+        },
+        {
+          "content": "  const shouldHideEmail = hideOrganizerEmail && isTeamMemberOrHost;",
+          "newLineNo": 791,
+          "oldLineNo": 792,
+          "type": "unchanged"
+        },
+        {
+          "content": "",
+          "newLineNo": 792,
+          "oldLineNo": 793,
+          "type": "unchanged"
+        },
+        {
+          "content": "  return (",
+          "newLineNo": 793,
+          "oldLineNo": 794,
+          "type": "unchanged"
+        },
+        {
+          "content": "    <Dropdown open={openDropdown} onOpenChange={setOpenDropdown}>",
+          "newLineNo": 794,
+          "oldLineNo": 795,
+          "type": "unchanged"
+        },
+        {
+          "content": "      <DropdownMenuTrigger asChild>",
+          "newLineNo": 795,
+          "oldLineNo": 796,
+          "type": "unchanged"
+        },
+        {
+          "content": "        <button",
+          "newLineNo": 796,
+          "oldLineNo": 797,
+          "type": "unchanged"
+        },
+        {
+          "content": "          data-testid=\"guest\"",
+          "newLineNo": 797,
+          "oldLineNo": 798,
+          "type": "unchanged"
+        },
+        {
+          "content": "          onClick={(e) => e.stopPropagation()}",
+          "newLineNo": 798,
+          "oldLineNo": 799,
+          "type": "unchanged"
+        },
+        {
+          "content": "          className=\"radix-state-open:text-blue-500 transition hover:text-blue-500\">",
+          "newLineNo": 799,
+          "oldLineNo": 800,
+          "type": "unchanged"
+        },
+        {
+          "content": "          {noShow ? (",
+          "newLineNo": 800,
+          "oldLineNo": 801,
+          "type": "unchanged"
+        },
+        {
+          "content": "            <>",
+          "newLineNo": 801,
+          "oldLineNo": 802,
+          "type": "unchanged"
+        },
+        {
+          "content": "              {displayName} <Icon name=\"eye-off\" className=\"inline h-4\" />",
+          "newLineNo": 802,
+          "oldLineNo": 803,
+          "type": "unchanged"
+        },
+        {
+          "content": "            </>",
+          "newLineNo": 803,
+          "oldLineNo": 804,
+          "type": "unchanged"
+        },
+        {
+          "content": "          ) : (",
+          "newLineNo": 804,
+          "oldLineNo": 805,
+          "type": "unchanged"
+        },
+        {
+          "content": "            <>{displayName}</>",
+          "newLineNo": 805,
+          "oldLineNo": 806,
+          "type": "unchanged"
+        },
+        {
+          "content": "          )}",
+          "newLineNo": 806,
+          "oldLineNo": 807,
+          "type": "unchanged"
+        },
+        {
+          "content": "        </button>",
+          "newLineNo": 807,
+          "oldLineNo": 808,
+          "type": "unchanged"
+        },
+        {
+          "content": "      </DropdownMenuTrigger>",
+          "newLineNo": 808,
+          "oldLineNo": 809,
+          "type": "unchanged"
+        },
+        {
+          "content": "      <DropdownMenuPortal>",
+          "newLineNo": 809,
+          "oldLineNo": 810,
+          "type": "unchanged"
+        },
+        {
+          "content": "        <DropdownMenuContent>",
+          "newLineNo": 810,
+          "oldLineNo": 811,
+          "type": "unchanged"
+        },
+        {
+          "content": "          {!isSmsCalEmail(email) && !shouldHideEmail && (",
+          "newLineNo": 811,
+          "oldLineNo": 812,
+          "type": "unchanged"
+        },
+        {
+          "content": "            <DropdownMenuItem className=\"focus:outline-none\">",
+          "newLineNo": 812,
+          "oldLineNo": 813,
+          "type": "unchanged"
+        },
+        {
+          "content": "              <DropdownItem",
+          "newLineNo": 813,
+          "oldLineNo": 814,
+          "type": "unchanged"
+        },
+        {
+          "content": "                StartIcon=\"mail\"",
+          "newLineNo": 814,
+          "oldLineNo": 815,
+          "type": "unchanged"
+        },
+        {
+          "content": "                href={`mailto:${email}`}",
+          "newLineNo": 815,
+          "oldLineNo": 816,
+          "type": "unchanged"
+        },
+        {
+          "content": "                onClick={(e) => {",
+          "newLineNo": 816,
+          "oldLineNo": 817,
+          "type": "unchanged"
+        },
+        {
+          "content": "                  setOpenDropdown(false);",
+          "newLineNo": 817,
+          "oldLineNo": 818,
+          "type": "unchanged"
+        },
+        {
+          "content": "                  e.stopPropagation();",
+          "newLineNo": 818,
+          "oldLineNo": 819,
+          "type": "unchanged"
+        },
+        {
+          "content": "                }}>",
+          "newLineNo": 819,
+          "oldLineNo": 820,
+          "type": "unchanged"
+        },
+        {
+          "content": "                <a href={`mailto:${email}`}>{t(\"email\")}</a>",
+          "newLineNo": 820,
+          "oldLineNo": 821,
+          "type": "unchanged"
+        },
+        {
+          "content": "              </DropdownItem>",
+          "newLineNo": 821,
+          "oldLineNo": 822,
+          "type": "unchanged"
+        },
+        {
+          "content": "            </DropdownMenuItem>",
+          "newLineNo": 822,
+          "oldLineNo": 823,
+          "type": "unchanged"
+        },
+        {
+          "content": "          )}",
+          "newLineNo": 823,
+          "oldLineNo": 824,
+          "type": "unchanged"
+        },
+        {
+          "content": "",
+          "newLineNo": 824,
+          "oldLineNo": 825,
+          "type": "unchanged"
+        },
+        {
+          "content": "          <DropdownMenuItem className=\"focus:outline-none\">",
+          "newLineNo": 825,
+          "oldLineNo": 826,
+          "type": "unchanged"
+        },
+        {
+          "content": "            <DropdownItem",
+          "newLineNo": 826,
+          "oldLineNo": 827,
+          "type": "unchanged"
+        },
+        {
+          "content": "              StartIcon={isCopied ? \"clipboard-check\" : \"clipboard\"}",
+          "newLineNo": 827,
+          "oldLineNo": 828,
+          "type": "unchanged"
+        },
+        {
+          "content": "              onClick={(e) => {",
+          "newLineNo": 828,
+          "oldLineNo": 829,
+          "type": "unchanged"
+        },
+        {
+          "content": "                e.preventDefault();",
+          "newLineNo": 829,
+          "oldLineNo": 830,
+          "type": "unchanged"
+        },
+        {
+          "content": "                const isEmailCopied = isSmsCalEmail(email);",
+          "newLineNo": 830,
+          "oldLineNo": 831,
+          "type": "unchanged"
+        },
+        {
+          "content": "                copyToClipboard(isEmailCopied ? email : (phoneNumber ?? \"\"));",
+          "newLineNo": 831,
+          "oldLineNo": 832,
+          "type": "unchanged"
+        },
+        {
+          "content": "                setOpenDropdown(false);",
+          "newLineNo": 832,
+          "oldLineNo": 833,
+          "type": "unchanged"
+        },
+        {
+          "content": "                showToast(isEmailCopied ? t(\"email_copied\") : t(\"phone_number_copied\"), \"success\");",
+          "newLineNo": 833,
+          "oldLineNo": 834,
+          "type": "unchanged"
+        },
+        {
+          "content": "              }}>",
+          "newLineNo": 834,
+          "oldLineNo": 835,
+          "type": "unchanged"
+        },
+        {
+          "content": "              {!isCopied ? t(\"copy\") : t(\"copied\")}",
+          "newLineNo": 835,
+          "oldLineNo": 836,
+          "type": "unchanged"
+        },
+        {
+          "content": "            </DropdownItem>",
+          "newLineNo": 836,
+          "oldLineNo": 837,
+          "type": "unchanged"
+        },
+        {
+          "content": "          </DropdownMenuItem>",
+          "newLineNo": 837,
+          "oldLineNo": 838,
+          "type": "unchanged"
+        },
+        {
+          "content": "",
+          "newLineNo": 838,
+          "oldLineNo": 839,
+          "type": "unchanged"
+        },
+        {
+          "content": "          {isBookingInPast && (",
+          "newLineNo": 839,
+          "oldLineNo": 840,
+          "type": "unchanged"
+        },
+        {
+          "content": "            <DropdownMenuItem className=\"focus:outline-none\">",
+          "newLineNo": 840,
+          "oldLineNo": 841,
+          "type": "unchanged"
+        },
+        {
+          "content": "              <DropdownItem",
+          "newLineNo": 841,
+          "oldLineNo": 842,
+          "type": "unchanged"
+        },
+        {
+          "content": "                data-testid={noShow ? \"unmark-no-show\" : \"mark-no-show\"}",
+          "newLineNo": 842,
+          "oldLineNo": 843,
+          "type": "unchanged"
+        },
+        {
+          "content": "                onClick={(e) => {",
+          "newLineNo": 843,
+          "oldLineNo": 844,
+          "type": "unchanged"
+        },
+        {
+          "content": "                  e.preventDefault();",
+          "newLineNo": 844,
+          "oldLineNo": 845,
+          "type": "unchanged"
+        },
+        {
+          "content": "                  setOpenDropdown(false);",
+          "newLineNo": 845,
+          "oldLineNo": 846,
+          "type": "unchanged"
+        },
+        {
+          "content": "                  noShowMutation.mutate({ bookingUid, attendees: [{ noShow: !noShow, email }] });",
+          "newLineNo": 846,
+          "oldLineNo": 847,
+          "type": "unchanged"
+        },
+        {
+          "content": "                }}",
+          "newLineNo": 847,
+          "oldLineNo": 848,
+          "type": "unchanged"
+        },
+        {
+          "content": "                StartIcon={noShow ? \"eye\" : \"eye-off\"}>",
+          "newLineNo": 848,
+          "oldLineNo": 849,
+          "type": "unchanged"
+        },
+        {
+          "content": "                {noShow ? t(\"unmark_as_no_show\") : t(\"mark_as_no_show\")}",
+          "newLineNo": 849,
+          "oldLineNo": 850,
+          "type": "unchanged"
+        },
+        {
+          "content": "              </DropdownItem>",
+          "newLineNo": 850,
+          "oldLineNo": 851,
+          "type": "unchanged"
+        },
+        {
+          "content": "            </DropdownMenuItem>",
+          "newLineNo": 851,
+          "oldLineNo": 852,
+          "type": "unchanged"
+        },
+        {
+          "content": "          )}",
+          "newLineNo": 852,
+          "oldLineNo": 853,
+          "type": "unchanged"
+        },
+        {
+          "content": "        </DropdownMenuContent>",
+          "newLineNo": 853,
+          "oldLineNo": 854,
+          "type": "unchanged"
+        },
+        {
+          "content": "      </DropdownMenuPortal>",
+          "newLineNo": 854,
+          "oldLineNo": 855,
+          "type": "unchanged"
+        },
+        {
+          "content": "    </Dropdown>",
+          "newLineNo": 855,
+          "oldLineNo": 856,
+          "type": "unchanged"
+        },
+        {
+          "content": "  );",
+          "newLineNo": 856,
+          "oldLineNo": 857,
+          "type": "unchanged"
+        },
+        {
+          "content": "};",
+          "newLineNo": 857,
+          "oldLineNo": 858,
+          "type": "unchanged"
+        },
+        {
+          "content": "",
+          "newLineNo": 858,
+          "oldLineNo": 859,
+          "type": "unchanged"
+        },
+        {
+          "content": "type GroupedAttendeeProps = {",
+          "newLineNo": 859,
+          "oldLineNo": 860,
+          "type": "unchanged"
+        },
+        {
+          "content": "  attendees: BookingAttendee[];",
+          "newLineNo": 860,
+          "oldLineNo": 861,
+          "type": "unchanged"
+        },
+        {
+          "content": "  bookingUid: string;",
+          "newLineNo": 861,
+          "oldLineNo": 862,
+          "type": "unchanged"
+        },
+        {
+          "content": "};",
+          "newLineNo": 862,
+          "oldLineNo": 863,
+          "type": "unchanged"
+        },
+        {
+          "content": "",
+          "newLineNo": 863,
+          "oldLineNo": 864,
+          "type": "unchanged"
+        },
+        {
+          "content": "const GroupedAttendees = (groupedAttendeeProps: GroupedAttendeeProps) => {",
+          "newLineNo": 864,
+          "oldLineNo": 865,
+          "type": "unchanged"
+        },
+        {
+          "content": "  const { bookingUid, attendees } = groupedAttendeeProps;",
+          "newLineNo": 865,
+          "oldLineNo": 866,
+          "type": "unchanged"
+        },
+        {
+          "content": "  const { t } = useLocale();",
+          "newLineNo": 866,
+          "oldLineNo": 867,
+          "type": "unchanged"
+        },
+        {
+          "content": "  const utils = trpc.useUtils();",
+          "newLineNo": 867,
+          "oldLineNo": 868,
+          "type": "unchanged"
+        },
+        {
+          "content": "  const noShowMutation = trpc.viewer.loggedInViewerRouter.markNoShow.useMutation({",
+          "newLineNo": 868,
+          "oldLineNo": 869,
+          "type": "unchanged"
+        },
+        {
+          "content": "    onSuccess: async (data) => {",
+          "newLineNo": 869,
+          "oldLineNo": 870,
+          "type": "unchanged"
+        },
+        {
+          "content": "      showToast(t(data.message), \"success\");",
+          "newLineNo": 870,
+          "oldLineNo": 871,
+          "type": "unchanged"
+        },
+        {
+          "content": "      await utils.viewer.bookings.invalidate();",
+          "newLineNo": 871,
+          "oldLineNo": 872,
+          "type": "unchanged"
+        },
+        {
+          "content": "    },",
+          "newLineNo": 872,
+          "oldLineNo": 873,
+          "type": "unchanged"
+        },
+        {
+          "content": "    onError: (err) => {",
+          "newLineNo": 873,
+          "oldLineNo": 874,
+          "type": "unchanged"
+        },
+        {
+          "content": "      showToast(err.message, \"error\");",
+          "newLineNo": 874,
+          "oldLineNo": 875,
+          "type": "unchanged"
+        },
+        {
+          "content": "    },",
+          "newLineNo": 875,
+          "oldLineNo": 876,
+          "type": "unchanged"
+        },
+        {
+          "content": "  });",
+          "newLineNo": 876,
+          "oldLineNo": 877,
+          "type": "unchanged"
+        },
+        {
+          "content": "",
+          "newLineNo": 877,
+          "oldLineNo": 878,
+          "type": "unchanged"
+        },
+        {
+          "content": "  type FormValues = {",
+          "newLineNo": 878,
+          "oldLineNo": 879,
+          "type": "unchanged"
+        },
+        {
+          "content": "    attendees: Array<{ id: number; email: string; noShow: boolean }>;",
+          "newLineNo": 879,
+          "oldLineNo": 880,
+          "type": "unchanged"
+        },
+        {
+          "content": "  };",
+          "newLineNo": 880,
+          "oldLineNo": 881,
+          "type": "unchanged"
+        },
+        {
+          "content": "",
+          "newLineNo": 881,
+          "oldLineNo": 882,
+          "type": "unchanged"
+        },
+        {
+          "content": "  const { control, handleSubmit } = useForm<FormValues>({",
+          "newLineNo": 882,
+          "oldLineNo": 883,
+          "type": "unchanged"
+        },
+        {
+          "content": "    defaultValues: {",
+          "newLineNo": 883,
+          "oldLineNo": 884,
+          "type": "unchanged"
+        },
+        {
+          "content": "      attendees: attendees.map((a) => ({ id: a.id, email: a.email, noShow: a.noShow || false })),",
+          "newLineNo": 884,
+          "oldLineNo": 885,
+          "type": "unchanged"
+        },
+        {
+          "content": "    },",
+          "newLineNo": 885,
+          "oldLineNo": 886,
+          "type": "unchanged"
+        },
+        {
+          "content": "    mode: \"onBlur\",",
+          "newLineNo": 886,
+          "oldLineNo": 887,
+          "type": "unchanged"
+        },
+        {
+          "content": "  });",
+          "newLineNo": 887,
+          "oldLineNo": 888,
+          "type": "unchanged"
+        },
+        {
+          "content": "",
+          "newLineNo": 888,
+          "oldLineNo": 889,
+          "type": "unchanged"
+        },
+        {
+          "content": "  const { fields } = useFieldArray({",
+          "newLineNo": 889,
+          "oldLineNo": 890,
+          "type": "unchanged"
+        },
+        {
+          "content": "    control,",
+          "newLineNo": 890,
+          "oldLineNo": 891,
+          "type": "unchanged"
+        },
+        {
+          "content": "    name: \"attendees\",",
+          "newLineNo": 891,
+          "oldLineNo": 892,
+          "type": "unchanged"
+        },
+        {
+          "content": "  });",
+          "newLineNo": 892,
+          "oldLineNo": 893,
+          "type": "unchanged"
+        },
+        {
+          "content": "",
+          "newLineNo": 893,
+          "oldLineNo": 894,
+          "type": "unchanged"
+        },
+        {
+          "content": "  const onSubmit = (data: FormValues) => {",
+          "newLineNo": 894,
+          "oldLineNo": 895,
+          "type": "unchanged"
+        },
+        {
+          "content": "    const filteredData = data.attendees.slice(1).map((attendee) => ({",
+          "newLineNo": 895,
+          "oldLineNo": 896,
+          "type": "unchanged"
+        },
+        {
+          "content": "      email: attendee.email,",
+          "newLineNo": 896,
+          "oldLineNo": 897,
+          "type": "unchanged"
+        },
+        {
+          "content": "      noShow: attendee.noShow,",
+          "newLineNo": 897,
+          "oldLineNo": 898,
+          "type": "unchanged"
+        },
+        {
+          "content": "    }));",
+          "newLineNo": 898,
+          "oldLineNo": 899,
+          "type": "unchanged"
+        },
+        {
+          "content": "    noShowMutation.mutate({ bookingUid, attendees: filteredData });",
+          "newLineNo": 899,
+          "oldLineNo": 900,
+          "type": "unchanged"
+        },
+        {
+          "content": "    setOpenDropdown(false);",
+          "newLineNo": 900,
+          "oldLineNo": 901,
+          "type": "unchanged"
+        },
+        {
+          "content": "  };",
+          "newLineNo": 901,
+          "oldLineNo": 902,
+          "type": "unchanged"
+        },
+        {
+          "content": "",
+          "newLineNo": 902,
+          "oldLineNo": 903,
+          "type": "unchanged"
+        },
+        {
+          "content": "  const [openDropdown, setOpenDropdown] = useState(false);",
+          "newLineNo": 903,
+          "oldLineNo": 904,
+          "type": "unchanged"
+        },
+        {
+          "content": "",
+          "newLineNo": 904,
+          "oldLineNo": 905,
+          "type": "unchanged"
+        },
+        {
+          "content": "  return (",
+          "newLineNo": 905,
+          "oldLineNo": 906,
+          "type": "unchanged"
+        },
+        {
+          "content": "    <Dropdown open={openDropdown} onOpenChange={setOpenDropdown}>",
+          "newLineNo": 906,
+          "oldLineNo": 907,
+          "type": "unchanged"
+        },
+        {
+          "content": "      <DropdownMenuTrigger asChild>",
+          "newLineNo": 907,
+          "oldLineNo": 908,
+          "type": "unchanged"
+        },
+        {
+          "content": "        <button",
+          "newLineNo": 908,
+          "oldLineNo": 909,
+          "type": "unchanged"
+        },
+        {
+          "content": "          data-testid=\"more-guests\"",
+          "newLineNo": 909,
+          "oldLineNo": 910,
+          "type": "unchanged"
+        },
+        {
+          "content": "          onClick={(e) => e.stopPropagation()}",
+          "newLineNo": 910,
+          "oldLineNo": 911,
+          "type": "unchanged"
+        },
+        {
+          "content": "          className=\"radix-state-open:text-blue-500 transition hover:text-blue-500 focus:outline-none\">",
+          "newLineNo": 911,
+          "oldLineNo": 912,
+          "type": "unchanged"
+        },
+        {
+          "content": "          {t(\"plus_more\", { count: attendees.length - 1 })}",
+          "newLineNo": 912,
+          "oldLineNo": 913,
+          "type": "unchanged"
+        },
+        {
+          "content": "        </button>",
+          "newLineNo": 913,
+          "oldLineNo": 914,
+          "type": "unchanged"
+        },
+        {
+          "content": "      </DropdownMenuTrigger>",
+          "newLineNo": 914,
+          "oldLineNo": 915,
+          "type": "unchanged"
+        },
+        {
+          "content": "      <DropdownMenuContent className=\"min-w-[300px]\">",
+          "newLineNo": 915,
+          "oldLineNo": 916,
+          "type": "unchanged"
+        },
+        {
+          "content": "        <DropdownMenuLabel className=\"text-xs font-medium uppercase\">",
+          "newLineNo": 916,
+          "oldLineNo": 917,
+          "type": "unchanged"
+        },
+        {
+          "content": "          {t(\"mark_as_no_show_title\")}",
+          "newLineNo": 917,
+          "oldLineNo": 918,
+          "type": "unchanged"
+        },
+        {
+          "content": "        </DropdownMenuLabel>",
+          "newLineNo": 918,
+          "oldLineNo": 919,
+          "type": "unchanged"
+        },
+        {
+          "content": "        <form onSubmit={handleSubmit(onSubmit)}>",
+          "newLineNo": 919,
+          "oldLineNo": 920,
+          "type": "unchanged"
+        },
+        {
+          "content": "          {fields.slice(1).map((field, index) => {",
+          "newLineNo": 920,
+          "oldLineNo": 921,
+          "type": "unchanged"
+        },
+        {
+          "content": "            const attendee = attendees[index + 1];",
+          "newLineNo": 921,
+          "oldLineNo": 922,
+          "type": "unchanged"
+        },
+        {
+          "content": "            const displayName =",
+          "newLineNo": 922,
+          "oldLineNo": 923,
+          "type": "unchanged"
+        },
+        {
+          "content": "              attendee.user?.name || attendee.name || attendee.user?.email || attendee.email;",
+          "newLineNo": 923,
+          "oldLineNo": 924,
+          "type": "unchanged"
+        },
+        {
+          "content": "            const hasName = attendee.name || attendee.user?.name;",
+          "newLineNo": 924,
+          "oldLineNo": 925,
+          "type": "unchanged"
+        },
+        {
+          "content": "",
+          "newLineNo": 925,
+          "oldLineNo": 926,
+          "type": "unchanged"
+        },
+        {
+          "content": "            return (",
+          "newLineNo": 926,
+          "oldLineNo": 927,
+          "type": "unchanged"
+        },
+        {
+          "content": "              <Controller",
+          "newLineNo": 927,
+          "oldLineNo": 928,
+          "type": "unchanged"
+        },
+        {
+          "content": "                key={field.id}",
+          "newLineNo": 928,
+          "oldLineNo": 929,
+          "type": "unchanged"
+        },
+        {
+          "content": "                name={`attendees.${index + 1}.noShow`}",
+          "newLineNo": 929,
+          "oldLineNo": 930,
+          "type": "unchanged"
+        },
+        {
+          "content": "                control={control}",
+          "newLineNo": 930,
+          "oldLineNo": 931,
+          "type": "unchanged"
+        },
+        {
+          "content": "                render={({ field: { onChange, value } }) => (",
+          "newLineNo": 931,
+          "oldLineNo": 932,
+          "type": "unchanged"
+        },
+        {
+          "content": "                  <DropdownMenuCheckboxItem",
+          "newLineNo": 932,
+          "oldLineNo": 933,
+          "type": "unchanged"
+        },
+        {
+          "content": "                    checked={value || false}",
+          "newLineNo": 933,
+          "oldLineNo": 934,
+          "type": "unchanged"
+        },
+        {
+          "content": "                    onCheckedChange={onChange}",
+          "newLineNo": 934,
+          "oldLineNo": 935,
+          "type": "unchanged"
+        },
+        {
+          "content": "                    className=\"focus:outline-none\"",
+          "newLineNo": 935,
+          "oldLineNo": 936,
+          "type": "unchanged"
+        },
+        {
+          "content": "                    onClick={(e) => {",
+          "newLineNo": 936,
+          "oldLineNo": 937,
+          "type": "unchanged"
+        },
+        {
+          "content": "                      e.preventDefault();",
+          "newLineNo": 937,
+          "oldLineNo": 938,
+          "type": "unchanged"
+        },
+        {
+          "content": "                      onChange(!value);",
+          "newLineNo": 938,
+          "oldLineNo": 939,
+          "type": "unchanged"
+        },
+        {
+          "content": "                    }}>",
+          "newLineNo": 939,
+          "oldLineNo": 940,
+          "type": "unchanged"
+        },
+        {
+          "content": "                    <div className={`w-full ${value ? \"line-through\" : \"\"}`}>",
+          "newLineNo": 940,
+          "oldLineNo": 941,
+          "type": "unchanged"
+        },
+        {
+          "content": "                      {hasName ? (",
+          "newLineNo": 941,
+          "oldLineNo": 942,
+          "type": "unchanged"
+        },
+        {
+          "content": "                        <>",
+          "newLineNo": 942,
+          "oldLineNo": 943,
+          "type": "unchanged"
+        },
+        {
+          "content": "                          <div>{displayName}</div>",
+          "newLineNo": 943,
+          "oldLineNo": 944,
+          "type": "unchanged"
+        },
+        {
+          "content": "                          <div className=\"text-subtle text-xs\">{field.email}</div>",
+          "newLineNo": 944,
+          "oldLineNo": 945,
+          "type": "unchanged"
+        },
+        {
+          "content": "                        </>",
+          "newLineNo": 945,
+          "oldLineNo": 946,
+          "type": "unchanged"
+        },
+        {
+          "content": "                      ) : (",
+          "newLineNo": 946,
+          "oldLineNo": 947,
+          "type": "unchanged"
+        },
+        {
+          "content": "                        <div>{field.email}</div>",
+          "newLineNo": 947,
+          "oldLineNo": 948,
+          "type": "unchanged"
+        },
+        {
+          "content": "                      )}",
+          "newLineNo": 948,
+          "oldLineNo": 949,
+          "type": "unchanged"
+        },
+        {
+          "content": "                    </div>",
+          "newLineNo": 949,
+          "oldLineNo": 950,
+          "type": "unchanged"
+        },
+        {
+          "content": "                  </DropdownMenuCheckboxItem>",
+          "newLineNo": 950,
+          "oldLineNo": 951,
+          "type": "unchanged"
+        },
+        {
+          "content": "                )}",
+          "newLineNo": 951,
+          "oldLineNo": 952,
+          "type": "unchanged"
+        },
+        {
+          "content": "              />",
+          "newLineNo": 952,
+          "oldLineNo": 953,
+          "type": "unchanged"
+        },
+        {
+          "content": "            );",
+          "newLineNo": 953,
+          "oldLineNo": 954,
+          "type": "unchanged"
+        },
+        {
+          "content": "          })}",
+          "newLineNo": 954,
+          "oldLineNo": 955,
+          "type": "unchanged"
+        },
+        {
+          "content": "          <DropdownMenuSeparator />",
+          "newLineNo": 955,
+          "oldLineNo": 956,
+          "type": "unchanged"
+        },
+        {
+          "content": "          <div className=\"flex justify-end p-2\">",
+          "newLineNo": 956,
+          "oldLineNo": 957,
+          "type": "unchanged"
+        },
+        {
+          "content": "            <Button",
+          "newLineNo": 957,
+          "oldLineNo": 958,
+          "type": "unchanged"
+        },
+        {
+          "content": "              data-testid=\"update-no-show\"",
+          "newLineNo": 958,
+          "oldLineNo": 959,
+          "type": "unchanged"
+        },
+        {
+          "content": "              color=\"secondary\"",
+          "newLineNo": 959,
+          "oldLineNo": 960,
+          "type": "unchanged"
+        },
+        {
+          "content": "              onClick={(e) => {",
+          "newLineNo": 960,
+          "oldLineNo": 961,
+          "type": "unchanged"
+        },
+        {
+          "content": "                e.preventDefault();",
+          "newLineNo": 961,
+          "oldLineNo": 962,
+          "type": "unchanged"
+        },
+        {
+          "content": "                handleSubmit(onSubmit)();",
+          "newLineNo": 962,
+          "oldLineNo": 963,
+          "type": "unchanged"
+        },
+        {
+          "content": "              }}>",
+          "newLineNo": 963,
+          "oldLineNo": 964,
+          "type": "unchanged"
+        },
+        {
+          "content": "              {t(\"mark_as_no_show_title\")}",
+          "newLineNo": 964,
+          "oldLineNo": 965,
+          "type": "unchanged"
+        },
+        {
+          "content": "            </Button>",
+          "newLineNo": 965,
+          "oldLineNo": 966,
+          "type": "unchanged"
+        },
+        {
+          "content": "          </div>",
+          "newLineNo": 966,
+          "oldLineNo": 967,
+          "type": "unchanged"
+        },
+        {
+          "content": "        </form>",
+          "newLineNo": 967,
+          "oldLineNo": 968,
+          "type": "unchanged"
+        },
+        {
+          "content": "      </DropdownMenuContent>",
+          "newLineNo": 968,
+          "oldLineNo": 969,
+          "type": "unchanged"
+        },
+        {
+          "content": "    </Dropdown>",
+          "newLineNo": 969,
+          "oldLineNo": 970,
+          "type": "unchanged"
+        },
+        {
+          "content": "  );",
+          "newLineNo": 970,
+          "oldLineNo": 971,
+          "type": "unchanged"
+        },
+        {
+          "content": "};",
+          "newLineNo": 971,
+          "oldLineNo": 972,
+          "type": "unchanged"
+        },
+        {
+          "content": "",
+          "newLineNo": 972,
+          "oldLineNo": 973,
+          "type": "unchanged"
+        },
+        {
+          "content": "const GroupedGuests = ({ guests }: { guests: BookingAttendee[] }) => {",
+          "newLineNo": 973,
+          "oldLineNo": 974,
+          "type": "unchanged"
+        },
+        {
+          "content": "  const [openDropdown, setOpenDropdown] = useState(false);",
+          "newLineNo": 974,
+          "oldLineNo": 975,
+          "type": "unchanged"
+        },
+        {
+          "content": "  const { t } = useLocale();",
+          "newLineNo": 975,
+          "oldLineNo": 976,
+          "type": "unchanged"
+        },
+        {
+          "content": "  const { copyToClipboard, isCopied } = useCopy();",
+          "newLineNo": 976,
+          "oldLineNo": 977,
+          "type": "unchanged"
+        },
+        {
+          "content": "  const [selectedEmail, setSelectedEmail] = useState(\"\");",
+          "newLineNo": 977,
+          "oldLineNo": 978,
+          "type": "unchanged"
+        },
+        {
+          "content": "",
+          "newLineNo": 978,
+          "oldLineNo": 979,
+          "type": "unchanged"
+        },
+        {
+          "content": "  return (",
+          "newLineNo": 979,
+          "oldLineNo": 980,
+          "type": "unchanged"
+        },
+        {
+          "content": "    <Dropdown",
+          "newLineNo": 980,
+          "oldLineNo": 981,
+          "type": "unchanged"
+        },
+        {
+          "content": "      open={openDropdown}",
+          "newLineNo": 981,
+          "oldLineNo": 982,
+          "type": "unchanged"
+        },
+        {
+          "content": "      onOpenChange={(value) => {",
+          "newLineNo": 982,
+          "oldLineNo": 983,
+          "type": "unchanged"
+        },
+        {
+          "content": "        setOpenDropdown(value);",
+          "newLineNo": 983,
+          "oldLineNo": 984,
+          "type": "unchanged"
+        },
+        {
+          "content": "        setSelectedEmail(\"\");",
+          "newLineNo": 984,
+          "oldLineNo": 985,
+          "type": "unchanged"
+        },
+        {
+          "content": "      }}>",
+          "newLineNo": 985,
+          "oldLineNo": 986,
+          "type": "unchanged"
+        },
+        {
+          "content": "      <DropdownMenuTrigger asChild>",
+          "newLineNo": 986,
+          "oldLineNo": 987,
+          "type": "unchanged"
+        },
+        {
+          "content": "        <button",
+          "newLineNo": 987,
+          "oldLineNo": 988,
+          "type": "unchanged"
+        },
+        {
+          "content": "          onClick={(e) => e.stopPropagation()}",
+          "newLineNo": 988,
+          "oldLineNo": 989,
+          "type": "unchanged"
+        },
+        {
+          "content": "          className=\"radix-state-open:text-blue-500 transition hover:text-blue-500 focus:outline-none\">",
+          "newLineNo": 989,
+          "oldLineNo": 990,
+          "type": "unchanged"
+        },
+        {
+          "content": "          {t(\"plus_more\", { count: guests.length - 1 })}",
+          "newLineNo": 990,
+          "oldLineNo": 991,
+          "type": "unchanged"
+        },
+        {
+          "content": "        </button>",
+          "newLineNo": 991,
+          "oldLineNo": 992,
+          "type": "unchanged"
+        },
+        {
+          "content": "      </DropdownMenuTrigger>",
+          "newLineNo": 992,
+          "oldLineNo": 993,
+          "type": "unchanged"
+        },
+        {
+          "content": "      <DropdownMenuContent className=\"min-w-[300px]\">",
+          "newLineNo": 993,
+          "oldLineNo": 994,
+          "type": "unchanged"
+        },
+        {
+          "content": "        <DropdownMenuLabel className=\"text-xs font-medium uppercase\">{t(\"guests\")}</DropdownMenuLabel>",
+          "newLineNo": 994,
+          "oldLineNo": 995,
+          "type": "unchanged"
+        },
+        {
+          "content": "        {guests.slice(1).map((guest) => {",
+          "newLineNo": 995,
+          "oldLineNo": 996,
+          "type": "unchanged"
+        },
+        {
+          "content": "          const displayName = guest.user?.name || guest.name || guest.user?.email || guest.email;",
+          "newLineNo": 996,
+          "oldLineNo": 997,
+          "type": "unchanged"
+        },
+        {
+          "content": "          const hasName = guest.name || guest.user?.name;",
+          "newLineNo": 997,
+          "oldLineNo": 998,
+          "type": "unchanged"
+        },
+        {
+          "content": "",
+          "newLineNo": 998,
+          "oldLineNo": 999,
+          "type": "unchanged"
+        },
+        {
+          "content": "          return (",
+          "newLineNo": 999,
+          "oldLineNo": 1000,
+          "type": "unchanged"
+        },
+        {
+          "content": "            <DropdownMenuItem key={guest.id}>",
+          "newLineNo": 1000,
+          "oldLineNo": 1001,
+          "type": "unchanged"
+        },
+        {
+          "content": "              <DropdownItem",
+          "newLineNo": 1001,
+          "oldLineNo": 1002,
+          "type": "unchanged"
+        },
+        {
+          "content": "                className=\"pr-6 focus:outline-none\"",
+          "newLineNo": 1002,
+          "oldLineNo": 1003,
+          "type": "unchanged"
+        },
+        {
+          "content": "                StartIcon={selectedEmail === guest.email ? \"circle-check\" : undefined}",
+          "newLineNo": 1003,
+          "oldLineNo": 1004,
+          "type": "unchanged"
+        },
+        {
+          "content": "                onClick={(e) => {",
+          "newLineNo": 1004,
+          "oldLineNo": 1005,
+          "type": "unchanged"
+        },
+        {
+          "content": "                  e.preventDefault();",
+          "newLineNo": 1005,
+          "oldLineNo": 1006,
+          "type": "unchanged"
+        },
+        {
+          "content": "                  setSelectedEmail(guest.email);",
+          "newLineNo": 1006,
+          "oldLineNo": 1007,
+          "type": "unchanged"
+        },
+        {
+          "content": "                }}>",
+          "newLineNo": 1007,
+          "oldLineNo": 1008,
+          "type": "unchanged"
+        },
+        {
+          "content": "                <div className={`${selectedEmail !== guest.email ? \"pl-6\" : \"\"}`}>",
+          "newLineNo": 1008,
+          "oldLineNo": 1009,
+          "type": "unchanged"
+        },
+        {
+          "content": "                  {hasName ? (",
+          "newLineNo": 1009,
+          "oldLineNo": 1010,
+          "type": "unchanged"
+        },
+        {
+          "content": "                    <>",
+          "newLineNo": 1010,
+          "oldLineNo": 1011,
+          "type": "unchanged"
+        },
+        {
+          "content": "                      <div>{displayName}</div>",
+          "newLineNo": 1011,
+          "oldLineNo": 1012,
+          "type": "unchanged"
+        },
+        {
+          "content": "                      <div className=\"text-subtle text-xs\">{guest.email}</div>",
+          "newLineNo": 1012,
+          "oldLineNo": 1013,
+          "type": "unchanged"
+        },
+        {
+          "content": "                    </>",
+          "newLineNo": 1013,
+          "oldLineNo": 1014,
+          "type": "unchanged"
+        },
+        {
+          "content": "                  ) : (",
+          "newLineNo": 1014,
+          "oldLineNo": 1015,
+          "type": "unchanged"
+        },
+        {
+          "content": "                    <div>{guest.email}</div>",
+          "newLineNo": 1015,
+          "oldLineNo": 1016,
+          "type": "unchanged"
+        },
+        {
+          "content": "                  )}",
+          "newLineNo": 1016,
+          "oldLineNo": 1017,
+          "type": "unchanged"
+        },
+        {
+          "content": "                </div>",
+          "newLineNo": 1017,
+          "oldLineNo": 1018,
+          "type": "unchanged"
+        },
+        {
+          "content": "              </DropdownItem>",
+          "newLineNo": 1018,
+          "oldLineNo": 1019,
+          "type": "unchanged"
+        },
+        {
+          "content": "            </DropdownMenuItem>",
+          "newLineNo": 1019,
+          "oldLineNo": 1020,
+          "type": "unchanged"
+        },
+        {
+          "content": "          );",
+          "newLineNo": 1020,
+          "oldLineNo": 1021,
+          "type": "unchanged"
+        },
+        {
+          "content": "        })}",
+          "newLineNo": 1021,
+          "oldLineNo": 1022,
+          "type": "unchanged"
+        },
+        {
+          "content": "        <DropdownMenuSeparator />",
+          "newLineNo": 1022,
+          "oldLineNo": 1023,
+          "type": "unchanged"
+        },
+        {
+          "content": "        <div className=\"flex justify-end gap-2 p-2\">",
+          "newLineNo": 1023,
+          "oldLineNo": 1024,
+          "type": "unchanged"
+        },
+        {
+          "content": "          <Link href={`mailto:${selectedEmail}`}>",
+          "newLineNo": 1024,
+          "oldLineNo": 1025,
+          "type": "unchanged"
+        },
+        {
+          "content": "            <Button",
+          "newLineNo": 1025,
+          "oldLineNo": 1026,
+          "type": "unchanged"
+        },
+        {
+          "content": "              color=\"secondary\"",
+          "newLineNo": 1026,
+          "oldLineNo": 1027,
+          "type": "unchanged"
+        },
+        {
+          "content": "              disabled={selectedEmail.length === 0}",
+          "newLineNo": 1027,
+          "oldLineNo": 1028,
+          "type": "unchanged"
+        },
+        {
+          "content": "              onClick={(e) => {",
+          "newLineNo": 1028,
+          "oldLineNo": 1029,
+          "type": "unchanged"
+        },
+        {
+          "content": "                setOpenDropdown(false);",
+          "newLineNo": 1029,
+          "oldLineNo": 1030,
+          "type": "unchanged"
+        },
+        {
+          "content": "                e.stopPropagation();",
+          "newLineNo": 1030,
+          "oldLineNo": 1031,
+          "type": "unchanged"
+        },
+        {
+          "content": "              }}>",
+          "newLineNo": 1031,
+          "oldLineNo": 1032,
+          "type": "unchanged"
+        },
+        {
+          "content": "              {t(\"email\")}",
+          "newLineNo": 1032,
+          "oldLineNo": 1033,
+          "type": "unchanged"
+        },
+        {
+          "content": "            </Button>",
+          "newLineNo": 1033,
+          "oldLineNo": 1034,
+          "type": "unchanged"
+        },
+        {
+          "content": "          </Link>",
+          "newLineNo": 1034,
+          "oldLineNo": 1035,
+          "type": "unchanged"
+        },
+        {
+          "content": "          <Button",
+          "newLineNo": 1035,
+          "oldLineNo": 1036,
+          "type": "unchanged"
+        },
+        {
+          "content": "            color=\"secondary\"",
+          "newLineNo": 1036,
+          "oldLineNo": 1037,
+          "type": "unchanged"
+        },
+        {
+          "content": "            disabled={selectedEmail.length === 0}",
+          "newLineNo": 1037,
+          "oldLineNo": 1038,
+          "type": "unchanged"
+        },
+        {
+          "content": "            onClick={(e) => {",
+          "newLineNo": 1038,
+          "oldLineNo": 1039,
+          "type": "unchanged"
+        },
+        {
+          "content": "              e.preventDefault();",
+          "newLineNo": 1039,
+          "oldLineNo": 1040,
+          "type": "unchanged"
+        },
+        {
+          "content": "              copyToClipboard(selectedEmail);",
+          "newLineNo": 1040,
+          "oldLineNo": 1041,
+          "type": "unchanged"
+        },
+        {
+          "content": "              showToast(t(\"email_copied\"), \"success\");",
+          "newLineNo": 1041,
+          "oldLineNo": 1042,
+          "type": "unchanged"
+        },
+        {
+          "content": "            }}>",
+          "newLineNo": 1042,
+          "oldLineNo": 1043,
+          "type": "unchanged"
+        },
+        {
+          "content": "            {!isCopied ? t(\"copy\") : t(\"copied\")}",
+          "newLineNo": 1043,
+          "oldLineNo": 1044,
+          "type": "unchanged"
+        },
+        {
+          "content": "          </Button>",
+          "newLineNo": 1044,
+          "oldLineNo": 1045,
+          "type": "unchanged"
+        },
+        {
+          "content": "        </div>",
+          "newLineNo": 1045,
+          "oldLineNo": 1046,
+          "type": "unchanged"
+        },
+        {
+          "content": "      </DropdownMenuContent>",
+          "newLineNo": 1046,
+          "oldLineNo": 1047,
+          "type": "unchanged"
+        },
+        {
+          "content": "    </Dropdown>",
+          "newLineNo": 1047,
+          "oldLineNo": 1048,
+          "type": "unchanged"
+        },
+        {
+          "content": "  );",
+          "newLineNo": 1048,
+          "oldLineNo": 1049,
+          "type": "unchanged"
+        },
+        {
+          "content": "};",
+          "newLineNo": 1049,
+          "oldLineNo": 1050,
+          "type": "unchanged"
+        },
+        {
+          "content": "",
+          "newLineNo": 1050,
+          "oldLineNo": 1051,
+          "type": "unchanged"
+        },
+        {
+          "content": "const DisplayAttendees = ({",
+          "newLineNo": 1051,
+          "oldLineNo": 1052,
+          "type": "unchanged"
+        },
+        {
+          "content": "  attendees,",
+          "newLineNo": 1052,
+          "oldLineNo": 1053,
+          "type": "unchanged"
+        },
+        {
+          "content": "  user,",
+          "newLineNo": 1053,
+          "oldLineNo": 1054,
+          "type": "unchanged"
+        },
+        {
+          "content": "  currentEmail,",
+          "newLineNo": 1054,
+          "oldLineNo": 1055,
+          "type": "unchanged"
+        },
+        {
+          "content": "  bookingUid,",
+          "newLineNo": 1055,
+          "oldLineNo": 1056,
+          "type": "unchanged"
+        },
+        {
+          "content": "  isBookingInPast,",
+          "newLineNo": 1056,
+          "oldLineNo": 1057,
+          "type": "unchanged"
+        },
+        {
+          "content": "  hideOrganizerEmail,",
+          "newLineNo": 1057,
+          "oldLineNo": 1058,
+          "type": "unchanged"
+        },
+        {
+          "content": "  organizerEmail,",
+          "newLineNo": 1058,
+          "oldLineNo": 1059,
+          "type": "unchanged"
+        },
+        {
+          "content": "  eventTypeHosts,",
+          "newLineNo": 1059,
+          "oldLineNo": 1060,
+          "type": "unchanged"
+        },
+        {
+          "content": "}: {",
+          "newLineNo": 1060,
+          "oldLineNo": 1061,
+          "type": "unchanged"
+        },
+        {
+          "content": "  attendees: BookingAttendee[];",
+          "newLineNo": 1061,
+          "oldLineNo": 1062,
+          "type": "unchanged"
+        },
+        {
+          "content": "  user: UserProps | null;",
+          "newLineNo": 1062,
+          "oldLineNo": 1063,
+          "type": "unchanged"
+        },
+        {
+          "content": "  currentEmail?: string | null;",
+          "newLineNo": 1063,
+          "oldLineNo": 1064,
+          "type": "unchanged"
+        },
+        {
+          "content": "  bookingUid: string;",
+          "newLineNo": 1064,
+          "oldLineNo": 1065,
+          "type": "unchanged"
+        },
+        {
+          "content": "  isBookingInPast: boolean;",
+          "newLineNo": 1065,
+          "oldLineNo": 1066,
+          "type": "unchanged"
+        },
+        {
+          "content": "  hideOrganizerEmail?: boolean;",
+          "newLineNo": 1066,
+          "oldLineNo": 1067,
+          "type": "unchanged"
+        },
+        {
+          "content": "  organizerEmail?: string | null;",
+          "newLineNo": 1067,
+          "oldLineNo": 1068,
+          "type": "unchanged"
+        },
+        {
+          "content": "  eventTypeHosts?: Array<{ user: { email: string } | null }> | null;",
+          "newLineNo": 1068,
+          "oldLineNo": 1069,
+          "type": "unchanged"
+        },
+        {
+          "content": "}) => {",
+          "newLineNo": 1069,
+          "oldLineNo": 1070,
+          "type": "unchanged"
+        },
+        {
+          "content": "  const { t } = useLocale();",
+          "newLineNo": 1070,
+          "oldLineNo": 1071,
+          "type": "unchanged"
+        },
+        {
+          "content": "  attendees.sort((a, b) => a.id - b.id);",
+          "newLineNo": 1071,
+          "oldLineNo": 1072,
+          "type": "unchanged"
+        },
+        {
+          "content": "",
+          "newLineNo": 1072,
+          "oldLineNo": 1073,
+          "type": "unchanged"
+        },
+        {
+          "content": "  return (",
+          "newLineNo": 1073,
+          "oldLineNo": 1074,
+          "type": "unchanged"
+        },
+        {
+          "content": "    <div className=\"text-emphasis text-sm\" onClick={(e) => e.stopPropagation()}>",
+          "newLineNo": 1074,
+          "oldLineNo": 1075,
+          "type": "unchanged"
+        },
+        {
+          "content": "      {user && (",
+          "newLineNo": 1075,
+          "oldLineNo": 1076,
+          "type": "unchanged"
+        },
+        {
+          "content": "        <FirstAttendee user={user} currentEmail={currentEmail} hideOrganizerEmail={hideOrganizerEmail} />",
+          "newLineNo": 1076,
+          "oldLineNo": 1077,
+          "type": "unchanged"
+        },
+        {
+          "content": "      )}",
+          "newLineNo": 1077,
+          "oldLineNo": 1078,
+          "type": "unchanged"
+        },
+        {
+          "content": "      {attendees.length > 1 ? <span>,&nbsp;</span> : <span>&nbsp;{t(\"and\")}&nbsp;</span>}",
+          "newLineNo": 1078,
+          "oldLineNo": 1079,
+          "type": "unchanged"
+        },
+        {
+          "content": "      <Attendee",
+          "newLineNo": 1079,
+          "oldLineNo": 1080,
+          "type": "unchanged"
+        },
+        {
+          "content": "        {...attendees[0]}",
+          "newLineNo": 1080,
+          "oldLineNo": 1081,
+          "type": "unchanged"
+        },
+        {
+          "content": "        bookingUid={bookingUid}",
+          "newLineNo": 1081,
+          "oldLineNo": 1082,
+          "type": "unchanged"
+        },
+        {
+          "content": "        isBookingInPast={isBookingInPast}",
+          "newLineNo": 1082,
+          "oldLineNo": 1083,
+          "type": "unchanged"
+        },
+        {
+          "content": "        hideOrganizerEmail={hideOrganizerEmail}",
+          "newLineNo": 1083,
+          "oldLineNo": 1084,
+          "type": "unchanged"
+        },
+        {
+          "content": "        organizerEmail={organizerEmail}",
+          "newLineNo": 1084,
+          "oldLineNo": 1085,
+          "type": "unchanged"
+        },
+        {
+          "content": "        eventTypeHosts={eventTypeHosts}",
+          "newLineNo": 1085,
+          "oldLineNo": 1086,
+          "type": "unchanged"
+        },
+        {
+          "content": "      />",
+          "newLineNo": 1086,
+          "oldLineNo": 1087,
+          "type": "unchanged"
+        },
+        {
+          "content": "      {attendees.length > 1 && (",
+          "newLineNo": 1087,
+          "oldLineNo": 1088,
+          "type": "unchanged"
+        },
+        {
+          "content": "        <>",
+          "newLineNo": 1088,
+          "oldLineNo": 1089,
+          "type": "unchanged"
+        },
+        {
+          "content": "          <div className=\"text-emphasis inline-block text-sm\">&nbsp;{t(\"and\")}&nbsp;</div>",
+          "newLineNo": 1089,
+          "oldLineNo": 1090,
+          "type": "unchanged"
+        },
+        {
+          "content": "          {attendees.length > 2 ? (",
+          "newLineNo": 1090,
+          "oldLineNo": 1091,
+          "type": "unchanged"
+        },
+        {
+          "content": "            <Tooltip",
+          "newLineNo": 1091,
+          "oldLineNo": 1092,
+          "type": "unchanged"
+        },
+        {
+          "content": "              content={attendees.slice(1).map((attendee) => (",
+          "newLineNo": 1092,
+          "oldLineNo": 1093,
+          "type": "unchanged"
+        },
+        {
+          "content": "                <p key={attendee.email}>",
+          "newLineNo": 1093,
+          "oldLineNo": 1094,
+          "type": "unchanged"
+        },
+        {
+          "content": "                  <Attendee",
+          "newLineNo": 1094,
+          "oldLineNo": 1095,
+          "type": "unchanged"
+        },
+        {
+          "content": "                    {...attendee}",
+          "newLineNo": 1095,
+          "oldLineNo": 1096,
+          "type": "unchanged"
+        },
+        {
+          "content": "                    bookingUid={bookingUid}",
+          "newLineNo": 1096,
+          "oldLineNo": 1097,
+          "type": "unchanged"
+        },
+        {
+          "content": "                    isBookingInPast={isBookingInPast}",
+          "newLineNo": 1097,
+          "oldLineNo": 1098,
+          "type": "unchanged"
+        },
+        {
+          "content": "                    hideOrganizerEmail={hideOrganizerEmail}",
+          "newLineNo": 1098,
+          "oldLineNo": 1099,
+          "type": "unchanged"
+        },
+        {
+          "content": "                    organizerEmail={organizerEmail}",
+          "newLineNo": 1099,
+          "oldLineNo": 1100,
+          "type": "unchanged"
+        },
+        {
+          "content": "                    eventTypeHosts={eventTypeHosts}",
+          "newLineNo": 1100,
+          "oldLineNo": 1101,
+          "type": "unchanged"
+        },
+        {
+          "content": "                  />",
+          "newLineNo": 1101,
+          "oldLineNo": 1102,
+          "type": "unchanged"
+        },
+        {
+          "content": "                </p>",
+          "newLineNo": 1102,
+          "oldLineNo": 1103,
+          "type": "unchanged"
+        },
+        {
+          "content": "              ))}>",
+          "newLineNo": 1103,
+          "oldLineNo": 1104,
+          "type": "unchanged"
+        },
+        {
+          "content": "              {isBookingInPast ? (",
+          "newLineNo": 1104,
+          "oldLineNo": 1105,
+          "type": "unchanged"
+        },
+        {
+          "content": "                <GroupedAttendees attendees={attendees} bookingUid={bookingUid} />",
+          "newLineNo": 1105,
+          "oldLineNo": 1106,
+          "type": "unchanged"
+        },
+        {
+          "content": "              ) : (",
+          "newLineNo": 1106,
+          "oldLineNo": 1107,
+          "type": "unchanged"
+        },
+        {
+          "content": "                <GroupedGuests guests={attendees} />",
+          "newLineNo": 1107,
+          "oldLineNo": 1108,
+          "type": "unchanged"
+        },
+        {
+          "content": "              )}",
+          "newLineNo": 1108,
+          "oldLineNo": 1109,
+          "type": "unchanged"
+        },
+        {
+          "content": "            </Tooltip>",
+          "newLineNo": 1109,
+          "oldLineNo": 1110,
+          "type": "unchanged"
+        },
+        {
+          "content": "          ) : (",
+          "newLineNo": 1110,
+          "oldLineNo": 1111,
+          "type": "unchanged"
+        },
+        {
+          "content": "            <Attendee",
+          "newLineNo": 1111,
+          "oldLineNo": 1112,
+          "type": "unchanged"
+        },
+        {
+          "content": "              {...attendees[1]}",
+          "newLineNo": 1112,
+          "oldLineNo": 1113,
+          "type": "unchanged"
+        },
+        {
+          "content": "              bookingUid={bookingUid}",
+          "newLineNo": 1113,
+          "oldLineNo": 1114,
+          "type": "unchanged"
+        },
+        {
+          "content": "              isBookingInPast={isBookingInPast}",
+          "newLineNo": 1114,
+          "oldLineNo": 1115,
+          "type": "unchanged"
+        },
+        {
+          "content": "              hideOrganizerEmail={hideOrganizerEmail}",
+          "newLineNo": 1115,
+          "oldLineNo": 1116,
+          "type": "unchanged"
+        },
+        {
+          "content": "              organizerEmail={organizerEmail}",
+          "newLineNo": 1116,
+          "oldLineNo": 1117,
+          "type": "unchanged"
+        },
+        {
+          "content": "              eventTypeHosts={eventTypeHosts}",
+          "newLineNo": 1117,
+          "oldLineNo": 1118,
+          "type": "unchanged"
+        },
+        {
+          "content": "            />",
+          "newLineNo": 1118,
+          "oldLineNo": 1119,
+          "type": "unchanged"
+        },
+        {
+          "content": "          )}",
+          "newLineNo": 1119,
+          "oldLineNo": 1120,
+          "type": "unchanged"
+        },
+        {
+          "content": "        </>",
+          "newLineNo": 1120,
+          "oldLineNo": 1121,
+          "type": "unchanged"
+        },
+        {
+          "content": "      )}",
+          "newLineNo": 1121,
+          "oldLineNo": 1122,
+          "type": "unchanged"
+        },
+        {
+          "content": "    </div>",
+          "newLineNo": 1122,
+          "oldLineNo": 1123,
+          "type": "unchanged"
+        },
+        {
+          "content": "  );",
+          "newLineNo": 1123,
+          "oldLineNo": 1124,
+          "type": "unchanged"
+        },
+        {
+          "content": "};",
+          "newLineNo": 1124,
+          "oldLineNo": 1125,
+          "type": "unchanged"
+        },
+        {
+          "content": "",
+          "newLineNo": 1125,
+          "oldLineNo": 1126,
+          "type": "unchanged"
+        },
+        {
+          "content": "const AssignmentReasonTooltip = ({",
+          "newLineNo": 1126,
+          "oldLineNo": 1127,
+          "type": "unchanged"
+        },
+        {
+          "content": "  assignmentReason,",
+          "newLineNo": 1127,
+          "oldLineNo": 1128,
+          "type": "unchanged"
+        },
+        {
+          "content": "  onClick,",
+          "newLineNo": 1128,
+          "oldLineNo": 1129,
+          "type": "unchanged"
+        },
+        {
+          "content": "}: {",
+          "newLineNo": 1129,
+          "oldLineNo": 1130,
+          "type": "unchanged"
+        },
+        {
+          "content": "  assignmentReason: Pick<AssignmentReason, \"reasonEnum\" | \"reasonString\">;",
+          "newLineNo": 1130,
+          "oldLineNo": 1131,
+          "type": "unchanged"
+        },
+        {
+          "content": "  onClick?: () => void;",
+          "newLineNo": 1131,
+          "oldLineNo": 1132,
+          "type": "unchanged"
+        },
+        {
+          "content": "}) => {",
+          "newLineNo": 1132,
+          "oldLineNo": 1133,
+          "type": "unchanged"
+        },
+        {
+          "content": "  const { t } = useLocale();",
+          "newLineNo": 1133,
+          "oldLineNo": 1134,
+          "type": "unchanged"
+        },
+        {
+          "content": "  const badgeTitle = assignmentReasonBadgeTitleMap(assignmentReason.reasonEnum);",
+          "newLineNo": 1134,
+          "oldLineNo": 1135,
+          "type": "unchanged"
+        },
+        {
+          "content": "  return (",
+          "newLineNo": 1135,
+          "oldLineNo": 1136,
+          "type": "unchanged"
+        },
+        {
+          "content": "    <Tooltip content={<p>{assignmentReason.reasonString}</p>}>",
+          "newLineNo": 1136,
+          "oldLineNo": 1137,
+          "type": "unchanged"
+        },
+        {
+          "content": "      <Badge",
+          "newLineNo": 1137,
+          "oldLineNo": 1138,
+          "type": "unchanged"
+        },
+        {
+          "content": "        className={classNames(\"ltr:mr-2 rtl:ml-2\", onClick && \"cursor-pointer hover:opacity-80\")}",
+          "newLineNo": 1138,
+          "oldLineNo": 1139,
+          "type": "unchanged"
+        },
+        {
+          "content": "        variant=\"gray\"",
+          "newLineNo": 1139,
+          "oldLineNo": 1140,
+          "type": "unchanged"
+        },
+        {
+          "content": "        onClick={onClick}>",
+          "newLineNo": 1140,
+          "oldLineNo": 1141,
+          "type": "unchanged"
+        },
+        {
+          "content": "        {t(badgeTitle)}",
+          "newLineNo": 1141,
+          "oldLineNo": 1142,
+          "type": "unchanged"
+        },
+        {
+          "content": "      </Badge>",
+          "newLineNo": 1142,
+          "oldLineNo": 1143,
+          "type": "unchanged"
+        },
+        {
+          "content": "    </Tooltip>",
+          "newLineNo": 1143,
+          "oldLineNo": 1144,
+          "type": "unchanged"
+        },
+        {
+          "content": "  );",
+          "newLineNo": 1144,
+          "oldLineNo": 1145,
+          "type": "unchanged"
+        },
+        {
+          "content": "};",
+          "newLineNo": 1145,
+          "oldLineNo": 1146,
+          "type": "unchanged"
+        },
+        {
+          "content": "",
+          "newLineNo": 1146,
+          "oldLineNo": 1147,
+          "type": "unchanged"
+        },
+        {
+          "content": "// Wrap BookingListItem with BookingActionsStoreProvider to provide isolated store for each booking",
+          "newLineNo": 1147,
+          "oldLineNo": 1148,
+          "type": "unchanged"
+        },
+        {
+          "content": "const BookingListItemWithProvider = (props: BookingItemProps) => {",
+          "newLineNo": 1148,
+          "oldLineNo": 1149,
+          "type": "unchanged"
+        },
+        {
+          "content": "  return (",
+          "newLineNo": 1149,
+          "oldLineNo": 1150,
+          "type": "unchanged"
+        },
+        {
+          "content": "    <BookingActionsStoreProvider>",
+          "newLineNo": 1150,
+          "oldLineNo": 1151,
+          "type": "unchanged"
+        },
+        {
+          "content": "      <BookingListItem {...props} />",
+          "newLineNo": 1151,
+          "oldLineNo": 1152,
+          "type": "unchanged"
+        },
+        {
+          "content": "    </BookingActionsStoreProvider>",
+          "newLineNo": 1152,
+          "oldLineNo": 1153,
+          "type": "unchanged"
+        },
+        {
+          "content": "  );",
+          "newLineNo": 1153,
+          "oldLineNo": 1154,
+          "type": "unchanged"
+        },
+        {
+          "content": "};",
+          "newLineNo": 1154,
+          "oldLineNo": 1155,
+          "type": "unchanged"
+        },
+        {
+          "content": "",
+          "newLineNo": 1155,
+          "oldLineNo": 1156,
+          "type": "unchanged"
+        },
+        {
+          "content": "export default BookingListItemWithProvider;",
+          "newLineNo": 1156,
+          "oldLineNo": 1157,
+          "type": "unchanged"
+        },
+        {
+          "content": "",
+          "newLineNo": 1157,
+          "oldLineNo": null,
+          "type": "added"
+        },
+        {
+          "content": "function AttendeeExtracted(attendeeProps: (BookingAttendee) & (NoShowProps) & ({",
+          "newLineNo": 1158,
+          "oldLineNo": null,
+          "type": "added"
+        },
+        {
+          "content": "  hideOrganizerEmail?: boolean;",
+          "newLineNo": 1159,
+          "oldLineNo": null,
+          "type": "added"
+        },
+        {
+          "content": "  organizerEmail?: string | null;",
+          "newLineNo": 1160,
+          "oldLineNo": null,
+          "type": "added"
+        },
+        {
+          "content": "  eventTypeHosts?: Array<{ user: { email: string } | null }> | null;",
+          "newLineNo": 1161,
+          "oldLineNo": null,
+          "type": "added"
+        },
+        {
+          "content": "})) {",
+          "newLineNo": 1162,
+          "oldLineNo": null,
+          "type": "added"
+        },
+        {
+          "content": "  const {",
+          "newLineNo": 1163,
+          "oldLineNo": null,
+          "type": "added"
+        },
+        {
+          "content": "    email,",
+          "newLineNo": 1164,
+          "oldLineNo": null,
+          "type": "added"
+        },
+        {
+          "content": "    name,",
+          "newLineNo": 1165,
+          "oldLineNo": null,
+          "type": "added"
+        },
+        {
+          "content": "    bookingUid,",
+          "newLineNo": 1166,
+          "oldLineNo": null,
+          "type": "added"
+        },
+        {
+          "content": "    isBookingInPast,",
+          "newLineNo": 1167,
+          "oldLineNo": null,
+          "type": "added"
+        },
+        {
+          "content": "    noShow,",
+          "newLineNo": 1168,
+          "oldLineNo": null,
+          "type": "added"
+        },
+        {
+          "content": "    phoneNumber,",
+          "newLineNo": 1169,
+          "oldLineNo": null,
+          "type": "added"
+        },
+        {
+          "content": "    user,",
+          "newLineNo": 1170,
+          "oldLineNo": null,
+          "type": "added"
+        },
+        {
+          "content": "    hideOrganizerEmail,",
+          "newLineNo": 1171,
+          "oldLineNo": null,
+          "type": "added"
+        },
+        {
+          "content": "    organizerEmail,",
+          "newLineNo": 1172,
+          "oldLineNo": null,
+          "type": "added"
+        },
+        {
+          "content": "    eventTypeHosts,",
+          "newLineNo": 1173,
+          "oldLineNo": null,
+          "type": "added"
+        },
+        {
+          "content": "  } = attendeeProps;",
+          "newLineNo": 1174,
+          "oldLineNo": null,
+          "type": "added"
+        },
+        {
+          "content": "  return {",
+          "newLineNo": 1175,
+          "oldLineNo": null,
+          "type": "added"
+        },
+        {
+          "content": "    email,",
+          "newLineNo": 1176,
+          "oldLineNo": null,
+          "type": "added"
+        },
+        {
+          "content": "    name,",
+          "newLineNo": 1177,
+          "oldLineNo": null,
+          "type": "added"
+        },
+        {
+          "content": "    bookingUid,",
+          "newLineNo": 1178,
+          "oldLineNo": null,
+          "type": "added"
+        },
+        {
+          "content": "    isBookingInPast,",
+          "newLineNo": 1179,
+          "oldLineNo": null,
+          "type": "added"
+        },
+        {
+          "content": "    noShow,",
+          "newLineNo": 1180,
+          "oldLineNo": null,
+          "type": "added"
+        },
+        {
+          "content": "    phoneNumber,",
+          "newLineNo": 1181,
+          "oldLineNo": null,
+          "type": "added"
+        },
+        {
+          "content": "    user,",
+          "newLineNo": 1182,
+          "oldLineNo": null,
+          "type": "added"
+        },
+        {
+          "content": "    hideOrganizerEmail,",
+          "newLineNo": 1183,
+          "oldLineNo": null,
+          "type": "added"
+        },
+        {
+          "content": "    organizerEmail,",
+          "newLineNo": 1184,
+          "oldLineNo": null,
+          "type": "added"
+        },
+        {
+          "content": "    eventTypeHosts,",
+          "newLineNo": 1185,
+          "oldLineNo": null,
+          "type": "added"
+        },
+        {
+          "content": "  };",
+          "newLineNo": 1186,
+          "oldLineNo": null,
+          "type": "added"
+        },
+        {
+          "content": "}",
+          "newLineNo": 1187,
+          "oldLineNo": null,
+          "type": "added"
+        }
+      ],
+      "kind": "autofix"
+    },
+    "endLine": 1157,
+    "label": {
+      "catalogDependency": {
+        "explicitLocales": [],
+        "lookupLocales": [
+          "en-US",
+          "en-GB",
+          "en-CA",
+          "fr-CA",
+          "en-IN",
+          "cy-GB",
+          "gd-GB",
+          "ga-GB",
+          "es-US",
+          "es-MX",
+          "de-DE",
+          "fr-FR",
+          "es-ES",
+          "it-IT",
+          "nl-NL",
+          "pl-PL",
+          "pt-PT",
+          "pt-BR",
+          "ro-RO",
+          "sv-SE",
+          "ko-KR",
+          "zh-CN",
+          "ja-JP",
+          "hi-IN"
+        ],
+        "reportFallbacks": {
+          "ja-JP": "自動修正"
+        },
+        "sourceLocale": "en-US"
+      },
+      "defaultLocale": "en-US",
+      "defaultText": "Autofix",
+      "icuArgs": {},
+      "msgid": "scribe.report.finding.autofix.title",
+      "provenance": "template",
+      "reviewState": "reviewed",
+      "values": {
+        "en-US": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "Autofix"
+        }
+      }
+    },
+    "language": "typescript",
+    "pagePath": "findings/finding-repository-health/index.html",
+    "snippetId": "source-repository-health-complexity-attendee-c6d2fdf809",
+    "sourcePath": "apps/web/components/booking/BookingListItem.tsx",
+    "startLine": 757,
+    "vcsPermalink": "https://github.com/calcom/cal.com/blob/180ede28f0bddf2738933a6e60a8e80f6116d7da/apps/web/components/booking/BookingListItem.tsx#L750-L858",
+    "verifiedSourceHash": "sha256:5c3cad416339de5966c514ed71ed33bfea603486e2853db2bf293cf5e8128155"
   },
   {
     "anchorId": "source-repository-health-complexity-getandupdatenormalizedvalues-fac5c01648",
@@ -20972,6 +27785,39 @@ window.__SCRIBE_SOURCE_SNIPPETS__ = [
     },
     "endLine": 408,
     "label": {
+      "catalogDependency": {
+        "explicitLocales": [],
+        "lookupLocales": [
+          "en-US",
+          "en-GB",
+          "en-CA",
+          "fr-CA",
+          "en-IN",
+          "cy-GB",
+          "gd-GB",
+          "ga-GB",
+          "es-US",
+          "es-MX",
+          "de-DE",
+          "fr-FR",
+          "es-ES",
+          "it-IT",
+          "nl-NL",
+          "pl-PL",
+          "pt-PT",
+          "pt-BR",
+          "ro-RO",
+          "sv-SE",
+          "ko-KR",
+          "zh-CN",
+          "ja-JP",
+          "hi-IN"
+        ],
+        "reportFallbacks": {
+          "ja-JP": "自動修正"
+        },
+        "sourceLocale": "en-US"
+      },
       "defaultLocale": "en-US",
       "defaultText": "Autofix",
       "icuArgs": {},
@@ -22821,6 +29667,39 @@ window.__SCRIBE_SOURCE_SNIPPETS__ = [
     },
     "endLine": 234,
     "label": {
+      "catalogDependency": {
+        "explicitLocales": [],
+        "lookupLocales": [
+          "en-US",
+          "en-GB",
+          "en-CA",
+          "fr-CA",
+          "en-IN",
+          "cy-GB",
+          "gd-GB",
+          "ga-GB",
+          "es-US",
+          "es-MX",
+          "de-DE",
+          "fr-FR",
+          "es-ES",
+          "it-IT",
+          "nl-NL",
+          "pl-PL",
+          "pt-PT",
+          "pt-BR",
+          "ro-RO",
+          "sv-SE",
+          "ko-KR",
+          "zh-CN",
+          "ja-JP",
+          "hi-IN"
+        ],
+        "reportFallbacks": {
+          "ja-JP": "自動修正"
+        },
+        "sourceLocale": "en-US"
+      },
       "defaultLocale": "en-US",
       "defaultText": "Autofix",
       "icuArgs": {},
@@ -23482,6 +30361,39 @@ window.__SCRIBE_SOURCE_SNIPPETS__ = [
     },
     "endLine": 131,
     "label": {
+      "catalogDependency": {
+        "explicitLocales": [],
+        "lookupLocales": [
+          "en-US",
+          "en-GB",
+          "en-CA",
+          "fr-CA",
+          "en-IN",
+          "cy-GB",
+          "gd-GB",
+          "ga-GB",
+          "es-US",
+          "es-MX",
+          "de-DE",
+          "fr-FR",
+          "es-ES",
+          "it-IT",
+          "nl-NL",
+          "pl-PL",
+          "pt-PT",
+          "pt-BR",
+          "ro-RO",
+          "sv-SE",
+          "ko-KR",
+          "zh-CN",
+          "ja-JP",
+          "hi-IN"
+        ],
+        "reportFallbacks": {
+          "ja-JP": "自動修正"
+        },
+        "sourceLocale": "en-US"
+      },
       "defaultLocale": "en-US",
       "defaultText": "Autofix",
       "icuArgs": {},
@@ -23503,6 +30415,1464 @@ window.__SCRIBE_SOURCE_SNIPPETS__ = [
     "startLine": 54,
     "vcsPermalink": "https://github.com/calcom/cal.com/blob/180ede28f0bddf2738933a6e60a8e80f6116d7da/packages/app-store/hitpay/api/webhook.ts#L45-L131",
     "verifiedSourceHash": "sha256:99f505e69ffbb68b8e7571f1658a8e7a542703b341564699237b359fd79a3946"
+  },
+  {
+    "anchorId": "source-repository-health-complexity-cleanuptestdata-b5d56d443d",
+    "body": {
+      "diff": [
+        {
+          "content": "@@ -159,26 +159,39 @@",
+          "newLineNo": null,
+          "oldLineNo": null,
+          "type": "separator"
+        },
+        {
+          "content": "    });",
+          "newLineNo": 159,
+          "oldLineNo": 159,
+          "type": "unchanged"
+        },
+        {
+          "content": "  }",
+          "newLineNo": 160,
+          "oldLineNo": 160,
+          "type": "unchanged"
+        },
+        {
+          "content": "",
+          "newLineNo": 161,
+          "oldLineNo": 161,
+          "type": "unchanged"
+        },
+        {
+          "content": "  await cleanupTestDataDeleteMany(testData);",
+          "newLineNo": 162,
+          "oldLineNo": null,
+          "type": "added"
+        },
+        {
+          "content": "",
+          "newLineNo": 163,
+          "oldLineNo": null,
+          "type": "added"
+        },
+        {
+          "content": "  if (testData.userIds?.length) {",
+          "newLineNo": 164,
+          "oldLineNo": null,
+          "type": "added"
+        },
+        {
+          "content": "    await prisma.user.deleteMany({",
+          "newLineNo": 165,
+          "oldLineNo": null,
+          "type": "added"
+        },
+        {
+          "content": "      where: { id: { in: testData.userIds } },",
+          "newLineNo": 166,
+          "oldLineNo": null,
+          "type": "added"
+        },
+        {
+          "content": "    });",
+          "newLineNo": 167,
+          "oldLineNo": null,
+          "type": "added"
+        },
+        {
+          "content": "  }",
+          "newLineNo": 168,
+          "oldLineNo": null,
+          "type": "added"
+        },
+        {
+          "content": "};",
+          "newLineNo": 169,
+          "oldLineNo": null,
+          "type": "added"
+        },
+        {
+          "content": "",
+          "newLineNo": 170,
+          "oldLineNo": null,
+          "type": "added"
+        },
+        {
+          "content": "async function cleanupTestDataDeleteMany(testData: {",
+          "newLineNo": 171,
+          "oldLineNo": null,
+          "type": "added"
+        },
+        {
+          "content": "  bookingUid?: string;",
+          "newLineNo": 172,
+          "oldLineNo": null,
+          "type": "added"
+        },
+        {
+          "content": "  userUuids?: string[];",
+          "newLineNo": 173,
+          "oldLineNo": null,
+          "type": "added"
+        },
+        {
+          "content": "  attendeeEmails?: string[];",
+          "newLineNo": 174,
+          "oldLineNo": null,
+          "type": "added"
+        },
+        {
+          "content": "  eventTypeId?: number;",
+          "newLineNo": 175,
+          "oldLineNo": null,
+          "type": "added"
+        },
+        {
+          "content": "  organizationId?: number;",
+          "newLineNo": 176,
+          "oldLineNo": null,
+          "type": "added"
+        },
+        {
+          "content": "  userIds?: number[];",
+          "newLineNo": 177,
+          "oldLineNo": null,
+          "type": "added"
+        },
+        {
+          "content": "  featureSlug?: string;",
+          "newLineNo": 178,
+          "oldLineNo": null,
+          "type": "added"
+        },
+        {
+          "content": "}) {",
+          "newLineNo": 179,
+          "oldLineNo": null,
+          "type": "added"
+        },
+        {
+          "content": "",
+          "newLineNo": 180,
+          "oldLineNo": null,
+          "type": "added"
+        },
+        {
+          "content": "  if (testData.organizationId) {",
+          "newLineNo": 181,
+          "oldLineNo": 162,
+          "type": "unchanged"
+        },
+        {
+          "content": "    if (testData.featureSlug) {",
+          "newLineNo": 182,
+          "oldLineNo": 163,
+          "type": "unchanged"
+        },
+        {
+          "content": "      await prisma.teamFeatures.deleteMany({",
+          "newLineNo": 183,
+          "oldLineNo": 164,
+          "type": "unchanged"
+        },
+        {
+          "content": "        where: {",
+          "newLineNo": 184,
+          "oldLineNo": 165,
+          "type": "unchanged"
+        },
+        {
+          "content": "          teamId: testData.organizationId,",
+          "newLineNo": 185,
+          "oldLineNo": 166,
+          "type": "unchanged"
+        },
+        {
+          "content": "          featureId: testData.featureSlug,",
+          "newLineNo": 186,
+          "oldLineNo": 167,
+          "type": "unchanged"
+        },
+        {
+          "content": "        },",
+          "newLineNo": 187,
+          "oldLineNo": 168,
+          "type": "unchanged"
+        },
+        {
+          "content": "      });",
+          "newLineNo": 188,
+          "oldLineNo": 169,
+          "type": "unchanged"
+        },
+        {
+          "content": "    }",
+          "newLineNo": 189,
+          "oldLineNo": 170,
+          "type": "unchanged"
+        },
+        {
+          "content": "    await prisma.membership.deleteMany({",
+          "newLineNo": 190,
+          "oldLineNo": 171,
+          "type": "unchanged"
+        },
+        {
+          "content": "      where: { teamId: testData.organizationId },",
+          "newLineNo": 191,
+          "oldLineNo": 172,
+          "type": "unchanged"
+        },
+        {
+          "content": "    });",
+          "newLineNo": 192,
+          "oldLineNo": 173,
+          "type": "unchanged"
+        },
+        {
+          "content": "    await prisma.team.deleteMany({",
+          "newLineNo": 193,
+          "oldLineNo": 174,
+          "type": "unchanged"
+        },
+        {
+          "content": "      where: { id: testData.organizationId },",
+          "newLineNo": 194,
+          "oldLineNo": 175,
+          "type": "unchanged"
+        },
+        {
+          "content": "    });",
+          "newLineNo": 195,
+          "oldLineNo": 176,
+          "type": "unchanged"
+        },
+        {
+          "content": "  }",
+          "newLineNo": 196,
+          "oldLineNo": 177,
+          "type": "unchanged"
+        },
+        {
+          "content": "",
+          "newLineNo": null,
+          "oldLineNo": 178,
+          "type": "removed"
+        },
+        {
+          "content": "  if (testData.userIds?.length) {",
+          "newLineNo": null,
+          "oldLineNo": 179,
+          "type": "removed"
+        },
+        {
+          "content": "    await prisma.user.deleteMany({",
+          "newLineNo": null,
+          "oldLineNo": 180,
+          "type": "removed"
+        },
+        {
+          "content": "      where: { id: { in: testData.userIds } },",
+          "newLineNo": null,
+          "oldLineNo": 181,
+          "type": "removed"
+        },
+        {
+          "content": "    });",
+          "newLineNo": null,
+          "oldLineNo": 182,
+          "type": "removed"
+        },
+        {
+          "content": "  }",
+          "newLineNo": null,
+          "oldLineNo": 183,
+          "type": "removed"
+        },
+        {
+          "content": "};",
+          "newLineNo": null,
+          "oldLineNo": 184,
+          "type": "removed"
+        },
+        {
+          "content": "}",
+          "newLineNo": 197,
+          "oldLineNo": null,
+          "type": "added"
+        }
+      ],
+      "kind": "autofix"
+    },
+    "endLine": 184,
+    "label": {
+      "catalogDependency": {
+        "explicitLocales": [],
+        "lookupLocales": [
+          "en-US",
+          "en-GB",
+          "en-CA",
+          "fr-CA",
+          "en-IN",
+          "cy-GB",
+          "gd-GB",
+          "ga-GB",
+          "es-US",
+          "es-MX",
+          "de-DE",
+          "fr-FR",
+          "es-ES",
+          "it-IT",
+          "nl-NL",
+          "pl-PL",
+          "pt-PT",
+          "pt-BR",
+          "ro-RO",
+          "sv-SE",
+          "ko-KR",
+          "zh-CN",
+          "ja-JP",
+          "hi-IN"
+        ],
+        "reportFallbacks": {
+          "ja-JP": "自動修正"
+        },
+        "sourceLocale": "en-US"
+      },
+      "defaultLocale": "en-US",
+      "defaultText": "Autofix",
+      "icuArgs": {},
+      "msgid": "scribe.report.finding.autofix.title",
+      "provenance": "template",
+      "reviewState": "reviewed",
+      "values": {
+        "en-US": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "Autofix"
+        }
+      }
+    },
+    "language": "typescript",
+    "pagePath": "findings/finding-repository-health/index.html",
+    "snippetId": "source-repository-health-complexity-cleanuptestdata-b5d56d443d",
+    "sourcePath": "packages/features/booking-audit/lib/service/__tests__/integration-utils.ts",
+    "startLine": 159,
+    "vcsPermalink": "https://github.com/calcom/cal.com/blob/180ede28f0bddf2738933a6e60a8e80f6116d7da/packages/features/booking-audit/lib/service/__tests__/integration-utils.ts#L116-L184",
+    "verifiedSourceHash": "sha256:94318846aea28e28e529cd0da8a1e0a0b93ada878882401eae046a3b167cb2cd"
+  },
+  {
+    "anchorId": "source-repository-health-complexity-handlebookingerror-0b4887c534",
+    "body": {
+      "diff": [
+        {
+          "content": "@@ -48,21 +48,27 @@",
+          "newLineNo": null,
+          "oldLineNo": null,
+          "type": "separator"
+        },
+        {
+          "content": "        throw new BadRequestException(\"Attempting to book a meeting in the past.\");",
+          "newLineNo": 48,
+          "oldLineNo": 48,
+          "type": "unchanged"
+        },
+        {
+          "content": "      } else if (error.message === \"hosts_unavailable_for_booking\") {",
+          "newLineNo": 49,
+          "oldLineNo": 49,
+          "type": "unchanged"
+        },
+        {
+          "content": "        throw new BadRequestException(hostsUnavaile);",
+          "newLineNo": 50,
+          "oldLineNo": 50,
+          "type": "unchanged"
+        },
+        {
+          "content": "      } else if (error.message === \"booker_limit_exceeded_error\") {",
+          "newLineNo": null,
+          "oldLineNo": 51,
+          "type": "removed"
+        },
+        {
+          "content": "        throw new BadRequestException(",
+          "newLineNo": null,
+          "oldLineNo": 52,
+          "type": "removed"
+        },
+        {
+          "content": "          \"Attendee with this email can't book because the maximum number of active bookings has been reached.\"",
+          "newLineNo": null,
+          "oldLineNo": 53,
+          "type": "removed"
+        },
+        {
+          "content": "        );",
+          "newLineNo": null,
+          "oldLineNo": 54,
+          "type": "removed"
+        },
+        {
+          "content": "      } else if (error.message === \"booker_limit_exceeded_error_reschedule\") {",
+          "newLineNo": null,
+          "oldLineNo": 55,
+          "type": "removed"
+        },
+        {
+          "content": "        const errorData =",
+          "newLineNo": null,
+          "oldLineNo": 56,
+          "type": "removed"
+        },
+        {
+          "content": "          \"data\" in error ? (error.data as { rescheduleUid: string }) : { rescheduleUid: undefined };",
+          "newLineNo": null,
+          "oldLineNo": 57,
+          "type": "removed"
+        },
+        {
+          "content": "        let message =",
+          "newLineNo": null,
+          "oldLineNo": 58,
+          "type": "removed"
+        },
+        {
+          "content": "          \"Attendee with this email can't book because the maximum number of active bookings has been reached.\";",
+          "newLineNo": null,
+          "oldLineNo": 59,
+          "type": "removed"
+        },
+        {
+          "content": "        if (errorData?.rescheduleUid) {",
+          "newLineNo": null,
+          "oldLineNo": 60,
+          "type": "removed"
+        },
+        {
+          "content": "          message += ` You can reschedule your existing booking (${errorData.rescheduleUid}) to a new timeslot instead.`;",
+          "newLineNo": null,
+          "oldLineNo": 61,
+          "type": "removed"
+        },
+        {
+          "content": "        }",
+          "newLineNo": null,
+          "oldLineNo": 62,
+          "type": "removed"
+        },
+        {
+          "content": "        throw new BadRequestException(message);",
+          "newLineNo": null,
+          "oldLineNo": 63,
+          "type": "removed"
+        },
+        {
+          "content": "      } else {",
+          "newLineNo": 51,
+          "oldLineNo": null,
+          "type": "added"
+        },
+        {
+          "content": "        this.handleBookingErrorExtracted(error);",
+          "newLineNo": 52,
+          "oldLineNo": null,
+          "type": "added"
+        },
+        {
+          "content": "      }",
+          "newLineNo": 53,
+          "oldLineNo": 64,
+          "type": "unchanged"
+        },
+        {
+          "content": "    }",
+          "newLineNo": 54,
+          "oldLineNo": 65,
+          "type": "unchanged"
+        },
+        {
+          "content": "    throw error;",
+          "newLineNo": 55,
+          "oldLineNo": 66,
+          "type": "unchanged"
+        },
+        {
+          "content": "  }",
+          "newLineNo": 56,
+          "oldLineNo": 67,
+          "type": "unchanged"
+        },
+        {
+          "content": "",
+          "newLineNo": 57,
+          "oldLineNo": null,
+          "type": "added"
+        },
+        {
+          "content": "  private handleBookingErrorExtracted(error: Error) {",
+          "newLineNo": 58,
+          "oldLineNo": null,
+          "type": "added"
+        },
+        {
+          "content": "    if (error.message === \"booker_limit_exceeded_error\") {",
+          "newLineNo": 59,
+          "oldLineNo": null,
+          "type": "added"
+        },
+        {
+          "content": "      throw new BadRequestException(",
+          "newLineNo": 60,
+          "oldLineNo": null,
+          "type": "added"
+        },
+        {
+          "content": "        \"Attendee with this email can't book because the maximum number of active bookings has been reached.\"",
+          "newLineNo": 61,
+          "oldLineNo": null,
+          "type": "added"
+        },
+        {
+          "content": "      );",
+          "newLineNo": 62,
+          "oldLineNo": null,
+          "type": "added"
+        },
+        {
+          "content": "    } else if (error.message === \"booker_limit_exceeded_error_reschedule\") {",
+          "newLineNo": 63,
+          "oldLineNo": null,
+          "type": "added"
+        },
+        {
+          "content": "      const errorData =",
+          "newLineNo": 64,
+          "oldLineNo": null,
+          "type": "added"
+        },
+        {
+          "content": "        \"data\" in error ? (error.data as { rescheduleUid: string }) : { rescheduleUid: undefined };",
+          "newLineNo": 65,
+          "oldLineNo": null,
+          "type": "added"
+        },
+        {
+          "content": "      let message =",
+          "newLineNo": 66,
+          "oldLineNo": null,
+          "type": "added"
+        },
+        {
+          "content": "        \"Attendee with this email can't book because the maximum number of active bookings has been reached.\";",
+          "newLineNo": 67,
+          "oldLineNo": null,
+          "type": "added"
+        },
+        {
+          "content": "      if (errorData?.rescheduleUid) {",
+          "newLineNo": 68,
+          "oldLineNo": null,
+          "type": "added"
+        },
+        {
+          "content": "        message += ` You can reschedule your existing booking (${errorData.rescheduleUid}) to a new timeslot instead.`;",
+          "newLineNo": 69,
+          "oldLineNo": null,
+          "type": "added"
+        },
+        {
+          "content": "      }",
+          "newLineNo": 70,
+          "oldLineNo": null,
+          "type": "added"
+        },
+        {
+          "content": "      throw new BadRequestException(message);",
+          "newLineNo": 71,
+          "oldLineNo": null,
+          "type": "added"
+        },
+        {
+          "content": "    }",
+          "newLineNo": 72,
+          "oldLineNo": null,
+          "type": "added"
+        },
+        {
+          "content": "  }",
+          "newLineNo": 73,
+          "oldLineNo": null,
+          "type": "added"
+        },
+        {
+          "content": "}",
+          "newLineNo": 74,
+          "oldLineNo": 68,
+          "type": "unchanged"
+        }
+      ],
+      "kind": "autofix"
+    },
+    "endLine": 68,
+    "label": {
+      "catalogDependency": {
+        "explicitLocales": [],
+        "lookupLocales": [
+          "en-US",
+          "en-GB",
+          "en-CA",
+          "fr-CA",
+          "en-IN",
+          "cy-GB",
+          "gd-GB",
+          "ga-GB",
+          "es-US",
+          "es-MX",
+          "de-DE",
+          "fr-FR",
+          "es-ES",
+          "it-IT",
+          "nl-NL",
+          "pl-PL",
+          "pt-PT",
+          "pt-BR",
+          "ro-RO",
+          "sv-SE",
+          "ko-KR",
+          "zh-CN",
+          "ja-JP",
+          "hi-IN"
+        ],
+        "reportFallbacks": {
+          "ja-JP": "自動修正"
+        },
+        "sourceLocale": "en-US"
+      },
+      "defaultLocale": "en-US",
+      "defaultText": "Autofix",
+      "icuArgs": {},
+      "msgid": "scribe.report.finding.autofix.title",
+      "provenance": "template",
+      "reviewState": "reviewed",
+      "values": {
+        "en-US": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "Autofix"
+        }
+      }
+    },
+    "language": "typescript",
+    "pagePath": "findings/finding-repository-health/index.html",
+    "snippetId": "source-repository-health-complexity-handlebookingerror-0b4887c534",
+    "sourcePath": "apps/api/v2/src/platform/bookings/2024-08-13/services/errors.service.ts",
+    "startLine": 48,
+    "vcsPermalink": "https://github.com/calcom/cal.com/blob/180ede28f0bddf2738933a6e60a8e80f6116d7da/apps/api/v2/src/platform/bookings/2024-08-13/services/errors.service.ts#L32-L67",
+    "verifiedSourceHash": "sha256:bd979e472e29e106166654ba2356583b750fce298e932a757a70f9e1cd5cd21b"
+  },
+  {
+    "anchorId": "source-repository-health-complexity-applistcard-73123ee301",
+    "body": {
+      "diff": [
+        {
+          "content": "@@ -42,78 +42,108 @@",
+          "newLineNo": null,
+          "oldLineNo": null,
+          "type": "separator"
+        },
+        {
+          "content": "",
+          "newLineNo": 42,
+          "oldLineNo": 42,
+          "type": "unchanged"
+        },
+        {
+          "content": "export const AppListCard = (props: AppListCardProps & { highlight?: boolean }) => {",
+          "newLineNo": 43,
+          "oldLineNo": 43,
+          "type": "unchanged"
+        },
+        {
+          "content": "  const { t } = useLocale();",
+          "newLineNo": 44,
+          "oldLineNo": 44,
+          "type": "unchanged"
+        },
+        {
+          "content": "  const {",
+          "newLineNo": null,
+          "oldLineNo": 45,
+          "type": "removed"
+        },
+        {
+          "content": "    logo,",
+          "newLineNo": null,
+          "oldLineNo": 46,
+          "type": "removed"
+        },
+        {
+          "content": "    title,",
+          "newLineNo": null,
+          "oldLineNo": 47,
+          "type": "removed"
+        },
+        {
+          "content": "    description,",
+          "newLineNo": null,
+          "oldLineNo": 48,
+          "type": "removed"
+        },
+        {
+          "content": "    actions,",
+          "newLineNo": null,
+          "oldLineNo": 49,
+          "type": "removed"
+        },
+        {
+          "content": "    isDefault,",
+          "newLineNo": null,
+          "oldLineNo": 50,
+          "type": "removed"
+        },
+        {
+          "content": "    isTemplate,",
+          "newLineNo": null,
+          "oldLineNo": 51,
+          "type": "removed"
+        },
+        {
+          "content": "    invalidCredential,",
+          "newLineNo": null,
+          "oldLineNo": 52,
+          "type": "removed"
+        },
+        {
+          "content": "    children,",
+          "newLineNo": null,
+          "oldLineNo": 53,
+          "type": "removed"
+        },
+        {
+          "content": "    credentialOwner,",
+          "newLineNo": null,
+          "oldLineNo": 54,
+          "type": "removed"
+        },
+        {
+          "content": "    className,",
+          "newLineNo": null,
+          "oldLineNo": 55,
+          "type": "removed"
+        },
+        {
+          "content": "    classNameObject,",
+          "newLineNo": null,
+          "oldLineNo": 56,
+          "type": "removed"
+        },
+        {
+          "content": "    highlight,",
+          "newLineNo": null,
+          "oldLineNo": 57,
+          "type": "removed"
+        },
+        {
+          "content": "  } = props;",
+          "newLineNo": null,
+          "oldLineNo": 58,
+          "type": "removed"
+        },
+        {
+          "content": "  const AppListCardExtractedResult = AppListCardExtracted(props);",
+          "newLineNo": 45,
+          "oldLineNo": null,
+          "type": "added"
+        },
+        {
+          "content": "  const logo = AppListCardExtractedResult.logo;",
+          "newLineNo": 46,
+          "oldLineNo": null,
+          "type": "added"
+        },
+        {
+          "content": "  const title = AppListCardExtractedResult.title;",
+          "newLineNo": 47,
+          "oldLineNo": null,
+          "type": "added"
+        },
+        {
+          "content": "  const description = AppListCardExtractedResult.description;",
+          "newLineNo": 48,
+          "oldLineNo": null,
+          "type": "added"
+        },
+        {
+          "content": "  const actions = AppListCardExtractedResult.actions;",
+          "newLineNo": 49,
+          "oldLineNo": null,
+          "type": "added"
+        },
+        {
+          "content": "  const isDefault = AppListCardExtractedResult.isDefault;",
+          "newLineNo": 50,
+          "oldLineNo": null,
+          "type": "added"
+        },
+        {
+          "content": "  const isTemplate = AppListCardExtractedResult.isTemplate;",
+          "newLineNo": 51,
+          "oldLineNo": null,
+          "type": "added"
+        },
+        {
+          "content": "  const invalidCredential = AppListCardExtractedResult.invalidCredential;",
+          "newLineNo": 52,
+          "oldLineNo": null,
+          "type": "added"
+        },
+        {
+          "content": "  const children = AppListCardExtractedResult.children;",
+          "newLineNo": 53,
+          "oldLineNo": null,
+          "type": "added"
+        },
+        {
+          "content": "  const credentialOwner = AppListCardExtractedResult.credentialOwner;",
+          "newLineNo": 54,
+          "oldLineNo": null,
+          "type": "added"
+        },
+        {
+          "content": "  const className = AppListCardExtractedResult.className;",
+          "newLineNo": 55,
+          "oldLineNo": null,
+          "type": "added"
+        },
+        {
+          "content": "  const classNameObject = AppListCardExtractedResult.classNameObject;",
+          "newLineNo": 56,
+          "oldLineNo": null,
+          "type": "added"
+        },
+        {
+          "content": "  const highlight = AppListCardExtractedResult.highlight;",
+          "newLineNo": 57,
+          "oldLineNo": null,
+          "type": "added"
+        },
+        {
+          "content": "",
+          "newLineNo": 58,
+          "oldLineNo": 59,
+          "type": "unchanged"
+        },
+        {
+          "content": "  return (",
+          "newLineNo": 59,
+          "oldLineNo": 60,
+          "type": "unchanged"
+        },
+        {
+          "content": "    <div",
+          "newLineNo": 60,
+          "oldLineNo": 61,
+          "type": "unchanged"
+        },
+        {
+          "content": "      className={classNames(",
+          "newLineNo": 61,
+          "oldLineNo": 62,
+          "type": "unchanged"
+        },
+        {
+          "content": "        highlight && \"dark:bg-cal-muted bg-yellow-100\",",
+          "newLineNo": 62,
+          "oldLineNo": 63,
+          "type": "unchanged"
+        },
+        {
+          "content": "        className || classNameObject?.container",
+          "newLineNo": 63,
+          "oldLineNo": 64,
+          "type": "unchanged"
+        },
+        {
+          "content": "      )}>",
+          "newLineNo": 64,
+          "oldLineNo": 65,
+          "type": "unchanged"
+        },
+        {
+          "content": "      <div className=\"flex items-start gap-x-3 px-4 py-4 sm:px-6\">",
+          "newLineNo": 65,
+          "oldLineNo": 66,
+          "type": "unchanged"
+        },
+        {
+          "content": "        {logo ? (",
+          "newLineNo": 66,
+          "oldLineNo": 67,
+          "type": "unchanged"
+        },
+        {
+          "content": "          <img",
+          "newLineNo": 67,
+          "oldLineNo": 68,
+          "type": "unchanged"
+        },
+        {
+          "content": "            className={classNames(logo.includes(\"-dark\") && \"dark:invert\", \"h-10 w-10 shrink-0\")}",
+          "newLineNo": 68,
+          "oldLineNo": 69,
+          "type": "unchanged"
+        },
+        {
+          "content": "            src={logo}",
+          "newLineNo": 69,
+          "oldLineNo": 70,
+          "type": "unchanged"
+        },
+        {
+          "content": "            alt={`${title} logo`}",
+          "newLineNo": 70,
+          "oldLineNo": 71,
+          "type": "unchanged"
+        },
+        {
+          "content": "          />",
+          "newLineNo": 71,
+          "oldLineNo": 72,
+          "type": "unchanged"
+        },
+        {
+          "content": "        ) : null}",
+          "newLineNo": 72,
+          "oldLineNo": 73,
+          "type": "unchanged"
+        },
+        {
+          "content": "        <div className=\"flex min-w-0 grow flex-col gap-y-1\">",
+          "newLineNo": 73,
+          "oldLineNo": 74,
+          "type": "unchanged"
+        },
+        {
+          "content": "          <div className=\"flex items-center gap-x-2\">",
+          "newLineNo": 74,
+          "oldLineNo": 75,
+          "type": "unchanged"
+        },
+        {
+          "content": "            <h3",
+          "newLineNo": 75,
+          "oldLineNo": 76,
+          "type": "unchanged"
+        },
+        {
+          "content": "              className={classNames(\"text-emphasis truncate text-sm font-semibold\", classNameObject?.title)}>",
+          "newLineNo": 76,
+          "oldLineNo": 77,
+          "type": "unchanged"
+        },
+        {
+          "content": "              {title}",
+          "newLineNo": 77,
+          "oldLineNo": 78,
+          "type": "unchanged"
+        },
+        {
+          "content": "            </h3>",
+          "newLineNo": 78,
+          "oldLineNo": 79,
+          "type": "unchanged"
+        },
+        {
+          "content": "            <div className=\"flex shrink-0 items-center gap-x-2\">",
+          "newLineNo": 79,
+          "oldLineNo": 80,
+          "type": "unchanged"
+        },
+        {
+          "content": "              {isDefault && <Badge variant=\"green\">{t(\"default\")}</Badge>}",
+          "newLineNo": 80,
+          "oldLineNo": 81,
+          "type": "unchanged"
+        },
+        {
+          "content": "              {isTemplate && <Badge variant=\"red\">Template</Badge>}",
+          "newLineNo": 81,
+          "oldLineNo": 82,
+          "type": "unchanged"
+        },
+        {
+          "content": "            </div>",
+          "newLineNo": 82,
+          "oldLineNo": 83,
+          "type": "unchanged"
+        },
+        {
+          "content": "          </div>",
+          "newLineNo": 83,
+          "oldLineNo": 84,
+          "type": "unchanged"
+        },
+        {
+          "content": "          <ListItemText",
+          "newLineNo": 84,
+          "oldLineNo": 85,
+          "type": "unchanged"
+        },
+        {
+          "content": "            component=\"p\"",
+          "newLineNo": 85,
+          "oldLineNo": 86,
+          "type": "unchanged"
+        },
+        {
+          "content": "            className={classNames(\"whitespace-normal wrap-break-word\", classNameObject?.description)}>",
+          "newLineNo": 86,
+          "oldLineNo": 87,
+          "type": "unchanged"
+        },
+        {
+          "content": "            {description}",
+          "newLineNo": 87,
+          "oldLineNo": 88,
+          "type": "unchanged"
+        },
+        {
+          "content": "          </ListItemText>",
+          "newLineNo": 88,
+          "oldLineNo": 89,
+          "type": "unchanged"
+        },
+        {
+          "content": "          {invalidCredential && (",
+          "newLineNo": 89,
+          "oldLineNo": 90,
+          "type": "unchanged"
+        },
+        {
+          "content": "            <div className=\"flex gap-x-2 pt-2\">",
+          "newLineNo": 90,
+          "oldLineNo": 91,
+          "type": "unchanged"
+        },
+        {
+          "content": "              <CircleAlertIcon className=\"h-8 w-8 shrink-0 text-red-500 sm:h-4 sm:w-4\" />",
+          "newLineNo": 91,
+          "oldLineNo": 92,
+          "type": "unchanged"
+        },
+        {
+          "content": "              <ListItemText component=\"p\" className=\"whitespace-pre-wrap wrap-break-word text-red-500\">",
+          "newLineNo": 92,
+          "oldLineNo": 93,
+          "type": "unchanged"
+        },
+        {
+          "content": "                {t(\"invalid_credential\", { appName: title })}",
+          "newLineNo": 93,
+          "oldLineNo": 94,
+          "type": "unchanged"
+        },
+        {
+          "content": "              </ListItemText>",
+          "newLineNo": 94,
+          "oldLineNo": 95,
+          "type": "unchanged"
+        },
+        {
+          "content": "            </div>",
+          "newLineNo": 95,
+          "oldLineNo": 96,
+          "type": "unchanged"
+        },
+        {
+          "content": "          )}",
+          "newLineNo": 96,
+          "oldLineNo": 97,
+          "type": "unchanged"
+        },
+        {
+          "content": "        </div>",
+          "newLineNo": 97,
+          "oldLineNo": 98,
+          "type": "unchanged"
+        },
+        {
+          "content": "        {credentialOwner && (",
+          "newLineNo": 98,
+          "oldLineNo": 99,
+          "type": "unchanged"
+        },
+        {
+          "content": "          <div className=\"shrink-0\">",
+          "newLineNo": 99,
+          "oldLineNo": 100,
+          "type": "unchanged"
+        },
+        {
+          "content": "            <Badge variant=\"gray\">",
+          "newLineNo": 100,
+          "oldLineNo": 101,
+          "type": "unchanged"
+        },
+        {
+          "content": "              <div className=\"flex items-center\">",
+          "newLineNo": 101,
+          "oldLineNo": 102,
+          "type": "unchanged"
+        },
+        {
+          "content": "                <Avatar",
+          "newLineNo": 102,
+          "oldLineNo": 103,
+          "type": "unchanged"
+        },
+        {
+          "content": "                  className=\"mr-2\"",
+          "newLineNo": 103,
+          "oldLineNo": 104,
+          "type": "unchanged"
+        },
+        {
+          "content": "                  alt={credentialOwner.name || \"Nameless\"}",
+          "newLineNo": 104,
+          "oldLineNo": 105,
+          "type": "unchanged"
+        },
+        {
+          "content": "                  size=\"xs\"",
+          "newLineNo": 105,
+          "oldLineNo": 106,
+          "type": "unchanged"
+        },
+        {
+          "content": "                  imageSrc={getPlaceholderAvatar(credentialOwner.avatar, credentialOwner?.name as string)}",
+          "newLineNo": 106,
+          "oldLineNo": 107,
+          "type": "unchanged"
+        },
+        {
+          "content": "                />",
+          "newLineNo": 107,
+          "oldLineNo": 108,
+          "type": "unchanged"
+        },
+        {
+          "content": "                {credentialOwner.name}",
+          "newLineNo": 108,
+          "oldLineNo": 109,
+          "type": "unchanged"
+        },
+        {
+          "content": "              </div>",
+          "newLineNo": 109,
+          "oldLineNo": 110,
+          "type": "unchanged"
+        },
+        {
+          "content": "            </Badge>",
+          "newLineNo": 110,
+          "oldLineNo": 111,
+          "type": "unchanged"
+        },
+        {
+          "content": "          </div>",
+          "newLineNo": 111,
+          "oldLineNo": 112,
+          "type": "unchanged"
+        },
+        {
+          "content": "        )}",
+          "newLineNo": 112,
+          "oldLineNo": 113,
+          "type": "unchanged"
+        },
+        {
+          "content": "        {actions && <div className=\"shrink-0\">{actions}</div>}",
+          "newLineNo": 113,
+          "oldLineNo": 114,
+          "type": "unchanged"
+        },
+        {
+          "content": "      </div>",
+          "newLineNo": 114,
+          "oldLineNo": 115,
+          "type": "unchanged"
+        },
+        {
+          "content": "      <div className=\"w-full\">{children}</div>",
+          "newLineNo": 115,
+          "oldLineNo": 116,
+          "type": "unchanged"
+        },
+        {
+          "content": "    </div>",
+          "newLineNo": 116,
+          "oldLineNo": 117,
+          "type": "unchanged"
+        },
+        {
+          "content": "  );",
+          "newLineNo": 117,
+          "oldLineNo": 118,
+          "type": "unchanged"
+        },
+        {
+          "content": "};",
+          "newLineNo": 118,
+          "oldLineNo": 119,
+          "type": "unchanged"
+        },
+        {
+          "content": "",
+          "newLineNo": 119,
+          "oldLineNo": null,
+          "type": "added"
+        },
+        {
+          "content": "function AppListCardExtracted(props: (AppListCardProps) & ({ highlight?: boolean })) {",
+          "newLineNo": 120,
+          "oldLineNo": null,
+          "type": "added"
+        },
+        {
+          "content": "  const {",
+          "newLineNo": 121,
+          "oldLineNo": null,
+          "type": "added"
+        },
+        {
+          "content": "    logo,",
+          "newLineNo": 122,
+          "oldLineNo": null,
+          "type": "added"
+        },
+        {
+          "content": "    title,",
+          "newLineNo": 123,
+          "oldLineNo": null,
+          "type": "added"
+        },
+        {
+          "content": "    description,",
+          "newLineNo": 124,
+          "oldLineNo": null,
+          "type": "added"
+        },
+        {
+          "content": "    actions,",
+          "newLineNo": 125,
+          "oldLineNo": null,
+          "type": "added"
+        },
+        {
+          "content": "    isDefault,",
+          "newLineNo": 126,
+          "oldLineNo": null,
+          "type": "added"
+        },
+        {
+          "content": "    isTemplate,",
+          "newLineNo": 127,
+          "oldLineNo": null,
+          "type": "added"
+        },
+        {
+          "content": "    invalidCredential,",
+          "newLineNo": 128,
+          "oldLineNo": null,
+          "type": "added"
+        },
+        {
+          "content": "    children,",
+          "newLineNo": 129,
+          "oldLineNo": null,
+          "type": "added"
+        },
+        {
+          "content": "    credentialOwner,",
+          "newLineNo": 130,
+          "oldLineNo": null,
+          "type": "added"
+        },
+        {
+          "content": "    className,",
+          "newLineNo": 131,
+          "oldLineNo": null,
+          "type": "added"
+        },
+        {
+          "content": "    classNameObject,",
+          "newLineNo": 132,
+          "oldLineNo": null,
+          "type": "added"
+        },
+        {
+          "content": "    highlight,",
+          "newLineNo": 133,
+          "oldLineNo": null,
+          "type": "added"
+        },
+        {
+          "content": "  } = props;",
+          "newLineNo": 134,
+          "oldLineNo": null,
+          "type": "added"
+        },
+        {
+          "content": "  return {",
+          "newLineNo": 135,
+          "oldLineNo": null,
+          "type": "added"
+        },
+        {
+          "content": "    logo,",
+          "newLineNo": 136,
+          "oldLineNo": null,
+          "type": "added"
+        },
+        {
+          "content": "    title,",
+          "newLineNo": 137,
+          "oldLineNo": null,
+          "type": "added"
+        },
+        {
+          "content": "    description,",
+          "newLineNo": 138,
+          "oldLineNo": null,
+          "type": "added"
+        },
+        {
+          "content": "    actions,",
+          "newLineNo": 139,
+          "oldLineNo": null,
+          "type": "added"
+        },
+        {
+          "content": "    isDefault,",
+          "newLineNo": 140,
+          "oldLineNo": null,
+          "type": "added"
+        },
+        {
+          "content": "    isTemplate,",
+          "newLineNo": 141,
+          "oldLineNo": null,
+          "type": "added"
+        },
+        {
+          "content": "    invalidCredential,",
+          "newLineNo": 142,
+          "oldLineNo": null,
+          "type": "added"
+        },
+        {
+          "content": "    children,",
+          "newLineNo": 143,
+          "oldLineNo": null,
+          "type": "added"
+        },
+        {
+          "content": "    credentialOwner,",
+          "newLineNo": 144,
+          "oldLineNo": null,
+          "type": "added"
+        },
+        {
+          "content": "    className,",
+          "newLineNo": 145,
+          "oldLineNo": null,
+          "type": "added"
+        },
+        {
+          "content": "    classNameObject,",
+          "newLineNo": 146,
+          "oldLineNo": null,
+          "type": "added"
+        },
+        {
+          "content": "    highlight,",
+          "newLineNo": 147,
+          "oldLineNo": null,
+          "type": "added"
+        },
+        {
+          "content": "  };",
+          "newLineNo": 148,
+          "oldLineNo": null,
+          "type": "added"
+        },
+        {
+          "content": "}",
+          "newLineNo": 149,
+          "oldLineNo": null,
+          "type": "added"
+        }
+      ],
+      "kind": "autofix"
+    },
+    "endLine": 119,
+    "label": {
+      "catalogDependency": {
+        "explicitLocales": [],
+        "lookupLocales": [
+          "en-US",
+          "en-GB",
+          "en-CA",
+          "fr-CA",
+          "en-IN",
+          "cy-GB",
+          "gd-GB",
+          "ga-GB",
+          "es-US",
+          "es-MX",
+          "de-DE",
+          "fr-FR",
+          "es-ES",
+          "it-IT",
+          "nl-NL",
+          "pl-PL",
+          "pt-PT",
+          "pt-BR",
+          "ro-RO",
+          "sv-SE",
+          "ko-KR",
+          "zh-CN",
+          "ja-JP",
+          "hi-IN"
+        ],
+        "reportFallbacks": {
+          "ja-JP": "自動修正"
+        },
+        "sourceLocale": "en-US"
+      },
+      "defaultLocale": "en-US",
+      "defaultText": "Autofix",
+      "icuArgs": {},
+      "msgid": "scribe.report.finding.autofix.title",
+      "provenance": "template",
+      "reviewState": "reviewed",
+      "values": {
+        "en-US": {
+          "fallback": false,
+          "reviewed": true,
+          "text": "Autofix"
+        }
+      }
+    },
+    "language": "typescript",
+    "pagePath": "findings/finding-repository-health/index.html",
+    "snippetId": "source-repository-health-complexity-applistcard-73123ee301",
+    "sourcePath": "packages/ui/components/app-list-card/AppListCard.tsx",
+    "startLine": 42,
+    "vcsPermalink": "https://github.com/calcom/cal.com/blob/180ede28f0bddf2738933a6e60a8e80f6116d7da/packages/ui/components/app-list-card/AppListCard.tsx#L41-L119",
+    "verifiedSourceHash": "sha256:f446cdcda14d06fc465b5a451bcb94284faff342aed77eba653c07847a799ddb"
   },
   {
     "anchorId": "source-repository-health-complexity-attributechangedcallback-8f37fbc850",
@@ -23957,6 +32327,39 @@ window.__SCRIBE_SOURCE_SNIPPETS__ = [
     },
     "endLine": 261,
     "label": {
+      "catalogDependency": {
+        "explicitLocales": [],
+        "lookupLocales": [
+          "en-US",
+          "en-GB",
+          "en-CA",
+          "fr-CA",
+          "en-IN",
+          "cy-GB",
+          "gd-GB",
+          "ga-GB",
+          "es-US",
+          "es-MX",
+          "de-DE",
+          "fr-FR",
+          "es-ES",
+          "it-IT",
+          "nl-NL",
+          "pl-PL",
+          "pt-PT",
+          "pt-BR",
+          "ro-RO",
+          "sv-SE",
+          "ko-KR",
+          "zh-CN",
+          "ja-JP",
+          "hi-IN"
+        ],
+        "reportFallbacks": {
+          "ja-JP": "自動修正"
+        },
+        "sourceLocale": "en-US"
+      },
       "defaultLocale": "en-US",
       "defaultText": "Autofix",
       "icuArgs": {},
@@ -24516,6 +32919,39 @@ window.__SCRIBE_SOURCE_SNIPPETS__ = [
     },
     "endLine": 679,
     "label": {
+      "catalogDependency": {
+        "explicitLocales": [],
+        "lookupLocales": [
+          "en-US",
+          "en-GB",
+          "en-CA",
+          "fr-CA",
+          "en-IN",
+          "cy-GB",
+          "gd-GB",
+          "ga-GB",
+          "es-US",
+          "es-MX",
+          "de-DE",
+          "fr-FR",
+          "es-ES",
+          "it-IT",
+          "nl-NL",
+          "pl-PL",
+          "pt-PT",
+          "pt-BR",
+          "ro-RO",
+          "sv-SE",
+          "ko-KR",
+          "zh-CN",
+          "ja-JP",
+          "hi-IN"
+        ],
+        "reportFallbacks": {
+          "ja-JP": "自動修正"
+        },
+        "sourceLocale": "en-US"
+      },
       "defaultLocale": "en-US",
       "defaultText": "Autofix",
       "icuArgs": {},
@@ -24546,6 +32982,39 @@ window.__SCRIBE_SOURCE_SNIPPETS__ = [
     },
     "endLine": 26,
     "label": {
+      "catalogDependency": {
+        "explicitLocales": [],
+        "lookupLocales": [
+          "en-US",
+          "en-GB",
+          "en-CA",
+          "fr-CA",
+          "en-IN",
+          "cy-GB",
+          "gd-GB",
+          "ga-GB",
+          "es-US",
+          "es-MX",
+          "de-DE",
+          "fr-FR",
+          "es-ES",
+          "it-IT",
+          "nl-NL",
+          "pl-PL",
+          "pt-PT",
+          "pt-BR",
+          "ro-RO",
+          "sv-SE",
+          "ko-KR",
+          "zh-CN",
+          "ja-JP",
+          "hi-IN"
+        ],
+        "reportFallbacks": {
+          "ja-JP": "ソース証拠"
+        },
+        "sourceLocale": "en-US"
+      },
       "defaultLocale": "en-US",
       "defaultText": "Source evidence",
       "icuArgs": {},

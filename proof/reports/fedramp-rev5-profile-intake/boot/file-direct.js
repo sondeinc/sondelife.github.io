@@ -497,7 +497,7 @@ function createReportContentCache(capacityBytes, load) {
       return typeof stored === 'string'
         ? stored.split(',').filter(function (id) { return id.length > 0; })
         : [];
-    } catch (_error) {
+    } catch {
       return [];
     }
   }
@@ -510,7 +510,7 @@ function createReportContentCache(capacityBytes, load) {
     });
     try {
       if (window.localStorage) window.localStorage.setItem(settingsSectionStorageKey, openIds.join(','));
-    } catch (_error) {
+    } catch {
       return;
     }
   }
@@ -544,7 +544,7 @@ function createReportContentCache(capacityBytes, load) {
   function storedThemeId() {
     try {
       return window.localStorage ? window.localStorage.getItem(themeStorageKey) : null;
-    } catch (_error) {
+    } catch {
       return null;
     }
   }
@@ -552,7 +552,7 @@ function createReportContentCache(capacityBytes, load) {
   function storeThemeId(themeId) {
     try {
       if (window.localStorage) window.localStorage.setItem(themeStorageKey, themeId);
-    } catch (_error) {
+    } catch {
       return;
     }
   }
@@ -560,7 +560,7 @@ function createReportContentCache(capacityBytes, load) {
   function storedMode() {
     try {
       return window.localStorage ? window.localStorage.getItem(modeStorageKey) : null;
-    } catch (_error) {
+    } catch {
       return null;
     }
   }
@@ -568,7 +568,7 @@ function createReportContentCache(capacityBytes, load) {
   function storeMode(mode) {
     try {
       if (window.localStorage) window.localStorage.setItem(modeStorageKey, mode);
-    } catch (_error) {
+    } catch {
       return;
     }
   }
@@ -576,7 +576,7 @@ function createReportContentCache(capacityBytes, load) {
   function storedLocale() {
     try {
       return window.localStorage ? window.localStorage.getItem(localeStorageKey) : null;
-    } catch (_error) {
+    } catch {
       return null;
     }
   }
@@ -584,7 +584,7 @@ function createReportContentCache(capacityBytes, load) {
   function storeLocale(locale) {
     try {
       if (window.localStorage) window.localStorage.setItem(localeStorageKey, locale);
-    } catch (_error) {
+    } catch {
       return;
     }
   }
@@ -592,7 +592,7 @@ function createReportContentCache(capacityBytes, load) {
   function storedNistBaseline() {
     try {
       return window.localStorage ? window.localStorage.getItem(nistBaselineStorageKey) : null;
-    } catch (_error) {
+    } catch {
       return null;
     }
   }
@@ -600,7 +600,7 @@ function createReportContentCache(capacityBytes, load) {
   function storeNistBaseline(value) {
     try {
       if (window.localStorage) window.localStorage.setItem(nistBaselineStorageKey, value || '');
-    } catch (_error) {
+    } catch {
       return;
     }
   }
@@ -608,7 +608,7 @@ function createReportContentCache(capacityBytes, load) {
   function storedNistOverlay() {
     try {
       return window.localStorage ? window.localStorage.getItem(nistOverlayStorageKey) : null;
-    } catch (_error) {
+    } catch {
       return null;
     }
   }
@@ -616,7 +616,7 @@ function createReportContentCache(capacityBytes, load) {
   function storeNistOverlay(value) {
     try {
       if (window.localStorage) window.localStorage.setItem(nistOverlayStorageKey, value || '');
-    } catch (_error) {
+    } catch {
       return;
     }
   }
@@ -842,7 +842,7 @@ function createReportContentCache(capacityBytes, load) {
     try {
       var parsed = JSON.parse(raw);
       return parsed && typeof parsed === 'object' && !Array.isArray(parsed) ? parsed : {};
-    } catch (_error) {
+    } catch {
       return {};
     }
   }
@@ -951,7 +951,7 @@ function createReportContentCache(capacityBytes, load) {
     try {
       var category = localizedPluralRulesForLocale(locale).select(count);
       return options[category] || options.other || '';
-    } catch (_error) {
+    } catch {
       return options.other || '';
     }
   }
@@ -969,7 +969,7 @@ function createReportContentCache(capacityBytes, load) {
   function localizedLocaleKey(locale) {
     try {
       return Intl.getCanonicalLocales(locale || 'en-US')[0] || 'en-US';
-    } catch (_error) {
+    } catch {
       return 'en-US';
     }
   }
@@ -1019,7 +1019,7 @@ function createReportContentCache(capacityBytes, load) {
         if (typeof Intl !== 'undefined' && Intl.ListFormat) {
           return localizedListFormatter(locale).format(values);
         }
-      } catch (_error) {
+      } catch {
         return values.join(', ');
       }
       return values.join(', ');
@@ -1032,7 +1032,7 @@ function createReportContentCache(capacityBytes, load) {
     if (!Number.isFinite(number)) return String(value);
     try {
       return localizedNumberFormatter(locale).format(number);
-    } catch (_error) {
+    } catch {
       return String(value);
     }
   }
@@ -1048,7 +1048,7 @@ function createReportContentCache(capacityBytes, load) {
   function queryParam(name) {
     try {
       return new URL(location.href).searchParams.get(name);
-    } catch (_error) {
+    } catch {
       return null;
     }
   }
@@ -1066,7 +1066,7 @@ function createReportContentCache(capacityBytes, load) {
       if (window.history && window.history.replaceState) {
         window.history.replaceState(window.history.state, document.title, url.href);
       }
-    } catch (_error) {
+    } catch {
       return;
     }
   }
@@ -1317,7 +1317,7 @@ function createReportContentCache(capacityBytes, load) {
     if (!Number.isFinite(number)) return String(value);
     try {
       return localizedNumberFormatter(currentLocale() || document.documentElement.lang).format(number);
-    } catch (_error) {
+    } catch {
       return String(value);
     }
   }
@@ -1895,7 +1895,7 @@ function createReportContentCache(capacityBytes, load) {
     if (!href || href.charAt(0) !== '#') return '';
     try {
       return decodeURIComponent(href.slice(1));
-    } catch (_error) {
+    } catch {
       return href.slice(1);
     }
   }
@@ -1966,7 +1966,7 @@ function createReportContentCache(capacityBytes, load) {
     if (!fragment || fragment.length <= 1 || fragment.charAt(0) !== '#') return null;
     try {
       return document.getElementById(decodeURIComponent(fragment.slice(1)));
-    } catch (_error) {
+    } catch {
       return document.getElementById(fragment.slice(1));
     }
   }
@@ -2041,7 +2041,7 @@ function createReportContentCache(capacityBytes, load) {
     }
     try {
       focusTarget.focus({ preventScroll: true });
-    } catch (_error) {
+    } catch {
       focusTarget.focus();
     }
   }
@@ -2212,7 +2212,7 @@ function createReportContentCache(capacityBytes, load) {
     textarea.style.insetInlineStart = '-9999px';
     document.body.appendChild(textarea);
     textarea.select();
-    try { document.execCommand('copy'); } catch (_error) {}
+    try { document.execCommand('copy'); } catch {}
     textarea.remove();
   }
 
@@ -2519,16 +2519,6 @@ function createReportContentCache(capacityBytes, load) {
       if (Array.isArray(payload)) summaries = summaries.concat(payload);
     });
     return summaries;
-  }
-
-  function createChunkedFindingPermalink(anchorId, label) {
-    var link = createCanonicalPermalinkAnchor(anchorId, {
-      label: label,
-      messageId: chunkedFindingLabels.findingPermalink.msgid,
-      share: true
-    });
-    link.className = 'scribe-finding-heading-permalink';
-    return link;
   }
 
   function createChunkedFindingActions(summary) {
@@ -3727,7 +3717,7 @@ function createReportContentCache(capacityBytes, load) {
     }
   }
 
-  
+
   function ensureScribeFullscreenDialog() {
     var existing = document.getElementById('scribe-source-fullscreen-dialog');
     if (existing) return existing;
@@ -4658,9 +4648,9 @@ function createReportContentCache(capacityBytes, load) {
     attachPrintActions();
     attachNistCoverageControls();
     ensureFindingTargetOpen();
-    
+
 (function () {
-  
+
   function openDiffFullscreen(container) {
     var label = container.querySelector('[data-scribe-diff-label]');
     var titleText = label ? label.textContent || '' : '';
@@ -4815,7 +4805,7 @@ function createReportContentCache(capacityBytes, load) {
       var link = event.target && event.target.closest ? event.target.closest('a[href]') : null;
       if (!link) return;
       var destination;
-      try { destination = new URL(link.getAttribute('href'), location.href); } catch (_error) { return; }
+      try { destination = new URL(link.getAttribute('href'), location.href); } catch { return; }
       if (!destination.hash || destination.origin !== location.origin || destination.pathname !== location.pathname) return;
       if (event.defaultPrevented || event.button !== 0 || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
       evidenceReturnContext = { url: location.href, focus: link, x: window.scrollX, y: window.scrollY };

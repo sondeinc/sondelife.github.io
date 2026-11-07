@@ -1,0 +1,828 @@
+window.__SCRIBE_LOCALES__ = window.__SCRIBE_LOCALES__ || {};
+window.__SCRIBE_LOCALES__["gd-GB"] = {
+  "fallbackCount": 70,
+  "locale": "gd-GB",
+  "messages": {
+    "scribe.leaderboard.language": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Cànan"
+    },
+    "scribe.report.action.backToFinding": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Air ais dhan lorg"
+    },
+    "scribe.report.action.closeFullScreenSourceSnippet": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Dùin snippet làn-sgrìn"
+    },
+    "scribe.report.action.collapseSourceSnippet": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Paisg criomag"
+    },
+    "scribe.report.action.download": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Luchdaich a-nuas"
+    },
+    "scribe.report.action.downloadOpenAcr": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Luchdaich sìos OpenACR"
+    },
+    "scribe.report.action.downloadOscal": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Luchdaich sìos OSCAL"
+    },
+    "scribe.report.action.downloadPdf": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Luchdaich sìos PDF"
+    },
+    "scribe.report.action.expandSourceSnippet": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Leudachadh an snippet"
+    },
+    "scribe.report.action.exportMarkdown": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Luchdaich sìos aithris Markdown"
+    },
+    "scribe.report.action.feedbackFinding": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Seall aiseag"
+    },
+    "scribe.report.action.findingPermalink": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Dèan lethbhreac dhen ceangal a tha a' lorg"
+    },
+    "scribe.report.action.fullScreenSourceSnippet": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Snippet làn-sgrìn"
+    },
+    "scribe.report.action.openFinding": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Fosgail mion-fhiosrachadh an lorgaidh"
+    },
+    "scribe.report.action.openFixPlan": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Fosgail plana-rèiteachaidh"
+    },
+    "scribe.report.action.openRepository": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Fosgail tasglann"
+    },
+    "scribe.report.action.openVpat": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Fosgail VPAT"
+    },
+    "scribe.report.action.printReport": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Clò-bhuail aithris"
+    },
+    "scribe.report.action.reportOverview": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Sealladh aithisg"
+    },
+    "scribe.report.action.shareFinding": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "A' lorg sgaoilidhean"
+    },
+    "scribe.report.action.sourcePermalink": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Fosgail buan-cheangal stòrais"
+    },
+    "scribe.report.aiGuardrails.finding.complexity.criterion": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Poileasaidh iom-fhillteachd AI Guardrails: thoir rabhadh os cionn {warningCyclomatic} cyclomatic, {warningCognitive} cognaiteach, no fo {warningMaintainability} cumail-suas."
+    },
+    "scribe.report.aiGuardrails.finding.complexity.fix": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Sgoilt an t-ionad teth ann an aonadan co-dhùnaidh nas lugha, cùm an giùlan làithreach le deuchainnean fòcas, agus ath-ruith an anailis raoin-chaoraich mus cuir thu glanadh fèin-obrachail an sàs."
+    },
+    "scribe.report.aiGuardrails.finding.runtime": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Mion-sgrudadh statach AI Guardrails"
+    },
+    "scribe.report.aiGuardrails.finding.summary": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Tha an aithisg AI Guardrails a’ ceangal {sourcePath} ri anailis ath-riochdaichte, neo-eisimeileach bho mhodail de chòd le ùghdar AI air feadh structar, uachdar còd marbh, agus slàinte còd."
+    },
+    "scribe.report.aiGuardrails.overview.body": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Tha an aithisg AI Guardrails seo air a chruthachadh le anailis structar deterministic air bunait còd le ùghdar AI – chan eil samhail a’ breithneachadh samhail eile. Tha gach lorg na fhìrinn ath-riochdaichte mun chòd, le nithean statach poblach air an sgaradh bho ghnèithean prìobhaideach."
+    },
+    "scribe.report.aiGuardrails.overview.issue.body": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "{repositoryLabel} a’ faighinn {score, number}/1000 ({grade}) fo anailis dìon-rèile deterministic air a’ chòd a sgrìobh an AI, a’ gabhail a-steach co-sheirm structar, uachdar còd marbh, agus slàinte a’ chòda. Sonde a’ nochdadh lorg neo-eisimeileach air feadh {sourceFileCount, number} faidhlichean bun-sgoile — gun mhodail a’ sgrùdadh modail eile."
+    },
+    "scribe.report.aiGuardrails.overview.issue.label": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Beachdan mu dhion-rathaid"
+    },
+    "scribe.report.aiGuardrails.overview.summary": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Deterministic AI-code governance — dè a gheibh anailis structar ann an còd le ùghdar AI a chaill ath-bhreithneachadh AI."
+    },
+    "scribe.report.aiGuardrails.visualization.alt": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Innealan-cùirte còd le ùghdar AI a' sealltainn {sourceFileCount, number} faidhlichean-tòiseachaidh, {languageCount, number} cànanan, {packageManifestCount, number} manifestos pacaid, {buildConfigCount, number} rèiteachadh-togail, agus {databaseSchemaCount, number} artifacts sgeama stòr-dàta."
+    },
+    "scribe.report.aiGuardrails.visualization.longDescription": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Tha an dàta tùsail a’ toirt a-steach inntrigeadh raoin-dìon a chaidh a chruinneachadh bhon còd-bhogsa {repositoryLabel} a chaidh a chruthachadh le AI: {languages, list}, {dataEntityCount, number} eileamaidean dàta, agus {apiEndpointCount, number} puingean-deiridh API."
+    },
+    "scribe.report.aiGuardrails.visualization.title": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Data bun-stoiris airson dion-rathaidean coid le ughdar AI"
+    },
+    "scribe.report.asset.export.markdown": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Às-mhalairt Markdown"
+    },
+    "scribe.report.asset.mark": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Comharra aithisg Scribe {version}"
+    },
+    "scribe.report.asset.mark.alt": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Comharra aithisg gèillidh Sonde Scribe {version}"
+    },
+    "scribe.report.asset.overviewScreenshot": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Fianais ruigsinneachd Cockpit Mobile le notaichean"
+    },
+    "scribe.report.asset.overviewScreenshot.alt": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Fianais àm-ruith le notaichean bhon uidheam-deuchainn ruigsinneachd Cockpit-mobile."
+    },
+    "scribe.report.asset.overviewScreenshot.caption": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Chaidh lethbhreac a dhèanamh dheth bhon aon riochdaire fianais annotated a chaidh a chleachdadh air duilleag poblach sonde.tech compliance."
+    },
+    "scribe.report.asset.theme.daylight": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Cuspair Daylight"
+    },
+    "scribe.report.asset.theme.highContrast": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Cuspair iomsgaradh àrd"
+    },
+    "scribe.report.asset.theme.infrared": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Cuspair infridhearg"
+    },
+    "scribe.report.asset.theme.ultraviolet": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Cuspair ultra-bhiolet"
+    },
+    "scribe.report.brand": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Sonde Scribe"
+    },
+    "scribe.report.calibration.class": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Clas"
+    },
+    "scribe.report.calibration.cleanFp": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Clean-corpus FP"
+    },
+    "scribe.report.calibration.cwe": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "CWE"
+    },
+    "scribe.report.calibration.disclaimer": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Chailleas tu an calabrachadh an aghaidh fìrinn an talamh airson dearbhadh foirmeil taobh a-muigh — chan e benchmark iomairt. Cha tèid leòidean a tha a' giùlan mionaideachd agus leòidean a tha a' còmhdach a-mhàin a mheasgadh."
+    },
+    "scribe.report.calibration.groundTruth": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Firinn thalmhainn"
+    },
+    "scribe.report.calibration.heading": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Calibration Detection"
+    },
+    "scribe.report.calibration.precision": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Beachd"
+    },
+    "scribe.report.calibration.programsEvaluated": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Proramaichean a chaidh a mheasadh"
+    },
+    "scribe.report.calibration.recall": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Aisig"
+    },
+    "scribe.report.calibration.tier": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Tìrean"
+    },
+    "scribe.report.calibration.tier.coverageOnly": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Còmhdach-a-mhàin"
+    },
+    "scribe.report.calibration.tier.precisionBearing": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Precision-bearing"
+    },
+    "scribe.report.capabilityTiers.title": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Comasan ORM agus stòr-dàta"
+    },
+    "scribe.report.complianceEvidence.criterion": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "{criterion}"
+    },
+    "scribe.report.complianceExample.source.summary": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "{sourcePath} L{startLine}-L{endLine}"
+    },
+    "scribe.report.control.allClassifications": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Na h-uile roinneachadh"
+    },
+    "scribe.report.control.allLanguages": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Na h-uile cànan"
+    },
+    "scribe.report.control.allResults": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Gach nì"
+    },
+    "scribe.report.control.allSeverities": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Na h-uile ìre trom-inntinn"
+    },
+    "scribe.report.control.classification": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Seòrsachadh"
+    },
+    "scribe.report.control.clearFilters": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Sguabaich às na criathragan"
+    },
+    "scribe.report.control.collapseContents": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Paisg susbaint"
+    },
+    "scribe.report.control.contents": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Clàr-innse"
+    },
+    "scribe.report.control.expandContents": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Leudachadh an t-susbaint"
+    },
+    "scribe.report.control.findings": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Toraidhean"
+    },
+    "scribe.report.control.firstPage": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "An toiseach"
+    },
+    "scribe.report.control.languageSearch": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Lorg cànanan"
+    },
+    "scribe.report.control.lastPage": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "An ath"
+    },
+    "scribe.report.control.locale": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Ionad"
+    },
+    "scribe.report.control.mode": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Modh"
+    },
+    "scribe.report.control.nextPage": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "An ath-cheum"
+    },
+    "scribe.report.control.pageSize": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Seall"
+    },
+    "scribe.report.control.pageStatus": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Duilleag"
+    },
+    "scribe.report.control.previousPage": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Roimhe"
+    },
+    "scribe.report.control.readerView": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Sealladh leughadair"
+    },
+    "scribe.report.control.remediation": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Ceartachadh"
+    },
+    "scribe.report.control.resultCount": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Na toraidhean"
+    },
+    "scribe.report.control.search": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Lorg san aithris seo"
+    },
+    "scribe.report.control.severity": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Trìd"
+    },
+    "scribe.report.control.theme": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Cuspair"
+    },
+    "scribe.report.facet.status.absent": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "A-mach"
+    },
+    "scribe.report.facet.status.gap": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Beàrn"
+    },
+    "scribe.report.facet.status.partial": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Pàirteach"
+    },
+    "scribe.report.facet.status.present": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Làthair"
+    },
+    "scribe.report.facet.status.requiresCustomerContext": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Feumaidh co-theacsa luchd-ceannach"
+    },
+    "scribe.report.filter.option.accessibility": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Ruigsinneachd"
+    },
+    "scribe.report.filter.option.analysisCompleteness": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Coileantachd anailis"
+    },
+    "scribe.report.filter.option.codeHealth": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Slàinte còd"
+    },
+    "scribe.report.filter.option.critical": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Èiginneach"
+    },
+    "scribe.report.filter.option.error": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Mearachd"
+    },
+    "scribe.report.filter.option.info": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Fiosrachadh"
+    },
+    "scribe.report.filter.option.warning": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Rabhadh"
+    },
+    "scribe.report.finding.autofix.title": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Autofix"
+    },
+    "scribe.report.fixPlan.component.beforeAfter": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Roimhe / às dèidh (ro-shealladh fèin-cheartachaidh)"
+    },
+    "scribe.report.fixPlan.component.closeFullScreen": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Dùin"
+    },
+    "scribe.report.fixPlan.component.fixGroups": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Buidhnean ceartachaidh"
+    },
+    "scribe.report.fixPlan.component.fixed": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Fixed"
+    },
+    "scribe.report.fixPlan.component.original": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Original"
+    },
+    "scribe.report.fixPlan.component.source": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Tùs"
+    },
+    "scribe.report.fixPlan.component.splitView": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Split"
+    },
+    "scribe.report.fixPlan.component.unifiedView": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Unified"
+    },
+    "scribe.report.fixPlan.component.verify": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Dearbhaich"
+    },
+    "scribe.report.fixPlan.pageTitle": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Plana ceartachaidh"
+    },
+    "scribe.report.fixPlan.redacted": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Tha mion-fhiosrachadh a' phlana rèiteachaidh ri fhaighinn san uidheamachd rèiteachaidh."
+    },
+    "scribe.report.fixPlan.summary": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Stiùireadh ceartachaidh airson nan lorgan san aithisg seo."
+    },
+    "scribe.report.metric.severity.critical": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Èiginneach"
+    },
+    "scribe.report.metric.severity.good": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Math"
+    },
+    "scribe.report.metric.severity.high": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Àrd"
+    },
+    "scribe.report.metric.severity.moderate": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Meadhanach"
+    },
+    "scribe.report.mode.auto": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "fèin-obrachail"
+    },
+    "scribe.report.mode.dark": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Dorcha"
+    },
+    "scribe.report.mode.light": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Solas"
+    },
+    "scribe.report.overview.stat.accessibilityFindings": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Ruigsinneachd"
+    },
+    "scribe.report.overview.stat.codeQualityFindings": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Lorgan càileachd còd"
+    },
+    "scribe.report.overview.stat.complianceFindings": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Lorgan gèillidh"
+    },
+    "scribe.report.overview.stat.evidenceScreenshots": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Glacaidhean-sgrìn fianais"
+    },
+    "scribe.report.overview.stat.findingsRequiringRemediation": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Thoraidhean a dh'fheumas leigheas"
+    },
+    "scribe.report.overview.stat.privateArtifactsExposed": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Tha nithean-ealain prìobhaideach air an sealltainn"
+    },
+    "scribe.report.overview.stat.selectedIssues": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Selected issues"
+    },
+    "scribe.report.overview.stat.severityBreakdown": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Sgrùdadh air an ìre de dhroch-bhuaidh"
+    },
+    "scribe.report.overview.stat.sourceAnchors": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Ancoraichean an t-seòlaidh dearbhte"
+    },
+    "scribe.report.overview.stat.sourceLanguagesCovered": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Cànanan stòrais air an còmhdach"
+    },
+    "scribe.report.overview.status.evidenceReady": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Tha am pacaid fianais deiseil"
+    },
+    "scribe.report.overview.status.needsRemediation": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Tha feum air leigheas"
+    },
+    "scribe.report.overview.status.privateBoundary": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Crìoch pacaid phoblaich"
+    },
+    "scribe.report.overview.title": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Sealladh farsaing"
+    },
+    "scribe.report.repositoryHealth.complianceMatrix.title": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Còmhdach fianais"
+    },
+    "scribe.report.repositoryHealth.discoverySummary.title": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Cruth an stòrais"
+    },
+    "scribe.report.repositoryHealth.finding.complexity.summary": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Tha {sourcePath}:{line} a' gabhail a-steach iom-fhillteachd chearcallach {cyclomatic}, iom-fhillteachd inntinneil {cognitive}, agus comas cumail-suas {maintainability}."
+    },
+    "scribe.report.repositoryHealth.finding.complexity.title.critical": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Cruthachail-choimhearsnachd ann an {symbol}"
+    },
+    "scribe.report.repositoryHealth.finding.complexity.title.error": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Co-chòrdadh mòr ann an {symbol}"
+    },
+    "scribe.report.repositoryHealth.finding.complexity.title.high": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Co-chòrdadh àrd ann an {symbol}"
+    },
+    "scribe.report.repositoryHealth.finding.raw.fix": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "{recommendation}"
+    },
+    "scribe.report.repositoryHealth.finding.raw.summary": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "{summary}"
+    },
+    "scribe.report.repositoryHealth.finding.raw.title": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "{title}"
+    },
+    "scribe.report.repositoryHealth.finding.showcaseSampling.criterion": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Cuiridh aithisgean taisbeanaidh casg air innteartan lorg a chaidh a ghineadh aig àrd-ìre rèiteachail gus fuireach nan stuth ion-chleachdaidh, ion-chuir, fhad 's a tha iad ag aithris an fhìor iomlan."
+    },
+    "scribe.report.repositoryHealth.finding.showcaseSampling.fix": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Ruith an anailis Sonde shlàn gu h-ionadail, no àrdaich an ceann-uidhe lorgan, airson an t-seata lorgan iomlan — chan eil an taisbeanadh foillsichte seo a' sealltainn ach na lorgan as àirde, chan e sgrùdadh làn-fharsaing."
+    },
+    "scribe.report.repositoryHealth.finding.showcaseSampling.summary": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Tha an taisbeanadh comais seo a' nochdadh nan lorgan as àirde inbhe suas gu casg de {cap, number} lorg — a' sealltainn {shown, number} de {total, number} lorg gu h-iomlan. Roinnean a chaidh a shampladh: {categories, list}."
+    },
+    "scribe.report.repositoryHealth.finding.showcaseSampling.title": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Samplachadh taisbeanaidh: na lorgan as àirde air an sealltainn"
+    },
+    "scribe.report.repositoryHealth.sondeScore.title": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Sonde Score"
+    },
+    "scribe.report.repositoryHealth.sourceRow.frameworks": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Frèaman-obrach"
+    },
+    "scribe.report.repositoryHealth.sourceRow.languages": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Cànanan"
+    },
+    "scribe.report.repositoryHealth.sourceRow.source": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Tùs"
+    },
+    "scribe.report.repositoryHealth.sourceSnippet.summary": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Tha an stòr-dàta a chaidh a ghairm a' ceangal na h-aithrise ri sgeama, pacaid, tomhas no còd co-dhèanta bhon cheannaichte."
+    },
+    "scribe.report.sources.changes": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Atharrachaidhean air an comharrachadh"
+    },
+    "scribe.report.sources.citations": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Luaidhean"
+    },
+    "scribe.report.sources.disclosure": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Nochdadh"
+    },
+    "scribe.report.sources.heading": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Tobraichean is creideas"
+    },
+    "scribe.report.sources.license": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Ceadachas"
+    },
+    "scribe.report.sources.source": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Bun-stèidh"
+    },
+    "scribe.report.theme.daylight": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Daylight"
+    },
+    "scribe.report.theme.highContrast": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Codarras àrd"
+    },
+    "scribe.report.theme.infrared": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Infridhearg"
+    },
+    "scribe.report.theme.ultraviolet": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Ultra-bhiolet"
+    },
+    "scribe.report.view.auditor": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Sgrùdaiche"
+    },
+    "scribe.report.view.developer": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Dealbhadair"
+    },
+    "scribe.report.view.executive": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Gnìomhach"
+    },
+    "settings.theme.daylight": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Daylight"
+    },
+    "settings.theme.hc": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Co-dhealbhachd àrd"
+    },
+    "settings.theme.infrared": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Inntrigeadh"
+    },
+    "settings.theme.ultraviolet": {
+      "fallback": false,
+      "reviewed": true,
+      "text": "Ultraviolet"
+    }
+  }
+}
+;

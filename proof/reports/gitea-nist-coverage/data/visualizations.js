@@ -2,38 +2,11 @@ window.__SCRIBE_VISUALIZATIONS__ = [
   {
     "altText": {
       "catalogDependency": {
-        "explicitLocales": [
-          "es-US"
-        ],
+        "explicitLocales": [],
         "lookupLocales": [
-          "en-US",
-          "en-GB",
-          "en-CA",
-          "fr-CA",
-          "en-IN",
-          "cy-GB",
-          "gd-GB",
-          "ga-GB",
-          "es-US",
-          "es-MX",
-          "de-DE",
-          "fr-FR",
-          "es-ES",
-          "it-IT",
-          "nl-NL",
-          "pl-PL",
-          "pt-PT",
-          "pt-BR",
-          "ro-RO",
-          "sv-SE",
-          "ko-KR",
-          "zh-CN",
-          "ja-JP",
-          "hi-IN"
+          "en-US"
         ],
-        "reportFallbacks": {
-          "ja-JP": "NIST コントロール件数をファミリーと状態別に示す表。"
-        },
+        "reportFallbacks": {},
         "sourceLocale": "en-US"
       },
       "defaultLocale": "en-US",
@@ -57,38 +30,11 @@ window.__SCRIBE_VISUALIZATIONS__ = [
     ],
     "label": {
       "catalogDependency": {
-        "explicitLocales": [
-          "es-US"
-        ],
+        "explicitLocales": [],
         "lookupLocales": [
-          "en-US",
-          "en-GB",
-          "en-CA",
-          "fr-CA",
-          "en-IN",
-          "cy-GB",
-          "gd-GB",
-          "ga-GB",
-          "es-US",
-          "es-MX",
-          "de-DE",
-          "fr-FR",
-          "es-ES",
-          "it-IT",
-          "nl-NL",
-          "pl-PL",
-          "pt-PT",
-          "pt-BR",
-          "ro-RO",
-          "sv-SE",
-          "ko-KR",
-          "zh-CN",
-          "ja-JP",
-          "hi-IN"
+          "en-US"
         ],
-        "reportFallbacks": {
-          "ja-JP": "NIST ファミリーカバレッジマトリクス"
-        },
+        "reportFallbacks": {},
         "sourceLocale": "en-US"
       },
       "defaultLocale": "en-US",
@@ -107,38 +53,11 @@ window.__SCRIBE_VISUALIZATIONS__ = [
     },
     "longDescription": {
       "catalogDependency": {
-        "explicitLocales": [
-          "es-US"
-        ],
+        "explicitLocales": [],
         "lookupLocales": [
-          "en-US",
-          "en-GB",
-          "en-CA",
-          "fr-CA",
-          "en-IN",
-          "cy-GB",
-          "gd-GB",
-          "ga-GB",
-          "es-US",
-          "es-MX",
-          "de-DE",
-          "fr-FR",
-          "es-ES",
-          "it-IT",
-          "nl-NL",
-          "pl-PL",
-          "pt-PT",
-          "pt-BR",
-          "ro-RO",
-          "sv-SE",
-          "ko-KR",
-          "zh-CN",
-          "ja-JP",
-          "hi-IN"
+          "en-US"
         ],
-        "reportFallbacks": {
-          "ja-JP": "このマトリクスは HTML、Markdown、OSCAL Assessment Results と同じロールアップから生成されます。"
-        },
+        "reportFallbacks": {},
         "sourceLocale": "en-US"
       },
       "defaultLocale": "en-US",
@@ -165,30 +84,7 @@ window.__SCRIBE_VISUALIZATIONS__ = [
       "catalogDependency": {
         "explicitLocales": [],
         "lookupLocales": [
-          "en-US",
-          "en-GB",
-          "en-CA",
-          "fr-CA",
-          "en-IN",
-          "cy-GB",
-          "gd-GB",
-          "ga-GB",
-          "es-US",
-          "es-MX",
-          "de-DE",
-          "fr-FR",
-          "es-ES",
-          "it-IT",
-          "nl-NL",
-          "pl-PL",
-          "pt-PT",
-          "pt-BR",
-          "ro-RO",
-          "sv-SE",
-          "ko-KR",
-          "zh-CN",
-          "ja-JP",
-          "hi-IN"
+          "en-US"
         ],
         "reportFallbacks": {},
         "sourceLocale": "en-US"
@@ -220,30 +116,7 @@ window.__SCRIBE_VISUALIZATIONS__ = [
           "catalogDependency": {
             "explicitLocales": [],
             "lookupLocales": [
-              "en-US",
-              "en-GB",
-              "en-CA",
-              "fr-CA",
-              "en-IN",
-              "cy-GB",
-              "gd-GB",
-              "ga-GB",
-              "es-US",
-              "es-MX",
-              "de-DE",
-              "fr-FR",
-              "es-ES",
-              "it-IT",
-              "nl-NL",
-              "pl-PL",
-              "pt-PT",
-              "pt-BR",
-              "ro-RO",
-              "sv-SE",
-              "ko-KR",
-              "zh-CN",
-              "ja-JP",
-              "hi-IN"
+              "en-US"
             ],
             "reportFallbacks": {},
             "sourceLocale": "en-US"
@@ -274,30 +147,7 @@ window.__SCRIBE_VISUALIZATIONS__ = [
           "catalogDependency": {
             "explicitLocales": [],
             "lookupLocales": [
-              "en-US",
-              "en-GB",
-              "en-CA",
-              "fr-CA",
-              "en-IN",
-              "cy-GB",
-              "gd-GB",
-              "ga-GB",
-              "es-US",
-              "es-MX",
-              "de-DE",
-              "fr-FR",
-              "es-ES",
-              "it-IT",
-              "nl-NL",
-              "pl-PL",
-              "pt-PT",
-              "pt-BR",
-              "ro-RO",
-              "sv-SE",
-              "ko-KR",
-              "zh-CN",
-              "ja-JP",
-              "hi-IN"
+              "en-US"
             ],
             "reportFallbacks": {},
             "sourceLocale": "en-US"
@@ -328,30 +178,7 @@ window.__SCRIBE_VISUALIZATIONS__ = [
           "catalogDependency": {
             "explicitLocales": [],
             "lookupLocales": [
-              "en-US",
-              "en-GB",
-              "en-CA",
-              "fr-CA",
-              "en-IN",
-              "cy-GB",
-              "gd-GB",
-              "ga-GB",
-              "es-US",
-              "es-MX",
-              "de-DE",
-              "fr-FR",
-              "es-ES",
-              "it-IT",
-              "nl-NL",
-              "pl-PL",
-              "pt-PT",
-              "pt-BR",
-              "ro-RO",
-              "sv-SE",
-              "ko-KR",
-              "zh-CN",
-              "ja-JP",
-              "hi-IN"
+              "en-US"
             ],
             "reportFallbacks": {},
             "sourceLocale": "en-US"
@@ -382,30 +209,7 @@ window.__SCRIBE_VISUALIZATIONS__ = [
           "catalogDependency": {
             "explicitLocales": [],
             "lookupLocales": [
-              "en-US",
-              "en-GB",
-              "en-CA",
-              "fr-CA",
-              "en-IN",
-              "cy-GB",
-              "gd-GB",
-              "ga-GB",
-              "es-US",
-              "es-MX",
-              "de-DE",
-              "fr-FR",
-              "es-ES",
-              "it-IT",
-              "nl-NL",
-              "pl-PL",
-              "pt-PT",
-              "pt-BR",
-              "ro-RO",
-              "sv-SE",
-              "ko-KR",
-              "zh-CN",
-              "ja-JP",
-              "hi-IN"
+              "en-US"
             ],
             "reportFallbacks": {},
             "sourceLocale": "en-US"
@@ -436,30 +240,7 @@ window.__SCRIBE_VISUALIZATIONS__ = [
           "catalogDependency": {
             "explicitLocales": [],
             "lookupLocales": [
-              "en-US",
-              "en-GB",
-              "en-CA",
-              "fr-CA",
-              "en-IN",
-              "cy-GB",
-              "gd-GB",
-              "ga-GB",
-              "es-US",
-              "es-MX",
-              "de-DE",
-              "fr-FR",
-              "es-ES",
-              "it-IT",
-              "nl-NL",
-              "pl-PL",
-              "pt-PT",
-              "pt-BR",
-              "ro-RO",
-              "sv-SE",
-              "ko-KR",
-              "zh-CN",
-              "ja-JP",
-              "hi-IN"
+              "en-US"
             ],
             "reportFallbacks": {},
             "sourceLocale": "en-US"
@@ -490,30 +271,7 @@ window.__SCRIBE_VISUALIZATIONS__ = [
           "catalogDependency": {
             "explicitLocales": [],
             "lookupLocales": [
-              "en-US",
-              "en-GB",
-              "en-CA",
-              "fr-CA",
-              "en-IN",
-              "cy-GB",
-              "gd-GB",
-              "ga-GB",
-              "es-US",
-              "es-MX",
-              "de-DE",
-              "fr-FR",
-              "es-ES",
-              "it-IT",
-              "nl-NL",
-              "pl-PL",
-              "pt-PT",
-              "pt-BR",
-              "ro-RO",
-              "sv-SE",
-              "ko-KR",
-              "zh-CN",
-              "ja-JP",
-              "hi-IN"
+              "en-US"
             ],
             "reportFallbacks": {},
             "sourceLocale": "en-US"
@@ -544,30 +302,7 @@ window.__SCRIBE_VISUALIZATIONS__ = [
           "catalogDependency": {
             "explicitLocales": [],
             "lookupLocales": [
-              "en-US",
-              "en-GB",
-              "en-CA",
-              "fr-CA",
-              "en-IN",
-              "cy-GB",
-              "gd-GB",
-              "ga-GB",
-              "es-US",
-              "es-MX",
-              "de-DE",
-              "fr-FR",
-              "es-ES",
-              "it-IT",
-              "nl-NL",
-              "pl-PL",
-              "pt-PT",
-              "pt-BR",
-              "ro-RO",
-              "sv-SE",
-              "ko-KR",
-              "zh-CN",
-              "ja-JP",
-              "hi-IN"
+              "en-US"
             ],
             "reportFallbacks": {},
             "sourceLocale": "en-US"
@@ -598,30 +333,7 @@ window.__SCRIBE_VISUALIZATIONS__ = [
           "catalogDependency": {
             "explicitLocales": [],
             "lookupLocales": [
-              "en-US",
-              "en-GB",
-              "en-CA",
-              "fr-CA",
-              "en-IN",
-              "cy-GB",
-              "gd-GB",
-              "ga-GB",
-              "es-US",
-              "es-MX",
-              "de-DE",
-              "fr-FR",
-              "es-ES",
-              "it-IT",
-              "nl-NL",
-              "pl-PL",
-              "pt-PT",
-              "pt-BR",
-              "ro-RO",
-              "sv-SE",
-              "ko-KR",
-              "zh-CN",
-              "ja-JP",
-              "hi-IN"
+              "en-US"
             ],
             "reportFallbacks": {},
             "sourceLocale": "en-US"
@@ -652,30 +364,7 @@ window.__SCRIBE_VISUALIZATIONS__ = [
           "catalogDependency": {
             "explicitLocales": [],
             "lookupLocales": [
-              "en-US",
-              "en-GB",
-              "en-CA",
-              "fr-CA",
-              "en-IN",
-              "cy-GB",
-              "gd-GB",
-              "ga-GB",
-              "es-US",
-              "es-MX",
-              "de-DE",
-              "fr-FR",
-              "es-ES",
-              "it-IT",
-              "nl-NL",
-              "pl-PL",
-              "pt-PT",
-              "pt-BR",
-              "ro-RO",
-              "sv-SE",
-              "ko-KR",
-              "zh-CN",
-              "ja-JP",
-              "hi-IN"
+              "en-US"
             ],
             "reportFallbacks": {},
             "sourceLocale": "en-US"

@@ -206,7 +206,7 @@ window.__SCRIBE_LOCALES__["de-DE"] = {
     "scribe.report.asset.overviewScreenshot.caption": {
       "fallback": false,
       "reviewed": true,
-      "text": "Kopiert aus demselben annotierten Beweis-Renderer, der von der öffentlichen sonde.life-Compliance-Seite verwendet wird."
+      "text": "Kopiert aus demselben annotierten Beweis-Renderer, der von der öffentlichen sonde.tech-Compliance-Seite verwendet wird."
     },
     "scribe.report.asset.theme.daylight": {
       "fallback": false,

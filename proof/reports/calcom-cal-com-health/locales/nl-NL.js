@@ -206,7 +206,7 @@ window.__SCRIBE_LOCALES__["nl-NL"] = {
     "scribe.report.asset.overviewScreenshot.caption": {
       "fallback": false,
       "reviewed": true,
-      "text": "Gekopieerd van dezelfde annotated evidence renderer die wordt gebruikt door de openbare sonde.life compliance pagina."
+      "text": "Gekopieerd van dezelfde annotated evidence renderer die wordt gebruikt door de openbare sonde.tech compliance pagina."
     },
     "scribe.report.asset.theme.daylight": {
       "fallback": false,

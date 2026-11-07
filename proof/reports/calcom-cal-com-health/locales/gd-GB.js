@@ -136,7 +136,7 @@ window.__SCRIBE_LOCALES__["gd-GB"] = {
     "scribe.report.asset.overviewScreenshot.caption": {
       "fallback": false,
       "reviewed": true,
-      "text": "Chaidh lethbhreac a dhèanamh dheth bhon aon riochdaire fianais annotated a chaidh a chleachdadh air duilleag poblach sonde.life compliance."
+      "text": "Chaidh lethbhreac a dhèanamh dheth bhon aon riochdaire fianais annotated a chaidh a chleachdadh air duilleag poblach sonde.tech compliance."
     },
     "scribe.report.asset.theme.daylight": {
       "fallback": false,
