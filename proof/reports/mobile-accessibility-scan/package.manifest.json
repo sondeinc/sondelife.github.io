@@ -63,10 +63,10 @@
       "sha256": "sha256:51cc45ef99a1a83ff0baa6953621f3449894f1e115a38be10b395228d2eb2ff7"
     },
     {
-      "bytes": 3344032,
+      "bytes": 3177457,
       "path": "assets/report-export-bundle.js",
       "role": "asset",
-      "sha256": "sha256:aa27d1d17c6f919668797b0da5006e8595b80efbcf1d0785640e8fec600fe0ff"
+      "sha256": "sha256:71aa056072cb80d80ecf51d6d42ec8555fa2111a7cbae0e603444594dd80f5df"
     },
     {
       "bytes": 503181,
@@ -75,10 +75,10 @@
       "sha256": "sha256:f44e35a6d5106d819c3415fd38591de04d3834343c14e50a562b84257e204692"
     },
     {
-      "bytes": 215723,
+      "bytes": 215185,
       "path": "boot/file-direct.js",
       "role": "runtime-script",
-      "sha256": "sha256:c0b4d0383cc64de9c4a908922ca6105a73b04112998e005d84ec5ac1325b03c7"
+      "sha256": "sha256:c11a7c9b228558ac00b07dafd8cdb8707887e82b148a6e40295c0ef074cb3bb1"
     },
     {
       "bytes": 53441,
@@ -99,10 +99,10 @@
       "sha256": "sha256:a557f64f798e910dd563d94a35fbf8be72285c3bf35833d4a30b1d2c7280d8e5"
     },
     {
-      "bytes": 51393,
+      "bytes": 32471,
       "path": "data/findings.js",
       "role": "runtime-data",
-      "sha256": "sha256:e9a92b8dbfd882246b315ae884b62ac450f03632f9030d71f66f1401891114ff"
+      "sha256": "sha256:7a393955cdd66eac2dd4668cf529218f6986b57a4e1af7ec6a16fe68561527f2"
     },
     {
       "bytes": 449408,
@@ -297,10 +297,10 @@
       "sha256": "sha256:79a77453e3c7a782c0226fc11da39ea2189b51e70627a6c7f222d0df65d8f3e4"
     },
     {
-      "bytes": 21454,
+      "bytes": 16204,
       "path": "data/source-snippets.js",
       "role": "runtime-data",
-      "sha256": "sha256:03d61d5957aa3d9bb92b177692e0b8e653e1f48bdf91ea76ed541dd3510ec80c"
+      "sha256": "sha256:941125ff4121ecaca97d2bd77621f5ddbd411efae7f25893a0451875c325b9e2"
     },
     {
       "bytes": 20729,

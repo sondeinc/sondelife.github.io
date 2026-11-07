@@ -206,7 +206,7 @@ window.__SCRIBE_LOCALES__["sv-SE"] = {
     "scribe.report.asset.overviewScreenshot.caption": {
       "fallback": false,
       "reviewed": true,
-      "text": "Kopierat från samma kommenterade bevis renderer som används av den offentliga sonde.life efterlevnadssidan."
+      "text": "Kopierat från samma kommenterade bevis renderer som används av den offentliga sonde.tech efterlevnadssidan."
     },
     "scribe.report.asset.theme.daylight": {
       "fallback": false,

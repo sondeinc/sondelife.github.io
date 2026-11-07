@@ -206,7 +206,7 @@ window.__SCRIBE_LOCALES__["ro-RO"] = {
     "scribe.report.asset.overviewScreenshot.caption": {
       "fallback": false,
       "reviewed": true,
-      "text": "Copiat din același renderer de dovezi adnotate folosit de pagina publică de conformitate sonde.life."
+      "text": "Copiat din același renderer de dovezi adnotate folosit de pagina publică de conformitate sonde.tech."
     },
     "scribe.report.asset.theme.daylight": {
       "fallback": false,

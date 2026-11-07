@@ -8,38 +8,11 @@ window.__SCRIBE_SOURCE_SNIPPETS__ = [
     "endLine": 12,
     "label": {
       "catalogDependency": {
-        "explicitLocales": [
-          "es-US"
-        ],
+        "explicitLocales": [],
         "lookupLocales": [
-          "en-US",
-          "en-GB",
-          "en-CA",
-          "fr-CA",
-          "en-IN",
-          "cy-GB",
-          "gd-GB",
-          "ga-GB",
-          "es-US",
-          "es-MX",
-          "de-DE",
-          "fr-FR",
-          "es-ES",
-          "it-IT",
-          "nl-NL",
-          "pl-PL",
-          "pt-PT",
-          "pt-BR",
-          "ro-RO",
-          "sv-SE",
-          "ko-KR",
-          "zh-CN",
-          "ja-JP",
-          "hi-IN"
+          "en-US"
         ],
-        "reportFallbacks": {
-          "ja-JP": "{framework} のソース証拠"
-        },
+        "reportFallbacks": {},
         "sourceLocale": "en-US"
       },
       "defaultLocale": "en-US",
@@ -75,38 +48,11 @@ window.__SCRIBE_SOURCE_SNIPPETS__ = [
     "endLine": 23,
     "label": {
       "catalogDependency": {
-        "explicitLocales": [
-          "es-US"
-        ],
+        "explicitLocales": [],
         "lookupLocales": [
-          "en-US",
-          "en-GB",
-          "en-CA",
-          "fr-CA",
-          "en-IN",
-          "cy-GB",
-          "gd-GB",
-          "ga-GB",
-          "es-US",
-          "es-MX",
-          "de-DE",
-          "fr-FR",
-          "es-ES",
-          "it-IT",
-          "nl-NL",
-          "pl-PL",
-          "pt-PT",
-          "pt-BR",
-          "ro-RO",
-          "sv-SE",
-          "ko-KR",
-          "zh-CN",
-          "ja-JP",
-          "hi-IN"
+          "en-US"
         ],
-        "reportFallbacks": {
-          "ja-JP": "{framework} のソース証拠"
-        },
+        "reportFallbacks": {},
         "sourceLocale": "en-US"
       },
       "defaultLocale": "en-US",
@@ -142,38 +88,11 @@ window.__SCRIBE_SOURCE_SNIPPETS__ = [
     "endLine": 23,
     "label": {
       "catalogDependency": {
-        "explicitLocales": [
-          "es-US"
-        ],
+        "explicitLocales": [],
         "lookupLocales": [
-          "en-US",
-          "en-GB",
-          "en-CA",
-          "fr-CA",
-          "en-IN",
-          "cy-GB",
-          "gd-GB",
-          "ga-GB",
-          "es-US",
-          "es-MX",
-          "de-DE",
-          "fr-FR",
-          "es-ES",
-          "it-IT",
-          "nl-NL",
-          "pl-PL",
-          "pt-PT",
-          "pt-BR",
-          "ro-RO",
-          "sv-SE",
-          "ko-KR",
-          "zh-CN",
-          "ja-JP",
-          "hi-IN"
+          "en-US"
         ],
-        "reportFallbacks": {
-          "ja-JP": "{framework} のソース証拠"
-        },
+        "reportFallbacks": {},
         "sourceLocale": "en-US"
       },
       "defaultLocale": "en-US",
@@ -209,38 +128,11 @@ window.__SCRIBE_SOURCE_SNIPPETS__ = [
     "endLine": 665,
     "label": {
       "catalogDependency": {
-        "explicitLocales": [
-          "es-US"
-        ],
+        "explicitLocales": [],
         "lookupLocales": [
-          "en-US",
-          "en-GB",
-          "en-CA",
-          "fr-CA",
-          "en-IN",
-          "cy-GB",
-          "gd-GB",
-          "ga-GB",
-          "es-US",
-          "es-MX",
-          "de-DE",
-          "fr-FR",
-          "es-ES",
-          "it-IT",
-          "nl-NL",
-          "pl-PL",
-          "pt-PT",
-          "pt-BR",
-          "ro-RO",
-          "sv-SE",
-          "ko-KR",
-          "zh-CN",
-          "ja-JP",
-          "hi-IN"
+          "en-US"
         ],
-        "reportFallbacks": {
-          "ja-JP": "{framework} のソース証拠"
-        },
+        "reportFallbacks": {},
         "sourceLocale": "en-US"
       },
       "defaultLocale": "en-US",
@@ -276,38 +168,11 @@ window.__SCRIBE_SOURCE_SNIPPETS__ = [
     "endLine": 541,
     "label": {
       "catalogDependency": {
-        "explicitLocales": [
-          "es-US"
-        ],
+        "explicitLocales": [],
         "lookupLocales": [
-          "en-US",
-          "en-GB",
-          "en-CA",
-          "fr-CA",
-          "en-IN",
-          "cy-GB",
-          "gd-GB",
-          "ga-GB",
-          "es-US",
-          "es-MX",
-          "de-DE",
-          "fr-FR",
-          "es-ES",
-          "it-IT",
-          "nl-NL",
-          "pl-PL",
-          "pt-PT",
-          "pt-BR",
-          "ro-RO",
-          "sv-SE",
-          "ko-KR",
-          "zh-CN",
-          "ja-JP",
-          "hi-IN"
+          "en-US"
         ],
-        "reportFallbacks": {
-          "ja-JP": "{framework} のソース証拠"
-        },
+        "reportFallbacks": {},
         "sourceLocale": "en-US"
       },
       "defaultLocale": "en-US",
@@ -343,38 +208,11 @@ window.__SCRIBE_SOURCE_SNIPPETS__ = [
     "endLine": 23,
     "label": {
       "catalogDependency": {
-        "explicitLocales": [
-          "es-US"
-        ],
+        "explicitLocales": [],
         "lookupLocales": [
-          "en-US",
-          "en-GB",
-          "en-CA",
-          "fr-CA",
-          "en-IN",
-          "cy-GB",
-          "gd-GB",
-          "ga-GB",
-          "es-US",
-          "es-MX",
-          "de-DE",
-          "fr-FR",
-          "es-ES",
-          "it-IT",
-          "nl-NL",
-          "pl-PL",
-          "pt-PT",
-          "pt-BR",
-          "ro-RO",
-          "sv-SE",
-          "ko-KR",
-          "zh-CN",
-          "ja-JP",
-          "hi-IN"
+          "en-US"
         ],
-        "reportFallbacks": {
-          "ja-JP": "{framework} のソース証拠"
-        },
+        "reportFallbacks": {},
         "sourceLocale": "en-US"
       },
       "defaultLocale": "en-US",
@@ -410,38 +248,11 @@ window.__SCRIBE_SOURCE_SNIPPETS__ = [
     "endLine": 15,
     "label": {
       "catalogDependency": {
-        "explicitLocales": [
-          "es-US"
-        ],
+        "explicitLocales": [],
         "lookupLocales": [
-          "en-US",
-          "en-GB",
-          "en-CA",
-          "fr-CA",
-          "en-IN",
-          "cy-GB",
-          "gd-GB",
-          "ga-GB",
-          "es-US",
-          "es-MX",
-          "de-DE",
-          "fr-FR",
-          "es-ES",
-          "it-IT",
-          "nl-NL",
-          "pl-PL",
-          "pt-PT",
-          "pt-BR",
-          "ro-RO",
-          "sv-SE",
-          "ko-KR",
-          "zh-CN",
-          "ja-JP",
-          "hi-IN"
+          "en-US"
         ],
-        "reportFallbacks": {
-          "ja-JP": "{framework} のソース証拠"
-        },
+        "reportFallbacks": {},
         "sourceLocale": "en-US"
       },
       "defaultLocale": "en-US",
@@ -477,38 +288,11 @@ window.__SCRIBE_SOURCE_SNIPPETS__ = [
     "endLine": 6,
     "label": {
       "catalogDependency": {
-        "explicitLocales": [
-          "es-US"
-        ],
+        "explicitLocales": [],
         "lookupLocales": [
-          "en-US",
-          "en-GB",
-          "en-CA",
-          "fr-CA",
-          "en-IN",
-          "cy-GB",
-          "gd-GB",
-          "ga-GB",
-          "es-US",
-          "es-MX",
-          "de-DE",
-          "fr-FR",
-          "es-ES",
-          "it-IT",
-          "nl-NL",
-          "pl-PL",
-          "pt-PT",
-          "pt-BR",
-          "ro-RO",
-          "sv-SE",
-          "ko-KR",
-          "zh-CN",
-          "ja-JP",
-          "hi-IN"
+          "en-US"
         ],
-        "reportFallbacks": {
-          "ja-JP": "{framework} のソース証拠"
-        },
+        "reportFallbacks": {},
         "sourceLocale": "en-US"
       },
       "defaultLocale": "en-US",
@@ -544,38 +328,11 @@ window.__SCRIBE_SOURCE_SNIPPETS__ = [
     "endLine": 13,
     "label": {
       "catalogDependency": {
-        "explicitLocales": [
-          "es-US"
-        ],
+        "explicitLocales": [],
         "lookupLocales": [
-          "en-US",
-          "en-GB",
-          "en-CA",
-          "fr-CA",
-          "en-IN",
-          "cy-GB",
-          "gd-GB",
-          "ga-GB",
-          "es-US",
-          "es-MX",
-          "de-DE",
-          "fr-FR",
-          "es-ES",
-          "it-IT",
-          "nl-NL",
-          "pl-PL",
-          "pt-PT",
-          "pt-BR",
-          "ro-RO",
-          "sv-SE",
-          "ko-KR",
-          "zh-CN",
-          "ja-JP",
-          "hi-IN"
+          "en-US"
         ],
-        "reportFallbacks": {
-          "ja-JP": "{framework} のソース証拠"
-        },
+        "reportFallbacks": {},
         "sourceLocale": "en-US"
       },
       "defaultLocale": "en-US",
@@ -611,38 +368,11 @@ window.__SCRIBE_SOURCE_SNIPPETS__ = [
     "endLine": 16,
     "label": {
       "catalogDependency": {
-        "explicitLocales": [
-          "es-US"
-        ],
+        "explicitLocales": [],
         "lookupLocales": [
-          "en-US",
-          "en-GB",
-          "en-CA",
-          "fr-CA",
-          "en-IN",
-          "cy-GB",
-          "gd-GB",
-          "ga-GB",
-          "es-US",
-          "es-MX",
-          "de-DE",
-          "fr-FR",
-          "es-ES",
-          "it-IT",
-          "nl-NL",
-          "pl-PL",
-          "pt-PT",
-          "pt-BR",
-          "ro-RO",
-          "sv-SE",
-          "ko-KR",
-          "zh-CN",
-          "ja-JP",
-          "hi-IN"
+          "en-US"
         ],
-        "reportFallbacks": {
-          "ja-JP": "{framework} のソース証拠"
-        },
+        "reportFallbacks": {},
         "sourceLocale": "en-US"
       },
       "defaultLocale": "en-US",

@@ -1,5 +1,38 @@
 window.__SCRIBE_MANIFEST__ = {
   "analysisScopeLabel": {
+    "catalogDependency": {
+      "explicitLocales": [],
+      "lookupLocales": [
+        "en-US",
+        "en-GB",
+        "en-CA",
+        "fr-CA",
+        "en-IN",
+        "cy-GB",
+        "gd-GB",
+        "ga-GB",
+        "es-US",
+        "es-MX",
+        "de-DE",
+        "fr-FR",
+        "es-ES",
+        "it-IT",
+        "nl-NL",
+        "pl-PL",
+        "pt-PT",
+        "pt-BR",
+        "ro-RO",
+        "sv-SE",
+        "ko-KR",
+        "zh-CN",
+        "ja-JP",
+        "hi-IN"
+      ],
+      "reportFallbacks": {
+        "ja-JP": "リポジトリ健全性解析"
+      },
+      "sourceLocale": "en-US"
+    },
     "defaultLocale": "en-US",
     "defaultText": "calcom/cal.com repository health",
     "icuArgs": {},
@@ -19,6 +52,39 @@ window.__SCRIBE_MANIFEST__ = {
       "anchorId": "section-overview",
       "indexTermIds": [],
       "label": {
+        "catalogDependency": {
+          "explicitLocales": [],
+          "lookupLocales": [
+            "en-US",
+            "en-GB",
+            "en-CA",
+            "fr-CA",
+            "en-IN",
+            "cy-GB",
+            "gd-GB",
+            "ga-GB",
+            "es-US",
+            "es-MX",
+            "de-DE",
+            "fr-FR",
+            "es-ES",
+            "it-IT",
+            "nl-NL",
+            "pl-PL",
+            "pt-PT",
+            "pt-BR",
+            "ro-RO",
+            "sv-SE",
+            "ko-KR",
+            "zh-CN",
+            "ja-JP",
+            "hi-IN"
+          ],
+          "reportFallbacks": {
+            "ja-JP": "概要"
+          },
+          "sourceLocale": "en-US"
+        },
         "defaultLocale": "en-US",
         "defaultText": "Overview",
         "icuArgs": {},
@@ -45,6 +111,39 @@ window.__SCRIBE_MANIFEST__ = {
         "repository-health"
       ],
       "label": {
+        "catalogDependency": {
+          "explicitLocales": [],
+          "lookupLocales": [
+            "en-US",
+            "en-GB",
+            "en-CA",
+            "fr-CA",
+            "en-IN",
+            "cy-GB",
+            "gd-GB",
+            "ga-GB",
+            "es-US",
+            "es-MX",
+            "de-DE",
+            "fr-FR",
+            "es-ES",
+            "it-IT",
+            "nl-NL",
+            "pl-PL",
+            "pt-PT",
+            "pt-BR",
+            "ro-RO",
+            "sv-SE",
+            "ko-KR",
+            "zh-CN",
+            "ja-JP",
+            "hi-IN"
+          ],
+          "reportFallbacks": {
+            "ja-JP": "リポジトリ健全性スキャンには再利用可能なソース裏付け証拠があります"
+          },
+          "sourceLocale": "en-US"
+        },
         "defaultLocale": "en-US",
         "defaultText": "Repository health scan has reusable source-backed evidence",
         "icuArgs": {},
@@ -66,6 +165,39 @@ window.__SCRIBE_MANIFEST__ = {
       "parentAnchorId": "section-overview",
       "role": "finding",
       "shareSummary": {
+        "catalogDependency": {
+          "explicitLocales": [],
+          "lookupLocales": [
+            "en-US",
+            "en-GB",
+            "en-CA",
+            "fr-CA",
+            "en-IN",
+            "cy-GB",
+            "gd-GB",
+            "ga-GB",
+            "es-US",
+            "es-MX",
+            "de-DE",
+            "fr-FR",
+            "es-ES",
+            "it-IT",
+            "nl-NL",
+            "pl-PL",
+            "pt-PT",
+            "pt-BR",
+            "ro-RO",
+            "sv-SE",
+            "ko-KR",
+            "zh-CN",
+            "ja-JP",
+            "hi-IN"
+          ],
+          "reportFallbacks": {
+            "ja-JP": "健全性レポートは packages/platform/examples/base/prisma/schema.prisma を、言語、パッケージ、ビルドシステム、リソースフレームワーク、データベース/スキーマ証拠の反復可能な解析カバレッジに結び付けます。"
+          },
+          "sourceLocale": "en-US"
+        },
         "defaultLocale": "en-US",
         "defaultText": "The health report ties {sourcePath} to repeatable analysis coverage for languages, packages, build systems, resource frameworks ({frameworkText}), and database/schema evidence.",
         "icuArgs": {
@@ -84,6 +216,39 @@ window.__SCRIBE_MANIFEST__ = {
         }
       },
       "shareTitle": {
+        "catalogDependency": {
+          "explicitLocales": [],
+          "lookupLocales": [
+            "en-US",
+            "en-GB",
+            "en-CA",
+            "fr-CA",
+            "en-IN",
+            "cy-GB",
+            "gd-GB",
+            "ga-GB",
+            "es-US",
+            "es-MX",
+            "de-DE",
+            "fr-FR",
+            "es-ES",
+            "it-IT",
+            "nl-NL",
+            "pl-PL",
+            "pt-PT",
+            "pt-BR",
+            "ro-RO",
+            "sv-SE",
+            "ko-KR",
+            "zh-CN",
+            "ja-JP",
+            "hi-IN"
+          ],
+          "reportFallbacks": {
+            "ja-JP": "リポジトリ健全性スキャンには再利用可能なソース裏付け証拠があります"
+          },
+          "sourceLocale": "en-US"
+        },
         "defaultLocale": "en-US",
         "defaultText": "Repository health scan has reusable source-backed evidence",
         "icuArgs": {},
@@ -105,6 +270,39 @@ window.__SCRIBE_MANIFEST__ = {
         "repository-health"
       ],
       "label": {
+        "catalogDependency": {
+          "explicitLocales": [],
+          "lookupLocales": [
+            "en-US",
+            "en-GB",
+            "en-CA",
+            "fr-CA",
+            "en-IN",
+            "cy-GB",
+            "gd-GB",
+            "ga-GB",
+            "es-US",
+            "es-MX",
+            "de-DE",
+            "fr-FR",
+            "es-ES",
+            "it-IT",
+            "nl-NL",
+            "pl-PL",
+            "pt-PT",
+            "pt-BR",
+            "ro-RO",
+            "sv-SE",
+            "ko-KR",
+            "zh-CN",
+            "ja-JP",
+            "hi-IN"
+          ],
+          "reportFallbacks": {
+            "ja-JP": "ソース証拠"
+          },
+          "sourceLocale": "en-US"
+        },
         "defaultLocale": "en-US",
         "defaultText": "Source evidence",
         "icuArgs": {},
@@ -127,6 +325,39 @@ window.__SCRIBE_MANIFEST__ = {
       "parentAnchorId": "finding-repository-health",
       "role": "source-snippet",
       "shareSummary": {
+        "catalogDependency": {
+          "explicitLocales": [],
+          "lookupLocales": [
+            "en-US",
+            "en-GB",
+            "en-CA",
+            "fr-CA",
+            "en-IN",
+            "cy-GB",
+            "gd-GB",
+            "ga-GB",
+            "es-US",
+            "es-MX",
+            "de-DE",
+            "fr-FR",
+            "es-ES",
+            "it-IT",
+            "nl-NL",
+            "pl-PL",
+            "pt-PT",
+            "pt-BR",
+            "ro-RO",
+            "sv-SE",
+            "ko-KR",
+            "zh-CN",
+            "ja-JP",
+            "hi-IN"
+          ],
+          "reportFallbacks": {
+            "ja-JP": "引用されたソースは、チェックアウト内の具体的なスキーマ、パッケージ、ビルド、またはコード証拠にレポートを固定します。"
+          },
+          "sourceLocale": "en-US"
+        },
         "defaultLocale": "en-US",
         "defaultText": "The cited source anchors the report to concrete schema, package, build, or code evidence from the checkout.",
         "icuArgs": {},
@@ -142,6 +373,39 @@ window.__SCRIBE_MANIFEST__ = {
         }
       },
       "shareTitle": {
+        "catalogDependency": {
+          "explicitLocales": [],
+          "lookupLocales": [
+            "en-US",
+            "en-GB",
+            "en-CA",
+            "fr-CA",
+            "en-IN",
+            "cy-GB",
+            "gd-GB",
+            "ga-GB",
+            "es-US",
+            "es-MX",
+            "de-DE",
+            "fr-FR",
+            "es-ES",
+            "it-IT",
+            "nl-NL",
+            "pl-PL",
+            "pt-PT",
+            "pt-BR",
+            "ro-RO",
+            "sv-SE",
+            "ko-KR",
+            "zh-CN",
+            "ja-JP",
+            "hi-IN"
+          ],
+          "reportFallbacks": {
+            "ja-JP": "ソース証拠"
+          },
+          "sourceLocale": "en-US"
+        },
         "defaultLocale": "en-US",
         "defaultText": "Source evidence",
         "icuArgs": {},
@@ -163,6 +427,39 @@ window.__SCRIBE_MANIFEST__ = {
         "repository-health"
       ],
       "label": {
+        "catalogDependency": {
+          "explicitLocales": [],
+          "lookupLocales": [
+            "en-US",
+            "en-GB",
+            "en-CA",
+            "fr-CA",
+            "en-IN",
+            "cy-GB",
+            "gd-GB",
+            "ga-GB",
+            "es-US",
+            "es-MX",
+            "de-DE",
+            "fr-FR",
+            "es-ES",
+            "it-IT",
+            "nl-NL",
+            "pl-PL",
+            "pt-PT",
+            "pt-BR",
+            "ro-RO",
+            "sv-SE",
+            "ko-KR",
+            "zh-CN",
+            "ja-JP",
+            "hi-IN"
+          ],
+          "reportFallbacks": {
+            "ja-JP": "ソースデータ"
+          },
+          "sourceLocale": "en-US"
+        },
         "defaultLocale": "en-US",
         "defaultText": "Source data",
         "icuArgs": {},
@@ -185,6 +482,39 @@ window.__SCRIBE_MANIFEST__ = {
       "parentAnchorId": "finding-repository-health",
       "role": "diagram",
       "shareSummary": {
+        "catalogDependency": {
+          "explicitLocales": [],
+          "lookupLocales": [
+            "en-US",
+            "en-GB",
+            "en-CA",
+            "fr-CA",
+            "en-IN",
+            "cy-GB",
+            "gd-GB",
+            "ga-GB",
+            "es-US",
+            "es-MX",
+            "de-DE",
+            "fr-FR",
+            "es-ES",
+            "it-IT",
+            "nl-NL",
+            "pl-PL",
+            "pt-PT",
+            "pt-BR",
+            "ro-RO",
+            "sv-SE",
+            "ko-KR",
+            "zh-CN",
+            "ja-JP",
+            "hi-IN"
+          ],
+          "reportFallbacks": {
+            "ja-JP": "この表は、レポート生成中に収集されたリポジトリ健全性証拠から描画されます。"
+          },
+          "sourceLocale": "en-US"
+        },
         "defaultLocale": "en-US",
         "defaultText": "The table is rendered from repository health evidence collected during report generation.",
         "icuArgs": {},
@@ -200,6 +530,39 @@ window.__SCRIBE_MANIFEST__ = {
         }
       },
       "shareTitle": {
+        "catalogDependency": {
+          "explicitLocales": [],
+          "lookupLocales": [
+            "en-US",
+            "en-GB",
+            "en-CA",
+            "fr-CA",
+            "en-IN",
+            "cy-GB",
+            "gd-GB",
+            "ga-GB",
+            "es-US",
+            "es-MX",
+            "de-DE",
+            "fr-FR",
+            "es-ES",
+            "it-IT",
+            "nl-NL",
+            "pl-PL",
+            "pt-PT",
+            "pt-BR",
+            "ro-RO",
+            "sv-SE",
+            "ko-KR",
+            "zh-CN",
+            "ja-JP",
+            "hi-IN"
+          ],
+          "reportFallbacks": {
+            "ja-JP": "ソースデータ"
+          },
+          "sourceLocale": "en-US"
+        },
         "defaultLocale": "en-US",
         "defaultText": "Source data",
         "icuArgs": {},
@@ -221,6 +584,37 @@ window.__SCRIBE_MANIFEST__ = {
         "repository-health"
       ],
       "label": {
+        "catalogDependency": {
+          "explicitLocales": [],
+          "lookupLocales": [
+            "en-US",
+            "en-GB",
+            "en-CA",
+            "fr-CA",
+            "en-IN",
+            "cy-GB",
+            "gd-GB",
+            "ga-GB",
+            "es-US",
+            "es-MX",
+            "de-DE",
+            "fr-FR",
+            "es-ES",
+            "it-IT",
+            "nl-NL",
+            "pl-PL",
+            "pt-PT",
+            "pt-BR",
+            "ro-RO",
+            "sv-SE",
+            "ko-KR",
+            "zh-CN",
+            "ja-JP",
+            "hi-IN"
+          ],
+          "reportFallbacks": {},
+          "sourceLocale": "en-US"
+        },
         "defaultLocale": "en-US",
         "defaultText": "Fix plan",
         "icuArgs": {},
@@ -243,6 +637,37 @@ window.__SCRIBE_MANIFEST__ = {
       "parentAnchorId": "finding-repository-health",
       "role": "fix-plan",
       "shareSummary": {
+        "catalogDependency": {
+          "explicitLocales": [],
+          "lookupLocales": [
+            "en-US",
+            "en-GB",
+            "en-CA",
+            "fr-CA",
+            "en-IN",
+            "cy-GB",
+            "gd-GB",
+            "ga-GB",
+            "es-US",
+            "es-MX",
+            "de-DE",
+            "fr-FR",
+            "es-ES",
+            "it-IT",
+            "nl-NL",
+            "pl-PL",
+            "pt-PT",
+            "pt-BR",
+            "ro-RO",
+            "sv-SE",
+            "ko-KR",
+            "zh-CN",
+            "ja-JP",
+            "hi-IN"
+          ],
+          "reportFallbacks": {},
+          "sourceLocale": "en-US"
+        },
         "defaultLocale": "en-US",
         "defaultText": "Remediation guidance for the findings in this report.",
         "icuArgs": {},
@@ -258,6 +683,37 @@ window.__SCRIBE_MANIFEST__ = {
         }
       },
       "shareTitle": {
+        "catalogDependency": {
+          "explicitLocales": [],
+          "lookupLocales": [
+            "en-US",
+            "en-GB",
+            "en-CA",
+            "fr-CA",
+            "en-IN",
+            "cy-GB",
+            "gd-GB",
+            "ga-GB",
+            "es-US",
+            "es-MX",
+            "de-DE",
+            "fr-FR",
+            "es-ES",
+            "it-IT",
+            "nl-NL",
+            "pl-PL",
+            "pt-PT",
+            "pt-BR",
+            "ro-RO",
+            "sv-SE",
+            "ko-KR",
+            "zh-CN",
+            "ja-JP",
+            "hi-IN"
+          ],
+          "reportFallbacks": {},
+          "sourceLocale": "en-US"
+        },
         "defaultLocale": "en-US",
         "defaultText": "Fix plan",
         "icuArgs": {},
@@ -277,6 +733,37 @@ window.__SCRIBE_MANIFEST__ = {
       "anchorId": "section-report-context",
       "indexTermIds": [],
       "label": {
+        "catalogDependency": {
+          "explicitLocales": [],
+          "lookupLocales": [
+            "en-US",
+            "en-GB",
+            "en-CA",
+            "fr-CA",
+            "en-IN",
+            "cy-GB",
+            "gd-GB",
+            "ga-GB",
+            "es-US",
+            "es-MX",
+            "de-DE",
+            "fr-FR",
+            "es-ES",
+            "it-IT",
+            "nl-NL",
+            "pl-PL",
+            "pt-PT",
+            "pt-BR",
+            "ro-RO",
+            "sv-SE",
+            "ko-KR",
+            "zh-CN",
+            "ja-JP",
+            "hi-IN"
+          ],
+          "reportFallbacks": {},
+          "sourceLocale": "en-US"
+        },
         "defaultLocale": "en-US",
         "defaultText": "More information",
         "icuArgs": {},
@@ -302,6 +789,37 @@ window.__SCRIBE_MANIFEST__ = {
       "anchorId": "section-context-6d56f5934e56e3646b01f321f109cfa2d1109e6c5886eab4fc14e8c2fc6d607a",
       "indexTermIds": [],
       "label": {
+        "catalogDependency": {
+          "explicitLocales": [],
+          "lookupLocales": [
+            "en-US",
+            "en-GB",
+            "en-CA",
+            "fr-CA",
+            "en-IN",
+            "cy-GB",
+            "gd-GB",
+            "ga-GB",
+            "es-US",
+            "es-MX",
+            "de-DE",
+            "fr-FR",
+            "es-ES",
+            "it-IT",
+            "nl-NL",
+            "pl-PL",
+            "pt-PT",
+            "pt-BR",
+            "ro-RO",
+            "sv-SE",
+            "ko-KR",
+            "zh-CN",
+            "ja-JP",
+            "hi-IN"
+          ],
+          "reportFallbacks": {},
+          "sourceLocale": "en-US"
+        },
         "defaultLocale": "en-US",
         "defaultText": "More information",
         "icuArgs": {},
@@ -328,6 +846,37 @@ window.__SCRIBE_MANIFEST__ = {
       "anchorId": "section-context-interpretation-8122d186334592a8d8e027d36d170b6eb1dc77719b95c6589b5971c445ed50b5",
       "indexTermIds": [],
       "label": {
+        "catalogDependency": {
+          "explicitLocales": [],
+          "lookupLocales": [
+            "en-US",
+            "en-GB",
+            "en-CA",
+            "fr-CA",
+            "en-IN",
+            "cy-GB",
+            "gd-GB",
+            "ga-GB",
+            "es-US",
+            "es-MX",
+            "de-DE",
+            "fr-FR",
+            "es-ES",
+            "it-IT",
+            "nl-NL",
+            "pl-PL",
+            "pt-PT",
+            "pt-BR",
+            "ro-RO",
+            "sv-SE",
+            "ko-KR",
+            "zh-CN",
+            "ja-JP",
+            "hi-IN"
+          ],
+          "reportFallbacks": {},
+          "sourceLocale": "en-US"
+        },
         "defaultLocale": "en-US",
         "defaultText": "More information",
         "icuArgs": {},
@@ -355,6 +904,37 @@ window.__SCRIBE_MANIFEST__ = {
       "anchorId": "section-context-a8287f1320fa2c9408ca783b161a1ea1942d3956678c4fac121555bd6995c177",
       "indexTermIds": [],
       "label": {
+        "catalogDependency": {
+          "explicitLocales": [],
+          "lookupLocales": [
+            "en-US",
+            "en-GB",
+            "en-CA",
+            "fr-CA",
+            "en-IN",
+            "cy-GB",
+            "gd-GB",
+            "ga-GB",
+            "es-US",
+            "es-MX",
+            "de-DE",
+            "fr-FR",
+            "es-ES",
+            "it-IT",
+            "nl-NL",
+            "pl-PL",
+            "pt-PT",
+            "pt-BR",
+            "ro-RO",
+            "sv-SE",
+            "ko-KR",
+            "zh-CN",
+            "ja-JP",
+            "hi-IN"
+          ],
+          "reportFallbacks": {},
+          "sourceLocale": "en-US"
+        },
         "defaultLocale": "en-US",
         "defaultText": "More information",
         "icuArgs": {},
@@ -381,6 +961,37 @@ window.__SCRIBE_MANIFEST__ = {
       "anchorId": "section-context-interpretation-669f6888fb8136e0d4757dbabaa24813b44bc41386b69ac66f94f9c4154a5170",
       "indexTermIds": [],
       "label": {
+        "catalogDependency": {
+          "explicitLocales": [],
+          "lookupLocales": [
+            "en-US",
+            "en-GB",
+            "en-CA",
+            "fr-CA",
+            "en-IN",
+            "cy-GB",
+            "gd-GB",
+            "ga-GB",
+            "es-US",
+            "es-MX",
+            "de-DE",
+            "fr-FR",
+            "es-ES",
+            "it-IT",
+            "nl-NL",
+            "pl-PL",
+            "pt-PT",
+            "pt-BR",
+            "ro-RO",
+            "sv-SE",
+            "ko-KR",
+            "zh-CN",
+            "ja-JP",
+            "hi-IN"
+          ],
+          "reportFallbacks": {},
+          "sourceLocale": "en-US"
+        },
         "defaultLocale": "en-US",
         "defaultText": "More information",
         "icuArgs": {},
@@ -408,6 +1019,37 @@ window.__SCRIBE_MANIFEST__ = {
       "anchorId": "section-context-32d12b2f51676ba753e868e827b570fc466f94765b27a12836c13f3587f9c6cf",
       "indexTermIds": [],
       "label": {
+        "catalogDependency": {
+          "explicitLocales": [],
+          "lookupLocales": [
+            "en-US",
+            "en-GB",
+            "en-CA",
+            "fr-CA",
+            "en-IN",
+            "cy-GB",
+            "gd-GB",
+            "ga-GB",
+            "es-US",
+            "es-MX",
+            "de-DE",
+            "fr-FR",
+            "es-ES",
+            "it-IT",
+            "nl-NL",
+            "pl-PL",
+            "pt-PT",
+            "pt-BR",
+            "ro-RO",
+            "sv-SE",
+            "ko-KR",
+            "zh-CN",
+            "ja-JP",
+            "hi-IN"
+          ],
+          "reportFallbacks": {},
+          "sourceLocale": "en-US"
+        },
         "defaultLocale": "en-US",
         "defaultText": "More information",
         "icuArgs": {},
@@ -434,6 +1076,37 @@ window.__SCRIBE_MANIFEST__ = {
       "anchorId": "section-context-2e84c9433df7f82bdc7da3239f66e0a9e94d0d1e6a716ce45d50cdffba450ab4",
       "indexTermIds": [],
       "label": {
+        "catalogDependency": {
+          "explicitLocales": [],
+          "lookupLocales": [
+            "en-US",
+            "en-GB",
+            "en-CA",
+            "fr-CA",
+            "en-IN",
+            "cy-GB",
+            "gd-GB",
+            "ga-GB",
+            "es-US",
+            "es-MX",
+            "de-DE",
+            "fr-FR",
+            "es-ES",
+            "it-IT",
+            "nl-NL",
+            "pl-PL",
+            "pt-PT",
+            "pt-BR",
+            "ro-RO",
+            "sv-SE",
+            "ko-KR",
+            "zh-CN",
+            "ja-JP",
+            "hi-IN"
+          ],
+          "reportFallbacks": {},
+          "sourceLocale": "en-US"
+        },
         "defaultLocale": "en-US",
         "defaultText": "More information",
         "icuArgs": {},
@@ -460,6 +1133,37 @@ window.__SCRIBE_MANIFEST__ = {
       "anchorId": "section-context-d5fa8c958ec2fdba6b05a0165bdefcf02ee34fa4ddb235cf290f84ac4f74a541",
       "indexTermIds": [],
       "label": {
+        "catalogDependency": {
+          "explicitLocales": [],
+          "lookupLocales": [
+            "en-US",
+            "en-GB",
+            "en-CA",
+            "fr-CA",
+            "en-IN",
+            "cy-GB",
+            "gd-GB",
+            "ga-GB",
+            "es-US",
+            "es-MX",
+            "de-DE",
+            "fr-FR",
+            "es-ES",
+            "it-IT",
+            "nl-NL",
+            "pl-PL",
+            "pt-PT",
+            "pt-BR",
+            "ro-RO",
+            "sv-SE",
+            "ko-KR",
+            "zh-CN",
+            "ja-JP",
+            "hi-IN"
+          ],
+          "reportFallbacks": {},
+          "sourceLocale": "en-US"
+        },
         "defaultLocale": "en-US",
         "defaultText": "More information",
         "icuArgs": {},
@@ -486,6 +1190,37 @@ window.__SCRIBE_MANIFEST__ = {
       "anchorId": "section-context-interpretation-2683d8b0fadaf0075d23461aa604181f4038c101028bc809eb04910ebbf9e662",
       "indexTermIds": [],
       "label": {
+        "catalogDependency": {
+          "explicitLocales": [],
+          "lookupLocales": [
+            "en-US",
+            "en-GB",
+            "en-CA",
+            "fr-CA",
+            "en-IN",
+            "cy-GB",
+            "gd-GB",
+            "ga-GB",
+            "es-US",
+            "es-MX",
+            "de-DE",
+            "fr-FR",
+            "es-ES",
+            "it-IT",
+            "nl-NL",
+            "pl-PL",
+            "pt-PT",
+            "pt-BR",
+            "ro-RO",
+            "sv-SE",
+            "ko-KR",
+            "zh-CN",
+            "ja-JP",
+            "hi-IN"
+          ],
+          "reportFallbacks": {},
+          "sourceLocale": "en-US"
+        },
         "defaultLocale": "en-US",
         "defaultText": "More information",
         "icuArgs": {},
@@ -513,6 +1248,39 @@ window.__SCRIBE_MANIFEST__ = {
   "assets": [
     {
       "altText": {
+        "catalogDependency": {
+          "explicitLocales": [
+            "es-US"
+          ],
+          "lookupLocales": [
+            "en-US",
+            "en-GB",
+            "en-CA",
+            "fr-CA",
+            "en-IN",
+            "cy-GB",
+            "gd-GB",
+            "ga-GB",
+            "es-US",
+            "es-MX",
+            "de-DE",
+            "fr-FR",
+            "es-ES",
+            "it-IT",
+            "nl-NL",
+            "pl-PL",
+            "pt-PT",
+            "pt-BR",
+            "ro-RO",
+            "sv-SE",
+            "ko-KR",
+            "zh-CN",
+            "ja-JP",
+            "hi-IN"
+          ],
+          "reportFallbacks": {},
+          "sourceLocale": "en-US"
+        },
         "defaultLocale": "en-US",
         "defaultText": "Sonde Scribe {version} compliance report mark",
         "icuArgs": {
@@ -533,6 +1301,39 @@ window.__SCRIBE_MANIFEST__ = {
       "defaultPath": "assets/immutable/report-mark.8de0f91487c32afd.svg",
       "kind": "icon",
       "label": {
+        "catalogDependency": {
+          "explicitLocales": [
+            "es-US"
+          ],
+          "lookupLocales": [
+            "en-US",
+            "en-GB",
+            "en-CA",
+            "fr-CA",
+            "en-IN",
+            "cy-GB",
+            "gd-GB",
+            "ga-GB",
+            "es-US",
+            "es-MX",
+            "de-DE",
+            "fr-FR",
+            "es-ES",
+            "it-IT",
+            "nl-NL",
+            "pl-PL",
+            "pt-PT",
+            "pt-BR",
+            "ro-RO",
+            "sv-SE",
+            "ko-KR",
+            "zh-CN",
+            "ja-JP",
+            "hi-IN"
+          ],
+          "reportFallbacks": {},
+          "sourceLocale": "en-US"
+        },
         "defaultLocale": "en-US",
         "defaultText": "Scribe {version} report mark",
         "icuArgs": {
@@ -556,6 +1357,39 @@ window.__SCRIBE_MANIFEST__ = {
       "defaultPath": "exports/report.md",
       "kind": "export",
       "label": {
+        "catalogDependency": {
+          "explicitLocales": [
+            "es-US"
+          ],
+          "lookupLocales": [
+            "en-US",
+            "en-GB",
+            "en-CA",
+            "fr-CA",
+            "en-IN",
+            "cy-GB",
+            "gd-GB",
+            "ga-GB",
+            "es-US",
+            "es-MX",
+            "de-DE",
+            "fr-FR",
+            "es-ES",
+            "it-IT",
+            "nl-NL",
+            "pl-PL",
+            "pt-PT",
+            "pt-BR",
+            "ro-RO",
+            "sv-SE",
+            "ko-KR",
+            "zh-CN",
+            "ja-JP",
+            "hi-IN"
+          ],
+          "reportFallbacks": {},
+          "sourceLocale": "en-US"
+        },
         "defaultLocale": "en-US",
         "defaultText": "Markdown export",
         "icuArgs": {},
@@ -577,6 +1411,37 @@ window.__SCRIBE_MANIFEST__ = {
       "defaultPath": "assets/immutable/theme-daylight.ffce2abf0c8dffe5.css",
       "kind": "theme",
       "label": {
+        "catalogDependency": {
+          "explicitLocales": [],
+          "lookupLocales": [
+            "en-US",
+            "en-GB",
+            "en-CA",
+            "fr-CA",
+            "en-IN",
+            "cy-GB",
+            "gd-GB",
+            "ga-GB",
+            "es-US",
+            "es-MX",
+            "de-DE",
+            "fr-FR",
+            "es-ES",
+            "it-IT",
+            "nl-NL",
+            "pl-PL",
+            "pt-PT",
+            "pt-BR",
+            "ro-RO",
+            "sv-SE",
+            "ko-KR",
+            "zh-CN",
+            "ja-JP",
+            "hi-IN"
+          ],
+          "reportFallbacks": {},
+          "sourceLocale": "en-US"
+        },
         "defaultLocale": "en-US",
         "defaultText": "Daylight theme",
         "icuArgs": {},
@@ -598,6 +1463,37 @@ window.__SCRIBE_MANIFEST__ = {
       "defaultPath": "assets/immutable/theme-ultraviolet.e8d1e286a433a1f6.css",
       "kind": "theme",
       "label": {
+        "catalogDependency": {
+          "explicitLocales": [],
+          "lookupLocales": [
+            "en-US",
+            "en-GB",
+            "en-CA",
+            "fr-CA",
+            "en-IN",
+            "cy-GB",
+            "gd-GB",
+            "ga-GB",
+            "es-US",
+            "es-MX",
+            "de-DE",
+            "fr-FR",
+            "es-ES",
+            "it-IT",
+            "nl-NL",
+            "pl-PL",
+            "pt-PT",
+            "pt-BR",
+            "ro-RO",
+            "sv-SE",
+            "ko-KR",
+            "zh-CN",
+            "ja-JP",
+            "hi-IN"
+          ],
+          "reportFallbacks": {},
+          "sourceLocale": "en-US"
+        },
         "defaultLocale": "en-US",
         "defaultText": "Ultraviolet theme",
         "icuArgs": {},
@@ -619,6 +1515,37 @@ window.__SCRIBE_MANIFEST__ = {
       "defaultPath": "assets/immutable/theme-infrared.caf6e90430229b41.css",
       "kind": "theme",
       "label": {
+        "catalogDependency": {
+          "explicitLocales": [],
+          "lookupLocales": [
+            "en-US",
+            "en-GB",
+            "en-CA",
+            "fr-CA",
+            "en-IN",
+            "cy-GB",
+            "gd-GB",
+            "ga-GB",
+            "es-US",
+            "es-MX",
+            "de-DE",
+            "fr-FR",
+            "es-ES",
+            "it-IT",
+            "nl-NL",
+            "pl-PL",
+            "pt-PT",
+            "pt-BR",
+            "ro-RO",
+            "sv-SE",
+            "ko-KR",
+            "zh-CN",
+            "ja-JP",
+            "hi-IN"
+          ],
+          "reportFallbacks": {},
+          "sourceLocale": "en-US"
+        },
         "defaultLocale": "en-US",
         "defaultText": "Infrared theme",
         "icuArgs": {},
@@ -640,6 +1567,37 @@ window.__SCRIBE_MANIFEST__ = {
       "defaultPath": "assets/immutable/theme-high-contrast.32d22d1a3f404d86.css",
       "kind": "theme",
       "label": {
+        "catalogDependency": {
+          "explicitLocales": [],
+          "lookupLocales": [
+            "en-US",
+            "en-GB",
+            "en-CA",
+            "fr-CA",
+            "en-IN",
+            "cy-GB",
+            "gd-GB",
+            "ga-GB",
+            "es-US",
+            "es-MX",
+            "de-DE",
+            "fr-FR",
+            "es-ES",
+            "it-IT",
+            "nl-NL",
+            "pl-PL",
+            "pt-PT",
+            "pt-BR",
+            "ro-RO",
+            "sv-SE",
+            "ko-KR",
+            "zh-CN",
+            "ja-JP",
+            "hi-IN"
+          ],
+          "reportFallbacks": {},
+          "sourceLocale": "en-US"
+        },
         "defaultLocale": "en-US",
         "defaultText": "High Contrast theme",
         "icuArgs": {},
@@ -672,6 +1630,41 @@ window.__SCRIBE_MANIFEST__ = {
       "href": "exports/report.md",
       "includesPrivateReceipt": false,
       "label": {
+        "catalogDependency": {
+          "explicitLocales": [
+            "es-US"
+          ],
+          "lookupLocales": [
+            "en-US",
+            "en-GB",
+            "en-CA",
+            "fr-CA",
+            "en-IN",
+            "cy-GB",
+            "gd-GB",
+            "ga-GB",
+            "es-US",
+            "es-MX",
+            "de-DE",
+            "fr-FR",
+            "es-ES",
+            "it-IT",
+            "nl-NL",
+            "pl-PL",
+            "pt-PT",
+            "pt-BR",
+            "ro-RO",
+            "sv-SE",
+            "ko-KR",
+            "zh-CN",
+            "ja-JP",
+            "hi-IN"
+          ],
+          "reportFallbacks": {
+            "ja-JP": "Markdown レポートをダウンロード"
+          },
+          "sourceLocale": "en-US"
+        },
         "defaultLocale": "en-US",
         "defaultText": "Download Markdown report",
         "icuArgs": {},
@@ -703,6 +1696,40 @@ window.__SCRIBE_MANIFEST__ = {
         {
           "id": "critical",
           "label": {
+            "catalogDependency": {
+              "explicitLocales": [
+                "es-US",
+                "ja-JP"
+              ],
+              "lookupLocales": [
+                "en-US",
+                "en-GB",
+                "en-CA",
+                "fr-CA",
+                "en-IN",
+                "cy-GB",
+                "gd-GB",
+                "ga-GB",
+                "es-US",
+                "es-MX",
+                "de-DE",
+                "fr-FR",
+                "es-ES",
+                "it-IT",
+                "nl-NL",
+                "pl-PL",
+                "pt-PT",
+                "pt-BR",
+                "ro-RO",
+                "sv-SE",
+                "ko-KR",
+                "zh-CN",
+                "ja-JP",
+                "hi-IN"
+              ],
+              "reportFallbacks": {},
+              "sourceLocale": "en-US"
+            },
             "defaultLocale": "en-US",
             "defaultText": "Critical",
             "icuArgs": {},
@@ -722,6 +1749,41 @@ window.__SCRIBE_MANIFEST__ = {
         {
           "id": "error",
           "label": {
+            "catalogDependency": {
+              "explicitLocales": [
+                "es-US"
+              ],
+              "lookupLocales": [
+                "en-US",
+                "en-GB",
+                "en-CA",
+                "fr-CA",
+                "en-IN",
+                "cy-GB",
+                "gd-GB",
+                "ga-GB",
+                "es-US",
+                "es-MX",
+                "de-DE",
+                "fr-FR",
+                "es-ES",
+                "it-IT",
+                "nl-NL",
+                "pl-PL",
+                "pt-PT",
+                "pt-BR",
+                "ro-RO",
+                "sv-SE",
+                "ko-KR",
+                "zh-CN",
+                "ja-JP",
+                "hi-IN"
+              ],
+              "reportFallbacks": {
+                "ja-JP": "エラー"
+              },
+              "sourceLocale": "en-US"
+            },
             "defaultLocale": "en-US",
             "defaultText": "Error",
             "icuArgs": {},
@@ -741,6 +1803,41 @@ window.__SCRIBE_MANIFEST__ = {
         {
           "id": "warning",
           "label": {
+            "catalogDependency": {
+              "explicitLocales": [
+                "es-US"
+              ],
+              "lookupLocales": [
+                "en-US",
+                "en-GB",
+                "en-CA",
+                "fr-CA",
+                "en-IN",
+                "cy-GB",
+                "gd-GB",
+                "ga-GB",
+                "es-US",
+                "es-MX",
+                "de-DE",
+                "fr-FR",
+                "es-ES",
+                "it-IT",
+                "nl-NL",
+                "pl-PL",
+                "pt-PT",
+                "pt-BR",
+                "ro-RO",
+                "sv-SE",
+                "ko-KR",
+                "zh-CN",
+                "ja-JP",
+                "hi-IN"
+              ],
+              "reportFallbacks": {
+                "ja-JP": "警告"
+              },
+              "sourceLocale": "en-US"
+            },
             "defaultLocale": "en-US",
             "defaultText": "Warning",
             "icuArgs": {},
@@ -760,6 +1857,41 @@ window.__SCRIBE_MANIFEST__ = {
         {
           "id": "info",
           "label": {
+            "catalogDependency": {
+              "explicitLocales": [
+                "es-US"
+              ],
+              "lookupLocales": [
+                "en-US",
+                "en-GB",
+                "en-CA",
+                "fr-CA",
+                "en-IN",
+                "cy-GB",
+                "gd-GB",
+                "ga-GB",
+                "es-US",
+                "es-MX",
+                "de-DE",
+                "fr-FR",
+                "es-ES",
+                "it-IT",
+                "nl-NL",
+                "pl-PL",
+                "pt-PT",
+                "pt-BR",
+                "ro-RO",
+                "sv-SE",
+                "ko-KR",
+                "zh-CN",
+                "ja-JP",
+                "hi-IN"
+              ],
+              "reportFallbacks": {
+                "ja-JP": "情報"
+              },
+              "sourceLocale": "en-US"
+            },
             "defaultLocale": "en-US",
             "defaultText": "Info",
             "icuArgs": {},
@@ -791,6 +1923,40 @@ window.__SCRIBE_MANIFEST__ = {
         {
           "id": "present",
           "label": {
+            "catalogDependency": {
+              "explicitLocales": [
+                "es-US",
+                "ja-JP"
+              ],
+              "lookupLocales": [
+                "en-US",
+                "en-GB",
+                "en-CA",
+                "fr-CA",
+                "en-IN",
+                "cy-GB",
+                "gd-GB",
+                "ga-GB",
+                "es-US",
+                "es-MX",
+                "de-DE",
+                "fr-FR",
+                "es-ES",
+                "it-IT",
+                "nl-NL",
+                "pl-PL",
+                "pt-PT",
+                "pt-BR",
+                "ro-RO",
+                "sv-SE",
+                "ko-KR",
+                "zh-CN",
+                "ja-JP",
+                "hi-IN"
+              ],
+              "reportFallbacks": {},
+              "sourceLocale": "en-US"
+            },
             "defaultLocale": "en-US",
             "defaultText": "Present",
             "icuArgs": {},
@@ -810,6 +1976,41 @@ window.__SCRIBE_MANIFEST__ = {
         {
           "id": "partial",
           "label": {
+            "catalogDependency": {
+              "explicitLocales": [
+                "es-US"
+              ],
+              "lookupLocales": [
+                "en-US",
+                "en-GB",
+                "en-CA",
+                "fr-CA",
+                "en-IN",
+                "cy-GB",
+                "gd-GB",
+                "ga-GB",
+                "es-US",
+                "es-MX",
+                "de-DE",
+                "fr-FR",
+                "es-ES",
+                "it-IT",
+                "nl-NL",
+                "pl-PL",
+                "pt-PT",
+                "pt-BR",
+                "ro-RO",
+                "sv-SE",
+                "ko-KR",
+                "zh-CN",
+                "ja-JP",
+                "hi-IN"
+              ],
+              "reportFallbacks": {
+                "ja-JP": "部分的"
+              },
+              "sourceLocale": "en-US"
+            },
             "defaultLocale": "en-US",
             "defaultText": "Partial",
             "icuArgs": {},
@@ -829,6 +2030,41 @@ window.__SCRIBE_MANIFEST__ = {
         {
           "id": "gap",
           "label": {
+            "catalogDependency": {
+              "explicitLocales": [
+                "es-US"
+              ],
+              "lookupLocales": [
+                "en-US",
+                "en-GB",
+                "en-CA",
+                "fr-CA",
+                "en-IN",
+                "cy-GB",
+                "gd-GB",
+                "ga-GB",
+                "es-US",
+                "es-MX",
+                "de-DE",
+                "fr-FR",
+                "es-ES",
+                "it-IT",
+                "nl-NL",
+                "pl-PL",
+                "pt-PT",
+                "pt-BR",
+                "ro-RO",
+                "sv-SE",
+                "ko-KR",
+                "zh-CN",
+                "ja-JP",
+                "hi-IN"
+              ],
+              "reportFallbacks": {
+                "ja-JP": "不足"
+              },
+              "sourceLocale": "en-US"
+            },
             "defaultLocale": "en-US",
             "defaultText": "Gap",
             "icuArgs": {},
@@ -848,6 +2084,41 @@ window.__SCRIBE_MANIFEST__ = {
         {
           "id": "requires-customer-context",
           "label": {
+            "catalogDependency": {
+              "explicitLocales": [
+                "es-US"
+              ],
+              "lookupLocales": [
+                "en-US",
+                "en-GB",
+                "en-CA",
+                "fr-CA",
+                "en-IN",
+                "cy-GB",
+                "gd-GB",
+                "ga-GB",
+                "es-US",
+                "es-MX",
+                "de-DE",
+                "fr-FR",
+                "es-ES",
+                "it-IT",
+                "nl-NL",
+                "pl-PL",
+                "pt-PT",
+                "pt-BR",
+                "ro-RO",
+                "sv-SE",
+                "ko-KR",
+                "zh-CN",
+                "ja-JP",
+                "hi-IN"
+              ],
+              "reportFallbacks": {
+                "ja-JP": "顧客コンテキストが必要"
+              },
+              "sourceLocale": "en-US"
+            },
             "defaultLocale": "en-US",
             "defaultText": "Needs customer context",
             "icuArgs": {},
@@ -867,6 +2138,41 @@ window.__SCRIBE_MANIFEST__ = {
         {
           "id": "absent",
           "label": {
+            "catalogDependency": {
+              "explicitLocales": [
+                "es-US"
+              ],
+              "lookupLocales": [
+                "en-US",
+                "en-GB",
+                "en-CA",
+                "fr-CA",
+                "en-IN",
+                "cy-GB",
+                "gd-GB",
+                "ga-GB",
+                "es-US",
+                "es-MX",
+                "de-DE",
+                "fr-FR",
+                "es-ES",
+                "it-IT",
+                "nl-NL",
+                "pl-PL",
+                "pt-PT",
+                "pt-BR",
+                "ro-RO",
+                "sv-SE",
+                "ko-KR",
+                "zh-CN",
+                "ja-JP",
+                "hi-IN"
+              ],
+              "reportFallbacks": {
+                "ja-JP": "非対応"
+              },
+              "sourceLocale": "en-US"
+            },
             "defaultLocale": "en-US",
             "defaultText": "Absent",
             "icuArgs": {},
@@ -892,6 +2198,40 @@ window.__SCRIBE_MANIFEST__ = {
         {
           "id": "code-health",
           "label": {
+            "catalogDependency": {
+              "explicitLocales": [
+                "es-US",
+                "ja-JP"
+              ],
+              "lookupLocales": [
+                "en-US",
+                "en-GB",
+                "en-CA",
+                "fr-CA",
+                "en-IN",
+                "cy-GB",
+                "gd-GB",
+                "ga-GB",
+                "es-US",
+                "es-MX",
+                "de-DE",
+                "fr-FR",
+                "es-ES",
+                "it-IT",
+                "nl-NL",
+                "pl-PL",
+                "pt-PT",
+                "pt-BR",
+                "ro-RO",
+                "sv-SE",
+                "ko-KR",
+                "zh-CN",
+                "ja-JP",
+                "hi-IN"
+              ],
+              "reportFallbacks": {},
+              "sourceLocale": "en-US"
+            },
             "defaultLocale": "en-US",
             "defaultText": "Code health",
             "icuArgs": {},
@@ -910,6 +2250,41 @@ window.__SCRIBE_MANIFEST__ = {
         {
           "id": "analysis-completeness",
           "label": {
+            "catalogDependency": {
+              "explicitLocales": [
+                "es-US"
+              ],
+              "lookupLocales": [
+                "en-US",
+                "en-GB",
+                "en-CA",
+                "fr-CA",
+                "en-IN",
+                "cy-GB",
+                "gd-GB",
+                "ga-GB",
+                "es-US",
+                "es-MX",
+                "de-DE",
+                "fr-FR",
+                "es-ES",
+                "it-IT",
+                "nl-NL",
+                "pl-PL",
+                "pt-PT",
+                "pt-BR",
+                "ro-RO",
+                "sv-SE",
+                "ko-KR",
+                "zh-CN",
+                "ja-JP",
+                "hi-IN"
+              ],
+              "reportFallbacks": {
+                "ja-JP": "解析完全性"
+              },
+              "sourceLocale": "en-US"
+            },
             "defaultLocale": "en-US",
             "defaultText": "Analysis completeness",
             "icuArgs": {},
@@ -928,6 +2303,41 @@ window.__SCRIBE_MANIFEST__ = {
         {
           "id": "repository-health",
           "label": {
+            "catalogDependency": {
+              "explicitLocales": [
+                "es-US"
+              ],
+              "lookupLocales": [
+                "en-US",
+                "en-GB",
+                "en-CA",
+                "fr-CA",
+                "en-IN",
+                "cy-GB",
+                "gd-GB",
+                "ga-GB",
+                "es-US",
+                "es-MX",
+                "de-DE",
+                "fr-FR",
+                "es-ES",
+                "it-IT",
+                "nl-NL",
+                "pl-PL",
+                "pt-PT",
+                "pt-BR",
+                "ro-RO",
+                "sv-SE",
+                "ko-KR",
+                "zh-CN",
+                "ja-JP",
+                "hi-IN"
+              ],
+              "reportFallbacks": {
+                "ja-JP": "リポジトリ健全性"
+              },
+              "sourceLocale": "en-US"
+            },
             "defaultLocale": "en-US",
             "defaultText": "Repository health",
             "icuArgs": {},
@@ -946,6 +2356,41 @@ window.__SCRIBE_MANIFEST__ = {
         {
           "id": "accessibility",
           "label": {
+            "catalogDependency": {
+              "explicitLocales": [
+                "es-US"
+              ],
+              "lookupLocales": [
+                "en-US",
+                "en-GB",
+                "en-CA",
+                "fr-CA",
+                "en-IN",
+                "cy-GB",
+                "gd-GB",
+                "ga-GB",
+                "es-US",
+                "es-MX",
+                "de-DE",
+                "fr-FR",
+                "es-ES",
+                "it-IT",
+                "nl-NL",
+                "pl-PL",
+                "pt-PT",
+                "pt-BR",
+                "ro-RO",
+                "sv-SE",
+                "ko-KR",
+                "zh-CN",
+                "ja-JP",
+                "hi-IN"
+              ],
+              "reportFallbacks": {
+                "ja-JP": "アクセシビリティ"
+              },
+              "sourceLocale": "en-US"
+            },
             "defaultLocale": "en-US",
             "defaultText": "Accessibility",
             "icuArgs": {},
@@ -969,6 +2414,41 @@ window.__SCRIBE_MANIFEST__ = {
       "actionId": "feedback-finding-repository-health",
       "anchorId": "finding-repository-health",
       "label": {
+        "catalogDependency": {
+          "explicitLocales": [
+            "es-US"
+          ],
+          "lookupLocales": [
+            "en-US",
+            "en-GB",
+            "en-CA",
+            "fr-CA",
+            "en-IN",
+            "cy-GB",
+            "gd-GB",
+            "ga-GB",
+            "es-US",
+            "es-MX",
+            "de-DE",
+            "fr-FR",
+            "es-ES",
+            "it-IT",
+            "nl-NL",
+            "pl-PL",
+            "pt-PT",
+            "pt-BR",
+            "ro-RO",
+            "sv-SE",
+            "ko-KR",
+            "zh-CN",
+            "ja-JP",
+            "hi-IN"
+          ],
+          "reportFallbacks": {
+            "ja-JP": "フィードバックを送信"
+          },
+          "sourceLocale": "en-US"
+        },
         "defaultLocale": "en-US",
         "defaultText": "Send feedback",
         "icuArgs": {},
@@ -1021,7 +2501,7 @@ window.__SCRIBE_MANIFEST__ = {
     "requiresServer": false
   },
   "findingChunks": {
-    "chunkCount": 9,
+    "chunkCount": 13,
     "completeExportMaterialization": true,
     "defaultProvider": "script-tag-js",
     "indexPath": "data/findings/index.js",
@@ -1043,7 +2523,11 @@ window.__SCRIBE_MANIFEST__ = {
           "data/findings/chunk-0006.js",
           "data/findings/chunk-0007.js",
           "data/findings/chunk-0008.js",
-          "data/findings/chunk-0009.js"
+          "data/findings/chunk-0009.js",
+          "data/findings/chunk-0010.js",
+          "data/findings/chunk-0011.js",
+          "data/findings/chunk-0012.js",
+          "data/findings/chunk-0013.js"
         ],
         "indexPath": "data/findings/index.js",
         "providerId": "script-tag-js"
@@ -1058,7 +2542,11 @@ window.__SCRIBE_MANIFEST__ = {
           "data/findings/chunk-0006.json",
           "data/findings/chunk-0007.json",
           "data/findings/chunk-0008.json",
-          "data/findings/chunk-0009.json"
+          "data/findings/chunk-0009.json",
+          "data/findings/chunk-0010.json",
+          "data/findings/chunk-0011.json",
+          "data/findings/chunk-0012.json",
+          "data/findings/chunk-0013.json"
         ],
         "indexPath": "data/findings/index.json",
         "providerId": "static-server-json"
@@ -1075,6 +2563,37 @@ window.__SCRIBE_MANIFEST__ = {
       "href": "fix-plans/finding-repository-health/index.html",
       "licenseState": "visible",
       "title": {
+        "catalogDependency": {
+          "explicitLocales": [],
+          "lookupLocales": [
+            "en-US",
+            "en-GB",
+            "en-CA",
+            "fr-CA",
+            "en-IN",
+            "cy-GB",
+            "gd-GB",
+            "ga-GB",
+            "es-US",
+            "es-MX",
+            "de-DE",
+            "fr-FR",
+            "es-ES",
+            "it-IT",
+            "nl-NL",
+            "pl-PL",
+            "pt-PT",
+            "pt-BR",
+            "ro-RO",
+            "sv-SE",
+            "ko-KR",
+            "zh-CN",
+            "ja-JP",
+            "hi-IN"
+          ],
+          "reportFallbacks": {},
+          "sourceLocale": "en-US"
+        },
         "defaultLocale": "en-US",
         "defaultText": "Fix plan",
         "icuArgs": {},
@@ -1095,6 +2614,37 @@ window.__SCRIBE_MANIFEST__ = {
     {
       "aliases": [
         {
+          "catalogDependency": {
+            "explicitLocales": [],
+            "lookupLocales": [
+              "en-US",
+              "en-GB",
+              "en-CA",
+              "fr-CA",
+              "en-IN",
+              "cy-GB",
+              "gd-GB",
+              "ga-GB",
+              "es-US",
+              "es-MX",
+              "de-DE",
+              "fr-FR",
+              "es-ES",
+              "it-IT",
+              "nl-NL",
+              "pl-PL",
+              "pt-PT",
+              "pt-BR",
+              "ro-RO",
+              "sv-SE",
+              "ko-KR",
+              "zh-CN",
+              "ja-JP",
+              "hi-IN"
+            ],
+            "reportFallbacks": {},
+            "sourceLocale": "en-US"
+          },
           "defaultLocale": "en-US",
           "defaultText": "Health report",
           "icuArgs": {},
@@ -1111,6 +2661,37 @@ window.__SCRIBE_MANIFEST__ = {
         }
       ],
       "label": {
+        "catalogDependency": {
+          "explicitLocales": [],
+          "lookupLocales": [
+            "en-US",
+            "en-GB",
+            "en-CA",
+            "fr-CA",
+            "en-IN",
+            "cy-GB",
+            "gd-GB",
+            "ga-GB",
+            "es-US",
+            "es-MX",
+            "de-DE",
+            "fr-FR",
+            "es-ES",
+            "it-IT",
+            "nl-NL",
+            "pl-PL",
+            "pt-PT",
+            "pt-BR",
+            "ro-RO",
+            "sv-SE",
+            "ko-KR",
+            "zh-CN",
+            "ja-JP",
+            "hi-IN"
+          ],
+          "reportFallbacks": {},
+          "sourceLocale": "en-US"
+        },
         "defaultLocale": "en-US",
         "defaultText": "Repository health",
         "icuArgs": {},
@@ -1424,9 +3005,9 @@ window.__SCRIBE_MANIFEST__ = {
     "generatedAt": "2026-05-15T12:00:00.000Z",
     "gitRef": "HEAD",
     "performance": {
-      "analyzedFileCount": 6335,
+      "analyzedFileCount": 6336,
       "cacheMode": "unknown",
-      "payloadBytes": 94167746
+      "payloadBytes": 95648637
     },
     "repository": {
       "label": "calcom/cal.com",
@@ -1447,11 +3028,13 @@ window.__SCRIBE_MANIFEST__ = {
         "finding-repository-health",
         "source-repository-health-complexity-handler-1ba4f96898",
         "source-repository-health-complexity-main-442cd69960",
+        "source-repository-health-complexity-handler-ade03c41a4",
         "source-repository-health-complexity-createcontacts-73917edde3",
         "source-repository-health-complexity-main-93206e005a",
         "source-repository-health-complexity-validate-33e64b8b32",
         "source-repository-health-complexity-setsmslockstate-f5f5353512",
         "source-repository-health-complexity-main-88b488f1c0",
+        "source-repository-health-complexity-posthandler-aa1f68f1f7",
         "source-repository-health-complexity-findqualifiedhostswithdelegationcredentials-5cee6a9688",
         "source-repository-health-complexity-getserversideprops-1434c10d43",
         "source-repository-health-complexity-handler-71962a93c2",
@@ -1483,12 +3066,6 @@ window.__SCRIBE_MANIFEST__ = {
         "source-repository-health-complexity-getcontacts-7ec53dee4e",
         "source-repository-health-complexity-basescheduledemail-0d1d86e884",
         "source-repository-health-complexity-getaccountrecordsforrrskip-33a849c917",
-        "source-repository-health-complexity-eventadvancedtab-39f223b582",
-        "source-repository-health-complexity-handler-ade03c41a4",
-        "source-repository-health-complexity-eventmeta-3da7ba22a7",
-        "source-repository-health-complexity-getbaseproperties-7b639d0787",
-        "source-repository-health-complexity-useschedule-2fa8338b3a",
-        "source-repository-health-complexity-event-dd37a2798d",
         "source-repository-health-accessibility-wcag-4-1-2-name-role-value-1cb0f406ad",
         "source-repository-health-accessibility-wcag-4-1-2-name-role-value-8a515ce34d",
         "source-repository-health-accessibility-wcag-4-1-2-name-role-value-f845552ae8",
@@ -1540,9 +3117,13 @@ window.__SCRIBE_MANIFEST__ = {
         "source-repository-health-accessibility-wcag-1-1-1-img-alt-8a87cdaeb5",
         "source-repository-health-accessibility-wcag-1-1-1-img-alt-d70ff79fae",
         "source-repository-health-complexity-detectcontenttype-83acfa1fbf",
+        "source-repository-health-complexity-attendee-c6d2fdf809",
         "source-repository-health-complexity-getandupdatenormalizedvalues-fac5c01648",
         "source-repository-health-complexity-getbooking-fd763cf2c0",
         "source-repository-health-complexity-handler-eee7f014ae",
+        "source-repository-health-complexity-cleanuptestdata-b5d56d443d",
+        "source-repository-health-complexity-handlebookingerror-0b4887c534",
+        "source-repository-health-complexity-applistcard-73123ee301",
         "source-repository-health-complexity-attributechangedcallback-8f37fbc850",
         "source-repository-health-complexity-cancelnoshowtasksforbooking-864f8391e3",
         "source-repository-health-showcase-sampling",
@@ -1552,6 +3133,41 @@ window.__SCRIBE_MANIFEST__ = {
       "density": "full",
       "hiddenAnchorIds": [],
       "label": {
+        "catalogDependency": {
+          "explicitLocales": [
+            "es-US"
+          ],
+          "lookupLocales": [
+            "en-US",
+            "en-GB",
+            "en-CA",
+            "fr-CA",
+            "en-IN",
+            "cy-GB",
+            "gd-GB",
+            "ga-GB",
+            "es-US",
+            "es-MX",
+            "de-DE",
+            "fr-FR",
+            "es-ES",
+            "it-IT",
+            "nl-NL",
+            "pl-PL",
+            "pt-PT",
+            "pt-BR",
+            "ro-RO",
+            "sv-SE",
+            "ko-KR",
+            "zh-CN",
+            "ja-JP",
+            "hi-IN"
+          ],
+          "reportFallbacks": {
+            "ja-JP": "開発者"
+          },
+          "sourceLocale": "en-US"
+        },
         "defaultLocale": "en-US",
         "defaultText": "Developer",
         "icuArgs": {},
@@ -1570,11 +3186,13 @@ window.__SCRIBE_MANIFEST__ = {
         "finding-repository-health",
         "source-repository-health-complexity-handler-1ba4f96898",
         "source-repository-health-complexity-main-442cd69960",
+        "source-repository-health-complexity-handler-ade03c41a4",
         "source-repository-health-complexity-createcontacts-73917edde3",
         "source-repository-health-complexity-main-93206e005a",
         "source-repository-health-complexity-validate-33e64b8b32",
         "source-repository-health-complexity-setsmslockstate-f5f5353512",
         "source-repository-health-complexity-main-88b488f1c0",
+        "source-repository-health-complexity-posthandler-aa1f68f1f7",
         "source-repository-health-complexity-findqualifiedhostswithdelegationcredentials-5cee6a9688",
         "source-repository-health-complexity-getserversideprops-1434c10d43",
         "source-repository-health-complexity-handler-71962a93c2",
@@ -1606,12 +3224,6 @@ window.__SCRIBE_MANIFEST__ = {
         "source-repository-health-complexity-getcontacts-7ec53dee4e",
         "source-repository-health-complexity-basescheduledemail-0d1d86e884",
         "source-repository-health-complexity-getaccountrecordsforrrskip-33a849c917",
-        "source-repository-health-complexity-eventadvancedtab-39f223b582",
-        "source-repository-health-complexity-handler-ade03c41a4",
-        "source-repository-health-complexity-eventmeta-3da7ba22a7",
-        "source-repository-health-complexity-getbaseproperties-7b639d0787",
-        "source-repository-health-complexity-useschedule-2fa8338b3a",
-        "source-repository-health-complexity-event-dd37a2798d",
         "source-repository-health-accessibility-wcag-4-1-2-name-role-value-1cb0f406ad",
         "source-repository-health-accessibility-wcag-4-1-2-name-role-value-8a515ce34d",
         "source-repository-health-accessibility-wcag-4-1-2-name-role-value-f845552ae8",
@@ -1663,9 +3275,13 @@ window.__SCRIBE_MANIFEST__ = {
         "source-repository-health-accessibility-wcag-1-1-1-img-alt-8a87cdaeb5",
         "source-repository-health-accessibility-wcag-1-1-1-img-alt-d70ff79fae",
         "source-repository-health-complexity-detectcontenttype-83acfa1fbf",
+        "source-repository-health-complexity-attendee-c6d2fdf809",
         "source-repository-health-complexity-getandupdatenormalizedvalues-fac5c01648",
         "source-repository-health-complexity-getbooking-fd763cf2c0",
         "source-repository-health-complexity-handler-eee7f014ae",
+        "source-repository-health-complexity-cleanuptestdata-b5d56d443d",
+        "source-repository-health-complexity-handlebookingerror-0b4887c534",
+        "source-repository-health-complexity-applistcard-73123ee301",
         "source-repository-health-complexity-attributechangedcallback-8f37fbc850",
         "source-repository-health-complexity-cancelnoshowtasksforbooking-864f8391e3",
         "source-repository-health-showcase-sampling",
@@ -1685,11 +3301,13 @@ window.__SCRIBE_MANIFEST__ = {
       "hiddenAnchorIds": [
         "source-repository-health-complexity-handler-1ba4f96898",
         "source-repository-health-complexity-main-442cd69960",
+        "source-repository-health-complexity-handler-ade03c41a4",
         "source-repository-health-complexity-createcontacts-73917edde3",
         "source-repository-health-complexity-main-93206e005a",
         "source-repository-health-complexity-validate-33e64b8b32",
         "source-repository-health-complexity-setsmslockstate-f5f5353512",
         "source-repository-health-complexity-main-88b488f1c0",
+        "source-repository-health-complexity-posthandler-aa1f68f1f7",
         "source-repository-health-complexity-findqualifiedhostswithdelegationcredentials-5cee6a9688",
         "source-repository-health-complexity-getserversideprops-1434c10d43",
         "source-repository-health-complexity-handler-71962a93c2",
@@ -1721,12 +3339,6 @@ window.__SCRIBE_MANIFEST__ = {
         "source-repository-health-complexity-getcontacts-7ec53dee4e",
         "source-repository-health-complexity-basescheduledemail-0d1d86e884",
         "source-repository-health-complexity-getaccountrecordsforrrskip-33a849c917",
-        "source-repository-health-complexity-eventadvancedtab-39f223b582",
-        "source-repository-health-complexity-handler-ade03c41a4",
-        "source-repository-health-complexity-eventmeta-3da7ba22a7",
-        "source-repository-health-complexity-getbaseproperties-7b639d0787",
-        "source-repository-health-complexity-useschedule-2fa8338b3a",
-        "source-repository-health-complexity-event-dd37a2798d",
         "source-repository-health-accessibility-wcag-4-1-2-name-role-value-1cb0f406ad",
         "source-repository-health-accessibility-wcag-4-1-2-name-role-value-8a515ce34d",
         "source-repository-health-accessibility-wcag-4-1-2-name-role-value-f845552ae8",
@@ -1778,14 +3390,53 @@ window.__SCRIBE_MANIFEST__ = {
         "source-repository-health-accessibility-wcag-1-1-1-img-alt-8a87cdaeb5",
         "source-repository-health-accessibility-wcag-1-1-1-img-alt-d70ff79fae",
         "source-repository-health-complexity-detectcontenttype-83acfa1fbf",
+        "source-repository-health-complexity-attendee-c6d2fdf809",
         "source-repository-health-complexity-getandupdatenormalizedvalues-fac5c01648",
         "source-repository-health-complexity-getbooking-fd763cf2c0",
         "source-repository-health-complexity-handler-eee7f014ae",
+        "source-repository-health-complexity-cleanuptestdata-b5d56d443d",
+        "source-repository-health-complexity-handlebookingerror-0b4887c534",
+        "source-repository-health-complexity-applistcard-73123ee301",
         "source-repository-health-complexity-attributechangedcallback-8f37fbc850",
         "source-repository-health-complexity-cancelnoshowtasksforbooking-864f8391e3",
         "source-repository-health-showcase-sampling"
       ],
       "label": {
+        "catalogDependency": {
+          "explicitLocales": [
+            "es-US"
+          ],
+          "lookupLocales": [
+            "en-US",
+            "en-GB",
+            "en-CA",
+            "fr-CA",
+            "en-IN",
+            "cy-GB",
+            "gd-GB",
+            "ga-GB",
+            "es-US",
+            "es-MX",
+            "de-DE",
+            "fr-FR",
+            "es-ES",
+            "it-IT",
+            "nl-NL",
+            "pl-PL",
+            "pt-PT",
+            "pt-BR",
+            "ro-RO",
+            "sv-SE",
+            "ko-KR",
+            "zh-CN",
+            "ja-JP",
+            "hi-IN"
+          ],
+          "reportFallbacks": {
+            "ja-JP": "エグゼクティブ"
+          },
+          "sourceLocale": "en-US"
+        },
         "defaultLocale": "en-US",
         "defaultText": "Executive",
         "icuArgs": {},
@@ -1818,6 +3469,41 @@ window.__SCRIBE_MANIFEST__ = {
       "density": "normal",
       "hiddenAnchorIds": [],
       "label": {
+        "catalogDependency": {
+          "explicitLocales": [
+            "es-US"
+          ],
+          "lookupLocales": [
+            "en-US",
+            "en-GB",
+            "en-CA",
+            "fr-CA",
+            "en-IN",
+            "cy-GB",
+            "gd-GB",
+            "ga-GB",
+            "es-US",
+            "es-MX",
+            "de-DE",
+            "fr-FR",
+            "es-ES",
+            "it-IT",
+            "nl-NL",
+            "pl-PL",
+            "pt-PT",
+            "pt-BR",
+            "ro-RO",
+            "sv-SE",
+            "ko-KR",
+            "zh-CN",
+            "ja-JP",
+            "hi-IN"
+          ],
+          "reportFallbacks": {
+            "ja-JP": "監査担当"
+          },
+          "sourceLocale": "en-US"
+        },
         "defaultLocale": "en-US",
         "defaultText": "Auditor",
         "icuArgs": {},
@@ -1857,7 +3543,7 @@ window.__SCRIBE_MANIFEST__ = {
     {
       "locale": "en-US",
       "path": "data/search-index.en-US.js",
-      "tokenCount": 526
+      "tokenCount": 527
     }
   ],
   "shareActions": [
@@ -1867,6 +3553,41 @@ window.__SCRIBE_MANIFEST__ = {
       "hash": "finding-repository-health",
       "href": "findings/finding-repository-health/index.html#finding-repository-health",
       "label": {
+        "catalogDependency": {
+          "explicitLocales": [
+            "es-US"
+          ],
+          "lookupLocales": [
+            "en-US",
+            "en-GB",
+            "en-CA",
+            "fr-CA",
+            "en-IN",
+            "cy-GB",
+            "gd-GB",
+            "ga-GB",
+            "es-US",
+            "es-MX",
+            "de-DE",
+            "fr-FR",
+            "es-ES",
+            "it-IT",
+            "nl-NL",
+            "pl-PL",
+            "pt-PT",
+            "pt-BR",
+            "ro-RO",
+            "sv-SE",
+            "ko-KR",
+            "zh-CN",
+            "ja-JP",
+            "hi-IN"
+          ],
+          "reportFallbacks": {
+            "ja-JP": "検出結果を共有"
+          },
+          "sourceLocale": "en-US"
+        },
         "defaultLocale": "en-US",
         "defaultText": "Share finding",
         "icuArgs": {},
@@ -1882,6 +3603,39 @@ window.__SCRIBE_MANIFEST__ = {
         }
       },
       "summary": {
+        "catalogDependency": {
+          "explicitLocales": [],
+          "lookupLocales": [
+            "en-US",
+            "en-GB",
+            "en-CA",
+            "fr-CA",
+            "en-IN",
+            "cy-GB",
+            "gd-GB",
+            "ga-GB",
+            "es-US",
+            "es-MX",
+            "de-DE",
+            "fr-FR",
+            "es-ES",
+            "it-IT",
+            "nl-NL",
+            "pl-PL",
+            "pt-PT",
+            "pt-BR",
+            "ro-RO",
+            "sv-SE",
+            "ko-KR",
+            "zh-CN",
+            "ja-JP",
+            "hi-IN"
+          ],
+          "reportFallbacks": {
+            "ja-JP": "健全性レポートは packages/platform/examples/base/prisma/schema.prisma を、言語、パッケージ、ビルドシステム、リソースフレームワーク、データベース/スキーマ証拠の反復可能な解析カバレッジに結び付けます。"
+          },
+          "sourceLocale": "en-US"
+        },
         "defaultLocale": "en-US",
         "defaultText": "The health report ties {sourcePath} to repeatable analysis coverage for languages, packages, build systems, resource frameworks ({frameworkText}), and database/schema evidence.",
         "icuArgs": {
@@ -1900,6 +3654,39 @@ window.__SCRIBE_MANIFEST__ = {
         }
       },
       "title": {
+        "catalogDependency": {
+          "explicitLocales": [],
+          "lookupLocales": [
+            "en-US",
+            "en-GB",
+            "en-CA",
+            "fr-CA",
+            "en-IN",
+            "cy-GB",
+            "gd-GB",
+            "ga-GB",
+            "es-US",
+            "es-MX",
+            "de-DE",
+            "fr-FR",
+            "es-ES",
+            "it-IT",
+            "nl-NL",
+            "pl-PL",
+            "pt-PT",
+            "pt-BR",
+            "ro-RO",
+            "sv-SE",
+            "ko-KR",
+            "zh-CN",
+            "ja-JP",
+            "hi-IN"
+          ],
+          "reportFallbacks": {
+            "ja-JP": "リポジトリ健全性スキャンには再利用可能なソース裏付け証拠があります"
+          },
+          "sourceLocale": "en-US"
+        },
         "defaultLocale": "en-US",
         "defaultText": "Repository health scan has reusable source-backed evidence",
         "icuArgs": {},
@@ -1994,6 +3781,17 @@ window.__SCRIBE_MANIFEST__ = {
       },
       {
         "anchorIds": [
+          "fix-plan-finding-repository-health-complexity-handler-ade03c41a4"
+        ],
+        "canonicalPath": "fix-plans/finding-repository-health-complexity-handler-ade03c41a4/index.html",
+        "exportPaths": [],
+        "locale": "en-US",
+        "parentPath": "fix-plans/finding-repository-health/index.html",
+        "path": "fix-plans/finding-repository-health-complexity-handler-ade03c41a4/index.html",
+        "role": "fix-plan"
+      },
+      {
+        "anchorIds": [
           "fix-plan-finding-repository-health-complexity-createcontacts-73917edde3"
         ],
         "canonicalPath": "fix-plans/finding-repository-health-complexity-createcontacts-73917edde3/index.html",
@@ -2045,6 +3843,17 @@ window.__SCRIBE_MANIFEST__ = {
         "locale": "en-US",
         "parentPath": "fix-plans/finding-repository-health/index.html",
         "path": "fix-plans/finding-repository-health-complexity-main-88b488f1c0/index.html",
+        "role": "fix-plan"
+      },
+      {
+        "anchorIds": [
+          "fix-plan-finding-repository-health-complexity-posthandler-aa1f68f1f7"
+        ],
+        "canonicalPath": "fix-plans/finding-repository-health-complexity-posthandler-aa1f68f1f7/index.html",
+        "exportPaths": [],
+        "locale": "en-US",
+        "parentPath": "fix-plans/finding-repository-health/index.html",
+        "path": "fix-plans/finding-repository-health-complexity-posthandler-aa1f68f1f7/index.html",
         "role": "fix-plan"
       },
       {
@@ -2386,72 +4195,6 @@ window.__SCRIBE_MANIFEST__ = {
         "locale": "en-US",
         "parentPath": "fix-plans/finding-repository-health/index.html",
         "path": "fix-plans/finding-repository-health-complexity-getaccountrecordsforrrskip-33a849c917/index.html",
-        "role": "fix-plan"
-      },
-      {
-        "anchorIds": [
-          "fix-plan-finding-repository-health-complexity-eventadvancedtab-39f223b582"
-        ],
-        "canonicalPath": "fix-plans/finding-repository-health-complexity-eventadvancedtab-39f223b582/index.html",
-        "exportPaths": [],
-        "locale": "en-US",
-        "parentPath": "fix-plans/finding-repository-health/index.html",
-        "path": "fix-plans/finding-repository-health-complexity-eventadvancedtab-39f223b582/index.html",
-        "role": "fix-plan"
-      },
-      {
-        "anchorIds": [
-          "fix-plan-finding-repository-health-complexity-handler-ade03c41a4"
-        ],
-        "canonicalPath": "fix-plans/finding-repository-health-complexity-handler-ade03c41a4/index.html",
-        "exportPaths": [],
-        "locale": "en-US",
-        "parentPath": "fix-plans/finding-repository-health/index.html",
-        "path": "fix-plans/finding-repository-health-complexity-handler-ade03c41a4/index.html",
-        "role": "fix-plan"
-      },
-      {
-        "anchorIds": [
-          "fix-plan-finding-repository-health-complexity-eventmeta-3da7ba22a7"
-        ],
-        "canonicalPath": "fix-plans/finding-repository-health-complexity-eventmeta-3da7ba22a7/index.html",
-        "exportPaths": [],
-        "locale": "en-US",
-        "parentPath": "fix-plans/finding-repository-health/index.html",
-        "path": "fix-plans/finding-repository-health-complexity-eventmeta-3da7ba22a7/index.html",
-        "role": "fix-plan"
-      },
-      {
-        "anchorIds": [
-          "fix-plan-finding-repository-health-complexity-getbaseproperties-7b639d0787"
-        ],
-        "canonicalPath": "fix-plans/finding-repository-health-complexity-getbaseproperties-7b639d0787/index.html",
-        "exportPaths": [],
-        "locale": "en-US",
-        "parentPath": "fix-plans/finding-repository-health/index.html",
-        "path": "fix-plans/finding-repository-health-complexity-getbaseproperties-7b639d0787/index.html",
-        "role": "fix-plan"
-      },
-      {
-        "anchorIds": [
-          "fix-plan-finding-repository-health-complexity-useschedule-2fa8338b3a"
-        ],
-        "canonicalPath": "fix-plans/finding-repository-health-complexity-useschedule-2fa8338b3a/index.html",
-        "exportPaths": [],
-        "locale": "en-US",
-        "parentPath": "fix-plans/finding-repository-health/index.html",
-        "path": "fix-plans/finding-repository-health-complexity-useschedule-2fa8338b3a/index.html",
-        "role": "fix-plan"
-      },
-      {
-        "anchorIds": [
-          "fix-plan-finding-repository-health-complexity-event-dd37a2798d"
-        ],
-        "canonicalPath": "fix-plans/finding-repository-health-complexity-event-dd37a2798d/index.html",
-        "exportPaths": [],
-        "locale": "en-US",
-        "parentPath": "fix-plans/finding-repository-health/index.html",
-        "path": "fix-plans/finding-repository-health-complexity-event-dd37a2798d/index.html",
         "role": "fix-plan"
       },
       {
@@ -3017,6 +4760,17 @@ window.__SCRIBE_MANIFEST__ = {
       },
       {
         "anchorIds": [
+          "fix-plan-finding-repository-health-complexity-attendee-c6d2fdf809"
+        ],
+        "canonicalPath": "fix-plans/finding-repository-health-complexity-attendee-c6d2fdf809/index.html",
+        "exportPaths": [],
+        "locale": "en-US",
+        "parentPath": "fix-plans/finding-repository-health/index.html",
+        "path": "fix-plans/finding-repository-health-complexity-attendee-c6d2fdf809/index.html",
+        "role": "fix-plan"
+      },
+      {
+        "anchorIds": [
           "fix-plan-finding-repository-health-complexity-getandupdatenormalizedvalues-fac5c01648"
         ],
         "canonicalPath": "fix-plans/finding-repository-health-complexity-getandupdatenormalizedvalues-fac5c01648/index.html",
@@ -3050,6 +4804,39 @@ window.__SCRIBE_MANIFEST__ = {
       },
       {
         "anchorIds": [
+          "fix-plan-finding-repository-health-complexity-cleanuptestdata-b5d56d443d"
+        ],
+        "canonicalPath": "fix-plans/finding-repository-health-complexity-cleanuptestdata-b5d56d443d/index.html",
+        "exportPaths": [],
+        "locale": "en-US",
+        "parentPath": "fix-plans/finding-repository-health/index.html",
+        "path": "fix-plans/finding-repository-health-complexity-cleanuptestdata-b5d56d443d/index.html",
+        "role": "fix-plan"
+      },
+      {
+        "anchorIds": [
+          "fix-plan-finding-repository-health-complexity-handlebookingerror-0b4887c534"
+        ],
+        "canonicalPath": "fix-plans/finding-repository-health-complexity-handlebookingerror-0b4887c534/index.html",
+        "exportPaths": [],
+        "locale": "en-US",
+        "parentPath": "fix-plans/finding-repository-health/index.html",
+        "path": "fix-plans/finding-repository-health-complexity-handlebookingerror-0b4887c534/index.html",
+        "role": "fix-plan"
+      },
+      {
+        "anchorIds": [
+          "fix-plan-finding-repository-health-complexity-applistcard-73123ee301"
+        ],
+        "canonicalPath": "fix-plans/finding-repository-health-complexity-applistcard-73123ee301/index.html",
+        "exportPaths": [],
+        "locale": "en-US",
+        "parentPath": "fix-plans/finding-repository-health/index.html",
+        "path": "fix-plans/finding-repository-health-complexity-applistcard-73123ee301/index.html",
+        "role": "fix-plan"
+      },
+      {
+        "anchorIds": [
           "fix-plan-finding-repository-health-complexity-attributechangedcallback-8f37fbc850"
         ],
         "canonicalPath": "fix-plans/finding-repository-health-complexity-attributechangedcallback-8f37fbc850/index.html",
@@ -3079,6 +4866,41 @@ window.__SCRIBE_MANIFEST__ = {
     "availableModes": [
       {
         "label": {
+          "catalogDependency": {
+            "explicitLocales": [
+              "es-US"
+            ],
+            "lookupLocales": [
+              "en-US",
+              "en-GB",
+              "en-CA",
+              "fr-CA",
+              "en-IN",
+              "cy-GB",
+              "gd-GB",
+              "ga-GB",
+              "es-US",
+              "es-MX",
+              "de-DE",
+              "fr-FR",
+              "es-ES",
+              "it-IT",
+              "nl-NL",
+              "pl-PL",
+              "pt-PT",
+              "pt-BR",
+              "ro-RO",
+              "sv-SE",
+              "ko-KR",
+              "zh-CN",
+              "ja-JP",
+              "hi-IN"
+            ],
+            "reportFallbacks": {
+              "ja-JP": "自動"
+            },
+            "sourceLocale": "en-US"
+          },
           "defaultLocale": "en-US",
           "defaultText": "Auto",
           "icuArgs": {},
@@ -3097,6 +4919,41 @@ window.__SCRIBE_MANIFEST__ = {
       },
       {
         "label": {
+          "catalogDependency": {
+            "explicitLocales": [
+              "es-US"
+            ],
+            "lookupLocales": [
+              "en-US",
+              "en-GB",
+              "en-CA",
+              "fr-CA",
+              "en-IN",
+              "cy-GB",
+              "gd-GB",
+              "ga-GB",
+              "es-US",
+              "es-MX",
+              "de-DE",
+              "fr-FR",
+              "es-ES",
+              "it-IT",
+              "nl-NL",
+              "pl-PL",
+              "pt-PT",
+              "pt-BR",
+              "ro-RO",
+              "sv-SE",
+              "ko-KR",
+              "zh-CN",
+              "ja-JP",
+              "hi-IN"
+            ],
+            "reportFallbacks": {
+              "ja-JP": "ライト"
+            },
+            "sourceLocale": "en-US"
+          },
           "defaultLocale": "en-US",
           "defaultText": "Light",
           "icuArgs": {},
@@ -3115,6 +4972,41 @@ window.__SCRIBE_MANIFEST__ = {
       },
       {
         "label": {
+          "catalogDependency": {
+            "explicitLocales": [
+              "es-US"
+            ],
+            "lookupLocales": [
+              "en-US",
+              "en-GB",
+              "en-CA",
+              "fr-CA",
+              "en-IN",
+              "cy-GB",
+              "gd-GB",
+              "ga-GB",
+              "es-US",
+              "es-MX",
+              "de-DE",
+              "fr-FR",
+              "es-ES",
+              "it-IT",
+              "nl-NL",
+              "pl-PL",
+              "pt-PT",
+              "pt-BR",
+              "ro-RO",
+              "sv-SE",
+              "ko-KR",
+              "zh-CN",
+              "ja-JP",
+              "hi-IN"
+            ],
+            "reportFallbacks": {
+              "ja-JP": "ダーク"
+            },
+            "sourceLocale": "en-US"
+          },
           "defaultLocale": "en-US",
           "defaultText": "Dark",
           "icuArgs": {},
@@ -3136,6 +5028,37 @@ window.__SCRIBE_MANIFEST__ = {
       {
         "cssPath": "assets/immutable/theme-daylight.ffce2abf0c8dffe5.css",
         "label": {
+          "catalogDependency": {
+            "explicitLocales": [],
+            "lookupLocales": [
+              "en-US",
+              "en-GB",
+              "en-CA",
+              "fr-CA",
+              "en-IN",
+              "cy-GB",
+              "gd-GB",
+              "ga-GB",
+              "es-US",
+              "es-MX",
+              "de-DE",
+              "fr-FR",
+              "es-ES",
+              "it-IT",
+              "nl-NL",
+              "pl-PL",
+              "pt-PT",
+              "pt-BR",
+              "ro-RO",
+              "sv-SE",
+              "ko-KR",
+              "zh-CN",
+              "ja-JP",
+              "hi-IN"
+            ],
+            "reportFallbacks": {},
+            "sourceLocale": "en-US"
+          },
           "defaultLocale": "en-US",
           "defaultText": "Daylight",
           "icuArgs": {},
@@ -3155,6 +5078,37 @@ window.__SCRIBE_MANIFEST__ = {
       {
         "cssPath": "assets/immutable/theme-ultraviolet.e8d1e286a433a1f6.css",
         "label": {
+          "catalogDependency": {
+            "explicitLocales": [],
+            "lookupLocales": [
+              "en-US",
+              "en-GB",
+              "en-CA",
+              "fr-CA",
+              "en-IN",
+              "cy-GB",
+              "gd-GB",
+              "ga-GB",
+              "es-US",
+              "es-MX",
+              "de-DE",
+              "fr-FR",
+              "es-ES",
+              "it-IT",
+              "nl-NL",
+              "pl-PL",
+              "pt-PT",
+              "pt-BR",
+              "ro-RO",
+              "sv-SE",
+              "ko-KR",
+              "zh-CN",
+              "ja-JP",
+              "hi-IN"
+            ],
+            "reportFallbacks": {},
+            "sourceLocale": "en-US"
+          },
           "defaultLocale": "en-US",
           "defaultText": "Ultraviolet",
           "icuArgs": {},
@@ -3174,6 +5128,37 @@ window.__SCRIBE_MANIFEST__ = {
       {
         "cssPath": "assets/immutable/theme-infrared.caf6e90430229b41.css",
         "label": {
+          "catalogDependency": {
+            "explicitLocales": [],
+            "lookupLocales": [
+              "en-US",
+              "en-GB",
+              "en-CA",
+              "fr-CA",
+              "en-IN",
+              "cy-GB",
+              "gd-GB",
+              "ga-GB",
+              "es-US",
+              "es-MX",
+              "de-DE",
+              "fr-FR",
+              "es-ES",
+              "it-IT",
+              "nl-NL",
+              "pl-PL",
+              "pt-PT",
+              "pt-BR",
+              "ro-RO",
+              "sv-SE",
+              "ko-KR",
+              "zh-CN",
+              "ja-JP",
+              "hi-IN"
+            ],
+            "reportFallbacks": {},
+            "sourceLocale": "en-US"
+          },
           "defaultLocale": "en-US",
           "defaultText": "Infrared",
           "icuArgs": {},
@@ -3193,6 +5178,37 @@ window.__SCRIBE_MANIFEST__ = {
       {
         "cssPath": "assets/immutable/theme-high-contrast.32d22d1a3f404d86.css",
         "label": {
+          "catalogDependency": {
+            "explicitLocales": [],
+            "lookupLocales": [
+              "en-US",
+              "en-GB",
+              "en-CA",
+              "fr-CA",
+              "en-IN",
+              "cy-GB",
+              "gd-GB",
+              "ga-GB",
+              "es-US",
+              "es-MX",
+              "de-DE",
+              "fr-FR",
+              "es-ES",
+              "it-IT",
+              "nl-NL",
+              "pl-PL",
+              "pt-PT",
+              "pt-BR",
+              "ro-RO",
+              "sv-SE",
+              "ko-KR",
+              "zh-CN",
+              "ja-JP",
+              "hi-IN"
+            ],
+            "reportFallbacks": {},
+            "sourceLocale": "en-US"
+          },
           "defaultLocale": "en-US",
           "defaultText": "High Contrast",
           "icuArgs": {},
@@ -3215,6 +5231,37 @@ window.__SCRIBE_MANIFEST__ = {
     "density": "normal"
   },
   "title": {
+    "catalogDependency": {
+      "explicitLocales": [],
+      "lookupLocales": [
+        "en-US",
+        "en-GB",
+        "en-CA",
+        "fr-CA",
+        "en-IN",
+        "cy-GB",
+        "gd-GB",
+        "ga-GB",
+        "es-US",
+        "es-MX",
+        "de-DE",
+        "fr-FR",
+        "es-ES",
+        "it-IT",
+        "nl-NL",
+        "pl-PL",
+        "pt-PT",
+        "pt-BR",
+        "ro-RO",
+        "sv-SE",
+        "ko-KR",
+        "zh-CN",
+        "ja-JP",
+        "hi-IN"
+      ],
+      "reportFallbacks": {},
+      "sourceLocale": "en-US"
+    },
     "defaultLocale": "en-US",
     "defaultText": "Cal.diy Repository Health",
     "icuArgs": {},
@@ -3242,6 +5289,39 @@ window.__SCRIBE_MANIFEST__ = {
               "pagePath": "findings/finding-repository-health/index.html",
               "role": "source-snippet",
               "title": {
+                "catalogDependency": {
+                  "explicitLocales": [],
+                  "lookupLocales": [
+                    "en-US",
+                    "en-GB",
+                    "en-CA",
+                    "fr-CA",
+                    "en-IN",
+                    "cy-GB",
+                    "gd-GB",
+                    "ga-GB",
+                    "es-US",
+                    "es-MX",
+                    "de-DE",
+                    "fr-FR",
+                    "es-ES",
+                    "it-IT",
+                    "nl-NL",
+                    "pl-PL",
+                    "pt-PT",
+                    "pt-BR",
+                    "ro-RO",
+                    "sv-SE",
+                    "ko-KR",
+                    "zh-CN",
+                    "ja-JP",
+                    "hi-IN"
+                  ],
+                  "reportFallbacks": {
+                    "ja-JP": "ソース証拠"
+                  },
+                  "sourceLocale": "en-US"
+                },
                 "defaultLocale": "en-US",
                 "defaultText": "Source evidence",
                 "icuArgs": {},
@@ -3263,6 +5343,39 @@ window.__SCRIBE_MANIFEST__ = {
               "pagePath": "findings/finding-repository-health/index.html",
               "role": "diagram",
               "title": {
+                "catalogDependency": {
+                  "explicitLocales": [],
+                  "lookupLocales": [
+                    "en-US",
+                    "en-GB",
+                    "en-CA",
+                    "fr-CA",
+                    "en-IN",
+                    "cy-GB",
+                    "gd-GB",
+                    "ga-GB",
+                    "es-US",
+                    "es-MX",
+                    "de-DE",
+                    "fr-FR",
+                    "es-ES",
+                    "it-IT",
+                    "nl-NL",
+                    "pl-PL",
+                    "pt-PT",
+                    "pt-BR",
+                    "ro-RO",
+                    "sv-SE",
+                    "ko-KR",
+                    "zh-CN",
+                    "ja-JP",
+                    "hi-IN"
+                  ],
+                  "reportFallbacks": {
+                    "ja-JP": "ソースデータ"
+                  },
+                  "sourceLocale": "en-US"
+                },
                 "defaultLocale": "en-US",
                 "defaultText": "Source data",
                 "icuArgs": {},
@@ -3284,6 +5397,37 @@ window.__SCRIBE_MANIFEST__ = {
               "pagePath": "fix-plans/finding-repository-health/index.html",
               "role": "fix-plan",
               "title": {
+                "catalogDependency": {
+                  "explicitLocales": [],
+                  "lookupLocales": [
+                    "en-US",
+                    "en-GB",
+                    "en-CA",
+                    "fr-CA",
+                    "en-IN",
+                    "cy-GB",
+                    "gd-GB",
+                    "ga-GB",
+                    "es-US",
+                    "es-MX",
+                    "de-DE",
+                    "fr-FR",
+                    "es-ES",
+                    "it-IT",
+                    "nl-NL",
+                    "pl-PL",
+                    "pt-PT",
+                    "pt-BR",
+                    "ro-RO",
+                    "sv-SE",
+                    "ko-KR",
+                    "zh-CN",
+                    "ja-JP",
+                    "hi-IN"
+                  ],
+                  "reportFallbacks": {},
+                  "sourceLocale": "en-US"
+                },
                 "defaultLocale": "en-US",
                 "defaultText": "Fix plan",
                 "icuArgs": {},
@@ -3303,6 +5447,39 @@ window.__SCRIBE_MANIFEST__ = {
           "pagePath": "findings/finding-repository-health/index.html",
           "role": "finding",
           "title": {
+            "catalogDependency": {
+              "explicitLocales": [],
+              "lookupLocales": [
+                "en-US",
+                "en-GB",
+                "en-CA",
+                "fr-CA",
+                "en-IN",
+                "cy-GB",
+                "gd-GB",
+                "ga-GB",
+                "es-US",
+                "es-MX",
+                "de-DE",
+                "fr-FR",
+                "es-ES",
+                "it-IT",
+                "nl-NL",
+                "pl-PL",
+                "pt-PT",
+                "pt-BR",
+                "ro-RO",
+                "sv-SE",
+                "ko-KR",
+                "zh-CN",
+                "ja-JP",
+                "hi-IN"
+              ],
+              "reportFallbacks": {
+                "ja-JP": "リポジトリ健全性スキャンには再利用可能なソース裏付け証拠があります"
+              },
+              "sourceLocale": "en-US"
+            },
             "defaultLocale": "en-US",
             "defaultText": "Repository health scan has reusable source-backed evidence",
             "icuArgs": {},
@@ -3322,6 +5499,39 @@ window.__SCRIBE_MANIFEST__ = {
       "pagePath": "index.html",
       "role": "section",
       "title": {
+        "catalogDependency": {
+          "explicitLocales": [],
+          "lookupLocales": [
+            "en-US",
+            "en-GB",
+            "en-CA",
+            "fr-CA",
+            "en-IN",
+            "cy-GB",
+            "gd-GB",
+            "ga-GB",
+            "es-US",
+            "es-MX",
+            "de-DE",
+            "fr-FR",
+            "es-ES",
+            "it-IT",
+            "nl-NL",
+            "pl-PL",
+            "pt-PT",
+            "pt-BR",
+            "ro-RO",
+            "sv-SE",
+            "ko-KR",
+            "zh-CN",
+            "ja-JP",
+            "hi-IN"
+          ],
+          "reportFallbacks": {
+            "ja-JP": "概要"
+          },
+          "sourceLocale": "en-US"
+        },
         "defaultLocale": "en-US",
         "defaultText": "Overview",
         "icuArgs": {},
@@ -3349,6 +5559,37 @@ window.__SCRIBE_MANIFEST__ = {
               "pagePath": "references/index.html",
               "role": "methodology",
               "title": {
+                "catalogDependency": {
+                  "explicitLocales": [],
+                  "lookupLocales": [
+                    "en-US",
+                    "en-GB",
+                    "en-CA",
+                    "fr-CA",
+                    "en-IN",
+                    "cy-GB",
+                    "gd-GB",
+                    "ga-GB",
+                    "es-US",
+                    "es-MX",
+                    "de-DE",
+                    "fr-FR",
+                    "es-ES",
+                    "it-IT",
+                    "nl-NL",
+                    "pl-PL",
+                    "pt-PT",
+                    "pt-BR",
+                    "ro-RO",
+                    "sv-SE",
+                    "ko-KR",
+                    "zh-CN",
+                    "ja-JP",
+                    "hi-IN"
+                  ],
+                  "reportFallbacks": {},
+                  "sourceLocale": "en-US"
+                },
                 "defaultLocale": "en-US",
                 "defaultText": "calcom/cal.com · 180ede28f0bddf2738933a6e60a8e80f6116d7da",
                 "icuArgs": {},
@@ -3368,6 +5609,37 @@ window.__SCRIBE_MANIFEST__ = {
           "pagePath": "references/index.html",
           "role": "methodology",
           "title": {
+            "catalogDependency": {
+              "explicitLocales": [],
+              "lookupLocales": [
+                "en-US",
+                "en-GB",
+                "en-CA",
+                "fr-CA",
+                "en-IN",
+                "cy-GB",
+                "gd-GB",
+                "ga-GB",
+                "es-US",
+                "es-MX",
+                "de-DE",
+                "fr-FR",
+                "es-ES",
+                "it-IT",
+                "nl-NL",
+                "pl-PL",
+                "pt-PT",
+                "pt-BR",
+                "ro-RO",
+                "sv-SE",
+                "ko-KR",
+                "zh-CN",
+                "ja-JP",
+                "hi-IN"
+              ],
+              "reportFallbacks": {},
+              "sourceLocale": "en-US"
+            },
             "defaultLocale": "en-US",
             "defaultText": "Cognitive Complexity",
             "icuArgs": {},
@@ -3392,6 +5664,37 @@ window.__SCRIBE_MANIFEST__ = {
               "pagePath": "references/index.html",
               "role": "methodology",
               "title": {
+                "catalogDependency": {
+                  "explicitLocales": [],
+                  "lookupLocales": [
+                    "en-US",
+                    "en-GB",
+                    "en-CA",
+                    "fr-CA",
+                    "en-IN",
+                    "cy-GB",
+                    "gd-GB",
+                    "ga-GB",
+                    "es-US",
+                    "es-MX",
+                    "de-DE",
+                    "fr-FR",
+                    "es-ES",
+                    "it-IT",
+                    "nl-NL",
+                    "pl-PL",
+                    "pt-PT",
+                    "pt-BR",
+                    "ro-RO",
+                    "sv-SE",
+                    "ko-KR",
+                    "zh-CN",
+                    "ja-JP",
+                    "hi-IN"
+                  ],
+                  "reportFallbacks": {},
+                  "sourceLocale": "en-US"
+                },
                 "defaultLocale": "en-US",
                 "defaultText": "calcom/cal.com · 180ede28f0bddf2738933a6e60a8e80f6116d7da",
                 "icuArgs": {},
@@ -3411,6 +5714,37 @@ window.__SCRIBE_MANIFEST__ = {
           "pagePath": "references/index.html",
           "role": "methodology",
           "title": {
+            "catalogDependency": {
+              "explicitLocales": [],
+              "lookupLocales": [
+                "en-US",
+                "en-GB",
+                "en-CA",
+                "fr-CA",
+                "en-IN",
+                "cy-GB",
+                "gd-GB",
+                "ga-GB",
+                "es-US",
+                "es-MX",
+                "de-DE",
+                "fr-FR",
+                "es-ES",
+                "it-IT",
+                "nl-NL",
+                "pl-PL",
+                "pt-PT",
+                "pt-BR",
+                "ro-RO",
+                "sv-SE",
+                "ko-KR",
+                "zh-CN",
+                "ja-JP",
+                "hi-IN"
+              ],
+              "reportFallbacks": {},
+              "sourceLocale": "en-US"
+            },
             "defaultLocale": "en-US",
             "defaultText": "Cyclomatic Complexity",
             "icuArgs": {},
@@ -3432,6 +5766,37 @@ window.__SCRIBE_MANIFEST__ = {
           "pagePath": "references/index.html",
           "role": "methodology",
           "title": {
+            "catalogDependency": {
+              "explicitLocales": [],
+              "lookupLocales": [
+                "en-US",
+                "en-GB",
+                "en-CA",
+                "fr-CA",
+                "en-IN",
+                "cy-GB",
+                "gd-GB",
+                "ga-GB",
+                "es-US",
+                "es-MX",
+                "de-DE",
+                "fr-FR",
+                "es-ES",
+                "it-IT",
+                "nl-NL",
+                "pl-PL",
+                "pt-PT",
+                "pt-BR",
+                "ro-RO",
+                "sv-SE",
+                "ko-KR",
+                "zh-CN",
+                "ja-JP",
+                "hi-IN"
+              ],
+              "reportFallbacks": {},
+              "sourceLocale": "en-US"
+            },
             "defaultLocale": "en-US",
             "defaultText": "Halstead Volume",
             "icuArgs": {},
@@ -3453,6 +5818,37 @@ window.__SCRIBE_MANIFEST__ = {
           "pagePath": "references/index.html",
           "role": "methodology",
           "title": {
+            "catalogDependency": {
+              "explicitLocales": [],
+              "lookupLocales": [
+                "en-US",
+                "en-GB",
+                "en-CA",
+                "fr-CA",
+                "en-IN",
+                "cy-GB",
+                "gd-GB",
+                "ga-GB",
+                "es-US",
+                "es-MX",
+                "de-DE",
+                "fr-FR",
+                "es-ES",
+                "it-IT",
+                "nl-NL",
+                "pl-PL",
+                "pt-PT",
+                "pt-BR",
+                "ro-RO",
+                "sv-SE",
+                "ko-KR",
+                "zh-CN",
+                "ja-JP",
+                "hi-IN"
+              ],
+              "reportFallbacks": {},
+              "sourceLocale": "en-US"
+            },
             "defaultLocale": "en-US",
             "defaultText": "Lines of Code",
             "icuArgs": {},
@@ -3477,6 +5873,37 @@ window.__SCRIBE_MANIFEST__ = {
               "pagePath": "references/index.html",
               "role": "methodology",
               "title": {
+                "catalogDependency": {
+                  "explicitLocales": [],
+                  "lookupLocales": [
+                    "en-US",
+                    "en-GB",
+                    "en-CA",
+                    "fr-CA",
+                    "en-IN",
+                    "cy-GB",
+                    "gd-GB",
+                    "ga-GB",
+                    "es-US",
+                    "es-MX",
+                    "de-DE",
+                    "fr-FR",
+                    "es-ES",
+                    "it-IT",
+                    "nl-NL",
+                    "pl-PL",
+                    "pt-PT",
+                    "pt-BR",
+                    "ro-RO",
+                    "sv-SE",
+                    "ko-KR",
+                    "zh-CN",
+                    "ja-JP",
+                    "hi-IN"
+                  ],
+                  "reportFallbacks": {},
+                  "sourceLocale": "en-US"
+                },
                 "defaultLocale": "en-US",
                 "defaultText": "calcom/cal.com · 180ede28f0bddf2738933a6e60a8e80f6116d7da",
                 "icuArgs": {},
@@ -3496,6 +5923,37 @@ window.__SCRIBE_MANIFEST__ = {
           "pagePath": "references/index.html",
           "role": "methodology",
           "title": {
+            "catalogDependency": {
+              "explicitLocales": [],
+              "lookupLocales": [
+                "en-US",
+                "en-GB",
+                "en-CA",
+                "fr-CA",
+                "en-IN",
+                "cy-GB",
+                "gd-GB",
+                "ga-GB",
+                "es-US",
+                "es-MX",
+                "de-DE",
+                "fr-FR",
+                "es-ES",
+                "it-IT",
+                "nl-NL",
+                "pl-PL",
+                "pt-PT",
+                "pt-BR",
+                "ro-RO",
+                "sv-SE",
+                "ko-KR",
+                "zh-CN",
+                "ja-JP",
+                "hi-IN"
+              ],
+              "reportFallbacks": {},
+              "sourceLocale": "en-US"
+            },
             "defaultLocale": "en-US",
             "defaultText": "Maintainability Index",
             "icuArgs": {},
@@ -3515,6 +5973,37 @@ window.__SCRIBE_MANIFEST__ = {
       "pagePath": "references/index.html",
       "role": "methodology",
       "title": {
+        "catalogDependency": {
+          "explicitLocales": [],
+          "lookupLocales": [
+            "en-US",
+            "en-GB",
+            "en-CA",
+            "fr-CA",
+            "en-IN",
+            "cy-GB",
+            "gd-GB",
+            "ga-GB",
+            "es-US",
+            "es-MX",
+            "de-DE",
+            "fr-FR",
+            "es-ES",
+            "it-IT",
+            "nl-NL",
+            "pl-PL",
+            "pt-PT",
+            "pt-BR",
+            "ro-RO",
+            "sv-SE",
+            "ko-KR",
+            "zh-CN",
+            "ja-JP",
+            "hi-IN"
+          ],
+          "reportFallbacks": {},
+          "sourceLocale": "en-US"
+        },
         "defaultLocale": "en-US",
         "defaultText": "More information",
         "icuArgs": {},
@@ -3534,6 +6023,39 @@ window.__SCRIBE_MANIFEST__ = {
   "visualizations": [
     {
       "altText": {
+        "catalogDependency": {
+          "explicitLocales": [],
+          "lookupLocales": [
+            "en-US",
+            "en-GB",
+            "en-CA",
+            "fr-CA",
+            "en-IN",
+            "cy-GB",
+            "gd-GB",
+            "ga-GB",
+            "es-US",
+            "es-MX",
+            "de-DE",
+            "fr-FR",
+            "es-ES",
+            "it-IT",
+            "nl-NL",
+            "pl-PL",
+            "pt-PT",
+            "pt-BR",
+            "ro-RO",
+            "sv-SE",
+            "ko-KR",
+            "zh-CN",
+            "ja-JP",
+            "hi-IN"
+          ],
+          "reportFallbacks": {
+            "ja-JP": "6336 個のソースファイル、7 個の言語、120 個のパッケージマニフェスト、210 個のビルド設定、7 個のリソース検出、604 個のデータベーススキーマ成果物を示すリポジトリ健全性ソースデータ。"
+          },
+          "sourceLocale": "en-US"
+        },
         "defaultLocale": "en-US",
         "defaultText": "Repository health source data showing {sourceFileCount, number} source files, {languageCount, number} languages, {packageManifestCount, number} package manifests, {buildConfigCount, number} build configs, {frameworkDetectionCount, number} resource detections, and {databaseSchemaCount, number} database schema artifacts.",
         "icuArgs": {
@@ -3542,7 +6064,7 @@ window.__SCRIBE_MANIFEST__ = {
           "frameworkDetectionCount": 7,
           "languageCount": 7,
           "packageManifestCount": 120,
-          "sourceFileCount": 6335
+          "sourceFileCount": 6336
         },
         "msgid": "scribe.report.repositoryHealth.visualization.alt",
         "provenance": "template",
@@ -3561,6 +6083,39 @@ window.__SCRIBE_MANIFEST__ = {
         "table"
       ],
       "label": {
+        "catalogDependency": {
+          "explicitLocales": [],
+          "lookupLocales": [
+            "en-US",
+            "en-GB",
+            "en-CA",
+            "fr-CA",
+            "en-IN",
+            "cy-GB",
+            "gd-GB",
+            "ga-GB",
+            "es-US",
+            "es-MX",
+            "de-DE",
+            "fr-FR",
+            "es-ES",
+            "it-IT",
+            "nl-NL",
+            "pl-PL",
+            "pt-PT",
+            "pt-BR",
+            "ro-RO",
+            "sv-SE",
+            "ko-KR",
+            "zh-CN",
+            "ja-JP",
+            "hi-IN"
+          ],
+          "reportFallbacks": {
+            "ja-JP": "ソースデータ"
+          },
+          "sourceLocale": "en-US"
+        },
         "defaultLocale": "en-US",
         "defaultText": "Source data",
         "icuArgs": {},
@@ -3576,6 +6131,39 @@ window.__SCRIBE_MANIFEST__ = {
         }
       },
       "longDescription": {
+        "catalogDependency": {
+          "explicitLocales": [],
+          "lookupLocales": [
+            "en-US",
+            "en-GB",
+            "en-CA",
+            "fr-CA",
+            "en-IN",
+            "cy-GB",
+            "gd-GB",
+            "ga-GB",
+            "es-US",
+            "es-MX",
+            "de-DE",
+            "fr-FR",
+            "es-ES",
+            "it-IT",
+            "nl-NL",
+            "pl-PL",
+            "pt-PT",
+            "pt-BR",
+            "ro-RO",
+            "sv-SE",
+            "ko-KR",
+            "zh-CN",
+            "ja-JP",
+            "hi-IN"
+          ],
+          "reportFallbacks": {
+            "ja-JP": "この可視化は calcom/cal.com から収集したリポジトリ健全性入力を要約します。101 個のデータエンティティ、255 個の API エンドポイント、28 個のメッセージチャネル、822 個の設定キーがあります。"
+          },
+          "sourceLocale": "en-US"
+        },
         "defaultLocale": "en-US",
         "defaultText": "The source data summarizes repository health inputs collected from {repositoryLabel}: {languages, list}, {frameworkText}, {dataEntityCount, number} data entities, {apiEndpointCount, number} API endpoints ({endpointTypeText}), {messageChannelCount, number} message channels, {configKeyCount, number} config keys, and {cicdText}.",
         "icuArgs": {
@@ -3615,6 +6203,37 @@ window.__SCRIBE_MANIFEST__ = {
       "projection": "treemap",
       "projectionLabel": "Source data",
       "projectionLabelText": {
+        "catalogDependency": {
+          "explicitLocales": [],
+          "lookupLocales": [
+            "en-US",
+            "en-GB",
+            "en-CA",
+            "fr-CA",
+            "en-IN",
+            "cy-GB",
+            "gd-GB",
+            "ga-GB",
+            "es-US",
+            "es-MX",
+            "de-DE",
+            "fr-FR",
+            "es-ES",
+            "it-IT",
+            "nl-NL",
+            "pl-PL",
+            "pt-PT",
+            "pt-BR",
+            "ro-RO",
+            "sv-SE",
+            "ko-KR",
+            "zh-CN",
+            "ja-JP",
+            "hi-IN"
+          ],
+          "reportFallbacks": {},
+          "sourceLocale": "en-US"
+        },
         "defaultLocale": "en-US",
         "defaultText": "Source data",
         "icuArgs": {},
@@ -3639,6 +6258,37 @@ window.__SCRIBE_MANIFEST__ = {
         {
           "label": "Source",
           "labelText": {
+            "catalogDependency": {
+              "explicitLocales": [],
+              "lookupLocales": [
+                "en-US",
+                "en-GB",
+                "en-CA",
+                "fr-CA",
+                "en-IN",
+                "cy-GB",
+                "gd-GB",
+                "ga-GB",
+                "es-US",
+                "es-MX",
+                "de-DE",
+                "fr-FR",
+                "es-ES",
+                "it-IT",
+                "nl-NL",
+                "pl-PL",
+                "pt-PT",
+                "pt-BR",
+                "ro-RO",
+                "sv-SE",
+                "ko-KR",
+                "zh-CN",
+                "ja-JP",
+                "hi-IN"
+              ],
+              "reportFallbacks": {},
+              "sourceLocale": "en-US"
+            },
             "defaultLocale": "en-US",
             "defaultText": "Source",
             "icuArgs": {},
@@ -3653,11 +6303,42 @@ window.__SCRIBE_MANIFEST__ = {
               }
             }
           },
-          "value": "Files: 6335 · LOC: 260522 · Classes: 1255 · Types: 2436 · Interfaces: 768"
+          "value": "Files: 6336 · LOC: 260591 · Classes: 1286 · Types: 2436 · Interfaces: 768"
         },
         {
           "label": "Languages",
           "labelText": {
+            "catalogDependency": {
+              "explicitLocales": [],
+              "lookupLocales": [
+                "en-US",
+                "en-GB",
+                "en-CA",
+                "fr-CA",
+                "en-IN",
+                "cy-GB",
+                "gd-GB",
+                "ga-GB",
+                "es-US",
+                "es-MX",
+                "de-DE",
+                "fr-FR",
+                "es-ES",
+                "it-IT",
+                "nl-NL",
+                "pl-PL",
+                "pt-PT",
+                "pt-BR",
+                "ro-RO",
+                "sv-SE",
+                "ko-KR",
+                "zh-CN",
+                "ja-JP",
+                "hi-IN"
+              ],
+              "reportFallbacks": {},
+              "sourceLocale": "en-US"
+            },
             "defaultLocale": "en-US",
             "defaultText": "Languages",
             "icuArgs": {},
@@ -3677,6 +6358,37 @@ window.__SCRIBE_MANIFEST__ = {
         {
           "label": "Frameworks",
           "labelText": {
+            "catalogDependency": {
+              "explicitLocales": [],
+              "lookupLocales": [
+                "en-US",
+                "en-GB",
+                "en-CA",
+                "fr-CA",
+                "en-IN",
+                "cy-GB",
+                "gd-GB",
+                "ga-GB",
+                "es-US",
+                "es-MX",
+                "de-DE",
+                "fr-FR",
+                "es-ES",
+                "it-IT",
+                "nl-NL",
+                "pl-PL",
+                "pt-PT",
+                "pt-BR",
+                "ro-RO",
+                "sv-SE",
+                "ko-KR",
+                "zh-CN",
+                "ja-JP",
+                "hi-IN"
+              ],
+              "reportFallbacks": {},
+              "sourceLocale": "en-US"
+            },
             "defaultLocale": "en-US",
             "defaultText": "Frameworks",
             "icuArgs": {},
@@ -3696,6 +6408,37 @@ window.__SCRIBE_MANIFEST__ = {
         {
           "label": "Packages and build",
           "labelText": {
+            "catalogDependency": {
+              "explicitLocales": [],
+              "lookupLocales": [
+                "en-US",
+                "en-GB",
+                "en-CA",
+                "fr-CA",
+                "en-IN",
+                "cy-GB",
+                "gd-GB",
+                "ga-GB",
+                "es-US",
+                "es-MX",
+                "de-DE",
+                "fr-FR",
+                "es-ES",
+                "it-IT",
+                "nl-NL",
+                "pl-PL",
+                "pt-PT",
+                "pt-BR",
+                "ro-RO",
+                "sv-SE",
+                "ko-KR",
+                "zh-CN",
+                "ja-JP",
+                "hi-IN"
+              ],
+              "reportFallbacks": {},
+              "sourceLocale": "en-US"
+            },
             "defaultLocale": "en-US",
             "defaultText": "Packages and build",
             "icuArgs": {},
@@ -3715,6 +6458,37 @@ window.__SCRIBE_MANIFEST__ = {
         {
           "label": "CI/CD",
           "labelText": {
+            "catalogDependency": {
+              "explicitLocales": [],
+              "lookupLocales": [
+                "en-US",
+                "en-GB",
+                "en-CA",
+                "fr-CA",
+                "en-IN",
+                "cy-GB",
+                "gd-GB",
+                "ga-GB",
+                "es-US",
+                "es-MX",
+                "de-DE",
+                "fr-FR",
+                "es-ES",
+                "it-IT",
+                "nl-NL",
+                "pl-PL",
+                "pt-PT",
+                "pt-BR",
+                "ro-RO",
+                "sv-SE",
+                "ko-KR",
+                "zh-CN",
+                "ja-JP",
+                "hi-IN"
+              ],
+              "reportFallbacks": {},
+              "sourceLocale": "en-US"
+            },
             "defaultLocale": "en-US",
             "defaultText": "CI/CD",
             "icuArgs": {},
@@ -3734,6 +6508,37 @@ window.__SCRIBE_MANIFEST__ = {
         {
           "label": "Resource detections",
           "labelText": {
+            "catalogDependency": {
+              "explicitLocales": [],
+              "lookupLocales": [
+                "en-US",
+                "en-GB",
+                "en-CA",
+                "fr-CA",
+                "en-IN",
+                "cy-GB",
+                "gd-GB",
+                "ga-GB",
+                "es-US",
+                "es-MX",
+                "de-DE",
+                "fr-FR",
+                "es-ES",
+                "it-IT",
+                "nl-NL",
+                "pl-PL",
+                "pt-PT",
+                "pt-BR",
+                "ro-RO",
+                "sv-SE",
+                "ko-KR",
+                "zh-CN",
+                "ja-JP",
+                "hi-IN"
+              ],
+              "reportFallbacks": {},
+              "sourceLocale": "en-US"
+            },
             "defaultLocale": "en-US",
             "defaultText": "Resource detections",
             "icuArgs": {},
@@ -3753,6 +6558,37 @@ window.__SCRIBE_MANIFEST__ = {
         {
           "label": "Database model",
           "labelText": {
+            "catalogDependency": {
+              "explicitLocales": [],
+              "lookupLocales": [
+                "en-US",
+                "en-GB",
+                "en-CA",
+                "fr-CA",
+                "en-IN",
+                "cy-GB",
+                "gd-GB",
+                "ga-GB",
+                "es-US",
+                "es-MX",
+                "de-DE",
+                "fr-FR",
+                "es-ES",
+                "it-IT",
+                "nl-NL",
+                "pl-PL",
+                "pt-PT",
+                "pt-BR",
+                "ro-RO",
+                "sv-SE",
+                "ko-KR",
+                "zh-CN",
+                "ja-JP",
+                "hi-IN"
+              ],
+              "reportFallbacks": {},
+              "sourceLocale": "en-US"
+            },
             "defaultLocale": "en-US",
             "defaultText": "Database model",
             "icuArgs": {},
@@ -3772,6 +6608,37 @@ window.__SCRIBE_MANIFEST__ = {
         {
           "label": "API endpoints",
           "labelText": {
+            "catalogDependency": {
+              "explicitLocales": [],
+              "lookupLocales": [
+                "en-US",
+                "en-GB",
+                "en-CA",
+                "fr-CA",
+                "en-IN",
+                "cy-GB",
+                "gd-GB",
+                "ga-GB",
+                "es-US",
+                "es-MX",
+                "de-DE",
+                "fr-FR",
+                "es-ES",
+                "it-IT",
+                "nl-NL",
+                "pl-PL",
+                "pt-PT",
+                "pt-BR",
+                "ro-RO",
+                "sv-SE",
+                "ko-KR",
+                "zh-CN",
+                "ja-JP",
+                "hi-IN"
+              ],
+              "reportFallbacks": {},
+              "sourceLocale": "en-US"
+            },
             "defaultLocale": "en-US",
             "defaultText": "API endpoints",
             "icuArgs": {},
@@ -3791,6 +6658,37 @@ window.__SCRIBE_MANIFEST__ = {
         {
           "label": "Other runtime surfaces",
           "labelText": {
+            "catalogDependency": {
+              "explicitLocales": [],
+              "lookupLocales": [
+                "en-US",
+                "en-GB",
+                "en-CA",
+                "fr-CA",
+                "en-IN",
+                "cy-GB",
+                "gd-GB",
+                "ga-GB",
+                "es-US",
+                "es-MX",
+                "de-DE",
+                "fr-FR",
+                "es-ES",
+                "it-IT",
+                "nl-NL",
+                "pl-PL",
+                "pt-PT",
+                "pt-BR",
+                "ro-RO",
+                "sv-SE",
+                "ko-KR",
+                "zh-CN",
+                "ja-JP",
+                "hi-IN"
+              ],
+              "reportFallbacks": {},
+              "sourceLocale": "en-US"
+            },
             "defaultLocale": "en-US",
             "defaultText": "Other runtime surfaces",
             "icuArgs": {},
@@ -3810,6 +6708,37 @@ window.__SCRIBE_MANIFEST__ = {
         {
           "label": "Sonde Performance",
           "labelText": {
+            "catalogDependency": {
+              "explicitLocales": [],
+              "lookupLocales": [
+                "en-US",
+                "en-GB",
+                "en-CA",
+                "fr-CA",
+                "en-IN",
+                "cy-GB",
+                "gd-GB",
+                "ga-GB",
+                "es-US",
+                "es-MX",
+                "de-DE",
+                "fr-FR",
+                "es-ES",
+                "it-IT",
+                "nl-NL",
+                "pl-PL",
+                "pt-PT",
+                "pt-BR",
+                "ro-RO",
+                "sv-SE",
+                "ko-KR",
+                "zh-CN",
+                "ja-JP",
+                "hi-IN"
+              ],
+              "reportFallbacks": {},
+              "sourceLocale": "en-US"
+            },
             "defaultLocale": "en-US",
             "defaultText": "Sonde Performance",
             "icuArgs": {},
@@ -3824,7 +6753,7 @@ window.__SCRIBE_MANIFEST__ = {
               }
             }
           },
-          "value": "Analysis: 6335 files · Payload: 89.8 MB"
+          "value": "Analysis: 6336 files · Payload: 91.2 MB"
         }
       ],
       "visualizationId": "visualization-repository-health"

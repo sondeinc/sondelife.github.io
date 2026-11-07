@@ -63,16 +63,16 @@
       "sha256": "sha256:f44e35a6d5106d819c3415fd38591de04d3834343c14e50a562b84257e204692"
     },
     {
-      "bytes": 215722,
+      "bytes": 215184,
       "path": "boot/file-direct.js",
       "role": "runtime-script",
-      "sha256": "sha256:b08804cef60da783c529e30e5c71fe969802430004bea77be3a71f78765d500b"
+      "sha256": "sha256:2b79abea25747196611992be0e82c1e9d0e6fe8852d4a8b6311db7eba6c9d5fd"
     },
     {
-      "bytes": 19244,
+      "bytes": 12897,
       "path": "data/anchors.js",
       "role": "runtime-data",
-      "sha256": "sha256:0d6b719266902fe5e176c352fa076a7c250156c43856c26477531495b981c3c6"
+      "sha256": "sha256:82c04e35895d5d834f6db08bff120b0d68dc91adbfa0bbc8aeb2d62b6adfe286"
     },
     {
       "bytes": 4730,
@@ -87,16 +87,16 @@
       "sha256": "sha256:08b21b18443e4645a01827c7be69ca6e646e3d4fe6d65446a06fc5fd5ec79883"
     },
     {
-      "bytes": 18190,
+      "bytes": 12622,
       "path": "data/findings.js",
       "role": "runtime-data",
-      "sha256": "sha256:b85e423dadeecea387e477b3c95c388c0e3605d37aec0d4486036bd83123f34e"
+      "sha256": "sha256:4f158c0f476e16474c6d7b14a971cb02bf4c317a137323b061a9ec2d8648415d"
     },
     {
-      "bytes": 138225,
+      "bytes": 96370,
       "path": "data/manifest.js",
       "role": "runtime-data",
-      "sha256": "sha256:09b3d7ec70475afca295aa1b418410ede56e6b44b33a8859477f535a5311a39d"
+      "sha256": "sha256:9e2546654ddc87bbd864480c3d5520f1a8d7e387ae166c636764153050038f89"
     },
     {
       "bytes": 270022,
@@ -177,16 +177,16 @@
       "sha256": "sha256:378160dafa13de5795ca6f0245fd6029bc09057ac541666485434f2f983ebdcb"
     },
     {
-      "bytes": 9155,
+      "bytes": 7055,
       "path": "data/source-snippets.js",
       "role": "runtime-data",
-      "sha256": "sha256:1fc94f0d178714977d9a6cce7971edc12436da5a291d4251e846bf0769af06a5"
+      "sha256": "sha256:e6852515d6acb44ce04df6b98e478cdae89e98f730a9e30791c74781f9aa29fe"
     },
     {
-      "bytes": 8670,
+      "bytes": 5679,
       "path": "data/toc.js",
       "role": "runtime-data",
-      "sha256": "sha256:2602d31d6b88a445faaf20a997397625104709e32becf3588b901c3e126bd6fb"
+      "sha256": "sha256:8f6cb16f73870585da57c7da71cbbc0c97c8f13ac61a9344e0cb9fd104c4c3b2"
     },
     {
       "bytes": 22659,
@@ -195,10 +195,10 @@
       "sha256": "sha256:3c559616e4877ee35c501d07dea20ea88ca39b303a51f56ea936556430c6398d"
     },
     {
-      "bytes": 13449,
+      "bytes": 8206,
       "path": "data/visualizations.js",
       "role": "runtime-data",
-      "sha256": "sha256:4e07a913655c84d6c584bd6dc343442ba2f6fddc1f436f47233eca9df2e570bd"
+      "sha256": "sha256:ba490a631bf67ade6466651de96d647e426e527236035c317139d6ae4f39aacf"
     },
     {
       "bytes": 764593,
@@ -285,10 +285,10 @@
       "sha256": "sha256:445d8bf6527092e24bd0d5fbb49bd088fbe08f477b515a24233347828142db05"
     },
     {
-      "bytes": 138194,
+      "bytes": 96339,
       "path": "scribe-runtime.manifest.json",
       "role": "runtime-manifest",
-      "sha256": "sha256:5a0bea95b1709e42ce0685587232d191308e24e99ae62aa2c0825b73a40cc96a"
+      "sha256": "sha256:9bc0dba3978b49723be4b95d04acbb14a0ced2b9c2ddc5423041c6208e88030c"
     },
     {
       "bytes": 334,

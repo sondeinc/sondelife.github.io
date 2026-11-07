@@ -206,7 +206,7 @@ window.__SCRIBE_LOCALES__["ja-JP"] = {
     "scribe.report.asset.overviewScreenshot.caption": {
       "fallback": false,
       "reviewed": true,
-      "text": "公開 sonde.life コンプライアンスページで使用される同じ注釈付き証拠レンダラーからコピーしました。"
+      "text": "公開 sonde.tech コンプライアンスページで使用される同じ注釈付き証拠レンダラーからコピーしました。"
     },
     "scribe.report.asset.theme.daylight": {
       "fallback": false,

@@ -206,7 +206,7 @@ window.__SCRIBE_LOCALES__["en-IN"] = {
     "scribe.report.asset.overviewScreenshot.caption": {
       "fallback": false,
       "reviewed": true,
-      "text": "Copied from the same annotated evidence renderer used by the public sonde.life compliance page."
+      "text": "Copied from the same annotated evidence renderer used by the public sonde.tech compliance page."
     },
     "scribe.report.asset.theme.daylight": {
       "fallback": false,

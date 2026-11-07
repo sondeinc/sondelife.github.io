@@ -206,7 +206,7 @@ window.__SCRIBE_LOCALES__["ko-KR"] = {
     "scribe.report.asset.overviewScreenshot.caption": {
       "fallback": false,
       "reviewed": true,
-      "text": "공개 sonde.life 규정 준수 페이지에서 사용하는 주석이 있는 증거 렌더러에서 복사되었습니다."
+      "text": "공개 sonde.tech 규정 준수 페이지에서 사용하는 주석이 있는 증거 렌더러에서 복사되었습니다."
     },
     "scribe.report.asset.theme.daylight": {
       "fallback": false,

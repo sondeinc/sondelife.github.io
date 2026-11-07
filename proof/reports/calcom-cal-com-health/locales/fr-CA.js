@@ -206,7 +206,7 @@ window.__SCRIBE_LOCALES__["fr-CA"] = {
     "scribe.report.asset.overviewScreenshot.caption": {
       "fallback": false,
       "reviewed": true,
-      "text": "Recopié à partir du même rendu d'évidence annoté utilisé par la page de conformité de sonde.life."
+      "text": "Recopié à partir du même rendu d'évidence annoté utilisé par la page de conformité de sonde.tech."
     },
     "scribe.report.asset.theme.daylight": {
       "fallback": false,

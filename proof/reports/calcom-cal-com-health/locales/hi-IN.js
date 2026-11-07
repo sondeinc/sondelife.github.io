@@ -206,7 +206,7 @@ window.__SCRIBE_LOCALES__["hi-IN"] = {
     "scribe.report.asset.overviewScreenshot.caption": {
       "fallback": false,
       "reviewed": true,
-      "text": "पब्लिक sonde.life कॉम्प्लायंस पेज द्वारा उपयोग किए गए उसी एनोटेटेड एविडेंस रेंडरर से कॉपी किया गया है।"
+      "text": "पब्लिक sonde.tech कॉम्प्लायंस पेज द्वारा उपयोग किए गए उसी एनोटेटेड एविडेंस रेंडरर से कॉपी किया गया है।"
     },
     "scribe.report.asset.theme.daylight": {
       "fallback": false,

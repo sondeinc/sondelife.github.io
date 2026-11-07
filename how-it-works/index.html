@@ -36,7 +36,7 @@
     if (beaconInserted) return;
     beaconInserted = true;
     insert(BEACON_SRC, BEACON_CONFIG);
-    insert("../assets/immutable/video-engagement.6e38ee4a462bcccb.js", null);
+    insert("../assets/immutable/video-engagement.0d8010869a477f21.js", null);
   }
   function needed() {
     root.setAttribute('data-analytics-consent', 'needed');
@@ -128,7 +128,7 @@
   <link rel="icon" type="image/svg+xml" href="/favicon.svg">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
   <link id="sonde-active-platform-theme" rel="stylesheet" href="../assets/immutable/theme-airglow.1c68f85145a8170b.css">
-  <link rel="stylesheet" href="../assets/immutable/style.94ca7a0ca2f37b9d.css">
+  <link rel="stylesheet" href="../assets/immutable/style.c5c81e02fe55a970.css">
   <script src="../assets/immutable/navigation-rail.383c60fe9d907824.js" defer></script><script>(function () {
   var LIFETIMES = {"sonde-locale":31536000000,"sonde-platform-theme":31536000000,"sonde-theme":31536000000,"sonde-settings-sections":31536000000,"sonde-motion":31536000000};
   var OFFERED = {"sonde-locale":["en-US"],"sonde-platform-theme":["airglow","ultraviolet","infrared","high-contrast"],"sonde-theme":["auto","light","dark"],"sonde-motion":["normal","reduce","auto"]};
@@ -1161,11 +1161,14 @@
         <path d="M20.6 3.5v4.7h-4.7" />
         <path d="m8.9 12.1 2.2 2.2 4.1-4.4" />
       </symbol>
+      <symbol id="sonde-i-bolt" viewBox="0 0 24 24">
+        <path d="M13.4 2.6 5 13.4h6l-1 8 8.4-10.8h-6Z" />
+      </symbol>
     </svg>
 
         <div class="diagram" role="group" aria-labelledby="diagram-label" aria-describedby="diagram-desc">
           <h3 class="sonde-visually-hidden" id="diagram-label" data-msg-id="sondeLife.howItWorks.diagram.label">How Sonde turns a software system into evidence and fix plans</h3>
-          <p class="sonde-visually-hidden" id="diagram-desc" data-msg-id="sondeLife.howItWorks.diagram.description">Eight kinds of system input feed the Sonde Semantic Mesh. The mesh runs a discover, analyze, query and prove pipeline, and emits three outcome tracks — AI guardrails; development; and compliance and accessibility — which together deliver a specific file and line, a deterministic fix plan, audit-ready reports, and a rerun that verifies improvement.</p>
+          <p class="sonde-visually-hidden" id="diagram-desc" data-msg-id="sondeLife.howItWorks.diagram.description">Eight kinds of system input feed the Sonde Semantic Mesh. The mesh runs a discover, analyze, query and prove pipeline, and emits three outcome tracks — AI guardrails; development; and compliance and accessibility — which together deliver the exact file and line, a fix plan, proof the fix worked, fixes applied for you, and audit-ready reports.</p>
 
           <article class="card card--system" aria-labelledby="system-heading">
             <h3 class="card__heading" id="system-heading" data-msg-id="sondeLife.howItWorks.diagram.system.heading">Your software system</h3>
@@ -1440,19 +1443,38 @@
             <ul class="rows rows--stacked">
               <li class="row row--stacked">
                 <svg class="row__icon" aria-hidden="true" focusable="false"><use href="#sonde-i-file-code" /></svg>
-                <span data-msg-id="sondeLife.howItWorks.diagram.teams.fileLine">Specific file + line</span>
+                <span class="row__body">
+                  <span class="row__title" data-msg-id="sondeLife.howItWorks.diagram.teams.fileLine">The exact file and line</span>
+                  <span class="row__sub" data-msg-id="sondeLife.howItWorks.diagram.teams.everyPlan">Every plan</span>
+                </span>
               </li>
               <li class="row row--stacked">
                 <svg class="row__icon" aria-hidden="true" focusable="false"><use href="#sonde-i-fixplan" /></svg>
-                <span data-msg-id="sondeLife.howItWorks.diagram.teams.fixPlan">Deterministic fix plan</span>
-              </li>
-              <li class="row row--stacked">
-                <svg class="row__icon" aria-hidden="true" focusable="false"><use href="#sonde-i-report" /></svg>
-                <span data-msg-id="sondeLife.howItWorks.diagram.teams.reports">Audit-ready reports</span>
+                <span class="row__body">
+                  <span class="row__title" data-msg-id="sondeLife.howItWorks.diagram.teams.fixPlan">A fix plan</span>
+                  <span class="row__sub" data-msg-id="sondeLife.howItWorks.diagram.teams.everyPlanFix">Every plan</span>
+                </span>
               </li>
               <li class="row row--stacked">
                 <svg class="row__icon" aria-hidden="true" focusable="false"><use href="#sonde-i-rerun" /></svg>
-                <span data-msg-id="sondeLife.howItWorks.diagram.teams.rerun">Rerun to verify improvement</span>
+                <span class="row__body">
+                  <span class="row__title" data-msg-id="sondeLife.howItWorks.diagram.teams.proof">Proof the fix worked</span>
+                  <span class="row__sub" data-msg-id="sondeLife.howItWorks.diagram.teams.everyPlanProof">Every plan</span>
+                </span>
+              </li>
+              <li class="row row--stacked">
+                <svg class="row__icon" aria-hidden="true" focusable="false"><use href="#sonde-i-bolt" /></svg>
+                <span class="row__body">
+                  <span class="row__title" data-msg-id="sondeLife.howItWorks.diagram.teams.applied">Fixes applied for you</span>
+                  <span class="row__sub" data-msg-id="sondeLife.howItWorks.diagram.teams.automatedFixes">+ Automated fixes</span>
+                </span>
+              </li>
+              <li class="row row--stacked">
+                <svg class="row__icon" aria-hidden="true" focusable="false"><use href="#sonde-i-report" /></svg>
+                <span class="row__body">
+                  <span class="row__title" data-msg-id="sondeLife.howItWorks.diagram.teams.reports">Audit-ready reports</span>
+                  <span class="row__sub" data-msg-id="sondeLife.howItWorks.diagram.teams.complianceEvidence">+ Compliance evidence</span>
+                </span>
               </li>
             </ul>
           </article>
