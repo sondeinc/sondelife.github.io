@@ -21,7 +21,7 @@
   <link rel="icon" type="image/svg+xml" href="/favicon.svg">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
   <link id="sonde-active-platform-theme" rel="stylesheet" href="/assets/immutable/theme-airglow.1c68f85145a8170b.css">
-  <link rel="stylesheet" href="/assets/immutable/style.c5c81e02fe55a970.css">
+  <link rel="stylesheet" href="/assets/immutable/style.79b807fafefb5033.css">
   <script src="/assets/immutable/navigation-rail.383c60fe9d907824.js" defer></script><script>(function () {
   var LIFETIMES = {"sonde-locale":31536000000,"sonde-platform-theme":31536000000,"sonde-theme":31536000000,"sonde-settings-sections":31536000000,"sonde-motion":31536000000};
   var OFFERED = {"sonde-locale":["en-US"],"sonde-platform-theme":["airglow","ultraviolet","infrared","high-contrast"],"sonde-theme":["auto","light","dark"],"sonde-motion":["normal","reduce","auto"]};
@@ -130,7 +130,7 @@
 
   var PLATFORM_THEME_KEY = "sonde-platform-theme";
   var PLATFORM_THEME_LINK_ID = "sonde-active-platform-theme";
-  var PLATFORM_THEME_HREFS = {"airglow":"/assets/immutable/theme-airglow.1c68f85145a8170b.css","ultraviolet":"/assets/immutable/theme-ultraviolet.b8925766fdfdab46.css","infrared":"/assets/immutable/theme-infrared.9789fb6eae62141a.css","high-contrast":"/assets/immutable/theme-high-contrast.0afc0c2fb8c46969.css"};
+  var PLATFORM_THEME_HREFS = {"airglow":"/assets/immutable/theme-airglow.1c68f85145a8170b.css","high-contrast":"/assets/immutable/theme-high-contrast.0afc0c2fb8c46969.css","infrared":"/assets/immutable/theme-infrared.9789fb6eae62141a.css","ultraviolet":"/assets/immutable/theme-ultraviolet.b8925766fdfdab46.css"};
   var PLATFORM_THEME_ATTRIBUTE = "data-theme";
 
   function applyPlatformTheme(stored) {
@@ -265,11 +265,7 @@
     });
   }
   function settingsSectionId(section) {
-    if (!section || !section.classList) return '';
-    if (section.classList.contains('settings-platform-theme-section')) return 'theme';
-    if (section.classList.contains('settings-theme-section')) return 'mode';
-    if (section.classList.contains('settings-language-section')) return 'language';
-    return '';
+    return section ? section.getAttribute('data-settings-section') || '' : '';
   }
   function settingsSections() {
     return document.querySelectorAll('.settings-section');
@@ -725,7 +721,7 @@
           <span class="sl-settings-label" data-msg-id="sondeLife.settings.aria">Settings</span>
         </summary>
         <div class="settings-dropdown-menu" data-report-settings-dialog>
-  <details class="settings-section settings-platform-theme-section" open>
+  <details class="settings-section settings-platform-theme-section" data-settings-section="theme" open>
     <summary class="settings-section-trigger" data-msg-id="settings.theme.legend" data-scribe-msgid="settings.theme.legend">Theme</summary>
     <div class="settings-section-body">
       <label class="theme-toggle-option settings-platform-theme-option">
@@ -758,7 +754,7 @@
 </label>
     </div>
   </details>
-  <details class="settings-section settings-theme-section" open>
+  <details class="settings-section settings-theme-section" data-settings-section="mode" open>
     <summary class="settings-section-trigger" data-msg-id="settings.mode.legend" data-scribe-msgid="settings.mode.legend">Mode</summary>
     <div class="settings-section-body">
       <label class="theme-toggle-option theme-option-auto">
