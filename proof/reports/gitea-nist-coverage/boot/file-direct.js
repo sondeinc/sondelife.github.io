@@ -403,11 +403,7 @@ function createReportContentCache(capacityBytes, load) {
   }
 
   function settingsSectionId(section) {
-    if (!section || !section.classList) return '';
-    if (section.classList.contains('settings-platform-theme-section')) return 'theme';
-    if (section.classList.contains('settings-theme-section')) return 'mode';
-    if (section.classList.contains('settings-language-section')) return 'language';
-    return '';
+    return section ? section.getAttribute('data-settings-section') || '' : '';
   }
 
   function currentLocale() {
