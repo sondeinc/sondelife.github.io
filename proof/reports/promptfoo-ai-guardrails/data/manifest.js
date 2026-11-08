@@ -1407,7 +1407,7 @@ window.__SCRIBE_MANIFEST__ = {
     },
     {
       "assetId": "theme-daylight",
-      "defaultPath": "assets/immutable/theme-daylight.ffce2abf0c8dffe5.css",
+      "defaultPath": "assets/immutable/theme-daylight.a3fd27c9ac932670.css",
       "kind": "theme",
       "label": {
         "catalogDependency": {
@@ -1459,7 +1459,7 @@ window.__SCRIBE_MANIFEST__ = {
     },
     {
       "assetId": "theme-ultraviolet",
-      "defaultPath": "assets/immutable/theme-ultraviolet.e8d1e286a433a1f6.css",
+      "defaultPath": "assets/immutable/theme-ultraviolet.6b69db45628fc2b8.css",
       "kind": "theme",
       "label": {
         "catalogDependency": {
@@ -1511,7 +1511,7 @@ window.__SCRIBE_MANIFEST__ = {
     },
     {
       "assetId": "theme-infrared",
-      "defaultPath": "assets/immutable/theme-infrared.caf6e90430229b41.css",
+      "defaultPath": "assets/immutable/theme-infrared.fe2f630c7fe0671c.css",
       "kind": "theme",
       "label": {
         "catalogDependency": {
@@ -1563,7 +1563,7 @@ window.__SCRIBE_MANIFEST__ = {
     },
     {
       "assetId": "theme-high-contrast",
-      "defaultPath": "assets/immutable/theme-high-contrast.32d22d1a3f404d86.css",
+      "defaultPath": "assets/immutable/theme-high-contrast.4ff79888a5ca76eb.css",
       "kind": "theme",
       "label": {
         "catalogDependency": {
@@ -5024,7 +5024,7 @@ window.__SCRIBE_MANIFEST__ = {
     ],
     "availableThemes": [
       {
-        "cssPath": "assets/immutable/theme-daylight.ffce2abf0c8dffe5.css",
+        "cssPath": "assets/immutable/theme-daylight.a3fd27c9ac932670.css",
         "label": {
           "catalogDependency": {
             "explicitLocales": [],
@@ -5074,7 +5074,7 @@ window.__SCRIBE_MANIFEST__ = {
         "themeId": "daylight"
       },
       {
-        "cssPath": "assets/immutable/theme-ultraviolet.e8d1e286a433a1f6.css",
+        "cssPath": "assets/immutable/theme-ultraviolet.6b69db45628fc2b8.css",
         "label": {
           "catalogDependency": {
             "explicitLocales": [],
@@ -5124,7 +5124,7 @@ window.__SCRIBE_MANIFEST__ = {
         "themeId": "ultraviolet"
       },
       {
-        "cssPath": "assets/immutable/theme-infrared.caf6e90430229b41.css",
+        "cssPath": "assets/immutable/theme-infrared.fe2f630c7fe0671c.css",
         "label": {
           "catalogDependency": {
             "explicitLocales": [],
@@ -5174,7 +5174,7 @@ window.__SCRIBE_MANIFEST__ = {
         "themeId": "infrared"
       },
       {
-        "cssPath": "assets/immutable/theme-high-contrast.32d22d1a3f404d86.css",
+        "cssPath": "assets/immutable/theme-high-contrast.4ff79888a5ca76eb.css",
         "label": {
           "catalogDependency": {
             "explicitLocales": [],

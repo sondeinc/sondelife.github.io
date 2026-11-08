@@ -33,28 +33,28 @@
       "sha256": "sha256:452cd0766e61a7647afb16112c6f3b0dd84aee9879b2c007f3dddf33d8ce5d81"
     },
     {
-      "bytes": 590577,
-      "path": "assets/immutable/theme-daylight.ffce2abf0c8dffe5.css",
+      "bytes": 590574,
+      "path": "assets/immutable/theme-daylight.a3fd27c9ac932670.css",
       "role": "theme",
-      "sha256": "sha256:ffce2abf0c8dffe5703942b87df9dc103fc95861b1dc98059d79825af246e767"
+      "sha256": "sha256:a3fd27c9ac932670fdf42a1079f4e6c815bbdfaaa7c9134221a66b6d0b3ebc2d"
     },
     {
-      "bytes": 582955,
-      "path": "assets/immutable/theme-high-contrast.32d22d1a3f404d86.css",
+      "bytes": 582952,
+      "path": "assets/immutable/theme-high-contrast.4ff79888a5ca76eb.css",
       "role": "theme",
-      "sha256": "sha256:32d22d1a3f404d86ae765c58129b05f4defcb3dbfd563ff62d73295e05e0ad20"
+      "sha256": "sha256:4ff79888a5ca76eb5216c8b4be67eb26932d415fe42786ac80ce75e8329ccbe5"
     },
     {
-      "bytes": 582161,
-      "path": "assets/immutable/theme-infrared.caf6e90430229b41.css",
+      "bytes": 582158,
+      "path": "assets/immutable/theme-infrared.fe2f630c7fe0671c.css",
       "role": "theme",
-      "sha256": "sha256:caf6e90430229b41cc417f7b23c6a3cd63f26d27490d33ccb3056904948b60f9"
+      "sha256": "sha256:fe2f630c7fe0671c10aca3f816f5a4878108e5f42bc16124c824bf6cd3d5048c"
     },
     {
-      "bytes": 582288,
-      "path": "assets/immutable/theme-ultraviolet.e8d1e286a433a1f6.css",
+      "bytes": 582285,
+      "path": "assets/immutable/theme-ultraviolet.6b69db45628fc2b8.css",
       "role": "theme",
-      "sha256": "sha256:e8d1e286a433a1f6b9ccc9ba833c8de4ada7f96a4a468859b39690e9c32fd2a9"
+      "sha256": "sha256:6b69db45628fc2b8ef19317c7c6f74d579cd665260e76bec69b6a93cb6ad8ded"
     },
     {
       "bytes": 32216,
@@ -63,10 +63,10 @@
       "sha256": "sha256:51cc45ef99a1a83ff0baa6953621f3449894f1e115a38be10b395228d2eb2ff7"
     },
     {
-      "bytes": 3177457,
+      "bytes": 3073700,
       "path": "assets/report-export-bundle.js",
       "role": "asset",
-      "sha256": "sha256:71aa056072cb80d80ecf51d6d42ec8555fa2111a7cbae0e603444594dd80f5df"
+      "sha256": "sha256:ee3ba43a1f4345a2d0870dbe932e117f219821a5fa8719760ca62260ee7f0e47"
     },
     {
       "bytes": 503181,
@@ -75,10 +75,10 @@
       "sha256": "sha256:f44e35a6d5106d819c3415fd38591de04d3834343c14e50a562b84257e204692"
     },
     {
-      "bytes": 215185,
+      "bytes": 214950,
       "path": "boot/file-direct.js",
       "role": "runtime-script",
-      "sha256": "sha256:c11a7c9b228558ac00b07dafd8cdb8707887e82b148a6e40295c0ef074cb3bb1"
+      "sha256": "sha256:9dd200d50e18b11835d9fc89040b3f162505b8280816a37c74813f3153034135"
     },
     {
       "bytes": 53441,
@@ -108,7 +108,7 @@
       "bytes": 449408,
       "path": "data/manifest.js",
       "role": "runtime-data",
-      "sha256": "sha256:bd3f67a9439c0f87507047066391a599e22a4c6f41f9c9bf12e98d1c697e380f"
+      "sha256": "sha256:8c400c46e2d7e1c19a38d02a8a43e6d48b684555004a502ac4ec94d0ba782ee9"
     },
     {
       "bytes": 3935,
@@ -324,7 +324,7 @@
       "bytes": 136896,
       "path": "exports/report/index.html",
       "role": "page",
-      "sha256": "sha256:e31a077da279cf20cb45a5c826a105a73bbf57b2b9f3f7fd949d769ea154a686"
+      "sha256": "sha256:c9c39956566e2c499af797c2a2f254daebd4001ad0a15e27a4de892ee87c4419"
     },
     {
       "bytes": 1759,
@@ -339,76 +339,76 @@
       "sha256": "sha256:fe052c3c245b1346c7545a193475d2433edd4dca45eedd2a4b010a4ad3b93900"
     },
     {
-      "bytes": 78597,
+      "bytes": 78689,
       "path": "findings/finding-1-runtime-scan-found-symbolic-accessible-name/index.html",
       "role": "page",
-      "sha256": "sha256:c95e9e46d5703334754431255d18a0c2584dfc8204a7ee7ce16e3bd54e83afed"
+      "sha256": "sha256:9d384dadbed45b9c7d0e23f8888e2a4a087655e094a7ea7986770d06af63fc40"
     },
     {
-      "bytes": 76854,
+      "bytes": 76946,
       "path": "findings/finding-10-element-has-positive-tabindex-focus-order/index.html",
       "role": "page",
-      "sha256": "sha256:ad0d6b852e120ac4f52240c3f03168458aa38169d33a8bd5dca64923f62c6335"
+      "sha256": "sha256:d28164ce3f9a746e8a822b3afd300e2c216984e9aaba5cd0ca3a17df12ebf753"
     },
     {
-      "bytes": 78590,
+      "bytes": 78682,
       "path": "findings/finding-2-runtime-scan-found-symbolic-accessible-name/index.html",
       "role": "page",
-      "sha256": "sha256:26e1519901cfe09e84187d335724aa648272a41d275624ad8f6cddd0aa3ab319"
+      "sha256": "sha256:b79a68bd0f05a6c3b7bcbfb1ead4eaa0a509f896d5e868e79347b8f67ddfb75a"
     },
     {
-      "bytes": 80817,
+      "bytes": 80909,
       "path": "findings/finding-4-filter-control-target-is-below-android-minimum/index.html",
       "role": "page",
-      "sha256": "sha256:656a7fe9aab3d9f976cc18afc5a7a3743f02d1ebafc998312a2842a48acf209e"
+      "sha256": "sha256:d730af97e73fbb976a5588103540f3baab00811a1cd6047de57df756acd15f7c"
     },
     {
-      "bytes": 79384,
+      "bytes": 79476,
       "path": "findings/finding-5-finding-group-heading-can-truncate-under-ios-dynamic-type/index.html",
       "role": "page",
-      "sha256": "sha256:72e4bec60e16e9c52415c8100508b7f6ee60561bf3882aead7cf8f6e9bf14e5d"
+      "sha256": "sha256:ce6590e68e1b58e2777597b489ca27e1ccad6c1067fd430276d72512aa6d970b"
     },
     {
-      "bytes": 78717,
+      "bytes": 78809,
       "path": "findings/finding-6-mobile-brand-consistency-gap-color-drift/index.html",
       "role": "page",
-      "sha256": "sha256:39c94c822afede1f78ac3d09db27730ef87dad4eaca4c012a88d5a5daab68124"
+      "sha256": "sha256:b77facb819ec55f076f6196b8f59ddd4f969552937c2b2c86a05d1155d67126f"
     },
     {
-      "bytes": 79939,
+      "bytes": 80031,
       "path": "findings/finding-7-objective-c-uikit-image-is-missing-an-accessible-name/index.html",
       "role": "page",
-      "sha256": "sha256:5fde3967fdb939c35d3a18f8a28b28f21f0fe10d597e3b6b105d40960fc4bcda"
+      "sha256": "sha256:751d40cc8759dfd3d34df9c683f594e474e67f95b3781db16b21b4e26160d543"
     },
     {
-      "bytes": 77308,
+      "bytes": 77400,
       "path": "findings/finding-8-hardcoded-english-accessibility-label/index.html",
       "role": "page",
-      "sha256": "sha256:f934603da92fdf7965af889f519b979566b8a68ad4d903fa24199c569f955bde"
+      "sha256": "sha256:901ac1bebf4e1901524c4a20d2c52a8b8402963c8897c0f97e80307d92805cdd"
     },
     {
-      "bytes": 76390,
+      "bytes": 76482,
       "path": "findings/finding-9-image-element-is-missing-the-alt-attribute/index.html",
       "role": "page",
-      "sha256": "sha256:059440a7a5cf0f9f5b23b2fdc2f02f47a19ef4e8acf90168b4db1214a8f5fe86"
+      "sha256": "sha256:5f46a7405636522da54bcd5068c965c0ec8ee6a21fd51ad5b3fb4fe09745295b"
     },
     {
-      "bytes": 78635,
+      "bytes": 78727,
       "path": "findings/finding-missing-alt/index.html",
       "role": "page",
-      "sha256": "sha256:c4104959027c1b38dd80183c74a9af4320c0958a6c3d4874b9badbce629f1632"
+      "sha256": "sha256:73ad411f1527b9a8ac91cdbb8fb2f49c78d3f363fd2b2e47f7f83946b6daf70b"
     },
     {
-      "bytes": 69163,
+      "bytes": 69255,
       "path": "fix-plans/finding-missing-alt/index.html",
       "role": "page",
-      "sha256": "sha256:4014159f501cae29bd655500475914601984a314ce6f75931db78c0306cba0c3"
+      "sha256": "sha256:c753d922e1e2fdbf1dc95da5550837cb04d338c70b76881ad1591c874f0483fb"
     },
     {
-      "bytes": 238698,
+      "bytes": 238790,
       "path": "index.html",
       "role": "page",
-      "sha256": "sha256:5afdd2d264e7ba53a99b2f9e75eb5cbb0c709c60cf3bd24f66c0c59d8e4a9081"
+      "sha256": "sha256:073de0a61cd7a2aaa3650686c796f1e09f7e9a5c83d6ece7936f4d5097de7497"
     },
     {
       "bytes": 28994,
@@ -555,16 +555,16 @@
       "sha256": "sha256:3289ba80c22a87450669746cb0000c48409ce7ae7dea178bb0517fe4cad81016"
     },
     {
-      "bytes": 68313,
+      "bytes": 68405,
       "path": "references/index.html",
       "role": "page",
-      "sha256": "sha256:e635d54f113642b177306e72de3e0988120663e22a093f0474a21ce71145d794"
+      "sha256": "sha256:46c079cad067163ceab1299f580ca309da4f1c08e03a672f9e95db69ed56928f"
     },
     {
       "bytes": 449377,
       "path": "scribe-runtime.manifest.json",
       "role": "runtime-manifest",
-      "sha256": "sha256:cc4b5d9deca4156c37b746ee2a45199d0f2e9997e5eee464e7ace91b02b46a12"
+      "sha256": "sha256:34ccb2a88e8b5ece2fbdb3cd91921b7a30ad78e9ca625daca5ec1be20f6819cf"
     },
     {
       "bytes": 316,
